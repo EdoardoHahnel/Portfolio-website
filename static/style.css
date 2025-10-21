@@ -49,6 +49,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    font-size: 14px; /* Base font size reduced for better scaling */
 }
 
 .container {
@@ -83,7 +84,7 @@ body {
 }
 
 .logo h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
 }
 
@@ -308,7 +309,7 @@ body {
 }
 
 .section-header h2 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     color: var(--text-primary);
 }
 
@@ -386,7 +387,7 @@ body {
 }
 
 .news-title {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 0.75rem;
