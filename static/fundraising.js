@@ -453,7 +453,7 @@ function createGeographyChart(fundraising) {
     };
     
     geographyChartInstance = new Chart(ctx, {
-        type: 'polarArea',
+        type: 'doughnut',
         data: {
             labels: Object.keys(filteredGeographies),
             datasets: [{
@@ -466,6 +466,7 @@ function createGeographyChart(fundraising) {
         options: {
             responsive: true,
             maintainAspectRatio: true,
+            cutout: '60%',
             plugins: {
                 legend: {
                     position: 'bottom',
@@ -487,18 +488,6 @@ function createGeographyChart(fundraising) {
                 },
                 datalabels: {
                     display: false
-                }
-            },
-            scales: {
-                r: {
-                    ticks: {
-                        stepSize: 5,
-                        color: '#666',
-                        backdropColor: 'transparent'
-                    },
-                    grid: {
-                        color: 'rgba(0, 0, 0, 0.1)'
-                    }
                 }
             }
         }
