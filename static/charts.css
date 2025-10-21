@@ -1,0 +1,94 @@
+/* Chart and Graph Global Sizing - 50% smaller */
+
+/* All charts and canvases */
+canvas {
+    max-height: 180px !important;
+    transform: scale(0.65);
+    transform-origin: top left;
+}
+
+.chart-container,
+.graph-container {
+    max-height: 200px !important;
+    font-size: 0.55rem !important;
+}
+
+/* Chart legends */
+.chart-legend,
+.chartjs-legend {
+    font-size: 0.5rem !important;
+}
+
+/* Chart labels */
+.chartjs-render-monitor text,
+.chart-label {
+    font-size: 0.55rem !important;
+}
+
+/* Analytics/Fundraising specific */
+#leagueTablesChart,
+#fundraisingChart,
+#dealFlowChart,
+#analyticsChart {
+    max-height: 200px !important;
+}
+
+/* Table text in analytics pages */
+.analytics-table,
+.fundraising-table,
+.league-table {
+    font-size: 0.6rem !important;
+}
+
+.analytics-table th,
+.fundraising-table th,
+.league-table th {
+    font-size: 0.55rem !important;
+    padding: 0.25rem 0.35rem !important;
+}
+
+.analytics-table td,
+.fundraising-table td,
+.league-table td {
+    font-size: 0.6rem !important;
+    padding: 0.25rem 0.35rem !important;
+}
+
+/* Chart titles */
+.chart-title {
+    font-size: 0.7rem !important;
+    font-weight: 700;
+}
+
+/* Stat numbers in charts */
+.stat-number {
+    font-size: 0.95rem !important;
+}
+
+/* Tooltips */
+.chartjs-tooltip {
+    font-size: 0.5rem !important;
+}
+
+/* Make all headings in content areas smaller */
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit !important;
+}
+
+h1 { font-size: 0.9rem !important; }
+h2 { font-size: 0.8rem !important; }
+h3 { font-size: 0.75rem !important; }
+h4 { font-size: 0.7rem !important; }
+
+/* Buttons globally */
+button, .btn, .button {
+    font-size: 0.65rem !important;
+    padding: 0.25rem 0.5rem !important;
+}
+
+/* Input fields */
+input, select, textarea {
+    font-size: 0.7rem !important;
+    padding: 0.3rem 0.5rem !important;
+}
+
