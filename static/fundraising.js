@@ -381,9 +381,9 @@ function createStrategyChart(fundraising) {
                 legend: {
                     position: 'bottom',
                     labels: {
-                        boxWidth: 14,
-                        padding: 12,
-                        font: { size: 12, weight: '600' },
+                        boxWidth: 6,
+                        padding: 3,
+                        font: { size: 6, weight: '600' },
                         color: '#1a1a1a'
                     }
                 },
@@ -470,9 +470,9 @@ function createGeographyChart(fundraising) {
                 legend: {
                     position: 'bottom',
                     labels: {
-                        boxWidth: 14,
-                        padding: 12,
-                        font: { size: 12, weight: '600' },
+                        boxWidth: 6,
+                        padding: 3,
+                        font: { size: 6, weight: '600' },
                         color: '#1a1a1a'
                     }
                 },
@@ -662,9 +662,9 @@ function createEuropeanFundsChart() {
                 legend: {
                     position: 'top',
                     labels: {
-                        boxWidth: 14,
-                        padding: 12,
-                        font: { size: 12, weight: '600' },
+                        boxWidth: 6,
+                        padding: 3,
+                        font: { size: 6, weight: '600' },
                         color: '#1a1a1a'
                     }
                 },
@@ -751,9 +751,9 @@ function createCUMChart() {
                 legend: {
                     position: 'top',
                     labels: {
-                        boxWidth: 14,
-                        padding: 12,
-                        font: { size: 12, weight: '600' },
+                        boxWidth: 6,
+                        padding: 3,
+                        font: { size: 6, weight: '600' },
                         color: '#1a1a1a'
                     }
                 },
@@ -893,9 +893,9 @@ function createEuropeanInvestmentsChart() {
                 legend: {
                     position: 'top',
                     labels: {
-                        boxWidth: 14,
-                        padding: 12,
-                        font: { size: 12, weight: '600' },
+                        boxWidth: 6,
+                        padding: 3,
+                        font: { size: 6, weight: '600' },
                         color: '#1a1a1a'
                     }
                 },
