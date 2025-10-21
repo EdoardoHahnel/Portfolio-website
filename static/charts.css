@@ -24,7 +24,7 @@ canvas {
 /* Chart legends */
 .chart-legend,
 .chartjs-legend {
-    font-size: 0.2rem !important;
+    font-size: 0.1rem !important;
 }
 
 /* Chart labels */
@@ -99,18 +99,40 @@ canvas {
 
 /* Force legend to be much smaller */
 .chartjs-legend {
-    font-size: 0.15rem !important;
+    font-size: 0.1rem !important;
 }
 
 .chartjs-legend li {
-    font-size: 0.15rem !important;
-    margin: 0.05rem !important;
-    padding: 0.02rem !important;
+    font-size: 0.1rem !important;
+    margin: 0.02rem !important;
+    padding: 0.01rem !important;
 }
 
 /* Stat numbers in charts */
 .stat-number {
     font-size: 0.95rem !important;
+}
+
+/* Ultra-small legends for portfolio charts */
+#yearChart + .chartjs-legend,
+#sectorChart + .chartjs-legend,
+#countryChart + .chartjs-legend {
+    font-size: 0.08rem !important;
+}
+
+#yearChart + .chartjs-legend li,
+#sectorChart + .chartjs-legend li,
+#countryChart + .chartjs-legend li {
+    font-size: 0.08rem !important;
+    margin: 0.01rem !important;
+    padding: 0.005rem !important;
+}
+
+/* Target all chart legends specifically */
+.chartjs-legend,
+.chartjs-legend * {
+    font-size: 0.08rem !important;
+    line-height: 0.1rem !important;
 }
 
 /* Tooltips */
