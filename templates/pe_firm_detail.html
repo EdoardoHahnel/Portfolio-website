@@ -50,13 +50,14 @@ function displayFirmDetail(firm) {
     
     container.innerHTML = `
         <!-- Firm Header -->
-        <div class="firm-detail-header">
-            <div class="firm-detail-header-content">
-                <img src="${firm.logo_url}" alt="${escapeHtml(firm.name)}" class="firm-detail-logo" 
+        <div class="firm-detail-header" style="background: linear-gradient(135deg, #4c1d95 0%, #581c87 100%); padding: 0.6rem 0.8rem; border-radius: 6px; color: white; margin-bottom: 0.5rem;">
+            <div class="firm-detail-header-content" style="display: flex; align-items: center; gap: 0.5rem;">
+                <img src="${firm.logo_url}" alt="${escapeHtml(firm.name)}" 
+                     style="height: 35px; border-radius: 4px; background: white; padding: 0.2rem;"
                      onerror="this.style.display='none'">
                 <div>
-                    <h1 class="firm-detail-name">${escapeHtml(firm.name)}</h1>
-                    <div class="firm-detail-meta">
+                    <h1 style="margin: 0; font-size: 0.8rem; font-weight: 700;">${escapeHtml(firm.name)}</h1>
+                    <div style="display: flex; gap: 0.5rem; margin-top: 0.2rem; font-size: 0.45rem; opacity: 0.9; flex-wrap: wrap;">
                         <span><i class="fas fa-map-marker-alt"></i> ${escapeHtml(firm.headquarters)}</span>
                         <span><i class="fas fa-calendar"></i> Founded ${firm.founded}</span>
                         <span><i class="fas fa-dollar-sign"></i> AUM: ${escapeHtml(firm.aum)}</span>
@@ -65,54 +66,54 @@ function displayFirmDetail(firm) {
                 </div>
             </div>
             <div>
-                <a href="${firm.website}" target="_blank" class="btn btn-primary">
+                <a href="${firm.website}" target="_blank" style="padding: 0.25rem 0.5rem; background: white; color: #4c1d95; border-radius: 4px; text-decoration: none; font-size: 0.5rem; font-weight: 600;">
                     <i class="fas fa-external-link-alt"></i> Visit Website
                 </a>
             </div>
         </div>
         
         <!-- Tabs -->
-        <div class="tabs">
-            <button class="tab-btn active" data-tab="overview">
-                <i class="fas fa-info-circle"></i> Overview
+        <div class="tabs" style="display: flex; gap: 0.3rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e0e0e0;">
+            <button class="tab-btn active" data-tab="overview" style="padding: 0.3rem 0.5rem; border: none; background: none; cursor: pointer; font-size: 0.55rem; font-weight: 600; color: #4c1d95; border-bottom: 2px solid #4c1d95;">
+                <i class="fas fa-info-circle" style="font-size: 0.5rem;"></i> Overview
             </button>
-            <button class="tab-btn" data-tab="portfolio">
-                <i class="fas fa-briefcase"></i> Portfolio (${getPortfolioCount(firmName)})
+            <button class="tab-btn" data-tab="portfolio" style="padding: 0.3rem 0.5rem; border: none; background: none; cursor: pointer; font-size: 0.55rem; font-weight: 600; color: #666; border-bottom: 2px solid transparent;">
+                <i class="fas fa-briefcase" style="font-size: 0.5rem;"></i> Portfolio (${getPortfolioCount(firmName)})
             </button>
-            <button class="tab-btn" data-tab="team">
-                <i class="fas fa-users"></i> Team (${firm.team.length})
+            <button class="tab-btn" data-tab="team" style="padding: 0.3rem 0.5rem; border: none; background: none; cursor: pointer; font-size: 0.55rem; font-weight: 600; color: #666; border-bottom: 2px solid transparent;">
+                <i class="fas fa-users" style="font-size: 0.5rem;"></i> Team (${firm.team.length})
             </button>
-            <button class="tab-btn" data-tab="focus">
-                <i class="fas fa-bullseye"></i> Investment Focus
+            <button class="tab-btn" data-tab="focus" style="padding: 0.3rem 0.5rem; border: none; background: none; cursor: pointer; font-size: 0.55rem; font-weight: 600; color: #666; border-bottom: 2px solid transparent;">
+                <i class="fas fa-bullseye" style="font-size: 0.5rem;"></i> Investment Focus
             </button>
         </div>
         
         <!-- Tab Content -->
         <div class="tab-content active" id="tab-overview">
-            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem;">
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 0.5rem;">
                 <div class="content-card">
                     <div class="content-card-header">
-                        <h3 class="content-card-title">About ${escapeHtml(firm.name)}</h3>
+                        <h3 class="content-card-title" style="font-size: 0.65rem;">About ${escapeHtml(firm.name)}</h3>
                     </div>
                     <div class="content-card-body">
-                        <p class="firm-description">${escapeHtml(firm.description)}</p>
+                        <p style="font-size: 0.55rem; line-height: 1.4; margin: 0 0 0.5rem 0; color: #555;">${escapeHtml(firm.description)}</p>
                         
-                        <div class="info-grid" style="margin-top: 1.5rem;">
-                            <div class="info-item">
-                                <div class="info-label">Headquarters</div>
-                                <div class="info-value">${escapeHtml(firm.headquarters)}</div>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.3rem; margin-top: 0.5rem;">
+                            <div style="padding: 0.25rem; border-radius: 4px; background: #f8f9fa;">
+                                <div style="font-size: 0.45rem; color: #666; margin-bottom: 0.1rem;">Headquarters</div>
+                                <div style="font-size: 0.6rem; font-weight: 600; color: #1a1a1a;">${escapeHtml(firm.headquarters)}</div>
                             </div>
-                            <div class="info-item">
-                                <div class="info-label">Founded</div>
-                                <div class="info-value">${firm.founded}</div>
+                            <div style="padding: 0.25rem; border-radius: 4px; background: #f8f9fa;">
+                                <div style="font-size: 0.45rem; color: #666; margin-bottom: 0.1rem;">Founded</div>
+                                <div style="font-size: 0.6rem; font-weight: 600; color: #1a1a1a;">${firm.founded}</div>
                             </div>
-                            <div class="info-item">
-                                <div class="info-label">Employees</div>
-                                <div class="info-value">${firm.employees}</div>
+                            <div style="padding: 0.25rem; border-radius: 4px; background: #f8f9fa;">
+                                <div style="font-size: 0.45rem; color: #666; margin-bottom: 0.1rem;">Employees</div>
+                                <div style="font-size: 0.6rem; font-weight: 600; color: #1a1a1a;">${firm.employees}</div>
                             </div>
-                            <div class="info-item">
-                                <div class="info-label">AUM</div>
-                                <div class="info-value">${escapeHtml(firm.aum)}</div>
+                            <div style="padding: 0.25rem; border-radius: 4px; background: #f8f9fa;">
+                                <div style="font-size: 0.45rem; color: #666; margin-bottom: 0.1rem;">AUM</div>
+                                <div style="font-size: 0.6rem; font-weight: 600; color: #1a1a1a;">${escapeHtml(firm.aum)}</div>
                             </div>
                         </div>
                     </div>
@@ -120,19 +121,19 @@ function displayFirmDetail(firm) {
                 
                 <div class="content-card">
                     <div class="content-card-header">
-                        <h3 class="content-card-title">Recent Activity</h3>
+                        <h3 class="content-card-title" style="font-size: 0.65rem;">Recent Activity</h3>
                     </div>
                     <div class="content-card-body">
-                        <p>${escapeHtml(firm.recent_activity)}</p>
+                        <p style="font-size: 0.5rem; line-height: 1.4; margin: 0; color: #555;">${escapeHtml(firm.recent_activity)}</p>
                     </div>
                 </div>
             </div>
             
             <!-- Timeline Section -->
-            <div class="content-card" style="margin-top: 1.5rem;">
+            <div class="content-card" style="margin-top: 0.5rem;">
                 <div class="content-card-header">
-                    <h3 class="content-card-title">
-                        <i class="fas fa-history"></i> Timeline & Major Events
+                    <h3 class="content-card-title" style="font-size: 0.65rem;">
+                        <i class="fas fa-history" style="font-size: 0.6rem;"></i> Timeline & Major Events
                     </h3>
                 </div>
                 <div class="content-card-body">
@@ -146,108 +147,67 @@ function displayFirmDetail(firm) {
             </div>
             
             <!-- Portfolio Summary Stats -->
-            <div class="content-card" style="margin-top: 1.5rem;">
+            <div class="content-card" style="margin-top: 0.5rem;">
                 <div class="content-card-header">
-                    <h3 class="content-card-title">
-                        <i class="fas fa-chart-bar"></i> Portfolio Overview
+                    <h3 class="content-card-title" style="font-size: 0.65rem;">
+                        <i class="fas fa-chart-bar" style="font-size: 0.6rem;"></i> Portfolio Overview
                     </h3>
                 </div>
                 <div class="content-card-body">
-                    <div class="portfolio-stats-modern">
-                        <div class="stat-modern" data-color="blue">
-                            <div class="stat-modern-icon">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <div class="stat-modern-content">
-                                <div class="stat-modern-value" id="totalPortfolio">-</div>
-                                <div class="stat-modern-label">Portfolio Companies</div>
-                            </div>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.3rem;">
+                        <div style="padding: 0.3rem; background: #eff6ff; border-radius: 4px; text-align: center;">
+                            <div style="font-size: 0.6rem; font-weight: 700; color: #1e40af; margin-bottom: 0.1rem;" id="totalPortfolio">-</div>
+                            <div style="font-size: 0.45rem; color: #666;">Portfolio Companies</div>
                         </div>
-                        <div class="stat-modern" data-color="purple">
-                            <div class="stat-modern-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="stat-modern-content">
-                                <div class="stat-modern-value" id="avgHolding">-</div>
-                                <div class="stat-modern-label">Avg Holding Period</div>
-                            </div>
+                        <div style="padding: 0.3rem; background: #faf5ff; border-radius: 4px; text-align: center;">
+                            <div style="font-size: 0.6rem; font-weight: 700; color: #4c1d95; margin-bottom: 0.1rem;" id="avgHolding">-</div>
+                            <div style="font-size: 0.45rem; color: #666;">Avg Holding Period</div>
                         </div>
-                        <div class="stat-modern" data-color="pink">
-                            <div class="stat-modern-icon">
-                                <i class="fas fa-globe"></i>
-                            </div>
-                            <div class="stat-modern-content">
-                                <div class="stat-modern-value" id="countriesCount">-</div>
-                                <div class="stat-modern-label">Countries</div>
-                            </div>
+                        <div style="padding: 0.3rem; background: #fef2f2; border-radius: 4px; text-align: center;">
+                            <div style="font-size: 0.6rem; font-weight: 700; color: #dc2626; margin-bottom: 0.1rem;" id="countriesCount">-</div>
+                            <div style="font-size: 0.45rem; color: #666;">Countries</div>
                         </div>
-                        <div class="stat-modern" data-color="cyan">
-                            <div class="stat-modern-icon">
-                                <i class="fas fa-plus-circle"></i>
-                            </div>
-                            <div class="stat-modern-content">
-                                <div class="stat-modern-value" id="recentAdds">-</div>
-                                <div class="stat-modern-label">Added 2024-25</div>
-                            </div>
+                        <div style="padding: 0.3rem; background: #ecfdf5; border-radius: 4px; text-align: center;">
+                            <div style="font-size: 0.6rem; font-weight: 700; color: #059669; margin-bottom: 0.1rem;" id="recentAdds">-</div>
+                            <div style="font-size: 0.45rem; color: #666;">Added 2024-25</div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="content-card" style="margin-top: 1.5rem;">
+            <div class="content-card" style="margin-top: 0.5rem;">
                 <div class="content-card-header">
-                    <h3 class="content-card-title">
-                        <i class="fas fa-globe"></i> Global Presence & Portfolio Analytics
+                    <h3 class="content-card-title" style="font-size: 0.65rem;">
+                        <i class="fas fa-globe" style="font-size: 0.6rem;"></i> Global Presence & Portfolio Analytics
                     </h3>
                 </div>
                 <div class="content-card-body">
-                    <h4 style="margin-bottom: 1rem; color: var(--text-primary); font-size: 14px; font-weight: 700;">
-                        <i class="fas fa-building"></i> Office Locations
+                    <h4 style="margin-bottom: 0.3rem; color: var(--text-primary); font-size: 0.55rem; font-weight: 700;">
+                        <i class="fas fa-building" style="font-size: 0.5rem;"></i> Office Locations
                     </h4>
-                    <div class="offices-list" style="margin-bottom: 1.5rem;">
+                    <div style="margin-bottom: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.2rem;">
                         ${firm.offices.map(office => `
-                            <span class="office-badge">
-                                <i class="fas fa-map-pin"></i> ${escapeHtml(office)}
+                            <span style="padding: 0.15rem 0.3rem; background: #eff6ff; color: #1e40af; border-radius: 4px; font-size: 0.5rem; font-weight: 500;">
+                                <i class="fas fa-map-pin" style="font-size: 0.45rem;"></i> ${escapeHtml(office)}
                             </span>
                         `).join('')}
                     </div>
                     
-                    <h4 style="margin-bottom: 1rem; color: var(--text-primary); font-size: 14px; font-weight: 700;">
-                        <i class="fas fa-chart-pie"></i> Portfolio Distribution
+                    <h4 style="margin-bottom: 0.3rem; color: var(--text-primary); font-size: 0.55rem; font-weight: 700;">
+                        <i class="fas fa-chart-pie" style="font-size: 0.5rem;"></i> Portfolio Distribution
                     </h4>
-                    <div class="modern-charts-grid">
-                        <div class="modern-chart-card">
-                            <div class="modern-chart-header">
-                                <div class="chart-icon-wrapper" style="background: linear-gradient(135deg, #6366F1, #4F46E5);">
-                                    <i class="fas fa-globe"></i>
-                                </div>
-                                <h5 class="modern-chart-title">Country Distribution</h5>
-                            </div>
-                            <div class="modern-chart-body">
-                                <canvas id="firmCountryChart"></canvas>
-                            </div>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.3rem;">
+                        <div style="background: white; padding: 0.3rem; border-radius: 4px; border: 1px solid #e0e0e0;">
+                            <h5 style="margin: 0 0 0.2rem 0; font-size: 0.5rem; font-weight: 600; color: #1a1a1a;">Country Distribution</h5>
+                            <canvas id="firmCountryChart" style="max-height: 180px;"></canvas>
                         </div>
-                        <div class="modern-chart-card">
-                            <div class="modern-chart-header">
-                                <div class="chart-icon-wrapper" style="background: linear-gradient(135deg, #7C3AED, #5B21B6);">
-                                    <i class="fas fa-industry"></i>
-                                </div>
-                                <h5 class="modern-chart-title">Sector Distribution</h5>
-                            </div>
-                            <div class="modern-chart-body">
-                                <canvas id="firmSectorChart"></canvas>
-                            </div>
+                        <div style="background: white; padding: 0.3rem; border-radius: 4px; border: 1px solid #e0e0e0;">
+                            <h5 style="margin: 0 0 0.2rem 0; font-size: 0.5rem; font-weight: 600; color: #1a1a1a;">Sector Distribution</h5>
+                            <canvas id="firmSectorChart" style="max-height: 180px;"></canvas>
                         </div>
-                        <div class="modern-chart-card">
-                            <div class="modern-chart-header">
-                                <div class="chart-icon-wrapper" style="background: linear-gradient(135deg, #8B5CF6, #6D28D9);">
-                                    <i class="fas fa-calendar-alt"></i>
-                                </div>
-                                <h5 class="modern-chart-title">Entry Year Trend</h5>
-                            </div>
-                            <div class="modern-chart-body">
-                                <canvas id="firmYearChart"></canvas>
-                            </div>
+                        <div style="background: white; padding: 0.3rem; border-radius: 4px; border: 1px solid #e0e0e0;">
+                            <h5 style="margin: 0 0 0.2rem 0; font-size: 0.5rem; font-weight: 600; color: #1a1a1a;">Entry Year Trend</h5>
+                            <canvas id="firmYearChart" style="max-height: 180px;"></canvas>
                         </div>
                     </div>
                 </div>
