@@ -484,6 +484,9 @@ function createGeographyChart(fundraising) {
                     borderColor: '#667eea',
                     borderWidth: 1,
                     cornerRadius: 6
+                },
+                datalabels: {
+                    display: false
                 }
             },
             scales: {
@@ -561,6 +564,9 @@ function createVintageChart(fundraising) {
                     borderColor: '#667eea',
                     borderWidth: 1,
                     cornerRadius: 6
+                },
+                datalabels: {
+                    display: false
                 }
             },
             scales: {

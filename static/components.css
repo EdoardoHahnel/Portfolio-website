@@ -565,7 +565,7 @@ Component Styles - All UI components for the M&A platform
     padding: 0.4rem;
     text-align: left;
     font-weight: 600;
-    font-size: 0.55rem;
+    font-size: 0.5rem;
 }
 
 .fundraising-table tbody tr {
@@ -579,7 +579,7 @@ Component Styles - All UI components for the M&A platform
 
 .fundraising-table td {
     padding: 0.4rem;
-    font-size: 0.6rem;
+    font-size: 0.5rem;
 }
 
 .fundraising-table td.amount {
@@ -588,9 +588,9 @@ Component Styles - All UI components for the M&A platform
 }
 
 .status-badge {
-    padding: 0.18rem 0.4rem;
-    border-radius: 8px;
-    font-size: 0.55rem;
+    padding: 0.15rem 0.3rem;
+    border-radius: 6px;
+    font-size: 0.45rem;
     font-weight: 600;
     text-transform: uppercase;
 }
@@ -633,15 +633,18 @@ Component Styles - All UI components for the M&A platform
 .progress-text {
     font-weight: 600;
     color: var(--text-primary);
-    min-width: 35px;
-    font-size: 0.6rem;
+    min-width: 30px;
+    font-size: 0.5rem;
 }
 
 .strategy-tag {
     background: var(--bg-color);
-    padding: 0.35rem 0.75rem;
-    border-radius: 6px;
-    font-size: 0.85rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.45rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    line-height: 1.2;
 }
 
 /* ===== FILTER BUTTONS ===== */
