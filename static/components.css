@@ -1192,7 +1192,7 @@ Component Styles - All UI components for the M&A platform
     justify-content: space-between;
     align-items: flex-start;
     padding: 2.5rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #8b5cf6 100%);
+    background: linear-gradient(135deg, #4c1d95 0%, #581c87 50%, #6b21a8 100%);
     color: white;
     border-radius: 24px 24px 0 0;
     position: relative;
@@ -1280,7 +1280,7 @@ Component Styles - All UI components for the M&A platform
     border-radius: 20px;
     font-size: 0.875rem;
     font-weight: 700;
-    color: #764ba2;
+    color: #4c1d95;
 }
 
 .modal-close {
@@ -1333,7 +1333,7 @@ Component Styles - All UI components for the M&A platform
 .modal-stat-icon {
     width: 48px;
     height: 48px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #4c1d95, #581c87);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -1356,7 +1356,7 @@ Component Styles - All UI components for the M&A platform
 
 .modal-stat-label {
     font-size: 0.75rem;
-    color: #7c3aed;
+    color: #4c1d95;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -1381,7 +1381,7 @@ Component Styles - All UI components for the M&A platform
 }
 
 .modal-section-title i {
-    color: #8b5cf6;
+    color: #4c1d95;
     font-size: 1.5rem;
 }
 
@@ -1432,7 +1432,7 @@ Component Styles - All UI components for the M&A platform
 }
 
 .modal-detail-icon.purple {
-    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+    background: linear-gradient(135deg, #4c1d95, #581c87);
     color: white;
     box-shadow: 0 6px 16px rgba(139, 92, 246, 0.35);
 }
@@ -1443,7 +1443,7 @@ Component Styles - All UI components for the M&A platform
 
 .modal-detail-label {
     font-size: 0.75rem;
-    color: #7c3aed;
+    color: #4c1d95;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -1481,7 +1481,7 @@ Component Styles - All UI components for the M&A platform
 .modal-geo-icon {
     width: 54px;
     height: 54px;
-    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    background: linear-gradient(135deg, #4c1d95, #581c87);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1498,7 +1498,7 @@ Component Styles - All UI components for the M&A platform
 
 .modal-geo-label {
     font-size: 0.75rem;
-    color: #7c3aed;
+    color: #4c1d95;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -1547,7 +1547,7 @@ Component Styles - All UI components for the M&A platform
     justify-content: center;
     gap: 0.75rem;
     margin-bottom: 1rem;
-    color: #7c3aed;
+    color: #4c1d95;
     font-size: 0.875rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -1604,7 +1604,7 @@ Component Styles - All UI components for the M&A platform
 .modal-intel-icon {
     width: 48px;
     height: 48px;
-    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+    background: linear-gradient(135deg, #4c1d95, #581c87);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -1621,7 +1621,7 @@ Component Styles - All UI components for the M&A platform
 
 .modal-intel-label {
     font-size: 0.75rem;
-    color: #7c3aed;
+    color: #4c1d95;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -1666,7 +1666,7 @@ Component Styles - All UI components for the M&A platform
 
 .modal-funding-label {
     font-size: 0.8125rem;
-    color: #7c3aed;
+    color: #4c1d95;
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 0.75rem;
@@ -1713,7 +1713,7 @@ Component Styles - All UI components for the M&A platform
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+    background: linear-gradient(135deg, #4c1d95, #581c87);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1735,7 +1735,7 @@ Component Styles - All UI components for the M&A platform
 
 .modal-leader-role {
     font-size: 0.8125rem;
-    color: #7c3aed;
+    color: #4c1d95;
     font-weight: 600;
 }
 
@@ -1772,7 +1772,7 @@ Component Styles - All UI components for the M&A platform
 }
 
 .modal-tech-tag {
-    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    background: linear-gradient(135deg, #4c1d95, #581c87);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
@@ -1809,14 +1809,14 @@ Component Styles - All UI components for the M&A platform
     top: 1.25rem;
     width: 12px;
     height: 12px;
-    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    background: linear-gradient(135deg, #4c1d95, #581c87);
     border-radius: 50%;
     box-shadow: 0 0 0 4px #f5f3ff;
 }
 
 .modal-news-date {
     font-size: 0.75rem;
-    color: #7c3aed;
+    color: #4c1d95;
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 0.5rem;
@@ -1853,7 +1853,7 @@ Component Styles - All UI components for the M&A platform
 
 .modal-market-label {
     font-size: 0.875rem;
-    color: #7c3aed;
+    color: #4c1d95;
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 0.75rem;
@@ -1885,7 +1885,7 @@ Component Styles - All UI components for the M&A platform
 }
 
 .modal-advantage-icon {
-    color: #8b5cf6;
+    color: #4c1d95;
     font-size: 1rem;
     margin-top: 0.125rem;
 }
@@ -1911,7 +1911,7 @@ Component Styles - All UI components for the M&A platform
     width: 48px;
     height: 48px;
     border: 4px solid #e9d5ff;
-    border-top-color: #8b5cf6;
+    border-top-color: #4c1d95;
     border-radius: 50%;
     animation: spin 1s linear infinite;
     margin: 0 auto 1rem;
@@ -1923,7 +1923,7 @@ Component Styles - All UI components for the M&A platform
 
 .modal-loading-text {
     font-size: 1rem;
-    color: #7c3aed;
+    color: #4c1d95;
     font-weight: 600;
 }
 
@@ -1951,7 +1951,7 @@ Component Styles - All UI components for the M&A platform
 }
 
 .modal-btn-primary {
-    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+    background: linear-gradient(135deg, #4c1d95 0%, #581c87 100%);
     color: white;
     border: 2px solid transparent;
 }
@@ -1959,12 +1959,12 @@ Component Styles - All UI components for the M&A platform
 .modal-btn-primary:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 24px rgba(139, 92, 246, 0.4);
-    background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+    background: linear-gradient(135deg, #581c87 0%, #4c1d95 100%);
 }
 
 .modal-btn-secondary {
     background: white;
-    color: #7c3aed;
+    color: #4c1d95;
     border: 2px solid #e9d5ff;
 }
 

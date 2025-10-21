@@ -76,24 +76,24 @@
     }
     
     .filter-btn {
-        padding: 4px 8px;
+        padding: 2px 6px;
         border: 1px solid #e0e0e0;
         background: white;
-        border-radius: 15px;
+        border-radius: 10px;
         cursor: pointer;
-        font-size: 0.5rem;
+        font-size: 0.45rem;
         transition: all 0.2s;
     }
     
     .filter-btn:hover {
-        border-color: #667eea;
+        border-color: #4c1d95;
         background: #f7f9ff;
     }
     
     .filter-btn.active {
-        background: #667eea;
+        background: #4c1d95;
         color: white;
-        border-color: #667eea;
+        border-color: #4c1d95;
     }
     
     .deal-card {
@@ -358,30 +358,30 @@
     <!-- Market Trends Tab Content -->
     <div id="tab-market-trends" class="analytics-content" style="display: none; padding: 30px;">
         <div style="margin-bottom: 30px;">
-            <h3 style="margin: 0 0 10px 0; color: #1a1a1a; font-size: 24px;">Nordic PE Market Trends</h3>
-            <p style="color: #666; margin: 0;">Buyout vs VC deal volumes (2022 Q2 - 2025 Q2)</p>
+            <h3 style="margin: 0 0 10px 0; color: #1a1a1a; font-size: 0.65rem; font-weight: 700;">Buyout and VC Volume</h3>
+            <p style="color: #666; margin: 0; font-size: 0.5rem;">2022 Q2 - 2025 Q2</p>
         </div>
         
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px;">
+        <div style="display: grid; grid-template-columns: 1fr; gap: 30px; margin-bottom: 30px;">
             <div class="chart-card" style="background: white; padding: 25px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
-                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 8px;">
-                    <i class="fas fa-chart-bar" style="color: #6366F1;"></i>
-                    Buyout Deal Volume
+                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 0.55rem; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-chart-bar" style="color: #4c1d95; font-size: 0.5rem;"></i>
+                    Buyout Volume
                 </h4>
-                <p style="margin: 0 0 20px 0; color: #10B981; font-size: 13px; font-weight: 600;">
+                <p style="margin: 0 0 20px 0; color: #059669; font-size: 0.45rem; font-weight: 600;">
                     Q2'25: 382 deals | LTM: 1,465 deals | +10% QoQ Growth
                 </p>
-                <canvas id="buyoutChart" style="max-height: 350px;"></canvas>
+                <canvas id="buyoutChart" style="height: 500px; width: 100%;"></canvas>
             </div>
             <div class="chart-card" style="background: white; padding: 25px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
-                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 8px;">
-                    <i class="fas fa-chart-line" style="color: #3B82F6;"></i>
-                    Venture Capital Deal Volume
+                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 0.55rem; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-chart-line" style="color: #059669; font-size: 0.5rem;"></i>
+                    VC Volume
                 </h4>
-                <p style="margin: 0 0 20px 0; color: #EF4444; font-size: 13px; font-weight: 600;">
+                <p style="margin: 0 0 20px 0; color: #EF4444; font-size: 0.45rem; font-weight: 600;">
                     Q2'25: 325 deals | LTM: 1,445 deals | -16% QoQ Decline
                 </p>
-                <canvas id="vcChart" style="max-height: 350px;"></canvas>
+                <canvas id="vcChart" style="height: 500px; width: 100%;"></canvas>
             </div>
         </div>
     </div>
@@ -389,49 +389,49 @@
     <!-- Country Analysis Tab Content -->
     <div id="tab-country-analysis" class="analytics-content" style="display: none; padding: 30px;">
         <div style="margin-bottom: 30px;">
-            <h3 style="margin: 0 0 10px 0; color: #1a1a1a; font-size: 24px;">Nordic Buyout Deal Volume by Country</h3>
-            <p style="color: #666; margin: 0;">Q2 2025 vs Q1 2025 performance across Nordic markets</p>
+            <h3 style="margin: 0 0 10px 0; color: #1a1a1a; font-size: 0.65rem; font-weight: 700;">Buyout Volume by Country</h3>
+            <p style="color: #666; margin: 0; font-size: 0.5rem;">Q2 2025 vs Q1 2025 performance across Nordic markets</p>
         </div>
         
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px;">
+        <div style="display: grid; grid-template-columns: 1fr; gap: 30px; margin-bottom: 30px;">
             <div class="chart-card" style="background: white; padding: 25px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
-                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 10px;">
-                    <img src="https://flagcdn.com/w40/fi.png" width="28" height="21" alt="Finland" style="border-radius: 4px;"> Finland
+                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 0.55rem; font-weight: 700; display: flex; align-items: center; gap: 10px;">
+                    <img src="https://flagcdn.com/w40/fi.png" width="20" height="15" alt="Finland" style="border-radius: 4px;"> Finland
                 </h4>
-                <p style="margin: 0 0 20px 0; color: #10B981; font-size: 13px; font-weight: 600;">
+                <p style="margin: 0 0 20px 0; color: #059669; font-size: 0.45rem; font-weight: 600;">
                     Q2'25: 67 deals | +20% QoQ Growth | 18% of Nordic deals
                 </p>
-                <canvas id="finlandChart" style="max-height: 280px;"></canvas>
+                <canvas id="finlandChart" style="height: 450px; width: 100%;"></canvas>
             </div>
             
             <div class="chart-card" style="background: white; padding: 25px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
-                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 10px;">
-                    <img src="https://flagcdn.com/w40/se.png" width="28" height="21" alt="Sweden" style="border-radius: 4px;"> Sweden
+                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 0.55rem; font-weight: 700; display: flex; align-items: center; gap: 10px;">
+                    <img src="https://flagcdn.com/w40/se.png" width="20" height="15" alt="Sweden" style="border-radius: 4px;"> Sweden
                 </h4>
-                <p style="margin: 0 0 20px 0; color: #10B981; font-size: 13px; font-weight: 600;">
+                <p style="margin: 0 0 20px 0; color: #059669; font-size: 0.45rem; font-weight: 600;">
                     Q2'25: 154 deals | +7% QoQ Growth | 40% of Nordic deals
                 </p>
-                <canvas id="swedenChart" style="max-height: 280px;"></canvas>
+                <canvas id="swedenChart" style="height: 450px; width: 100%;"></canvas>
             </div>
             
             <div class="chart-card" style="background: white; padding: 25px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
-                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 10px;">
-                    <img src="https://flagcdn.com/w40/no.png" width="28" height="21" alt="Norway" style="border-radius: 4px;"> Norway
+                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 0.55rem; font-weight: 700; display: flex; align-items: center; gap: 10px;">
+                    <img src="https://flagcdn.com/w40/no.png" width="20" height="15" alt="Norway" style="border-radius: 4px;"> Norway
                 </h4>
-                <p style="margin: 0 0 20px 0; color: #10B981; font-size: 13px; font-weight: 600;">
+                <p style="margin: 0 0 20px 0; color: #059669; font-size: 0.45rem; font-weight: 600;">
                     Q2'25: 81 deals | +35% QoQ Growth | 21% of Nordic deals
                 </p>
-                <canvas id="norwayChart" style="max-height: 280px;"></canvas>
+                <canvas id="norwayChart" style="height: 450px; width: 100%;"></canvas>
             </div>
             
             <div class="chart-card" style="background: white; padding: 25px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
-                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 10px;">
-                    <img src="https://flagcdn.com/w40/dk.png" width="28" height="21" alt="Denmark" style="border-radius: 4px;"> Denmark
+                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 0.55rem; font-weight: 700; display: flex; align-items: center; gap: 10px;">
+                    <img src="https://flagcdn.com/w40/dk.png" width="20" height="15" alt="Denmark" style="border-radius: 4px;"> Denmark
                 </h4>
-                <p style="margin: 0 0 20px 0; color: #EF4444; font-size: 13px; font-weight: 600;">
+                <p style="margin: 0 0 20px 0; color: #EF4444; font-size: 0.45rem; font-weight: 600;">
                     Q2'25: 80 deals | -8% QoQ Decline | IT sector 41% of deals
                 </p>
-                <canvas id="denmarkChart" style="max-height: 280px;"></canvas>
+                <canvas id="denmarkChart" style="height: 450px; width: 100%;"></canvas>
             </div>
         </div>
     </div>
@@ -439,49 +439,49 @@
     <!-- Sector Analysis Tab Content -->
     <div id="tab-sector-analysis" class="analytics-content" style="display: none; padding: 30px;">
         <div style="margin-bottom: 30px;">
-            <h3 style="margin: 0 0 10px 0; color: #1a1a1a; font-size: 24px;">Nordic Buyout Deal Volume by Sector</h3>
-            <p style="color: #666; margin: 0;">Tech grew significantly (+32%), Business Services grew moderately (+8%), Consumer & Retail declined substantially (-28%)</p>
+            <h3 style="margin: 0 0 10px 0; color: #1a1a1a; font-size: 0.65rem; font-weight: 700;">Buyout Volume by Sector</h3>
+            <p style="color: #666; margin: 0; font-size: 0.5rem;">Tech grew significantly (+32%), Business Services grew moderately (+8%), Consumer & Retail declined substantially (-28%)</p>
         </div>
         
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px;">
+        <div style="display: grid; grid-template-columns: 1fr; gap: 30px; margin-bottom: 30px;">
             <div class="chart-card" style="background: white; padding: 25px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
-                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 10px;">
-                    <span style="font-size: 24px;">🏭</span> Industrial Manufacturing
+                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 0.55rem; font-weight: 700; display: flex; align-items: center; gap: 10px;">
+                    <span style="font-size: 0.6rem;">🏭</span> Industrial Manufacturing
                 </h4>
-                <p style="margin: 0 0 20px 0; color: #6B7280; font-size: 13px; font-weight: 600;">
+                <p style="margin: 0 0 20px 0; color: #6B7280; font-size: 0.45rem; font-weight: 600;">
                     Q2'25: 54 deals | -4% QoQ | Stable near 3-year avg (60 deals)
                 </p>
-                <canvas id="industrialChart" style="max-height: 280px;"></canvas>
+                <canvas id="industrialChart" style="height: 450px; width: 100%;"></canvas>
             </div>
             
             <div class="chart-card" style="background: white; padding: 25px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
-                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 10px;">
-                    <span style="font-size: 24px;">💻</span> Tech
+                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 0.55rem; font-weight: 700; display: flex; align-items: center; gap: 10px;">
+                    <span style="font-size: 0.6rem;">💻</span> Tech
                 </h4>
-                <p style="margin: 0 0 20px 0; color: #10B981; font-size: 13px; font-weight: 600;">
+                <p style="margin: 0 0 20px 0; color: #059669; font-size: 0.45rem; font-weight: 600;">
                     Q2'25: 115 deals | +32% QoQ Growth | Top: Software (35 deals)
                 </p>
-                <canvas id="techChart" style="max-height: 280px;"></canvas>
+                <canvas id="techChart" style="height: 450px; width: 100%;"></canvas>
             </div>
             
             <div class="chart-card" style="background: white; padding: 25px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
-                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 10px;">
-                    <span style="font-size: 24px;">🤝</span> Business Services
+                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 0.55rem; font-weight: 700; display: flex; align-items: center; gap: 10px;">
+                    <span style="font-size: 0.6rem;">🤝</span> Business Services
                 </h4>
-                <p style="margin: 0 0 20px 0; color: #10B981; font-size: 13px; font-weight: 600;">
+                <p style="margin: 0 0 20px 0; color: #059669; font-size: 0.45rem; font-weight: 600;">
                     Q2'25: 220 deals | +8% QoQ Growth | Above 3-year avg (200)
                 </p>
-                <canvas id="businessServicesChart" style="max-height: 280px;"></canvas>
+                <canvas id="businessServicesChart" style="height: 450px; width: 100%;"></canvas>
             </div>
             
             <div class="chart-card" style="background: white; padding: 25px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
-                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 10px;">
-                    <span style="font-size: 24px;">🛒</span> Consumer & Retail
+                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 0.55rem; font-weight: 700; display: flex; align-items: center; gap: 10px;">
+                    <span style="font-size: 0.6rem;">🛒</span> Consumer & Retail
                 </h4>
-                <p style="margin: 0 0 20px 0; color: #EF4444; font-size: 13px; font-weight: 600;">
+                <p style="margin: 0 0 20px 0; color: #EF4444; font-size: 0.45rem; font-weight: 600;">
                     Q2'25: 63 deals | -28% QoQ Decline | Below 3-year avg (80)
                 </p>
-                <canvas id="consumerChart" style="max-height: 280px;"></canvas>
+                <canvas id="consumerChart" style="height: 450px; width: 100%;"></canvas>
             </div>
         </div>
     </div>
@@ -1255,12 +1255,12 @@ function createBuyoutChart() {
                 backgroundColor: function(context) {
                     const ctx = context.chart.ctx;
                     const gradient = ctx.createLinearGradient(0, 0, 0, 400);
-                    gradient.addColorStop(0, '#6366F1');
-                    gradient.addColorStop(0.5, '#7C3AED');
-                    gradient.addColorStop(1, '#5B21B6');
+                    gradient.addColorStop(0, '#6b21a8');
+                    gradient.addColorStop(0.5, '#581c87');
+                    gradient.addColorStop(1, '#4c1d95');
                     return gradient;
                 },
-                borderRadius: 12,
+                borderRadius: 8,
                 borderWidth: 0,
                 borderSkipped: false,
                 yAxisID: 'y'
@@ -1268,12 +1268,12 @@ function createBuyoutChart() {
                 label: 'LTM Aggregate',
                 data: ltmData,
                 type: 'line',
-                backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                borderColor: '#10B981',
+                backgroundColor: 'rgba(5, 150, 105, 0.1)',
+                borderColor: '#059669',
                 borderWidth: 3,
                 fill: true,
                 tension: 0.4,
-                pointBackgroundColor: '#10B981',
+                pointBackgroundColor: '#059669',
                 pointBorderColor: '#fff',
                 pointBorderWidth: 2,
                 pointRadius: 4,
@@ -1358,9 +1358,9 @@ function createVCChart() {
                 backgroundColor: function(context) {
                     const ctx = context.chart.ctx;
                     const gradient = ctx.createLinearGradient(0, 0, 0, 400);
-                    gradient.addColorStop(0, '#3B82F6');
-                    gradient.addColorStop(0.5, '#2563EB');
-                    gradient.addColorStop(1, '#1E40AF');
+                    gradient.addColorStop(0, '#10b981');
+                    gradient.addColorStop(0.5, '#059669');
+                    gradient.addColorStop(1, '#047857');
                     return gradient;
                 },
                 borderRadius: 12,
@@ -1376,7 +1376,7 @@ function createVCChart() {
                 borderWidth: 3,
                 fill: true,
                 tension: 0.4,
-                pointBackgroundColor: '#10B981',
+                pointBackgroundColor: '#059669',
                 pointBorderColor: '#fff',
                 pointBorderWidth: 2,
                 pointRadius: 4,
@@ -1461,9 +1461,9 @@ function createFinlandChart() {
                 backgroundColor: function(context) {
                     const ctx = context.chart.ctx;
                     const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-                    gradient.addColorStop(0, '#6366F1');
-                    gradient.addColorStop(0.5, '#7C3AED');
-                    gradient.addColorStop(1, '#5B21B6');
+                    gradient.addColorStop(0, '#6b21a8');
+                    gradient.addColorStop(0.5, '#581c87');
+                    gradient.addColorStop(1, '#4c1d95');
                     return gradient;
                 },
                 borderRadius: 12,
@@ -1522,7 +1522,7 @@ function createSwedenChart() {
                 backgroundColor: function(context) {
                     const ctx = context.chart.ctx;
                     const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-                    gradient.addColorStop(0, '#10B981');
+                    gradient.addColorStop(0, '#10b981');
                     gradient.addColorStop(0.5, '#059669');
                     gradient.addColorStop(1, '#047857');
                     return gradient;
@@ -1583,9 +1583,9 @@ function createNorwayChart() {
                 backgroundColor: function(context) {
                     const ctx = context.chart.ctx;
                     const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-                    gradient.addColorStop(0, '#3B82F6');
-                    gradient.addColorStop(0.5, '#2563EB');
-                    gradient.addColorStop(1, '#1E40AF');
+                    gradient.addColorStop(0, '#6b21a8');
+                    gradient.addColorStop(0.5, '#581c87');
+                    gradient.addColorStop(1, '#4c1d95');
                     return gradient;
                 },
                 borderRadius: 12,
@@ -1644,9 +1644,9 @@ function createDenmarkChart() {
                 backgroundColor: function(context) {
                     const ctx = context.chart.ctx;
                     const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-                    gradient.addColorStop(0, '#8B5CF6');
-                    gradient.addColorStop(0.5, '#7C3AED');
-                    gradient.addColorStop(1, '#6D28D9');
+                    gradient.addColorStop(0, '#10b981');
+                    gradient.addColorStop(0.5, '#059669');
+                    gradient.addColorStop(1, '#047857');
                     return gradient;
                 },
                 borderRadius: 12,
@@ -1706,9 +1706,9 @@ function createIndustrialChart() {
                 backgroundColor: function(context) {
                     const ctx = context.chart.ctx;
                     const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-                    gradient.addColorStop(0, '#6366F1');
-                    gradient.addColorStop(0.5, '#7C3AED');
-                    gradient.addColorStop(1, '#5B21B6');
+                    gradient.addColorStop(0, '#6b21a8');
+                    gradient.addColorStop(0.5, '#581c87');
+                    gradient.addColorStop(1, '#4c1d95');
                     return gradient;
                 },
                 borderRadius: 12,
@@ -1767,7 +1767,7 @@ function createTechChart() {
                 backgroundColor: function(context) {
                     const ctx = context.chart.ctx;
                     const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-                    gradient.addColorStop(0, '#10B981');
+                    gradient.addColorStop(0, '#10b981');
                     gradient.addColorStop(0.5, '#059669');
                     gradient.addColorStop(1, '#047857');
                     return gradient;
@@ -1828,9 +1828,9 @@ function createBusinessServicesChart() {
                 backgroundColor: function(context) {
                     const ctx = context.chart.ctx;
                     const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-                    gradient.addColorStop(0, '#3B82F6');
-                    gradient.addColorStop(0.5, '#2563EB');
-                    gradient.addColorStop(1, '#1E40AF');
+                    gradient.addColorStop(0, '#6b21a8');
+                    gradient.addColorStop(0.5, '#581c87');
+                    gradient.addColorStop(1, '#4c1d95');
                     return gradient;
                 },
                 borderRadius: 12,
@@ -1889,9 +1889,9 @@ function createConsumerChart() {
                 backgroundColor: function(context) {
                     const ctx = context.chart.ctx;
                     const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-                    gradient.addColorStop(0, '#8B5CF6');
-                    gradient.addColorStop(0.5, '#7C3AED');
-                    gradient.addColorStop(1, '#6D28D9');
+                    gradient.addColorStop(0, '#10b981');
+                    gradient.addColorStop(0.5, '#059669');
+                    gradient.addColorStop(1, '#047857');
                     return gradient;
                 },
                 borderRadius: 12,

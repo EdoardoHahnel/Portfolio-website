@@ -185,7 +185,7 @@ function showFundDetails(fund) {
                 <div style="font-size: 12px; opacity: 0.9; margin-bottom: 8px;">Target Size</div>
                 <div style="font-size: 28px; font-weight: 700;">${fund.target_size}</div>
             </div>
-            <div style="padding: 20px; background: ${fund.status === 'Closed' ? '#10b981' : '#3b82f6'}; border-radius: 12px; color: white;">
+            <div style="padding: 20px; background: ${fund.status === 'Closed' ? '#059669' : '#1e40af'}; border-radius: 12px; color: white;">
                 <div style="font-size: 12px; opacity: 0.9; margin-bottom: 8px;">Status</div>
                 <div style="font-size: 28px; font-weight: 700;">${fund.status}</div>
             </div>
@@ -225,7 +225,7 @@ function showFundDetails(fund) {
         </div>
         
         ${fund.final_size && fund.final_size !== 'In fundraising' ? `
-            <div style="margin-top: 20px; padding: 16px; background: #d1fae5; border-radius: 10px; border-left: 4px solid #10b981;">
+            <div style="margin-top: 20px; padding: 16px; background: #d1fae5; border-radius: 10px; border-left: 4px solid #059669;">
                 <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 8px; color: #065f46;">Final Fund Size</h3>
                 <p style="margin: 0; color: #047857; font-size: 18px; font-weight: 600;">${fund.final_size}</p>
             </div>
@@ -259,8 +259,8 @@ function createNordicFundsChart() {
                 backgroundColor: function(context) {
                     const ctx = context.chart.ctx;
                     const gradient = ctx.createLinearGradient(0, 0, 0, 250);
-                    gradient.addColorStop(0, '#6366F1');
-                    gradient.addColorStop(0.5, '#7C3AED');
+                    gradient.addColorStop(0, '#6b21a8');
+                    gradient.addColorStop(0.5, '#581c87');
                     gradient.addColorStop(1, '#4F46E5');
                     return gradient;
                 },
@@ -359,12 +359,12 @@ function createStrategyChart(fundraising) {
     
     // Deep purple, green, and blue color palette
     const colors = {
-        'Buyout': '#6366F1',
-        'Growth & VC': '#10B981',
-        'Specialized PE': '#3B82F6',
-        'Real Estate': '#8B5CF6',
-        'Infrastructure': '#059669',
-        'Other': '#7C3AED'
+        'Buyout': '#4c1d95',
+        'Growth & VC': '#059669',
+        'Specialized PE': '#1e40af',
+        'Real Estate': '#581c87',
+        'Infrastructure': '#047857',
+        'Other': '#6b21a8'
     };
     
     strategyChartInstance = new Chart(ctx, {
@@ -450,10 +450,10 @@ function createGeographyChart(fundraising) {
     
     // Deep purple, green, and blue color palette
     const colors = {
-        'Nordic': '#6366F1',
-        'Europe': '#10B981',
-        'North America': '#3B82F6',
-        'Global': '#8B5CF6'
+        'Nordic': '#4c1d95',
+        'Europe': '#059669',
+        'North America': '#1e40af',
+        'Global': '#581c87'
     };
     
     geographyChartInstance = new Chart(ctx, {
@@ -605,22 +605,22 @@ function createEuropeanFundsChart() {
             {
                 label: 'UK & Ireland',
                 data: [55, 20, 33, 17, 50, 49, 22, 47, 21],
-                backgroundColor: '#6366F1CC',
-                borderColor: '#6366F1',
+                backgroundColor: '#4c1d95CC',
+                borderColor: '#4c1d95',
                 borderWidth: 0
             },
             {
                 label: 'Southern Europe',
                 data: [3, 2, 4, 4, 3, 5, 4, 3, 4],
-                backgroundColor: '#8B5CF6CC',
-                borderColor: '#8B5CF6',
+                backgroundColor: '#059669CC',
+                borderColor: '#059669',
                 borderWidth: 0
             },
             {
                 label: 'Nordics',
                 data: [2, 8, 22, 4, 14, 22, 3, 10, 10],
-                backgroundColor: '#7C3AEDCC',
-                borderColor: '#7C3AED',
+                backgroundColor: '#1e40afCC',
+                borderColor: '#1e40af',
                 borderWidth: 0
             },
             {
@@ -720,16 +720,16 @@ function createCUMChart() {
             {
                 label: 'Capital Under Management',
                 data: [595, 125, 272, 97, 54, 12],
-                backgroundColor: '#6366F1CC',
-                borderColor: '#6366F1',
+                backgroundColor: '#4c1d95CC',
+                borderColor: '#4c1d95',
                 borderWidth: 0,
                 borderRadius: 8
             },
             {
                 label: 'Dry Powder',
                 data: [203, 58, 89, 36, 21, 4],
-                backgroundColor: '#7C3AEDCC',
-                borderColor: '#7C3AED',
+                backgroundColor: '#1e40afCC',
+                borderColor: '#1e40af',
                 borderWidth: 0,
                 borderRadius: 8
             }
@@ -817,24 +817,24 @@ function createEuropeanInvestmentsChart() {
             {
                 label: 'Buyout (Value)',
                 data: [31, 31, 50, 39, 49, 36, 37, 25, 23],
-                backgroundColor: '#6366F1CC',
-                borderColor: '#6366F1',
+                backgroundColor: '#4c1d95CC',
+                borderColor: '#4c1d95',
                 borderWidth: 0,
                 yAxisID: 'y'
             },
             {
                 label: 'Growth (Value)',
                 data: [7, 9, 19, 17, 17, 14, 10, 11, 8],
-                backgroundColor: '#7C3AEDCC',
-                borderColor: '#7C3AED',
+                backgroundColor: '#1e40afCC',
+                borderColor: '#1e40af',
                 borderWidth: 0,
                 yAxisID: 'y'
             },
             {
                 label: 'Other (Value)',
                 data: [6, 5, 11, 10, 10, 7, 6, 6, 8],
-                backgroundColor: '#8B5CF6CC',
-                borderColor: '#8B5CF6',
+                backgroundColor: '#059669CC',
+                borderColor: '#059669',
                 borderWidth: 0,
                 yAxisID: 'y'
             },
@@ -843,8 +843,8 @@ function createEuropeanInvestmentsChart() {
                 label: 'Venture (Volume)',
                 data: [2500, 2500, 3000, 3000, 3000, 2500, 2000, 1500, 1000],
                 type: 'line',
-                backgroundColor: 'rgba(99, 102, 241, 0.2)',
-                borderColor: '#6366F1',
+                backgroundColor: 'rgba(76, 29, 149, 0.2)',
+                borderColor: '#4c1d95',
                 borderWidth: 3,
                 fill: false,
                 pointRadius: 4,
@@ -855,8 +855,8 @@ function createEuropeanInvestmentsChart() {
                 label: 'Growth (Volume)',
                 data: [1500, 1500, 2000, 2000, 2000, 1500, 1000, 500, 500],
                 type: 'line',
-                backgroundColor: 'rgba(124, 58, 237, 0.2)',
-                borderColor: '#7C3AED',
+                backgroundColor: 'rgba(30, 64, 175, 0.2)',
+                borderColor: '#1e40af',
                 borderWidth: 3,
                 fill: false,
                 pointRadius: 4,
@@ -867,8 +867,8 @@ function createEuropeanInvestmentsChart() {
                 label: 'Buyout (Volume)',
                 data: [1000, 1000, 1500, 1500, 1500, 1000, 500, 250, 250],
                 type: 'line',
-                backgroundColor: 'rgba(139, 92, 246, 0.2)',
-                borderColor: '#8B5CF6',
+                backgroundColor: 'rgba(5, 150, 105, 0.2)',
+                borderColor: '#059669',
                 borderWidth: 3,
                 fill: false,
                 pointRadius: 4,

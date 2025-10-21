@@ -481,7 +481,7 @@ body {
 
 /* ===== PORTFOLIO TABLE ===== */
 .portfolio-table-wrapper {
-    overflow-x: auto;
+    overflow-x: auto !important;
     overflow-y: visible;
     margin-top: 1rem;
     width: 100%;
@@ -489,6 +489,8 @@ body {
     border: 1px solid var(--border-color);
     border-radius: 6px;
     max-width: 100%;
+    position: relative;
+    display: block;
 }
 
 /* Firm Section Grouping */
@@ -562,11 +564,13 @@ body {
 }
 
 .portfolio-table {
-    width: 100%;
+    width: max-content;
+    min-width: 100%;
     border-collapse: collapse;
     background: var(--card-bg);
-    min-width: 2000px; /* Ensure table is wide enough for all columns */
     white-space: nowrap;
+    display: table;
+    table-layout: auto;
 }
 
 .portfolio-table thead {
