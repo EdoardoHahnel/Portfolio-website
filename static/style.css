@@ -209,8 +209,11 @@ body {
 
 .search-box i {
     position: absolute;
-    left: 1rem;
+    left: 0.75rem;
     color: var(--text-secondary);
+    z-index: 10;
+    pointer-events: none;
+    font-size: 0.75rem;
 }
 
 .search-box input {
@@ -221,6 +224,8 @@ body {
     width: 250px;
     transition: var(--transition);
     font-family: inherit;
+    position: relative;
+    z-index: 1;
 }
 
 .search-box input:focus {

@@ -141,8 +141,11 @@ Modern Layout - Dashboard Style
 
 .search-global i {
     position: absolute;
-    left: 1rem;
-    color: var(--text-secondary);
+    left: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    z-index: 10;
+    pointer-events: none;
+    font-size: 0.75rem;
 }
 
 .search-global input {
@@ -154,6 +157,8 @@ Modern Layout - Dashboard Style
     background: rgba(255, 255, 255, 0.15);
     color: white;
     transition: var(--transition);
+    position: relative;
+    z-index: 1;
 }
 
 .search-global input::placeholder {
