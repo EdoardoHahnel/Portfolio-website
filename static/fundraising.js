@@ -934,7 +934,7 @@ function createEuropeanInvestmentsChart() {
                     title: {
                         display: true,
                         text: 'Investment Value (€ bn)',
-                        font: { size: 12, weight: '600' },
+                        font: { size: 8, weight: '600' },
                         color: '#666'
                     },
                     ticks: {
@@ -953,7 +953,7 @@ function createEuropeanInvestmentsChart() {
                     title: {
                         display: true,
                         text: 'Number of Companies',
-                        font: { size: 12, weight: '600' },
+                        font: { size: 8, weight: '600' },
                         color: '#666'
                     },
                     ticks: {
