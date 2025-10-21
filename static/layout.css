@@ -37,19 +37,19 @@ Modern Layout - Dashboard Style
 
 .news-ticker-item {
     display: inline-block;
-    padding: 0 20px;
-    font-size: 8px;
+    padding: 0 15px;
+    font-size: 6px;
     font-weight: 500;
 }
 
 .news-ticker-item .ticker-badge {
     background: #e94560;
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 8px;
     font-weight: 700;
     text-transform: uppercase;
-    margin-right: 10px;
+    margin-right: 8px;
 }
 
 .news-ticker-item .ticker-badge.funding {

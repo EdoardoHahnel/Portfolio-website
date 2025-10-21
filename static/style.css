@@ -247,7 +247,7 @@ body {
 }
 
 .stat-value {
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     font-weight: 700;
     color: var(--primary-color);
 }
