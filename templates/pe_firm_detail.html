@@ -175,39 +175,55 @@ function displayFirmDetail(firm) {
                 </div>
             </div>
             
-            <div class="content-card" style="margin-top: 0.5rem;">
-                <div class="content-card-header">
-                    <h3 class="content-card-title" style="font-size: 0.65rem;">
-                        <i class="fas fa-globe" style="font-size: 0.6rem;"></i> Global Presence & Portfolio Analytics
-                    </h3>
-                </div>
-                <div class="content-card-body">
-                    <h4 style="margin-bottom: 0.3rem; color: var(--text-primary); font-size: 0.55rem; font-weight: 700;">
-                        <i class="fas fa-building" style="font-size: 0.5rem;"></i> Office Locations
-                    </h4>
-                    <div style="margin-bottom: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.2rem;">
-                        ${firm.offices.map(office => `
-                            <span style="padding: 0.15rem 0.3rem; background: #eff6ff; color: #1e40af; border-radius: 4px; font-size: 0.5rem; font-weight: 500;">
-                                <i class="fas fa-map-pin" style="font-size: 0.45rem;"></i> ${escapeHtml(office)}
-                            </span>
-                        `).join('')}
+            <!-- Office Locations & Portfolio Charts -->
+            <div style="display: grid; grid-template-columns: 200px 1fr; gap: 0.5rem; margin-top: 0.5rem;">
+                <!-- Office Locations -->
+                <div class="content-card">
+                    <div class="content-card-header">
+                        <h3 class="content-card-title" style="font-size: 0.6rem;">
+                            <i class="fas fa-building" style="font-size: 0.55rem;"></i> Office Locations
+                        </h3>
                     </div>
-                    
-                    <h4 style="margin-bottom: 0.3rem; color: var(--text-primary); font-size: 0.55rem; font-weight: 700;">
-                        <i class="fas fa-chart-pie" style="font-size: 0.5rem;"></i> Portfolio Distribution
-                    </h4>
-                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.3rem;">
-                        <div style="background: white; padding: 0.3rem; border-radius: 4px; border: 1px solid #e0e0e0;">
-                            <h5 style="margin: 0 0 0.2rem 0; font-size: 0.5rem; font-weight: 600; color: #1a1a1a;">Country Distribution</h5>
-                            <canvas id="firmCountryChart" style="max-height: 180px;"></canvas>
+                    <div class="content-card-body">
+                        <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+                            ${firm.offices.map(office => `
+                                <div style="padding: 0.2rem 0.3rem; background: #f8f9fa; border-left: 3px solid #1e40af; border-radius: 3px;">
+                                    <span style="font-size: 0.5rem; font-weight: 500; color: #1a1a1a;">
+                                        <i class="fas fa-map-marker-alt" style="font-size: 0.45rem; color: #1e40af;"></i> ${escapeHtml(office)}
+                                    </span>
+                                </div>
+                            `).join('')}
                         </div>
-                        <div style="background: white; padding: 0.3rem; border-radius: 4px; border: 1px solid #e0e0e0;">
-                            <h5 style="margin: 0 0 0.2rem 0; font-size: 0.5rem; font-weight: 600; color: #1a1a1a;">Sector Distribution</h5>
-                            <canvas id="firmSectorChart" style="max-height: 180px;"></canvas>
-                        </div>
-                        <div style="background: white; padding: 0.3rem; border-radius: 4px; border: 1px solid #e0e0e0;">
-                            <h5 style="margin: 0 0 0.2rem 0; font-size: 0.5rem; font-weight: 600; color: #1a1a1a;">Entry Year Trend</h5>
-                            <canvas id="firmYearChart" style="max-height: 180px;"></canvas>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Distribution Charts -->
+                <div class="content-card">
+                    <div class="content-card-header">
+                        <h3 class="content-card-title" style="font-size: 0.6rem;">
+                            <i class="fas fa-chart-pie" style="font-size: 0.55rem;"></i> Portfolio Distribution
+                        </h3>
+                    </div>
+                    <div class="content-card-body">
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.4rem;">
+                            <div style="text-align: center;">
+                                <h5 style="margin: 0 0 0.2rem 0; font-size: 0.5rem; font-weight: 600; color: #1a1a1a;">
+                                    <i class="fas fa-globe" style="font-size: 0.45rem; color: #1e40af;"></i> Country
+                                </h5>
+                                <canvas id="firmCountryChart" style="max-height: 150px;"></canvas>
+                            </div>
+                            <div style="text-align: center;">
+                                <h5 style="margin: 0 0 0.2rem 0; font-size: 0.5rem; font-weight: 600; color: #1a1a1a;">
+                                    <i class="fas fa-industry" style="font-size: 0.45rem; color: #059669;"></i> Sector
+                                </h5>
+                                <canvas id="firmSectorChart" style="max-height: 150px;"></canvas>
+                            </div>
+                            <div style="text-align: center;">
+                                <h5 style="margin: 0 0 0.2rem 0; font-size: 0.5rem; font-weight: 600; color: #1a1a1a;">
+                                    <i class="fas fa-calendar-alt" style="font-size: 0.45rem; color: #4c1d95;"></i> Entry Year
+                                </h5>
+                                <canvas id="firmYearChart" style="max-height: 150px;"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1508,21 +1524,21 @@ function escapeHtml(text) {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    padding: 16px 20px 20px 20px;
+    gap: 0.2rem;
+    padding: 0.3rem;
     background: #f9fafb;
     border-top: 1px solid #e5e7eb;
 }
 
 .company-logo-item {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     background: white;
-    border-radius: 4px;
+    border-radius: 3px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8px;
+    padding: 0.15rem;
     border: 1px solid #e5e7eb;
     transition: all 0.2s ease;
 }
@@ -1540,17 +1556,16 @@ function escapeHtml(text) {
 }
 
 .company-logo-more {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     background: linear-gradient(135deg, #4c1d95, #1e40af);
-    border-radius: 4px;
+    border-radius: 3px;
     display: flex;
-    font-size: 0.45rem;
     align-items: center;
     justify-content: center;
     color: white;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 0.4rem;
 }
 
 .timeline-meta {
@@ -1634,8 +1649,8 @@ function escapeHtml(text) {
     }
     
     .company-logos-preview {
-        padding: 12px 16px 16px 16px;
-        gap: 6px;
+        padding: 0.25rem;
+        gap: 0.15rem;
     }
 }
 </style>
