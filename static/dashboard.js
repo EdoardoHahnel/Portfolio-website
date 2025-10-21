@@ -43,24 +43,24 @@ async function loadLatestNews() {
             const container = document.getElementById('latestNews');
             container.innerHTML = '';
             
-            // Filter for PE/M&A news (exclude AI-specific news)
+            // Filter for PE/M&A news only (exclude AI-specific news)
             const peNews = data.news.filter(article => {
-                const text = (article.title + ' ' + (article.description || '')).toLowerCase();
                 const source = (article.source || '').toLowerCase();
                 
-                // Include PE/M&A sources
-                if (source.includes('pe news') || source.includes('seeking alpha m&a') || source.includes('reuters m&a') || 
-                    source.includes('private equity') || source.includes('m&a') || source.includes('acquisition')) {
-                    return true;
-                }
-                
-                // Exclude AI-specific news from main section
-                if (text.includes('ai startup') || text.includes('artificial intelligence') || 
-                    text.includes('machine learning') || text.includes('ai company')) {
+                // EXCLUDE AI news sources
+                if (source.includes('breakit ai') || source.includes('crescendo ai') || 
+                    source.includes('crunchbase') || source.includes('ai news') ||
+                    source.includes('techcrunch')) {
                     return false;
                 }
                 
-                return true;
+                // ONLY include PE/M&A sources
+                if (source.includes('pe news') || source.includes('seeking alpha m&a') || 
+                    source.includes('reuters m&a') || source.includes('private equity')) {
+                    return true;
+                }
+                
+                return false;
             });
             
             // Show first 15 PE articles
