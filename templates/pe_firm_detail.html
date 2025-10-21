@@ -205,24 +205,30 @@ function displayFirmDetail(firm) {
                         </h3>
                     </div>
                     <div class="content-card-body">
-                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.4rem;">
-                            <div style="text-align: center;">
-                                <h5 style="margin: 0 0 0.2rem 0; font-size: 0.5rem; font-weight: 600; color: #1a1a1a;">
-                                    <i class="fas fa-globe" style="font-size: 0.45rem; color: #1e40af;"></i> Country
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem;">
+                            <div>
+                                <h5 style="margin: 0 0 0.3rem 0; font-size: 0.55rem; font-weight: 700; color: #1a1a1a; text-align: center;">
+                                    <i class="fas fa-globe" style="font-size: 0.5rem; color: #1e40af;"></i> Country
                                 </h5>
-                                <canvas id="firmCountryChart" style="max-height: 150px;"></canvas>
+                                <div style="height: 120px; position: relative;">
+                                    <canvas id="firmCountryChart"></canvas>
+                                </div>
                             </div>
-                            <div style="text-align: center;">
-                                <h5 style="margin: 0 0 0.2rem 0; font-size: 0.5rem; font-weight: 600; color: #1a1a1a;">
-                                    <i class="fas fa-industry" style="font-size: 0.45rem; color: #059669;"></i> Sector
+                            <div>
+                                <h5 style="margin: 0 0 0.3rem 0; font-size: 0.55rem; font-weight: 700; color: #1a1a1a; text-align: center;">
+                                    <i class="fas fa-industry" style="font-size: 0.5rem; color: #059669;"></i> Sector
                                 </h5>
-                                <canvas id="firmSectorChart" style="max-height: 150px;"></canvas>
+                                <div style="height: 120px; position: relative;">
+                                    <canvas id="firmSectorChart"></canvas>
+                                </div>
                             </div>
-                            <div style="text-align: center;">
-                                <h5 style="margin: 0 0 0.2rem 0; font-size: 0.5rem; font-weight: 600; color: #1a1a1a;">
-                                    <i class="fas fa-calendar-alt" style="font-size: 0.45rem; color: #4c1d95;"></i> Entry Year
+                            <div>
+                                <h5 style="margin: 0 0 0.3rem 0; font-size: 0.55rem; font-weight: 700; color: #1a1a1a; text-align: center;">
+                                    <i class="fas fa-calendar-alt" style="font-size: 0.5rem; color: #4c1d95;"></i> Entry Year
                                 </h5>
-                                <canvas id="firmYearChart" style="max-height: 150px;"></canvas>
+                                <div style="height: 120px; position: relative;">
+                                    <canvas id="firmYearChart"></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -473,44 +479,45 @@ function createFirmCharts(companies) {
                 datasets: [{
                     data: countryData,
                     backgroundColor: countryBackgroundColors,
-                    borderWidth: 4,
+                    borderWidth: 2,
                     borderColor: '#ffffff',
-                    hoverBorderWidth: 6,
+                    hoverBorderWidth: 3,
                     hoverBorderColor: '#667eea',
-                    hoverOffset: 12,
-                    spacing: 2
+                    hoverOffset: 8,
+                    spacing: 1
                 }]
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: false,
-                cutout: '60%',
+                maintainAspectRatio: true,
+                aspectRatio: 1.2,
+                cutout: '55%',
                 animation: {
                     animateRotate: true,
                     animateScale: true,
-                    duration: 1500,
+                    duration: 1200,
                     easing: 'easeInOutQuart'
                 },
                 plugins: {
                     legend: {
                         position: 'bottom',
                         labels: { 
-                            boxWidth: 14, 
-                            padding: 10, 
-                            font: { size: 12, weight: '700' },
+                            boxWidth: 5, 
+                            padding: 4, 
+                            font: { size: 7, weight: '600' },
                             usePointStyle: true,
-                            pointStyle: 'rectRounded',
+                            pointStyle: 'circle',
                             color: '#1f2937'
                         }
                     },
                     tooltip: {
-                        backgroundColor: 'rgba(17, 24, 39, 0.95)',
-                        padding: 14,
-                        titleFont: { size: 14, weight: 'bold' },
-                        bodyFont: { size: 13 },
+                        backgroundColor: 'rgba(0, 0, 0, 0.85)',
+                        padding: 8,
+                        titleFont: { size: 10, weight: 'bold' },
+                        bodyFont: { size: 9 },
                         borderColor: '#667eea',
-                        borderWidth: 2,
-                        cornerRadius: 8,
+                        borderWidth: 1,
+                        cornerRadius: 6,
                         displayColors: true,
                         callbacks: {
                             label: function(context) {
@@ -518,7 +525,7 @@ function createFirmCharts(companies) {
                                 const value = context.parsed || 0;
                                 const total = context.dataset.data.reduce((a, b) => a + b, 0);
                                 const percentage = ((value / total) * 100).toFixed(1);
-                                return ` ${label}: ${value} companies (${percentage}%)`;
+                                return ` ${label}: ${value} (${percentage}%)`;
                             }
                         }
                     }
@@ -559,59 +566,65 @@ function createFirmCharts(companies) {
         });
         
         new Chart(sectorCtx, {
-            type: 'doughnut',
+            type: 'polarArea',
             data: {
                 labels: sectorLabels,
                 datasets: [{
                     data: sectorData,
-                    backgroundColor: colors.map(c => c + 'DD'),
-                    borderWidth: 4,
+                    backgroundColor: colors.map(c => c + 'CC'),
+                    borderWidth: 2,
                     borderColor: '#ffffff',
-                    hoverBorderWidth: 6,
-                    hoverBorderColor: '#667eea',
-                    hoverOffset: 15,
-                    spacing: 2
+                    hoverBorderWidth: 3,
+                    hoverBorderColor: '#ffffff'
                 }]
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: false,
-                cutout: '65%',
+                maintainAspectRatio: true,
+                aspectRatio: 1.2,
                 animation: {
                     animateRotate: true,
                     animateScale: true,
-                    duration: 1500,
+                    duration: 1200,
                     easing: 'easeInOutQuart'
                 },
                 plugins: {
                     legend: {
                         position: 'bottom',
                         labels: { 
-                            boxWidth: 14, 
-                            padding: 10, 
-                            font: { size: 12, weight: '700' },
+                            boxWidth: 5, 
+                            padding: 4, 
+                            font: { size: 7, weight: '600' },
                             usePointStyle: true,
-                            pointStyle: 'rectRounded',
+                            pointStyle: 'circle',
                             color: '#1f2937'
                         }
                     },
                     tooltip: {
-                        backgroundColor: 'rgba(17, 24, 39, 0.95)',
-                        padding: 14,
-                        titleFont: { size: 14, weight: 'bold' },
-                        bodyFont: { size: 13 },
+                        backgroundColor: 'rgba(0, 0, 0, 0.85)',
+                        padding: 8,
+                        titleFont: { size: 10, weight: 'bold' },
+                        bodyFont: { size: 9 },
                         borderColor: '#667eea',
-                        borderWidth: 2,
-                        cornerRadius: 8,
+                        borderWidth: 1,
+                        cornerRadius: 6,
                         displayColors: true,
                         callbacks: {
                             label: function(context) {
                                 const label = context.label || '';
                                 const value = context.parsed || 0;
-                                const total = context.dataset.data.reduce((a, b) => a + b, 0);
-                                const percentage = ((value / total) * 100).toFixed(1);
-                                return ` ${label}: ${value} companies (${percentage}%)`;
+                                return ` ${label}: ${value} companies`;
                             }
+                        }
+                    }
+                },
+                scales: {
+                    r: {
+                        ticks: {
+                            display: false
+                        },
+                        grid: {
+                            color: '#f3f4f6'
                         }
                     }
                 }
@@ -641,17 +654,17 @@ function createFirmCharts(companies) {
                     data: yearData,
                     backgroundColor: function(context) {
                         const ctx = context.chart.ctx;
-                        const gradient = ctx.createLinearGradient(0, 0, 0, 250);
+                        const gradient = ctx.createLinearGradient(0, 0, 0, 150);
                         gradient.addColorStop(0, '#6366F1');
                         gradient.addColorStop(0.5, '#7C3AED');
                         gradient.addColorStop(1, '#4F46E5');
                         return gradient;
                     },
-                    borderRadius: 12,
+                    borderRadius: 8,
                     borderWidth: 0,
                     hoverBackgroundColor: function(context) {
                         const ctx = context.chart.ctx;
-                        const gradient = ctx.createLinearGradient(0, 0, 0, 250);
+                        const gradient = ctx.createLinearGradient(0, 0, 0, 150);
                         gradient.addColorStop(0, '#4F46E5');
                         gradient.addColorStop(1, '#5B21B6');
                         return gradient;
@@ -661,21 +674,22 @@ function createFirmCharts(companies) {
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: false,
+                maintainAspectRatio: true,
+                aspectRatio: 1.5,
                 animation: {
-                    duration: 1500,
+                    duration: 1200,
                     easing: 'easeInOutQuart'
                 },
                 plugins: { 
                     legend: { display: false },
                     tooltip: {
-                        backgroundColor: 'rgba(17, 24, 39, 0.95)',
-                        padding: 14,
-                        titleFont: { size: 14, weight: 'bold' },
-                        bodyFont: { size: 13 },
+                        backgroundColor: 'rgba(0, 0, 0, 0.85)',
+                        padding: 8,
+                        titleFont: { size: 10, weight: 'bold' },
+                        bodyFont: { size: 9 },
                         borderColor: '#667eea',
-                        borderWidth: 2,
-                        cornerRadius: 8,
+                        borderWidth: 1,
+                        cornerRadius: 6,
                         displayColors: false,
                         callbacks: {
                             label: function(context) {
@@ -689,12 +703,12 @@ function createFirmCharts(companies) {
                         beginAtZero: true, 
                         ticks: { 
                             stepSize: 1, 
-                            font: { size: 12, weight: '700' },
+                            font: { size: 7, weight: '600' },
                             color: '#374151',
-                            padding: 8
+                            padding: 3
                         },
                         grid: { 
-                            color: 'rgba(0, 0, 0, 0.05)',
+                            color: '#f3f4f6',
                             drawBorder: false,
                             lineWidth: 1
                         },
@@ -704,9 +718,9 @@ function createFirmCharts(companies) {
                     },
                     x: { 
                         ticks: { 
-                            font: { size: 12, weight: '700' },
+                            font: { size: 7, weight: '600' },
                             color: '#374151',
-                            padding: 8
+                            padding: 3
                         },
                         grid: { 
                             display: false,
@@ -896,6 +910,11 @@ async function loadFirmTimeline(firm, firmName) {
                     const year = parseInt(company.entry);
                     if (!investmentsByYear[year]) {
                         investmentsByYear[year] = [];
+                    }
+                    // Add logo URL if not present
+                    if (!company.logo_url && company.website) {
+                        const domain = extractDomain(company.website);
+                        company.logo_url = `https://logo.clearbit.com/${domain}`;
                     }
                     investmentsByYear[year].push(company);
                 }
@@ -1394,8 +1413,8 @@ function escapeHtml(text) {
 
 .timeline-marker-horizontal {
     position: relative;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background: white;
     display: flex;
@@ -1404,14 +1423,16 @@ function escapeHtml(text) {
     z-index: 2;
     transition: all 0.3s ease;
     margin-bottom: 20px;
-    overflow: hidden;
+    overflow: visible;
+    padding: 6px;
 }
 
 .timeline-marker-horizontal img {
-    width: 70%;
-    height: 70%;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
-    border-radius: 8px;
+    border-radius: 6px;
+    display: block;
 }
 
 .timeline-marker-horizontal:hover {
@@ -1531,41 +1552,45 @@ function escapeHtml(text) {
 }
 
 .company-logo-item {
-    width: 25px;
-    height: 25px;
+    width: 28px;
+    height: 28px;
     background: white;
-    border-radius: 3px;
+    border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.15rem;
+    padding: 3px;
     border: 1px solid #e5e7eb;
     transition: all 0.2s ease;
+    flex-shrink: 0;
 }
 
 .company-logo-item:hover {
-    transform: scale(1.1);
+    transform: scale(1.15);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-color: #8b5cf6;
+    z-index: 10;
 }
 
 .company-logo-item img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
+    display: block;
 }
 
 .company-logo-more {
-    width: 25px;
-    height: 25px;
+    width: 28px;
+    height: 28px;
     background: linear-gradient(135deg, #4c1d95, #1e40af);
-    border-radius: 3px;
+    border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     font-weight: 700;
-    font-size: 0.4rem;
+    font-size: 0.45rem;
+    flex-shrink: 0;
 }
 
 .timeline-meta {
@@ -1644,13 +1669,19 @@ function escapeHtml(text) {
     
     .company-logo-item,
     .company-logo-more {
-        width: 25px;
-        height: 25px;
+        width: 24px;
+        height: 24px;
     }
     
     .company-logos-preview {
         padding: 0.25rem;
         gap: 0.15rem;
+    }
+    
+    .timeline-marker-horizontal {
+        width: 45px;
+        height: 45px;
+        padding: 5px;
     }
 }
 </style>

@@ -8,22 +8,86 @@
 
 {% block content %}
 <div class="page-header">
-    <div style="display: flex; align-items: center; gap: 10px;">
-        <h1 class="page-title" style="margin: 0;">Insights Dashboard</h1>
-        <img src="{{ url_for('static', filename='Port.png') }}" alt="Portföljbolagen" style="height: 25px; width: auto; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.1);">
+    <div style="display: flex; align-items: center; gap: 8px;">
+        <h1 class="page-title" style="margin: 0; font-size: 0.95rem;">Insights Dashboard</h1>
+        <img src="{{ url_for('static', filename='Port.png') }}" alt="Portföljbolagen" style="height: 18px; width: auto; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
     </div>
-    <p class="page-subtitle">Real-time intelligence on Nordic private equity, deals, fundraising, and AI</p>
+    <p class="page-subtitle" style="font-size: 0.65rem; margin-top: 0.2rem;">Real-time intelligence on Nordic private equity, deals, fundraising, and AI</p>
+</div>
+
+<!-- Video Hero Section -->
+<div class="video-hero-section">
+    <video class="video-hero-bg" autoplay muted loop playsinline>
+        <source src="https://cdn.coverr.co/videos/coverr-technology-background-9765/1080p.mp4" type="video/mp4">
+        <source src="https://player.vimeo.com/external/434045526.hd.mp4?s=c27eecc69a27dbc4ff2b87d38afc35f1a9e7c02d&profile_id=174" type="video/mp4">
+    </video>
+    <div class="video-hero-overlay"></div>
+    
+    <!-- Animated particles background -->
+    <div class="particles-bg">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    
+    <!-- Animated grid lines -->
+    <div class="grid-lines">
+        <div class="grid-line horizontal"></div>
+        <div class="grid-line horizontal"></div>
+        <div class="grid-line vertical"></div>
+        <div class="grid-line vertical"></div>
+    </div>
+    
+    <div class="video-hero-content">
+        <h2 class="video-hero-title">
+            Nordic PE & AI <span class="gradient-text">Investment Platform</span>
+        </h2>
+        <p class="video-hero-subtitle">
+            Navigate portfolio companies, PE firms, AI investments, and investor networks
+        </p>
+        
+        <div class="hero-actions">
+            <a href="/portfolio" class="hero-btn hero-btn-primary">
+                Browse Portfolio Companies
+            </a>
+            <a href="/pe-firms" class="hero-btn hero-btn-secondary">
+                Explore PE Firms
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Powered by Portföljbolagen Badge -->
+<div style="text-align: center; margin: 0.75rem 0; padding: 0.5rem; background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); border-radius: 8px; border: 1px solid #e5e7eb;">
+    <div style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; margin-bottom: 0.25rem;">
+        <img src="{{ url_for('static', filename='Portföljbolagen2.png') }}" alt="Portföljbolagen" style="height: 20px; width: auto;">
+        <div style="text-align: left;">
+            <div style="font-size: 0.45rem; font-weight: 700; color: #4c1d95; letter-spacing: 0.3px;">POWERED BY</div>
+            <div style="font-size: 0.6rem; font-weight: 800; color: #1a1a1a; letter-spacing: -0.2px;">Portföljbolagen</div>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 0.3rem;">
+        <div style="text-align: center;">
+            <div style="font-size: 0.4rem; color: #6b7280; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px;">Research User</div>
+            <div style="font-size: 0.5rem; color: #1a1a1a; font-weight: 700; margin-top: 0.05rem;">Analyst</div>
+        </div>
+    </div>
 </div>
 
 <!-- Dashboard Stats Cards -->
-<div class="dashboard-grid">
-    <a href="/portfolio" class="stat-card-link">
+<div class="dashboard-grid scroll-reveal">
+    <a href="/portfolio" class="stat-card-link scroll-reveal-item" style="animation-delay: 0.1s;">
         <div class="stat-card">
             <div class="stat-card-icon-top purple">
                 <i class="fas fa-building"></i>
             </div>
             <div class="stat-card-content">
-                <div class="stat-card-value" id="totalCompanies">349</div>
+                <div class="stat-card-value counter-animate" data-target="411">0</div>
                 <div class="stat-card-label">Portfolio Companies</div>
                 <div class="stat-card-change positive">
                     <i class="fas fa-arrow-up"></i>
@@ -33,13 +97,13 @@
         </div>
     </a>
     
-    <a href="/news" class="stat-card-link">
+    <a href="/news" class="stat-card-link scroll-reveal-item" style="animation-delay: 0.2s;">
         <div class="stat-card">
             <div class="stat-card-icon-top purple">
                 <i class="fas fa-newspaper"></i>
             </div>
             <div class="stat-card-content">
-                <div class="stat-card-value" id="totalNews">75</div>
+                <div class="stat-card-value counter-animate" data-target="83">0</div>
                 <div class="stat-card-label">Latest Investment News</div>
                 <div class="stat-card-change positive">
                     <i class="fas fa-check-circle"></i>
@@ -49,13 +113,13 @@
         </div>
     </a>
     
-    <a href="/pe-firms" class="stat-card-link">
+    <a href="/pe-firms" class="stat-card-link scroll-reveal-item" style="animation-delay: 0.3s;">
         <div class="stat-card">
             <div class="stat-card-icon-top purple">
                 <i class="fas fa-briefcase"></i>
             </div>
             <div class="stat-card-content">
-                <div class="stat-card-value">14</div>
+                <div class="stat-card-value counter-animate" data-target="14">0</div>
                 <div class="stat-card-label">PE Firms Tracked</div>
                 <div class="stat-card-change info">
                     <i class="fas fa-euro-sign"></i>
@@ -67,10 +131,10 @@
 </div>
 
 <!-- Recent Activity Grid -->
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+<div class="scroll-reveal" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
     
     <!-- Latest Investment News -->
-    <div class="content-card">
+    <div class="content-card scroll-reveal-item" style="animation-delay: 0.1s;">
         <div class="content-card-header">
             <h2 class="content-card-title">
                 <i class="fas fa-newspaper"></i>
@@ -85,7 +149,7 @@
     </div>
     
     <!-- AI Investment News -->
-    <div class="content-card">
+    <div class="content-card scroll-reveal-item" style="animation-delay: 0.2s;">
         <div class="content-card-header">
             <h2 class="content-card-title">
                 <i class="fas fa-robot"></i>
@@ -101,7 +165,7 @@
     </div>
     
     <!-- Active Fundraising -->
-    <div class="content-card">
+    <div class="content-card scroll-reveal-item" style="animation-delay: 0.3s;">
         <div class="content-card-header">
             <h2 class="content-card-title">
                 <i class="fas fa-chart-pie"></i>
@@ -118,7 +182,7 @@
 </div>
 
 <!-- PE Firms Overview -->
-<div class="content-card">
+<div class="content-card scroll-reveal">
     <div class="content-card-header">
         <h2 class="content-card-title">
             <i class="fas fa-building"></i>
@@ -134,5 +198,60 @@
 </div>
 
 <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+
+<script>
+// Scroll Animation System
+document.addEventListener('DOMContentLoaded', function() {
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+        root: null,
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                
+                // Trigger counter animation if this element has counters
+                const counters = entry.target.querySelectorAll('.counter-animate');
+                counters.forEach(counter => {
+                    if (!counter.classList.contains('counted')) {
+                        animateCounter(counter);
+                        counter.classList.add('counted');
+                    }
+                });
+                
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe all scroll reveal elements
+    document.querySelectorAll('.scroll-reveal, .scroll-reveal-item').forEach(el => {
+        observer.observe(el);
+    });
+});
+
+// Counter Animation
+function animateCounter(element) {
+    const target = parseInt(element.getAttribute('data-target'));
+    const duration = 2000; // 2 seconds
+    const increment = target / (duration / 16); // 60fps
+    let current = 0;
+
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            element.textContent = target;
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(current);
+        }
+    }, 16);
+}
+</script>
+
 {% endblock %}
 
