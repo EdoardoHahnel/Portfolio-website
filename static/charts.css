@@ -2,15 +2,23 @@
 
 /* All charts and canvases */
 canvas {
-    max-height: 180px !important;
-    transform: scale(0.65);
-    transform-origin: top left;
+    max-height: 300px !important;
+    transform: scale(1.0);
+    transform-origin: center center;
+    margin: 0 auto;
+    display: block;
+    width: 100% !important;
 }
 
 .chart-container,
 .graph-container {
-    max-height: 200px !important;
-    font-size: 0.55rem !important;
+    max-height: 320px !important;
+    font-size: 0.7rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    width: 100%;
 }
 
 /* Chart legends */
@@ -30,7 +38,8 @@ canvas {
 #fundraisingChart,
 #dealFlowChart,
 #analyticsChart {
-    max-height: 200px !important;
+    max-height: 350px !important;
+    width: 100% !important;
 }
 
 /* Table text in analytics pages */
@@ -56,7 +65,7 @@ canvas {
 
 /* Chart titles */
 .chart-title {
-    font-size: 0.7rem !important;
+    font-size: 0.9rem !important;
     font-weight: 700;
 }
 

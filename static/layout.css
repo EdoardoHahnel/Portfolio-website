@@ -465,7 +465,7 @@ Modern Layout - Dashboard Style
 }
 
 .stat-card-value {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     font-weight: 800;
     color: var(--text-primary);
     line-height: 1;
@@ -477,7 +477,7 @@ Modern Layout - Dashboard Style
 
 .stat-card-label {
     color: var(--text-primary);
-    font-size: 0.58rem;
+    font-size: 0.55rem;
     font-weight: 600;
     margin-top: 0.05rem;
 }
@@ -525,7 +525,7 @@ Modern Layout - Dashboard Style
 }
 
 .content-card-header {
-    padding: 0.4rem;
+    padding: 0.3rem;
     border-bottom: 1px solid var(--border-color);
     display: flex;
     justify-content: space-between;
@@ -534,7 +534,7 @@ Modern Layout - Dashboard Style
 }
 
 .content-card-title {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: 700;
     color: var(--text-primary);
     display: flex;
@@ -544,11 +544,11 @@ Modern Layout - Dashboard Style
 
 .content-card-title i {
     color: var(--primary-color);
-    font-size: 0.65rem;
+    font-size: 0.6rem;
 }
 
 .content-card-body {
-    padding: 0.4rem;
+    padding: 0.3rem;
     background: white;
 }
 

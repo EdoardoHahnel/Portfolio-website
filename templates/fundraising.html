@@ -55,27 +55,27 @@
     
     .chart-card {
         background: white;
-        border-radius: 14px;
-        padding: 30px;
-        margin-bottom: 25px;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        border-radius: 6px;
+        padding: 0.4rem;
+        margin-bottom: 0.4rem;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.06);
         border: 1px solid #e8e8e8;
     }
     
     .chart-title {
-        font-size: 20px;
+        font-size: 0.75rem;
         font-weight: 700;
-        margin-bottom: 8px;
+        margin-bottom: 0.2rem;
         color: #1a1a1a;
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 0.3rem;
     }
     
     .chart-subtitle {
-        font-size: 14px;
+        font-size: 0.6rem;
         color: #666;
-        margin-bottom: 25px;
+        margin-bottom: 0.3rem;
     }
     
     .data-table {
@@ -90,17 +90,18 @@
     }
     
     .data-table th {
-        padding: 14px 16px;
+        padding: 0.4rem 0.5rem;
         text-align: left;
         font-weight: 600;
-        font-size: 12px;
+        font-size: 0.6rem;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.3px;
     }
     
     .data-table td {
-        padding: 14px 16px;
+        padding: 0.4rem 0.5rem;
         border-bottom: 1px solid #f0f0f0;
+        font-size: 0.65rem;
     }
     
     .data-table tr:hover {
@@ -128,16 +129,16 @@
     }
     
     .stat-box-small .value {
-        font-size: 28px;
+        font-size: 0.8rem;
         font-weight: 800;
-        margin-bottom: 6px;
+        margin-bottom: 0.2rem;
     }
     
     .stat-box-small .label {
-        font-size: 12px;
+        font-size: 0.55rem;
         opacity: 0.95;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.3px;
         font-weight: 500;
     }
 </style>
@@ -225,50 +226,50 @@
         <!-- Nordic Overview Tab -->
         <div id="tab-nordic" class="tab-content active">
             <!-- Top Row: Two Pie Charts -->
-            <div class="chart-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-bottom: 30px;">
+            <div class="chart-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.6rem; margin-bottom: 0.6rem;">
                 <!-- Strategy Distribution -->
-                <div class="chart-card" style="background: white; padding: 25px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
-                    <h3 style="font-size: 16px; font-weight: 700; margin: 0 0 8px 0; color: #1a1a1a; display: flex; align-items: center; gap: 8px;">
+                <div class="chart-card" style="background: white; padding: 0.4rem; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
+                    <h3 style="font-size: 0.75rem; font-weight: 700; margin: 0 0 0.2rem 0; color: #1a1a1a; display: flex; align-items: center; gap: 0.3rem;">
                         <i class="fas fa-chart-pie" style="color: #6366F1;"></i>
                         Strategy Focus
                     </h3>
-                    <p style="margin: 0 0 20px 0; color: #666; font-size: 13px;">Distribution of funds by investment strategy</p>
-                    <canvas id="strategyChart" style="max-height: 280px;"></canvas>
+                    <p style="margin: 0 0 0.3rem 0; color: #666; font-size: 0.6rem;">Distribution of funds by investment strategy</p>
+                    <canvas id="strategyChart" style="max-height: 300px; width: 100%;"></canvas>
                 </div>
                 
                 <!-- Geography Distribution -->
-                <div class="chart-card" style="background: white; padding: 25px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
-                    <h3 style="font-size: 16px; font-weight: 700; margin: 0 0 8px 0; color: #1a1a1a; display: flex; align-items: center; gap: 8px;">
+                <div class="chart-card" style="background: white; padding: 0.4rem; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
+                    <h3 style="font-size: 0.75rem; font-weight: 700; margin: 0 0 0.2rem 0; color: #1a1a1a; display: flex; align-items: center; gap: 0.3rem;">
                         <i class="fas fa-globe-europe" style="color: #10B981;"></i>
                         Geographic Focus
                     </h3>
-                    <p style="margin: 0 0 20px 0; color: #666; font-size: 13px;">Regional distribution of fund investments</p>
-                    <canvas id="geographyChart" style="max-height: 280px;"></canvas>
+                    <p style="margin: 0 0 0.3rem 0; color: #666; font-size: 0.6rem;">Regional distribution of fund investments</p>
+                    <canvas id="geographyChart" style="max-height: 300px; width: 100%;"></canvas>
                 </div>
             </div>
             
             <!-- Bottom Row: Two Stacked Bar Charts -->
-            <div class="chart-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-bottom: 20px;">
+            <div class="chart-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.6rem; margin-bottom: 0.6rem;">
                 <!-- Nordic Funds Raised -->
-                <div class="chart-card" style="background: white; padding: 25px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
-                    <h3 style="font-size: 16px; font-weight: 700; margin: 0 0 8px 0; color: #1a1a1a; display: flex; align-items: center; gap: 8px;">
+                <div class="chart-card" style="background: white; padding: 0.4rem; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
+                    <h3 style="font-size: 0.75rem; font-weight: 700; margin: 0 0 0.2rem 0; color: #1a1a1a; display: flex; align-items: center; gap: 0.3rem;">
                         <i class="fas fa-chart-bar" style="color: #3B82F6;"></i>
                         Nordic Funds Raised by Year
                     </h3>
-                    <p style="margin: 0 0 20px 0; color: #10B981; font-size: 13px; font-weight: 600;">
+                    <p style="margin: 0 0 0.3rem 0; color: #10B981; font-size: 0.6rem; font-weight: 600;">
                         2020-2025: €280.5B raised across 93 funds
                     </p>
-                    <canvas id="nordicFundsChart" style="max-height: 320px;"></canvas>
+                    <canvas id="nordicFundsChart" style="max-height: 300px; width: 100%;"></canvas>
                 </div>
                 
                 <!-- Vintage Year Distribution -->
-                <div class="chart-card" style="background: white; padding: 25px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
-                    <h3 style="font-size: 16px; font-weight: 700; margin: 0 0 8px 0; color: #1a1a1a; display: flex; align-items: center; gap: 8px;">
+                <div class="chart-card" style="background: white; padding: 0.4rem; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
+                    <h3 style="font-size: 0.75rem; font-weight: 700; margin: 0 0 0.2rem 0; color: #1a1a1a; display: flex; align-items: center; gap: 0.3rem;">
                         <i class="fas fa-calendar-alt" style="color: #8B5CF6;"></i>
                         Vintage Year Distribution
                     </h3>
-                    <p style="margin: 0 0 20px 0; color: #666; font-size: 13px;">Number of funds by vintage year</p>
-                    <canvas id="vintageChart" style="max-height: 320px;"></canvas>
+                    <p style="margin: 0 0 0.3rem 0; color: #666; font-size: 0.6rem;">Number of funds by vintage year</p>
+                    <canvas id="vintageChart" style="max-height: 300px; width: 100%;"></canvas>
                 </div>
             </div>
         </div>
@@ -293,29 +294,7 @@
                     Capital Under Management and Dry Powder in Europe
                 </div>
                 <div class="chart-subtitle">End of 2023 - CUM and DP by European region (€ bn)</div>
-                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 20px; align-items: start;">
-                    <div style="min-height: 400px;">
-                        <canvas id="cumChart" style="max-height: 400px; width: 100%;"></canvas>
-                    </div>
-                    <div style="padding: 20px; background: #f8f9fa; border-radius: 12px; height: fit-content;">
-                        <h4 style="margin: 0 0 20px 0; color: #1a1a1a;">Key Insights</h4>
-                        <div style="margin-bottom: 15px;">
-                            <strong style="color: #667eea;">Total Europe CUM:</strong> €1,154B (+15% YoY)
-                        </div>
-                        <div style="margin-bottom: 15px;">
-                            <strong style="color: #667eea;">Total Europe DP:</strong> €410B (+18% YoY)
-                        </div>
-                        <div style="margin-bottom: 15px;">
-                            <strong style="color: #667eea;">Nordics DP %:</strong> 46% (highest among regions)
-                        </div>
-                        <div style="margin-bottom: 15px;">
-                            <strong style="color: #667eea;">UK & Ireland:</strong> Largest market (€595B CUM)
-                        </div>
-                        <div>
-                            <strong style="color: #667eea;">CEE:</strong> Smallest but growing market (€12B CUM)
-                        </div>
-                    </div>
-                </div>
+                <canvas id="cumChart" style="max-height: 400px; width: 100%;"></canvas>
             </div>
         </div>
         
