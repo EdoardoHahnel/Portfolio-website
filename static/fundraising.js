@@ -293,12 +293,16 @@ function createNordicFundsChart() {
                     beginAtZero: true,
                     ticks: { 
                         stepSize: 5,
-                        font: { size: 10 }
+                        color: '#666',
+                        font: { size: 8, weight: '600' }
                     },
                     grid: { color: '#f3f4f6' }
                 },
                 x: {
-                    ticks: { font: { size: 10, weight: '600' } },
+                    ticks: { 
+                        color: '#666',
+                        font: { size: 8, weight: '600' } 
+                    },
                     grid: { display: false }
                 }
             }
@@ -523,9 +527,9 @@ function createVintageChart(fundraising) {
                 backgroundColor: function(context) {
                     const ctx = context.chart.ctx;
                     const gradient = ctx.createLinearGradient(0, 0, 0, 250);
-                    gradient.addColorStop(0, '#6366F1');
-                    gradient.addColorStop(0.5, '#7C3AED');
-                    gradient.addColorStop(1, '#4F46E5');
+                    gradient.addColorStop(0, '#059669');
+                    gradient.addColorStop(0.5, '#047857');
+                    gradient.addColorStop(1, '#065f46');
                     return gradient;
                 },
                 borderRadius: 12,
@@ -533,8 +537,8 @@ function createVintageChart(fundraising) {
                 hoverBackgroundColor: function(context) {
                     const ctx = context.chart.ctx;
                     const gradient = ctx.createLinearGradient(0, 0, 0, 250);
-                    gradient.addColorStop(0, '#4F46E5');
-                    gradient.addColorStop(1, '#5B21B6');
+                    gradient.addColorStop(0, '#047857');
+                    gradient.addColorStop(1, '#064e3b');
                     return gradient;
                 },
                 borderSkipped: false
@@ -564,20 +568,16 @@ function createVintageChart(fundraising) {
                     ticks: { 
                         stepSize: 2,
                         color: '#666',
-                        font: { weight: '600' }
+                        font: { size: 8, weight: '600' }
                     },
-                    grid: {
-                        color: 'rgba(0, 0, 0, 0.05)'
-                    }
+                    grid: { color: '#f3f4f6' }
                 },
                 x: {
-                    ticks: {
+                    ticks: { 
                         color: '#666',
-                        font: { weight: '600' }
+                        font: { size: 8, weight: '600' } 
                     },
-                    grid: {
-                        display: false
-                    }
+                    grid: { display: false }
                 }
             }
         }
