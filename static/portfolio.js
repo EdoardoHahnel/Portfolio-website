@@ -297,9 +297,9 @@ function createSectorChart(companies) {
                 legend: {
                     position: 'bottom',
                     labels: {
-                        boxWidth: 14,
-                        padding: 10,
-                        font: { size: 12, weight: '700' },
+                        boxWidth: 6,
+                        padding: 3,
+                        font: { size: 6, weight: '700' },
                         usePointStyle: true,
                         pointStyle: 'rectRounded',
                         color: '#1f2937'
@@ -398,9 +398,9 @@ function createCountryChart(companies) {
                 legend: {
                     position: 'bottom',
                     labels: {
-                        boxWidth: 14,
-                        padding: 10,
-                        font: { size: 12, weight: '700' },
+                        boxWidth: 6,
+                        padding: 3,
+                        font: { size: 6, weight: '700' },
                         usePointStyle: true,
                         pointStyle: 'rectRounded',
                         color: '#1f2937'
