@@ -24,13 +24,13 @@ canvas {
 /* Chart legends */
 .chart-legend,
 .chartjs-legend {
-    font-size: 0.5rem !important;
+    font-size: 0.3rem !important;
 }
 
 /* Chart labels */
 .chartjs-render-monitor text,
 .chart-label {
-    font-size: 0.55rem !important;
+    font-size: 0.35rem !important;
 }
 
 /* Analytics/Fundraising specific */
@@ -65,8 +65,47 @@ canvas {
 
 /* Chart titles */
 .chart-title {
-    font-size: 0.9rem !important;
+    font-size: 0.7rem !important;
     font-weight: 700;
+}
+
+/* Make all chart text elements much smaller */
+.chartjs-render-monitor,
+.chartjs-render-monitor * {
+    font-size: 0.3rem !important;
+}
+
+/* Specific chart label targeting */
+.chartjs-render-monitor text[data-text],
+.chartjs-render-monitor .chartjs-tooltip,
+.chartjs-render-monitor .chartjs-legend-item {
+    font-size: 0.25rem !important;
+}
+
+/* Axis labels */
+.chartjs-render-monitor .chartjs-axis-label {
+    font-size: 0.3rem !important;
+}
+
+/* Legend items */
+.chartjs-render-monitor .chartjs-legend-item {
+    font-size: 0.25rem !important;
+}
+
+/* Hide chart labels that appear inside segments */
+.chartjs-render-monitor text[data-text] {
+    display: none !important;
+}
+
+/* Force legend to be much smaller */
+.chartjs-legend {
+    font-size: 0.25rem !important;
+}
+
+.chartjs-legend li {
+    font-size: 0.25rem !important;
+    margin: 0.1rem !important;
+    padding: 0.05rem !important;
 }
 
 /* Stat numbers in charts */

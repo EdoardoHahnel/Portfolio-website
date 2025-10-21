@@ -562,28 +562,28 @@ function displayPortfolio(companies) {
                     <span class="fund-badge">${escapeHtml(company.fund || 'N/A')}</span>
                 </td>
                 <td>${escapeHtml(company.market || 'N/A')}</td>
-                <td style="font-size: 13px; color: #64748b;">
+                <td style="font-size: 0.65rem; color: #64748b;">
                     <i class="fas fa-map-marker-alt" style="color: #667eea; margin-right: 4px;"></i>
                     ${escapeHtml(company.headquarters || 'N/A')}
                 </td>
-                <td style="color: ${company.entry ? 'inherit' : '#94a3b8'};">${escapeHtml(company.entry || 'N/A')}</td>
-                <td style="text-align: center; font-weight: 600; color: ${holdingPeriod ? '#667eea' : '#94a3b8'};">
+                <td style="color: ${company.entry ? 'inherit' : '#94a3b8'}; font-size: 0.65rem;">${escapeHtml(company.entry || 'N/A')}</td>
+                <td style="text-align: center; font-weight: 600; color: ${holdingPeriod ? '#667eea' : '#94a3b8'}; font-size: 0.65rem;">
                     ${holdingPeriod ? `${holdingPeriod} yrs` : '—'}
                 </td>
                 <td style="text-align: center;">
-                    <span style="background: ${statusColor}15; color: ${statusColor}; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; display: inline-block;">
+                    <span style="background: ${statusColor}15; color: ${statusColor}; padding: 2px 6px; border-radius: 8px; font-size: 0.55rem; font-weight: 600; display: inline-block;">
                         ${status}
                     </span>
                 </td>
-                <td style="text-align: center; font-size: 13px; color: ${dealSize ? '#1e40af' : '#94a3b8'}; font-weight: ${dealSize ? '600' : 'normal'};">
+                <td style="text-align: center; font-size: 0.65rem; color: ${dealSize ? '#1e40af' : '#94a3b8'}; font-weight: ${dealSize ? '600' : 'normal'};">
                     ${dealSize || '—'}
                 </td>
                 <td style="text-align: center;">
-                    <span style="background: ${geographyColor}15; color: ${geographyColor}; padding: 4px 8px; border-radius: 8px; font-size: 11px; font-weight: 600;">
+                    <span style="background: ${geographyColor}15; color: ${geographyColor}; padding: 2px 6px; border-radius: 6px; font-size: 0.55rem; font-weight: 600;">
                         ${geography}
                     </span>
                 </td>
-                <td style="max-width: 400px; font-size: 12px; color: #64748b; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${escapeHtml(description)}">
+                <td style="max-width: 400px; font-size: 0.6rem; color: #64748b; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${escapeHtml(description)}">
                     ${description ? escapeHtml(description.substring(0, 120)) + (description.length > 120 ? '...' : '') : '—'}
                 </td>
                 <td style="text-align: center;">

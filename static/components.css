@@ -565,7 +565,7 @@ Component Styles - All UI components for the M&A platform
     padding: 0.4rem;
     text-align: left;
     font-weight: 600;
-    font-size: 0.6rem;
+    font-size: 0.55rem;
 }
 
 .fundraising-table tbody tr {
@@ -579,7 +579,7 @@ Component Styles - All UI components for the M&A platform
 
 .fundraising-table td {
     padding: 0.4rem;
-    font-size: 0.65rem;
+    font-size: 0.6rem;
 }
 
 .fundraising-table td.amount {
