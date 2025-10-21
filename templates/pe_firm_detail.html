@@ -1359,8 +1359,8 @@ function escapeHtml(text) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 320px;
-    max-width: 320px;
+    min-width: 180px;
+    max-width: 180px;
     opacity: 0;
     animation: fadeInScale 0.6s ease forwards;
 }
@@ -1378,8 +1378,8 @@ function escapeHtml(text) {
 
 .timeline-marker-horizontal {
     position: relative;
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: white;
     display: flex;
@@ -1409,6 +1409,7 @@ function escapeHtml(text) {
     border-radius: 50%;
     display: flex;
     align-items: center;
+    font-size: 0.55rem;
     justify-content: center;
     color: white;
     font-size: 28px;
@@ -1443,9 +1444,9 @@ function escapeHtml(text) {
 
 .timeline-content-horizontal {
     background: white;
-    border-radius: 12px;
+    border-radius: 6px;
     padding: 0;
-    border-top: 4px solid #667eea;
+    border-top: 2px solid #4c1d95;
     transition: all 0.3s ease;
     width: 100%;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -1458,48 +1459,48 @@ function escapeHtml(text) {
 }
 
 .timeline-event-type {
-    padding: 8px 16px;
+    padding: 0.15rem 0.3rem;
     color: white;
-    font-size: 10px;
+    font-size: 0.4rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.3px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 0.15rem;
 }
 
 .timeline-event-type i {
-    font-size: 11px;
+    font-size: 0.4rem;
 }
 
 .timeline-year-horizontal {
-    font-size: 28px;
+    font-size: 0.7rem;
     font-weight: 900;
-    color: #667eea;
-    margin: 16px 0 12px 0;
-    padding: 0 20px;
+    color: #4c1d95;
+    margin: 0.3rem 0 0.2rem 0;
+    padding: 0 0.3rem;
     text-align: center;
     letter-spacing: 0.5px;
 }
 
 .timeline-title-horizontal {
-    font-size: 16px;
+    font-size: 0.55rem;
     font-weight: 700;
     color: #111827;
-    margin-bottom: 10px;
-    padding: 0 20px;
+    margin-bottom: 0.2rem;
+    padding: 0 0.3rem;
     text-align: center;
     line-height: 1.4;
 }
 
 .timeline-description-horizontal {
-    font-size: 13px;
+    font-size: 0.5rem;
     color: #6b7280;
-    line-height: 1.6;
-    margin-bottom: 16px;
-    padding: 0 20px;
+    line-height: 1.4;
+    margin-bottom: 0.3rem;
+    padding: 0 0.3rem;
     text-align: center;
 }
 
@@ -1514,10 +1515,10 @@ function escapeHtml(text) {
 }
 
 .company-logo-item {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     background: white;
-    border-radius: 8px;
+    border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1539,11 +1540,12 @@ function escapeHtml(text) {
 }
 
 .company-logo-more {
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, #8b5cf6, #6366f1);
-    border-radius: 8px;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, #4c1d95, #1e40af);
+    border-radius: 4px;
     display: flex;
+    font-size: 0.45rem;
     align-items: center;
     justify-content: center;
     color: white;
@@ -1591,17 +1593,17 @@ function escapeHtml(text) {
 /* Responsive */
 @media (max-width: 768px) {
     .timeline-item-horizontal {
-        min-width: 280px;
-        max-width: 280px;
+        min-width: 160px;
+        max-width: 160px;
     }
     
     .timeline-marker-horizontal {
-        width: 64px;
-        height: 64px;
+        width: 35px;
+        height: 35px;
     }
     
     .timeline-marker-icon {
-        font-size: 22px;
+        font-size: 0.5rem;
     }
     
     .timeline-year-horizontal {
@@ -1610,14 +1612,14 @@ function escapeHtml(text) {
     }
     
     .timeline-title-horizontal {
-        font-size: 14px;
-        padding: 0 16px;
+        font-size: 0.5rem;
+        padding: 0 0.3rem;
     }
     
     .timeline-description-horizontal {
-        font-size: 12px;
-        padding: 0 16px;
-        margin-bottom: 12px;
+        font-size: 0.45rem;
+        padding: 0 0.3rem;
+        margin-bottom: 0.25rem;
     }
     
     .timeline-event-type {
@@ -1627,8 +1629,8 @@ function escapeHtml(text) {
     
     .company-logo-item,
     .company-logo-more {
-        width: 40px;
-        height: 40px;
+        width: 25px;
+        height: 25px;
     }
     
     .company-logos-preview {
