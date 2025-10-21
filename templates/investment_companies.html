@@ -1,0 +1,339 @@
+{% extends "base.html" %}
+
+{% block title %}Nordic Investment Firms{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
+<style>
+    /* Compact Investmentbolag Cards */
+    .inv-bolag-card {
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 15px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        transition: all 0.3s;
+        border-left: 4px solid #667eea;
+    }
+    
+    .inv-bolag-card:hover {
+        box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        transform: translateY(-2px);
+    }
+    
+    .inv-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    
+    .inv-logo-section {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .inv-logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        object-fit: contain;
+    }
+    
+    .inv-icon-fallback {
+        width: 40px;
+        height: 40px;
+        background: #f0f0f0;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #999;
+    }
+    
+    .inv-main-info {
+        flex: 1;
+        margin-left: 12px;
+    }
+    
+    .inv-name {
+        font-size: 18px;
+        font-weight: 700;
+        margin: 0 0 4px 0;
+        color: #1a1a1a;
+    }
+    
+    .inv-ticker {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 6px;
+    }
+    
+    .inv-type-tag {
+        display: inline-block;
+        background: #e3f2fd;
+        color: #1976d2;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+    
+    .inv-discount-box {
+        padding: 12px 16px;
+        border-radius: 8px;
+        text-align: center;
+        min-width: 80px;
+    }
+    
+    .inv-discount-box.discount {
+        background: #e8f5e9;
+        border: 2px solid #4caf50;
+    }
+    
+    .inv-discount-box.premium {
+        background: #ffebee;
+        border: 2px solid #f44336;
+    }
+    
+    .discount-label {
+        font-size: 11px;
+        font-weight: 600;
+        margin-bottom: 4px;
+        text-transform: uppercase;
+    }
+    
+    .discount-value {
+        font-size: 20px;
+        font-weight: 700;
+    }
+    
+    .discount .discount-value {
+        color: #2e7d32;
+    }
+    
+    .premium .discount-value {
+        color: #d32f2f;
+    }
+    
+    .inv-card-body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        font-size: 14px;
+    }
+    
+    .inv-description {
+        grid-column: 1 / -1;
+        color: #555;
+        line-height: 1.4;
+        margin-bottom: 10px;
+    }
+    
+    .inv-nav-data {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    
+    .nav-item {
+        text-align: center;
+    }
+    
+    .nav-label {
+        font-size: 11px;
+        color: #666;
+        margin-bottom: 4px;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    
+    .nav-value {
+        font-size: 16px;
+        font-weight: 700;
+        color: #1a1a1a;
+    }
+    
+    .inv-holdings {
+        grid-column: 1 / -1;
+        margin-top: 10px;
+    }
+    
+    .holdings-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 8px;
+    }
+    
+    .holding-badge {
+        background: #f0f0f0;
+        color: #666;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 11px;
+        font-weight: 500;
+    }
+    
+    .inv-focus {
+        grid-column: 1 / -1;
+        margin-top: 10px;
+    }
+    
+    .focus-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 8px;
+    }
+    
+    .focus-tag {
+        background: #f3e5f5;
+        color: #7b1fa2;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 11px;
+        font-weight: 500;
+    }
+    
+    .inv-actions {
+        grid-column: 1 / -1;
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+    }
+    
+    .inv-btn {
+        flex: 1;
+        padding: 8px 12px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 600;
+        text-align: center;
+        transition: all 0.2s;
+    }
+    
+    .inv-btn-primary {
+        background: #667eea;
+        color: white;
+    }
+    
+    .inv-btn-primary:hover {
+        background: #5a6fd8;
+    }
+    
+    .inv-btn-secondary {
+        background: #f8f9fa;
+        color: #666;
+        border: 1px solid #e0e0e0;
+    }
+    
+    .inv-btn-secondary:hover {
+        background: #e9ecef;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1 class="page-title">Nordic Investment Firms</h1>
+    <p class="page-subtitle">18 investmentbolag med substansrabatt/premie data - Källa: substansrabatt.se</p>
+</div>
+
+<!-- Summary Stats -->
+<div class="dashboard-grid">
+    <div class="stat-card">
+        <div class="stat-card-header">
+            <div>
+                <div class="stat-card-value" id="totalInvBolag">23</div>
+                <div class="stat-card-label">Nordic Investment Firms</div>
+            </div>
+            <div class="stat-card-icon blue">
+                <i class="fas fa-landmark"></i>
+            </div>
+        </div>
+    </div>
+    
+    <div class="stat-card">
+        <div class="stat-card-header">
+            <div>
+                <div class="stat-card-value" id="totalMarketCap">SEK 450B+</div>
+                <div class="stat-card-label">Total Market Cap</div>
+                <div class="stat-card-change positive">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Nordic Leaders</span>
+                </div>
+            </div>
+            <div class="stat-card-icon purple">
+                <i class="fas fa-coins"></i>
+            </div>
+        </div>
+    </div>
+    
+    <div class="stat-card">
+        <div class="stat-card-header">
+            <div>
+                <div class="stat-card-value" id="avgDividend">4.2%</div>
+                <div class="stat-card-label">Avg Dividend Yield</div>
+                <div class="stat-card-change positive">
+                    <i class="fas fa-arrow-up"></i>
+                    <span>Income Focus</span>
+                </div>
+            </div>
+            <div class="stat-card-icon purple">
+                <i class="fas fa-percentage"></i>
+            </div>
+        </div>
+    </div>
+    
+    <div class="stat-card">
+        <div class="stat-card-header">
+            <div>
+                <div class="stat-card-value">SEK 2.3T+</div>
+                <div class="stat-card-label">Totalt Börsvärde</div>
+            </div>
+            <div class="stat-card-icon orange">
+                <i class="fas fa-coins"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Filter and Search -->
+<div class="content-card" style="margin-bottom: 1.5rem;">
+    <div class="content-card-body">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="invBolagSearch" placeholder="Sök bolag, innehav, fokus...">
+            </div>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Alla</button>
+                <button class="filter-btn" data-filter="investment">Nordic Investment Firms</button>
+                <button class="filter-btn" data-filter="real-estate">Fastighetsbolag</button>
+                <button class="filter-btn" data-filter="discount">Endast Rabatt</button>
+                <button class="filter-btn" data-filter="premium">Endast Premie</button>
+                <button class="filter-btn" data-filter="large">Stora (>SEK 10B)</button>
+            </div>
+            
+            <select id="sortSelect" class="sort-select">
+                <option value="discount-desc">Störst Rabatt först</option>
+                <option value="discount-asc">Minst Rabatt först</option>
+                <option value="name">Namn A-Ö</option>
+                <option value="market-cap">Börsvärde</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<!-- Investment Companies Grid -->
+<div id="invBolagContainer">
+    <!-- Will be populated by JavaScript -->
+</div>
+
+<script src="{{ url_for('static', filename='investment_companies.js') }}"></script>
+{% endblock %}
+

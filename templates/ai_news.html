@@ -1,0 +1,218 @@
+{% extends "base.html" %}
+
+{% block title %}AI News - Nordic Investment Intelligence{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- AI News Header - Compact & Data-Rich -->
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px 40px; border-radius: 12px; color: white; margin-bottom: 25px;">
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+        <!-- Title Section -->
+        <div style="flex: 1; min-width: 300px;">
+            <h1 style="margin: 0 0 8px 0; font-size: 32px; font-weight: 700; display: flex; align-items: center; gap: 12px;">
+                🤖 AI News
+            </h1>
+            <p style="margin: 0; font-size: 14px; opacity: 0.9;">Swedish & Global AI • Funding, Tech & M&A</p>
+        </div>
+        
+        <!-- Compact Stats Grid -->
+        <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+            <div style="text-align: center;">
+                <div style="font-size: 28px; font-weight: 700; line-height: 1;" id="totalNews">23</div>
+                <div style="font-size: 11px; opacity: 0.85; margin-top: 4px; font-weight: 500;">Articles</div>
+            </div>
+            <div style="border-left: 1px solid rgba(255,255,255,0.2);"></div>
+            <div style="text-align: center;">
+                <div style="font-size: 28px; font-weight: 700; line-height: 1;" id="recentDays">7</div>
+                <div style="font-size: 11px; opacity: 0.85; margin-top: 4px; font-weight: 500;">Days</div>
+            </div>
+            <div style="border-left: 1px solid rgba(255,255,255,0.2);"></div>
+            <div style="text-align: center;">
+                <div style="font-size: 28px; font-weight: 700; line-height: 1;" id="sourcesCount">5</div>
+                <div style="font-size: 11px; opacity: 0.85; margin-top: 4px; font-weight: 500;">Sources</div>
+            </div>
+            <div style="border-left: 1px solid rgba(255,255,255,0.2);"></div>
+            <div style="text-align: center;">
+                <div style="font-size: 28px; font-weight: 700; line-height: 1; color: #fbbf24;" id="fundingCount">4</div>
+                <div style="font-size: 11px; opacity: 0.85; margin-top: 4px; font-weight: 500;">Funding</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Filter Section -->
+<div class="content-card" style="margin: 2rem 0;">
+    <div class="content-card-body">
+        <div class="filter-group" style="margin-bottom: 20px;">
+            <label style="font-weight: 600; margin-bottom: 10px; display: block;">📂 Category</label>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All News</button>
+                <button class="filter-btn" data-filter="funding">Funding Rounds</button>
+                <button class="filter-btn" data-filter="exits">Exits & M&A</button>
+                <button class="filter-btn" data-filter="product">Product Launches</button>
+                <button class="filter-btn" data-filter="partnerships">Partnerships</button>
+                <button class="filter-btn" data-filter="research">Research & Tech</button>
+            </div>
+        </div>
+        
+        <div class="filter-group">
+            <label style="font-weight: 600; margin-bottom: 10px; display: block;">🌍 Region</label>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter-region="all">All Regions</button>
+                <button class="filter-btn" data-filter-region="nordic">Nordic</button>
+                <button class="filter-btn" data-filter-region="europe">Europe</button>
+                <button class="filter-btn" data-filter-region="us">United States</button>
+                <button class="filter-btn" data-filter-region="global">Global</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- News Container -->
+<div id="aiNewsContainer">
+    <div style="text-align: center; padding: 60px; color: #999;">
+        <i class="fas fa-spinner fa-spin" style="font-size: 48px; margin-bottom: 20px;"></i>
+        <p style="font-size: 18px;">Loading AI news...</p>
+    </div>
+</div>
+
+<style>
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border: 2px solid #e0e0e0;
+    background: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.filter-btn:hover {
+    border-color: #007bff;
+    transform: translateY(-1px);
+}
+
+.filter-btn.active {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.news-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    transition: all 0.2s;
+}
+
+.news-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.news-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.news-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.news-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.news-category {
+    display: inline-block;
+    padding: 4px 12px;
+    background: #007bff;
+    color: white;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.news-description {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.news-highlights {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.news-highlights ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.news-highlights li {
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.news-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.news-companies {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.company-tag {
+    padding: 4px 12px;
+    background: #f0f0f0;
+    border-radius: 12px;
+    font-size: 12px;
+    color: #333;
+}
+
+.news-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.news-link:hover {
+    text-decoration: underline;
+}
+</style>
+
+<script src="{{ url_for('static', filename='ai_news.js') }}"></script>
+{% endblock %}
+

@@ -1,0 +1,274 @@
+{% extends "base.html" %}
+
+{% block title %}League Tables{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
+<style>
+    .league-tabs {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 25px;
+        border-bottom: 2px solid #e0e0e0;
+        padding-bottom: 0;
+    }
+    
+    .league-tab-button {
+        padding: 14px 24px;
+        background: transparent;
+        border: none;
+        border-bottom: 3px solid transparent;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        color: #666;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .league-tab-button:hover {
+        color: #667eea;
+        background: rgba(102, 126, 234, 0.05);
+    }
+    
+    .league-tab-button.active {
+        color: #667eea;
+        border-bottom-color: #667eea;
+        background: rgba(102, 126, 234, 0.08);
+    }
+    
+    .league-tab-content {
+        display: none;
+    }
+    
+    .league-tab-content.active {
+        display: block;
+        animation: fadeIn 0.4s;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .league-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+        background: white;
+    }
+    
+    .league-table thead {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+    
+    .league-table th {
+        padding: 14px 12px;
+        text-align: left;
+        font-weight: 600;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-right: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .league-table th:last-child {
+        border-right: none;
+    }
+    
+    .league-table td {
+        padding: 14px 12px;
+        border-bottom: 1px solid #f0f0f0;
+        vertical-align: middle;
+    }
+    
+    .league-table tbody tr:hover {
+        background: #f8f9ff;
+    }
+    
+    .league-table .rank {
+        font-weight: 700;
+        color: #667eea;
+        font-size: 16px;
+        width: 50px;
+        text-align: center;
+    }
+    
+    .league-table .firm-name {
+        font-weight: 600;
+        color: #1a1a1a;
+    }
+    
+    .league-table .number {
+        font-weight: 600;
+        color: #1a1a1a;
+        text-align: right;
+    }
+    
+    .top-3 {
+        background: linear-gradient(90deg, rgba(102, 126, 234, 0.08) 0%, rgba(255,255,255,0) 100%);
+    }
+    
+    .rank-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        font-weight: 700;
+        font-size: 14px;
+    }
+    
+    .rank-badge-1 {
+        background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+        color: #000;
+        box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
+    }
+    
+    .rank-badge-2 {
+        background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 100%);
+        color: #000;
+        box-shadow: 0 2px 8px rgba(192, 192, 192, 0.4);
+    }
+    
+    .rank-badge-3 {
+        background: linear-gradient(135deg, #cd7f32 0%, #d4a574 100%);
+        color: #fff;
+        box-shadow: 0 2px 8px rgba(205, 127, 50, 0.4);
+    }
+    
+    .rank-badge-other {
+        background: #f3f4f6;
+        color: #666;
+    }
+    
+    /* Flag icon support */
+    .flag-icon {
+        width: 20px;
+        height: 15px;
+        display: inline-block;
+        margin-right: 6px;
+        border-radius: 2px;
+        vertical-align: middle;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    }
+    
+    .firm-flag {
+        width: 18px;
+        height: 13px;
+        margin-right: 8px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1 class="page-title"><i class="fas fa-trophy"></i> League Tables</h1>
+    <p class="page-subtitle">Rankings of Nordic & Global investors, fund managers, funds, and law firms</p>
+</div>
+
+<!-- Tab Navigation -->
+<div class="league-tabs">
+    <button class="league-tab-button active" onclick="switchLeagueTab('nordic-investors')">
+        <i class="fas fa-globe-europe"></i> Nordic Investors
+    </button>
+    <button class="league-tab-button" onclick="switchLeagueTab('investors')">
+        <i class="fas fa-building"></i> Investors
+    </button>
+    <button class="league-tab-button" onclick="switchLeagueTab('managers')">
+        <i class="fas fa-briefcase"></i> Fund Managers
+    </button>
+    <button class="league-tab-button" onclick="switchLeagueTab('funds')">
+        <i class="fas fa-hand-holding-usd"></i> Top Funds
+    </button>
+    <button class="league-tab-button" onclick="switchLeagueTab('lawfirms')">
+        <i class="fas fa-balance-scale"></i> Law Firms
+    </button>
+</div>
+
+<!-- Tab 1: Nordic Investors -->
+<div id="league-tab-nordic-investors" class="league-tab-content active">
+    <div class="content-card">
+        <div class="content-card-header">
+            <h2 class="content-card-title">Top 20 Nordic Investors by AUM</h2>
+            <div style="font-size: 13px; color: #666;">Total Nordic AUM: €450+ Billion</div>
+        </div>
+        <div class="content-card-body">
+            <div style="overflow-x: auto;">
+                <table class="league-table" id="nordicInvestorsTable"></table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tab 2: Investors -->
+<div id="league-tab-investors" class="league-tab-content">
+    <div class="content-card">
+        <div class="content-card-header">
+            <h2 class="content-card-title">Top 20 Investors by AUM</h2>
+            <div style="font-size: 13px; color: #666;">Total AUM: $3.9 Trillion</div>
+        </div>
+        <div class="content-card-body">
+            <div style="overflow-x: auto;">
+                <table class="league-table" id="investorsTable"></table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tab 3: Fund Managers -->
+<div id="league-tab-managers" class="league-tab-content">
+    <div class="content-card">
+        <div class="content-card-header">
+            <h2 class="content-card-title">Top 20 Fund Managers by Capital Raised</h2>
+            <div style="font-size: 13px; color: #666;">Total Raised: $3.3 Trillion | Estimated Dry Powder: $740 Billion</div>
+        </div>
+        <div class="content-card-body">
+            <div style="overflow-x: auto;">
+                <table class="league-table" id="managersTable"></table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tab 4: Top Funds -->
+<div id="league-tab-funds" class="league-tab-content">
+    <div class="content-card">
+        <div class="content-card-header">
+            <h2 class="content-card-title">Top 20 Largest Private Capital Funds</h2>
+            <div style="font-size: 13px; color: #666;">Total Capital: $502 Billion</div>
+        </div>
+        <div class="content-card-body">
+            <div style="overflow-x: auto;">
+                <table class="league-table" id="fundsTable"></table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tab 5: Law Firms -->
+<div id="league-tab-lawfirms" class="league-tab-content">
+    <div class="content-card">
+        <div class="content-card-header">
+            <h2 class="content-card-title">Top 20 Law Firms in Fund Formation</h2>
+            <div style="font-size: 13px; color: #666;">By number of closed-end funds serviced</div>
+        </div>
+        <div class="content-card-body">
+            <div style="overflow-x: auto;">
+                <table class="league-table" id="lawfirmsTable"></table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='league_tables.js') }}"></script>
+{% endblock %}
+

@@ -1,0 +1,406 @@
+{% extends "base.html" %}
+
+{% block title %}{{ company_name }} - Investmentbolag{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
+<style>
+    .company-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 40px;
+        border-radius: 16px;
+        color: white;
+        margin-bottom: 30px;
+    }
+    
+    .company-logo {
+        width: 80px;
+        height: 80px;
+        border-radius: 12px;
+        margin-right: 20px;
+        object-fit: contain;
+        background: white;
+        padding: 10px;
+    }
+    
+    .company-title {
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+    
+    .company-ticker {
+        font-size: 18px;
+        opacity: 0.9;
+        margin-bottom: 15px;
+    }
+    
+    .company-type {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    
+    .nav-discount-section {
+        background: white;
+        padding: 30px;
+        border-radius: 16px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    
+    .discount-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+    
+    .discount-box {
+        padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+        min-width: 150px;
+    }
+    
+    .discount-box.discount {
+        background: #e8f5e9;
+        border: 2px solid #4caf50;
+    }
+    
+    .discount-box.premium {
+        background: #ffebee;
+        border: 2px solid #f44336;
+    }
+    
+    .discount-label {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+    }
+    
+    .discount-value {
+        font-size: 32px;
+        font-weight: 700;
+    }
+    
+    .discount.discount-value {
+        color: #2e7d32;
+    }
+    
+    .discount.premium-value {
+        color: #d32f2f;
+    }
+    
+    .nav-data-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+    
+    .nav-data-item {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+    }
+    
+    .nav-data-label {
+        font-size: 12px;
+        color: #666;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    
+    .nav-data-value {
+        font-size: 24px;
+        font-weight: 700;
+        color: #1a1a1a;
+    }
+    
+    .company-info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .info-card {
+        background: white;
+        padding: 30px;
+        border-radius: 16px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    
+    .info-card h3 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #1a1a1a;
+    }
+    
+    .holdings-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 10px;
+    }
+    
+    .holding-badge {
+        background: #e3f2fd;
+        color: #1976d2;
+        padding: 8px 12px;
+        border-radius: 16px;
+        font-size: 13px;
+        font-weight: 500;
+        text-align: center;
+    }
+    
+    .focus-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .focus-tag {
+        background: #f3e5f5;
+        color: #7b1fa2;
+        padding: 6px 12px;
+        border-radius: 16px;
+        font-size: 13px;
+        font-weight: 500;
+    }
+    
+    .action-buttons {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    .btn {
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.2s;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .btn-primary {
+        background: #667eea;
+        color: white;
+    }
+    
+    .btn-primary:hover {
+        background: #5a6fd8;
+        transform: translateY(-1px);
+    }
+    
+    .btn-secondary {
+        background: #f8f9fa;
+        color: #666;
+        border: 2px solid #e0e0e0;
+    }
+    
+    .btn-secondary:hover {
+        background: #e9ecef;
+        border-color: #d0d0d0;
+    }
+    
+    .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+    
+    .back-link:hover {
+        color: #5a6fd8;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="back-link" onclick="history.back()">
+    <i class="fas fa-arrow-left"></i>
+    <span>Back to Investmentbolag</span>
+</div>
+
+<div id="companyDetailContainer">
+    <div style="text-align: center; padding: 60px; color: #999;">
+        <i class="fas fa-spinner fa-spin" style="font-size: 48px; margin-bottom: 20px;"></i>
+        <p style="font-size: 18px;">Loading company details...</p>
+    </div>
+</div>
+
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+const companyName = urlParams.get('name');
+
+if (companyName) {
+    loadCompanyDetail(companyName);
+} else {
+    document.getElementById('companyDetailContainer').innerHTML = `
+        <div style="text-align: center; padding: 60px; color: #d32f2f;">
+            <i class="fas fa-exclamation-triangle" style="font-size: 48px; margin-bottom: 20px;"></i>
+            <p style="font-size: 18px;">Company not found</p>
+        </div>
+    `;
+}
+
+async function loadCompanyDetail(companyName) {
+    try {
+        const response = await fetch('/api/investment-companies');
+        const data = await response.json();
+        
+        if (data.success) {
+            const company = data.companies.find(c => c.name === companyName);
+            
+            if (company) {
+                displayCompanyDetail(company);
+            } else {
+                showError('Company not found');
+            }
+        } else {
+            showError('Failed to load company data');
+        }
+    } catch (error) {
+        console.error('Error loading company:', error);
+        showError('Error loading company details');
+    }
+}
+
+function displayCompanyDetail(company) {
+    const container = document.getElementById('companyDetailContainer');
+    
+    const isDiscount = company.discount_numeric > 0;
+    const discountClass = isDiscount ? 'discount' : 'premium';
+    const discountLabel = isDiscount ? 'RABATT' : 'PREMIE';
+    
+    container.innerHTML = `
+        <div class="company-header">
+            <div style="display: flex; align-items: center;">
+                ${company.logo_url ? 
+                    `<img src="${company.logo_url}" alt="${company.name}" class="company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">` : 
+                    ''
+                }
+                <div class="company-icon-fallback" style="${company.logo_url ? 'display:none;' : 'display:flex;'} width: 80px; height: 80px; background: rgba(255,255,255,0.2); border-radius: 12px; align-items: center; justify-content: center; margin-right: 20px;">
+                    <i class="fas fa-landmark" style="font-size: 32px;"></i>
+                </div>
+                <div>
+                    <div class="company-title">${company.name}</div>
+                    <div class="company-ticker">${company.ticker}</div>
+                    <div class="company-type">${company.type}</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav-discount-section">
+            <div class="discount-header">
+                <h2 style="margin: 0; font-size: 24px;">NAV & Discount/Premium Analysis</h2>
+                <div class="discount-box ${discountClass}">
+                    <div class="discount-label">${discountLabel}</div>
+                    <div class="discount-value ${discountClass}">${Math.abs(company.discount_numeric).toFixed(2)}%</div>
+                </div>
+            </div>
+            
+            <div class="nav-data-grid">
+                <div class="nav-data-item">
+                    <div class="nav-data-label">Substansvärde (NAV)</div>
+                    <div class="nav-data-value">SEK ${company.nav_per_share}</div>
+                </div>
+                <div class="nav-data-item">
+                    <div class="nav-data-label">Aktiekurs</div>
+                    <div class="nav-data-value">SEK ${company.share_price}</div>
+                </div>
+                <div class="nav-data-item">
+                    <div class="nav-data-label">Börsvärde</div>
+                    <div class="nav-data-value">${company.market_cap}</div>
+                </div>
+                <div class="nav-data-item">
+                    <div class="nav-data-label">Grundat</div>
+                    <div class="nav-data-value">${company.founded}</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="company-info-grid">
+            <div class="info-card">
+                <h3><i class="fas fa-briefcase"></i> Största Innehav</h3>
+                <div class="holdings-grid">
+                    ${company.holdings.map(holding => 
+                        `<div class="holding-badge">${holding}</div>`
+                    ).join('')}
+                </div>
+            </div>
+            
+            <div class="info-card">
+                <h3><i class="fas fa-bullseye"></i> Investeringsfokus</h3>
+                <div class="focus-tags">
+                    ${company.investment_focus.map(focus => 
+                        `<span class="focus-tag">${focus}</span>`
+                    ).join('')}
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <strong>VD:</strong> ${company.ceo}
+                </div>
+                
+                <div style="margin-top: 10px;">
+                    <strong>Börs:</strong> ${company.exchange}
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-card">
+            <h3><i class="fas fa-info-circle"></i> Om ${company.name}</h3>
+            <p style="font-size: 16px; line-height: 1.6; color: #555; margin-bottom: 20px;">
+                ${company.description}
+            </p>
+            
+            ${company.recent_activity ? `
+            <div style="background: #fff3e0; border-left: 4px solid #ff9800; padding: 15px; border-radius: 8px; margin-top: 20px;">
+                <div style="font-size: 12px; color: #e65100; font-weight: 700; text-transform: uppercase; margin-bottom: 5px;">
+                    Recent Activity
+                </div>
+                <div style="font-size: 14px; color: #555;">
+                    ${company.recent_activity}
+                </div>
+            </div>
+            ` : ''}
+            
+            <div class="action-buttons">
+                <a href="${company.website}" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-external-link-alt"></i>
+                    Besök Hemsida
+                </a>
+                <a href="https://www.avanza.se/aktier/om-aktien.html/${company.ticker.replace(/\s+/g, '').toLowerCase()}" target="_blank" class="btn btn-secondary">
+                    <i class="fas fa-chart-line"></i>
+                    Se på Avanza
+                </a>
+            </div>
+        </div>
+    `;
+}
+
+function showError(message) {
+    const container = document.getElementById('companyDetailContainer');
+    container.innerHTML = `
+        <div style="text-align: center; padding: 60px; color: #d32f2f;">
+            <i class="fas fa-exclamation-triangle" style="font-size: 48px; margin-bottom: 20px;"></i>
+            <p style="font-size: 18px;">${message}</p>
+        </div>
+    `;
+}
+</script>
+{% endblock %}

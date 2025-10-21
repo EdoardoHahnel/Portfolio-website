@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}PE Firms{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1 class="page-title">Nordic Private Equity Firms</h1>
+    <p class="page-subtitle">14 leading PE firms managing €327+ billion in assets</p>
+</div>
+
+<div class="content-card">
+    <div class="content-card-header">
+        <h2 class="content-card-title">All PE Firms</h2>
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="firmSearch" placeholder="Search firms...">
+        </div>
+    </div>
+    <div class="content-card-body">
+        <div id="peFirmsList" class="pe-firms-list">
+            <!-- Will be populated by JavaScript -->
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='pe_firms.js') }}"></script>
+{% endblock %}
+

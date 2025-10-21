@@ -1,0 +1,304 @@
+{% extends "base.html" %}
+
+{% block title %}AI Investors - Nordic Investment Intelligence{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Compact Header with Inline Stats -->
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 25px 40px; border-radius: 12px; color: white; margin-bottom: 25px;">
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+        <!-- Title Section -->
+        <div style="flex: 1; min-width: 300px;">
+            <h1 style="margin: 0 0 6px 0; font-size: 28px; font-weight: 700; display: flex; align-items: center; gap: 10px;">
+                Nordic AI Investors
+            </h1>
+            <p style="margin: 0; font-size: 13px; opacity: 0.9;">Leading Nordic investors in <strong>pure AI companies</strong> • VCs, Private Equity, Corporate & Government Funds from Sweden, Denmark, Norway & Finland</p>
+            <p style="margin: 4px 0 0 0; font-size: 11px; opacity: 0.75;">💡 Showing only companies where AI is the core product (not companies that just use AI features)</p>
+        </div>
+        
+        <!-- Compact Inline Stats -->
+        <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+            <div style="text-align: center;">
+                <div style="font-size: 26px; font-weight: 700; line-height: 1;" id="totalInvestors">23</div>
+                <div style="font-size: 10px; opacity: 0.85; margin-top: 3px; font-weight: 500;">Nordic Investors</div>
+            </div>
+            <div style="border-left: 1px solid rgba(255,255,255,0.2);"></div>
+            <div style="text-align: center;">
+                <div style="font-size: 26px; font-weight: 700; line-height: 1;" id="totalInvested">€43B+</div>
+                <div style="font-size: 10px; opacity: 0.85; margin-top: 3px; font-weight: 500;">Total Invested</div>
+            </div>
+            <div style="border-left: 1px solid rgba(255,255,255,0.2);"></div>
+            <div style="text-align: center;">
+                <div style="font-size: 26px; font-weight: 700; line-height: 1;" id="totalCompanies">17+</div>
+                <div style="font-size: 10px; opacity: 0.85; margin-top: 3px; font-weight: 500;">Portfolio Cos</div>
+            </div>
+            <div style="border-left: 1px solid rgba(255,255,255,0.2);"></div>
+            <div style="text-align: center;">
+                <div style="font-size: 26px; font-weight: 700; line-height: 1; color: #fbbf24;" id="avgDealSize">71+</div>
+                <div style="font-size: 10px; opacity: 0.85; margin-top: 3px; font-weight: 500;">AI Deals</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Filter Section -->
+<div class="content-card" style="margin: 2rem 0;">
+    <div class="content-card-body">
+        <div class="search-box" style="margin-bottom: 20px;">
+            <i class="fas fa-search"></i>
+            <input type="text" id="investorSearch" placeholder="Search investors by name, focus, or location...">
+        </div>
+        
+        <div class="filter-group">
+            <label style="font-weight: 600; margin-bottom: 10px; display: block;">🏢 Investor Type</label>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Types</button>
+                <button class="filter-btn" data-filter="vc">Venture Capital</button>
+                <button class="filter-btn" data-filter="pe">Private Equity</button>
+                <button class="filter-btn" data-filter="corporate">Corporate VC</button>
+                <button class="filter-btn" data-filter="family">Family Offices</button>
+            </div>
+        </div>
+        
+        <div class="filter-group" style="margin-top: 15px;">
+            <label style="font-weight: 600; margin-bottom: 10px; display: block;">🌍 Nordic Country</label>
+            <div class="filter-buttons">
+                <button class="filter-btn-country active" data-country="all">All Nordic</button>
+                <button class="filter-btn-country" data-country="Sweden">Sweden</button>
+                <button class="filter-btn-country" data-country="Denmark">Denmark</button>
+                <button class="filter-btn-country" data-country="Norway">Norway</button>
+                <button class="filter-btn-country" data-country="Finland">Finland</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Investors Container -->
+<div id="investorsContainer">
+    <div style="text-align: center; padding: 60px; color: #999;">
+        <i class="fas fa-spinner fa-spin" style="font-size: 48px; margin-bottom: 20px;"></i>
+        <p style="font-size: 18px;">Loading AI investors...</p>
+    </div>
+</div>
+
+<style>
+.ai-investors-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.stat-box-modern {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid #e9ecef;
+    transition: all 0.2s;
+}
+
+.stat-box-modern:hover {
+    border-color: #007bff;
+    transform: translateY(-2px);
+}
+
+.stat-number-large {
+    font-size: 42px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.stat-label-modern {
+    font-size: 13px;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.investors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 25px;
+}
+
+.investor-card-modern {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: all 0.3s;
+}
+
+.investor-card-modern:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.investor-card-header {
+    padding: 25px;
+    color: white;
+    position: relative;
+}
+
+.investor-logo-section {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.investor-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255,255,255,0.3);
+    background: white;
+    padding: 8px;
+}
+
+.investor-type-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.2);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.investor-name {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    color: white;
+}
+
+.investor-card-body {
+    padding: 25px;
+}
+
+.investor-stat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.investor-stat-box {
+    text-align: center;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 12px;
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.portfolio-companies-section {
+    margin-top: 20px;
+}
+
+.section-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.portfolio-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.company-chip-modern {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.more-companies {
+    background: #e9ecef;
+    color: #666;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.notable-deals {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e9ecef;
+}
+
+.deal-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.deal-company {
+    font-weight: 600;
+    color: #333;
+}
+
+.deal-amount {
+    color: #667eea;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.filter-btn-country {
+    padding: 10px 20px;
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s;
+    color: #666;
+}
+
+.filter-btn-country:hover {
+    border-color: #667eea;
+    color: #667eea;
+    transform: translateY(-2px);
+}
+
+.filter-btn-country.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+</style>
+
+<script src="{{ url_for('static', filename='ai_investors.js') }}"></script>
+{% endblock %}
+

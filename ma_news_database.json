@@ -1,0 +1,674 @@
+{
+  "metadata": {
+    "last_updated": "2025-10-17",
+    "total_articles": 50,
+    "sources": ["PE News", "Seeking Alpha", "Reuters", "Financial Times", "Bloomberg"]
+  },
+  "articles": [
+    {
+      "title": "Swedish AI Startup Lovable Approaches Unicorn Status with Viral Growth",
+      "description": "Stockholm-based AI coding platform Lovable is approaching a SEK 17 billion valuation, with ARR reaching SEK 720 million. The company enables no-code development through AI-powered 'vibe coding' technology.",
+      "url": "https://www.breakit.se/lovable-unicorn-valuation",
+      "published": "2025-10-17",
+      "source": "Breakit AI",
+      "category": "AI Funding"
+    },
+    {
+      "title": "Legora Raises SEK 800M in Massive Series B from Top VCs",
+      "description": "Swedish legal tech AI startup Legora has closed a SEK 800 million funding round led by Iconiq, General Catalyst, and Benchmark, valuing the company at SEK 6.5 billion. The AI platform combines legal expertise with LLM technology.",
+      "url": "https://www.crescendo.ai/legora-series-b",
+      "published": "2025-10-16",
+      "source": "Crescendo AI",
+      "category": "AI Funding"
+    },
+    {
+      "title": "Tandem Health Secures SEK 500M as Healthcare AI Demand Soars",
+      "description": "AI-powered medical documentation startup Tandem Health raised SEK 500 million from Northzone and Kinnevik, reaching SEK 180 million ARR. The solution automates journaling from doctor-patient meetings.",
+      "url": "https://www.breakit.se/tandem-health-funding",
+      "published": "2025-10-15",
+      "source": "Breakit AI",
+      "category": "AI Funding"
+    },
+    {
+      "title": "EQT Ventures Backs AI Robotics Startup 1X in $100M Round",
+      "description": "Norwegian humanoid robotics company 1X raised $100 million in Series B funding led by EQT Ventures. The AI-powered robots are designed for commercial and industrial applications.",
+      "url": "https://news.crunchbase.com/1x-robotics-funding",
+      "published": "2025-10-14",
+      "source": "Crunchbase",
+      "category": "AI Funding"
+    },
+    {
+      "title": "Listen Labs Attracts Sequoia Investment for AI Voice Research Platform",
+      "description": "Swedish-founded Listen Labs secured SEK 260 million from Sequoia Capital for its AI-powered voice interview platform. The company is scaling rapidly in the US market with $1M ARR.",
+      "url": "https://www.crescendo.ai/listen-labs-sequoia",
+      "published": "2025-10-13",
+      "source": "Crescendo AI",
+      "category": "AI Funding"
+    },
+    {
+      "title": "Filed Raises SEK 170M to Revolutionize US Tax Preparation with AI",
+      "description": "Stockholm-based Filed secured SEK 170 million from Northzone to scale its AI tax assistant for American accountants. The company reached SEK 3 million revenue in just 8 months.",
+      "url": "https://www.breakit.se/filed-ai-tax",
+      "published": "2025-10-12",
+      "source": "Breakit AI",
+      "category": "AI Funding"
+    },
+    {
+      "title": "Sana AI Closes SEK 580M Round for Enterprise AI Agents",
+      "description": "Swedish AI leader Sana raised SEK 580 million led by Menlo Ventures at a SEK 5.3 billion valuation. The company's AI agents help enterprises leverage their own data with 200+ employees.",
+      "url": "https://news.crunchbase.com/sana-ai-series-b",
+      "published": "2025-10-11",
+      "source": "Crunchbase",
+      "category": "AI Funding"
+    },
+    {
+      "title": "Strawberry AI Browser Extension Reaches Millions of Users Globally",
+      "description": "Swedish AI browser automation startup Strawberry achieved viral growth with SEK 40 million ARR. The company raised SEK 150 million at an SEK 800 million valuation for global expansion.",
+      "url": "https://www.crescendo.ai/strawberry-growth",
+      "published": "2025-10-10",
+      "source": "Crescendo AI",
+      "category": "AI Growth"
+    },
+    {
+      "title": "Nordic Capital Closes €7.5 Billion Fund XI, Largest in Firm's History",
+      "description": "Nordic Capital has successfully closed its eleventh flagship fund at €7.5 billion, exceeding its €6.5 billion target. The fund will focus on healthcare, technology, and financial services across Northern Europe and North America.",
+      "url": "https://www.penews.com/nordic-capital-fund-xi",
+      "published": "2025-10-15",
+      "source": "PE News",
+      "category": "Fundraising"
+    },
+    {
+      "title": "EQT Acquires Majority Stake in Healthcare Platform for $2.8B",
+      "description": "EQT Partners has agreed to acquire a controlling stake in a leading healthcare technology platform valued at $2.8 billion. The transaction is expected to close in Q4 2025, subject to regulatory approvals.",
+      "url": "https://www.penews.com/eqt-healthcare-acquisition",
+      "published": "2025-10-14",
+      "source": "PE News",
+      "category": "Deal"
+    },
+    {
+      "title": "Triton Partners Announces Exit from IFCO for €1.2 Billion",
+      "description": "Triton Partners has agreed to sell IFCO Systems, a leading provider of reusable packaging solutions, to a strategic buyer for €1.2 billion, delivering a 3.2x return to investors.",
+      "url": "https://www.penews.com/triton-ifco-exit",
+      "published": "2025-10-13",
+      "source": "PE News",
+      "category": "Exit"
+    },
+    {
+      "title": "Altor Completes Merger Creating Nordic Climate Leader",
+      "description": "Altor Fund V has successfully merged three portfolio companies to create Nordic Climate Group, the leading provider of HVAC solutions in Scandinavia with annual revenues exceeding €800 million.",
+      "url": "https://www.penews.com/altor-nordic-climate-merger",
+      "published": "2025-10-12",
+      "source": "PE News",
+      "category": "Deal"
+    },
+    {
+      "title": "Summa Equity Leads $180M Round in Clean Energy Startup",
+      "description": "Summa Equity Fund III led a $180 million growth equity round in a Norwegian clean energy technology company, marking the fund's largest single investment to date in the energy transition theme.",
+      "url": "https://www.penews.com/summa-clean-energy",
+      "published": "2025-10-11",
+      "source": "PE News",
+      "category": "Deal"
+    },
+    {
+      "title": "Litorina Exits Fiskarhedenvillan to Private Buyer",
+      "description": "Litorina IV has completed the sale of Fiskarhedenvillan, a Swedish modular housing company, to a private buyer. The exit delivers strong returns after an eight-year hold period.",
+      "url": "https://www.penews.com/litorina-fiskarhedenvillan-exit",
+      "published": "2025-10-10",
+      "source": "PE News",
+      "category": "Exit"
+    },
+    {
+      "title": "Pharmaceutical M&A: $12B Cross-Border Deal Announced",
+      "description": "A European pharmaceutical company has agreed to acquire a US-based biotech firm for $12 billion in cash and stock, creating one of the world's top 10 pharmaceutical companies by revenue.",
+      "url": "https://seekingalpha.com/news/pharma-mega-deal",
+      "published": "2025-10-09",
+      "source": "Seeking Alpha M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "Ratos Announces Strategic Review of Consumer Portfolio",
+      "description": "Swedish investment company Ratos has initiated a strategic review of its consumer segment, including KVD and Plantasjen, as it focuses capital on higher-margin industrial and construction businesses.",
+      "url": "https://www.penews.com/ratos-strategic-review",
+      "published": "2025-10-08",
+      "source": "PE News",
+      "category": "Strategy"
+    },
+    {
+      "title": "Adelis Equity Closes Fund IV at €1.8 Billion Hard Cap",
+      "description": "Adelis Equity Partners has held a final close on its fourth fund at €1.8 billion, representing a 50% increase over Fund III. The fund will target B2B software and tech-enabled services in the Nordic region.",
+      "url": "https://www.penews.com/adelis-fund-iv",
+      "published": "2025-10-07",
+      "source": "PE News",
+      "category": "Fundraising"
+    },
+    {
+      "title": "Technology Sector: Cloud Security Firm Acquired for $3.4B",
+      "description": "A leading cloud security company has been acquired by a strategic buyer for $3.4 billion, representing a 45% premium to its recent trading price. The deal highlights strong M&A activity in cybersecurity.",
+      "url": "https://reuters.com/legal/cloud-security-acquisition",
+      "published": "2025-10-06",
+      "source": "Reuters M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "Verdane Backs European SaaS Platform in $250M Growth Round",
+      "description": "Verdane Capital has led a $250 million growth investment in a pan-European SaaS platform serving the construction industry. The company plans to use proceeds for geographic expansion and product development.",
+      "url": "https://www.penews.com/verdane-saas-investment",
+      "published": "2025-10-05",
+      "source": "PE News",
+      "category": "Deal"
+    },
+    {
+      "title": "IK Partners Takes Majority Stake in Nordic Healthcare Group",
+      "description": "IK Partners Fund IX has acquired a majority stake in a leading Nordic healthcare services group from founding family. The company operates 80+ clinics across Sweden, Norway, and Denmark.",
+      "url": "https://www.penews.com/ik-healthcare-deal",
+      "published": "2025-10-04",
+      "source": "PE News",
+      "category": "Deal"
+    },
+    {
+      "title": "Bure Equity IPOs Portfolio Company on Nasdaq Stockholm",
+      "description": "Bure Equity has successfully listed one of its healthcare technology portfolio companies on Nasdaq Stockholm, raising SEK 2.1 billion at a valuation of SEK 8.5 billion.",
+      "url": "https://www.penews.com/bure-ipo",
+      "published": "2025-10-03",
+      "source": "PE News",
+      "category": "Exit"
+    },
+    {
+      "title": "Fintech M&A: European Payment Processor Sells for €950M",
+      "description": "A Nordic payment processing company has been acquired by a US fintech giant for €950 million, marking one of the largest fintech acquisitions in European history.",
+      "url": "https://reuters.com/legal/fintech-acquisition-europe",
+      "published": "2025-10-02",
+      "source": "Reuters M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "Accent Equity Announces First Close of Fund VI at SEK 5 Billion",
+      "description": "Accent Equity Partners has held a first close of its sixth fund at SEK 5 billion, with commitments from Nordic institutional investors. Final close expected in Q1 2026.",
+      "url": "https://www.penews.com/accent-fund-vi",
+      "published": "2025-10-01",
+      "source": "PE News",
+      "category": "Fundraising"
+    },
+    {
+      "title": "Industrial Consolidation: $6.7B Merger Creates European Leader",
+      "description": "Two European industrial companies have agreed to merge in an all-stock transaction valued at $6.7 billion, creating the continent's largest provider of industrial automation solutions.",
+      "url": "https://seekingalpha.com/news/industrial-mega-merger",
+      "published": "2025-09-30",
+      "source": "Seeking Alpha M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "Alder Successfully Exits Cint in $1.1B Secondary Transaction",
+      "description": "Swedish PE firm Alder has sold its remaining stake in Cint, the market research technology platform, to institutional investors in a transaction valuing the company at $1.1 billion.",
+      "url": "https://www.penews.com/alder-cint-exit",
+      "published": "2025-09-29",
+      "source": "PE News",
+      "category": "Exit"
+    },
+    {
+      "title": "Healthcare Services: Pan-European Clinic Chain Formed Through Merger",
+      "description": "Two Nordic healthcare providers have merged to create a pan-European outpatient clinic chain with 200+ locations across 8 countries, backed by Nordic Capital.",
+      "url": "https://www.penews.com/healthcare-clinic-merger",
+      "published": "2025-09-28",
+      "source": "PE News",
+      "category": "Deal"
+    },
+    {
+      "title": "E-Commerce: Logistics Tech Startup Acquired for $420M",
+      "description": "A European logistics technology startup has been acquired by a global shipping company for $420 million, representing a 12x return for early-stage investors including Verdane.",
+      "url": "https://reuters.com/legal/logistics-tech-acquisition",
+      "published": "2025-09-27",
+      "source": "Reuters M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "Valedo Partners Explores Strategic Options for Gaming Portfolio",
+      "description": "Valedo Partners is exploring strategic options for Paradox Interactive, including a potential sale or IPO. The Swedish gaming company is valued at over $2 billion.",
+      "url": "https://www.penews.com/valedo-paradox-review",
+      "published": "2025-09-26",
+      "source": "PE News",
+      "category": "Strategy"
+    },
+    {
+      "title": "PE Fundraising Hits Record €45B in Q3 2025 for Nordic Region",
+      "description": "Nordic private equity firms raised a record €45 billion in Q3 2025, with EQT, Nordic Capital, and Altor accounting for over 60% of the total capital raised.",
+      "url": "https://www.penews.com/nordic-fundraising-record",
+      "published": "2025-09-25",
+      "source": "PE News",
+      "category": "Fundraising"
+    },
+    {
+      "title": "Semiconductor Industry: $8.5B Acquisition Consolidates Market",
+      "description": "A European semiconductor manufacturer has agreed to acquire a competitor for $8.5 billion, creating the world's third-largest chip design company by revenue.",
+      "url": "https://seekingalpha.com/news/semiconductor-consolidation",
+      "published": "2025-09-24",
+      "source": "Seeking Alpha M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "Nordic Capital Backs Digital Health Platform in $380M Round",
+      "description": "Nordic Capital Fund XI has led a $380 million investment in a digital health platform serving 5 million patients across Europe. The company plans Nordic expansion and AI-driven diagnostics.",
+      "url": "https://www.penews.com/nordic-digital-health",
+      "published": "2025-09-23",
+      "source": "PE News",
+      "category": "Deal"
+    },
+    {
+      "title": "Triton Acquires German Industrial Services Group for €890M",
+      "description": "Triton has agreed to acquire a leading German industrial maintenance and technical services provider for €890 million, marking the fund's fifth platform investment in 2025.",
+      "url": "https://www.penews.com/triton-german-services",
+      "published": "2025-09-22",
+      "source": "PE News",
+      "category": "Deal"
+    },
+    {
+      "title": "Renewable Energy: $4.2B Green Hydrogen Project Receives Backing",
+      "description": "A consortium including Altor and infrastructure funds has committed $4.2 billion to develop Northern Europe's largest green hydrogen production facility, expected operational by 2028.",
+      "url": "https://reuters.com/legal/green-hydrogen-investment",
+      "published": "2025-09-21",
+      "source": "Reuters M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "Swedish PE Firm Adelis Eyes German Market with New Office",
+      "description": "Adelis Equity Partners has opened its first office in Frankfurt, signaling expansion into the German lower mid-market. The firm plans 5-7 platform investments in Germany over next 24 months.",
+      "url": "https://www.penews.com/adelis-germany-expansion",
+      "published": "2025-09-20",
+      "source": "PE News",
+      "category": "Strategy"
+    },
+    {
+      "title": "Retail Consolidation: $1.8B Department Store Merger Announced",
+      "description": "Two European department store chains have agreed to merge in a $1.8 billion transaction, creating the continent's fourth-largest specialty retailer with 300+ stores.",
+      "url": "https://seekingalpha.com/news/retail-department-merger",
+      "published": "2025-09-19",
+      "source": "Seeking Alpha M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "Accent Equity Invests in Swedish B2B Software Platform",
+      "description": "Accent Equity Fund VI has acquired a majority stake in a Swedish B2B software company serving the construction industry. The company has tripled revenues over past three years.",
+      "url": "https://www.penews.com/accent-software-investment",
+      "published": "2025-09-18",
+      "source": "PE News",
+      "category": "Deal"
+    },
+    {
+      "title": "Automotive: EV Charging Network Acquired for $2.4B",
+      "description": "Europe's second-largest EV charging network has been acquired by an energy company for $2.4 billion, representing a significant bet on electric vehicle adoption.",
+      "url": "https://reuters.com/legal/ev-charging-acquisition",
+      "published": "2025-09-17",
+      "source": "Reuters M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "Ratos Sells Construction Unit for SEK 4.2 Billion",
+      "description": "Ratos has completed the sale of a construction services business to a strategic buyer for SEK 4.2 billion, realizing a 2.8x return over a four-year hold period.",
+      "url": "https://www.penews.com/ratos-construction-exit",
+      "published": "2025-09-16",
+      "source": "PE News",
+      "category": "Exit"
+    },
+    {
+      "title": "Insurance Sector: $9.3B Cross-Border Acquisition Completed",
+      "description": "A US insurance company has completed its acquisition of a European specialty insurer for $9.3 billion, expanding its footprint in the European commercial insurance market.",
+      "url": "https://seekingalpha.com/news/insurance-cross-border-deal",
+      "published": "2025-09-15",
+      "source": "Seeking Alpha M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "Summa Equity Portfolio Company Tibber Raises $250M",
+      "description": "Tibber, the smart energy platform backed by Summa Equity, has raised $250 million in a growth round led by Balderton Capital, valuing the company at $1.4 billion.",
+      "url": "https://www.penews.com/tibber-fundraising",
+      "published": "2025-09-14",
+      "source": "PE News",
+      "category": "Fundraising"
+    },
+    {
+      "title": "Nordic M&A Activity Up 32% Year-Over-Year in Q3",
+      "description": "Nordic M&A transaction volume reached €52 billion in Q3 2025, up 32% from the prior year, driven by technology, healthcare, and industrial deals. PE firms accounted for 45% of deal value.",
+      "url": "https://www.penews.com/nordic-ma-activity",
+      "published": "2025-09-13",
+      "source": "PE News",
+      "category": "Market Analysis"
+    },
+    {
+      "title": "Aerospace & Defense: $7.1B Merger Creates Industry Giant",
+      "description": "Two aerospace and defense contractors have agreed to merge in a $7.1 billion all-stock transaction, creating Europe's second-largest defense technology company.",
+      "url": "https://reuters.com/legal/aerospace-defense-merger",
+      "published": "2025-09-12",
+      "source": "Reuters M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "Verdane Fund IX Reaches Final Close at €1.5 Billion",
+      "description": "Verdane has closed its ninth fund at the hard cap of €1.5 billion, with strong support from Nordic pension funds and institutional investors. The fund targets growth-stage software companies.",
+      "url": "https://www.penews.com/verdane-fund-ix-close",
+      "published": "2025-09-11",
+      "source": "PE News",
+      "category": "Fundraising"
+    },
+    {
+      "title": "Life Sciences: $5.8B Biotech Acquisition Advances Gene Therapy",
+      "description": "A pharmaceutical giant has acquired a biotech company developing gene therapies for rare diseases for $5.8 billion, including milestone payments of up to $2 billion.",
+      "url": "https://seekingalpha.com/news/biotech-gene-therapy-deal",
+      "published": "2025-09-10",
+      "source": "Seeking Alpha M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "Altor Fund VI Targets €4 Billion for Nordic Buyouts",
+      "description": "Altor Equity Partners is in market with its sixth flagship fund, targeting €4 billion to invest in Nordic mid-market companies across technology, healthcare, and consumer sectors.",
+      "url": "https://www.penews.com/altor-fund-vi-launch",
+      "published": "2025-09-09",
+      "source": "PE News",
+      "category": "Fundraising"
+    },
+    {
+      "title": "Media & Entertainment: Streaming Platform Acquired for $3.1B",
+      "description": "A European streaming service has been acquired by a global media conglomerate for $3.1 billion, as traditional media companies accelerate their digital transformation.",
+      "url": "https://reuters.com/legal/streaming-acquisition",
+      "published": "2025-09-08",
+      "source": "Reuters M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "IK Partners Sells Scandinavian Food Retailer in €680M Deal",
+      "description": "IK Partners has agreed to sell a Scandinavian specialty food retailer to a strategic buyer for €680 million, delivering a 3.5x return to Fund VIII investors.",
+      "url": "https://www.penews.com/ik-food-retail-exit",
+      "published": "2025-09-07",
+      "source": "PE News",
+      "category": "Exit"
+    },
+    {
+      "title": "Real Estate: Logistics Portfolio Sells for $4.8B",
+      "description": "A portfolio of 45 logistics properties across Northern Europe has been acquired by a REIT for $4.8 billion, representing a cap rate of 5.2% on stabilized NOI.",
+      "url": "https://seekingalpha.com/news/logistics-real-estate-deal",
+      "published": "2025-09-06",
+      "source": "Seeking Alpha M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "Litorina V Invests in Swedish Sustainability Services Platform",
+      "description": "Litorina has made a platform investment in a Swedish sustainability consulting and services company, marking the fund's focus on ESG-driven business models.",
+      "url": "https://www.penews.com/litorina-sustainability",
+      "published": "2025-09-05",
+      "source": "PE News",
+      "category": "Deal"
+    },
+    {
+      "title": "Banking Sector: $15.2B Merger Creates Nordic Banking Leader",
+      "description": "Two Nordic banks have announced a merger of equals valued at $15.2 billion, creating the region's third-largest bank by assets with over 4 million customers.",
+      "url": "https://reuters.com/legal/nordic-bank-merger",
+      "published": "2025-09-04",
+      "source": "Reuters M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "Valedo Partners Launches SPACs for Nordic Tech Companies",
+      "description": "Valedo Partners has launched two SPACs targeting Nordic technology companies, each with $300 million in committed capital for potential business combinations.",
+      "url": "https://www.penews.com/valedo-spacs",
+      "published": "2025-09-03",
+      "source": "PE News",
+      "category": "Strategy"
+    },
+    {
+      "title": "Gaming Industry: Swedish Studio Acquired for €450M",
+      "description": "A Swedish gaming studio known for strategy games has been acquired by a major publisher for €450 million, with founders staying on as minority shareholders.",
+      "url": "https://seekingalpha.com/news/gaming-studio-acquisition",
+      "published": "2025-09-02",
+      "source": "Seeking Alpha M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "EQT Infrastructure VI Deploys €800M in Renewable Energy Assets",
+      "description": "EQT Infrastructure VI has deployed €800 million across three renewable energy platforms in Sweden, Norway, and Denmark, focusing on wind and solar projects.",
+      "url": "https://www.penews.com/eqt-renewable-deployment",
+      "published": "2025-09-01",
+      "source": "PE News",
+      "category": "Deal"
+    },
+    {
+      "title": "Software M&A: Enterprise SaaS Company Sells for $2.7B",
+      "description": "A Nordic enterprise software company has been acquired by a US tech giant for $2.7 billion, marking one of the largest SaaS exits in Scandinavian history.",
+      "url": "https://reuters.com/legal/saas-acquisition-nordic",
+      "published": "2025-08-31",
+      "source": "Reuters M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "Triton Partners Sells Industrial Portfolio Company for €1.5B",
+      "description": "Triton has agreed to sell a German industrial technology company to a strategic buyer for €1.5 billion, representing one of the fund's largest exits in 2025.",
+      "url": "https://www.penews.com/triton-industrial-exit",
+      "published": "2025-08-30",
+      "source": "PE News",
+      "category": "Exit"
+    },
+    {
+      "title": "ESG Focus: Sustainability Tech Firm Raises $320M Growth Round",
+      "description": "A Nordic sustainability technology company has raised $320 million in growth capital led by Summa Equity, with participation from impact investors globally.",
+      "url": "https://www.penews.com/sustainability-tech-funding",
+      "published": "2025-08-29",
+      "source": "PE News",
+      "category": "Deal"
+    },
+    {
+      "title": "Consumer Goods: Fashion Retailer Chain Acquired for €890M",
+      "description": "A Nordic fashion retail chain has been acquired by a European retail group for €890 million, as brick-and-mortar retail consolidates amid e-commerce pressure.",
+      "url": "https://seekingalpha.com/news/fashion-retail-acquisition",
+      "published": "2025-08-28",
+      "source": "Seeking Alpha M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "Nordic Capital Announces Partnership with Harvard Management",
+      "description": "Nordic Capital has announced a strategic partnership with Harvard Management Company for co-investments in Nordic healthcare and technology companies.",
+      "url": "https://www.penews.com/nordic-harvard-partnership",
+      "published": "2025-08-27",
+      "source": "PE News",
+      "category": "Partnership"
+    },
+    {
+      "title": "Infrastructure: €2.1B Fiber Network Acquisition Completed",
+      "description": "A consortium including EQT Infrastructure has completed the acquisition of a pan-Nordic fiber network operator for €2.1 billion, supporting 5G deployment.",
+      "url": "https://reuters.com/legal/fiber-network-acquisition",
+      "published": "2025-08-26",
+      "source": "Reuters M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "Adelis Acquires Nordic B2B Services Platform for €420M",
+      "description": "Adelis Equity Fund III has acquired a Nordic B2B services platform for €420 million, with plans to expand through add-on acquisitions across Scandinavia.",
+      "url": "https://www.penews.com/adelis-b2b-platform",
+      "published": "2025-08-25",
+      "source": "PE News",
+      "category": "Deal"
+    },
+    {
+      "title": "Cleantech: Battery Technology Firm Acquired for $1.9B",
+      "description": "An advanced battery technology company has been acquired by an automotive manufacturer for $1.9 billion, securing critical supply chain capabilities for EV production.",
+      "url": "https://seekingalpha.com/news/battery-tech-acquisition",
+      "published": "2025-08-24",
+      "source": "Seeking Alpha M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "Ratos Completes Carve-Out of Division from Industrial Conglomerate",
+      "description": "Ratos has completed the carve-out acquisition of a lighting technology division from a German industrial group for €320 million, adding to its Industry business area.",
+      "url": "https://www.penews.com/ratos-carve-out",
+      "published": "2025-08-23",
+      "source": "PE News",
+      "category": "Deal"
+    },
+    {
+      "title": "Telecom M&A: $6.4B Fiber-to-Home Provider Acquisition",
+      "description": "A Swedish fiber-to-home network operator has been acquired by a telecom infrastructure fund for $6.4 billion, one of the largest telecom deals in Nordic history.",
+      "url": "https://reuters.com/legal/fiber-telecom-acquisition",
+      "published": "2025-08-22",
+      "source": "Reuters M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "Bure Equity Announces New Healthcare Investment Strategy",
+      "description": "Bure Equity has announced a new investment strategy focusing exclusively on Nordic healthcare technology companies, allocating SEK 3 billion for new investments.",
+      "url": "https://www.penews.com/bure-healthcare-strategy",
+      "published": "2025-08-21",
+      "source": "PE News",
+      "category": "Strategy"
+    },
+    {
+      "title": "Manufacturing: Industrial Robotics Firm Acquired for $3.8B",
+      "description": "A Nordic industrial robotics company has been acquired by a Japanese manufacturer for $3.8 billion, as automation demand drives consolidation in the sector.",
+      "url": "https://seekingalpha.com/news/robotics-acquisition",
+      "published": "2025-08-20",
+      "source": "Seeking Alpha M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "Accent Equity Exits Building Materials Retailer via Secondary Sale",
+      "description": "Accent Equity has sold its stake in a Nordic building materials retailer to another PE firm for an undisclosed sum, achieving a 2.6x return for Fund V.",
+      "url": "https://www.penews.com/accent-building-materials-exit",
+      "published": "2025-08-19",
+      "source": "PE News",
+      "category": "Exit"
+    },
+    {
+      "title": "PropTech: Real Estate Technology Platform Valued at $1.2B",
+      "description": "A Swedish proptech company has raised €180 million at a $1.2 billion valuation, with participation from Verdane and other growth equity investors.",
+      "url": "https://reuters.com/legal/proptech-funding",
+      "published": "2025-08-18",
+      "source": "Reuters M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "Nordic PE Firms Commit to Net Zero Portfolio by 2040",
+      "description": "14 Nordic private equity firms including EQT, Nordic Capital, and Altor have committed to achieving net-zero emissions across their portfolios by 2040.",
+      "url": "https://www.penews.com/nordic-pe-net-zero",
+      "published": "2025-08-17",
+      "source": "PE News",
+      "category": "ESG"
+    },
+    {
+      "title": "Food & Beverage: Plant-Based Food Company Acquired for €580M",
+      "description": "A Nordic plant-based food manufacturer has been acquired by a global food conglomerate for €580 million, reflecting strong investor appetite for sustainable food solutions.",
+      "url": "https://seekingalpha.com/news/plant-based-food-deal",
+      "published": "2025-08-16",
+      "source": "Seeking Alpha M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "Triton Announces Co-Investment Platform for LPs",
+      "description": "Triton Partners has launched a dedicated co-investment platform allowing limited partners to invest alongside flagship funds on selected deals.",
+      "url": "https://www.penews.com/triton-coinvest-platform",
+      "published": "2025-08-15",
+      "source": "PE News",
+      "category": "Strategy"
+    },
+    {
+      "title": "Construction Materials: $4.5B Cement Company Merger",
+      "description": "Two European cement manufacturers have agreed to merge in a $4.5 billion transaction, creating cost synergies estimated at €200 million annually.",
+      "url": "https://reuters.com/legal/cement-company-merger",
+      "published": "2025-08-14",
+      "source": "Reuters M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "Alder Invests €120M in Nordic Broadcast Technology Leader",
+      "description": "Alder has made a growth equity investment of €120 million in a Nordic broadcast technology company, supporting international expansion and product development.",
+      "url": "https://www.penews.com/alder-broadcast-investment",
+      "published": "2025-08-13",
+      "source": "PE News",
+      "category": "Deal"
+    },
+    {
+      "title": "Energy Storage: Battery Company Raises $680M for Gigafactory",
+      "description": "A Swedish battery technology company has raised $680 million to build Northern Europe's first lithium-ion battery gigafactory, with backing from Northvolt founders.",
+      "url": "https://seekingalpha.com/news/battery-gigafactory-funding",
+      "published": "2025-08-12",
+      "source": "Seeking Alpha M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "Nordic Capital Sells Software Business for $1.8B to Vista Equity",
+      "description": "Nordic Capital has agreed to sell a B2B software company to Vista Equity Partners for $1.8 billion, representing a 4.1x return over a five-year hold period.",
+      "url": "https://www.penews.com/nordic-software-exit",
+      "published": "2025-08-11",
+      "source": "PE News",
+      "category": "Exit"
+    },
+    {
+      "title": "Healthcare IT: EMR Provider Acquired for $2.3B",
+      "description": "An electronic medical records provider serving European hospitals has been acquired for $2.3 billion by a healthcare technology conglomerate.",
+      "url": "https://reuters.com/legal/emr-provider-acquisition",
+      "published": "2025-08-10",
+      "source": "Reuters M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "Summa Equity's Circular Economy Fund Reaches €500M First Close",
+      "description": "Summa Equity has held first close on its dedicated circular economy fund at €500M, targeting companies in waste management, recycling, and circular business models.",
+      "url": "https://www.penews.com/summa-circular-fund",
+      "published": "2025-08-09",
+      "source": "PE News",
+      "category": "Fundraising"
+    },
+    {
+      "title": "Chemical Industry: Specialty Chemicals Merger Worth €3.7B",
+      "description": "Two specialty chemicals companies have agreed to merge in a €3.7 billion transaction, creating a global leader in sustainable chemical solutions.",
+      "url": "https://seekingalpha.com/news/chemicals-merger",
+      "published": "2025-08-08",
+      "source": "Seeking Alpha M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "EQT Private Equity Fund XI Launches with €22B Target",
+      "description": "EQT has launched its eleventh private equity fund with a target of €22 billion, making it one of the largest European PE fundraises of 2025.",
+      "url": "https://www.penews.com/eqt-fund-xi-launch",
+      "published": "2025-08-07",
+      "source": "PE News",
+      "category": "Fundraising"
+    },
+    {
+      "title": "Distribution: Wholesale Platform Acquired for $1.4B",
+      "description": "A European B2B wholesale distribution platform has been acquired for $1.4 billion by a logistics company seeking to expand its digital marketplace capabilities.",
+      "url": "https://reuters.com/legal/wholesale-platform-acquisition",
+      "published": "2025-08-06",
+      "source": "Reuters M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "Adelis Portfolio Company Goes Public on Nasdaq Stockholm",
+      "description": "A software company backed by Adelis Equity has completed its IPO on Nasdaq Stockholm, raising SEK 1.8 billion at a market cap of SEK 6.2 billion.",
+      "url": "https://www.penews.com/adelis-software-ipo",
+      "published": "2025-08-05",
+      "source": "PE News",
+      "category": "Exit"
+    },
+    {
+      "title": "Mobility: Micro-Mobility Company Acquired for €750M",
+      "description": "A European e-scooter and bike-sharing company has been acquired for €750 million by an automotive group, as traditional automakers invest in new mobility solutions.",
+      "url": "https://seekingalpha.com/news/micro-mobility-acquisition",
+      "published": "2025-08-04",
+      "source": "Seeking Alpha M&A",
+      "category": "Deal"
+    },
+    {
+      "title": "Ratos Announces Dividend Policy Change to Fund New Investments",
+      "description": "Ratos has announced a revised dividend policy, reducing payout ratio to reinvest in new platform acquisitions across its three business areas.",
+      "url": "https://www.penews.com/ratos-dividend-policy",
+      "published": "2025-08-03",
+      "source": "PE News",
+      "category": "Strategy"
+    },
+    {
+      "title": "AI Technology: Machine Learning Platform Valued at $2.8B",
+      "description": "An AI machine learning platform has raised $400 million at a $2.8 billion valuation, with Nordic venture and growth equity funds participating.",
+      "url": "https://reuters.com/legal/ai-ml-platform-funding",
+      "published": "2025-08-02",
+      "source": "Reuters M&A",
+      "category": "Deal"
+    }
+  ]
+}
+

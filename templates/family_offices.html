@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block title %}Nordic Family Offices{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1 class="page-title">Family Offices</h1>
+    <p class="page-subtitle">27 true family offices in the Nordic region</p>
+</div>
+
+<!-- Stats -->
+<div class="dashboard-grid">
+    <div class="stat-card">
+        <div class="stat-card-header">
+            <div>
+                <div class="stat-card-value" id="totalFamilyOffices">35</div>
+                <div class="stat-card-label">Family Offices</div>
+            </div>
+            <div class="stat-card-icon blue">
+                <i class="fas fa-users"></i>
+            </div>
+        </div>
+    </div>
+    
+    <div class="stat-card">
+        <div class="stat-card-header">
+            <div>
+                <div class="stat-card-value">€500B+</div>
+                <div class="stat-card-label">Combined AUM</div>
+            </div>
+            <div class="stat-card-icon green">
+                <i class="fas fa-dollar-sign"></i>
+            </div>
+        </div>
+    </div>
+    
+    <div class="stat-card">
+        <div class="stat-card-header">
+            <div>
+                <div class="stat-card-value">4</div>
+                <div class="stat-card-label">Countries</div>
+            </div>
+            <div class="stat-card-icon purple">
+                <i class="fas fa-flag"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Filter Options -->
+<div class="content-card" style="margin-bottom: 1.5rem;">
+    <div class="content-card-body">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="familyOfficeSearch" placeholder="Search by name, family, or focus...">
+            </div>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-country="all">All Countries</button>
+                <button class="filter-btn" data-country="Sweden">Sweden</button>
+                <button class="filter-btn" data-country="Norway">Norway</button>
+                <button class="filter-btn" data-country="Denmark">Denmark</button>
+                <button class="filter-btn" data-country="Finland">Finland</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Family Offices List -->
+<div class="content-card">
+    <div class="content-card-header">
+        <h2 class="content-card-title">All Family Offices</h2>
+        <div style="color: var(--text-secondary); font-size: 0.9rem;">
+            Click any office for detailed profile
+        </div>
+    </div>
+    <div class="content-card-body">
+        <div id="familyOfficesList" class="family-offices-grid">
+            <!-- Will be populated by JavaScript -->
+        </div>
+        
+        <div id="emptyStateFO" class="empty-state hidden">
+            <i class="fas fa-search"></i>
+            <h3>No Results Found</h3>
+            <p>Try adjusting your search or filters</p>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='family_offices.js') }}"></script>
+{% endblock %}
+

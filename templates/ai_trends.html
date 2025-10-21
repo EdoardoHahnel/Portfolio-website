@@ -1,0 +1,249 @@
+{% extends "base.html" %}
+
+{% block title %}AI Trends & Analysis - Nordic Investment Intelligence{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1 class="page-title">📊 AI Trends & Analysis</h1>
+    <p class="page-subtitle">Market trends, investment patterns, and technology analysis for AI sector</p>
+</div>
+
+<!-- Key Trends -->
+<div class="content-card" style="margin-bottom: 2rem;">
+    <div class="content-card-header">
+        <h2 class="content-card-title">🔥 Key Trends in AI</h2>
+    </div>
+    <div class="content-card-body">
+        <div class="trends-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+            <div class="trend-card">
+                <div class="trend-icon">🤖</div>
+                <h3>AI Agents & Automation</h3>
+                <p>Enterprise AI agents automating complex workflows. Companies like Lovable, Sana, and Listen Labs leading the charge.</p>
+                <div class="trend-stats">
+                    <span><strong>+250%</strong> Growth</span>
+                    <span><strong>15+</strong> Nordic companies</span>
+                </div>
+            </div>
+            
+            <div class="trend-card">
+                <div class="trend-icon">🏥</div>
+                <h3>Healthcare AI</h3>
+                <p>AI-powered diagnostics and patient care. Tandem Health, Intuicell leading healthcare transformation.</p>
+                <div class="trend-stats">
+                    <span><strong>€500M+</strong> Invested</span>
+                    <span><strong>8+</strong> Nordic companies</span>
+                </div>
+            </div>
+            
+            <div class="trend-card">
+                <div class="trend-icon">⚖️</div>
+                <h3>LegalTech AI</h3>
+                <p>Legal research and document automation. Legora raised €800M, transforming legal industry.</p>
+                <div class="trend-stats">
+                    <span><strong>€800M+</strong> Raised</span>
+                    <span><strong>5+</strong> Nordic companies</span>
+                </div>
+            </div>
+            
+            <div class="trend-card">
+                <div class="trend-icon">💻</div>
+                <h3>Developer Tools</h3>
+                <p>AI-powered coding assistants. Modal, Leap, and Lightbringer enabling developers.</p>
+                <div class="trend-stats">
+                    <span><strong>+180%</strong> Growth</span>
+                    <span><strong>12+</strong> Nordic companies</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Investment Trends Charts -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+    <div class="content-card">
+        <div class="content-card-header">
+            <h2 class="content-card-title">💰 Funding by Quarter</h2>
+        </div>
+        <div class="content-card-body">
+            <canvas id="fundingChart" style="max-height: 300px;"></canvas>
+        </div>
+    </div>
+    
+    <div class="content-card">
+        <div class="content-card-header">
+            <h2 class="content-card-title">📂 Investment by Category</h2>
+        </div>
+        <div class="content-card-body">
+            <canvas id="categoryChart" style="max-height: 300px;"></canvas>
+        </div>
+    </div>
+</div>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+    <div class="content-card">
+        <div class="content-card-header">
+            <h2 class="content-card-title">🚀 Valuation Trends</h2>
+        </div>
+        <div class="content-card-body">
+            <canvas id="valuationChart" style="max-height: 300px;"></canvas>
+        </div>
+    </div>
+    
+    <div class="content-card">
+        <div class="content-card-header">
+            <h2 class="content-card-title">🌍 Geographic Distribution</h2>
+        </div>
+        <div class="content-card-body">
+            <canvas id="geoChart" style="max-height: 300px;"></canvas>
+        </div>
+    </div>
+</div>
+
+<!-- Market Insights -->
+<div class="content-card">
+    <div class="content-card-header">
+        <h2 class="content-card-title">💡 Market Insights</h2>
+    </div>
+    <div class="content-card-body">
+        <div class="insights-list">
+            <div class="insight-item">
+                <div class="insight-number">1</div>
+                <div class="insight-content">
+                    <h4>Stockholm Emerging as AI Hub</h4>
+                    <p>Stockholm accounts for 65% of Nordic AI companies, with strong talent pipeline from KTH and Stockholm University. Average seed round: €3M.</p>
+                </div>
+            </div>
+            
+            <div class="insight-item">
+                <div class="insight-number">2</div>
+                <div class="insight-content">
+                    <h4>B2B AI Tools Dominating</h4>
+                    <p>85% of Nordic AI companies focus on B2B solutions, with average ARR growth of 200% YoY. Enterprise AI spending projected to reach €10B by 2026.</p>
+                </div>
+            </div>
+            
+            <div class="insight-item">
+                <div class="insight-number">3</div>
+                <div class="insight-content">
+                    <h4>LLM-Powered Applications Leading</h4>
+                    <p>70% of new AI companies leverage Large Language Models. Average time to first customer: 3 months. Average deal size: €50K ARR.</p>
+                </div>
+            </div>
+            
+            <div class="insight-item">
+                <div class="insight-number">4</div>
+                <div class="insight-content">
+                    <h4>International Investors Active</h4>
+                    <p>US investors (Sequoia, Benchmark, Y Combinator) increasingly active in Nordic AI. Average round size increased 3x since 2022.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.trends-grid {
+    margin: 0;
+}
+
+.trend-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    transition: transform 0.2s;
+}
+
+.trend-card:nth-child(2) {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.trend-card:nth-child(3) {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.trend-card:nth-child(4) {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.trend-card:hover {
+    transform: translateY(-5px);
+}
+
+.trend-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.trend-card h3 {
+    font-size: 22px;
+    margin: 15px 0;
+    font-weight: 600;
+}
+
+.trend-card p {
+    font-size: 15px;
+    opacity: 0.95;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.trend-stats {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.trend-stats span {
+    opacity: 0.95;
+}
+
+.insights-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.insight-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.insight-number {
+    width: 40px;
+    height: 40px;
+    background: #007bff;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.insight-content h4 {
+    margin: 0 0 8px 0;
+    color: #333;
+    font-size: 18px;
+}
+
+.insight-content p {
+    margin: 0;
+    color: #666;
+    line-height: 1.6;
+}
+</style>
+
+<script src="{{ url_for('static', filename='ai_trends.js') }}"></script>
+{% endblock %}
+

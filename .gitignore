@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Development scripts (not needed in production)
+add_confirmed_deal_values.py
+append_companies.py
+check_scrape_progress.py
+compile_enriched.py
+fix_correct_urls.py
+get_unenriched.py
+linkedin_google_scraper.py
+merge_batches.py
+multi_source_scraper.py
+scrape_all_auto.py
+scrape_company_data.py
+test_direct_wiki.py
+test_leo_pharma.py
+verify_enriched_db.py
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

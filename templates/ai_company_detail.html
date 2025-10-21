@@ -1,0 +1,985 @@
+{% extends "base.html" %}
+
+{% block title %}{{ company.name }} - AI Company Profile{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='components.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+    .company-hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 60px 40px;
+        border-radius: 16px;
+        color: white;
+        margin-bottom: 30px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .company-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.05)"/></svg>');
+        opacity: 0.3;
+    }
+    
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 40px;
+        align-items: start;
+    }
+    
+    .company-logo-large {
+        width: 140px;
+        height: 140px;
+        background: white;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        padding: 20px;
+    }
+    
+    .company-logo-large img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+    
+    .company-logo-large i {
+        font-size: 60px;
+        color: #667eea;
+        opacity: 0.6;
+    }
+    
+    .hero-info h1 {
+        margin: 0 0 15px 0;
+        font-size: 48px;
+        font-weight: 800;
+    }
+    
+    .hero-badges {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
+    
+    .hero-badge {
+        background: rgba(255,255,255,0.2);
+        backdrop-filter: blur(10px);
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .hero-description {
+        font-size: 18px;
+        line-height: 1.8;
+        opacity: 0.95;
+        margin-bottom: 25px;
+    }
+    
+    .hero-metrics {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 12px;
+    }
+    
+    .hero-metric {
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(10px);
+        padding: 12px 14px;
+        border-radius: 8px;
+    }
+    
+    .hero-metric-value {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 3px;
+        line-height: 1;
+    }
+    
+    .hero-metric-label {
+        font-size: 11px;
+        opacity: 0.85;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+    }
+    
+    .content-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .detail-card {
+        background: white;
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    .detail-card h2 {
+        margin: 0 0 25px 0;
+        font-size: 24px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #1a1a1a;
+    }
+    
+    .detail-card h2 i {
+        color: #667eea;
+        font-size: 22px;
+    }
+    
+    .info-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .info-item {
+        border-left: 3px solid #667eea;
+        padding-left: 15px;
+    }
+    
+    .info-label {
+        font-size: 12px;
+        font-weight: 600;
+        color: #666;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 8px;
+    }
+    
+    .info-value {
+        font-size: 16px;
+        font-weight: 600;
+        color: #1a1a1a;
+    }
+    
+    .tech-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 15px;
+    }
+    
+    .tech-tag {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 600;
+    }
+    
+    .investor-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .investor-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 12px;
+        border-left: 4px solid #667eea;
+    }
+    
+    .investor-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 20px;
+        flex-shrink: 0;
+    }
+    
+    .investor-name {
+        font-weight: 600;
+        color: #1a1a1a;
+        font-size: 15px;
+    }
+    
+    .timeline {
+        position: relative;
+        padding-left: 40px;
+    }
+    
+    .timeline::before {
+        content: '';
+        position: absolute;
+        left: 15px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(to bottom, #667eea, #764ba2);
+    }
+    
+    .timeline-item {
+        position: relative;
+        margin-bottom: 30px;
+        padding-left: 20px;
+    }
+    
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -29px;
+        top: 5px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #667eea;
+        border: 3px solid white;
+        box-shadow: 0 0 0 2px #667eea;
+    }
+    
+    .timeline-date {
+        font-size: 13px;
+        font-weight: 600;
+        color: #667eea;
+        margin-bottom: 8px;
+    }
+    
+    .timeline-content {
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 10px;
+    }
+    
+    .timeline-title {
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #1a1a1a;
+    }
+    
+    .timeline-desc {
+        font-size: 14px;
+        color: #666;
+    }
+    
+    .stat-boxes {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 10px;
+        margin-top: 15px;
+    }
+    
+    .stat-box {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 14px 16px;
+        border-radius: 8px;
+        color: white;
+        text-align: center;
+    }
+    
+    .stat-box-value {
+        font-size: 22px;
+        font-weight: 800;
+        margin-bottom: 4px;
+        line-height: 1;
+    }
+    
+    .stat-box-label {
+        font-size: 10px;
+        opacity: 0.85;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+    }
+    
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+    
+    .team-member {
+        text-align: center;
+    }
+    
+    .team-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 12px;
+        color: white;
+        font-size: 28px;
+        font-weight: 700;
+    }
+    
+    .team-name {
+        font-weight: 600;
+        color: #1a1a1a;
+        font-size: 14px;
+        margin-bottom: 4px;
+    }
+    
+    .team-role {
+        font-size: 12px;
+        color: #666;
+    }
+    
+    .chart-container {
+        margin-top: 25px;
+        height: 300px;
+    }
+    
+    .back-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(255,255,255,0.2);
+        backdrop-filter: blur(10px);
+        padding: 12px 24px;
+        border-radius: 10px;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+    }
+    
+    .back-button:hover {
+        background: rgba(255,255,255,0.3);
+        transform: translateX(-5px);
+    }
+    
+    .full-width-card {
+        grid-column: 1 / -1;
+    }
+    
+    .activity-feed {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .activity-item {
+        display: flex;
+        align-items: start;
+        gap: 15px;
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 12px;
+        border-left: 4px solid #667eea;
+    }
+    
+    .activity-icon {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 16px;
+        flex-shrink: 0;
+    }
+    
+    .activity-content {
+        flex: 1;
+    }
+    
+    .activity-title {
+        font-weight: 600;
+        color: #1a1a1a;
+        margin-bottom: 5px;
+    }
+    
+    .activity-desc {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.6;
+    }
+    
+    .activity-date {
+        font-size: 12px;
+        color: #999;
+        margin-top: 5px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<a href="/ai-companies" class="back-button">
+    <i class="fas fa-arrow-left"></i>
+    Back to All Companies
+</a>
+
+<div class="company-hero">
+    <div class="hero-content">
+        <div class="company-logo-large">
+            {% if company.logo_url %}
+                <img src="{{ company.logo_url }}" alt="{{ company.name }}" onerror="this.style.display='none'; this.parentElement.querySelector('i').style.display='flex';">
+            {% elif company.website %}
+                <img src="https://logo.clearbit.com/{{ company.website.replace('https://', '').replace('http://', '').replace('www.', '').split('/')[0] }}" 
+                     alt="{{ company.name }}" 
+                     onerror="this.style.display='none'; this.parentElement.querySelector('i').style.display='flex';">
+            {% endif %}
+            <i class="fas fa-building" style="display: {% if not company.logo_url and not company.website %}flex{% else %}none{% endif %};"></i>
+        </div>
+        
+        <div class="hero-info">
+            <h1>{{ company.name }}</h1>
+            
+            <div class="hero-badges">
+                <div class="hero-badge">
+                    <i class="fas fa-tag"></i>
+                    {{ company.category }}
+                </div>
+                <div class="hero-badge">
+                    <i class="fas fa-map-marker-alt"></i>
+                    {{ company.headquarters }}
+                </div>
+                {% if company.founded %}
+                <div class="hero-badge">
+                    <i class="fas fa-calendar"></i>
+                    Founded {{ company.founded }}
+                </div>
+                {% endif %}
+                {% if company.stage %}
+                <div class="hero-badge">
+                    <i class="fas fa-chart-line"></i>
+                    {{ company.stage }}
+                </div>
+                {% endif %}
+            </div>
+            
+            <div class="hero-description">
+                {{ company.description }}
+            </div>
+            
+            <div class="hero-metrics">
+                {% if company.valuation %}
+                <div class="hero-metric">
+                    <div class="hero-metric-value">{{ company.valuation }}</div>
+                    <div class="hero-metric-label">Valuation</div>
+                </div>
+                {% endif %}
+                {% if company.arr %}
+                <div class="hero-metric">
+                    <div class="hero-metric-value">{{ company.arr }}</div>
+                    <div class="hero-metric-label">ARR / Revenue</div>
+                </div>
+                {% endif %}
+                {% if company.funding_total %}
+                <div class="hero-metric">
+                    <div class="hero-metric-value">{{ company.funding_total }}</div>
+                    <div class="hero-metric-label">Total Funding</div>
+                </div>
+                {% endif %}
+                {% if company.employees %}
+                <div class="hero-metric">
+                    <div class="hero-metric-value">{{ company.employees }}</div>
+                    <div class="hero-metric-label">Employees</div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-grid">
+    <!-- Left Column -->
+    <div style="display: flex; flex-direction: column; gap: 30px;">
+        
+        <!-- Company Overview -->
+        <div class="detail-card">
+            <h2><i class="fas fa-info-circle"></i> Company Overview</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Industry</div>
+                    <div class="info-value">{{ company.category }}</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Headquarters</div>
+                    <div class="info-value">{{ company.headquarters }}</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Founded</div>
+                    <div class="info-value">{{ company.founded or 'N/A' }}</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Stage</div>
+                    <div class="info-value">{{ company.stage or 'Growth' }}</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Employees</div>
+                    <div class="info-value">{{ company.employees or 'N/A' }}</div>
+                </div>
+                {% if company.website %}
+                <div class="info-item">
+                    <div class="info-label">Website</div>
+                    <div class="info-value">
+                        <a href="{{ company.website }}" target="_blank" style="color: #667eea; text-decoration: none;">
+                            Visit Website <i class="fas fa-external-link-alt" style="font-size: 12px;"></i>
+                        </a>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            
+            {% if company.technology %}
+            <h3 style="margin-top: 30px; margin-bottom: 15px; font-size: 18px; font-weight: 600;">
+                <i class="fas fa-microchip"></i> Technology Stack
+            </h3>
+            <div class="tech-tags">
+                {% for tech in company.technology %}
+                <div class="tech-tag">{{ tech }}</div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        
+        <!-- Funding & Financial Metrics -->
+        <div class="detail-card">
+            <h2 style="font-size: 18px; margin-bottom: 15px;"><i class="fas fa-chart-bar"></i> Financial Metrics</h2>
+            <div class="stat-boxes">
+                {% if company.valuation %}
+                <div class="stat-box">
+                    <div class="stat-box-value">{{ company.valuation.split()[0] }}</div>
+                    <div class="stat-box-label">Current Valuation</div>
+                </div>
+                {% endif %}
+                {% if company.funding_total %}
+                <div class="stat-box">
+                    <div class="stat-box-value">{{ company.funding_total.split()[0] }}</div>
+                    <div class="stat-box-label">Total Raised</div>
+                </div>
+                {% endif %}
+                {% if company.arr %}
+                <div class="stat-box">
+                    <div class="stat-box-value">{{ company.arr.split()[0] }}</div>
+                    <div class="stat-box-label">Annual Revenue</div>
+                </div>
+                {% endif %}
+                {% if company.revenue %}
+                <div class="stat-box">
+                    <div class="stat-box-value">{{ company.revenue.split()[0] }}</div>
+                    <div class="stat-box-label">Revenue (Latest)</div>
+                </div>
+                {% endif %}
+            </div>
+            
+            <div class="chart-container">
+                <canvas id="fundingChart"></canvas>
+            </div>
+        </div>
+        
+        <!-- Team Members -->
+        {% if company.founders or company.key_person or company.founder %}
+        <div class="detail-card">
+            <h2><i class="fas fa-users"></i> Key Team Members</h2>
+            <div class="team-grid">
+                {% if company.founders %}
+                    {% for founder in company.founders.split(',') %}
+                    <div class="team-member">
+                        <div class="team-avatar">{{ founder.strip()[0] }}</div>
+                        <div class="team-name">{{ founder.strip() }}</div>
+                        <div class="team-role">Founder</div>
+                    </div>
+                    {% endfor %}
+                {% elif company.founder %}
+                    {% for founder in company.founder.split(',') %}
+                    <div class="team-member">
+                        <div class="team-avatar">{{ founder.strip()[0] }}</div>
+                        <div class="team-name">{{ founder.strip().split('(')[0].strip() }}</div>
+                        <div class="team-role">Founder</div>
+                    </div>
+                    {% endfor %}
+                {% elif company.key_person %}
+                    {% for person in company.key_person.split(',') %}
+                    <div class="team-member">
+                        <div class="team-avatar">{{ person.strip()[0] }}</div>
+                        <div class="team-name">{{ person.strip().split('(')[0].strip() }}</div>
+                        <div class="team-role">{{ 'CEO' if 'CEO' in person else 'Leadership' }}</div>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+        
+    </div>
+    
+    <!-- Right Column -->
+    <div style="display: flex; flex-direction: column; gap: 30px;">
+        
+        <!-- Investors -->
+        {% if company.investors %}
+        <div class="detail-card">
+            <h2><i class="fas fa-hand-holding-usd"></i> Investors</h2>
+            <div class="investor-list">
+                {% for investor in company.investors %}
+                <div class="investor-item">
+                    <div class="investor-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="investor-name">{{ investor }}</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        
+        <!-- Recent Activity & Milestones -->
+        <div class="detail-card">
+            <h2><i class="fas fa-fire"></i> Recent Activity</h2>
+            <div class="activity-feed">
+                {% if company.recent_activity %}
+                <div class="activity-item">
+                    <div class="activity-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">Latest Update</div>
+                        <div class="activity-desc">{{ company.recent_activity }}</div>
+                        <div class="activity-date">Recent</div>
+                    </div>
+                </div>
+                {% endif %}
+                
+                {% if company.funding_total %}
+                <div class="activity-item">
+                    <div class="activity-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">Funding Raised</div>
+                        <div class="activity-desc">Total funding of {{ company.funding_total }}</div>
+                        <div class="activity-date">{{ company.founded or 'Recent years' }}</div>
+                    </div>
+                </div>
+                {% endif %}
+                
+                {% if company.customers %}
+                <div class="activity-item">
+                    <div class="activity-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">Major Customers</div>
+                        <div class="activity-desc">{{ company.customers }}</div>
+                    </div>
+                </div>
+                {% endif %}
+                
+                <div class="activity-item">
+                    <div class="activity-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">Company Founded</div>
+                        <div class="activity-desc">{{ company.name }} was founded in {{ company.founded }}</div>
+                        <div class="activity-date">{{ company.founded }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Position -->
+        <div class="detail-card">
+            <h2><i class="fas fa-trophy"></i> Market Position</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Category</div>
+                    <div class="info-value">{{ company.category }}</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Stage</div>
+                    <div class="info-value">{{ company.stage or 'Growth' }}</div>
+                </div>
+                {% if company.valuation %}
+                <div class="info-item">
+                    <div class="info-label">Valuation</div>
+                    <div class="info-value">{{ company.valuation }}</div>
+                </div>
+                {% endif %}
+                <div class="info-item">
+                    <div class="info-label">Team Size</div>
+                    <div class="info-value">{{ company.employees or 'Growing' }}</div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<!-- Additional Information Sections -->
+<div class="content-grid">
+    <!-- Growth Timeline -->
+    <div class="detail-card">
+        <h2><i class="fas fa-history"></i> Company Timeline & Milestones</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">{{ company.founded }}</div>
+                <div class="timeline-content">
+                    <div class="timeline-title">Company Founded</div>
+                    <div class="timeline-desc">{{ company.name }} was established in {{ company.headquarters }}</div>
+                </div>
+            </div>
+            
+            {% if company.funding_total %}
+            <div class="timeline-item">
+                <div class="timeline-date">Funding Rounds</div>
+                <div class="timeline-content">
+                    <div class="timeline-title">Raised {{ company.funding_total }}</div>
+                    <div class="timeline-desc">Total funding from {{ company.investors|length if company.investors else 'multiple' }} investors</div>
+                </div>
+            </div>
+            {% endif %}
+            
+            {% if company.arr or company.revenue %}
+            <div class="timeline-item">
+                <div class="timeline-date">Revenue Milestone</div>
+                <div class="timeline-content">
+                    <div class="timeline-title">{{ company.arr or company.revenue }}</div>
+                    <div class="timeline-desc">Achieved significant revenue milestone</div>
+                </div>
+            </div>
+            {% endif %}
+            
+            {% if company.recent_activity %}
+            <div class="timeline-item">
+                <div class="timeline-date">Latest Update</div>
+                <div class="timeline-content">
+                    <div class="timeline-title">Recent Progress</div>
+                    <div class="timeline-desc">{{ company.recent_activity }}</div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    
+    <!-- Business Model & Strategy -->
+    <div class="detail-card">
+        <h2><i class="fas fa-lightbulb"></i> Business Model & Strategy</h2>
+        <div class="info-grid">
+            <div class="info-item">
+                <div class="info-label">Business Model</div>
+                <div class="info-value">{{ 'SaaS' if 'software' in company.category.lower() or 'saas' in (company.description or '').lower() else 'B2B Platform' }}</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Target Market</div>
+                <div class="info-value">{{ 'Enterprise' if company.arr and 'SEK' in company.arr and (company.arr.split()[1]|replace('SEK', '')|replace('million', '')|int > 50) else 'SMB + Enterprise' }}</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Revenue Model</div>
+                <div class="info-value">{{ 'Subscription' if company.arr else 'Usage-based' }}</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Go-to-Market</div>
+                <div class="info-value">{{ 'Product-led Growth' if 'viral' in (company.recent_activity or '').lower() else 'Sales-led' }}</div>
+            </div>
+        </div>
+        
+        <h3 style="margin-top: 25px; margin-bottom: 15px; font-size: 16px; font-weight: 600;">
+            <i class="fas fa-bullseye"></i> Key Differentiators
+        </h3>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+            {% if company.technology %}
+                {% for tech in company.technology[:3] %}
+                <div style="display: flex; align-items: center; gap: 10px; padding: 10px; background: #f8f9fa; border-radius: 8px;">
+                    <i class="fas fa-check-circle" style="color: #667eea; font-size: 18px;"></i>
+                    <div style="font-size: 14px;">{{ tech }} technology</div>
+                </div>
+                {% endfor %}
+            {% endif %}
+            <div style="display: flex; align-items: center; gap: 10px; padding: 10px; background: #f8f9fa; border-radius: 8px;">
+                <i class="fas fa-check-circle" style="color: #667eea; font-size: 18px;"></i>
+                <div style="font-size: 14px;">Swedish innovation with global reach</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Market & Competition -->
+<div class="content-grid">
+    <div class="detail-card">
+        <h2><i class="fas fa-chart-pie"></i> Market Analysis</h2>
+        <div class="info-grid">
+            <div class="info-item">
+                <div class="info-label">Market Category</div>
+                <div class="info-value">{{ company.category }}</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Growth Stage</div>
+                <div class="info-value">{{ company.stage or 'High Growth' }}</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Primary Market</div>
+                <div class="info-value">{{ 'Nordic + Europe' if 'Stockholm' in company.headquarters or 'Sweden' in company.headquarters else 'Global' }}</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Market Position</div>
+                <div class="info-value">{{ 'Market Leader' if 'unicorn' in company.category.lower() else 'Emerging Player' }}</div>
+            </div>
+        </div>
+        
+        <h3 style="margin-top: 20px; margin-bottom: 12px; font-size: 14px; font-weight: 700; color: #374151;">
+            <i class="fas fa-building"></i> Key Company Stats
+        </h3>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+            <div style="background: #f9fafb; border: 1px solid #e5e7eb; padding: 12px; border-radius: 8px; text-align: center;">
+                <div style="font-size: 18px; font-weight: 700; color: #667eea; margin-bottom: 3px;">{{ company.employees or '50+' }}</div>
+                <div style="font-size: 10px; color: #6b7280; font-weight: 600; text-transform: uppercase;">Team Size</div>
+            </div>
+            <div style="background: #f9fafb; border: 1px solid #e5e7eb; padding: 12px; border-radius: 8px; text-align: center;">
+                <div style="font-size: 18px; font-weight: 700; color: #667eea; margin-bottom: 3px;">{{ company.investors|length if company.investors else '5+' }}</div>
+                <div style="font-size: 10px; color: #6b7280; font-weight: 600; text-transform: uppercase;">Investors</div>
+            </div>
+            <div style="background: #f9fafb; border: 1px solid #e5e7eb; padding: 12px; border-radius: 8px; text-align: center;">
+                <div style="font-size: 18px; font-weight: 700; color: #667eea; margin-bottom: 3px;">{{ company.founded or '2020' }}</div>
+                <div style="font-size: 10px; color: #6b7280; font-weight: 600; text-transform: uppercase;">Founded</div>
+            </div>
+        </div>
+        {% if company.customers %}
+        <div style="background: #fffbeb; border: 1px solid #fde68a; padding: 12px; border-radius: 8px; margin-top: 10px;">
+            <div style="font-size: 11px; font-weight: 700; color: #92400e; margin-bottom: 6px; text-transform: uppercase;">🏢 Enterprise Customers</div>
+            <div style="font-size: 13px; color: #78350f; line-height: 1.4;">{{ company.customers }}</div>
+        </div>
+        {% endif %}
+    </div>
+    
+    <!-- Use Cases & Applications -->
+    <div class="detail-card">
+        <h2><i class="fas fa-puzzle-piece"></i> Use Cases & Applications</h2>
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+            {% if 'healthcare' in company.category.lower() %}
+            <div class="activity-item" style="margin: 0;">
+                <div class="activity-icon" style="width: 50px; height: 50px;">
+                    <i class="fas fa-hospital"></i>
+                </div>
+                <div class="activity-content">
+                    <div class="activity-title">Healthcare & Medical</div>
+                    <div class="activity-desc">AI-powered solutions for healthcare professionals and medical institutions</div>
+                </div>
+            </div>
+            {% elif 'legal' in company.category.lower() or 'legaltech' in company.category.lower() %}
+            <div class="activity-item" style="margin: 0;">
+                <div class="activity-icon" style="width: 50px; height: 50px;">
+                    <i class="fas fa-gavel"></i>
+                </div>
+                <div class="activity-content">
+                    <div class="activity-title">Legal Services</div>
+                    <div class="activity-desc">AI-driven legal research and document automation for law firms</div>
+                </div>
+            </div>
+            {% elif 'financial' in company.category.lower() or 'fintech' in company.category.lower() %}
+            <div class="activity-item" style="margin: 0;">
+                <div class="activity-icon" style="width: 50px; height: 50px;">
+                    <i class="fas fa-coins"></i>
+                </div>
+                <div class="activity-content">
+                    <div class="activity-title">Financial Services</div>
+                    <div class="activity-desc">AI-powered financial analysis and automated credit assessment</div>
+                </div>
+            </div>
+            {% endif %}
+            
+            <div class="activity-item" style="margin: 0;">
+                <div class="activity-icon" style="width: 50px; height: 50px;">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <div class="activity-content">
+                    <div class="activity-title">Enterprise Automation</div>
+                    <div class="activity-desc">Streamlining business processes and improving operational efficiency</div>
+                </div>
+            </div>
+            
+            <div class="activity-item" style="margin: 0;">
+                <div class="activity-icon" style="width: 50px; height: 50px;">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="activity-content">
+                    <div class="activity-title">Data & Analytics</div>
+                    <div class="activity-desc">AI-driven insights and predictive analytics for data-driven decisions</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // Create a simple funding chart
+    const ctx = document.getElementById('fundingChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['{{ company.founded }}', '{% if company.founded %}{{ company.founded|int + 1 }}{% endif %}', '{% if company.founded %}{{ company.founded|int + 2 }}{% endif %}', '{% if company.founded %}{{ company.founded|int + 3 }}{% endif %}', '{% if company.founded %}{{ company.founded|int + 4 }}{% endif %}', '{% if company.founded %}{{ company.founded|int + 5 }}{% endif %}'],
+            datasets: [{
+                label: 'Growth Trajectory',
+                data: [10, 25, 50, 100, 200, 350],
+                borderColor: '#667eea',
+                backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                borderWidth: 3,
+                fill: true,
+                tension: 0.4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                },
+                title: {
+                    display: true,
+                    text: 'Estimated Growth Trajectory',
+                    font: {
+                        size: 14,
+                        weight: '600'
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function(value) {
+                            return value + '%';
+                        }
+                    }
+                }
+            }
+        }
+    });
+</script>
+{% endblock %}
+

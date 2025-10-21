@@ -1,0 +1,4437 @@
+{
+  "metadata": {
+    "last_updated": "2025-10-18",
+    "total_companies": 157,
+    "total_funding": "SEK 50+ billion",
+    "region": "Nordic AI Companies (Sweden, Finland, Norway, Denmark, Iceland) + Global AI Giants",
+    "source": "Dagens Industri, TechCrunch, PitchBook, Sifted, Crunchbase, Omdena, Clutch",
+    "breakdown": {
+      "sweden": 117,
+      "finland": 15,
+      "norway": 13,
+      "denmark": 11,
+      "iceland": 1
+    }
+  },
+  "ai_companies": [
+    {
+      "name": "Lovable",
+      "category": "Swedish AI Unicorn",
+      "industry": "Developer Tools",
+      "description": "Låter personer utan koderfarenhet programmera genom 'vibe coding' - beskriv vad du vill ha så skapar AI:n koden. Revolutionary no-code AI platform enabling anyone to build software through natural language.",
+      "founded": 2023,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 17 billion (approaching unicorn, October 2025)",
+      "arr": "SEK 720 million (June 2025)",
+      "revenue": "SEK 720 million ARR",
+      "technology": [
+        "No-code AI",
+        "Code Generation",
+        "Large Language Models",
+        "GPT-4 Integration",
+        "Vibe Coding™"
+      ],
+      "investors": [
+        "Creandum (lead)",
+        "Emblem VC",
+        "Guillaume Durao"
+      ],
+      "funding_rounds": [
+        {
+          "round": "Seed",
+          "amount": "Undisclosed",
+          "date": "2023",
+          "lead": "Creandum"
+        },
+        {
+          "round": "Series A",
+          "amount": "Undisclosed",
+          "date": "2024",
+          "valuation": "SEK 10B+"
+        }
+      ],
+      "funding_total": "SEK 300+ million (estimated)",
+      "stage": "Unicorn Track",
+      "employees": "85",
+      "team": [
+        {
+          "name": "Anton Osika",
+          "role": "CEO & Founder",
+          "background": "Former Depict AI cofounder"
+        },
+        {
+          "name": "Engineering Team",
+          "role": "AI/ML Engineers",
+          "size": "40+"
+        }
+      ],
+      "website": "https://lovable.dev",
+      "logo_url": "https://lovable.dev/favicon.ico",
+      "users": "100K+ developers worldwide",
+      "growth_rate": "300% MoM at peak",
+      "markets": "Global (US, EU, Asia)",
+      "partnerships": "OpenAI GPT-4, Anthropic Claude",
+      "recent_activity": "Viral growth reaching SEK 720M ARR in under 2 years. Approaching unicorn status. Featured as fastest-growing Nordic AI startup.",
+      "milestones": [
+        {
+          "date": "2023-Q1",
+          "event": "Company founded by Depict AI alumni"
+        },
+        {
+          "date": "2023-Q3",
+          "event": "Seed round from Creandum"
+        },
+        {
+          "date": "2024-Q2",
+          "event": "Reached SEK 100M ARR"
+        },
+        {
+          "date": "2025-Q2",
+          "event": "SEK 720M ARR, unicorn trajectory"
+        }
+      ]
+    },
+    {
+      "name": "Legora",
+      "category": "Swedish AI Unicorn",
+      "industry": "Legal",
+      "description": "AI-plattform för juridisk research och assistans. Kombinerar advokaters expertis med AI för att effektivisera juridiskt arbete. Leading legal AI platform transforming law firms with intelligent research and automation.",
+      "founded": 2023,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 6.5 billion (Series B, May 2025)",
+      "revenue": "SEK 173 million (2024)",
+      "arr": "SEK 250 million (Q3 2025)",
+      "technology": [
+        "Legal AI",
+        "Document Analysis",
+        "LLM for Law",
+        "RAG Technology",
+        "GPT-4 Legal Fine-tuning"
+      ],
+      "investors": [
+        "Iconiq Capital (lead)",
+        "General Catalyst",
+        "Redpoint Ventures",
+        "Benchmark",
+        "Y Combinator"
+      ],
+      "funding_rounds": [
+        {
+          "round": "YC Batch",
+          "amount": "$500K",
+          "date": "2023-07",
+          "program": "Y Combinator S23"
+        },
+        {
+          "round": "Seed",
+          "amount": "SEK 120 million",
+          "date": "2023-12",
+          "lead": "General Catalyst"
+        },
+        {
+          "round": "Series A",
+          "amount": "SEK 350 million",
+          "date": "2024-06",
+          "lead": "Iconiq Capital",
+          "valuation": "SEK 2.5B"
+        },
+        {
+          "round": "Series B",
+          "amount": "SEK 800 million",
+          "date": "2025-07",
+          "lead": "Iconiq Capital",
+          "valuation": "SEK 6.5B"
+        }
+      ],
+      "funding_total": "SEK 1.27 billion",
+      "stage": "Unicorn Track",
+      "employees": "145",
+      "team": [
+        {
+          "name": "Max Junestrand",
+          "role": "CEO & Founder",
+          "background": "Former lawyer, Y Combinator"
+        },
+        {
+          "name": "Legal AI Team",
+          "role": "ML Engineers & Legal Experts",
+          "size": "60+"
+        },
+        {
+          "name": "Product Team",
+          "role": "Engineering",
+          "size": "40+"
+        }
+      ],
+      "website": "https://www.legora.com",
+      "logo_url": "https://logo.clearbit.com/legora.com",
+      "customers": "500+ law firms across Nordics and US",
+      "users": "10,000+ legal professionals",
+      "markets": "Sweden, Norway, Denmark, Finland, expanding US",
+      "partnerships": "Anthropic, OpenAI, major Nordic law firms",
+      "growth_rate": "150% YoY revenue growth",
+      "recent_activity": "Massive SEK 800M Series B from Iconiq (Facebook/Airbnb early investor). Expanding to US market with top-tier Silicon Valley backing.",
+      "milestones": [
+        {
+          "date": "2023-07",
+          "event": "Accepted to Y Combinator S23"
+        },
+        {
+          "date": "2023-12",
+          "event": "Seed round - SEK 120M"
+        },
+        {
+          "date": "2024-06",
+          "event": "Series A - SEK 350M at SEK 2.5B valuation"
+        },
+        {
+          "date": "2025-07",
+          "event": "Series B - SEK 800M at SEK 6.5B valuation"
+        }
+      ]
+    },
+    {
+      "name": "Sana",
+      "category": "Swedish AI Leader",
+      "industry": "Education",
+      "description": "AI-agent som baserar information på företagens egen data och användarnas arbetsuppgifter. Enterprise AI platform leveraging company data with transformer technology. Behind Swedish AI Reform initiative.",
+      "founded": 2016,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 5.3 billion (Series B, October 2024)",
+      "revenue": "SEK 36 million (2023), SEK 95 million (2024 estimated)",
+      "arr": "SEK 120 million (2025)",
+      "technology": [
+        "Enterprise AI",
+        "Knowledge Management",
+        "AI Agents",
+        "Transformer Models",
+        "Proprietary LLM",
+        "RAG Architecture"
+      ],
+      "investors": [
+        "Menlo Ventures (lead)",
+        "Scott Sandell (Partner @ Menlo)",
+        "Sven Hagströmer (Avanza founder)",
+        "Katarina Martinson"
+      ],
+      "funding_rounds": [
+        {
+          "round": "Seed",
+          "amount": "SEK 45 million",
+          "date": "2020",
+          "lead": "Nordic Angels"
+        },
+        {
+          "round": "Series A",
+          "amount": "SEK 250 million",
+          "date": "2022-03",
+          "lead": "Menlo Ventures",
+          "valuation": "SEK 1.8B"
+        },
+        {
+          "round": "Series B",
+          "amount": "SEK 580 million",
+          "date": "2024-10",
+          "lead": "Menlo Ventures",
+          "valuation": "SEK 5.3B"
+        }
+      ],
+      "funding_total": "SEK 875 million",
+      "stage": "Growth",
+      "employees": "215",
+      "team": [
+        {
+          "name": "Joel Hellermark",
+          "role": "CEO & Founder",
+          "background": "Forbes 30 Under 30, Swedish AI Reform leader"
+        },
+        {
+          "name": "Oscar Täckström",
+          "role": "Chief Scientist",
+          "background": "Transformer model pioneer, Google Research alumni"
+        },
+        {
+          "name": "Engineering Team",
+          "role": "AI/ML Engineers",
+          "size": "90+"
+        }
+      ],
+      "website": "https://sanalabs.com",
+      "logo_url": "https://sanalabs.com/favicon.ico",
+      "customers": "200+ enterprises including Fortune 500 companies",
+      "users": "50,000+ daily active users",
+      "markets": "Global (Nordics, US, Europe)",
+      "partnerships": "Swedish government (AI Reform), major universities, OpenAI",
+      "initiatives": "Swedish AI Reform (education), Annual Sana AI Summit",
+      "recent_activity": "SEK 580M Series B led by Menlo Ventures. Leading Swedish AI Reform initiative. Hosting annual AI summit with global leaders including OpenAI, Anthropic.",
+      "milestones": [
+        {
+          "date": "2016",
+          "event": "Company founded by Joel Hellermark"
+        },
+        {
+          "date": "2020",
+          "event": "Seed round SEK 45M"
+        },
+        {
+          "date": "2022-03",
+          "event": "Series A SEK 250M at SEK 1.8B valuation"
+        },
+        {
+          "date": "2024-10",
+          "event": "Series B SEK 580M at SEK 5.3B valuation"
+        },
+        {
+          "date": "2024-11",
+          "event": "Swedish AI Reform initiative launched"
+        }
+      ]
+    },
+    {
+      "name": "Tandem Health",
+      "category": "Swedish AI Healthcare",
+      "industry": "Healthcare",
+      "description": "AI-assistent för journalföring från möten mellan läkare och patienter. Automatiserar medicinskt dokumentarbete. Leading medical AI scribe transforming clinical documentation.",
+      "founded": 2023,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 2.8 billion (Series A, June 2025)",
+      "arr": "SEK 180 million (March 2025)",
+      "revenue": "SEK 180 million ARR",
+      "technology": [
+        "Healthcare AI",
+        "Medical Transcription",
+        "Clinical Documentation",
+        "Voice Recognition",
+        "GDPR-compliant AI"
+      ],
+      "investors": [
+        "Northzone (lead)",
+        "Kinnevik",
+        "Zenith Ventures",
+        "Inception Fund",
+        "Oliver Molander"
+      ],
+      "funding_rounds": [
+        {
+          "round": "Pre-seed",
+          "amount": "SEK 25 million",
+          "date": "2023-09",
+          "lead": "Zenith Ventures"
+        },
+        {
+          "round": "Seed",
+          "amount": "SEK 150 million",
+          "date": "2024-03",
+          "lead": "Northzone",
+          "valuation": "SEK 800M"
+        },
+        {
+          "round": "Series A",
+          "amount": "SEK 500 million",
+          "date": "2025-06",
+          "lead": "Kinnevik + Northzone",
+          "valuation": "SEK 2.8B"
+        }
+      ],
+      "funding_total": "SEK 675 million",
+      "stage": "Series A",
+      "employees": "72",
+      "team": [
+        {
+          "name": "Lukas Saari",
+          "role": "CEO & Co-founder",
+          "background": "Healthcare tech entrepreneur"
+        },
+        {
+          "name": "Oliver Åstrand",
+          "role": "CTO & Co-founder",
+          "background": "ML engineer"
+        },
+        {
+          "name": "Oscar Boldt-Christmas",
+          "role": "Co-founder",
+          "background": "Medical doctor & AI researcher"
+        },
+        {
+          "name": "Clinical AI Team",
+          "role": "ML + Medical experts",
+          "size": "35+"
+        }
+      ],
+      "website": "https://www.tandemhealth.ai",
+      "logo_url": "https://logo.clearbit.com/tandemhealth.ai",
+      "customers": "50+ hospitals and clinics across Nordics",
+      "users": "2,000+ doctors using daily",
+      "markets": "Sweden, Norway, Denmark, expanding Finland",
+      "compliance": "GDPR compliant, Medical Device certified",
+      "time_saved": "30 minutes per doctor per day",
+      "growth_rate": "400% YoY",
+      "recent_activity": "SEK 500M Series A from Kinnevik & Northzone. Rapid expansion across Nordic healthcare. 400% YoY growth with 2K+ doctors using daily.",
+      "milestones": [
+        {
+          "date": "2023-09",
+          "event": "Pre-seed SEK 25M from Zenith"
+        },
+        {
+          "date": "2024-03",
+          "event": "Seed SEK 150M at SEK 800M valuation"
+        },
+        {
+          "date": "2025-03",
+          "event": "Reached SEK 180M ARR"
+        },
+        {
+          "date": "2025-06",
+          "event": "Series A SEK 500M at SEK 2.8B valuation"
+        }
+      ]
+    },
+    {
+      "name": "Listen Labs",
+      "category": "Swedish AI - US Based",
+      "industry": "Market Research",
+      "description": "AI-drivna röstintervjuer för kundundersökningar. AI genomför intervjuer och summerar insights automatiskt.",
+      "founded": 2023,
+      "headquarters": "San Francisco, USA (Swedish founders)",
+      "valuation": "Undisclosed",
+      "arr": "$1 million (May 2025)",
+      "technology": [
+        "Voice AI",
+        "Customer Research",
+        "NLP",
+        "Speech Recognition"
+      ],
+      "investors": [
+        "Sequoia",
+        "Conviction",
+        "Pear VC",
+        "Arash Pournouri",
+        "Peder Stahle"
+      ],
+      "funding_total": "SEK 260 million",
+      "stage": "Early Growth",
+      "employees": "20-30",
+      "website": "https://www.listenlabs.ai",
+      "logo_url": "https://www.listenlabs.ai/favicon.ico",
+      "founders": "Alfred Wahlforss, Florian Juengermann",
+      "recent_activity": "Backed by Sequoia (Klarna's lead investor), scaling in US market"
+    },
+    {
+      "name": "Filed",
+      "category": "Swedish AI - US Market",
+      "description": "AI för amerikanska skattekonsulter som förenklar komplicerade deklarationer i USA.",
+      "founded": 2024,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "Undisclosed",
+      "revenue": "SEK 3 million (8 months, 2024)",
+      "technology": [
+        "Tax AI",
+        "Document Processing",
+        "Compliance Automation"
+      ],
+      "investors": [
+        "Northzone",
+        "Greens Ventures"
+      ],
+      "funding_total": "SEK 170 million (May 2025)",
+      "stage": "Seed/Early",
+      "employees": "15-25",
+      "website": "https://filed.com",
+      "logo_url": "https://filed.com/favicon.ico",
+      "recent_activity": "Launched 2024, rapid growth in US tax accountant market",
+      "industry": "Finance"
+    },
+    {
+      "name": "Lightbringer",
+      "category": "Swedish AI LegalTech",
+      "description": "Skyddar immateriella rättigheter och automatiserar patentansökningar med AI och egenutvecklad mjukvara.",
+      "founded": 2023,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 250 million (Dec 2024, DI estimate)",
+      "arr": "SEK 4.6 million (Dec 2024)",
+      "technology": [
+        "IP Protection",
+        "Patent AI",
+        "Legal Tech"
+      ],
+      "investors": [
+        "Luminar Ventures",
+        "Alliance VC",
+        "Zenith Ventures"
+      ],
+      "funding_total": "Undisclosed",
+      "stage": "Seed",
+      "employees": "10-20",
+      "website": "https://www.lightbringer.ai",
+      "recent_activity": "Early traction in patent automation",
+      "industry": "Legal"
+    },
+    {
+      "name": "Talentium",
+      "category": "Swedish AI Recruiting",
+      "description": "AI för rekrytering som söker kandidater online och summerar deras erfarenheter och kompetenser automatiskt.",
+      "founded": 2023,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 157 million (Nov 2024)",
+      "revenue": "SEK 1 million (Oct 2023-2024)",
+      "technology": [
+        "Recruiting AI",
+        "Talent Sourcing",
+        "NLP"
+      ],
+      "investors": [
+        "EQT Ventures"
+      ],
+      "funding_total": "Undisclosed",
+      "stage": "Seed",
+      "employees": "10-15",
+      "website": "https://www.talentium.io",
+      "logo_url": "https://talentium.ai/favicon.ico",
+      "recent_activity": "Backed by EQT Ventures, growing in Nordic recruitment market",
+      "industry": "HR"
+    },
+    {
+      "name": "AI-Bob",
+      "category": "Swedish AI Construction",
+      "description": "Effektiviserar byggbranschen genom att AI granskar ritningar utifrån svenska byggregler automatiskt.",
+      "founded": 2023,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "Undisclosed",
+      "arr": "Early stage",
+      "technology": [
+        "Construction AI",
+        "Building Code Compliance",
+        "Document Analysis"
+      ],
+      "investors": "Unknown",
+      "funding_total": "Undisclosed",
+      "stage": "Seed",
+      "employees": "5-10",
+      "website": "https://www.aibob.io",
+      "founder": "Elin Mårtensson (Female Founders 2025 finalist)",
+      "recent_activity": "Finalist at Di Digital Female Founders 2025",
+      "logo_url": "https://www.aibob.io/favicon.ico",
+      "industry": "Developer Tools"
+    },
+    {
+      "name": "Aris Machina",
+      "category": "Swedish AI Manufacturing",
+      "description": "AI-verktyg för optimering av tillverkningsprocesser. Grundat av Northvolt-grundaren Peter Carlsson.",
+      "founded": 2024,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "High (backed by Gates, Bezos, Zuckerberg)",
+      "arr": "Pre-revenue/Early",
+      "technology": [
+        "Manufacturing AI",
+        "Process Optimization",
+        "Industrial ML"
+      ],
+      "investors": [
+        "Village Global (Bill Gates, Jeff Bezos, Mark Zuckerberg)"
+      ],
+      "funding_total": "Large undisclosed round",
+      "stage": "Seed/Series A",
+      "employees": "20-30",
+      "website": "https://arismachina.com",
+      "logo_url": "https://arismachina.com/favicon.ico",
+      "founder": "Peter Carlsson (Northvolt), Siddharth Khullar (ex-Apple)",
+      "recent_activity": "Attracted massive backing from tech billionaires through Village Global",
+      "industry": "Manufacturing"
+    },
+    {
+      "name": "Andon Labs",
+      "category": "Swedish AI Security",
+      "description": "Säkrar stora AI-modeller. Arbetar med Anthropic (Claude) och enligt uppgift även OpenAI (ChatGPT).",
+      "founded": 2023,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "Undisclosed",
+      "arr": "Unknown",
+      "technology": [
+        "AI Security",
+        "Model Safety",
+        "Red Teaming"
+      ],
+      "investors": "Unknown",
+      "funding_total": "Undisclosed",
+      "stage": "Early Growth",
+      "employees": "15-25",
+      "website": "https://andonlabs.com",
+      "logo_url": "https://andonlabs.com/favicon.ico",
+      "recent_activity": "Working with Anthropic and reportedly OpenAI on AI safety",
+      "industry": "HR"
+    },
+    {
+      "name": "Arkion (formerly Skyqraft)",
+      "category": "Swedish AI Energy",
+      "description": "Hjälper elbolag att optimera och anpassa sina elnät med AI-driven analys och computer vision.",
+      "founded": 2018,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "Undisclosed",
+      "arr": "Growing",
+      "technology": [
+        "Energy Grid AI",
+        "Computer Vision",
+        "Predictive Maintenance"
+      ],
+      "investors": [
+        "Norrsken VC",
+        "Others"
+      ],
+      "funding_total": "SEK 100+ million",
+      "stage": "Growth",
+      "employees": "30-50",
+      "website": "https://www.arkion.com",
+      "recent_activity": "Rebranded from Skyqraft, expanding in European energy markets",
+      "industry": "Energy"
+    },
+    {
+      "name": "Bluebook",
+      "category": "Swedish AI Tax/Finance",
+      "description": "'ChatGPT för revisorer' - AI som behärskar skattesystem i hela världen för revisorer och skatteexperter.",
+      "founded": 2024,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "Early stage",
+      "arr": "Early",
+      "technology": [
+        "Tax AI",
+        "Compliance",
+        "Financial AI"
+      ],
+      "investors": "Unknown",
+      "funding_total": "Seed funding",
+      "stage": "Seed",
+      "employees": "10-15",
+      "website": "https://getbluebook.com",
+      "recent_activity": "Early traction among tax professionals",
+      "logo_url": "https://getbluebook.com/favicon.ico",
+      "industry": "Finance"
+    },
+    {
+      "name": "Buddywise",
+      "category": "Swedish AI Safety",
+      "description": "Förhindrar arbetsplatsolyckor med computer vision som känner igen hot genom kameror och sensorer.",
+      "founded": 2023,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "Undisclosed",
+      "arr": "Unknown",
+      "technology": [
+        "Computer Vision",
+        "Workplace Safety",
+        "Edge AI"
+      ],
+      "investors": "Unknown",
+      "funding_total": "Undisclosed",
+      "stage": "Seed/Early",
+      "employees": "15-20",
+      "website": "https://www.buddywise.co",
+      "founder": "Former Vattenfall executive",
+      "recent_activity": "Piloting with industrial customers",
+      "logo_url": "https://www.buddywise.co/favicon.ico",
+      "industry": "Computer Vision"
+    },
+    {
+      "name": "Dema AI",
+      "category": "Swedish AI E-commerce",
+      "description": "AI-verktyg för e-handel. Grundat av Babyshop-grundaren Marcus Tagesson.",
+      "founded": 2024,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "Early",
+      "arr": "Early",
+      "technology": [
+        "E-commerce AI",
+        "Personalization",
+        "Retail Tech"
+      ],
+      "investors": "Unknown",
+      "funding_total": "Seed round",
+      "stage": "Seed",
+      "employees": "10-15",
+      "website": "https://dema.ai",
+      "founder": "Marcus Tagesson (Babyshop founder)",
+      "recent_activity": "Building AI tools for e-commerce optimization",
+      "logo_url": "https://dema.ai/favicon.ico",
+      "industry": "E-Commerce"
+    },
+    {
+      "name": "Freda",
+      "category": "Swedish AI Stealth",
+      "industry": "Fintech",
+      "description": "Tink-grundarnas (Daniel Kjellén & Fredrik Hedberg) hemliga AI-projekt. Rekryterar aktivt, nyligen värvad profil från Atomico.",
+      "founded": 2024,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "Undisclosed",
+      "arr": "Stealth",
+      "technology": [
+        "Undisclosed AI technology"
+      ],
+      "investors": [
+        "Tink founders' capital"
+      ],
+      "funding_total": "Well-funded (Tink exit capital)",
+      "stage": "Stealth",
+      "employees": "20-30",
+      "website": "https://www.freda.com",
+      "founders": "Daniel Kjellén, Fredrik Hedberg (Tink founders - €1.8B exit to Visa)",
+      "recent_activity": "Active hiring, recruited from Atomico, highly secretive",
+      "logo_url": "https://logo.clearbit.com/freda.com"
+    },
+    {
+      "name": "Gilion (formerly Ark Capital)",
+      "category": "Swedish AI Fintech",
+      "description": "Använder AI för att i realtid följa företags affärer och ge ut lån baserat på AI-driven kreditbedömning.",
+      "founded": 2020,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 1+ billion",
+      "arr": "Growing",
+      "technology": [
+        "AI Credit Assessment",
+        "Real-time Business Analytics",
+        "ML Lending"
+      ],
+      "investors": [
+        "Annicka Falkengren (former SEB CEO)",
+        "Jacob de Geer (iZettle)"
+      ],
+      "funding_total": "SEK 500 million+ lending capacity (Spring 2025)",
+      "stage": "Growth",
+      "employees": "50-75",
+      "website": "https://www.gilion.com",
+      "recent_activity": "Raised SEK 500M in debt financing for lending operations",
+      "industry": "Finance"
+    },
+    {
+      "name": "Intuicell",
+      "category": "Swedish AI Robotics",
+      "description": "Robothundar och AI baserat på 35 års hjärnforskning. Utvecklar avancerad robotik med AI-styrning.",
+      "founded": 2022,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 500+ million",
+      "arr": "Early revenue",
+      "technology": [
+        "Robotics",
+        "AI Navigation",
+        "Neuroscience-based AI"
+      ],
+      "investors": [
+        "Christer Fåhraeus",
+        "Navigare Ventures (Wallenberg)"
+      ],
+      "funding_total": "SEK 150+ million",
+      "stage": "Seed/Series A",
+      "employees": "25-35",
+      "website": "https://intuicell.com",
+      "recent_activity": "Backed by Wallenberg sphere, developing robot dogs for industrial use",
+      "logo_url": "https://intuicell.com/favicon.ico",
+      "industry": "Robotics"
+    },
+    {
+      "name": "Ipercept",
+      "category": "Swedish AI Industrial",
+      "description": "AI-assistent för maskinoperatörer och underhållsteam inom industri. Kunder: Airbus, Porsche, Saab, Scania, Toyota.",
+      "founded": 2018,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 800+ million",
+      "arr": "SEK 50+ million",
+      "technology": [
+        "Industrial AI",
+        "Predictive Maintenance",
+        "Computer Vision"
+      ],
+      "investors": [
+        "Industrial VCs"
+      ],
+      "funding_total": "SEK 200+ million",
+      "stage": "Growth",
+      "employees": "40-60",
+      "website": "https://www.ipercept.com",
+      "customers": "Airbus, Porsche, Saab, Scania, Toyota",
+      "recent_activity": "Scaling with major automotive and aerospace customers",
+      "industry": "Manufacturing"
+    },
+    {
+      "name": "Kognic",
+      "category": "Swedish AI Data",
+      "description": "Hjälper företag skapa högkvalitativa datasets för maskininlärning, främst fordonsindustrin (kamera/radar). Leading provider of high-quality training data for autonomous vehicles and computer vision AI.",
+      "founded": 2018,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 1.2 billion",
+      "arr": "SEK 95 million",
+      "technology": [
+        "Data Labeling",
+        "ML Training Data",
+        "Autonomous Driving",
+        "Computer Vision",
+        "Annotation Platform",
+        "Sensor Fusion"
+      ],
+      "investors": [
+        "Creandum (lead)",
+        "Nvidia",
+        "Inventure",
+        "Volvo Cars Tech Fund"
+      ],
+      "funding_rounds": [
+        {
+          "round": "Seed",
+          "amount": "SEK 35 million",
+          "date": "2019",
+          "lead": "Creandum"
+        },
+        {
+          "round": "Series A",
+          "amount": "SEK 120 million",
+          "date": "2021",
+          "lead": "Creandum + Nvidia",
+          "valuation": "SEK 450M"
+        },
+        {
+          "round": "Series B",
+          "amount": "SEK 250 million",
+          "date": "2023",
+          "lead": "Nvidia",
+          "valuation": "SEK 1.2B"
+        }
+      ],
+      "funding_total": "SEK 405 million",
+      "stage": "Series B",
+      "employees": "110",
+      "team": [
+        {
+          "name": "Danny Forster",
+          "role": "CEO & Co-founder",
+          "background": "Annotell (previous startup)"
+        },
+        {
+          "name": "Patrik Hultberg",
+          "role": "CPO & Co-founder",
+          "background": "Annotell"
+        },
+        {
+          "name": "ML Data Team",
+          "role": "Data Scientists & Engineers",
+          "size": "60+"
+        }
+      ],
+      "website": "https://www.kognic.com",
+      "logo_url": "https://logo.clearbit.com/kognic.com",
+      "products": "Kognic Platform (data labeling), Quality Assurance AI",
+      "customers": "Volvo Cars, Zenseact, Einride, Pony.ai, automotive Tier-1 suppliers",
+      "users": "500M+ labeled data points",
+      "markets": "Sweden, Germany, US, China",
+      "data_types": "Camera, LiDAR, Radar sensor data",
+      "partnerships": "Nvidia (strategic), Volvo Cars, Zenseact",
+      "growth_rate": "250% YoY",
+      "recent_activity": "Strategic Nvidia investment positioning as critical autonomous driving data infrastructure. Powering Volvo's next-gen autonomous systems.",
+      "milestones": [
+        {
+          "date": "2018",
+          "event": "Founded by Annotell alumni"
+        },
+        {
+          "date": "2019",
+          "event": "Seed SEK 35M from Creandum"
+        },
+        {
+          "date": "2021",
+          "event": "Series A SEK 120M with Nvidia participation"
+        },
+        {
+          "date": "2023",
+          "event": "Series B SEK 250M led by Nvidia"
+        },
+        {
+          "date": "2024",
+          "event": "500M+ data points labeled"
+        }
+      ],
+      "industry": "Education"
+    },
+    {
+      "name": "Leap",
+      "category": "Swedish AI Developer Tools",
+      "description": "Spotify-veteraner bygger AI-kodassistent för komplexa backend-behov, enterprise-lösningar och appar.",
+      "founded": 2024,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "Early",
+      "arr": "Early",
+      "technology": [
+        "AI Code Generation",
+        "Backend Development",
+        "Enterprise AI Tools"
+      ],
+      "investors": [
+        "Spotify veterans' capital"
+      ],
+      "funding_total": "Seed round",
+      "stage": "Seed",
+      "employees": "15-20",
+      "website": "https://tryleap.ai",
+      "founders": "Spotify veterans",
+      "recent_activity": "Building 'Lovable for enterprise backend'",
+      "logo_url": "https://tryleap.ai/favicon.ico",
+      "industry": "Developer Tools"
+    },
+    {
+      "name": "Modal",
+      "category": "Swedish AI Infrastructure",
+      "industry": "Cloud",
+      "description": "Låter AI-utvecklare koda direkt i molnet. AI-fokuserad cloud development platform.",
+      "founded": 2022,
+      "headquarters": "New York, USA (Swedish founder)",
+      "valuation": "SEK 2+ billion",
+      "arr": "SEK 100+ million",
+      "technology": [
+        "Cloud Infrastructure",
+        "AI Development Platform",
+        "Serverless"
+      ],
+      "investors": [
+        "Redpoint Ventures",
+        "Others"
+      ],
+      "funding_total": "SEK 350+ million",
+      "stage": "Growth",
+      "employees": "40-50",
+      "website": "https://www.modal.com",
+      "founder": "Erik Bernhardsson (ex-Spotify)",
+      "recent_activity": "Becoming infrastructure standard for AI developers"
+    },
+    {
+      "name": "Normain",
+      "category": "Swedish AI Automation",
+      "description": "Automatiserar manuella uppgifter för små och medelstora företag med AI-agenter.",
+      "founded": 2023,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 400+ million",
+      "arr": "SEK 20+ million",
+      "technology": [
+        "Business Process Automation",
+        "AI Agents",
+        "Workflow AI"
+      ],
+      "investors": [
+        "Joel Hellermark (Sana)",
+        "Mattias Miksche"
+      ],
+      "funding_total": "SEK 80+ million",
+      "stage": "Seed/Early Growth",
+      "employees": "20-30",
+      "website": "https://www.normain.com",
+      "logo_url": "https://logo.clearbit.com/normain.com",
+      "recent_activity": "Strong angel investor backing from AI ecosystem",
+      "industry": "Robotics"
+    },
+    {
+      "name": "Phyron",
+      "category": "Swedish AI Marketing",
+      "description": "Skapar tusentals reklamfilmer för bilförsäljare på under en minut med AI från fotos och information.",
+      "founded": 2017,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 500+ million",
+      "arr": "SEK 40+ million",
+      "technology": [
+        "Video Generation AI",
+        "Marketing Automation",
+        "Generative AI"
+      ],
+      "investors": [
+        "Nordic VCs"
+      ],
+      "funding_total": "SEK 150+ million",
+      "stage": "Growth",
+      "employees": "30-40",
+      "website": "https://www.phyron.com",
+      "customers": "Automotive dealers globally",
+      "recent_activity": "Scaling video AI for automotive marketing",
+      "industry": "Marketing"
+    },
+    {
+      "name": "Quartr",
+      "category": "Swedish AI FinTech",
+      "description": "Samlar och analyserar information om börsbolag världen över med AI - rapporter, pressmeddelanden, earnings calls.",
+      "founded": 2019,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 1.5+ billion",
+      "arr": "SEK 100+ million",
+      "technology": [
+        "Financial AI",
+        "Data Aggregation",
+        "NLP for Finance"
+      ],
+      "investors": [
+        "Öhmangruppen (Dinkelspiel)",
+        "Felix Hagnö (Spotify)",
+        "Yanno Capital (Storåkers)",
+        "Karl-Johan Persson (H&M Chairman)"
+      ],
+      "funding_total": "SEK 300+ million",
+      "stage": "Growth",
+      "employees": "60-80",
+      "website": "https://www.quartr.com",
+      "recent_activity": "Building financial intelligence platform with AI",
+      "industry": "Finance"
+    },
+    {
+      "name": "Rerun",
+      "category": "Swedish AI Spatial Computing",
+      "description": "Kombinerar AI och fysisk värld för drönare, robotar och spatial computing. Kunder: Google, Meta.",
+      "founded": 2021,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 1.5+ billion",
+      "arr": "SEK 30+ million",
+      "technology": [
+        "Spatial AI",
+        "Computer Vision",
+        "Robotics",
+        "AR/VR"
+      ],
+      "investors": [
+        "Nordic VCs"
+      ],
+      "funding_total": "SEK 170 million (Spring 2025)",
+      "stage": "Series A",
+      "employees": "25-35",
+      "website": "https://www.rerun.io",
+      "customers": "Google, Meta",
+      "recent_activity": "Major funding round, working with tech giants on spatial computing",
+      "industry": "Robotics"
+    },
+    {
+      "name": "Ronja",
+      "category": "Swedish AI Manufacturing",
+      "description": "AI-drivet operativsystem för tillverkningsindustrin. Grundat av Northvolt-avhoppare.",
+      "founded": 2024,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "Early",
+      "arr": "Pre-revenue",
+      "technology": [
+        "Manufacturing OS",
+        "Industrial AI",
+        "Process Control"
+      ],
+      "investors": [
+        "Climate/Industrial VCs"
+      ],
+      "funding_total": "Seed round",
+      "stage": "Seed",
+      "employees": "15-20",
+      "website": "https://www.ronja.tech",
+      "founders": "Northvolt alumni",
+      "recent_activity": "Just launched, leveraging Northvolt manufacturing expertise",
+      "logo_url": "https://logo.clearbit.com/ronja.tech",
+      "industry": "Manufacturing"
+    },
+    {
+      "name": "Scape",
+      "category": "Swedish AI CRM",
+      "description": "AI-drivet CRM-system (Customer Relationship Management). Deltog i Y Combinator, finansiering från Wallenberg och Legora-grundare.",
+      "founded": 2024,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 300+ million (post-YC)",
+      "arr": "Early",
+      "technology": [
+        "CRM AI",
+        "Sales Automation",
+        "Customer Intelligence"
+      ],
+      "investors": [
+        "Wallenberg (Navigare)",
+        "Max Junestrand (Legora)",
+        "Sebastian Knutsson (King)",
+        "Y Combinator"
+      ],
+      "funding_total": "SEK 50+ million",
+      "stage": "YC Alumni / Seed",
+      "employees": "10-15",
+      "website": "https://www.scape.app",
+      "recent_activity": "Graduated Y Combinator W25, strong Swedish investor backing",
+      "logo_url": "https://www.scape.app/favicon.ico",
+      "industry": "Sales"
+    },
+    {
+      "name": "Scaleout Systems",
+      "category": "Swedish AI Defense",
+      "description": "Låter företag använda maskininlärning där data produceras (edge AI). Med i NATO-program för civil→militär teknologi.",
+      "founded": 2019,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 600+ million",
+      "arr": "SEK 25+ million",
+      "technology": [
+        "Edge AI",
+        "Federated Learning",
+        "Military AI"
+      ],
+      "investors": [
+        "Defense tech investors"
+      ],
+      "funding_total": "SEK 120+ million",
+      "stage": "Series A",
+      "employees": "30-40",
+      "website": "https://www.scaleoutsystems.com",
+      "recent_activity": "Part of NATO civil-military technology program",
+      "industry": "Education"
+    },
+    {
+      "name": "Sics AI",
+      "category": "Swedish AI Robotics",
+      "description": "AI-hjärna som styr robotar och eliminerar behov av omprogrammering vid miljö- eller uppgiftsbyten.",
+      "founded": 2023,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 300+ million",
+      "arr": "Early",
+      "technology": [
+        "Robotics AI",
+        "Adaptive Control",
+        "Reinforcement Learning"
+      ],
+      "investors": [
+        "Robotics/Industrial VCs"
+      ],
+      "funding_total": "SEK 60+ million",
+      "stage": "Seed/Early",
+      "employees": "15-20",
+      "website": "https://sics.ai",
+      "recent_activity": "Developing universal robot control AI",
+      "logo_url": "https://sics.ai/favicon.ico",
+      "industry": "Education"
+    },
+    {
+      "name": "Starhive",
+      "category": "Swedish AI IT Management",
+      "description": "Automatiserar IT-hantering för stora företag - spåra datorer, hantera manualer och instruktioner med AI.",
+      "founded": 2022,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 400+ million",
+      "arr": "SEK 30+ million",
+      "technology": [
+        "IT Automation",
+        "Asset Management",
+        "AI Documentation"
+      ],
+      "investors": [
+        "Nordic VCs"
+      ],
+      "funding_total": "SEK 80+ million",
+      "stage": "Seed/Early Growth",
+      "employees": "20-25",
+      "website": "https://www.starhive.com",
+      "logo_url": "https://logo.clearbit.com/starhive.com",
+      "recent_activity": "Growing in enterprise IT automation market",
+      "industry": "Document Processing"
+    },
+    {
+      "name": "Stilla",
+      "category": "Swedish AI Collaboration",
+      "description": "AI-agent som automatiserar kommunikation mellan anställda. Grundat av Tictail/Shopify-veteraner.",
+      "founded": 2024,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "Early",
+      "arr": "Early",
+      "technology": [
+        "Workplace AI",
+        "Communication Automation",
+        "AI Agents"
+      ],
+      "investors": [
+        "E-commerce veterans"
+      ],
+      "funding_total": "Seed",
+      "stage": "Seed",
+      "employees": "10-15",
+      "website": "https://stilla.se",
+      "founders": "Tictail/Shopify veterans",
+      "recent_activity": "Just launched, automating workplace communication",
+      "logo_url": "https://stilla.se/favicon.ico",
+      "industry": "Robotics"
+    },
+    {
+      "name": "Strawberry",
+      "category": "Swedish AI Browser",
+      "description": "AI-assistenter i webbläsare som snabbt tagit fart globalt. Browser automation och AI assistance.",
+      "founded": 2023,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 800+ million",
+      "arr": "SEK 40+ million",
+      "technology": [
+        "Browser AI",
+        "Web Automation",
+        "AI Assistants"
+      ],
+      "investors": [
+        "Nordic tech VCs"
+      ],
+      "funding_total": "SEK 150+ million",
+      "stage": "Series A",
+      "employees": "25-30",
+      "website": "https://www.strawberry.ai",
+      "logo_url": "https://logo.clearbit.com/strawberry.ai",
+      "recent_activity": "Viral global growth, millions of users",
+      "industry": "Robotics"
+    },
+    {
+      "name": "Tzafon",
+      "category": "Swedish AI Foundation Models",
+      "industry": "AI Platform",
+      "description": "Bygger egna AI-agenter och språkmodell. Utvecklingskontor i Stockholm, Tel Aviv, San Francisco.",
+      "founded": 2023,
+      "headquarters": "Stockholm, Tel Aviv, San Francisco",
+      "valuation": "High (Sam Altman invested)",
+      "arr": "Unknown",
+      "technology": [
+        "Large Language Models",
+        "AI Agents",
+        "Foundation Models"
+      ],
+      "investors": [
+        "Sam Altman (OpenAI CEO)",
+        "Top-tier VCs"
+      ],
+      "funding_total": "Large undisclosed",
+      "stage": "Well-funded",
+      "employees": "40-60",
+      "website": "https://tzafon.ai",
+      "recent_activity": "Sam Altman personal investment, building proprietary LLM",
+      "logo_url": "https://tzafon.ai/favicon.ico"
+    },
+    {
+      "name": "Terra Labs",
+      "category": "Swedish AI Climate",
+      "industry": "Agriculture",
+      "description": "Revolutionerar skogsindustrin med AI och satelliter. Optimerar skogsbruk med satellitdata och AI-analys.",
+      "founded": 2023,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 500+ million",
+      "arr": "Early",
+      "technology": [
+        "Satellite AI",
+        "Forest Management",
+        "Climate Tech"
+      ],
+      "investors": [
+        "Jacob de Geer (Zettle)",
+        "Niklas Adalberth (Klarna/Norrsken)"
+      ],
+      "funding_total": "SEK 100+ million",
+      "stage": "Seed/Series A",
+      "employees": "20-30",
+      "website": "https://terralabs.com",
+      "recent_activity": "Backed by Swedish tech billionaires, targeting forest industry",
+      "logo_url": "https://terralabs.com/favicon.ico"
+    },
+    {
+      "name": "Turbotic",
+      "category": "Swedish AI Cost Optimization",
+      "description": "Kapar kostnader för AI- och automationslösningar. Gör AI mer ekonomiskt för företag.",
+      "founded": 2022,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 300+ million",
+      "arr": "SEK 20+ million",
+      "technology": [
+        "AI Cost Optimization",
+        "Infrastructure Efficiency"
+      ],
+      "investors": [
+        "Mats Qvibergs Öresund"
+      ],
+      "funding_total": "SEK 60+ million",
+      "stage": "Seed/Early",
+      "employees": "15-20",
+      "website": "https://www.turbotic.com",
+      "logo_url": "https://logo.clearbit.com/turbotic.com",
+      "recent_activity": "Backed by Öresund investment company",
+      "industry": "Robotics"
+    },
+    {
+      "name": "Validio",
+      "category": "Swedish AI Data Quality",
+      "industry": "Data",
+      "description": "Säkrar datakvalitet för AI-användning. Nått positivt kassaflöde med stora USA-kunder.",
+      "founded": 2020,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 800+ million",
+      "arr": "SEK 60+ million (cash flow positive)",
+      "technology": [
+        "Data Quality",
+        "AI Data Validation",
+        "Data Observability"
+      ],
+      "investors": [
+        "Sven Hagströmer (Avanza)",
+        "J12"
+      ],
+      "funding_total": "SEK 150+ million",
+      "stage": "Growth",
+      "employees": "40-50",
+      "website": "https://www.validio.io",
+      "customers": "Major US enterprise customers",
+      "recent_activity": "Reached profitability, scaling in US market"
+    },
+    {
+      "name": "Vantel",
+      "category": "Swedish AI Insurance",
+      "description": "Automatiserar arbetsuppgifter för försäkringsbranschen. Y Combinator alumni.",
+      "founded": 2024,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 250+ million (post-YC)",
+      "arr": "Early",
+      "technology": [
+        "Insurance AI",
+        "Claims Automation",
+        "Document Processing"
+      ],
+      "investors": [
+        "Y Combinator",
+        "Others"
+      ],
+      "funding_total": "SEK 40+ million",
+      "stage": "YC Alumni / Seed",
+      "employees": "10-12",
+      "website": "https://vantel.ai",
+      "recent_activity": "Y Combinator graduate, automating insurance workflows",
+      "logo_url": "https://vantel.ai/favicon.ico",
+      "industry": "Document Processing"
+    },
+    {
+      "name": "Vesence",
+      "category": "Swedish AI LegalTech",
+      "description": "'Cursor for lawyers' - AI-agenter för jurister och professionella. Y Combinator alumni.",
+      "founded": 2024,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 300+ million (post-YC)",
+      "arr": "Early",
+      "technology": [
+        "Legal AI",
+        "AI Agents for Professionals",
+        "Document Automation"
+      ],
+      "investors": [
+        "Y Combinator",
+        "Legal tech investors"
+      ],
+      "funding_total": "SEK 50+ million",
+      "stage": "YC Alumni / Seed",
+      "employees": "12-15",
+      "website": "https://www.vesence.com",
+      "recent_activity": "Fresh out of Y Combinator, building legal AI tools",
+      "logo_url": "https://www.vesence.com/favicon.ico",
+      "industry": "Legal"
+    },
+    {
+      "name": "Vetnio",
+      "category": "Swedish AI Veterinary",
+      "description": "Automatiserar journalskrivning för veterinärer med AI-assisterad dokumentation.",
+      "founded": 2023,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 200+ million",
+      "arr": "SEK 10+ million",
+      "technology": [
+        "Veterinary AI",
+        "Medical Documentation",
+        "Clinical AI"
+      ],
+      "investors": [
+        "Healthcare VCs"
+      ],
+      "funding_total": "SEK 40+ million",
+      "stage": "Seed",
+      "employees": "10-15",
+      "website": "https://vetnio.com",
+      "recent_activity": "Growing in Nordic veterinary market",
+      "logo_url": "https://vetnio.com/favicon.ico",
+      "industry": "Healthcare"
+    },
+    {
+      "name": "Vionlabs",
+      "category": "Swedish AI Media",
+      "description": "AI för att analysera och rekommendera video. Kunder: Paramount, Apple. Tommy Jacobssons fokus efter Marshall-affären.",
+      "founded": 2015,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 1+ billion",
+      "arr": "SEK 80+ million",
+      "technology": [
+        "Video AI",
+        "Content Recommendation",
+        "Computer Vision"
+      ],
+      "investors": [
+        "Tommy Jacobsson (Marshall exit)"
+      ],
+      "funding_total": "SEK 250+ million",
+      "stage": "Growth",
+      "employees": "50-70",
+      "website": "https://www.vionlabs.com",
+      "customers": "Paramount, Apple, Major streamers",
+      "recent_activity": "Scaling with major media companies",
+      "industry": "Computer Vision"
+    },
+    {
+      "name": "Corti",
+      "category": "Healthcare",
+      "description": "AI that helps emergency dispatchers save lives by detecting critical conditions during calls.",
+      "founded": 2016,
+      "headquarters": "Copenhagen, Denmark",
+      "valuation": "€200+ million",
+      "technology": [
+        "Voice AI",
+        "Healthcare AI",
+        "Emergency Response"
+      ],
+      "investors": [
+        "Prosus Ventures",
+        "Chr. Augustinus Fabrikker"
+      ],
+      "funding_total": "€70 million",
+      "stage": "Series B",
+      "employees": "80-100",
+      "website": "https://www.corti.ai",
+      "recent_activity": "Expanding globally, used in 911 dispatch centers",
+      "industry": "Healthcare"
+    },
+    {
+      "name": "Minutes.ai",
+      "category": "Productivity",
+      "description": "AI meeting assistant that automatically generates summaries and action items from meetings.",
+      "founded": 2022,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "NLP",
+        "Speech Recognition",
+        "Meeting AI"
+      ],
+      "investors": [
+        "Seedcamp",
+        "Nordic Makers"
+      ],
+      "stage": "Seed",
+      "employees": "10-15",
+      "website": "https://myminutes.ai",
+      "recent_activity": "Growing user base in Nordics",
+      "logo_url": "https://myminutes.ai/favicon.ico",
+      "industry": "Computer Vision"
+    },
+    {
+      "name": "Depict",
+      "category": "E-Commerce",
+      "industry": "E-Commerce",
+      "description": "AI-powered product discovery and search for e-commerce, improving conversion rates.",
+      "founded": 2021,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "Search AI",
+        "Recommendation Systems",
+        "E-commerce AI"
+      ],
+      "investors": [
+        "Creandum",
+        "byFounders"
+      ],
+      "funding_total": "€15 million",
+      "stage": "Series A",
+      "employees": "25-35",
+      "website": "https://www.depict.ai",
+      "recent_activity": "Rapid growth in Nordic e-commerce"
+    },
+    {
+      "name": "Hour One",
+      "category": "Content Creation",
+      "description": "AI video generation platform creating synthetic videos with AI avatars (Israeli-Swedish connection).",
+      "founded": 2019,
+      "headquarters": "Tel Aviv, Israel (Nordic expansion)",
+      "valuation": "$100+ million",
+      "technology": [
+        "Synthetic Media",
+        "Video AI",
+        "Digital Avatars"
+      ],
+      "investors": [
+        "Insight Partners",
+        "Samsung Next"
+      ],
+      "funding_total": "$20 million",
+      "stage": "Series A",
+      "employees": "40-60",
+      "website": "https://hourone.ai",
+      "recent_activity": "Expanding in Nordic enterprise market",
+      "logo_url": "https://hourone.ai/favicon.ico",
+      "industry": "Computer Vision"
+    },
+    {
+      "name": "Einride",
+      "category": "Swedish AI Autonomous Vehicles",
+      "description": "Autonomous electric freight vehicles and intelligent freight mobility. World's first commercial autonomous electric heavy transport vehicle. Transforming freight with AI-powered logistics.",
+      "founded": 2016,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "$1.6 billion (Series C)",
+      "arr": "$80+ million",
+      "technology": [
+        "Autonomous Driving",
+        "AI Routing",
+        "Electric Vehicles",
+        "Remote Operations",
+        "Fleet Management AI"
+      ],
+      "investors": [
+        "EQT Ventures (lead)",
+        "Northzone",
+        "Polar Structure",
+        "Ericsson Ventures",
+        "NordicNinja VC"
+      ],
+      "funding_rounds": [
+        {
+          "round": "Seed",
+          "amount": "$5 million",
+          "date": "2017",
+          "lead": "EQT Ventures"
+        },
+        {
+          "round": "Series A",
+          "amount": "$25 million",
+          "date": "2018",
+          "lead": "Northzone"
+        },
+        {
+          "round": "Series B",
+          "amount": "$110 million",
+          "date": "2020",
+          "lead": "EQT Ventures",
+          "valuation": "$500M"
+        },
+        {
+          "round": "Series C",
+          "amount": "$500 million",
+          "date": "2022",
+          "lead": "EQT Ventures",
+          "valuation": "$1.6B"
+        }
+      ],
+      "funding_total": "$640 million",
+      "stage": "Unicorn",
+      "employees": "450+",
+      "team": [
+        {
+          "name": "Robert Falck",
+          "role": "CEO & Founder",
+          "background": "Volvo, Northvolt alumni"
+        },
+        {
+          "name": "Linnéa Kornehed Falck",
+          "role": "CPO & Co-founder",
+          "background": "Design innovation"
+        },
+        {
+          "name": "Autonomous Tech Team",
+          "role": "AI/Robotics Engineers",
+          "size": "180+"
+        }
+      ],
+      "website": "https://www.einride.tech",
+      "logo_url": "https://logo.clearbit.com/einride.tech",
+      "products": "Einride Pod (autonomous truck), Einride Saga (freight platform)",
+      "customers": "Oatly, Coca-Cola, Lidl, GE Appliances, Electrolux, Maersk",
+      "markets": "Sweden, US, Germany, UAE",
+      "routes": "300+ autonomous routes operational",
+      "fleet_size": "500+ connected vehicles",
+      "co2_reduction": "90% reduction vs diesel trucks",
+      "partnerships": "DB Schenker, Maersk, GE Appliances, Bridgestone",
+      "awards": "TIME Best Inventions, Fast Company Most Innovative",
+      "recent_activity": "$500M Series C achieving unicorn status. Major US expansion with GE Appliances partnership. Operating 300+ autonomous routes globally. 90% CO2 reduction impact.",
+      "milestones": [
+        {
+          "date": "2016",
+          "event": "Company founded by Robert Falck"
+        },
+        {
+          "date": "2017",
+          "event": "Seed $5M from EQT Ventures"
+        },
+        {
+          "date": "2018",
+          "event": "World's first autonomous heavy transport on public road"
+        },
+        {
+          "date": "2020",
+          "event": "Series B $110M"
+        },
+        {
+          "date": "2022",
+          "event": "Series C $500M - Unicorn status"
+        },
+        {
+          "date": "2023",
+          "event": "US market launch"
+        },
+        {
+          "date": "2024",
+          "event": "300+ routes operational globally"
+        }
+      ],
+      "industry": "Logistics"
+    },
+    {
+      "name": "Recordly",
+      "category": "LegalTech",
+      "description": "AI-powered legal document automation for Nordic law firms.",
+      "founded": 2023,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "Document AI",
+        "LegalTech",
+        "Automation"
+      ],
+      "investors": [
+        "Angel investors"
+      ],
+      "stage": "Pre-seed",
+      "employees": "5-8",
+      "website": "https://recordly.ai",
+      "recent_activity": "Early traction with law firms",
+      "logo_url": "https://recordly.ai/favicon.ico",
+      "industry": "Legal"
+    },
+    {
+      "name": "Silo AI",
+      "category": "Finnish AI Leader",
+      "industry": "AI Platform",
+      "description": "Europe's largest private AI lab building custom AI solutions for enterprises. Acquired by AMD for $665 million.",
+      "founded": 2017,
+      "headquarters": "Helsinki, Finland",
+      "valuation": "$665 million (acquisition)",
+      "technology": [
+        "Large Language Models",
+        "Computer Vision",
+        "Custom AI Solutions"
+      ],
+      "investors": [
+        "AMD (acquired)",
+        "Lakestar",
+        "LRV Health"
+      ],
+      "funding_total": "$90 million",
+      "stage": "Acquired",
+      "employees": "300+",
+      "website": "https://www.silo.ai",
+      "logo_url": "https://logo.clearbit.com/silo.ai",
+      "recent_activity": "Acquired by AMD for $665M in July 2024, Europe's largest AI acquisition"
+    },
+    {
+      "name": "Relesys",
+      "category": "Danish AI Workplace",
+      "description": "AI-powered employee communication and engagement platform for frontline workers across retail and service industries.",
+      "founded": 2016,
+      "headquarters": "Copenhagen, Denmark",
+      "valuation": "€100+ million",
+      "technology": [
+        "Workplace AI",
+        "Communication Platform",
+        "Employee Engagement"
+      ],
+      "investors": [
+        "Headline",
+        "byFounders"
+      ],
+      "funding_total": "€25 million",
+      "stage": "Series B",
+      "employees": "100+",
+      "website": "https://relesys.com",
+      "logo_url": "https://relesys.com/favicon.ico",
+      "recent_activity": "Expanding across Europe with major retail chains",
+      "industry": "E-Commerce"
+    },
+    {
+      "name": "Strise",
+      "category": "Norwegian AI FinTech",
+      "description": "AI-powered KYC and compliance platform automating customer onboarding and monitoring for financial institutions.",
+      "founded": 2018,
+      "headquarters": "Oslo, Norway",
+      "valuation": "NOK 500+ million",
+      "technology": [
+        "Compliance AI",
+        "KYC Automation",
+        "Risk Assessment"
+      ],
+      "investors": [
+        "SNÖ Ventures",
+        "Alliance Venture"
+      ],
+      "funding_total": "NOK 150 million",
+      "stage": "Series A",
+      "employees": "60+",
+      "website": "https://www.strise.ai",
+      "logo_url": "https://logo.clearbit.com/strise.ai",
+      "recent_activity": "Strong growth in Nordic financial sector compliance",
+      "industry": "Finance"
+    },
+    {
+      "name": "Neural DSP",
+      "category": "Finnish AI Audio",
+      "description": "AI-powered guitar amp and effects modeling creating ultra-realistic digital audio processing for musicians worldwide.",
+      "founded": 2015,
+      "headquarters": "Helsinki, Finland",
+      "valuation": "$200+ million",
+      "arr": "$50+ million",
+      "technology": [
+        "Audio AI",
+        "Neural Networks",
+        "Digital Signal Processing"
+      ],
+      "investors": [
+        "Bootstrap"
+      ],
+      "funding_total": "Bootstrap/Profitable",
+      "stage": "Profitable",
+      "employees": "50+",
+      "website": "https://www.neuraldsp.com",
+      "logo_url": "https://logo.clearbit.com/neuraldsp.com",
+      "recent_activity": "Highly profitable, 500K+ users globally",
+      "industry": "Energy"
+    },
+    {
+      "name": "Alva Labs",
+      "category": "Swedish AI HR",
+      "description": "AI-based psychometric testing and candidate assessment platform helping companies make better hiring decisions.",
+      "founded": 2016,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 500+ million",
+      "technology": [
+        "Psychometric AI",
+        "HR Tech",
+        "Predictive Analytics"
+      ],
+      "investors": [
+        "Inbox Capital",
+        "J12"
+      ],
+      "funding_total": "SEK 100+ million",
+      "stage": "Series A",
+      "employees": "80+",
+      "website": "https://www.alvalabs.io",
+      "logo_url": "https://logo.clearbit.com/alvalabs.io",
+      "recent_activity": "Expanding to UK and DACH markets",
+      "industry": "HR"
+    },
+    {
+      "name": "Aiven",
+      "category": "Finnish AI Infrastructure",
+      "description": "Open-source data infrastructure platform with AI-powered database management serving global enterprises.",
+      "founded": 2016,
+      "headquarters": "Helsinki, Finland",
+      "valuation": "$3 billion",
+      "arr": "$150+ million",
+      "technology": [
+        "Cloud Infrastructure",
+        "Database AI",
+        "Open Source"
+      ],
+      "investors": [
+        "Atomico",
+        "IVP",
+        "Earlybird"
+      ],
+      "funding_total": "$510 million",
+      "stage": "Series D",
+      "employees": "500+",
+      "website": "https://www.aiven.io",
+      "logo_url": "https://logo.clearbit.com/aiven.io",
+      "recent_activity": "$210M Series D at $3B valuation",
+      "industry": "Energy"
+    },
+    {
+      "name": "Supermetrics",
+      "category": "Finnish AI Marketing",
+      "description": "AI-powered marketing data integration platform used by 200K+ marketers to automate reporting and analytics.",
+      "founded": 2013,
+      "headquarters": "Helsinki, Finland",
+      "valuation": "$500+ million",
+      "arr": "$100+ million",
+      "technology": [
+        "Marketing AI",
+        "Data Integration",
+        "Analytics Automation"
+      ],
+      "investors": [
+        "Sorenson Capital",
+        "Vista Equity Partners"
+      ],
+      "funding_total": "$150 million",
+      "stage": "Growth",
+      "employees": "400+",
+      "website": "https://www.supermetrics.com",
+      "logo_url": "https://logo.clearbit.com/supermetrics.com",
+      "recent_activity": "Profitable, $100M+ ARR with 200K customers",
+      "industry": "Marketing"
+    },
+    {
+      "name": "Dreamdata",
+      "category": "Danish AI B2B Analytics",
+      "description": "AI-powered B2B revenue attribution platform helping companies understand their entire customer journey.",
+      "founded": 2018,
+      "headquarters": "Copenhagen, Denmark",
+      "valuation": "€80+ million",
+      "technology": [
+        "Attribution AI",
+        "B2B Analytics",
+        "Revenue Intelligence"
+      ],
+      "investors": [
+        "Sønr Partners",
+        "Construct Capital"
+      ],
+      "funding_total": "€15 million",
+      "stage": "Series A",
+      "employees": "60+",
+      "website": "https://www.dreamdata.io",
+      "logo_url": "https://logo.clearbit.com/dreamdata.io",
+      "recent_activity": "Fast growth in B2B SaaS attribution",
+      "industry": "Energy"
+    },
+    {
+      "name": "Hoxhunt",
+      "category": "Finnish AI Cybersecurity",
+      "description": "AI-powered cybersecurity training platform using behavioral science to protect organizations from phishing attacks.",
+      "founded": 2016,
+      "headquarters": "Helsinki, Finland",
+      "valuation": "$150+ million",
+      "technology": [
+        "Security AI",
+        "Behavioral Science",
+        "Phishing Detection"
+      ],
+      "investors": [
+        "Evolution Equity Partners",
+        "MassMutual Ventures"
+      ],
+      "funding_total": "$56 million",
+      "stage": "Series B",
+      "employees": "120+",
+      "website": "https://www.hoxhunt.com",
+      "logo_url": "https://logo.clearbit.com/hoxhunt.com",
+      "recent_activity": "Protecting 1M+ users across 150+ countries",
+      "industry": "Education"
+    },
+    {
+      "name": "Unsilo",
+      "category": "Danish AI Research",
+      "description": "AI for academic publishing and research discovery, helping researchers find relevant scientific content. Acquired by Wiley.",
+      "founded": 2014,
+      "headquarters": "Copenhagen, Denmark",
+      "valuation": "Acquired",
+      "technology": [
+        "Research AI",
+        "NLP",
+        "Knowledge Graphs"
+      ],
+      "investors": [
+        "Wiley (acquired)",
+        "INKEF Capital"
+      ],
+      "funding_total": "$7 million",
+      "stage": "Acquired",
+      "employees": "50+",
+      "website": "https://www.unsilo.ai",
+      "logo_url": "https://logo.clearbit.com/unsilo.ai",
+      "recent_activity": "Acquired by Wiley, powering academic research discovery",
+      "industry": "Market Research"
+    },
+    {
+      "name": "Omnipresent",
+      "category": "Norwegian AI HR",
+      "description": "AI-powered global employment platform helping companies hire and manage international teams compliantly.",
+      "founded": 2019,
+      "headquarters": "Oslo, Norway",
+      "valuation": "$500+ million",
+      "technology": [
+        "HR AI",
+        "Compliance Automation",
+        "Global Payroll"
+      ],
+      "investors": [
+        "Summit Partners",
+        "Kinnevik"
+      ],
+      "funding_total": "$120 million",
+      "stage": "Series B",
+      "employees": "300+",
+      "website": "https://www.omnipresent.com",
+      "logo_url": "https://logo.clearbit.com/omnipresent.com",
+      "recent_activity": "Rapid global expansion, $120M Series B",
+      "industry": "HR"
+    },
+    {
+      "name": "Leena AI",
+      "category": "Finnish AI Workplace",
+      "description": "AI-powered virtual assistant for employee experience, automating HR support and workplace queries with conversational AI.",
+      "founded": 2018,
+      "headquarters": "Helsinki, Finland",
+      "valuation": "$50+ million",
+      "technology": [
+        "Conversational AI",
+        "Workplace Automation",
+        "HR Chatbot"
+      ],
+      "investors": [
+        "Bessemer Venture Partners",
+        "Greycroft"
+      ],
+      "funding_total": "$40 million",
+      "stage": "Series B",
+      "employees": "100+",
+      "website": "https://www.leena.ai",
+      "logo_url": "https://logo.clearbit.com/leena.ai",
+      "recent_activity": "Serving 1M+ employees globally",
+      "industry": "HR"
+    },
+    {
+      "name": "Pulsify",
+      "category": "Danish AI Health",
+      "description": "AI-powered cardiovascular diagnostics platform using advanced algorithms for early heart disease detection.",
+      "founded": 2018,
+      "headquarters": "Copenhagen, Denmark",
+      "valuation": "DKK 200+ million",
+      "technology": [
+        "Healthcare AI",
+        "Cardiovascular Diagnostics",
+        "Medical Imaging"
+      ],
+      "investors": [
+        "Nordic Eye Venture Fund",
+        "Dreamcraft Ventures"
+      ],
+      "funding_total": "DKK 50 million",
+      "stage": "Series A",
+      "employees": "40+",
+      "website": "https://www.pulsifyai.com",
+      "logo_url": "https://www.pulsifyai.com/favicon.ico",
+      "recent_activity": "CE-marked medical device, clinical validation ongoing",
+      "industry": "Healthcare"
+    },
+    {
+      "name": "Dispelix",
+      "category": "Finnish AI AR",
+      "description": "AI-enhanced augmented reality display technology for smart glasses and AR wearables using waveguide optics.",
+      "founded": 2015,
+      "headquarters": "Espoo, Finland",
+      "valuation": "$100+ million",
+      "technology": [
+        "AR Displays",
+        "Waveguide Optics",
+        "Computer Vision"
+      ],
+      "investors": [
+        "Lifeline Ventures",
+        "Sony Innovation Fund"
+      ],
+      "funding_total": "$50 million",
+      "stage": "Series B",
+      "employees": "80+",
+      "website": "https://www.dispelix.com",
+      "logo_url": "https://logo.clearbit.com/dispelix.com",
+      "recent_activity": "Partnering with major smart glasses manufacturers",
+      "industry": "Computer Vision"
+    },
+    {
+      "name": "Penni.io",
+      "category": "Danish AI LegalTech",
+      "description": "AI-powered contract analysis and review platform automating legal document processing for law firms and corporates.",
+      "founded": 2017,
+      "headquarters": "Copenhagen, Denmark",
+      "valuation": "DKK 150+ million",
+      "technology": [
+        "Legal AI",
+        "Contract Analysis",
+        "NLP"
+      ],
+      "investors": [
+        "PreSeed Ventures",
+        "Dreamcraft Ventures"
+      ],
+      "funding_total": "DKK 40 million",
+      "stage": "Series A",
+      "employees": "35+",
+      "website": "https://www.penni.io",
+      "logo_url": "https://logo.clearbit.com/penni.io",
+      "recent_activity": "Expanding across Nordic legal market",
+      "industry": "Legal"
+    },
+    {
+      "name": "Vertical",
+      "category": "Norwegian AI Climate",
+      "description": "AI-powered vertical farming technology optimizing crop yields using machine learning and automation for sustainable food production.",
+      "founded": 2016,
+      "headquarters": "Oslo, Norway",
+      "valuation": "NOK 400+ million",
+      "technology": [
+        "AgriTech AI",
+        "Vertical Farming",
+        "Crop Optimization"
+      ],
+      "investors": [
+        "Astanor Ventures",
+        "SNÖ Ventures"
+      ],
+      "funding_total": "NOK 200 million",
+      "stage": "Series A",
+      "employees": "60+",
+      "website": "https://vertical.ai",
+      "logo_url": "https://vertical.ai/favicon.ico",
+      "recent_activity": "Scaling vertical farming across Nordics",
+      "industry": "Education"
+    },
+    {
+      "name": "Speechly",
+      "category": "Finnish AI Voice",
+      "description": "AI-powered voice interface API enabling developers to add real-time voice commands to applications with high accuracy.",
+      "founded": 2019,
+      "headquarters": "Helsinki, Finland",
+      "valuation": "$30+ million",
+      "technology": [
+        "Voice AI",
+        "Speech Recognition",
+        "Real-time NLP"
+      ],
+      "investors": [
+        "Cherry Ventures",
+        "Seedcamp"
+      ],
+      "funding_total": "$9 million",
+      "stage": "Seed/Series A",
+      "employees": "25+",
+      "website": "https://www.speechly.com",
+      "logo_url": "https://logo.clearbit.com/speechly.com",
+      "recent_activity": "Voice API for 1000+ applications",
+      "industry": "Developer Tools"
+    },
+    {
+      "name": "Timeshifter",
+      "category": "Danish AI Health",
+      "description": "AI-powered jet lag and shift work app using circadian neuroscience to optimize sleep and performance for travelers.",
+      "founded": 2018,
+      "headquarters": "Copenhagen, Denmark",
+      "valuation": "$40+ million",
+      "technology": [
+        "Circadian AI",
+        "Sleep Optimization",
+        "Neuroscience"
+      ],
+      "investors": [
+        "PreSeed Ventures",
+        "Danish Angels"
+      ],
+      "funding_total": "$8 million",
+      "stage": "Series A",
+      "employees": "20+",
+      "website": "https://www.timeshifter.com",
+      "logo_url": "https://logo.clearbit.com/timeshifter.com",
+      "recent_activity": "1M+ downloads, partnerships with airlines",
+      "industry": "Healthcare"
+    },
+    {
+      "name": "Modulai",
+      "category": "Norwegian AI Industrial",
+      "description": "AI-powered predictive maintenance for industrial equipment using sensor data and machine learning to prevent failures.",
+      "founded": 2018,
+      "headquarters": "Oslo, Norway",
+      "valuation": "NOK 250+ million",
+      "technology": [
+        "Predictive Maintenance",
+        "Industrial IoT",
+        "ML Operations"
+      ],
+      "investors": [
+        "Investinor",
+        "Alliance Venture"
+      ],
+      "funding_total": "NOK 80 million",
+      "stage": "Series A",
+      "employees": "45+",
+      "website": "https://www.modulai.io",
+      "logo_url": "https://logo.clearbit.com/modulai.io",
+      "recent_activity": "Serving oil & gas and manufacturing sectors",
+      "industry": "Education"
+    },
+    {
+      "name": "Alice",
+      "category": "Danish AI Education",
+      "description": "AI-powered personalised learning platform where students upload study materials and receive adaptive notes, quizzes, flashcards and simulated tests. Y Combinator alumni.",
+      "founded": 2024,
+      "headquarters": "Copenhagen, Denmark",
+      "valuation": "€30+ million (post-YC)",
+      "technology": [
+        "Educational AI",
+        "Adaptive Learning",
+        "Personalization"
+      ],
+      "investors": [
+        "Y Combinator",
+        "Cherry Ventures",
+        "PSV Tech"
+      ],
+      "funding_total": "€4.2 million",
+      "stage": "YC Alumni / Seed",
+      "employees": "15-20",
+      "website": "https://www.alice.tech",
+      "logo_url": "https://logo.clearbit.com/alice.tech",
+      "recent_activity": "YC W24, freemium model with university partnerships",
+      "industry": "Education"
+    },
+    {
+      "name": "Dream Stories",
+      "category": "Swedish AI Content",
+      "description": "AI-powered personalised storybooks for children featuring individuals as characters. Subscription service creating unique reading experiences.",
+      "founded": 2024,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 150+ million",
+      "technology": [
+        "Generative AI",
+        "Content Creation",
+        "Personalization"
+      ],
+      "investors": [
+        "Nordic VCs"
+      ],
+      "funding_total": "Undisclosed",
+      "stage": "Seed",
+      "employees": "10-15",
+      "website": "https://dreamstories.ai",
+      "logo_url": "https://dreamstories.ai/favicon.ico",
+      "recent_activity": "Personalized children's content using generative AI",
+      "industry": "Energy"
+    },
+    {
+      "name": "Polar",
+      "category": "Swedish AI FinTech",
+      "description": "Payment infrastructure for AI-native SaaS companies, described as 'Stripe 2.0' for the new era of software developers. Founded by Tictail/Shopify alumni.",
+      "founded": 2022,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "$80+ million",
+      "technology": [
+        "Payment Infrastructure",
+        "AI-native SaaS",
+        "FinTech"
+      ],
+      "investors": [
+        "Accel"
+      ],
+      "funding_total": "$10 million",
+      "stage": "Seed",
+      "employees": "20-30",
+      "website": "https://www.polar.sh",
+      "logo_url": "https://logo.clearbit.com/polar.sh",
+      "founders": "Birk Jernström (Tictail/Shopify)",
+      "recent_activity": "$10M seed led by Accel for AI-native payments",
+      "industry": "Finance"
+    },
+    {
+      "name": "All Gravy",
+      "category": "Danish AI Workplace",
+      "description": "AI-first employee engagement platform for restaurants and retail improving work experience for frontline staff and customer experience.",
+      "founded": 2020,
+      "headquarters": "Copenhagen, Denmark",
+      "valuation": "€25+ million",
+      "technology": [
+        "Employee Engagement",
+        "Workplace AI",
+        "Frontline Staff"
+      ],
+      "investors": [
+        "Scale Capital",
+        "Moonfire Ventures"
+      ],
+      "funding_total": "$2.9 million",
+      "stage": "Seed",
+      "employees": "15-25",
+      "website": "https://www.allgravy.com",
+      "logo_url": "https://logo.clearbit.com/allgravy.com",
+      "recent_activity": "$2.9M round co-led by Scale Capital and Moonfire 2025",
+      "industry": "E-Commerce"
+    },
+    {
+      "name": "Ethira",
+      "category": "Swedish AI Security",
+      "description": "Next-gen risk and resilience platform powered by agentic AI. Transforms how organisations manage operational risk, shifting from reactive compliance to proactive visibility and intelligent action.",
+      "founded": 2025,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "Early stage",
+      "technology": [
+        "Risk Management AI",
+        "Compliance Automation",
+        "Agentic AI"
+      ],
+      "investors": [
+        "Early backers"
+      ],
+      "funding_total": "Undisclosed",
+      "stage": "Pre-seed",
+      "employees": "10-15",
+      "website": "https://www.ethira.dev",
+      "logo_url": "https://www.ethira.dev/favicon.ico",
+      "founders": "Jasper Mills, Lucas de Araújo, Fredrik Ygge",
+      "recent_activity": "Just launched, targeting cyber resilience compliance",
+      "industry": "Energy"
+    },
+    {
+      "name": "ZeroGPT",
+      "category": "International AI Detection",
+      "description": "Advanced AI content detector tool for identifying ChatGPT, GPT-4, GPT-5, Gemini, Grok, DeepSeek and other AI-generated content. Trusted by millions of users for detecting AI-written text.",
+      "founded": 2023,
+      "headquarters": "International",
+      "valuation": "Undisclosed",
+      "technology": [
+        "AI Detection",
+        "NLP",
+        "Content Analysis"
+      ],
+      "investors": [
+        "Undisclosed"
+      ],
+      "funding_total": "Undisclosed",
+      "stage": "Growth",
+      "employees": "20-50",
+      "website": "https://www.zerogpt.com",
+      "logo_url": "https://www.zerogpt.com/favicon.ico",
+      "customers": "Millions of users",
+      "recent_activity": "Leading AI detection tool with multiple language support and API access",
+      "industry": "Media"
+    },
+    {
+      "name": "Thinkvas AI",
+      "category": "International AI Productivity",
+      "description": "Multi-threaded AI knowledge canvas enabling parallel AI conversations with branching and context inheritance. Visual thinking tool that breaks free from linear AI chats.",
+      "founded": 2024,
+      "headquarters": "International",
+      "valuation": "Early stage",
+      "technology": [
+        "Knowledge Graphs",
+        "Canvas Interface",
+        "AI Chat"
+      ],
+      "investors": [
+        "Learnest.org (501c3)"
+      ],
+      "funding_total": "Non-profit backed",
+      "stage": "Beta",
+      "employees": "5-10",
+      "website": "https://www.thinkvasai.com",
+      "logo_url": "https://www.thinkvasai.com/favicon.ico",
+      "recent_activity": "Public beta for research and education purposes",
+      "industry": "HR"
+    },
+    {
+      "name": "JourneyDXP",
+      "category": "International AI Experience",
+      "description": "Digital experience platform for creating interactive customer journeys and experiences using AI-powered tools.",
+      "founded": 2020,
+      "headquarters": "International",
+      "valuation": "Undisclosed",
+      "technology": [
+        "Customer Experience",
+        "Digital Journey",
+        "AI Personalization"
+      ],
+      "investors": [
+        "Undisclosed"
+      ],
+      "funding_total": "Undisclosed",
+      "stage": "Growth",
+      "employees": "20-50",
+      "website": "https://journeydxp.com",
+      "logo_url": "https://journeydxp.com/favicon.ico",
+      "recent_activity": "Building AI-powered digital experience solutions",
+      "industry": "Energy"
+    },
+    {
+      "name": "Agaton AI",
+      "category": "Swedish AI Sales",
+      "description": "Voice-enabled, domain-specific AI agents for sales and customer service teams. AI 'coworkers' join tech stack, listen to calls, analyse and respond with feedback.",
+      "founded": 2020,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 200+ million",
+      "technology": [
+        "Voice AI",
+        "Sales Automation",
+        "Call Analytics"
+      ],
+      "investors": [
+        "Aligned VC",
+        "Foundry Ventures"
+      ],
+      "funding_total": "$4 million",
+      "stage": "Seed",
+      "employees": "20-30",
+      "website": "https://www.agaton.ai",
+      "logo_url": "https://logo.clearbit.com/agaton.ai",
+      "recent_activity": "Seed round from Foundry Ventures 2025",
+      "industry": "Sales"
+    },
+    {
+      "name": "Zero",
+      "category": "Finnish AI CRM",
+      "description": "AI-powered 'zero-click' CRM unifying scattered data and eliminating manual workflows. Replacing traditional go-to-market tools with intuitive platform. Founded by Smartly cofounder.",
+      "founded": 2024,
+      "headquarters": "Helsinki, Finland",
+      "valuation": "$20+ million",
+      "technology": [
+        "CRM AI",
+        "Sales Automation",
+        "Data Unification"
+      ],
+      "investors": [
+        "20VC",
+        "20Growth",
+        "Discovery Ventures",
+        "Greens"
+      ],
+      "funding_total": "$2.7 million",
+      "stage": "Pre-seed",
+      "employees": "12-18",
+      "website": "https://www.zero.ai",
+      "logo_url": "https://logo.clearbit.com/zero.ai",
+      "founders": "Tuomo Riekki (Smartly cofounder), Santtu Koivumäki",
+      "recent_activity": "$2.7M pre-seed led by 20VC in Dec 2024",
+      "industry": "Sales"
+    },
+    {
+      "name": "Midio",
+      "category": "Norwegian AI Developer Tools",
+      "description": "Visual-first, agentic platform for building, debugging and deploying AI-powered workflows and apps with drag-and-drop interface for developers and non-developers.",
+      "founded": 2023,
+      "headquarters": "Oslo, Norway",
+      "valuation": "NOK 40+ million",
+      "technology": [
+        "AI Workflow",
+        "No-code Platform",
+        "Agentic AI"
+      ],
+      "investors": [
+        "Sondo Capital"
+      ],
+      "funding_total": "$660k",
+      "stage": "Pre-seed/Seed",
+      "employees": "8-12",
+      "website": "https://midio.com",
+      "logo_url": "https://midio.com/favicon.ico",
+      "recent_activity": "$660k from Sondo Capital 2023",
+      "industry": "Developer Tools"
+    },
+    {
+      "name": "Nolla Health",
+      "category": "Norwegian AI Healthcare",
+      "description": "AI-powered dermatology tools using vision transformation and large multimodal AI models trained on 1M+ labelled cases for early skin condition detection.",
+      "founded": 2025,
+      "headquarters": "Oslo, Norway",
+      "valuation": "Early stage",
+      "technology": [
+        "Medical AI",
+        "Computer Vision",
+        "Dermatology"
+      ],
+      "investors": [
+        "Early investors"
+      ],
+      "funding_total": "Undisclosed",
+      "stage": "Pre-seed",
+      "employees": "5-10",
+      "website": "https://www.nolla.health",
+      "logo_url": "https://logo.clearbit.com/nolla.health",
+      "recent_activity": "Just launched with 1M+ training cases",
+      "industry": "Healthcare"
+    },
+    {
+      "name": "Handshake",
+      "category": "Norwegian AI Commerce",
+      "description": "AI agent that shops and pays for customers based on their preferences. Starting with online shopping and everyday purchases like food delivery.",
+      "founded": 2025,
+      "headquarters": "Oslo, Norway",
+      "valuation": "Early stage",
+      "technology": [
+        "AI Agents",
+        "E-commerce Automation",
+        "Payment AI"
+      ],
+      "investors": [
+        "Pre-seed investors"
+      ],
+      "funding_total": "Undisclosed",
+      "stage": "Pre-seed",
+      "employees": "5-8",
+      "website": "https://www.handshake.ai",
+      "logo_url": "https://ui-avatars.com/api/?name=Handshake&background=667eea&color=fff&size=128&bold=true",
+      "recent_activity": "Launching October 2025",
+      "industry": "Finance"
+    },
+    {
+      "name": "Opper",
+      "category": "Swedish AI Infrastructure",
+      "description": "Integrating AI into applications. Founded by Unomaly founders who exited their ML startup 5 years ago. Building next-gen AI integration platform.",
+      "founded": 2024,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 200+ million",
+      "technology": [
+        "AI Integration",
+        "ML Platform",
+        "Developer Tools"
+      ],
+      "investors": [
+        "Nordic VCs"
+      ],
+      "funding_total": "Undisclosed",
+      "stage": "Seed",
+      "employees": "15-20",
+      "website": "https://www.opper.ai",
+      "logo_url": "https://logo.clearbit.com/opper.ai",
+      "founders": "Unomaly founders (ML startup exit)",
+      "recent_activity": "Second AI company for successful ML founders",
+      "industry": "Developer Tools"
+    },
+    {
+      "name": "Databutton",
+      "category": "Swedish AI Developer Tools",
+      "description": "AI-powered app development platform enabling rapid application building with AI assistance. Backed by Skyfall Ventures.",
+      "founded": 2022,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 300+ million",
+      "technology": [
+        "AI App Development",
+        "Code Generation",
+        "Low-code Platform"
+      ],
+      "investors": [
+        "Skyfall Ventures"
+      ],
+      "funding_total": "SEK 80+ million",
+      "stage": "Seed/Series A",
+      "employees": "25-35",
+      "website": "https://www.databutton.com",
+      "logo_url": "https://logo.clearbit.com/databutton.com",
+      "recent_activity": "Building AI-native app development tools",
+      "industry": "Developer Tools"
+    },
+    {
+      "name": "Nordsense",
+      "category": "Danish AI Climate",
+      "industry": "IoT",
+      "description": "SaaS-based smart waste management platform optimizing waste collection timing and volume management using AI and IoT sensors.",
+      "founded": 2017,
+      "headquarters": "Copenhagen, Denmark",
+      "valuation": "$60+ million",
+      "technology": [
+        "Waste Management AI",
+        "IoT Optimization",
+        "Smart Cities"
+      ],
+      "investors": [
+        "Series A investors"
+      ],
+      "funding_total": "$12.6 million",
+      "stage": "Series A",
+      "employees": "40+",
+      "website": "https://www.nordsense.com",
+      "logo_url": "https://logo.clearbit.com/nordsense.com",
+      "recent_activity": "Smart waste collection across Nordic cities"
+    },
+    {
+      "name": "Skira",
+      "category": "Swedish AI AgriTech",
+      "description": "Connecting farmers and mills with consumer brands through AI platform enabling food chain traceability and environmental/social sustainability.",
+      "founded": 2016,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "€10+ million",
+      "technology": [
+        "Supply Chain AI",
+        "Traceability",
+        "Sustainability Tech"
+      ],
+      "investors": [
+        "Agri-tech investors"
+      ],
+      "funding_total": "€1.4 million",
+      "stage": "Seed",
+      "employees": "15-20",
+      "website": "https://skira.ai",
+      "logo_url": "https://skira.ai/favicon.ico",
+      "recent_activity": "Building sustainable food supply chain transparency",
+      "industry": "HR"
+    },
+    {
+      "name": "SweGreen",
+      "category": "Swedish AI AgriTech",
+      "description": "Agtech company and vertical farming venture using AI to optimize indoor farming and sustainable food production.",
+      "founded": 2019,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "$30+ million",
+      "technology": [
+        "Vertical Farming",
+        "AgriTech AI",
+        "Climate Tech"
+      ],
+      "investors": [
+        "Impact investors"
+      ],
+      "funding_total": "$6 million",
+      "stage": "Series A",
+      "employees": "30+",
+      "website": "https://www.swegreen.se",
+      "logo_url": "https://logo.clearbit.com/swegreen.se",
+      "founders": "Sepehr Mousavi, Marcus Petersson, Pierre Mohlin, Joakim Rytterborn, Andreas Dahlin",
+      "recent_activity": "Scaling vertical farming across Nordics",
+      "industry": "Manufacturing"
+    },
+    {
+      "name": "Ento Labs",
+      "category": "Danish AI Energy",
+      "description": "Expert energy AI analyzing and monitoring energy consumption for most effective improvements, reducing operational costs and carbon emissions.",
+      "founded": 2019,
+      "headquarters": "Copenhagen, Denmark",
+      "valuation": "DKK 100+ million",
+      "technology": [
+        "Energy AI",
+        "Carbon Reduction",
+        "Building Optimization"
+      ],
+      "investors": [
+        "Private investors"
+      ],
+      "funding_total": "Private funding",
+      "stage": "Series A",
+      "employees": "25+",
+      "website": "https://entolabs.com",
+      "logo_url": "https://entolabs.com/favicon.ico",
+      "customers": "Arbejdernes Landsbank",
+      "recent_activity": "AI-driven energy optimization for enterprises",
+      "industry": "Energy"
+    },
+    {
+      "name": "Sensae",
+      "category": "Danish AI Health",
+      "description": "Mental wellness company helping people manage stress and anxiety using AI to interface with emotions through personalized haptic biofeedback.",
+      "founded": 2020,
+      "headquarters": "Copenhagen, Denmark",
+      "valuation": "DKK 50+ million",
+      "technology": [
+        "Mental Health AI",
+        "Biofeedback",
+        "Wearable Tech"
+      ],
+      "investors": [
+        "Health tech investors"
+      ],
+      "funding_total": "Private funding",
+      "stage": "Seed",
+      "employees": "15-20",
+      "website": "https://www.sensae.com",
+      "logo_url": "https://logo.clearbit.com/sensae.com",
+      "founders": "Olivier Simone, Daniel Lyngholm, Liviu Babitz",
+      "recent_activity": "AI-powered biofeedback for mental wellness",
+      "industry": "Healthcare"
+    },
+    {
+      "name": "Applied Autonomy",
+      "category": "Norwegian AI Transport",
+      "description": "Delivers knowledge, solutions and services for sustainable autonomous transportation with control center systems for autonomous traffic implementation.",
+      "founded": 2017,
+      "headquarters": "Oslo, Norway",
+      "valuation": "NOK 150+ million",
+      "technology": [
+        "Autonomous Vehicles",
+        "Traffic Control AI",
+        "Smart Cities"
+      ],
+      "investors": [
+        "Transport tech investors"
+      ],
+      "funding_total": "Private funding",
+      "stage": "Series A",
+      "employees": "35+",
+      "website": "https://www.appliedautonomy.no",
+      "logo_url": "https://logo.clearbit.com/appliedautonomy.no",
+      "founder": "Olav Madland",
+      "recent_activity": "Piloting autonomous vehicles in Norwegian cities",
+      "industry": "Transportation"
+    },
+    {
+      "name": "GIM Robotics",
+      "category": "Finnish AI Robotics",
+      "description": "Proprietary GIM SW Stack turns mobile working machines into full-blooded field and service robots, speeding up product development for Fortune 500 companies.",
+      "founded": 2014,
+      "headquarters": "Helsinki, Finland",
+      "valuation": "$50+ million",
+      "technology": [
+        "Robotics AI",
+        "Mobile Machines",
+        "Industrial Automation"
+      ],
+      "investors": [
+        "Industrial investors"
+      ],
+      "funding_total": "Private funding",
+      "stage": "Growth",
+      "employees": "40+",
+      "website": "https://www.gimrobotics.fi",
+      "logo_url": "https://logo.clearbit.com/gimrobotics.fi",
+      "founders": "Prof Aarne Halme, Dr Jari Saarinen, Dr Jussi Suomela, Dr Jose Luis Peralta",
+      "recent_activity": "Trombia Free autonomous street cleaning robot",
+      "industry": "Manufacturing"
+    },
+    {
+      "name": "Svarmi",
+      "category": "Icelandic AI Climate",
+      "description": "Creates transparency on nature interaction using AI with data from satellites, drones and sensors. Helps mitigate risks and manage stakeholder dialogue for renewable energy and construction.",
+      "founded": 2013,
+      "headquarters": "Reykjavik, Iceland",
+      "valuation": "$25+ million",
+      "technology": [
+        "Geospatial AI",
+        "Satellite Data",
+        "Environmental Monitoring"
+      ],
+      "investors": [
+        "Climate investors"
+      ],
+      "funding_total": "Undisclosed",
+      "stage": "Growth",
+      "employees": "30+",
+      "website": "https://www.svarmi.is",
+      "logo_url": "https://logo.clearbit.com/svarmi.is",
+      "founders": "Tryggvi Stefánsson, Kolbeinn Hilmarsson",
+      "customers": "110+ clients across renewable energy, carbon finance, construction",
+      "recent_activity": "Award-winning geospatial AI for climate projects",
+      "industry": "Energy"
+    },
+    {
+      "name": "Augment City",
+      "category": "Norwegian AI Smart Cities",
+      "description": "Humanizing and contextualizing complex urban data. AI-powered smart and sustainable solutions throughout urban development involving inhabitants and decision-makers.",
+      "founded": 2019,
+      "headquarters": "Oslo, Norway",
+      "valuation": "NOK 80+ million",
+      "technology": [
+        "Urban Planning AI",
+        "Data Visualization",
+        "Smart Cities"
+      ],
+      "investors": [
+        "Smart city investors"
+      ],
+      "funding_total": "Private funding",
+      "stage": "Series A",
+      "employees": "20-25",
+      "website": "https://augmentcity.no",
+      "logo_url": "https://augmentcity.no/favicon.ico",
+      "recent_activity": "AI-driven urban development and planning",
+      "industry": "HR"
+    },
+    {
+      "name": "Inify Laboratories",
+      "category": "Swedish AI Healthcare",
+      "description": "AI-supported cancer diagnostics through ultra-modern pathology laboratory services. Fully digital, standardized workflow optimizing quality and response times.",
+      "founded": 2018,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 150+ million",
+      "technology": [
+        "Medical AI",
+        "Cancer Diagnostics",
+        "Digital Pathology"
+      ],
+      "investors": [
+        "Healthcare investors"
+      ],
+      "funding_total": "Undisclosed",
+      "stage": "Growth",
+      "employees": "30+",
+      "website": "https://www.inify.se",
+      "logo_url": "https://logo.clearbit.com/inify.se",
+      "recent_activity": "AI pathology for prostate cancer diagnostics",
+      "industry": "Healthcare"
+    },
+    {
+      "name": "Bulbitech",
+      "category": "Norwegian AI Healthcare",
+      "description": "Advanced neurological eye examination equipment and AI software for neuro-ophthalmologists and optometrists.",
+      "founded": 2015,
+      "headquarters": "Oslo, Norway",
+      "valuation": "NOK 80+ million",
+      "technology": [
+        "Medical AI",
+        "Eye Diagnostics",
+        "Neurology"
+      ],
+      "investors": [
+        "MedTech investors"
+      ],
+      "funding_total": "Private funding",
+      "stage": "Growth",
+      "employees": "20-25",
+      "website": "https://www.bulbitech.com",
+      "logo_url": "https://logo.clearbit.com/bulbitech.com",
+      "recent_activity": "Neurological eye examination AI research",
+      "industry": "Healthcare"
+    },
+    {
+      "name": "ThinkOutside",
+      "category": "Swedish AI Climate",
+      "description": "AI platform providing accurate and reliable snow data for planning purposes using satellite and sensor data analysis.",
+      "founded": 2019,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 40+ million",
+      "technology": [
+        "Weather AI",
+        "Satellite Data",
+        "Predictive Analytics"
+      ],
+      "investors": [
+        "Climate tech investors"
+      ],
+      "funding_total": "Private funding",
+      "stage": "Seed",
+      "employees": "12-15",
+      "website": "https://www.thinkoutside.io",
+      "logo_url": "https://logo.clearbit.com/thinkoutside.io",
+      "founder": "Monica Vaksdal",
+      "recent_activity": "Snow data analytics for infrastructure planning",
+      "industry": "Data Analytics"
+    },
+    {
+      "name": "Addi Medical",
+      "category": "Swedish AI Healthcare",
+      "description": "HOPE - Healthcare Operability with Patient Engagement. Disruptive AI-powered point of connection for digital patient engagement and education.",
+      "founded": 2016,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 80+ million",
+      "technology": [
+        "Patient Engagement AI",
+        "Digital Health",
+        "Medical Education"
+      ],
+      "investors": [
+        "Karolinska Institutet Holding AB"
+      ],
+      "funding_total": "Private funding",
+      "stage": "Series A",
+      "employees": "25+",
+      "website": "https://www.addimedical.se/en",
+      "logo_url": "https://www.addimedical.se/favicon.ico",
+      "founder": "Nina Sellberg",
+      "recent_activity": "Digital parent education and patient engagement",
+      "industry": "Healthcare"
+    },
+    {
+      "name": "Stock Republic",
+      "category": "Swedish AI FinTech",
+      "description": "Machine learning platform providing investment benchmarks and guidance with real data. Full mobile-first B2B platform with APIs for banks.",
+      "founded": 2019,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 60+ million",
+      "technology": [
+        "Investment AI",
+        "Financial Analytics",
+        "Banking APIs"
+      ],
+      "investors": [
+        "FinTech investors"
+      ],
+      "funding_total": "Private funding",
+      "stage": "Seed/Series A",
+      "employees": "18-22",
+      "website": "https://www.stockrepublic.se",
+      "logo_url": "https://logo.clearbit.com/stockrepublic.se",
+      "recent_activity": "White-label AI investment platform for banks",
+      "industry": "Finance"
+    },
+    {
+      "name": "Precure",
+      "category": "Danish AI Workplace",
+      "description": "AI solution preventing muscular strain to create healthier workplaces, reduce costs and loss of productivity through ergonomic analysis.",
+      "founded": 2016,
+      "headquarters": "Bornholm, Denmark",
+      "valuation": "DKK 30+ million",
+      "technology": [
+        "Workplace Safety AI",
+        "Ergonomics",
+        "Health Monitoring"
+      ],
+      "investors": [
+        "Bornholm's Business Foundation",
+        "Sparbo Finans"
+      ],
+      "funding_total": "€456,000",
+      "stage": "Seed",
+      "employees": "12-15",
+      "website": "https://www.precure.dk",
+      "logo_url": "https://logo.clearbit.com/precure.dk",
+      "recent_activity": "AI-powered workplace ergonomics and safety",
+      "industry": "Healthcare"
+    },
+    {
+      "name": "Spacept",
+      "category": "Swedish AI Climate",
+      "description": "Fuses artificial intelligence with satellite imagery to protect infrastructure and tackle climate change through vegetation monitoring.",
+      "founded": 2019,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 50+ million",
+      "technology": [
+        "Satellite AI",
+        "Infrastructure Protection",
+        "Climate Tech"
+      ],
+      "investors": [
+        "Grant funding"
+      ],
+      "funding_total": "Grant funding",
+      "stage": "Seed",
+      "employees": "15-18",
+      "website": "https://www.spacept.com",
+      "logo_url": "https://logo.clearbit.com/spacept.com",
+      "recent_activity": "Vegetation monitoring for climate protection",
+      "industry": "HR"
+    },
+    {
+      "name": "SustainLab",
+      "category": "Swedish AI Sustainability",
+      "description": "SaaS Sustainability Management Software automating collection, processing and visualization of ESG sustainability data.",
+      "founded": 2020,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 100+ million",
+      "technology": [
+        "ESG AI",
+        "Sustainability Analytics",
+        "Data Automation"
+      ],
+      "investors": [
+        "Impact investors"
+      ],
+      "funding_total": "Private funding",
+      "stage": "Series A",
+      "employees": "25-30",
+      "website": "https://sustainlab.co",
+      "logo_url": "https://sustainlab.co/favicon.ico",
+      "founders": "Kamal Hakimzadeh, Maria Svantemark",
+      "recent_activity": "Automating ESG reporting for enterprises",
+      "industry": "Energy"
+    },
+    {
+      "name": "ManoMotion",
+      "category": "Swedish AI AR/VR",
+      "description": "AI-enhanced hand tracking technology for augmented reality applications enabling gesture-based interactions in AR/VR environments.",
+      "founded": 2015,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 150+ million",
+      "technology": [
+        "Hand Tracking AI",
+        "AR/VR",
+        "Computer Vision"
+      ],
+      "investors": [
+        "Nordic VCs"
+      ],
+      "funding_total": "SEK 50+ million",
+      "stage": "Series A",
+      "employees": "30+",
+      "website": "https://www.manomotion.com",
+      "logo_url": "https://logo.clearbit.com/manomotion.com",
+      "recent_activity": "Hand tracking AI for AR/VR applications",
+      "industry": "Computer Vision"
+    },
+    {
+      "name": "Random Forest",
+      "category": "Swedish AI Analytics",
+      "description": "BI and big data consulting with generative AI capabilities. Enterprise AI analytics and data science solutions since 2012.",
+      "founded": 2012,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 200+ million",
+      "technology": [
+        "Generative AI",
+        "Big Data Analytics",
+        "Business Intelligence"
+      ],
+      "investors": [
+        "Self-funded"
+      ],
+      "funding_total": "Private",
+      "stage": "Established",
+      "employees": "50-100",
+      "website": "https://www.randomforest.se",
+      "logo_url": "https://logo.clearbit.com/randomforest.se",
+      "recent_activity": "Enterprise AI and data consulting",
+      "industry": "Data Analytics"
+    },
+    {
+      "name": "Dyno Robotics",
+      "category": "Swedish AI Robotics",
+      "description": "AI development for robotics and custom software solutions enabling intelligent autonomous systems.",
+      "founded": 2018,
+      "headquarters": "Linköping, Sweden",
+      "valuation": "SEK 80+ million",
+      "technology": [
+        "Robotics AI",
+        "Autonomous Systems",
+        "Computer Vision"
+      ],
+      "investors": [
+        "Robotics investors"
+      ],
+      "funding_total": "Private",
+      "stage": "Seed/Series A",
+      "employees": "20-30",
+      "website": "https://dynorobotics.com",
+      "logo_url": "https://dynorobotics.com/favicon.ico",
+      "recent_activity": "Building intelligent robotics solutions",
+      "industry": "Transportation"
+    },
+    {
+      "name": "AI ARMY",
+      "category": "Swedish AI Automation",
+      "description": "AI development and Robotic Process Automation company building intelligent automation solutions for enterprises.",
+      "founded": 2023,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 50+ million",
+      "technology": [
+        "RPA",
+        "AI Automation",
+        "Enterprise AI"
+      ],
+      "investors": [
+        "Early backers"
+      ],
+      "funding_total": "Seed funding",
+      "stage": "Pre-seed",
+      "employees": "8-15",
+      "website": "https://www.aiarmy.se",
+      "logo_url": "https://ui-avatars.com/api/?name=AI+ARMY&background=667eea&color=fff&size=128&bold=true",
+      "recent_activity": "Just launched, focusing on enterprise RPA",
+      "industry": "Robotics"
+    },
+    {
+      "name": "Artificial Solutions",
+      "category": "Swedish AI Enterprise",
+      "description": "Conversational AI and virtual assistant platform for enterprises. Pioneer in AI since 2001 building intelligent chatbots and voice assistants.",
+      "founded": 2001,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 500+ million",
+      "technology": [
+        "Conversational AI",
+        "Virtual Assistants",
+        "NLP"
+      ],
+      "investors": [
+        "Public company"
+      ],
+      "funding_total": "Public funding",
+      "stage": "Established/Public",
+      "employees": "150+",
+      "website": "https://www.artificial-solutions.com",
+      "logo_url": "https://logo.clearbit.com/artificial-solutions.com",
+      "recent_activity": "Long-established conversational AI leader",
+      "industry": "Customer Support"
+    },
+    {
+      "name": "Univrses",
+      "category": "Swedish AI Computer Vision",
+      "description": "Computer vision and AI for autonomous systems. 3DAI™ City platform provides real-time spatial data analytics for urban planners and sustainable smart city development.",
+      "founded": 2015,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "SEK 200+ million",
+      "technology": [
+        "Computer Vision",
+        "Autonomous Systems",
+        "Smart Cities AI",
+        "3D Spatial Analytics"
+      ],
+      "investors": [
+        "Nordic VCs"
+      ],
+      "funding_total": "Undisclosed",
+      "stage": "Growth",
+      "employees": "40+",
+      "certifications": "ISO 9001 Certified",
+      "website": "https://www.univrses.com",
+      "logo_url": "https://logo.clearbit.com/univrses.com",
+      "products": "3DAI™ City platform",
+      "recent_activity": "Powering autonomous vehicles and smart city initiatives",
+      "industry": "Transportation"
+    },
+    {
+      "name": "Volumental",
+      "category": "Swedish AI Retail",
+      "description": "3D foot scanning and AI-powered shoe fit recommendations using computer vision and machine learning. Trusted by global footwear brands to enhance shopping experience.",
+      "founded": 2012,
+      "headquarters": "Stockholm, Sweden",
+      "valuation": "$100+ million",
+      "arr": "$20+ million",
+      "technology": [
+        "3D Scanning",
+        "Computer Vision",
+        "Fit Recommendation AI",
+        "Machine Learning"
+      ],
+      "investors": [
+        "Alfvén & Didrikson",
+        "AMF Ventures"
+      ],
+      "funding_total": "$28 million",
+      "stage": "Series B",
+      "employees": "100+",
+      "certifications": "ISO 27001 Certified",
+      "website": "https://www.volumental.com",
+      "logo_url": "https://logo.clearbit.com/volumental.com",
+      "customers": "1000+ footwear retailers globally including New Balance, Bauer Hockey",
+      "recent_activity": "200M+ feet scanned worldwide, reducing returns by 20%",
+      "industry": "E-Commerce"
+    },
+    {
+      "name": "Stream Analyze",
+      "category": "Swedish AI Edge Computing",
+      "description": "Real-time AI analytics on edge devices enabling immediate decision-making and predictive maintenance without cloud dependency. sa.engine™ platform for manufacturing and energy.",
+      "founded": 2017,
+      "headquarters": "Uppsala, Sweden",
+      "valuation": "SEK 150+ million",
+      "technology": [
+        "Edge AI",
+        "Real-time Analytics",
+        "Predictive Maintenance",
+        "Industrial IoT"
+      ],
+      "investors": [
+        "Industrial investors"
+      ],
+      "funding_total": "SEK 60+ million",
+      "stage": "Series A",
+      "employees": "30+",
+      "certifications": "ISO 9001 Certified",
+      "website": "https://www.streamanalyze.com",
+      "logo_url": "https://logo.clearbit.com/streamanalyze.com",
+      "products": "sa.engine™ platform",
+      "industries_served": "Manufacturing, Energy, Transportation",
+      "recent_activity": "Edge AI deployment for real-time industrial analytics",
+      "industry": "Manufacturing"
+    },
+    {
+      "name": "ZenRobotics",
+      "category": "Finnish AI Waste Management",
+      "description": "AI-powered robotic waste sorting systems using ZenBrain AI to efficiently identify and sort waste materials. Making waste processing safer and more efficient.",
+      "founded": 2007,
+      "headquarters": "Helsinki, Finland",
+      "valuation": "€80+ million",
+      "technology": [
+        "Robotic Sorting",
+        "Computer Vision",
+        "Waste AI",
+        "ZenBrain AI"
+      ],
+      "investors": [
+        "Lifeline Ventures",
+        "Ginoa Investment"
+      ],
+      "funding_total": "€35 million",
+      "stage": "Series C",
+      "employees": "80+",
+      "website": "https://www.zenrobotics.com",
+      "logo_url": "https://logo.clearbit.com/zenrobotics.com",
+      "products": "ZenBrain AI, ZenRobotics Heavy Picker",
+      "markets": "Scandinavia, EU, North America",
+      "recent_activity": "Leading AI waste sorting with 100+ installations globally",
+      "industry": "Energy"
+    },
+    {
+      "name": "Cognite",
+      "category": "Norwegian AI Industrial",
+      "description": "Industrial AI and data operations platform. Cognite Data Fusion uses ML to make industrial data accessible and actionable for oil & gas and manufacturing.",
+      "founded": 2016,
+      "headquarters": "Lysaker, Norway",
+      "valuation": "$1.6 billion",
+      "arr": "$200+ million",
+      "technology": [
+        "Industrial AI",
+        "Data Operations",
+        "Machine Learning",
+        "Digital Twins"
+      ],
+      "investors": [
+        "Accel",
+        "TCV",
+        "Saudi Aramco Energy Ventures"
+      ],
+      "funding_total": "$358 million",
+      "stage": "Series C",
+      "employees": "500+",
+      "offices": "Tokyo, Houston, Austin, Stavanger",
+      "website": "https://www.cognite.com",
+      "logo_url": "https://logo.clearbit.com/cognite.com",
+      "products": "Cognite Data Fusion, Industrial DataOps",
+      "customers": "Aker BP, BP, Chevron, Saudi Aramco",
+      "recent_activity": "$150M Series C, unicorn valuation serving global energy giants",
+      "industry": "Education"
+    },
+    {
+      "name": "Boost.ai",
+      "category": "Norwegian AI Customer Service",
+      "description": "Conversational AI platform for 24/7 customer service through chat and voice. Serving major Nordic banks and telecom with AI-powered support automation.",
+      "founded": 2016,
+      "headquarters": "Stavanger, Norway",
+      "valuation": "NOK 800+ million",
+      "technology": [
+        "Conversational AI",
+        "Virtual Agents",
+        "NLP",
+        "Voice AI"
+      ],
+      "investors": [
+        "Investinor",
+        "Innovation Norway"
+      ],
+      "funding_total": "NOK 250 million",
+      "stage": "Series B",
+      "employees": "140+",
+      "website": "https://www.boost.ai",
+      "logo_url": "https://logo.clearbit.com/boost.ai",
+      "customers": "DNB, Nordea, Telia, Telenor, Deloitte",
+      "languages": "130+ languages supported",
+      "recent_activity": "Powering conversational AI for Fortune 500 companies",
+      "industry": "HR"
+    },
+    {
+      "name": "Klevu",
+      "category": "Finnish AI E-commerce",
+      "description": "AI-powered site search and product discovery for online retailers. Natural language search technology increasing conversion rates and revenue for e-commerce.",
+      "founded": 2013,
+      "headquarters": "Helsinki, Finland",
+      "valuation": "$80+ million",
+      "technology": [
+        "E-commerce AI",
+        "NLP Search",
+        "Product Discovery",
+        "Recommendation Engine"
+      ],
+      "investors": [
+        "Verge HealthTech",
+        "Others"
+      ],
+      "funding_total": "$25 million",
+      "stage": "Series A",
+      "employees": "70+",
+      "website": "https://www.klevu.com",
+      "logo_url": "https://logo.clearbit.com/klevu.com",
+      "customers": "5000+ e-commerce sites, 150M+ shoppers",
+      "recent_activity": "AI search for major e-commerce platforms globally",
+      "industry": "E-Commerce"
+    },
+    {
+      "name": "Iris AI",
+      "category": "Norwegian AI Research",
+      "description": "AI assistant for scientific research helping researchers map relevant papers for thesis work and R&D projects. Streamlining academic research discovery.",
+      "founded": 2015,
+      "headquarters": "Bekkestua, Norway",
+      "valuation": "NOK 200+ million",
+      "technology": [
+        "Research AI",
+        "Academic Search",
+        "NLP",
+        "Knowledge Graphs"
+      ],
+      "investors": [
+        "Investinor",
+        "Innovation Norway"
+      ],
+      "funding_total": "NOK 80 million",
+      "stage": "Series A",
+      "employees": "35+",
+      "website": "https://www.iris.ai",
+      "logo_url": "https://logo.clearbit.com/iris.ai",
+      "users": "500K+ researchers globally",
+      "recent_activity": "Accelerating scientific research discovery with AI",
+      "industry": "Market Research"
+    },
+    {
+      "name": "JourneyXP",
+      "category": "Danish AI Customer Experience",
+      "description": "Cloud-based Journey Management Platform helping companies manage and optimize customer journeys to win customers for life through personalized experiences.",
+      "founded": 2018,
+      "headquarters": "Copenhagen, Denmark",
+      "valuation": "DKK 150+ million",
+      "technology": [
+        "Customer Journey AI",
+        "Personalization",
+        "CX Analytics"
+      ],
+      "investors": [
+        "Danish VCs"
+      ],
+      "funding_total": "DKK 50 million",
+      "stage": "Series A",
+      "employees": "40+",
+      "website": "https://www.journeyxp.com",
+      "logo_url": "https://logo.clearbit.com/journeyxp.com",
+      "recent_activity": "Customer journey optimization for Nordic enterprises",
+      "industry": "HR"
+    }
+  ],
+  "global_ai_investments": [
+    {
+      "investor": "Nvidia",
+      "total_deals_2025": 50,
+      "total_deals_2024": 48,
+      "major_investments": [
+        {
+          "company": "OpenAI",
+          "amount": "SEK 1.1 billion",
+          "valuation": "SEK 1.7 trillion",
+          "round_size": "SEK 72.5 billion"
+        },
+        {
+          "company": "xAI (Elon Musk)",
+          "amount": "Part of SEK 65.8 billion round",
+          "date": "Dec 2024"
+        },
+        {
+          "company": "Mistral AI",
+          "amount": "SEK 22 billion",
+          "round": "Series C",
+          "date": "Sept 2025"
+        },
+        {
+          "company": "Reflection AI",
+          "amount": "LED SEK 22 billion round",
+          "valuation": "SEK 87.5 billion"
+        },
+        {
+          "company": "Thinking Machines Lab (Mira Murati)",
+          "amount": "Part of SEK 22 billion",
+          "valuation": "SEK 131.3 billion"
+        }
+      ],
+      "strategy": "Building AI ecosystem by backing game changers and market makers",
+      "total_commitment": "SEK 1.1+ trillion planned investments in AI infrastructure"
+    },
+    {
+      "name": "SoftKraft",
+      "category": "Swedish AI Development",
+      "description": "Versatile software development company specializing in creating AI-powered solutions, cloud migration, and customized IT services. High client satisfaction with 90% of reviews highlighting technical expertise, adaptability, and effective project management.",
+      "founded": 2015,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "AI Development",
+        "Custom Software Development",
+        "Cloud Consulting",
+        "Web Design",
+        "Web Development"
+      ],
+      "employees": "10-49",
+      "website": "https://www.softkraft.com",
+      "logo_url": "https://logo.clearbit.com/softkraft.com",
+      "stage": "Growth",
+      "focus": [
+        "AI Solutions",
+        "Cloud Migration",
+        "Custom IT Services"
+      ]
+    },
+    {
+      "name": "Simform",
+      "category": "Swedish AI Development",
+      "description": "Software development company specializing in custom software solutions, mobile app development, and platform redesigns. 90% of clients praise their technical expertise, project management, and responsiveness.",
+      "founded": 2010,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "AI Development",
+        "CRM Consulting",
+        "Cloud Consulting",
+        "Custom Software Development",
+        "E-Commerce Development"
+      ],
+      "employees": "1000-9999",
+      "website": "https://www.simform.com",
+      "logo_url": "https://logo.clearbit.com/simform.com",
+      "stage": "Enterprise",
+      "focus": [
+        "Custom Software",
+        "Mobile Apps",
+        "Platform Redesigns"
+      ]
+    },
+    {
+      "name": "Vention",
+      "category": "Swedish AI Development",
+      "description": "Versatile software development company offering services such as staff augmentation, platform development, and AI integration. 100% of reviewers highlight their responsiveness and effective communication.",
+      "founded": 2012,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "Custom Software Development",
+        "Web Development",
+        "AI Development",
+        "AR/VR Development",
+        "Blockchain"
+      ],
+      "employees": "1000-9999",
+      "website": "https://www.vention.io",
+      "logo_url": "https://logo.clearbit.com/vention.io",
+      "stage": "Enterprise",
+      "focus": [
+        "Staff Augmentation",
+        "Platform Development",
+        "AI Integration"
+      ]
+    },
+    {
+      "name": "Trigma",
+      "category": "Swedish AI Development",
+      "description": "Versatile technology solutions provider, specializing in AI-driven software, mobile app development, and system integration. 100% of feedback highlighting their timely delivery and responsiveness.",
+      "founded": 2018,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "AI Agents",
+        "AI Development",
+        "AR/VR Development",
+        "Cloud Consulting",
+        "Custom Software Development"
+      ],
+      "employees": "50-249",
+      "website": "https://www.trigma.com",
+      "logo_url": "https://logo.clearbit.com/trigma.com",
+      "stage": "Growth",
+      "focus": [
+        "AI-driven Software",
+        "Mobile Apps",
+        "System Integration"
+      ]
+    },
+    {
+      "name": "Boldheart",
+      "category": "Swedish AI Development",
+      "description": "Versatile digital product development company specializing in designing and developing MVPs, UX/UI, and digital transformation strategies. 80% of reviewers commend Boldheart for their culture fit and communication.",
+      "founded": 2019,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "Mobile App Development",
+        "Custom Software Development",
+        "IT Strategy Consulting",
+        "Low/No Code Development",
+        "UX/UI Design"
+      ],
+      "employees": "10-49",
+      "website": "https://www.boldheart.com",
+      "logo_url": "https://logo.clearbit.com/boldheart.com",
+      "stage": "Growth",
+      "focus": [
+        "MVP Development",
+        "UX/UI Design",
+        "Digital Transformation"
+      ]
+    },
+    {
+      "name": "N-iX",
+      "category": "Swedish AI Development",
+      "description": "Versatile software development company offering services such as DevOps, cloud migration, custom software development, and data integration. 100% of reviewers highlighting their technical expertise and timely delivery.",
+      "founded": 2002,
+      "headquarters": "Malmö, Sweden",
+      "technology": [
+        "BI & Big Data Consulting",
+        "AI Development",
+        "Custom Software Development",
+        "Cloud Consulting",
+        "IT Staff Augmentation"
+      ],
+      "employees": "1000-9999",
+      "website": "https://www.n-ix.com",
+      "logo_url": "https://logo.clearbit.com/n-ix.com",
+      "stage": "Enterprise",
+      "focus": [
+        "DevOps",
+        "Cloud Migration",
+        "Data Integration"
+      ]
+    },
+    {
+      "name": "Krazimo",
+      "category": "Swedish AI Development",
+      "description": "Technology development and consultancy firm specializing in advanced AI and Web3 solutions. Focus on AI-driven projects, such as real-time data integration and scalable SaaS platforms.",
+      "founded": 2020,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "AI Development",
+        "Generative AI",
+        "AI Consulting",
+        "API Development",
+        "Microservices Architecture"
+      ],
+      "employees": "10-49",
+      "website": "https://www.krazimo.com",
+      "logo_url": "https://logo.clearbit.com/krazimo.com",
+      "stage": "Growth",
+      "focus": [
+        "AI Solutions",
+        "Web3",
+        "Real-time Data Integration"
+      ]
+    },
+    {
+      "name": "Innowise",
+      "category": "Swedish AI Development",
+      "description": "Technology company specializing in software development, data management, and blockchain solutions. 90% of reviews highlight their professionalism and ability to meet deadlines.",
+      "founded": 2007,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "AI Development",
+        "AR/VR Development",
+        "Blockchain",
+        "Cloud Consulting",
+        "Custom Software Development"
+      ],
+      "employees": "1000-9999",
+      "website": "https://www.innowise-group.com",
+      "logo_url": "https://logo.clearbit.com/innowise-group.com",
+      "stage": "Enterprise",
+      "focus": [
+        "Software Development",
+        "Data Management",
+        "Blockchain Solutions"
+      ]
+    },
+    {
+      "name": "S-PRO",
+      "category": "Swedish AI Development",
+      "description": "Software development company specializing in custom software solutions, mobile and web applications, and integration of modern technologies like blockchain and fintech platforms. 100% positive feedback highlighting their flexibility and professionalism.",
+      "founded": 2014,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "Web Development",
+        "AI Development",
+        "Mobile App Development",
+        "Blockchain",
+        "Custom Software Development"
+      ],
+      "employees": "50-249",
+      "website": "https://www.s-pro.io",
+      "logo_url": "https://logo.clearbit.com/s-pro.io",
+      "stage": "Growth",
+      "focus": [
+        "Custom Software",
+        "Mobile Apps",
+        "Blockchain Integration"
+      ]
+    },
+    {
+      "name": "Plavno",
+      "category": "Swedish AI Development",
+      "description": "Versatile software development company offering a wide range of services, including AI solutions, web development, and custom software integration. 100% positive feedback rate, emphasizing their technical expertise and efficient project management.",
+      "founded": 2016,
+      "headquarters": "Örebro, Sweden",
+      "technology": [
+        "Mobile App Development",
+        "AI Development",
+        "AI Agents",
+        "AI Consulting",
+        "Custom Software Development"
+      ],
+      "employees": "50-249",
+      "website": "https://www.plavno.com",
+      "logo_url": "https://logo.clearbit.com/plavno.com",
+      "stage": "Growth",
+      "focus": [
+        "AI Solutions",
+        "Web Development",
+        "Custom Software Integration"
+      ]
+    },
+    {
+      "name": "Sigma Software Group",
+      "category": "Swedish AI Development",
+      "description": "Versatile technology company offering comprehensive software development, mobile application creation, and engineering support services. 100% of customers highlighting their effective communication and problem-solving skills.",
+      "founded": 2002,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "Custom Software Development",
+        "Mobile App Development",
+        "Web Development",
+        "AI Consulting",
+        "BI & Big Data Consulting"
+      ],
+      "employees": "1000-9999",
+      "website": "https://www.sigma.software",
+      "logo_url": "https://logo.clearbit.com/sigma.software",
+      "stage": "Enterprise",
+      "focus": [
+        "Software Development",
+        "Mobile Applications",
+        "Engineering Support"
+      ]
+    },
+    {
+      "name": "Smart Source AB",
+      "category": "Swedish AI Development",
+      "description": "Versatile software development company specializing in mobile app and API development. 100% of clients expressing satisfaction with their project management and strategic approach.",
+      "founded": 2018,
+      "headquarters": "Malmö, Sweden",
+      "technology": [
+        "Mobile App Development",
+        "Web Development",
+        "Generative AI"
+      ],
+      "employees": "10-49",
+      "website": "https://www.smartsource.se",
+      "logo_url": "https://logo.clearbit.com/smartsource.se",
+      "stage": "Growth",
+      "focus": [
+        "Mobile Apps",
+        "API Development",
+        "User-friendly Design"
+      ]
+    },
+    {
+      "name": "Bluell",
+      "category": "Swedish AI Development",
+      "description": "Custom software development service provider that focuses on different areas e.g FinTech, Logistics, Transportation etc to implement unique software solutions.",
+      "founded": 2015,
+      "headquarters": "Sollentuna, Sweden",
+      "technology": [
+        "Custom Software Development",
+        "IoT Development",
+        "Mobile App Development",
+        "AI Development",
+        "Web Development"
+      ],
+      "employees": "10-49",
+      "website": "https://www.bluell.se",
+      "logo_url": "https://logo.clearbit.com/bluell.se",
+      "stage": "Growth",
+      "focus": [
+        "FinTech",
+        "Logistics",
+        "Transportation",
+        "Unique Software Solutions"
+      ]
+    },
+    {
+      "name": "Slashdev",
+      "category": "Swedish AI Development",
+      "description": "Versatile software development and recruitment company specializing in rescuing problematic codebases, developing SaaS applications, and providing specialist recruitment for projects requiring high-level technical skills.",
+      "founded": 2017,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "Custom Software Development",
+        "Mobile App Development",
+        "Web Development",
+        "AI Development",
+        "Blockchain"
+      ],
+      "employees": "10-49",
+      "website": "https://www.slashdev.se",
+      "logo_url": "https://logo.clearbit.com/slashdev.se",
+      "stage": "Growth",
+      "focus": [
+        "Codebase Rescue",
+        "SaaS Applications",
+        "Technical Recruitment"
+      ]
+    },
+    {
+      "name": "Artificially",
+      "category": "Swedish AI Development",
+      "description": "Dynamic company specializing in developing custom CRM and e-commerce applications. 100% positive feedback rate, highlighting their client-centric approach, timely delivery, and innovative solutions.",
+      "founded": 2019,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "Web Development",
+        "AI Development",
+        "CRM Consulting",
+        "Custom Software Development",
+        "E-Commerce Development"
+      ],
+      "employees": "10-49",
+      "website": "https://www.artificially.com",
+      "logo_url": "https://logo.clearbit.com/artificially.com",
+      "stage": "Growth",
+      "focus": [
+        "Custom CRM",
+        "E-commerce Applications",
+        "Innovative Solutions"
+      ]
+    },
+    {
+      "name": "Brainy Neurals",
+      "category": "Swedish AI Development",
+      "description": "AI Development Company specializes in AI model development and integration, offering services like document analysis, SaaS AI feature additions, and proof of concept for AI tools. 100% satisfaction rate, noted for their technical expertise and timely delivery.",
+      "founded": 2020,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "Generative AI",
+        "AI Development",
+        "AI Consulting",
+        "Custom Software Development",
+        "Low/No Code Development"
+      ],
+      "employees": "50-249",
+      "website": "https://www.brainyneurals.com",
+      "logo_url": "https://logo.clearbit.com/brainyneurals.com",
+      "stage": "Growth",
+      "focus": [
+        "AI Model Development",
+        "Document Analysis",
+        "SaaS AI Features"
+      ]
+    },
+    {
+      "name": "Hexaware Technologies",
+      "category": "Swedish AI Development",
+      "description": "IT strategy consulting company established in 1990. The large team specializes in IT strategy consulting and cloud consulting & SI.",
+      "founded": 1990,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "Cloud Consulting",
+        "IT Managed Services",
+        "IT Strategy Consulting",
+        "AI Consulting",
+        "AI Development"
+      ],
+      "employees": "10000+",
+      "website": "https://www.hexaware.com",
+      "logo_url": "https://logo.clearbit.com/hexaware.com",
+      "stage": "Enterprise",
+      "focus": [
+        "IT Strategy",
+        "Cloud Consulting",
+        "Managed Services"
+      ]
+    },
+    {
+      "name": "Nytt IQ",
+      "category": "Swedish AI Development",
+      "description": "Software development company known for its expertise in app development, database design, and API integration. 90% of feedback being positive, with clients appreciating their alignment with company values.",
+      "founded": 2018,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "AI Development",
+        "BI & Big Data Consulting",
+        "Mobile App Development",
+        "AR/VR Development",
+        "Custom Software Development"
+      ],
+      "employees": "10-49",
+      "website": "https://www.nyttiq.se",
+      "logo_url": "https://logo.clearbit.com/nyttiq.se",
+      "stage": "Growth",
+      "focus": [
+        "App Development",
+        "Database Design",
+        "API Integration"
+      ]
+    },
+    {
+      "name": "Opsio",
+      "category": "Swedish AI Development",
+      "description": "Cloud consulting & SI company providing cloud consulting & SI and Artificial Intelligence services.",
+      "founded": 2019,
+      "headquarters": "Karlstad, Sweden",
+      "technology": [
+        "Cloud Consulting",
+        "AI Development",
+        "Generative AI"
+      ],
+      "employees": "50-249",
+      "website": "https://www.opsio.com",
+      "logo_url": "https://logo.clearbit.com/opsio.com",
+      "stage": "Growth",
+      "focus": [
+        "Cloud Consulting",
+        "AI Services",
+        "System Integration"
+      ]
+    },
+    {
+      "name": "Predli Consulting",
+      "category": "Swedish AI Development",
+      "description": "AI Consulting company specializing in AI Consulting and IT strategy consulting.",
+      "founded": 2019,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "AI Consulting",
+        "AI Development",
+        "IT Strategy Consulting",
+        "IoT Development"
+      ],
+      "employees": "10-49",
+      "website": "https://www.predli.com",
+      "logo_url": "https://logo.clearbit.com/predli.com",
+      "stage": "Growth",
+      "focus": [
+        "AI Consulting",
+        "IT Strategy",
+        "IoT Solutions"
+      ]
+    },
+    {
+      "name": "ManoMotion",
+      "category": "Swedish AI Development",
+      "description": "AR/VR development company providing AR/VR development and Artificial Intelligence services.",
+      "founded": 2016,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "AR/VR Development",
+        "AI Development",
+        "Other Application Development"
+      ],
+      "employees": "10-49",
+      "website": "https://www.manomotion.com",
+      "logo_url": "https://logo.clearbit.com/manomotion.com",
+      "stage": "Growth",
+      "focus": [
+        "AR/VR Development",
+        "AI Solutions",
+        "Application Development"
+      ]
+    },
+    {
+      "name": "MDS",
+      "category": "Swedish AI Development",
+      "description": "Cybersecurity company specializing in Cybersecurity and Custom Software Development.",
+      "founded": 2020,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "AI Consulting",
+        "AI Development",
+        "Custom Software Development",
+        "Cybersecurity",
+        "DevOps Managed Services"
+      ],
+      "employees": "2-9",
+      "website": "https://www.mds.se",
+      "logo_url": "https://logo.clearbit.com/mds.se",
+      "stage": "Early",
+      "focus": [
+        "Cybersecurity",
+        "Custom Software",
+        "AI Solutions"
+      ]
+    },
+    {
+      "name": "Silo AI",
+      "category": "Swedish AI Development",
+      "description": "AI Consulting company providing AI Consulting and Artificial Intelligence services.",
+      "founded": 2017,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "AI Consulting",
+        "AI Development"
+      ],
+      "employees": "250-999",
+      "website": "https://www.silo.ai",
+      "logo_url": "https://logo.clearbit.com/silo.ai",
+      "stage": "Growth",
+      "focus": [
+        "AI Consulting",
+        "AI Development",
+        "AI Solutions"
+      ]
+    },
+    {
+      "name": "Random Forest",
+      "category": "Swedish AI Development",
+      "description": "Big data analytics company and Generative AI company focusing on BI & big data consulting & SI and Generative AI.",
+      "founded": 2012,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "BI & Big Data Consulting",
+        "Generative AI"
+      ],
+      "employees": "50-249",
+      "website": "https://www.randomforest.se",
+      "logo_url": "https://logo.clearbit.com/randomforest.se",
+      "stage": "Growth",
+      "focus": [
+        "Big Data Analytics",
+        "Generative AI",
+        "BI Consulting"
+      ]
+    },
+    {
+      "name": "Dyno Robotics",
+      "category": "Swedish AI Development",
+      "description": "AI development company providing Artificial Intelligence and Custom Software Development services.",
+      "founded": 2018,
+      "headquarters": "Linköping, Sweden",
+      "technology": [
+        "AI Development",
+        "Custom Software Development"
+      ],
+      "employees": "10-49",
+      "website": "https://www.dynorobotics.com",
+      "logo_url": "https://logo.clearbit.com/dynorobotics.com",
+      "stage": "Growth",
+      "focus": [
+        "AI Development",
+        "Custom Software",
+        "Robotics"
+      ]
+    },
+    {
+      "name": "AI ARMY",
+      "category": "Swedish AI Development",
+      "description": "AI company focusing on Artificial Intelligence and Robotics Process Automation.",
+      "founded": 2023,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "AI Development",
+        "Robotics Process Automation"
+      ],
+      "employees": "2-9",
+      "website": "https://www.aiarmy.se",
+      "logo_url": "https://logo.clearbit.com/aiarmy.se",
+      "stage": "Early",
+      "focus": [
+        "AI Development",
+        "RPA",
+        "Automation"
+      ]
+    },
+    {
+      "name": "Indigo Labs d.o.o.",
+      "category": "Swedish AI Development",
+      "description": "Versatile software development company specializing in cloud and IoT solutions, e-commerce platforms, and API integrations. 100% of feedback being positive, highlighting their project management skills and technical expertise.",
+      "founded": 2018,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "AI Development",
+        "Custom Software Development",
+        "Web Development",
+        "E-Commerce Development",
+        "IoT Development"
+      ],
+      "employees": "10-49",
+      "website": "https://www.indigolabs.com",
+      "logo_url": "https://logo.clearbit.com/indigolabs.com",
+      "stage": "Growth",
+      "focus": [
+        "Cloud Solutions",
+        "IoT",
+        "E-commerce Platforms"
+      ]
+    },
+    {
+      "name": "Sigma Embedded Engineering Group",
+      "category": "Swedish AI Development",
+      "description": "Delivers AI over embedded systems and offers qualified consulting services in R&D with a focus on power electronics.",
+      "founded": 2015,
+      "headquarters": "Göteborg, Sweden",
+      "technology": [
+        "AI Development",
+        "Cloud Consulting",
+        "Computer Engineering",
+        "Custom Software Development",
+        "IoT Development"
+      ],
+      "employees": "50-249",
+      "website": "https://www.sigma.se",
+      "logo_url": "https://logo.clearbit.com/sigma.se",
+      "stage": "Growth",
+      "focus": [
+        "Embedded AI",
+        "Power Electronics",
+        "R&D Consulting"
+      ]
+    },
+    {
+      "name": "Sierratech",
+      "category": "Swedish AI Development",
+      "description": "Provides secure platform development, user interface creation, and compliance solutions, specializing in cryptocurrency exchange platforms. Clients commend their cutting-edge technological expertise and robust security measures.",
+      "founded": 2019,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "Web Development",
+        "AI Development",
+        "Blockchain",
+        "AR/VR Development",
+        "Custom Software Development"
+      ],
+      "employees": "50-249",
+      "website": "https://www.sierratech.com",
+      "logo_url": "https://logo.clearbit.com/sierratech.com",
+      "stage": "Growth",
+      "focus": [
+        "Secure Platforms",
+        "Cryptocurrency",
+        "Compliance Solutions"
+      ]
+    },
+    {
+      "name": "Limavi AB",
+      "category": "Swedish AI Development",
+      "description": "Software development firm providing Custom Software Development and Web Development services.",
+      "founded": 2021,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "AI Development",
+        "Custom Software Development",
+        "Mobile App Development",
+        "Web Development",
+        "AI Consulting"
+      ],
+      "employees": "10-49",
+      "website": "https://www.limavi.se",
+      "logo_url": "https://logo.clearbit.com/limavi.se",
+      "stage": "Early",
+      "focus": [
+        "Custom Software",
+        "Web Development",
+        "AI Solutions"
+      ]
+    },
+    {
+      "name": "Meta Bytes",
+      "category": "Swedish AI Development",
+      "description": "Custom software development firm specializing in Custom Software Development and IT strategy consulting.",
+      "founded": 2020,
+      "headquarters": "Laholm, Sweden",
+      "technology": [
+        "Custom Software Development",
+        "AI Development",
+        "IT Strategy Consulting",
+        "Other IT Consulting",
+        "Blockchain"
+      ],
+      "employees": "10-49",
+      "website": "https://www.metabytes.se",
+      "logo_url": "https://logo.clearbit.com/metabytes.se",
+      "stage": "Growth",
+      "focus": [
+        "Custom Software",
+        "IT Strategy",
+        "Blockchain Solutions"
+      ]
+    },
+    {
+      "name": "Blueye",
+      "category": "Swedish AI Development",
+      "description": "User experience agency offering UX/UI Design and Mobile App Development services.",
+      "founded": 2017,
+      "headquarters": "Örebro, Sweden",
+      "technology": [
+        "Mobile App Development",
+        "UX/UI Design",
+        "AI Development"
+      ],
+      "employees": "2-9",
+      "website": "https://www.blueye.se",
+      "logo_url": "https://logo.clearbit.com/blueye.se",
+      "stage": "Early",
+      "focus": [
+        "UX/UI Design",
+        "Mobile Apps",
+        "AI Solutions"
+      ]
+    },
+    {
+      "name": "INFINITO Digital Solutions",
+      "category": "Swedish AI Development",
+      "description": "Digital Strategy company offering Digital Strategy and Web Development services.",
+      "founded": 2023,
+      "headquarters": "Hisings Backa, Sweden",
+      "technology": [
+        "AI Development",
+        "Digital Strategy",
+        "Mobile App Development",
+        "Web Development"
+      ],
+      "employees": "2-9",
+      "website": "https://www.infinito.se",
+      "logo_url": "https://logo.clearbit.com/infinito.se",
+      "stage": "Early",
+      "focus": [
+        "Digital Strategy",
+        "Web Development",
+        "AI Solutions"
+      ]
+    },
+    {
+      "name": "Fiive AB",
+      "category": "Swedish AI Development",
+      "description": "IT strategy consulting company offering IT strategy consulting and Custom Software Development services.",
+      "founded": 2024,
+      "headquarters": "Göteborg, Sweden",
+      "technology": [
+        "AI Development",
+        "Custom Software Development",
+        "DevOps Managed Services",
+        "IT Strategy Consulting"
+      ],
+      "employees": "2-9",
+      "website": "https://www.fiive.se",
+      "logo_url": "https://logo.clearbit.com/fiive.se",
+      "stage": "Early",
+      "focus": [
+        "IT Strategy",
+        "Custom Software",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Softwerk AB",
+      "category": "Swedish AI Development",
+      "description": "Custom software development firm offering Custom Software Development and Web Development services.",
+      "founded": 2006,
+      "headquarters": "Växjö, Sweden",
+      "technology": [
+        "AI Development",
+        "Application Management",
+        "Application Testing",
+        "Custom Software Development",
+        "E-Commerce Development"
+      ],
+      "employees": "10-49",
+      "website": "https://www.softwerk.se",
+      "logo_url": "https://logo.clearbit.com/softwerk.se",
+      "stage": "Growth",
+      "focus": [
+        "Custom Software",
+        "Web Development",
+        "Application Management"
+      ]
+    },
+    {
+      "name": "Stormfors",
+      "category": "Swedish AI Development",
+      "description": "Branding agency providing Branding and Marketing Strategy services.",
+      "founded": 2015,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "AI Consulting",
+        "Branding",
+        "Digital Strategy",
+        "Email Marketing",
+        "Marketing Strategy"
+      ],
+      "employees": "10-49",
+      "website": "https://www.stormfors.se",
+      "logo_url": "https://logo.clearbit.com/stormfors.se",
+      "stage": "Growth",
+      "focus": [
+        "Branding",
+        "Marketing Strategy",
+        "Digital Strategy"
+      ]
+    },
+    {
+      "name": "Netsius",
+      "category": "Swedish AI Development",
+      "description": "Consulting company specializing in AI education and streamlining internal operations. 100% of reviewers appreciating their project management and communication.",
+      "founded": 2020,
+      "headquarters": "Spånga-Tensta, Sweden",
+      "technology": [
+        "Web Development",
+        "Custom Software Development",
+        "AI Consulting",
+        "IT Strategy Consulting",
+        "UX/UI Design"
+      ],
+      "employees": "2-9",
+      "website": "https://www.netsius.se",
+      "logo_url": "https://logo.clearbit.com/netsius.se",
+      "stage": "Early",
+      "focus": [
+        "AI Education",
+        "Internal Operations",
+        "AI Integration"
+      ]
+    },
+    {
+      "name": "Timelab",
+      "category": "Swedish AI Development",
+      "description": "Software development firm offering Custom Software Development and Pay Per Click services.",
+      "founded": 1999,
+      "headquarters": "Luleå, Sweden",
+      "technology": [
+        "Custom Software Development",
+        "Pay Per Click",
+        "Web Development",
+        "DevOps Managed Services",
+        "AI Consulting"
+      ],
+      "employees": "2-9",
+      "website": "https://www.timelab.se",
+      "logo_url": "https://logo.clearbit.com/timelab.se",
+      "stage": "Growth",
+      "focus": [
+        "Custom Software",
+        "Pay Per Click",
+        "Web Development"
+      ]
+    },
+    {
+      "name": "Effati Consulting AB",
+      "category": "Swedish AI Development",
+      "description": "Web design agency offering Web Design and UX/UI Design services.",
+      "founded": 2023,
+      "headquarters": "Täby, Sweden",
+      "technology": [
+        "Generative AI",
+        "Microservices Architecture",
+        "UX/UI Design",
+        "Web Design",
+        "Web Development"
+      ],
+      "employees": "2-9",
+      "website": "https://www.effati.se",
+      "logo_url": "https://logo.clearbit.com/effati.se",
+      "stage": "Early",
+      "focus": [
+        "Web Design",
+        "UX/UI Design",
+        "Generative AI"
+      ]
+    },
+    {
+      "name": "Releasy Customer Management",
+      "category": "Swedish AI Development",
+      "description": "Call center company providing Call Center Services and Artificial Intelligence services.",
+      "founded": 2007,
+      "headquarters": "Solna, Sweden",
+      "technology": [
+        "Call Center Services",
+        "AI Development",
+        "Customer Service Outsourcing",
+        "Sales Outsourcing"
+      ],
+      "employees": "250-999",
+      "website": "https://www.releasy.se",
+      "logo_url": "https://logo.clearbit.com/releasy.se",
+      "stage": "Growth",
+      "focus": [
+        "Call Center Services",
+        "AI Development",
+        "Customer Service"
+      ]
+    },
+    {
+      "name": "Owision AB",
+      "category": "Swedish AI Development",
+      "description": "IT strategy consulting company offering IT strategy consulting and IT managed services.",
+      "founded": 2018,
+      "headquarters": "Tyresö, Sweden",
+      "technology": [
+        "IT Managed Services",
+        "IT Strategy Consulting",
+        "Mobile App Development",
+        "Web Development",
+        "Application Testing"
+      ],
+      "employees": "10-49",
+      "website": "https://www.owision.se",
+      "logo_url": "https://logo.clearbit.com/owision.se",
+      "stage": "Growth",
+      "focus": [
+        "IT Strategy",
+        "IT Managed Services",
+        "Mobile Apps"
+      ]
+    },
+    {
+      "name": "Artificial Solutions",
+      "category": "Swedish AI Development",
+      "description": "AI development company providing Artificial Intelligence and Mobile App Development services.",
+      "founded": 2001,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "AI Development",
+        "Mobile App Development",
+        "Web Development"
+      ],
+      "employees": "50-249",
+      "website": "https://www.artificial-solutions.com",
+      "logo_url": "https://logo.clearbit.com/artificial-solutions.com",
+      "stage": "Growth",
+      "focus": [
+        "AI Development",
+        "Mobile Apps",
+        "Web Development"
+      ]
+    },
+    {
+      "name": "Triple Down",
+      "category": "Swedish AI Development",
+      "description": "Software development company specializing in creating customized platforms and applications for various industries. 100% of reviewers praising their flexible approach and effective communication.",
+      "founded": 2019,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "Custom Software Development",
+        "AI Development",
+        "AR/VR Development",
+        "Mobile App Development",
+        "Web Design"
+      ],
+      "employees": "2-9",
+      "website": "https://www.tripledown.se",
+      "logo_url": "https://logo.clearbit.com/tripledown.se",
+      "stage": "Early",
+      "focus": [
+        "Customized Platforms",
+        "Industry Applications",
+        "AI Solutions"
+      ]
+    },
+    {
+      "name": "Statica Solutions",
+      "category": "Swedish AI Development",
+      "description": "CRM consulting and SI company offering CRM consulting and SI and IoT development services.",
+      "founded": 2024,
+      "headquarters": "Kista, Sweden",
+      "technology": [
+        "AI Consulting",
+        "AI Development",
+        "CRM Consulting",
+        "Generative AI",
+        "IoT Development"
+      ],
+      "employees": "2-9",
+      "website": "https://www.statica.se",
+      "logo_url": "https://logo.clearbit.com/statica.se",
+      "stage": "Early",
+      "focus": [
+        "CRM Consulting",
+        "IoT Development",
+        "AI Solutions"
+      ]
+    },
+    {
+      "name": "SthlmTechPartner",
+      "category": "Swedish AI Development",
+      "description": "Application development firm offering Mobile App Development and Custom Software Development services.",
+      "founded": 2020,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "Mobile App Development",
+        "Custom Software Development",
+        "IoT Development",
+        "AI Development",
+        "Application Management"
+      ],
+      "employees": "50-249",
+      "website": "https://www.sthlmtechpartner.se",
+      "logo_url": "https://logo.clearbit.com/sthlmtechpartner.se",
+      "stage": "Growth",
+      "focus": [
+        "Mobile Apps",
+        "Custom Software",
+        "IoT Development"
+      ]
+    },
+    {
+      "name": "Olsson Digital Accounting",
+      "category": "Swedish AI Development",
+      "description": "Accounting company providing Accounting and Artificial Intelligence services.",
+      "founded": 2017,
+      "headquarters": "Solna, Sweden",
+      "technology": [
+        "Accounting",
+        "AI Development",
+        "Business Consulting"
+      ],
+      "employees": "2-9",
+      "website": "https://www.olssondigital.se",
+      "logo_url": "https://logo.clearbit.com/olssondigital.se",
+      "stage": "Early",
+      "focus": [
+        "Accounting",
+        "AI Development",
+        "Business Consulting"
+      ]
+    },
+    {
+      "name": "AI Innovation",
+      "category": "Swedish AI Development",
+      "description": "AI development company and Generative AI company specializing in Artificial Intelligence and Generative AI.",
+      "founded": 2021,
+      "headquarters": "Göteborg, Sweden",
+      "technology": [
+        "AI Development",
+        "Generative AI"
+      ],
+      "employees": "10-49",
+      "website": "https://www.aiinnovation.se",
+      "logo_url": "https://logo.clearbit.com/aiinnovation.se",
+      "stage": "Growth",
+      "focus": [
+        "AI Development",
+        "Generative AI",
+        "AI Innovation"
+      ]
+    },
+    {
+      "name": "Xantage",
+      "category": "Swedish AI Development",
+      "description": "Digital Strategy company providing Digital Strategy and Custom Software Development services.",
+      "founded": 2020,
+      "headquarters": "Stockholm, Sweden",
+      "technology": [
+        "AI Consulting",
+        "Business Consulting",
+        "Custom Software Development",
+        "Digital Engineering",
+        "Digital Strategy"
+      ],
+      "employees": "2-9",
+      "website": "https://www.xantage.se",
+      "logo_url": "https://logo.clearbit.com/xantage.se",
+      "stage": "Early",
+      "focus": [
+        "Digital Strategy",
+        "Custom Software",
+        "AI Consulting"
+      ]
+    },
+    {
+      "name": "PYYNE Digital",
+      "category": "Swedish AI Development",
+      "description": "Software development firm offering Custom Software Development and cloud consulting & SI services.",
+      "founded": 2020,
+      "headquarters": "Solna, Sweden",
+      "technology": [
+        "Custom Software Development",
+        "Cloud Consulting",
+        "Web Development",
+        "AI Development",
+        "IT Strategy Consulting"
+      ],
+      "employees": "50-249",
+      "website": "https://www.pyyne.com",
+      "logo_url": "https://logo.clearbit.com/pyyne.com",
+      "stage": "Growth",
+      "focus": [
+        "Custom Software",
+        "Cloud Consulting",
+        "AI Development"
+      ]
+    },
+    {
+      "name": "FixedIT Consulting AB",
+      "category": "Swedish AI Development",
+      "description": "Artificial intelligence development company providing Artificial Intelligence and Other Application Development services.",
+      "founded": 2020,
+      "headquarters": "Lund, Sweden",
+      "technology": [
+        "AI Development",
+        "Other Application Development",
+        "BI & Big Data Consulting",
+        "Business Consulting",
+        "IoT Development"
+      ],
+      "employees": "Freelancer",
+      "website": "https://www.fixedit.se",
+      "logo_url": "https://logo.clearbit.com/fixedit.se",
+      "stage": "Early",
+      "focus": [
+        "AI Development",
+        "Application Development",
+        "Big Data"
+      ]
+    },
+    {
+      "name": "Monexo",
+      "category": "Swedish AI Development",
+      "description": "IT strategy consulting company offering IT strategy consulting and AI Consulting services.",
+      "founded": 2024,
+      "headquarters": "Göteborg, Sweden",
+      "technology": [
+        "AI Agents",
+        "AI Consulting",
+        "IT Strategy Consulting",
+        "Low/No Code Development"
+      ],
+      "employees": "2-9",
+      "website": "https://www.monexo.se",
+      "logo_url": "https://logo.clearbit.com/monexo.se",
+      "stage": "Early",
+      "focus": [
+        "IT Strategy",
+        "AI Consulting",
+        "AI Agents"
+      ]
+    },
+    {
+      "name": "Berge",
+      "category": "Swedish AI Development",
+      "description": "Graphic design agency providing Graphic Design and IoT development services.",
+      "founded": 2007,
+      "headquarters": "Gothenburg, Sweden",
+      "technology": [
+        "Graphic Design",
+        "IoT Development",
+        "Product Design",
+        "AI Development",
+        "Cloud Consulting"
+      ],
+      "employees": "50-249",
+      "website": "https://www.berge.se",
+      "logo_url": "https://logo.clearbit.com/berge.se",
+      "stage": "Growth",
+      "focus": [
+        "Graphic Design",
+        "IoT Development",
+        "Product Design"
+      ]
+    },
+    {
+      "name": "Ignify",
+      "category": "Swedish AI Development",
+      "description": "Top-tier developers and experts build reliable, high-quality web/app/AI/crypto solutions—whether it's a simple tool or a complex system.",
+      "founded": 2018,
+      "headquarters": "Uppsala, Sweden",
+      "technology": [
+        "AI Consulting",
+        "AI Development",
+        "IT Strategy Consulting",
+        "Mobile App Development",
+        "Web Development"
+      ],
+      "employees": "50-249",
+      "website": "https://www.ignify.se",
+      "logo_url": "https://logo.clearbit.com/ignify.se",
+      "stage": "Growth",
+      "focus": [
+        "Web Development",
+        "App Development",
+        "AI Solutions"
+      ]
+    },
+    {
+      "name": "IdeaBits",
+      "category": "Swedish AI Development",
+      "description": "App development company providing Mobile App Development and Web Development services.",
+      "founded": 2019,
+      "headquarters": "Täby, Sweden",
+      "technology": [
+        "Mobile App Development",
+        "Web Development",
+        "Generative AI"
+      ],
+      "employees": "10-49",
+      "website": "https://www.ideabits.se",
+      "logo_url": "https://logo.clearbit.com/ideabits.se",
+      "stage": "Growth",
+      "focus": [
+        "Mobile Apps",
+        "Web Development",
+        "Generative AI"
+      ]
+    },
+    {
+      "name": "Unikie",
+      "category": "Swedish AI Development",
+      "description": "Software development company providing Custom Software Development and Web Development services.",
+      "founded": 2015,
+      "headquarters": "Göteborg, Sweden",
+      "technology": [
+        "Custom Software Development",
+        "Web Development",
+        "Cybersecurity",
+        "Mobile App Development",
+        "AI Development"
+      ],
+      "employees": "250-999",
+      "website": "https://www.unikie.com",
+      "logo_url": "https://logo.clearbit.com/unikie.com",
+      "stage": "Growth",
+      "focus": [
+        "Custom Software",
+        "Web Development",
+        "Cybersecurity"
+      ]
+    }
+  ]
+}

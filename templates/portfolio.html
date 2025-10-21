@@ -1,0 +1,442 @@
+{% extends "base.html" %}
+
+{% block title %}Portfolio Companies{% endblock %}
+
+{% block extra_css %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1 class="page-title">Portfolio Companies</h1>
+    <p class="page-subtitle"><span id="totalPortfolioCount">435</span> companies across 14 Nordic private equity firms</p>
+</div>
+
+<!-- Portfolio Statistics Summary -->
+<div class="portfolio-stats-grid">
+    <div class="stat-card-mini">
+        <div class="stat-mini-icon purple">
+            <i class="fas fa-calendar-alt"></i>
+        </div>
+        <div class="stat-mini-content">
+            <div class="stat-mini-value" id="statsAvgHoldingPeriod">6.2 yrs</div>
+            <div class="stat-mini-label">Avg Holding Period</div>
+        </div>
+    </div>
+    
+    <div class="stat-card-mini">
+        <div class="stat-mini-icon purple">
+            <i class="fas fa-industry"></i>
+        </div>
+        <div class="stat-mini-content">
+            <div class="stat-mini-value" id="statsSectorCount">12</div>
+            <div class="stat-mini-label">Industries Covered</div>
+        </div>
+    </div>
+    
+    <div class="stat-card-mini">
+        <div class="stat-mini-icon purple">
+            <i class="fas fa-globe-europe"></i>
+        </div>
+        <div class="stat-mini-content">
+            <div class="stat-mini-value" id="statsMarketCount">25+</div>
+            <div class="stat-mini-label">Countries</div>
+        </div>
+    </div>
+    
+    <div class="stat-card-mini">
+        <div class="stat-mini-icon purple">
+            <i class="fas fa-fire"></i>
+        </div>
+        <div class="stat-mini-content">
+            <div class="stat-mini-value" id="statsRecentCount">48</div>
+            <div class="stat-mini-label">Added in 2024-25</div>
+        </div>
+    </div>
+</div>
+
+<!-- Charts Section -->
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+    <div class="content-card">
+        <div class="content-card-header">
+            <h3 class="content-card-title" style="font-size: 15px;">
+                <i class="fas fa-chart-bar"></i>
+                Investment Year Distribution
+            </h3>
+        </div>
+        <div class="content-card-body">
+            <canvas id="yearChart" style="max-height: 220px;"></canvas>
+        </div>
+    </div>
+    
+    <div class="content-card">
+        <div class="content-card-header">
+            <h3 class="content-card-title" style="font-size: 15px;">
+                <i class="fas fa-chart-pie"></i>
+                Industry Distribution
+            </h3>
+        </div>
+        <div class="content-card-body">
+            <canvas id="sectorChart" style="max-height: 220px;"></canvas>
+        </div>
+    </div>
+    
+    <div class="content-card">
+        <div class="content-card-header">
+            <h3 class="content-card-title" style="font-size: 15px;">
+                <i class="fas fa-globe"></i>
+                Country Distribution
+            </h3>
+        </div>
+        <div class="content-card-body">
+            <canvas id="countryChart" style="max-height: 220px;"></canvas>
+        </div>
+    </div>
+</div>
+
+<div class="content-card" style="margin-bottom: 1.5rem;">
+    <div class="content-card-body">
+            <section class="control-panel">
+                <div class="controls-left">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="portfolioSearchInput" placeholder="Search companies, sectors, markets...">
+                    </div>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Total Companies:</span>
+                        <span id="portfolioTotalCount" class="stat-value">0</span>
+                    </div>
+                </div>
+            </section>
+    </div>
+</div>
+
+<!-- Status Messages -->
+<div id="portfolioStatusMessage" class="status-message hidden"></div>
+
+<!-- Portfolio Section -->
+<div class="content-card">
+    <div class="content-card-header">
+        <h2 class="content-card-title">All Portfolio Companies</h2>
+        <button id="refreshPortfolioBtn" class="btn btn-primary btn-sm">
+            <i class="fas fa-sync-alt"></i> Refresh
+        </button>
+    </div>
+    
+    <div class="content-card-body">
+        <!-- Loading Spinner -->
+        <div id="portfolioLoadingSpinner" class="loading-spinner hidden">
+            <div class="spinner"></div>
+            <p>Loading portfolio data...</p>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 8px 15px; border-radius: 8px; font-size: 12px; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+            <i class="fas fa-info-circle"></i>
+            <span><strong>Enhanced View:</strong> Table includes 13 columns with comprehensive portfolio data. Scroll horizontally → to view all metrics.</span>
+        </div>
+        
+        <!-- Portfolio Table Container -->
+        <div id="portfolioContainer" class="portfolio-table-wrapper">
+            <!-- Portfolio table will be inserted here by JavaScript -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="portfolioEmptyState" class="empty-state">
+            <i class="fas fa-briefcase"></i>
+            <h3>No Portfolio Data Yet</h3>
+            <p>Click "Refresh" to load portfolio companies from all PE firms.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Company Detail Modal - Enhanced Version -->
+<div id="companyModal" class="company-modal">
+    <div class="company-modal-content">
+        <!-- Header Section with Purple Gradient -->
+        <div class="company-modal-header">
+            <div class="company-modal-header-left">
+                <div class="modal-logo-wrapper">
+                    <img id="modalCompanyLogo" src="" alt="" class="modal-company-logo">
+                </div>
+                <div class="modal-header-text">
+                    <h2 id="modalCompanyName" class="modal-company-name"></h2>
+                    <div class="modal-company-meta">
+                        <span class="modal-sector-badge" id="modalCompanySector"></span>
+                        <span class="modal-status-badge-header" id="modalStatusHeader"></span>
+                    </div>
+                </div>
+            </div>
+            <button class="modal-close" id="closeModalBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="company-modal-body">
+            <!-- Quick Stats Banner -->
+            <div class="modal-stats-banner">
+                <div class="modal-stat-item">
+                    <div class="modal-stat-icon"><i class="fas fa-calendar-plus"></i></div>
+                    <div class="modal-stat-content">
+                        <div class="modal-stat-value" id="modalBannerEntry"></div>
+                        <div class="modal-stat-label">Entry Year</div>
+                    </div>
+                </div>
+                <div class="modal-stat-item">
+                    <div class="modal-stat-icon"><i class="fas fa-hourglass-half"></i></div>
+                    <div class="modal-stat-content">
+                        <div class="modal-stat-value" id="modalBannerHolding"></div>
+                        <div class="modal-stat-label">Holding Period</div>
+                    </div>
+                </div>
+                <div class="modal-stat-item">
+                    <div class="modal-stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="modal-stat-content">
+                        <div class="modal-stat-value" id="modalBannerEmployees"></div>
+                        <div class="modal-stat-label">Employees</div>
+                    </div>
+                </div>
+                <div class="modal-stat-item">
+                    <div class="modal-stat-icon"><i class="fas fa-coins"></i></div>
+                    <div class="modal-stat-content">
+                        <div class="modal-stat-value" id="modalBannerDeal"></div>
+                        <div class="modal-stat-label">Deal Size</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Company Overview Section -->
+            <div class="modal-section">
+                <h3 class="modal-section-title">
+                    <i class="fas fa-building"></i> Company Overview
+                </h3>
+                <p id="modalDescription" class="modal-description"></p>
+            </div>
+
+            <!-- Investment Details Grid -->
+            <div class="modal-section">
+                <h3 class="modal-section-title">
+                    <i class="fas fa-chart-line"></i> Investment Details
+                </h3>
+                <div class="modal-detail-grid">
+                    <div class="modal-detail-card">
+                        <div class="modal-detail-icon purple"><i class="fas fa-handshake"></i></div>
+                        <div class="modal-detail-content">
+                            <div class="modal-detail-label">Private Equity Firm</div>
+                            <div class="modal-detail-value" id="modalPEFirm"></div>
+                        </div>
+                    </div>
+                    <div class="modal-detail-card">
+                        <div class="modal-detail-icon purple"><i class="fas fa-layer-group"></i></div>
+                        <div class="modal-detail-content">
+                            <div class="modal-detail-label">Fund Name</div>
+                            <div class="modal-detail-value" id="modalFund"></div>
+                        </div>
+                    </div>
+                    <div class="modal-detail-card">
+                        <div class="modal-detail-icon purple"><i class="fas fa-calendar-check"></i></div>
+                        <div class="modal-detail-content">
+                            <div class="modal-detail-label">Investment Date</div>
+                            <div class="modal-detail-value" id="modalEntryYear"></div>
+                        </div>
+                    </div>
+                    <div class="modal-detail-card">
+                        <div class="modal-detail-icon purple"><i class="fas fa-sack-dollar"></i></div>
+                        <div class="modal-detail-content">
+                            <div class="modal-detail-label">Transaction Value</div>
+                            <div class="modal-detail-value" id="modalDealSize"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Geographic & Market Information -->
+            <div class="modal-section">
+                <h3 class="modal-section-title">
+                    <i class="fas fa-globe-europe"></i> Geographic & Market Information
+                </h3>
+                <div class="modal-geo-grid">
+                    <div class="modal-geo-card">
+                        <div class="modal-geo-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="modal-geo-content">
+                            <div class="modal-geo-label">Headquarters</div>
+                            <div class="modal-geo-value" id="modalHeadquarters"></div>
+                        </div>
+                    </div>
+                    <div class="modal-geo-card">
+                        <div class="modal-geo-icon"><i class="fas fa-globe"></i></div>
+                        <div class="modal-geo-content">
+                            <div class="modal-geo-label">Primary Market</div>
+                            <div class="modal-geo-value" id="modalMarket"></div>
+                        </div>
+                    </div>
+                    <div class="modal-geo-card">
+                        <div class="modal-geo-icon"><i class="fas fa-compass"></i></div>
+                        <div class="modal-geo-content">
+                            <div class="modal-geo-label">Geography Type</div>
+                            <div class="modal-geo-value">
+                                <span id="modalGeography" class="modal-geography-badge"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Operational Metrics -->
+            <div class="modal-section">
+                <h3 class="modal-section-title">
+                    <i class="fas fa-tachometer-alt"></i> Operational Metrics
+                </h3>
+                <div class="modal-metrics-grid">
+                    <div class="modal-metric-card">
+                        <div class="modal-metric-header">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Workforce Size</span>
+                        </div>
+                        <div class="modal-metric-value" id="modalEmployees"></div>
+                    </div>
+                    <div class="modal-metric-card">
+                        <div class="modal-metric-header">
+                            <i class="fas fa-clock"></i>
+                            <span>Years Under Ownership</span>
+                        </div>
+                        <div class="modal-metric-value" id="modalHoldingPeriod"></div>
+                    </div>
+                    <div class="modal-metric-card">
+                        <div class="modal-metric-header">
+                            <i class="fas fa-signal"></i>
+                            <span>Investment Status</span>
+                        </div>
+                        <div class="modal-metric-value">
+                            <span id="modalStatus" class="modal-status-badge"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Business Intelligence Section -->
+            <div class="modal-section modal-intelligence-section">
+                <h3 class="modal-section-title">
+                    <i class="fas fa-lightbulb"></i> Business Intelligence
+                </h3>
+                <div class="modal-intelligence-grid">
+                    <div class="modal-intel-card">
+                        <div class="modal-intel-icon"><i class="fas fa-industry"></i></div>
+                        <div class="modal-intel-content">
+                            <div class="modal-intel-label">Industry Sector</div>
+                            <div class="modal-intel-value" id="modalSectorDetail"></div>
+                            <div class="modal-intel-desc">Primary business classification and market segment</div>
+                        </div>
+                    </div>
+                    <div class="modal-intel-card">
+                        <div class="modal-intel-icon"><i class="fas fa-rocket"></i></div>
+                        <div class="modal-intel-content">
+                            <div class="modal-intel-label">Growth Stage</div>
+                            <div class="modal-intel-value" id="modalGrowthStage">Expansion</div>
+                            <div class="modal-intel-desc">Current phase of company development and market maturity</div>
+                        </div>
+                    </div>
+                    <div class="modal-intel-card">
+                        <div class="modal-intel-icon"><i class="fas fa-trophy"></i></div>
+                        <div class="modal-intel-content">
+                            <div class="modal-intel-label">Business Model</div>
+                            <div class="modal-intel-value" id="modalBusinessModel">SaaS/Enterprise</div>
+                            <div class="modal-intel-desc">Revenue generation and value delivery approach</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Funding & Valuation -->
+            <div class="modal-section" id="modalFundingSection" style="display: none;">
+                <h3 class="modal-section-title">
+                    <i class="fas fa-money-bill-wave"></i> Funding & Valuation
+                </h3>
+                <div class="modal-funding-grid">
+                    <div class="modal-funding-card">
+                        <div class="modal-funding-label">Total Funding Raised</div>
+                        <div class="modal-funding-value" id="modalTotalFunding">—</div>
+                    </div>
+                    <div class="modal-funding-card">
+                        <div class="modal-funding-label">Latest Valuation</div>
+                        <div class="modal-funding-value" id="modalValuation">—</div>
+                    </div>
+                    <div class="modal-funding-card">
+                        <div class="modal-funding-label">Funding Stage</div>
+                        <div class="modal-funding-value" id="modalFundingStage">—</div>
+                    </div>
+                </div>
+                <div class="modal-funding-history" id="modalFundingHistory"></div>
+            </div>
+
+            <!-- Leadership Team -->
+            <div class="modal-section" id="modalLeadershipSection" style="display: none;">
+                <h3 class="modal-section-title">
+                    <i class="fas fa-users-cog"></i> Leadership Team
+                </h3>
+                <div class="modal-leadership-grid" id="modalLeadership"></div>
+            </div>
+
+            <!-- Products & Technology -->
+            <div class="modal-section" id="modalProductsSection" style="display: none;">
+                <h3 class="modal-section-title">
+                    <i class="fas fa-cube"></i> Products & Technology
+                </h3>
+                <div class="modal-products-list" id="modalProducts"></div>
+                <div class="modal-tech-tags" id="modalTechnology"></div>
+            </div>
+
+            <!-- Recent News & Milestones -->
+            <div class="modal-section" id="modalNewsSection" style="display: none;">
+                <h3 class="modal-section-title">
+                    <i class="fas fa-newspaper"></i> Recent News & Milestones
+                </h3>
+                <div class="modal-news-timeline" id="modalNews"></div>
+            </div>
+
+            <!-- Market Position & Competitive Advantage -->
+            <div class="modal-section" id="modalMarketSection" style="display: none;">
+                <h3 class="modal-section-title">
+                    <i class="fas fa-chart-line"></i> Market Position & Strategy
+                </h3>
+                <div class="modal-market-content">
+                    <div class="modal-market-item">
+                        <div class="modal-market-label"><i class="fas fa-crosshairs"></i> Target Market</div>
+                        <div class="modal-market-value" id="modalTargetMarket">—</div>
+                    </div>
+                    <div class="modal-market-item">
+                        <div class="modal-market-label"><i class="fas fa-medal"></i> Market Position</div>
+                        <div class="modal-market-value" id="modalMarketPosition">—</div>
+                    </div>
+                    <div class="modal-market-item">
+                        <div class="modal-market-label"><i class="fas fa-star"></i> Competitive Advantages</div>
+                        <div class="modal-advantages-list" id="modalAdvantages"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading Indicator -->
+            <div class="modal-loading" id="modalLoadingIndicator" style="display: none;">
+                <div class="modal-loading-spinner"></div>
+                <div class="modal-loading-text">Researching company data from online sources...</div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="modal-actions">
+                <a id="modalWebsiteBtn" href="#" target="_blank" class="modal-btn modal-btn-primary">
+                    <i class="fas fa-external-link-alt"></i> Visit Company Website
+                </a>
+                <button class="modal-btn modal-btn-secondary" id="closeModalBtn2">
+                    <i class="fas fa-times-circle"></i> Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='portfolio.js') }}"></script>
+{% endblock %}
+

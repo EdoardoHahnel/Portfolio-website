@@ -1,0 +1,369 @@
+{% extends "base.html" %}
+
+{% block title %}Fundraising Analytics{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
+<style>
+    .fundraising-tabs {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 25px;
+        border-bottom: 2px solid #e0e0e0;
+        padding-bottom: 0;
+    }
+    
+    .tab-button {
+        padding: 14px 28px;
+        background: transparent;
+        border: none;
+        border-bottom: 3px solid transparent;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 600;
+        color: #666;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .tab-button:hover {
+        color: #667eea;
+        background: rgba(102, 126, 234, 0.05);
+    }
+    
+    .tab-button.active {
+        color: #667eea;
+        border-bottom-color: #667eea;
+        background: rgba(102, 126, 234, 0.08);
+    }
+    
+    .tab-content {
+        display: none;
+    }
+    
+    .tab-content.active {
+        display: block;
+        animation: fadeIn 0.4s;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .chart-card {
+        background: white;
+        border-radius: 14px;
+        padding: 30px;
+        margin-bottom: 25px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        border: 1px solid #e8e8e8;
+    }
+    
+    .chart-title {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: #1a1a1a;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .chart-subtitle {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 25px;
+    }
+    
+    .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+    }
+    
+    .data-table thead {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+    }
+    
+    .data-table th {
+        padding: 14px 16px;
+        text-align: left;
+        font-weight: 600;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .data-table td {
+        padding: 14px 16px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .data-table tr:hover {
+        background: #f8f9ff;
+    }
+    
+    .data-table .number {
+        font-weight: 600;
+        color: #1a1a1a;
+    }
+    
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin-bottom: 30px;
+    }
+    
+    .stat-box-small {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+    }
+    
+    .stat-box-small .value {
+        font-size: 28px;
+        font-weight: 800;
+        margin-bottom: 6px;
+    }
+    
+    .stat-box-small .label {
+        font-size: 12px;
+        opacity: 0.95;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-weight: 500;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1 class="page-title">Nordic PE Fundraising Tracker</h1>
+    <p class="page-subtitle">Track active and completed fundraising across Nordic private equity firms</p>
+</div>
+
+<!-- Fundraising Summary Cards -->
+<div class="dashboard-grid">
+    <div class="stat-card">
+        <div class="stat-card-header">
+            <div>
+                <div class="stat-card-value" id="totalRaised">€280.5B</div>
+                <div class="stat-card-label">Total Capital Raised</div>
+            </div>
+            <div class="stat-card-icon blue">
+                <i class="fas fa-piggy-bank"></i>
+            </div>
+        </div>
+    </div>
+    
+    <div class="stat-card">
+        <div class="stat-card-header">
+            <div>
+                <div class="stat-card-value" id="activeFunds">19</div>
+                <div class="stat-card-label">Funds in Market</div>
+            </div>
+            <div class="stat-card-icon purple">
+                <i class="fas fa-chart-line"></i>
+            </div>
+        </div>
+    </div>
+    
+    <div class="stat-card">
+        <div class="stat-card-header">
+            <div>
+                <div class="stat-card-value" id="recentCloses">22</div>
+                <div class="stat-card-label">Recent Closes (2023-25)</div>
+            </div>
+            <div class="stat-card-icon purple">
+                <i class="fas fa-check-circle"></i>
+            </div>
+        </div>
+    </div>
+    
+    <div class="stat-card">
+        <div class="stat-card-header">
+            <div>
+                <div class="stat-card-value" id="avgFundSize">€3.0B</div>
+                <div class="stat-card-label">Avg Fund Size</div>
+            </div>
+            <div class="stat-card-icon orange">
+                <i class="fas fa-calculator"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Fundraising Analytics Tabs -->
+<div class="content-card" style="margin-bottom: 1.5rem;">
+    <div class="content-card-header">
+        <h2 class="content-card-title">Fundraising Analytics</h2>
+    </div>
+    <div class="content-card-body">
+        <!-- Analytics Tabs -->
+        <div class="fundraising-tabs">
+            <button class="tab-button active" data-tab="nordic">
+                <i class="fas fa-chart-pie"></i> Nordic Overview
+            </button>
+            <button class="tab-button" data-tab="european-funds">
+                <i class="fas fa-euro-sign"></i> European Funds Raised
+            </button>
+            <button class="tab-button" data-tab="european-cum">
+                <i class="fas fa-map"></i> Capital Under Management
+            </button>
+            <button class="tab-button" data-tab="european-investments">
+                <i class="fas fa-chart-line"></i> European Investments
+            </button>
+        </div>
+        
+        <!-- Nordic Overview Tab -->
+        <div id="tab-nordic" class="tab-content active">
+            <!-- Top Row: Two Pie Charts -->
+            <div class="chart-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-bottom: 30px;">
+                <!-- Strategy Distribution -->
+                <div class="chart-card" style="background: white; padding: 25px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
+                    <h3 style="font-size: 16px; font-weight: 700; margin: 0 0 8px 0; color: #1a1a1a; display: flex; align-items: center; gap: 8px;">
+                        <i class="fas fa-chart-pie" style="color: #6366F1;"></i>
+                        Strategy Focus
+                    </h3>
+                    <p style="margin: 0 0 20px 0; color: #666; font-size: 13px;">Distribution of funds by investment strategy</p>
+                    <canvas id="strategyChart" style="max-height: 280px;"></canvas>
+                </div>
+                
+                <!-- Geography Distribution -->
+                <div class="chart-card" style="background: white; padding: 25px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
+                    <h3 style="font-size: 16px; font-weight: 700; margin: 0 0 8px 0; color: #1a1a1a; display: flex; align-items: center; gap: 8px;">
+                        <i class="fas fa-globe-europe" style="color: #10B981;"></i>
+                        Geographic Focus
+                    </h3>
+                    <p style="margin: 0 0 20px 0; color: #666; font-size: 13px;">Regional distribution of fund investments</p>
+                    <canvas id="geographyChart" style="max-height: 280px;"></canvas>
+                </div>
+            </div>
+            
+            <!-- Bottom Row: Two Stacked Bar Charts -->
+            <div class="chart-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-bottom: 20px;">
+                <!-- Nordic Funds Raised -->
+                <div class="chart-card" style="background: white; padding: 25px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
+                    <h3 style="font-size: 16px; font-weight: 700; margin: 0 0 8px 0; color: #1a1a1a; display: flex; align-items: center; gap: 8px;">
+                        <i class="fas fa-chart-bar" style="color: #3B82F6;"></i>
+                        Nordic Funds Raised by Year
+                    </h3>
+                    <p style="margin: 0 0 20px 0; color: #10B981; font-size: 13px; font-weight: 600;">
+                        2020-2025: €280.5B raised across 93 funds
+                    </p>
+                    <canvas id="nordicFundsChart" style="max-height: 320px;"></canvas>
+                </div>
+                
+                <!-- Vintage Year Distribution -->
+                <div class="chart-card" style="background: white; padding: 25px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
+                    <h3 style="font-size: 16px; font-weight: 700; margin: 0 0 8px 0; color: #1a1a1a; display: flex; align-items: center; gap: 8px;">
+                        <i class="fas fa-calendar-alt" style="color: #8B5CF6;"></i>
+                        Vintage Year Distribution
+                    </h3>
+                    <p style="margin: 0 0 20px 0; color: #666; font-size: 13px;">Number of funds by vintage year</p>
+                    <canvas id="vintageChart" style="max-height: 320px;"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <!-- European Funds Raised Tab -->
+        <div id="tab-european-funds" class="tab-content">
+            <div class="chart-card">
+                <div class="chart-title">
+                    <i class="fas fa-euro-sign"></i>
+                    European PE and VC Funds Raised by Region
+                </div>
+                <div class="chart-subtitle">Funds raised (€ bn) across European regions from H1-20 to H1-24</div>
+                <canvas id="europeanFundsChart" style="max-height: 500px;"></canvas>
+            </div>
+        </div>
+        
+        <!-- Capital Under Management Tab -->
+        <div id="tab-european-cum" class="tab-content">
+            <div class="chart-card">
+                <div class="chart-title">
+                    <i class="fas fa-map"></i>
+                    Capital Under Management and Dry Powder in Europe
+                </div>
+                <div class="chart-subtitle">End of 2023 - CUM and DP by European region (€ bn)</div>
+                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 20px; align-items: start;">
+                    <div style="min-height: 400px;">
+                        <canvas id="cumChart" style="max-height: 400px; width: 100%;"></canvas>
+                    </div>
+                    <div style="padding: 20px; background: #f8f9fa; border-radius: 12px; height: fit-content;">
+                        <h4 style="margin: 0 0 20px 0; color: #1a1a1a;">Key Insights</h4>
+                        <div style="margin-bottom: 15px;">
+                            <strong style="color: #667eea;">Total Europe CUM:</strong> €1,154B (+15% YoY)
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <strong style="color: #667eea;">Total Europe DP:</strong> €410B (+18% YoY)
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <strong style="color: #667eea;">Nordics DP %:</strong> 46% (highest among regions)
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <strong style="color: #667eea;">UK & Ireland:</strong> Largest market (€595B CUM)
+                        </div>
+                        <div>
+                            <strong style="color: #667eea;">CEE:</strong> Smallest but growing market (€12B CUM)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- European Investments Tab -->
+        <div id="tab-european-investments" class="tab-content">
+            <div class="chart-card">
+                <div class="chart-title">
+                    <i class="fas fa-chart-line"></i>
+                    European PE Investments by Type
+                </div>
+                <div class="chart-subtitle">Investment value (€ bn) and volume (number of companies) from H1-20 to H1-24</div>
+                <canvas id="europeanInvestmentsChart" style="max-height: 500px; width: 100%;"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Fundraising Table -->
+<div class="content-card">
+    <div class="content-card-header">
+        <h2 class="content-card-title">All Fundraising Activity</h2>
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="Marketing">In Market</button>
+            <button class="filter-btn" data-filter="Closed">Closed</button>
+        </div>
+    </div>
+    <div class="content-card-body">
+        <div id="fundraisingTable">
+            <!-- Will be populated by JavaScript -->
+        </div>
+    </div>
+</div>
+
+<!-- Fund Detail Modal -->
+<div id="fundModal" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.7);">
+    <div class="modal-content" style="background-color: #fefefe; margin: 3% auto; padding: 0; border-radius: 16px; width: 80%; max-width: 900px; box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 24px; border-radius: 16px 16px 0 0; display: flex; justify-content: space-between; align-items: center;">
+            <h2 id="modalFundName" style="color: white; margin: 0; font-size: 24px; font-weight: 600;"></h2>
+            <span class="close" onclick="document.getElementById('fundModal').style.display='none'" style="color: white; font-size: 32px; font-weight: bold; cursor: pointer; opacity: 0.8; transition: 0.2s;">&times;</span>
+        </div>
+        <div id="modalFundDetails" style="padding: 30px; max-height: 70vh; overflow-y: auto;">
+            <!-- Details will be populated by JavaScript -->
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="{{ url_for('static', filename='fundraising.js') }}"></script>
+{% endblock %}
+

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}M&A News{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1 class="page-title">Investment News & Deals</h1>
+    <p class="page-subtitle">Latest mergers, acquisitions, private equity, and investment activity in the Nordic region</p>
+</div>
+
+<!-- Control Panel -->
+<div class="content-card" style="margin-bottom: 1.5rem;">
+    <div class="content-card-body">
+        <div class="controls-left">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search articles...">
+            </div>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Total Articles:</span>
+                    <span id="totalCount" class="stat-value">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Status Messages -->
+<div id="statusMessage" class="status-message hidden"></div>
+
+<!-- News Grid -->
+<div class="content-card">
+    <div class="content-card-header">
+        <h2 class="content-card-title">All Articles</h2>
+        <button id="refreshBtn" class="btn btn-primary btn-sm">
+            <i class="fas fa-sync-alt"></i> Refresh
+        </button>
+    </div>
+    
+    <div class="content-card-body">
+        <!-- Loading Spinner -->
+        <div id="loadingSpinner" class="loading-spinner hidden">
+            <div class="spinner"></div>
+            <p>Loading news articles...</p>
+        </div>
+
+        <!-- News Cards Container -->
+        <div id="newsContainer" class="news-grid">
+            <!-- News cards will be inserted here by JavaScript -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="empty-state">
+            <i class="fas fa-newspaper"></i>
+            <h3>No Articles Yet</h3>
+            <p>Click "Refresh" to load M&A news.</p>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}
+

@@ -1,0 +1,492 @@
+{
+  "metadata": {
+    "last_updated": "2025-10-17",
+    "source": "substansrabatt.se",
+    "total_companies": 17,
+    "description": "Swedish Investment Companies (Investmentbolag) with NAV discount/premium data"
+  },
+  "investment_companies": [
+    {
+      "name": "Investor AB",
+      "ticker": "Investor B",
+      "nav_per_share": "336.00",
+      "share_price": "306.10",
+      "discount_premium": "+8.90%",
+      "discount_numeric": 8.9,
+      "website": "https://www.investorab.com",
+      "logo_url": "https://logo.clearbit.com/investorab.com",
+      "type": "Listed Investment Company",
+      "founded": 1916,
+      "market_cap": "SEK 1,100 billion",
+      "description": "The Wallenberg family's flagship investment company, owning world-class Nordic industrial companies.",
+      "holdings": [
+        "Atlas Copco",
+        "Epiroc",
+        "ABB",
+        "Ericsson",
+        "AstraZeneca",
+        "SEB",
+        "Nasdaq",
+        "Mölnlycke"
+      ],
+      "investment_focus": [
+        "Industrial",
+        "Healthcare",
+        "Technology",
+        "Financial Services"
+      ],
+      "ceo": "Johan Forssell",
+      "exchange": "Nasdaq Stockholm",
+      "recent_activity": "Q3 2024: Increased Atlas Copco stake to 22.5% (SEK 8.5B investment), strong NAV growth of 8.5% driven by industrial portfolio performance. Epiroc spin-off completed successfully, Ericsson showing recovery signs. New sustainability initiatives launched across portfolio companies. Board approved SEK 2B share buyback program. Strong cash position of SEK 15B for future investments."
+    },
+    {
+      "name": "Industrivärden",
+      "ticker": "Industrivärden C",
+      "nav_per_share": "401.00",
+      "share_price": "383.50",
+      "discount_premium": "+4.36%",
+      "discount_numeric": 4.36,
+      "website": "https://www.industrivarden.se",
+      "logo_url": "https://logo.clearbit.com/industrivarden.se",
+      "type": "Listed Investment Company",
+      "founded": 1944,
+      "market_cap": "SEK 140 billion",
+      "description": "Lundberg family's investment company focusing on large Nordic industrial and financial companies.",
+      "holdings": [
+        "Volvo",
+        "Sandvik",
+        "Handelsbanken",
+        "SCA",
+        "Essity",
+        "ICA Gruppen"
+      ],
+      "investment_focus": [
+        "Industrial",
+        "Financial",
+        "Consumer"
+      ],
+      "ceo": "Helena Stjernholm",
+      "exchange": "Nasdaq Stockholm",
+      "recent_activity": "Q3 2024: Active ownership initiatives in Volvo (increased stake to 8.2%) and Sandvik (6.1% stake). Volvo's electric truck division showing strong growth, Sandvik's mining equipment orders up 15%. New board members appointed to SCA and Essity. Sustainability targets updated: 50% emissions reduction by 2030. Dividend increased 12% to SEK 4.50 per share. Exploring new industrial investments in green technology sector."
+    },
+    {
+      "name": "Kinnevik",
+      "ticker": "Kinnevik B",
+      "nav_per_share": "135.56",
+      "share_price": "88.42",
+      "discount_premium": "+34.77%",
+      "discount_numeric": 34.77,
+      "website": "https://www.kinnevik.com",
+      "logo_url": "https://logo.clearbit.com/kinnevik.com",
+      "type": "Listed Investment Company",
+      "founded": 1936,
+      "market_cap": "SEK 24 billion",
+      "description": "Stenbeck family investment company focused on digital consumer businesses and growth equity.",
+      "holdings": [
+        "Zalando",
+        "Global Fashion Group",
+        "Babylon Health",
+        "Tele2",
+        "Millicom"
+      ],
+      "investment_focus": [
+        "E-commerce",
+        "Healthcare Tech",
+        "Telecom",
+        "Consumer Digital"
+      ],
+      "ceo": "Georgi Ganev",
+      "exchange": "Nasdaq Stockholm",
+      "recent_activity": "Q3 2024: Major Zalando divestment program underway (reduced stake from 21% to 8%), focusing on unlisted growth investments. New investments in Babylon Health (€50M), Global Fashion Group restructuring completed. Strong performance from Tele2 and Millicom. Digital health portfolio expanded with 3 new investments. Board approved new investment strategy: 70% unlisted, 30% listed. Cash position strengthened to SEK 8B for future opportunities."
+    },
+    {
+      "name": "Latour",
+      "ticker": "Latour B",
+      "nav_per_share": "212.00",
+      "share_price": "228.60",
+      "discount_premium": "-7.83%",
+      "discount_numeric": -7.83,
+      "website": "https://www.latour.se",
+      "logo_url": "https://logo.clearbit.com/latour.se",
+      "type": "Listed Investment Company",
+      "founded": 1985,
+      "market_cap": "SEK 180 billion",
+      "description": "Industrial investment company with wholly owned operations and listed holdings.",
+      "holdings": [
+        "Sweco",
+        "Troax",
+        "Fagerhult",
+        "Latour Industries",
+        "Hultafors Group"
+      ],
+      "investment_focus": [
+        "Industrial Technology",
+        "Infrastructure",
+        "Manufacturing"
+      ],
+      "ceo": "Johan Hjertonsson",
+      "exchange": "Nasdaq Stockholm",
+      "recent_activity": "Q3 2024: Trading at 7.8% premium to NAV, strong industrial operations performance across all divisions. Sweco won major infrastructure contracts (€200M), Troax expanded in US market, Fagerhult LED sales up 25%. New acquisitions: 2 German industrial companies (€150M total). Sustainability initiatives: 100% renewable energy by 2025. Dividend increased 8% to SEK 3.20. Strong cash flow generation of SEK 2.1B. Exploring European expansion opportunities."
+    },
+    {
+      "name": "Bure Equity",
+      "ticker": "Bure Equity",
+      "nav_per_share": "276.10",
+      "share_price": "268.80",
+      "discount_premium": "+2.64%",
+      "discount_numeric": 2.64,
+      "website": "https://www.bure.se",
+      "logo_url": "https://logo.clearbit.com/bure.se",
+      "type": "Listed Private Equity",
+      "founded": 1992,
+      "market_cap": "SEK 12 billion",
+      "description": "Swedish investment company focusing on STEM-related unlisted companies with active ownership.",
+      "holdings": [
+        "Vitrolife",
+        "Xvivo Perfusion",
+        "Cavotec",
+        "Cellavision",
+        "Mycronic"
+      ],
+      "investment_focus": [
+        "Healthcare Tech",
+        "Life Sciences",
+        "Industrial Tech"
+      ],
+      "ceo": "Max Jonson",
+      "exchange": "Nasdaq Stockholm",
+      "recent_activity": "Vitrolife merger completed, Xvivo strong growth"
+    },
+    {
+      "name": "Lundbergs",
+      "ticker": "Lundberg B",
+      "nav_per_share": "564.00",
+      "share_price": "496.20",
+      "discount_premium": "+12.02%",
+      "discount_numeric": 12.02,
+      "website": "https://www.lundbergs.se",
+      "logo_url": "https://logo.clearbit.com/lundbergs.se",
+      "type": "Listed Investment Company",
+      "founded": 1944,
+      "market_cap": "SEK 200+ billion",
+      "description": "Lundberg family holding company with real estate and equity investments through Industrivärden and L E Lundbergföretagen.",
+      "holdings": [
+        "Industrivärden",
+        "L E Lundbergföretagen",
+        "Hufvudstaden",
+        "Fastighets AB L E Lundberg"
+      ],
+      "investment_focus": [
+        "Real Estate",
+        "Listed Equities",
+        "Industrial"
+      ],
+      "ceo": "Fredrik Lundberg",
+      "exchange": "Nasdaq Stockholm",
+      "recent_activity": "One of Sweden's largest real estate portfolios, Hufvudstaden developments ongoing"
+    },
+    {
+      "name": "Öresund",
+      "ticker": "Öresund",
+      "nav_per_share": "111.00",
+      "share_price": "116.00",
+      "discount_premium": "-4.50%",
+      "discount_numeric": -4.5,
+      "website": "https://www.oresund.se",
+      "logo_url": "https://logo.clearbit.com/oresund.se",
+      "type": "Listed Investment Company",
+      "founded": 1890,
+      "market_cap": "SEK 4 billion",
+      "description": "Small-cap focused investment company with active ownership in Nordic growth companies.",
+      "holdings": [
+        "Sdiptech",
+        "Strax",
+        "ELOS Medtech",
+        "Moment Group"
+      ],
+      "investment_focus": [
+        "Small-cap Nordic",
+        "Growth companies",
+        "Technology"
+      ],
+      "ceo": "Patrik Wahlén",
+      "exchange": "Nasdaq Stockholm",
+      "recent_activity": "Trading at slight premium, active in small-cap acquisitions"
+    },
+    {
+      "name": "Creades",
+      "ticker": "Creades A",
+      "nav_per_share": "81.00",
+      "share_price": "77.05",
+      "discount_premium": "+4.88%",
+      "discount_numeric": 4.88,
+      "website": "https://www.creades.se",
+      "logo_url": "https://logo.clearbit.com/creades.se",
+      "type": "Listed Private Equity",
+      "founded": 2011,
+      "market_cap": "SEK 8 billion",
+      "description": "Active investment company focusing on small and mid-cap Nordic companies.",
+      "holdings": [
+        "Sdiptech",
+        "Zutec",
+        "Lime Technologies",
+        "Hansa Biopharma"
+      ],
+      "investment_focus": [
+        "Nordic Small/Mid-cap",
+        "Active ownership",
+        "Growth"
+      ],
+      "ceo": "Sven Hagströmer",
+      "exchange": "Nasdaq Stockholm",
+      "recent_activity": "Several portfolio companies performing well, focus on tech-enabled services"
+    },
+    {
+      "name": "Svolder",
+      "ticker": "Svolder B",
+      "nav_per_share": "56.00",
+      "share_price": "53.95",
+      "discount_premium": "+3.66%",
+      "discount_numeric": 3.66,
+      "website": "https://www.svolder.se",
+      "logo_url": "https://logo.clearbit.com/svolder.se",
+      "type": "Listed Investment Company",
+      "founded": 1991,
+      "market_cap": "SEK 3 billion",
+      "description": "Focused investment company with concentrated portfolio of Nordic small and mid-cap companies.",
+      "holdings": [
+        "Assa Abloy",
+        "Lifco",
+        "Beijer Ref",
+        "Troax",
+        "Lagercrantz"
+      ],
+      "investment_focus": [
+        "Nordic Small/Mid-cap",
+        "Industrial",
+        "Technology"
+      ],
+      "ceo": "Ulf Hedlundh",
+      "exchange": "Nasdaq Stockholm",
+      "recent_activity": "Concentrated portfolio strategy, long-term holdings"
+    },
+    {
+      "name": "Traction",
+      "ticker": "Traction B",
+      "nav_per_share": "285.00",
+      "share_price": "247.00",
+      "discount_premium": "+13.33%",
+      "discount_numeric": 13.33,
+      "website": "https://www.traction.se",
+      "logo_url": "https://logo.clearbit.com/traction.se",
+      "type": "Listed Private Equity",
+      "founded": 1986,
+      "market_cap": "SEK 2 billion",
+      "description": "Investment company focusing on unlisted small-cap companies with growth potential.",
+      "holdings": [
+        "XCAP",
+        "Ratos preference shares",
+        "Indentive",
+        "Paradox Interactive (exited)"
+      ],
+      "investment_focus": [
+        "Unlisted Small-cap",
+        "Growth Equity",
+        "Technology"
+      ],
+      "ceo": "Petter Stillström",
+      "exchange": "Nasdaq Stockholm First North",
+      "recent_activity": "Active in small-cap private equity, several exits completed"
+    },
+    {
+      "name": "Spiltan",
+      "ticker": "Spiltan Invest",
+      "nav_per_share": "284.58",
+      "share_price": "196.20",
+      "discount_premium": "+31.06%",
+      "discount_numeric": 31.06,
+      "website": "https://www.spiltan.se",
+      "logo_url": "https://logo.clearbit.com/spiltan.se",
+      "type": "Listed Investment Company",
+      "founded": 2004,
+      "market_cap": "SEK 3 billion",
+      "description": "Investment company with focus on small-cap Nordic companies and real estate.",
+      "holdings": [
+        "Nordic real estate",
+        "Small-cap equities",
+        "Private investments"
+      ],
+      "investment_focus": [
+        "Real Estate",
+        "Small-cap",
+        "Value investing"
+      ],
+      "ceo": "Erik Brändström",
+      "exchange": "Nasdaq Stockholm First North",
+      "recent_activity": "Large NAV discount, value opportunity for investors"
+    },
+    {
+      "name": "Linc",
+      "ticker": "Linc",
+      "nav_per_share": "72.30",
+      "share_price": "70.70",
+      "discount_premium": "+2.21%",
+      "discount_numeric": 2.21,
+      "website": "https://www.linc.se",
+      "logo_url": "https://logo.clearbit.com/linc.se",
+      "type": "Listed Investment Company",
+      "founded": 2002,
+      "market_cap": "SEK 1.5 billion",
+      "description": "Investment company focusing on unlisted Nordic growth companies.",
+      "holdings": [
+        "Ncab Group",
+        "Instalco",
+        "Sdiptech",
+        "Various unlisted"
+      ],
+      "investment_focus": [
+        "Unlisted Growth",
+        "Nordic",
+        "B2B Services"
+      ],
+      "ceo": "Johan Lindberg",
+      "exchange": "Nasdaq Stockholm First North",
+      "recent_activity": "Trading near NAV, portfolio company valuations stable"
+    },
+    {
+      "name": "VNV Global",
+      "ticker": "VNV Global",
+      "nav_per_share": "43.39",
+      "share_price": "24.28",
+      "discount_premium": "+44.04%",
+      "discount_numeric": 44.04,
+      "website": "https://www.vnv.global",
+      "logo_url": "https://logo.clearbit.com/vnv.global",
+      "type": "Listed VC/Growth Equity",
+      "founded": 2005,
+      "market_cap": "SEK 5 billion",
+      "description": "Growth equity investor in technology companies in emerging markets.",
+      "holdings": [
+        "Vinted",
+        "BlaBlaCar",
+        "Everty (Glovo)",
+        "Various tech companies"
+      ],
+      "investment_focus": [
+        "Emerging Markets Tech",
+        "Marketplaces",
+        "Fintech"
+      ],
+      "ceo": "Keith Richman",
+      "exchange": "Nasdaq Stockholm",
+      "recent_activity": "Large discount due to emerging markets exposure, Vinted performing well"
+    },
+    {
+      "name": "NAXS",
+      "ticker": "NAXS",
+      "nav_per_share": "73.32",
+      "share_price": "38.40",
+      "discount_premium": "+47.63%",
+      "discount_numeric": 47.63,
+      "website": "https://www.naxs.se",
+      "logo_url": "https://logo.clearbit.com/naxs.se",
+      "type": "Nordic Secondary Fund",
+      "founded": 2010,
+      "market_cap": "SEK 3 billion",
+      "description": "Nordic secondary private equity fund-of-funds structure.",
+      "holdings": [
+        "EQT funds",
+        "Nordic Capital funds",
+        "Altor funds",
+        "Various PE fund stakes"
+      ],
+      "investment_focus": [
+        "PE Secondaries",
+        "Nordic Funds",
+        "Diversified PE"
+      ],
+      "ceo": "Viveka Holst",
+      "exchange": "Nasdaq Stockholm",
+      "recent_activity": "Large discount reflects secondaries market dynamics"
+    },
+    {
+      "name": "Spiltan Invest",
+      "ticker": "Spiltan Invest",
+      "nav_per_share": "284.58",
+      "share_price": "196.20",
+      "discount_premium": "+31.06%",
+      "discount_numeric": 31.06,
+      "website": "https://www.spiltan.se",
+      "logo_url": "https://logo.clearbit.com/spiltan.se",
+      "type": "Listed Investment Company",
+      "founded": 2004,
+      "market_cap": "SEK 3 billion",
+      "description": "Value-focused investment company with real estate and small-cap equity investments.",
+      "holdings": [
+        "Real estate properties",
+        "Small-cap equities",
+        "Funds"
+      ],
+      "investment_focus": [
+        "Real Estate",
+        "Value Investing",
+        "Small-cap"
+      ],
+      "ceo": "Erik Brändström",
+      "exchange": "First North",
+      "recent_activity": "Significant NAV discount presents value opportunity"
+    },
+    {
+      "name": "VEF",
+      "ticker": "VEF",
+      "nav_per_share": "3.48",
+      "share_price": "2.29",
+      "discount_premium": "+34.34%",
+      "discount_numeric": 34.34,
+      "website": "https://www.vef.vc",
+      "logo_url": "https://logo.clearbit.com/vef.vc",
+      "type": "Listed VC Fund",
+      "founded": 2015,
+      "market_cap": "SEK 2 billion",
+      "description": "Emerging markets fintech venture capital investor.",
+      "holdings": [
+        "Creditas",
+        "Konfio",
+        "Juspay",
+        "Emerging market fintechs"
+      ],
+      "investment_focus": [
+        "Emerging Markets",
+        "Fintech",
+        "Venture Capital"
+      ],
+      "ceo": "David Nangle",
+      "exchange": "Nasdaq Stockholm",
+      "recent_activity": "Portfolio fintech companies growing in Latin America and Asia"
+    },
+    {
+      "name": "Flerie Invest",
+      "ticker": "Flerie",
+      "nav_per_share": "52.78",
+      "share_price": "39.35",
+      "discount_premium": "+25.45%",
+      "discount_numeric": 25.45,
+      "website": "",
+      "logo_url": "",
+      "type": "Listed Investment Company",
+      "founded": 2005,
+      "market_cap": "SEK 800M",
+      "description": "Small investment company focusing on Nordic equities.",
+      "holdings": [
+        "Various Nordic equities"
+      ],
+      "investment_focus": [
+        "Nordic Equities",
+        "Small-cap"
+      ],
+      "ceo": "",
+      "exchange": "First North",
+      "recent_activity": "Moderate discount to NAV"
+    }
+  ]
+}

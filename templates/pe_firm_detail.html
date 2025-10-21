@@ -1,0 +1,1681 @@
+{% extends "base.html" %}
+
+{% block title %}{{ firm_name }}{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+{% endblock %}
+
+{% block content %}
+<div id="firmDetailContainer">
+    <!-- Will be populated by JavaScript with firm details -->
+    <div class="loading-spinner">
+        <div class="spinner"></div>
+        <p>Loading firm details...</p>
+    </div>
+</div>
+
+<script>
+const firmName = "{{ firm_name }}";
+
+document.addEventListener('DOMContentLoaded', async function() {
+    await loadFirmDetail();
+});
+
+async function loadFirmDetail() {
+    try {
+        const response = await fetch(`/api/pe-firm/${firmName}`);
+        const data = await response.json();
+        
+        if (data.success) {
+            const firm = data.firm;
+            displayFirmDetail(firm);
+        } else {
+            document.getElementById('firmDetailContainer').innerHTML = `
+                <div class="error-message">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <h2>Firm not found</h2>
+                    <a href="/pe-firms" class="btn btn-primary">Back to PE Firms</a>
+                </div>
+            `;
+        }
+    } catch (error) {
+        console.error('Error loading firm:', error);
+    }
+}
+
+function displayFirmDetail(firm) {
+    const container = document.getElementById('firmDetailContainer');
+    
+    container.innerHTML = `
+        <!-- Firm Header -->
+        <div class="firm-detail-header">
+            <div class="firm-detail-header-content">
+                <img src="${firm.logo_url}" alt="${escapeHtml(firm.name)}" class="firm-detail-logo" 
+                     onerror="this.style.display='none'">
+                <div>
+                    <h1 class="firm-detail-name">${escapeHtml(firm.name)}</h1>
+                    <div class="firm-detail-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> ${escapeHtml(firm.headquarters)}</span>
+                        <span><i class="fas fa-calendar"></i> Founded ${firm.founded}</span>
+                        <span><i class="fas fa-dollar-sign"></i> AUM: ${escapeHtml(firm.aum)}</span>
+                        <span><i class="fas fa-users"></i> ${firm.employees} employees</span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <a href="${firm.website}" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-external-link-alt"></i> Visit Website
+                </a>
+            </div>
+        </div>
+        
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="overview">
+                <i class="fas fa-info-circle"></i> Overview
+            </button>
+            <button class="tab-btn" data-tab="portfolio">
+                <i class="fas fa-briefcase"></i> Portfolio (${getPortfolioCount(firmName)})
+            </button>
+            <button class="tab-btn" data-tab="team">
+                <i class="fas fa-users"></i> Team (${firm.team.length})
+            </button>
+            <button class="tab-btn" data-tab="focus">
+                <i class="fas fa-bullseye"></i> Investment Focus
+            </button>
+        </div>
+        
+        <!-- Tab Content -->
+        <div class="tab-content active" id="tab-overview">
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem;">
+                <div class="content-card">
+                    <div class="content-card-header">
+                        <h3 class="content-card-title">About ${escapeHtml(firm.name)}</h3>
+                    </div>
+                    <div class="content-card-body">
+                        <p class="firm-description">${escapeHtml(firm.description)}</p>
+                        
+                        <div class="info-grid" style="margin-top: 1.5rem;">
+                            <div class="info-item">
+                                <div class="info-label">Headquarters</div>
+                                <div class="info-value">${escapeHtml(firm.headquarters)}</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Founded</div>
+                                <div class="info-value">${firm.founded}</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Employees</div>
+                                <div class="info-value">${firm.employees}</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">AUM</div>
+                                <div class="info-value">${escapeHtml(firm.aum)}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-card">
+                    <div class="content-card-header">
+                        <h3 class="content-card-title">Recent Activity</h3>
+                    </div>
+                    <div class="content-card-body">
+                        <p>${escapeHtml(firm.recent_activity)}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Timeline Section -->
+            <div class="content-card" style="margin-top: 1.5rem;">
+                <div class="content-card-header">
+                    <h3 class="content-card-title">
+                        <i class="fas fa-history"></i> Timeline & Major Events
+                    </h3>
+                </div>
+                <div class="content-card-body">
+                    <div id="firmTimeline">
+                        <div class="loading-spinner">
+                            <div class="spinner"></div>
+                            <p>Loading timeline...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Portfolio Summary Stats -->
+            <div class="content-card" style="margin-top: 1.5rem;">
+                <div class="content-card-header">
+                    <h3 class="content-card-title">
+                        <i class="fas fa-chart-bar"></i> Portfolio Overview
+                    </h3>
+                </div>
+                <div class="content-card-body">
+                    <div class="portfolio-stats-modern">
+                        <div class="stat-modern" data-color="blue">
+                            <div class="stat-modern-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="stat-modern-content">
+                                <div class="stat-modern-value" id="totalPortfolio">-</div>
+                                <div class="stat-modern-label">Portfolio Companies</div>
+                            </div>
+                        </div>
+                        <div class="stat-modern" data-color="purple">
+                            <div class="stat-modern-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-modern-content">
+                                <div class="stat-modern-value" id="avgHolding">-</div>
+                                <div class="stat-modern-label">Avg Holding Period</div>
+                            </div>
+                        </div>
+                        <div class="stat-modern" data-color="pink">
+                            <div class="stat-modern-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="stat-modern-content">
+                                <div class="stat-modern-value" id="countriesCount">-</div>
+                                <div class="stat-modern-label">Countries</div>
+                            </div>
+                        </div>
+                        <div class="stat-modern" data-color="cyan">
+                            <div class="stat-modern-icon">
+                                <i class="fas fa-plus-circle"></i>
+                            </div>
+                            <div class="stat-modern-content">
+                                <div class="stat-modern-value" id="recentAdds">-</div>
+                                <div class="stat-modern-label">Added 2024-25</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card" style="margin-top: 1.5rem;">
+                <div class="content-card-header">
+                    <h3 class="content-card-title">
+                        <i class="fas fa-globe"></i> Global Presence & Portfolio Analytics
+                    </h3>
+                </div>
+                <div class="content-card-body">
+                    <h4 style="margin-bottom: 1rem; color: var(--text-primary); font-size: 14px; font-weight: 700;">
+                        <i class="fas fa-building"></i> Office Locations
+                    </h4>
+                    <div class="offices-list" style="margin-bottom: 1.5rem;">
+                        ${firm.offices.map(office => `
+                            <span class="office-badge">
+                                <i class="fas fa-map-pin"></i> ${escapeHtml(office)}
+                            </span>
+                        `).join('')}
+                    </div>
+                    
+                    <h4 style="margin-bottom: 1rem; color: var(--text-primary); font-size: 14px; font-weight: 700;">
+                        <i class="fas fa-chart-pie"></i> Portfolio Distribution
+                    </h4>
+                    <div class="modern-charts-grid">
+                        <div class="modern-chart-card">
+                            <div class="modern-chart-header">
+                                <div class="chart-icon-wrapper" style="background: linear-gradient(135deg, #6366F1, #4F46E5);">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <h5 class="modern-chart-title">Country Distribution</h5>
+                            </div>
+                            <div class="modern-chart-body">
+                                <canvas id="firmCountryChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="modern-chart-card">
+                            <div class="modern-chart-header">
+                                <div class="chart-icon-wrapper" style="background: linear-gradient(135deg, #7C3AED, #5B21B6);">
+                                    <i class="fas fa-industry"></i>
+                                </div>
+                                <h5 class="modern-chart-title">Sector Distribution</h5>
+                            </div>
+                            <div class="modern-chart-body">
+                                <canvas id="firmSectorChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="modern-chart-card">
+                            <div class="modern-chart-header">
+                                <div class="chart-icon-wrapper" style="background: linear-gradient(135deg, #8B5CF6, #6D28D9);">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                                <h5 class="modern-chart-title">Entry Year Trend</h5>
+                            </div>
+                            <div class="modern-chart-body">
+                                <canvas id="firmYearChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="tab-portfolio">
+            <div class="content-card">
+                <div class="content-card-header">
+                    <h3 class="content-card-title">Portfolio Companies</h3>
+                </div>
+                <div class="content-card-body">
+                    <div id="firmPortfolio">Loading portfolio...</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="tab-team">
+            <div class="content-card">
+                <div class="content-card-header">
+                    <h3 class="content-card-title">Leadership Team</h3>
+                </div>
+                <div class="content-card-body">
+                    <div class="team-grid">
+                        ${firm.team.map(member => `
+                            <div class="team-card">
+                                <div class="team-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="team-info">
+                                    <div class="team-name">${escapeHtml(member.name)}</div>
+                                    <div class="team-title">${escapeHtml(member.title)}</div>
+                                    <div class="team-location">
+                                        <i class="fas fa-map-marker-alt"></i> ${escapeHtml(member.location)}
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="tab-focus">
+            <div class="content-card">
+                <div class="content-card-header">
+                    <h3 class="content-card-title">
+                        <i class="fas fa-bullseye"></i> Investment Strategy
+                    </h3>
+                </div>
+                <div class="content-card-body">
+                    <div class="focus-grid">
+                        <div class="focus-section">
+                            <h4><i class="fas fa-industry"></i> Sectors</h4>
+                            <div class="tag-list">
+                                ${firm.investment_focus.sectors.map(s => `<span class="tag">${escapeHtml(s)}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="focus-section">
+                            <h4><i class="fas fa-globe"></i> Geography</h4>
+                            <div class="tag-list">
+                                ${firm.investment_focus.geography.map(g => `<span class="tag">${escapeHtml(g)}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="focus-section">
+                            <h4><i class="fas fa-chart-line"></i> Investment Type</h4>
+                            <div class="tag-list">
+                                ${firm.investment_focus.investment_type.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="focus-section">
+                            <h4><i class="fas fa-money-bill-wave"></i> Deal Size</h4>
+                            <div class="tag-list">
+                                <span class="tag tag-large">${escapeHtml(firm.investment_focus.deal_size)}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card" style="margin-top: 1.5rem;">
+                <div class="content-card-header">
+                    <h3 class="content-card-title">
+                        <i class="fas fa-history"></i> Latest Acquisitions
+                    </h3>
+                </div>
+                <div class="content-card-body">
+                    <div id="latestAcquisitions">
+                        <p style="color: var(--text-secondary);">Loading latest acquisitions...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Setup tab switching
+    setupTabs();
+    
+    // Load portfolio for this firm
+    loadFirmPortfolio(firmName);
+    
+    // Load latest acquisitions
+    loadLatestAcquisitions(firmName);
+    
+    // Load timeline
+    loadFirmTimeline(firm, firmName);
+}
+
+function setupTabs() {
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tabName = btn.dataset.tab;
+            
+            // Remove active from all
+            tabBtns.forEach(b => b.classList.remove('active'));
+            tabContents.forEach(c => c.classList.remove('active'));
+            
+            // Add active to clicked
+            btn.classList.add('active');
+            document.getElementById(`tab-${tabName}`).classList.add('active');
+        });
+    });
+}
+
+async function loadFirmPortfolio(firmName) {
+    try {
+        const response = await fetch('/api/portfolio');
+        const data = await response.json();
+        
+        if (data.success) {
+            const firmCompanies = data.companies.filter(c => c.source === firmName);
+            const container = document.getElementById('firmPortfolio');
+            
+            if (firmCompanies.length === 0) {
+                container.innerHTML = '<p>No portfolio companies found. Visit the Portfolio page and click "Refresh" to load data.</p>';
+                return;
+            }
+            
+            // Create charts for this firm
+            createFirmCharts(firmCompanies);
+            
+            // Create table
+            let html = `
+                <table class="portfolio-table">
+                    <thead>
+                        <tr>
+                            <th>Company</th>
+                            <th>Sector</th>
+                            <th>Market</th>
+                            <th>Entry Year</th>
+                            <th>Website</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+            
+            firmCompanies.forEach(company => {
+                // Generate logo URL from website (like portfolio.js does)
+                const logoUrl = company.logo_url || (company.website ? 
+                    `https://logo.clearbit.com/${extractDomain(company.website)}` : '');
+                
+                html += `
+                    <tr>
+                        <td class="company-name">
+                            ${logoUrl ? `<img src="${logoUrl}" class="company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">` : ''}
+                            <i class="fas fa-building company-icon-fallback" style="display:none;"></i>
+                            ${escapeHtml(company.company)}
+                        </td>
+                        <td>${escapeHtml(company.sector)}</td>
+                        <td>${escapeHtml(company.market)}</td>
+                        <td>${escapeHtml(company.entry || '-')}</td>
+                        <td>
+                            ${company.website ? `<a href="${company.website}" target="_blank" class="btn btn-sm btn-secondary">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>` : '-'}
+                        </td>
+                    </tr>
+                `;
+            });
+            
+            html += '</tbody></table>';
+            container.innerHTML = html;
+        }
+    } catch (error) {
+        console.error('Error loading portfolio:', error);
+    }
+}
+
+function createFirmCharts(companies) {
+    // Calculate summary stats
+    const totalCompanies = companies.length;
+    document.getElementById('totalPortfolio').textContent = totalCompanies;
+    
+    // Calculate avg holding period
+    const currentYear = new Date().getFullYear();
+    const companiesWithEntry = companies.filter(c => c.entry && !isNaN(c.entry));
+    if (companiesWithEntry.length > 0) {
+        const avgHolding = companiesWithEntry.reduce((sum, c) => sum + (currentYear - parseInt(c.entry)), 0) / companiesWithEntry.length;
+        document.getElementById('avgHolding').textContent = avgHolding.toFixed(1) + ' yrs';
+    } else {
+        document.getElementById('avgHolding').textContent = 'N/A';
+    }
+    
+    // Count unique countries
+    const countries = new Set(companies.map(c => c.market).filter(m => m && m !== 'N/A'));
+    document.getElementById('countriesCount').textContent = countries.size || '-';
+    
+    // Count recent additions
+    const recentAdds = companies.filter(c => c.entry && (parseInt(c.entry) >= 2024)).length;
+    document.getElementById('recentAdds').textContent = recentAdds;
+    
+    // Country distribution chart
+    const countryCtx = document.getElementById('firmCountryChart');
+    if (countryCtx) {
+        const countryCounts = {};
+        companies.forEach(c => {
+            if (c.market && c.market !== 'N/A') {
+                countryCounts[c.market] = (countryCounts[c.market] || 0) + 1;
+            }
+        });
+        
+        const sortedCountries = Object.entries(countryCounts)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 8);
+        
+        const countryLabels = sortedCountries.map(s => s[0]);
+        const countryData = sortedCountries.map(s => s[1]);
+        
+        // Blue and purple color palette
+        const countryColors = [
+            '#4F46E5', '#6366F1', '#7C3AED', '#8B5CF6',
+            '#3B82F6', '#5B21B6', '#6D28D9', '#4338CA'
+        ];
+        
+        // Assign different color to each country
+        const countryBackgroundColors = countryLabels.map((label, index) => {
+            return countryColors[index % countryColors.length] + 'DD';
+        });
+        
+        new Chart(countryCtx, {
+            type: 'doughnut',
+            data: {
+                labels: countryLabels,
+                datasets: [{
+                    data: countryData,
+                    backgroundColor: countryBackgroundColors,
+                    borderWidth: 4,
+                    borderColor: '#ffffff',
+                    hoverBorderWidth: 6,
+                    hoverBorderColor: '#667eea',
+                    hoverOffset: 12,
+                    spacing: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '60%',
+                animation: {
+                    animateRotate: true,
+                    animateScale: true,
+                    duration: 1500,
+                    easing: 'easeInOutQuart'
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { 
+                            boxWidth: 14, 
+                            padding: 10, 
+                            font: { size: 12, weight: '700' },
+                            usePointStyle: true,
+                            pointStyle: 'rectRounded',
+                            color: '#1f2937'
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(17, 24, 39, 0.95)',
+                        padding: 14,
+                        titleFont: { size: 14, weight: 'bold' },
+                        bodyFont: { size: 13 },
+                        borderColor: '#667eea',
+                        borderWidth: 2,
+                        cornerRadius: 8,
+                        displayColors: true,
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.label || '';
+                                const value = context.parsed || 0;
+                                const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                const percentage = ((value / total) * 100).toFixed(1);
+                                return ` ${label}: ${value} companies (${percentage}%)`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+    
+    // Sector distribution chart
+    const sectorCtx = document.getElementById('firmSectorChart');
+    if (sectorCtx) {
+        const sectorCounts = {};
+        companies.forEach(c => {
+            if (c.sector && c.sector !== '') {
+                sectorCounts[c.sector] = (sectorCounts[c.sector] || 0) + 1;
+            }
+        });
+        
+        const sortedSectors = Object.entries(sectorCounts)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 8);
+        
+        const sectorLabels = sortedSectors.map(s => s[0]);
+        const sectorData = sortedSectors.map(s => s[1]);
+        
+        // Blue and purple color palette
+        const colors = [
+            '#6366F1', '#4F46E5', '#8B5CF6', '#7C3AED',
+            '#3B82F6', '#5B21B6', '#6D28D9', '#4338CA'
+        ];
+        
+        // Create gradient backgrounds
+        const gradients = colors.map((color, index) => {
+            const gradient = sectorCtx.getContext('2d').createLinearGradient(0, 0, 0, 400);
+            gradient.addColorStop(0, color);
+            gradient.addColorStop(1, colors[(index + 1) % colors.length]);
+            return gradient;
+        });
+        
+        new Chart(sectorCtx, {
+            type: 'doughnut',
+            data: {
+                labels: sectorLabels,
+                datasets: [{
+                    data: sectorData,
+                    backgroundColor: colors.map(c => c + 'DD'),
+                    borderWidth: 4,
+                    borderColor: '#ffffff',
+                    hoverBorderWidth: 6,
+                    hoverBorderColor: '#667eea',
+                    hoverOffset: 15,
+                    spacing: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '65%',
+                animation: {
+                    animateRotate: true,
+                    animateScale: true,
+                    duration: 1500,
+                    easing: 'easeInOutQuart'
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { 
+                            boxWidth: 14, 
+                            padding: 10, 
+                            font: { size: 12, weight: '700' },
+                            usePointStyle: true,
+                            pointStyle: 'rectRounded',
+                            color: '#1f2937'
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(17, 24, 39, 0.95)',
+                        padding: 14,
+                        titleFont: { size: 14, weight: 'bold' },
+                        bodyFont: { size: 13 },
+                        borderColor: '#667eea',
+                        borderWidth: 2,
+                        cornerRadius: 8,
+                        displayColors: true,
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.label || '';
+                                const value = context.parsed || 0;
+                                const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                const percentage = ((value / total) * 100).toFixed(1);
+                                return ` ${label}: ${value} companies (${percentage}%)`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+    
+    // Year distribution chart
+    const yearCtx = document.getElementById('firmYearChart');
+    if (yearCtx) {
+        const yearCounts = {};
+        companies.forEach(c => {
+            if (c.entry && c.entry !== '' && !isNaN(c.entry)) {
+                yearCounts[c.entry] = (yearCounts[c.entry] || 0) + 1;
+            }
+        });
+        
+        const years = Object.keys(yearCounts).sort();
+        const yearData = years.map(y => yearCounts[y]);
+        
+        new Chart(yearCtx, {
+            type: 'bar',
+            data: {
+                labels: years,
+                datasets: [{
+                    label: 'Investments',
+                    data: yearData,
+                    backgroundColor: function(context) {
+                        const ctx = context.chart.ctx;
+                        const gradient = ctx.createLinearGradient(0, 0, 0, 250);
+                        gradient.addColorStop(0, '#6366F1');
+                        gradient.addColorStop(0.5, '#7C3AED');
+                        gradient.addColorStop(1, '#4F46E5');
+                        return gradient;
+                    },
+                    borderRadius: 12,
+                    borderWidth: 0,
+                    hoverBackgroundColor: function(context) {
+                        const ctx = context.chart.ctx;
+                        const gradient = ctx.createLinearGradient(0, 0, 0, 250);
+                        gradient.addColorStop(0, '#4F46E5');
+                        gradient.addColorStop(1, '#5B21B6');
+                        return gradient;
+                    },
+                    borderSkipped: false
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: {
+                    duration: 1500,
+                    easing: 'easeInOutQuart'
+                },
+                plugins: { 
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: 'rgba(17, 24, 39, 0.95)',
+                        padding: 14,
+                        titleFont: { size: 14, weight: 'bold' },
+                        bodyFont: { size: 13 },
+                        borderColor: '#667eea',
+                        borderWidth: 2,
+                        cornerRadius: 8,
+                        displayColors: false,
+                        callbacks: {
+                            label: function(context) {
+                                return ` ${context.parsed.y} ${context.parsed.y === 1 ? 'investment' : 'investments'}`;
+                            }
+                        }
+                    }
+                },
+                scales: { 
+                    y: { 
+                        beginAtZero: true, 
+                        ticks: { 
+                            stepSize: 1, 
+                            font: { size: 12, weight: '700' },
+                            color: '#374151',
+                            padding: 8
+                        },
+                        grid: { 
+                            color: 'rgba(0, 0, 0, 0.05)',
+                            drawBorder: false,
+                            lineWidth: 1
+                        },
+                        border: {
+                            display: false
+                        }
+                    },
+                    x: { 
+                        ticks: { 
+                            font: { size: 12, weight: '700' },
+                            color: '#374151',
+                            padding: 8
+                        },
+                        grid: { 
+                            display: false,
+                            drawBorder: false
+                        },
+                        border: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+    }
+}
+
+async function loadLatestAcquisitions(firmName) {
+    try {
+        const response = await fetch('/api/portfolio');
+        const data = await response.json();
+        
+        if (data.success) {
+            const firmCompanies = data.companies.filter(c => c.source === firmName);
+            
+            // Sort by entry year (most recent first) and take top 5
+            const latest = firmCompanies
+                .filter(c => c.entry && c.entry !== '' && !isNaN(c.entry))
+                .sort((a, b) => parseInt(b.entry) - parseInt(a.entry))
+                .slice(0, 5);
+            
+            const container = document.getElementById('latestAcquisitions');
+            
+            if (latest.length === 0) {
+                container.innerHTML = '<p style="color: var(--text-secondary);">No recent acquisitions data available.</p>';
+                return;
+            }
+            
+            let html = '<div class="news-list-compact">';
+            latest.forEach(company => {
+                html += `
+                    <div class="news-item-compact" style="border-left-color: #064e3b;">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                            <div>
+                                <div class="fund-name-compact">${escapeHtml(company.company)}</div>
+                                <div class="fund-details-compact">${escapeHtml(company.sector)} • ${escapeHtml(company.market)}</div>
+                            </div>
+                            <span class="progress-badge" style="background: #064e3b;">${company.entry}</span>
+                        </div>
+                        ${company.website ? `<a href="${company.website}" target="_blank" class="news-link-small" style="color: #064e3b;">
+                            Visit Website <i class="fas fa-arrow-right"></i>
+                        </a>` : ''}
+                    </div>
+                `;
+            });
+            html += '</div>';
+            
+            container.innerHTML = html;
+        }
+    } catch (error) {
+        console.error('Error loading latest acquisitions:', error);
+    }
+}
+
+async function loadFirmTimeline(firm, firmName) {
+    try {
+        // Fetch portfolio data to get investments
+        const response = await fetch('/api/portfolio');
+        const data = await response.json();
+        
+        if (data.success) {
+            const firmCompanies = data.companies.filter(c => c.source === firmName);
+            
+            // Build timeline events
+            const events = [];
+            
+            // Add founding event
+            events.push({
+                year: firm.founded,
+                type: 'founding',
+                title: 'Company Founded',
+                description: `${firm.name} established in ${firm.headquarters}`,
+                icon: 'fa-flag-checkered',
+                color: '#667eea'
+            });
+            
+            // Parse recent activity for fundraising and exits
+            const recentActivity = firm.recent_activity || '';
+            
+            // Extract year from recent activity (usually starts with Q3 2024 format)
+            const primaryYearMatch = recentActivity.match(/Q[1-4]\s+(\d{4})/);
+            const currentActivityYear = primaryYearMatch ? parseInt(primaryYearMatch[1]) : new Date().getFullYear();
+            
+            // Extract fundraising events - multiple patterns
+            // Pattern 1: "Fund VI first close at SEK 5B"
+            const fundCloseMatches = [...recentActivity.matchAll(/Fund\s+([IVX]+|\w+)\s+(first\s+)?close(?:d)?\s+at\s+([\w\s€$£SEK]+?\d+[BMK])/gi)];
+            fundCloseMatches.forEach(match => {
+                events.push({
+                    year: currentActivityYear,
+                    type: 'fundraising',
+                    title: `Fund ${match[1]} ${match[2] ? 'First Close' : 'Closed'}`,
+                    description: `${match[0]}`,
+                    icon: 'fa-piggy-bank',
+                    color: '#10b981'
+                });
+            });
+            
+            // Pattern 2: "New Fund VII launch planned"
+            const fundLaunchMatches = [...recentActivity.matchAll(/(?:New\s+)?Fund\s+([IVX]+|\w+)\s+launch\s+planned\s+for\s+Q[1-4]\s+(\d{4})\s+\(([\w\s€$£SEK]+?\d+[BMK])\s+target\)/gi)];
+            fundLaunchMatches.forEach(match => {
+                events.push({
+                    year: parseInt(match[2]),
+                    type: 'fundraising',
+                    title: `Fund ${match[1]} Launch Planned`,
+                    description: `Target: ${match[3]}`,
+                    icon: 'fa-rocket',
+                    color: '#3b82f6'
+                });
+            });
+            
+            // Extract exits - multiple patterns
+            // Pattern: "Hedda.io sold to EQT (€200M)"
+            const exitMatches = [...recentActivity.matchAll(/(\w+(?:\.\w+)?)\s+sold to\s+(\w+)\s+\(([\w€$£SEK\s]+?\d+[BMK])\)/gi)];
+            exitMatches.forEach(match => {
+                events.push({
+                    year: currentActivityYear,
+                    type: 'exit',
+                    title: `Exit: ${match[1]}`,
+                    description: `Sold to ${match[2]} for ${match[3]}`,
+                    icon: 'fa-chart-line',
+                    color: '#f59e0b'
+                });
+            });
+            
+            // Extract team growth events
+            const teamGrowthMatch = recentActivity.match(/Team growth:\s+(\d+)\s+new hires/i);
+            if (teamGrowthMatch) {
+                events.push({
+                    year: currentActivityYear,
+                    type: 'team',
+                    title: 'Team Expansion',
+                    description: `${teamGrowthMatch[1]} new hires`,
+                    icon: 'fa-users',
+                    color: '#6366f1'
+                });
+            }
+            
+            // Extract performance metrics
+            const performanceMatch = recentActivity.match(/Fund\s+([IVX]+|\w+)\s+showing\s+(\d+)%\s+IRR/i);
+            if (performanceMatch) {
+                events.push({
+                    year: currentActivityYear,
+                    type: 'milestone',
+                    title: `Fund ${performanceMatch[1]} Performance`,
+                    description: `Achieved ${performanceMatch[2]}% IRR`,
+                    icon: 'fa-trophy',
+                    color: '#ec4899'
+                });
+            }
+            
+            // Add notable company milestones (like exits, acquisitions, etc)
+            firmCompanies.forEach(company => {
+                if (company.recent_news && Array.isArray(company.recent_news)) {
+                    company.recent_news.forEach(news => {
+                        // Check if news contains exit or acquisition info
+                        if (news.headline && (news.headline.toLowerCase().includes('exit') || 
+                            news.headline.toLowerCase().includes('acquired') ||
+                            news.headline.toLowerCase().includes('sold'))) {
+                            const newsYear = news.date ? (typeof news.date === 'string' ? parseInt(news.date) : news.date) : null;
+                            if (newsYear && !isNaN(newsYear)) {
+                                events.push({
+                                    year: newsYear,
+                                    type: 'exit',
+                                    title: `Exit: ${company.company}`,
+                                    description: news.headline,
+                                    icon: 'fa-chart-line',
+                                    color: '#f59e0b'
+                                });
+                            }
+                        }
+                    });
+                }
+            });
+            
+            // Add investment events from portfolio
+            const investmentsByYear = {};
+            firmCompanies.forEach(company => {
+                if (company.entry && !isNaN(company.entry)) {
+                    const year = parseInt(company.entry);
+                    if (!investmentsByYear[year]) {
+                        investmentsByYear[year] = [];
+                    }
+                    investmentsByYear[year].push(company);
+                }
+            });
+            
+            // Create investment events (remove duplicates)
+            Object.keys(investmentsByYear).forEach(year => {
+                const companies = investmentsByYear[year];
+                const yearInt = parseInt(year);
+                
+                // Remove duplicate companies by name
+                const uniqueCompanies = [];
+                const seenNames = new Set();
+                companies.forEach(company => {
+                    if (!seenNames.has(company.company)) {
+                        seenNames.add(company.company);
+                        uniqueCompanies.push(company);
+                    }
+                });
+                
+                if (uniqueCompanies.length === 1) {
+                    events.push({
+                        year: yearInt,
+                        type: 'investment',
+                        title: `Investment in ${uniqueCompanies[0].company}`,
+                        description: uniqueCompanies[0].sector,
+                        icon: 'fa-handshake',
+                        color: '#8b5cf6',
+                        company: uniqueCompanies[0]
+                    });
+                } else {
+                    events.push({
+                        year: yearInt,
+                        type: 'investment',
+                        title: `${uniqueCompanies.length} New Investments`,
+                        description: uniqueCompanies.map(c => c.company).slice(0, 5).join(', ') + (uniqueCompanies.length > 5 ? `, +${uniqueCompanies.length - 5} more` : ''),
+                        icon: 'fa-handshake',
+                        color: '#8b5cf6',
+                        companies: uniqueCompanies
+                    });
+                }
+            });
+            
+            // Display timeline (sorting handled in displayTimeline)
+            displayTimeline(events);
+        }
+    } catch (error) {
+        console.error('Error loading timeline:', error);
+        document.getElementById('firmTimeline').innerHTML = '<p style="color: var(--text-secondary);">Unable to load timeline.</p>';
+    }
+}
+
+function displayTimeline(events) {
+    const container = document.getElementById('firmTimeline');
+    
+    if (events.length === 0) {
+        container.innerHTML = '<p style="color: var(--text-secondary);">No timeline events available.</p>';
+        return;
+    }
+    
+    // Sort events by year (oldest to newest for left-to-right display)
+    events.sort((a, b) => a.year - b.year);
+    
+    let html = '<div class="timeline-horizontal-wrapper"><div class="timeline-horizontal">';
+    
+    events.forEach((event, index) => {
+        // Determine icon/logo to display
+        let iconHtml = '';
+        let logoPreviewHtml = '';
+        
+        if (event.company && event.company.logo_url) {
+            // Use company logo for investment events
+            iconHtml = `
+                <img src="${event.company.logo_url}" alt="${escapeHtml(event.company.company)}" 
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="timeline-marker-fallback" style="display: none; background-color: ${event.color};">
+                    <i class="fas ${event.icon}"></i>
+                </div>
+            `;
+        } else if (event.companies && event.companies.length > 0) {
+            // Show first company logo prominently
+            const firstCompany = event.companies[0];
+            iconHtml = `
+                <img src="${firstCompany.logo_url}" alt="${escapeHtml(firstCompany.company)}" 
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="timeline-marker-fallback" style="display: none; background-color: ${event.color};">
+                    <i class="fas ${event.icon}"></i>
+                </div>
+            `;
+            
+            // Show logo preview for up to 4 companies
+            const previewCompanies = event.companies.slice(0, 4);
+            logoPreviewHtml = `
+                <div class="company-logos-preview">
+                    ${previewCompanies.map(company => `
+                        <div class="company-logo-item" title="${escapeHtml(company.company)}">
+                            <img src="${company.logo_url}" alt="${escapeHtml(company.company)}" 
+                                 onerror="this.style.display='none';">
+                        </div>
+                    `).join('')}
+                    ${event.companies.length > 4 ? `
+                        <div class="company-logo-more">+${event.companies.length - 4}</div>
+                    ` : ''}
+                </div>
+            `;
+        } else {
+            // Use icon for non-investment events
+            iconHtml = `
+                <div class="timeline-marker-icon" style="background-color: ${event.color};">
+                    <i class="fas ${event.icon}"></i>
+                </div>
+            `;
+        }
+        
+        // Determine event type badge
+        const eventTypeBadge = {
+            'founding': 'Founding',
+            'fundraising': 'Fundraising',
+            'investment': 'Investment',
+            'exit': 'Exit',
+            'team': 'Team',
+            'milestone': 'Milestone'
+        }[event.type] || 'Event';
+        
+        html += `
+            <div class="timeline-item-horizontal" style="animation-delay: ${index * 0.05}s;">
+                <div class="timeline-marker-horizontal" style="box-shadow: 0 0 0 4px white, 0 0 0 6px ${event.color};">
+                    ${iconHtml}
+                </div>
+                <div class="timeline-content-horizontal" style="border-top-color: ${event.color};">
+                    <div class="timeline-event-type" style="background-color: ${event.color};">
+                        <i class="fas ${event.icon}"></i> ${eventTypeBadge}
+                    </div>
+                    <div class="timeline-year-horizontal" style="color: ${event.color};">${event.year}</div>
+                    <div class="timeline-title-horizontal">${escapeHtml(event.title)}</div>
+                    <div class="timeline-description-horizontal">${escapeHtml(event.description)}</div>
+                    ${logoPreviewHtml}
+                </div>
+            </div>
+        `;
+    });
+    
+    html += '</div></div>';
+    container.innerHTML = html;
+    
+    // Auto-scroll to the right (newest events) after a brief delay
+    setTimeout(() => {
+        const wrapper = container.querySelector('.timeline-horizontal-wrapper');
+        if (wrapper) {
+            wrapper.scrollLeft = wrapper.scrollWidth;
+        }
+    }, 100);
+}
+
+function getPortfolioCount(firmName) {
+    // This will be updated when portfolio loads
+    return '...';
+}
+
+function extractDomain(url) {
+    try {
+        if (!url) return '';
+        const urlObj = new URL(url.startsWith('http') ? url : 'https://' + url);
+        return urlObj.hostname.replace('www.', '');
+    } catch {
+        return '';
+    }
+}
+
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+</script>
+
+<style>
+/* Modern Charts Section */
+.modern-charts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.modern-chart-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.modern-chart-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.modern-chart-card:hover::before {
+    opacity: 1;
+}
+
+.modern-chart-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(102, 126, 234, 0.25);
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.modern-chart-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.chart-icon-wrapper {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.modern-chart-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #111827;
+    margin: 0;
+    letter-spacing: -0.3px;
+}
+
+.modern-chart-body {
+    position: relative;
+    height: 240px;
+}
+
+.modern-chart-body canvas {
+    max-height: 100%;
+}
+
+@media (max-width: 1200px) {
+    .modern-charts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modern-chart-body {
+        height: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .modern-chart-card {
+        padding: 20px;
+    }
+    
+    .chart-icon-wrapper {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+    
+    .modern-chart-title {
+        font-size: 14px;
+    }
+    
+    .modern-chart-body {
+        height: 220px;
+    }
+}
+
+/* Portfolio Overview Section */
+.portfolio-stats-modern {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin: -1.5rem;
+}
+
+.stat-modern {
+    position: relative;
+    padding: 28px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-right: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.stat-modern:last-child {
+    border-right: none;
+}
+
+.stat-modern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.stat-modern[data-color="blue"]::before {
+    background: linear-gradient(90deg, #667eea, #4facfe);
+}
+
+.stat-modern[data-color="purple"]::before {
+    background: linear-gradient(90deg, #764ba2, #667eea);
+}
+
+.stat-modern[data-color="pink"]::before {
+    background: linear-gradient(90deg, #f093fb, #f5576c);
+}
+
+.stat-modern[data-color="cyan"]::before {
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+}
+
+.stat-modern:hover::before {
+    opacity: 1;
+}
+
+.stat-modern:hover {
+    background: #fafbfc;
+}
+
+.stat-modern-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.stat-modern[data-color="blue"] .stat-modern-icon {
+    background: linear-gradient(135deg, #667eea, #4facfe);
+    color: white;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.25);
+}
+
+.stat-modern[data-color="purple"] .stat-modern-icon {
+    background: linear-gradient(135deg, #764ba2, #667eea);
+    color: white;
+    box-shadow: 0 4px 12px rgba(118, 75, 162, 0.25);
+}
+
+.stat-modern[data-color="pink"] .stat-modern-icon {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    color: white;
+    box-shadow: 0 4px 12px rgba(240, 147, 251, 0.25);
+}
+
+.stat-modern[data-color="cyan"] .stat-modern-icon {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+    box-shadow: 0 4px 12px rgba(79, 172, 254, 0.25);
+}
+
+.stat-modern-content {
+    flex: 1;
+}
+
+.stat-modern-value {
+    font-size: 32px;
+    font-weight: 900;
+    color: #111827;
+    margin-bottom: 4px;
+    line-height: 1;
+}
+
+.stat-modern-label {
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+}
+
+@media (max-width: 1200px) {
+    .portfolio-stats-modern {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .stat-modern:nth-child(2) {
+        border-right: none;
+    }
+    
+    .stat-modern:nth-child(1),
+    .stat-modern:nth-child(2) {
+        border-bottom: 1px solid #e5e7eb;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-stats-modern {
+        grid-template-columns: 1fr;
+        margin: -1rem;
+    }
+    
+    .stat-modern {
+        padding: 20px;
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .stat-modern:last-child {
+        border-bottom: none;
+    }
+    
+    .stat-modern-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
+    
+    .stat-modern-value {
+        font-size: 28px;
+    }
+    
+    .stat-modern-label {
+        font-size: 11px;
+    }
+}
+
+/* Horizontal Timeline Styles */
+.timeline-horizontal-wrapper {
+    position: relative;
+    overflow-x: auto;
+    overflow-y: visible;
+    padding: 40px 0 20px 0;
+    margin: 0 -20px;
+}
+
+.timeline-horizontal {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    min-width: min-content;
+    padding: 0 20px;
+    gap: 40px;
+}
+
+.timeline-horizontal::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 4px;
+    background: linear-gradient(to right, #667eea, #10b981, #f59e0b, #ec4899);
+    border-radius: 2px;
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+.timeline-item-horizontal {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 320px;
+    max-width: 320px;
+    opacity: 0;
+    animation: fadeInScale 0.6s ease forwards;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.timeline-marker-horizontal {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.timeline-marker-horizontal img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.timeline-marker-horizontal:hover {
+    transform: scale(1.15) translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+.timeline-marker-icon {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+}
+
+.timeline-marker-fallback {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+}
+
+.timeline-multi-logos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+}
+
+.timeline-multi-logos img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.timeline-content-horizontal {
+    background: white;
+    border-radius: 12px;
+    padding: 0;
+    border-top: 4px solid #667eea;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.timeline-item-horizontal:hover .timeline-content-horizontal {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-event-type {
+    padding: 8px 16px;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.timeline-event-type i {
+    font-size: 11px;
+}
+
+.timeline-year-horizontal {
+    font-size: 28px;
+    font-weight: 900;
+    color: #667eea;
+    margin: 16px 0 12px 0;
+    padding: 0 20px;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.timeline-title-horizontal {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 10px;
+    padding: 0 20px;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.timeline-description-horizontal {
+    font-size: 13px;
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.company-logos-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 20px 20px 20px;
+    background: #f9fafb;
+    border-top: 1px solid #e5e7eb;
+}
+
+.company-logo-item {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.2s ease;
+}
+
+.company-logo-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: #8b5cf6;
+}
+
+.company-logo-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.company-logo-more {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.timeline-meta {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.timeline-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Custom scrollbar for timeline */
+.timeline-horizontal-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.timeline-horizontal-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.timeline-horizontal-wrapper::-webkit-scrollbar-thumb {
+    background: linear-gradient(to right, #667eea, #10b981);
+    border-radius: 4px;
+}
+
+.timeline-horizontal-wrapper::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to right, #5568d3, #059669);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timeline-item-horizontal {
+        min-width: 280px;
+        max-width: 280px;
+    }
+    
+    .timeline-marker-horizontal {
+        width: 64px;
+        height: 64px;
+    }
+    
+    .timeline-marker-icon {
+        font-size: 22px;
+    }
+    
+    .timeline-year-horizontal {
+        font-size: 22px;
+        margin: 12px 0 10px 0;
+    }
+    
+    .timeline-title-horizontal {
+        font-size: 14px;
+        padding: 0 16px;
+    }
+    
+    .timeline-description-horizontal {
+        font-size: 12px;
+        padding: 0 16px;
+        margin-bottom: 12px;
+    }
+    
+    .timeline-event-type {
+        font-size: 9px;
+        padding: 6px 12px;
+    }
+    
+    .company-logo-item,
+    .company-logo-more {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .company-logos-preview {
+        padding: 12px 16px 16px 16px;
+        gap: 6px;
+    }
+}
+</style>
+
+{% endblock %}
