@@ -43,19 +43,6 @@
                 </div>
             </div>
             
-            <div class="nav-actions">
-                <div class="search-global">
-                    <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Search everything..." id="globalSearch">
-                </div>
-                <button class="btn-icon" title="Notifications">
-                    <i class="fas fa-bell"></i>
-                    <span class="badge">3</span>
-                </button>
-                <button class="btn-icon" title="Settings">
-                    <i class="fas fa-cog"></i>
-                </button>
-            </div>
         </div>
     </nav>
     
@@ -67,11 +54,6 @@
                 <i class="fas fa-home"></i>
                 <span>Dashboard</span>
             </a>
-            <a href="/news" class="sidebar-link {% if request.path == '/news' %}active{% endif %}">
-                <i class="fas fa-newspaper"></i>
-                <span>Investment News</span>
-                <span class="count">50</span>
-            </a>
         </div>
         
         <div class="sidebar-section">
@@ -80,6 +62,11 @@
                 <i class="fas fa-building"></i>
                 <span>PE Firms</span>
                 <span class="count">18</span>
+            </a>
+            <a href="/news" class="sidebar-link {% if request.path == '/news' %}active{% endif %}">
+                <i class="fas fa-newspaper"></i>
+                <span>Investment News</span>
+                <span class="count">50</span>
             </a>
             <a href="/portfolio" class="sidebar-link {% if request.path == '/portfolio' %}active{% endif %}">
                 <i class="fas fa-briefcase"></i>

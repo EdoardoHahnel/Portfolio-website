@@ -10,25 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Mobile functionality here
     }
     
-    // Global search functionality
-    const globalSearch = document.getElementById('globalSearch');
-    if (globalSearch) {
-        globalSearch.addEventListener('input', handleGlobalSearch);
-    }
 });
 
-let globalSearchTimeout;
-function handleGlobalSearch(event) {
-    const query = event.target.value.trim();
-    
-    clearTimeout(globalSearchTimeout);
-    globalSearchTimeout = setTimeout(() => {
-        if (query.length > 2) {
-            // Implement global search across all data
-            console.log('Global search for:', query);
-        }
-    }, 300);
-}
 
 // Utility functions available globally
 window.escapeHtml = function(text) {

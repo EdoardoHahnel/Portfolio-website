@@ -34,13 +34,13 @@ def load_news_database():
                 data = json.load(f)
                 if 'articles' in data:
                     news_storage = data['articles']
-                    print(f"✅ Loaded {len(news_storage)} news articles from database")
+                    print(f"Loaded {len(news_storage)} news articles from database")
                 else:
-                    print("⚠️ No articles found in database file")
+                    print("No articles found in database file")
         else:
-            print("⚠️ ma_news_database.json not found")
+            print("ma_news_database.json not found")
     except Exception as e:
-        print(f"❌ Error loading news database: {e}")
+        print(f"Error loading news database: {e}")
 
 # Load portfolio companies from database file at startup
 def load_portfolio_database():
@@ -52,7 +52,7 @@ def load_portfolio_database():
             with open('portfolio_enriched.json', 'r', encoding='utf-8') as f:
                 data = json.load(f)
                 portfolio_storage = data.get('companies', [])
-                print(f"✅ Loaded {len(portfolio_storage)} portfolio companies from enriched database")
+                print(f"Loaded {len(portfolio_storage)} portfolio companies from enriched database")
                 valedo_count = len([c for c in portfolio_storage if c.get('source') == 'Valedo Partners'])
                 verdane_count = len([c for c in portfolio_storage if c.get('source') == 'Verdane'])
                 print(f"   Valedo Partners: {valedo_count}, Verdane: {verdane_count}")
@@ -62,13 +62,13 @@ def load_portfolio_database():
                 data = json.load(f)
                 if 'portfolio_companies' in data:
                     portfolio_storage = data['portfolio_companies']
-                    print(f"✅ Loaded {len(portfolio_storage)} portfolio companies from old database")
+                    print(f"Loaded {len(portfolio_storage)} portfolio companies from old database")
                 else:
-                    print("⚠️ No portfolio_companies found in database file")
+                    print("No portfolio_companies found in database file")
         else:
-            print("⚠️ No portfolio database found")
+            print("No portfolio database found")
     except Exception as e:
-        print(f"❌ Error loading portfolio database: {e}")
+        print(f"Error loading portfolio database: {e}")
 
 # Load news and portfolio on startup
 load_news_database()
@@ -403,10 +403,10 @@ def get_portfolio():
                     
                     # Update global storage
                     portfolio_storage.extend(all_companies)
-                    print(f"✅ Loaded {len(all_companies)} companies from portfolio_complete.json")
+                    print(f"Loaded {len(all_companies)} companies from portfolio_complete.json")
             
             if portfolio_storage:
-                print(f"✅ Loaded {len(portfolio_storage)} companies from database")
+                print(f"Loaded {len(portfolio_storage)} companies from database")
         
         return jsonify({
             'success': True,
@@ -498,7 +498,7 @@ def reload_portfolio():
     try:
         # Clear cache
         portfolio_storage.clear()
-        print("🔄 Clearing portfolio cache...")
+        print("Clearing portfolio cache...")
         
         # Reload from enriched database
         if os.path.exists('portfolio_enriched.json'):
@@ -506,7 +506,7 @@ def reload_portfolio():
                 data = json.load(f)
                 all_companies = data.get('companies', [])
                 portfolio_storage.extend(all_companies)
-                print(f"✅ Reloaded {len(all_companies)} companies from portfolio_enriched.json")
+                print(f"Reloaded {len(all_companies)} companies from portfolio_enriched.json")
                 
                 # Count by source
                 valedo = len([c for c in all_companies if c.get('source') == 'Valedo Partners'])
@@ -526,7 +526,7 @@ def reload_portfolio():
             }), 404
             
     except Exception as e:
-        print(f"❌ Error reloading portfolio: {e}")
+        print(f"Error reloading portfolio: {e}")
         return jsonify({
             'success': False,
             'message': f'Error: {str(e)}'
@@ -925,13 +925,13 @@ def research_portfolio_company(company_name):
                         for company in companies:
                             if company.get('company', '').lower() == company_name.lower():
                                 enriched_data = company
-                                print(f"  ✅ Found enriched data in {filename}")
+                                print(f"  Found enriched data in {filename}")
                                 break
                         
                         if enriched_data:
                             break
                 except Exception as e:
-                    print(f"  ⚠️ Error loading {filename}: {e}")
+                    print(f"  Error loading {filename}: {e}")
         
         # If we found enriched data, format it properly
         if enriched_data and enriched_data.get('enriched'):
@@ -974,7 +974,7 @@ def research_portfolio_company(company_name):
             })
         
         # Fallback: Basic research structure
-        print(f"  ⚠️ No enriched data found, using basic structure")
+        print(f"  No enriched data found, using basic structure")
         research_data = {
             'company_name': company_name,
             'timestamp': datetime.now().isoformat(),
@@ -1002,7 +1002,7 @@ def research_portfolio_company(company_name):
         })
         
     except Exception as e:
-        print(f"  ❌ Research error: {e}")
+        print(f"  Research error: {e}")
         return jsonify({
             'success': False,
             'message': str(e),
@@ -1020,10 +1020,10 @@ if __name__ == '__main__':
     
     if debug_mode:
         print("=" * 60)
-        print("🚀 M&A News Website Starting...")
+        print("M&A News Website Starting...")
         print("=" * 60)
-        print("\n📍 Open your browser and go to: http://localhost:5000")
-        print("\n💡 Tips:")
+        print("\nOpen your browser and go to: http://localhost:5000")
+        print("\nTips:")
         print("   - Press Ctrl+C to stop the server")
         print("   - Refresh the browser to see changes in HTML/CSS/JS")
         print("   - Restart the server to see changes in Python code")

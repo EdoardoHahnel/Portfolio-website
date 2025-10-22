@@ -518,7 +518,7 @@ class MAScraper:
             }
         ]
         
-        print(f"📰 Generated {len(sample_news)} sample M&A news articles")
+        print(f"Generated {len(sample_news)} sample M&A news articles")
         return sample_news
     
     def scrape_seeking_alpha_ma(self):
@@ -528,7 +528,7 @@ class MAScraper:
         articles = []
         
         try:
-            print("📡 Fetching M&A news from Seeking Alpha...")
+            print("Fetching M&A news from Seeking Alpha...")
             url = self.ma_news_urls['seeking_alpha']
             
             response = requests.get(url, headers=self.headers, timeout=10)
@@ -568,12 +568,12 @@ class MAScraper:
                     except Exception as e:
                         continue
                 
-                print(f"✅ Found {len(articles)} articles from Seeking Alpha")
+                print(f"SUCCESS: Found {len(articles)} articles from Seeking Alpha")
             else:
-                print(f"⚠️  Seeking Alpha returned status code {response.status_code}")
+                print(f"Seeking Alpha returned status code {response.status_code}")
                 
         except Exception as e:
-            print(f"❌ Error scraping Seeking Alpha: {str(e)}")
+            print(f"ERROR: Error scraping Seeking Alpha: {str(e)}")
         
         return articles
     
@@ -584,7 +584,7 @@ class MAScraper:
         articles = []
         
         try:
-            print("📡 Fetching M&A news from Reuters...")
+            print("Fetching M&A news from Reuters...")
             url = self.ma_news_urls['reuters']
             
             response = requests.get(url, headers=self.headers, timeout=10)
@@ -623,12 +623,12 @@ class MAScraper:
                     except Exception as e:
                         continue
                 
-                print(f"✅ Found {len(articles)} articles from Reuters")
+                print(f"SUCCESS: Found {len(articles)} articles from Reuters")
             else:
-                print(f"⚠️  Reuters returned status code {response.status_code}")
+                print(f"Reuters returned status code {response.status_code}")
                 
         except Exception as e:
-            print(f"❌ Error scraping Reuters: {str(e)}")
+            print(f"ERROR: Error scraping Reuters: {str(e)}")
         
         return articles
     
@@ -643,10 +643,10 @@ class MAScraper:
                 with open(db_path, 'r', encoding='utf-8') as f:
                     data = json.load(f)
                     articles = data.get('articles', [])
-                    print(f"✅ Loaded {len(articles)} M&A news articles from database")
+                    print(f"SUCCESS: Loaded {len(articles)} M&A news articles from database")
                     return articles
         except Exception as e:
-            print(f"⚠️  Could not load news database: {e}")
+            print(f"Could not load news database: {e}")
         
         return []
     
@@ -661,17 +661,17 @@ class MAScraper:
         all_articles = []
         
         print("\n" + "="*60)
-        print("📰 Loading M&A News...")
+        print("Loading M&A News...")
         print("="*60 + "\n")
         
         # First, try loading from pre-built database
         db_articles = self.load_news_from_database()
         if len(db_articles) > 0:
-            print(f"\n✨ Total articles loaded from database: {len(db_articles)}\n")
+            print(f"\nTotal articles loaded from database: {len(db_articles)}\n")
             return db_articles
         
         # If database doesn't exist, try web scraping
-        print("📡 Database not found, attempting to scrape...")
+        print("Database not found, attempting to scrape...")
         
         # Try scraping real sources
         try:
@@ -690,11 +690,11 @@ class MAScraper:
         
         # If real scraping didn't work, use sample data
         if len(all_articles) == 0:
-            print("⚠️  Real scraping didn't return results. Using sample data...")
+            print("Real scraping didn't return results. Using sample data...")
             sample_articles = self.scrape_generic_ma_news()
             all_articles.extend(sample_articles)
         
-        print(f"\n✨ Total articles collected: {len(all_articles)}\n")
+        print(f"\nTotal articles collected: {len(all_articles)}\n")
         return all_articles
     
     def load_portfolio_from_database(self):
@@ -709,7 +709,7 @@ class MAScraper:
                 with open(db_path, 'r', encoding='utf-8') as f:
                     data = json.load(f)
                     companies = data.get('portfolio_companies', [])
-                    print(f"✅ Loaded {len(companies)} companies from comprehensive database")
+                    print(f"SUCCESS: Loaded {len(companies)} companies from comprehensive database")
                     return companies
             
             # Fallback to data_portfolio.json
@@ -718,10 +718,10 @@ class MAScraper:
                 with open(db_path, 'r', encoding='utf-8') as f:
                     data = json.load(f)
                     companies = data.get('portfolio_companies', [])
-                    print(f"✅ Loaded {len(companies)} companies from database")
+                    print(f"SUCCESS: Loaded {len(companies)} companies from database")
                     return companies
         except Exception as e:
-            print(f"⚠️  Could not load database: {e}")
+            print(f"Could not load database: {e}")
         
         return []
     
@@ -742,11 +742,11 @@ class MAScraper:
         # First, try loading from pre-built database
         db_companies = self.load_portfolio_from_database()
         if len(db_companies) > 0:
-            print(f"\n✨ Total companies loaded from database: {len(db_companies)}\n")
+            print(f"\nTotal companies loaded from database: {len(db_companies)}\n")
             return db_companies
         
         # If database doesn't exist, try web scraping
-        print("📡 Database not found, attempting to scrape...")
+        print("Database not found, attempting to scrape...")
         print("="*60 + "\n")
         
         # Try EQT
@@ -805,14 +805,14 @@ class MAScraper:
         
         # If real scraping didn't get enough data, supplement with sample data
         if len(all_companies) < 20:
-            print("⚠️  Limited scraping results. Adding sample data for demonstration...")
+            print("Limited scraping results. Adding sample data for demonstration...")
             sample_data = self.get_sample_portfolio()
             # Add sample companies that aren't already in the list
             for sample in sample_data:
                 if not any(c['company'] == sample['company'] for c in all_companies):
                     all_companies.append(sample)
         
-        print(f"\n✨ Total companies collected: {len(all_companies)}\n")
+        print(f"\nTotal companies collected: {len(all_companies)}\n")
         return all_companies
     
     def scrape_eqt_portfolio(self):
@@ -822,7 +822,7 @@ class MAScraper:
         companies = []
         
         try:
-            print("📡 Fetching portfolio from EQT Group...")
+            print("FETCHING: Fetching portfolio from EQT Group...")
             url = self.portfolio_urls['eqt']
             
             response = requests.get(url, headers=self.headers, timeout=10)
@@ -855,12 +855,12 @@ class MAScraper:
                     except Exception as e:
                         continue
                 
-                print(f"✅ Found {len(companies)} companies from EQT")
+                print(f"SUCCESS: Found {len(companies)} companies from EQT")
             else:
-                print(f"⚠️  EQT returned status code {response.status_code}")
+                print(f"WARNING:  EQT returned status code {response.status_code}")
                 
         except Exception as e:
-            print(f"❌ Error scraping EQT: {str(e)}")
+            print(f"ERROR: Error scraping EQT: {str(e)}")
         
         return companies
     
@@ -872,7 +872,7 @@ class MAScraper:
         companies = []
         
         try:
-            print("📡 Fetching portfolio from Triton Partners...")
+            print("FETCHING: Fetching portfolio from Triton Partners...")
             url = self.portfolio_urls['triton']
             
             response = requests.get(url, headers=self.headers, timeout=15)
@@ -930,12 +930,12 @@ class MAScraper:
                         current_location = None
                         current_date = None
                 
-                print(f"✅ Found {len(companies)} companies from Triton")
+                print(f"SUCCESS: Found {len(companies)} companies from Triton")
             else:
-                print(f"⚠️  Triton returned status code {response.status_code}")
+                print(f"WARNING:  Triton returned status code {response.status_code}")
                 
         except Exception as e:
-            print(f"❌ Error scraping Triton: {str(e)}")
+            print(f"ERROR: Error scraping Triton: {str(e)}")
         
         return companies
     
@@ -947,7 +947,7 @@ class MAScraper:
         companies = []
         
         try:
-            print("📡 Fetching portfolio from Valedo Partners...")
+            print("FETCHING: Fetching portfolio from Valedo Partners...")
             url = self.portfolio_urls['valedo']
             
             response = requests.get(url, headers=self.headers, timeout=15)
@@ -988,12 +988,12 @@ class MAScraper:
                 seen = set()
                 companies = [c for c in companies if c['company'] not in seen and not seen.add(c['company'])]
                 
-                print(f"✅ Found {len(companies)} companies from Valedo Partners")
+                print(f"SUCCESS: Found {len(companies)} companies from Valedo Partners")
             else:
-                print(f"⚠️  Valedo returned status code {response.status_code}")
+                print(f"WARNING:  Valedo returned status code {response.status_code}")
                 
         except Exception as e:
-            print(f"❌ Error scraping Valedo: {str(e)}")
+            print(f"ERROR: Error scraping Valedo: {str(e)}")
         
         return companies
     
@@ -1005,7 +1005,7 @@ class MAScraper:
         companies = []
         
         try:
-            print("📡 Fetching portfolio from Litorina...")
+            print("FETCHING: Fetching portfolio from Litorina...")
             url = self.portfolio_urls['litorina']
             
             response = requests.get(url, headers=self.headers, timeout=15)
@@ -1081,12 +1081,12 @@ class MAScraper:
                         current_year = None
                         current_fund = None
                 
-                print(f"✅ Found {len(companies)} companies from Litorina")
+                print(f"SUCCESS: Found {len(companies)} companies from Litorina")
             else:
-                print(f"⚠️  Litorina returned status code {response.status_code}")
+                print(f"WARNING:  Litorina returned status code {response.status_code}")
                 
         except Exception as e:
-            print(f"❌ Error scraping Litorina: {str(e)}")
+            print(f"ERROR: Error scraping Litorina: {str(e)}")
         
         return companies
     
@@ -1098,7 +1098,7 @@ class MAScraper:
         companies = []
         
         try:
-            print(f"📡 Fetching portfolio from {firm_name}...")
+            print(f"FETCHING: Fetching portfolio from {firm_name}...")
             url = self.portfolio_urls.get(firm_key)
             
             if not url:
@@ -1139,12 +1139,12 @@ class MAScraper:
                         'source': firm_name
                     })
                 
-                print(f"✅ Found {len(companies)} companies from {firm_name}")
+                print(f"SUCCESS: Found {len(companies)} companies from {firm_name}")
             else:
-                print(f"⚠️  {firm_name} returned status code {response.status_code}")
+                print(f"WARNING:  {firm_name} returned status code {response.status_code}")
                 
         except Exception as e:
-            print(f"❌ Error scraping {firm_name}: {str(e)}")
+            print(f"ERROR: Error scraping {firm_name}: {str(e)}")
         
         return companies
     
