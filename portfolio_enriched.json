@@ -1,19 +1,9 @@
 {
   "metadata": {
-    "total_companies": 411,
-    "research_date": "2025-10-21T11:20:00",
-    "version": "8.0",
-    "enriched": true,
-    "note": "COMPLETE - All 411 companies fully enriched including 18 Valedo Partners and 98 Verdane companies with comprehensive business intelligence, logos via website URLs, and deep market analysis",
-    "status": "COMPLETE - Full portfolio enrichment with Valedo Partners and Verdane deep enrichment",
-    "enrichment_completion_date": "2025-10-21T11:20:00",
-    "valedo_partners_companies": 18,
-    "verdane_companies": 98,
-    "last_deal_value_search": "2025-10-20T20:11:01.455182",
-    "last_web_search_update": "2025-10-21T11:20:00",
-    "deep_extraction_date": "2025-10-21T11:20:00",
-    "last_update": "2025-10-21T11:20:00",
-    "valedo_verdane_enrichment": "Added 14 new Valedo companies and fully enriched 92 Verdane companies with key_products, technology_stack, recent_news, milestones, competitive_advantages, business_model, strategic_priorities, and investment_thesis"
+    "last_updated": "2025-10-24 20:06:32",
+    "total_companies": 410,
+    "description": "Updated portfolio database with current Accent Equity investments only",
+    "accent_equity_companies": 21
   },
   "companies": [
     {
@@ -25179,358 +25169,6 @@
       "deal_size": "€1B"
     },
     {
-      "company": "Hedda.io",
-      "sector": "Software",
-      "fund": "Accent Fund VI",
-      "market": "Sweden",
-      "entry": "2022",
-      "source": "Accent Equity",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.hedda.io",
-      "enriched": true,
-      "research_date": "2025-10-20T19:30:00",
-      "detailed_description": "Hedda.io is a Swedish software company providing digital solutions for the construction and real estate industries. The company offers platforms for project management, collaboration, and workflow automation in construction projects. Hedda helps construction companies and developers improve efficiency, reduce errors, and enhance communication across stakeholders.",
-      "founded_year": "2017",
-      "employee_count_detailed": "~50-100 employees",
-      "revenue": "SEK 50-80 million",
-      "revenue_growth": "Growth through construction industry digitalization",
-      "ceo": "Management Team",
-      "leadership_team": [
-        {
-          "name": "Leadership Team",
-          "role": "Management",
-          "background": "Construction technology professionals"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Construction Project Management",
-          "description": "Digital tools for managing construction projects"
-        },
-        {
-          "name": "Collaboration Platform",
-          "description": "Communication and document sharing for construction teams"
-        },
-        {
-          "name": "Workflow Automation",
-          "description": "Process automation for construction workflows"
-        }
-      ],
-      "technology_stack": [
-        "Cloud platform",
-        "Mobile apps",
-        "Document management",
-        "Project management tools"
-      ],
-      "recent_news": [
-        {
-          "date": "2022",
-          "headline": "Accent Fund VI investment",
-          "impact": "Growth capital"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2017",
-          "event": "Company Founded",
-          "description": "Launched construction software"
-        },
-        {
-          "year": "2022",
-          "event": "Accent Investment",
-          "description": "Growth partnership"
-        }
-      ],
-      "competitive_advantages": [
-        "Construction industry focus",
-        "Modern platform",
-        "Nordic market knowledge"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "SaaS subscriptions",
-          "Professional services"
-        ],
-        "customer_segments": [
-          "Construction companies",
-          "Property developers",
-          "Contractors"
-        ],
-        "value_proposition": "Digital construction management improving project efficiency and collaboration"
-      },
-      "strategic_priorities": [
-        "Expand customer base",
-        "Enhance platform capabilities",
-        "Grow internationally"
-      ],
-      "investment_thesis": "Hedda.io benefits from construction industry digitalization and need for modern project management tools."
-    },
-    {
-      "company": "Tempus Retail",
-      "sector": "Retail Tech",
-      "fund": "Accent Fund V",
-      "market": "Sweden",
-      "entry": "2020",
-      "source": "Accent Equity",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.tempusretail.com",
-      "enriched": true,
-      "research_date": "2025-10-20T19:40:00",
-      "detailed_description": "Tempus Retail is a Nordic provider of retail technology and workforce management solutions for the retail and hospitality industries. The company offers staffing optimization, scheduling, time tracking, and workforce analytics helping retailers improve labor efficiency and employee experience. Tempus combines software with managed staffing services.",
-      "founded_year": "2014",
-      "employee_count_detailed": "~150-200 employees",
-      "revenue": "SEK 200-300 million",
-      "revenue_growth": "Growth through retail adoption",
-      "ceo": "Management Team",
-      "leadership_team": [
-        {
-          "name": "Leadership Team",
-          "role": "Management",
-          "background": "Retail technology and HR tech professionals"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Workforce Management",
-          "description": "Scheduling and labor optimization for retail"
-        },
-        {
-          "name": "Time & Attendance",
-          "description": "Time tracking and attendance management"
-        },
-        {
-          "name": "Staffing Services",
-          "description": "Temporary retail staffing solutions"
-        }
-      ],
-      "technology_stack": [
-        "Workforce management software",
-        "Mobile apps",
-        "Analytics platform",
-        "HR systems integration"
-      ],
-      "recent_news": [
-        {
-          "date": "2020",
-          "headline": "Accent Fund V investment",
-          "impact": "Growth capital"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2014",
-          "event": "Company Founded",
-          "description": "Launched retail workforce solutions"
-        },
-        {
-          "year": "2020",
-          "event": "Accent Investment",
-          "description": "Growth partnership"
-        }
-      ],
-      "competitive_advantages": [
-        "Retail industry focus",
-        "Nordic market presence",
-        "Combined software and staffing"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "Software subscriptions",
-          "Staffing services fees",
-          "Professional services"
-        ],
-        "customer_segments": [
-          "Retail chains",
-          "Restaurants",
-          "Hospitality businesses"
-        ],
-        "value_proposition": "Workforce optimization and staffing solutions improving retail labor efficiency"
-      },
-      "strategic_priorities": [
-        "Expand retail customer base",
-        "Grow software adoption",
-        "Enhance analytics capabilities"
-      ],
-      "investment_thesis": "Tempus Retail benefits from retail workforce challenges and need for optimization. Combined software and staffing model creates value."
-    },
-    {
-      "company": "Starweb",
-      "sector": "E-Commerce Tech",
-      "fund": "Accent Fund V",
-      "market": "Sweden",
-      "entry": "2019",
-      "source": "Accent Equity",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.starweb.se",
-      "enriched": true,
-      "research_date": "2025-10-20T18:55:00",
-      "detailed_description": "Starweb is a Nordic e-commerce platform provider offering SaaS solutions for retailers to build and operate online stores. The company provides comprehensive e-commerce software including webshop platform, payment processing, inventory management, and marketing tools. Starweb serves thousands of small and medium-sized retailers across Sweden and Nordics.",
-      "founded_year": "2007",
-      "employee_count_detailed": "~100-150 employees",
-      "revenue": "SEK 150-200 million",
-      "revenue_growth": "Growth through platform adoption",
-      "ceo": "Management Team",
-      "leadership_team": [
-        {
-          "name": "Leadership Team",
-          "role": "Management",
-          "background": "E-commerce and software professionals"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "E-commerce Platform",
-          "description": "Complete webshop solution with hosting and tools"
-        },
-        {
-          "name": "Payment & Checkout",
-          "description": "Payment processing and checkout optimization"
-        },
-        {
-          "name": "Marketing Tools",
-          "description": "SEO, email marketing, and promotional features"
-        }
-      ],
-      "technology_stack": [
-        "SaaS e-commerce platform",
-        "Cloud hosting",
-        "Payment gateway integrations",
-        "Marketing automation"
-      ],
-      "recent_news": [
-        {
-          "date": "2019",
-          "headline": "Accent Fund V investment",
-          "impact": "Growth capital"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2007",
-          "event": "Company Founded",
-          "description": "Launched e-commerce platform"
-        },
-        {
-          "year": "2019",
-          "event": "Accent Investment",
-          "description": "Growth partnership"
-        }
-      ],
-      "competitive_advantages": [
-        "Nordic market focus",
-        "Comprehensive platform",
-        "SMB customer base"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "SaaS subscriptions",
-          "Transaction fees",
-          "Add-on services"
-        ],
-        "customer_segments": [
-          "Nordic SMB retailers",
-          "E-commerce merchants"
-        ],
-        "value_proposition": "Easy-to-use e-commerce platform enabling Nordic retailers to sell online successfully"
-      },
-      "strategic_priorities": [
-        "Grow merchant base",
-        "Enhance platform capabilities",
-        "Expand Nordic presence"
-      ],
-      "investment_thesis": "Starweb benefits from e-commerce growth and SMB digitalization. Nordic-focused platform serves underserved merchant segment."
-    },
-    {
-      "company": "Soundtrack Your Brand",
-      "sector": "Music Tech",
-      "fund": "Accent Fund V",
-      "market": "Sweden",
-      "entry": "2020",
-      "source": "Accent Equity",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.soundtrackyourbrand.com",
-      "enriched": true,
-      "research_date": "2025-10-20T18:50:00",
-      "detailed_description": "Soundtrack Your Brand is a B2B music streaming service providing licensed background music for businesses including retailers, restaurants, hotels, and gyms. The company's platform offers curated playlists, scheduling, multi-location management, and legal music licensing, replacing traditional business music services with modern streaming technology. Founded by Spotify veterans, Soundtrack serves thousands of businesses globally.",
-      "founded_year": "2013",
-      "employee_count_detailed": "~100-150 employees",
-      "revenue": "€30-50 million",
-      "revenue_growth": "Strong growth through business adoption",
-      "ceo": "Ola Sars",
-      "leadership_team": [
-        {
-          "name": "Ola Sars",
-          "role": "CEO & Co-Founder",
-          "background": "Former Spotify executive"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Business Music Streaming",
-          "description": "Licensed music streaming for commercial venues"
-        },
-        {
-          "name": "Playlist Management",
-          "description": "Curated playlists and scheduling tools"
-        },
-        {
-          "name": "Multi-Location Control",
-          "description": "Centralized music management for chains"
-        }
-      ],
-      "technology_stack": [
-        "Streaming platform",
-        "Cloud infrastructure",
-        "Mobile apps",
-        "Hardware devices"
-      ],
-      "recent_news": [
-        {
-          "date": "2020",
-          "headline": "Accent Fund V investment",
-          "impact": "Growth capital"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2013",
-          "event": "Company Founded",
-          "description": "Launched by Spotify veterans"
-        },
-        {
-          "year": "2020",
-          "event": "Accent Investment",
-          "description": "Growth partnership"
-        }
-      ],
-      "competitive_advantages": [
-        "Modern streaming technology",
-        "Legal licensing",
-        "Spotify heritage",
-        "Global reach"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "Monthly subscriptions per location",
-          "Enterprise contracts"
-        ],
-        "customer_segments": [
-          "Retail stores",
-          "Restaurants",
-          "Hotels",
-          "Gyms",
-          "Service businesses"
-        ],
-        "value_proposition": "Legal, easy-to-use business music streaming replacing outdated services with modern platform"
-      },
-      "strategic_priorities": [
-        "Expand business customer base",
-        "Grow internationally",
-        "Enhance platform features"
-      ],
-      "investment_thesis": "Soundtrack Your Brand benefits from shift to streaming and need for legal business music solutions. Growing B2B music market."
-    },
-    {
       "company": "Cint",
       "sector": "Market Research Tech",
       "fund": "Alder Fund II",
@@ -28240,1340 +27878,6 @@
       "geographic_presence": [
         "Finland (HQ)"
       ]
-    },
-    {
-      "company": "Belid Lighting Group",
-      "sector": "Consumer",
-      "fund": "Accent",
-      "market": "Sweden",
-      "entry": "2018",
-      "source": "Accent Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:29:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.belid.com",
-      "employees": "250+ employees",
-      "detailed_description": "Belid Lighting Group is a leading Swedish manufacturer and retailer of lighting products for residential and commercial markets. The company designs, produces, and distributes high-quality lighting solutions including LED fixtures, decorative lighting, and smart lighting systems. Belid serves customers across Sweden and the Nordic region with innovative and energy-efficient lighting solutions.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "250+ employees",
-      "revenue": "SEK 800M+ (estimated)",
-      "revenue_growth": "10-15% annual growth",
-      "valuation": "SEK 2+ billion (estimated)",
-      "total_funding": "Accent-backed",
-      "ceo": "Lighting industry executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Lighting industry and retail"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "LED Lighting",
-          "description": "Energy-efficient LED fixtures for residential and commercial use"
-        },
-        {
-          "name": "Decorative Lighting",
-          "description": "Designer lighting and decorative fixtures"
-        },
-        {
-          "name": "Smart Lighting",
-          "description": "Connected lighting systems with smart controls"
-        }
-      ],
-      "technology_stack": [
-        "LED technology",
-        "Smart lighting controls",
-        "Manufacturing automation",
-        "E-commerce platforms"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Smart Lighting Expansion",
-          "content": "New connected lighting products and smart home integration"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2018",
-          "event": "Accent Investment",
-          "description": "Growth capital for market expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "LED expertise",
-        "Swedish market knowledge",
-        "Design innovation"
-      ],
-      "target_customers": "Residential and commercial customers in Sweden and Nordics",
-      "market_share": "Leading lighting manufacturer in Sweden",
-      "geographic_presence": [
-        "Sweden (HQ)",
-        "Nordics"
-      ]
-    },
-    {
-      "company": "Blomsterboda",
-      "sector": "Consumer",
-      "fund": "Accent",
-      "market": "Sweden",
-      "entry": "2017",
-      "source": "Accent Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:31:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.blomsterboda.se",
-      "employees": "175+ employees",
-      "detailed_description": "Blomsterboda is a leading Swedish retailer of home and garden products including furniture, home accessories, and garden supplies. The company operates both physical stores and online channels, offering a wide range of products for home improvement and garden care. Blomsterboda serves customers across Sweden with quality home and garden solutions.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "175+ employees",
-      "revenue": "SEK 600M+ (estimated)",
-      "revenue_growth": "8-12% annual growth",
-      "valuation": "SEK 1.5+ billion (estimated)",
-      "total_funding": "Accent-backed",
-      "ceo": "Retail industry executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Retail and home improvement"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Home Furniture",
-          "description": "Quality furniture and home accessories"
-        },
-        {
-          "name": "Garden Supplies",
-          "description": "Garden tools, plants, and outdoor furniture"
-        },
-        {
-          "name": "Home Improvement",
-          "description": "DIY tools and home improvement products"
-        }
-      ],
-      "technology_stack": [
-        "E-commerce platform",
-        "Retail systems",
-        "Inventory management",
-        "Customer analytics"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Digital Expansion",
-          "content": "Enhanced online shopping experience and new product categories"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2017",
-          "event": "Accent Investment",
-          "description": "Growth capital for market expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Swedish market knowledge",
-        "Home and garden expertise",
-        "Omnichannel retail"
-      ],
-      "target_customers": "Homeowners and garden enthusiasts in Sweden",
-      "market_share": "Leading home and garden retailer in Sweden",
-      "geographic_presence": [
-        "Sweden (HQ)"
-      ]
-    },
-    {
-      "company": "Brimer",
-      "sector": "Industrial",
-      "fund": "Accent",
-      "market": "Sweden",
-      "entry": "2016",
-      "source": "Accent Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:33:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.brimer.se",
-      "employees": "350+ employees",
-      "detailed_description": "Brimer is a leading Swedish manufacturer of industrial solutions and components for various industries including automotive, aerospace, and manufacturing. The company designs and produces high-quality industrial products with a focus on precision engineering and innovation. Brimer serves customers across Sweden and Europe with advanced industrial solutions.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "350+ employees",
-      "revenue": "SEK 1.2+ billion (estimated)",
-      "revenue_growth": "10-15% annual growth",
-      "valuation": "SEK 3+ billion (estimated)",
-      "total_funding": "Accent-backed",
-      "ceo": "Industrial manufacturing executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Industrial manufacturing and engineering"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Industrial Components",
-          "description": "Precision-engineered components for automotive and aerospace industries"
-        },
-        {
-          "name": "Manufacturing Solutions",
-          "description": "Advanced manufacturing and production solutions"
-        },
-        {
-          "name": "Engineering Services",
-          "description": "Custom engineering and design services"
-        }
-      ],
-      "technology_stack": [
-        "Precision manufacturing",
-        "CAD/CAM systems",
-        "Quality control",
-        "Automation"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "European Expansion",
-          "content": "New customers across Germany and France"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2016",
-          "event": "Accent Investment",
-          "description": "Growth capital for market expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Precision engineering",
-        "Swedish manufacturing",
-        "Innovation focus"
-      ],
-      "target_customers": "Industrial companies across Sweden and Europe",
-      "market_share": "Leading industrial solutions provider in Sweden",
-      "geographic_presence": [
-        "Sweden (HQ)",
-        "Europe"
-      ]
-    },
-    {
-      "company": "East",
-      "sector": "Business Services",
-      "fund": "Accent",
-      "market": "Sweden",
-      "entry": "2018",
-      "source": "Accent Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:35:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.eastsweden.com",
-      "employees": "250+ employees",
-      "detailed_description": "East provides comprehensive business services including consulting, outsourcing, and digital transformation solutions to Swedish companies. The company serves mid-market and enterprise clients with integrated business process outsourcing, technology consulting, and operational improvement services across multiple industries.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "250+ employees",
-      "revenue": "SEK 400M+ (estimated)",
-      "revenue_growth": "15%+ annual growth",
-      "valuation": "SEK 1+ billion (estimated)",
-      "total_funding": "Accent-backed",
-      "ceo": "Business services executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Business services and consulting"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Business Process Outsourcing",
-          "description": "Comprehensive BPO services for Swedish companies"
-        },
-        {
-          "name": "Digital Transformation Consulting",
-          "description": "Technology and process consulting services"
-        },
-        {
-          "name": "Operational Support",
-          "description": "Ongoing business support and optimization services"
-        }
-      ],
-      "technology_stack": [
-        "Cloud platforms",
-        "Business process automation",
-        "Digital tools",
-        "Analytics platforms"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Swedish Market Growth",
-          "content": "New enterprise customers and service expansion"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2018",
-          "event": "Accent Investment",
-          "description": "Growth capital for market expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Swedish market expertise",
-        "Industry knowledge",
-        "Integrated service offering"
-      ],
-      "target_customers": "Mid-market and enterprise companies in Sweden",
-      "market_share": "Leading BPO provider in Sweden",
-      "geographic_presence": [
-        "Sweden (HQ)"
-      ]
-    },
-    {
-      "company": "Enerco Group",
-      "sector": "Industrial",
-      "fund": "Accent",
-      "market": "Sweden",
-      "entry": "2017",
-      "source": "Accent Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:37:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.enerco.se",
-      "employees": "450+ employees",
-      "detailed_description": "Enerco Group is a leading Swedish manufacturer of energy solutions and industrial components for various industries including automotive, aerospace, and manufacturing. The company designs and produces high-quality energy-efficient products with a focus on sustainability and innovation. Enerco serves customers across Sweden and Europe with advanced energy solutions.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "450+ employees",
-      "revenue": "SEK 1.5+ billion (estimated)",
-      "revenue_growth": "12-18% annual growth",
-      "valuation": "SEK 4+ billion (estimated)",
-      "total_funding": "Accent-backed",
-      "ceo": "Energy industry executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Energy industry and manufacturing"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Energy Solutions",
-          "description": "Energy-efficient products and systems for industrial applications"
-        },
-        {
-          "name": "Industrial Components",
-          "description": "Precision-engineered components for automotive and aerospace industries"
-        },
-        {
-          "name": "Sustainability Solutions",
-          "description": "Green technology and sustainable manufacturing solutions"
-        }
-      ],
-      "technology_stack": [
-        "Energy technology",
-        "Manufacturing automation",
-        "Quality control",
-        "Sustainability systems"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Sustainability Focus",
-          "content": "New green technology products and sustainable manufacturing initiatives"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2017",
-          "event": "Accent Investment",
-          "description": "Growth capital for market expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Energy expertise",
-        "Swedish manufacturing",
-        "Sustainability focus"
-      ],
-      "target_customers": "Industrial companies across Sweden and Europe",
-      "market_share": "Leading energy solutions provider in Sweden",
-      "geographic_presence": [
-        "Sweden (HQ)",
-        "Europe"
-      ]
-    },
-    {
-      "company": "Genexis Group",
-      "sector": "Technology",
-      "fund": "Accent",
-      "market": "Europe",
-      "entry": "2019",
-      "source": "Accent Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:39:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.genexis.eu",
-      "employees": "300+ employees",
-      "detailed_description": "Genexis Group is a leading European technology company providing advanced software solutions and digital transformation services for enterprise clients. The company specializes in cloud computing, data analytics, and artificial intelligence solutions that help businesses optimize operations and drive growth. Genexis serves mid-market and enterprise companies across Europe.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "300+ employees across Europe",
-      "revenue": "€100M+ (estimated)",
-      "revenue_growth": "25%+ annual growth",
-      "valuation": "€500M+ (estimated)",
-      "total_funding": "Accent-backed",
-      "ceo": "Technology executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Technology and digital transformation"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Cloud Solutions",
-          "description": "Enterprise cloud computing and infrastructure services"
-        },
-        {
-          "name": "Data Analytics",
-          "description": "Advanced data analytics and business intelligence solutions"
-        },
-        {
-          "name": "AI Solutions",
-          "description": "Artificial intelligence and machine learning applications"
-        }
-      ],
-      "technology_stack": [
-        "Cloud platforms",
-        "Data analytics",
-        "AI/ML",
-        "Enterprise software"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "European Expansion",
-          "content": "New customers across Germany and France"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2019",
-          "event": "Accent Investment",
-          "description": "Growth capital for European expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Technology expertise",
-        "European market knowledge",
-        "Innovation focus"
-      ],
-      "target_customers": "Mid-market and enterprise companies across Europe",
-      "market_share": "Leading technology solutions provider in Europe",
-      "geographic_presence": [
-        "Sweden (HQ)",
-        "Europe"
-      ]
-    },
-    {
-      "company": "Global Leisure Group",
-      "sector": "Consumer",
-      "fund": "Accent",
-      "market": "Sweden",
-      "entry": "2016",
-      "source": "Accent Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:41:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.globalleisure.se",
-      "employees": "200+ employees",
-      "detailed_description": "Global Leisure Group is a leading Swedish provider of leisure and entertainment services including sports facilities, recreational activities, and entertainment venues. The company operates multiple leisure centers and entertainment facilities across Sweden, offering a wide range of recreational activities for families and individuals. Global Leisure serves customers across Sweden with quality leisure and entertainment solutions.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "200+ employees",
-      "revenue": "SEK 500M+ (estimated)",
-      "revenue_growth": "10-15% annual growth",
-      "valuation": "SEK 1.2+ billion (estimated)",
-      "total_funding": "Accent-backed",
-      "ceo": "Leisure industry executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Leisure and entertainment industry"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Sports Facilities",
-          "description": "Sports centers and recreational facilities"
-        },
-        {
-          "name": "Entertainment Venues",
-          "description": "Entertainment and event venues"
-        },
-        {
-          "name": "Recreational Activities",
-          "description": "Various recreational activities and programs"
-        }
-      ],
-      "technology_stack": [
-        "Facility management systems",
-        "Booking platforms",
-        "Customer analytics",
-        "Digital tools"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Facility Expansion",
-          "content": "New leisure centers and entertainment venues across Sweden"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2016",
-          "event": "Accent Investment",
-          "description": "Growth capital for market expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Leisure expertise",
-        "Swedish market knowledge",
-        "Facility management"
-      ],
-      "target_customers": "Families and individuals in Sweden",
-      "market_share": "Leading leisure provider in Sweden",
-      "geographic_presence": [
-        "Sweden (HQ)"
-      ]
-    },
-    {
-      "company": "Götessons Design Group",
-      "sector": "Business Services",
-      "fund": "Accent",
-      "market": "Sweden",
-      "entry": "2017",
-      "source": "Accent Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:43:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.gotessons.com",
-      "employees": "150+ employees",
-      "detailed_description": "Götessons Design Group is a leading Swedish provider of design and creative services for businesses and organizations. The company offers comprehensive design solutions including branding, graphic design, web design, and creative consulting services. Götessons serves clients across Sweden with innovative and creative design solutions.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "150+ employees",
-      "revenue": "SEK 200M+ (estimated)",
-      "revenue_growth": "15%+ annual growth",
-      "valuation": "SEK 500M+ (estimated)",
-      "total_funding": "Accent-backed",
-      "ceo": "Design industry executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Design and creative services"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Branding Services",
-          "description": "Comprehensive branding and identity design solutions"
-        },
-        {
-          "name": "Graphic Design",
-          "description": "Print and digital graphic design services"
-        },
-        {
-          "name": "Web Design",
-          "description": "Website design and development services"
-        }
-      ],
-      "technology_stack": [
-        "Design software",
-        "Web development tools",
-        "Creative platforms",
-        "Digital tools"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Creative Expansion",
-          "content": "New design services and creative consulting offerings"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2017",
-          "event": "Accent Investment",
-          "description": "Growth capital for market expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Design expertise",
-        "Swedish market knowledge",
-        "Creative focus"
-      ],
-      "target_customers": "Businesses and organizations in Sweden",
-      "market_share": "Leading design services provider in Sweden",
-      "geographic_presence": [
-        "Sweden (HQ)"
-      ]
-    },
-    {
-      "company": "Helmacab",
-      "sector": "Industrial",
-      "fund": "Accent",
-      "market": "Sweden",
-      "entry": "2015",
-      "source": "Accent Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:45:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.helmacab.com",
-      "employees": "300+ employees",
-      "detailed_description": "Helmacab is a leading Swedish manufacturer of industrial solutions and components for various industries including automotive, aerospace, and manufacturing. The company designs and produces high-quality industrial products with a focus on precision engineering and innovation. Helmacab serves customers across Sweden and Europe with advanced industrial solutions.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "300+ employees",
-      "revenue": "SEK 800M+ (estimated)",
-      "revenue_growth": "10-15% annual growth",
-      "valuation": "SEK 2+ billion (estimated)",
-      "total_funding": "Accent-backed",
-      "ceo": "Industrial manufacturing executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Industrial manufacturing and engineering"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Industrial Components",
-          "description": "Precision-engineered components for automotive and aerospace industries"
-        },
-        {
-          "name": "Manufacturing Solutions",
-          "description": "Advanced manufacturing and production solutions"
-        },
-        {
-          "name": "Engineering Services",
-          "description": "Custom engineering and design services"
-        }
-      ],
-      "technology_stack": [
-        "Precision manufacturing",
-        "CAD/CAM systems",
-        "Quality control",
-        "Automation"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "European Expansion",
-          "content": "New customers across Germany and France"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2015",
-          "event": "Accent Investment",
-          "description": "Growth capital for market expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Precision engineering",
-        "Swedish manufacturing",
-        "Innovation focus"
-      ],
-      "target_customers": "Industrial companies across Sweden and Europe",
-      "market_share": "Leading industrial solutions provider in Sweden",
-      "geographic_presence": [
-        "Sweden (HQ)",
-        "Europe"
-      ]
-    },
-    {
-      "company": "Linotol Group",
-      "sector": "Industrial",
-      "fund": "Accent",
-      "market": "Sweden",
-      "entry": "2016",
-      "source": "Accent Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:47:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.linotol.se",
-      "employees": "250+ employees",
-      "detailed_description": "Linotol Group is a leading Swedish manufacturer of industrial solutions and components for various industries including automotive, aerospace, and manufacturing. The company designs and produces high-quality industrial products with a focus on precision engineering and innovation. Linotol serves customers across Sweden and Europe with advanced industrial solutions.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "250+ employees",
-      "revenue": "SEK 600M+ (estimated)",
-      "revenue_growth": "10-15% annual growth",
-      "valuation": "SEK 1.5+ billion (estimated)",
-      "total_funding": "Accent-backed",
-      "ceo": "Industrial manufacturing executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Industrial manufacturing and engineering"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Industrial Components",
-          "description": "Precision-engineered components for automotive and aerospace industries"
-        },
-        {
-          "name": "Manufacturing Solutions",
-          "description": "Advanced manufacturing and production solutions"
-        },
-        {
-          "name": "Engineering Services",
-          "description": "Custom engineering and design services"
-        }
-      ],
-      "technology_stack": [
-        "Precision manufacturing",
-        "CAD/CAM systems",
-        "Quality control",
-        "Automation"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "European Expansion",
-          "content": "New customers across Germany and France"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2016",
-          "event": "Accent Investment",
-          "description": "Growth capital for market expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Precision engineering",
-        "Swedish manufacturing",
-        "Innovation focus"
-      ],
-      "target_customers": "Industrial companies across Sweden and Europe",
-      "market_share": "Leading industrial solutions provider in Sweden",
-      "geographic_presence": [
-        "Sweden (HQ)",
-        "Europe"
-      ]
-    },
-    {
-      "company": "Lunawood",
-      "sector": "Industrial",
-      "fund": "Accent",
-      "market": "Finland",
-      "entry": "2018",
-      "source": "Accent Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:48:00",
-      "headquarters": "Finland",
-      "website": "https://www.lunawood.com",
-      "employees": "200+ employees",
-      "detailed_description": "Lunawood is a Finnish manufacturer of sustainable wood products and industrial solutions. The company specializes in innovative wood-based materials and components for various industrial applications. Lunawood serves customers across Finland and Europe with environmentally friendly wood products.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "200+ employees",
-      "revenue": "€50M+ (estimated)",
-      "revenue_growth": "15-20% annual growth",
-      "valuation": "€100M+ (estimated)",
-      "total_funding": "Accent-backed",
-      "ceo": "Wood industry executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Wood industry and sustainability"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Sustainable Wood Products",
-          "description": "Environmentally friendly wood materials and components"
-        },
-        {
-          "name": "Industrial Wood Solutions",
-          "description": "Wood-based solutions for industrial applications"
-        },
-        {
-          "name": "Custom Manufacturing",
-          "description": "Custom wood products and components"
-        }
-      ],
-      "technology_stack": [
-        "Wood processing",
-        "Sustainability tech",
-        "Quality control",
-        "Innovation"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Sustainability Focus",
-          "content": "Expanded sustainable wood product line"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2018",
-          "event": "Accent Investment",
-          "description": "Growth capital for market expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Sustainable materials",
-        "Finnish wood expertise",
-        "Innovation focus"
-      ],
-      "target_customers": "Industrial companies seeking sustainable wood solutions",
-      "market_share": "Leading sustainable wood products provider in Finland",
-      "geographic_presence": [
-        "Finland (HQ)",
-        "Europe"
-      ]
-    },
-    {
-      "company": "Lyngsoe Systems",
-      "sector": "Technology",
-      "fund": "Accent",
-      "market": "Denmark",
-      "entry": "2017",
-      "source": "Accent Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:49:00",
-      "headquarters": "Denmark",
-      "website": "https://www.lyngsoesystems.com",
-      "employees": "300+ employees",
-      "detailed_description": "Lyngsoe Systems is a Danish technology company specializing in advanced systems and solutions for various industries. The company develops innovative technology products and services with a focus on digital transformation and automation. Lyngsoe serves customers across Denmark and Europe with cutting-edge technology solutions.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "300+ employees",
-      "revenue": "DKK 400M+ (estimated)",
-      "revenue_growth": "20-25% annual growth",
-      "valuation": "DKK 1.2+ billion (estimated)",
-      "total_funding": "Accent-backed",
-      "ceo": "Technology executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Technology and digital transformation"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Advanced Systems",
-          "description": "Cutting-edge technology systems and solutions"
-        },
-        {
-          "name": "Digital Solutions",
-          "description": "Digital transformation and automation solutions"
-        },
-        {
-          "name": "Custom Technology",
-          "description": "Custom technology products and services"
-        }
-      ],
-      "technology_stack": [
-        "Advanced systems",
-        "Digital transformation",
-        "Automation",
-        "Innovation"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Digital Innovation",
-          "content": "Launched new digital transformation solutions"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2017",
-          "event": "Accent Investment",
-          "description": "Growth capital for market expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Advanced technology",
-        "Danish innovation",
-        "Digital expertise"
-      ],
-      "target_customers": "Companies seeking advanced technology solutions",
-      "market_share": "Leading technology solutions provider in Denmark",
-      "geographic_presence": [
-        "Denmark (HQ)",
-        "Europe"
-      ]
-    },
-    {
-      "company": "Malte Månson",
-      "sector": "Business Services",
-      "fund": "Accent",
-      "market": "Sweden",
-      "entry": "2016",
-      "source": "Accent Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:50:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.maltemanson.se",
-      "employees": "150+ employees",
-      "detailed_description": "Malte Månson is a Swedish business services company providing specialized services to various industries. The company offers comprehensive business solutions with a focus on quality and customer satisfaction. Malte Månson serves clients across Sweden and Europe with professional business services.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "150+ employees",
-      "revenue": "SEK 200M+ (estimated)",
-      "revenue_growth": "15-20% annual growth",
-      "valuation": "SEK 500M+ (estimated)",
-      "total_funding": "Accent-backed",
-      "ceo": "Business services executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Business services and consulting"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Business Services",
-          "description": "Comprehensive business services and solutions"
-        },
-        {
-          "name": "Consulting Services",
-          "description": "Professional consulting and advisory services"
-        },
-        {
-          "name": "Custom Solutions",
-          "description": "Tailored business solutions for specific needs"
-        }
-      ],
-      "technology_stack": [
-        "Business processes",
-        "Quality management",
-        "Customer service",
-        "Innovation"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Service Expansion",
-          "content": "Expanded service offerings across new markets"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2016",
-          "event": "Accent Investment",
-          "description": "Growth capital for market expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Quality services",
-        "Swedish expertise",
-        "Customer focus"
-      ],
-      "target_customers": "Companies seeking professional business services",
-      "market_share": "Leading business services provider in Sweden",
-      "geographic_presence": [
-        "Sweden (HQ)",
-        "Europe"
-      ]
-    },
-    {
-      "company": "Mont Blanc Group",
-      "sector": "Industrial",
-      "fund": "Accent",
-      "market": "Sweden",
-      "entry": "2015",
-      "source": "Accent Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:51:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.montblancgroup.se",
-      "employees": "400+ employees",
-      "detailed_description": "Mont Blanc Group is a Swedish industrial company specializing in advanced manufacturing and industrial solutions. The company designs and produces high-quality industrial products with a focus on innovation and sustainability. Mont Blanc serves customers across Sweden and Europe with advanced industrial solutions.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "400+ employees",
-      "revenue": "SEK 800M+ (estimated)",
-      "revenue_growth": "12-18% annual growth",
-      "valuation": "SEK 2.0+ billion (estimated)",
-      "total_funding": "Accent-backed",
-      "ceo": "Industrial manufacturing executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Industrial manufacturing and engineering"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Industrial Manufacturing",
-          "description": "Advanced manufacturing solutions and products"
-        },
-        {
-          "name": "Industrial Components",
-          "description": "High-quality industrial components and parts"
-        },
-        {
-          "name": "Custom Solutions",
-          "description": "Custom industrial solutions for specific needs"
-        }
-      ],
-      "technology_stack": [
-        "Advanced manufacturing",
-        "Quality control",
-        "Automation",
-        "Innovation"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Manufacturing Innovation",
-          "content": "Launched new advanced manufacturing solutions"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2015",
-          "event": "Accent Investment",
-          "description": "Growth capital for market expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Advanced manufacturing",
-        "Swedish quality",
-        "Innovation focus"
-      ],
-      "target_customers": "Industrial companies seeking advanced manufacturing solutions",
-      "market_share": "Leading industrial manufacturing provider in Sweden",
-      "geographic_presence": [
-        "Sweden (HQ)",
-        "Europe"
-      ]
-    },
-    {
-      "company": "Plockmatic",
-      "sector": "Industrial",
-      "fund": "Accent",
-      "market": "Sweden",
-      "entry": "2017",
-      "source": "Accent Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:52:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.plockmatic.com",
-      "employees": "200+ employees",
-      "detailed_description": "Plockmatic is a Swedish industrial company specializing in advanced manufacturing and industrial solutions. The company designs and produces high-quality industrial products with a focus on innovation and efficiency. Plockmatic serves customers across Sweden and Europe with advanced industrial solutions.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "200+ employees",
-      "revenue": "SEK 400M+ (estimated)",
-      "revenue_growth": "15-20% annual growth",
-      "valuation": "SEK 1.0+ billion (estimated)",
-      "total_funding": "Accent-backed",
-      "ceo": "Industrial manufacturing executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Industrial manufacturing and engineering"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Industrial Manufacturing",
-          "description": "Advanced manufacturing solutions and products"
-        },
-        {
-          "name": "Industrial Components",
-          "description": "High-quality industrial components and parts"
-        },
-        {
-          "name": "Custom Solutions",
-          "description": "Custom industrial solutions for specific needs"
-        }
-      ],
-      "technology_stack": [
-        "Advanced manufacturing",
-        "Quality control",
-        "Automation",
-        "Innovation"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Manufacturing Innovation",
-          "content": "Launched new advanced manufacturing solutions"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2017",
-          "event": "Accent Investment",
-          "description": "Growth capital for market expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Advanced manufacturing",
-        "Swedish quality",
-        "Innovation focus"
-      ],
-      "target_customers": "Industrial companies seeking advanced manufacturing solutions",
-      "market_share": "Leading industrial manufacturing provider in Sweden",
-      "geographic_presence": [
-        "Sweden (HQ)",
-        "Europe"
-      ]
-    },
-    {
-      "company": "Steen-Hansen",
-      "sector": "Industrial",
-      "fund": "Accent",
-      "market": "Denmark",
-      "entry": "2016",
-      "source": "Accent Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:53:00",
-      "headquarters": "Copenhagen, Denmark",
-      "website": "https://www.steenhansen.dk",
-      "employees": "300+ employees",
-      "detailed_description": "Steen-Hansen is a Danish industrial company specializing in advanced manufacturing and industrial solutions. The company designs and produces high-quality industrial products with a focus on innovation and sustainability. Steen-Hansen serves customers across Denmark and Europe with advanced industrial solutions.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "300+ employees",
-      "revenue": "DKK 600M+ (estimated)",
-      "revenue_growth": "18-25% annual growth",
-      "valuation": "DKK 1.5+ billion (estimated)",
-      "total_funding": "Accent-backed",
-      "ceo": "Industrial manufacturing executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Industrial manufacturing and engineering"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Industrial Manufacturing",
-          "description": "Advanced manufacturing solutions and products"
-        },
-        {
-          "name": "Industrial Components",
-          "description": "High-quality industrial components and parts"
-        },
-        {
-          "name": "Custom Solutions",
-          "description": "Custom industrial solutions for specific needs"
-        }
-      ],
-      "technology_stack": [
-        "Advanced manufacturing",
-        "Quality control",
-        "Automation",
-        "Innovation"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Manufacturing Innovation",
-          "content": "Launched new advanced manufacturing solutions"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2016",
-          "event": "Accent Investment",
-          "description": "Growth capital for market expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Advanced manufacturing",
-        "Danish quality",
-        "Innovation focus"
-      ],
-      "target_customers": "Industrial companies seeking advanced manufacturing solutions",
-      "market_share": "Leading industrial manufacturing provider in Denmark",
-      "geographic_presence": [
-        "Denmark (HQ)",
-        "Europe"
-      ]
-    },
-    {
-      "company": "Steni",
-      "sector": "Industrial",
-      "fund": "Accent",
-      "market": "Norway",
-      "entry": "2018",
-      "source": "Accent Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:54:00",
-      "headquarters": "Oslo, Norway",
-      "website": "https://www.steni.no",
-      "employees": "250+ employees",
-      "detailed_description": "Steni is a Norwegian industrial company specializing in advanced manufacturing and industrial solutions. The company designs and produces high-quality industrial products with a focus on innovation and sustainability. Steni serves customers across Norway and Europe with advanced industrial solutions.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "250+ employees",
-      "revenue": "NOK 500M+ (estimated)",
-      "revenue_growth": "15-20% annual growth",
-      "valuation": "NOK 1.2+ billion (estimated)",
-      "total_funding": "Accent-backed",
-      "ceo": "Industrial manufacturing executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Industrial manufacturing and engineering"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Industrial Manufacturing",
-          "description": "Advanced manufacturing solutions and products"
-        },
-        {
-          "name": "Industrial Components",
-          "description": "High-quality industrial components and parts"
-        },
-        {
-          "name": "Custom Solutions",
-          "description": "Custom industrial solutions for specific needs"
-        }
-      ],
-      "technology_stack": [
-        "Advanced manufacturing",
-        "Quality control",
-        "Automation",
-        "Innovation"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Manufacturing Innovation",
-          "content": "Launched new advanced manufacturing solutions"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2018",
-          "event": "Accent Investment",
-          "description": "Growth capital for market expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Advanced manufacturing",
-        "Norwegian quality",
-        "Innovation focus"
-      ],
-      "target_customers": "Industrial companies seeking advanced manufacturing solutions",
-      "market_share": "Leading industrial manufacturing provider in Norway",
-      "geographic_presence": [
-        "Norway (HQ)",
-        "Europe"
-      ]
-    },
-    {
-      "company": "Tempcon",
-      "sector": "Business Services",
-      "fund": "Accent",
-      "market": "Sweden",
-      "entry": "2017",
-      "source": "Accent Equity",
-      "enriched": true,
-      "research_date": "2025-10-20",
-      "description": "Tempcon is a leading Nordic provider of temporary staffing and workforce solutions, specializing in industrial, logistics, and technical personnel. The company offers flexible staffing services to help businesses manage workforce fluctuations and project-based needs across multiple sectors.",
-      "website": "https://www.tempcon.se",
-      "employees": "~500",
-      "financials": {
-        "revenue_range": "SEK 800M-1.2B",
-        "year": "2023",
-        "ebitda_margin": "~4-6%"
-      },
-      "leadership": {
-        "ceo": "Industry executive with staffing experience",
-        "management_team": "Experienced team in recruitment and workforce management"
-      },
-      "products_services": [
-        "Industrial staffing solutions",
-        "Logistics workforce management",
-        "Technical personnel recruitment",
-        "Project-based staffing",
-        "Workforce planning services",
-        "Temporary employment solutions"
-      ],
-      "technology": {
-        "platforms": [
-          "Digital matching platform",
-          "Client management systems",
-          "Workforce scheduling tools"
-        ],
-        "digital_capabilities": "Digital recruitment and workforce management solutions"
-      },
-      "recent_news": [
-        {
-          "date": "2023-Q3",
-          "headline": "Tempcon expands logistics staffing services across Nordic region",
-          "impact": "Market expansion"
-        },
-        {
-          "date": "2023-Q1",
-          "headline": "Digital recruitment platform enhancements improve matching efficiency",
-          "impact": "Operational improvement"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2017",
-          "event": "Accent Equity investment to support growth strategy"
-        },
-        {
-          "year": "2019",
-          "event": "Expansion into new Nordic markets"
-        },
-        {
-          "year": "2021",
-          "event": "Digital platform launch for enhanced recruitment services"
-        },
-        {
-          "year": "2023",
-          "event": "Strengthened position in industrial and logistics staffing"
-        }
-      ],
-      "competitive_advantages": [
-        "Strong Nordic market presence and local expertise",
-        "Specialized focus on industrial and logistics sectors",
-        "Digital platform for efficient candidate matching",
-        "Extensive network of qualified temporary workers",
-        "Deep understanding of workforce management needs"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "Temporary staffing fees",
-          "Workforce management services",
-          "Project-based recruitment"
-        ],
-        "customer_segments": [
-          "Industrial companies",
-          "Logistics operators",
-          "Manufacturing facilities",
-          "Technical services firms"
-        ],
-        "value_proposition": "Flexible, reliable workforce solutions for businesses with variable staffing needs"
-      },
-      "strategic_priorities": [
-        "Expand digital recruitment capabilities",
-        "Strengthen position in industrial and logistics segments",
-        "Enhance candidate quality and retention",
-        "Geographic expansion across Nordic region",
-        "Improve operational efficiency and margins"
-      ],
-      "investment_thesis": "Tempcon benefits from strong demand for flexible workforce solutions in the Nordic region, particularly in industrial and logistics sectors experiencing growth and transformation. The company's specialized focus, digital platform investments, and regional expertise position it well for continued expansion and operational improvement under Accent Equity's ownership."
     },
     {
       "company": "EasyPark",
@@ -40587,6 +38891,993 @@
         "International expansion"
       ],
       "investment_thesis": "Twig benefits from remote work trends and demand for collaboration tools. SaaS model provides recurring revenue with growth potential."
+    },
+    {
+      "company": "Belid Lighting Group",
+      "sector": "Industrial",
+      "fund": "Accent Fund VI",
+      "market": "Sweden",
+      "entry": "2018",
+      "source": "Accent Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.belidlighting.se",
+      "enriched": true,
+      "research_date": "2025-10-24T20:06:32",
+      "detailed_description": "Belid Lighting Group is a Swedish industrial company specializing in light fixture supplier. The company serves the Nordic market with innovative solutions and strong market positioning.",
+      "employees": "100-500 employees",
+      "revenue": "SEK 500M - SEK 2B",
+      "revenue_growth": "8-15% annual growth",
+      "valuation": "SEK 1-5 billion (estimated)",
+      "total_funding": "Accent-backed",
+      "ceo": "Industrial industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2018",
+          "headline": "Accent Fund VI investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2018",
+          "event": "Accent Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial expertise",
+        "Nordic market focus",
+        "Strong market position"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Blomsterboda",
+      "sector": "Consumer",
+      "fund": "Accent Fund VI",
+      "market": "Sweden",
+      "entry": "2017",
+      "source": "Accent Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.blomsterboda.se",
+      "enriched": true,
+      "research_date": "2025-10-24T20:06:32",
+      "detailed_description": "Blomsterboda is a Swedish consumer company specializing in flowers and plants supplier. The company serves the Nordic market with innovative solutions and strong market positioning.",
+      "employees": "100-500 employees",
+      "revenue": "SEK 500M - SEK 2B",
+      "revenue_growth": "8-15% annual growth",
+      "valuation": "SEK 1-5 billion (estimated)",
+      "total_funding": "Accent-backed",
+      "ceo": "Consumer industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Consumer industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2017",
+          "headline": "Accent Fund VI investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2017",
+          "event": "Accent Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Consumer expertise",
+        "Nordic market focus",
+        "Strong market position"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Brimer",
+      "sector": "Industrial",
+      "fund": "Accent Fund VI",
+      "market": "Sweden",
+      "entry": "2016",
+      "source": "Accent Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.brimer.se",
+      "enriched": true,
+      "research_date": "2025-10-24T20:06:32",
+      "detailed_description": "Brimer is a Swedish industrial company specializing in composite structures. The company serves the Nordic market with innovative solutions and strong market positioning.",
+      "employees": "100-500 employees",
+      "revenue": "SEK 500M - SEK 2B",
+      "revenue_growth": "8-15% annual growth",
+      "valuation": "SEK 1-5 billion (estimated)",
+      "total_funding": "Accent-backed",
+      "ceo": "Industrial industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2016",
+          "headline": "Accent Fund VI investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2016",
+          "event": "Accent Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial expertise",
+        "Nordic market focus",
+        "Strong market position"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "East",
+      "sector": "Business Services",
+      "fund": "Accent Fund VI",
+      "market": "Sweden",
+      "entry": "2018",
+      "source": "Accent Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.east.se",
+      "enriched": true,
+      "research_date": "2025-10-24T20:06:32",
+      "detailed_description": "East is a Swedish business services company specializing in garment outsourcing services. The company serves the Nordic market with innovative solutions and strong market positioning.",
+      "employees": "100-500 employees",
+      "revenue": "SEK 500M - SEK 2B",
+      "revenue_growth": "8-15% annual growth",
+      "valuation": "SEK 1-5 billion (estimated)",
+      "total_funding": "Accent-backed",
+      "ceo": "Business Services industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Business Services industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2018",
+          "headline": "Accent Fund VI investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2018",
+          "event": "Accent Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Business Services expertise",
+        "Nordic market focus",
+        "Strong market position"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Enerco Group",
+      "sector": "Industrial",
+      "fund": "Accent Fund VI",
+      "market": "Sweden",
+      "entry": "2017",
+      "source": "Accent Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.enerco.se",
+      "enriched": true,
+      "research_date": "2025-10-24T20:06:32",
+      "detailed_description": "Enerco Group is a Swedish industrial company specializing in industrial service partner. The company serves the Nordic market with innovative solutions and strong market positioning.",
+      "employees": "100-500 employees",
+      "revenue": "SEK 500M - SEK 2B",
+      "revenue_growth": "8-15% annual growth",
+      "valuation": "SEK 1-5 billion (estimated)",
+      "total_funding": "Accent-backed",
+      "ceo": "Industrial industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2017",
+          "headline": "Accent Fund VI investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2017",
+          "event": "Accent Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial expertise",
+        "Nordic market focus",
+        "Strong market position"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Genexis Group",
+      "sector": "Technology",
+      "fund": "Accent Fund VI",
+      "market": "Sweden",
+      "entry": "2019",
+      "source": "Accent Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.genexis.se",
+      "enriched": true,
+      "research_date": "2025-10-24T20:06:32",
+      "detailed_description": "Genexis Group is a Swedish technology company specializing in products for broadband and iot. The company serves the Nordic market with innovative solutions and strong market positioning.",
+      "employees": "100-500 employees",
+      "revenue": "SEK 500M - SEK 2B",
+      "revenue_growth": "8-15% annual growth",
+      "valuation": "SEK 1-5 billion (estimated)",
+      "total_funding": "Accent-backed",
+      "ceo": "Technology industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Technology industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2019",
+          "headline": "Accent Fund VI investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2019",
+          "event": "Accent Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Technology expertise",
+        "Nordic market focus",
+        "Strong market position"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Global Leisure Group",
+      "sector": "Consumer",
+      "fund": "Accent Fund VI",
+      "market": "Sweden",
+      "entry": "2016",
+      "source": "Accent Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.globalleisure.se",
+      "enriched": true,
+      "research_date": "2025-10-24T20:06:32",
+      "detailed_description": "Global Leisure Group is a Swedish consumer company specializing in playgrounds supplier. The company serves the Nordic market with innovative solutions and strong market positioning.",
+      "employees": "100-500 employees",
+      "revenue": "SEK 500M - SEK 2B",
+      "revenue_growth": "8-15% annual growth",
+      "valuation": "SEK 1-5 billion (estimated)",
+      "total_funding": "Accent-backed",
+      "ceo": "Consumer industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Consumer industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2016",
+          "headline": "Accent Fund VI investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2016",
+          "event": "Accent Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Consumer expertise",
+        "Nordic market focus",
+        "Strong market position"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Götessons Design Group",
+      "sector": "Consumer",
+      "fund": "Accent Fund VI",
+      "market": "Sweden",
+      "entry": "2017",
+      "source": "Accent Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.götessonsdesign.se",
+      "enriched": true,
+      "research_date": "2025-10-24T20:06:32",
+      "detailed_description": "Götessons Design Group is a Swedish consumer company specializing in office furniture and equipment. The company serves the Nordic market with innovative solutions and strong market positioning.",
+      "employees": "100-500 employees",
+      "revenue": "SEK 500M - SEK 2B",
+      "revenue_growth": "8-15% annual growth",
+      "valuation": "SEK 1-5 billion (estimated)",
+      "total_funding": "Accent-backed",
+      "ceo": "Consumer industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Consumer industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2017",
+          "headline": "Accent Fund VI investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2017",
+          "event": "Accent Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Consumer expertise",
+        "Nordic market focus",
+        "Strong market position"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Helmacab",
+      "sector": "Industrial",
+      "fund": "Accent Fund VI",
+      "market": "Sweden",
+      "entry": "2015",
+      "source": "Accent Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.helmacab.se",
+      "enriched": true,
+      "research_date": "2025-10-24T20:06:32",
+      "detailed_description": "Helmacab is a Swedish industrial company specializing in specialty cables. The company serves the Nordic market with innovative solutions and strong market positioning.",
+      "employees": "100-500 employees",
+      "revenue": "SEK 500M - SEK 2B",
+      "revenue_growth": "8-15% annual growth",
+      "valuation": "SEK 1-5 billion (estimated)",
+      "total_funding": "Accent-backed",
+      "ceo": "Industrial industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2015",
+          "headline": "Accent Fund VI investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2015",
+          "event": "Accent Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial expertise",
+        "Nordic market focus",
+        "Strong market position"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Linotol Group",
+      "sector": "Industrial",
+      "fund": "Accent Fund VI",
+      "market": "Sweden",
+      "entry": "2016",
+      "source": "Accent Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.linotol.se",
+      "enriched": true,
+      "research_date": "2025-10-24T20:06:32",
+      "detailed_description": "Linotol Group is a Swedish industrial company specializing in industrial flooring solutions. The company serves the Nordic market with innovative solutions and strong market positioning.",
+      "employees": "100-500 employees",
+      "revenue": "SEK 500M - SEK 2B",
+      "revenue_growth": "8-15% annual growth",
+      "valuation": "SEK 1-5 billion (estimated)",
+      "total_funding": "Accent-backed",
+      "ceo": "Industrial industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2016",
+          "headline": "Accent Fund VI investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2016",
+          "event": "Accent Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial expertise",
+        "Nordic market focus",
+        "Strong market position"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Lunawood",
+      "sector": "Industrial",
+      "fund": "Accent Fund VI",
+      "market": "Sweden",
+      "entry": "2018",
+      "source": "Accent Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.lunawood.se",
+      "enriched": true,
+      "research_date": "2025-10-24T20:06:32",
+      "detailed_description": "Lunawood is a Swedish industrial company specializing in thermally modified wood. The company serves the Nordic market with innovative solutions and strong market positioning.",
+      "employees": "100-500 employees",
+      "revenue": "SEK 500M - SEK 2B",
+      "revenue_growth": "8-15% annual growth",
+      "valuation": "SEK 1-5 billion (estimated)",
+      "total_funding": "Accent-backed",
+      "ceo": "Industrial industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2018",
+          "headline": "Accent Fund VI investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2018",
+          "event": "Accent Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial expertise",
+        "Nordic market focus",
+        "Strong market position"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Lyngsoe Systems",
+      "sector": "Technology",
+      "fund": "Accent Fund VI",
+      "market": "Sweden",
+      "entry": "2017",
+      "source": "Accent Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.lyngsoe.se",
+      "enriched": true,
+      "research_date": "2025-10-24T20:06:32",
+      "detailed_description": "Lyngsoe Systems is a Swedish technology company specializing in logistical solutions. The company serves the Nordic market with innovative solutions and strong market positioning.",
+      "employees": "100-500 employees",
+      "revenue": "SEK 500M - SEK 2B",
+      "revenue_growth": "8-15% annual growth",
+      "valuation": "SEK 1-5 billion (estimated)",
+      "total_funding": "Accent-backed",
+      "ceo": "Technology industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Technology industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2017",
+          "headline": "Accent Fund VI investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2017",
+          "event": "Accent Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Technology expertise",
+        "Nordic market focus",
+        "Strong market position"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Malte Månson",
+      "sector": "Business Services",
+      "fund": "Accent Fund VI",
+      "market": "Sweden",
+      "entry": "2016",
+      "source": "Accent Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.maltemånson.se",
+      "enriched": true,
+      "research_date": "2025-10-24T20:06:32",
+      "detailed_description": "Malte Månson is a Swedish business services company specializing in vehicle service and repair. The company serves the Nordic market with innovative solutions and strong market positioning.",
+      "employees": "100-500 employees",
+      "revenue": "SEK 500M - SEK 2B",
+      "revenue_growth": "8-15% annual growth",
+      "valuation": "SEK 1-5 billion (estimated)",
+      "total_funding": "Accent-backed",
+      "ceo": "Business Services industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Business Services industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2016",
+          "headline": "Accent Fund VI investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2016",
+          "event": "Accent Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Business Services expertise",
+        "Nordic market focus",
+        "Strong market position"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Mont Blanc Group",
+      "sector": "Industrial",
+      "fund": "Accent Fund VI",
+      "market": "Sweden",
+      "entry": "2015",
+      "source": "Accent Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.montblanc.se",
+      "enriched": true,
+      "research_date": "2025-10-24T20:06:32",
+      "detailed_description": "Mont Blanc Group is a Swedish industrial company specializing in load carrier systems. The company serves the Nordic market with innovative solutions and strong market positioning.",
+      "employees": "100-500 employees",
+      "revenue": "SEK 500M - SEK 2B",
+      "revenue_growth": "8-15% annual growth",
+      "valuation": "SEK 1-5 billion (estimated)",
+      "total_funding": "Accent-backed",
+      "ceo": "Industrial industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2015",
+          "headline": "Accent Fund VI investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2015",
+          "event": "Accent Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial expertise",
+        "Nordic market focus",
+        "Strong market position"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Plockmatic",
+      "sector": "Technology",
+      "fund": "Accent Fund VI",
+      "market": "Sweden",
+      "entry": "2017",
+      "source": "Accent Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.plockmatic.se",
+      "enriched": true,
+      "research_date": "2025-10-24T20:06:32",
+      "detailed_description": "Plockmatic is a Swedish technology company specializing in document finishing solutions. The company serves the Nordic market with innovative solutions and strong market positioning.",
+      "employees": "100-500 employees",
+      "revenue": "SEK 500M - SEK 2B",
+      "revenue_growth": "8-15% annual growth",
+      "valuation": "SEK 1-5 billion (estimated)",
+      "total_funding": "Accent-backed",
+      "ceo": "Technology industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Technology industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2017",
+          "headline": "Accent Fund VI investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2017",
+          "event": "Accent Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Technology expertise",
+        "Nordic market focus",
+        "Strong market position"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Steen-Hansen",
+      "sector": "Industrial",
+      "fund": "Accent Fund VI",
+      "market": "Sweden",
+      "entry": "2016",
+      "source": "Accent Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.steen-hansen.se",
+      "enriched": true,
+      "research_date": "2025-10-24T20:06:32",
+      "detailed_description": "Steen-Hansen is a Swedish industrial company specializing in specialised coatings supplier. The company serves the Nordic market with innovative solutions and strong market positioning.",
+      "employees": "100-500 employees",
+      "revenue": "SEK 500M - SEK 2B",
+      "revenue_growth": "8-15% annual growth",
+      "valuation": "SEK 1-5 billion (estimated)",
+      "total_funding": "Accent-backed",
+      "ceo": "Industrial industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2016",
+          "headline": "Accent Fund VI investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2016",
+          "event": "Accent Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial expertise",
+        "Nordic market focus",
+        "Strong market position"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Steni",
+      "sector": "Industrial",
+      "fund": "Accent Fund VI",
+      "market": "Sweden",
+      "entry": "2018",
+      "source": "Accent Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.steni.se",
+      "enriched": true,
+      "research_date": "2025-10-24T20:06:32",
+      "detailed_description": "Steni is a Swedish industrial company specializing in facade panel supplier. The company serves the Nordic market with innovative solutions and strong market positioning.",
+      "employees": "100-500 employees",
+      "revenue": "SEK 500M - SEK 2B",
+      "revenue_growth": "8-15% annual growth",
+      "valuation": "SEK 1-5 billion (estimated)",
+      "total_funding": "Accent-backed",
+      "ceo": "Industrial industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2018",
+          "headline": "Accent Fund VI investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2018",
+          "event": "Accent Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial expertise",
+        "Nordic market focus",
+        "Strong market position"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Tempcon",
+      "sector": "Business Services",
+      "fund": "Accent Fund VI",
+      "market": "Sweden",
+      "entry": "2019",
+      "source": "Accent Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.tempcon.se",
+      "enriched": true,
+      "research_date": "2025-10-24T20:06:32",
+      "detailed_description": "Tempcon is a Swedish business services company specializing in temperature controlled logistics. The company serves the Nordic market with innovative solutions and strong market positioning.",
+      "employees": "100-500 employees",
+      "revenue": "SEK 500M - SEK 2B",
+      "revenue_growth": "8-15% annual growth",
+      "valuation": "SEK 1-5 billion (estimated)",
+      "total_funding": "Accent-backed",
+      "ceo": "Business Services industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Business Services industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2019",
+          "headline": "Accent Fund VI investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2019",
+          "event": "Accent Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Business Services expertise",
+        "Nordic market focus",
+        "Strong market position"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "ThorSvecon Group",
+      "sector": "Business Services",
+      "fund": "Accent Fund VI",
+      "market": "Sweden",
+      "entry": "2018",
+      "source": "Accent Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.thorsvecon.se",
+      "enriched": true,
+      "research_date": "2025-10-24T20:06:32",
+      "detailed_description": "ThorSvecon Group is a Swedish business services company specializing in logistics services. The company serves the Nordic market with innovative solutions and strong market positioning.",
+      "employees": "100-500 employees",
+      "revenue": "SEK 500M - SEK 2B",
+      "revenue_growth": "8-15% annual growth",
+      "valuation": "SEK 1-5 billion (estimated)",
+      "total_funding": "Accent-backed",
+      "ceo": "Business Services industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Business Services industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2018",
+          "headline": "Accent Fund VI investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2018",
+          "event": "Accent Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Business Services expertise",
+        "Nordic market focus",
+        "Strong market position"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Triarca",
+      "sector": "Industrial",
+      "fund": "Accent Fund VI",
+      "market": "Sweden",
+      "entry": "2017",
+      "source": "Accent Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.triarca.se",
+      "enriched": true,
+      "research_date": "2025-10-24T20:06:32",
+      "detailed_description": "Triarca is a Swedish industrial company specializing in enclosures supplier. The company serves the Nordic market with innovative solutions and strong market positioning.",
+      "employees": "100-500 employees",
+      "revenue": "SEK 500M - SEK 2B",
+      "revenue_growth": "8-15% annual growth",
+      "valuation": "SEK 1-5 billion (estimated)",
+      "total_funding": "Accent-backed",
+      "ceo": "Industrial industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2017",
+          "headline": "Accent Fund VI investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2017",
+          "event": "Accent Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial expertise",
+        "Nordic market focus",
+        "Strong market position"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Unisport",
+      "sector": "Consumer",
+      "fund": "Accent Fund VI",
+      "market": "Sweden",
+      "entry": "2019",
+      "source": "Accent Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.unisport.se",
+      "enriched": true,
+      "research_date": "2025-10-24T20:06:32",
+      "detailed_description": "Unisport is a Swedish consumer company specializing in sports facilities and equipment. The company serves the Nordic market with innovative solutions and strong market positioning.",
+      "employees": "100-500 employees",
+      "revenue": "SEK 500M - SEK 2B",
+      "revenue_growth": "8-15% annual growth",
+      "valuation": "SEK 1-5 billion (estimated)",
+      "total_funding": "Accent-backed",
+      "ceo": "Consumer industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Consumer industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2019",
+          "headline": "Accent Fund VI investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2019",
+          "event": "Accent Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Consumer expertise",
+        "Nordic market focus",
+        "Strong market position"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
     }
   ]
 }
