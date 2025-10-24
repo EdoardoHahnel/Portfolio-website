@@ -325,10 +325,10 @@
     }
     
     .sector-tag, .deal-type-tag {
-        padding: 6px 12px;
-        border-radius: 20px;
-        font-size: 0.75rem;
-        font-weight: 600;
+        padding: 3px 6px;
+        border-radius: 12px;
+        font-size: 0.5rem;
+        font-weight: 500;
     }
     
     .sector-tag {
@@ -357,10 +357,6 @@
         color: #2e7d32;
     }
     
-    .status-ongoing {
-        background: #fff3e0;
-        color: #f57c00;
-    }
     
     .status-rumored {
         background: #f3e5f5;
@@ -422,9 +418,9 @@
         display: inline-block;
         background: #f3e5f5;
         color: #7b1fa2;
-        padding: 0.15rem 0.3rem;
-        border-radius: 8px;
-        font-size: 0.55rem;
+        padding: 0.1rem 0.2rem;
+        border-radius: 6px;
+        font-size: 0.4rem;
         font-weight: 500;
     }
 </style>
@@ -490,10 +486,6 @@
                 <div class="filter-dropdown-item" data-filter="completed">
                     <i class="fas fa-check-circle"></i>
                     <span>Completed</span>
-                </div>
-                <div class="filter-dropdown-item" data-filter="ongoing">
-                    <i class="fas fa-clock"></i>
-                    <span>Ongoing</span>
                 </div>
             </div>
         </div>
@@ -668,14 +660,12 @@ function updateStats(deals) {
     // Update stats only if elements exist (they were removed when we removed the header)
     const totalDealsEl = document.getElementById('totalDeals');
     const completedDealsEl = document.getElementById('completedDeals');
-    const ongoingDealsEl = document.getElementById('ongoingDeals');
     const aiDealsEl = document.getElementById('aiDeals');
     const totalValueEl = document.getElementById('totalValue');
     const nordic2025El = document.getElementById('nordic2025');
     
     if (totalDealsEl) totalDealsEl.textContent = deals.length;
     if (completedDealsEl) completedDealsEl.textContent = deals.filter(d => d.status === 'Completed').length;
-    if (ongoingDealsEl) ongoingDealsEl.textContent = deals.filter(d => d.status === 'Ongoing').length;
     if (aiDealsEl) aiDealsEl.textContent = deals.filter(d => d.sector && d.sector.toLowerCase().includes('ai')).length;
     if (totalValueEl) totalValueEl.textContent = '$280B+';
     
@@ -753,7 +743,6 @@ function getCompanyLogo(companyName) {
 function getStatusIcon(status) {
     const statusIcons = {
         'Completed': '<i class="fas fa-check-circle"></i>',
-        'Ongoing': '<i class="fas fa-clock"></i>',
         'Announced': '<i class="fas fa-bullhorn"></i>',
         'Pending': '<i class="fas fa-hourglass-half"></i>',
         'Cancelled': '<i class="fas fa-times-circle"></i>',
@@ -872,9 +861,6 @@ function applyFilter() {
             filtered = allDeals.filter(d => d.status === 'Completed');
             break;
             
-        case 'ongoing':
-            filtered = allDeals.filter(d => d.status === 'Ongoing');
-            break;
             
         default:
             filtered = allDeals;
@@ -1000,7 +986,6 @@ function getCountryFlag(geography, size = 'medium') {
 function getStatusIcon(status) {
     const iconMap = {
         'Completed': '<i class="fas fa-check-circle"></i>',
-        'Ongoing': '<i class="fas fa-clock"></i>',
         'Rumored': '<i class="fas fa-question-circle"></i>',
         'Milestone': '<i class="fas fa-flag"></i>',
         'Failed': '<i class="fas fa-times-circle"></i>'
