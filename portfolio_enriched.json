@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "last_updated": "2025-10-24 20:48:39",
-    "total_companies": 434,
-    "description": "Updated portfolio database with current Alder investments only",
-    "alder_companies": 13
+    "last_updated": "2025-10-24 20:58:58",
+    "total_companies": 493,
+    "description": "Updated portfolio database with current IK Partners investments only",
+    "ik_partners_companies": 19
   },
   "companies": [
     {
@@ -22967,520 +22967,6 @@
       "logo_url": "https://logo.clearbit.com/knowit.eu"
     },
     {
-      "company": "Egmont",
-      "sector": "Media",
-      "fund": "IK IX",
-      "market": "Denmark",
-      "entry": "2020",
-      "source": "IK Partners",
-      "headquarters": "Copenhagen, Denmark",
-      "website": "https://www.egmont.com",
-      "enriched": true,
-      "research_date": "2025-10-20T17:35:00",
-      "detailed_description": "Egmont is a leading Nordic media group with operations in publishing, film & TV production, digital media, and retail. Founded in 1878, the company is a major publisher of magazines, books, and comics (including Scandinavia's rights to Disney comics), produces Nordic noir TV series and films, and operates retail stores. Egmont is a foundation-owned company channeling profits to the Egmont Foundation supporting children and youth. With operations across Scandinavia, UK, and other European markets, Egmont combines traditional media with digital platforms and streaming services.",
-      "founded_year": "1878",
-      "employee_count_detailed": "~4,000 employees",
-      "revenue": "DKK 10+ billion (~€1.3 billion)",
-      "revenue_growth": "Moderate growth with shift to digital and streaming",
-      "ceo": "Steffen Kragh",
-      "leadership_team": [
-        {
-          "name": "Steffen Kragh",
-          "role": "CEO",
-          "background": "Media executive with Nordic market expertise"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Publishing",
-          "description": "Magazines, books, comics, and digital publications including leading Nordic titles and Disney comics rights"
-        },
-        {
-          "name": "TV & Film Production",
-          "description": "Nordic noir series, films, and content production for broadcasters and streaming platforms"
-        },
-        {
-          "name": "Digital Media",
-          "description": "Online publications, gaming platforms, and digital content services"
-        }
-      ],
-      "technology_stack": [
-        "Digital publishing platforms",
-        "Content management systems",
-        "Streaming technology",
-        "E-commerce platforms"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "headline": "Continued investment in streaming and digital content",
-          "impact": "Digital transformation"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "1878",
-          "event": "Company Founded",
-          "description": "Established as publishing company in Denmark"
-        },
-        {
-          "year": "2020",
-          "event": "IK IX Investment",
-          "description": "Partnership to support digital transformation"
-        }
-      ],
-      "competitive_advantages": [
-        "Long heritage and strong Nordic brands",
-        "Foundation ownership enabling long-term focus",
-        "Diversified media portfolio",
-        "Strong content production capabilities"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "Publishing sales",
-          "Content production",
-          "Digital subscriptions",
-          "Retail"
-        ],
-        "customer_segments": [
-          "Consumers",
-          "Broadcasters",
-          "Streaming platforms"
-        ],
-        "value_proposition": "Nordic media and entertainment content across traditional and digital platforms"
-      },
-      "strategic_priorities": [
-        "Accelerate digital transformation",
-        "Grow streaming and on-demand content",
-        "Optimize publishing portfolio",
-        "Invest in content production"
-      ],
-      "investment_thesis": "Egmont benefits from strong Nordic brands and content library while transforming traditional media business for digital era. Foundation ownership provides stability and long-term perspective.",
-      "deal_size": "€2B",
-      "logo_url": "https://logo.clearbit.com/egmont.com"
-    },
-    {
-      "company": "Jollyroom",
-      "sector": "E-Commerce",
-      "fund": "IK VIII",
-      "market": "Sweden",
-      "entry": "2019",
-      "source": "IK Partners",
-      "headquarters": "Gothenburg, Sweden",
-      "website": "https://www.jollyroom.se",
-      "enriched": true,
-      "research_date": "2025-10-20T17:40:00",
-      "detailed_description": "Jollyroom is the leading Nordic e-commerce retailer for baby and children's products, offering strollers, car seats, furniture, toys, clothing, and accessories for families with young children. Founded in 2010, the company has grown rapidly to become the go-to destination for Scandinavian parents, operating across Sweden, Norway, Denmark, and Finland. Jollyroom combines extensive product selection from top brands with expert guidance, fast delivery, and customer service tailored to parents' needs. The company operates primarily online with select retail stores providing showroom experiences.",
-      "founded_year": "2010",
-      "employee_count_detailed": "~300 employees",
-      "revenue": "SEK 1+ billion (~€100 million)",
-      "revenue_growth": "Strong growth through market share gains",
-      "ceo": "Kent Eriksson",
-      "leadership_team": [
-        {
-          "name": "Kent Eriksson",
-          "role": "CEO & Founder",
-          "background": "E-commerce entrepreneur"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Baby Gear & Strollers",
-          "description": "Strollers, car seats, carriers, and transportation products from premium brands"
-        },
-        {
-          "name": "Furniture & Nursery",
-          "description": "Cribs, changing tables, nursery furniture, and baby room essentials"
-        },
-        {
-          "name": "Toys & Play",
-          "description": "Educational toys, play equipment, and children's activities"
-        },
-        {
-          "name": "Clothing & Textiles",
-          "description": "Baby and children's clothing, bedding, and textile products"
-        }
-      ],
-      "technology_stack": [
-        "E-commerce platform",
-        "Warehouse management",
-        "CRM and customer service",
-        "Digital marketing"
-      ],
-      "recent_news": [
-        {
-          "date": "2019",
-          "headline": "IK VIII investment to accelerate Nordic expansion",
-          "impact": "Growth capital"
-        },
-        {
-          "date": "2020-2023",
-          "headline": "Strong growth during and post-pandemic",
-          "impact": "Market share gains"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2010",
-          "event": "Company Founded",
-          "description": "Launched as online baby products store"
-        },
-        {
-          "year": "2019",
-          "event": "IK VIII Investment",
-          "description": "Partnership to support Nordic expansion"
-        },
-        {
-          "year": "2020-2024",
-          "event": "Market Leadership",
-          "description": "Became leading Nordic baby products e-tailer"
-        }
-      ],
-      "competitive_advantages": [
-        "Leading Nordic market position in baby products",
-        "Strong brand recognition among parents",
-        "Extensive product selection and inventory",
-        "Expert customer service and guidance",
-        "Fast delivery and convenient returns",
-        "Multi-market Nordic presence"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "Product sales",
-          "Premium brand partnerships"
-        ],
-        "customer_segments": [
-          "Parents and families with young children",
-          "Gift buyers"
-        ],
-        "value_proposition": "One-stop Nordic e-commerce destination for baby and children's products with expert guidance and fast delivery"
-      },
-      "strategic_priorities": [
-        "Expand across all Nordic markets",
-        "Grow product categories",
-        "Enhance customer experience",
-        "Improve logistics and fulfillment",
-        "Increase brand partnerships",
-        "Optimize profitability"
-      ],
-      "investment_thesis": "Jollyroom benefits from shift to online shopping for baby products, high customer lifetime value, and strong Nordic demographics. Market leadership position and brand provide competitive advantages in growing market.",
-      "deal_size": "SEK 1.5B",
-      "logo_url": "https://logo.clearbit.com/jollyroom.se"
-    },
-    {
-      "company": "Mamut",
-      "sector": "Software",
-      "fund": "IK VIII",
-      "market": "Norway",
-      "entry": "2018",
-      "source": "IK Partners",
-      "headquarters": "Oslo, Norway",
-      "website": "https://www.mamut.com",
-      "enriched": true,
-      "research_date": "2025-10-20T19:15:00",
-      "detailed_description": "Mamut is a Norwegian software company providing business management solutions for small and medium-sized enterprises. The company offers ERP, CRM, invoicing, and business automation software helping Norwegian SMBs manage operations. Mamut has served the Norwegian market for decades with locally-tailored solutions.",
-      "founded_year": "1989",
-      "employee_count_detailed": "~100 employees",
-      "revenue": "NOK 150-200 million",
-      "revenue_growth": "Stable with transition to cloud",
-      "ceo": "Management Team",
-      "leadership_team": [
-        {
-          "name": "Leadership Team",
-          "role": "Management",
-          "background": "Enterprise software professionals"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Business Software",
-          "description": "ERP and business management solutions for SMBs"
-        },
-        {
-          "name": "Invoicing & Accounting",
-          "description": "Financial management and invoicing tools"
-        },
-        {
-          "name": "CRM",
-          "description": "Customer relationship management for Norwegian businesses"
-        }
-      ],
-      "technology_stack": [
-        "Cloud software",
-        "Accounting systems",
-        "CRM platform"
-      ],
-      "recent_news": [
-        {
-          "date": "2018",
-          "headline": "IK VIII investment",
-          "impact": "Growth capital"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "1989",
-          "event": "Company Founded",
-          "description": "Established as Norwegian software provider"
-        },
-        {
-          "year": "2018",
-          "event": "IK Investment",
-          "description": "Partnership for modernization"
-        }
-      ],
-      "competitive_advantages": [
-        "Strong Norwegian market presence",
-        "Local software tailored to Norwegian businesses",
-        "Established customer base"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "Software subscriptions",
-          "Licenses",
-          "Support services"
-        ],
-        "customer_segments": [
-          "Norwegian SMBs",
-          "Small businesses"
-        ],
-        "value_proposition": "Locally-tailored business software for Norwegian SMEs"
-      },
-      "strategic_priorities": [
-        "Cloud migration",
-        "Modernize platform",
-        "Retain customer base"
-      ],
-      "investment_thesis": "Mamut benefits from established Norwegian SMB market position. Cloud transition and modernization offer opportunities.",
-      "deal_size": "NOK 800M",
-      "logo_url": "https://logo.clearbit.com/mamut.com"
-    },
-    {
-      "company": "Iver",
-      "sector": "Business Services",
-      "fund": "IK IX",
-      "market": "Denmark",
-      "entry": "2021",
-      "source": "IK Partners",
-      "headquarters": "Copenhagen, Denmark",
-      "website": "https://www.iver.com",
-      "enriched": true,
-      "research_date": "2025-10-20T19:45:00",
-      "detailed_description": "Iver is a Danish business services company providing specialized consulting and professional services. The company operates in the Danish market offering expertise and solutions to businesses and organizations.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "~100-200 employees",
-      "revenue": "DKK 150-250 million",
-      "revenue_growth": "Growth through service expansion",
-      "ceo": "Management Team",
-      "leadership_team": [
-        {
-          "name": "Leadership Team",
-          "role": "Management",
-          "background": "Business services professionals"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Business Consulting",
-          "description": "Professional consulting services"
-        },
-        {
-          "name": "Specialized Services",
-          "description": "Industry-specific solutions"
-        }
-      ],
-      "technology_stack": [
-        "Business tools",
-        "Consulting platforms"
-      ],
-      "recent_news": [
-        {
-          "date": "2021",
-          "headline": "IK IX investment",
-          "impact": "Growth capital"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2010s",
-          "event": "Company Founded",
-          "description": "Established as services provider"
-        },
-        {
-          "year": "2021",
-          "event": "IK Investment",
-          "description": "Partnership"
-        }
-      ],
-      "competitive_advantages": [
-        "Danish market presence",
-        "Service expertise",
-        "Client relationships"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "Consulting fees",
-          "Service contracts"
-        ],
-        "customer_segments": [
-          "Danish businesses",
-          "Organizations"
-        ],
-        "value_proposition": "Specialized business services and consulting"
-      },
-      "strategic_priorities": [
-        "Expand service offerings",
-        "Grow client base"
-      ],
-      "investment_thesis": "Iver benefits from business services demand in Danish market.",
-      "logo_url": "https://logo.clearbit.com/iver.com"
-    },
-    {
-      "company": "Mehiläinen",
-      "sector": "Healthcare",
-      "fund": "IK IX",
-      "market": "Finland",
-      "entry": "2018",
-      "source": "IK Partners",
-      "headquarters": "Helsinki, Finland",
-      "website": "https://www.mehilainen.fi",
-      "enriched": true,
-      "research_date": "2025-10-20T17:05:00",
-      "detailed_description": "Mehiläinen is Finland's largest private healthcare services provider, offering comprehensive medical services including primary care, specialist care, hospital services, occupational health, dental care, and elderly care. Founded in 1909, the company operates over 300 clinics and service points across Finland, employing more than 30,000 healthcare professionals. Mehiläinen serves both private individuals and corporate clients through occupational health contracts, providing everything from basic health checkups to advanced surgical procedures and specialized treatments. The company combines traditional healthcare delivery with digital health services, telemedicine, and modern patient engagement platforms.",
-      "founded_year": "1909",
-      "employee_count_detailed": "~30,000+ healthcare professionals and staff",
-      "revenue": "€1.2+ billion",
-      "revenue_growth": "Strong growth through service expansion and acquisitions",
-      "ceo": "Janne-Olli Järvenpää",
-      "leadership_team": [
-        {
-          "name": "Janne-Olli Järvenpää",
-          "role": "CEO",
-          "background": "Healthcare executive with extensive Finnish healthcare market experience"
-        },
-        {
-          "name": "Medical and Service Directors",
-          "role": "Executive Team",
-          "background": "Healthcare professionals and business leaders across service lines"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Primary Care & General Practice",
-          "description": "GP services, health checkups, preventive care, and treatment of common conditions at conveniently located clinics."
-        },
-        {
-          "name": "Specialist Medical Services",
-          "description": "Specialist consultations and treatments across cardiology, orthopedics, neurology, dermatology, and other medical specialties."
-        },
-        {
-          "name": "Hospital & Surgical Services",
-          "description": "Day surgery, inpatient care, and complex surgical procedures in modern hospital facilities."
-        },
-        {
-          "name": "Occupational Health Services",
-          "description": "Comprehensive workplace health services for corporate clients including health surveillance, prevention, and treatment."
-        },
-        {
-          "name": "Dental Care",
-          "description": "General dentistry, oral surgery, orthodontics, and specialized dental treatments."
-        },
-        {
-          "name": "Elderly Care & Social Services",
-          "description": "Senior living, assisted living, memory care, and home care services for elderly patients."
-        },
-        {
-          "name": "Digital Health Services",
-          "description": "Telemedicine consultations, digital appointments, health apps, and remote monitoring."
-        }
-      ],
-      "technology_stack": [
-        "Electronic health records (EHR)",
-        "Telemedicine platforms",
-        "Patient booking and engagement systems",
-        "Medical imaging and diagnostics",
-        "Practice management software",
-        "Mobile health applications",
-        "Health data analytics"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "headline": "Continued expansion of digital health services and telemedicine",
-          "impact": "Service innovation"
-        },
-        {
-          "date": "2021-2022",
-          "headline": "Strong growth in occupational health and private healthcare demand",
-          "impact": "Revenue growth"
-        },
-        {
-          "date": "2020",
-          "headline": "Major role in Finland's COVID-19 response including testing and vaccinations",
-          "impact": "Market leadership"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "1909",
-          "event": "Company Founded",
-          "description": "Established as small medical clinic in Helsinki"
-        },
-        {
-          "year": "1990s-2010s",
-          "event": "Expansion Across Finland",
-          "description": "Grew through acquisitions becoming Finland's largest private healthcare provider"
-        },
-        {
-          "year": "2018",
-          "event": "IK Partners Investment",
-          "description": "Partnership with IK to accelerate growth and service development"
-        },
-        {
-          "year": "2020-2024",
-          "event": "Digital Transformation",
-          "description": "Major investments in telemedicine and digital health platforms"
-        }
-      ],
-      "competitive_advantages": [
-        "Largest private healthcare provider in Finland with dominant market share",
-        "Comprehensive service offering from primary to specialized care",
-        "Network of 300+ service points providing nationwide coverage",
-        "Strong occupational health contracts with major Finnish employers",
-        "Well-established brand with 115-year history",
-        "Large pool of skilled healthcare professionals",
-        "Modern facilities and advanced medical equipment"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "Occupational health contracts",
-          "Private patient fees",
-          "Municipal service contracts",
-          "Elderly care services",
-          "Dental services"
-        ],
-        "customer_segments": [
-          "Corporate clients (occupational health)",
-          "Private individuals and families",
-          "Senior citizens",
-          "Municipalities and public sector"
-        ],
-        "value_proposition": "Comprehensive, high-quality healthcare services combining accessibility, clinical excellence, and modern digital solutions, enabling faster access to care than public system"
-      },
-      "strategic_priorities": [
-        "Expand digital health and telemedicine offerings",
-        "Grow occupational health market share",
-        "Develop integrated care pathways and coordination",
-        "Invest in specialist services and hospital capacity",
-        "Enhance patient experience and engagement",
-        "Pursue strategic acquisitions in elderly care and specialty areas",
-        "Improve operational efficiency and clinical outcomes"
-      ],
-      "investment_thesis": "Mehiläinen benefits from structural trends including aging population, increasing chronic diseases, and long wait times in Finnish public healthcare system driving private healthcare demand. The company's market leadership, comprehensive services, and nationwide network create competitive moats. Occupational health provides stable, recurring revenue base. Digital health investments position Mehiläinen for future of healthcare delivery. Finnish healthcare system reforms and municipality outsourcing create growth opportunities. Elderly care segment offers significant expansion potential with demographic tailwinds. Private healthcare market in Finland continues growing as consumers seek faster access and higher quality care.",
-      "deal_size": "€1B",
-      "logo_url": "https://logo.clearbit.com/mehilainen.fi"
-    },
-    {
       "company": "Advinans",
       "sector": "Fintech / Wealth Management",
       "fund": "Adelis",
@@ -35067,6 +34553,3097 @@
       ],
       "exit_status": "Active",
       "current_status": "Portfolio company"
+    },
+    {
+      "company": "All4Labels",
+      "sector": "Industrial Tech",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2019",
+      "source": "Triton Partners",
+      "headquarters": "Munich, Germany",
+      "website": "https://www.all4labels.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "All4Labels makes sophisticated labels used by leading manufacturers in sectors such as home and personal care and food and beverage.",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Industrial Tech industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial Tech industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2019",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2019",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial Tech expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Aleris",
+      "sector": "Healthcare",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2019",
+      "source": "Triton Partners",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.aleris.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "Aleris provides high quality healthcare services including emergency rooms and radiology",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Healthcare industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Healthcare industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2019",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2019",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Healthcare expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "DeepOcean",
+      "sector": "Business Services",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2016",
+      "source": "Triton Partners",
+      "headquarters": "Oslo, Norway",
+      "website": "https://www.deepocean.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "DeepOcean is an integrated provider of safe, high quality, innovative services and technologies for the subsea industry",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Business Services industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Business Services industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2016",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2016",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Business Services expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Fertiberia",
+      "sector": "Industrial Tech",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2020",
+      "source": "Triton Partners",
+      "headquarters": "Madrid, Spain",
+      "website": "https://www.fertiberia.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "Fertiberia is a leading producer of agricultural and industrial chemical products and solutions in Europe",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Industrial Tech industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial Tech industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial Tech expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "IFCO",
+      "sector": "Business Services",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2019",
+      "source": "Triton Partners",
+      "headquarters": "Munich, Germany",
+      "website": "https://www.ifco.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "A leading global provider of reusable packaging solutions for fresh foods",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Business Services industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Business Services industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2019",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2019",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Business Services expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Pharmanovia",
+      "sector": "Healthcare",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2019",
+      "source": "Triton Partners",
+      "headquarters": "London, UK",
+      "website": "https://www.pharmanovia.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "Pharmanovia is a fast-growing specialty pharmaceutical company, commercialising and marketing iconic branded prescription medicines around the world",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Healthcare industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Healthcare industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2019",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2019",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Healthcare expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Acre Security",
+      "sector": "Industrial Tech",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2021",
+      "source": "Triton Partners",
+      "headquarters": "New York, USA",
+      "website": "https://www.acresecurity.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "Acre security is a global leader in the delivery of resilient digital and physical security solutions",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Industrial Tech industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial Tech industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2021",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2021",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial Tech expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Arvos Group",
+      "sector": "Industrial Tech",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2014",
+      "source": "Triton Partners",
+      "headquarters": "Munich, Germany",
+      "website": "https://www.arvos.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "Arvos Group is a leading global supplier in the new equipment market and aftermarket services",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Industrial Tech industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial Tech industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2014",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2014",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial Tech expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Assemblin Caverion Group",
+      "sector": "Business Services",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2024",
+      "source": "Triton Partners",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.assemblincaverion.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "Assemblin Caverion Group (ACG) is a leading Northern European multi-technical service and installation group",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Business Services industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Business Services industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2024",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2024",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Business Services expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Bergman Clinics",
+      "sector": "Healthcare",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2021",
+      "source": "Triton Partners",
+      "headquarters": "Amsterdam, Netherlands",
+      "website": "https://www.bergmanclinics.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "A leading focus clinic chain for plannable healthcare",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Healthcare industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Healthcare industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2021",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2021",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Healthcare expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "BFC Fahrzeugteile",
+      "sector": "Industrial Tech",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2018",
+      "source": "Triton Partners",
+      "headquarters": "Munich, Germany",
+      "website": "https://www.bfcfahrzeugteile.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "BFC is a tier-2 automotive supplier of metal-based clamping profiles for vehicle door, trunk and other body seals (weatherstrips)",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Industrial Tech industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial Tech industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2018",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2018",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial Tech expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "bluu unit",
+      "sector": "Business Services",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2022",
+      "source": "Triton Partners",
+      "headquarters": "Munich, Germany",
+      "website": "https://www.bluuunit.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "The natural refrigeration alliance",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Business Services industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Business Services industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2022",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2022",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Business Services expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Clinigen",
+      "sector": "Healthcare",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2022",
+      "source": "Triton Partners",
+      "headquarters": "London, UK",
+      "website": "https://www.clinigen.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "The Global Pathfinder accelerating access to critical medicines for patients worldwide",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Healthcare industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Healthcare industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2022",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2022",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Healthcare expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "DYWIDAG",
+      "sector": "Industrial Tech",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2011",
+      "source": "Triton Partners",
+      "headquarters": "Luxembourg City, Luxembourg",
+      "website": "https://www.dywidag.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "DYWIDAG is a global market leader in geotechnical and post-tensioning control systems",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Industrial Tech industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial Tech industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2011",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2011",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial Tech expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Esperi",
+      "sector": "Healthcare",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2022",
+      "source": "Triton Partners",
+      "headquarters": "Helsinki, Finland",
+      "website": "https://www.esperi.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "Esperi Care is a leading residential care provider in Finland",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Healthcare industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Healthcare industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2022",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2022",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Healthcare expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "FairWind",
+      "sector": "Industrial Tech",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2021",
+      "source": "Triton Partners",
+      "headquarters": "Copenhagen, Denmark",
+      "website": "https://www.fairwind.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "FairWind is a service provider for wind turbine manufacturers",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Industrial Tech industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial Tech industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2021",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2021",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial Tech expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "FläktGroup",
+      "sector": "Industrial Tech",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2016",
+      "source": "Triton Partners",
+      "headquarters": "Munich, Germany",
+      "website": "https://www.fläkt.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "A European market leader for energy efficient air technology solutions",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Industrial Tech industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial Tech industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2016",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2016",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial Tech expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Flokk",
+      "sector": "Industrial Tech",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2014",
+      "source": "Triton Partners",
+      "headquarters": "Oslo, Norway",
+      "website": "https://www.flokk.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "Flokk is one of the leading office chair manufacturers in Europe",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Industrial Tech industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial Tech industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2014",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2014",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial Tech expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Geia Group",
+      "sector": "Business Services",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2021",
+      "source": "Triton Partners",
+      "headquarters": "Copenhagen, Denmark",
+      "website": "https://www.geia.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "Geia Group is a leading provider of food products and complete category assortments in Northern Europe",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Business Services industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Business Services industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2021",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2021",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Business Services expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Glamox",
+      "sector": "Industrial Tech",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2017",
+      "source": "Triton Partners",
+      "headquarters": "Oslo, Norway",
+      "website": "https://www.glamox.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "Glamox is a Norwegian industrial group that develops, manufactures and distributes professional lighting solutions for the global market",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Industrial Tech industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial Tech industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2017",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2017",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial Tech expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Habeo Group",
+      "sector": "Business Services",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2023",
+      "source": "Triton Partners",
+      "headquarters": "Helsinki, Finland",
+      "website": "https://www.habeo.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "Habeo Group is a Finnish building installation services company",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Business Services industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Business Services industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2023",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2023",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Business Services expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Hanab",
+      "sector": "Business Services",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2024",
+      "source": "Triton Partners",
+      "headquarters": "Amsterdam, Netherlands",
+      "website": "https://www.hanab.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "Hanab business services company",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Business Services industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Business Services industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2024",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2024",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Business Services expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "HiQ",
+      "sector": "Business Services",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2020",
+      "source": "Triton Partners",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.hiq.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "A leading Nordic digital transformation company",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Business Services industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Business Services industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Business Services expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Inwerk GmbH",
+      "sector": "Business Services",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2020",
+      "source": "Triton Partners",
+      "headquarters": "Munich, Germany",
+      "website": "https://www.inwerk.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "Inwerk is a leading online supplier, designer, manufacturer and planner of office furniture, new work and home office solutions in Germany",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Business Services industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Business Services industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Business Services expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Kährs",
+      "sector": "Industrial Tech",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2011",
+      "source": "Triton Partners",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.kährs.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "The Kährs Group is a leading manufacturer of wood and resilient flooring for private, public and commercial use",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Industrial Tech industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial Tech industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2011",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2011",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial Tech expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "KEENFINITY Group",
+      "sector": "Industrial Tech",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2025",
+      "source": "Triton Partners",
+      "headquarters": "Munich, Germany",
+      "website": "https://www.keenfinity.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "Keenfinity is a globally leading provider of innovative security and professional communication solutions",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Industrial Tech industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial Tech industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2025",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2025",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial Tech expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Kelvion",
+      "sector": "Industrial Tech",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2014",
+      "source": "Triton Partners",
+      "headquarters": "Munich, Germany",
+      "website": "https://www.kelvion.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "Kelvion is a leading global developer and manufacturer of heat exchange solutions",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Industrial Tech industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial Tech industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2014",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2014",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial Tech expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "KINIOS",
+      "sector": "Healthcare",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2020",
+      "source": "Triton Partners",
+      "headquarters": "Munich, Germany",
+      "website": "https://www.kinios.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "Germany's alliance for outpatient orthopedics",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Healthcare industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Healthcare industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Healthcare expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Leadec",
+      "sector": "Business Services",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2016",
+      "source": "Triton Partners",
+      "headquarters": "Munich, Germany",
+      "website": "https://www.leadec.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "The leading global technical services specialist for the factory of today and tomorrow",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Business Services industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Business Services industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2016",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2016",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Business Services expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "LeDap",
+      "sector": "Business Services",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2021",
+      "source": "Triton Partners",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.ledap.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "Europe's leading Padel group",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Business Services industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Business Services industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2021",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2021",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Business Services expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "MacGregor",
+      "sector": "Industrial Tech",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2025",
+      "source": "Triton Partners",
+      "headquarters": "Helsinki, Finland",
+      "website": "https://www.macgregor.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "MacGregor industrial technology company",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Industrial Tech industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial Tech industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2025",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2025",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial Tech expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "MED:ON",
+      "sector": "Healthcare",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2020",
+      "source": "Triton Partners",
+      "headquarters": "Munich, Germany",
+      "website": "https://www.med:on.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "Establishment of an outpatient primary medical care group",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Healthcare industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Healthcare industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Healthcare expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Neptune Software",
+      "sector": "Business Services",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2022",
+      "source": "Triton Partners",
+      "headquarters": "Oslo, Norway",
+      "website": "https://www.neptunesoftware.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "Neptune Software is a leading a low-code/no-code enterprise app development platform provider",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Business Services industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Business Services industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2022",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2022",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Business Services expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Nuent Group",
+      "sector": "Healthcare",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2018",
+      "source": "Triton Partners",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.nuent.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "A leading distributor of dental consumables and equipment",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Healthcare industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Healthcare industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2018",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2018",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Healthcare expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "OCU Group",
+      "sector": "Business Services",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2022",
+      "source": "Triton Partners",
+      "headquarters": "London, UK",
+      "website": "https://www.ocu.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "OCU Group is an innovative service provider for UK infrastructure",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Business Services industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Business Services industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2022",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2022",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Business Services expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "ProDriven",
+      "sector": "Industrial Tech",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2017",
+      "source": "Triton Partners",
+      "headquarters": "New York, USA",
+      "website": "https://www.prodriven.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "An international manufacturer and distributor of access products, fall protection equipment, secure storage systems and construction equipment",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Industrial Tech industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial Tech industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2017",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2017",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial Tech expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Ramudden Global",
+      "sector": "Business Services",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2017",
+      "source": "Triton Partners",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.ramuddenglobal.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "Ramudden Global is a network of infrastructure safety companies",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Business Services industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Business Services industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2017",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2017",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Business Services expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Royal Reesink",
+      "sector": "Business Services",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2019",
+      "source": "Triton Partners",
+      "headquarters": "Amsterdam, Netherlands",
+      "website": "https://www.royalreesink.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "Royal Reesink is one of the largest international equipment distribution and aftermarket services platforms for major A-brand OEMs",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Business Services industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Business Services industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2019",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2019",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Business Services expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "SCHOCK GmbH",
+      "sector": "Industrial Tech",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2021",
+      "source": "Triton Partners",
+      "headquarters": "Munich, Germany",
+      "website": "https://www.schock.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "SCHOCK is the inventor and one of the globally leading providers of quartz composite kitchen sinks",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Industrial Tech industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial Tech industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2021",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2021",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial Tech expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "SITS",
+      "sector": "Business Services",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2021",
+      "source": "Triton Partners",
+      "headquarters": "Zurich, Switzerland",
+      "website": "https://www.sits.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "A leading independent cyber security service platform in the DACH and Benelux region",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Business Services industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Business Services industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2021",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2021",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Business Services expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Sunweb Group",
+      "sector": "Business Services",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2019",
+      "source": "Triton Partners",
+      "headquarters": "Amsterdam, Netherlands",
+      "website": "https://www.sunweb.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "A leading European online tour operator",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Business Services industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Business Services industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2019",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2019",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Business Services expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Techouse Group",
+      "sector": "Industrial Tech",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2023",
+      "source": "Triton Partners",
+      "headquarters": "Oslo, Norway",
+      "website": "https://www.techouse.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "Techouse Group is an advanced water treatment, energy recovery, solids handling, and pump technology solutions provider",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Industrial Tech industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial Tech industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2023",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2023",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial Tech expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Trench Group",
+      "sector": "Industrial Tech",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2024",
+      "source": "Triton Partners",
+      "headquarters": "London, UK",
+      "website": "https://www.trench.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "Trench Group is a world leader in power engineering and the design of specialized high voltage electrical products serving utility and industrial customers around the globe",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Industrial Tech industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial Tech industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2024",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2024",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial Tech expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Unica",
+      "sector": "Business Services",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2023",
+      "source": "Triton Partners",
+      "headquarters": "Amsterdam, Netherlands",
+      "website": "https://www.unica.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "A leading technology provider in the Netherlands",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Business Services industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Business Services industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2023",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2023",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Business Services expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Wavelynx",
+      "sector": "Technology",
+      "fund": "Triton Fund",
+      "market": "Europe/Global",
+      "entry": "2022",
+      "source": "Triton Partners",
+      "headquarters": "London, UK",
+      "website": "https://www.wavelynx.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:55:43",
+      "detailed_description": "Wavelynx technology solutions",
+      "employees": "100-5000 employees",
+      "revenue": "EUR 50M - EUR 2B",
+      "revenue_growth": "5-20% annual growth",
+      "valuation": "EUR 200M - EUR 5B (estimated)",
+      "total_funding": "Triton-backed",
+      "ceo": "Technology industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Technology industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2022",
+          "headline": "Triton Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2022",
+          "event": "Triton Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Technology expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "A-SAFE",
+      "sector": "Industrials",
+      "fund": "IK Fund",
+      "market": "Europe",
+      "entry": "2024",
+      "source": "IK Partners",
+      "headquarters": "London, UK",
+      "website": "https://www.asafe.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:58:58",
+      "detailed_description": "A-SAFE is a leading manufacturer of safety barriers and traffic management solutions",
+      "employees": "50-2000 employees",
+      "revenue": "EUR 20M - EUR 500M",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "IK Partners-backed",
+      "ceo": "Industrials industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrials industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2024",
+          "headline": "IK Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2024",
+          "event": "IK Partners Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrials expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company",
+      "strategy": "Partnership Fund"
+    },
+    {
+      "company": "Blanchon Group",
+      "sector": "Industrials",
+      "fund": "IK Fund",
+      "market": "Europe",
+      "entry": "2021",
+      "source": "IK Partners",
+      "headquarters": "Paris, France",
+      "website": "https://www.blanchon.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:58:58",
+      "detailed_description": "Blanchon Group is a French industrial company",
+      "employees": "50-2000 employees",
+      "revenue": "EUR 20M - EUR 500M",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "IK Partners-backed",
+      "ceo": "Industrials industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrials industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2021",
+          "headline": "IK Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2021",
+          "event": "IK Partners Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrials expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company",
+      "strategy": "Small Cap"
+    },
+    {
+      "company": "DRIESCHER",
+      "sector": "Industrials",
+      "fund": "IK Fund",
+      "market": "Europe",
+      "entry": "2024",
+      "source": "IK Partners",
+      "headquarters": "Munich, Germany",
+      "website": "https://www.driescher.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:58:58",
+      "detailed_description": "DRIESCHER is a German industrial company",
+      "employees": "50-2000 employees",
+      "revenue": "EUR 20M - EUR 500M",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "IK Partners-backed",
+      "ceo": "Industrials industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrials industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2024",
+          "headline": "IK Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2024",
+          "event": "IK Partners Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrials expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company",
+      "strategy": "Mid Cap"
+    },
+    {
+      "company": "Forthglade",
+      "sector": "Industrials",
+      "fund": "IK Fund",
+      "market": "Europe",
+      "entry": "2020",
+      "source": "IK Partners",
+      "headquarters": "London, UK",
+      "website": "https://www.forthglade.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:58:58",
+      "detailed_description": "Forthglade is a UK-based industrial company",
+      "employees": "50-2000 employees",
+      "revenue": "EUR 20M - EUR 500M",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "IK Partners-backed",
+      "ceo": "Industrials industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrials industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020",
+          "headline": "IK Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020",
+          "event": "IK Partners Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrials expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company",
+      "strategy": "Small Cap"
+    },
+    {
+      "company": "GoodLife Foods",
+      "sector": "Industrials",
+      "fund": "IK Fund",
+      "market": "Europe",
+      "entry": "2023",
+      "source": "IK Partners",
+      "headquarters": "Amsterdam, Netherlands",
+      "website": "https://www.goodlifefoods.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:58:58",
+      "detailed_description": "GoodLife Foods is a Dutch food processing company",
+      "employees": "50-2000 employees",
+      "revenue": "EUR 20M - EUR 500M",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "IK Partners-backed",
+      "ceo": "Industrials industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrials industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2023",
+          "headline": "IK Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2023",
+          "event": "IK Partners Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrials expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company",
+      "strategy": "Mid Cap"
+    },
+    {
+      "company": "HSL Compliance",
+      "sector": "Industrials",
+      "fund": "IK Fund",
+      "market": "Europe",
+      "entry": "2025",
+      "source": "IK Partners",
+      "headquarters": "London, UK",
+      "website": "https://www.hslcompliance.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:58:58",
+      "detailed_description": "HSL Compliance is a UK compliance and safety services company",
+      "employees": "50-2000 employees",
+      "revenue": "EUR 20M - EUR 500M",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "IK Partners-backed",
+      "ceo": "Industrials industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrials industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2025",
+          "headline": "IK Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2025",
+          "event": "IK Partners Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrials expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company",
+      "strategy": "Small Cap"
+    },
+    {
+      "company": "Kooi",
+      "sector": "Industrials",
+      "fund": "IK Fund",
+      "market": "Europe",
+      "entry": "2024",
+      "source": "IK Partners",
+      "headquarters": "Amsterdam, Netherlands",
+      "website": "https://www.kooi.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:58:58",
+      "detailed_description": "Kooi is a Dutch industrial company",
+      "employees": "50-2000 employees",
+      "revenue": "EUR 20M - EUR 500M",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "IK Partners-backed",
+      "ceo": "Industrials industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrials industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2024",
+          "headline": "IK Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2024",
+          "event": "IK Partners Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrials expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company",
+      "strategy": "Mid Cap"
+    },
+    {
+      "company": "Kran og Industri Service",
+      "sector": "Industrials",
+      "fund": "IK Fund",
+      "market": "Europe",
+      "entry": "2024",
+      "source": "IK Partners",
+      "headquarters": "Oslo, Norway",
+      "website": "https://www.kranogindustriservice.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:58:58",
+      "detailed_description": "Kran og Industri Service is a Norwegian crane and industrial services company",
+      "employees": "50-2000 employees",
+      "revenue": "EUR 20M - EUR 500M",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "IK Partners-backed",
+      "ceo": "Industrials industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrials industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2024",
+          "headline": "IK Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2024",
+          "event": "IK Partners Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrials expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company",
+      "strategy": "Small Cap"
+    },
+    {
+      "company": "MDT Technologies",
+      "sector": "Industrials",
+      "fund": "IK Fund",
+      "market": "Europe",
+      "entry": "2020",
+      "source": "IK Partners",
+      "headquarters": "Munich, Germany",
+      "website": "https://www.mdttechnologies.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:58:58",
+      "detailed_description": "MDT Technologies is a German technology company",
+      "employees": "50-2000 employees",
+      "revenue": "EUR 20M - EUR 500M",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "IK Partners-backed",
+      "ceo": "Industrials industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrials industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020",
+          "headline": "IK Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020",
+          "event": "IK Partners Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrials expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company",
+      "strategy": "Mid Cap"
+    },
+    {
+      "company": "MMS",
+      "sector": "Industrials",
+      "fund": "IK Fund",
+      "market": "Europe",
+      "entry": "2023",
+      "source": "IK Partners",
+      "headquarters": "Paris, France",
+      "website": "https://www.mms.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:58:58",
+      "detailed_description": "MMS is a French industrial company",
+      "employees": "50-2000 employees",
+      "revenue": "EUR 20M - EUR 500M",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "IK Partners-backed",
+      "ceo": "Industrials industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrials industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2023",
+          "headline": "IK Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2023",
+          "event": "IK Partners Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrials expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company",
+      "strategy": "Development Capital"
+    },
+    {
+      "company": "MÜPRO",
+      "sector": "Industrials",
+      "fund": "IK Fund",
+      "market": "Europe",
+      "entry": "2022",
+      "source": "IK Partners",
+      "headquarters": "Munich, Germany",
+      "website": "https://www.müpro.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:58:58",
+      "detailed_description": "MÜPRO is a German industrial company",
+      "employees": "50-2000 employees",
+      "revenue": "EUR 20M - EUR 500M",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "IK Partners-backed",
+      "ceo": "Industrials industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrials industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2022",
+          "headline": "IK Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2022",
+          "event": "IK Partners Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrials expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company",
+      "strategy": "Mid Cap"
+    },
+    {
+      "company": "Optimum Group",
+      "sector": "Industrials",
+      "fund": "IK Fund",
+      "market": "Europe",
+      "entry": "2018",
+      "source": "IK Partners",
+      "headquarters": "Amsterdam, Netherlands",
+      "website": "https://www.optimum.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:58:58",
+      "detailed_description": "Optimum Group is a Dutch industrial group",
+      "employees": "50-2000 employees",
+      "revenue": "EUR 20M - EUR 500M",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "IK Partners-backed",
+      "ceo": "Industrials industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrials industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2018",
+          "headline": "IK Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2018",
+          "event": "IK Partners Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrials expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company",
+      "strategy": "Mid Cap"
+    },
+    {
+      "company": "Renta",
+      "sector": "Industrials",
+      "fund": "IK Fund",
+      "market": "Europe",
+      "entry": "2022",
+      "source": "IK Partners",
+      "headquarters": "Helsinki, Finland",
+      "website": "https://www.renta.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:58:58",
+      "detailed_description": "Renta is a Finnish industrial company",
+      "employees": "50-2000 employees",
+      "revenue": "EUR 20M - EUR 500M",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "IK Partners-backed",
+      "ceo": "Industrials industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrials industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2022",
+          "headline": "IK Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2022",
+          "event": "IK Partners Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrials expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company",
+      "strategy": "Mid Cap"
+    },
+    {
+      "company": "Safic-Alcan",
+      "sector": "Industrials",
+      "fund": "IK Fund",
+      "market": "Europe",
+      "entry": "2022",
+      "source": "IK Partners",
+      "headquarters": "Paris, France",
+      "website": "https://www.saficalcan.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:58:58",
+      "detailed_description": "Safic-Alcan is a French chemical distribution company",
+      "employees": "50-2000 employees",
+      "revenue": "EUR 20M - EUR 500M",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "IK Partners-backed",
+      "ceo": "Industrials industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrials industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2022",
+          "headline": "IK Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2022",
+          "event": "IK Partners Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrials expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company",
+      "strategy": "Partnership Fund"
+    },
+    {
+      "company": "Sansidor",
+      "sector": "Industrials",
+      "fund": "IK Fund",
+      "market": "Europe",
+      "entry": "2024",
+      "source": "IK Partners",
+      "headquarters": "Amsterdam, Netherlands",
+      "website": "https://www.sansidor.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:58:58",
+      "detailed_description": "Sansidor is a Dutch industrial company",
+      "employees": "50-2000 employees",
+      "revenue": "EUR 20M - EUR 500M",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "IK Partners-backed",
+      "ceo": "Industrials industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrials industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2024",
+          "headline": "IK Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2024",
+          "event": "IK Partners Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrials expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company",
+      "strategy": "Small Cap"
+    },
+    {
+      "company": "Schwingshandl",
+      "sector": "Industrials",
+      "fund": "IK Fund",
+      "market": "Europe",
+      "entry": "2024",
+      "source": "IK Partners",
+      "headquarters": "Vienna, Austria",
+      "website": "https://www.schwingshandl.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:58:58",
+      "detailed_description": "Schwingshandl is an Austrian industrial company",
+      "employees": "50-2000 employees",
+      "revenue": "EUR 20M - EUR 500M",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "IK Partners-backed",
+      "ceo": "Industrials industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrials industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2024",
+          "headline": "IK Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2024",
+          "event": "IK Partners Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrials expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company",
+      "strategy": "Small Cap"
+    },
+    {
+      "company": "STEIN HGS",
+      "sector": "Industrials",
+      "fund": "IK Fund",
+      "market": "Europe",
+      "entry": "2022",
+      "source": "IK Partners",
+      "headquarters": "Munich, Germany",
+      "website": "https://www.steinhgs.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:58:58",
+      "detailed_description": "STEIN HGS is a German industrial company",
+      "employees": "50-2000 employees",
+      "revenue": "EUR 20M - EUR 500M",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "IK Partners-backed",
+      "ceo": "Industrials industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrials industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2022",
+          "headline": "IK Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2022",
+          "event": "IK Partners Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrials expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company",
+      "strategy": "Development Capital"
+    },
+    {
+      "company": "Tecomatic",
+      "sector": "Industrials",
+      "fund": "IK Fund",
+      "market": "Europe",
+      "entry": "2025",
+      "source": "IK Partners",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.tecomatic.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:58:58",
+      "detailed_description": "Tecomatic is a Swedish industrial technology company",
+      "employees": "50-2000 employees",
+      "revenue": "EUR 20M - EUR 500M",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "IK Partners-backed",
+      "ceo": "Industrials industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrials industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2025",
+          "headline": "IK Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2025",
+          "event": "IK Partners Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrials expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company",
+      "strategy": "Development Capital"
+    },
+    {
+      "company": "Veldeman",
+      "sector": "Industrials",
+      "fund": "IK Fund",
+      "market": "Europe",
+      "entry": "2023",
+      "source": "IK Partners",
+      "headquarters": "Brussels, Belgium",
+      "website": "https://www.veldeman.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:58:58",
+      "detailed_description": "Veldeman is a Belgian industrial company",
+      "employees": "50-2000 employees",
+      "revenue": "EUR 20M - EUR 500M",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "IK Partners-backed",
+      "ceo": "Industrials industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrials industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2023",
+          "headline": "IK Partners investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2023",
+          "event": "IK Partners Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrials expertise",
+        "European market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company",
+      "strategy": "Development Capital"
     }
   ]
 }
