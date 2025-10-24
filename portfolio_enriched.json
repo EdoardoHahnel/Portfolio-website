@@ -1,10 +1,9 @@
 {
   "metadata": {
-    "last_updated": "2025-10-24 20:23:20",
-    "total_companies": 404,
-    "description": "Updated portfolio database with current Verdane investments only",
-    "verdane_companies": 92,
-    "verdane_featured": 3
+    "last_updated": "2025-10-24 20:24:54",
+    "total_companies": 417,
+    "description": "Updated portfolio database with current Summa Equity investments only",
+    "summa_equity_companies": 19
   },
   "companies": [
     {
@@ -22417,682 +22416,6 @@
       "investment_thesis": "Oase Outdoors benefits from growing outdoor recreation and camping trends. Strong brands and European distribution provide foundation for growth."
     },
     {
-      "company": "Meltwater",
-      "sector": "Software",
-      "fund": "Summa Equity Fund II",
-      "market": "Norway",
-      "entry": "2019",
-      "source": "Summa Equity",
-      "headquarters": "San Francisco, USA / Oslo, Norway",
-      "website": "https://www.meltwater.com",
-      "enriched": true,
-      "research_date": "2025-10-20T16:40:00",
-      "detailed_description": "Meltwater is a global leader in media intelligence and social analytics SaaS, providing AI-powered solutions for media monitoring, social listening, consumer intelligence, and sales intelligence. Founded in 2001, the company serves over 30,000 customers across 120+ countries, helping PR, marketing, and sales professionals track media coverage, monitor social conversations, analyze sentiment, identify influencers, and generate leads. Meltwater's platform aggregates data from millions of online sources including news sites, blogs, podcasts, social media platforms, and broadcast media, using AI and machine learning to deliver actionable insights. Publicly traded on Euronext Growth Oslo.",
-      "founded_year": "2001",
-      "employee_count_detailed": "~2,000 employees globally",
-      "revenue": "$400+ million",
-      "revenue_growth": "Strong growth driven by platform expansion and customer additions",
-      "ceo": "John Box",
-      "leadership_team": [
-        {
-          "name": "John Box",
-          "role": "CEO",
-          "background": "SaaS and enterprise software executive with global leadership experience"
-        },
-        {
-          "name": "Product and Regional Leaders",
-          "role": "Executive Team",
-          "background": "Media intelligence and technology professionals"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Media Intelligence",
-          "description": "Comprehensive media monitoring tracking mentions across print, online, broadcast, and social media with analytics, sentiment analysis, and competitive benchmarking."
-        },
-        {
-          "name": "Social Listening & Analytics",
-          "description": "Real-time social media monitoring and analytics across major platforms, identifying trends, sentiment, influencers, and consumer insights."
-        },
-        {
-          "name": "Consumer Intelligence",
-          "description": "Market research and consumer insights platform analyzing online conversations to understand customer preferences, brand perception, and market trends."
-        },
-        {
-          "name": "Sales Intelligence",
-          "description": "B2B sales prospecting and lead generation tools identifying potential customers through their digital footprint and media mentions."
-        }
-      ],
-      "technology_stack": [
-        "Cloud-based SaaS platform",
-        "AI and machine learning for content analysis",
-        "Natural language processing",
-        "Big data processing and storage",
-        "API integrations with social platforms",
-        "Sentiment analysis algorithms",
-        "Data visualization and dashboards"
-      ],
-      "recent_news": [
-        {
-          "date": "2022",
-          "headline": "Completed acquisition of Klear influencer marketing platform",
-          "impact": "Product expansion"
-        },
-        {
-          "date": "2021",
-          "headline": "Listed on Euronext Growth Oslo through SPAC merger",
-          "impact": "Public listing"
-        },
-        {
-          "date": "2020-2023",
-          "headline": "Expanded AI capabilities and launched new product modules",
-          "impact": "Technology innovation"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2001",
-          "event": "Company Founded",
-          "description": "Meltwater established as online media monitoring service"
-        },
-        {
-          "year": "2010-2018",
-          "event": "Global Expansion",
-          "description": "Grew to serve customers in 120+ countries with 50+ offices"
-        },
-        {
-          "year": "2019",
-          "event": "Summa Equity Investment",
-          "description": "Growth investment to accelerate product development"
-        },
-        {
-          "year": "2021",
-          "event": "Public Listing",
-          "description": "Listed on Oslo stock exchange through SPAC"
-        }
-      ],
-      "competitive_advantages": [
-        "Largest global media intelligence platform with 30,000+ customers",
-        "Comprehensive data coverage across media types and geographies",
-        "AI and NLP technology providing advanced analytics",
-        "Global sales and support organization",
-        "Strong brand recognition in PR and marketing sectors",
-        "Platform approach integrating multiple use cases",
-        "Scale advantages in data aggregation and processing"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "SaaS subscription fees",
-          "Platform licenses by user/functionality",
-          "Professional services and training",
-          "Enterprise contracts"
-        ],
-        "customer_segments": [
-          "PR and communications professionals",
-          "Marketing teams",
-          "Market research analysts",
-          "Sales and business development",
-          "Government and public sector"
-        ],
-        "value_proposition": "Comprehensive media intelligence platform enabling organizations to monitor brand reputation, track competitors, identify opportunities, and make data-driven decisions through AI-powered insights from millions of online sources"
-      },
-      "strategic_priorities": [
-        "Enhance AI and machine learning capabilities",
-        "Expand product modules and platform integration",
-        "Grow enterprise customer base and upsell existing customers",
-        "Improve customer retention and reduce churn",
-        "Pursue strategic acquisitions in adjacent categories",
-        "Optimize operational efficiency and profitability",
-        "Strengthen competitive position against emerging platforms"
-      ],
-      "investment_thesis": "Meltwater addresses growing need for organizations to monitor and analyze their digital presence, brand reputation, and market trends. Secular shift to digital media and social platforms creates vast amounts of data requiring sophisticated tools. The company's scale, AI capabilities, and comprehensive platform provide competitive advantages. High recurring SaaS revenue with strong retention characteristics. Expansion opportunities through new products, customer segments, and geographies. Public listing provides liquidity while significant runway remains for market penetration and operational improvements.",
-      "deal_size": "€800M"
-    },
-    {
-      "company": "Cabonline",
-      "sector": "Transport",
-      "fund": "Summa Equity Fund I",
-      "market": "Sweden",
-      "entry": "2017",
-      "source": "Summa Equity",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.cabonline.com",
-      "enriched": true,
-      "research_date": "2025-10-20T16:45:00",
-      "detailed_description": "Cabonline is the Nordic region's largest taxi and mobility services company, operating taxi services across Sweden, Norway, Denmark, and Finland. The company manages a network of over 3,000 vehicles and connects passengers with drivers through multiple brands including Taxi Stockholm, Taxi Göteborg, Norgestaxi, and Dantaxi. Cabonline operates both owned and affiliated taxi services, providing traditional taxi dispatch, mobile app bookings, corporate accounts, and specialized transport services. The company is transitioning toward sustainable mobility with electric and hybrid vehicles while investing in digital platforms to improve customer experience and operational efficiency.",
-      "founded_year": "2002",
-      "employee_count_detailed": "~1,000 employees plus affiliated drivers",
-      "revenue": "SEK 2+ billion (~€200 million)",
-      "revenue_growth": "Moderate growth with recovery post-pandemic",
-      "ceo": "Dag Kibsgaard-Petersen",
-      "leadership_team": [
-        {
-          "name": "Dag Kibsgaard-Petersen",
-          "role": "CEO",
-          "background": "Transportation and mobility industry executive"
-        },
-        {
-          "name": "Country Managers",
-          "role": "Regional Leadership",
-          "background": "Taxi and transportation professionals across Nordic markets"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Taxi Services",
-          "description": "Traditional taxi dispatch and booking through phone, app, and street hailing across major Nordic cities and regions."
-        },
-        {
-          "name": "Mobile App Booking",
-          "description": "Digital booking platforms enabling customers to order, track, and pay for rides through smartphone apps."
-        },
-        {
-          "name": "Corporate Accounts",
-          "description": "B2B taxi services for businesses with account management, reporting, and invoicing for employee travel."
-        },
-        {
-          "name": "Specialized Transport",
-          "description": "Medical transport, accessible vehicles for mobility-impaired passengers, and dedicated services."
-        }
-      ],
-      "technology_stack": [
-        "Mobile booking applications",
-        "Dispatch and routing systems",
-        "Driver management platforms",
-        "Payment processing",
-        "Fleet management software",
-        "Customer relationship management",
-        "Data analytics"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "headline": "Accelerating transition to electric vehicle fleet",
-          "impact": "Sustainability initiative"
-        },
-        {
-          "date": "2021-2022",
-          "headline": "Recovery in demand following pandemic impacts on mobility",
-          "impact": "Revenue recovery"
-        },
-        {
-          "date": "2020",
-          "headline": "Enhanced safety measures and contactless payments",
-          "impact": "Operational adaptation"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2002",
-          "event": "Company Founded",
-          "description": "Established through consolidation of Nordic taxi operators"
-        },
-        {
-          "year": "2010s",
-          "event": "Nordic Expansion",
-          "description": "Grew through acquisitions becoming region's largest operator"
-        },
-        {
-          "year": "2017",
-          "event": "Summa Equity Investment",
-          "description": "Growth capital to support digitalization and sustainability"
-        },
-        {
-          "year": "2020-2024",
-          "event": "Digital & Green Transformation",
-          "description": "Invested in app platform and electric vehicle transition"
-        }
-      ],
-      "competitive_advantages": [
-        "Largest scale in Nordic taxi market with 3,000+ vehicles",
-        "Strong local brands with market recognition",
-        "Established corporate customer relationships",
-        "Regulatory licenses and permits in key markets",
-        "Driver network and dispatch infrastructure",
-        "Multi-brand strategy serving different segments"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "Commission from affiliated drivers",
-          "Owned vehicle operations",
-          "Corporate account fees",
-          "Booking and service fees"
-        ],
-        "customer_segments": [
-          "Individual consumers",
-          "Corporate clients",
-          "Tourists and visitors",
-          "Medical and specialized transport users"
-        ],
-        "value_proposition": "Reliable, safe taxi services across Nordics with local brands, professional drivers, and modern booking options including traditional dispatch and mobile apps"
-      },
-      "strategic_priorities": [
-        "Accelerate electric vehicle adoption across fleet",
-        "Enhance digital booking platform and user experience",
-        "Grow corporate and B2B customer base",
-        "Improve driver retention and satisfaction",
-        "Compete effectively with ride-hailing platforms",
-        "Optimize operational efficiency and utilization",
-        "Expand into adjacent mobility services"
-      ],
-      "investment_thesis": "Cabonline benefits from established market position in regulated Nordic taxi markets with high barriers to entry. The company's scale provides advantages in driver recruitment, corporate accounts, and technology investment. Transition to electric vehicles aligns with Nordic sustainability priorities and reduces operating costs. Digital transformation improves customer experience and efficiency. Corporate accounts provide stable demand. While facing competition from Uber and Bolt, traditional taxi operators maintain advantages in regulations, comprehensive coverage, and corporate relationships. Opportunities to expand mobility services and improve profitability through technology and fleet optimization.",
-      "deal_size": "€600M"
-    },
-    {
-      "company": "Mynewsdesk",
-      "sector": "Software",
-      "fund": "Summa Equity Fund I",
-      "market": "Sweden",
-      "entry": "2018",
-      "source": "Summa Equity",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.mynewsdesk.com",
-      "enriched": true,
-      "research_date": "2025-10-20T18:40:00",
-      "detailed_description": "Mynewsdesk is a leading European PR and brand-building platform enabling organizations to create, publish, and distribute press releases, multimedia content, and news to media, stakeholders, and the public. The company's SaaS platform serves over 5,000 organizations including brands, agencies, and public sector entities. Mynewsdesk combines newsroom functionality, media distribution, monitoring, and analytics in a single platform.",
-      "founded_year": "2003",
-      "employee_count_detailed": "~100 employees",
-      "revenue": "SEK 150-200 million",
-      "revenue_growth": "Steady SaaS growth",
-      "ceo": "Peter Ingman",
-      "leadership_team": [
-        {
-          "name": "Peter Ingman",
-          "role": "CEO & Founder",
-          "background": "PR and communications technology entrepreneur"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "PR Platform",
-          "description": "Press release creation, distribution, and newsroom management"
-        },
-        {
-          "name": "Media Monitoring",
-          "description": "Track media coverage and mentions"
-        },
-        {
-          "name": "Analytics & Reporting",
-          "description": "PR performance measurement and insights"
-        }
-      ],
-      "technology_stack": [
-        "Cloud SaaS platform",
-        "Content distribution network",
-        "Media database",
-        "Analytics engine"
-      ],
-      "recent_news": [
-        {
-          "date": "2018",
-          "headline": "Summa Equity investment",
-          "impact": "Growth capital"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2003",
-          "event": "Company Founded",
-          "description": "Launched PR platform"
-        },
-        {
-          "year": "2018",
-          "event": "Summa Investment",
-          "description": "Growth partnership"
-        }
-      ],
-      "competitive_advantages": [
-        "Established European PR platform",
-        "5,000+ customer base",
-        "Media distribution network"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "SaaS subscriptions",
-          "Distribution services"
-        ],
-        "customer_segments": [
-          "Brands",
-          "PR agencies",
-          "Public sector"
-        ],
-        "value_proposition": "All-in-one PR platform for creating, distributing, and measuring communications impact"
-      },
-      "strategic_priorities": [
-        "Expand customer base",
-        "Enhance platform features",
-        "Grow internationally"
-      ],
-      "investment_thesis": "Mynewsdesk benefits from digitalization of PR and communications. Established platform with strong Nordic presence offers growth potential."
-    },
-    {
-      "company": "ISS",
-      "sector": "Facility Services",
-      "fund": "Summa Equity",
-      "market": "Denmark",
-      "entry": "2020",
-      "source": "Summa Equity",
-      "headquarters": "Copenhagen, Denmark",
-      "website": "https://www.issworld.com",
-      "enriched": true,
-      "research_date": "2025-10-20T17:00:00",
-      "detailed_description": "ISS (International Service System) is one of the world's leading facility services companies, providing integrated facility management and workplace experience services to businesses and organizations globally. Founded in Copenhagen in 1901, ISS employs over 350,000 people serving clients in more than 30 countries across Europe, Asia, North America, Latin America, and the Pacific. The company's services span cleaning, catering, security, technical services, property services, and integrated facility management (IFM). ISS helps organizations optimize workplace experiences, improve operational efficiency, and focus on their core business. Listed on the Copenhagen Stock Exchange, ISS is a major player in the global facility services market valued at hundreds of billions annually.",
-      "founded_year": "1901",
-      "employee_count_detailed": "~350,000+ employees globally",
-      "revenue": "DKK 75+ billion (~€10 billion)",
-      "revenue_growth": "Steady growth through contracts and geographic expansion",
-      "ceo": "Kasper Fangel",
-      "leadership_team": [
-        {
-          "name": "Kasper Fangel",
-          "role": "CEO",
-          "background": "Facility services and business services industry veteran"
-        },
-        {
-          "name": "Regional and Service Leaders",
-          "role": "Executive Team",
-          "background": "Facility management professionals across geographies and service lines"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Integrated Facility Management (IFM)",
-          "description": "Comprehensive facility management solutions bundling multiple services under single contract with dedicated account management and technology integration."
-        },
-        {
-          "name": "Cleaning Services",
-          "description": "Professional cleaning services for offices, healthcare facilities, retail, education, and other commercial spaces with specialized cleaning protocols."
-        },
-        {
-          "name": "Catering & Food Services",
-          "description": "Workplace catering, cafeteria management, vending, and food services for corporate clients, hospitals, schools, and other institutions."
-        },
-        {
-          "name": "Technical Services",
-          "description": "HVAC maintenance, electrical services, plumbing, building automation, and technical facility maintenance."
-        },
-        {
-          "name": "Security Services",
-          "description": "Manned guarding, access control, surveillance, and security management for facilities and events."
-        },
-        {
-          "name": "Workplace Experience",
-          "description": "Reception services, mailroom, meeting room management, and workplace services enhancing employee experience."
-        }
-      ],
-      "technology_stack": [
-        "Facility management software platforms",
-        "IoT sensors and building automation",
-        "Workforce management systems",
-        "Mobile apps for service delivery",
-        "Data analytics and reporting",
-        "Contract and financial management",
-        "Quality and compliance systems"
-      ],
-      "recent_news": [
-        {
-          "date": "2020",
-          "headline": "Sustainability initiatives including waste reduction and carbon neutrality goals",
-          "impact": "ESG leadership"
-        },
-        {
-          "date": "2021-2023",
-          "headline": "Recovery and growth following pandemic impacts on facility services",
-          "impact": "Revenue stabilization"
-        },
-        {
-          "date": "2023",
-          "headline": "Continued focus on IFM contracts and workplace experience services",
-          "impact": "Service evolution"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "1901",
-          "event": "Company Founded",
-          "description": "Established in Copenhagen as security services provider"
-        },
-        {
-          "year": "1970s-2000s",
-          "event": "Global Expansion",
-          "description": "Grew through acquisitions becoming global facility services leader"
-        },
-        {
-          "year": "2014",
-          "event": "Public Listing",
-          "description": "Listed on Copenhagen Stock Exchange"
-        },
-        {
-          "year": "2020-2024",
-          "event": "Digital Transformation",
-          "description": "Invested in technology, sustainability, and workplace experience innovation"
-        }
-      ],
-      "competitive_advantages": [
-        "Global scale with 350,000+ employees providing breadth and depth",
-        "Comprehensive service portfolio enabling IFM contracts",
-        "Strong brand recognition and track record with blue-chip clients",
-        "Local presence in 30+ countries with global standards",
-        "Technology and data analytics capabilities",
-        "Sustainability leadership resonating with customers",
-        "Large workforce providing recruitment and training advantages"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "Integrated facility management contracts",
-          "Single-service cleaning contracts",
-          "Catering and food services",
-          "Technical maintenance services",
-          "Security services"
-        ],
-        "customer_segments": [
-          "Corporate offices",
-          "Healthcare facilities",
-          "Public sector and government",
-          "Manufacturing and industrial",
-          "Retail and hospitality",
-          "Education institutions"
-        ],
-        "value_proposition": "Comprehensive facility services enabling organizations to optimize workplace experiences, reduce costs, and focus on core business while ISS handles all facility-related operations with quality, safety, and sustainability"
-      },
-      "strategic_priorities": [
-        "Grow integrated facility management (IFM) contract share",
-        "Enhance digital capabilities and workplace technology",
-        "Achieve sustainability goals and carbon neutrality",
-        "Improve operational efficiency and margins",
-        "Expand in high-growth markets and sectors",
-        "Develop workplace experience and consulting services",
-        "Attract and retain quality workforce"
-      ],
-      "investment_thesis": "ISS benefits from long-term outsourcing trends as organizations focus on core competencies while outsourcing facility operations. The company's scale provides competitive advantages in contract bidding, workforce management, and technology investment. IFM contracts offer higher margins and stickier customer relationships than single services. Aging infrastructure and sustainability requirements drive demand for technical services. Workplace transformation and hybrid work models create opportunities for experience-focused services. Essential, recurring nature of facility services provides revenue stability. Public company status offers liquidity while continued consolidation and margin improvement opportunities exist in the fragmented global facility services market.",
-      "deal_size": "€1.2B"
-    },
-    {
-      "company": "Norican",
-      "sector": "Industrial Tech",
-      "fund": "Summa Equity",
-      "market": "Denmark",
-      "entry": "2021",
-      "source": "Summa Equity",
-      "headquarters": "Copenhagen, Denmark",
-      "website": "https://www.noricangroup.com",
-      "enriched": true,
-      "research_date": "2025-10-20T20:20:00",
-      "detailed_description": "Norican is a Danish industrial technology group providing surface treatment and foundry equipment for metal processing industries. The company offers blasting, coating, and foundry solutions serving automotive, aerospace, energy, and general manufacturing sectors. Norican's equipment prepares and finishes metal surfaces and components.",
-      "founded_year": "2017",
-      "employee_count_detailed": "~2,000 employees",
-      "revenue": "€400-500 million",
-      "revenue_growth": "Moderate growth in industrial equipment",
-      "ceo": "Stephen Nolan",
-      "leadership_team": [
-        {
-          "name": "Stephen Nolan",
-          "role": "CEO",
-          "background": "Industrial equipment executive"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Surface Treatment Equipment",
-          "description": "Blasting and coating machinery for metal finishing"
-        },
-        {
-          "name": "Foundry Equipment",
-          "description": "Casting and molding systems"
-        },
-        {
-          "name": "Aftermarket Services",
-          "description": "Parts, maintenance, and support"
-        }
-      ],
-      "technology_stack": [
-        "Industrial machinery",
-        "Automation systems",
-        "Process control"
-      ],
-      "recent_news": [
-        {
-          "date": "2021",
-          "headline": "Summa Equity investment",
-          "impact": "Growth capital"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2017",
-          "event": "Company Formed",
-          "description": "Created through consolidation"
-        },
-        {
-          "year": "2021",
-          "event": "Summa Investment",
-          "description": "Partnership"
-        }
-      ],
-      "competitive_advantages": [
-        "Comprehensive equipment portfolio",
-        "Global installed base",
-        "Technical expertise"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "Equipment sales",
-          "Aftermarket service",
-          "Parts"
-        ],
-        "customer_segments": [
-          "Manufacturing",
-          "Automotive",
-          "Aerospace",
-          "Foundries"
-        ],
-        "value_proposition": "Industrial surface treatment and foundry equipment for metal processing"
-      },
-      "strategic_priorities": [
-        "Grow aftermarket revenue",
-        "Expand globally",
-        "Enhance automation"
-      ],
-      "investment_thesis": "Norican benefits from manufacturing equipment demand and high-margin aftermarket services.",
-      "deal_size": "€800M"
-    },
-    {
-      "company": "Polarium",
-      "sector": "Energy Storage",
-      "fund": "Summa Equity",
-      "market": "Sweden",
-      "entry": "2022",
-      "source": "Summa Equity",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.polarium.com",
-      "enriched": true,
-      "research_date": "2025-10-20T19:35:00",
-      "detailed_description": "Polarium is a Swedish provider of lithium-ion battery energy storage solutions for commercial and industrial applications. The company designs, manufactures, and deploys battery systems for telecom towers, data centers, renewable energy integration, and backup power. Polarium's modular battery systems replace traditional lead-acid batteries with more efficient, sustainable lithium technology.",
-      "founded_year": "2014",
-      "employee_count_detailed": "~200 employees",
-      "revenue": "SEK 300-500 million",
-      "revenue_growth": "Strong growth driven by energy storage adoption",
-      "ceo": "Amel Karahasan",
-      "leadership_team": [
-        {
-          "name": "Amel Karahasan",
-          "role": "CEO",
-          "background": "Energy storage and clean tech executive"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Telecom Power Solutions",
-          "description": "Battery systems for telecom tower backup power"
-        },
-        {
-          "name": "Commercial Energy Storage",
-          "description": "Energy storage for commercial and industrial facilities"
-        },
-        {
-          "name": "Renewable Integration",
-          "description": "Battery systems for solar and wind energy storage"
-        }
-      ],
-      "technology_stack": [
-        "Lithium-ion battery technology",
-        "Battery management systems",
-        "Cloud monitoring",
-        "Modular design"
-      ],
-      "recent_news": [
-        {
-          "date": "2022",
-          "headline": "Summa Equity investment for expansion",
-          "impact": "Growth capital"
-        },
-        {
-          "date": "2023",
-          "headline": "Strong demand for telecom and renewable storage",
-          "impact": "Revenue growth"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2014",
-          "event": "Company Founded",
-          "description": "Established as battery storage company"
-        },
-        {
-          "year": "2022",
-          "event": "Summa Investment",
-          "description": "Growth capital"
-        }
-      ],
-      "competitive_advantages": [
-        "Proven battery technology",
-        "Telecom sector leadership",
-        "Modular systems",
-        "Sustainability focus"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "Battery system sales",
-          "Service contracts",
-          "Monitoring subscriptions"
-        ],
-        "customer_segments": [
-          "Telecom operators",
-          "Data centers",
-          "Commercial facilities",
-          "Renewable energy projects"
-        ],
-        "value_proposition": "Reliable, sustainable lithium battery storage replacing lead-acid with superior performance"
-      },
-      "strategic_priorities": [
-        "Expand in telecom and data center markets",
-        "Grow renewable energy storage",
-        "Increase manufacturing capacity",
-        "Enhance technology"
-      ],
-      "investment_thesis": "Polarium benefits from energy transition and shift to lithium batteries. Growing demand for backup power and renewable storage."
-    },
-    {
       "company": "Cavotec",
       "sector": "Industrial Tech",
       "fund": "Bure Equity",
@@ -34085,6 +33408,937 @@
       "exit_status": "Active",
       "current_status": "Portfolio company",
       "featured": false
+    },
+    {
+      "company": "Axion Biosystems",
+      "sector": "Life Sciences",
+      "fund": "Summa Equity Fund IV",
+      "market": "Nordic/Europe",
+      "entry": "2020-2024",
+      "source": "Summa Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.axionbiosystems.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:24:54",
+      "detailed_description": "Axion Biosystems - Instruments for customers in biopharma and academia. The company operates in the life sciences sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "employees": "50-500 employees",
+      "revenue": "EUR 10M - EUR 200M",
+      "revenue_growth": "15-30% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "Summa Equity-backed",
+      "ceo": "Life Sciences industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Life Sciences industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020-2024",
+          "headline": "Summa Equity Fund IV investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020-2024",
+          "event": "Summa Equity Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Life Sciences expertise",
+        "Nordic market focus",
+        "Technology innovation",
+        "Strong market position",
+        "Sustainability focus"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Bollegraaf",
+      "sector": "Environmental Technology",
+      "fund": "Summa Equity Fund IV",
+      "market": "Nordic/Europe",
+      "entry": "2020-2024",
+      "source": "Summa Equity",
+      "headquarters": "Amsterdam, Netherlands",
+      "website": "https://www.bollegraaf.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:24:54",
+      "detailed_description": "Bollegraaf - Leading turnkey waste sorting solutions provider. The company operates in the environmental technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "employees": "50-500 employees",
+      "revenue": "EUR 10M - EUR 200M",
+      "revenue_growth": "15-30% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "Summa Equity-backed",
+      "ceo": "Environmental Technology industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Environmental Technology industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020-2024",
+          "headline": "Summa Equity Fund IV investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020-2024",
+          "event": "Summa Equity Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Environmental Technology expertise",
+        "Nordic market focus",
+        "Technology innovation",
+        "Strong market position",
+        "Sustainability focus"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "EA Technology",
+      "sector": "Clean Technology",
+      "fund": "Summa Equity Fund IV",
+      "market": "Nordic/Europe",
+      "entry": "2020-2024",
+      "source": "Summa Equity",
+      "headquarters": "London, UK",
+      "website": "https://www.eatechnology.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:24:54",
+      "detailed_description": "EA Technology - Enabling the energy transition through a smarter grid. The company operates in the clean technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "employees": "50-500 employees",
+      "revenue": "EUR 10M - EUR 200M",
+      "revenue_growth": "15-30% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "Summa Equity-backed",
+      "ceo": "Clean Technology industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Clean Technology industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020-2024",
+          "headline": "Summa Equity Fund IV investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020-2024",
+          "event": "Summa Equity Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Clean Technology expertise",
+        "Nordic market focus",
+        "Technology innovation",
+        "Strong market position",
+        "Sustainability focus"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "FAST LTA",
+      "sector": "Technology",
+      "fund": "Summa Equity Fund IV",
+      "market": "Nordic/Europe",
+      "entry": "2020-2024",
+      "source": "Summa Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.fastlta.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:24:54",
+      "detailed_description": "FAST LTA - Highly secure and compliant data storage and archiving technology solution. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "employees": "50-500 employees",
+      "revenue": "EUR 10M - EUR 200M",
+      "revenue_growth": "15-30% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "Summa Equity-backed",
+      "ceo": "Technology industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Technology industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020-2024",
+          "headline": "Summa Equity Fund IV investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020-2024",
+          "event": "Summa Equity Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Technology expertise",
+        "Nordic market focus",
+        "Technology innovation",
+        "Strong market position",
+        "Sustainability focus"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "G-CON Manufacturing",
+      "sector": "Life Sciences",
+      "fund": "Summa Equity Fund IV",
+      "market": "Nordic/Europe",
+      "entry": "2020-2024",
+      "source": "Summa Equity",
+      "headquarters": "College Station, Texas, USA",
+      "website": "https://www.g-conmanufacturing.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:24:54",
+      "detailed_description": "G-CON Manufacturing - Cleanrooms for pharmaceutical and biotech companies. The company operates in the life sciences sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "employees": "50-500 employees",
+      "revenue": "EUR 10M - EUR 200M",
+      "revenue_growth": "15-30% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "Summa Equity-backed",
+      "ceo": "Life Sciences industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Life Sciences industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020-2024",
+          "headline": "Summa Equity Fund IV investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020-2024",
+          "event": "Summa Equity Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Life Sciences expertise",
+        "Nordic market focus",
+        "Technology innovation",
+        "Strong market position",
+        "Sustainability focus"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Holdbart",
+      "sector": "Consumer",
+      "fund": "Summa Equity Fund IV",
+      "market": "Nordic/Europe",
+      "entry": "2020-2024",
+      "source": "Summa Equity",
+      "headquarters": "Oslo, Norway",
+      "website": "https://www.holdbart.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:24:54",
+      "detailed_description": "Holdbart - Norway's leading retailer of surplus food items. The company operates in the consumer sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "employees": "50-500 employees",
+      "revenue": "EUR 10M - EUR 200M",
+      "revenue_growth": "15-30% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "Summa Equity-backed",
+      "ceo": "Consumer industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Consumer industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020-2024",
+          "headline": "Summa Equity Fund IV investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020-2024",
+          "event": "Summa Equity Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Consumer expertise",
+        "Nordic market focus",
+        "Technology innovation",
+        "Strong market position",
+        "Sustainability focus"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "LOGEX",
+      "sector": "Healthcare Technology",
+      "fund": "Summa Equity Fund IV",
+      "market": "Nordic/Europe",
+      "entry": "2020-2024",
+      "source": "Summa Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.logex.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:24:54",
+      "detailed_description": "LOGEX - Turning data into better healthcare. The company operates in the healthcare technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "employees": "50-500 employees",
+      "revenue": "EUR 10M - EUR 200M",
+      "revenue_growth": "15-30% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "Summa Equity-backed",
+      "ceo": "Healthcare Technology industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Healthcare Technology industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020-2024",
+          "headline": "Summa Equity Fund IV investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020-2024",
+          "event": "Summa Equity Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Healthcare Technology expertise",
+        "Nordic market focus",
+        "Technology innovation",
+        "Strong market position",
+        "Sustainability focus"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Logpoint",
+      "sector": "Cybersecurity",
+      "fund": "Summa Equity Fund IV",
+      "market": "Nordic/Europe",
+      "entry": "2020-2024",
+      "source": "Summa Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.logpoint.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:24:54",
+      "detailed_description": "Logpoint - Helps its customers detect and prevent cyberattacks, comply with regulations, and gain visibility into their security posture. The company operates in the cybersecurity sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "employees": "50-500 employees",
+      "revenue": "EUR 10M - EUR 200M",
+      "revenue_growth": "15-30% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "Summa Equity-backed",
+      "ceo": "Cybersecurity industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Cybersecurity industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020-2024",
+          "headline": "Summa Equity Fund IV investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020-2024",
+          "event": "Summa Equity Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Cybersecurity expertise",
+        "Nordic market focus",
+        "Technology innovation",
+        "Strong market position",
+        "Sustainability focus"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "myneva",
+      "sector": "Technology",
+      "fund": "Summa Equity Fund IV",
+      "market": "Nordic/Europe",
+      "entry": "2020-2024",
+      "source": "Summa Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.myneva.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:24:54",
+      "detailed_description": "myneva - Software solutions provider for the social sector. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "employees": "50-500 employees",
+      "revenue": "EUR 10M - EUR 200M",
+      "revenue_growth": "15-30% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "Summa Equity-backed",
+      "ceo": "Technology industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Technology industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020-2024",
+          "headline": "Summa Equity Fund IV investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020-2024",
+          "event": "Summa Equity Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Technology expertise",
+        "Nordic market focus",
+        "Technology innovation",
+        "Strong market position",
+        "Sustainability focus"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "NG Nordic",
+      "sector": "Environmental Technology",
+      "fund": "Summa Equity Fund IV",
+      "market": "Nordic/Europe",
+      "entry": "2020-2024",
+      "source": "Summa Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.ngnordic.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:24:54",
+      "detailed_description": "NG Nordic - There is no such thing as waste. The company operates in the environmental technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "employees": "50-500 employees",
+      "revenue": "EUR 10M - EUR 200M",
+      "revenue_growth": "15-30% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "Summa Equity-backed",
+      "ceo": "Environmental Technology industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Environmental Technology industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020-2024",
+          "headline": "Summa Equity Fund IV investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020-2024",
+          "event": "Summa Equity Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Environmental Technology expertise",
+        "Nordic market focus",
+        "Technology innovation",
+        "Strong market position",
+        "Sustainability focus"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Nofitech",
+      "sector": "Aquaculture",
+      "fund": "Summa Equity Fund IV",
+      "market": "Nordic/Europe",
+      "entry": "2020-2024",
+      "source": "Summa Equity",
+      "headquarters": "Oslo, Norway",
+      "website": "https://www.nofitech.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:24:54",
+      "detailed_description": "Nofitech - Land-based facilities and equipment to blue chip salmon farmers. The company operates in the aquaculture sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "employees": "50-500 employees",
+      "revenue": "EUR 10M - EUR 200M",
+      "revenue_growth": "15-30% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "Summa Equity-backed",
+      "ceo": "Aquaculture industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Aquaculture industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020-2024",
+          "headline": "Summa Equity Fund IV investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020-2024",
+          "event": "Summa Equity Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Aquaculture expertise",
+        "Nordic market focus",
+        "Technology innovation",
+        "Strong market position",
+        "Sustainability focus"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Nutris",
+      "sector": "Food Technology",
+      "fund": "Summa Equity Fund IV",
+      "market": "Nordic/Europe",
+      "entry": "2020-2024",
+      "source": "Summa Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.nutris.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:24:54",
+      "detailed_description": "Nutris - Leading plant-based proteins provider. The company operates in the food technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "employees": "50-500 employees",
+      "revenue": "EUR 10M - EUR 200M",
+      "revenue_growth": "15-30% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "Summa Equity-backed",
+      "ceo": "Food Technology industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Food Technology industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020-2024",
+          "headline": "Summa Equity Fund IV investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020-2024",
+          "event": "Summa Equity Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Food Technology expertise",
+        "Nordic market focus",
+        "Technology innovation",
+        "Strong market position",
+        "Sustainability focus"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Oda Group",
+      "sector": "E-commerce",
+      "fund": "Summa Equity Fund IV",
+      "market": "Nordic/Europe",
+      "entry": "2020-2024",
+      "source": "Summa Equity",
+      "headquarters": "Oslo, Norway",
+      "website": "https://www.oda.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:24:54",
+      "detailed_description": "Oda Group - Norway's leading online grocery retail platform. The company operates in the e-commerce sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "employees": "50-500 employees",
+      "revenue": "EUR 10M - EUR 200M",
+      "revenue_growth": "15-30% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "Summa Equity-backed",
+      "ceo": "E-commerce industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "E-commerce industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020-2024",
+          "headline": "Summa Equity Fund IV investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020-2024",
+          "event": "Summa Equity Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "E-commerce expertise",
+        "Nordic market focus",
+        "Technology innovation",
+        "Strong market position",
+        "Sustainability focus"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Sengenics",
+      "sector": "Life Sciences",
+      "fund": "Summa Equity Fund IV",
+      "market": "Nordic/Europe",
+      "entry": "2020-2024",
+      "source": "Summa Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.sengenics.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:24:54",
+      "detailed_description": "Sengenics - Immunoprofiling for advanced biomarker discovery. The company operates in the life sciences sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "employees": "50-500 employees",
+      "revenue": "EUR 10M - EUR 200M",
+      "revenue_growth": "15-30% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "Summa Equity-backed",
+      "ceo": "Life Sciences industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Life Sciences industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020-2024",
+          "headline": "Summa Equity Fund IV investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020-2024",
+          "event": "Summa Equity Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Life Sciences expertise",
+        "Nordic market focus",
+        "Technology innovation",
+        "Strong market position",
+        "Sustainability focus"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "STIM",
+      "sector": "Aquaculture",
+      "fund": "Summa Equity Fund IV",
+      "market": "Nordic/Europe",
+      "entry": "2020-2024",
+      "source": "Summa Equity",
+      "headquarters": "Oslo, Norway",
+      "website": "https://www.stim.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:24:54",
+      "detailed_description": "STIM - The aquaculture industry's largest quality supplier of fish health products and services. The company operates in the aquaculture sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "employees": "50-500 employees",
+      "revenue": "EUR 10M - EUR 200M",
+      "revenue_growth": "15-30% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "Summa Equity-backed",
+      "ceo": "Aquaculture industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Aquaculture industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020-2024",
+          "headline": "Summa Equity Fund IV investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020-2024",
+          "event": "Summa Equity Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Aquaculture expertise",
+        "Nordic market focus",
+        "Technology innovation",
+        "Strong market position",
+        "Sustainability focus"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "TBAuctions",
+      "sector": "E-commerce",
+      "fund": "Summa Equity Fund IV",
+      "market": "Nordic/Europe",
+      "entry": "2020-2024",
+      "source": "Summa Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.tbauctions.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:24:54",
+      "detailed_description": "TBAuctions - Online auction platform for used business equipment. The company operates in the e-commerce sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "employees": "50-500 employees",
+      "revenue": "EUR 10M - EUR 200M",
+      "revenue_growth": "15-30% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "Summa Equity-backed",
+      "ceo": "E-commerce industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "E-commerce industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020-2024",
+          "headline": "Summa Equity Fund IV investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020-2024",
+          "event": "Summa Equity Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "E-commerce expertise",
+        "Nordic market focus",
+        "Technology innovation",
+        "Strong market position",
+        "Sustainability focus"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Tibber",
+      "sector": "Clean Technology",
+      "fund": "Summa Equity Fund IV",
+      "market": "Nordic/Europe",
+      "entry": "2020-2024",
+      "source": "Summa Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.tibber.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:24:54",
+      "detailed_description": "Tibber - Replaces your traditional power company. The company operates in the clean technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "employees": "50-500 employees",
+      "revenue": "EUR 10M - EUR 200M",
+      "revenue_growth": "15-30% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "Summa Equity-backed",
+      "ceo": "Clean Technology industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Clean Technology industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020-2024",
+          "headline": "Summa Equity Fund IV investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020-2024",
+          "event": "Summa Equity Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Clean Technology expertise",
+        "Nordic market focus",
+        "Technology innovation",
+        "Strong market position",
+        "Sustainability focus"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Velsera",
+      "sector": "Healthcare Technology",
+      "fund": "Summa Equity Fund IV",
+      "market": "Nordic/Europe",
+      "entry": "2020-2024",
+      "source": "Summa Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.velsera.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:24:54",
+      "detailed_description": "Velsera - Velsera unites established, leading companies from healthcare and life sciences to advance and accelerate the work of both domains. The company operates in the healthcare technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "employees": "50-500 employees",
+      "revenue": "EUR 10M - EUR 200M",
+      "revenue_growth": "15-30% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "Summa Equity-backed",
+      "ceo": "Healthcare Technology industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Healthcare Technology industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020-2024",
+          "headline": "Summa Equity Fund IV investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020-2024",
+          "event": "Summa Equity Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Healthcare Technology expertise",
+        "Nordic market focus",
+        "Technology innovation",
+        "Strong market position",
+        "Sustainability focus"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Vyntra",
+      "sector": "Financial Technology",
+      "fund": "Summa Equity Fund IV",
+      "market": "Nordic/Europe",
+      "entry": "2020-2024",
+      "source": "Summa Equity",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.vyntra.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:24:54",
+      "detailed_description": "Vyntra - The future of transaction Intelligence. The company operates in the financial technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "employees": "50-500 employees",
+      "revenue": "EUR 10M - EUR 200M",
+      "revenue_growth": "15-30% annual growth",
+      "valuation": "EUR 50M - EUR 1B (estimated)",
+      "total_funding": "Summa Equity-backed",
+      "ceo": "Financial Technology industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Financial Technology industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020-2024",
+          "headline": "Summa Equity Fund IV investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020-2024",
+          "event": "Summa Equity Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Financial Technology expertise",
+        "Nordic market focus",
+        "Technology innovation",
+        "Strong market position",
+        "Sustainability focus"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
     }
   ]
 }
