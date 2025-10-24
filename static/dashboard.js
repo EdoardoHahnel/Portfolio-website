@@ -2,6 +2,14 @@
 Dashboard - Main page interactivity
 */
 
+// ===== TRUNCATE TEXT FUNCTION =====
+// Truncates text to specified length and adds ellipsis
+function truncateText(text, maxLength) {
+    if (!text) return '';
+    if (text.length <= maxLength) return text;
+    return text.substring(0, maxLength).trim() + '...';
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log('📊 Dashboard initialized!');
     loadDashboard();
@@ -10,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
 async function loadDashboard() {
     await Promise.all([
         loadLatestNews(),
-        loadLatestAINews(),
         loadActiveFundraising(),
         loadPEFirms(),
         loadStats()
@@ -43,24 +50,12 @@ async function loadLatestNews() {
             const container = document.getElementById('latestNews');
             container.innerHTML = '';
             
-            // Filter for PE/M&A news only (exclude AI-specific news)
+            // Filter for PE/M&A news only (use category field)
             const peNews = data.news.filter(article => {
-                const source = (article.source || '').toLowerCase();
+                const category = (article.category || '').toLowerCase();
                 
-                // EXCLUDE AI news sources
-                if (source.includes('breakit ai') || source.includes('crescendo ai') || 
-                    source.includes('crunchbase') || source.includes('ai news') ||
-                    source.includes('techcrunch')) {
-                    return false;
-                }
-                
-                // ONLY include PE/M&A sources
-                if (source.includes('pe news') || source.includes('seeking alpha m&a') || 
-                    source.includes('reuters m&a') || source.includes('private equity')) {
-                    return true;
-                }
-                
-                return false;
+                // Only show PE News, exclude AI News
+                return category === 'pe news';
             });
             
             // Show first 15 PE articles
@@ -81,7 +76,7 @@ async function loadLatestNews() {
                         </div>
                         <span class="news-date-small">${escapeHtml(article.published || 'Today')}</span>
                     </div>
-                    <h4 class="news-title-compact">${escapeHtml(article.title)}</h4>
+                    <h4 class="news-title-compact">${escapeHtml(truncateText(article.title, 60))}</h4>
                     <a href="${escapeHtml(article.url)}" target="_blank" class="news-link-small">
                         Read more <i class="fas fa-arrow-right"></i>
                     </a>
@@ -104,138 +99,6 @@ async function loadLatestNews() {
     }
 }
 
-async function loadLatestAINews() {
-    try {
-        console.log('Loading latest AI news...');
-        // For now, show sample AI news from the main news that contains AI keywords
-        const response = await fetch('/api/news');
-        const data = await response.json();
-        
-        if (data.success && data.news && data.news.length > 0) {
-            const container = document.getElementById('latestAINews');
-            container.innerHTML = '';
-            
-            // Filter for AI-related news only (exclude PE articles)
-            const aiNews = data.news.filter(article => {
-                const text = (article.title + ' ' + (article.description || '')).toLowerCase();
-                const source = (article.source || '').toLowerCase();
-                const title = (article.title || '').toLowerCase();
-                
-                // EXCLUDE PE/M&A sources and PE firm mentions
-                if (source.includes('pe news') || source.includes('seeking alpha m&a') || 
-                    source.includes('reuters m&a') || source.includes('private equity')) {
-                    return false;
-                }
-                
-                // EXCLUDE articles mentioning PE firms in title
-                const peFirmKeywords = ['nordic capital', 'eqt', 'triton', 'altor', 'summa', 'litorina', 
-                                      'ratos', 'adelis', 'verdan', 'ik partners', 'bure', 'accent'];
-                for (let keyword of peFirmKeywords) {
-                    if (title.includes(keyword)) {
-                        return false;
-                    }
-                }
-                
-                // Include AI-specific news sources
-                if (source.includes('breakit ai') || source.includes('crescendo ai') || source.includes('crunchbase')) {
-                    return true;
-                }
-                
-                // Only include if it specifically mentions AI/tech keywords
-                return text.includes('ai') || text.includes('artificial intelligence') || 
-                       text.includes('machine learning') || text.includes('neural network') ||
-                       text.includes('deep learning') || text.includes('llm') || text.includes('gpt') ||
-                       text.includes('chatbot') || text.includes('robotics') || text.includes('autonomous') ||
-                       text.includes('tech') || text.includes('digital') || text.includes('software') ||
-                       text.includes('automation') || text.includes('algorithm');
-            }).slice(0, 10);
-            
-            if (aiNews.length === 0) {
-                // If no AI-specific news, show tech-related news instead (exclude PE articles)
-                const techNews = data.news.filter(article => {
-                    const source = (article.source || '').toLowerCase();
-                    const title = (article.title || '').toLowerCase();
-                    
-                    // Exclude PE-specific news sources
-                    if (source.includes('pe news') || source.includes('seeking alpha m&a') || 
-                        source.includes('reuters m&a') || source.includes('private equity')) {
-                        return false;
-                    }
-                    
-                    // Exclude articles mentioning PE firms in title
-                    const peFirmKeywords = ['nordic capital', 'eqt', 'triton', 'altor', 'summa', 'litorina', 
-                                          'ratos', 'adelis', 'verdan', 'ik partners', 'bure', 'accent'];
-                    for (let keyword of peFirmKeywords) {
-                        if (title.includes(keyword)) {
-                            return false;
-                        }
-                    }
-                    
-                    return true;
-                }).slice(0, 10);
-                
-                if (techNews.length === 0) {
-                    container.innerHTML = `
-                        <div style="text-align: center; padding: 20px; color: #666;">
-                            <i class="fas fa-robot" style="font-size: 24px; margin-bottom: 10px; opacity: 0.5;"></i>
-                            <p>AI news coming soon...</p>
-                            <p style="font-size: 0.85rem; margin-top: 0.5rem;">Sources: Breakit, Crescendo AI, Crunchbase</p>
-                        </div>
-                    `;
-                    return;
-                }
-                
-                // Use tech news if no AI-specific news found
-                techNews.forEach(article => {
-                    const item = document.createElement('div');
-                    item.className = 'news-item-compact';
-                    item.style.borderLeftColor = '#7c3aed';
-                    const sourceIcon = getSourceIcon(article.source);
-                    item.innerHTML = `
-                        <div class="news-item-header">
-                            <span class="news-badge" style="background: #7c3aed;">${sourceIcon} ${escapeHtml(article.source || 'AI News')}</span>
-                            <span class="news-date-small">${escapeHtml(article.published || 'Today')}</span>
-                        </div>
-                        <h4 class="news-title-compact">${escapeHtml(article.title)}</h4>
-                        <a href="${escapeHtml(article.url)}" target="_blank" class="news-link-small" style="color: #7c3aed;">
-                            Read more <i class="fas fa-arrow-right"></i>
-                        </a>
-                    `;
-                    container.appendChild(item);
-                });
-                return;
-            }
-            
-            aiNews.forEach(article => {
-                const item = document.createElement('div');
-                item.className = 'news-item-compact';
-                item.style.borderLeftColor = '#7c3aed';
-                const sourceIcon = getSourceIcon(article.source);
-                
-                // Get firm info from title and description
-                const firmName = getFirmFromTitle(article.title) || getFirmFromTitle(article.description);
-                const firmLogoHtml = createRobustLogoHTML(firmName, '24px');
-                
-                item.innerHTML = `
-                    <div class="news-item-header">
-                        <div style="display: flex; align-items: center;">
-                            ${firmLogoHtml}
-                            <span class="news-badge" style="background: #7c3aed;">${sourceIcon} ${escapeHtml(article.source || 'AI News')}</span>
-                        </div>
-                        <span class="news-date-small">${escapeHtml(article.published || 'Today')}</span>
-                    </div>
-                    <h4 class="news-title-compact">${escapeHtml(article.title)}</h4>
-                    <a href="${escapeHtml(article.url)}" target="_blank" class="news-link-small" style="color: #7c3aed;">
-                        Read more <i class="fas fa-arrow-right"></i>
-                    </a>
-                `;
-                container.appendChild(item);
-            });
-        }
-    } catch (error) {
-        console.error('Error loading AI news:', error);
-    }
-}
 
 async function loadActiveFundraising() {
     try {

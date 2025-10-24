@@ -216,18 +216,18 @@
     
     .deal-card {
         background: white;
-        border-radius: 8px;
-        padding: 16px;
-        margin-bottom: 12px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 16px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
         border: 1px solid #f0f0f0;
-        transition: all 0.2s;
+        transition: all 0.3s ease;
         position: relative;
     }
     
     .deal-card:hover {
-        box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        transform: translateY(-4px);
         border-color: #4c1d95;
     }
     
@@ -235,66 +235,100 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        margin-bottom: 12px;
+        margin-bottom: 16px;
     }
     
     .deal-title {
-        font-size: 1rem;
+        font-size: 1.1rem;
         font-weight: 700;
         color: #1a1a1a;
-        margin-bottom: 8px;
         line-height: 1.3;
+        margin: 0;
     }
     
     .deal-year-badge {
         display: inline-flex;
         align-items: center;
-        gap: 4px;
-        background: #4c1d95;
+        background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%);
         color: white;
-        padding: 4px 8px;
-        border-radius: 4px;
-        font-size: 0.7rem;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.75rem;
         font-weight: 600;
+        box-shadow: 0 2px 8px rgba(76, 29, 149, 0.3);
     }
     
     .deal-parties {
-        font-size: 0.85rem;
-        color: #666;
-        margin-bottom: 12px;
-        line-height: 1.4;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 16px;
+        padding: 12px 0;
+    }
+    
+    .party-info {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex: 1;
+    }
+    
+    .party-name {
+        font-weight: 600;
+        color: #1a1a1a;
+        font-size: 0.9rem;
+    }
+    
+    .deal-arrow {
+        color: #4c1d95;
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin: 0 8px;
     }
     
     .deal-meta {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: 12px;
-        padding-top: 12px;
+        margin-top: 16px;
+        padding-top: 16px;
         border-top: 1px solid #f0f0f0;
     }
     
+    .deal-tags {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+    
+    .deal-status-info {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    
     .deal-status {
-        padding: 4px 8px;
-        border-radius: 4px;
-        font-size: 0.7rem;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.75rem;
         font-weight: 600;
         text-align: center;
     }
     
     .deal-value {
-        font-size: 0.8rem;
-        font-weight: 600;
+        font-size: 0.85rem;
+        font-weight: 700;
         color: #4c1d95;
+        background: #f8f9ff;
+        padding: 4px 8px;
+        border-radius: 6px;
     }
     
     .sector-tag, .deal-type-tag {
-        background: #f8f9fa;
-        color: #666;
-        padding: 2px 6px;
-        border-radius: 4px;
-        font-size: 0.7rem;
-        font-weight: 500;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
     }
     
     .sector-tag {
@@ -305,6 +339,17 @@
     .deal-type-tag {
         background: #e3f2fd;
         color: #1976d2;
+    }
+    
+    .deal-description {
+        margin-top: 16px;
+        padding: 12px 16px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        color: #555;
+        line-height: 1.5;
+        border-left: 3px solid #4c1d95;
     }
     
     .status-completed {
@@ -876,53 +921,51 @@ function displayDeals(deals) {
 function createDealCard(deal) {
     const statusClass = `status-${deal.status.toLowerCase().replace(/\s+/g, '-')}`;
     
-    // Get country flags - different sizes for different locations
-    const countryFlagLarge = getCountryFlag(deal.geography, 'medium');
-    const countryFlagSmall = getCountryFlag(deal.geography, 'small');
-    
     // Get company logos
     const acquirerLogo = getCompanyLogo(deal.acquirer);
     const targetLogo = getCompanyLogo(deal.target);
     
     // Check if 2025 deal
-    const year2025Badge = deal.year === 2025 ? '<span class="deal-year-badge"><i class="fas fa-calendar-check"></i> 2025</span>' : '';
+    const year2025Badge = deal.year === 2025 ? '<span class="deal-year-badge">2025</span>' : '';
     
     const cardHTML = `
         <div class="deal-card">
             <div class="deal-card-header">
-                <div style="flex: 1;">
-                    <div class="deal-title">
-                        ${deal.deal_name}
-                    </div>
-                    <div class="deal-parties" style="display: flex; align-items: center; gap: 8px;">
-                        <div style="display: flex; align-items: center; gap: 6px;">
-                            ${acquirerLogo}
-                            <strong>${deal.acquirer}</strong>
-                        </div>
-                        <span style="color: #999; font-size: 14px;">→</span>
-                        <div style="display: flex; align-items: center; gap: 6px;">
-                            ${targetLogo}
-                            <strong>${deal.target}</strong>
-                        </div>
-                    </div>
+                <div class="deal-title">
+                    ${deal.deal_name}
                 </div>
                 ${year2025Badge}
             </div>
+            
+            <div class="deal-parties">
+                <div class="party-info">
+                    ${acquirerLogo}
+                    <span class="party-name">${deal.acquirer}</span>
+                </div>
+                <div class="deal-arrow">→</div>
+                <div class="party-info">
+                    ${targetLogo}
+                    <span class="party-name">${deal.target}</span>
+                </div>
+            </div>
+            
             <div class="deal-meta">
-                <div style="display: flex; align-items: center; gap: 12px;">
+                <div class="deal-tags">
                     <span class="sector-tag">${deal.sector}</span>
                     <span class="deal-type-tag">${deal.deal_type}</span>
+                </div>
+                <div class="deal-status-info">
                     <div class="deal-status ${statusClass}">
                         ${getStatusIcon(deal.status)} ${deal.status}
                     </div>
-                </div>
-                <div class="deal-value">
-                    ${deal.deal_value && deal.deal_value !== 'N/A' && deal.deal_value !== 'Undisclosed' ? deal.deal_value : 'Undisclosed'}
+                    <div class="deal-value">
+                        ${deal.deal_value && deal.deal_value !== 'N/A' && deal.deal_value !== 'Undisclosed' ? deal.deal_value : 'Undisclosed'}
+                    </div>
                 </div>
             </div>
             
             ${deal.description ? `
-            <div class="deal-description" style="margin-top: 12px; font-size: 0.8rem; color: #666; line-height: 1.4;">
+            <div class="deal-description">
                 ${deal.description}
             </div>
             ` : ''}

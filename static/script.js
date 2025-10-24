@@ -388,31 +388,12 @@ async function loadNews() {
         const data = await response.json();
         
         if (data.success) {
-            // Filter out AI articles and show only PE/investment news
+            // Filter to show only PE/investment news (exclude AI news)
             const filteredNews = data.news.filter(article => {
-                const title = (article.title || '').toLowerCase();
-                const description = (article.description || '').toLowerCase();
-                const source = (article.source || '').toLowerCase();
                 const category = (article.category || '').toLowerCase();
                 
-                // Exclude AI-specific sources
-                if (source.includes('breakit ai') || source.includes('crescendo ai')) {
-                    return false;
-                }
-                
-                // Exclude AI-specific categories
-                if (category.includes('ai') || category.includes('artificial intelligence')) {
-                    return false;
-                }
-                
-                // Include PE/investment keywords
-                const peKeywords = ['private equity', 'pe', 'investment', 'acquisition', 'merger', 'deal', 'fund', 'capital', 'equity', 'buyout', 'exit', 'ipo', 'fundraising'];
-                const hasPEKeywords = peKeywords.some(keyword => 
-                    title.includes(keyword) || description.includes(keyword)
-                );
-                
-                // Include if it has PE keywords or is from PE sources
-                return hasPEKeywords || source.includes('pe news') || source.includes('reuters') || source.includes('financial times') || source.includes('bloomberg');
+                // Only show PE News, exclude AI News
+                return category === 'pe news';
             });
             
             // Update the total count
@@ -458,6 +439,14 @@ function displayNews(newsArray) {
     });
 }
 
+// ===== TRUNCATE TEXT FUNCTION =====
+// Truncates text to specified length and adds ellipsis
+function truncateText(text, maxLength) {
+    if (!text) return '';
+    if (text.length <= maxLength) return text;
+    return text.substring(0, maxLength).trim() + '...';
+}
+
 // ===== CREATE NEWS CARD =====
 // Creates a single news card element
 function createNewsCard(article, index) {
@@ -487,8 +476,8 @@ function createNewsCard(article, index) {
                 </span>
             </div>
         </div>
-        <h3 class="news-title">${escapeHtml(article.title)}</h3>
-        <p class="news-description">${escapeHtml(article.description)}</p>
+        <h3 class="news-title">${escapeHtml(truncateText(article.title, 80))}</h3>
+        <p class="news-description">${escapeHtml(truncateText(article.description, 120))}</p>
         <div class="news-footer">
             <span class="news-date">
                 <i class="far fa-calendar"></i>

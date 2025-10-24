@@ -11,6 +11,8 @@ from datetime import datetime
 import json
 import os
 from scraper import MAScraper
+import subprocess
+import sys
 
 # Create a Flask application
 # Flask is a framework that helps create web applications easily
@@ -311,6 +313,43 @@ def scrape_news():
     except Exception as e:
         # If something goes wrong, send an error message
         print(f"Error during scraping: {str(e)}")
+        return jsonify({
+            'success': False,
+            'message': f'Error: {str(e)}'
+        }), 500
+
+
+@app.route('/api/news/update-real', methods=['POST'])
+def update_real_news():
+    """
+    API endpoint to update news with real RSS feeds
+    """
+    try:
+        print("🔄 Starting real news update...")
+        
+        # Run the real news fetcher
+        result = subprocess.run([
+            sys.executable, 'fetch_real_news.py'
+        ], capture_output=True, text=True, cwd=os.getcwd())
+        
+        if result.returncode == 0:
+            # Reload the news database
+            load_news_database()
+            
+            return jsonify({
+                'success': True,
+                'message': 'Real news updated successfully!',
+                'output': result.stdout,
+                'total_articles': len(news_storage)
+            })
+        else:
+            return jsonify({
+                'success': False,
+                'message': f'News update failed: {result.stderr}'
+            }), 500
+            
+    except Exception as e:
+        print(f"❌ Error updating real news: {e}")
         return jsonify({
             'success': False,
             'message': f'Error: {str(e)}'

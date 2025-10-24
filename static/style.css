@@ -533,15 +533,16 @@ body {
 }
 
 
+
 .firm-section .firm-header {
     position: sticky;
     top: 0;
     z-index: 10;
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     width: 100%;
-    min-width: max-content;
+    min-width: 3000px;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .firm-section .firm-header::after {
@@ -554,7 +555,8 @@ body {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     z-index: -1;
     width: 100%;
-    min-width: 2500px;
+    min-width: 3000px;
+    transform: translateX(0);
 }
 
 .firm-header {
@@ -578,6 +580,9 @@ body {
     bottom: 0;
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     z-index: -1;
+    width: 100%;
+    min-width: 3000px;
+    transform: translateX(0);
 }
 
 .firm-header-link {
@@ -799,6 +804,30 @@ body {
     .news-grid {
         grid-template-columns: 1fr;
     }
+    
+    /* Portfolio Charts Mobile Responsive */
+    .portfolio-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+    
+    /* Make charts stack vertically on mobile */
+    div[style*="grid-template-columns: 1fr 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    /* Increase chart height on mobile */
+    canvas[id*="Chart"] {
+        max-height: 200px !important;
+        min-height: 180px !important;
+    }
+    
+    /* Make chart titles more readable on mobile */
+    .content-card-title {
+        font-size: 0.8rem !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -809,6 +838,29 @@ body {
     
     .logo h1 {
         font-size: 1.5rem;
+    }
+    
+    /* Extra small mobile optimizations for portfolio charts */
+    .portfolio-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 0.3rem;
+    }
+    
+    /* Make charts even taller on very small screens */
+    canvas[id*="Chart"] {
+        max-height: 250px !important;
+        min-height: 220px !important;
+    }
+    
+    /* Larger chart titles on small phones */
+    .content-card-title {
+        font-size: 0.9rem !important;
+    }
+    
+    /* Better spacing for chart cards on small screens */
+    div[style*="grid-template-columns: 1fr 1fr 1fr"] {
+        gap: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
     }
 }
 
