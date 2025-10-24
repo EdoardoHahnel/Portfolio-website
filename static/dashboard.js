@@ -68,9 +68,17 @@ async function loadLatestNews() {
                 const item = document.createElement('div');
                 item.className = 'news-item-compact';
                 const sourceIcon = getSourceIcon(article.source);
+                
+                // Get firm info from title and description
+                const firmName = getFirmFromTitle(article.title) || getFirmFromTitle(article.description);
+                const firmLogoHtml = createRobustLogoHTML(firmName, '24px');
+                
                 item.innerHTML = `
                     <div class="news-item-header">
-                        <span class="news-badge">${sourceIcon} ${escapeHtml(article.source || 'M&A News')}</span>
+                        <div style="display: flex; align-items: center;">
+                            ${firmLogoHtml}
+                            <span class="news-badge">${sourceIcon} ${escapeHtml(article.source || 'M&A News')}</span>
+                        </div>
                         <span class="news-date-small">${escapeHtml(article.published || 'Today')}</span>
                     </div>
                     <h4 class="news-title-compact">${escapeHtml(article.title)}</h4>
@@ -107,10 +115,26 @@ async function loadLatestAINews() {
             const container = document.getElementById('latestAINews');
             container.innerHTML = '';
             
-            // Filter for AI-related news only
+            // Filter for AI-related news only (exclude PE articles)
             const aiNews = data.news.filter(article => {
                 const text = (article.title + ' ' + (article.description || '')).toLowerCase();
                 const source = (article.source || '').toLowerCase();
+                const title = (article.title || '').toLowerCase();
+                
+                // EXCLUDE PE/M&A sources and PE firm mentions
+                if (source.includes('pe news') || source.includes('seeking alpha m&a') || 
+                    source.includes('reuters m&a') || source.includes('private equity')) {
+                    return false;
+                }
+                
+                // EXCLUDE articles mentioning PE firms in title
+                const peFirmKeywords = ['nordic capital', 'eqt', 'triton', 'altor', 'summa', 'litorina', 
+                                      'ratos', 'adelis', 'verdan', 'ik partners', 'bure', 'accent'];
+                for (let keyword of peFirmKeywords) {
+                    if (title.includes(keyword)) {
+                        return false;
+                    }
+                }
                 
                 // Include AI-specific news sources
                 if (source.includes('breakit ai') || source.includes('crescendo ai') || source.includes('crunchbase')) {
@@ -127,11 +151,27 @@ async function loadLatestAINews() {
             }).slice(0, 10);
             
             if (aiNews.length === 0) {
-                // If no AI-specific news, show tech-related news instead
+                // If no AI-specific news, show tech-related news instead (exclude PE articles)
                 const techNews = data.news.filter(article => {
                     const source = (article.source || '').toLowerCase();
+                    const title = (article.title || '').toLowerCase();
+                    
                     // Exclude PE-specific news sources
-                    return !source.includes('pe news') && !source.includes('seeking alpha m&a') && !source.includes('reuters m&a');
+                    if (source.includes('pe news') || source.includes('seeking alpha m&a') || 
+                        source.includes('reuters m&a') || source.includes('private equity')) {
+                        return false;
+                    }
+                    
+                    // Exclude articles mentioning PE firms in title
+                    const peFirmKeywords = ['nordic capital', 'eqt', 'triton', 'altor', 'summa', 'litorina', 
+                                          'ratos', 'adelis', 'verdan', 'ik partners', 'bure', 'accent'];
+                    for (let keyword of peFirmKeywords) {
+                        if (title.includes(keyword)) {
+                            return false;
+                        }
+                    }
+                    
+                    return true;
                 }).slice(0, 10);
                 
                 if (techNews.length === 0) {
@@ -171,9 +211,17 @@ async function loadLatestAINews() {
                 item.className = 'news-item-compact';
                 item.style.borderLeftColor = '#7c3aed';
                 const sourceIcon = getSourceIcon(article.source);
+                
+                // Get firm info from title and description
+                const firmName = getFirmFromTitle(article.title) || getFirmFromTitle(article.description);
+                const firmLogoHtml = createRobustLogoHTML(firmName, '24px');
+                
                 item.innerHTML = `
                     <div class="news-item-header">
-                        <span class="news-badge" style="background: #7c3aed;">${sourceIcon} ${escapeHtml(article.source || 'AI News')}</span>
+                        <div style="display: flex; align-items: center;">
+                            ${firmLogoHtml}
+                            <span class="news-badge" style="background: #7c3aed;">${sourceIcon} ${escapeHtml(article.source || 'AI News')}</span>
+                        </div>
                         <span class="news-date-small">${escapeHtml(article.published || 'Today')}</span>
                     </div>
                     <h4 class="news-title-compact">${escapeHtml(article.title)}</h4>
@@ -241,7 +289,12 @@ async function loadPEFirms() {
                 card.className = 'pe-firm-card-compact';
                 card.innerHTML = `
                     <div class="firm-logo-container">
-                        <img src="${firm.logo_url}" alt="${escapeHtml(firm.name)}" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22><text y=%2250%%25%22 font-size=%2240%22>🏢</text></svg>'">
+                        <img src="${firm.logo_url}" 
+                             alt="${escapeHtml(firm.name)}" 
+                             onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name='+encodeURIComponent('${escapeHtml(firm.name)}')+'&background=4c1d95&color=ffffff&size=120'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';}">
+                        <div class="firm-logo-fallback" style="display: none; width: 60px; height: 60px; background: #4c1d95; color: white; border-radius: 12px; align-items: center; justify-content: center; font-size: 24px; font-weight: bold;">
+                            🏢
+                        </div>
                     </div>
                     <div class="firm-info-compact">
                         <div class="firm-name-compact">${escapeHtml(firm.name)}</div>
@@ -258,6 +311,298 @@ async function loadPEFirms() {
     } catch (error) {
         console.error('Error loading PE firms:', error);
     }
+}
+
+// Firm mapping for news articles (PE firms + VCs)
+const firmMapping = {
+    // Nordic PE Firms
+    'nordic capital': 'Nordic Capital',
+    'eqt': 'EQT',
+    'triton': 'Triton Partners',
+    'altor': 'Altor',
+    'summa': 'Summa Equity',
+    'litorina': 'Litorina',
+    'ratos': 'Ratos',
+    'adelis': 'Adelis Equity',
+    'verdan': 'Verdane',
+    'ik partners': 'IK Partners',
+    'bure': 'Bure Equity',
+    'accent': 'Accent Equity',
+    
+    // VCs and AI Investors
+    'sequoia': 'Sequoia Capital',
+    'benchmark': 'Benchmark',
+    'general catalyst': 'General Catalyst',
+    'iconiq': 'Iconiq Capital',
+    'northzone': 'Northzone',
+    'kinnevik': 'Kinnevik',
+    'balderton': 'Balderton Capital',
+    'index ventures': 'Index Ventures',
+    'accel': 'Accel',
+    'andreessen horowitz': 'Andreessen Horowitz',
+    'kleiner perkins': 'Kleiner Perkins',
+    'bessemer': 'Bessemer Venture Partners',
+    'insight partners': 'Insight Partners',
+    'tiger global': 'Tiger Global',
+    'softbank': 'SoftBank',
+    
+    // Well-known AI Startups (for logo display)
+    'lovable': 'Lovable',
+    'legora': 'Legora',
+    'tandem health': 'Tandem Health',
+    'listen labs': 'Listen Labs',
+    'filed': 'Filed',
+    'sana ai': 'Sana AI'
+};
+
+// Firm logo URLs with multiple fallbacks
+const firmLogos = {
+    'Nordic Capital': {
+        primary: 'https://logo.clearbit.com/nordiccapital.com',
+        fallback: 'https://ui-avatars.com/api/?name=Nordic+Capital&background=4c1d95&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'EQT': {
+        primary: 'https://logo.clearbit.com/eqtgroup.com',
+        fallback: 'https://ui-avatars.com/api/?name=EQT&background=7c3aed&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Triton Partners': {
+        primary: 'https://logo.clearbit.com/triton-partners.com',
+        fallback: 'https://ui-avatars.com/api/?name=Triton&background=059669&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Altor': {
+        primary: 'https://logo.clearbit.com/altor.com',
+        fallback: 'https://ui-avatars.com/api/?name=Altor&background=dc2626&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Summa Equity': {
+        primary: 'https://logo.clearbit.com/summaequity.com',
+        fallback: 'https://ui-avatars.com/api/?name=Summa&background=0891b2&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Litorina': {
+        primary: 'https://logo.clearbit.com/litorina.com',
+        fallback: 'https://ui-avatars.com/api/?name=Litorina&background=7c2d12&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Ratos': {
+        primary: 'https://logo.clearbit.com/ratos.se',
+        fallback: 'https://ui-avatars.com/api/?name=Ratos&background=1f2937&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Adelis Equity': {
+        primary: 'https://logo.clearbit.com/adelisequity.com',
+        fallback: 'https://ui-avatars.com/api/?name=Adelis&background=be185d&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Verdane': {
+        primary: 'https://logo.clearbit.com/verdanecapital.com',
+        fallback: 'https://ui-avatars.com/api/?name=Verdane&background=059669&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'IK Partners': {
+        primary: 'https://logo.clearbit.com/ikpartners.com',
+        fallback: 'https://ui-avatars.com/api/?name=IK+Partners&background=7c3aed&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Bure Equity': {
+        primary: 'https://logo.clearbit.com/bure.se',
+        fallback: 'https://ui-avatars.com/api/?name=Bure&background=1f2937&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Accent Equity': {
+        primary: 'https://logo.clearbit.com/accentequity.com',
+        fallback: 'https://ui-avatars.com/api/?name=Accent&background=dc2626&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    
+    // VCs and AI Investors
+    'Sequoia Capital': {
+        primary: 'https://logo.clearbit.com/sequoiacap.com',
+        fallback: 'https://ui-avatars.com/api/?name=Sequoia&background=1f2937&color=ffffff&size=64',
+        icon: '🚀'
+    },
+    'Benchmark': {
+        primary: 'https://logo.clearbit.com/benchmark.com',
+        fallback: 'https://ui-avatars.com/api/?name=Benchmark&background=7c3aed&color=ffffff&size=64',
+        icon: '🚀'
+    },
+    'General Catalyst': {
+        primary: 'https://logo.clearbit.com/generalcatalyst.com',
+        fallback: 'https://ui-avatars.com/api/?name=General+Catalyst&background=059669&color=ffffff&size=64',
+        icon: '🚀'
+    },
+    'Iconiq Capital': {
+        primary: 'https://logo.clearbit.com/iconiqcapital.com',
+        fallback: 'https://ui-avatars.com/api/?name=Iconiq&background=be185d&color=ffffff&size=64',
+        icon: '🚀'
+    },
+    'Northzone': {
+        primary: 'https://logo.clearbit.com/northzone.com',
+        fallback: 'https://ui-avatars.com/api/?name=Northzone&background=0891b2&color=ffffff&size=64',
+        icon: '🚀'
+    },
+    'Kinnevik': {
+        primary: 'https://logo.clearbit.com/kinnevik.com',
+        fallback: 'https://ui-avatars.com/api/?name=Kinnevik&background=1f2937&color=ffffff&size=64',
+        icon: '🚀'
+    },
+    'Balderton Capital': {
+        primary: 'https://logo.clearbit.com/balderton.com',
+        fallback: 'https://ui-avatars.com/api/?name=Balderton&background=7c3aed&color=ffffff&size=64',
+        icon: '🚀'
+    },
+    'Index Ventures': {
+        primary: 'https://logo.clearbit.com/indexventures.com',
+        fallback: 'https://ui-avatars.com/api/?name=Index+Ventures&background=dc2626&color=ffffff&size=64',
+        icon: '🚀'
+    },
+    'Accel': {
+        primary: 'https://logo.clearbit.com/accel.com',
+        fallback: 'https://ui-avatars.com/api/?name=Accel&background=059669&color=ffffff&size=64',
+        icon: '🚀'
+    },
+    'Andreessen Horowitz': {
+        primary: 'https://logo.clearbit.com/a16z.com',
+        fallback: 'https://ui-avatars.com/api/?name=a16z&background=1f2937&color=ffffff&size=64',
+        icon: '🚀'
+    },
+    'Kleiner Perkins': {
+        primary: 'https://logo.clearbit.com/kleinerperkins.com',
+        fallback: 'https://ui-avatars.com/api/?name=Kleiner+Perkins&background=7c3aed&color=ffffff&size=64',
+        icon: '🚀'
+    },
+    'Bessemer Venture Partners': {
+        primary: 'https://logo.clearbit.com/bvp.com',
+        fallback: 'https://ui-avatars.com/api/?name=Bessemer&background=0891b2&color=ffffff&size=64',
+        icon: '🚀'
+    },
+    'Insight Partners': {
+        primary: 'https://logo.clearbit.com/insightpartners.com',
+        fallback: 'https://ui-avatars.com/api/?name=Insight+Partners&background=be185d&color=ffffff&size=64',
+        icon: '🚀'
+    },
+    'Tiger Global': {
+        primary: 'https://logo.clearbit.com/tigerglobal.com',
+        fallback: 'https://ui-avatars.com/api/?name=Tiger+Global&background=dc2626&color=ffffff&size=64',
+        icon: '🚀'
+    },
+    'SoftBank': {
+        primary: 'https://logo.clearbit.com/softbank.com',
+        fallback: 'https://ui-avatars.com/api/?name=SoftBank&background=1f2937&color=ffffff&size=64',
+        icon: '🚀'
+    },
+    
+    // AI Startups
+    'Lovable': {
+        primary: 'https://logo.clearbit.com/lovable.dev',
+        fallback: 'https://ui-avatars.com/api/?name=Lovable&background=7c3aed&color=ffffff&size=64',
+        icon: '🤖'
+    },
+    'Legora': {
+        primary: 'https://logo.clearbit.com/legora.com',
+        fallback: 'https://ui-avatars.com/api/?name=Legora&background=059669&color=ffffff&size=64',
+        icon: '🤖'
+    },
+    'Tandem Health': {
+        primary: 'https://logo.clearbit.com/tandemhealth.com',
+        fallback: 'https://ui-avatars.com/api/?name=Tandem+Health&background=dc2626&color=ffffff&size=64',
+        icon: '🤖'
+    },
+    'Listen Labs': {
+        primary: 'https://logo.clearbit.com/listenlabs.com',
+        fallback: 'https://ui-avatars.com/api/?name=Listen+Labs&background=0891b2&color=ffffff&size=64',
+        icon: '🤖'
+    },
+    'Filed': {
+        primary: 'https://logo.clearbit.com/filed.com',
+        fallback: 'https://ui-avatars.com/api/?name=Filed&background=be185d&color=ffffff&size=64',
+        icon: '🤖'
+    },
+    'Sana AI': {
+        primary: 'https://logo.clearbit.com/sana.ai',
+        fallback: 'https://ui-avatars.com/api/?name=Sana+AI&background=1f2937&color=ffffff&size=64',
+        icon: '🤖'
+    }
+};
+
+function getFirmFromTitle(title) {
+    if (!title) return null;
+    
+    const titleLower = title.toLowerCase();
+    
+    // Check for exact matches first (more specific)
+    for (let key in firmMapping) {
+        if (titleLower.includes(key)) {
+            return firmMapping[key];
+        }
+    }
+    
+    // Check for partial matches and variations
+    const variations = {
+        'eqt ventures': 'EQT',
+        'eqt partners': 'EQT',
+        'nordic capital fund': 'Nordic Capital',
+        'triton partners': 'Triton Partners',
+        'altor fund': 'Altor',
+        'summa equity fund': 'Summa Equity',
+        'litorina fund': 'Litorina',
+        'ratos group': 'Ratos',
+        'adelis equity partners': 'Adelis Equity',
+        'verdan capital': 'Verdane',
+        'ik partners fund': 'IK Partners',
+        'bure equity': 'Bure Equity',
+        'accent equity fund': 'Accent Equity',
+        'sequoia capital': 'Sequoia Capital',
+        'benchmark capital': 'Benchmark',
+        'general catalyst partners': 'General Catalyst',
+        'iconiq capital': 'Iconiq Capital',
+        'northzone ventures': 'Northzone',
+        'kinnevik ab': 'Kinnevik',
+        'balderton capital': 'Balderton Capital',
+        'index ventures': 'Index Ventures',
+        'accel partners': 'Accel',
+        'andreessen horowitz': 'Andreessen Horowitz',
+        'kleiner perkins': 'Kleiner Perkins',
+        'bessemer venture partners': 'Bessemer Venture Partners',
+        'insight partners': 'Insight Partners',
+        'tiger global management': 'Tiger Global',
+        'softbank group': 'SoftBank'
+    };
+    
+    for (let key in variations) {
+        if (titleLower.includes(key)) {
+            return variations[key];
+        }
+    }
+    
+    return null;
+}
+
+function getFirmLogo(firmName) {
+    if (!firmName || !firmLogos[firmName]) return null;
+    return firmLogos[firmName];
+}
+
+function createRobustLogoHTML(firmName, size = '24px') {
+    if (!firmName || !firmLogos[firmName]) return '';
+    
+    const logoData = firmLogos[firmName];
+    const escapedName = escapeHtml(firmName);
+    
+    return `
+        <div class="news-firm-logo" style="position: relative;">
+            <img src="${logoData.primary}" 
+                 alt="${escapedName}" 
+                 style="width: ${size}; height: ${size}; border-radius: 4px; margin-right: 8px;"
+                 onerror="this.onerror=null; this.src='${logoData.fallback}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';}">
+            <div class="logo-fallback" style="display: none; width: ${size}; height: ${size}; background: #4c1d95; color: white; border-radius: 4px; margin-right: 8px; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">
+                ${logoData.icon}
+            </div>
+        </div>
+    `;
 }
 
 function getSourceIcon(source) {

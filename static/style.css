@@ -529,15 +529,55 @@ body {
     -webkit-overflow-scrolling: touch;
     width: 100%;
     display: block;
+    position: relative;
+}
+
+
+.firm-section .firm-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    width: 100%;
+    min-width: max-content;
+    position: relative;
+    overflow: hidden;
+}
+
+.firm-section .firm-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    z-index: -1;
+    width: 100%;
+    min-width: 2500px;
 }
 
 .firm-header {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     color: white;
     padding: 0.65rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-width: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.firm-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    z-index: -1;
 }
 
 .firm-header-link {
@@ -601,11 +641,13 @@ body {
 }
 
 .portfolio-table thead {
-    background-color: var(--primary-color);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     color: white;
 }
 
 .portfolio-table th {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: white;
     padding: 0.35rem 0.45rem;
     text-align: left;
     font-weight: 600;

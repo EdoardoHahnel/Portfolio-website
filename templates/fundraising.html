@@ -145,61 +145,6 @@
 {% endblock %}
 
 {% block content %}
-<div class="page-header">
-    <h1 class="page-title">Nordic PE Fundraising Tracker</h1>
-    <p class="page-subtitle">Track active and completed fundraising across Nordic private equity firms</p>
-</div>
-
-<!-- Fundraising Summary Cards -->
-<div class="dashboard-grid">
-    <div class="stat-card">
-        <div class="stat-card-header">
-            <div>
-                <div class="stat-card-value" id="totalRaised">€280.5B</div>
-                <div class="stat-card-label">Total Capital Raised</div>
-            </div>
-            <div class="stat-card-icon blue">
-                <i class="fas fa-piggy-bank"></i>
-            </div>
-        </div>
-    </div>
-    
-    <div class="stat-card">
-        <div class="stat-card-header">
-            <div>
-                <div class="stat-card-value" id="activeFunds">19</div>
-                <div class="stat-card-label">Funds in Market</div>
-            </div>
-            <div class="stat-card-icon purple">
-                <i class="fas fa-chart-line"></i>
-            </div>
-        </div>
-    </div>
-    
-    <div class="stat-card">
-        <div class="stat-card-header">
-            <div>
-                <div class="stat-card-value" id="recentCloses">22</div>
-                <div class="stat-card-label">Recent Closes (2023-25)</div>
-            </div>
-            <div class="stat-card-icon purple">
-                <i class="fas fa-check-circle"></i>
-            </div>
-        </div>
-    </div>
-    
-    <div class="stat-card">
-        <div class="stat-card-header">
-            <div>
-                <div class="stat-card-value" id="avgFundSize">€3.0B</div>
-                <div class="stat-card-label">Avg Fund Size</div>
-            </div>
-            <div class="stat-card-icon orange">
-                <i class="fas fa-calculator"></i>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- Fundraising Analytics Tabs -->
 <div class="content-card" style="margin-bottom: 1.5rem;">
@@ -207,12 +152,19 @@
         <h2 class="content-card-title">Fundraising Analytics</h2>
     </div>
     <div class="content-card-body">
+        <!-- Nordic Funds Raised Chart -->
+        <div class="chart-card">
+            <div class="chart-title">
+                <i class="fas fa-chart-bar"></i>
+                Nordic Funds Raised by Year
+            </div>
+            <div class="chart-subtitle">2020-2025: €280.5B raised across 93 funds</div>
+            <canvas id="nordicFundsChart" style="max-height: 600px; width: 100%;"></canvas>
+        </div>
+        
         <!-- Analytics Tabs -->
         <div class="fundraising-tabs">
-            <button class="tab-button active" data-tab="nordic">
-                <i class="fas fa-chart-pie"></i> Nordic Overview
-            </button>
-            <button class="tab-button" data-tab="european-funds">
+            <button class="tab-button active" data-tab="european-funds">
                 <i class="fas fa-euro-sign"></i> European Funds Raised
             </button>
             <button class="tab-button" data-tab="european-cum">
@@ -223,59 +175,8 @@
             </button>
         </div>
         
-        <!-- Nordic Overview Tab -->
-        <div id="tab-nordic" class="tab-content active">
-            <!-- Top Row: Two Pie Charts -->
-            <div class="chart-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.2rem; margin-bottom: 0.2rem;">
-                <!-- Strategy Distribution -->
-                <div class="chart-card" style="background: white; padding: 0.2rem; border-radius: 3px; box-shadow: 0 1px 2px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
-                    <h3 style="font-size: 0.55rem; font-weight: 700; margin: 0 0 0.05rem 0; color: #1a1a1a; display: flex; align-items: center; gap: 0.15rem;">
-                        <i class="fas fa-chart-pie" style="color: #1e40af;"></i>
-                        Strategy Focus
-                    </h3>
-                    <p style="margin: 0 0 0.1rem 0; color: #666; font-size: 0.45rem;">Distribution of funds by investment strategy</p>
-                    <canvas id="strategyChart" style="max-height: 250px; width: 100%;"></canvas>
-                </div>
-                
-                <!-- Geography Distribution -->
-                <div class="chart-card" style="background: white; padding: 0.2rem; border-radius: 3px; box-shadow: 0 1px 2px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
-                    <h3 style="font-size: 0.55rem; font-weight: 700; margin: 0 0 0.05rem 0; color: #1a1a1a; display: flex; align-items: center; gap: 0.15rem;">
-                        <i class="fas fa-globe-europe" style="color: #1e40af;"></i>
-                        Geographic Focus
-                    </h3>
-                    <p style="margin: 0 0 0.1rem 0; color: #666; font-size: 0.45rem;">Regional distribution of fund investments</p>
-                    <canvas id="geographyChart" style="max-height: 250px; width: 100%;"></canvas>
-                </div>
-            </div>
-            
-            <!-- Bottom Row: Two Stacked Bar Charts -->
-            <div class="chart-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.2rem; margin-bottom: 0.2rem;">
-                <!-- Nordic Funds Raised -->
-                <div class="chart-card" style="background: white; padding: 0.2rem; border-radius: 3px; box-shadow: 0 1px 2px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
-                    <h3 style="font-size: 0.55rem; font-weight: 700; margin: 0 0 0.05rem 0; color: #1a1a1a; display: flex; align-items: center; gap: 0.15rem;">
-                        <i class="fas fa-chart-bar" style="color: #1e40af;"></i>
-                        Nordic Funds Raised by Year
-                    </h3>
-                    <p style="margin: 0 0 0.1rem 0; color: #666; font-size: 0.45rem;">
-                        2020-2025: €280.5B raised across 93 funds
-                    </p>
-                    <canvas id="nordicFundsChart" style="max-height: 250px; width: 100%;"></canvas>
-                </div>
-                
-                <!-- Vintage Year Distribution -->
-                <div class="chart-card" style="background: white; padding: 0.2rem; border-radius: 3px; box-shadow: 0 1px 2px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
-                    <h3 style="font-size: 0.55rem; font-weight: 700; margin: 0 0 0.05rem 0; color: #1a1a1a; display: flex; align-items: center; gap: 0.15rem;">
-                        <i class="fas fa-calendar-alt" style="color: #1e40af;"></i>
-                        Vintage Year Distribution
-                    </h3>
-                    <p style="margin: 0 0 0.1rem 0; color: #666; font-size: 0.45rem;">Number of funds by vintage year</p>
-                    <canvas id="vintageChart" style="max-height: 250px; width: 100%;"></canvas>
-                </div>
-            </div>
-        </div>
-        
         <!-- European Funds Raised Tab -->
-        <div id="tab-european-funds" class="tab-content">
+        <div id="tab-european-funds" class="tab-content active">
             <div class="chart-card">
                 <div class="chart-title">
                     <i class="fas fa-euro-sign"></i>

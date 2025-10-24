@@ -8,11 +8,11 @@
 
 {% block content %}
 <div class="page-header">
-    <div style="display: flex; align-items: center; gap: 12px;">
-        <h1 class="page-title" style="margin: 0; font-size: 1.4rem;">Insights Dashboard</h1>
-        <img src="{{ url_for('static', filename='Port.png') }}" alt="Portföljbolagen" style="height: 24px; width: auto; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+    <div style="display: flex; align-items: center; gap: 16px;">
+        <h1 class="page-title" style="margin: 0; font-size: 2.5rem; font-weight: 800;">Insights Dashboard</h1>
+        <img src="{{ url_for('static', filename='Port.png') }}" alt="Portföljbolagen" style="height: 40px; width: auto; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
     </div>
-    <p class="page-subtitle" style="font-size: 0.9rem; margin-top: 0.3rem;">Real-time intelligence on Nordic private equity, deals, fundraising, and AI</p>
+    <p class="page-subtitle" style="font-size: 0.9rem; margin-top: 0.5rem; font-weight: 500;">Real-time intelligence on Nordic private equity, deals, fundraising, and AI</p>
 </div>
 
 <!-- Video Hero Section -->
@@ -25,6 +25,14 @@
     
     <!-- Animated particles background -->
     <div class="particles-bg">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
         <div class="particle"></div>
         <div class="particle"></div>
         <div class="particle"></div>
@@ -62,22 +70,6 @@
     </div>
 </div>
 
-<!-- Powered by Portföljbolagen Badge -->
-<div style="text-align: center; margin: 0.75rem 0; padding: 0.5rem; background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); border-radius: 8px; border: 1px solid #e5e7eb;">
-    <div style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; margin-bottom: 0.25rem;">
-        <img src="{{ url_for('static', filename='Portföljbolagen2.png') }}" alt="Portföljbolagen" style="height: 20px; width: auto;">
-        <div style="text-align: left;">
-            <div style="font-size: 0.45rem; font-weight: 700; color: #4c1d95; letter-spacing: 0.3px;">POWERED BY</div>
-            <div style="font-size: 0.6rem; font-weight: 800; color: #1a1a1a; letter-spacing: -0.2px;">Portföljbolagen</div>
-        </div>
-    </div>
-    <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 0.3rem;">
-        <div style="text-align: center;">
-            <div style="font-size: 0.4rem; color: #6b7280; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px;">Research User</div>
-            <div style="font-size: 0.5rem; color: #1a1a1a; font-weight: 700; margin-top: 0.05rem;">Analyst</div>
-        </div>
-    </div>
-</div>
 
 <!-- Dashboard Stats Cards -->
 <div class="dashboard-grid scroll-reveal">
@@ -197,6 +189,7 @@
     </div>
 </div>
 
+<script src="{{ url_for('static', filename='logo-utils.js') }}"></script>
 <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
 
 <script>

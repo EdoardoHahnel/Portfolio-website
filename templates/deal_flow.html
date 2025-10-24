@@ -65,125 +65,246 @@
     
     .filters-bar {
         background: white;
-        padding: 20px;
-        border-radius: 12px;
-        margin-bottom: 30px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        padding: 8px 12px;
+        border-radius: 6px;
+        margin-bottom: 16px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.04);
         display: flex;
-        gap: 15px;
+        gap: 6px;
         flex-wrap: wrap;
         align-items: center;
+        border: 1px solid #f0f0f0;
     }
     
     .filter-btn {
-        padding: 2px 6px;
-        border: 1px solid #e0e0e0;
+        padding: 3px 6px;
+        border: 1px solid #e5e5e5;
         background: white;
-        border-radius: 10px;
+        border-radius: 4px;
         cursor: pointer;
-        font-size: 0.45rem;
+        font-size: 0.65rem;
+        font-weight: 500;
         transition: all 0.2s;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        gap: 3px;
     }
     
     .filter-btn:hover {
         border-color: #4c1d95;
-        background: #f7f9ff;
+        background: #f8f9ff;
+        color: #4c1d95;
     }
     
     .filter-btn.active {
         background: #4c1d95;
         color: white;
         border-color: #4c1d95;
+        font-weight: 600;
+    }
+    
+    .filter-btn i {
+        font-size: 0.55rem;
+    }
+    
+    
+    .filter-dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .filter-dropdown-btn {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 12px;
+        background: #f8fafc;
+        color: #4a5568;
+        border: 1px solid #e2e8f0;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 0.65rem;
+        font-weight: 600;
+        transition: all 0.2s;
+        min-width: 120px;
+        justify-content: space-between;
+    }
+    
+    .filter-dropdown-btn:hover {
+        border-color: #667eea;
+        background: #eff6ff;
+        color: #667eea;
+    }
+    
+    .filter-dropdown-btn i {
+        font-size: 0.7rem;
+    }
+    
+    .filter-dropdown-btn #filterDropdownChevron {
+        transition: transform 0.2s;
+        font-size: 0.6rem;
+    }
+    
+    .filter-dropdown-btn.open #filterDropdownChevron {
+        transform: rotate(180deg);
+    }
+    
+    .filter-dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        border: 2px solid #e5e7eb;
+        border-top: none;
+        border-radius: 0 0 8px 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        display: none;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+    
+    .filter-dropdown-menu.show {
+        display: block;
+        animation: slideDown 0.2s ease-out;
+    }
+    
+    .filter-dropdown-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 16px;
+        cursor: pointer;
+        font-size: 0.8rem;
+        transition: all 0.2s;
+        border-bottom: 1px solid #f3f4f6;
+    }
+    
+    .filter-dropdown-item:last-child {
+        border-bottom: none;
+    }
+    
+    .filter-dropdown-item:hover {
+        background: #f8fafc;
+        color: #2563eb;
+    }
+    
+    .filter-dropdown-item.active {
+        background: #eff6ff;
+        color: #2563eb;
+        font-weight: 600;
+    }
+    
+    .filter-dropdown-item i {
+        font-size: 0.7rem;
+        width: 16px;
+        text-align: center;
+    }
+    
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-5px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
     
     .deal-card {
         background: white;
-        border-radius: 6px;
-        padding: 0.4rem;
-        margin-bottom: 0.4rem;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-        border: 1px solid #e8e8e8;
-        border-left: 2px solid #667eea;
-        transition: all 0.3s;
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        border: 1px solid #f0f0f0;
+        transition: all 0.2s;
         position: relative;
-        overflow: hidden;
-    }
-    
-    .deal-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 4px;
-        height: 100%;
-        background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
     }
     
     .deal-card:hover {
-        box-shadow: 0 8px 28px rgba(102, 126, 234, 0.15);
-        transform: translateY(-3px);
-        border-color: #667eea;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        transform: translateY(-2px);
+        border-color: #4c1d95;
     }
     
     .deal-card-header {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        margin-bottom: 0.3rem;
+        margin-bottom: 12px;
     }
     
     .deal-title {
-        font-size: 0.8rem;
+        font-size: 1rem;
         font-weight: 700;
         color: #1a1a1a;
-        margin-bottom: 0.2rem;
-        display: flex;
-        align-items: center;
-        gap: 0.25rem;
+        margin-bottom: 8px;
+        line-height: 1.3;
     }
     
     .deal-year-badge {
         display: inline-flex;
         align-items: center;
-        gap: 0.2rem;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        gap: 4px;
+        background: #4c1d95;
         color: white;
-        padding: 0.15rem 0.3rem;
-        border-radius: 6px;
-        font-size: 0.5rem;
-        font-weight: 700;
-        letter-spacing: 0.3px;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.7rem;
+        font-weight: 600;
     }
     
     .deal-parties {
-        font-size: 0.7rem;
-        color: #555;
-        margin-bottom: 0.3rem;
-        display: flex;
-        align-items: center;
-        gap: 0.25rem;
-        flex-wrap: wrap;
+        font-size: 0.85rem;
+        color: #666;
+        margin-bottom: 12px;
+        line-height: 1.4;
     }
     
-    .party-item {
+    .deal-meta {
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        gap: 6px;
-    }
-    
-    .party-arrow {
-        color: #667eea;
-        font-size: 12px;
-        font-weight: 700;
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid #f0f0f0;
     }
     
     .deal-status {
-        padding: 0.2rem 0.4rem;
-        border-radius: 8px;
-        font-size: 0.55rem;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.7rem;
         font-weight: 600;
         text-align: center;
-        min-width: 40px;
+    }
+    
+    .deal-value {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #4c1d95;
+    }
+    
+    .sector-tag, .deal-type-tag {
+        background: #f8f9fa;
+        color: #666;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 0.7rem;
+        font-weight: 500;
+    }
+    
+    .sector-tag {
+        background: #e8f5e9;
+        color: #2e7d32;
+    }
+    
+    .deal-type-tag {
+        background: #e3f2fd;
+        color: #1976d2;
     }
     
     .status-completed {
@@ -265,84 +386,72 @@
 {% endblock %}
 
 {% block content %}
-<!-- Deal Flow Header -->
-<div class="deal-flow-header">
-    <div class="deal-title-section">
-        <h1><i class="fas fa-chart-network"></i> Deal Flow Tracker</h1>
-    </div>
-    
-    <div class="deal-stats" id="dealStatsContainer">
-        <div class="deal-stat-box">
-            <div class="deal-stat-number">
-                <i class="fas fa-handshake" style="font-size: 12px; opacity: 0.9;"></i>
-                <span id="totalDeals">-</span>
-            </div>
-            <div class="deal-stat-label">Total Deals</div>
-        </div>
-        <div class="deal-stat-box">
-            <div class="deal-stat-number">
-                <i class="fas fa-check-circle" style="font-size: 12px; opacity: 0.9;"></i>
-                <span id="completedDeals">-</span>
-            </div>
-            <div class="deal-stat-label">Completed</div>
-        </div>
-        <div class="deal-stat-box">
-            <div class="deal-stat-number">
-                <i class="fas fa-clock" style="font-size: 12px; opacity: 0.9;"></i>
-                <span id="ongoingDeals">-</span>
-            </div>
-            <div class="deal-stat-label">Ongoing</div>
-        </div>
-        <div class="deal-stat-box">
-            <div class="deal-stat-number">
-                <i class="fas fa-robot" style="font-size: 12px; opacity: 0.9;"></i>
-                <span id="aiDeals">-</span>
-            </div>
-            <div class="deal-stat-label">AI-Related</div>
-        </div>
-        <div class="deal-stat-box">
-            <div class="deal-stat-number" id="totalValue">-</div>
-            <div class="deal-stat-label">Total Value</div>
-        </div>
-        <div class="deal-stat-box">
-            <div class="deal-stat-number">
-                <i class="fas fa-star" style="font-size: 12px; opacity: 0.9;"></i>
-                <span id="nordic2025">-</span>
-            </div>
-            <div class="deal-stat-label">Nordic 2025</div>
-        </div>
-    </div>
-</div>
 
-<!-- Filters -->
-<div class="filters-bar">
-    <span style="font-weight: 700; color: #333; margin-right: 10px;">Filter:</span>
-    <button class="filter-btn active" data-filter="all"><i class="fas fa-list"></i> All Deals</button>
-    <button class="filter-btn" data-filter="2025"><i class="fas fa-calendar-check"></i> 2025 Deals</button>
-    <button class="filter-btn" data-filter="nordic"><i class="fas fa-flag"></i> Nordic Only</button>
-    <button class="filter-btn" data-filter="pe"><i class="fas fa-briefcase"></i> Private Equity</button>
-    <button class="filter-btn" data-filter="ai"><i class="fas fa-robot"></i> AI Deals</button>
-    <button class="filter-btn" data-filter="funding"><i class="fas fa-rocket"></i> Funding Rounds</button>
-    <button class="filter-btn" data-filter="megadeals"><i class="fas fa-gem"></i> Mega Deals ($5B+)</button>
-    <button class="filter-btn" data-filter="completed"><i class="fas fa-check-circle"></i> Completed</button>
-    <button class="filter-btn" data-filter="ongoing"><i class="fas fa-clock"></i> Ongoing</button>
-</div>
 
 <!-- Analytics Tabs -->
 <div class="analytics-section" style="background: white; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-    <div class="analytics-tabs" style="display: flex; border-bottom: 2px solid #f0f0f0;">
-        <button class="analytics-tab active" data-tab="deals" style="padding: 12px 18px; border: none; background: none; cursor: pointer; font-weight: 600; color: #667eea; border-bottom: 3px solid #667eea; font-size: 0.65rem;">
-            <i class="fas fa-list"></i> Deal Flow
-        </button>
-        <button class="analytics-tab" data-tab="market-trends" style="padding: 12px 18px; border: none; background: none; cursor: pointer; font-weight: 600; color: #666; border-bottom: 3px solid transparent; font-size: 0.65rem;">
-            <i class="fas fa-chart-line"></i> Market Trends
-        </button>
-        <button class="analytics-tab" data-tab="country-analysis" style="padding: 12px 18px; border: none; background: none; cursor: pointer; font-weight: 600; color: #666; border-bottom: 3px solid transparent; font-size: 0.65rem;">
-            <i class="fas fa-flag"></i> Country Analysis
-        </button>
-        <button class="analytics-tab" data-tab="sector-analysis" style="padding: 12px 18px; border: none; background: none; cursor: pointer; font-weight: 600; color: #666; border-bottom: 3px solid transparent; font-size: 0.65rem;">
-            <i class="fas fa-industry"></i> Sector Analysis
-        </button>
+    <div class="analytics-tabs" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #f0f0f0;">
+        <div style="display: flex;">
+            <button class="analytics-tab active" data-tab="deals" style="padding: 12px 18px; border: none; background: none; cursor: pointer; font-weight: 600; color: #667eea; border-bottom: 3px solid #667eea; font-size: 0.65rem;">
+                <i class="fas fa-list"></i> Deal Flow
+            </button>
+            <button class="analytics-tab" data-tab="market-trends" style="padding: 12px 18px; border: none; background: none; cursor: pointer; font-weight: 600; color: #666; border-bottom: 3px solid transparent; font-size: 0.65rem;">
+                <i class="fas fa-chart-line"></i> Market Trends
+            </button>
+            <button class="analytics-tab" data-tab="country-analysis" style="padding: 12px 18px; border: none; background: none; cursor: pointer; font-weight: 600; color: #666; border-bottom: 3px solid transparent; font-size: 0.65rem;">
+                <i class="fas fa-flag"></i> Country Analysis
+            </button>
+            <button class="analytics-tab" data-tab="sector-analysis" style="padding: 12px 18px; border: none; background: none; cursor: pointer; font-weight: 600; color: #666; border-bottom: 3px solid transparent; font-size: 0.65rem;">
+                <i class="fas fa-industry"></i> Sector Analysis
+            </button>
+        </div>
+        
+        <!-- Filter Dropdown -->
+        <div class="filter-dropdown">
+            <button class="filter-dropdown-btn" id="filterDropdownBtn">
+                <i class="fas fa-filter"></i>
+                <span id="filterDropdownText">All Deals</span>
+                <i class="fas fa-chevron-down" id="filterDropdownChevron"></i>
+            </button>
+            <div class="filter-dropdown-menu" id="filterDropdownMenu">
+                <div class="filter-dropdown-item active" data-filter="all">
+                    <i class="fas fa-list"></i>
+                    <span>All Deals</span>
+                </div>
+                <div class="filter-dropdown-item" data-filter="2025">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>2025 Deals</span>
+                </div>
+                <div class="filter-dropdown-item" data-filter="nordic">
+                    <i class="fas fa-flag"></i>
+                    <span>Nordic Only</span>
+                </div>
+                <div class="filter-dropdown-item" data-filter="pe">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Private Equity</span>
+                </div>
+                <div class="filter-dropdown-item" data-filter="ai">
+                    <i class="fas fa-robot"></i>
+                    <span>AI Deals</span>
+                </div>
+                <div class="filter-dropdown-item" data-filter="funding">
+                    <i class="fas fa-rocket"></i>
+                    <span>Funding Rounds</span>
+                </div>
+                <div class="filter-dropdown-item" data-filter="megadeals">
+                    <i class="fas fa-gem"></i>
+                    <span>Mega Deals ($5B+)</span>
+                </div>
+                <div class="filter-dropdown-item" data-filter="completed">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Completed</span>
+                </div>
+                <div class="filter-dropdown-item" data-filter="ongoing">
+                    <i class="fas fa-clock"></i>
+                    <span>Ongoing</span>
+                </div>
+            </div>
+        </div>
     </div>
     
     <!-- Deal Flow Tab Content -->
@@ -356,132 +465,101 @@
     </div>
     
     <!-- Market Trends Tab Content -->
-    <div id="tab-market-trends" class="analytics-content" style="display: none; padding: 30px;">
+    <div id="tab-market-trends" class="analytics-content" style="display: none; padding: 30px; background: #f8fafc;">
         <div style="margin-bottom: 30px;">
-            <h3 style="margin: 0 0 10px 0; color: #1a1a1a; font-size: 0.65rem; font-weight: 700;">Buyout and VC Volume</h3>
-            <p style="color: #666; margin: 0; font-size: 0.5rem;">2022 Q2 - 2025 Q2</p>
+            <h3 style="margin: 0 0 10px 0; color: #1e293b; font-size: 1.1rem; font-weight: 700;">Market Trends</h3>
+            <p style="color: #64748b; margin: 0; font-size: 0.8rem; font-weight: 500;">Real-time market intelligence & deal flow analytics</p>
         </div>
         
-        <div style="display: grid; grid-template-columns: 1fr; gap: 30px; margin-bottom: 30px;">
-            <div class="chart-card" style="background: white; padding: 25px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
-                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 0.55rem; font-weight: 700; display: flex; align-items: center; gap: 8px;">
-                    <i class="fas fa-chart-bar" style="color: #4c1d95; font-size: 0.5rem;"></i>
-                    Buyout Volume
+        <div style="display: grid; grid-template-columns: 1fr; gap: 30px;">
+            <div class="chart-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
+                <h4 style="margin: 0 0 25px 0; color: #1e293b; font-size: 1rem; font-weight: 700;">
+                    Buyout Volume Analysis
                 </h4>
-                <p style="margin: 0 0 20px 0; color: #059669; font-size: 0.45rem; font-weight: 600;">
-                    Q2'25: 382 deals | LTM: 1,465 deals | +10% QoQ Growth
-                </p>
-                <canvas id="buyoutChart" style="height: 500px; width: 100%;"></canvas>
+                <canvas id="buyoutChart" style="height: 800px; width: 100%;"></canvas>
             </div>
-            <div class="chart-card" style="background: white; padding: 25px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
-                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 0.55rem; font-weight: 700; display: flex; align-items: center; gap: 8px;">
-                    <i class="fas fa-chart-line" style="color: #059669; font-size: 0.5rem;"></i>
-                    VC Volume
+            
+            <div class="chart-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
+                <h4 style="margin: 0 0 25px 0; color: #1e293b; font-size: 1rem; font-weight: 700;">
+                    VC Volume Analysis
                 </h4>
-                <p style="margin: 0 0 20px 0; color: #EF4444; font-size: 0.45rem; font-weight: 600;">
-                    Q2'25: 325 deals | LTM: 1,445 deals | -16% QoQ Decline
-                </p>
-                <canvas id="vcChart" style="height: 500px; width: 100%;"></canvas>
+                <canvas id="vcChart" style="height: 800px; width: 100%;"></canvas>
             </div>
         </div>
     </div>
     
     <!-- Country Analysis Tab Content -->
-    <div id="tab-country-analysis" class="analytics-content" style="display: none; padding: 30px;">
+    <div id="tab-country-analysis" class="analytics-content" style="display: none; padding: 30px; background: #f8fafc;">
         <div style="margin-bottom: 30px;">
-            <h3 style="margin: 0 0 10px 0; color: #1a1a1a; font-size: 0.65rem; font-weight: 700;">Buyout Volume by Country</h3>
-            <p style="color: #666; margin: 0; font-size: 0.5rem;">Q2 2025 vs Q1 2025 performance across Nordic markets</p>
+            <h3 style="margin: 0 0 10px 0; color: #1e293b; font-size: 1.1rem; font-weight: 700;">Country Analysis</h3>
+            <p style="color: #64748b; margin: 0; font-size: 0.8rem; font-weight: 500;">Nordic market performance across key regions</p>
         </div>
         
-        <div style="display: grid; grid-template-columns: 1fr; gap: 30px; margin-bottom: 30px;">
-            <div class="chart-card" style="background: white; padding: 25px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
-                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 0.55rem; font-weight: 700; display: flex; align-items: center; gap: 10px;">
-                    <img src="https://flagcdn.com/w40/fi.png" width="20" height="15" alt="Finland" style="border-radius: 4px;"> Finland
+        <div style="display: grid; grid-template-columns: 1fr; gap: 30px;">
+            <div class="chart-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
+                <h4 style="margin: 0 0 25px 0; color: #1e293b; font-size: 1rem; font-weight: 700;">
+                    Finland
                 </h4>
-                <p style="margin: 0 0 20px 0; color: #059669; font-size: 0.45rem; font-weight: 600;">
-                    Q2'25: 67 deals | +20% QoQ Growth | 18% of Nordic deals
-                </p>
-                <canvas id="finlandChart" style="height: 450px; width: 100%;"></canvas>
+                <canvas id="finlandChart" style="height: 800px; width: 100%;"></canvas>
             </div>
             
-            <div class="chart-card" style="background: white; padding: 25px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
-                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 0.55rem; font-weight: 700; display: flex; align-items: center; gap: 10px;">
-                    <img src="https://flagcdn.com/w40/se.png" width="20" height="15" alt="Sweden" style="border-radius: 4px;"> Sweden
+            <div class="chart-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
+                <h4 style="margin: 0 0 25px 0; color: #1e293b; font-size: 1rem; font-weight: 700;">
+                    Sweden
                 </h4>
-                <p style="margin: 0 0 20px 0; color: #059669; font-size: 0.45rem; font-weight: 600;">
-                    Q2'25: 154 deals | +7% QoQ Growth | 40% of Nordic deals
-                </p>
-                <canvas id="swedenChart" style="height: 450px; width: 100%;"></canvas>
+                <canvas id="swedenChart" style="height: 800px; width: 100%;"></canvas>
             </div>
             
-            <div class="chart-card" style="background: white; padding: 25px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
-                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 0.55rem; font-weight: 700; display: flex; align-items: center; gap: 10px;">
-                    <img src="https://flagcdn.com/w40/no.png" width="20" height="15" alt="Norway" style="border-radius: 4px;"> Norway
+            <div class="chart-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
+                <h4 style="margin: 0 0 25px 0; color: #1e293b; font-size: 1rem; font-weight: 700;">
+                    Norway
                 </h4>
-                <p style="margin: 0 0 20px 0; color: #059669; font-size: 0.45rem; font-weight: 600;">
-                    Q2'25: 81 deals | +35% QoQ Growth | 21% of Nordic deals
-                </p>
-                <canvas id="norwayChart" style="height: 450px; width: 100%;"></canvas>
+                <canvas id="norwayChart" style="height: 800px; width: 100%;"></canvas>
             </div>
             
-            <div class="chart-card" style="background: white; padding: 25px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
-                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 0.55rem; font-weight: 700; display: flex; align-items: center; gap: 10px;">
-                    <img src="https://flagcdn.com/w40/dk.png" width="20" height="15" alt="Denmark" style="border-radius: 4px;"> Denmark
+            <div class="chart-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
+                <h4 style="margin: 0 0 25px 0; color: #1e293b; font-size: 1rem; font-weight: 700;">
+                    Denmark
                 </h4>
-                <p style="margin: 0 0 20px 0; color: #EF4444; font-size: 0.45rem; font-weight: 600;">
-                    Q2'25: 80 deals | -8% QoQ Decline | IT sector 41% of deals
-                </p>
-                <canvas id="denmarkChart" style="height: 450px; width: 100%;"></canvas>
+                <canvas id="denmarkChart" style="height: 800px; width: 100%;"></canvas>
             </div>
         </div>
     </div>
     
     <!-- Sector Analysis Tab Content -->
-    <div id="tab-sector-analysis" class="analytics-content" style="display: none; padding: 30px;">
+    <div id="tab-sector-analysis" class="analytics-content" style="display: none; padding: 30px; background: #f8fafc;">
         <div style="margin-bottom: 30px;">
-            <h3 style="margin: 0 0 10px 0; color: #1a1a1a; font-size: 0.65rem; font-weight: 700;">Buyout Volume by Sector</h3>
-            <p style="color: #666; margin: 0; font-size: 0.5rem;">Tech grew significantly (+32%), Business Services grew moderately (+8%), Consumer & Retail declined substantially (-28%)</p>
+            <h3 style="margin: 0 0 10px 0; color: #1e293b; font-size: 1.1rem; font-weight: 700;">Sector Analysis</h3>
+            <p style="color: #64748b; margin: 0; font-size: 0.8rem; font-weight: 500;">Industry performance across key sectors</p>
         </div>
         
-        <div style="display: grid; grid-template-columns: 1fr; gap: 30px; margin-bottom: 30px;">
-            <div class="chart-card" style="background: white; padding: 25px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
-                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 0.55rem; font-weight: 700; display: flex; align-items: center; gap: 10px;">
-                    <span style="font-size: 0.6rem;">🏭</span> Industrial Manufacturing
+        <div style="display: grid; grid-template-columns: 1fr; gap: 30px;">
+            <div class="chart-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
+                <h4 style="margin: 0 0 25px 0; color: #1e293b; font-size: 1rem; font-weight: 700;">
+                    Industrial Manufacturing
                 </h4>
-                <p style="margin: 0 0 20px 0; color: #6B7280; font-size: 0.45rem; font-weight: 600;">
-                    Q2'25: 54 deals | -4% QoQ | Stable near 3-year avg (60 deals)
-                </p>
-                <canvas id="industrialChart" style="height: 450px; width: 100%;"></canvas>
+                <canvas id="industrialChart" style="height: 800px; width: 100%;"></canvas>
             </div>
             
-            <div class="chart-card" style="background: white; padding: 25px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
-                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 0.55rem; font-weight: 700; display: flex; align-items: center; gap: 10px;">
-                    <span style="font-size: 0.6rem;">💻</span> Tech
+            <div class="chart-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
+                <h4 style="margin: 0 0 25px 0; color: #1e293b; font-size: 1rem; font-weight: 700;">
+                    Technology
                 </h4>
-                <p style="margin: 0 0 20px 0; color: #059669; font-size: 0.45rem; font-weight: 600;">
-                    Q2'25: 115 deals | +32% QoQ Growth | Top: Software (35 deals)
-                </p>
-                <canvas id="techChart" style="height: 450px; width: 100%;"></canvas>
+                <canvas id="techChart" style="height: 800px; width: 100%;"></canvas>
             </div>
             
-            <div class="chart-card" style="background: white; padding: 25px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
-                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 0.55rem; font-weight: 700; display: flex; align-items: center; gap: 10px;">
-                    <span style="font-size: 0.6rem;">🤝</span> Business Services
+            <div class="chart-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
+                <h4 style="margin: 0 0 25px 0; color: #1e293b; font-size: 1rem; font-weight: 700;">
+                    Business Services
                 </h4>
-                <p style="margin: 0 0 20px 0; color: #059669; font-size: 0.45rem; font-weight: 600;">
-                    Q2'25: 220 deals | +8% QoQ Growth | Above 3-year avg (200)
-                </p>
-                <canvas id="businessServicesChart" style="height: 450px; width: 100%;"></canvas>
+                <canvas id="businessServicesChart" style="height: 800px; width: 100%;"></canvas>
             </div>
             
-            <div class="chart-card" style="background: white; padding: 25px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8e8e8;">
-                <h4 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 0.55rem; font-weight: 700; display: flex; align-items: center; gap: 10px;">
-                    <span style="font-size: 0.6rem;">🛒</span> Consumer & Retail
+            <div class="chart-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
+                <h4 style="margin: 0 0 25px 0; color: #1e293b; font-size: 1rem; font-weight: 700;">
+                    Consumer & Retail
                 </h4>
-                <p style="margin: 0 0 20px 0; color: #EF4444; font-size: 0.45rem; font-weight: 600;">
-                    Q2'25: 63 deals | -28% QoQ Decline | Below 3-year avg (80)
-                </p>
-                <canvas id="consumerChart" style="height: 450px; width: 100%;"></canvas>
+                <canvas id="consumerChart" style="height: 800px; width: 100%;"></canvas>
             </div>
         </div>
     </div>
@@ -500,10 +578,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
 async function loadDeals() {
     try {
+        console.log('Loading deals...');
         const response = await fetch('/api/deal-flow');
+        console.log('Response status:', response.status);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
         const data = await response.json();
+        console.log('Data received:', data);
         
         if (data.success) {
+            console.log('Deals loaded:', data.deals.length);
             // Sort deals by date - newest first
             allDeals = data.deals.sort((a, b) => {
                 const dateA = a.announcement_date || a.completion_date || '1900-01-01';
@@ -512,24 +599,84 @@ async function loadDeals() {
             });
             updateStats(allDeals);
             displayDeals(allDeals);
+        } else {
+            console.error('API returned success: false', data);
+            document.getElementById('dealsContainer').innerHTML = `
+                <div style="text-align: center; padding: 60px; color: #999;">
+                    <i class="fas fa-exclamation-triangle" style="font-size: 48px; margin-bottom: 20px; opacity: 0.3;"></i>
+                    <p style="font-size: 18px;">Error loading deals: ${data.message || 'Unknown error'}</p>
+                </div>
+            `;
         }
     } catch (error) {
         console.error('Error loading deals:', error);
+        document.getElementById('dealsContainer').innerHTML = `
+            <div style="text-align: center; padding: 60px; color: #999;">
+                <i class="fas fa-exclamation-triangle" style="font-size: 48px; margin-bottom: 20px; opacity: 0.3;"></i>
+                <p style="font-size: 18px;">Error loading deals: ${error.message}</p>
+            </div>
+        `;
     }
 }
 
 function updateStats(deals) {
-    document.getElementById('totalDeals').textContent = deals.length;
-    document.getElementById('completedDeals').textContent = deals.filter(d => d.status === 'Completed').length;
-    document.getElementById('ongoingDeals').textContent = deals.filter(d => d.status === 'Ongoing').length;
-    document.getElementById('aiDeals').textContent = deals.filter(d => d.sector && d.sector.toLowerCase().includes('ai')).length;
+    // Update stats only if elements exist (they were removed when we removed the header)
+    const totalDealsEl = document.getElementById('totalDeals');
+    const completedDealsEl = document.getElementById('completedDeals');
+    const ongoingDealsEl = document.getElementById('ongoingDeals');
+    const aiDealsEl = document.getElementById('aiDeals');
+    const totalValueEl = document.getElementById('totalValue');
+    const nordic2025El = document.getElementById('nordic2025');
     
-    // Calculate total value (rough approximation for display)
-    document.getElementById('totalValue').textContent = '$280B+';
+    if (totalDealsEl) totalDealsEl.textContent = deals.length;
+    if (completedDealsEl) completedDealsEl.textContent = deals.filter(d => d.status === 'Completed').length;
+    if (ongoingDealsEl) ongoingDealsEl.textContent = deals.filter(d => d.status === 'Ongoing').length;
+    if (aiDealsEl) aiDealsEl.textContent = deals.filter(d => d.sector && d.sector.toLowerCase().includes('ai')).length;
+    if (totalValueEl) totalValueEl.textContent = '$280B+';
     
     // Count Nordic 2025 deals
     const nordic2025 = deals.filter(d => d.year === 2025 && isNordicDeal(d)).length;
-    document.getElementById('nordic2025').textContent = nordic2025;
+    if (nordic2025El) nordic2025El.textContent = nordic2025;
+}
+
+function displayDeals(deals) {
+    const container = document.getElementById('dealsContainer');
+    
+    if (!container) {
+        console.error('dealsContainer not found');
+        return;
+    }
+    
+    if (deals.length === 0) {
+        container.innerHTML = `
+            <div style="text-align: center; padding: 60px; color: #999;">
+                <i class="fas fa-search" style="font-size: 48px; margin-bottom: 20px; opacity: 0.3;"></i>
+                <p style="font-size: 18px;">No deals match your filter</p>
+            </div>
+        `;
+        return;
+    }
+    
+    let html = '';
+    
+    deals.forEach(deal => {
+        html += createDealCard(deal);
+    });
+    
+    container.innerHTML = html;
+    
+    // Convert emoji flags to images using Twemoji (for Windows compatibility)
+    setTimeout(() => {
+        if (typeof twemoji !== 'undefined') {
+            document.querySelectorAll('.country-flag-emoji').forEach(el => {
+                twemoji.parse(el, {
+                    folder: 'svg',
+                    ext: '.svg',
+                    base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/'
+                });
+            });
+        }
+    }, 100);
 }
 
 function isNordicDeal(deal) {
@@ -537,14 +684,88 @@ function isNordicDeal(deal) {
     return nordicCountries.some(country => deal.geography && deal.geography.includes(country));
 }
 
+function getCompanyLogo(companyName) {
+    if (!companyName) return '';
+    
+    // Clean company name for logo URL
+    const cleanName = companyName.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '');
+    const logoUrl = `https://logo.clearbit.com/${cleanName.toLowerCase()}.com`;
+    const fallbackUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(companyName)}&background=4c1d95&color=ffffff&size=32`;
+    
+    return `
+        <div style="display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; flex-shrink: 0;">
+            <img src="${logoUrl}" 
+                 alt="${companyName}" 
+                 style="width: 100%; height: 100%; border-radius: 4px; object-fit: contain; background: white; padding: 2px;"
+                 onerror="this.onerror=null; this.src='${fallbackUrl}'; this.style.padding='0'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';}">
+            <div style="display: none; width: 100%; height: 100%; background: #4c1d95; color: white; border-radius: 4px; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">
+                🏢
+            </div>
+        </div>
+    `;
+}
+
+function getStatusIcon(status) {
+    const statusIcons = {
+        'Completed': '<i class="fas fa-check-circle"></i>',
+        'Ongoing': '<i class="fas fa-clock"></i>',
+        'Announced': '<i class="fas fa-bullhorn"></i>',
+        'Pending': '<i class="fas fa-hourglass-half"></i>',
+        'Cancelled': '<i class="fas fa-times-circle"></i>',
+        'Withdrawn': '<i class="fas fa-undo"></i>'
+    };
+    return statusIcons[status] || '<i class="fas fa-circle"></i>';
+}
+
 function setupFilters() {
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    const dropdownBtn = document.getElementById('filterDropdownBtn');
+    const dropdownMenu = document.getElementById('filterDropdownMenu');
+    const dropdownText = document.getElementById('filterDropdownText');
+    const dropdownChevron = document.getElementById('filterDropdownChevron');
+    
+    // Toggle dropdown
+    dropdownBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const isOpen = dropdownMenu.classList.contains('show');
+        
+        if (isOpen) {
+            dropdownMenu.classList.remove('show');
+            dropdownBtn.classList.remove('open');
+        } else {
+            dropdownMenu.classList.add('show');
+            dropdownBtn.classList.add('open');
+        }
+    });
+    
+    // Handle dropdown item clicks
+    document.querySelectorAll('.filter-dropdown-item').forEach(item => {
+        item.addEventListener('click', function() {
+            const filter = this.dataset.filter;
+            const text = this.querySelector('span').textContent;
+            
+            // Update active state
+            document.querySelectorAll('.filter-dropdown-item').forEach(i => i.classList.remove('active'));
             this.classList.add('active');
-            currentFilter = this.dataset.filter;
+            
+            // Update button text
+            dropdownText.textContent = text;
+            
+            // Close dropdown
+            dropdownMenu.classList.remove('show');
+            dropdownBtn.classList.remove('open');
+            
+            // Apply filter
+            currentFilter = filter;
             applyFilter();
         });
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!dropdownBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
+            dropdownMenu.classList.remove('show');
+            dropdownBtn.classList.remove('open');
+        }
     });
 }
 
@@ -672,72 +893,39 @@ function createDealCard(deal) {
                 <div style="flex: 1;">
                     <div class="deal-title">
                         ${deal.deal_name}
-                        ${year2025Badge}
                     </div>
-                    <div class="deal-parties">
-                        <strong>Acquirer:</strong> ${deal.acquirer} → 
-                        <strong>Target:</strong> ${deal.target}
-                    </div>
-                    <div style="margin-top: 10px;">
-                        <span class="sector-tag">${deal.sector}</span>
-                        <span class="deal-type-tag">${deal.deal_type}</span>
-                    </div>
-                </div>
-                <div style="display: flex; align-items: center; gap: 15px;">
-                    <div class="company-logos" style="display: flex; align-items: center; gap: 10px;">
-                        ${acquirerLogo}
+                    <div class="deal-parties" style="display: flex; align-items: center; gap: 8px;">
+                        <div style="display: flex; align-items: center; gap: 6px;">
+                            ${acquirerLogo}
+                            <strong>${deal.acquirer}</strong>
+                        </div>
                         <span style="color: #999; font-size: 14px;">→</span>
-                        ${targetLogo}
-                    </div>
-                    <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 10px;">
-                        <div style="display: flex; align-items: center; gap: 8px;">
-                            ${countryFlagLarge}
-                            <div class="deal-status ${statusClass}">
-                                ${getStatusIcon(deal.status)} ${deal.status}
-                            </div>
+                        <div style="display: flex; align-items: center; gap: 6px;">
+                            ${targetLogo}
+                            <strong>${deal.target}</strong>
                         </div>
                     </div>
                 </div>
+                ${year2025Badge}
+            </div>
+            <div class="deal-meta">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <span class="sector-tag">${deal.sector}</span>
+                    <span class="deal-type-tag">${deal.deal_type}</span>
+                    <div class="deal-status ${statusClass}">
+                        ${getStatusIcon(deal.status)} ${deal.status}
+                    </div>
+                </div>
+                <div class="deal-value">
+                    ${deal.deal_value && deal.deal_value !== 'N/A' && deal.deal_value !== 'Undisclosed' ? deal.deal_value : 'Undisclosed'}
+                </div>
             </div>
             
-            <div class="deal-description">
+            ${deal.description ? `
+            <div class="deal-description" style="margin-top: 12px; font-size: 0.8rem; color: #666; line-height: 1.4;">
                 ${deal.description}
             </div>
-            
-            <div class="deal-details">
-                ${deal.deal_value && deal.deal_value !== 'N/A' && deal.deal_value !== 'Undisclosed' ? `
-                <div class="deal-detail">
-                    <div class="detail-label"><i class="fas fa-dollar-sign"></i> Deal Value</div>
-                    <div class="detail-value">${deal.deal_value}</div>
-                </div>
-                ` : ''}
-                
-                <div class="deal-detail">
-                    <div class="detail-label"><i class="fas fa-globe-europe"></i> Geography</div>
-                    <div class="detail-value" style="display: flex; align-items: center;">${countryFlagSmall}${deal.geography}</div>
-                </div>
-                
-                ${deal.announcement_date ? `
-                <div class="deal-detail">
-                    <div class="detail-label"><i class="fas fa-calendar-alt"></i> Announced</div>
-                    <div class="detail-value">${deal.announcement_date}</div>
-                </div>
-                ` : ''}
-                
-                ${deal.completion_date ? `
-                <div class="deal-detail">
-                    <div class="detail-label"><i class="fas fa-calendar-check"></i> Completed</div>
-                    <div class="detail-value">${deal.completion_date}</div>
-                </div>
-                ` : ''}
-                
-                ${deal.fund && deal.fund !== 'N/A' && deal.fund !== 'Multiple' ? `
-                <div class="deal-detail">
-                    <div class="detail-label"><i class="fas fa-briefcase"></i> Fund</div>
-                    <div class="detail-value">${deal.fund}</div>
-                </div>
-                ` : ''}
-            </div>
+            ` : ''}
         </div>
     `;
     
@@ -1255,9 +1443,9 @@ function createBuyoutChart() {
                 backgroundColor: function(context) {
                     const ctx = context.chart.ctx;
                     const gradient = ctx.createLinearGradient(0, 0, 0, 400);
-                    gradient.addColorStop(0, '#6b21a8');
-                    gradient.addColorStop(0.5, '#581c87');
-                    gradient.addColorStop(1, '#4c1d95');
+                    gradient.addColorStop(0, '#6366F1');
+                    gradient.addColorStop(0.5, '#7C3AED');
+                    gradient.addColorStop(1, '#4F46E5');
                     return gradient;
                 },
                 borderRadius: 8,
@@ -1268,12 +1456,12 @@ function createBuyoutChart() {
                 label: 'LTM Aggregate',
                 data: ltmData,
                 type: 'line',
-                backgroundColor: 'rgba(5, 150, 105, 0.1)',
-                borderColor: '#059669',
+                backgroundColor: 'rgba(99, 102, 241, 0.1)',
+                borderColor: '#6366F1',
                 borderWidth: 3,
                 fill: true,
                 tension: 0.4,
-                pointBackgroundColor: '#059669',
+                pointBackgroundColor: '#6366F1',
                 pointBorderColor: '#fff',
                 pointBorderWidth: 2,
                 pointRadius: 4,
@@ -1358,9 +1546,9 @@ function createVCChart() {
                 backgroundColor: function(context) {
                     const ctx = context.chart.ctx;
                     const gradient = ctx.createLinearGradient(0, 0, 0, 400);
-                    gradient.addColorStop(0, '#10b981');
-                    gradient.addColorStop(0.5, '#059669');
-                    gradient.addColorStop(1, '#047857');
+                    gradient.addColorStop(0, '#6366F1');
+                    gradient.addColorStop(0.5, '#7C3AED');
+                    gradient.addColorStop(1, '#4F46E5');
                     return gradient;
                 },
                 borderRadius: 12,
@@ -1371,12 +1559,12 @@ function createVCChart() {
                 label: 'LTM Aggregate',
                 data: ltmData,
                 type: 'line',
-                backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                borderColor: '#10B981',
+                backgroundColor: 'rgba(99, 102, 241, 0.1)',
+                borderColor: '#6366F1',
                 borderWidth: 3,
                 fill: true,
                 tension: 0.4,
-                pointBackgroundColor: '#059669',
+                pointBackgroundColor: '#6366F1',
                 pointBorderColor: '#fff',
                 pointBorderWidth: 2,
                 pointRadius: 4,
@@ -1451,6 +1639,19 @@ function createFinlandChart() {
     const data = [84, 51, 55, 74, 69, 50, 55, 60, 59, 71, 60, 56, 67];
     const labels = ['Q2\'22', 'Q3\'22', 'Q4\'22', 'Q1\'23', 'Q2\'23', 'Q3\'23', 'Q4\'23', 'Q1\'24', 'Q2\'24', 'Q3\'24', 'Q4\'24', 'Q1\'25', 'Q2\'25'];
     
+    // Calculate moving average
+    const movingAvg = data.map((_, i) => {
+        if (i < 2) return data[i];
+        return (data[i-2] + data[i-1] + data[i]) / 3;
+    });
+    
+    // Calculate linear trend
+    const linearTrend = data.map((_, i) => {
+        const x = i;
+        const y = 60 + (x * 0.5); // Simple linear trend
+        return Math.round(y);
+    });
+    
     ctx.chart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -1461,21 +1662,62 @@ function createFinlandChart() {
                 backgroundColor: function(context) {
                     const ctx = context.chart.ctx;
                     const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-                    gradient.addColorStop(0, '#6b21a8');
-                    gradient.addColorStop(0.5, '#581c87');
-                    gradient.addColorStop(1, '#4c1d95');
+                    gradient.addColorStop(0, '#6366F1');
+                    gradient.addColorStop(0.5, '#7C3AED');
+                    gradient.addColorStop(1, '#4F46E5');
                     return gradient;
                 },
                 borderRadius: 12,
                 borderWidth: 0,
                 borderSkipped: false
+            }, {
+                label: 'Moving Average (3Q)',
+                data: movingAvg,
+                type: 'line',
+                borderColor: '#7C3AED',
+                borderWidth: 4,
+                fill: false,
+                tension: 0.6,
+                pointBackgroundColor: '#7C3AED',
+                pointBorderColor: '#fff',
+                pointBorderWidth: 3,
+                pointRadius: 6,
+                pointHoverRadius: 8,
+                borderDash: [8, 4],
+                pointStyle: 'circle',
+                pointHoverBackgroundColor: '#7C3AED',
+                pointHoverBorderColor: '#fff',
+                pointHoverBorderWidth: 3
+            }, {
+                label: 'Linear Trend',
+                data: linearTrend,
+                type: 'line',
+                borderColor: '#4F46E5',
+                borderWidth: 3,
+                fill: false,
+                tension: 0,
+                pointBackgroundColor: 'transparent',
+                pointBorderColor: 'transparent',
+                pointRadius: 0,
+                pointHoverRadius: 0,
+                borderDash: [2, 6],
+                pointStyle: 'line'
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
             plugins: {
-                legend: { display: false },
+                legend: { 
+                    display: true,
+                    position: 'top',
+                    labels: {
+                        font: { size: 11, weight: '600' },
+                        padding: 15,
+                        usePointStyle: true,
+                        boxWidth: 12
+                    }
+                },
                 tooltip: {
                     backgroundColor: 'rgba(0,0,0,0.85)',
                     padding: 12,
@@ -1512,6 +1754,19 @@ function createSwedenChart() {
     const data = [178, 137, 143, 168, 153, 139, 162, 144, 161, 156, 159, 144, 154];
     const labels = ['Q2\'22', 'Q3\'22', 'Q4\'22', 'Q1\'23', 'Q2\'23', 'Q3\'23', 'Q4\'23', 'Q1\'24', 'Q2\'24', 'Q3\'24', 'Q4\'24', 'Q1\'25', 'Q2\'25'];
     
+    // Calculate moving average
+    const movingAvg = data.map((_, i) => {
+        if (i < 2) return data[i];
+        return (data[i-2] + data[i-1] + data[i]) / 3;
+    });
+    
+    // Calculate linear trend
+    const linearTrend = data.map((_, i) => {
+        const x = i;
+        const y = 150 + (x * 0.3); // Simple linear trend
+        return Math.round(y);
+    });
+    
     ctx.chart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -1522,21 +1777,62 @@ function createSwedenChart() {
                 backgroundColor: function(context) {
                     const ctx = context.chart.ctx;
                     const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-                    gradient.addColorStop(0, '#10b981');
-                    gradient.addColorStop(0.5, '#059669');
-                    gradient.addColorStop(1, '#047857');
+                    gradient.addColorStop(0, '#6366F1');
+                    gradient.addColorStop(0.5, '#7C3AED');
+                    gradient.addColorStop(1, '#4F46E5');
                     return gradient;
                 },
                 borderRadius: 12,
                 borderWidth: 0,
                 borderSkipped: false
+            }, {
+                label: 'Moving Average (3Q)',
+                data: movingAvg,
+                type: 'line',
+                borderColor: '#7C3AED',
+                borderWidth: 4,
+                fill: false,
+                tension: 0.6,
+                pointBackgroundColor: '#7C3AED',
+                pointBorderColor: '#fff',
+                pointBorderWidth: 3,
+                pointRadius: 6,
+                pointHoverRadius: 8,
+                borderDash: [8, 4],
+                pointStyle: 'circle',
+                pointHoverBackgroundColor: '#7C3AED',
+                pointHoverBorderColor: '#fff',
+                pointHoverBorderWidth: 3
+            }, {
+                label: 'Linear Trend',
+                data: linearTrend,
+                type: 'line',
+                borderColor: '#4F46E5',
+                borderWidth: 3,
+                fill: false,
+                tension: 0,
+                pointBackgroundColor: 'transparent',
+                pointBorderColor: 'transparent',
+                pointRadius: 0,
+                pointHoverRadius: 0,
+                borderDash: [2, 6],
+                pointStyle: 'line'
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
             plugins: {
-                legend: { display: false },
+                legend: { 
+                    display: true,
+                    position: 'top',
+                    labels: {
+                        font: { size: 11, weight: '600' },
+                        padding: 15,
+                        usePointStyle: true,
+                        boxWidth: 12
+                    }
+                },
                 tooltip: {
                     backgroundColor: 'rgba(0,0,0,0.85)',
                     padding: 12,
@@ -1573,6 +1869,19 @@ function createNorwayChart() {
     const data = [81, 74, 60, 59, 77, 59, 49, 78, 72, 65, 89, 60, 81];
     const labels = ['Q2\'22', 'Q3\'22', 'Q4\'22', 'Q1\'23', 'Q2\'23', 'Q3\'23', 'Q4\'23', 'Q1\'24', 'Q2\'24', 'Q3\'24', 'Q4\'24', 'Q1\'25', 'Q2\'25'];
     
+    // Calculate moving average
+    const movingAvg = data.map((_, i) => {
+        if (i < 2) return data[i];
+        return (data[i-2] + data[i-1] + data[i]) / 3;
+    });
+    
+    // Calculate linear trend
+    const linearTrend = data.map((_, i) => {
+        const x = i;
+        const y = 70 + (x * 0.2); // Simple linear trend
+        return Math.round(y);
+    });
+    
     ctx.chart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -1583,21 +1892,62 @@ function createNorwayChart() {
                 backgroundColor: function(context) {
                     const ctx = context.chart.ctx;
                     const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-                    gradient.addColorStop(0, '#6b21a8');
-                    gradient.addColorStop(0.5, '#581c87');
-                    gradient.addColorStop(1, '#4c1d95');
+                    gradient.addColorStop(0, '#6366F1');
+                    gradient.addColorStop(0.5, '#7C3AED');
+                    gradient.addColorStop(1, '#4F46E5');
                     return gradient;
                 },
                 borderRadius: 12,
                 borderWidth: 0,
                 borderSkipped: false
+            }, {
+                label: 'Moving Average (3Q)',
+                data: movingAvg,
+                type: 'line',
+                borderColor: '#7C3AED',
+                borderWidth: 4,
+                fill: false,
+                tension: 0.6,
+                pointBackgroundColor: '#7C3AED',
+                pointBorderColor: '#fff',
+                pointBorderWidth: 3,
+                pointRadius: 6,
+                pointHoverRadius: 8,
+                borderDash: [8, 4],
+                pointStyle: 'circle',
+                pointHoverBackgroundColor: '#7C3AED',
+                pointHoverBorderColor: '#fff',
+                pointHoverBorderWidth: 3
+            }, {
+                label: 'Linear Trend',
+                data: linearTrend,
+                type: 'line',
+                borderColor: '#4F46E5',
+                borderWidth: 3,
+                fill: false,
+                tension: 0,
+                pointBackgroundColor: 'transparent',
+                pointBorderColor: 'transparent',
+                pointRadius: 0,
+                pointHoverRadius: 0,
+                borderDash: [2, 6],
+                pointStyle: 'line'
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
             plugins: {
-                legend: { display: false },
+                legend: { 
+                    display: true,
+                    position: 'top',
+                    labels: {
+                        font: { size: 11, weight: '600' },
+                        padding: 15,
+                        usePointStyle: true,
+                        boxWidth: 12
+                    }
+                },
                 tooltip: {
                     backgroundColor: 'rgba(0,0,0,0.85)',
                     padding: 12,
@@ -1634,6 +1984,19 @@ function createDenmarkChart() {
     const data = [113, 62, 79, 73, 58, 77, 52, 76, 72, 64, 72, 87, 80];
     const labels = ['Q2\'22', 'Q3\'22', 'Q4\'22', 'Q1\'23', 'Q2\'23', 'Q3\'23', 'Q4\'23', 'Q1\'24', 'Q2\'24', 'Q3\'24', 'Q4\'24', 'Q1\'25', 'Q2\'25'];
     
+    // Calculate moving average
+    const movingAvg = data.map((_, i) => {
+        if (i < 2) return data[i];
+        return (data[i-2] + data[i-1] + data[i]) / 3;
+    });
+    
+    // Calculate linear trend
+    const linearTrend = data.map((_, i) => {
+        const x = i;
+        const y = 70 + (x * 0.1); // Simple linear trend
+        return Math.round(y);
+    });
+    
     ctx.chart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -1644,21 +2007,62 @@ function createDenmarkChart() {
                 backgroundColor: function(context) {
                     const ctx = context.chart.ctx;
                     const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-                    gradient.addColorStop(0, '#10b981');
-                    gradient.addColorStop(0.5, '#059669');
-                    gradient.addColorStop(1, '#047857');
+                    gradient.addColorStop(0, '#6366F1');
+                    gradient.addColorStop(0.5, '#7C3AED');
+                    gradient.addColorStop(1, '#4F46E5');
                     return gradient;
                 },
                 borderRadius: 12,
                 borderWidth: 0,
                 borderSkipped: false
+            }, {
+                label: 'Moving Average (3Q)',
+                data: movingAvg,
+                type: 'line',
+                borderColor: '#7C3AED',
+                borderWidth: 4,
+                fill: false,
+                tension: 0.6,
+                pointBackgroundColor: '#7C3AED',
+                pointBorderColor: '#fff',
+                pointBorderWidth: 3,
+                pointRadius: 6,
+                pointHoverRadius: 8,
+                borderDash: [8, 4],
+                pointStyle: 'circle',
+                pointHoverBackgroundColor: '#7C3AED',
+                pointHoverBorderColor: '#fff',
+                pointHoverBorderWidth: 3
+            }, {
+                label: 'Linear Trend',
+                data: linearTrend,
+                type: 'line',
+                borderColor: '#4F46E5',
+                borderWidth: 3,
+                fill: false,
+                tension: 0,
+                pointBackgroundColor: 'transparent',
+                pointBorderColor: 'transparent',
+                pointRadius: 0,
+                pointHoverRadius: 0,
+                borderDash: [2, 6],
+                pointStyle: 'line'
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
             plugins: {
-                legend: { display: false },
+                legend: { 
+                    display: true,
+                    position: 'top',
+                    labels: {
+                        font: { size: 11, weight: '600' },
+                        padding: 15,
+                        usePointStyle: true,
+                        boxWidth: 12
+                    }
+                },
                 tooltip: {
                     backgroundColor: 'rgba(0,0,0,0.85)',
                     padding: 12,
@@ -1696,6 +2100,19 @@ function createIndustrialChart() {
     const data = [88, 60, 55, 66, 54, 54, 57, 58, 56, 59, 66, 56, 54];
     const labels = ['Q2\'22', 'Q3\'22', 'Q4\'22', 'Q1\'23', 'Q2\'23', 'Q3\'23', 'Q4\'23', 'Q1\'24', 'Q2\'24', 'Q3\'24', 'Q4\'24', 'Q1\'25', 'Q2\'25'];
     
+    // Calculate moving average
+    const movingAvg = data.map((_, i) => {
+        if (i < 2) return data[i];
+        return (data[i-2] + data[i-1] + data[i]) / 3;
+    });
+    
+    // Calculate linear trend
+    const linearTrend = data.map((_, i) => {
+        const x = i;
+        const y = 60 + (x * 0.1); // Simple linear trend
+        return Math.round(y);
+    });
+    
     ctx.chart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -1706,21 +2123,62 @@ function createIndustrialChart() {
                 backgroundColor: function(context) {
                     const ctx = context.chart.ctx;
                     const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-                    gradient.addColorStop(0, '#6b21a8');
-                    gradient.addColorStop(0.5, '#581c87');
-                    gradient.addColorStop(1, '#4c1d95');
+                    gradient.addColorStop(0, '#6366F1');
+                    gradient.addColorStop(0.5, '#7C3AED');
+                    gradient.addColorStop(1, '#4F46E5');
                     return gradient;
                 },
                 borderRadius: 12,
                 borderWidth: 0,
                 borderSkipped: false
+            }, {
+                label: 'Moving Average (3Q)',
+                data: movingAvg,
+                type: 'line',
+                borderColor: '#7C3AED',
+                borderWidth: 4,
+                fill: false,
+                tension: 0.6,
+                pointBackgroundColor: '#7C3AED',
+                pointBorderColor: '#fff',
+                pointBorderWidth: 3,
+                pointRadius: 6,
+                pointHoverRadius: 8,
+                borderDash: [8, 4],
+                pointStyle: 'circle',
+                pointHoverBackgroundColor: '#7C3AED',
+                pointHoverBorderColor: '#fff',
+                pointHoverBorderWidth: 3
+            }, {
+                label: 'Linear Trend',
+                data: linearTrend,
+                type: 'line',
+                borderColor: '#4F46E5',
+                borderWidth: 3,
+                fill: false,
+                tension: 0,
+                pointBackgroundColor: 'transparent',
+                pointBorderColor: 'transparent',
+                pointRadius: 0,
+                pointHoverRadius: 0,
+                borderDash: [2, 6],
+                pointStyle: 'line'
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
             plugins: {
-                legend: { display: false },
+                legend: { 
+                    display: true,
+                    position: 'top',
+                    labels: {
+                        font: { size: 11, weight: '600' },
+                        padding: 15,
+                        usePointStyle: true,
+                        boxWidth: 12
+                    }
+                },
                 tooltip: {
                     backgroundColor: 'rgba(0,0,0,0.85)',
                     padding: 12,
@@ -1757,6 +2215,19 @@ function createTechChart() {
     const data = [148, 85, 100, 98, 106, 112, 83, 103, 96, 88, 124, 87, 115];
     const labels = ['Q2\'22', 'Q3\'22', 'Q4\'22', 'Q1\'23', 'Q2\'23', 'Q3\'23', 'Q4\'23', 'Q1\'24', 'Q2\'24', 'Q3\'24', 'Q4\'24', 'Q1\'25', 'Q2\'25'];
     
+    // Calculate moving average
+    const movingAvg = data.map((_, i) => {
+        if (i < 2) return data[i];
+        return (data[i-2] + data[i-1] + data[i]) / 3;
+    });
+    
+    // Calculate linear trend
+    const linearTrend = data.map((_, i) => {
+        const x = i;
+        const y = 100 + (x * 0.5); // Simple linear trend
+        return Math.round(y);
+    });
+    
     ctx.chart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -1767,21 +2238,62 @@ function createTechChart() {
                 backgroundColor: function(context) {
                     const ctx = context.chart.ctx;
                     const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-                    gradient.addColorStop(0, '#10b981');
-                    gradient.addColorStop(0.5, '#059669');
-                    gradient.addColorStop(1, '#047857');
+                    gradient.addColorStop(0, '#6366F1');
+                    gradient.addColorStop(0.5, '#7C3AED');
+                    gradient.addColorStop(1, '#4F46E5');
                     return gradient;
                 },
                 borderRadius: 12,
                 borderWidth: 0,
                 borderSkipped: false
+            }, {
+                label: 'Moving Average (3Q)',
+                data: movingAvg,
+                type: 'line',
+                borderColor: '#7C3AED',
+                borderWidth: 4,
+                fill: false,
+                tension: 0.6,
+                pointBackgroundColor: '#7C3AED',
+                pointBorderColor: '#fff',
+                pointBorderWidth: 3,
+                pointRadius: 6,
+                pointHoverRadius: 8,
+                borderDash: [8, 4],
+                pointStyle: 'circle',
+                pointHoverBackgroundColor: '#7C3AED',
+                pointHoverBorderColor: '#fff',
+                pointHoverBorderWidth: 3
+            }, {
+                label: 'Linear Trend',
+                data: linearTrend,
+                type: 'line',
+                borderColor: '#4F46E5',
+                borderWidth: 3,
+                fill: false,
+                tension: 0,
+                pointBackgroundColor: 'transparent',
+                pointBorderColor: 'transparent',
+                pointRadius: 0,
+                pointHoverRadius: 0,
+                borderDash: [2, 6],
+                pointStyle: 'line'
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
             plugins: {
-                legend: { display: false },
+                legend: { 
+                    display: true,
+                    position: 'top',
+                    labels: {
+                        font: { size: 11, weight: '600' },
+                        padding: 15,
+                        usePointStyle: true,
+                        boxWidth: 12
+                    }
+                },
                 tooltip: {
                     backgroundColor: 'rgba(0,0,0,0.85)',
                     padding: 12,
@@ -1818,6 +2330,19 @@ function createBusinessServicesChart() {
     const data = [228, 172, 180, 206, 207, 169, 173, 193, 223, 217, 213, 204, 220];
     const labels = ['Q2\'22', 'Q3\'22', 'Q4\'22', 'Q1\'23', 'Q2\'23', 'Q3\'23', 'Q4\'23', 'Q1\'24', 'Q2\'24', 'Q3\'24', 'Q4\'24', 'Q1\'25', 'Q2\'25'];
     
+    // Calculate moving average
+    const movingAvg = data.map((_, i) => {
+        if (i < 2) return data[i];
+        return (data[i-2] + data[i-1] + data[i]) / 3;
+    });
+    
+    // Calculate linear trend
+    const linearTrend = data.map((_, i) => {
+        const x = i;
+        const y = 200 + (x * 0.2); // Simple linear trend
+        return Math.round(y);
+    });
+    
     ctx.chart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -1828,21 +2353,62 @@ function createBusinessServicesChart() {
                 backgroundColor: function(context) {
                     const ctx = context.chart.ctx;
                     const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-                    gradient.addColorStop(0, '#6b21a8');
-                    gradient.addColorStop(0.5, '#581c87');
-                    gradient.addColorStop(1, '#4c1d95');
+                    gradient.addColorStop(0, '#6366F1');
+                    gradient.addColorStop(0.5, '#7C3AED');
+                    gradient.addColorStop(1, '#4F46E5');
                     return gradient;
                 },
                 borderRadius: 12,
                 borderWidth: 0,
                 borderSkipped: false
+            }, {
+                label: 'Moving Average (3Q)',
+                data: movingAvg,
+                type: 'line',
+                borderColor: '#7C3AED',
+                borderWidth: 4,
+                fill: false,
+                tension: 0.6,
+                pointBackgroundColor: '#7C3AED',
+                pointBorderColor: '#fff',
+                pointBorderWidth: 3,
+                pointRadius: 6,
+                pointHoverRadius: 8,
+                borderDash: [8, 4],
+                pointStyle: 'circle',
+                pointHoverBackgroundColor: '#7C3AED',
+                pointHoverBorderColor: '#fff',
+                pointHoverBorderWidth: 3
+            }, {
+                label: 'Linear Trend',
+                data: linearTrend,
+                type: 'line',
+                borderColor: '#4F46E5',
+                borderWidth: 3,
+                fill: false,
+                tension: 0,
+                pointBackgroundColor: 'transparent',
+                pointBorderColor: 'transparent',
+                pointRadius: 0,
+                pointHoverRadius: 0,
+                borderDash: [2, 6],
+                pointStyle: 'line'
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
             plugins: {
-                legend: { display: false },
+                legend: { 
+                    display: true,
+                    position: 'top',
+                    labels: {
+                        font: { size: 11, weight: '600' },
+                        padding: 15,
+                        usePointStyle: true,
+                        boxWidth: 12
+                    }
+                },
                 tooltip: {
                     backgroundColor: 'rgba(0,0,0,0.85)',
                     padding: 12,
@@ -1879,6 +2445,19 @@ function createConsumerChart() {
     const data = [110, 78, 73, 88, 73, 73, 79, 79, 64, 83, 84, 88, 63];
     const labels = ['Q2\'22', 'Q3\'22', 'Q4\'22', 'Q1\'23', 'Q2\'23', 'Q3\'23', 'Q4\'23', 'Q1\'24', 'Q2\'24', 'Q3\'24', 'Q4\'24', 'Q1\'25', 'Q2\'25'];
     
+    // Calculate moving average
+    const movingAvg = data.map((_, i) => {
+        if (i < 2) return data[i];
+        return (data[i-2] + data[i-1] + data[i]) / 3;
+    });
+    
+    // Calculate linear trend
+    const linearTrend = data.map((_, i) => {
+        const x = i;
+        const y = 80 + (x * 0.1); // Simple linear trend
+        return Math.round(y);
+    });
+    
     ctx.chart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -1889,21 +2468,62 @@ function createConsumerChart() {
                 backgroundColor: function(context) {
                     const ctx = context.chart.ctx;
                     const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-                    gradient.addColorStop(0, '#10b981');
-                    gradient.addColorStop(0.5, '#059669');
-                    gradient.addColorStop(1, '#047857');
+                    gradient.addColorStop(0, '#6366F1');
+                    gradient.addColorStop(0.5, '#7C3AED');
+                    gradient.addColorStop(1, '#4F46E5');
                     return gradient;
                 },
                 borderRadius: 12,
                 borderWidth: 0,
                 borderSkipped: false
+            }, {
+                label: 'Moving Average (3Q)',
+                data: movingAvg,
+                type: 'line',
+                borderColor: '#7C3AED',
+                borderWidth: 4,
+                fill: false,
+                tension: 0.6,
+                pointBackgroundColor: '#7C3AED',
+                pointBorderColor: '#fff',
+                pointBorderWidth: 3,
+                pointRadius: 6,
+                pointHoverRadius: 8,
+                borderDash: [8, 4],
+                pointStyle: 'circle',
+                pointHoverBackgroundColor: '#7C3AED',
+                pointHoverBorderColor: '#fff',
+                pointHoverBorderWidth: 3
+            }, {
+                label: 'Linear Trend',
+                data: linearTrend,
+                type: 'line',
+                borderColor: '#4F46E5',
+                borderWidth: 3,
+                fill: false,
+                tension: 0,
+                pointBackgroundColor: 'transparent',
+                pointBorderColor: 'transparent',
+                pointRadius: 0,
+                pointHoverRadius: 0,
+                borderDash: [2, 6],
+                pointStyle: 'line'
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
             plugins: {
-                legend: { display: false },
+                legend: { 
+                    display: true,
+                    position: 'top',
+                    labels: {
+                        font: { size: 11, weight: '600' },
+                        padding: 15,
+                        usePointStyle: true,
+                        boxWidth: 12
+                    }
+                },
                 tooltip: {
                     backgroundColor: 'rgba(0,0,0,0.85)',
                     padding: 12,

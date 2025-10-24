@@ -38,8 +38,9 @@
                     <i class="fas fa-bars"></i>
                 </button>
                 
-                <div class="brand" style="display: flex; align-items: center; gap: 10px; margin-left: -30px;">
-                    <img src="{{ url_for('static', filename='Portföljbolagen2.png') }}" alt="Portföljbolagen" style="height: 35px; width: auto; border-radius: 6px; margin-top: 0px;">
+                <div class="brand" style="display: flex; align-items: center; gap: 15px; margin-left: -10px;">
+                    <img src="{{ url_for('static', filename='Port.png') }}" alt="Portföljbolagen" style="height: 35px; width: auto; border-radius: 6px; margin-top: 0px;">
+                    <span style="font-size: 1.2rem; font-weight: 700; color: white;">Portföljbolagen</span>
                 </div>
             </div>
             
@@ -48,97 +49,74 @@
     
     <!-- Sidebar Navigation -->
     <aside class="sidebar">
+        <!-- Overview Section -->
         <div class="sidebar-section">
-            <div class="sidebar-label">OVERVIEW</div>
             <a href="/" class="sidebar-link {% if request.path == '/' %}active{% endif %}">
-                <i class="fas fa-home"></i>
                 <span>Dashboard</span>
             </a>
         </div>
         
+        <!-- Private Equity Category -->
         <div class="sidebar-section">
-            <div class="sidebar-label">PRIVATE EQUITY</div>
-            <a href="/pe-firms" class="sidebar-link {% if request.path == '/pe-firms' %}active{% endif %}">
-                <i class="fas fa-building"></i>
-                <span>PE Firms</span>
-                <span class="count">18</span>
-            </a>
-            <a href="/news" class="sidebar-link {% if request.path == '/news' %}active{% endif %}">
-                <i class="fas fa-newspaper"></i>
-                <span>Investment News</span>
-                <span class="count">50</span>
-            </a>
-            <a href="/portfolio" class="sidebar-link {% if request.path == '/portfolio' %}active{% endif %}">
-                <i class="fas fa-briefcase"></i>
-                <span>Portfolio Companies</span>
-                <span class="count">349</span>
-            </a>
-            <a href="/fundraising" class="sidebar-link {% if request.path == '/fundraising' %}active{% endif %}">
-                <i class="fas fa-chart-pie"></i>
-                <span>Fundraising</span>
-                <span class="count">43</span>
-            </a>
-            <a href="/league-tables" class="sidebar-link {% if request.path == '/league-tables' %}active{% endif %}">
-                <i class="fas fa-trophy"></i>
-                <span>League Tables</span>
-                <span class="count">80</span>
-            </a>
+            <div class="sidebar-category-text" onclick="toggleDropdown('private-equity')">
+                <span>Private Equity</span>
+                <i class="fas fa-chevron-down dropdown-arrow" id="private-equity-arrow"></i>
+            </div>
+            <div class="sidebar-dropdown" id="private-equity-dropdown">
+                <a href="/pe-firms" class="sidebar-link {% if request.path == '/pe-firms' %}active{% endif %}">
+                    <span>PE Firms</span>
+                    <span class="count">18</span>
+                </a>
+                <a href="/news" class="sidebar-link {% if request.path == '/news' %}active{% endif %}">
+                    <span>Investment News</span>
+                    <span class="count">50</span>
+                </a>
+                <a href="/portfolio" class="sidebar-link {% if request.path == '/portfolio' %}active{% endif %}">
+                    <span>Portfolio Companies</span>
+                    <span class="count">349</span>
+                </a>
+                <a href="/fundraising" class="sidebar-link {% if request.path == '/fundraising' %}active{% endif %}">
+                    <span>Fundraising</span>
+                    <span class="count">43</span>
+                </a>
+                <a href="/league-tables" class="sidebar-link {% if request.path == '/league-tables' %}active{% endif %}">
+                    <span>League Tables</span>
+                    <span class="count">80</span>
+                </a>
+                <a href="/deal-flow" class="sidebar-link {% if request.path == '/deal-flow' %}active{% endif %}">
+                    <span>Deal Flow</span>
+                    <span class="count">25</span>
+                </a>
+            </div>
         </div>
         
+        <!-- AI & Technology Category -->
         <div class="sidebar-section">
-            <div class="sidebar-label">TRANSACTIONS</div>
-            <a href="/deal-flow" class="sidebar-link {% if request.path == '/deal-flow' %}active{% endif %}">
-                <i class="fas fa-exchange-alt"></i>
-                <span>Deal Flow</span>
-                <span class="count">25</span>
-            </a>
-        </div>
-        
-        <div class="sidebar-section">
-            <div class="sidebar-label">AI & TECHNOLOGY</div>
-            <a href="/ai-companies" class="sidebar-link {% if request.path == '/ai-companies' %}active{% endif %}">
-                <i class="fas fa-robot"></i>
-                <span>AI Companies</span>
-                <span class="count">55</span>
-            </a>
-            <a href="/ai-news" class="sidebar-link {% if request.path == '/ai-news' %}active{% endif %}">
-                <i class="fas fa-rss"></i>
-                <span>AI News</span>
-            </a>
-            <a href="/ai-investors" class="sidebar-link {% if request.path == '/ai-investors' %}active{% endif %}">
-                <i class="fas fa-hand-holding-usd"></i>
-                <span>AI Investors</span>
-            </a>
-            <a href="/ai-trends" class="sidebar-link {% if request.path == '/ai-trends' %}active{% endif %}">
-                <i class="fas fa-chart-line"></i>
-                <span>Trends & Analysis</span>
-            </a>
-            <a href="/ai-map" class="sidebar-link {% if request.path == '/ai-map' %}active{% endif %}">
-                <i class="fas fa-map-marked-alt"></i>
-                <span>Nordic AI Map</span>
-            </a>
-        </div>
-        
-        <div class="sidebar-section">
-            <div class="sidebar-label">MARKET & DEALS</div>
-            <a href="/analytics" class="sidebar-link {% if request.path == '/analytics' %}active{% endif %}">
-                <i class="fas fa-chart-bar"></i>
-                <span>Market Analytics</span>
-            </a>
+            <div class="sidebar-category-text" onclick="toggleDropdown('ai-technology')">
+                <span>AI & Technology</span>
+                <i class="fas fa-chevron-down dropdown-arrow" id="ai-technology-arrow"></i>
+            </div>
+            <div class="sidebar-dropdown" id="ai-technology-dropdown">
+                <a href="/ai-companies" class="sidebar-link {% if request.path == '/ai-companies' %}active{% endif %}">
+                    <span>AI Companies</span>
+                    <span class="count">55</span>
+                </a>
+                <a href="/ai-news" class="sidebar-link {% if request.path == '/ai-news' %}active{% endif %}">
+                    <span>AI News</span>
+                </a>
+                <a href="/ai-investors" class="sidebar-link {% if request.path == '/ai-investors' %}active{% endif %}">
+                    <span>AI Investors</span>
+                </a>
+                <a href="/ai-trends" class="sidebar-link {% if request.path == '/ai-trends' %}active{% endif %}">
+                    <span>Trends & Analysis</span>
+                </a>
+                <a href="/ai-map" class="sidebar-link {% if request.path == '/ai-map' %}active{% endif %}">
+                    <span>Nordic AI Map</span>
+                </a>
+            </div>
         </div>
         
         <div class="sidebar-footer">
-            <div style="text-align: center; padding: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
-                <img src="{{ url_for('static', filename='Port.png') }}" alt="Portföljbolagen" style="width: 70px; height: auto; border-radius: 8px; margin-bottom: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-                <div style="font-size: 8px; color: rgba(255,255,255,0.7); margin-top: 4px;">Powered by Portföljbolagen</div>
-            </div>
-            <div class="sidebar-user">
-                <i class="fas fa-user-circle"></i>
-                <div>
-                    <div class="user-name">Research User</div>
-                    <div class="user-role">Analyst</div>
-                </div>
-            </div>
         </div>
     </aside>
     
@@ -149,6 +127,39 @@
     
     <script src="{{ url_for('static', filename='common.js') }}"></script>
     <script src="{{ url_for('static', filename='news_ticker.js') }}"></script>
+    
+    <!-- Dropdown Navigation Script -->
+    <script>
+        // Dropdown toggle functionality with smooth animations
+        function toggleDropdown(category) {
+            const dropdown = document.getElementById(category + '-dropdown');
+            const arrow = document.getElementById(category + '-arrow');
+            
+            if (dropdown.classList.contains('show')) {
+                // Close dropdown
+                dropdown.classList.remove('show');
+                arrow.style.transform = 'rotate(0deg)';
+            } else {
+                // Open dropdown
+                dropdown.classList.add('show');
+                arrow.style.transform = 'rotate(180deg)';
+            }
+        }
+        
+        // Initialize dropdowns - closed by default
+        document.addEventListener('DOMContentLoaded', function() {
+            // Close all dropdowns by default
+            const dropdowns = ['overview', 'private-equity', 'ai-technology'];
+            dropdowns.forEach(category => {
+                const dropdown = document.getElementById(category + '-dropdown');
+                const arrow = document.getElementById(category + '-arrow');
+                if (dropdown) {
+                    dropdown.classList.remove('show');
+                    arrow.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+    </script>
     
     <!-- Mobile Menu Toggle Script -->
     <script>

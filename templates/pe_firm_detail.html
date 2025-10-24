@@ -5,6 +5,7 @@
 {% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="{{ url_for('static', filename='logo-utils.js') }}"></script>
 {% endblock %}
 
 {% block content %}
@@ -52,9 +53,10 @@ function displayFirmDetail(firm) {
         <!-- Firm Header -->
         <div class="firm-detail-header" style="background: linear-gradient(135deg, #4c1d95 0%, #581c87 100%); padding: 0.6rem 0.8rem; border-radius: 6px; color: white; margin-bottom: 0.5rem;">
             <div class="firm-detail-header-content" style="display: flex; align-items: center; gap: 0.5rem;">
-                <img src="${firm.logo_url}" alt="${escapeHtml(firm.name)}" 
-                     style="height: 35px; border-radius: 4px; background: white; padding: 0.2rem;"
-                     onerror="this.style.display='none'">
+                ${window.LogoUtils ? window.LogoUtils.createRobustLogoElement(firm.logo_url, firm.name, '35px', '🏢', '#4c1d95') : 
+                  `<img src="${firm.logo_url}" alt="${escapeHtml(firm.name)}" 
+                        style="height: 35px; border-radius: 4px; background: white; padding: 0.2rem;"
+                        onerror="this.style.display='none'">`}
                 <div>
                     <h1 style="margin: 0; font-size: 0.8rem; font-weight: 700;">${escapeHtml(firm.name)}</h1>
                     <div style="display: flex; gap: 0.5rem; margin-top: 0.2rem; font-size: 0.45rem; opacity: 0.9; flex-wrap: wrap;">
@@ -274,36 +276,47 @@ function displayFirmDetail(firm) {
         </div>
         
         <div class="tab-content" id="tab-focus">
-            <div class="content-card">
-                <div class="content-card-header">
-                    <h3 class="content-card-title">
-                        <i class="fas fa-bullseye"></i> Investment Strategy
+            <div class="content-card" style="padding: 1rem;">
+                <div class="content-card-header" style="margin-bottom: 1rem;">
+                    <h3 class="content-card-title" style="font-size: 0.7rem; margin: 0; color: #1a1a1a; font-weight: 700;">
+                        Investment Strategy
                     </h3>
                 </div>
-                <div class="content-card-body">
-                    <div class="focus-grid">
-                        <div class="focus-section">
-                            <h4><i class="fas fa-industry"></i> Sectors</h4>
-                            <div class="tag-list">
-                                ${firm.investment_focus.sectors.map(s => `<span class="tag">${escapeHtml(s)}</span>`).join('')}
+                <div class="content-card-body" style="padding: 0;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                        <div style="background: #f8fafc; padding: 0.8rem; border-radius: 8px; border: 1px solid #e2e8f0;">
+                            <h4 style="font-size: 0.6rem; font-weight: 600; color: #374151; margin: 0 0 0.5rem 0; display: flex; align-items: center; gap: 0.3rem;">
+                                <i class="fas fa-industry" style="font-size: 0.5rem; color: #6366F1;"></i> Sectors
+                            </h4>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.3rem;">
+                                ${firm.investment_focus.sectors.map(s => `<span style="background: #6366F1; color: white; padding: 0.2rem 0.4rem; border-radius: 4px; font-size: 0.45rem; font-weight: 500;">${escapeHtml(s)}</span>`).join('')}
                             </div>
                         </div>
-                        <div class="focus-section">
-                            <h4><i class="fas fa-globe"></i> Geography</h4>
-                            <div class="tag-list">
-                                ${firm.investment_focus.geography.map(g => `<span class="tag">${escapeHtml(g)}</span>`).join('')}
+                        <div style="background: #f8fafc; padding: 0.8rem; border-radius: 8px; border: 1px solid #e2e8f0;">
+                            <h4 style="font-size: 0.6rem; font-weight: 600; color: #374151; margin: 0 0 0.5rem 0; display: flex; align-items: center; gap: 0.3rem;">
+                                <i class="fas fa-globe" style="font-size: 0.5rem; color: #6366F1;"></i> Geography
+                            </h4>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.3rem;">
+                                ${firm.investment_focus.geography.map(g => `<span style="background: #7C3AED; color: white; padding: 0.2rem 0.4rem; border-radius: 4px; font-size: 0.45rem; font-weight: 500;">${escapeHtml(g)}</span>`).join('')}
                             </div>
                         </div>
-                        <div class="focus-section">
-                            <h4><i class="fas fa-chart-line"></i> Investment Type</h4>
-                            <div class="tag-list">
-                                ${firm.investment_focus.investment_type.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('')}
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                        <div style="background: #f8fafc; padding: 0.8rem; border-radius: 8px; border: 1px solid #e2e8f0;">
+                            <h4 style="font-size: 0.6rem; font-weight: 600; color: #374151; margin: 0 0 0.5rem 0; display: flex; align-items: center; gap: 0.3rem;">
+                                <i class="fas fa-chart-line" style="font-size: 0.5rem; color: #6366F1;"></i> Investment Type
+                            </h4>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.3rem;">
+                                ${firm.investment_focus.investment_type.map(t => `<span style="background: #4F46E5; color: white; padding: 0.2rem 0.4rem; border-radius: 4px; font-size: 0.45rem; font-weight: 500;">${escapeHtml(t)}</span>`).join('')}
                             </div>
                         </div>
-                        <div class="focus-section">
-                            <h4><i class="fas fa-money-bill-wave"></i> Deal Size</h4>
-                            <div class="tag-list">
-                                <span class="tag tag-large">${escapeHtml(firm.investment_focus.deal_size)}</span>
+                        <div style="background: #f8fafc; padding: 0.8rem; border-radius: 8px; border: 1px solid #e2e8f0;">
+                            <h4 style="font-size: 0.6rem; font-weight: 600; color: #374151; margin: 0 0 0.5rem 0; display: flex; align-items: center; gap: 0.3rem;">
+                                <i class="fas fa-money-bill-wave" style="font-size: 0.5rem; color: #6366F1;"></i> Deal Size
+                            </h4>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.3rem;">
+                                <span style="background: #6366F1; color: white; padding: 0.3rem 0.6rem; border-radius: 6px; font-size: 0.5rem; font-weight: 600;">${escapeHtml(firm.investment_focus.deal_size)}</span>
                             </div>
                         </div>
                     </div>
@@ -346,12 +359,18 @@ function setupTabs() {
         btn.addEventListener('click', () => {
             const tabName = btn.dataset.tab;
             
-            // Remove active from all
-            tabBtns.forEach(b => b.classList.remove('active'));
+            // Remove active from all tabs and reset their styles
+            tabBtns.forEach(b => {
+                b.classList.remove('active');
+                b.style.color = '#666';
+                b.style.borderBottom = '2px solid transparent';
+            });
             tabContents.forEach(c => c.classList.remove('active'));
             
-            // Add active to clicked
+            // Add active to clicked tab and update its styles
             btn.classList.add('active');
+            btn.style.color = '#4c1d95';
+            btn.style.borderBottom = '2px solid #4c1d95';
             document.getElementById(`tab-${tabName}`).classList.add('active');
         });
     });
@@ -988,11 +1007,12 @@ function displayTimeline(events) {
         if (event.company && event.company.logo_url) {
             // Use company logo for investment events
             iconHtml = `
-                <img src="${event.company.logo_url}" alt="${escapeHtml(event.company.company)}" 
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div class="timeline-marker-fallback" style="display: none; background-color: ${event.color};">
-                    <i class="fas ${event.icon}"></i>
-                </div>
+                ${window.LogoUtils ? window.LogoUtils.createRobustLogoElement(event.company.logo_url, event.company.company, '40px', '🏢', event.color) : 
+                  `<img src="${event.company.logo_url}" alt="${escapeHtml(event.company.company)}" 
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                   <div class="timeline-marker-fallback" style="display: none; background-color: ${event.color};">
+                       <i class="fas ${event.icon}"></i>
+                   </div>`}
             `;
         } else if (event.companies && event.companies.length > 0) {
             // Show first company logo prominently
@@ -1011,8 +1031,9 @@ function displayTimeline(events) {
                 <div class="company-logos-preview">
                     ${previewCompanies.map(company => `
                         <div class="company-logo-item" title="${escapeHtml(company.company)}">
-                            <img src="${company.logo_url}" alt="${escapeHtml(company.company)}" 
-                                 onerror="this.style.display='none';">
+                            ${window.LogoUtils ? window.LogoUtils.createRobustLogoElement(company.logo_url, company.company, '28px', '🏢', '#4c1d95') : 
+                              `<img src="${company.logo_url}" alt="${escapeHtml(company.company)}" 
+                                   onerror="this.style.display='none';">`}
                         </div>
                     `).join('')}
                     ${event.companies.length > 4 ? `

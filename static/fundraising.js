@@ -4,9 +4,6 @@ Fundraising Tracker - Interactive fundraising data
 
 let allFundraising = [];
 let currentFilter = 'all';
-let strategyChartInstance = null;
-let geographyChartInstance = null;
-let vintageChartInstance = null;
 let nordicFundsChartInstance = null;
 let europeanFundsChartInstance = null;
 let cumChartInstance = null;
@@ -14,6 +11,7 @@ let europeanInvestmentsChartInstance = null;
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('📈 Fundraising tracker initialized!');
+    console.log('Chart.js available:', typeof Chart !== 'undefined');
     init();
 });
 
@@ -22,6 +20,15 @@ function init() {
     setupTabs();
     loadFundraisingData();
     setupModalClose();
+    
+    // Fallback: ensure charts are created after a delay
+    setTimeout(() => {
+        if (typeof Chart !== 'undefined') {
+            console.log('Fallback: Creating charts...');
+            createNordicFundsChart();
+            initializeEuropeanCharts();
+        }
+    }, 1000);
 }
 
 function setupModalClose() {
@@ -237,31 +244,41 @@ function showFundDetails(fund) {
 
 // Create analytics charts
 function createCharts(fundraising) {
-    createNordicFundsChart();
-    createStrategyChart(fundraising);
-    createGeographyChart(fundraising);
-    createVintageChart(fundraising);
+    // Add a small delay to ensure DOM is ready
+    setTimeout(() => {
+        createNordicFundsChart();
+        // Initialize European charts immediately
+        initializeEuropeanCharts();
+    }, 100);
 }
 
 function createNordicFundsChart() {
     const ctx = document.getElementById('nordicFundsChart');
-    if (!ctx) return;
+    if (!ctx) {
+        console.error('Nordic funds chart canvas not found');
+        return;
+    }
     
+    console.log('Creating Nordic funds chart...');
     if (nordicFundsChartInstance) nordicFundsChartInstance.destroy();
+    
+    // Nordic data from European funds chart
+    const labels = ['H1-20', 'H2-20', 'H1-21', 'H2-21', 'H1-22', 'H2-22', 'H1-23', 'H2-23', 'H1-24'];
+    const nordicData = [2, 8, 22, 4, 14, 22, 3, 10, 10];
     
     nordicFundsChartInstance = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['2020', '2021', '2022', '2023', '2024'],
+            labels: labels,
             datasets: [{
                 label: 'Nordic Funds Raised (€ bn)',
-                data: [10, 30, 16, 13, 20],
+                data: nordicData,
                 backgroundColor: function(context) {
                     const ctx = context.chart.ctx;
                     const gradient = ctx.createLinearGradient(0, 0, 0, 250);
-                    gradient.addColorStop(0, '#6b21a8');
-                    gradient.addColorStop(0.5, '#581c87');
-                    gradient.addColorStop(1, '#4F46E5');
+                    gradient.addColorStop(0, '#1e40af');
+                    gradient.addColorStop(0.5, '#3b82f6');
+                    gradient.addColorStop(1, '#60a5fa');
                     return gradient;
                 },
                 borderRadius: 12,
@@ -269,8 +286,8 @@ function createNordicFundsChart() {
                 hoverBackgroundColor: function(context) {
                     const ctx = context.chart.ctx;
                     const gradient = ctx.createLinearGradient(0, 0, 0, 250);
-                    gradient.addColorStop(0, '#4F46E5');
-                    gradient.addColorStop(1, '#5B21B6');
+                    gradient.addColorStop(0, '#3b82f6');
+                    gradient.addColorStop(1, '#1e40af');
                     return gradient;
                 },
                 borderSkipped: false
@@ -291,17 +308,22 @@ function createNordicFundsChart() {
             scales: {
                 y: {
                     beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Funds Raised (€ bn)',
+                        font: { size: 8, weight: '600' },
+                        color: '#666'
+                    },
                     ticks: { 
-                        stepSize: 5,
                         color: '#666',
-                        font: { size: 8, weight: '600' }
+                        font: { size: 10, weight: '600' }
                     },
                     grid: { color: '#f3f4f6' }
                 },
                 x: {
                     ticks: { 
                         color: '#666',
-                        font: { size: 8, weight: '600' } 
+                        font: { size: 10, weight: '600' } 
                     },
                     grid: { display: false }
                 }
@@ -310,279 +332,8 @@ function createNordicFundsChart() {
     });
 }
 
-function createStrategyChart(fundraising) {
-    // Consolidate strategies into broader categories
-    const strategyMapping = {
-        'Buyout': ['buyout', 'buyouts', 'mid-market', 'lower mid-market', 'sme', 'large-cap'],
-        'Growth & VC': ['growth', 'venture', 'vc', 'early stage', 'early-stage', 'seed'],
-        'Specialized PE': ['healthcare', 'technology', 'software', 'tech', 'industrials', 'cleantech', 'digital', 'consumer', 'services'],
-        'Real Estate': ['real estate', 'property', 're '],
-        'Infrastructure': ['infrastructure', 'infra', 'energy'],
-        'Other': ['impact', 'sustainability', 'secondaries', 'continuation', 'diversified', 'balanced']
-    };
-    
-    const strategies = {
-        'Buyout': 0,
-        'Growth & VC': 0,
-        'Specialized PE': 0,
-        'Real Estate': 0,
-        'Infrastructure': 0,
-        'Other': 0
-    };
-    
-    fundraising.forEach(fund => {
-        const strategy = fund.strategy.toLowerCase();
-        let categorized = false;
-        
-        for (const [category, keywords] of Object.entries(strategyMapping)) {
-            if (keywords.some(keyword => strategy.includes(keyword))) {
-                strategies[category]++;
-                categorized = true;
-                break;
-            }
-        }
-        
-        if (!categorized) {
-            strategies['Other']++;
-        }
-    });
-    
-    // Remove categories with 0 funds
-    const filteredStrategies = Object.fromEntries(
-        Object.entries(strategies).filter(([_, count]) => count > 0)
-    );
-    
-    const ctx = document.getElementById('strategyChart');
-    if (!ctx) return;
-    
-    if (strategyChartInstance) strategyChartInstance.destroy();
-    
-    // Deep purple, green, and blue color palette
-    const colors = {
-        'Buyout': '#4c1d95',
-        'Growth & VC': '#059669',
-        'Specialized PE': '#1e40af',
-        'Real Estate': '#581c87',
-        'Infrastructure': '#047857',
-        'Other': '#6b21a8'
-    };
-    
-    strategyChartInstance = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            labels: Object.keys(filteredStrategies),
-            datasets: [{
-                data: Object.values(filteredStrategies),
-                backgroundColor: Object.keys(filteredStrategies).map(k => colors[k]),
-                borderWidth: 3,
-                borderColor: '#fff'
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: true,
-            plugins: {
-                legend: {
-                    position: 'bottom',
-                    labels: {
-                        boxWidth: 6,
-                        padding: 3,
-                        font: { size: 6, weight: '600' },
-                        color: '#1a1a1a'
-                    }
-                },
-                tooltip: {
-                    backgroundColor: 'rgba(17, 24, 39, 0.95)',
-                    padding: 12,
-                    titleFont: { size: 13, weight: 'bold' },
-                    bodyFont: { size: 12 },
-                    borderColor: '#667eea',
-                    borderWidth: 1,
-                    cornerRadius: 6
-                }
-            }
-        }
-    });
-}
 
-function createGeographyChart(fundraising) {
-    // Consolidate geographies into broader regions
-    const geoMapping = {
-        'Nordic': ['nordic', 'sweden', 'denmark', 'norway', 'finland', 'iceland'],
-        'Europe': ['europe', 'european', 'west europe', 'benelux', 'dach', 'baltics', 'uk', 'france', 'germany'],
-        'North America': ['north america', 'us', 'canada', 'united states'],
-        'Global': ['global', 'worldwide', 'international']
-    };
-    
-    const geographies = {
-        'Nordic': 0,
-        'Europe': 0,
-        'North America': 0,
-        'Global': 0
-    };
-    
-    fundraising.forEach(fund => {
-        const geo = fund.geography.toLowerCase();
-        let categorized = false;
-        
-        for (const [region, keywords] of Object.entries(geoMapping)) {
-            if (keywords.some(keyword => geo.includes(keyword))) {
-                geographies[region]++;
-                categorized = true;
-                break;
-            }
-        }
-        
-        if (!categorized) {
-            geographies['Global']++;
-        }
-    });
-    
-    // Remove regions with 0 funds
-    const filteredGeographies = Object.fromEntries(
-        Object.entries(geographies).filter(([_, count]) => count > 0)
-    );
-    
-    const ctx = document.getElementById('geographyChart');
-    if (!ctx) return;
-    
-    if (geographyChartInstance) geographyChartInstance.destroy();
-    
-    // Deep purple, green, and blue color palette
-    const colors = {
-        'Nordic': '#4c1d95',
-        'Europe': '#059669',
-        'North America': '#1e40af',
-        'Global': '#581c87'
-    };
-    
-    geographyChartInstance = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            labels: Object.keys(filteredGeographies),
-            datasets: [{
-                data: Object.values(filteredGeographies),
-                backgroundColor: Object.keys(filteredGeographies).map(k => colors[k]),
-                borderWidth: 3,
-                borderColor: '#fff'
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: true,
-            cutout: '60%',
-            plugins: {
-                legend: {
-                    position: 'bottom',
-                    labels: {
-                        boxWidth: 6,
-                        padding: 3,
-                        font: { size: 6, weight: '600' },
-                        color: '#1a1a1a'
-                    }
-                },
-                tooltip: {
-                    backgroundColor: 'rgba(17, 24, 39, 0.95)',
-                    padding: 12,
-                    titleFont: { size: 13, weight: 'bold' },
-                    bodyFont: { size: 12 },
-                    borderColor: '#667eea',
-                    borderWidth: 1,
-                    cornerRadius: 6
-                },
-                datalabels: {
-                    display: false
-                }
-            }
-        }
-    });
-}
 
-function createVintageChart(fundraising) {
-    const vintages = {};
-    fundraising.forEach(fund => {
-        if (fund.vintage && fund.vintage !== 'Evergreen') {
-            vintages[fund.vintage] = (vintages[fund.vintage] || 0) + 1;
-        }
-    });
-    
-    // Sort by year
-    const sortedVintages = Object.keys(vintages).sort().reduce((obj, key) => {
-        obj[key] = vintages[key];
-        return obj;
-    }, {});
-    
-    const ctx = document.getElementById('vintageChart');
-    if (!ctx) return;
-    
-    if (vintageChartInstance) vintageChartInstance.destroy();
-    
-    vintageChartInstance = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: Object.keys(sortedVintages),
-            datasets: [{
-                label: 'Funds',
-                data: Object.values(sortedVintages),
-                backgroundColor: function(context) {
-                    const ctx = context.chart.ctx;
-                    const gradient = ctx.createLinearGradient(0, 0, 0, 250);
-                    gradient.addColorStop(0, '#059669');
-                    gradient.addColorStop(0.5, '#047857');
-                    gradient.addColorStop(1, '#065f46');
-                    return gradient;
-                },
-                borderRadius: 12,
-                borderWidth: 0,
-                hoverBackgroundColor: function(context) {
-                    const ctx = context.chart.ctx;
-                    const gradient = ctx.createLinearGradient(0, 0, 0, 250);
-                    gradient.addColorStop(0, '#047857');
-                    gradient.addColorStop(1, '#064e3b');
-                    return gradient;
-                },
-                borderSkipped: false
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: true,
-            plugins: {
-                legend: { display: false },
-                tooltip: {
-                    backgroundColor: 'rgba(17, 24, 39, 0.95)',
-                    padding: 12,
-                    titleFont: { size: 13, weight: 'bold' },
-                    bodyFont: { size: 12 },
-                    borderColor: '#667eea',
-                    borderWidth: 1,
-                    cornerRadius: 6
-                },
-                datalabels: {
-                    display: false
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    ticks: { 
-                        stepSize: 2,
-                        color: '#666',
-                        font: { size: 8, weight: '600' }
-                    },
-                    grid: { color: '#f3f4f6' }
-                },
-                x: {
-                    ticks: { 
-                        color: '#666',
-                        font: { size: 8, weight: '600' } 
-                    },
-                    grid: { display: false }
-                }
-            }
-        }
-    });
-}
 
 // European Analytics Charts
 function initializeEuropeanCharts() {
@@ -593,8 +344,12 @@ function initializeEuropeanCharts() {
 
 function createEuropeanFundsChart() {
     const ctx = document.getElementById('europeanFundsChart');
-    if (!ctx) return;
+    if (!ctx) {
+        console.error('European funds chart canvas not found');
+        return;
+    }
     
+    console.log('Creating European funds chart...');
     if (europeanFundsChartInstance) europeanFundsChartInstance.destroy();
     
     const labels = ['H1-20', 'H2-20', 'H1-21', 'H2-21', 'H1-22', 'H2-22', 'H1-23', 'H2-23', 'H1-24'];
@@ -692,7 +447,7 @@ function createEuropeanFundsChart() {
                     title: {
                         display: true,
                         text: 'Funds Raised (€ bn)',
-                        font: { size: 12, weight: '600' },
+                        font: { size: 8, weight: '600' },
                         color: '#666'
                     },
                     ticks: {
