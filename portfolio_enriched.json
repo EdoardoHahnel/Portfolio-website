@@ -1,11 +1,9 @@
 {
   "metadata": {
-    "last_updated": "2025-10-24 20:31:30",
-    "total_companies": 417,
-    "description": "Updated portfolio database with current Summa Equity investments only",
-    "summa_equity_companies": 19,
-    "force_refresh": true,
-    "summa_years_updated": true
+    "last_updated": "2025-10-24 20:40:03",
+    "total_companies": 424,
+    "description": "Updated portfolio database with current Ratos investments only",
+    "ratos_companies": 14
   },
   "companies": [
     {
@@ -21747,677 +21745,6 @@
       "deal_size": "SEK 6.1B"
     },
     {
-      "company": "Bisnode",
-      "sector": "Business Services",
-      "fund": "Ratos",
-      "market": "Sweden",
-      "entry": "2017",
-      "source": "Ratos",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.bisnode.se",
-      "enriched": true,
-      "research_date": "2025-10-20T16:50:00",
-      "detailed_description": "Bisnode (now part of Dun & Bradstreet after 2021 acquisition) was a leading Nordic provider of business intelligence, credit information, and data analytics services. The company helped businesses make better decisions through credit reports, company databases, marketing data, and business intelligence solutions. Bisnode operated across the Nordics providing credit risk assessment, sales intelligence, compliance solutions, and market insights to help companies identify customers, assess creditworthiness, prevent fraud, and grow revenue. The company aggregated data from public and private sources, applying analytics to provide actionable business insights.",
-      "founded_year": "1989",
-      "employee_count_detailed": "~2,000 employees (prior to D&B acquisition)",
-      "revenue": "SEK 2+ billion",
-      "revenue_growth": "Steady growth in data and analytics services",
-      "ceo": "Leadership Team (pre-acquisition)",
-      "leadership_team": [
-        {
-          "name": "Management Team",
-          "role": "Leadership",
-          "background": "Data analytics and business services professionals"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Credit Information & Risk Management",
-          "description": "Credit reports, credit ratings, and risk assessment tools helping businesses evaluate customer creditworthiness and reduce bad debt."
-        },
-        {
-          "name": "Sales & Marketing Intelligence",
-          "description": "Company databases, prospect lists, and marketing data enabling B2B sales and marketing targeting."
-        },
-        {
-          "name": "Compliance & AML Solutions",
-          "description": "Know-your-customer (KYC), anti-money laundering (AML), and compliance screening services for regulatory requirements."
-        },
-        {
-          "name": "Business Intelligence & Analytics",
-          "description": "Market insights, industry analysis, and data visualization helping companies understand markets and make strategic decisions."
-        }
-      ],
-      "technology_stack": [
-        "Data aggregation and processing platforms",
-        "Credit scoring algorithms",
-        "API integrations",
-        "Cloud-based delivery",
-        "Analytics and visualization tools",
-        "CRM integrations"
-      ],
-      "recent_news": [
-        {
-          "date": "2021",
-          "headline": "Acquired by Dun & Bradstreet in major transaction",
-          "impact": "Exit for Ratos"
-        },
-        {
-          "date": "2019-2020",
-          "headline": "Digital transformation and platform modernization",
-          "impact": "Technology investment"
-        },
-        {
-          "date": "2018",
-          "headline": "Expansion of analytics and compliance offerings",
-          "impact": "Product development"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "1989",
-          "event": "Company Founded",
-          "description": "Established as Nordic business information provider"
-        },
-        {
-          "year": "2017",
-          "event": "Ratos Investment",
-          "description": "Acquired by Ratos to drive operational improvements and growth"
-        },
-        {
-          "year": "2021",
-          "event": "Dun & Bradstreet Acquisition",
-          "description": "Sold to global business intelligence leader D&B"
-        }
-      ],
-      "competitive_advantages": [
-        "Leading position in Nordic business information market",
-        "Comprehensive data coverage across Nordic companies",
-        "Established customer relationships across industries",
-        "Regulatory expertise and compliance capabilities",
-        "Local market knowledge and language support",
-        "Integration with business processes and systems"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "Subscription-based data services",
-          "Credit report fees",
-          "Compliance and AML services",
-          "Analytics and consulting"
-        ],
-        "customer_segments": [
-          "Banks and financial institutions",
-          "B2B companies",
-          "Credit managers",
-          "Sales and marketing teams",
-          "Compliance officers"
-        ],
-        "value_proposition": "Trusted business intelligence enabling better decisions through comprehensive company data, credit insights, and compliance solutions tailored for Nordic markets"
-      },
-      "strategic_priorities": [
-        "Modernize technology platform and data delivery",
-        "Expand analytics and predictive capabilities",
-        "Grow compliance and regulatory solutions",
-        "Enhance self-service and digital experience",
-        "Cross-sell across Nordic markets",
-        "Improve data quality and coverage"
-      ],
-      "investment_thesis": "Bisnode served essential business needs for credit risk management, sales intelligence, and compliance in the Nordic region. The company's market position, data assets, and customer relationships provided a strong foundation. Ratos's operational improvements enhanced profitability and positioned the company for strategic exit. The acquisition by Dun & Bradstreet validated the value of Nordic data assets and local market expertise. Business information services benefit from recurring revenue, high switching costs, and growing regulatory requirements driving compliance spending.",
-      "deal_size": "SEK 7.5B"
-    },
-    {
-      "company": "LEDiL",
-      "sector": "Technology",
-      "fund": "Ratos Industry",
-      "market": "Finland",
-      "entry": "2019",
-      "source": "Ratos",
-      "headquarters": "Vantaa, Finland",
-      "website": "https://www.ledil.com",
-      "enriched": true,
-      "research_date": "2025-10-20T21:05:00",
-      "detailed_description": "LEDiL is a Finnish manufacturer of LED optics and lighting solutions for professional LED applications. The company designs and produces optical components, lenses, and reflectors optimizing light output and distribution for LED lighting fixtures. LEDiL serves lighting manufacturers globally providing customized optical solutions for indoor, outdoor, industrial, and specialty lighting.",
-      "founded_year": "2002",
-      "employee_count_detailed": "~200 employees",
-      "revenue": "€40-60 million",
-      "revenue_growth": "Growth through LED market expansion",
-      "ceo": "Tomi Kuntze",
-      "leadership_team": [
-        {
-          "name": "Tomi Kuntze",
-          "role": "CEO",
-          "background": "Lighting and optics industry executive"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "LED Optics",
-          "description": "Optical lenses and reflectors for LED fixtures"
-        },
-        {
-          "name": "Street Lighting Optics",
-          "description": "Optical solutions for outdoor and street lighting"
-        },
-        {
-          "name": "Indoor Lighting Optics",
-          "description": "Components for commercial and industrial indoor lighting"
-        }
-      ],
-      "technology_stack": [
-        "Optical design software",
-        "Injection molding",
-        "LED optics technology"
-      ],
-      "recent_news": [
-        {
-          "date": "2019",
-          "headline": "Ratos Industry investment",
-          "impact": "Growth capital"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2002",
-          "event": "Company Founded",
-          "description": "Established LED optics company"
-        },
-        {
-          "year": "2019",
-          "event": "Ratos Investment",
-          "description": "Growth partnership"
-        }
-      ],
-      "competitive_advantages": [
-        "LED optics expertise",
-        "Custom design capabilities",
-        "Global customer base"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "Optics component sales",
-          "Custom design services"
-        ],
-        "customer_segments": [
-          "LED lighting manufacturers",
-          "Lighting fixture companies"
-        ],
-        "value_proposition": "Optimized optical solutions maximizing LED lighting performance and efficiency"
-      },
-      "strategic_priorities": [
-        "Expand in high-growth lighting segments",
-        "Develop new optical technologies",
-        "Grow customer base"
-      ],
-      "investment_thesis": "LEDiL benefits from LED lighting market growth and need for specialized optical components."
-    },
-    {
-      "company": "airteam",
-      "sector": "Business Services",
-      "fund": "Ratos",
-      "market": "Sweden",
-      "entry": "2020",
-      "source": "Ratos",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.airteam.se",
-      "enriched": true,
-      "research_date": "2025-10-20T21:00:00",
-      "detailed_description": "airteam is a Swedish climate control and HVAC services company providing installation, maintenance, and service of heating, ventilation, and air conditioning systems. The company serves commercial buildings, industrial facilities, and residential properties with technical expertise in climate systems.",
-      "founded_year": "1990s",
-      "employee_count_detailed": "~500-700 technicians and staff",
-      "revenue": "SEK 800-1,000 million",
-      "revenue_growth": "Growth through service contracts and acquisitions",
-      "ceo": "Management Team",
-      "leadership_team": [
-        {
-          "name": "Leadership Team",
-          "role": "Management",
-          "background": "HVAC and technical services professionals"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "HVAC Installation",
-          "description": "Installation of heating, ventilation, and AC systems"
-        },
-        {
-          "name": "Maintenance Services",
-          "description": "Regular maintenance and servicing of climate systems"
-        },
-        {
-          "name": "Service & Repair",
-          "description": "Emergency repairs and technical support"
-        }
-      ],
-      "technology_stack": [
-        "HVAC systems",
-        "Service management software",
-        "Remote monitoring"
-      ],
-      "recent_news": [
-        {
-          "date": "2020",
-          "headline": "Ratos investment",
-          "impact": "Growth capital"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "1990s",
-          "event": "Company Founded",
-          "description": "Established HVAC services"
-        },
-        {
-          "year": "2020",
-          "event": "Ratos Investment",
-          "description": "Growth partnership"
-        }
-      ],
-      "competitive_advantages": [
-        "Swedish market presence",
-        "Technical expertise",
-        "Service contract portfolio"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "Installation projects",
-          "Service contracts",
-          "Maintenance fees",
-          "Repair services"
-        ],
-        "customer_segments": [
-          "Commercial buildings",
-          "Industrial facilities",
-          "Property managers"
-        ],
-        "value_proposition": "Professional HVAC services ensuring optimal climate control and energy efficiency"
-      },
-      "strategic_priorities": [
-        "Expand service contract base",
-        "Grow through acquisitions",
-        "Enhance technical capabilities"
-      ],
-      "investment_thesis": "airteam benefits from building services outsourcing and energy efficiency focus. Recurring service contracts provide stable revenue."
-    },
-    {
-      "company": "HENT",
-      "sector": "Construction",
-      "fund": "Ratos",
-      "market": "Norway",
-      "entry": "2021",
-      "source": "Ratos",
-      "headquarters": "Oslo, Norway",
-      "website": "https://www.hent.no",
-      "enriched": true,
-      "research_date": "2025-10-20T21:05:00",
-      "detailed_description": "HENT is a Norwegian construction company specializing in complex building projects including offices, residential, healthcare, and educational facilities. The company provides design-build services, project development, and construction management with focus on sustainability and innovation in Norwegian construction market.",
-      "founded_year": "2008",
-      "employee_count_detailed": "~500-700 employees",
-      "revenue": "NOK 4-5 billion",
-      "revenue_growth": "Growth through project pipeline",
-      "ceo": "Christian Thorsrud",
-      "leadership_team": [
-        {
-          "name": "Christian Thorsrud",
-          "role": "CEO",
-          "background": "Construction industry executive"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Construction Services",
-          "description": "Building construction and project delivery"
-        },
-        {
-          "name": "Design-Build",
-          "description": "Integrated design and construction services"
-        },
-        {
-          "name": "Project Development",
-          "description": "Development and realization of construction projects"
-        }
-      ],
-      "technology_stack": [
-        "BIM (Building Information Modeling)",
-        "Project management systems",
-        "Construction technology"
-      ],
-      "recent_news": [
-        {
-          "date": "2021",
-          "headline": "Ratos investment",
-          "impact": "Growth capital"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2008",
-          "event": "Company Founded",
-          "description": "Established construction company"
-        },
-        {
-          "year": "2021",
-          "event": "Ratos Investment",
-          "description": "Growth partnership"
-        }
-      ],
-      "competitive_advantages": [
-        "Norwegian market expertise",
-        "Complex projects capabilities",
-        "Sustainability focus"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "Construction contracts",
-          "Project management fees",
-          "Design-build services"
-        ],
-        "customer_segments": [
-          "Property developers",
-          "Public sector",
-          "Private clients"
-        ],
-        "value_proposition": "Professional construction services delivering complex projects with quality and sustainability"
-      },
-      "strategic_priorities": [
-        "Grow project pipeline",
-        "Enhance sustainability",
-        "Improve margins"
-      ],
-      "investment_thesis": "HENT benefits from Norwegian construction activity and demand for quality contractors. Sustainability positioning creates differentiation.",
-      "deal_size": "NOK 1.5B"
-    },
-    {
-      "company": "Speed Group",
-      "sector": "Logistics",
-      "fund": "Ratos Industry",
-      "market": "Sweden",
-      "entry": "2018",
-      "source": "Ratos",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.speedgroup.se",
-      "enriched": true,
-      "research_date": "2025-10-20T21:10:00",
-      "detailed_description": "Speed Group is a Nordic third-party logistics and express delivery company providing temperature-controlled transport, express delivery, and logistics solutions. The company specializes in time-critical and temperature-sensitive shipments serving healthcare, pharma, food, and e-commerce industries across Sweden and Nordics.",
-      "founded_year": "2006",
-      "employee_count_detailed": "~800-1,000 employees",
-      "revenue": "SEK 1.5+ billion",
-      "revenue_growth": "Strong growth through e-commerce and healthcare logistics",
-      "ceo": "Henrik Brehmer",
-      "leadership_team": [
-        {
-          "name": "Henrik Brehmer",
-          "role": "CEO",
-          "background": "Logistics industry executive"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Temperature-Controlled Logistics",
-          "description": "Cold chain transportation for pharma and food"
-        },
-        {
-          "name": "Express Delivery",
-          "description": "Time-critical delivery services"
-        },
-        {
-          "name": "Healthcare Logistics",
-          "description": "Specialized transport for medical products"
-        }
-      ],
-      "technology_stack": [
-        "Fleet management",
-        "Route optimization",
-        "Temperature monitoring",
-        "Logistics platforms"
-      ],
-      "recent_news": [
-        {
-          "date": "2018",
-          "headline": "Ratos Industry investment",
-          "impact": "Growth capital"
-        },
-        {
-          "date": "2020-2023",
-          "headline": "Strong growth in healthcare and e-commerce logistics",
-          "impact": "Revenue growth"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2006",
-          "event": "Company Founded",
-          "description": "Established logistics company"
-        },
-        {
-          "year": "2018",
-          "event": "Ratos Investment",
-          "description": "Growth partnership"
-        }
-      ],
-      "competitive_advantages": [
-        "Temperature-controlled expertise",
-        "Healthcare specialization",
-        "Nordic coverage",
-        "Express delivery capabilities"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "Delivery fees",
-          "Logistics contracts",
-          "Healthcare transport services"
-        ],
-        "customer_segments": [
-          "Pharma companies",
-          "Healthcare providers",
-          "Food distributors",
-          "E-commerce retailers"
-        ],
-        "value_proposition": "Reliable temperature-controlled and express logistics ensuring critical shipments arrive on time"
-      },
-      "strategic_priorities": [
-        "Expand healthcare logistics",
-        "Grow e-commerce delivery",
-        "Enhance cold chain capabilities",
-        "Geographic expansion"
-      ],
-      "investment_thesis": "Speed Group benefits from growing demand for specialized logistics in healthcare and e-commerce. Temperature-controlled and time-critical capabilities create competitive advantages."
-    },
-    {
-      "company": "Kvdbil",
-      "sector": "Automotive",
-      "fund": "Ratos",
-      "market": "Sweden",
-      "entry": "2019",
-      "source": "Ratos",
-      "headquarters": "Gothenburg, Sweden",
-      "website": "https://www.kvdbil.se",
-      "enriched": true,
-      "research_date": "2025-10-20T21:15:00",
-      "detailed_description": "KVD (Kamux Vara Dealer) is a leading Nordic online marketplace for used cars, operating digital platforms for buying and selling pre-owned vehicles. The company provides vehicle inspection, reconditioning, financing, and logistics services, connecting buyers and sellers across Sweden and Nordics. KVD combines traditional auto auction expertise with modern e-commerce technology.",
-      "founded_year": "1974",
-      "employee_count_detailed": "~300-500 employees",
-      "revenue": "SEK 3+ billion",
-      "revenue_growth": "Strong growth through online adoption",
-      "ceo": "Fredrik Wikingsson",
-      "leadership_team": [
-        {
-          "name": "Fredrik WikingsSon",
-          "role": "CEO",
-          "background": "Automotive and e-commerce executive"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Online Vehicle Marketplace",
-          "description": "Digital platform for buying and selling used cars"
-        },
-        {
-          "name": "Vehicle Inspection & Reconditioning",
-          "description": "Professional inspection and preparation services"
-        },
-        {
-          "name": "Auto Financing",
-          "description": "Vehicle financing and insurance products"
-        },
-        {
-          "name": "Logistics & Transport",
-          "description": "Vehicle delivery and transport services"
-        }
-      ],
-      "technology_stack": [
-        "E-commerce platform",
-        "Vehicle inspection systems",
-        "Pricing algorithms",
-        "Digital auction technology"
-      ],
-      "recent_news": [
-        {
-          "date": "2019",
-          "headline": "Ratos investment for digitalization",
-          "impact": "Growth capital"
-        },
-        {
-          "date": "2021",
-          "headline": "Strong growth in online vehicle sales",
-          "impact": "Market share gains"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "1974",
-          "event": "Company Founded",
-          "description": "Established as auto auction company"
-        },
-        {
-          "year": "2019",
-          "event": "Ratos Investment",
-          "description": "Partnership for digital transformation"
-        }
-      ],
-      "competitive_advantages": [
-        "Leading Nordic used car platform",
-        "Digital marketplace technology",
-        "Inspection and quality standards",
-        "Established brand"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "Vehicle sales",
-          "Marketplace fees",
-          "Financing commissions",
-          "Inspection fees"
-        ],
-        "customer_segments": [
-          "Used car buyers",
-          "Vehicle sellers",
-          "Dealers",
-          "Private individuals"
-        ],
-        "value_proposition": "Trusted online marketplace for quality used cars with inspection, financing, and delivery services"
-      },
-      "strategic_priorities": [
-        "Grow online sales",
-        "Expand Nordic presence",
-        "Enhance digital experience",
-        "Increase vehicle throughput"
-      ],
-      "investment_thesis": "KVD benefits from shift to online used car shopping and Nordic vehicle market dynamics. Digital transformation and marketplace model offer growth and margin expansion."
-    },
-    {
-      "company": "Oase Outdoors",
-      "sector": "Consumer",
-      "fund": "Ratos Industry",
-      "market": "Denmark",
-      "entry": "2020",
-      "source": "Ratos",
-      "headquarters": "Copenhagen, Denmark",
-      "website": "https://www.oaseoutdoors.com",
-      "enriched": true,
-      "research_date": "2025-10-20T21:20:00",
-      "detailed_description": "Oase Outdoors is a Danish outdoor equipment and camping gear company designing and selling tents, sleeping bags, backpacks, and outdoor accessories. The company's brands include Outwell, Easy Camp, and Robens, serving camping and outdoor enthusiasts across Europe. Oase combines Scandinavian design with functional outdoor products.",
-      "founded_year": "1984",
-      "employee_count_detailed": "~200 employees",
-      "revenue": "DKK 500-700 million",
-      "revenue_growth": "Growth through brand building and distribution",
-      "ceo": "Management Team",
-      "leadership_team": [
-        {
-          "name": "Leadership Team",
-          "role": "Management",
-          "background": "Outdoor products and retail professionals"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Tents & Shelters",
-          "description": "Family tents, camping tents, and outdoor shelters"
-        },
-        {
-          "name": "Sleeping Systems",
-          "description": "Sleeping bags, mats, and camping comfort products"
-        },
-        {
-          "name": "Camping Equipment",
-          "description": "Furniture, cookware, and camping accessories"
-        },
-        {
-          "name": "Backpacks & Bags",
-          "description": "Outdoor backpacks and travel bags"
-        }
-      ],
-      "technology_stack": [
-        "Product design systems",
-        "E-commerce platforms",
-        "Supply chain management"
-      ],
-      "recent_news": [
-        {
-          "date": "2020",
-          "headline": "Ratos Industry investment",
-          "impact": "Growth capital"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "1984",
-          "event": "Company Founded",
-          "description": "Established outdoor equipment brand"
-        },
-        {
-          "year": "2020",
-          "event": "Ratos Investment",
-          "description": "Growth partnership"
-        }
-      ],
-      "competitive_advantages": [
-        "Strong European camping brands",
-        "Scandinavian design heritage",
-        "Distribution network",
-        "Product innovation"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "Product sales through retailers",
-          "Direct e-commerce",
-          "Wholesale distribution"
-        ],
-        "customer_segments": [
-          "Camping enthusiasts",
-          "Families",
-          "Outdoor adventurers",
-          "Retailers"
-        ],
-        "value_proposition": "Quality outdoor and camping equipment with Scandinavian design and functionality"
-      },
-      "strategic_priorities": [
-        "Expand distribution",
-        "Innovate product portfolio",
-        "Grow e-commerce",
-        "Strengthen brand positioning"
-      ],
-      "investment_thesis": "Oase Outdoors benefits from growing outdoor recreation and camping trends. Strong brands and European distribution provide foundation for growth."
-    },
-    {
       "company": "Cavotec",
       "sector": "Industrial Tech",
       "fund": "Bure Equity",
@@ -34338,6 +33665,678 @@
         "Technology innovation",
         "Strong market position",
         "Sustainability focus"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "aibel",
+      "sector": "Industrial",
+      "fund": "Ratos Fund",
+      "market": "Nordic/Europe",
+      "entry": "2020",
+      "source": "Ratos",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.aibel.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:40:03",
+      "detailed_description": "aibel - Engineering and construction company. The company operates in the industrial sector with strong market positioning across Nordic and European markets.",
+      "employees": "100-1000 employees",
+      "revenue": "SEK 500M - SEK 5B",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "SEK 1B - SEK 10B (estimated)",
+      "total_funding": "Ratos-backed",
+      "ceo": "Industrial industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020",
+          "headline": "Ratos investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020",
+          "event": "Ratos Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial expertise",
+        "Nordic market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "ALEIDO",
+      "sector": "Technology",
+      "fund": "Ratos Fund",
+      "market": "Nordic/Europe",
+      "entry": "2021",
+      "source": "Ratos",
+      "headquarters": "Copenhagen, Denmark",
+      "website": "https://www.aleido.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:40:03",
+      "detailed_description": "ALEIDO - Technology solutions provider. The company operates in the technology sector with strong market positioning across Nordic and European markets.",
+      "employees": "100-1000 employees",
+      "revenue": "SEK 500M - SEK 5B",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "SEK 1B - SEK 10B (estimated)",
+      "total_funding": "Ratos-backed",
+      "ceo": "Technology industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Technology industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2021",
+          "headline": "Ratos investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2021",
+          "event": "Ratos Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Technology expertise",
+        "Nordic market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Diab",
+      "sector": "Industrial",
+      "fund": "Ratos Fund",
+      "market": "Nordic/Europe",
+      "entry": "2022",
+      "source": "Ratos",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.diab.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:40:03",
+      "detailed_description": "Diab - Composite materials manufacturer. The company operates in the industrial sector with strong market positioning across Nordic and European markets.",
+      "employees": "100-1000 employees",
+      "revenue": "SEK 500M - SEK 5B",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "SEK 1B - SEK 10B (estimated)",
+      "total_funding": "Ratos-backed",
+      "ceo": "Industrial industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2022",
+          "headline": "Ratos investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2022",
+          "event": "Ratos Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial expertise",
+        "Nordic market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "EXPIN GROUP",
+      "sector": "Industrial",
+      "fund": "Ratos Fund",
+      "market": "Nordic/Europe",
+      "entry": "2023",
+      "source": "Ratos",
+      "headquarters": "Oslo, Norway",
+      "website": "https://www.expin.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:40:03",
+      "detailed_description": "EXPIN GROUP - Industrial services group. The company operates in the industrial sector with strong market positioning across Nordic and European markets.",
+      "employees": "100-1000 employees",
+      "revenue": "SEK 500M - SEK 5B",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "SEK 1B - SEK 10B (estimated)",
+      "total_funding": "Ratos-backed",
+      "ceo": "Industrial industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2023",
+          "headline": "Ratos investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2023",
+          "event": "Ratos Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial expertise",
+        "Nordic market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "HL",
+      "sector": "Industrial",
+      "fund": "Ratos Fund",
+      "market": "Nordic/Europe",
+      "entry": "2024",
+      "source": "Ratos",
+      "headquarters": "Oslo, Norway",
+      "website": "https://www.hl.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:40:03",
+      "detailed_description": "HL - Industrial solutions provider. The company operates in the industrial sector with strong market positioning across Nordic and European markets.",
+      "employees": "100-1000 employees",
+      "revenue": "SEK 500M - SEK 5B",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "SEK 1B - SEK 10B (estimated)",
+      "total_funding": "Ratos-backed",
+      "ceo": "Industrial industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2024",
+          "headline": "Ratos investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2024",
+          "event": "Ratos Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial expertise",
+        "Nordic market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Knightec Group",
+      "sector": "Business Services",
+      "fund": "Ratos Fund",
+      "market": "Nordic/Europe",
+      "entry": "2020",
+      "source": "Ratos",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.knightec.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:40:03",
+      "detailed_description": "Knightec Group - Engineering and consulting group. The company operates in the business services sector with strong market positioning across Nordic and European markets.",
+      "employees": "100-1000 employees",
+      "revenue": "SEK 500M - SEK 5B",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "SEK 1B - SEK 10B (estimated)",
+      "total_funding": "Ratos-backed",
+      "ceo": "Business Services industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Business Services industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020",
+          "headline": "Ratos investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020",
+          "event": "Ratos Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Business Services expertise",
+        "Nordic market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "kvd",
+      "sector": "Industrial",
+      "fund": "Ratos Fund",
+      "market": "Nordic/Europe",
+      "entry": "2021",
+      "source": "Ratos",
+      "headquarters": "Oslo, Norway",
+      "website": "https://www.kvd.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:40:03",
+      "detailed_description": "kvd - Industrial services company. The company operates in the industrial sector with strong market positioning across Nordic and European markets.",
+      "employees": "100-1000 employees",
+      "revenue": "SEK 500M - SEK 5B",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "SEK 1B - SEK 10B (estimated)",
+      "total_funding": "Ratos-backed",
+      "ceo": "Industrial industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2021",
+          "headline": "Ratos investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2021",
+          "event": "Ratos Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial expertise",
+        "Nordic market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "LEDİL",
+      "sector": "Technology",
+      "fund": "Ratos Fund",
+      "market": "Nordic/Europe",
+      "entry": "2022",
+      "source": "Ratos",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.ledi̇l.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:40:03",
+      "detailed_description": "LEDİL - LED lighting solutions. The company operates in the technology sector with strong market positioning across Nordic and European markets.",
+      "employees": "100-1000 employees",
+      "revenue": "SEK 500M - SEK 5B",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "SEK 1B - SEK 10B (estimated)",
+      "total_funding": "Ratos-backed",
+      "ceo": "Technology industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Technology industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2022",
+          "headline": "Ratos investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2022",
+          "event": "Ratos Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Technology expertise",
+        "Nordic market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "OASE OUTDOORS",
+      "sector": "Consumer",
+      "fund": "Ratos Fund",
+      "market": "Nordic/Europe",
+      "entry": "2023",
+      "source": "Ratos",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.oaseoutdoors.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:40:03",
+      "detailed_description": "OASE OUTDOORS - Outdoor furniture and equipment. The company operates in the consumer sector with strong market positioning across Nordic and European markets.",
+      "employees": "100-1000 employees",
+      "revenue": "SEK 500M - SEK 5B",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "SEK 1B - SEK 10B (estimated)",
+      "total_funding": "Ratos-backed",
+      "ceo": "Consumer industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Consumer industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2023",
+          "headline": "Ratos investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2023",
+          "event": "Ratos Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Consumer expertise",
+        "Nordic market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "PLANTASJEN",
+      "sector": "Consumer",
+      "fund": "Ratos Fund",
+      "market": "Nordic/Europe",
+      "entry": "2024",
+      "source": "Ratos",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.plantasjen.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:40:03",
+      "detailed_description": "PLANTASJEN - Garden center chain. The company operates in the consumer sector with strong market positioning across Nordic and European markets.",
+      "employees": "100-1000 employees",
+      "revenue": "SEK 500M - SEK 5B",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "SEK 1B - SEK 10B (estimated)",
+      "total_funding": "Ratos-backed",
+      "ceo": "Consumer industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Consumer industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2024",
+          "headline": "Ratos investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2024",
+          "event": "Ratos Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Consumer expertise",
+        "Nordic market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "PRESIS INFRA",
+      "sector": "Industrial",
+      "fund": "Ratos Fund",
+      "market": "Nordic/Europe",
+      "entry": "2020",
+      "source": "Ratos",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.presisinfra.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:40:03",
+      "detailed_description": "PRESIS INFRA - Infrastructure services. The company operates in the industrial sector with strong market positioning across Nordic and European markets.",
+      "employees": "100-1000 employees",
+      "revenue": "SEK 500M - SEK 5B",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "SEK 1B - SEK 10B (estimated)",
+      "total_funding": "Ratos-backed",
+      "ceo": "Industrial industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020",
+          "headline": "Ratos investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020",
+          "event": "Ratos Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial expertise",
+        "Nordic market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "sentia",
+      "sector": "Technology",
+      "fund": "Ratos Fund",
+      "market": "Nordic/Europe",
+      "entry": "2021",
+      "source": "Ratos",
+      "headquarters": "Copenhagen, Denmark",
+      "website": "https://www.sentia.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:40:03",
+      "detailed_description": "sentia - Technology solutions provider. The company operates in the technology sector with strong market positioning across Nordic and European markets.",
+      "employees": "100-1000 employees",
+      "revenue": "SEK 500M - SEK 5B",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "SEK 1B - SEK 10B (estimated)",
+      "total_funding": "Ratos-backed",
+      "ceo": "Technology industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Technology industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2021",
+          "headline": "Ratos investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2021",
+          "event": "Ratos Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Technology expertise",
+        "Nordic market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "SPEED GROUP",
+      "sector": "Industrial",
+      "fund": "Ratos Fund",
+      "market": "Nordic/Europe",
+      "entry": "2022",
+      "source": "Ratos",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.speed.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:40:03",
+      "detailed_description": "SPEED GROUP - Industrial services group. The company operates in the industrial sector with strong market positioning across Nordic and European markets.",
+      "employees": "100-1000 employees",
+      "revenue": "SEK 500M - SEK 5B",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "SEK 1B - SEK 10B (estimated)",
+      "total_funding": "Ratos-backed",
+      "ceo": "Industrial industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2022",
+          "headline": "Ratos investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2022",
+          "event": "Ratos Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial expertise",
+        "Nordic market focus",
+        "Strong market position",
+        "Operational excellence"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "TFS HealthScience",
+      "sector": "Healthcare",
+      "fund": "Ratos Fund",
+      "market": "Nordic/Europe",
+      "entry": "2023",
+      "source": "Ratos",
+      "headquarters": "London, UK",
+      "website": "https://www.tfshealthscience.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:40:03",
+      "detailed_description": "TFS HealthScience - Clinical research organization. The company operates in the healthcare sector with strong market positioning across Nordic and European markets.",
+      "employees": "100-1000 employees",
+      "revenue": "SEK 500M - SEK 5B",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "SEK 1B - SEK 10B (estimated)",
+      "total_funding": "Ratos-backed",
+      "ceo": "Healthcare industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Healthcare industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2023",
+          "headline": "Ratos investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2023",
+          "event": "Ratos Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Healthcare expertise",
+        "Nordic market focus",
+        "Strong market position",
+        "Operational excellence"
       ],
       "exit_status": "Active",
       "current_status": "Portfolio company"
