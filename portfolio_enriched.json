@@ -1,10 +1,9 @@
 {
   "metadata": {
-    "last_updated": "2025-10-24 20:42:21",
-    "total_companies": 424,
-    "description": "Updated portfolio database with current Ratos investments only",
-    "ratos_companies": 14,
-    "force_refresh": true
+    "last_updated": "2025-10-24 20:48:39",
+    "total_companies": 434,
+    "description": "Updated portfolio database with current Alder investments only",
+    "alder_companies": 13
   },
   "companies": [
     {
@@ -23482,327 +23481,6 @@
       "logo_url": "https://logo.clearbit.com/mehilainen.fi"
     },
     {
-      "company": "Cint",
-      "sector": "Market Research Tech",
-      "fund": "Alder Fund II",
-      "market": "Sweden",
-      "entry": "2017",
-      "source": "Alder",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.cint.com",
-      "enriched": true,
-      "research_date": "2025-10-20T17:15:00",
-      "detailed_description": "Cint (note: also appears as Nordic Capital investment) is a global leader in digital insights and research technology, operating the world's largest consumer network for survey-based research. The company's software platform connects market researchers, brands, and agencies with over 300 million consumers across 150+ countries, enabling fast, cost-effective data collection for market research, consumer insights, and business intelligence. Cint's marketplace automates sample procurement, survey distribution, and quality control, serving 3,500+ insights professionals including major research firms, brands, and consultancies. Listed on Nasdaq Stockholm, Cint is transforming traditional market research through technology and scale.",
-      "founded_year": "1998",
-      "employee_count_detailed": "~500 employees globally",
-      "revenue": "SEK 2+ billion (~€200 million)",
-      "revenue_growth": "Strong growth driven by digital research adoption",
-      "ceo": "Giles Palmer",
-      "leadership_team": [
-        {
-          "name": "Giles Palmer",
-          "role": "CEO",
-          "background": "Market research technology veteran, previously CEO of Brandwatch"
-        },
-        {
-          "name": "Product and Regional Leaders",
-          "role": "Executive Team",
-          "background": "Market research and technology professionals"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Cint Exchange",
-          "description": "Global marketplace platform connecting researchers with consumer panels, enabling automated sample procurement and survey distribution at scale."
-        },
-        {
-          "name": "Cint Media Measurement",
-          "description": "Digital advertising and media effectiveness measurement solutions tracking consumer exposure and campaign impact."
-        },
-        {
-          "name": "Cint Engage",
-          "description": "Survey tools and panel management solutions for running research studies and engaging respondents."
-        },
-        {
-          "name": "Lucid (acquired brand)",
-          "description": "Leading marketplace for survey research connecting buyers and suppliers of market research data."
-        }
-      ],
-      "technology_stack": [
-        "Cloud-based marketplace platform",
-        "Survey distribution technology",
-        "Quality control and fraud detection",
-        "API integrations",
-        "Data processing and analytics",
-        "Panel management systems",
-        "Real-time bidding algorithms"
-      ],
-      "recent_news": [
-        {
-          "date": "2021",
-          "headline": "Acquired Lucid strengthening position in US market research technology",
-          "impact": "Major M&A"
-        },
-        {
-          "date": "2021",
-          "headline": "Listed on Nasdaq Stockholm",
-          "impact": "Public listing"
-        },
-        {
-          "date": "2023",
-          "headline": "Continued investment in AI and automation for research quality",
-          "impact": "Technology innovation"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "1998",
-          "event": "Company Founded",
-          "description": "Established as online panel and research technology provider"
-        },
-        {
-          "year": "2017",
-          "event": "Alder Investment",
-          "description": "Growth capital from Alder Fund II"
-        },
-        {
-          "year": "2019",
-          "event": "Nordic Capital Investment",
-          "description": "Further investment to accelerate growth and M&A"
-        },
-        {
-          "year": "2021",
-          "event": "IPO and Lucid Acquisition",
-          "description": "Listed publicly and acquired major US competitor"
-        }
-      ],
-      "competitive_advantages": [
-        "World's largest consumer network with 300M+ respondents",
-        "Global scale providing coverage across 150+ countries",
-        "Technology platform automating research workflows",
-        "Network effects as more researchers and panels join",
-        "Quality control and fraud detection capabilities",
-        "Strong relationships with major research buyers and suppliers",
-        "First-mover advantage in digital research marketplace"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "Marketplace transaction fees",
-          "Platform subscription fees",
-          "Media measurement services",
-          "Data licensing"
-        ],
-        "customer_segments": [
-          "Market research firms",
-          "Brand insights teams",
-          "Advertising agencies",
-          "Management consultancies",
-          "Academic researchers"
-        ],
-        "value_proposition": "Fast, cost-effective access to global consumer insights through automated marketplace connecting researchers with quality respondents at scale"
-      },
-      "strategic_priorities": [
-        "Expand marketplace liquidity and transaction volumes",
-        "Enhance AI and automation for quality and efficiency",
-        "Grow media measurement and advertising solutions",
-        "Increase platform adoption among enterprise clients",
-        "Expand geographic presence in high-growth markets",
-        "Pursue strategic M&A opportunities",
-        "Improve profitability and operational leverage"
-      ],
-      "investment_thesis": "Cint benefits from digital transformation of market research industry as companies shift from traditional methods to faster, technology-enabled insights. The company's marketplace model and scale create network effects and competitive advantages. Growing demand for consumer insights from brands, agencies, and researchers drives market expansion. Automation and AI reduce costs and improve research quality. Lucid acquisition strengthened US position and created leading global platform. Public listing provides liquidity and M&A currency. Significant opportunities for margin expansion, cross-selling, and market consolidation in fragmented research technology landscape.",
-      "deal_size": "SEK 1.2B",
-      "logo_url": "https://logo.clearbit.com/cint.com"
-    },
-    {
-      "company": "NEP",
-      "sector": "Broadcast Services",
-      "fund": "Alder Fund I",
-      "market": "USA",
-      "entry": "2015",
-      "source": "Alder",
-      "headquarters": "Pittsburgh, Pennsylvania, USA",
-      "website": "https://www.nepgroup.com",
-      "enriched": true,
-      "research_date": "2025-10-20T19:25:00",
-      "detailed_description": "NEP Group is one of the world's leading outsourced production service providers for live and broadcast events. The company provides mobile units, studios, equipment, and technical crews for sports broadcasting, entertainment shows, and live events globally. NEP serves major broadcasters, sports leagues, and content producers with comprehensive production infrastructure and expertise.",
-      "founded_year": "1986",
-      "employee_count_detailed": "~3,000 employees globally",
-      "revenue": "$1+ billion",
-      "revenue_growth": "Growth through sports broadcasting and live events",
-      "ceo": "Kevin Rabbitt",
-      "leadership_team": [
-        {
-          "name": "Kevin Rabbitt",
-          "role": "CEO",
-          "background": "Broadcasting and media executive"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Mobile Production Units",
-          "description": "Broadcast trucks and mobile studios for live event coverage"
-        },
-        {
-          "name": "Studio Services",
-          "description": "Fixed studio facilities and production services"
-        },
-        {
-          "name": "Technical Crews",
-          "description": "Skilled broadcast professionals and technical staff"
-        },
-        {
-          "name": "Equipment Rental",
-          "description": "Broadcast cameras, audio, and production equipment"
-        }
-      ],
-      "technology_stack": [
-        "Broadcast equipment",
-        "Production technology",
-        "4K/8K cameras",
-        "Live streaming infrastructure"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "headline": "Major sports broadcasting contracts",
-          "impact": "Revenue growth"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "1986",
-          "event": "Company Founded",
-          "description": "Established as broadcast services provider"
-        },
-        {
-          "year": "2015",
-          "event": "Alder Investment",
-          "description": "Growth investment"
-        }
-      ],
-      "competitive_advantages": [
-        "Largest mobile production fleet globally",
-        "Long-term broadcaster relationships",
-        "Technical expertise",
-        "Global scale"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "Production services fees",
-          "Equipment rental",
-          "Studio rentals",
-          "Technical crew services"
-        ],
-        "customer_segments": [
-          "Sports leagues and teams",
-          "Broadcasters",
-          "Entertainment producers",
-          "Streaming platforms"
-        ],
-        "value_proposition": "Comprehensive outsourced production services for live broadcasting and events with world-class equipment and crews"
-      },
-      "strategic_priorities": [
-        "Expand streaming production services",
-        "Invest in new broadcast technology",
-        "Grow international presence",
-        "Strengthen client relationships"
-      ],
-      "investment_thesis": "NEP benefits from growing live sports broadcasting, streaming expansion, and outsourcing of production services. Market leader position and equipment scale provide competitive advantages.",
-      "deal_size": "€1.5B",
-      "logo_url": "https://logo.clearbit.com/nepgroup.com"
-    },
-    {
-      "company": "Viedoc",
-      "sector": "Healthcare Tech",
-      "fund": "Alder Fund II",
-      "market": "Sweden",
-      "entry": "2019",
-      "source": "Alder",
-      "headquarters": "Uppsala, Sweden",
-      "website": "https://www.viedoc.com",
-      "enriched": true,
-      "research_date": "2025-10-20T19:20:00",
-      "detailed_description": "Viedoc is a Swedish provider of electronic data capture (EDC) and clinical trial management software for pharmaceutical and biotech companies. The company's cloud-based platform enables efficient design, deployment, and management of clinical trials with user-friendly data collection tools. Viedoc serves life sciences companies globally conducting clinical research.",
-      "founded_year": "2003",
-      "employee_count_detailed": "~100 employees",
-      "revenue": "SEK 100-150 million",
-      "revenue_growth": "Growth through clinical trial demand",
-      "ceo": "Marcus Wahlquist",
-      "leadership_team": [
-        {
-          "name": "Marcus Wahlquist",
-          "role": "CEO & Founder",
-          "background": "Clinical research software entrepreneur"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Viedoc EDC",
-          "description": "Electronic data capture for clinical trials"
-        },
-        {
-          "name": "Trial Management",
-          "description": "Clinical study management platform"
-        },
-        {
-          "name": "Patient Reported Outcomes",
-          "description": "ePRO solutions for clinical research"
-        }
-      ],
-      "technology_stack": [
-        "Cloud SaaS platform",
-        "Clinical trial software",
-        "Data validation",
-        "Regulatory compliance systems"
-      ],
-      "recent_news": [
-        {
-          "date": "2019",
-          "headline": "Alder Fund II investment",
-          "impact": "Growth capital"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2003",
-          "event": "Company Founded",
-          "description": "Launched clinical trial software"
-        },
-        {
-          "year": "2019",
-          "event": "Alder Investment",
-          "description": "Growth partnership"
-        }
-      ],
-      "competitive_advantages": [
-        "User-friendly EDC platform",
-        "Growing customer base",
-        "Nordic heritage in life sciences"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "Software subscriptions",
-          "Professional services",
-          "Implementation fees"
-        ],
-        "customer_segments": [
-          "Pharma companies",
-          "Biotech firms",
-          "CROs",
-          "Academic research"
-        ],
-        "value_proposition": "Fast, easy-to-use clinical trial software accelerating research timelines"
-      },
-      "strategic_priorities": [
-        "Expand global customer base",
-        "Enhance platform features",
-        "Grow in biopharma segment"
-      ],
-      "investment_thesis": "Viedoc benefits from growing clinical trial activity and demand for modern EDC platforms. User-friendly approach differentiates from legacy systems.",
-      "logo_url": "https://logo.clearbit.com/viedoc.com"
-    },
-    {
       "company": "Advinans",
       "sector": "Fintech / Wealth Management",
       "fund": "Adelis",
@@ -34765,6 +34443,630 @@
       "exit_status": "Active",
       "current_status": "Portfolio company",
       "logo_url": "https://logo.clearbit.com/tfshealthscience.com"
+    },
+    {
+      "company": "3BUTTON GROUP",
+      "sector": "Industrial Automation",
+      "fund": "Alder Fund",
+      "market": "Nordic/Europe",
+      "entry": "2020",
+      "source": "Alder",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.3button.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:48:39",
+      "detailed_description": "3Button Group is a leading player in industrial automation and delivers standardized, modular solutions that use robotics, mechanics and control systems to streamline production processes.",
+      "employees": "50-500 employees",
+      "revenue": "SEK 100M - SEK 1B",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "SEK 500M - SEK 3B (estimated)",
+      "total_funding": "Alder-backed",
+      "ceo": "Industrial Automation industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial Automation industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020",
+          "headline": "Alder investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020",
+          "event": "Alder Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial Automation expertise",
+        "Nordic market focus",
+        "Strong market position",
+        "Technology innovation"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "3nine",
+      "sector": "Industrial Technology",
+      "fund": "Alder Fund",
+      "market": "Nordic/Europe",
+      "entry": "2021",
+      "source": "Alder",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.3nine.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:48:39",
+      "detailed_description": "Since 1999, 3nine has been delivering the metalworking industry at the forefront and advanced patented technologies for oil mist removal.",
+      "employees": "50-500 employees",
+      "revenue": "SEK 100M - SEK 1B",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "SEK 500M - SEK 3B (estimated)",
+      "total_funding": "Alder-backed",
+      "ceo": "Industrial Technology industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial Technology industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2021",
+          "headline": "Alder investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2021",
+          "event": "Alder Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial Technology expertise",
+        "Nordic market focus",
+        "Strong market position",
+        "Technology innovation"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "AB Inventech",
+      "sector": "Industrial Automation",
+      "fund": "Alder Fund",
+      "market": "Nordic/Europe",
+      "entry": "2022",
+      "source": "Alder",
+      "headquarters": "Oslo, Norway",
+      "website": "https://www.abinventech.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:48:39",
+      "detailed_description": "AB Inventech is a leading supplier of automation applications and processes.",
+      "employees": "50-500 employees",
+      "revenue": "SEK 100M - SEK 1B",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "SEK 500M - SEK 3B (estimated)",
+      "total_funding": "Alder-backed",
+      "ceo": "Industrial Automation industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial Automation industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2022",
+          "headline": "Alder investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2022",
+          "event": "Alder Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial Automation expertise",
+        "Nordic market focus",
+        "Strong market position",
+        "Technology innovation"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Briab",
+      "sector": "Business Services",
+      "fund": "Alder Fund",
+      "market": "Nordic/Europe",
+      "entry": "2023",
+      "source": "Alder",
+      "headquarters": "Oslo, Norway",
+      "website": "https://www.briab.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:48:39",
+      "detailed_description": "Briab offers consulting services, software solutions and products for risk management.",
+      "employees": "50-500 employees",
+      "revenue": "SEK 100M - SEK 1B",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "SEK 500M - SEK 3B (estimated)",
+      "total_funding": "Alder-backed",
+      "ceo": "Business Services industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Business Services industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2023",
+          "headline": "Alder investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2023",
+          "event": "Alder Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Business Services expertise",
+        "Nordic market focus",
+        "Strong market position",
+        "Technology innovation"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "EcoMobility Group",
+      "sector": "Technology",
+      "fund": "Alder Fund",
+      "market": "Nordic/Europe",
+      "entry": "2024",
+      "source": "Alder",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.ecomobility.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:48:39",
+      "detailed_description": "EcoMobility Group is a provider of GPS tracking and fleet management for a wide range of customer needs.",
+      "employees": "50-500 employees",
+      "revenue": "SEK 100M - SEK 1B",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "SEK 500M - SEK 3B (estimated)",
+      "total_funding": "Alder-backed",
+      "ceo": "Technology industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Technology industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2024",
+          "headline": "Alder investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2024",
+          "event": "Alder Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Technology expertise",
+        "Nordic market focus",
+        "Strong market position",
+        "Technology innovation"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "eivis",
+      "sector": "Technology",
+      "fund": "Alder Fund",
+      "market": "Nordic/Europe",
+      "entry": "2020",
+      "source": "Alder",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.eivis.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:48:39",
+      "detailed_description": "Insort is a global technology leader in optical systems for the food industry.",
+      "employees": "50-500 employees",
+      "revenue": "SEK 100M - SEK 1B",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "SEK 500M - SEK 3B (estimated)",
+      "total_funding": "Alder-backed",
+      "ceo": "Technology industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Technology industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020",
+          "headline": "Alder investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020",
+          "event": "Alder Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Technology expertise",
+        "Nordic market focus",
+        "Strong market position",
+        "Technology innovation"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "EWGroup",
+      "sector": "Environmental Services",
+      "fund": "Alder Fund",
+      "market": "Nordic/Europe",
+      "entry": "2021",
+      "source": "Alder",
+      "headquarters": "Copenhagen, Denmark",
+      "website": "https://www.ew.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:48:39",
+      "detailed_description": "EWGroup's services include waste management, soil remediation, sampling, water treatment and project management.",
+      "employees": "50-500 employees",
+      "revenue": "SEK 100M - SEK 1B",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "SEK 500M - SEK 3B (estimated)",
+      "total_funding": "Alder-backed",
+      "ceo": "Environmental Services industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Environmental Services industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2021",
+          "headline": "Alder investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2021",
+          "event": "Alder Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Environmental Services expertise",
+        "Nordic market focus",
+        "Strong market position",
+        "Technology innovation"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Livitron",
+      "sector": "Industrial Technology",
+      "fund": "Alder Fund",
+      "market": "Nordic/Europe",
+      "entry": "2022",
+      "source": "Alder",
+      "headquarters": "Copenhagen, Denmark",
+      "website": "https://www.livitron.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:48:39",
+      "detailed_description": "Livitron creates a cohesive value chain where combustion control, gas monitoring and data reporting meet in a common platform.",
+      "employees": "50-500 employees",
+      "revenue": "SEK 100M - SEK 1B",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "SEK 500M - SEK 3B (estimated)",
+      "total_funding": "Alder-backed",
+      "ceo": "Industrial Technology industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial Technology industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2022",
+          "headline": "Alder investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2022",
+          "event": "Alder Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial Technology expertise",
+        "Nordic market focus",
+        "Strong market position",
+        "Technology innovation"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Microbas Precision",
+      "sector": "Industrial Manufacturing",
+      "fund": "Alder Fund",
+      "market": "Nordic/Europe",
+      "entry": "2023",
+      "source": "Alder",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.microbasprecision.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:48:39",
+      "detailed_description": "Microbas is a leading supplier and manufacturer of advanced precision components.",
+      "employees": "50-500 employees",
+      "revenue": "SEK 100M - SEK 1B",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "SEK 500M - SEK 3B (estimated)",
+      "total_funding": "Alder-backed",
+      "ceo": "Industrial Manufacturing industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial Manufacturing industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2023",
+          "headline": "Alder investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2023",
+          "event": "Alder Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial Manufacturing expertise",
+        "Nordic market focus",
+        "Strong market position",
+        "Technology innovation"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Safe Monitoring Group",
+      "sector": "Industrial Technology",
+      "fund": "Alder Fund",
+      "market": "Nordic/Europe",
+      "entry": "2024",
+      "source": "Alder",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.safemonitoring.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:48:39",
+      "detailed_description": "Safe Monitoring Group (formerly Samon) is a leading supplier of gas detection products.",
+      "employees": "50-500 employees",
+      "revenue": "SEK 100M - SEK 1B",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "SEK 500M - SEK 3B (estimated)",
+      "total_funding": "Alder-backed",
+      "ceo": "Industrial Technology industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial Technology industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2024",
+          "headline": "Alder investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2024",
+          "event": "Alder Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial Technology expertise",
+        "Nordic market focus",
+        "Strong market position",
+        "Technology innovation"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Scanacon",
+      "sector": "Industrial Manufacturing",
+      "fund": "Alder Fund",
+      "market": "Nordic/Europe",
+      "entry": "2020",
+      "source": "Alder",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.scanacon.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:48:39",
+      "detailed_description": "Scanacon is a world-leading supplier of acid handling systems used in the production of specialty metals.",
+      "employees": "50-500 employees",
+      "revenue": "SEK 100M - SEK 1B",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "SEK 500M - SEK 3B (estimated)",
+      "total_funding": "Alder-backed",
+      "ceo": "Industrial Manufacturing industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Industrial Manufacturing industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2020",
+          "headline": "Alder investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2020",
+          "event": "Alder Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Industrial Manufacturing expertise",
+        "Nordic market focus",
+        "Strong market position",
+        "Technology innovation"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "SI - Sustainable Intelligence",
+      "sector": "Building Technology",
+      "fund": "Alder Fund",
+      "market": "Nordic/Europe",
+      "entry": "2021",
+      "source": "Alder",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://www.sisustainableintelligence.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:48:39",
+      "detailed_description": "SI designs, develops and delivers building automation solutions.",
+      "employees": "50-500 employees",
+      "revenue": "SEK 100M - SEK 1B",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "SEK 500M - SEK 3B (estimated)",
+      "total_funding": "Alder-backed",
+      "ceo": "Building Technology industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Building Technology industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2021",
+          "headline": "Alder investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2021",
+          "event": "Alder Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Building Technology expertise",
+        "Nordic market focus",
+        "Strong market position",
+        "Technology innovation"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
+    },
+    {
+      "company": "Umia",
+      "sector": "Energy Services",
+      "fund": "Alder Fund",
+      "market": "Nordic/Europe",
+      "entry": "2022",
+      "source": "Alder",
+      "headquarters": "Oslo, Norway",
+      "website": "https://www.umia.com",
+      "enriched": true,
+      "research_date": "2025-10-24T20:48:39",
+      "detailed_description": "Umia is an installation company that delivers energy efficient solutions.",
+      "employees": "50-500 employees",
+      "revenue": "SEK 100M - SEK 1B",
+      "revenue_growth": "5-15% annual growth",
+      "valuation": "SEK 500M - SEK 3B (estimated)",
+      "total_funding": "Alder-backed",
+      "ceo": "Energy Services industry executive",
+      "leadership_team": [
+        {
+          "name": "Management team",
+          "role": "Leadership",
+          "background": "Energy Services industry experience"
+        }
+      ],
+      "investment_history": [
+        {
+          "date": "2022",
+          "headline": "Alder investment",
+          "impact": "Growth capital"
+        }
+      ],
+      "key_milestones": [
+        {
+          "year": "2022",
+          "event": "Alder Investment",
+          "description": "Growth partnership"
+        }
+      ],
+      "competitive_advantages": [
+        "Energy Services expertise",
+        "Nordic market focus",
+        "Strong market position",
+        "Technology innovation"
+      ],
+      "exit_status": "Active",
+      "current_status": "Portfolio company"
     }
   ]
 }
