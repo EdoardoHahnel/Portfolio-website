@@ -1,6 +1,54 @@
 {
   "news": [
     {
+      "title": "Thoma Bravo Acquires Dayforce Inc. for $12.3 Billion",
+      "description": "Thoma Bravo agrees to take private human capital management software company Dayforce Inc. in one of the largest PE deals of 2025.",
+      "firm": "Thoma Bravo",
+      "date": "2025-08-21",
+      "link": "https://www.spglobal.com",
+      "source": "S&P Global"
+    },
+    {
+      "title": "Nordic Capital Acquires Arcadia Healthcare Software Company",
+      "description": "Nordic Capital completes acquisition of Arcadia, a US-based healthcare software company, strengthening its healthcare technology portfolio.",
+      "firm": "Nordic Capital",
+      "date": "2025-07-15",
+      "link": "https://www.nordiccapital.com",
+      "source": "Nordic Capital Press Release"
+    },
+    {
+      "title": "Carlyle Group Offers $23.86 Billion for Santos Ltd.",
+      "description": "An investor group including The Carlyle Group Inc. offers to buy oil and natural gas company Santos Ltd. in one of the largest energy sector deals.",
+      "firm": "Carlyle Group",
+      "date": "2025-06-15",
+      "link": "https://www.spglobal.com",
+      "source": "S&P Global"
+    },
+    {
+      "title": "Blackstone Infrastructure Acquires TXNM Energy for $11.5 Billion",
+      "description": "Blackstone Infrastructure completes buyout of TXNM Energy, marking one of the largest energy sector deals in the US during Q2 2025.",
+      "firm": "Blackstone",
+      "date": "2025-04-15",
+      "link": "https://www.kpmg.com",
+      "source": "KPMG"
+    },
+    {
+      "title": "EQT Acquires Crown Castle's Small Cells Business for $4.25 Billion",
+      "description": "EQT announces acquisition of Crown Castle's small cells business for $4.25 billion, expanding its telecommunications infrastructure portfolio.",
+      "firm": "EQT",
+      "date": "2025-03-19",
+      "link": "https://www.eqtgroup.com",
+      "source": "EQT Press Release"
+    },
+    {
+      "title": "Sycamore Partners Acquires Walgreens in Major Retail Deal",
+      "description": "Sycamore Partners completes substantial acquisition of Walgreens, contributing to a 45% year-over-year surge in private equity deal volume in Q1 2025.",
+      "firm": "Sycamore Partners",
+      "date": "2025-03-01",
+      "link": "https://www.sartoriglobal.com",
+      "source": "Sartori Global"
+    },
+    {
       "title": "EQT Life Sciences Co-Leads USD 183 Million Series C Financing",
       "description": "EQT Life Sciences announces co-leading a USD 183 million Series C financing round for a portfolio company, supporting continued growth and expansion.",
       "firm": "EQT",
@@ -39,28 +87,12 @@
       "date": "2024-12-01",
       "link": "https://news.cision.com/se/ratos-ab",
       "source": "Cision"
-    },
-    {
-      "title": "EQT Acquires Crown Castle's Small Cells Business for $4.25 Billion",
-      "description": "EQT announces acquisition of Crown Castle's small cells business for $4.25 billion, expanding its telecommunications infrastructure portfolio.",
-      "firm": "EQT",
-      "date": "2025-03-19",
-      "link": "https://www.eqtgroup.com",
-      "source": "EQT Press Release"
-    },
-    {
-      "title": "Nordic Capital Acquires Arcadia Healthcare Software Company",
-      "description": "Nordic Capital completes acquisition of Arcadia, a US-based healthcare software company, strengthening its healthcare technology portfolio.",
-      "firm": "Nordic Capital",
-      "date": "2025-07-15",
-      "link": "https://www.nordiccapital.com",
-      "source": "Nordic Capital Press Release"
     }
   ],
-  "total_news": 7,
-  "last_updated": "2025-01-27T17:02:22",
-  "description": "Nordic PE news including recent 2025 deals",
-  "source": "Cision RSS feeds and recent web sources",
+  "total_news": 11,
+  "last_updated": "2025-01-27T17:15:22",
+  "description": "Comprehensive Nordic and global PE news with most recent deals first",
+  "source": "Cision RSS feeds, S&P Global, KPMG, and firm press releases",
   "firms_covered": [
     "EQT",
     "Nordic Capital",
@@ -74,6 +106,10 @@
     "IK Partners",
     "Axcel",
     "CapMan",
-    "FSN Capital"
+    "FSN Capital",
+    "Thoma Bravo",
+    "Carlyle Group",
+    "Blackstone",
+    "Sycamore Partners"
   ]
 }
