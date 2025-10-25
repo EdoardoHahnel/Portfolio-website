@@ -493,6 +493,9 @@ function displayPortfolio(companies) {
         // Create table for this firm
         const table = document.createElement('table');
         table.className = 'portfolio-table';
+        table.style.minWidth = '2000px';
+        table.style.width = '2000px';
+        console.log('🔧 DEBUG: Created table with class:', table.className);
         
         // Table header
         const thead = document.createElement('thead');
@@ -627,6 +630,10 @@ function displayPortfolio(companies) {
         
         firmSection.appendChild(table);
         container.appendChild(firmSection);
+        
+        // DEBUG: Check if wrapper has proper overflow
+        console.log('🔧 DEBUG: Table wrapper styles:', window.getComputedStyle(container));
+        console.log('🔧 DEBUG: Table styles:', window.getComputedStyle(table));
     });
 }
 

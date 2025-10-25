@@ -383,18 +383,13 @@ async function loadNews() {
     hideStatusMessage();
     
     try {
-        // GET request to fetch news
-        const response = await fetch('/api/news');
+        // GET request to fetch investment news
+        const response = await fetch('/api/investment-news');
         const data = await response.json();
         
         if (data.success) {
-            // Filter to show only PE/investment news (exclude AI news)
-            const filteredNews = data.news.filter(article => {
-                const category = (article.category || '').toLowerCase();
-                
-                // Only show PE News, exclude AI News
-                return category === 'pe news';
-            });
+            // Use all PE investment news (already filtered by source)
+            const filteredNews = data.news;
             
             // Update the total count
             document.getElementById('totalCount').textContent = filteredNews.length;
@@ -456,13 +451,13 @@ function createNewsCard(article, index) {
     card.style.animationDelay = `${index * 0.1}s`;
     
     // Format the date nicely
-    const date = article.published || article.scraped_at || 'Unknown date';
+    const date = article.date || 'Unknown date';
     
     // Get source icon
     const sourceIcon = getSourceIcon(article.source);
     
-    // Get firm info from title and description
-    const firmName = getFirmFromTitle(article.title) || getFirmFromTitle(article.description);
+    // Use firm from the news data
+    const firmName = article.firm || 'PE Firm';
     const firmLogoHtml = createRobustLogoHTML(firmName, '32px');
     
     // Build the HTML for the card
@@ -472,7 +467,7 @@ function createNewsCard(article, index) {
                 ${firmLogoHtml}
                 <span class="news-source">
                     ${sourceIcon}
-                    ${escapeHtml(article.source || 'Unknown')}
+                    ${escapeHtml(article.source || 'Cision')}
                 </span>
             </div>
         </div>
@@ -483,7 +478,7 @@ function createNewsCard(article, index) {
                 <i class="far fa-calendar"></i>
                 ${escapeHtml(date)}
             </span>
-            <a href="${escapeHtml(article.url)}" target="_blank" class="news-link">
+            <a href="${escapeHtml(article.link)}" target="_blank" class="news-link">
                 Read More
                 <i class="fas fa-arrow-right"></i>
             </a>

@@ -630,8 +630,8 @@ async function loadDeals() {
             console.log('Deals loaded:', data.deals.length);
             // Sort deals by date - newest first
             allDeals = data.deals.sort((a, b) => {
-                const dateA = a.announcement_date || a.completion_date || '1900-01-01';
-                const dateB = b.announcement_date || b.completion_date || '1900-01-01';
+                const dateA = a.date || '1900-01-01';
+                const dateB = b.date || '1900-01-01';
                 return new Date(dateB) - new Date(dateA);
             });
             updateStats(allDeals);
@@ -716,7 +716,10 @@ function displayDeals(deals) {
 
 function isNordicDeal(deal) {
     const nordicCountries = ['Sweden', 'Norway', 'Denmark', 'Finland', 'Iceland', 'Nordic', 'Nordics'];
-    return nordicCountries.some(country => deal.geography && deal.geography.includes(country));
+    return nordicCountries.some(country => 
+        (deal.geography && deal.geography.includes(country)) ||
+        (deal.description && deal.description.toLowerCase().includes(country.toLowerCase()))
+    );
 }
 
 function getCompanyLogo(companyName) {
@@ -812,7 +815,10 @@ function applyFilter() {
             break;
             
         case '2025':
-            filtered = allDeals.filter(d => d.year === 2025);
+            filtered = allDeals.filter(d => {
+                const dealYear = new Date(d.date).getFullYear();
+                return dealYear === 2025;
+            });
             break;
             
         case 'nordic':
@@ -821,7 +827,7 @@ function applyFilter() {
             
         case 'pe':
             filtered = allDeals.filter(d => {
-                const peTypes = ['Buyout', 'Public-to-Private', 'Secondary Buyout', 'Buy-and-Build', 'Carve-out', 'PE Exit'];
+                const peTypes = ['Buyout', 'Public-to-Private', 'Secondary Buyout', 'Buy-and-Build', 'Carve-out', 'PE Exit', 'Strategic Acquisition', 'Merger', 'Growth Capital'];
                 return peTypes.includes(d.deal_type);
             });
             break;
@@ -842,8 +848,8 @@ function applyFilter() {
             
         case 'megadeals':
             filtered = allDeals.filter(d => {
-                if (!d.deal_value) return false;
-                const value = d.deal_value.toLowerCase();
+                if (!d.deal_size) return false;
+                const value = d.deal_size.toLowerCase();
                 // Extract numeric value
                 const match = value.match(/[\d.,]+/);
                 if (!match) return false;
@@ -908,30 +914,31 @@ function createDealCard(deal) {
     const statusClass = `status-${deal.status.toLowerCase().replace(/\s+/g, '-')}`;
     
     // Get company logos
-    const acquirerLogo = getCompanyLogo(deal.acquirer);
-    const targetLogo = getCompanyLogo(deal.target);
+    const peFirmLogo = getCompanyLogo(deal.pe_firm);
+    const companyLogo = getCompanyLogo(deal.company);
     
     // Check if 2025 deal
-    const year2025Badge = deal.year === 2025 ? '<span class="deal-year-badge">2025</span>' : '';
+    const dealYear = new Date(deal.date).getFullYear();
+    const year2025Badge = dealYear === 2025 ? '<span class="deal-year-badge">2025</span>' : '';
     
     const cardHTML = `
         <div class="deal-card">
             <div class="deal-card-header">
                 <div class="deal-title">
-                    ${deal.deal_name}
+                    ${deal.company} - ${deal.deal_type}
                 </div>
                 ${year2025Badge}
             </div>
             
             <div class="deal-parties">
                 <div class="party-info">
-                    ${acquirerLogo}
-                    <span class="party-name">${deal.acquirer}</span>
+                    ${peFirmLogo}
+                    <span class="party-name">${deal.pe_firm}</span>
                 </div>
                 <div class="deal-arrow">→</div>
                 <div class="party-info">
-                    ${targetLogo}
-                    <span class="party-name">${deal.target}</span>
+                    ${companyLogo}
+                    <span class="party-name">${deal.company}</span>
                 </div>
             </div>
             
@@ -945,7 +952,7 @@ function createDealCard(deal) {
                         ${getStatusIcon(deal.status)} ${deal.status}
                     </div>
                     <div class="deal-value">
-                        ${deal.deal_value && deal.deal_value !== 'N/A' && deal.deal_value !== 'Undisclosed' ? deal.deal_value : 'Undisclosed'}
+                        ${deal.deal_size && deal.deal_size !== 'N/A' && deal.deal_size !== 'Undisclosed' ? deal.deal_size : 'Undisclosed'}
                     </div>
                 </div>
             </div>

@@ -40,44 +40,38 @@ async function loadStats() {
 
 async function loadLatestNews() {
     try {
-        console.log('Loading latest PE news...');
-        const response = await fetch('/api/news');
+        console.log('Loading latest PE investment news...');
+        const response = await fetch('/api/investment-news');
         const data = await response.json();
         
-        console.log('News API response:', data);
+        console.log('Investment News API response:', data);
         
         if (data.success && data.news && data.news.length > 0) {
             const container = document.getElementById('latestNews');
             container.innerHTML = '';
             
-            // Filter for PE/M&A news only (use category field)
-            const peNews = data.news.filter(article => {
-                const category = (article.category || '').toLowerCase();
-                
-                // Only show PE News, exclude AI News
-                return category === 'pe news';
-            });
+            // Use all PE news (already filtered by source)
+            const peNews = data.news.slice(0, 15);
             
-            // Show first 15 PE articles
-            peNews.slice(0, 15).forEach(article => {
+            peNews.forEach(article => {
                 const item = document.createElement('div');
                 item.className = 'news-item-compact';
                 const sourceIcon = getSourceIcon(article.source);
                 
-                // Get firm info from title and description
-                const firmName = getFirmFromTitle(article.title) || getFirmFromTitle(article.description);
+                // Use firm from the news data
+                const firmName = article.firm || 'PE Firm';
                 const firmLogoHtml = createRobustLogoHTML(firmName, '24px');
                 
                 item.innerHTML = `
                     <div class="news-item-header">
                         <div style="display: flex; align-items: center;">
                             ${firmLogoHtml}
-                            <span class="news-badge">${sourceIcon} ${escapeHtml(article.source || 'M&A News')}</span>
+                            <span class="news-badge">${sourceIcon} ${escapeHtml(article.source || 'Cision')}</span>
                         </div>
-                        <span class="news-date-small">${escapeHtml(article.published || 'Today')}</span>
+                        <span class="news-date-small">${escapeHtml(article.date || 'Today')}</span>
                     </div>
                     <h4 class="news-title-compact">${escapeHtml(truncateText(article.title, 60))}</h4>
-                    <a href="${escapeHtml(article.url)}" target="_blank" class="news-link-small">
+                    <a href="${escapeHtml(article.link)}" target="_blank" class="news-link-small">
                         Read more <i class="fas fa-arrow-right"></i>
                     </a>
                 `;

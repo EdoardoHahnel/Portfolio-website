@@ -171,7 +171,7 @@ def get_deal_flow():
             data = json.load(f)
             return jsonify({
                 'success': True,
-                'deals': data.get('active_deals', []),
+                'deals': data.get('deals', []),
                 'metadata': data.get('metadata', {})
             })
     except Exception as e:
@@ -277,6 +277,33 @@ def get_news():
         'count': len(news_storage),
         'news': news_storage
     })
+
+@app.route('/api/investment-news', methods=['GET'])
+def get_investment_news():
+    """
+    API endpoint to get real Nordic PE investment news from Cision
+    """
+    try:
+        if os.path.exists('pe_news_database.json'):
+            with open('pe_news_database.json', 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                return jsonify({
+                    'success': True,
+                    'count': data.get('total_news', 0),
+                    'news': data.get('news', []),
+                    'last_updated': data.get('last_updated', ''),
+                    'source': data.get('source', 'Cision RSS feeds')
+                })
+        else:
+            return jsonify({
+                'success': False,
+                'message': 'PE news database not found'
+            }), 404
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'message': f'Error loading investment news: {str(e)}'
+        }), 500
 
 
 @app.route('/api/scrape', methods=['POST'])
