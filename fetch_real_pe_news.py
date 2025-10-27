@@ -14,7 +14,10 @@ def fetch_cision_rss(url, firm_name):
     """Fetch RSS feed from Cision and parse news items"""
     try:
         print(f"Fetching RSS for {firm_name}...")
-        response = requests.get(url, timeout=10)
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+        }
+        response = requests.get(url, timeout=15, headers=headers)
         response.raise_for_status()
         
         # Parse XML
@@ -27,7 +30,7 @@ def fetch_cision_rss(url, firm_name):
         if not items:
             items = root.findall('.//entry')  # Atom format
         
-        for item in items[:10]:  # Limit to 10 most recent
+        for item in items[:15]:  # Limit to 15 most recent
             try:
                 # Extract title
                 title_elem = item.find('title')
@@ -121,14 +124,17 @@ def main():
         "Adelis Equity Partners": "https://news.cision.com/se/adelis-equity-partners",
         "Summa Equity": "https://news.cision.com/se/summa-equity",
         "Ratos AB": "https://news.cision.com/se/ratos-ab",
-        "Litorina": "https://news.cision.com/se/?q=litorina",
         "Verdane": "https://news.cision.com/se/verdane-intressenter",
-        "Altor": "https://news.cision.com/se/?q=altor",
+        "Altor": "https://news.cision.com/se/altor",
+        "IK Partners": "https://news.cision.com/se/ik-partners",
+        "Litorina": "https://news.cision.com/se/?q=litorina",
         "Triton Partners": "https://news.cision.com/se/?q=triton",
-        "IK Partners": "https://news.cision.com/se/?q=ik+partners",
         "Axcel": "https://news.cision.com/se/?q=axcel",
         "CapMan": "https://news.cision.com/se/?q=capman",
-        "FSN Capital": "https://news.cision.com/se/?q=fsn+capital"
+        "FSN Capital": "https://news.cision.com/se/?q=fsn+capital",
+        "Valedo Partners": "https://news.cision.com/se/?q=valedo+partners",
+        "Segulah": "https://news.cision.com/se/?q=segulah",
+        "Procuritas": "https://news.cision.com/se/?q=procuritas"
     }
     
     all_news = []
@@ -144,8 +150,8 @@ def main():
     # Sort by date (newest first)
     all_news.sort(key=lambda x: x['date'], reverse=True)
     
-    # Limit to 50 most recent news items
-    all_news = all_news[:50]
+    # Limit to 100 most recent news items
+    all_news = all_news[:100]
     
     # Create the database structure
     news_database = {
@@ -175,3 +181,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

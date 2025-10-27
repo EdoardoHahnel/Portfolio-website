@@ -267,10 +267,47 @@ Modern Layout - Dashboard Style
     font-size: 0.8rem;
 }
 
+/* Enhanced Sidebar Category Styles */
+.sidebar-category {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 0.5rem;
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: color 0.3s ease;
+}
+
+.category-header:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+.category-header span {
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.category-header i:first-child {
+    width: 16px;
+    margin-right: 0.4rem;
+    font-size: 0.8rem;
+}
+
 .dropdown-arrow {
     font-size: 0.7rem;
     transition: transform 0.3s ease;
     color: rgba(255, 255, 255, 0.6);
+}
+
+.sidebar-category.open .dropdown-arrow {
+    transform: rotate(180deg);
 }
 
 .sidebar-dropdown {
@@ -278,14 +315,8 @@ Modern Layout - Dashboard Style
     margin-left: 0.5rem;
     padding-left: 0.5rem;
     transition: all 0.3s ease;
-    opacity: 0;
     max-height: 0;
     overflow: hidden;
-}
-
-.sidebar-dropdown.show {
-    opacity: 1;
-    max-height: 500px;
 }
 
 .sidebar-dropdown .sidebar-link {

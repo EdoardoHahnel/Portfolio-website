@@ -1,63 +1,826 @@
 {
   "news": [
     {
-      "title": "EQT Life Sciences Co-Leads USD 183 Million Series C Financing",
-      "description": "EQT Life Sciences announces co-leading a USD 183 million Series C financing round for a portfolio company, supporting continued growth and expansion.",
+      "title": "EQT AB (publ) Redogörelse för tredje kvartalet 2025",
+      "description": "",
+      "link": "https://news.cision.com/se/eqt/r/eqt-ab--publ--redogorelse-for-tredje-kvartalet-2025,c4251039",
+      "date": "2025-10-16",
       "firm": "EQT",
-      "date": "2024-12-15",
-      "link": "https://news.cision.com/se/EQT",
-      "source": "Cision"
+      "source": "Cision News"
     },
     {
-      "title": "Nordic Capital-backed NOBA Lists Successfully on Nasdaq Stockholm",
-      "description": "NOBA, backed by Nordic Capital, successfully lists on Nasdaq Stockholm following strong investor demand and successful IPO process.",
+      "title": "Jean Eric Salata nominerad att efterträda grundaren Conni Jonsson som EQT:s styrelseordförande un...",
+      "description": "",
+      "link": "https://news.cision.com/se/eqt/r/jean-eric-salata-nominerad-att-eftertrada-grundaren-conni-jonsson-som-eqt-s-styrelseordforande-under,c4245678",
+      "date": "2025-10-06",
+      "firm": "EQT",
+      "source": "Cision News"
+    },
+    {
+      "title": "Inbjudan till presentation av EQT AB:s redogörelse för tredje kvartalet 2025",
+      "description": "",
+      "link": "https://news.cision.com/se/eqt/r/inbjudan-till-presentation-av-eqt-ab-s-redogorelse-for-tredje-kvartalet-2025,c4244175",
+      "date": "2025-10-02",
+      "firm": "EQT",
+      "source": "Cision News"
+    },
+    {
+      "title": "Framgångsrik notering för Nordic Capital-backade NOBA på Nasdaq Stockholm",
+      "description": "",
+      "link": "https://news.cision.com/se/nordic-capital/r/framgangsrik-notering-for-nordic-capital-backade-noba-pa-nasdaq-stockholm,c4240397",
+      "date": "2025-09-26",
       "firm": "Nordic Capital",
-      "date": "2024-12-10",
-      "link": "https://news.cision.com/se/nordic-capital",
-      "source": "Cision"
+      "source": "Cision News"
     },
     {
-      "title": "Adelis Equity Partners Announces New Investment in Circura",
-      "description": "Adelis Equity Partners forms Circura, a leading group in property renovation and service, targeting SEK 2 billion in revenue by 2025.",
-      "firm": "Adelis Equity Partners",
-      "date": "2024-12-09",
-      "link": "https://news.cision.com/se/adelis-equity-partners",
-      "source": "Cision"
+      "title": "EQT AB:s valberedning inför årsstämman 2026",
+      "description": "",
+      "link": "https://news.cision.com/se/eqt/r/eqt-ab-s-valberedning-infor-arsstamman-2026,c4236483",
+      "date": "2025-09-19",
+      "firm": "EQT",
+      "source": "Cision News"
     },
     {
-      "title": "Summa Equity Completes Full Exit of Infobric",
-      "description": "Summa Equity announces successful exit from Infobric, a leading provider of construction technology solutions, following strong growth under their ownership.",
+      "title": "21 företag testar cirkulära bygglösningar i sju nordiska städer",
+      "description": "",
+      "link": "https://news.cision.com/se/combient-oy/r/21-foretag-testar-cirkulara-bygglosningar-i-sju-nordiska-stader,c4228066",
+      "date": "2025-09-03",
+      "firm": "CapMan",
+      "source": "Cision News"
+    },
+    {
+      "title": "JM säljer bostadsprojekt i Järfälla, Stockholm",
+      "description": "",
+      "link": "https://news.cision.com/se/jm/r/jm-saljer-bostadsprojekt-i-jarfalla--stockholm,c4193183",
+      "date": "2025-07-04",
+      "firm": "CapMan",
+      "source": "Cision News"
+    },
+    {
+      "title": "CapMan Real Estate investerar 692 miljoner SEK i ett bostadsutvecklingsprojekt med 205 hyreslägen...",
+      "description": "",
+      "link": "https://news.cision.com/se/capman-oyj/r/capman-real-estate-investerar-692-miljoner-sek-i-ett-bostadsutvecklingsprojekt-med-205-hyreslagenhet,c4200316",
+      "date": "2025-07-04",
+      "firm": "CapMan",
+      "source": "Cision News"
+    },
+    {
+      "title": "CapMan Real Estate välkomnar Rexel som första hyresgäst i toppmodern logistikfastighet i Mölnlycke",
+      "description": "",
+      "link": "https://news.cision.com/se/capman-oyj/r/capman-real-estate-valkomnar-rexel-som-forsta-hyresgast-i-toppmodern-logistikfastighet-i-molnlycke,c4164386",
+      "date": "2025-06-16",
+      "firm": "CapMan",
+      "source": "Cision News"
+    },
+    {
+      "title": "Rexel blir första hyresgäst i Panattonis logistikpark i Mölnlycke",
+      "description": "",
+      "link": "https://news.cision.com/se/panattoni/r/rexel-blir-forsta-hyresgast-i-panattonis-logistikpark-i-molnlycke,c4164183",
+      "date": "2025-06-16",
+      "firm": "CapMan",
+      "source": "Cision News"
+    },
+    {
+      "title": "CapMan Real Estate stärker sitt asset management-team med flera nyckelrekryteringar och befordringar",
+      "description": "",
+      "link": "https://news.cision.com/se/capman-oyj/r/capman-real-estate-starker-sitt-asset-management-team-med-flera-nyckelrekryteringar-och-befordringar,c4162708",
+      "date": "2025-06-11",
+      "firm": "CapMan",
+      "source": "Cision News"
+    },
+    {
+      "title": "Nyrenoverade Scandic Karlskrona har öppnat takbar med skärgårdsutsikt",
+      "description": "",
+      "link": "https://news.cision.com/se/scandic-hotels-sverige/r/nyrenoverade-scandic-karlskrona-har-oppnat-takbar-med-skargardsutsikt,c4161372",
+      "date": "2025-06-11",
+      "firm": "CapMan",
+      "source": "Cision News"
+    },
+    {
+      "title": "Nordic Capital blir ny strategisk partner till Minerva Imaging för att stödja tillväxtsresan inom...",
+      "description": "",
+      "link": "https://news.cision.com/se/nordic-capital/r/nordic-capital-blir-ny-strategisk-partner-till-minerva-imaging-for-att-stodja-tillvaxtsresan-inom-ra,c4161186",
+      "date": "2025-06-10",
+      "firm": "Nordic Capital",
+      "source": "Cision News"
+    },
+    {
+      "title": "Återköp av aktier av EQT AB under vecka 39 2025. Det nuvarande återköpsprogrammet har avslutats",
+      "description": "",
+      "link": "https://news.cision.com/se/eqt/r/aterkop-av-aktier-av-eqt-ab-under-vecka-39-2025--det-nuvarande-aterkopsprogrammet-har-avslutats,c4241349",
+      "date": "2025-05-27",
+      "firm": "EQT",
+      "source": "Cision News"
+    },
+    {
+      "title": "Återköp av aktier av EQT AB under vecka 38 2025",
+      "description": "",
+      "link": "https://news.cision.com/se/eqt/r/aterkop-av-aktier-av-eqt-ab-under-vecka-38-2025,c4238123",
+      "date": "2025-05-27",
+      "firm": "EQT",
+      "source": "Cision News"
+    },
+    {
+      "title": "Återköp av aktier av EQT AB under vecka 37 2025",
+      "description": "",
+      "link": "https://news.cision.com/se/eqt/r/aterkop-av-aktier-av-eqt-ab-under-vecka-37-2025,c4234565",
+      "date": "2025-05-27",
+      "firm": "EQT",
+      "source": "Cision News"
+    },
+    {
+      "title": "Återköp av aktier av EQT AB under vecka 36 2025",
+      "description": "",
+      "link": "https://news.cision.com/se/eqt/r/aterkop-av-aktier-av-eqt-ab-under-vecka-36-2025,c4231101",
+      "date": "2025-05-27",
+      "firm": "EQT",
+      "source": "Cision News"
+    },
+    {
+      "title": "Återköp av aktier av EQT AB under vecka 35 2025",
+      "description": "",
+      "link": "https://news.cision.com/se/eqt/r/aterkop-av-aktier-av-eqt-ab-under-vecka-35-2025,c4227584",
+      "date": "2025-05-27",
+      "firm": "EQT",
+      "source": "Cision News"
+    },
+    {
+      "title": "Återköp av aktier av EQT AB under vecka 34 2025",
+      "description": "",
+      "link": "https://news.cision.com/se/eqt/r/aterkop-av-aktier-av-eqt-ab-under-vecka-34-2025,c4222797",
+      "date": "2025-05-27",
+      "firm": "EQT",
+      "source": "Cision News"
+    },
+    {
+      "title": "Kallelse till årsstämma i Ambea AB (publ)",
+      "description": "",
+      "link": "https://news.cision.com/se/ambea/r/kallelse-till-arsstamma-i-ambea-ab--publ-,c4132679",
+      "date": "2025-05-14",
+      "firm": "Triton Partners",
+      "source": "Cision News"
+    },
+    {
+      "title": "Kallelse till årsstämma 2025 i Eltel AB",
+      "description": "",
+      "link": "https://news.cision.com/se/eltel/r/kallelse-till-arsstamma-2025-i-eltel-ab,c4132144",
+      "date": "2025-05-13",
+      "firm": "Triton Partners",
+      "source": "Cision News"
+    },
+    {
+      "title": "Magnus Lindquist ny styrelseordförande i Rebellion – efterträder Erik Rune",
+      "description": "Magnus Lindquist har valts till ny styrelseordförande i Rebellion. Magnus har varit styrelseledamot i Rebellion sedan maj 2024 och är aktieägare sedan 2022. Han är en erfaren företagsledare och investerare med gedigen bakgrund inom private equity och M&A. I dag är han styrelseordförande i Intrum ...",
+      "link": "https://news.cision.com/se/rebellion-capital/r/magnus-lindquist-ny-styrelseordforande-i-rebellion---eftertrader-erik-rune,c4143893",
+      "date": "2025-04-30",
+      "firm": "Triton Partners",
+      "source": "Cision News"
+    },
+    {
+      "title": "CapMan Infras datacenterplattform expanderar genom förvärv av tre högkvalitativa datacenter i Sve...",
+      "description": "",
+      "link": "https://news.cision.com/se/capman-oyj/r/capman-infras-datacenterplattform-expanderar-genom-forvarv-av-tre-hogkvalitativa-datacenter-i-sverig,c4141003",
+      "date": "2025-04-28",
+      "firm": "CapMan",
+      "source": "Cision News"
+    },
+    {
+      "title": "Michael Halbye, Chairman of Ludvig & Co, has passed away",
+      "description": "",
+      "link": "https://news.cision.com/se/altor/r/michael-halbye--chairman-of-ludvig---co--has-passed-away,c4137345",
+      "date": "2025-04-16",
+      "firm": "Altor",
+      "source": "Cision News"
+    },
+    {
+      "title": "Valberedningen för Eltel AB föreslår Riitta Palomäki som ny styrelseledamot",
+      "description": "",
+      "link": "https://news.cision.com/se/eltel/r/valberedningen-for-eltel-ab-foreslar-riitta-palomaki-som-ny-styrelseledamot,c4129246",
+      "date": "2025-04-02",
+      "firm": "Triton Partners",
+      "source": "Cision News"
+    },
+    {
+      "title": "CapMan Hotels II (“CMH II”) blir en ledande privat nordisk hotellaktör efter slutförandet av förv...",
+      "description": "",
+      "link": "https://news.cision.com/se/capman-oyj/r/capman-hotels-ii--cmh-ii--blir-en-ledande-privat-nordisk-hotellaktor-efter-slutforandet-av-forvarvet,c4127491",
+      "date": "2025-04-01",
+      "firm": "CapMan",
+      "source": "Cision News"
+    },
+    {
+      "title": "Kallelse till årsstämma i Nobia AB (Publ)",
+      "description": "",
+      "link": "https://news.cision.com/se/nobia-ab/r/kallelse-till-arsstamma-i-nobia-ab--publ-,c4125204",
+      "date": "2025-03-28",
+      "firm": "CapMan",
+      "source": "Cision News"
+    },
+    {
+      "title": "Nordlo planerar för flertalet förvärv under 2025: ”Vi har många aktiva dialoger i gång”",
+      "description": "",
+      "link": "https://news.cision.com/se/nordlo/r/nordlo-planerar-for-flertalet-forvarv-under-2025---vi-har-manga-aktiva-dialoger-i-gang-,c4122554",
+      "date": "2025-03-24",
+      "firm": "FSN Capital",
+      "source": "Cision News"
+    },
+    {
+      "title": "Valberedningen föreslår val av nya styrelseledamöter samt omval av styrelseordförande",
+      "description": "",
+      "link": "https://news.cision.com/se/ambea/r/valberedningen-foreslar-val-av-nya-styrelseledamoter-samt-omval-av-styrelseordforande,c4122583",
+      "date": "2025-03-21",
+      "firm": "Triton Partners",
+      "source": "Cision News"
+    },
+    {
+      "title": "Apax Funds offentliggör, genom Nordahl BidCo AB, ett rekommenderat kontanterbjudande om 36,50 kro...",
+      "description": "Detta pressmeddelande utgör inte ett erbjudande, vare sig direkt eller indirekt, i Australien, Belarus, Hongkong, Japan, Kanada, Nya Zeeland, Ryssland, Singapore, Sydafrika, eller i någon annan jurisdiktion där ett sådant erbjudande enligt lag och förordningar i sådan relevant jurisdiktion skulle...",
+      "link": "https://news.cision.com/se/nordahl-bidco-ab/r/apax-funds-offentliggor--genom-nordahl-bidco-ab--ett-rekommenderat-kontanterbjudande-om-36-50-kronor,c4116332",
+      "date": "2025-03-10",
+      "firm": "Valedo Partners",
+      "source": "Cision News"
+    },
+    {
+      "title": "HiQ tar strategiskt kliv – väljer Cinode för effektiv resursplanering och bättre prognoser",
+      "description": "",
+      "link": "https://news.cision.com/se/cinode-ab/r/hiq-tar-strategiskt-kliv---valjer-cinode-for-effektiv-resursplanering-och-battre-prognoser,c4104747",
+      "date": "2025-02-14",
+      "firm": "Triton Partners",
+      "source": "Cision News"
+    },
+    {
+      "title": "Nordic Capital reser sin andra fond för medelstora företag, Evolution II, om 2 miljarder euro på ...",
+      "description": "",
+      "link": "https://news.cision.com/se/nordic-capital/r/nordic-capital-reser-sin-andra-fond-for-medelstora-foretag--evolution-ii--om-2-miljarder-euro-pa-rek,c4085518",
+      "date": "2024-12-20",
+      "firm": "Nordic Capital",
+      "source": "Cision News"
+    },
+    {
+      "title": "IK Partners säljer Mecenat till Inflexion",
+      "description": "",
+      "link": "https://news.cision.com/se/ik-partners/r/ik-partners-saljer-mecenat-till-inflexion,c4083867",
+      "date": "2024-12-20",
+      "firm": "IK Partners",
+      "source": "Cision News"
+    },
+    {
+      "title": "Axcel ingår partnerskap med Nordic Tyre Group för att stödja dess fortsatta tillväxtresa",
+      "description": "",
+      "link": "https://news.cision.com/se/axcel/r/axcel-ingar-partnerskap-med-nordic-tyre-group-for-att-stodja-dess-fortsatta-tillvaxtresa,c4085304",
+      "date": "2024-12-20",
+      "firm": "Axcel",
+      "source": "Cision News"
+    },
+    {
+      "title": "Ontario Teachers och Nordic Capital saminvesterar i Max Matthiessen",
+      "description": "",
+      "link": "https://news.cision.com/se/nordic-capital/r/ontario-teachers-och-nordic-capital-saminvesterar-i-max-matthiessen,c4069268",
+      "date": "2024-11-20",
+      "firm": "Nordic Capital",
+      "source": "Cision News"
+    },
+    {
+      "title": "Eltels valberedning inför årsstämma 2025",
+      "description": "",
+      "link": "https://news.cision.com/se/eltel/r/eltels-valberedning-infor-arsstamma-2025,c4056971",
+      "date": "2024-10-28",
+      "firm": "Triton Partners",
+      "source": "Cision News"
+    },
+    {
+      "title": "NAXS har utökat sitt åtagande till Celero Capital Fund (E) AB till 3,2 miljoner euro",
+      "description": "",
+      "link": "https://news.cision.com/se/naxs-ab/r/naxs-har-utokat-sitt-atagande-till-celero-capital-fund--e--ab-till-3-2-miljoner-euro,c4054990",
+      "date": "2024-10-23",
+      "firm": "FSN Capital",
+      "source": "Cision News"
+    },
+    {
+      "title": "Loopia Group joins team.blue",
+      "description": "",
+      "link": "https://news.cision.com/se/loopia-group-ab/r/loopia-group-joins-team-blue,c4041889",
+      "date": "2024-09-24",
+      "firm": "Axcel",
+      "source": "Cision News"
+    },
+    {
+      "title": "Axcel etablerar en ny koncern inom fastighetsrelaterade tjänster",
+      "description": "",
+      "link": "https://news.cision.com/se/axcel/r/axcel-etablerar-en-ny-koncern-inom-fastighetsrelaterade-tjanster,c4038911",
+      "date": "2024-09-18",
+      "firm": "Axcel",
+      "source": "Cision News"
+    },
+    {
+      "title": "Nordlo förvärvar stockholmsbolaget EPM Data",
+      "description": "",
+      "link": "https://news.cision.com/se/nordlo/r/nordlo-forvarvar-stockholmsbolaget-epm-data,c4034598",
+      "date": "2024-09-10",
+      "firm": "FSN Capital",
+      "source": "Cision News"
+    },
+    {
+      "title": "Summa Equity acquires Nutris to innovate sustainable plant-based nutrition",
+      "description": "",
+      "link": "https://news.cision.com/se/summa-equity/r/summa-equity-acquires-nutris-to-innovate-sustainable-plant-based-nutrition,c4035070",
+      "date": "2024-09-03",
       "firm": "Summa Equity",
-      "date": "2024-12-05",
-      "link": "https://news.cision.com/se/summa-equity",
-      "source": "Cision"
+      "source": "Cision News"
     },
     {
-      "title": "Ratos Company HENT Wins NOK 2.4 Billion Infrastructure Contract",
-      "description": "HENT, a company within the Ratos group, has been awarded a contract worth NOK 2.4 billion to build a new passenger terminal at Bodø airport in Norway.",
+      "title": "Altor divests 19.2% shares in SATS",
+      "description": "",
+      "link": "https://news.cision.com/se/altor/r/altor-divests-19-2--shares-in-sats,c4030126",
+      "date": "2024-08-28",
+      "firm": "Altor",
+      "source": "Cision News"
+    },
+    {
+      "title": "IT-raketen Nordlo siktar på Tyskland – ägarna fyller kassan med 140 MEUR",
+      "description": "",
+      "link": "https://news.cision.com/se/nordlo/r/it-raketen-nordlo-siktar-pa-tyskland---agarna-fyller-kassan-med-140-meur,c4026507",
+      "date": "2024-08-22",
+      "firm": "FSN Capital",
+      "source": "Cision News"
+    },
+    {
+      "title": "Layer Group förvärvar Indoor Floor & Wall Sweden AB i Kristinehamn",
+      "description": "",
+      "link": "https://news.cision.com/se/layer-group/r/layer-group-forvarvar-indoor-floor---wall-sweden-ab-i-kristinehamn,c4025377",
+      "date": "2024-08-16",
+      "firm": "Litorina",
+      "source": "Cision News"
+    },
+    {
+      "title": "Mattias Gelinder tillträder som chef för M&A och affärsutveckling på Layer Group",
+      "description": "",
+      "link": "https://news.cision.com/se/layer-group/r/mattias-gelinder-tilltrader-som-chef-for-m-a-och-affarsutveckling-pa-layer-group,c4019886",
+      "date": "2024-07-22",
+      "firm": "Litorina",
+      "source": "Cision News"
+    },
+    {
+      "title": "Nordic Capital köper Sensio, en ledande leverantör av omsorgsteknik",
+      "description": "",
+      "link": "https://news.cision.com/se/nordic-capital/r/nordic-capital-koper-sensio--en-ledande-leverantor-av-omsorgsteknik,c4014293",
+      "date": "2024-07-12",
+      "firm": "Nordic Capital",
+      "source": "Cision News"
+    },
+    {
+      "title": "Altor divests Silo AI",
+      "description": "",
+      "link": "https://news.cision.com/se/altor/r/altor-divests-silo-ai,c4014347",
+      "date": "2024-07-12",
+      "firm": "Altor",
+      "source": "Cision News"
+    },
+    {
+      "title": "Summa Equity has sold its shares in Olink Holding AB (publ) to Thermo Fisher",
+      "description": "",
+      "link": "https://news.cision.com/se/summa-equity/r/summa-equity-has-sold-its-shares-in-olink-holding-ab--publ--to-thermo-fisher,c4035056",
+      "date": "2024-07-02",
+      "firm": "Summa Equity",
+      "source": "Cision News"
+    },
+    {
+      "title": "Layer Group-bolaget, Mästarna Vision AB, förvärvar Granlunds Måleri AB i Sundsvall",
+      "description": "",
+      "link": "https://news.cision.com/se/layer-group/r/layer-group-bolaget--mastarna-vision-ab--forvarvar-granlunds-maleri-ab-i-sundsvall,c4009886",
+      "date": "2024-07-02",
+      "firm": "Litorina",
+      "source": "Cision News"
+    },
+    {
+      "title": "Layer Group-bolaget, Mästarna Vision AB, förvärvar Granlunds Måleri AB i Sundsvall",
+      "description": "",
+      "link": "https://news.cision.com/se/layer-group/r/layer-group-bolaget--mastarna-vision-ab--forvarvar-granlunds-maleri-ab-i-sundsvall,c4009901",
+      "date": "2024-07-02",
+      "firm": "Litorina",
+      "source": "Cision News"
+    },
+    {
+      "title": "OX2 och Varberg Energi ingår samarbete om mer förnybar elproduktion i Halland",
+      "description": "",
+      "link": "https://news.cision.com/se/varberg-energi/r/ox2-och-varberg-energi-ingar-samarbete-om-mer-fornybar-elproduktion-i-halland,c4003796",
+      "date": "2024-06-24",
+      "firm": "Triton Partners",
+      "source": "Cision News"
+    },
+    {
+      "title": "Ratosbolaget LEDiL förvärvar Ingemann Components",
+      "description": "",
+      "link": "https://news.cision.com/se/ratos-ab/r/ratosbolaget-ledil-forvarvar-ingemann-components,c3998490",
+      "date": "2024-06-11",
       "firm": "Ratos AB",
-      "date": "2024-12-01",
-      "link": "https://news.cision.com/se/ratos-ab",
-      "source": "Cision"
+      "source": "Cision News"
+    },
+    {
+      "title": "R-GOL och Unisport går samman för fortsatt internationell expansion",
+      "description": "",
+      "link": "https://news.cision.com/se/nordic-capital/r/r-gol-och-unisport-gar-samman-for-fortsatt-internationell-expansion,c3996160",
+      "date": "2024-06-06",
+      "firm": "Nordic Capital",
+      "source": "Cision News"
+    },
+    {
+      "title": "Ratos AB – förändring i antal aktier och röster",
+      "description": "",
+      "link": "https://news.cision.com/se/ratos-ab/r/ratos-ab---forandring-i-antal-aktier-och-roster,c3992260",
+      "date": "2024-05-31",
+      "firm": "Ratos AB",
+      "source": "Cision News"
+    },
+    {
+      "title": "Länsstyrelsen föreslår att regeringen ger tillstånd till den havsbaserade vindparken Aurora söder...",
+      "description": "",
+      "link": "https://news.cision.com/se/ox2-ab/r/lansstyrelsen-foreslar-att-regeringen-ger-tillstand-till-den-havsbaserade-vindparken-aurora-soder-om,c4209055",
+      "date": "2024-05-31",
+      "firm": "Triton Partners",
+      "source": "Cision News"
+    },
+    {
+      "title": "Ratosbolaget HENT har vunnit miljardkontrakt på nya Bodø flygplats i Norge",
+      "description": "",
+      "link": "https://news.cision.com/se/ratos-ab/r/ratosbolaget-hent-har-vunnit-miljardkontrakt-pa-nya-bodo-flygplats-i-norge,c4012054",
+      "date": "2024-05-30",
+      "firm": "Ratos AB",
+      "source": "Cision News"
+    },
+    {
+      "title": "Nordic Capital förvärvar BRP Systems, en ledande nordisk SaaS ERP-plattform för träningsindustrin...",
+      "description": "",
+      "link": "https://news.cision.com/se/nordic-capital/r/nordic-capital-forvarvar-brp-systems--en-ledande-nordisk-saas-erp-plattform-for-traningsindustrin--f,c3985078",
+      "date": "2024-05-21",
+      "firm": "Nordic Capital",
+      "source": "Cision News"
+    },
+    {
+      "title": "Nordic Capital förvärvar BRP Systems, en ledande nordisk SaaS ERP-plattform för träningsindustrin...",
+      "description": "",
+      "link": "https://news.cision.com/se/nordic-capital/r/nordic-capital-forvarvar-brp-systems--en-ledande-nordisk-saas-erp-plattform-for-traningsindustrin--f,c3985078",
+      "date": "2024-05-21",
+      "firm": "Valedo Partners",
+      "source": "Cision News"
+    },
+    {
+      "title": "Ratosbolaget Aibel och Hitachi Energy ingår ramavtal med RWE för att påskynda utvecklingen av hav...",
+      "description": "",
+      "link": "https://news.cision.com/se/ratos-ab/r/ratosbolaget-aibel-och-hitachi-energy-ingar-ramavtal-med-rwe-for-att-paskynda-utvecklingen-av-havsba,c3977559",
+      "date": "2024-05-13",
+      "firm": "Ratos AB",
+      "source": "Cision News"
+    },
+    {
+      "title": "Ratos AB: Stark start på 2024",
+      "description": "",
+      "link": "https://news.cision.com/se/ratos-ab/r/ratos-ab--stark-start-pa-2024,c3969432",
+      "date": "2024-04-29",
+      "firm": "Ratos AB",
+      "source": "Cision News"
+    },
+    {
+      "title": "Inbjudan till presentation av Ratos delårsrapport januari-mars 2024",
+      "description": "",
+      "link": "https://news.cision.com/se/ratos-ab/r/inbjudan-till-presentation-av-ratos-delarsrapport-januari-mars-2024,c3963214",
+      "date": "2024-04-18",
+      "firm": "Ratos AB",
+      "source": "Cision News"
+    },
+    {
+      "title": "Humana har ingått avtal om att förvärva Team Olivia Norge AS",
+      "description": "Humana-koncernen (”Humana”) stärker sitt erbjudande av kvalitativa omsorgstjänster i Norge genom att Human Care Holding AS (”Humana Norge”) har ingått avtal om att förvärva Team Olivia Norge AS (”Transaktionen”) för en köpeskilling om 341 miljoner svenska kronor på en kassa- och skuldfri basis. F...",
+      "link": "https://news.cision.com/se/humana-ab/r/humana-har-ingatt-avtal-om-att-forvarva-team-olivia-norge-as,c3957590",
+      "date": "2024-04-08",
+      "firm": "Procuritas",
+      "source": "Cision News"
+    },
+    {
+      "title": "Ratos AB – förändring i antal aktier och röster",
+      "description": "",
+      "link": "https://news.cision.com/se/ratos-ab/r/ratos-ab---forandring-i-antal-aktier-och-roster,c3953454",
+      "date": "2024-03-28",
+      "firm": "Ratos AB",
+      "source": "Cision News"
+    },
+    {
+      "title": "Kommuniké från Ratos årsstämma den 26 mars 2024",
+      "description": "",
+      "link": "https://news.cision.com/se/ratos-ab/r/kommunike-fran-ratos-arsstamma-den-26-mars-2024,c3952896",
+      "date": "2024-03-26",
+      "firm": "Ratos AB",
+      "source": "Cision News"
+    },
+    {
+      "title": "Nordic Capital investerar i One Inc, en ledande betalningsplattform för försäkringsbolag",
+      "description": "",
+      "link": "https://news.cision.com/se/nordic-capital/r/nordic-capital-investerar-i-one-inc--en-ledande-betalningsplattform-for-forsakringsbolag,c3946125",
+      "date": "2024-03-14",
+      "firm": "Nordic Capital",
+      "source": "Cision News"
+    },
+    {
+      "title": "Axcel stänger övertecknad fond VII på 1,3 miljarder euro",
+      "description": "",
+      "link": "https://news.cision.com/se/axcel/r/axcel-stanger-overtecknad-fond-vii-pa-1-3-miljarder-euro,c3940276",
+      "date": "2024-03-06",
+      "firm": "Axcel",
+      "source": "Cision News"
+    },
+    {
+      "title": "Ratos års- och hållbarhetsredovisning för 2023: Stark finansiell position möjliggör accelererad t...",
+      "description": "",
+      "link": "https://news.cision.com/se/ratos-ab/r/ratos-ars--och-hallbarhetsredovisning-for-2023--stark-finansiell-position-mojliggor-accelererad-till,c3941196",
+      "date": "2024-03-05",
+      "firm": "Ratos AB",
+      "source": "Cision News"
+    },
+    {
+      "title": "Ratos AB – förändring i antal aktier och röster",
+      "description": "",
+      "link": "https://news.cision.com/se/ratos-ab/r/ratos-ab---forandring-i-antal-aktier-och-roster,c3937663",
+      "date": "2024-02-29",
+      "firm": "Ratos AB",
+      "source": "Cision News"
+    },
+    {
+      "title": "Nordic Capital blir majoritetsägare i ActiveViam, en global ledare inom dataanalys för finansiell...",
+      "description": "",
+      "link": "https://news.cision.com/se/nordic-capital/r/nordic-capital-blir-majoritetsagare-i-activeviam--en-global-ledare-inom-dataanalys-for-finansiella-i,c3937499",
+      "date": "2024-02-28",
+      "firm": "Nordic Capital",
+      "source": "Cision News"
+    },
+    {
+      "title": "Altor offentliggör slutligt utfall för det kontanta offentliga uppköpserbjudandet till aktieägarn...",
+      "description": "Erbjudandet lämnas inte, och detta pressmeddelande får inte distribueras, vare sig direkt eller indirekt, i eller till, och inga anmälningssedlar kommer att accepteras från eller på uppdrag av aktieägare i Australien, Hongkong, Japan, Kanada, Nya Zeeland, Sydafrika eller i något annat land där lä...",
+      "link": "https://news.cision.com/se/altor/r/altor-offentliggor-slutligt-utfall-for-det-kontanta-offentliga-uppkopserbjudandet-till-aktieagarna-i,c3931388",
+      "date": "2024-02-19",
+      "firm": "Altor",
+      "source": "Cision News"
+    },
+    {
+      "title": "Altor offentliggör tillägg till erbjudandehandlingen avseende det rekommenderade offentliga konta...",
+      "description": "Erbjudandet lämnas inte, och detta pressmeddelande får inte distribueras, vare sig direkt eller indirekt, i eller till, och inga anmälningssedlar kommer att accepteras från eller på uppdrag av aktieägare i Australien, Hongkong, Japan, Kanada, Nya Zeeland, Sydafrika eller i något annat land där lä...",
+      "link": "https://news.cision.com/se/altor/r/altor-offentliggor-tillagg-till-erbjudandehandlingen-avseende-det-rekommenderade-offentliga-kontante,c3929339",
+      "date": "2024-02-15",
+      "firm": "Altor",
+      "source": "Cision News"
+    },
+    {
+      "title": "Altor fullföljer det offentliga kontanta uppköpserbjudandet till aktieägarna i Permascand Top Hol...",
+      "description": "Erbjudandet lämnas inte, och detta pressmeddelande får inte distribueras, vare sig direkt eller indirekt, i eller till, och inga anmälningssedlar kommer att accepteras från eller på uppdrag av aktieägare i Australien, Hongkong, Japan, Kanada, Nya Zeeland, Sydafrika eller i något annat land där lä...",
+      "link": "https://news.cision.com/se/altor/r/altor-fullfoljer-det-offentliga-kontanta-uppkopserbjudandet-till-aktieagarna-i-permascand-top-holdin,c3922618",
+      "date": "2024-02-05",
+      "firm": "Altor",
+      "source": "Cision News"
+    },
+    {
+      "title": "Altor PC AB förlänger acceptfristen för Erbjudandet till aktieägarna i Permascand Top Holding AB ...",
+      "description": "Erbjudandet lämnas inte, och detta pressmeddelande får inte distribueras, vare sig direkt eller indirekt, i eller till, och inga anmälningssedlar kommer att accepteras från eller på uppdrag av aktieägare i Australien, Hongkong, Japan, Kanada, Nya Zeeland, Sydafrika eller i något annat land där lä...",
+      "link": "https://news.cision.com/se/altor/r/altor-pc-ab-forlanger-acceptfristen-for-erbjudandet-till-aktieagarna-i-permascand-top-holding-ab-och,c3913319",
+      "date": "2024-01-22",
+      "firm": "Altor",
+      "source": "Cision News"
+    },
+    {
+      "title": "Layer Group-bolaget, Stoby Måleri AB, förvärvar Ystadmålarna och bildar starkt fäste i Ystad",
+      "description": "",
+      "link": "https://news.cision.com/se/layer-group/r/layer-group-bolaget--stoby-maleri-ab--forvarvar-ystadmalarna-och-bildar-starkt-faste-i-ystad,c3911824",
+      "date": "2024-01-18",
+      "firm": "Litorina",
+      "source": "Cision News"
+    },
+    {
+      "title": "Layer Group förvärvar finska måleribolaget Tasoite- ja Maalaustyö Vista Oy",
+      "description": "",
+      "link": "https://news.cision.com/se/layer-group/r/layer-group-forvarvar-finska-maleribolaget-tasoite--ja-maalaustyo-vista-oy,c3907608",
+      "date": "2024-01-11",
+      "firm": "Litorina",
+      "source": "Cision News"
+    },
+    {
+      "title": "Norska Håndverksgruppen utökar sin närvaro i Tyskland med Beck GmbH farbrat",
+      "description": "",
+      "link": "https://news.cision.com/se/hg-handverksgruppen-ab/r/norska-handverksgruppen-utokar-sin-narvaro-i-tyskland-med-beck-gmbh-farbrat,c3906252",
+      "date": "2024-01-09",
+      "firm": "FSN Capital",
+      "source": "Cision News"
+    },
+    {
+      "title": "Golvinteriör går till Håndverksgruppen",
+      "description": "",
+      "link": "https://news.cision.com/se/hg-handverksgruppen-ab/r/golvinterior-gar-till-handverksgruppen,c3898644",
+      "date": "2023-12-22",
+      "firm": "FSN Capital",
+      "source": "Cision News"
+    },
+    {
+      "title": "OptiGroup förvärvar Top Service och expanderar till Tyskland",
+      "description": "",
+      "link": "https://news.cision.com/se/optigroup/r/optigroup-forvarvar-top-service-och-expanderar-till-tyskland,c3897391",
+      "date": "2023-12-21",
+      "firm": "FSN Capital",
+      "source": "Cision News"
+    },
+    {
+      "title": "Sophie Hedblom, ny vd på Högström Golv",
+      "description": "",
+      "link": "https://news.cision.com/se/layer-group/r/sophie-hedblom--ny-vd-pa-hogstrom-golv,c3896995",
+      "date": "2023-12-20",
+      "firm": "Litorina",
+      "source": "Cision News"
+    },
+    {
+      "title": "Altor PC AB offentliggör erbjudandehandling avseende det kontanta offentliga uppköpserbjudandet t...",
+      "description": "Erbjudandet lämnas inte, och detta pressmeddelande får inte distribueras, vare sig direkt eller indirekt, i eller till, och inga anmälningssedlar kommer att accepteras från eller på uppdrag av aktieägare i Australien, Hongkong, Japan, Kanada, Nya Zeeland, Sydafrika eller i något annat land där lä...",
+      "link": "https://news.cision.com/se/altor/r/altor-pc-ab-offentliggor-erbjudandehandling-avseende-det-kontanta-offentliga-uppkopserbjudandet-till,c3895849",
+      "date": "2023-12-19",
+      "firm": "Altor",
+      "source": "Cision News"
+    },
+    {
+      "title": "Altor PC AB[1] lämnar ett rekommenderat kontant offentligt uppköpserbjudande till aktieägarna i P...",
+      "description": "Erbjudandet lämnas inte, och detta pressmeddelande får inte distribueras, vare sig direkt eller indirekt, i eller till, och inga anmälningssedlar kommer att accepteras från eller på uppdrag av aktieägare i Australien, Hongkong, Japan, Kanada, Nya Zeeland, Sydafrika eller i något annat land där lä...",
+      "link": "https://news.cision.com/se/altor/r/altor-pc-ab-1--lamnar-ett-rekommenderat-kontant-offentligt-uppkopserbjudande-till-aktieagarna-i-perm,c3895838",
+      "date": "2023-12-19",
+      "firm": "Altor",
+      "source": "Cision News"
+    },
+    {
+      "title": "Nordic Capital investerar i Sesol, en ledare inom teknik för förnybar energi",
+      "description": "",
+      "link": "https://news.cision.com/se/nordic-capital/r/nordic-capital-investerar-i-sesol--en-ledare-inom-teknik-for-fornybar-energi,c3891672",
+      "date": "2023-12-12",
+      "firm": "Nordic Capital",
+      "source": "Cision News"
+    },
+    {
+      "title": "Layer Group förvärvar Stig Erikssons Golv AB – och etablerar sig som en aktör inom golvsegmentet ...",
+      "description": "",
+      "link": "https://news.cision.com/se/layer-group/r/layer-group-forvarvar-stig-erikssons-golv-ab---och-etablerar-sig-som-en-aktor-inom-golvsegmentet-i-s,c3870273",
+      "date": "2023-11-07",
+      "firm": "Litorina",
+      "source": "Cision News"
+    },
+    {
+      "title": "Layer Group förvärvar Färg & Co Måleri i Arvika och Eda - tar strategiskt kliv in i Värmland",
+      "description": "",
+      "link": "https://news.cision.com/se/layer-group/r/layer-group-forvarvar-farg---co-maleri-i-arvika-och-eda---tar-strategiskt-kliv-in-i-varmland,c3867123",
+      "date": "2023-11-02",
+      "firm": "Litorina",
+      "source": "Cision News"
+    },
+    {
+      "title": "Layer Group förvärvar MälarFasad - ett tillväxtbolag som adderar specialkompetens inom byggnadsvå...",
+      "description": "",
+      "link": "https://news.cision.com/se/layer-group/r/layer-group-forvarvar-malarfasad---ett-tillvaxtbolag-som-adderar-specialkompetens-inom-byggnadsvard-,c3864333",
+      "date": "2023-10-27",
+      "firm": "Litorina",
+      "source": "Cision News"
+    },
+    {
+      "title": "Niclas Österbergs Måleri blir en del av Håndverksgruppen",
+      "description": "",
+      "link": "https://news.cision.com/se/hg-handverksgruppen-ab/r/niclas-osterbergs-maleri-blir-en-del-av-handverksgruppen,c3853089",
+      "date": "2023-10-13",
+      "firm": "FSN Capital",
+      "source": "Cision News"
+    },
+    {
+      "title": "Håndverksgruppen etablerar sig i Tyskland med stöd av Hans Übelacker",
+      "description": "",
+      "link": "https://news.cision.com/se/hg-handverksgruppen-ab/r/handverksgruppen-etablerar-sig-i-tyskland-med-stod-av-hans-ubelacker,c3839996",
+      "date": "2023-09-22",
+      "firm": "FSN Capital",
+      "source": "Cision News"
+    },
+    {
+      "title": "Henrik Hjalmarsson utsedd till ny VD och koncernchef för OptiGroup",
+      "description": "",
+      "link": "https://news.cision.com/se/optigroup/r/henrik-hjalmarsson-utsedd-till-ny-vd-och-koncernchef-for-optigroup,c3825388",
+      "date": "2023-08-29",
+      "firm": "FSN Capital",
+      "source": "Cision News"
+    },
+    {
+      "title": "Kommuniké från extra bolagsstämma i Appspotr AB",
+      "description": "",
+      "link": "https://news.cision.com/se/appspotr-ab/r/kommunike-fran-extra-bolagsstamma-i-appspotr-ab,c3812690",
+      "date": "2023-08-02",
+      "firm": "Valedo Partners",
+      "source": "Cision News"
+    },
+    {
+      "title": "Kallelse till extra bolagsstämma",
+      "description": "",
+      "link": "https://news.cision.com/se/appspotr-ab/r/kallelse-till-extra-bolagsstamma,c3804502",
+      "date": "2023-07-17",
+      "firm": "Valedo Partners",
+      "source": "Cision News"
+    },
+    {
+      "title": "Axcel ingår partnerskap med programvarubolaget Progrits",
+      "description": "",
+      "link": "https://news.cision.com/se/axcel/r/axcel-ingar-partnerskap-med-programvarubolaget-progrits,c3785388",
+      "date": "2023-06-13",
+      "firm": "Axcel",
+      "source": "Cision News"
+    },
+    {
+      "title": "Årsstämma i Swedish Electromagnet Invest AB (publ) har hållits i dag",
+      "description": "",
+      "link": "https://news.cision.com/se/swedish-electromagnet-invest-ab--publ-/r/arsstamma-i-swedish-electromagnet-invest-ab--publ--har-hallits-i-dag,c3775804",
+      "date": "2023-05-26",
+      "firm": "Procuritas",
+      "source": "Cision News"
+    },
+    {
+      "title": "Procuritas blir ny partner till Proptech Sweden med dotterbolagen Ömangruppen och Axcell Fastighe...",
+      "description": "",
+      "link": "https://news.cision.com/se/proptech-sweden-ab/r/procuritas-blir-ny-partner-till-proptech-sweden-med-dotterbolagen-omangruppen-och-axcell-fastighetsp,c3769206",
+      "date": "2023-05-15",
+      "firm": "Procuritas",
+      "source": "Cision News"
+    },
+    {
+      "title": "Axcel ingår partnerskap med XPartners för att accelerera tillväxtresan",
+      "description": "",
+      "link": "https://news.cision.com/se/axcel/r/axcel-ingar-partnerskap-med-xpartners-for-att-accelerera-tillvaxtresan,c3762204",
+      "date": "2023-05-03",
+      "firm": "Axcel",
+      "source": "Cision News"
+    },
+    {
+      "title": "SEM har nått en principöverenskommelse med vissa obligationsinnehavare avseende sina utestående o...",
+      "description": "Enligt ett pressmeddelande daterat den 11 november 2022 har Swedish Electromagnet Invest AB (publ) (”Bolaget” eller ”SEM”) meddelat att SEM har förhandlat en långsiktig lösning för sin finansiering med vissa större innehavare (”Ad Hoc-Obligationsinnehavarkommittén”) av de utestående obligationern...",
+      "link": "https://news.cision.com/se/swedish-electromagnet-invest-ab--publ-/r/sem-har-natt-en-principoverenskommelse-med-vissa-obligationsinnehavare-avseende-sina-utestaende-obli,c3750505",
+      "date": "2023-04-13",
+      "firm": "Procuritas",
+      "source": "Cision News"
+    },
+    {
+      "title": "Mirovia Nordics AB (publ) publishes Q2 report - issues subsequent bond of SEK 400m to continue it...",
+      "description": "",
+      "link": "https://news.cision.com/se/lyvia-group-ab--publ-/r/mirovia-nordics-ab--publ--publishes-q2-report---issues-subsequent-bond-of-sek-400m-to-continue-its-p,c3622324",
+      "date": "2022-08-29",
+      "firm": "Axcel",
+      "source": "Cision News"
+    },
+    {
+      "title": "Navinci Diagnostics AB announces closing of SEK 90M Series A financing, led by Segulah Medical Ac...",
+      "description": "",
+      "link": "https://news.cision.com/se/navinci/r/navinci-diagnostics-ab-announces-closing-of-sek-90m-series-a-financing--led-by-segulah-medical-accel,c3600171",
+      "date": "2022-07-12",
+      "firm": "Segulah",
+      "source": "Cision News"
+    },
+    {
+      "title": "Levinsgruppen stärker sin position i Stockholm och Mälardalen genom förvärv av AF Elteknik",
+      "description": "",
+      "link": "https://news.cision.com/se/foretagsformedlingen/r/levinsgruppen-starker-sin-position-i-stockholm-och-malardalen-genom-forvarv-av-af-elteknik,c3666433",
+      "date": "2022-07-08",
+      "firm": "Segulah",
+      "source": "Cision News"
+    },
+    {
+      "title": "Ytterligare uppdrag till Delete i Piteå - vinner nytt slamavtal",
+      "description": "",
+      "link": "https://news.cision.com/se/delete-sweden-ab/r/ytterligare-uppdrag-till-delete-i-pitea---vinner-nytt-slamavtal,c3517143",
+      "date": "2022-03-02",
+      "firm": "Axcel",
+      "source": "Cision News"
+    },
+    {
+      "title": "Nordstjernan förvärvar det finska diagnostikbolaget Aidian",
+      "description": "Nordstjernan har ingått avtal om att förvärva det finska diagnostikbolaget Aidian från fonder som förvaltas av den nordiska investeringsrådgivaren Axcel. Aidian är en ledande, global aktör verksam på den snabbväxande marknaden för patientnära diagnostik. Bolaget utvecklar, tillverkar och säljer i...",
+      "link": "https://news.cision.com/se/nordstjernan/r/nordstjernan-forvarvar-det-finska-diagnostikbolaget-aidian,c3511329",
+      "date": "2022-02-22",
+      "firm": "Axcel",
+      "source": "Cision News"
     }
   ],
-  "total_news": 5,
-  "last_updated": "2025-01-27T17:25:22",
-  "description": "Nordic PE news from Cision RSS feeds only",
-  "source": "Cision RSS feeds",
+  "total_news": 100,
+  "last_updated": "2025-10-27T22:42:08",
+  "description": "Nordic PE news from Cision news pages and recent activity",
+  "source": "Cision News Pages",
   "firms_covered": [
     "EQT",
     "Nordic Capital",
     "Adelis Equity Partners",
     "Summa Equity",
     "Ratos AB",
-    "Litorina",
     "Verdane",
     "Altor",
-    "Triton Partners",
     "IK Partners",
+    "Litorina",
+    "Triton Partners",
     "Axcel",
     "CapMan",
-    "FSN Capital"
+    "FSN Capital",
+    "Valedo Partners",
+    "Segulah",
+    "Procuritas"
   ]
 }

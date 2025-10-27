@@ -48,84 +48,169 @@ async function loadLatestNews() {
         
         if (data.success && data.news && data.news.length > 0) {
             const container = document.getElementById('latestNews');
+            if (!container) {
+                console.error('latestNews container not found');
+                return;
+            }
+            
             container.innerHTML = '';
             
-            // Use all PE news (already filtered by source)
-            const peNews = data.news.slice(0, 15);
+            // Limit to first 10 items for dashboard performance
+            const peNews = data.news.slice(0, 10);
             
-            peNews.forEach(article => {
-                const item = document.createElement('div');
-                item.className = 'news-item-compact';
-                const sourceIcon = getSourceIcon(article.source);
-                
-                // Use firm from the news data
-                const firmName = article.firm || 'PE Firm';
-                const firmLogoHtml = createRobustLogoHTML(firmName, '24px');
-                
-                item.innerHTML = `
-                    <div class="news-item-header">
-                        <div style="display: flex; align-items: center;">
-                            ${firmLogoHtml}
-                            <span class="news-badge">${sourceIcon} ${escapeHtml(article.source || 'Cision')}</span>
+            console.log(`Displaying ${peNews.length} news items on dashboard`);
+            
+            peNews.forEach((article, index) => {
+                try {
+                    const item = document.createElement('div');
+                    item.className = 'news-item-compact';
+                    const sourceIcon = getSourceIcon(article.source);
+                    
+                    // Use firm from the news data
+                    const firmName = article.firm || 'PE Firm';
+                    const firmLogoHtml = createRobustLogoHTML(firmName, '24px');
+                    
+                    item.innerHTML = `
+                        <div class="news-item-header">
+                            <div style="display: flex; align-items: center;">
+                                ${firmLogoHtml}
+                                <span class="news-badge">${sourceIcon} ${escapeHtml(article.source || 'Cision')}</span>
+                            </div>
+                            <span class="news-date-small">${escapeHtml(article.date || 'Today')}</span>
                         </div>
-                        <span class="news-date-small">${escapeHtml(article.date || 'Today')}</span>
-                    </div>
-                    <h4 class="news-title-compact">${escapeHtml(truncateText(article.title, 60))}</h4>
-                    <a href="${escapeHtml(article.link)}" target="_blank" class="news-link-small">
-                        Read more <i class="fas fa-arrow-right"></i>
-                    </a>
-                `;
-                container.appendChild(item);
+                        <h4 class="news-title-compact">${escapeHtml(truncateText(article.title, 60))}</h4>
+                        <a href="${escapeHtml(article.link)}" target="_blank" class="news-link-small">
+                            Read more <i class="fas fa-arrow-right"></i>
+                        </a>
+                    `;
+                    container.appendChild(item);
+                } catch (itemError) {
+                    console.error(`Error creating news item ${index}:`, itemError);
+                }
             });
+            
+            // Add "View All" link
+            const viewAllLink = document.createElement('div');
+            viewAllLink.style.textAlign = 'center';
+            viewAllLink.style.marginTop = '15px';
+            viewAllLink.innerHTML = `<a href="/news" class="btn btn-primary btn-sm">View All ${data.news.length} Articles</a>`;
+            container.appendChild(viewAllLink);
+            
         } else {
+            console.log('No news data available');
             // Show fallback message
             const container = document.getElementById('latestNews');
+            if (container) {
+                container.innerHTML = `
+                    <div style="text-align: center; padding: 20px; color: #666;">
+                        <i class="fas fa-newspaper" style="font-size: 24px; margin-bottom: 10px; opacity: 0.5;"></i>
+                        <p>Loading latest M&A news...</p>
+                        <a href="/news" class="btn btn-primary btn-sm">View All News</a>
+                    </div>
+                `;
+            }
+        }
+    } catch (error) {
+        console.error('Error loading news:', error);
+        const container = document.getElementById('latestNews');
+        if (container) {
             container.innerHTML = `
-                <div style="text-align: center; padding: 20px; color: #666;">
-                    <i class="fas fa-newspaper" style="font-size: 24px; margin-bottom: 10px; opacity: 0.5;"></i>
-                    <p>Loading latest M&A news...</p>
+                <div style="text-align: center; padding: 20px; color: #dc2626;">
+                    <i class="fas fa-exclamation-triangle" style="font-size: 24px; margin-bottom: 10px;"></i>
+                    <p>Error loading news. Please refresh the page.</p>
                     <a href="/news" class="btn btn-primary btn-sm">View All News</a>
                 </div>
             `;
         }
-    } catch (error) {
-        console.error('Error loading news:', error);
     }
 }
 
 
 async function loadActiveFundraising() {
     try {
+        console.log('Loading active fundraising...');
         const response = await fetch('/api/fundraising');
         const data = await response.json();
         
-        if (data.success) {
+        console.log('Fundraising API response:', data);
+        
+        if (data.success && data.fundraising && data.fundraising.length > 0) {
             const container = document.getElementById('activeFundraising');
+            if (!container) {
+                console.error('activeFundraising container not found');
+                return;
+            }
+            
             container.innerHTML = '';
             
-            // Filter active fundraising
+            // Filter active fundraising and limit to 5
             const active = data.fundraising.filter(f => f.status !== 'Closed').slice(0, 5);
             
-            active.forEach(fund => {
-                const item = document.createElement('div');
-                item.className = 'fundraising-item-compact';
-                item.innerHTML = `
-                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
-                        <div>
-                            <div class="fund-name-compact">${escapeHtml(fund.firm)} - ${escapeHtml(fund.fund_name)}</div>
-                            <div class="fund-details-compact">Target: ${escapeHtml(fund.target_size)} | ${escapeHtml(fund.status)}</div>
-                        </div>
-                        <span class="progress-badge">${fund.progress}%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: ${fund.progress}%"></div>
+            console.log(`Displaying ${active.length} active fundraising items`);
+            
+            if (active.length > 0) {
+                active.forEach((fund, index) => {
+                    try {
+                        const item = document.createElement('div');
+                        item.className = 'fundraising-item-compact';
+                        item.innerHTML = `
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                                <div>
+                                    <div class="fund-name-compact">${escapeHtml(fund.firm)} - ${escapeHtml(fund.fund_name)}</div>
+                                    <div class="fund-details-compact">Target: ${escapeHtml(fund.target_size)} | ${escapeHtml(fund.status)}</div>
+                                </div>
+                                <span class="progress-badge">${fund.progress}%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: ${fund.progress}%"></div>
+                            </div>
+                        `;
+                        container.appendChild(item);
+                    } catch (itemError) {
+                        console.error(`Error creating fundraising item ${index}:`, itemError);
+                    }
+                });
+                
+                // Add "View All" link
+                const viewAllLink = document.createElement('div');
+                viewAllLink.style.textAlign = 'center';
+                viewAllLink.style.marginTop = '15px';
+                viewAllLink.innerHTML = `<a href="/fundraising" class="btn btn-primary btn-sm">View All ${data.fundraising.length} Funds</a>`;
+                container.appendChild(viewAllLink);
+            } else {
+                container.innerHTML = `
+                    <div style="text-align: center; padding: 20px; color: #666;">
+                        <i class="fas fa-chart-line" style="font-size: 24px; margin-bottom: 10px; opacity: 0.5;"></i>
+                        <p>No active fundraising campaigns</p>
+                        <a href="/fundraising" class="btn btn-primary btn-sm">View All Funds</a>
                     </div>
                 `;
-                container.appendChild(item);
-            });
+            }
+        } else {
+            console.log('No fundraising data available');
+            const container = document.getElementById('activeFundraising');
+            if (container) {
+                container.innerHTML = `
+                    <div style="text-align: center; padding: 20px; color: #666;">
+                        <i class="fas fa-chart-line" style="font-size: 24px; margin-bottom: 10px; opacity: 0.5;"></i>
+                        <p>Loading fundraising data...</p>
+                        <a href="/fundraising" class="btn btn-primary btn-sm">View All Funds</a>
+                    </div>
+                `;
+            }
         }
     } catch (error) {
         console.error('Error loading fundraising:', error);
+        const container = document.getElementById('activeFundraising');
+        if (container) {
+            container.innerHTML = `
+                <div style="text-align: center; padding: 20px; color: #dc2626;">
+                    <i class="fas fa-exclamation-triangle" style="font-size: 24px; margin-bottom: 10px;"></i>
+                    <p>Error loading fundraising data. Please refresh the page.</p>
+                    <a href="/fundraising" class="btn btn-primary btn-sm">View All Funds</a>
+                </div>
+            `;
+        }
     }
 }
 
@@ -244,14 +329,54 @@ const firmLogos = {
         fallback: 'https://ui-avatars.com/api/?name=Litorina&background=7c2d12&color=ffffff&size=64',
         icon: '🏢'
     },
-    'Ratos': {
+    'Ratos AB': {
         primary: 'https://logo.clearbit.com/ratos.se',
-        fallback: 'https://ui-avatars.com/api/?name=Ratos&background=1f2937&color=ffffff&size=64',
+        fallback: 'https://ui-avatars.com/api/?name=Ratos+AB&background=1f2937&color=ffffff&size=64',
         icon: '🏢'
     },
-    'Adelis Equity': {
+    'Adelis Equity Partners': {
         primary: 'https://logo.clearbit.com/adelisequity.com',
-        fallback: 'https://ui-avatars.com/api/?name=Adelis&background=be185d&color=ffffff&size=64',
+        fallback: 'https://ui-avatars.com/api/?name=Adelis+Equity+Partners&background=be185d&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Axcel': {
+        primary: 'https://logo.clearbit.com/axcel.dk',
+        fallback: 'https://ui-avatars.com/api/?name=Axcel&background=dc2626&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'CapMan': {
+        primary: 'https://logo.clearbit.com/capman.com',
+        fallback: 'https://ui-avatars.com/api/?name=CapMan&background=059669&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'FSN Capital': {
+        primary: 'https://logo.clearbit.com/fsncapital.com',
+        fallback: 'https://ui-avatars.com/api/?name=FSN+Capital&background=0891b2&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Valedo Partners': {
+        primary: 'https://logo.clearbit.com/valedopartners.com',
+        fallback: 'https://ui-avatars.com/api/?name=Valedo+Partners&background=7c2d12&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Segulah': {
+        primary: 'https://logo.clearbit.com/segulah.com',
+        fallback: 'https://ui-avatars.com/api/?name=Segulah&background=1f2937&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Procuritas': {
+        primary: 'https://logo.clearbit.com/procuritas.com',
+        fallback: 'https://ui-avatars.com/api/?name=Procuritas&background=be185d&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Celero': {
+        primary: 'https://logo.clearbit.com/celero.com',
+        fallback: 'https://ui-avatars.com/api/?name=Celero&background=0891b2&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Polaris': {
+        primary: 'https://logo.clearbit.com/polaris.com',
+        fallback: 'https://ui-avatars.com/api/?name=Polaris&background=7c2d12&color=ffffff&size=64',
         icon: '🏢'
     },
     'Verdane': {
@@ -444,19 +569,132 @@ function getFirmLogo(firmName) {
 }
 
 function createRobustLogoHTML(firmName, size = '24px') {
-    if (!firmName || !firmLogos[firmName]) return '';
+    if (!firmName) return '';
     
-    const logoData = firmLogos[firmName];
+    // Try exact match first
+    if (firmLogos[firmName]) {
+        const logoData = firmLogos[firmName];
+        const escapedName = escapeHtml(firmName);
+        
+        return `
+            <div class="news-firm-logo" style="position: relative; display: inline-block; margin-right: 8px;">
+                <img src="${logoData.primary}" 
+                     alt="${escapedName}" 
+                     style="width: ${size}; height: ${size}; border-radius: 6px; object-fit: contain;"
+                     onerror="this.onerror=null; this.src='${logoData.fallback}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';}">
+                <div class="logo-fallback" style="display: none; width: ${size}; height: ${size}; background: #4c1d95; color: white; border-radius: 6px; align-items: center; justify-content: center; font-size: 14px; font-weight: bold;">
+                    ${logoData.icon}
+                </div>
+            </div>
+        `;
+    }
+    
+    // Try partial matches for related companies
+    const relatedFirms = {
+        'Opti': 'FSN Capital',
+        'Opti Group': 'FSN Capital',
+        'Optigroup': 'FSN Capital',
+        'HENT': 'Ratos AB',
+        'LEDiL': 'Ratos AB',
+        'Semcon': 'Ratos AB',
+        'Aibel': 'Ratos AB',
+        'HL Display': 'Ratos AB',
+        'Adapteo': 'Ratos AB',
+        'Delete': 'Ratos AB',
+        'Plantasjen': 'Ratos AB',
+        'Expin': 'Ratos AB',
+        'NOBA': 'Nordic Capital',
+        'Minerva': 'Nordic Capital',
+        'Sensio': 'Nordic Capital',
+        'Max Matthiessen': 'Nordic Capital',
+        'R-GOL': 'Nordic Capital',
+        'Unisport': 'Nordic Capital',
+        'BRP Systems': 'Nordic Capital',
+        'One Inc': 'Nordic Capital',
+        'ActiveViam': 'Nordic Capital',
+        'Sesol': 'Nordic Capital',
+        'Circura': 'Adelis Equity Partners',
+        'Nordic BioSite': 'Adelis Equity Partners',
+        'SSI Diagnostica': 'Adelis Equity Partners',
+        'Kanari': 'Adelis Equity Partners',
+        'Nordomatic': 'Adelis Equity Partners',
+        'Axentia': 'Adelis Equity Partners',
+        'Infobric': 'Summa Equity',
+        'Lakers': 'Summa Equity',
+        'Pumppulohja': 'Summa Equity',
+        'Zengun': 'Segulah',
+        'Zengun Group': 'Segulah',
+        'Rebellion': 'Triton Partners',
+        'Eltel': 'Triton Partners',
+        'HiQ': 'Triton Partners',
+        'Mecenat': 'IK Partners',
+        'Nordic Tyre': 'Axcel',
+        'Nordstjernan': 'Axcel',
+        'Aidian': 'Axcel',
+        'XPartners': 'Axcel',
+        'Mirovia': 'Axcel',
+        'JM': 'CapMan',
+        'Rexel': 'CapMan',
+        'Scandic': 'CapMan',
+        'Nobia': 'CapMan',
+        'Nordlo': 'CapMan',
+        'Apax': 'CapMan',
+        'team.blue': 'CapMan',
+        'Loopia': 'CapMan',
+        'NAXS': 'CapMan',
+        'Celero': 'CapMan',
+        'CapMan Real Estate': 'CapMan',
+        'CapMan Infra': 'CapMan',
+        'CapMan Hotels': 'CapMan',
+        'CMH II': 'CapMan',
+        'Panattoni': 'CapMan'
+    };
+    
+    // Check if this is a portfolio company - try both exact match and partial match
+    let relatedFirm = relatedFirms[firmName];
+    
+    // If no exact match, try partial matching
+    if (!relatedFirm) {
+        for (const [keyword, peFirm] of Object.entries(relatedFirms)) {
+            if (firmName.toLowerCase().includes(keyword.toLowerCase()) || 
+                keyword.toLowerCase().includes(firmName.toLowerCase())) {
+                relatedFirm = peFirm;
+                break;
+            }
+        }
+    }
+    
+    if (relatedFirm && firmLogos[relatedFirm]) {
+        const logoData = firmLogos[relatedFirm];
+        const escapedName = escapeHtml(firmName);
+        const escapedRelated = escapeHtml(relatedFirm);
+        
+        return `
+            <div class="news-firm-logo" style="position: relative; display: inline-block; margin-right: 8px;" title="Related to ${escapedRelated}">
+                <img src="${logoData.primary}" 
+                     alt="${escapedName} (${escapedRelated})" 
+                     style="width: ${size}; height: ${size}; border-radius: 6px; object-fit: contain; border: 2px solid #fbbf24;"
+                     onerror="this.onerror=null; this.src='${logoData.fallback}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';}">
+                <div class="logo-fallback" style="display: none; width: ${size}; height: ${size}; background: #fbbf24; color: #1f2937; border-radius: 6px; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; border: 2px solid #f59e0b;">
+                    ${logoData.icon}
+                </div>
+                <div style="position: absolute; bottom: -2px; right: -2px; background: #fbbf24; color: #1f2937; border-radius: 50%; width: 12px; height: 12px; font-size: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold;">R</div>
+            </div>
+        `;
+    }
+    
+    // Fallback: create a generic logo
+    const encodedName = encodeURIComponent(firmName);
     const escapedName = escapeHtml(firmName);
     
     return `
-        <div class="news-firm-logo" style="position: relative;">
-            <img src="${logoData.primary}" 
+        <div class="news-firm-logo" style="position: relative; display: inline-block; margin-right: 8px;">
+            <img src="https://ui-avatars.com/api/?name=${encodedName}&background=6b7280&color=ffffff&size=${parseInt(size)}" 
                  alt="${escapedName}" 
-                 style="width: ${size}; height: ${size}; border-radius: 4px; margin-right: 8px;"
-                 onerror="this.onerror=null; this.src='${logoData.fallback}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';}">
-            <div class="logo-fallback" style="display: none; width: ${size}; height: ${size}; background: #4c1d95; color: white; border-radius: 4px; margin-right: 8px; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">
-                ${logoData.icon}
+                 style="width: ${size}; height: ${size}; border-radius: 6px; object-fit: contain;"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="logo-fallback" style="display: none; width: ${size}; height: ${size}; background: #6b7280; color: white; border-radius: 6px; align-items: center; justify-content: center; font-size: 14px; font-weight: bold;">
+                🏢
             </div>
         </div>
     `;

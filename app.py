@@ -620,7 +620,7 @@ def get_pe_firms():
 @app.route('/api/pe-firm/<firm_name>', methods=['GET'])
 def get_pe_firm_detail(firm_name):
     """
-    Get detailed information about a specific PE firm
+    Get detailed information about a specific PE firm with real news integration
     """
     try:
         # Try enriched database first
@@ -640,11 +640,61 @@ def get_pe_firm_detail(firm_name):
                             pe_data = json.load(pf)
                             firm_metadata = pe_data.get('pe_firms', {}).get(firm_name, {})
                     
-                    # Build firm data structure
+                    # Get real news for this firm
+                    real_news = []
+                    seen_articles = set()  # Track articles we've already added to avoid duplicates
+                    
+                    if os.path.exists('pe_news_database.json'):
+                        with open('pe_news_database.json', 'r', encoding='utf-8') as nf:
+                            news_data = json.load(nf)
+                            all_news = news_data.get('news', [])
+                            
+                            # Filter news for this firm (exact match ONLY on firm field)
+                            for article in all_news:
+                                article_firm = article.get('firm', '')
+                                article_title = article.get('title', '')
+                                article_desc = article.get('description', '')
+                                article_link = article.get('link', '')
+                                
+                                # Use the link as a unique identifier to avoid duplicates
+                                article_id = article_link
+                                
+                                # PRIORITY 1: Direct firm match from the 'firm' field
+                                if article_firm and article_firm.lower() == firm_name.lower():
+                                    if article_id not in seen_articles:
+                                        real_news.append(article)
+                                        seen_articles.add(article_id)
+                                        continue
+                                
+                                # PRIORITY 2: Check if article mentions portfolio companies (more selective)
+                                for company in firm_companies:
+                                    company_name = company.get('company', '')
+                                    if not company_name:
+                                        continue
+                                    
+                                    # Check if company name is mentioned in title or description
+                                    if (company_name.lower() in article_title.lower() or 
+                                        company_name.lower() in article_desc.lower()):
+                                        
+                                        if article_id not in seen_articles:
+                                            # Add firm context to the article
+                                            article_copy = article.copy()
+                                            article_copy['related_firm'] = firm_name
+                                            article_copy['related_company'] = company_name
+                                            real_news.append(article_copy)
+                                            seen_articles.add(article_id)
+                                            break  # Only add once per company match
+                    
+                    # Sort news by date (most recent first)
+                    real_news.sort(key=lambda x: x.get('date', ''), reverse=True)
+                    
+                    # Build firm data structure with real news
                     firm_data = {
                         'name': firm_name,
                         'companies': firm_companies,
                         'company_count': len(firm_companies),
+                        'real_news': real_news[:10],  # Latest 10 news items
+                        'total_news_count': len(real_news),
                         **firm_metadata  # Add any metadata from old database
                     }
                     

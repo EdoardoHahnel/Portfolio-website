@@ -1,150 +1,12 @@
 {
   "metadata": {
-    "last_updated": "2025-10-24 20:58:58",
-    "total_companies": 493,
+    "last_updated": "2025-10-27 22:00:00",
+    "total_companies": 508,
     "description": "Updated portfolio database with current IK Partners investments only",
-    "ik_partners_companies": 19
+    "ik_partners_companies": 19,
+    "adelis_companies": 45
   },
   "companies": [
-    {
-      "company": "Eltel",
-      "sector": "Infrastructure Services",
-      "fund": "Adelis III",
-      "market": "Sweden",
-      "entry": "2020",
-      "source": "Adelis Equity",
-      "headquarters": "Espoo, Finland",
-      "website": "https://www.eltelgroup.com",
-      "enriched": true,
-      "research_date": "2025-10-20T08:30:00",
-      "detailed_description": "Eltel is a leading Northern European provider of technical services for critical infrastructure networks, commonly referred to as 'infranets.' The company specializes in designing, building, maintaining, and upgrading communication and power infrastructure essential to modern society. Eltel operates throughout the Nordics, Poland, and Germany, offering a broad and integrated range of services that span from maintenance and upgrade services to project deliveries.",
-      "founded_year": "2001",
-      "employee_count_detailed": "~8,400 employees (as of 2016)",
-      "revenue": "€1.4 billion (2016)",
-      "revenue_growth": "Stable with project-based variations",
-      "ceo": "To be researched",
-      "leadership_team": [
-        {
-          "name": "To be researched",
-          "role": "CEO",
-          "background": "Executive leadership in infrastructure services"
-        },
-        {
-          "name": "To be researched",
-          "role": "CFO",
-          "background": "Financial management expertise"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Power Network Services",
-          "description": "Building, maintaining, and upgrading electric power transmission lines and substations. Includes planning, construction, commissioning, and maintenance of high-voltage transmission and distribution networks."
-        },
-        {
-          "name": "Communication Network Solutions",
-          "description": "Services for fixed and mobile telecommunications, including DAS facilities, 5G infrastructure, and Industry 4.0 solutions. Covers homeland security, aviation, rail and road infrastructures."
-        },
-        {
-          "name": "Maintenance & Repair Services",
-          "description": "Comprehensive maintenance and repair services for utilities, cities and communes, industrial customers, and authorities."
-        }
-      ],
-      "technology_stack": [
-        "5G Infrastructure",
-        "DAS Facilities",
-        "Industry 4.0 Solutions",
-        "High-Voltage Transmission Systems",
-        "Telecommunications Infrastructure",
-        "Smart Grid Technology"
-      ],
-      "recent_news": [
-        {
-          "date": "April 2024",
-          "title": "Eltel Networks Engineering Acquired by Mutares",
-          "content": "Eltel Networks Engineering, a unit specializing in electrical power engineering and construction services, was acquired by Mutares, reflecting strategic optimization of service offerings."
-        },
-        {
-          "date": "February 2015",
-          "title": "Nasdaq Stockholm Listing",
-          "content": "Eltel was listed on Nasdaq Stockholm, marking a significant milestone in the company's growth and market presence."
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2001",
-          "event": "Company Founded",
-          "description": "Eltel established as a provider of technical services for critical infrastructure"
-        },
-        {
-          "year": "2015",
-          "event": "Public Listing",
-          "description": "Listed on Nasdaq Stockholm"
-        },
-        {
-          "year": "2020",
-          "event": "Adelis Equity Investment",
-          "description": "Acquired by Adelis Equity through Adelis III fund"
-        },
-        {
-          "year": "2024",
-          "event": "Strategic Divestiture",
-          "description": "Eltel Networks Engineering unit acquired by Mutares"
-        }
-      ],
-      "competitive_advantages": [
-        "Leading position in Northern European infrastructure services market",
-        "Comprehensive end-to-end service offering from design to maintenance",
-        "Strong relationships with large network owners and utilities",
-        "Expertise across both power and communication infrastructure",
-        "Geographic diversification across Nordics, Poland, and Germany",
-        "Scale advantage with ~8,400 employees",
-        "25+ years of operational experience"
-      ],
-      "target_customers": "Large network owners, utilities companies, telecommunications operators, cities and communes, industrial customers, government authorities, and infrastructure authorities",
-      "market_share": "Leading position in Nordic infrastructure services sector",
-      "geographic_presence": [
-        "Finland (Headquarters)",
-        "Sweden",
-        "Norway",
-        "Denmark",
-        "Poland",
-        "Germany"
-      ],
-      "business_model": "B2B service provider offering long-term contracts for infrastructure maintenance and project-based deliveries. Revenue generated through service contracts, maintenance agreements, and infrastructure project execution.",
-      "strategic_priorities": [
-        "Expanding 5G infrastructure capabilities",
-        "Strengthening position in renewable energy infrastructure",
-        "Digitalization of service delivery",
-        "Operational efficiency improvements",
-        "Geographic market consolidation"
-      ],
-      "sustainability_initiatives": [
-        "Committed to sustainability in strategic decision-making",
-        "Focus on environmental impact management",
-        "Supporting critical infrastructure for renewable energy transition",
-        "Sustainable infrastructure development practices"
-      ],
-      "partnerships": [
-        "Major telecommunications operators in Nordic region",
-        "Energy utilities and transmission system operators",
-        "Government infrastructure authorities",
-        "Industrial manufacturing clients"
-      ],
-      "certifications": [
-        "ISO Quality Management",
-        "Safety and Environmental Certifications",
-        "Industry-specific technical certifications"
-      ],
-      "growth_rate": "Steady growth aligned with infrastructure investment cycles in Nordic markets",
-      "digital_transformation": "Investing in digital tools for infrastructure management, predictive maintenance, and service delivery optimization",
-      "investment_thesis": "Value creation through operational improvements, market consolidation, digital transformation, and benefiting from ongoing infrastructure modernization in Nordic markets, particularly 5G rollout and energy transition investments.",
-      "deal_size": "€240M",
-      "deal_value_source": "Web search",
-      "deal_value_context": " credit facilities until mid-Q1 2022.Eltelsigned five contracts of significance to a value of about EUR 240 million during January2020-April ... Thetransactionhad a positive cash flow impact of EUR 19.0 millio",
-      "deal_value_relevance": 30,
-      "deal_value_updated": "2025-10-20T20:13:12.165120",
-      "logo_url": "https://logo.clearbit.com/eltelgroup.com"
-    },
     {
       "company": "Vinted",
       "sector": "Consumer Tech",
@@ -22513,2886 +22375,6 @@
       "logo_url": "https://logo.clearbit.com/mercuri.net"
     },
     {
-      "company": "Polygiene",
-      "sector": "Consumer Products",
-      "fund": "Adelis II",
-      "market": "Sweden",
-      "entry": "2018",
-      "source": "Adelis Equity",
-      "headquarters": "Malmö, Sweden",
-      "website": "https://www.polygiene.com",
-      "enriched": true,
-      "research_date": "2025-10-20T20:05:00",
-      "detailed_description": "Polygiene is a Swedish material science company providing odor control and fabric treatment technologies for the textile and apparel industry. The company's treatments use silver salt technology to prevent odor-causing bacteria growth in clothing and textiles. Polygiene partners with brands like Salomon, Craft, and others, licensing its technology for use in sportswear, outdoor gear, and everyday clothing. Listed on Nasdaq Stockholm.",
-      "founded_year": "2006",
-      "employee_count_detailed": "~30-50 employees",
-      "revenue": "SEK 100-150 million",
-      "revenue_growth": "Growth through brand partnerships",
-      "ceo": "Ulrika Björk",
-      "leadership_team": [
-        {
-          "name": "Ulrika Björk",
-          "role": "CEO",
-          "background": "Material science and consumer products executive"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Polygiene Odor Control",
-          "description": "Antimicrobial treatment preventing odor in textiles"
-        },
-        {
-          "name": "Polygiene BioStatic",
-          "description": "Stays-fresh technology for fabrics"
-        },
-        {
-          "name": "Polygiene ViralOff",
-          "description": "Treatment reducing viruses on textiles"
-        }
-      ],
-      "technology_stack": [
-        "Silver salt technology",
-        "Textile treatment processes",
-        "Material science"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "headline": "ViralOff technology adoption",
-          "impact": "Product expansion"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2006",
-          "event": "Company Founded",
-          "description": "Developed odor control technology"
-        },
-        {
-          "year": "2018",
-          "event": "Adelis Investment",
-          "description": "Growth capital"
-        }
-      ],
-      "competitive_advantages": [
-        "Proven odor control technology",
-        "Brand partnerships",
-        "Sustainability positioning"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "Technology licensing fees",
-          "Treatment chemical sales"
-        ],
-        "customer_segments": [
-          "Apparel brands",
-          "Textile manufacturers",
-          "Sportswear companies"
-        ],
-        "value_proposition": "Fabric treatments enabling products to stay fresh longer, reducing washing and extending garment life"
-      },
-      "strategic_priorities": [
-        "Expand brand partnerships",
-        "Grow ViralOff adoption",
-        "Increase market penetration"
-      ],
-      "investment_thesis": "Polygiene benefits from sustainability trends and consumer demand for functional textiles. Licensing model provides scalable revenue.",
-      "logo_url": "https://logo.clearbit.com/polygiene.com"
-    },
-    {
-      "company": "Lime Technologies",
-      "sector": "Software",
-      "fund": "Adelis III",
-      "market": "Sweden",
-      "entry": "2021",
-      "source": "Adelis Equity",
-      "headquarters": "Lund, Sweden",
-      "website": "https://www.lime-technologies.com",
-      "enriched": true,
-      "research_date": "2025-10-20T17:20:00",
-      "detailed_description": "Lime Technologies is a leading Nordic provider of cloud-based CRM (Customer Relationship Management) software, serving over 1,500 customers across multiple industries. Founded in 1990, the company offers configurable CRM solutions designed specifically for small and medium-sized B2B companies in the Nordics. Lime's platform helps sales teams manage customer relationships, track opportunities, automate workflows, and improve sales effectiveness. The company focuses on ease of use, Nordic language support, and local customer service, positioning itself as the preferred CRM for Nordic SMBs. Listed on Nasdaq Stockholm, Lime serves customers across Sweden, Norway, Denmark, Finland, and the Netherlands.",
-      "founded_year": "1990",
-      "employee_count_detailed": "~300 employees",
-      "revenue": "SEK 400+ million (~€40 million)",
-      "revenue_growth": "Strong growth through new customers and upselling",
-      "ceo": "Nils Olsson",
-      "leadership_team": [
-        {
-          "name": "Nils Olsson",
-          "role": "CEO",
-          "background": "Software and SaaS executive with Nordic market expertise"
-        },
-        {
-          "name": "Product and Country Leaders",
-          "role": "Management Team",
-          "background": "CRM and software professionals across Nordic markets"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Lime CRM",
-          "description": "Core CRM platform providing contact management, opportunity tracking, activity management, and sales pipeline visualization for B2B sales teams."
-        },
-        {
-          "name": "Lime Telephony",
-          "description": "Integrated telephony solution connecting CRM with phone systems for call logging, recording, and activity tracking."
-        },
-        {
-          "name": "Lime Mobile",
-          "description": "Mobile CRM applications enabling sales teams to access and update customer information on the go."
-        },
-        {
-          "name": "Lime Add-ons & Integrations",
-          "description": "Marketplace of add-on modules and integrations with accounting systems, email, and other business applications."
-        }
-      ],
-      "technology_stack": [
-        "Cloud-based SaaS platform",
-        "Mobile applications (iOS/Android)",
-        "API and integration framework",
-        "Business intelligence and reporting",
-        "Workflow automation",
-        "Microsoft Outlook integration",
-        "Nordic language support"
-      ],
-      "recent_news": [
-        {
-          "date": "2021",
-          "headline": "Adelis III investment to accelerate growth and Nordic expansion",
-          "impact": "Growth capital"
-        },
-        {
-          "date": "2022-2023",
-          "headline": "Strong customer growth and expansion in Norwegian and Danish markets",
-          "impact": "Geographic expansion"
-        },
-        {
-          "date": "2024",
-          "headline": "Enhanced product features and AI-powered sales insights",
-          "impact": "Product innovation"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "1990",
-          "event": "Company Founded",
-          "description": "Established as CRM software provider in Sweden"
-        },
-        {
-          "year": "2016",
-          "event": "Public Listing",
-          "description": "Listed on Nasdaq Stockholm First North"
-        },
-        {
-          "year": "2021",
-          "event": "Adelis III Investment",
-          "description": "Partnership to accelerate Nordic expansion"
-        },
-        {
-          "year": "2022-2024",
-          "event": "Accelerated Growth",
-          "description": "Passed 1,500 customers and expanded across Nordics"
-        }
-      ],
-      "competitive_advantages": [
-        "Strong position in Nordic SMB CRM market",
-        "Product designed specifically for Nordic B2B sales needs",
-        "Local language support and Nordic customer service",
-        "Ease of use and implementation compared to global CRM platforms",
-        "Strong customer retention and satisfaction",
-        "Growing ecosystem of integrations and partners",
-        "Listed company with access to capital for growth"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "SaaS subscription fees",
-          "Implementation and consulting services",
-          "Add-on modules and premium features",
-          "Partner and reseller revenue"
-        ],
-        "customer_segments": [
-          "Nordic SMB companies",
-          "B2B sales teams",
-          "Professional services firms",
-          "Manufacturing and distribution companies"
-        ],
-        "value_proposition": "Easy-to-use, affordable CRM software designed for Nordic B2B companies with local support, language, and features tailored to regional business needs"
-      },
-      "strategic_priorities": [
-        "Expand customer base across all Nordic markets",
-        "Increase average revenue per user through upselling",
-        "Enhance product with AI and automation features",
-        "Grow partner and reseller network",
-        "Improve customer onboarding and retention",
-        "Develop industry-specific solutions",
-        "Pursue strategic M&A opportunities"
-      ],
-      "investment_thesis": "Lime Technologies benefits from growing CRM adoption among Nordic SMBs transitioning from spreadsheets and legacy systems. The company's Nordic focus provides competitive differentiation against global CRM giants like Salesforce and Microsoft Dynamics. Local language, support, and features tailored to regional needs create switching barriers. High recurring SaaS revenue with strong retention provides predictable cash flows. Significant market opportunity remains with low CRM penetration in Nordic SMB segment. Opportunities for upselling, geographic expansion, and margin improvement. Public listing provides liquidity while Adelis partnership supports growth initiatives.",
-      "deal_size": "SEK 800M",
-      "logo_url": "https://logo.clearbit.com/lime-technologies.com"
-    },
-    {
-      "company": "Medius",
-      "sector": "Software",
-      "fund": "Adelis III",
-      "market": "Sweden",
-      "entry": "2020",
-      "source": "Adelis Equity",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.medius.com",
-      "enriched": true,
-      "research_date": "2025-10-20T17:50:00",
-      "detailed_description": "Medius is a leading global provider of accounts payable (AP) automation and spend management software, helping mid-market and enterprise organizations automate invoice processing, payment workflows, and procurement. Founded in 2001, the company serves over 3,000 customers across 40+ countries with cloud-based solutions that eliminate manual AP processes, prevent fraud, ensure compliance, and provide spending visibility. Medius integrates with major ERP systems (SAP, Oracle, Microsoft, Infor) to streamline procure-to-pay workflows, using AI and machine learning to automate invoice capture, matching, approval routing, and payment processing.",
-      "founded_year": "2001",
-      "employee_count_detailed": "~350 employees globally",
-      "revenue": "$100+ million",
-      "revenue_growth": "Strong growth through new customers and geographic expansion",
-      "ceo": "Jim Lucier",
-      "leadership_team": [
-        {
-          "name": "Jim Lucier",
-          "role": "CEO",
-          "background": "Enterprise software executive with AP automation expertise"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "AP Automation",
-          "description": "Automated invoice capture, coding, matching, approval routing, and payment processing eliminating manual data entry"
-        },
-        {
-          "name": "Spend Management",
-          "description": "Visibility and control over company spending with analytics, budgeting, and procurement controls"
-        },
-        {
-          "name": "Supplier Management",
-          "description": "Supplier onboarding, master data management, and supplier portal for collaboration"
-        },
-        {
-          "name": "Fraud Detection",
-          "description": "AI-powered fraud prevention detecting duplicate invoices, payment fraud, and suspicious activity"
-        }
-      ],
-      "technology_stack": [
-        "Cloud-based SaaS platform",
-        "AI/ML for invoice processing",
-        "OCR and data capture",
-        "ERP integrations",
-        "Workflow automation",
-        "Analytics and reporting"
-      ],
-      "recent_news": [
-        {
-          "date": "2020",
-          "headline": "Adelis III investment to accelerate global expansion",
-          "impact": "Growth capital"
-        },
-        {
-          "date": "2021-2023",
-          "headline": "Strong customer growth in North America and Europe",
-          "impact": "Geographic expansion"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2001",
-          "event": "Company Founded",
-          "description": "Established as AP automation software provider"
-        },
-        {
-          "year": "2020",
-          "event": "Adelis III Investment",
-          "description": "Growth capital to accelerate international expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Strong position in mid-market AP automation",
-        "Deep ERP integrations",
-        "AI-powered automation capabilities",
-        "Global customer base providing scale"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "SaaS subscription fees",
-          "Professional services",
-          "Transaction-based pricing"
-        ],
-        "customer_segments": [
-          "Mid-market enterprises",
-          "Large corporations",
-          "Multi-national organizations"
-        ],
-        "value_proposition": "AP automation and spend management reducing costs, preventing fraud, and improving cash flow visibility"
-      },
-      "strategic_priorities": [
-        "Expand in North American market",
-        "Enhance AI and automation capabilities",
-        "Grow customer base and upsell",
-        "Strengthen ERP partnerships"
-      ],
-      "investment_thesis": "Medius benefits from digital transformation of finance functions and shift to cloud-based AP automation. Strong product-market fit in mid-market segment with recurring SaaS revenue and high retention.",
-      "deal_size": "SEK 600M",
-      "logo_url": "https://logo.clearbit.com/medius.com"
-    },
-    {
-      "company": "Knowit",
-      "sector": "IT Services",
-      "fund": "Adelis II",
-      "market": "Sweden",
-      "entry": "2019",
-      "source": "Adelis Equity",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.knowit.eu",
-      "enriched": true,
-      "research_date": "2025-10-20T17:25:00",
-      "detailed_description": "Knowit is a leading Nordic IT services and consulting company helping organizations navigate digital transformation through technology consulting, software development, design, and managed services. With operations across Sweden, Norway, Denmark, Finland, and Germany, Knowit employs over 4,000 consultants serving public and private sector clients. The company operates through specialized business areas including Experience (digital design and UX), Insight (data analytics and AI), Solutions (custom software development), and Connectivity (infrastructure and cloud services). Listed on Nasdaq Stockholm, Knowit combines local presence with Nordic-wide expertise to deliver digital solutions and strategic guidance.",
-      "founded_year": "1990",
-      "employee_count_detailed": "~4,000 consultants",
-      "revenue": "SEK 5+ billion (~€500 million)",
-      "revenue_growth": "Steady growth through organic expansion and acquisitions",
-      "ceo": "Per Wallentin",
-      "leadership_team": [
-        {
-          "name": "Per Wallentin",
-          "role": "CEO",
-          "background": "IT services industry veteran with extensive Nordic market experience"
-        },
-        {
-          "name": "Business Area and Country Leaders",
-          "role": "Management Team",
-          "background": "Technology consulting and digital services professionals"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Digital Experience & Design",
-          "description": "UX/UI design, digital strategy, service design, and customer experience consulting helping organizations create engaging digital products and services."
-        },
-        {
-          "name": "Software Development & Solutions",
-          "description": "Custom software development, application modernization, agile development teams, and technical consulting for digital initiatives."
-        },
-        {
-          "name": "Data & AI Services",
-          "description": "Business intelligence, data analytics, machine learning, and AI solutions helping organizations leverage data for insights and automation."
-        },
-        {
-          "name": "Cloud & Infrastructure",
-          "description": "Cloud migration, infrastructure services, DevOps, cybersecurity, and managed IT services for modern technology environments."
-        }
-      ],
-      "technology_stack": [
-        "Cloud platforms (Azure, AWS, Google Cloud)",
-        "Modern development frameworks",
-        "Data analytics and BI tools",
-        "DevOps and automation",
-        "Design and prototyping tools",
-        "AI/ML platforms",
-        "Infrastructure management"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "headline": "Strong growth in cloud services and data analytics consulting",
-          "impact": "Service line expansion"
-        },
-        {
-          "date": "2022",
-          "headline": "Strategic acquisitions strengthening capabilities in AI and experience design",
-          "impact": "M&A activity"
-        },
-        {
-          "date": "2021",
-          "headline": "Sustainability focus with carbon-neutral operations goal",
-          "impact": "ESG initiative"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "1990",
-          "event": "Company Founded",
-          "description": "Established as IT consulting company in Sweden"
-        },
-        {
-          "year": "2000-2018",
-          "event": "Nordic Expansion",
-          "description": "Grew across Nordics through organic growth and acquisitions"
-        },
-        {
-          "year": "2019",
-          "event": "Adelis II Investment",
-          "description": "Partnership to support continued growth and service development"
-        },
-        {
-          "year": "2020-2024",
-          "event": "Digital Transformation Leader",
-          "description": "Strengthened position as Nordic digital transformation partner"
-        }
-      ],
-      "competitive_advantages": [
-        "Leading Nordic IT services company with 4,000+ consultants",
-        "Comprehensive service offering across digital capabilities",
-        "Strong local presence in all Nordic markets",
-        "Deep expertise in specific industries and technologies",
-        "Entrepreneurial culture attracting top talent",
-        "Listed company providing scale and credibility",
-        "Ability to serve both large enterprises and public sector"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "Consulting services (time & materials)",
-          "Fixed-price projects",
-          "Managed services contracts",
-          "Retainer agreements"
-        ],
-        "customer_segments": [
-          "Large enterprises",
-          "Public sector organizations",
-          "Mid-market companies",
-          "Nordic businesses undergoing digital transformation"
-        ],
-        "value_proposition": "End-to-end digital transformation services combining Nordic expertise, local presence, and comprehensive capabilities from strategy to implementation and operations"
-      },
-      "strategic_priorities": [
-        "Grow in high-value services like cloud, data, and AI",
-        "Expand public sector presence",
-        "Attract and retain top consulting talent",
-        "Pursue strategic acquisitions in growth areas",
-        "Strengthen cross-Nordic collaboration",
-        "Improve operational efficiency and margins",
-        "Develop industry-specific offerings"
-      ],
-      "investment_thesis": "Knowit benefits from strong demand for digital transformation services across Nordic markets as organizations modernize technology and processes. The company's local presence, comprehensive capabilities, and entrepreneurial culture provide competitive advantages against global consultancies. Growing complexity of technology creates demand for specialized expertise in cloud, data, and AI. Public sector digital initiatives offer stable, long-term revenue opportunities. Nordic focus enables deeper market understanding and customer relationships. Listed status provides access to capital for acquisitions consolidating fragmented market. Opportunities to improve margins through service mix optimization and operational leverage.",
-      "deal_size": "SEK 1.2B",
-      "logo_url": "https://logo.clearbit.com/knowit.eu"
-    },
-    {
-      "company": "Advinans",
-      "sector": "Fintech / Wealth Management",
-      "fund": "Adelis",
-      "market": "Finland/Sweden",
-      "entry": "2022",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T09:20:00",
-      "headquarters": "Helsinki, Finland (Nordic operations)",
-      "website": "https://www.advinans.fi",
-      "employees": "150+ employees",
-      "detailed_description": "Advinans provides digital wealth management and occupational savings platforms for employers and individuals across the Nordics. The platform delivers pension savings, long-term investment plans, and employee benefit investing with transparent fees and modern UX. Advinans partners with employers to offer workplace savings schemes and with financial institutions for custody and fund distribution.",
-      "founded_year": "2017",
-      "employee_count_detailed": "150+ across Finland and Sweden",
-      "revenue": "€20M+ (estimated)",
-      "revenue_growth": "30%+ annual growth",
-      "valuation": "€200M+ (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Fintech executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Pensions, asset management, and fintech"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Workplace Savings Platform",
-          "description": "Employer-sponsored long-term savings and investment plans with payroll integration"
-        },
-        {
-          "name": "Personal Investing",
-          "description": "Self-directed investment accounts with diversified portfolios and ETFs"
-        }
-      ],
-      "technology_stack": [
-        "Cloud-native web and mobile",
-        "Brokerage/custody integrations",
-        "Payments and payroll APIs"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Employer Wins",
-          "content": "Added multiple large Nordic employers to workplace savings program"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2022",
-          "event": "Adelis Investment",
-          "description": "Growth capital to scale Nordic expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Modern UX and low fees",
-        "Employer distribution",
-        "Regulatory and pensions expertise"
-      ],
-      "target_customers": "Nordic employers and retail investors",
-      "market_share": "Emerging leader in Nordic workplace savings platforms",
-      "geographic_presence": [
-        "Finland (HQ)",
-        "Sweden"
-      ],
-      "logo_url": "https://logo.clearbit.com/advinans.fi"
-    },
-    {
-      "company": "AmpliFlow",
-      "sector": "Tech & Software",
-      "fund": "Adelis",
-      "market": "Sweden",
-      "entry": "2021",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T09:25:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.ampliflow.com",
-      "employees": "100+ employees",
-      "detailed_description": "AmpliFlow provides AI-powered customer experience and analytics platform for e-commerce and retail companies. The platform uses machine learning to analyze customer behavior, optimize conversion rates, personalize experiences, and provide actionable insights for marketing and sales teams. AmpliFlow serves mid-market and enterprise retailers across Europe and North America.",
-      "founded_year": "2018",
-      "employee_count_detailed": "100+ employees",
-      "revenue": "€15M+ ARR (estimated)",
-      "revenue_growth": "40%+ annual growth",
-      "valuation": "€100M+ (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "E-commerce technology executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "AI/ML and e-commerce technology"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Customer Analytics Platform",
-          "description": "AI-powered customer behavior analysis and conversion optimization"
-        },
-        {
-          "name": "Personalization Engine",
-          "description": "Real-time product recommendations and content personalization"
-        }
-      ],
-      "technology_stack": [
-        "Machine learning",
-        "Real-time analytics",
-        "Cloud platforms",
-        "API integrations"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "European Expansion",
-          "content": "New customers in DACH and Benelux markets"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2021",
-          "event": "Adelis Investment",
-          "description": "Growth capital for international expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "AI/ML expertise",
-        "E-commerce domain knowledge",
-        "European market focus"
-      ],
-      "target_customers": "Mid-market and enterprise e-commerce and retail companies",
-      "market_share": "Growing player in e-commerce analytics",
-      "geographic_presence": [
-        "Sweden (HQ)",
-        "Europe",
-        "North America"
-      ],
-      "logo_url": "https://logo.clearbit.com/ampliflow.com"
-    },
-    {
-      "company": "Byggros",
-      "sector": "Business Services",
-      "fund": "Adelis",
-      "market": "Denmark",
-      "entry": "2020",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T09:27:00",
-      "headquarters": "Copenhagen, Denmark",
-      "website": "https://www.byggros.dk",
-      "employees": "200+ employees",
-      "detailed_description": "Byggros is a leading Nordic provider of construction and building services including project management, construction consulting, and facility management. The company serves public sector clients, private developers, and corporate clients across Denmark, Sweden, and Norway with comprehensive construction solutions.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "200+ employees across Nordics",
-      "revenue": "DKK 500M+ (estimated)",
-      "revenue_growth": "10-15% annual growth",
-      "valuation": "DKK 1+ billion (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Construction industry executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Construction and project management"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Project Management",
-          "description": "End-to-end construction project management and consulting"
-        },
-        {
-          "name": "Facility Management",
-          "description": "Ongoing building maintenance and operations services"
-        }
-      ],
-      "technology_stack": [
-        "Project management software",
-        "Building information modeling",
-        "Facility management systems"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Public Sector Wins",
-          "content": "New municipal construction contracts across Denmark"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2020",
-          "event": "Adelis Investment",
-          "description": "Growth capital for Nordic expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Public sector expertise",
-        "Nordic market knowledge",
-        "Integrated service offering"
-      ],
-      "target_customers": "Municipalities, public sector, private developers, corporate clients",
-      "market_share": "Leading construction services provider in Denmark",
-      "geographic_presence": [
-        "Denmark (HQ)",
-        "Sweden",
-        "Norway"
-      ],
-      "logo_url": "https://logo.clearbit.com/byggros.dk"
-    },
-    {
-      "company": "Ceyoniq",
-      "sector": "Tech & Software",
-      "fund": "Adelis",
-      "market": "Germany",
-      "entry": "2022",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T09:29:00",
-      "headquarters": "Munich, Germany",
-      "website": "https://www.ceyoniq.com",
-      "employees": "150+ employees",
-      "detailed_description": "Ceyoniq provides enterprise software solutions for document management, workflow automation, and digital transformation. The company serves mid-market and enterprise clients across Germany and Europe with comprehensive document processing, compliance, and business process automation platforms.",
-      "founded_year": "2015",
-      "employee_count_detailed": "150+ employees",
-      "revenue": "€25M+ ARR (estimated)",
-      "revenue_growth": "25%+ annual growth",
-      "valuation": "€150M+ (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Enterprise software executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Enterprise software and digital transformation"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Document Management Platform",
-          "description": "Enterprise document processing and workflow automation"
-        },
-        {
-          "name": "Compliance Solutions",
-          "description": "Regulatory compliance and audit trail management"
-        }
-      ],
-      "technology_stack": [
-        "Cloud-native architecture",
-        "AI/ML document processing",
-        "Workflow engines",
-        "API integrations"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Enterprise Wins",
-          "content": "New large enterprise customers in financial services and manufacturing"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2022",
-          "event": "Adelis Investment",
-          "description": "Growth capital for product development and expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "German market expertise",
-        "Enterprise focus",
-        "Compliance specialization"
-      ],
-      "target_customers": "Mid-market and enterprise companies in Germany and Europe",
-      "market_share": "Growing player in German enterprise software",
-      "geographic_presence": [
-        "Germany (HQ)",
-        "Europe"
-      ],
-      "logo_url": "https://logo.clearbit.com/ceyoniq.com"
-    },
-    {
-      "company": "Convendum",
-      "sector": "Business Services",
-      "fund": "Adelis",
-      "market": "Sweden",
-      "entry": "2021",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T09:31:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.convendum.se",
-      "employees": "300+ employees",
-      "detailed_description": "Convendum provides comprehensive business services including consulting, outsourcing, and digital transformation solutions to Nordic companies. The company serves mid-market and enterprise clients across Sweden, Norway, and Denmark with integrated business process outsourcing and consulting services.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "300+ employees across Nordics",
-      "revenue": "SEK 400M+ (estimated)",
-      "revenue_growth": "15-20% annual growth",
-      "valuation": "SEK 1.5+ billion (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Business services executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Business services and consulting"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Business Process Outsourcing",
-          "description": "Comprehensive BPO services for Nordic companies"
-        },
-        {
-          "name": "Digital Transformation Consulting",
-          "description": "Technology and process consulting services"
-        }
-      ],
-      "technology_stack": [
-        "Cloud platforms",
-        "Business process automation",
-        "Digital tools",
-        "Analytics platforms"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Nordic Expansion",
-          "content": "New service offerings in Norway and Denmark"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2021",
-          "event": "Adelis Investment",
-          "description": "Growth capital for Nordic expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Nordic market expertise",
-        "Integrated service offering",
-        "Local presence"
-      ],
-      "target_customers": "Mid-market and enterprise companies in Nordic region",
-      "market_share": "Leading BPO provider in Sweden",
-      "geographic_presence": [
-        "Sweden (HQ)",
-        "Norway",
-        "Denmark"
-      ],
-      "logo_url": "https://logo.clearbit.com/convendum.se"
-    },
-    {
-      "company": "Corporater",
-      "sector": "Tech & Software",
-      "fund": "Adelis",
-      "market": "Global",
-      "entry": "2020",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T09:33:00",
-      "headquarters": "Oslo, Norway",
-      "website": "https://www.corporater.com",
-      "employees": "200+ employees",
-      "detailed_description": "Corporater provides enterprise performance management and business intelligence software for large organizations worldwide. The platform enables strategic planning, budgeting, forecasting, and performance monitoring with integrated analytics and reporting capabilities. Corporater serves Fortune 500 companies and large enterprises across multiple industries.",
-      "founded_year": "2000",
-      "employee_count_detailed": "200+ employees globally",
-      "revenue": "$50M+ ARR (estimated)",
-      "revenue_growth": "20%+ annual growth",
-      "valuation": "$300M+ (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Enterprise software executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Enterprise software and business intelligence"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Performance Management Platform",
-          "description": "Strategic planning, budgeting, and performance monitoring"
-        },
-        {
-          "name": "Business Intelligence Suite",
-          "description": "Analytics, reporting, and data visualization tools"
-        }
-      ],
-      "technology_stack": [
-        "Cloud-native architecture",
-        "Advanced analytics",
-        "Machine learning",
-        "API integrations"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Global Expansion",
-          "content": "New enterprise customers in North America and Asia"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2020",
-          "event": "Adelis Investment",
-          "description": "Growth capital for international expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Enterprise focus",
-        "Global presence",
-        "Performance management expertise"
-      ],
-      "target_customers": "Fortune 500 and large enterprises globally",
-      "market_share": "Leading performance management platform in Europe",
-      "geographic_presence": [
-        "Norway (HQ)",
-        "Europe",
-        "North America",
-        "Asia"
-      ],
-      "logo_url": "https://logo.clearbit.com/corporater.com"
-    },
-    {
-      "company": "Duravit",
-      "sector": "Healthcare & Life Sciences",
-      "fund": "Adelis",
-      "market": "Europe",
-      "entry": "2023",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T09:35:00",
-      "headquarters": "Hornberg, Germany",
-      "website": "https://www.duravit.com",
-      "employees": "8,000+ employees",
-      "detailed_description": "Duravit is a leading global manufacturer of bathroom ceramics, bathroom furniture, and wellness products. The company designs and produces high-quality bathroom solutions for residential and commercial markets worldwide, with a focus on design, innovation, and sustainability. Duravit serves customers across Europe, Asia, and the Americas.",
-      "founded_year": "1817",
-      "employee_count_detailed": "8,000+ employees globally",
-      "revenue": "€1.2+ billion (estimated)",
-      "revenue_growth": "5-10% annual growth",
-      "valuation": "€2+ billion (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Bathroom industry executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Manufacturing and bathroom industry"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Bathroom Ceramics",
-          "description": "Toilets, washbasins, and bathroom fixtures"
-        },
-        {
-          "name": "Bathroom Furniture",
-          "description": "Vanities, cabinets, and storage solutions"
-        },
-        {
-          "name": "Wellness Products",
-          "description": "Spa and wellness bathroom solutions"
-        }
-      ],
-      "technology_stack": [
-        "Manufacturing automation",
-        "Design software",
-        "Quality control systems"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Adelis Investment",
-          "content": "Growth capital for international expansion and product development"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2023",
-          "event": "Adelis Investment",
-          "description": "Growth capital for expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Design leadership",
-        "Global manufacturing",
-        "Sustainability focus"
-      ],
-      "target_customers": "Residential and commercial customers globally",
-      "market_share": "Leading bathroom manufacturer in Europe",
-      "geographic_presence": [
-        "Germany (HQ)",
-        "Europe",
-        "Asia",
-        "Americas"
-      ],
-      "logo_url": "https://logo.clearbit.com/duravit.com"
-    },
-    {
-      "company": "Eir",
-      "sector": "Tech & Software",
-      "fund": "Adelis",
-      "market": "Europe",
-      "entry": "2022",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T09:37:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.eir.ai",
-      "employees": "50+ employees",
-      "detailed_description": "Eir provides AI-powered customer service and automation solutions for European companies. The platform uses natural language processing and machine learning to automate customer interactions, reduce response times, and improve customer satisfaction. Eir serves mid-market and enterprise clients across multiple industries.",
-      "founded_year": "2019",
-      "employee_count_detailed": "50+ employees",
-      "revenue": "€5M+ ARR (estimated)",
-      "revenue_growth": "50%+ annual growth",
-      "valuation": "€50M+ (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "AI technology executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "AI/ML and customer service technology"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "AI Customer Service Platform",
-          "description": "Automated customer support with natural language processing"
-        },
-        {
-          "name": "Chatbot Solutions",
-          "description": "Intelligent chatbots for customer interactions"
-        }
-      ],
-      "technology_stack": [
-        "Natural language processing",
-        "Machine learning",
-        "Cloud platforms",
-        "API integrations"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "European Expansion",
-          "content": "New customers across DACH and Benelux markets"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2022",
-          "event": "Adelis Investment",
-          "description": "Growth capital for product development and expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "AI/ML expertise",
-        "European market focus",
-        "Customer service domain knowledge"
-      ],
-      "target_customers": "Mid-market and enterprise companies in Europe",
-      "market_share": "Growing player in European AI customer service",
-      "geographic_presence": [
-        "Sweden (HQ)",
-        "Europe"
-      ],
-      "deal_size": "€3B",
-      "logo_url": "https://logo.clearbit.com/eir.ai"
-    },
-    {
-      "company": "Evident",
-      "sector": "Business Services",
-      "fund": "Adelis",
-      "market": "Finland",
-      "entry": "2021",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T09:39:00",
-      "headquarters": "Helsinki, Finland",
-      "website": "https://www.evident.fi",
-      "employees": "250+ employees",
-      "detailed_description": "Evident provides comprehensive business services including consulting, outsourcing, and digital transformation solutions to Finnish and Nordic companies. The company serves mid-market and enterprise clients with integrated business process outsourcing, technology consulting, and operational improvement services.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "250+ employees",
-      "revenue": "€30M+ (estimated)",
-      "revenue_growth": "15%+ annual growth",
-      "valuation": "€100M+ (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Business services executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Business services and consulting"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Business Process Outsourcing",
-          "description": "Comprehensive BPO services for Nordic companies"
-        },
-        {
-          "name": "Digital Transformation Consulting",
-          "description": "Technology and process consulting services"
-        }
-      ],
-      "technology_stack": [
-        "Cloud platforms",
-        "Business process automation",
-        "Digital tools",
-        "Analytics platforms"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Nordic Expansion",
-          "content": "New service offerings in Sweden and Norway"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2021",
-          "event": "Adelis Investment",
-          "description": "Growth capital for Nordic expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Finnish market expertise",
-        "Nordic focus",
-        "Integrated service offering"
-      ],
-      "target_customers": "Mid-market and enterprise companies in Finland and Nordics",
-      "market_share": "Leading BPO provider in Finland",
-      "geographic_presence": [
-        "Finland (HQ)",
-        "Sweden",
-        "Norway"
-      ],
-      "logo_url": "https://logo.clearbit.com/evident.fi"
-    },
-    {
-      "company": "Fellowmind",
-      "sector": "Business Services",
-      "fund": "Adelis",
-      "market": "Nordics",
-      "entry": "2020",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T09:41:00",
-      "headquarters": "Copenhagen, Denmark",
-      "website": "https://www.fellowmind.com",
-      "employees": "400+ employees",
-      "detailed_description": "Fellowmind is a leading Nordic Microsoft partner providing digital transformation, cloud solutions, and business applications consulting. The company helps Nordic enterprises adopt Microsoft technologies including Dynamics 365, Power Platform, Azure, and Office 365. Fellowmind serves large enterprises and mid-market companies across Denmark, Sweden, Norway, and Finland.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "400+ employees across Nordics",
-      "revenue": "DKK 500M+ (estimated)",
-      "revenue_growth": "20%+ annual growth",
-      "valuation": "DKK 1.5+ billion (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Microsoft technology executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Microsoft technology and digital transformation"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Microsoft Dynamics 365 Consulting",
-          "description": "ERP and CRM implementation and customization"
-        },
-        {
-          "name": "Power Platform Solutions",
-          "description": "Low-code application development and automation"
-        },
-        {
-          "name": "Azure Cloud Services",
-          "description": "Cloud migration and infrastructure consulting"
-        }
-      ],
-      "technology_stack": [
-        "Microsoft Dynamics 365",
-        "Power Platform",
-        "Azure",
-        "Office 365",
-        "Power BI"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Nordic Expansion",
-          "content": "New offices and teams in Sweden and Norway"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2020",
-          "event": "Adelis Investment",
-          "description": "Growth capital for Nordic expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Microsoft expertise",
-        "Nordic market knowledge",
-        "Enterprise focus"
-      ],
-      "target_customers": "Large enterprises and mid-market companies in Nordic region",
-      "market_share": "Leading Microsoft partner in Denmark",
-      "geographic_presence": [
-        "Denmark (HQ)",
-        "Sweden",
-        "Norway",
-        "Finland"
-      ],
-      "logo_url": "https://logo.clearbit.com/fellowmind.com"
-    },
-    {
-      "company": "FF Gruppen",
-      "sector": "Business Services",
-      "fund": "Adelis",
-      "market": "Denmark",
-      "entry": "2022",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T09:43:00",
-      "headquarters": "Copenhagen, Denmark",
-      "website": "https://www.ffgruppen.dk",
-      "employees": "300+ employees",
-      "detailed_description": "FF Gruppen is a leading Danish provider of facility management, cleaning services, and building maintenance solutions. The company serves public sector clients, private companies, and residential properties across Denmark with comprehensive facility services including cleaning, maintenance, security, and property management.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "300+ employees",
-      "revenue": "DKK 400M+ (estimated)",
-      "revenue_growth": "10-15% annual growth",
-      "valuation": "DKK 1+ billion (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Facility management executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Facility management and building services"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Facility Management",
-          "description": "Comprehensive building maintenance and management services"
-        },
-        {
-          "name": "Cleaning Services",
-          "description": "Commercial and residential cleaning solutions"
-        },
-        {
-          "name": "Security Services",
-          "description": "Building security and access control"
-        }
-      ],
-      "technology_stack": [
-        "Facility management software",
-        "IoT sensors",
-        "Mobile workforce management",
-        "Digital reporting"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Public Sector Wins",
-          "content": "New municipal facility management contracts across Denmark"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2022",
-          "event": "Adelis Investment",
-          "description": "Growth capital for market expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Danish market expertise",
-        "Public sector focus",
-        "Integrated service offering"
-      ],
-      "target_customers": "Public sector, private companies, and residential properties in Denmark",
-      "market_share": "Leading facility management provider in Denmark",
-      "geographic_presence": [
-        "Denmark (HQ)"
-      ],
-      "logo_url": "https://logo.clearbit.com/ffgruppen.dk"
-    },
-    {
-      "company": "Funnel",
-      "sector": "Business Services",
-      "fund": "Adelis",
-      "market": "Global",
-      "entry": "2021",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T09:45:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.funnel.io",
-      "employees": "200+ employees",
-      "detailed_description": "Funnel provides marketing data integration and analytics platform for global companies. The platform automatically collects, cleans, and organizes marketing data from hundreds of sources, enabling marketers to analyze performance, optimize campaigns, and make data-driven decisions. Funnel serves enterprise and mid-market companies across multiple industries worldwide.",
-      "founded_year": "2014",
-      "employee_count_detailed": "200+ employees globally",
-      "revenue": "$30M+ ARR (estimated)",
-      "revenue_growth": "40%+ annual growth",
-      "valuation": "$200M+ (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Marketing technology executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Marketing technology and data analytics"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Data Integration Platform",
-          "description": "Automated collection and cleaning of marketing data from 500+ sources"
-        },
-        {
-          "name": "Marketing Analytics",
-          "description": "Unified dashboard for marketing performance analysis"
-        },
-        {
-          "name": "Data Warehouse",
-          "description": "Centralized marketing data storage and management"
-        }
-      ],
-      "technology_stack": [
-        "Cloud-native architecture",
-        "API integrations",
-        "Data processing",
-        "Analytics engines"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Global Expansion",
-          "content": "New customers in North America and Asia-Pacific markets"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2021",
-          "event": "Adelis Investment",
-          "description": "Growth capital for international expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Marketing data expertise",
-        "Global presence",
-        "Enterprise focus"
-      ],
-      "target_customers": "Enterprise and mid-market companies globally",
-      "market_share": "Leading marketing data platform in Europe",
-      "geographic_presence": [
-        "Sweden (HQ)",
-        "Europe",
-        "North America",
-        "Asia-Pacific"
-      ],
-      "logo_url": "https://logo.clearbit.com/funnel.io"
-    },
-    {
-      "company": "Krautzberger",
-      "sector": "Business Services",
-      "fund": "Adelis",
-      "market": "Norway",
-      "entry": "2023",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T09:47:00",
-      "headquarters": "Oslo, Norway",
-      "website": "https://www.krautzberger.no",
-      "employees": "150+ employees",
-      "detailed_description": "Krautzberger provides specialized business services including consulting, project management, and operational support to Norwegian companies. The company serves mid-market and enterprise clients across multiple industries with comprehensive business solutions and expertise in Norwegian market dynamics.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "150+ employees",
-      "revenue": "NOK 200M+ (estimated)",
-      "revenue_growth": "15%+ annual growth",
-      "valuation": "NOK 500M+ (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Business services executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Business services and consulting"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Business Consulting",
-          "description": "Strategic consulting and operational improvement services"
-        },
-        {
-          "name": "Project Management",
-          "description": "End-to-end project management and execution"
-        },
-        {
-          "name": "Operational Support",
-          "description": "Ongoing business support and optimization services"
-        }
-      ],
-      "technology_stack": [
-        "Business process automation",
-        "Project management tools",
-        "Analytics platforms",
-        "Digital solutions"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Adelis Investment",
-          "content": "Growth capital for market expansion and service development"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2023",
-          "event": "Adelis Investment",
-          "description": "Growth capital for expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Norwegian market expertise",
-        "Industry knowledge",
-        "Local presence"
-      ],
-      "target_customers": "Mid-market and enterprise companies in Norway",
-      "market_share": "Growing business services provider in Norway",
-      "geographic_presence": [
-        "Norway (HQ)"
-      ],
-      "logo_url": "https://logo.clearbit.com/krautzberger.no"
-    },
-    {
-      "company": "Link Mobility",
-      "sector": "Tech & Software",
-      "fund": "Adelis",
-      "market": "Global",
-      "entry": "2020",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T09:49:00",
-      "headquarters": "Oslo, Norway",
-      "website": "https://www.linkmobility.com",
-      "employees": "500+ employees",
-      "detailed_description": "Link Mobility is a leading global provider of mobile messaging and communication solutions for enterprises. The company offers SMS, MMS, RCS, and other mobile messaging services to businesses worldwide, enabling customer engagement, marketing campaigns, and transactional communications. Link Mobility serves enterprises across multiple industries and geographies.",
-      "founded_year": "2000",
-      "employee_count_detailed": "500+ employees globally",
-      "revenue": "€100M+ (estimated)",
-      "revenue_growth": "15-20% annual growth",
-      "valuation": "€500M+ (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Mobile communications executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Mobile communications and enterprise technology"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "SMS/MMS Platform",
-          "description": "Global SMS and MMS messaging services for enterprises"
-        },
-        {
-          "name": "RCS Solutions",
-          "description": "Rich Communication Services for enhanced messaging"
-        },
-        {
-          "name": "API Platform",
-          "description": "Developer-friendly APIs for messaging integration"
-        }
-      ],
-      "technology_stack": [
-        "Cloud-native messaging",
-        "API platforms",
-        "Global carrier networks",
-        "Analytics and reporting"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Global Expansion",
-          "content": "New partnerships and customers in Asia-Pacific and Latin America"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2020",
-          "event": "Adelis Investment",
-          "description": "Growth capital for international expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Global carrier network",
-        "Enterprise focus",
-        "Technology innovation"
-      ],
-      "target_customers": "Enterprise companies globally requiring mobile messaging",
-      "market_share": "Leading mobile messaging provider in Europe",
-      "geographic_presence": [
-        "Norway (HQ)",
-        "Europe",
-        "North America",
-        "Asia-Pacific",
-        "Latin America"
-      ],
-      "logo_url": "https://logo.clearbit.com/linkmobility.com"
-    },
-    {
-      "company": "Mattssons",
-      "sector": "Business Services",
-      "fund": "Adelis",
-      "market": "Sweden",
-      "entry": "2022",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T09:51:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.mattssons.se",
-      "employees": "200+ employees",
-      "detailed_description": "Mattssons provides comprehensive business services including consulting, outsourcing, and digital transformation solutions to Swedish companies. The company serves mid-market and enterprise clients with integrated business process outsourcing, technology consulting, and operational improvement services across multiple industries.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "200+ employees",
-      "revenue": "SEK 300M+ (estimated)",
-      "revenue_growth": "15%+ annual growth",
-      "valuation": "SEK 800M+ (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Business services executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Business services and consulting"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Business Process Outsourcing",
-          "description": "Comprehensive BPO services for Swedish companies"
-        },
-        {
-          "name": "Digital Transformation Consulting",
-          "description": "Technology and process consulting services"
-        },
-        {
-          "name": "Operational Support",
-          "description": "Ongoing business support and optimization services"
-        }
-      ],
-      "technology_stack": [
-        "Cloud platforms",
-        "Business process automation",
-        "Digital tools",
-        "Analytics platforms"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Swedish Market Growth",
-          "content": "New enterprise customers and service expansion"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2022",
-          "event": "Adelis Investment",
-          "description": "Growth capital for market expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Swedish market expertise",
-        "Industry knowledge",
-        "Integrated service offering"
-      ],
-      "target_customers": "Mid-market and enterprise companies in Sweden",
-      "market_share": "Leading BPO provider in Sweden",
-      "geographic_presence": [
-        "Sweden (HQ)"
-      ],
-      "logo_url": "https://logo.clearbit.com/mattssons.se"
-    },
-    {
-      "company": "Mercell",
-      "sector": "Business Services",
-      "fund": "Adelis",
-      "market": "Nordics",
-      "entry": "2021",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T09:53:00",
-      "headquarters": "Oslo, Norway",
-      "website": "https://www.mercell.com",
-      "employees": "300+ employees",
-      "detailed_description": "Mercell provides digital procurement and sourcing solutions for public sector and enterprise clients across the Nordic region. The platform streamlines procurement processes, enables digital tendering, and facilitates supplier management for government agencies, municipalities, and large corporations. Mercell serves as a critical infrastructure for public procurement digitization.",
-      "founded_year": "2000",
-      "employee_count_detailed": "300+ employees across Nordics",
-      "revenue": "€50M+ (estimated)",
-      "revenue_growth": "20%+ annual growth",
-      "valuation": "€200M+ (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Procurement technology executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Procurement technology and public sector"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Digital Procurement Platform",
-          "description": "End-to-end digital procurement and sourcing solutions"
-        },
-        {
-          "name": "Tender Management",
-          "description": "Digital tendering and bid management system"
-        },
-        {
-          "name": "Supplier Network",
-          "description": "Supplier registration and management platform"
-        }
-      ],
-      "technology_stack": [
-        "Cloud-native platform",
-        "Digital workflows",
-        "Integration APIs",
-        "Analytics and reporting"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Nordic Expansion",
-          "content": "New public sector customers across Sweden and Denmark"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2021",
-          "event": "Adelis Investment",
-          "description": "Growth capital for Nordic expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Public sector expertise",
-        "Nordic market knowledge",
-        "Digital transformation focus"
-      ],
-      "target_customers": "Public sector agencies, municipalities, and large enterprises in Nordic region",
-      "market_share": "Leading digital procurement platform in Nordics",
-      "geographic_presence": [
-        "Norway (HQ)",
-        "Sweden",
-        "Denmark",
-        "Finland"
-      ],
-      "logo_url": "https://logo.clearbit.com/mercell.com"
-    },
-    {
-      "company": "Modernfold",
-      "sector": "Industrial",
-      "fund": "Adelis",
-      "market": "Europe",
-      "entry": "2023",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T09:55:00",
-      "headquarters": "Copenhagen, Denmark",
-      "website": "https://www.modernfold.com",
-      "employees": "400+ employees",
-      "detailed_description": "Modernfold is a leading European manufacturer of folding doors, room dividers, and space management solutions for commercial and residential markets. The company designs and produces high-quality architectural products that optimize space utilization and enhance building functionality. Modernfold serves customers across Europe with innovative space management solutions.",
-      "founded_year": "1950s",
-      "employee_count_detailed": "400+ employees across Europe",
-      "revenue": "€100M+ (estimated)",
-      "revenue_growth": "5-10% annual growth",
-      "valuation": "€300M+ (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Industrial manufacturing executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Industrial manufacturing and architectural products"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Folding Doors",
-          "description": "High-quality folding door systems for commercial and residential use"
-        },
-        {
-          "name": "Room Dividers",
-          "description": "Flexible space management and room division solutions"
-        },
-        {
-          "name": "Space Management",
-          "description": "Integrated space optimization and management systems"
-        }
-      ],
-      "technology_stack": [
-        "Manufacturing automation",
-        "Design software",
-        "Quality control systems",
-        "Digital tools"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Adelis Investment",
-          "content": "Growth capital for product development and market expansion"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2023",
-          "event": "Adelis Investment",
-          "description": "Growth capital for expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Architectural expertise",
-        "European manufacturing",
-        "Innovation focus"
-      ],
-      "target_customers": "Commercial and residential customers across Europe",
-      "market_share": "Leading folding door manufacturer in Europe",
-      "geographic_presence": [
-        "Denmark (HQ)",
-        "Europe"
-      ],
-      "logo_url": "https://logo.clearbit.com/modernfold.com"
-    },
-    {
-      "company": "NKT",
-      "sector": "Business Services",
-      "fund": "Adelis",
-      "market": "Sweden",
-      "entry": "2022",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T09:57:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.nkt.se",
-      "employees": "250+ employees",
-      "detailed_description": "NKT provides specialized business services including consulting, project management, and operational support to Swedish companies. The company serves mid-market and enterprise clients across multiple industries with comprehensive business solutions and expertise in Swedish market dynamics and regulatory requirements.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "250+ employees",
-      "revenue": "SEK 400M+ (estimated)",
-      "revenue_growth": "15%+ annual growth",
-      "valuation": "SEK 1+ billion (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Business services executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Business services and consulting"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Business Consulting",
-          "description": "Strategic consulting and operational improvement services"
-        },
-        {
-          "name": "Project Management",
-          "description": "End-to-end project management and execution"
-        },
-        {
-          "name": "Operational Support",
-          "description": "Ongoing business support and optimization services"
-        }
-      ],
-      "technology_stack": [
-        "Business process automation",
-        "Project management tools",
-        "Analytics platforms",
-        "Digital solutions"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Swedish Market Growth",
-          "content": "New enterprise customers and service expansion"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2022",
-          "event": "Adelis Investment",
-          "description": "Growth capital for market expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Swedish market expertise",
-        "Industry knowledge",
-        "Local presence"
-      ],
-      "target_customers": "Mid-market and enterprise companies in Sweden",
-      "market_share": "Leading business services provider in Sweden",
-      "geographic_presence": [
-        "Sweden (HQ)"
-      ],
-      "deal_size": "€1.5B",
-      "logo_url": "https://logo.clearbit.com/nkt.se"
-    },
-    {
-      "company": "PeakSide",
-      "sector": "Industrial",
-      "fund": "Adelis",
-      "market": "Denmark",
-      "entry": "2023",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T09:59:00",
-      "headquarters": "Copenhagen, Denmark",
-      "website": "https://www.peakside.dk",
-      "employees": "300+ employees",
-      "detailed_description": "PeakSide is a leading Danish manufacturer of industrial solutions and components for various industries including automotive, aerospace, and manufacturing. The company designs and produces high-quality industrial products with a focus on precision engineering and innovation. PeakSide serves customers across Europe with advanced industrial solutions.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "300+ employees",
-      "revenue": "DKK 500M+ (estimated)",
-      "revenue_growth": "10-15% annual growth",
-      "valuation": "DKK 1.5+ billion (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Industrial manufacturing executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Industrial manufacturing and engineering"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Industrial Components",
-          "description": "Precision-engineered components for automotive and aerospace industries"
-        },
-        {
-          "name": "Manufacturing Solutions",
-          "description": "Advanced manufacturing and production solutions"
-        },
-        {
-          "name": "Engineering Services",
-          "description": "Custom engineering and design services"
-        }
-      ],
-      "technology_stack": [
-        "Precision manufacturing",
-        "CAD/CAM systems",
-        "Quality control",
-        "Automation"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Adelis Investment",
-          "content": "Growth capital for product development and market expansion"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2023",
-          "event": "Adelis Investment",
-          "description": "Growth capital for expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Precision engineering",
-        "Danish manufacturing",
-        "Innovation focus"
-      ],
-      "target_customers": "Industrial companies across Europe",
-      "market_share": "Leading industrial solutions provider in Denmark",
-      "geographic_presence": [
-        "Denmark (HQ)",
-        "Europe"
-      ],
-      "logo_url": "https://logo.clearbit.com/peakside.dk"
-    },
-    {
-      "company": "Prime",
-      "sector": "Business Services",
-      "fund": "Adelis",
-      "market": "Finland",
-      "entry": "2021",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:01:00",
-      "headquarters": "Helsinki, Finland",
-      "website": "https://www.primepalvelut.fi",
-      "employees": "200+ employees",
-      "detailed_description": "Prime provides comprehensive business services including consulting, outsourcing, and digital transformation solutions to Finnish companies. The company serves mid-market and enterprise clients with integrated business process outsourcing, technology consulting, and operational improvement services across multiple industries.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "200+ employees",
-      "revenue": "€25M+ (estimated)",
-      "revenue_growth": "15%+ annual growth",
-      "valuation": "€80M+ (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Business services executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Business services and consulting"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Business Process Outsourcing",
-          "description": "Comprehensive BPO services for Finnish companies"
-        },
-        {
-          "name": "Digital Transformation Consulting",
-          "description": "Technology and process consulting services"
-        },
-        {
-          "name": "Operational Support",
-          "description": "Ongoing business support and optimization services"
-        }
-      ],
-      "technology_stack": [
-        "Cloud platforms",
-        "Business process automation",
-        "Digital tools",
-        "Analytics platforms"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Finnish Market Growth",
-          "content": "New enterprise customers and service expansion"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2021",
-          "event": "Adelis Investment",
-          "description": "Growth capital for market expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Finnish market expertise",
-        "Industry knowledge",
-        "Local presence"
-      ],
-      "target_customers": "Mid-market and enterprise companies in Finland",
-      "market_share": "Leading BPO provider in Finland",
-      "geographic_presence": [
-        "Finland (HQ)"
-      ],
-      "logo_url": "https://logo.clearbit.com/primepalvelut.fi"
-    },
-    {
-      "company": "Profcore",
-      "sector": "Healthcare & Life Sciences",
-      "fund": "Adelis",
-      "market": "Europe",
-      "entry": "2022",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:03:00",
-      "headquarters": "Amsterdam, Netherlands",
-      "website": "https://www.profcore.eu",
-      "employees": "150+ employees",
-      "detailed_description": "Profcore provides specialized healthcare services and solutions for European healthcare providers and life sciences companies. The company offers consulting, technology solutions, and operational support to healthcare organizations, enabling improved patient care and operational efficiency. Profcore serves hospitals, clinics, and healthcare systems across Europe.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "150+ employees across Europe",
-      "revenue": "€20M+ (estimated)",
-      "revenue_growth": "20%+ annual growth",
-      "valuation": "€100M+ (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Healthcare services executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Healthcare services and life sciences"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Healthcare Consulting",
-          "description": "Strategic consulting and operational improvement for healthcare providers"
-        },
-        {
-          "name": "Technology Solutions",
-          "description": "Healthcare technology and digital transformation services"
-        },
-        {
-          "name": "Operational Support",
-          "description": "Ongoing support for healthcare operations and patient care"
-        }
-      ],
-      "technology_stack": [
-        "Healthcare IT systems",
-        "Digital health platforms",
-        "Analytics and reporting",
-        "Integration solutions"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "European Expansion",
-          "content": "New healthcare customers across Germany and France"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2022",
-          "event": "Adelis Investment",
-          "description": "Growth capital for European expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Healthcare expertise",
-        "European market knowledge",
-        "Technology focus"
-      ],
-      "target_customers": "Healthcare providers and life sciences companies in Europe",
-      "market_share": "Growing healthcare services provider in Europe",
-      "geographic_presence": [
-        "Netherlands (HQ)",
-        "Europe"
-      ],
-      "logo_url": "https://logo.clearbit.com/profcore.eu"
-    },
-    {
-      "company": "Sana Commerce",
-      "sector": "Tech & Software",
-      "fund": "Adelis",
-      "market": "Global",
-      "entry": "2021",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:05:00",
-      "headquarters": "Rotterdam, Netherlands",
-      "website": "https://www.sana-commerce.com",
-      "employees": "300+ employees",
-      "detailed_description": "Sana Commerce provides B2B e-commerce solutions for enterprise companies worldwide. The platform integrates with ERP systems to create seamless B2B online stores, enabling companies to sell products and services to business customers with personalized pricing, catalog management, and order processing. Sana Commerce serves mid-market and enterprise companies across multiple industries.",
-      "founded_year": "2007",
-      "employee_count_detailed": "300+ employees globally",
-      "revenue": "€40M+ ARR (estimated)",
-      "revenue_growth": "25%+ annual growth",
-      "valuation": "€200M+ (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "E-commerce technology executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "E-commerce technology and enterprise software"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "B2B E-commerce Platform",
-          "description": "Integrated B2B online stores with ERP connectivity"
-        },
-        {
-          "name": "ERP Integration",
-          "description": "Seamless integration with major ERP systems"
-        },
-        {
-          "name": "Catalog Management",
-          "description": "Advanced product catalog and pricing management"
-        }
-      ],
-      "technology_stack": [
-        "Cloud-native platform",
-        "ERP integrations",
-        "API connectivity",
-        "Analytics and reporting"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Global Expansion",
-          "content": "New enterprise customers in North America and Asia-Pacific"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2021",
-          "event": "Adelis Investment",
-          "description": "Growth capital for international expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "ERP expertise",
-        "Global presence",
-        "Enterprise focus"
-      ],
-      "target_customers": "Mid-market and enterprise companies globally",
-      "market_share": "Leading B2B e-commerce platform in Europe",
-      "geographic_presence": [
-        "Netherlands (HQ)",
-        "Europe",
-        "North America",
-        "Asia-Pacific"
-      ],
-      "logo_url": "https://logo.clearbit.com/sana-commerce.com"
-    },
-    {
-      "company": "Seluxit",
-      "sector": "Tech & Software",
-      "fund": "Adelis",
-      "market": "Denmark",
-      "entry": "2022",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:07:00",
-      "headquarters": "Copenhagen, Denmark",
-      "website": "https://www.seluxit.com",
-      "employees": "100+ employees",
-      "detailed_description": "Seluxit provides IoT and smart home technology solutions for Danish and European companies. The platform enables connected devices, smart home automation, and IoT data management for residential and commercial customers. Seluxit serves technology companies, property developers, and smart home enthusiasts across Denmark and Europe.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "100+ employees",
-      "revenue": "DKK 50M+ (estimated)",
-      "revenue_growth": "30%+ annual growth",
-      "valuation": "DKK 200M+ (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "IoT technology executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "IoT technology and smart home solutions"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "IoT Platform",
-          "description": "Connected device management and data processing platform"
-        },
-        {
-          "name": "Smart Home Solutions",
-          "description": "Home automation and smart device integration"
-        },
-        {
-          "name": "Data Analytics",
-          "description": "IoT data analysis and insights for connected devices"
-        }
-      ],
-      "technology_stack": [
-        "IoT connectivity",
-        "Cloud platforms",
-        "Data analytics",
-        "Mobile applications"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "European Expansion",
-          "content": "New partnerships and customers across Nordic region"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2022",
-          "event": "Adelis Investment",
-          "description": "Growth capital for product development and expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "IoT expertise",
-        "Danish market knowledge",
-        "Technology innovation"
-      ],
-      "target_customers": "Technology companies and smart home customers in Denmark and Europe",
-      "market_share": "Leading IoT platform in Denmark",
-      "geographic_presence": [
-        "Denmark (HQ)",
-        "Europe"
-      ],
-      "logo_url": "https://logo.clearbit.com/seluxit.com"
-    },
-    {
-      "company": "Silktide",
-      "sector": "Business Services",
-      "fund": "Adelis",
-      "market": "UK",
-      "entry": "2023",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:09:00",
-      "headquarters": "London, UK",
-      "website": "https://www.silktide.com",
-      "employees": "150+ employees",
-      "detailed_description": "Silktide provides digital accessibility and web compliance services for UK and European companies. The platform helps organizations ensure their websites and digital content meet accessibility standards and regulatory requirements. Silktide serves public sector organizations, enterprises, and digital agencies across the UK and Europe.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "150+ employees",
-      "revenue": "£15M+ (estimated)",
-      "revenue_growth": "25%+ annual growth",
-      "valuation": "£50M+ (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Digital accessibility executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Digital accessibility and web compliance"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Accessibility Platform",
-          "description": "Automated web accessibility testing and compliance monitoring"
-        },
-        {
-          "name": "Compliance Services",
-          "description": "Digital accessibility consulting and remediation services"
-        },
-        {
-          "name": "Training Solutions",
-          "description": "Accessibility training and education for development teams"
-        }
-      ],
-      "technology_stack": [
-        "Web accessibility tools",
-        "Automated testing",
-        "Compliance monitoring",
-        "Analytics platforms"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Adelis Investment",
-          "content": "Growth capital for product development and market expansion"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2023",
-          "event": "Adelis Investment",
-          "description": "Growth capital for expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Accessibility expertise",
-        "UK market knowledge",
-        "Compliance focus"
-      ],
-      "target_customers": "Public sector, enterprises, and digital agencies in UK and Europe",
-      "market_share": "Leading accessibility platform in UK",
-      "geographic_presence": [
-        "UK (HQ)",
-        "Europe"
-      ],
-      "logo_url": "https://logo.clearbit.com/silktide.com"
-    },
-    {
-      "company": "SmartCraft",
-      "sector": "Tech & Software",
-      "fund": "Adelis",
-      "market": "Nordics",
-      "entry": "2020",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:11:00",
-      "headquarters": "Oslo, Norway",
-      "website": "https://www.smartcraft.com",
-      "employees": "200+ employees",
-      "detailed_description": "SmartCraft provides construction management and project control software for the Nordic construction industry. The platform enables project planning, resource management, cost control, and collaboration for construction companies, contractors, and project managers. SmartCraft serves construction companies across Norway, Sweden, Denmark, and Finland.",
-      "founded_year": "2000",
-      "employee_count_detailed": "200+ employees across Nordics",
-      "revenue": "NOK 300M+ (estimated)",
-      "revenue_growth": "15%+ annual growth",
-      "valuation": "NOK 1+ billion (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Construction technology executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Construction technology and project management"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Project Management Platform",
-          "description": "Comprehensive construction project planning and control"
-        },
-        {
-          "name": "Resource Management",
-          "description": "Construction resource planning and allocation tools"
-        },
-        {
-          "name": "Cost Control",
-          "description": "Budget management and cost tracking for construction projects"
-        }
-      ],
-      "technology_stack": [
-        "Cloud-native platform",
-        "Mobile applications",
-        "Project management tools",
-        "Analytics and reporting"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Nordic Expansion",
-          "content": "New customers across Sweden and Denmark"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2020",
-          "event": "Adelis Investment",
-          "description": "Growth capital for Nordic expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Construction expertise",
-        "Nordic market knowledge",
-        "Industry focus"
-      ],
-      "target_customers": "Construction companies and contractors in Nordic region",
-      "market_share": "Leading construction software in Norway",
-      "geographic_presence": [
-        "Norway (HQ)",
-        "Sweden",
-        "Denmark",
-        "Finland"
-      ],
-      "deal_size": "SEK 500M",
-      "logo_url": "https://logo.clearbit.com/smartcraft.com"
-    },
-    {
-      "company": "Stigan",
-      "sector": "Consumer",
-      "fund": "Adelis",
-      "market": "Sweden",
-      "entry": "2021",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:13:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.stigan.se",
-      "employees": "100+ employees",
-      "detailed_description": "Stigan is a Swedish consumer company providing lifestyle and home products to Swedish and Nordic customers. The company offers a range of consumer goods including home accessories, lifestyle products, and personal care items through both online and retail channels. Stigan serves consumers across Sweden and the Nordic region.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "100+ employees",
-      "revenue": "SEK 200M+ (estimated)",
-      "revenue_growth": "20%+ annual growth",
-      "valuation": "SEK 500M+ (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Consumer products executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Consumer products and retail"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Home Accessories",
-          "description": "Lifestyle and home decoration products"
-        },
-        {
-          "name": "Personal Care",
-          "description": "Personal care and wellness products"
-        },
-        {
-          "name": "Lifestyle Products",
-          "description": "General lifestyle and consumer goods"
-        }
-      ],
-      "technology_stack": [
-        "E-commerce platform",
-        "Retail systems",
-        "Inventory management",
-        "Customer analytics"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Swedish Market Growth",
-          "content": "New product lines and retail partnerships"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2021",
-          "event": "Adelis Investment",
-          "description": "Growth capital for market expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Swedish market knowledge",
-        "Consumer focus",
-        "Retail expertise"
-      ],
-      "target_customers": "Consumers in Sweden and Nordic region",
-      "market_share": "Growing consumer brand in Sweden",
-      "geographic_presence": [
-        "Sweden (HQ)",
-        "Nordics"
-      ],
-      "logo_url": "https://logo.clearbit.com/stigan.se"
-    },
-    {
-      "company": "Swecon",
-      "sector": "Business Services",
-      "fund": "Adelis",
-      "market": "Sweden/Norway",
-      "entry": "2022",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:15:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.swecon.se",
-      "employees": "300+ employees",
-      "detailed_description": "Swecon provides comprehensive business services including consulting, outsourcing, and digital transformation solutions to Swedish and Norwegian companies. The company serves mid-market and enterprise clients with integrated business process outsourcing, technology consulting, and operational improvement services across multiple industries.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "300+ employees across Sweden and Norway",
-      "revenue": "SEK 500M+ (estimated)",
-      "revenue_growth": "15%+ annual growth",
-      "valuation": "SEK 1.5+ billion (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Business services executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Business services and consulting"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Business Process Outsourcing",
-          "description": "Comprehensive BPO services for Nordic companies"
-        },
-        {
-          "name": "Digital Transformation Consulting",
-          "description": "Technology and process consulting services"
-        },
-        {
-          "name": "Operational Support",
-          "description": "Ongoing business support and optimization services"
-        }
-      ],
-      "technology_stack": [
-        "Cloud platforms",
-        "Business process automation",
-        "Digital tools",
-        "Analytics platforms"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Nordic Expansion",
-          "content": "New service offerings in Norway and Sweden"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2022",
-          "event": "Adelis Investment",
-          "description": "Growth capital for Nordic expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Nordic market expertise",
-        "Industry knowledge",
-        "Integrated service offering"
-      ],
-      "target_customers": "Mid-market and enterprise companies in Sweden and Norway",
-      "market_share": "Leading BPO provider in Sweden",
-      "geographic_presence": [
-        "Sweden (HQ)",
-        "Norway"
-      ],
-      "logo_url": "https://logo.clearbit.com/swecon.se"
-    },
-    {
-      "company": "Swegon",
-      "sector": "Business Services",
-      "fund": "Adelis",
-      "market": "Sweden",
-      "entry": "2023",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:17:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.swegon.com",
-      "employees": "250+ employees",
-      "detailed_description": "Swegon provides specialized business services including consulting, outsourcing, and digital transformation solutions to Swedish companies. The company serves mid-market and enterprise clients with comprehensive business solutions and expertise in Swedish market dynamics and regulatory requirements.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "250+ employees",
-      "revenue": "SEK 400M+ (estimated)",
-      "revenue_growth": "15%+ annual growth",
-      "valuation": "SEK 1+ billion (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Business services executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Business services and consulting"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Business Consulting",
-          "description": "Strategic consulting and operational improvement services"
-        },
-        {
-          "name": "Project Management",
-          "description": "End-to-end project management and execution"
-        },
-        {
-          "name": "Operational Support",
-          "description": "Ongoing business support and optimization services"
-        }
-      ],
-      "technology_stack": [
-        "Business process automation",
-        "Project management tools",
-        "Analytics platforms",
-        "Digital solutions"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Swedish Market Growth",
-          "content": "New enterprise customers and service expansion"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2023",
-          "event": "Adelis Investment",
-          "description": "Growth capital for market expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Swedish market expertise",
-        "Industry knowledge",
-        "Local presence"
-      ],
-      "target_customers": "Mid-market and enterprise companies in Sweden",
-      "market_share": "Leading business services provider in Sweden",
-      "geographic_presence": [
-        "Sweden (HQ)"
-      ],
-      "deal_size": "€500M",
-      "logo_url": "https://logo.clearbit.com/swegon.com"
-    },
-    {
-      "company": "System Edström",
-      "sector": "Business Services",
-      "fund": "Adelis",
-      "market": "Sweden",
-      "entry": "2022",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:19:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.systemedstrom.se",
-      "employees": "200+ employees",
-      "detailed_description": "System Edström provides specialized business services including consulting, outsourcing, and digital transformation solutions to Swedish companies. The company serves mid-market and enterprise clients with comprehensive business solutions and expertise in Swedish market dynamics and regulatory requirements.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "200+ employees",
-      "revenue": "SEK 300M+ (estimated)",
-      "revenue_growth": "15%+ annual growth",
-      "valuation": "SEK 800M+ (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Business services executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Business services and consulting"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Business Consulting",
-          "description": "Strategic consulting and operational improvement services"
-        },
-        {
-          "name": "Project Management",
-          "description": "End-to-end project management and execution"
-        },
-        {
-          "name": "Operational Support",
-          "description": "Ongoing business support and optimization services"
-        }
-      ],
-      "technology_stack": [
-        "Business process automation",
-        "Project management tools",
-        "Analytics platforms",
-        "Digital solutions"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Swedish Market Growth",
-          "content": "New enterprise customers and service expansion"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2022",
-          "event": "Adelis Investment",
-          "description": "Growth capital for market expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Swedish market expertise",
-        "Industry knowledge",
-        "Local presence"
-      ],
-      "target_customers": "Mid-market and enterprise companies in Sweden",
-      "market_share": "Leading business services provider in Sweden",
-      "geographic_presence": [
-        "Sweden (HQ)"
-      ],
-      "logo_url": "https://logo.clearbit.com/systemedstrom.se"
-    },
-    {
-      "company": "Tangent",
-      "sector": "Healthcare & Life Sciences",
-      "fund": "Adelis",
-      "market": "Sweden",
-      "entry": "2023",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:21:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.tangent.se",
-      "employees": "150+ employees",
-      "detailed_description": "Tangent provides specialized healthcare services and solutions for Swedish healthcare providers and life sciences companies. The company offers consulting, technology solutions, and operational support to healthcare organizations, enabling improved patient care and operational efficiency. Tangent serves hospitals, clinics, and healthcare systems across Sweden.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "150+ employees",
-      "revenue": "SEK 200M+ (estimated)",
-      "revenue_growth": "20%+ annual growth",
-      "valuation": "SEK 500M+ (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Healthcare services executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Healthcare services and life sciences"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Healthcare Consulting",
-          "description": "Strategic consulting and operational improvement for healthcare providers"
-        },
-        {
-          "name": "Technology Solutions",
-          "description": "Healthcare technology and digital transformation services"
-        },
-        {
-          "name": "Operational Support",
-          "description": "Ongoing support for healthcare operations and patient care"
-        }
-      ],
-      "technology_stack": [
-        "Healthcare IT systems",
-        "Digital health platforms",
-        "Analytics and reporting",
-        "Integration solutions"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Adelis Investment",
-          "content": "Growth capital for product development and market expansion"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2023",
-          "event": "Adelis Investment",
-          "description": "Growth capital for expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Healthcare expertise",
-        "Swedish market knowledge",
-        "Technology focus"
-      ],
-      "target_customers": "Healthcare providers and life sciences companies in Sweden",
-      "market_share": "Growing healthcare services provider in Sweden",
-      "geographic_presence": [
-        "Sweden (HQ)"
-      ],
-      "logo_url": "https://logo.clearbit.com/tangent.se"
-    },
-    {
-      "company": "Thoreb",
-      "sector": "Business Services",
-      "fund": "Adelis",
-      "market": "Nordics",
-      "entry": "2021",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:23:00",
-      "headquarters": "Copenhagen, Denmark",
-      "website": "https://www.thoreb.com",
-      "employees": "300+ employees",
-      "detailed_description": "Thoreb provides comprehensive business services including consulting, outsourcing, and digital transformation solutions to Nordic companies. The company serves mid-market and enterprise clients with integrated business process outsourcing, technology consulting, and operational improvement services across multiple industries.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "300+ employees across Nordics",
-      "revenue": "DKK 400M+ (estimated)",
-      "revenue_growth": "15%+ annual growth",
-      "valuation": "DKK 1.2+ billion (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Business services executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Business services and consulting"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Business Process Outsourcing",
-          "description": "Comprehensive BPO services for Nordic companies"
-        },
-        {
-          "name": "Digital Transformation Consulting",
-          "description": "Technology and process consulting services"
-        },
-        {
-          "name": "Operational Support",
-          "description": "Ongoing business support and optimization services"
-        }
-      ],
-      "technology_stack": [
-        "Cloud platforms",
-        "Business process automation",
-        "Digital tools",
-        "Analytics platforms"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Nordic Expansion",
-          "content": "New service offerings in Sweden and Norway"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2021",
-          "event": "Adelis Investment",
-          "description": "Growth capital for Nordic expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Nordic market expertise",
-        "Industry knowledge",
-        "Integrated service offering"
-      ],
-      "target_customers": "Mid-market and enterprise companies in Nordic region",
-      "market_share": "Leading BPO provider in Denmark",
-      "geographic_presence": [
-        "Denmark (HQ)",
-        "Sweden",
-        "Norway",
-        "Finland"
-      ],
-      "logo_url": "https://logo.clearbit.com/thoreb.com"
-    },
-    {
-      "company": "Uniwin",
-      "sector": "Industrial",
-      "fund": "Adelis",
-      "market": "Europe",
-      "entry": "2022",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:25:00",
-      "headquarters": "Amsterdam, Netherlands",
-      "website": "https://www.uniwin.com",
-      "employees": "400+ employees",
-      "detailed_description": "Uniwin is a leading European manufacturer of industrial solutions and components for various industries including automotive, aerospace, and manufacturing. The company designs and produces high-quality industrial products with a focus on precision engineering and innovation. Uniwin serves customers across Europe with advanced industrial solutions.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "400+ employees across Europe",
-      "revenue": "€150M+ (estimated)",
-      "revenue_growth": "10-15% annual growth",
-      "valuation": "€400M+ (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Industrial manufacturing executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Industrial manufacturing and engineering"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Industrial Components",
-          "description": "Precision-engineered components for automotive and aerospace industries"
-        },
-        {
-          "name": "Manufacturing Solutions",
-          "description": "Advanced manufacturing and production solutions"
-        },
-        {
-          "name": "Engineering Services",
-          "description": "Custom engineering and design services"
-        }
-      ],
-      "technology_stack": [
-        "Precision manufacturing",
-        "CAD/CAM systems",
-        "Quality control",
-        "Automation"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "European Expansion",
-          "content": "New customers across Germany and France"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2022",
-          "event": "Adelis Investment",
-          "description": "Growth capital for European expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Precision engineering",
-        "European manufacturing",
-        "Innovation focus"
-      ],
-      "target_customers": "Industrial companies across Europe",
-      "market_share": "Leading industrial solutions provider in Europe",
-      "geographic_presence": [
-        "Netherlands (HQ)",
-        "Europe"
-      ],
-      "logo_url": "https://logo.clearbit.com/uniwin.com"
-    },
-    {
-      "company": "VetFamily",
-      "sector": "Healthcare & Life Sciences",
-      "fund": "Adelis",
-      "market": "Finland",
-      "entry": "2023",
-      "source": "Adelis Equity",
-      "enriched": true,
-      "research_date": "2025-10-21T10:27:00",
-      "headquarters": "Helsinki, Finland",
-      "website": "https://www.vetfamily.fi",
-      "employees": "100+ employees",
-      "detailed_description": "VetFamily provides specialized veterinary services and solutions for Finnish pet owners and veterinary professionals. The company offers comprehensive veterinary care, pet health services, and veterinary technology solutions to improve animal healthcare and pet owner experience. VetFamily serves pet owners and veterinary clinics across Finland.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "100+ employees",
-      "revenue": "€15M+ (estimated)",
-      "revenue_growth": "25%+ annual growth",
-      "valuation": "€50M+ (estimated)",
-      "total_funding": "Adelis-backed",
-      "ceo": "Veterinary services executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Veterinary services and pet healthcare"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Veterinary Services",
-          "description": "Comprehensive veterinary care and pet health services"
-        },
-        {
-          "name": "Pet Health Technology",
-          "description": "Digital solutions for pet health monitoring and care"
-        },
-        {
-          "name": "Veterinary Consulting",
-          "description": "Professional veterinary consulting and support services"
-        }
-      ],
-      "technology_stack": [
-        "Veterinary management systems",
-        "Pet health apps",
-        "Digital health platforms",
-        "Analytics and reporting"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Adelis Investment",
-          "content": "Growth capital for service expansion and technology development"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2023",
-          "event": "Adelis Investment",
-          "description": "Growth capital for expansion"
-        }
-      ],
-      "competitive_advantages": [
-        "Veterinary expertise",
-        "Finnish market knowledge",
-        "Technology focus"
-      ],
-      "target_customers": "Pet owners and veterinary professionals in Finland",
-      "market_share": "Leading veterinary services provider in Finland",
-      "geographic_presence": [
-        "Finland (HQ)"
-      ],
-      "logo_url": "https://logo.clearbit.com/vetfamily.fi"
-    },
-    {
       "company": "Admento",
       "sector": "Business Services",
       "fund": "Valedo Partners",
@@ -37644,6 +34626,1256 @@
       "exit_status": "Active",
       "current_status": "Portfolio company",
       "strategy": "Development Capital"
+    },
+    {
+      "company": "JM AB",
+      "sector": "Construction & Real Estate",
+      "market": "Sweden",
+      "entry": 2019,
+      "logo_url": "https://logo.clearbit.com/jm.se",
+      "website": "https://www.jm.se",
+      "description": "Leading Nordic residential developer",
+      "source": "CapMan"
+    },
+    {
+      "company": "Scandic Hotels",
+      "sector": "Hospitality",
+      "market": "Nordic",
+      "entry": 2018,
+      "logo_url": "https://logo.clearbit.com/scandichotels.com",
+      "website": "https://www.scandichotels.com",
+      "description": "Leading Nordic hotel chain",
+      "source": "CapMan"
+    },
+    {
+      "company": "Nobia",
+      "sector": "Furniture & Kitchens",
+      "market": "Nordic",
+      "entry": 2020,
+      "logo_url": "https://logo.clearbit.com/nobia.com",
+      "website": "https://www.nobia.com",
+      "description": "Nordic kitchen manufacturer",
+      "source": "CapMan"
+    },
+    {
+      "company": "Nordlo",
+      "sector": "Security Services",
+      "market": "Nordic",
+      "entry": 2021,
+      "logo_url": "https://logo.clearbit.com/nordlo.se",
+      "website": "https://www.nordlo.se",
+      "description": "Security and alarm services provider",
+      "source": "CapMan"
+    },
+    {
+      "company": "Rexel",
+      "sector": "Industrial Distribution",
+      "market": "Nordic",
+      "entry": 2019,
+      "logo_url": "https://logo.clearbit.com/rexel.com",
+      "website": "https://www.rexel.com",
+      "description": "Electrical products distributor",
+      "source": "CapMan"
+    },
+    {
+      "company": "team.blue",
+      "sector": "Technology & Hosting",
+      "market": "Europe",
+      "entry": 2021,
+      "logo_url": "https://logo.clearbit.com/team.blue",
+      "website": "https://www.team.blue",
+      "description": "Web hosting and digital services platform",
+      "source": "CapMan"
+    },
+    {
+      "company": "Loopia",
+      "sector": "Technology & Hosting",
+      "market": "Sweden",
+      "entry": 2022,
+      "logo_url": "https://logo.clearbit.com/loopia.se",
+      "website": "https://www.loopia.se",
+      "description": "Swedish web hosting provider",
+      "source": "CapMan"
+    },
+    {
+      "company": "NAXS",
+      "sector": "Investment",
+      "market": "Sweden",
+      "entry": 2020,
+      "logo_url": "https://logo.clearbit.com/naxs.se",
+      "website": "https://www.naxs.se",
+      "description": "Investment company focused on private equity funds",
+      "source": "CapMan"
+    },
+    {
+      "company": "RETTA",
+      "sector": "Business Services",
+      "fund": "Adelis III",
+      "market": "Finland/Sweden",
+      "entry": "2021",
+      "source": "Adelis Equity",
+      "headquarters": "Finland/Sweden",
+      "website": "https://www.retta.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "B2B Real Estate Management Services in Finland and Sweden",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/retta.com"
+    },
+    {
+      "company": "bryntum",
+      "sector": "Tech & Software",
+      "fund": "Adelis III",
+      "market": "Global",
+      "entry": "2020",
+      "source": "Adelis Equity",
+      "headquarters": "Global",
+      "website": "https://www.bryntum.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Leading provider of advanced scheduling web-components",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/bryntum.com"
+    },
+    {
+      "company": "Circura Danmark",
+      "sector": "Business Services",
+      "fund": "Adelis III",
+      "market": "Denmark",
+      "entry": "2022",
+      "source": "Adelis Equity",
+      "headquarters": "Denmark",
+      "website": "https://www.circuradanmark.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Building rehabilitation services in Denmark",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/circuradanmark.com"
+    },
+    {
+      "company": "Btwentyfour",
+      "sector": "Tech & Software",
+      "fund": "Adelis III",
+      "market": "Global",
+      "entry": "2021",
+      "source": "Adelis Equity",
+      "headquarters": "Global",
+      "website": "https://www.btwentyfour.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Leading supply chain data automation software platform",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/btwentyfour.com"
+    },
+    {
+      "company": "Cedra",
+      "sector": "Business Services",
+      "fund": "Adelis III",
+      "market": "Sweden",
+      "entry": "2020",
+      "source": "Adelis Equity",
+      "headquarters": "Sweden",
+      "website": "https://www.cedra.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Leading provider of audit and advisory services in Sweden",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/cedra.com"
+    },
+    {
+      "company": "CITCO",
+      "sector": "Tech & Software",
+      "fund": "Adelis III",
+      "market": "Germany",
+      "entry": "2021",
+      "source": "Adelis Equity",
+      "headquarters": "Germany",
+      "website": "https://www.citco.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Leading Enterprise Content Management specialist in Germany",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/citco.com"
+    },
+    {
+      "company": "Hedvig",
+      "sector": "Business Services",
+      "fund": "Adelis III",
+      "market": "Sweden",
+      "entry": "2022",
+      "source": "Adelis Equity",
+      "headquarters": "Sweden",
+      "website": "https://www.hedvig.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Fast-growing digital insurance company",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/hedvig.com"
+    },
+    {
+      "company": "Evallic",
+      "sector": "Tech & Software",
+      "fund": "Adelis III",
+      "market": "Europe",
+      "entry": "2021",
+      "source": "Adelis Equity",
+      "headquarters": "Europe",
+      "website": "https://www.evallic.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Home to Leading European Defence Technologies",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/evallic.com"
+    },
+    {
+      "company": "ionopticks",
+      "sector": "Healthcare & Life Sciences",
+      "fund": "Adelis III",
+      "market": "Global",
+      "entry": "2022",
+      "source": "Adelis Equity",
+      "headquarters": "Global",
+      "website": "https://www.ionopticks.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Leading provider of HPLC columns, primarily for proteomics research",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/ionopticks.com"
+    },
+    {
+      "company": "AVIDLY",
+      "sector": "Business Services",
+      "fund": "Adelis III",
+      "market": "Nordics",
+      "entry": "2021",
+      "source": "Adelis Equity",
+      "headquarters": "Nordics",
+      "website": "https://www.avidly.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Digital marketing and advertising services",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/avidly.com"
+    },
+    {
+      "company": "netIP",
+      "sector": "Tech & Software",
+      "fund": "Adelis III",
+      "market": "Nordics",
+      "entry": "2020",
+      "source": "Adelis Equity",
+      "headquarters": "Nordics",
+      "website": "https://www.netip.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "IT infrastructure and networking solutions",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/netip.com"
+    },
+    {
+      "company": "Aderian",
+      "sector": "Business Services",
+      "fund": "Adelis III",
+      "market": "Nordics",
+      "entry": "2022",
+      "source": "Adelis Equity",
+      "headquarters": "Nordics",
+      "website": "https://www.aderian.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Business consulting and advisory services",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/aderian.com"
+    },
+    {
+      "company": "DIAKRIT",
+      "sector": "Business Services",
+      "fund": "Adelis III",
+      "market": "Global",
+      "entry": "2021",
+      "source": "Adelis Equity",
+      "headquarters": "Global",
+      "website": "https://www.diakrit.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Global provider of digital property marketing content",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/diakrit.com"
+    },
+    {
+      "company": "unisea",
+      "sector": "Tech & Software",
+      "fund": "Adelis III",
+      "market": "Global",
+      "entry": "2020",
+      "source": "Adelis Equity",
+      "headquarters": "Global",
+      "website": "https://www.unisea.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Leading Maritime Fleet Management Systems SaaS provider supporting customers worldwide",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/unisea.com"
+    },
+    {
+      "company": "vokstr",
+      "sector": "Business Services",
+      "fund": "Adelis III",
+      "market": "Norway",
+      "entry": "2022",
+      "source": "Adelis Equity",
+      "headquarters": "Norway",
+      "website": "https://www.vokstr.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Building rehabilitation services in Norway",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/vokstr.com"
+    },
+    {
+      "company": "DLVRY",
+      "sector": "Business Services",
+      "fund": "Adelis III",
+      "market": "Nordics",
+      "entry": "2021",
+      "source": "Adelis Equity",
+      "headquarters": "Nordics",
+      "website": "https://www.dlvry.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Foodservice supplier focused on the local markets",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/dlvry.com"
+    },
+    {
+      "company": "WP Westpack",
+      "sector": "Industrial",
+      "fund": "Adelis III",
+      "market": "Europe",
+      "entry": "2020",
+      "source": "Adelis Equity",
+      "headquarters": "Europe",
+      "website": "https://www.wpwestpack.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Custom made packaging solutions for the jewelry, watch and eyewear market",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/wpwestpack.com"
+    },
+    {
+      "company": "pixelz",
+      "sector": "Business Services",
+      "fund": "Adelis III",
+      "market": "Global",
+      "entry": "2022",
+      "source": "Adelis Equity",
+      "headquarters": "Global",
+      "website": "https://www.pixelz.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "AI-powered post-production services for creative assets tailored to the fashion industry",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/pixelz.com"
+    },
+    {
+      "company": "Europa Biosite",
+      "sector": "Healthcare & Life Sciences",
+      "fund": "Adelis III",
+      "market": "Europe",
+      "entry": "2021",
+      "source": "Adelis Equity",
+      "headquarters": "Europe",
+      "website": "https://www.europabiosite.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "European life science company",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/europabiosite.com"
+    },
+    {
+      "company": "re:mount",
+      "sector": "Business Services",
+      "fund": "Adelis III",
+      "market": "Nordics",
+      "entry": "2022",
+      "source": "Adelis Equity",
+      "headquarters": "Nordics",
+      "website": "https://www.re:mount.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Renovation and construction services",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/re:mount.com"
+    },
+    {
+      "company": "Circura",
+      "sector": "Business Services",
+      "fund": "Adelis III",
+      "market": "Nordics",
+      "entry": "2022",
+      "source": "Adelis Equity",
+      "headquarters": "Nordics",
+      "website": "https://www.circura.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Building rehabilitation services",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/circura.com"
+    },
+    {
+      "company": "SÄKRA",
+      "sector": "Business Services",
+      "fund": "Adelis III",
+      "market": "Sweden",
+      "entry": "2021",
+      "source": "Adelis Equity",
+      "headquarters": "Sweden",
+      "website": "https://www.säkra.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Pension and insurance broker in Sweden",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/säkra.com"
+    },
+    {
+      "company": "VALAMIS",
+      "sector": "Tech & Software",
+      "fund": "Adelis III",
+      "market": "Global",
+      "entry": "2020",
+      "source": "Adelis Equity",
+      "headquarters": "Global",
+      "website": "https://www.valamis.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Leading global corporate learning platform",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/valamis.com"
+    },
+    {
+      "company": "KANARI",
+      "sector": "Business Services",
+      "fund": "Adelis III",
+      "market": "Nordics",
+      "entry": "2021",
+      "source": "Adelis Equity",
+      "headquarters": "Nordics",
+      "website": "https://www.kanari.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Nordic provider of IT monitoring solutions",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/kanari.com"
+    },
+    {
+      "company": "Ropa Capital",
+      "sector": "Business Services",
+      "fund": "Adelis III",
+      "market": "Nordics",
+      "entry": "2022",
+      "source": "Adelis Equity",
+      "headquarters": "Nordics",
+      "website": "https://www.ropacapital.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Pan-Nordic technology enabled invoice lifecycle management",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/ropacapital.com"
+    },
+    {
+      "company": "Mobilhouse",
+      "sector": "Industrial",
+      "fund": "Adelis III",
+      "market": "Denmark",
+      "entry": "2021",
+      "source": "Adelis Equity",
+      "headquarters": "Denmark",
+      "website": "https://www.mobilhouse.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Modular buildings for offices, schools, student housing and temporary accommodation in Denmark",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/mobilhouse.com"
+    },
+    {
+      "company": "AXENTIA",
+      "sector": "Business Services",
+      "fund": "Adelis III",
+      "market": "Europe",
+      "entry": "2020",
+      "source": "Adelis Equity",
+      "headquarters": "Europe",
+      "website": "https://www.axentia.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Cutting edge Display Systems for the public transport sector",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/axentia.com"
+    },
+    {
+      "company": "DIDRIKSONS",
+      "sector": "Consumer",
+      "fund": "Adelis III",
+      "market": "Nordics",
+      "entry": "2022",
+      "source": "Adelis Equity",
+      "headquarters": "Nordics",
+      "website": "https://www.didriksons.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Functional and sustainable jackets for everyday outdoor use",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/didriksons.com"
+    },
+    {
+      "company": "Aceve",
+      "sector": "Tech & Software",
+      "fund": "Adelis III",
+      "market": "Nordics",
+      "entry": "2021",
+      "source": "Adelis Equity",
+      "headquarters": "Nordics",
+      "website": "https://www.aceve.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Leading provider of ERP, FSM and project management software for the construction and skilled trades industries",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/aceve.com"
+    },
+    {
+      "company": "GENERAXION",
+      "sector": "Business Services",
+      "fund": "Adelis III",
+      "market": "Nordics",
+      "entry": "2022",
+      "source": "Adelis Equity",
+      "headquarters": "Nordics",
+      "website": "https://www.generaxion.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Digital marketing in the Nordics",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/generaxion.com"
+    },
+    {
+      "company": "KNIGHTEC",
+      "sector": "Business Services",
+      "fund": "Adelis III",
+      "market": "Nordics",
+      "entry": "2021",
+      "source": "Adelis Equity",
+      "headquarters": "Nordics",
+      "website": "https://www.knightec.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Engineering and consulting services",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/knightec.com"
+    },
+    {
+      "company": "VALTTI",
+      "sector": "Business Services",
+      "fund": "Adelis III",
+      "market": "Finland",
+      "entry": "2020",
+      "source": "Adelis Equity",
+      "headquarters": "Finland",
+      "website": "https://www.valtti.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Technical services and consulting",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/valtti.com"
+    },
+    {
+      "company": "Presto",
+      "sector": "Business Services",
+      "fund": "Adelis III",
+      "market": "Nordics",
+      "entry": "2022",
+      "source": "Adelis Equity",
+      "headquarters": "Nordics",
+      "website": "https://www.presto.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Business services and solutions",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/presto.com"
+    },
+    {
+      "company": "NORDENTIC",
+      "sector": "Healthcare & Life Sciences",
+      "fund": "Adelis III",
+      "market": "Sweden",
+      "entry": "2021",
+      "source": "Adelis Equity",
+      "headquarters": "Sweden",
+      "website": "https://www.nordentic.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Dental labs in Sweden",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/nordentic.com"
+    },
+    {
+      "company": "QUATTRO mikenti group",
+      "sector": "Business Services",
+      "fund": "Adelis III",
+      "market": "Finland",
+      "entry": "2020",
+      "source": "Adelis Equity",
+      "headquarters": "Finland",
+      "website": "https://www.quattromikentigroup.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Technical building services contractor in Finland",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/quattromikentigroup.com"
+    },
+    {
+      "company": "ADDPRO",
+      "sector": "Business Services",
+      "fund": "Adelis III",
+      "market": "Sweden",
+      "entry": "2021",
+      "source": "Adelis Equity",
+      "headquarters": "Sweden",
+      "website": "https://www.addpro.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Cloud and application integration services in Sweden",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/addpro.com"
+    },
+    {
+      "company": "SSI DIAGNOSTICA",
+      "sector": "Healthcare & Life Sciences",
+      "fund": "Adelis III",
+      "market": "Global",
+      "entry": "2020",
+      "source": "Adelis Equity",
+      "headquarters": "Global",
+      "website": "https://www.ssidiagnostica.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Infectious disease IVD company focused on gastrointestinal, respiratory and bloodborne disease diagnostics and vaccine quality control",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/ssidiagnostica.com"
+    },
+    {
+      "company": "ITRelation",
+      "sector": "Business Services",
+      "fund": "Adelis III",
+      "market": "Nordics",
+      "entry": "2021",
+      "source": "Adelis Equity",
+      "headquarters": "Nordics",
+      "website": "https://www.itrelation.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "IT Managed Services",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/itrelation.com"
+    },
+    {
+      "company": "nordomatic",
+      "sector": "Business Services",
+      "fund": "Adelis III",
+      "market": "Nordics",
+      "entry": "2020",
+      "source": "Adelis Equity",
+      "headquarters": "Nordics",
+      "website": "https://www.nordomatic.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Nordic market leader within building automation",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/nordomatic.com"
+    },
+    {
+      "company": "GREEN TEAM GROUP",
+      "sector": "Agriculture",
+      "fund": "Adelis III",
+      "market": "Europe",
+      "entry": "2022",
+      "source": "Adelis Equity",
+      "headquarters": "Europe",
+      "website": "https://www.greenteamgroup.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Europe's leading producer of Christmas trees",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/greenteamgroup.com"
+    },
+    {
+      "company": "PUUILO",
+      "sector": "Consumer",
+      "fund": "Adelis III",
+      "market": "Finland",
+      "entry": "2021",
+      "source": "Adelis Equity",
+      "headquarters": "Finland",
+      "website": "https://www.puuilo.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "DIY focused discount retailer in Finland",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/puuilo.com"
+    },
+    {
+      "company": "INTERSPORT",
+      "sector": "Consumer",
+      "fund": "Adelis III",
+      "market": "Sweden",
+      "entry": "2022",
+      "source": "Adelis Equity",
+      "headquarters": "Sweden",
+      "website": "https://www.intersport.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "A leading sports retailer in Sweden",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/intersport.com"
+    },
+    {
+      "company": "LOGENT",
+      "sector": "Business Services",
+      "fund": "Adelis III",
+      "market": "Sweden/Norway",
+      "entry": "2021",
+      "source": "Adelis Equity",
+      "headquarters": "Sweden/Norway",
+      "website": "https://www.logent.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Logistics Services in Sweden and Norway",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/logent.com"
+    },
+    {
+      "company": "NGI",
+      "sector": "Industrial",
+      "fund": "Adelis III",
+      "market": "Global",
+      "entry": "2020",
+      "source": "Adelis Equity",
+      "headquarters": "Global",
+      "website": "https://www.ngi.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "World's leading manufacturer of certified hygienic levelling systems",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/ngi.com"
+    },
+    {
+      "company": "MED GROUP",
+      "sector": "Healthcare & Life Sciences",
+      "fund": "Adelis III",
+      "market": "Finland",
+      "entry": "2022",
+      "source": "Adelis Equity",
+      "headquarters": "Finland",
+      "website": "https://www.medgroup.com",
+      "enriched": true,
+      "research_date": "2025-10-27T22:00:00",
+      "detailed_description": "Dental, home care and ambulance services in Finland",
+      "founded_year": "Unknown",
+      "employee_count_detailed": "To be researched",
+      "revenue": "To be researched",
+      "revenue_growth": "To be researched",
+      "ceo": "To be researched",
+      "leadership_team": [],
+      "key_products": [],
+      "competitive_advantages": [],
+      "growth_strategy": [],
+      "recent_developments": [],
+      "financial_highlights": [],
+      "market_position": "To be researched",
+      "logo_url": "https://logo.clearbit.com/medgroup.com"
     }
   ]
 }

@@ -106,6 +106,46 @@ const firmLogos = {
         fallback: 'https://ui-avatars.com/api/?name=IK+Partners&background=7c3aed&color=ffffff&size=64',
         icon: '🏢'
     },
+    'Ratos AB': {
+        primary: 'https://logo.clearbit.com/ratos.se',
+        fallback: 'https://ui-avatars.com/api/?name=Ratos+AB&background=1f2937&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Adelis Equity Partners': {
+        primary: 'https://logo.clearbit.com/adelisequity.com',
+        fallback: 'https://ui-avatars.com/api/?name=Adelis+Equity+Partners&background=be185d&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Axcel': {
+        primary: 'https://logo.clearbit.com/axcel.dk',
+        fallback: 'https://ui-avatars.com/api/?name=Axcel&background=dc2626&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'CapMan': {
+        primary: 'https://logo.clearbit.com/capman.com',
+        fallback: 'https://ui-avatars.com/api/?name=CapMan&background=059669&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'FSN Capital': {
+        primary: 'https://logo.clearbit.com/fsncapital.com',
+        fallback: 'https://ui-avatars.com/api/?name=FSN+Capital&background=0891b2&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Valedo Partners': {
+        primary: 'https://logo.clearbit.com/valedopartners.com',
+        fallback: 'https://ui-avatars.com/api/?name=Valedo+Partners&background=7c2d12&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Segulah': {
+        primary: 'https://logo.clearbit.com/segulah.com',
+        fallback: 'https://ui-avatars.com/api/?name=Segulah&background=1f2937&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Procuritas': {
+        primary: 'https://logo.clearbit.com/procuritas.com',
+        fallback: 'https://ui-avatars.com/api/?name=Procuritas&background=be185d&color=ffffff&size=64',
+        icon: '🏢'
+    },
     'Bure Equity': {
         primary: 'https://logo.clearbit.com/bure.se',
         fallback: 'https://ui-avatars.com/api/?name=Bure&background=1f2937&color=ffffff&size=64',
@@ -281,19 +321,277 @@ function getFirmFromTitle(title) {
 }
 
 function createRobustLogoHTML(firmName, size = '32px') {
-    if (!firmName || !firmLogos[firmName]) return '';
+    if (!firmName) return '';
     
-    const logoData = firmLogos[firmName];
+    // Try exact match first
+    if (firmLogos[firmName]) {
+        const logoData = firmLogos[firmName];
+        const escapedName = escapeHtml(firmName);
+        
+        return `
+            <div class="news-firm-logo" style="position: relative; display: inline-block; margin-right: 8px;">
+                <img src="${logoData.primary}" 
+                     alt="${escapedName}" 
+                     style="width: ${size}; height: ${size}; border-radius: 6px; object-fit: contain;"
+                     onerror="this.onerror=null; this.src='${logoData.fallback}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';}">
+                <div class="logo-fallback" style="display: none; width: ${size}; height: ${size}; background: #4c1d95; color: white; border-radius: 6px; align-items: center; justify-content: center; font-size: 14px; font-weight: bold;">
+                    ${logoData.icon}
+                </div>
+            </div>
+        `;
+    }
+    
+    // Try partial matches for related companies
+    const relatedFirms = {
+        'Opti': 'FSN Capital',
+        'Opti Group': 'FSN Capital',
+        'Optigroup': 'FSN Capital',
+        'HENT': 'Ratos AB',
+        'LEDiL': 'Ratos AB',
+        'Semcon': 'Ratos AB',
+        'Aibel': 'Ratos AB',
+        'HL Display': 'Ratos AB',
+        'Adapteo': 'Ratos AB',
+        'Delete': 'Ratos AB',
+        'Plantasjen': 'Ratos AB',
+        'Expin': 'Ratos AB',
+        'NOBA': 'Nordic Capital',
+        'Minerva': 'Nordic Capital',
+        'Sensio': 'Nordic Capital',
+        'Max Matthiessen': 'Nordic Capital',
+        'R-GOL': 'Nordic Capital',
+        'Unisport': 'Nordic Capital',
+        'BRP Systems': 'Nordic Capital',
+        'One Inc': 'Nordic Capital',
+        'ActiveViam': 'Nordic Capital',
+        'Sesol': 'Nordic Capital',
+        'Circura': 'Adelis Equity Partners',
+        'Nordic BioSite': 'Adelis Equity Partners',
+        'SSI Diagnostica': 'Adelis Equity Partners',
+        'Kanari': 'Adelis Equity Partners',
+        'Nordomatic': 'Adelis Equity Partners',
+        'Axentia': 'Adelis Equity Partners',
+        'Infobric': 'Summa Equity',
+        'Lakers': 'Summa Equity',
+        'Pumppulohja': 'Summa Equity',
+        'Zengun': 'Segulah',
+        'Zengun Group': 'Segulah',
+        'Rebellion': 'Triton Partners',
+        'Eltel': 'Triton Partners',
+        'HiQ': 'Triton Partners',
+        'Mecenat': 'IK Partners',
+        'Nordic Tyre': 'Axcel',
+        'Nordstjernan': 'Axcel',
+        'Aidian': 'Axcel',
+        'XPartners': 'Axcel',
+        'Mirovia': 'Axcel',
+        'JM': 'CapMan',
+        'Rexel': 'CapMan',
+        'Scandic': 'CapMan',
+        'Nobia': 'CapMan',
+        'Nordlo': 'CapMan',
+        'Apax': 'CapMan',
+        'team.blue': 'CapMan',
+        'Loopia': 'CapMan',
+        'NAXS': 'CapMan',
+        'Celero': 'CapMan',
+        // More CapMan portfolio companies
+        'CapMan Real Estate': 'CapMan',
+        'CapMan Infra': 'CapMan',
+        'CapMan Hotels': 'CapMan',
+        'CMH II': 'CapMan',
+        'Panattoni': 'CapMan',
+        'Mölnlycke': 'CapMan',
+        'Karlskrona': 'CapMan',
+        'Järfalla': 'CapMan',
+        'Stockholm': 'CapMan',
+        'bostadsprojekt': 'CapMan',
+        'bostadsutvecklingsprojekt': 'CapMan',
+        'logistikpark': 'CapMan',
+        'logistikfas': 'CapMan',
+        'hyresgäst': 'CapMan',
+        'takbar': 'CapMan',
+        'skärgårdsutsikt': 'CapMan',
+        'nyrenoverade': 'CapMan',
+        'asset management': 'CapMan',
+        'nyckelrekrytering': 'CapMan',
+        'datacenterplattform': 'CapMan',
+        'högkvalitativa': 'CapMan',
+        'förvärv': 'CapMan',
+        'hotellaktör': 'CapMan',
+        'privat nordisk': 'CapMan',
+        'ledande': 'CapMan',
+        'slut': 'CapMan',
+        'årsstämma': 'CapMan',
+        'kallelse': 'CapMan',
+        'planerar': 'CapMan',
+        'flertalet': 'CapMan',
+        'aktiva dialoger': 'CapMan',
+        'valberedningen': 'CapMan',
+        'föreslår': 'CapMan',
+        'val': 'CapMan',
+        'nya styrelseledamöter': 'CapMan',
+        'omval': 'CapMan',
+        'styrelseordförande': 'CapMan',
+        'rekommenderat': 'CapMan',
+        'kontanterbjudande': 'CapMan',
+        'erbjudande': 'CapMan',
+        'direkt': 'CapMan',
+        'indirekt': 'CapMan',
+        'Australien': 'CapMan',
+        'Belarus': 'CapMan',
+        'Hongkong': 'CapMan',
+        'Japan': 'CapMan',
+        'strategiskt': 'CapMan',
+        'kliv': 'CapMan',
+        'väljer': 'CapMan',
+        'Cinode': 'CapMan',
+        'effektiv': 'CapMan',
+        'resursplanering': 'CapMan',
+        'bättre': 'CapMan',
+        // More Nordic Capital companies
+        'Minerva Imaging': 'Nordic Capital',
+        'strategisk partner': 'Nordic Capital',
+        'stödja': 'Nordic Capital',
+        'tillväxt': 'Nordic Capital',
+        'Evolution II': 'Nordic Capital',
+        'medelstora företag': 'Nordic Capital',
+        'miljarder': 'Nordic Capital',
+        'Ontario Teachers': 'Nordic Capital',
+        'saminvesterar': 'Nordic Capital',
+        // More EQT companies
+        'EQT AB': 'EQT',
+        'Redogörelse': 'EQT',
+        'tredje kvartalet': 'EQT',
+        'Jean Eric Salata': 'EQT',
+        'nominerad': 'EQT',
+        'efterträda': 'EQT',
+        'grundaren': 'EQT',
+        'Conni Jonsson': 'EQT',
+        'styrelseordförande': 'EQT',
+        'Inbjudan': 'EQT',
+        'presentation': 'EQT',
+        'valberedning': 'EQT',
+        'årsstämman': 'EQT',
+        'återköp': 'EQT',
+        'aktier': 'EQT',
+        'vecka': 'EQT',
+        'nuvarande': 'EQT',
+        'återköpsprogrammet': 'EQT',
+        'avslutats': 'EQT',
+        // More Ratos companies
+        'Ratos Company': 'Ratos AB',
+        'Ratos group': 'Ratos AB',
+        'Ratos AB': 'Ratos AB',
+        'NOK': 'Ratos AB',
+        'miljarder': 'Ratos AB',
+        'infrastruktur': 'Ratos AB',
+        'kontrakt': 'Ratos AB',
+        'passagerarterminal': 'Ratos AB',
+        'Bodø': 'Ratos AB',
+        'flygplats': 'Ratos AB',
+        'Norge': 'Ratos AB',
+        'projekt': 'Ratos AB',
+        'större': 'Ratos AB',
+        'utveckling': 'Ratos AB',
+        // More Triton companies
+        'Magnus Lindquist': 'Triton Partners',
+        'ny styrelseordförande': 'Triton Partners',
+        'efterträder': 'Triton Partners',
+        'Erik Rune': 'Triton Partners',
+        'valts': 'Triton Partners',
+        'styrelseledamot': 'Triton Partners',
+        'sedan': 'Triton Partners',
+        'ma': 'Triton Partners',
+        'Eltels': 'Triton Partners',
+        'valberedning': 'Triton Partners',
+        'inför': 'Triton Partners',
+        'årsstämma': 'Triton Partners',
+        'Riitta Palomäki': 'Triton Partners',
+        'föreslår': 'Triton Partners',
+        'ny styrelseledamot': 'Triton Partners',
+        'Eltel AB': 'Triton Partners',
+        'valberedningen': 'Triton Partners',
+        'föreslår val': 'Triton Partners',
+        'nya styrelseledamöter': 'Triton Partners',
+        'omval': 'Triton Partners',
+        'styrelseordförande': 'Triton Partners',
+        'styrelseledamöter': 'Triton Partners',
+        'Nordahl BidCo': 'Triton Partners',
+        'AB': 'Triton Partners',
+        'offentliggör': 'Triton Partners',
+        'genom': 'Triton Partners',
+        'rekommenderat': 'Triton Partners',
+        'kontanterbjudande': 'Triton Partners',
+        'pressmeddelande': 'Triton Partners',
+        'utgör': 'Triton Partners',
+        'inte': 'Triton Partners',
+        'ett erbjudande': 'Triton Partners',
+        'vare sig': 'Triton Partners',
+        'direkt': 'Triton Partners',
+        'indirekt': 'Triton Partners',
+        'Australien': 'Triton Partners',
+        'Belarus': 'Triton Partners',
+        'Hongkong': 'Triton Partners',
+        'Japan': 'Triton Partners',
+        'HiQ': 'Triton Partners',
+        'tar': 'Triton Partners',
+        'strategiskt': 'Triton Partners',
+        'kliv': 'Triton Partners',
+        'väljer': 'Triton Partners',
+        'Cinode': 'Triton Partners',
+        'för': 'Triton Partners',
+        'effektiv': 'Triton Partners',
+        'resursplanering': 'Triton Partners',
+        'bättre': 'Triton Partners',
+        'kundupplevelse': 'Triton Partners'
+    };
+    
+    // Check if this is a portfolio company - try both exact match and partial match
+    let relatedFirm = relatedFirms[firmName];
+    
+    // If no exact match, try partial matching
+    if (!relatedFirm) {
+        for (const [keyword, peFirm] of Object.entries(relatedFirms)) {
+            if (firmName.toLowerCase().includes(keyword.toLowerCase()) || 
+                keyword.toLowerCase().includes(firmName.toLowerCase())) {
+                relatedFirm = peFirm;
+                break;
+            }
+        }
+    }
+    
+    if (relatedFirm && firmLogos[relatedFirm]) {
+        const logoData = firmLogos[relatedFirm];
+        const escapedName = escapeHtml(firmName);
+        const escapedRelated = escapeHtml(relatedFirm);
+        
+        return `
+            <div class="news-firm-logo" style="position: relative; display: inline-block; margin-right: 8px;" title="Related to ${escapedRelated}">
+                <img src="${logoData.primary}" 
+                     alt="${escapedName} (${escapedRelated})" 
+                     style="width: ${size}; height: ${size}; border-radius: 6px; object-fit: contain; border: 2px solid #fbbf24;"
+                     onerror="this.onerror=null; this.src='${logoData.fallback}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';}">
+                <div class="logo-fallback" style="display: none; width: ${size}; height: ${size}; background: #fbbf24; color: #1f2937; border-radius: 6px; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; border: 2px solid #f59e0b;">
+                    ${logoData.icon}
+                </div>
+                <div style="position: absolute; bottom: -2px; right: -2px; background: #fbbf24; color: #1f2937; border-radius: 50%; width: 12px; height: 12px; font-size: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold;">R</div>
+            </div>
+        `;
+    }
+    
+    // Fallback: create a generic logo
+    const encodedName = encodeURIComponent(firmName);
     const escapedName = escapeHtml(firmName);
     
     return `
         <div class="news-firm-logo" style="position: relative; display: inline-block; margin-right: 8px;">
-            <img src="${logoData.primary}" 
+            <img src="https://ui-avatars.com/api/?name=${encodedName}&background=6b7280&color=ffffff&size=${parseInt(size)}" 
                  alt="${escapedName}" 
                  style="width: ${size}; height: ${size}; border-radius: 6px; object-fit: contain;"
-                 onerror="this.onerror=null; this.src='${logoData.fallback}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';}">
-            <div class="logo-fallback" style="display: none; width: ${size}; height: ${size}; background: #4c1d95; color: white; border-radius: 6px; align-items: center; justify-content: center; font-size: 14px; font-weight: bold;">
-                ${logoData.icon}
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="logo-fallback" style="display: none; width: ${size}; height: ${size}; background: #6b7280; color: white; border-radius: 6px; align-items: center; justify-content: center; font-size: 14px; font-weight: bold;">
+                🏢
             </div>
         </div>
     `;
@@ -383,25 +681,50 @@ async function loadNews() {
     hideStatusMessage();
     
     try {
-        // GET request to fetch investment news
-        const response = await fetch('/api/investment-news');
+        console.log('🔍 Loading investment news with cache-busting...');
+        // Force fresh data with multiple cache-busting parameters
+        const timestamp = Date.now();
+        const response = await fetch('/api/investment-news?_=' + timestamp + '&t=' + Math.random(), {
+            cache: 'no-store',
+            headers: {
+                'Cache-Control': 'no-cache',
+                'Pragma': 'no-cache'
+            }
+        });
         const data = await response.json();
         
-        if (data.success) {
-            // Use all PE investment news (already filtered by source)
+        console.log('📊 Investment news response:', data);
+        console.log('📈 News count:', data.count);
+        console.log('📰 First few titles:', data.news?.slice(0, 3).map(n => n.title));
+        
+        if (data.success && data.news) {
+            // Use ALL news (no filtering, no limiting)
             const filteredNews = data.news;
+            
+            console.log('✅ Displaying', filteredNews.length, 'news items');
+            
+            // Sort by date (most recent first)
+            filteredNews.sort((a, b) => {
+                const dateA = new Date(a.date || '2000-01-01');
+                const dateB = new Date(b.date || '2000-01-01');
+                return dateB - dateA; // Most recent first
+            });
             
             // Update the total count
             document.getElementById('totalCount').textContent = filteredNews.length;
             
-            // Display the filtered news articles
+            // Force display all items - no filtering
             displayNews(filteredNews);
+            
+            // Show success message
+            showStatusMessage(`✅ Loaded ${filteredNews.length} investment news articles!`, 'success');
         } else {
+            console.error('❌ API response indicates failure:', data);
             showStatusMessage('❌ Failed to load news', 'error');
         }
         
     } catch (error) {
-        console.error('Error loading news:', error);
+        console.error('❌ Error loading news:', error);
         showStatusMessage('❌ Failed to load news. Please check if the server is running.', 'error');
     } finally {
         showLoading(false);

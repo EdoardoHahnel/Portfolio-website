@@ -8,27 +8,100 @@
       "founded": 1994,
       "aum": "€220 billion",
       "employees": "1,400+",
-      "offices": ["Stockholm", "London", "New York", "Hong Kong", "Singapore", "Frankfurt", "Copenhagen", "Oslo"],
+      "offices": [
+        "Stockholm",
+        "London",
+        "New York",
+        "Hong Kong",
+        "Singapore",
+        "Frankfurt",
+        "Copenhagen",
+        "Oslo"
+      ],
       "description": "EQT is a purpose-driven global investment organization focused on active ownership strategies. With a Nordic heritage and global reach, EQT has approximately EUR 220 billion in total assets under management across multiple strategies including Private Capital, Real Assets, and Credit.",
       "investment_focus": {
-        "sectors": ["Healthcare", "Technology", "Services", "Infrastructure", "Real Estate"],
-        "geography": ["Europe", "North America", "Asia-Pacific"],
+        "sectors": [
+          "Healthcare",
+          "Technology",
+          "Services",
+          "Infrastructure",
+          "Real Estate"
+        ],
+        "geography": [
+          "Europe",
+          "North America",
+          "Asia-Pacific"
+        ],
         "deal_size": "€500M - €5B+",
-        "investment_type": ["Buyouts", "Growth Equity", "Venture Capital", "Infrastructure", "Credit"]
+        "investment_type": [
+          "Buyouts",
+          "Growth Equity",
+          "Venture Capital",
+          "Infrastructure",
+          "Credit"
+        ]
       },
       "team": [
-        {"name": "Christian Sinding", "title": "CEO and Managing Partner", "location": "Stockholm"},
-        {"name": "Caspar Callerström", "title": "Deputy CEO and Head of Private Capital", "location": "Stockholm"},
-        {"name": "Anna Kinberg Batra", "title": "Head of Public Affairs", "location": "Stockholm"},
-        {"name": "Kim Henriksson", "title": "CFO", "location": "Stockholm"},
-        {"name": "Magnus Mandersson", "title": "Managing Partner, EQT Private Equity", "location": "Stockholm"},
-        {"name": "Thomas von Koch", "title": "Partner, EQT Ventures", "location": "Stockholm"},
-        {"name": "Mats Qviberg", "title": "Partner, EQT Private Equity", "location": "Stockholm"},
-        {"name": "Johannes Reichel", "title": "Partner, EQT Mid Market", "location": "Munich"},
-        {"name": "Dexter Braff", "title": "Partner, EQT Private Equity", "location": "New York"},
-        {"name": "Timo Soininen", "title": "Managing Partner, EQT Infrastructure", "location": "Helsinki"},
-        {"name": "Henrik Persson Ekdahl", "title": "Partner, EQT Growth", "location": "Stockholm"},
-        {"name": "Staffan Hansén", "title": "Partner, EQT Private Equity", "location": "Stockholm"}
+        {
+          "name": "Christian Sinding",
+          "title": "CEO and Managing Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Caspar Callerström",
+          "title": "Deputy CEO and Head of Private Capital",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Anna Kinberg Batra",
+          "title": "Head of Public Affairs",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Kim Henriksson",
+          "title": "CFO",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Magnus Mandersson",
+          "title": "Managing Partner, EQT Private Equity",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Thomas von Koch",
+          "title": "Partner, EQT Ventures",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Mats Qviberg",
+          "title": "Partner, EQT Private Equity",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Johannes Reichel",
+          "title": "Partner, EQT Mid Market",
+          "location": "Munich"
+        },
+        {
+          "name": "Dexter Braff",
+          "title": "Partner, EQT Private Equity",
+          "location": "New York"
+        },
+        {
+          "name": "Timo Soininen",
+          "title": "Managing Partner, EQT Infrastructure",
+          "location": "Helsinki"
+        },
+        {
+          "name": "Henrik Persson Ekdahl",
+          "title": "Partner, EQT Growth",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Staffan Hansén",
+          "title": "Partner, EQT Private Equity",
+          "location": "Stockholm"
+        }
       ],
       "recent_activity": "Q3 2024: EQT XI Fund closed at €22B (largest European PE fund ever). Recent deals: Zeus Healthcare acquisition (€2.1B), Sitecore software investment (€1.8B), Waystar healthcare tech exit (€3.2B). New office opened in Singapore. Sustainability initiatives: 50% portfolio companies carbon neutral by 2025. Team expansion: 50+ new hires across all offices. Strong portfolio performance: 25% IRR across Fund X investments. Exploring AI and climate tech opportunities."
     },
@@ -40,25 +113,89 @@
       "founded": 1989,
       "aum": "€35 billion",
       "employees": "250+",
-      "offices": ["Stockholm", "London", "New York", "Copenhagen", "Oslo", "Helsinki", "Frankfurt", "Jersey", "Luxembourg", "Seoul"],
+      "offices": [
+        "Stockholm",
+        "London",
+        "New York",
+        "Copenhagen",
+        "Oslo",
+        "Helsinki",
+        "Frankfurt",
+        "Jersey",
+        "Luxembourg",
+        "Seoul"
+      ],
       "description": "Nordic Capital is a leading private equity investor in the Nordic region with a strong track record in healthcare, technology & payments, financial services, and services & industrial tech. The firm has raised eleven funds with total commitments of EUR 35 billion.",
       "investment_focus": {
-        "sectors": ["Healthcare", "Technology & Payments", "Financial Services", "Services & Industrial Tech"],
-        "geography": ["Nordic region", "Northern Europe", "North America"],
+        "sectors": [
+          "Healthcare",
+          "Technology & Payments",
+          "Financial Services",
+          "Services & Industrial Tech"
+        ],
+        "geography": [
+          "Nordic region",
+          "Northern Europe",
+          "North America"
+        ],
         "deal_size": "€300M - €3B",
-        "investment_type": ["Mid-market buyouts", "Growth capital", "Public-to-private"]
+        "investment_type": [
+          "Mid-market buyouts",
+          "Growth capital",
+          "Public-to-private"
+        ]
       },
       "team": [
-        {"name": "Frederik Näs", "title": "Managing Partner and Head of Healthcare", "location": "Stockholm"},
-        {"name": "Bo Lagerström", "title": "Senior Partner", "location": "Stockholm"},
-        {"name": "Mikael Holmberg", "title": "Managing Partner", "location": "Stockholm"},
-        {"name": "Ludvig Mattsson", "title": "Partner, Technology & Payments", "location": "Stockholm"},
-        {"name": "Kristoffer Melinder", "title": "Partner, Financial Services", "location": "London"},
-        {"name": "Björn Björnsson", "title": "Partner, Healthcare", "location": "Stockholm"},
-        {"name": "Johan Lannebo", "title": "Partner, Technology", "location": "Stockholm"},
-        {"name": "Anders Björk", "title": "Senior Advisor", "location": "Stockholm"},
-        {"name": "Charlotte Strömberg", "title": "Partner, Financial Services", "location": "Copenhagen"},
-        {"name": "Per Franzén", "title": "Partner, Services & Industrial Tech", "location": "Oslo"}
+        {
+          "name": "Frederik Näs",
+          "title": "Managing Partner and Head of Healthcare",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Bo Lagerström",
+          "title": "Senior Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Mikael Holmberg",
+          "title": "Managing Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Ludvig Mattsson",
+          "title": "Partner, Technology & Payments",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Kristoffer Melinder",
+          "title": "Partner, Financial Services",
+          "location": "London"
+        },
+        {
+          "name": "Björn Björnsson",
+          "title": "Partner, Healthcare",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Johan Lannebo",
+          "title": "Partner, Technology",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Anders Björk",
+          "title": "Senior Advisor",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Charlotte Strömberg",
+          "title": "Partner, Financial Services",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Per Franzén",
+          "title": "Partner, Services & Industrial Tech",
+          "location": "Oslo"
+        }
       ],
       "recent_activity": "Q3 2024: Nordic Capital Fund XI closed at €7.5B (oversubscribed by 50%). Recent exits: Parexel sold to EQT (€2.8B), Cerba HealthCare to KKR (€1.9B). New investments: Ellab healthcare monitoring (€400M), Inexto technology platform (€300M). Team growth: 15 new partners across Nordic offices. Sustainability focus: 100% portfolio ESG integration. Strong performance: Fund X showing 28% IRR. Exploring AI healthcare and fintech opportunities. New Copenhagen office expansion planned."
     },
@@ -70,25 +207,83 @@
       "founded": 1997,
       "aum": "€11 billion",
       "employees": "180+",
-      "offices": ["London", "Frankfurt", "Luxembourg", "Stockholm", "Jersey"],
+      "offices": [
+        "London",
+        "Frankfurt",
+        "Luxembourg",
+        "Stockholm",
+        "Jersey"
+      ],
       "description": "Triton is a leading European private equity firm investing in medium-sized businesses in Northern Europe. The firm focuses on building sustainable value through operational improvements and strategic development.",
       "investment_focus": {
-        "sectors": ["Industrial Tech", "Healthcare", "Business Services"],
-        "geography": ["Northern Europe", "DACH region", "UK"],
+        "sectors": [
+          "Industrial Tech",
+          "Healthcare",
+          "Business Services"
+        ],
+        "geography": [
+          "Northern Europe",
+          "DACH region",
+          "UK"
+        ],
         "deal_size": "€200M - €2B",
-        "investment_type": ["Mid-market buyouts", "Carve-outs", "Family succession"]
+        "investment_type": [
+          "Mid-market buyouts",
+          "Carve-outs",
+          "Family succession"
+        ]
       },
       "team": [
-        {"name": "Peder Prahl", "title": "Managing Partner", "location": "Stockholm"},
-        {"name": "Mikael Schöldström", "title": "Partner", "location": "Stockholm"},
-        {"name": "Lauri Ratia", "title": "Partner", "location": "London"},
-        {"name": "Per Franzén", "title": "Partner", "location": "Stockholm"},
-        {"name": "Oliver Stenbäck", "title": "Partner, Industrial Tech", "location": "Frankfurt"},
-        {"name": "Christian Mogensen", "title": "Partner, Healthcare", "location": "London"},
-        {"name": "Tomas Ditlev", "title": "Senior Advisor", "location": "Luxembourg"},
-        {"name": "Henrik Lönnroth", "title": "Partner, Business Services", "location": "Stockholm"},
-        {"name": "Anna-Karin Celsing", "title": "CFO", "location": "London"},
-        {"name": "Johan Kardell", "title": "Partner", "location": "Stockholm"}
+        {
+          "name": "Peder Prahl",
+          "title": "Managing Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Mikael Schöldström",
+          "title": "Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Lauri Ratia",
+          "title": "Partner",
+          "location": "London"
+        },
+        {
+          "name": "Per Franzén",
+          "title": "Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Oliver Stenbäck",
+          "title": "Partner, Industrial Tech",
+          "location": "Frankfurt"
+        },
+        {
+          "name": "Christian Mogensen",
+          "title": "Partner, Healthcare",
+          "location": "London"
+        },
+        {
+          "name": "Tomas Ditlev",
+          "title": "Senior Advisor",
+          "location": "Luxembourg"
+        },
+        {
+          "name": "Henrik Lönnroth",
+          "title": "Partner, Business Services",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Anna-Karin Celsing",
+          "title": "CFO",
+          "location": "London"
+        },
+        {
+          "name": "Johan Kardell",
+          "title": "Partner",
+          "location": "Stockholm"
+        }
       ],
       "recent_activity": "Q3 2024: Major portfolio restructuring: Assemblin Caverion Group formation (€2.1B combined entity), IFCO exit to KKR (€1.2B). New investments: Acre Security acquisition (€800M), Bergman Clinics expansion (€300M). Fund V deployment: 60% committed across 8 platform investments. Team expansion: 20 new hires across European offices. Sustainability initiatives: 30% portfolio companies carbon neutral. Strong performance: Fund IV showing 22% IRR. Exploring industrial tech and healthcare opportunities. New Munich office opened."
     },
@@ -100,25 +295,83 @@
       "founded": 2003,
       "aum": "€10 billion",
       "employees": "120+",
-      "offices": ["Stockholm", "Copenhagen", "Oslo", "Helsinki"],
+      "offices": [
+        "Stockholm",
+        "Copenhagen",
+        "Oslo",
+        "Helsinki"
+      ],
       "description": "Altor is a private equity firm focused on investing in and developing Nordic mid-market companies. The firm partners with ambitious management teams to create sustainable growth and value.",
       "investment_focus": {
-        "sectors": ["Consumer", "Healthcare", "Industrial", "Financial Services", "Technology"],
-        "geography": ["Nordic region", "Northern Europe"],
+        "sectors": [
+          "Consumer",
+          "Healthcare",
+          "Industrial",
+          "Financial Services",
+          "Technology"
+        ],
+        "geography": [
+          "Nordic region",
+          "Northern Europe"
+        ],
         "deal_size": "€100M - €800M",
-        "investment_type": ["Management buyouts", "Growth capital", "Public-to-private"]
+        "investment_type": [
+          "Management buyouts",
+          "Growth capital",
+          "Public-to-private"
+        ]
       },
       "team": [
-        {"name": "Harald Mix", "title": "Managing Partner", "location": "Stockholm"},
-        {"name": "Johan Andersson", "title": "Partner", "location": "Stockholm"},
-        {"name": "Niels Mejer Lund", "title": "Partner", "location": "Copenhagen"},
-        {"name": "Carl Backman", "title": "Partner", "location": "Stockholm"},
-        {"name": "Henrik Persson", "title": "Partner, Consumer", "location": "Stockholm"},
-        {"name": "Mikael Ahlström", "title": "Partner, Industrial", "location": "Helsinki"},
-        {"name": "Christian Brunlid", "title": "Partner, Technology", "location": "Stockholm"},
-        {"name": "Sophie Hillborg", "title": "CFO", "location": "Stockholm"},
-        {"name": "Anders Hildén", "title": "Senior Advisor", "location": "Oslo"},
-        {"name": "Lars Rodert", "title": "Partner, Healthcare", "location": "Copenhagen"}
+        {
+          "name": "Harald Mix",
+          "title": "Managing Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Johan Andersson",
+          "title": "Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Niels Mejer Lund",
+          "title": "Partner",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Carl Backman",
+          "title": "Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Henrik Persson",
+          "title": "Partner, Consumer",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Mikael Ahlström",
+          "title": "Partner, Industrial",
+          "location": "Helsinki"
+        },
+        {
+          "name": "Christian Brunlid",
+          "title": "Partner, Technology",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Sophie Hillborg",
+          "title": "CFO",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Anders Hildén",
+          "title": "Senior Advisor",
+          "location": "Oslo"
+        },
+        {
+          "name": "Lars Rodert",
+          "title": "Partner, Healthcare",
+          "location": "Copenhagen"
+        }
       ],
       "recent_activity": "Q3 2024: Altor Fund VI launched targeting €4B (oversubscribed by 40%). Recent exits: Karnov Group IPO (€1.2B), AddSecure to EQT (€800M). New investments: Fortress Security acquisition (€600M), Moment Group healthcare (€400M). Fund V deployment: 70% committed across 12 investments. Team growth: 12 new partners across Nordic offices. Sustainability focus: 100% ESG integration across portfolio. Strong performance: Fund V showing 26% IRR. Exploring climate tech and AI opportunities. New sustainability fund launched (€500M)."
     },
@@ -130,22 +383,64 @@
       "founded": 2003,
       "aum": "SEK 20 billion",
       "employees": "40+",
-      "offices": ["Stockholm"],
+      "offices": [
+        "Stockholm"
+      ],
       "description": "Litorina is a Swedish private equity firm investing in medium-sized Nordic companies with strong market positions. The firm focuses on consumer and business services sectors with proven business models.",
       "investment_focus": {
-        "sectors": ["Consumer", "Business Services", "Healthcare"],
-        "geography": ["Sweden", "Denmark", "Norway"],
+        "sectors": [
+          "Consumer",
+          "Business Services",
+          "Healthcare"
+        ],
+        "geography": [
+          "Sweden",
+          "Denmark",
+          "Norway"
+        ],
         "deal_size": "SEK 300M - SEK 2B",
-        "investment_type": ["Mid-market buyouts", "Family succession", "Growth capital"]
+        "investment_type": [
+          "Mid-market buyouts",
+          "Family succession",
+          "Growth capital"
+        ]
       },
       "team": [
-        {"name": "Fredrik Hansson", "title": "Managing Partner", "location": "Stockholm"},
-        {"name": "Johan Lannebo", "title": "Partner", "location": "Stockholm"},
-        {"name": "Caroline af Ugglas", "title": "Partner", "location": "Stockholm"},
-        {"name": "Per Johansson", "title": "Partner, Consumer", "location": "Stockholm"},
-        {"name": "Martin Bjurström", "title": "CFO", "location": "Stockholm"},
-        {"name": "Anna Söderblom", "title": "Partner, Business Services", "location": "Stockholm"},
-        {"name": "Erik Wallgren", "title": "Senior Investment Manager", "location": "Stockholm"}
+        {
+          "name": "Fredrik Hansson",
+          "title": "Managing Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Johan Lannebo",
+          "title": "Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Caroline af Ugglas",
+          "title": "Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Per Johansson",
+          "title": "Partner, Consumer",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Martin Bjurström",
+          "title": "CFO",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Anna Söderblom",
+          "title": "Partner, Business Services",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Erik Wallgren",
+          "title": "Senior Investment Manager",
+          "location": "Stockholm"
+        }
       ],
       "recent_activity": "Q3 2024: Litorina V deployment: 12 platform investments completed (€800M deployed). Recent exits: Brödernas sold to EQT (€300M), Care of Carl to KKR (€250M). New investments: SellPower business services (€80M), Physical Medicine Group (€120M). Fund performance: 18% IRR across Fund V. Team expansion: 8 new hires across Stockholm and Copenhagen. Sustainability initiatives: 50% portfolio companies carbon neutral. Exploring AI and digital health opportunities. New Fund VI launch planned for Q4 2024 (€1.2B target)."
     },
@@ -157,72 +452,395 @@
       "founded": 2013,
       "aum": "€3 billion",
       "employees": "60+",
-      "offices": ["Stockholm", "Oslo", "Helsinki"],
+      "offices": [
+        "Stockholm",
+        "Oslo",
+        "Helsinki"
+      ],
       "description": "Adelis Equity Partners invests in leading Nordic lower mid-market companies within the B2B segment. The firm focuses on business services and tech-enabled services with strong recurring revenue models.",
       "investment_focus": {
-        "sectors": ["Business Services", "Tech & Software", "Healthcare & Life Sciences"],
-        "geography": ["Nordic region", "Northern Europe"],
+        "sectors": [
+          "Business Services",
+          "Tech & Software",
+          "Healthcare & Life Sciences"
+        ],
+        "geography": [
+          "Nordic region",
+          "Northern Europe"
+        ],
         "deal_size": "€50M - €400M",
-        "investment_type": ["Lower mid-market buyouts", "Add-on acquisitions", "Growth capital"]
+        "investment_type": [
+          "Lower mid-market buyouts",
+          "Add-on acquisitions",
+          "Growth capital"
+        ]
       },
       "team": [
-        {"name": "Staffan Proos", "title": "Founding Partner", "location": "Stockholm"},
-        {"name": "Erik Mitteregger", "title": "Managing Partner", "location": "Stockholm"},
-        {"name": "Kristian Tofte", "title": "Partner", "location": "Oslo"},
-        {"name": "Henrik Löfgren", "title": "Partner", "location": "Stockholm"},
-        {"name": "Mikael Blomquist", "title": "Partner, Tech & Software", "location": "Stockholm"},
-        {"name": "Anna Bernhardsson", "title": "CFO", "location": "Stockholm"},
-        {"name": "Johan Ericsson", "title": "Partner, Business Services", "location": "Helsinki"},
-        {"name": "Lisa Lindqvist", "title": "Senior Investment Manager", "location": "Stockholm"}
+        {
+          "name": "Staffan Proos",
+          "title": "Founding Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Erik Mitteregger",
+          "title": "Managing Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Kristian Tofte",
+          "title": "Partner",
+          "location": "Oslo"
+        },
+        {
+          "name": "Henrik Löfgren",
+          "title": "Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Mikael Blomquist",
+          "title": "Partner, Tech & Software",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Anna Bernhardsson",
+          "title": "CFO",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Johan Ericsson",
+          "title": "Partner, Business Services",
+          "location": "Helsinki"
+        },
+        {
+          "name": "Lisa Lindqvist",
+          "title": "Senior Investment Manager",
+          "location": "Stockholm"
+        }
       ],
-      "recent_activity": "Q3 2024: Adelis Fund IV closed at €1.8B (oversubscribed by 60%). Active portfolio of 46 platform companies across Nordic region. Strong focus on business services, technology, and healthcare. Recent add-on acquisitions expanding Nordomatic, Med Group, and Puuilo platforms. Team growth: 10 new hires across Stockholm, Oslo and Helsinki. Sustainability focus: 100% ESG integration. Strong performance: Fund III showing 24% IRR. New Fund V launch planned for Q1 2025 (€2.5B target).",
+      "recent_activity": "Adelis Equity is an active private equity firm focused on Nordic investments. Please visit their website for the latest news and updates.",
       "portfolio_companies": [
-        {"name": "Retta", "sector": "Business Services", "country": "Sweden", "logo": "https://logo.clearbit.com/retta.se", "description": "Leading Nordic business services provider"},
-        {"name": "Bryntum", "sector": "Technology & Software", "country": "Sweden", "logo": "https://logo.clearbit.com/bryntum.com", "description": "JavaScript UI components for web applications"},
-        {"name": "Circura Denmark", "sector": "Construction Services", "country": "Denmark", "logo": "https://logo.clearbit.com/circura.dk", "description": "Specialized construction and renovation services"},
-        {"name": "Btwentyfour", "sector": "Business Services", "country": "Nordic", "logo": "https://logo.clearbit.com/btwentyfour.com", "description": "24/7 business process outsourcing"},
-        {"name": "Cedra", "sector": "Healthcare & Pharmacy", "country": "Nordic", "logo": "https://logo.clearbit.com/cedra.se", "description": "Pharmacy chain and healthcare services"},
-        {"name": "Citco", "sector": "Business Services", "country": "Nordic", "logo": "https://logo.clearbit.com/citco.se", "description": "Corporate services and administration"},
-        {"name": "Hedvig", "sector": "Insurance & Fintech", "country": "Sweden", "logo": "https://logo.clearbit.com/hedvig.com", "description": "Digital insurance platform with AI-powered claims"},
-        {"name": "Evallic", "sector": "Technology & Software", "country": "Nordic", "logo": "https://logo.clearbit.com/evallic.com", "description": "Enterprise software solutions"},
-        {"name": "Ionopticks", "sector": "Manufacturing", "country": "Sweden", "logo": "https://logo.clearbit.com/ionopticks.com", "description": "Precision optical components manufacturer"},
-        {"name": "Avidly", "sector": "Marketing Services", "country": "Finland", "logo": "https://logo.clearbit.com/avidlyagency.com", "description": "Digital marketing and communications agency"},
-        {"name": "netIP", "sector": "IT Services", "country": "Denmark", "logo": "https://logo.clearbit.com/netip.dk", "description": "Managed IT services and cloud solutions"},
-        {"name": "Aderian", "sector": "Business Services", "country": "Nordic", "logo": "https://logo.clearbit.com/aderian.com", "description": "Professional services and consulting"},
-        {"name": "Diakrit", "sector": "Healthcare Services", "country": "Norway", "logo": "https://logo.clearbit.com/diakrit.no", "description": "Healthcare diagnostics and laboratory services"},
-        {"name": "Unisea", "sector": "Business Services", "country": "Nordic", "logo": "https://logo.clearbit.com/unisea.com", "description": "Unified business service platform"},
-        {"name": "Vokstr", "sector": "Technology & Software", "country": "Nordic", "logo": "https://logo.clearbit.com/vokstr.com", "description": "Voice and communication technology"},
-        {"name": "Dlvry", "sector": "Logistics Tech", "country": "Nordic", "logo": "https://logo.clearbit.com/dlvry.com", "description": "Last-mile delivery optimization platform"},
-        {"name": "QP Westpack", "sector": "Packaging Manufacturing", "country": "Denmark", "logo": "https://logo.clearbit.com/westpack.dk", "description": "Custom packaging solutions for luxury goods"},
-        {"name": "Pixelz", "sector": "Digital Services", "country": "Sweden", "logo": "https://logo.clearbit.com/pixelz.com", "description": "E-commerce image editing and optimization"},
-        {"name": "Europe BioSite", "sector": "Environmental Services", "country": "Denmark", "logo": "https://logo.clearbit.com/europebiosite.com", "description": "Environmental consulting and bio-remediation"},
-        {"name": "Remount", "sector": "Construction Services", "country": "Nordic", "logo": "https://logo.clearbit.com/remount.com", "description": "Construction and infrastructure services"},
-        {"name": "Circura", "sector": "Construction Services", "country": "Sweden", "logo": "https://logo.clearbit.com/circura.se", "description": "Construction and renovation services"},
-        {"name": "Säkra", "sector": "Insurance Broker", "country": "Sweden", "logo": "https://logo.clearbit.com/sakra.se", "description": "Leading pension and insurance broker"},
-        {"name": "Valamis", "sector": "EdTech", "country": "Finland", "logo": "https://logo.clearbit.com/valamis.com", "description": "Learning experience platform and digital education"},
-        {"name": "Kanari", "sector": "Business Services", "country": "Nordic", "logo": "https://logo.clearbit.com/kanari.com", "description": "Business intelligence and analytics services"},
-        {"name": "RO Capital", "sector": "Financial Services", "country": "Nordic", "logo": "https://logo.clearbit.com/rocapital.com", "description": "Investment and financial advisory services"},
-        {"name": "Mobilhouse", "sector": "Modular Buildings", "country": "Denmark", "logo": "https://logo.clearbit.com/mobilhouse.dk", "description": "Modular construction and temporary buildings"},
-        {"name": "Axentia", "sector": "Business Services", "country": "Denmark", "logo": "https://logo.clearbit.com/axentia.com", "description": "Professional services and consulting"},
-        {"name": "Didriksons", "sector": "Consumer & Apparel", "country": "Sweden", "logo": "https://logo.clearbit.com/didriksons.com", "description": "Outdoor clothing and weather protection"},
-        {"name": "Aceve", "sector": "Business Services", "country": "Nordic", "logo": "https://logo.clearbit.com/aceve.com", "description": "Business acceleration and venture services"},
-        {"name": "Generation", "sector": "Business Services", "country": "Nordic", "logo": "https://logo.clearbit.com/generation.se", "description": "Next-generation business services"},
-        {"name": "Knightex", "sector": "Business Services", "country": "Nordic", "logo": "https://logo.clearbit.com/knightex.com", "description": "Executive search and talent services"},
-        {"name": "Valtti", "sector": "Technology & Software", "country": "Finland", "logo": "https://logo.clearbit.com/valtti.fi", "description": "Software development and IT services"},
-        {"name": "Presto Brandsäkerhet", "sector": "Safety & Training", "country": "Sweden", "logo": "https://logo.clearbit.com/presto.se", "description": "Fire safety equipment and training leader"},
-        {"name": "Norddentic", "sector": "Dental Services", "country": "Nordic", "logo": "https://logo.clearbit.com/norddentic.com", "description": "Dental care and oral health services"},
-        {"name": "Mikelti", "sector": "Business Services", "country": "Nordic", "logo": "https://logo.clearbit.com/mikelti.com", "description": "Business process management and consulting"},
-        {"name": "Quattro Group", "sector": "Construction Services", "country": "Denmark", "logo": "https://logo.clearbit.com/quattrogroup.dk", "description": "Multi-service construction and maintenance"},
-        {"name": "AddPro", "sector": "Installation Services", "country": "Sweden", "logo": "https://logo.clearbit.com/addpro.se", "description": "Professional installation and technical services"},
-        {"name": "SSI Diagnostica", "sector": "Healthcare & Diagnostics", "country": "Denmark", "logo": "https://logo.clearbit.com/ssidiagnostica.com", "description": "In vitro diagnostics and medical testing"},
-        {"name": "IT Relation", "sector": "IT Services", "country": "Denmark", "logo": "https://logo.clearbit.com/it-relation.dk", "description": "IT consulting and digital transformation"},
-        {"name": "Nordomatic", "sector": "Building Automation", "country": "Sweden", "logo": "https://logo.clearbit.com/nordomatic.com", "description": "Building automation and energy management leader"},
-        {"name": "Green Team Group", "sector": "Agriculture & Consumer", "country": "Denmark", "logo": "https://logo.clearbit.com/greenteam.dk", "description": "Premium Christmas tree producer and retailer"},
-        {"name": "Puuilo", "sector": "Retail", "country": "Finland", "logo": "https://logo.clearbit.com/puuilo.fi", "description": "DIY and home improvement discount retailer"},
-        {"name": "Intersport Sweden", "sector": "Retail", "country": "Sweden", "logo": "https://logo.clearbit.com/intersport.se", "description": "Leading sports and outdoor equipment retailer"},
-        {"name": "Logent", "sector": "Logistics", "country": "Sweden/Norway", "logo": "https://logo.clearbit.com/logent.se", "description": "Logistics and supply chain management services"},
-        {"name": "NGI", "sector": "Manufacturing", "country": "Sweden", "logo": "https://logo.clearbit.com/ngi-global.com", "description": "Hygienic leveling systems for food industry"},
-        {"name": "Med Group", "sector": "Healthcare Services", "country": "Finland", "logo": "https://logo.clearbit.com/medgroup.fi", "description": "Comprehensive dental and home care services"}
+        {
+          "name": "Retta",
+          "sector": "Business Services",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/retta.se",
+          "description": "Leading Nordic business services provider"
+        },
+        {
+          "name": "Bryntum",
+          "sector": "Technology & Software",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/bryntum.com",
+          "description": "JavaScript UI components for web applications"
+        },
+        {
+          "name": "Circura Denmark",
+          "sector": "Construction Services",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/circura.dk",
+          "description": "Specialized construction and renovation services"
+        },
+        {
+          "name": "Btwentyfour",
+          "sector": "Business Services",
+          "country": "Nordic",
+          "logo": "https://logo.clearbit.com/btwentyfour.com",
+          "description": "24/7 business process outsourcing"
+        },
+        {
+          "name": "Cedra",
+          "sector": "Healthcare & Pharmacy",
+          "country": "Nordic",
+          "logo": "https://logo.clearbit.com/cedra.se",
+          "description": "Pharmacy chain and healthcare services"
+        },
+        {
+          "name": "Citco",
+          "sector": "Business Services",
+          "country": "Nordic",
+          "logo": "https://logo.clearbit.com/citco.se",
+          "description": "Corporate services and administration"
+        },
+        {
+          "name": "Hedvig",
+          "sector": "Insurance & Fintech",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/hedvig.com",
+          "description": "Digital insurance platform with AI-powered claims"
+        },
+        {
+          "name": "Evallic",
+          "sector": "Technology & Software",
+          "country": "Nordic",
+          "logo": "https://logo.clearbit.com/evallic.com",
+          "description": "Enterprise software solutions"
+        },
+        {
+          "name": "Ionopticks",
+          "sector": "Manufacturing",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/ionopticks.com",
+          "description": "Precision optical components manufacturer"
+        },
+        {
+          "name": "Avidly",
+          "sector": "Marketing Services",
+          "country": "Finland",
+          "logo": "https://logo.clearbit.com/avidlyagency.com",
+          "description": "Digital marketing and communications agency"
+        },
+        {
+          "name": "netIP",
+          "sector": "IT Services",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/netip.dk",
+          "description": "Managed IT services and cloud solutions"
+        },
+        {
+          "name": "Aderian",
+          "sector": "Business Services",
+          "country": "Nordic",
+          "logo": "https://logo.clearbit.com/aderian.com",
+          "description": "Professional services and consulting"
+        },
+        {
+          "name": "Diakrit",
+          "sector": "Healthcare Services",
+          "country": "Norway",
+          "logo": "https://logo.clearbit.com/diakrit.no",
+          "description": "Healthcare diagnostics and laboratory services"
+        },
+        {
+          "name": "Unisea",
+          "sector": "Business Services",
+          "country": "Nordic",
+          "logo": "https://logo.clearbit.com/unisea.com",
+          "description": "Unified business service platform"
+        },
+        {
+          "name": "Vokstr",
+          "sector": "Technology & Software",
+          "country": "Nordic",
+          "logo": "https://logo.clearbit.com/vokstr.com",
+          "description": "Voice and communication technology"
+        },
+        {
+          "name": "Dlvry",
+          "sector": "Logistics Tech",
+          "country": "Nordic",
+          "logo": "https://logo.clearbit.com/dlvry.com",
+          "description": "Last-mile delivery optimization platform"
+        },
+        {
+          "name": "QP Westpack",
+          "sector": "Packaging Manufacturing",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/westpack.dk",
+          "description": "Custom packaging solutions for luxury goods"
+        },
+        {
+          "name": "Pixelz",
+          "sector": "Digital Services",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/pixelz.com",
+          "description": "E-commerce image editing and optimization"
+        },
+        {
+          "name": "Europe BioSite",
+          "sector": "Environmental Services",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/europebiosite.com",
+          "description": "Environmental consulting and bio-remediation"
+        },
+        {
+          "name": "Remount",
+          "sector": "Construction Services",
+          "country": "Nordic",
+          "logo": "https://logo.clearbit.com/remount.com",
+          "description": "Construction and infrastructure services"
+        },
+        {
+          "name": "Circura",
+          "sector": "Construction Services",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/circura.se",
+          "description": "Construction and renovation services"
+        },
+        {
+          "name": "Säkra",
+          "sector": "Insurance Broker",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/sakra.se",
+          "description": "Leading pension and insurance broker"
+        },
+        {
+          "name": "Valamis",
+          "sector": "EdTech",
+          "country": "Finland",
+          "logo": "https://logo.clearbit.com/valamis.com",
+          "description": "Learning experience platform and digital education"
+        },
+        {
+          "name": "Kanari",
+          "sector": "Business Services",
+          "country": "Nordic",
+          "logo": "https://logo.clearbit.com/kanari.com",
+          "description": "Business intelligence and analytics services"
+        },
+        {
+          "name": "RO Capital",
+          "sector": "Financial Services",
+          "country": "Nordic",
+          "logo": "https://logo.clearbit.com/rocapital.com",
+          "description": "Investment and financial advisory services"
+        },
+        {
+          "name": "Mobilhouse",
+          "sector": "Modular Buildings",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/mobilhouse.dk",
+          "description": "Modular construction and temporary buildings"
+        },
+        {
+          "name": "Axentia",
+          "sector": "Business Services",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/axentia.com",
+          "description": "Professional services and consulting"
+        },
+        {
+          "name": "Didriksons",
+          "sector": "Consumer & Apparel",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/didriksons.com",
+          "description": "Outdoor clothing and weather protection"
+        },
+        {
+          "name": "Aceve",
+          "sector": "Business Services",
+          "country": "Nordic",
+          "logo": "https://logo.clearbit.com/aceve.com",
+          "description": "Business acceleration and venture services"
+        },
+        {
+          "name": "Generation",
+          "sector": "Business Services",
+          "country": "Nordic",
+          "logo": "https://logo.clearbit.com/generation.se",
+          "description": "Next-generation business services"
+        },
+        {
+          "name": "Knightex",
+          "sector": "Business Services",
+          "country": "Nordic",
+          "logo": "https://logo.clearbit.com/knightex.com",
+          "description": "Executive search and talent services"
+        },
+        {
+          "name": "Valtti",
+          "sector": "Technology & Software",
+          "country": "Finland",
+          "logo": "https://logo.clearbit.com/valtti.fi",
+          "description": "Software development and IT services"
+        },
+        {
+          "name": "Presto Brandsäkerhet",
+          "sector": "Safety & Training",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/presto.se",
+          "description": "Fire safety equipment and training leader"
+        },
+        {
+          "name": "Norddentic",
+          "sector": "Dental Services",
+          "country": "Nordic",
+          "logo": "https://logo.clearbit.com/norddentic.com",
+          "description": "Dental care and oral health services"
+        },
+        {
+          "name": "Mikelti",
+          "sector": "Business Services",
+          "country": "Nordic",
+          "logo": "https://logo.clearbit.com/mikelti.com",
+          "description": "Business process management and consulting"
+        },
+        {
+          "name": "Quattro Group",
+          "sector": "Construction Services",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/quattrogroup.dk",
+          "description": "Multi-service construction and maintenance"
+        },
+        {
+          "name": "AddPro",
+          "sector": "Installation Services",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/addpro.se",
+          "description": "Professional installation and technical services"
+        },
+        {
+          "name": "SSI Diagnostica",
+          "sector": "Healthcare & Diagnostics",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/ssidiagnostica.com",
+          "description": "In vitro diagnostics and medical testing"
+        },
+        {
+          "name": "IT Relation",
+          "sector": "IT Services",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/it-relation.dk",
+          "description": "IT consulting and digital transformation"
+        },
+        {
+          "name": "Nordomatic",
+          "sector": "Building Automation",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/nordomatic.com",
+          "description": "Building automation and energy management leader"
+        },
+        {
+          "name": "Green Team Group",
+          "sector": "Agriculture & Consumer",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/greenteam.dk",
+          "description": "Premium Christmas tree producer and retailer"
+        },
+        {
+          "name": "Puuilo",
+          "sector": "Retail",
+          "country": "Finland",
+          "logo": "https://logo.clearbit.com/puuilo.fi",
+          "description": "DIY and home improvement discount retailer"
+        },
+        {
+          "name": "Intersport Sweden",
+          "sector": "Retail",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/intersport.se",
+          "description": "Leading sports and outdoor equipment retailer"
+        },
+        {
+          "name": "Logent",
+          "sector": "Logistics",
+          "country": "Sweden/Norway",
+          "logo": "https://logo.clearbit.com/logent.se",
+          "description": "Logistics and supply chain management services"
+        },
+        {
+          "name": "NGI",
+          "sector": "Manufacturing",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/ngi-global.com",
+          "description": "Hygienic leveling systems for food industry"
+        },
+        {
+          "name": "Med Group",
+          "sector": "Healthcare Services",
+          "country": "Finland",
+          "logo": "https://logo.clearbit.com/medgroup.fi",
+          "description": "Comprehensive dental and home care services"
+        }
       ]
     },
     "Ratos": {
@@ -233,19 +851,47 @@
       "founded": 1866,
       "aum": "SEK 15 billion",
       "employees": "90+",
-      "offices": ["Stockholm"],
+      "offices": [
+        "Stockholm"
+      ],
       "description": "Ratos is a Swedish private equity firm with 150+ years of history. The company invests in and develops Nordic medium-sized companies within Industry, Construction & Services, and Consumer sectors.",
       "investment_focus": {
-        "sectors": ["Industrial", "Construction & Services", "Consumer"],
-        "geography": ["Nordic region"],
+        "sectors": [
+          "Industrial",
+          "Construction & Services",
+          "Consumer"
+        ],
+        "geography": [
+          "Nordic region"
+        ],
         "deal_size": "SEK 500M - SEK 5B",
-        "investment_type": ["Mid-market buyouts", "Carve-outs", "Public-to-private"]
+        "investment_type": [
+          "Mid-market buyouts",
+          "Carve-outs",
+          "Public-to-private"
+        ]
       },
       "team": [
-        {"name": "Jonas Wiström", "title": "President & CEO", "location": "Stockholm"},
-        {"name": "Helene Gustafsson", "title": "CFO", "location": "Stockholm"},
-        {"name": "Magnus Stephensen", "title": "Head of Construction & Services", "location": "Stockholm"},
-        {"name": "Magnus Jacobsson", "title": "Head of Industry", "location": "Stockholm"}
+        {
+          "name": "Jonas Wiström",
+          "title": "President & CEO",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Helene Gustafsson",
+          "title": "CFO",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Magnus Stephensen",
+          "title": "Head of Construction & Services",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Magnus Jacobsson",
+          "title": "Head of Industry",
+          "location": "Stockholm"
+        }
       ],
       "recent_activity": "Q3 2024: Major portfolio restructuring: HENT and SSEA merger completed forming Sentia (€1.5B combined entity). Recent exits: Bisnode sold to Dun & Bradstreet (€400M), LEDiL to EQT (€300M). New investments: airteam business services (€150M), Speed Group logistics (€200M). Fund performance: 20% IRR across current portfolio. Team expansion: 15 new hires across Stockholm and Oslo. Sustainability initiatives: 40% portfolio companies carbon neutral. Exploring AI and climate tech opportunities. New Fund VI launch planned for Q2 2025 (€1.5B target)."
     },
@@ -257,19 +903,52 @@
       "founded": 2016,
       "aum": "€4 billion",
       "employees": "80+",
-      "offices": ["Stockholm", "London", "Copenhagen"],
+      "offices": [
+        "Stockholm",
+        "London",
+        "Copenhagen"
+      ],
       "description": "Summa Equity is a purpose-driven private equity firm investing in companies that contribute to solving the UN Sustainable Development Goals. The firm focuses on five investment themes addressing global challenges.",
       "investment_focus": {
-        "sectors": ["Circularity", "Energy Transition", "Sustainable Food", "Tech-Enabled Resilience", "Changing Demographics"],
-        "geography": ["Europe", "North America"],
+        "sectors": [
+          "Circularity",
+          "Energy Transition",
+          "Sustainable Food",
+          "Tech-Enabled Resilience",
+          "Changing Demographics"
+        ],
+        "geography": [
+          "Europe",
+          "North America"
+        ],
         "deal_size": "€100M - €500M",
-        "investment_type": ["Growth equity", "Buyouts", "Impact investing"]
+        "investment_type": [
+          "Growth equity",
+          "Buyouts",
+          "Impact investing"
+        ]
       },
       "team": [
-        {"name": "Reynir Indahl", "title": "Founding Partner", "location": "Stockholm"},
-        {"name": "Olle Bergman", "title": "Managing Partner", "location": "Stockholm"},
-        {"name": "Peder Hasslev", "title": "Partner", "location": "Stockholm"},
-        {"name": "Johan H. Andersson", "title": "Partner", "location": "Stockholm"}
+        {
+          "name": "Reynir Indahl",
+          "title": "Founding Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Olle Bergman",
+          "title": "Managing Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Peder Hasslev",
+          "title": "Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Johan H. Andersson",
+          "title": "Partner",
+          "location": "Stockholm"
+        }
       ],
       "recent_activity": "Q3 2024: Summa Circular Fund closed at €500M (oversubscribed by 80%). Recent exits: Meltwater sold to EQT (€800M), Cabonline to KKR (€600M). New investments: ISS Facility Services (€1.2B), Norican industrial tech (€800M). Fund performance: 22% IRR across Fund II. Team growth: 12 new hires across Stockholm and Copenhagen. Sustainability focus: 100% circular economy investments. Strong portfolio performance: 25% revenue growth across portfolio. Exploring AI and climate tech opportunities. New Fund III launch planned for Q3 2025 (€1.5B target)."
     },
@@ -281,23 +960,59 @@
       "founded": 2013,
       "aum": "SEK 10 billion",
       "employees": "35+",
-      "offices": ["Stockholm"],
+      "offices": [
+        "Stockholm"
+      ],
       "description": "Accent Equity Partners invests in Nordic industrial companies with strong market positions and potential for operational improvements and internationalization.",
       "investment_focus": {
-        "sectors": ["Industrial", "Business Services", "Technology", "Consumer"],
-        "geography": ["Nordic region"],
+        "sectors": [
+          "Industrial",
+          "Business Services",
+          "Technology",
+          "Consumer"
+        ],
+        "geography": [
+          "Nordic region"
+        ],
         "deal_size": "SEK 200M - SEK 1.5B",
-        "investment_type": ["Lower mid-market buyouts", "Family succession"]
+        "investment_type": [
+          "Lower mid-market buyouts",
+          "Family succession"
+        ]
       },
       "team": [
-        {"name": "Patrik Johansson", "title": "Managing Partner", "location": "Stockholm"},
-        {"name": "Mikael Klingberg", "title": "Partner", "location": "Stockholm"},
-        {"name": "Fredrik Carlsson", "title": "Partner", "location": "Stockholm"},
-        {"name": "Sara Norberg", "title": "Partner, Technology", "location": "Stockholm"},
-        {"name": "Anders Holmgren", "title": "CFO", "location": "Stockholm"},
-        {"name": "Emma Lindström", "title": "Investment Director", "location": "Stockholm"}
+        {
+          "name": "Patrik Johansson",
+          "title": "Managing Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Mikael Klingberg",
+          "title": "Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Fredrik Carlsson",
+          "title": "Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Sara Norberg",
+          "title": "Partner, Technology",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Anders Holmgren",
+          "title": "CFO",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Emma Lindström",
+          "title": "Investment Director",
+          "location": "Stockholm"
+        }
       ],
-      "recent_activity": "Q3 2024: Accent Fund VI first close at SEK 5B (target SEK 8B). Recent exits: Hedda.io sold to EQT (€200M), Tempus to KKR (€150M). New investments: Starweb e-commerce (€100M), 3 new platform investments. Fund deployment: 40% committed across 21 portfolio companies. Team growth: 8 new hires across Stockholm and Copenhagen. Sustainability initiatives: 60% portfolio companies carbon neutral. Strong performance: Fund V showing 19% IRR. Exploring AI and digital health opportunities. New Fund VII launch planned for Q4 2024 (SEK 10B target)."
+      "recent_activity": "Accent Equity is an active private equity firm focused on Nordic investments. Please visit their website for the latest news and updates."
     },
     "IK Partners": {
       "name": "IK Partners (formerly IK Investment Partners)",
@@ -307,32 +1022,126 @@
       "founded": 1989,
       "aum": "€14 billion",
       "employees": "120+",
-      "offices": ["London", "Stockholm", "Hamburg", "Paris", "New York"],
+      "offices": [
+        "London",
+        "Stockholm",
+        "Hamburg",
+        "Paris",
+        "New York"
+      ],
       "description": "IK Partners is a European private equity firm focused on the Nordic and DACH regions, investing in mid-market companies with strong growth potential.",
       "investment_focus": {
-        "sectors": ["Business Services", "Consumer", "Healthcare", "Technology"],
-        "geography": ["Nordic", "DACH", "Western Europe"],
+        "sectors": [
+          "Business Services",
+          "Consumer",
+          "Healthcare",
+          "Technology"
+        ],
+        "geography": [
+          "Nordic",
+          "DACH",
+          "Western Europe"
+        ],
         "deal_size": "€100M - €500M",
-        "investment_type": ["Mid-market buyouts", "Growth capital"]
+        "investment_type": [
+          "Mid-market buyouts",
+          "Growth capital"
+        ]
       },
       "team": [
-        {"name": "Morten Giørtz-Carlsen", "title": "CEO and Partner", "location": "London"},
-        {"name": "Peter Axelsson", "title": "Partner", "location": "Stockholm"},
-        {"name": "Henrik Thuring", "title": "Partner", "location": "Stockholm"},
-        {"name": "Thomas Rossander", "title": "Partner", "location": "Stockholm"}
+        {
+          "name": "Morten Giørtz-Carlsen",
+          "title": "CEO and Partner",
+          "location": "London"
+        },
+        {
+          "name": "Peter Axelsson",
+          "title": "Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Henrik Thuring",
+          "title": "Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Thomas Rossander",
+          "title": "Partner",
+          "location": "Stockholm"
+        }
       ],
       "recent_activity": "Q3 2024: IK IX Fund closed at €3.5B. Recent exits: Egmont Media (€800M), Jollyroom e-commerce (€400M). New investments: Mamut Software (€200M), Iver business services (€150M). Strong Nordic presence with 4 new platform investments. Team expansion: 10 new hires. Sustainability: 100% ESG integration.",
       "portfolio_companies": [
-        {"name": "Aspia", "sector": "Business Services", "country": "Sweden", "logo": "https://logo.clearbit.com/aspia.se", "description": "Leading accounting, payroll, tax, and advisory services"},
-        {"name": "Kersia", "sector": "Industrial & Manufacturing", "country": "France", "logo": "https://logo.clearbit.com/kersia-group.com", "description": "Global leader in biosecurity and food safety solutions"},
-        {"name": "Colisée", "sector": "Healthcare Services", "country": "France", "logo": "https://logo.clearbit.com/colisee.com", "description": "European leader in elderly care services"},
-        {"name": "Mamut Software", "sector": "Technology & Software", "country": "Norway", "logo": "https://logo.clearbit.com/mamut.com", "description": "Business software solutions for SMEs"},
-        {"name": "Iver", "sector": "Business Services", "country": "Norway", "logo": "https://logo.clearbit.com/iver.no", "description": "Professional services and consulting"},
-        {"name": "Jollyroom", "sector": "E-commerce & Retail", "country": "Sweden", "logo": "https://logo.clearbit.com/jollyroom.se", "description": "Leading Nordic children's e-commerce platform"},
-        {"name": "Egmont Media", "sector": "Media & Entertainment", "country": "Nordic", "logo": "https://logo.clearbit.com/egmont.com", "description": "Nordic media and entertainment company"},
-        {"name": "Visma", "sector": "Technology & Software", "country": "Nordic", "logo": "https://logo.clearbit.com/visma.com", "description": "Leading Nordic business software company"},
-        {"name": "Loomis", "sector": "Financial Services", "country": "Sweden", "logo": "https://logo.clearbit.com/loomis.com", "description": "Cash handling and security services"},
-        {"name": "Terveystalo", "sector": "Healthcare Services", "country": "Finland", "logo": "https://logo.clearbit.com/terveystalo.com", "description": "Leading private healthcare provider"}
+        {
+          "name": "Aspia",
+          "sector": "Business Services",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/aspia.se",
+          "description": "Leading accounting, payroll, tax, and advisory services"
+        },
+        {
+          "name": "Kersia",
+          "sector": "Industrial & Manufacturing",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/kersia-group.com",
+          "description": "Global leader in biosecurity and food safety solutions"
+        },
+        {
+          "name": "Colisée",
+          "sector": "Healthcare Services",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/colisee.com",
+          "description": "European leader in elderly care services"
+        },
+        {
+          "name": "Mamut Software",
+          "sector": "Technology & Software",
+          "country": "Norway",
+          "logo": "https://logo.clearbit.com/mamut.com",
+          "description": "Business software solutions for SMEs"
+        },
+        {
+          "name": "Iver",
+          "sector": "Business Services",
+          "country": "Norway",
+          "logo": "https://logo.clearbit.com/iver.no",
+          "description": "Professional services and consulting"
+        },
+        {
+          "name": "Jollyroom",
+          "sector": "E-commerce & Retail",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/jollyroom.se",
+          "description": "Leading Nordic children's e-commerce platform"
+        },
+        {
+          "name": "Egmont Media",
+          "sector": "Media & Entertainment",
+          "country": "Nordic",
+          "logo": "https://logo.clearbit.com/egmont.com",
+          "description": "Nordic media and entertainment company"
+        },
+        {
+          "name": "Visma",
+          "sector": "Technology & Software",
+          "country": "Nordic",
+          "logo": "https://logo.clearbit.com/visma.com",
+          "description": "Leading Nordic business software company"
+        },
+        {
+          "name": "Loomis",
+          "sector": "Financial Services",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/loomis.com",
+          "description": "Cash handling and security services"
+        },
+        {
+          "name": "Terveystalo",
+          "sector": "Healthcare Services",
+          "country": "Finland",
+          "logo": "https://logo.clearbit.com/terveystalo.com",
+          "description": "Leading private healthcare provider"
+        }
       ]
     },
     "Verdane": {
@@ -343,37 +1152,159 @@
       "founded": 2003,
       "aum": "€7 billion",
       "employees": "100+",
-      "offices": ["Oslo", "Stockholm", "Copenhagen", "Helsinki", "London"],
+      "offices": [
+        "Oslo",
+        "Stockholm",
+        "Copenhagen",
+        "Helsinki",
+        "London"
+      ],
       "description": "Verdane is a specialist growth equity investor focusing on fast-growing tech and healthcare companies in Northern Europe.",
       "investment_focus": {
-        "sectors": ["Software", "Digital Services", "Healthcare Tech"],
-        "geography": ["Nordic region", "Northern Europe"],
+        "sectors": [
+          "Software",
+          "Digital Services",
+          "Healthcare Tech"
+        ],
+        "geography": [
+          "Nordic region",
+          "Northern Europe"
+        ],
         "deal_size": "€50M - €300M",
-        "investment_type": ["Growth equity", "Buy-and-build"]
+        "investment_type": [
+          "Growth equity",
+          "Buy-and-build"
+        ]
       },
       "team": [
-        {"name": "Bjarne Lie", "title": "Managing Partner", "location": "Oslo"},
-        {"name": "Erik Malmberg", "title": "Partner", "location": "Stockholm"},
-        {"name": "Haakon Storli", "title": "Partner", "location": "Oslo"},
-        {"name": "Rikke Stampe Skov", "title": "Partner", "location": "Copenhagen"}
+        {
+          "name": "Bjarne Lie",
+          "title": "Managing Partner",
+          "location": "Oslo"
+        },
+        {
+          "name": "Erik Malmberg",
+          "title": "Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Haakon Storli",
+          "title": "Partner",
+          "location": "Oslo"
+        },
+        {
+          "name": "Rikke Stampe Skov",
+          "title": "Partner",
+          "location": "Copenhagen"
+        }
       ],
-      "recent_activity": "Q3 2024: Verdane Capital X closed at €2.5B. Recent exits: Unacast data analytics (€200M), PSI CRO (€300M). New investments: Certego security (€150M), Gelato e-commerce (€200M). Strong tech portfolio performance: 30% revenue growth. Team expansion: 8 new hires.",
+      "recent_activity": "Verdane is an active private equity firm focused on Nordic investments. Please visit their website for the latest news and updates.",
       "portfolio_companies": [
-        {"name": "Voyado", "sector": "Technology & Software", "country": "Sweden", "logo": "https://logo.clearbit.com/voyado.com", "description": "Multichannel marketing and customer experience platform"},
-        {"name": "Lumene Group", "sector": "Consumer & Beauty", "country": "Finland", "logo": "https://logo.clearbit.com/lumene.com", "description": "Nordic beauty and cosmetics brand"},
-        {"name": "Parkopedia", "sector": "Technology & Software", "country": "UK", "logo": "https://logo.clearbit.com/parkopedia.com", "description": "Global parking service provider and data platform"},
-        {"name": "Unacast", "sector": "Data & Analytics", "country": "Norway", "logo": "https://logo.clearbit.com/unacast.com", "description": "Location data and analytics platform"},
-        {"name": "PSI CRO", "sector": "Healthcare Tech", "country": "Poland", "logo": "https://logo.clearbit.com/psi-cro.com", "description": "Clinical research organization services"},
-        {"name": "Certego", "sector": "Cybersecurity", "country": "Italy", "logo": "https://logo.clearbit.com/certego.net", "description": "Cybersecurity threat intelligence platform"},
-        {"name": "Gelato", "sector": "E-commerce & Print", "country": "Norway", "logo": "https://logo.clearbit.com/gelato.com", "description": "Global print-on-demand and e-commerce platform"},
-        {"name": "Mentimeter", "sector": "EdTech & Software", "country": "Sweden", "logo": "https://logo.clearbit.com/mentimeter.com", "description": "Interactive presentation and polling platform"},
-        {"name": "Funnel", "sector": "Marketing Tech", "country": "Sweden", "logo": "https://logo.clearbit.com/funnel.io", "description": "Marketing data platform and analytics"},
-        {"name": "Getsafe", "sector": "InsurTech", "country": "Germany", "logo": "https://logo.clearbit.com/getsafe.com", "description": "Digital insurance platform and mobile app"},
-        {"name": "Labster", "sector": "EdTech", "country": "Denmark", "logo": "https://logo.clearbit.com/labster.com", "description": "Virtual laboratory simulations for education"},
-        {"name": "Hibob", "sector": "HR Tech", "country": "UK", "logo": "https://logo.clearbit.com/hibob.com", "description": "Modern HR platform for growing companies"},
-        {"name": "Dixa", "sector": "Customer Service Tech", "country": "Denmark", "logo": "https://logo.clearbit.com/dixa.com", "description": "Customer service platform and conversation management"},
-        {"name": "Bambora", "sector": "FinTech", "country": "Sweden", "logo": "https://logo.clearbit.com/bambora.com", "description": "Payment processing and financial services platform"},
-        {"name": "Freckle", "sector": "AdTech", "country": "Norway", "logo": "https://logo.clearbit.com/freckle.com", "description": "Programmatic advertising and media buying platform"}
+        {
+          "name": "Voyado",
+          "sector": "Technology & Software",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/voyado.com",
+          "description": "Multichannel marketing and customer experience platform"
+        },
+        {
+          "name": "Lumene Group",
+          "sector": "Consumer & Beauty",
+          "country": "Finland",
+          "logo": "https://logo.clearbit.com/lumene.com",
+          "description": "Nordic beauty and cosmetics brand"
+        },
+        {
+          "name": "Parkopedia",
+          "sector": "Technology & Software",
+          "country": "UK",
+          "logo": "https://logo.clearbit.com/parkopedia.com",
+          "description": "Global parking service provider and data platform"
+        },
+        {
+          "name": "Unacast",
+          "sector": "Data & Analytics",
+          "country": "Norway",
+          "logo": "https://logo.clearbit.com/unacast.com",
+          "description": "Location data and analytics platform"
+        },
+        {
+          "name": "PSI CRO",
+          "sector": "Healthcare Tech",
+          "country": "Poland",
+          "logo": "https://logo.clearbit.com/psi-cro.com",
+          "description": "Clinical research organization services"
+        },
+        {
+          "name": "Certego",
+          "sector": "Cybersecurity",
+          "country": "Italy",
+          "logo": "https://logo.clearbit.com/certego.net",
+          "description": "Cybersecurity threat intelligence platform"
+        },
+        {
+          "name": "Gelato",
+          "sector": "E-commerce & Print",
+          "country": "Norway",
+          "logo": "https://logo.clearbit.com/gelato.com",
+          "description": "Global print-on-demand and e-commerce platform"
+        },
+        {
+          "name": "Mentimeter",
+          "sector": "EdTech & Software",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/mentimeter.com",
+          "description": "Interactive presentation and polling platform"
+        },
+        {
+          "name": "Funnel",
+          "sector": "Marketing Tech",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/funnel.io",
+          "description": "Marketing data platform and analytics"
+        },
+        {
+          "name": "Getsafe",
+          "sector": "InsurTech",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/getsafe.com",
+          "description": "Digital insurance platform and mobile app"
+        },
+        {
+          "name": "Labster",
+          "sector": "EdTech",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/labster.com",
+          "description": "Virtual laboratory simulations for education"
+        },
+        {
+          "name": "Hibob",
+          "sector": "HR Tech",
+          "country": "UK",
+          "logo": "https://logo.clearbit.com/hibob.com",
+          "description": "Modern HR platform for growing companies"
+        },
+        {
+          "name": "Dixa",
+          "sector": "Customer Service Tech",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/dixa.com",
+          "description": "Customer service platform and conversation management"
+        },
+        {
+          "name": "Bambora",
+          "sector": "FinTech",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/bambora.com",
+          "description": "Payment processing and financial services platform"
+        },
+        {
+          "name": "Freckle",
+          "sector": "AdTech",
+          "country": "Norway",
+          "logo": "https://logo.clearbit.com/freckle.com",
+          "description": "Programmatic advertising and media buying platform"
+        }
       ]
     },
     "Valedo Partners": {
@@ -384,28 +1315,93 @@
       "founded": 2012,
       "aum": "SEK 25 billion",
       "employees": "40+",
-      "offices": ["Stockholm"],
+      "offices": [
+        "Stockholm"
+      ],
       "description": "Valedo Partners is a Swedish private equity firm investing in listed Nordic small and mid-cap companies with strong fundamentals.",
       "investment_focus": {
-        "sectors": ["Technology", "Consumer", "Industrial"],
-        "geography": ["Nordic region"],
+        "sectors": [
+          "Technology",
+          "Consumer",
+          "Industrial"
+        ],
+        "geography": [
+          "Nordic region"
+        ],
         "deal_size": "SEK 500M - 3B",
-        "investment_type": ["Public-to-private", "Listed equity"]
+        "investment_type": [
+          "Public-to-private",
+          "Listed equity"
+        ]
       },
       "team": [
-        {"name": "Björn Björnsson", "title": "Managing Partner", "location": "Stockholm"},
-        {"name": "Henrik Blomquist", "title": "Partner", "location": "Stockholm"},
-        {"name": "Johan Lannebo", "title": "Partner", "location": "Stockholm"}
+        {
+          "name": "Björn Björnsson",
+          "title": "Managing Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Henrik Blomquist",
+          "title": "Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Johan Lannebo",
+          "title": "Partner",
+          "location": "Stockholm"
+        }
       ],
       "recent_activity": "Q3 2024: Active portfolio management across 5 listed holdings. Inwido building products performing well. Paradox Interactive gaming expansion. Doro technology turnaround ongoing. CTT Systems aerospace growth. Fund II planning stages.",
       "portfolio_companies": [
-        {"name": "Paradox Interactive", "sector": "Gaming & Entertainment", "country": "Sweden", "logo": "https://logo.clearbit.com/paradoxinteractive.com", "description": "Leading developer and publisher of strategy games"},
-        {"name": "Inwido", "sector": "Building Products", "country": "Sweden", "logo": "https://logo.clearbit.com/inwido.com", "description": "Leading European window and door manufacturer"},
-        {"name": "Doro", "sector": "Technology & Telecom", "country": "Sweden", "logo": "https://logo.clearbit.com/doro.com", "description": "Mobile phone solutions for seniors and accessibility"},
-        {"name": "CTT Systems", "sector": "Aerospace & Defense", "country": "Sweden", "logo": "https://logo.clearbit.com/cttsystems.se", "description": "Aircraft humidity control and cabin air systems"},
-        {"name": "Lakrids by Johan Bülow", "sector": "Consumer & Food", "country": "Denmark", "logo": "https://logo.clearbit.com/lakrids.com", "description": "Premium liquorice brand and confectionery"},
-        {"name": "Norva 24", "sector": "Environmental Services", "country": "Norway", "logo": "https://logo.clearbit.com/norva24.no", "description": "Sludge suction and environmental services"},
-        {"name": "Rapunzel of Sweden", "sector": "Consumer & Beauty", "country": "Sweden", "logo": "https://logo.clearbit.com/rapunzel.se", "description": "Hair extensions and beauty products"}
+        {
+          "name": "Paradox Interactive",
+          "sector": "Gaming & Entertainment",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/paradoxinteractive.com",
+          "description": "Leading developer and publisher of strategy games"
+        },
+        {
+          "name": "Inwido",
+          "sector": "Building Products",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/inwido.com",
+          "description": "Leading European window and door manufacturer"
+        },
+        {
+          "name": "Doro",
+          "sector": "Technology & Telecom",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/doro.com",
+          "description": "Mobile phone solutions for seniors and accessibility"
+        },
+        {
+          "name": "CTT Systems",
+          "sector": "Aerospace & Defense",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/cttsystems.se",
+          "description": "Aircraft humidity control and cabin air systems"
+        },
+        {
+          "name": "Lakrids by Johan Bülow",
+          "sector": "Consumer & Food",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/lakrids.com",
+          "description": "Premium liquorice brand and confectionery"
+        },
+        {
+          "name": "Norva 24",
+          "sector": "Environmental Services",
+          "country": "Norway",
+          "logo": "https://logo.clearbit.com/norva24.no",
+          "description": "Sludge suction and environmental services"
+        },
+        {
+          "name": "Rapunzel of Sweden",
+          "sector": "Consumer & Beauty",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/rapunzel.se",
+          "description": "Hair extensions and beauty products"
+        }
       ]
     },
     "Alder": {
@@ -416,18 +1412,44 @@
       "founded": 2012,
       "aum": "SEK 12 billion",
       "employees": "35+",
-      "offices": ["Stockholm", "New York"],
+      "offices": [
+        "Stockholm",
+        "New York"
+      ],
       "description": "Alder is a Swedish private equity firm focused on technology and media companies in Europe and North America.",
       "investment_focus": {
-        "sectors": ["Technology", "Media", "Market Research"],
-        "geography": ["Nordic", "Europe", "North America"],
+        "sectors": [
+          "Technology",
+          "Media",
+          "Market Research"
+        ],
+        "geography": [
+          "Nordic",
+          "Europe",
+          "North America"
+        ],
         "deal_size": "€100M - €500M",
-        "investment_type": ["Buyouts", "Growth capital"]
+        "investment_type": [
+          "Buyouts",
+          "Growth capital"
+        ]
       },
       "team": [
-        {"name": "Jonas Eriksson", "title": "Managing Partner", "location": "Stockholm"},
-        {"name": "Henrik Blomquist", "title": "Partner", "location": "Stockholm"},
-        {"name": "David Mindus", "title": "Partner", "location": "Stockholm"}
+        {
+          "name": "Jonas Eriksson",
+          "title": "Managing Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Henrik Blomquist",
+          "title": "Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "David Mindus",
+          "title": "Partner",
+          "location": "Stockholm"
+        }
       ],
       "recent_activity": "Q3 2024: Alder Fund III in market. Recent activity: Cint market research tech performing strongly, NEP broadcast services expansion in US market. Exploring new media tech opportunities."
     },
@@ -439,22 +1461,216 @@
       "founded": 1992,
       "aum": "SEK 20 billion",
       "employees": "30+",
-      "offices": ["Stockholm"],
+      "offices": [
+        "Stockholm"
+      ],
       "description": "Bure Equity is a Swedish investment company focusing on STEM-related sectors with active ownership approach.",
       "investment_focus": {
-        "sectors": ["Healthcare", "Technology", "STEM sectors"],
-        "geography": ["Nordic region", "Europe"],
+        "sectors": [
+          "Healthcare",
+          "Technology",
+          "STEM sectors"
+        ],
+        "geography": [
+          "Nordic region",
+          "Europe"
+        ],
         "deal_size": "SEK 500M - 2B",
-        "investment_type": ["Active ownership", "Listed & unlisted"]
+        "investment_type": [
+          "Active ownership",
+          "Listed & unlisted"
+        ]
       },
       "team": [
-        {"name": "Henrik Blomquist", "title": "CEO", "location": "Stockholm"},
-        {"name": "Max Jonson", "title": "Investment Director", "location": "Stockholm"},
-        {"name": "Charlotta Jonson", "title": "CFO", "location": "Stockholm"}
+        {
+          "name": "Henrik Blomquist",
+          "title": "CEO",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Max Jonson",
+          "title": "Investment Director",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Charlotta Jonson",
+          "title": "CFO",
+          "location": "Stockholm"
+        }
       ],
-      "recent_activity": "Q3 2024: Strong portfolio performance. Vitrolife healthcare M&A activity. Xvivo Perfusion organ preservation growth. Cavotec industrial tech expansion. Mycronic technology new orders. Cellavision healthcare AI integration."
+      "recent_activity": "Bure Equity is an active private equity firm focused on Nordic investments. Please visit their website for the latest news and updates."
+    },
+    "CapMan": {
+      "name": "CapMan",
+      "logo_url": "https://logo.clearbit.com/capman.com",
+      "website": "https://www.capman.com",
+      "headquarters": "Helsinki, Finland",
+      "founded": 1989,
+      "aum": "€4.5 billion",
+      "employees": "200+",
+      "offices": [
+        "Helsinki",
+        "Stockholm",
+        "Copenhagen",
+        "Oslo",
+        "London"
+      ],
+      "description": "CapMan is a leading Nordic private equity firm managing assets across Buyout, Growth Equity, Infrastructure, Real Estate, and Russian-focused strategies.",
+      "investment_focus": {
+        "sectors": [
+          "Services",
+          "Technology",
+          "Healthcare",
+          "Industrial"
+        ],
+        "geography": [
+          "Nordic region",
+          "Eastern Europe"
+        ],
+        "deal_size": "€30M - €500M",
+        "investment_type": [
+          "Mid-market buyouts",
+          "Growth equity",
+          "Real estate",
+          "Infrastructure"
+        ]
+      },
+      "team": [
+        {
+          "name": "Joakim Simonen",
+          "title": "Chairman and Senior Managing Partner",
+          "location": "Helsinki"
+        },
+        {
+          "name": "Petri Suuronen",
+          "title": "Managing Partner, Buyout",
+          "location": "Helsinki"
+        },
+        {
+          "name": "Tom Lindström",
+          "title": "Managing Partner, Growth",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Hannu Törmänen",
+          "title": "Managing Partner, Real Estate",
+          "location": "Helsinki"
+        },
+        {
+          "name": "Erik Lekander",
+          "title": "Managing Partner, Infrastructure",
+          "location": "Stockholm"
+        }
+      ],
+      "recent_activity": "CapMan is an active private equity firm focused on Nordic investments. Please visit their website for the latest news and updates."
+    },
+    "Celero": {
+      "name": "Celero",
+      "logo_url": "https://ui-avatars.com/api/?name=Celero&background=7c2d12&color=ffffff&size=64",
+      "website": "https://www.celero.eu",
+      "headquarters": "Stockholm, Sweden",
+      "founded": 2015,
+      "aum": "€500 million",
+      "employees": "15+",
+      "offices": [
+        "Stockholm",
+        "Oslo"
+      ],
+      "description": "Celero is a specialized Nordic private equity firm focused on growth capital investments in technology and services companies with proven business models and international expansion potential.",
+      "investment_focus": {
+        "sectors": [
+          "Technology",
+          "Services",
+          "B2B Software",
+          "SaaS"
+        ],
+        "geography": [
+          "Nordic region"
+        ],
+        "deal_size": "€20M - €150M",
+        "investment_type": [
+          "Growth capital",
+          "Minority stakes",
+          "Buy-and-build"
+        ]
+      },
+      "team": [
+        {
+          "name": "Lennart Altmann",
+          "title": "Managing Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Johan Fredriksson",
+          "title": "Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Erik Viklund",
+          "title": "Principal",
+          "location": "Oslo"
+        },
+        {
+          "name": "Marcus Johansson",
+          "title": "Principal",
+          "location": "Stockholm"
+        }
+      ],
+      "recent_activity": "Celero is an active private equity firm focused on Nordic investments. Please visit their website for the latest news and updates."
+    },
+    "Polaris": {
+      "name": "Polaris",
+      "logo_url": "https://ui-avatars.com/api/?name=Polaris&background=1e40af&color=ffffff&size=64",
+      "website": "https://www.polarisprivateequity.com",
+      "headquarters": "Copenhagen, Denmark",
+      "founded": 1998,
+      "aum": "€1.5 billion",
+      "employees": "25+",
+      "offices": [
+        "Copenhagen",
+        "Oslo"
+      ],
+      "description": "Polaris Private Equity is a Nordic private equity firm investing in mid-market companies with strong market positions and growth potential.",
+      "investment_focus": {
+        "sectors": [
+          "Services",
+          "Industrial",
+          "Healthcare",
+          "Business Services"
+        ],
+        "geography": [
+          "Nordic region"
+        ],
+        "deal_size": "€50M - €400M",
+        "investment_type": [
+          "Mid-market buyouts",
+          "Management buyouts",
+          "Corporate carve-outs"
+        ]
+      },
+      "team": [
+        {
+          "name": "Lars Fischer",
+          "title": "Managing Partner",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Jan Juul Hansen",
+          "title": "Partner",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Anders Sundström",
+          "title": "Partner",
+          "location": "Oslo"
+        },
+        {
+          "name": "Karsten Knudsen",
+          "title": "Senior Advisor",
+          "location": "Copenhagen"
+        }
+      ],
+      "recent_activity": "Polaris is an active private equity firm focused on Nordic investments. Please visit their website for the latest news and updates."
     }
   }
 }
-
-
