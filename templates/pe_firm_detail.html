@@ -1099,8 +1099,18 @@ async function loadFirmTimeline(firm, firmName) {
 function loadCompanyUpdates(firm) {
     const container = document.getElementById('companyUpdatesContainer');
     const updates = firm.company_updates || firm.companyUpdates || [];
-    if (!container) return;
+    console.log('Company Updates Debug:', { 
+        container: !!container, 
+        updatesCount: updates.length, 
+        firmName: firm.name,
+        updates: updates.slice(0, 3) // Show first 3 for debugging
+    });
+    if (!container) {
+        console.error('Company updates container not found');
+        return;
+    }
     if (!updates || updates.length === 0) {
+        console.log('No company updates found');
         container.innerHTML = '<p style="color: var(--text-secondary);">No company updates yet.</p>';
         return;
     }
@@ -1298,15 +1308,16 @@ function loadInvestmentFocus(firm) {
     const analysis = generateInvestmentFocusAnalysis(firm, updates);
     
     container.innerHTML = `
-        <div style="display: grid; gap: 0.4rem;">
+        <div style="display: flex; flex-direction: column; gap: 0.6rem;">
             ${analysis.map(section => `
-                <div style="padding: 0.4rem; background: #f8fafc; border-radius: 6px; border-left: 4px solid ${section.color};">
-                    <h4 style="font-size: 0.6rem; font-weight: 700; color: #1e293b; margin: 0 0 0.3rem 0; display: flex; align-items: center; gap: 0.3rem;">
-                        <i class="fas ${section.icon}" style="color: ${section.color};"></i> ${section.title}
-                    </h4>
-                    <div style="font-size: 0.52rem; color: #475569; line-height: 1.5;">${section.content}</div>
+                <div style="padding: 0.6rem; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
+                        <div style="width: 8px; height: 8px; background: ${section.color}; border-radius: 50%;"></div>
+                        <h4 style="font-size: 0.65rem; font-weight: 700; color: #111827; margin: 0;">${section.title}</h4>
+                    </div>
+                    <p style="font-size: 0.55rem; color: #4b5563; line-height: 1.6; margin: 0 0 0.4rem 0;">${section.content}</p>
                     ${section.data ? `
-                        <div style="margin-top: 0.3rem; font-size: 0.48rem; color: #64748b;">
+                        <div style="font-size: 0.5rem; color: #6b7280; background: #f9fafb; padding: 0.3rem 0.5rem; border-radius: 4px; border-left: 3px solid ${section.color};">
                             ${section.data}
                         </div>
                     ` : ''}
@@ -1320,61 +1331,56 @@ function generateInvestmentFocusAnalysis(firm, updates) {
     const analysis = [];
     
     // Recent Acquisitions Analysis
-    const recentInvestments = updates.filter(u => u.type === 'Investment' && u.date >= '2024').slice(0, 5);
+    const recentInvestments = updates.filter(u => u.type === 'Investment' && u.date >= '2024');
     if (recentInvestments.length > 0) {
         analysis.push({
-            title: "Recent Acquisitions (2024-2025)",
-            icon: "fa-handshake",
+            title: "Recent Investment Activity",
             color: "#3b82f6",
-            content: `Active acquisition strategy with ${recentInvestments.length} new platform investments in the last 18 months. Focus on scalable industrial and logistics platforms with Nordic expansion potential.`,
-            data: recentInvestments.map(inv => `• ${inv.title}`).join('<br>')
+            content: `Active acquisition strategy with ${recentInvestments.length} new platform investments since 2024. Focus on scalable industrial and logistics platforms with Nordic expansion potential.`,
+            data: recentInvestments.slice(0, 3).map(inv => `• ${inv.title}`).join('<br>')
         });
     }
     
-    // Sector Focus Analysis
+    // Sector Analysis
     const sectorAnalysis = analyzeSectorConcentration(updates);
     if (sectorAnalysis.primary.length > 0) {
         analysis.push({
-            title: "Sector Focus & Trends",
-            icon: "fa-industry",
+            title: "Sector Focus",
             color: "#10b981",
-            content: `Primary sector focus: ${sectorAnalysis.primary.join(', ')}. Emerging trends include ${sectorAnalysis.trends.join(', ')}. Geographic expansion through Nordic consolidation.`,
+            content: `Primary focus on ${sectorAnalysis.primary.join(' and ')} sectors. Strong presence in industrial services and niche manufacturing with technology integration trends.`,
             data: `Sector activity: ${Object.entries(sectorAnalysis.distribution).map(([sector, count]) => `${sector} (${count})`).join(', ')}`
         });
     }
     
-    // Investment Activity Analysis
+    // Investment Activity Summary
     const allInvestments = updates.filter(u => u.type === 'Investment');
     const exits = updates.filter(u => u.type === 'Exit');
     const portfolioMoves = updates.filter(u => u.type === 'Portfolio');
     
     if (allInvestments.length > 0) {
         analysis.push({
-            title: "Investment Activity",
-            icon: "fa-chart-line",
+            title: "Investment Strategy",
             color: "#f59e0b",
-            content: `Total of ${allInvestments.length} investments tracked, with ${exits.length} exits and ${portfolioMoves.length} portfolio add-ons. Strong buy-and-build execution across multiple fund vintages.`,
+            content: `Total of ${allInvestments.length} investments tracked with ${exits.length} exits and ${portfolioMoves.length} portfolio add-ons. Strong buy-and-build execution across multiple fund vintages.`,
             data: `Investments: ${allInvestments.length} | Exits: ${exits.length} | Add-ons: ${portfolioMoves.length}`
         });
     }
     
-    // Value Creation Strategy
+    // Value Creation
     if (portfolioMoves.length > 0) {
         analysis.push({
-            title: "Value Creation Strategy",
-            icon: "fa-rocket",
+            title: "Value Creation Approach",
             color: "#ef4444",
-            content: `Aggressive buy-and-build execution with ${portfolioMoves.length} portfolio add-ons. Focus on operational improvements, internationalization, and market consolidation. Strong ESG integration and sustainability reporting.`,
+            content: `Aggressive buy-and-build execution with ${portfolioMoves.length} portfolio add-ons. Focus on operational improvements, internationalization, and market consolidation.`,
             data: `Portfolio add-ons: ${portfolioMoves.length} | Exits: ${exits.length}`
         });
     }
     
-    // Geographic & Strategic Focus
+    // Strategic Positioning
     analysis.push({
-        title: "Strategic Focus",
-        icon: "fa-bullseye",
+        title: "Strategic Positioning",
         color: "#8b5cf6",
-        content: `Positioned as leading Nordic lower-midcap specialist. Strong track record in industrial services and niche manufacturing. International expansion capabilities through portfolio company growth.`,
+        content: `Leading Nordic lower-midcap specialist with strong track record in industrial services and niche manufacturing. International expansion capabilities through portfolio company growth.`,
         data: `Founded: ${firm.founded} | Team: ${firm.team?.length || '35+'} professionals | AUM: ${firm.aum || 'SEK 10B'}`
     });
     
