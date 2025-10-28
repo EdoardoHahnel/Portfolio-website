@@ -291,27 +291,14 @@ function displayFirmDetail(firm) {
         </div>
         
         <div class="tab-content" id="tab-focus">
-            <div class="content-card" style="padding: 1rem;">
-                <div class="content-card-header" style="margin-bottom: 1rem;">
-                    <h3 class="content-card-title" style="font-size: 0.7rem; margin: 0; color: #1a1a1a; font-weight: 700;">
-                        Investment Strategy
-                    </h3>
-                </div>
-                <div class="content-card-body" id="investmentFocusContainer">
-                    <!-- Filled dynamically -->
-                </div>
-            </div>
-            
-            <div class="content-card" style="margin-top: 1.5rem;">
+            <div class="content-card">
                 <div class="content-card-header">
-                    <h3 class="content-card-title">
-                        <i class="fas fa-history"></i> Latest Acquisitions
+                    <h3 class="content-card-title" style="font-size: 0.65rem;">
+                        <i class="fas fa-bullseye" style="font-size: 0.6rem;"></i> Investment Focus
                     </h3>
                 </div>
-                <div class="content-card-body">
-                    <div id="latestAcquisitions">
-                        <p style="color: var(--text-secondary);">Loading latest acquisitions...</p>
-                    </div>
+                <div class="content-card-body" id="investmentFocusContainer" style="display:flex; flex-direction:column; gap:0.6rem;">
+                    <!-- Filled dynamically -->
                 </div>
             </div>
         </div>
