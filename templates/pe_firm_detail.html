@@ -185,12 +185,12 @@ function displayFirmDetail(firm) {
                 </div>
                 <div class="content-card-body">
                     <div class="timeline-filters" style="display:flex; gap:0.4rem; margin-bottom:0.4rem; flex-wrap: wrap;">
-                        <button class="timeline-filter-btn active" data-type="all" style="font-size:0.45rem; padding:0.2rem 0.4rem; border:1px solid #e2e8f0; border-radius:4px; background:#f8fafc;">All</button>
-                        <button class="timeline-filter-btn" data-type="fund" style="font-size:0.45rem; padding:0.2rem 0.4rem; border:1px solid #e2e8f0; border-radius:4px; background:#fff;">Fund</button>
-                        <button class="timeline-filter-btn" data-type="investment" style="font-size:0.45rem; padding:0.2rem 0.4rem; border:1px solid #e2e8f0; border-radius:4px; background:#fff;">Investment</button>
-                        <button class="timeline-filter-btn" data-type="acquisition" style="font-size:0.45rem; padding:0.2rem 0.4rem; border:1px solid #e2e8f0; border-radius:4px; background:#fff;">Acquisition</button>
-                        <button class="timeline-filter-btn" data-type="exit" style="font-size:0.45rem; padding:0.2rem 0.4rem; border:1px solid #e2e8f0; border-radius:4px; background:#fff;">Exit</button>
-                        <button class="timeline-filter-btn" data-type="other" style="font-size:0.45rem; padding:0.2rem 0.4rem; border:1px solid #e2e8f0; border-radius:4px; background:#fff;">Other</button>
+                        <button class="timeline-filter-btn active" data-type="all" style="font-size:0.45rem; padding:0.2rem 0.4rem; border:1px solid #8b5cf6; border-radius:4px; background:#8b5cf6; color:white;">All</button>
+                        <button class="timeline-filter-btn" data-type="fund" style="font-size:0.45rem; padding:0.2rem 0.4rem; border:1px solid #e2e8f0; border-radius:4px; background:#fff; color:#666;">Fund</button>
+                        <button class="timeline-filter-btn" data-type="investment" style="font-size:0.45rem; padding:0.2rem 0.4rem; border:1px solid #e2e8f0; border-radius:4px; background:#fff; color:#666;">Investment</button>
+                        <button class="timeline-filter-btn" data-type="acquisition" style="font-size:0.45rem; padding:0.2rem 0.4rem; border:1px solid #e2e8f0; border-radius:4px; background:#fff; color:#666;">Acquisition</button>
+                        <button class="timeline-filter-btn" data-type="exit" style="font-size:0.45rem; padding:0.2rem 0.4rem; border:1px solid #e2e8f0; border-radius:4px; background:#fff; color:#666;">Exit</button>
+                        <button class="timeline-filter-btn" data-type="other" style="font-size:0.45rem; padding:0.2rem 0.4rem; border:1px solid #e2e8f0; border-radius:4px; background:#fff; color:#666;">Other</button>
                     </div>
                     <div id="firmTimeline">
                         <div class="loading-spinner">
@@ -201,50 +201,6 @@ function displayFirmDetail(firm) {
                 </div>
             </div>
             
-            <!-- Investment Focus Summary -->
-            <div class="content-card" style="margin-top: 0.5rem;">
-                <div class="content-card-header">
-                    <h3 class="content-card-title" style="font-size: 0.65rem;">
-                        <i class="fas fa-bullseye" style="font-size: 0.6rem;"></i> Investment Focus
-                    </h3>
-                </div>
-                <div class="content-card-body">
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
-                        <div style="padding: 0.4rem; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0;">
-                            <h4 style="font-size: 0.55rem; font-weight: 600; color: #374151; margin: 0 0 0.3rem 0; display: flex; align-items: center; gap: 0.3rem;">
-                                <i class="fas fa-industry" style="font-size: 0.5rem; color: #6366F1;"></i> Target Sectors
-                            </h4>
-                            <div style="display: flex; flex-wrap: wrap; gap: 0.2rem;">
-                                ${firm.investment_focus.sectors.map(s => `<span style="background: #6366F1; color: white; padding: 0.15rem 0.3rem; border-radius: 3px; font-size: 0.4rem; font-weight: 500;">${escapeHtml(s)}</span>`).join('')}
-                            </div>
-                        </div>
-                        <div style="padding: 0.4rem; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0;">
-                            <h4 style="font-size: 0.55rem; font-weight: 600; color: #374151; margin: 0 0 0.3rem 0; display: flex; align-items: center; gap: 0.3rem;">
-                                <i class="fas fa-globe" style="font-size: 0.5rem; color: #6366F1;"></i> Geographic Focus
-                            </h4>
-                            <div style="display: flex; flex-wrap: wrap; gap: 0.2rem;">
-                                ${firm.investment_focus.geography.map(g => `<span style="background: #7C3AED; color: white; padding: 0.15rem 0.3rem; border-radius: 3px; font-size: 0.4rem; font-weight: 500;">${escapeHtml(g)}</span>`).join('')}
-                            </div>
-                        </div>
-                    </div>
-                    <div style="margin-top: 0.4rem; padding: 0.4rem; background: #f0f9ff; border-radius: 6px; border: 1px solid #bae6fd;">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <div>
-                                <h4 style="font-size: 0.55rem; font-weight: 600; color: #0c4a6e; margin: 0 0 0.2rem 0;">
-                                    <i class="fas fa-money-bill-wave" style="font-size: 0.5rem; color: #0ea5e9;"></i> Deal Size Range
-                                </h4>
-                                <span style="background: #0ea5e9; color: white; padding: 0.2rem 0.4rem; border-radius: 4px; font-size: 0.45rem; font-weight: 600;">${escapeHtml(firm.investment_focus.deal_size)}</span>
-                            </div>
-                            <div style="text-align: right;">
-                                <div style="font-size: 0.45rem; color: #0c4a6e; font-weight: 600;">Investment Types</div>
-                                <div style="display: flex; flex-wrap: wrap; gap: 0.15rem; justify-content: flex-end; margin-top: 0.2rem;">
-                                    ${firm.investment_focus.investment_type.map(t => `<span style="background: #0ea5e9; color: white; padding: 0.1rem 0.25rem; border-radius: 2px; font-size: 0.35rem; font-weight: 500;">${escapeHtml(t)}</span>`).join('')}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             
             <!-- Key Statistics -->
             <div class="content-card" style="margin-top: 0.5rem;">
@@ -1365,61 +1321,61 @@ function generateInvestmentFocusAnalysis(firm, updates) {
     
     // Recent Acquisitions Analysis
     const recentInvestments = updates.filter(u => u.type === 'Investment' && u.date >= '2024').slice(0, 5);
-    analysis.push({
-        title: "Recent Acquisitions (2024-2025)",
-        icon: "fa-handshake",
-        color: "#3b82f6",
-        content: `Active acquisition strategy with ${recentInvestments.length} new platform investments in the last 18 months. Focus on scalable industrial and logistics platforms with Nordic expansion potential.`,
-        data: recentInvestments.map(inv => `• ${inv.title}`).join('<br>')
-    });
+    if (recentInvestments.length > 0) {
+        analysis.push({
+            title: "Recent Acquisitions (2024-2025)",
+            icon: "fa-handshake",
+            color: "#3b82f6",
+            content: `Active acquisition strategy with ${recentInvestments.length} new platform investments in the last 18 months. Focus on scalable industrial and logistics platforms with Nordic expansion potential.`,
+            data: recentInvestments.map(inv => `• ${inv.title}`).join('<br>')
+        });
+    }
     
-    // Historical Investment Patterns
-    const allInvestments = updates.filter(u => u.type === 'Investment');
-    const historicalAnalysis = analyzeHistoricalPatterns(allInvestments);
-    analysis.push({
-        title: "Historical Investment Patterns",
-        icon: "fa-chart-bar",
-        color: "#10b981",
-        content: `Consistent investment approach across ${historicalAnalysis.years} years with focus on ${historicalAnalysis.sectors.join(', ')}. Deal size typically in ${firm.investment_focus?.deal_size || 'SEK 200M-1.5B'} range.`,
-        data: `Total investments analyzed: ${allInvestments.length}`
-    });
-    
-    // Sector Concentration Analysis
+    // Sector Focus Analysis
     const sectorAnalysis = analyzeSectorConcentration(updates);
-    analysis.push({
-        title: "Sector Concentration & Trends",
-        icon: "fa-industry",
-        color: "#f59e0b",
-        content: `Primary sector focus: ${sectorAnalysis.primary.join(', ')}. Emerging trends include ${sectorAnalysis.trends.join(', ')}. Geographic expansion through Nordic consolidation.`,
-        data: `Sector distribution: ${Object.entries(sectorAnalysis.distribution).map(([sector, count]) => `${sector}: ${count}`).join(', ')}`
-    });
+    if (sectorAnalysis.primary.length > 0) {
+        analysis.push({
+            title: "Sector Focus & Trends",
+            icon: "fa-industry",
+            color: "#10b981",
+            content: `Primary sector focus: ${sectorAnalysis.primary.join(', ')}. Emerging trends include ${sectorAnalysis.trends.join(', ')}. Geographic expansion through Nordic consolidation.`,
+            data: `Sector activity: ${Object.entries(sectorAnalysis.distribution).map(([sector, count]) => `${sector} (${count})`).join(', ')}`
+        });
+    }
     
-    // Deal Size & Structure Analysis
-    analysis.push({
-        title: "Deal Size & Structure Analysis",
-        icon: "fa-coins",
-        color: "#8b5cf6",
-        content: `Target EV range: ${firm.investment_focus?.deal_size || 'SEK 200M-1.5B'}. Focus on ${firm.investment_focus?.investment_type?.join(', ') || 'lower mid-market buyouts'}. Strong preference for family succession and founder partnerships.`,
-        data: `Geographic focus: ${firm.investment_focus?.geography?.join(', ') || 'Nordic region'}`
-    });
+    // Investment Activity Analysis
+    const allInvestments = updates.filter(u => u.type === 'Investment');
+    const exits = updates.filter(u => u.type === 'Exit');
+    const portfolioMoves = updates.filter(u => u.type === 'Portfolio');
+    
+    if (allInvestments.length > 0) {
+        analysis.push({
+            title: "Investment Activity",
+            icon: "fa-chart-line",
+            color: "#f59e0b",
+            content: `Total of ${allInvestments.length} investments tracked, with ${exits.length} exits and ${portfolioMoves.length} portfolio add-ons. Strong buy-and-build execution across multiple fund vintages.`,
+            data: `Investments: ${allInvestments.length} | Exits: ${exits.length} | Add-ons: ${portfolioMoves.length}`
+        });
+    }
     
     // Value Creation Strategy
-    const portfolioMoves = updates.filter(u => u.type === 'Portfolio').length;
-    analysis.push({
-        title: "Value Creation Strategy",
-        icon: "fa-rocket",
-        color: "#ef4444",
-        content: `Aggressive buy-and-build execution with ${portfolioMoves} portfolio add-ons. Focus on operational improvements, internationalization, and market consolidation. Strong ESG integration and sustainability reporting.`,
-        data: `Portfolio add-ons: ${portfolioMoves} | Exits: ${updates.filter(u => u.type === 'Exit').length}`
-    });
+    if (portfolioMoves.length > 0) {
+        analysis.push({
+            title: "Value Creation Strategy",
+            icon: "fa-rocket",
+            color: "#ef4444",
+            content: `Aggressive buy-and-build execution with ${portfolioMoves.length} portfolio add-ons. Focus on operational improvements, internationalization, and market consolidation. Strong ESG integration and sustainability reporting.`,
+            data: `Portfolio add-ons: ${portfolioMoves.length} | Exits: ${exits.length}`
+        });
+    }
     
-    // Competitive Positioning
+    // Geographic & Strategic Focus
     analysis.push({
-        title: "Competitive Positioning",
+        title: "Strategic Focus",
         icon: "fa-bullseye",
-        color: "#06b6d4",
-        content: `Positioned as leading Nordic lower-midcap specialist with ${firm.aum || 'SEK 10B'} AUM. Strong track record in industrial services and niche manufacturing. International expansion capabilities through portfolio company growth.`,
-        data: `Founded: ${firm.founded} | Team: ${firm.team?.length || '35+'} professionals`
+        color: "#8b5cf6",
+        content: `Positioned as leading Nordic lower-midcap specialist. Strong track record in industrial services and niche manufacturing. International expansion capabilities through portfolio company growth.`,
+        data: `Founded: ${firm.founded} | Team: ${firm.team?.length || '35+'} professionals | AUM: ${firm.aum || 'SEK 10B'}`
     });
     
     return analysis;
@@ -1569,8 +1525,20 @@ function displayTimeline(events) {
     const filterButtons = document.querySelectorAll('.timeline-filter-btn');
     filterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            filterButtons.forEach(b => b.classList.remove('active'));
+            // Remove active class and reset styles
+            filterButtons.forEach(b => {
+                b.classList.remove('active');
+                b.style.background = '#fff';
+                b.style.color = '#666';
+                b.style.border = '1px solid #e2e8f0';
+            });
+            
+            // Add active class and purple styles
             btn.classList.add('active');
+            btn.style.background = '#8b5cf6';
+            btn.style.color = 'white';
+            btn.style.border = '1px solid #8b5cf6';
+            
             const type = btn.getAttribute('data-type');
             const items = container.querySelectorAll('.timeline-item-horizontal');
             items.forEach(item => {
@@ -1894,7 +1862,7 @@ function escapeHtml(text) {
 .timeline-horizontal-wrapper {
     position: relative;
     overflow-x: auto;
-    overflow-y: visible;
+    overflow-y: hidden;
     padding: 40px 0 20px 0;
     margin: 0 -20px;
 }
