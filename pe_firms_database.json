@@ -301,7 +301,7 @@
         "Oslo",
         "Helsinki"
       ],
-      "description": "Altor is a private equity firm focused on investing in and developing Nordic mid-market companies. The firm partners with ambitious management teams to create sustainable growth and value.",
+      "description": "Altor is a private equity firm focused on upper mid-cap transformational investments across the Nordics, DACH and Benelux. Distinctive themes include digital/AI transformation, energy transition and decarbonisation, with growing global partnerships (e.g., WovenLight AI lab).",
       "investment_focus": {
         "sectors": [
           "Consumer",
@@ -325,6 +325,11 @@
         {
           "name": "Harald Mix",
           "title": "Managing Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Klas Johansson",
+          "title": "Senior Advisor / Board (from 2025)",
           "location": "Stockholm"
         },
         {
@@ -363,6 +368,11 @@
           "location": "Stockholm"
         },
         {
+          "name": "Nils H. Andersen",
+          "title": "Chair",
+          "location": "Copenhagen"
+        },
+        {
           "name": "Anders Hildén",
           "title": "Senior Advisor",
           "location": "Oslo"
@@ -373,7 +383,14 @@
           "location": "Copenhagen"
         }
       ],
-      "recent_activity": "Q3 2024: Altor Fund VI launched targeting €4B (oversubscribed by 40%). Recent exits: Karnov Group IPO (€1.2B), AddSecure to EQT (€800M). New investments: Fortress Security acquisition (€600M), Moment Group healthcare (€400M). Fund V deployment: 70% committed across 12 investments. Team growth: 12 new partners across Nordic offices. Sustainability focus: 100% ESG integration across portfolio. Strong performance: Fund V showing 26% IRR. Exploring climate tech and AI opportunities. New sustainability fund launched (€500M)."
+      "fundraising": {
+        "funds": {
+          "altor_vi": ">€3.0bn (2023)",
+          "aum": "~€11bn"
+        },
+        "strategy": "Upper mid-cap transformational PE; Nordic + DACH + Benelux; partnerships with WovenLight AI"
+      },
+      "recent_activity": "2025: Divests RevolutionRace, Retta to Adelis, XXL, Qmatic to Valsoft, Wrist to J.F. Lehman & Co; signs to divest Marshall Group to HSG; invests in IMBOX (Fund VI); portfolio-wide AI initiative with WovenLight. 2024–2023: Divests Nordic Tyre Group to Axcel, Carnegie to DNB, Nova Austral, SATS stake; acquires majority in F24; raises record fund (Dec 2023); invests in Aira; Mandatum minority (later increased)."
     },
     "Litorina": {
       "name": "Litorina",
@@ -386,7 +403,7 @@
       "offices": [
         "Stockholm"
       ],
-      "description": "Litorina is a Swedish private equity firm investing in medium-sized Nordic companies with strong market positions. The firm focuses on consumer and business services sectors with proven business models.",
+      "description": "Litorina is a Swedish private equity firm investing in medium-sized Nordic companies with strong market positions. Investment focus on Swedish lower-mid-market consumer and services; buy-and-build across digital, lifestyle and healthcare. Regular co-investments with AP funds and PE secondary investors.",
       "investment_focus": {
         "sectors": [
           "Consumer",
@@ -406,6 +423,18 @@
         ]
       },
       "team": [
+        {
+          "name": "Johan Blomquist",
+          "title": "Managing Partner",
+          "location": "Stockholm",
+          "background": "Key people"
+        },
+        {
+          "name": "John Strand",
+          "title": "CEO, Layer Group",
+          "location": "Stockholm",
+          "background": "Layer Group CEO"
+        },
         {
           "name": "Fredrik Hansson",
           "title": "Managing Partner",
@@ -442,6 +471,11 @@
           "location": "Stockholm"
         }
       ],
+      "fundraising": {
+        "current_fund": "Litorina V (SEK 4.5bn, 2018 vintage)",
+        "strategy": "Swedish lower-mid-market consumer and services; buy-and-build across digital, lifestyle and healthcare",
+        "co_investments": "Regular co-investments with AP funds and PE secondary investors"
+      },
       "recent_activity": "Q3 2024: Litorina V deployment: 12 platform investments completed (€800M deployed). Recent exits: Brödernas sold to EQT (€300M), Care of Carl to KKR (€250M). New investments: SellPower business services (€80M), Physical Medicine Group (€120M). Fund performance: 18% IRR across Fund V. Team expansion: 8 new hires across Stockholm and Copenhagen. Sustainability initiatives: 50% portfolio companies carbon neutral. Exploring AI and digital health opportunities. New Fund VI launch planned for Q4 2024 (€1.2B target)."
     },
     "Adelis Equity": {
@@ -457,7 +491,7 @@
         "Oslo",
         "Helsinki"
       ],
-      "description": "Adelis Equity Partners invests in leading Nordic lower mid-market companies within the B2B segment. The firm focuses on business services and tech-enabled services with strong recurring revenue models.",
+      "description": "Adelis Equity Partners invests in leading Nordic lower mid-market companies within the B2B segment. Buy-and-build specialist in 10–150M€ EV range, Nordic + DACH + Benelux; prefers founder succession and professionalisation stories. Focus on B2B services, IT, healthcare, and sustainability solutions.",
       "investment_focus": {
         "sectors": [
           "Business Services",
@@ -477,8 +511,32 @@
       },
       "team": [
         {
-          "name": "Staffan Proos",
+          "name": "Jan Åström",
           "title": "Founding Partner",
+          "location": "Stockholm",
+          "background": "Founding partner"
+        },
+        {
+          "name": "Joel Russell",
+          "title": "Founding Partner",
+          "location": "Stockholm",
+          "background": "Founding partner"
+        },
+        {
+          "name": "Anders Björk",
+          "title": "Founding Partner",
+          "location": "Stockholm",
+          "background": "Founding partner"
+        },
+        {
+          "name": "Franz Reiffenstuel",
+          "title": "Partner",
+          "location": "Munich",
+          "background": "Joined 2023, Munich office"
+        },
+        {
+          "name": "Staffan Proos",
+          "title": "Partner",
           "location": "Stockholm"
         },
         {
@@ -517,6 +575,15 @@
           "location": "Stockholm"
         }
       ],
+      "fundraising": {
+        "funds": {
+          "fund_iv": "€1.6bn (2025)",
+          "fund_iii": "€932m (2021)"
+        },
+        "strategy": "Buy-and-build specialist in 10–150M€ EV range, Nordic + DACH + Benelux",
+        "sector_themes": "B2B services, IT, healthcare, and sustainability solutions",
+        "offices": "Stockholm, Copenhagen, Munich (opened 2023)"
+      },
       "recent_activity": "Adelis Equity is an active private equity firm focused on Nordic investments. Please visit their website for the latest news and updates.",
       "portfolio_companies": [
         {
@@ -908,7 +975,7 @@
         "London",
         "Copenhagen"
       ],
-      "description": "Summa Equity is a purpose-driven private equity firm investing in companies that contribute to solving the UN Sustainable Development Goals. The firm focuses on five investment themes addressing global challenges.",
+      "description": "Summa Equity is a purpose-driven private equity firm investing in companies that contribute to solving the UN Sustainable Development Goals. Thematic impact investor around UN SDGs (Circular, Tech-enabled, Changing Demographics). Flagship Article 9 fund with verified CO₂ impact model and annual Impact Report 'Transforming Companies'.",
       "investment_focus": {
         "sectors": [
           "Circularity",
@@ -930,6 +997,12 @@
       },
       "team": [
         {
+          "name": "Torleif Haldorsen",
+          "title": "CEO",
+          "location": "Stockholm",
+          "background": "CEO (2024)"
+        },
+        {
           "name": "Reynir Indahl",
           "title": "Founding Partner",
           "location": "Stockholm"
@@ -950,6 +1023,12 @@
           "location": "Stockholm"
         }
       ],
+      "fundraising": {
+        "current_fund": "Summa III (€2.3bn, 2022)",
+        "strategy": "Thematic impact investor around UN SDGs (Circular, Tech-enabled, Changing Demographics)",
+        "organization": "Oslo / Stockholm / Munich / Palo Alto; c. 80 professionals",
+        "strategic": "Integrating Impact Engine data model across all funds"
+      },
       "recent_activity": "Q3 2024: Summa Circular Fund closed at €500M (oversubscribed by 80%). Recent exits: Meltwater sold to EQT (€800M), Cabonline to KKR (€600M). New investments: ISS Facility Services (€1.2B), Norican industrial tech (€800M). Fund performance: 22% IRR across Fund II. Team growth: 12 new hires across Stockholm and Copenhagen. Sustainability focus: 100% circular economy investments. Strong portfolio performance: 25% revenue growth across portfolio. Exploring AI and climate tech opportunities. New Fund III launch planned for Q3 2025 (€1.5B target)."
     },
     "Accent Equity": {
@@ -963,7 +1042,7 @@
       "offices": [
         "Stockholm"
       ],
-      "description": "Accent Equity Partners invests in Nordic industrial companies with strong market positions and potential for operational improvements and internationalization.",
+      "description": "Accent Equity Partners invests in Nordic industrial companies with strong market positions and potential for operational improvements and internationalization. Focus on lower-midcap Nordics (EV 250–1,500 MSEK) with strong heritage in industrial services and niche manufacturing. Known for frequent use of industrial roll-up logic across platforms like Tempcon, Enerco, and Triarca.",
       "investment_focus": {
         "sectors": [
           "Industrial",
@@ -985,6 +1064,24 @@
           "name": "Patrik Johansson",
           "title": "Managing Partner",
           "location": "Stockholm"
+        },
+        {
+          "name": "Tommi Unkuri",
+          "title": "Partner",
+          "location": "Stockholm",
+          "background": "Long-tenured partner"
+        },
+        {
+          "name": "Mikael Grönberg",
+          "title": "Partner",
+          "location": "Stockholm",
+          "background": "Long-tenured partner"
+        },
+        {
+          "name": "Pär Andersson",
+          "title": "Partner",
+          "location": "Stockholm",
+          "background": "Long-tenured partner"
         },
         {
           "name": "Mikael Klingberg",
@@ -1012,7 +1109,214 @@
           "location": "Stockholm"
         }
       ],
-      "recent_activity": "Accent Equity is an active private equity firm focused on Nordic investments. Please visit their website for the latest news and updates."
+      "fundraising": {
+        "current_fund": "Accent Equity VII (~SEK 3bn, vintage 2017)",
+        "next_fund": "Fund VIII in planning/early marketing (expected 2025–26)",
+        "strategy": "Lower-midcap Nordics (EV 250–1,500 MSEK); strong heritage in industrial services and niche manufacturing"
+      },
+      "recent_activity": "2025: Plockmatic Group acquires Renz (Accent VII), Tempcon Group issues SEK 550M senior secured bonds. 2024: Invests in Unisport (new platform, Fund VII), acquires Brimer (Fund VII), TSG acquires AF Shipping, Malte Månson acquires Skandinaviska Buss & Truck, Triarca + Stitec combine (low voltage/eMobility/FTTH group), acquires Helkama Bica (specialty cables; Fund VII), Linotol acquires C M Betong, divests Norco Interior to Götessons Design Group, invests in Plockmatic (growth partner; Fund VII), Malte Månson acquires Experten Group. Strong Fund VII deployment across multiple platforms.",
+      "timeline": [
+        {
+          "year": 2013,
+          "event": "Accent Equity Partners founded",
+          "description": "Founded in Stockholm, Sweden"
+        },
+        {
+          "year": 2017,
+          "event": "Fund VI closes",
+          "description": "Fund VI closes SEK 3.0bn (platform for 2017 onwards)"
+        },
+        {
+          "year": 2017,
+          "event": "AR Packaging exit",
+          "description": "Divests AR Packaging to CVC (sign & completion)"
+        },
+        {
+          "year": 2017,
+          "event": "Inteno acquisition",
+          "description": "Acquires Inteno from KAMIC"
+        },
+        {
+          "year": 2018,
+          "event": "Nordic Traction Group exit",
+          "description": "Divests Nordic Traction Group"
+        },
+        {
+          "year": 2018,
+          "event": "S:t Eriks Group exit",
+          "description": "Divests S:t Eriks Group to Volati"
+        },
+        {
+          "year": 2018,
+          "event": "Stål & Hyr Group exit",
+          "description": "Divests Stål & Hyr Group to Renta"
+        },
+        {
+          "year": 2019,
+          "event": "Lunawood acquisition",
+          "description": "Acquires Lunawood"
+        },
+        {
+          "year": 2019,
+          "event": "Scandinavian Cosmetics investment",
+          "description": "Acquires Scandinavian Cosmetics Group (majority)"
+        },
+        {
+          "year": 2020,
+          "event": "Eco Log merger",
+          "description": "Eco Log merges with SP Maskiner"
+        },
+        {
+          "year": 2020,
+          "event": "Aviator exit",
+          "description": "Divests Aviator to Avia Solutions Group"
+        },
+        {
+          "year": 2020,
+          "event": "San Sac Group exit",
+          "description": "Divests San Sac Group to Sulo"
+        },
+        {
+          "year": 2021,
+          "event": "Global Leisure Group expansion",
+          "description": "Global Leisure Group acquires HPS Play Company"
+        },
+        {
+          "year": 2021,
+          "event": "Enerco Group expansion",
+          "description": "Enerco Group acquires DynaMate"
+        },
+        {
+          "year": 2021,
+          "event": "EAST majority ownership",
+          "description": "Steps in as majority owner of EAST"
+        },
+        {
+          "year": 2021,
+          "event": "Brenderup Group exit",
+          "description": "Divests Brenderup Group to Storskogen"
+        },
+        {
+          "year": 2021,
+          "event": "Triarca acquisition",
+          "description": "Acquires Triarca"
+        },
+        {
+          "year": 2021,
+          "event": "Cervera exit",
+          "description": "Divests Cervera to Kibord"
+        },
+        {
+          "year": 2021,
+          "event": "Hoist Group exit",
+          "description": "Divests Hoist Group"
+        },
+        {
+          "year": 2022,
+          "event": "Lyngsoe Systems acquisition",
+          "description": "Acquires Lyngsoe Systems"
+        },
+        {
+          "year": 2022,
+          "event": "Inteno consortium",
+          "description": "Continues ownership in Inteno via new consortium"
+        },
+        {
+          "year": 2022,
+          "event": "Oral Care exit",
+          "description": "Divests Oral Care to Axcel"
+        },
+        {
+          "year": 2022,
+          "event": "Norcospectra investment",
+          "description": "Invests in Norcospectra (new partner)"
+        },
+        {
+          "year": 2022,
+          "event": "Motum exit",
+          "description": "Divests Motum to Mitsubishi Electric"
+        },
+        {
+          "year": 2022,
+          "event": "Scandinavian Cosmetics exit",
+          "description": "Divests Scandinavian Cosmetics to Storskogen"
+        },
+        {
+          "year": 2023,
+          "event": "Linotol platform creation",
+          "description": "Acquires Linotol & C Holmqvist Entreprenad (creates industrial flooring platform; Fund VII)"
+        },
+        {
+          "year": 2023,
+          "event": "Malte Månson acquisition",
+          "description": "Acquires Malte Månson (independent truck/service; Fund VI)"
+        },
+        {
+          "year": 2023,
+          "event": "Linotol expansion",
+          "description": "Linotol acquires Tiller-Vimek"
+        },
+        {
+          "year": 2024,
+          "event": "Unisport investment",
+          "description": "Invests in Unisport (new platform, Fund VII)"
+        },
+        {
+          "year": 2024,
+          "event": "Brimer acquisition",
+          "description": "Acquires Brimer (Fund VII)"
+        },
+        {
+          "year": 2024,
+          "event": "TSG acquisition",
+          "description": "TSG acquires AF Shipping"
+        },
+        {
+          "year": 2024,
+          "event": "Malte Månson expansion",
+          "description": "Malte Månson acquires Skandinaviska Buss & Truck"
+        },
+        {
+          "year": 2024,
+          "event": "Triarca combination",
+          "description": "Triarca + Stitec combine (low voltage/eMobility/FTTH group)"
+        },
+        {
+          "year": 2024,
+          "event": "Helkama Bica acquisition",
+          "description": "Acquires Helkama Bica (specialty cables; Fund VII)"
+        },
+        {
+          "year": 2024,
+          "event": "Linotol expansion",
+          "description": "Linotol acquires C M Betong"
+        },
+        {
+          "year": 2024,
+          "event": "Norco Interior exit",
+          "description": "Divests Norco Interior to Götessons Design Group"
+        },
+        {
+          "year": 2024,
+          "event": "Plockmatic investment",
+          "description": "Invests in Plockmatic (growth partner; Fund VII)"
+        },
+        {
+          "year": 2024,
+          "event": "Malte Månson expansion",
+          "description": "Malte Månson acquires Experten Group"
+        },
+        {
+          "year": 2025,
+          "event": "Plockmatic Group expansion",
+          "description": "Plockmatic Group acquires Renz (Accent VII)"
+        },
+        {
+          "year": 2025,
+          "event": "Tempcon financing",
+          "description": "Tempcon Group issues SEK 550M senior secured bonds (portco financing)"
+        }
+      ]
     },
     "IK Partners": {
       "name": "IK Partners (formerly IK Investment Partners)",
@@ -1029,7 +1333,7 @@
         "Paris",
         "New York"
       ],
-      "description": "IK Partners is a European private equity firm focused on the Nordic and DACH regions, investing in mid-market companies with strong growth potential.",
+      "description": "IK Partners is a European private equity firm focused on the Nordic and DACH regions, investing in mid-market companies with strong growth potential. Strategic themes include business services, healthcare, industrial tech, software, and 'Platform + Add-On' excellence with 20+ add-ons in 2025 alone.",
       "investment_focus": {
         "sectors": [
           "Business Services",
@@ -1050,8 +1354,14 @@
       },
       "team": [
         {
-          "name": "Morten Giørtz-Carlsen",
+          "name": "Chris Masek",
           "title": "CEO and Partner",
+          "location": "London",
+          "background": "CEO with >10 years tenure"
+        },
+        {
+          "name": "Morten Giørtz-Carlsen",
+          "title": "Partner",
           "location": "London"
         },
         {
@@ -1070,7 +1380,194 @@
           "location": "Stockholm"
         }
       ],
-      "recent_activity": "Q3 2024: IK IX Fund closed at €3.5B. Recent exits: Egmont Media (€800M), Jollyroom e-commerce (€400M). New investments: Mamut Software (€200M), Iver business services (€150M). Strong Nordic presence with 4 new platform investments. Team expansion: 10 new hires. Sustainability: 100% ESG integration.",
+      "fundraising": {
+        "funds": {
+          "mid_cap_x": "€3.3bn (2025)",
+          "small_cap_iv": "€2.0bn (2025)",
+          "partnership_iii": "€0.6bn (2025)",
+          "total_aum": ">€14bn"
+        },
+        "offices": "London, Paris, Stockholm, Hamburg, Amsterdam, Luxembourg, Munich (2025 new)",
+        "strategy": "Platform + Add-On excellence; 20+ add-ons in 2025 alone"
+      },
+      "recent_activity": "2025: Closes Mid Cap Fund X €3.3bn (Apr), Small Cap IV €2.0bn (Jul), opens Munich office with Partner promotions. Recent acquisitions: PwC Norway carve-out (Sep), Francks Kylindustri (Aug), Sterimed (May), Kestrel Capital (May), DATAPART Factoring (May), Lohoff Pension Services (May), Tecomatic (Mar), HSL Compliance (Feb). Multiple add-ons across Renta, Ipsum, GoodLife Foods, MÜPRO, Defibrion, Dains. Exits: GeoDynamics to Blinqx (Jan), Netel partial stake sale (May). Strong fund performance and team expansion.",
+      "timeline": [
+        {
+          "year": 1989,
+          "event": "IK Partners founded",
+          "description": "Founded as IK Investment Partners in London"
+        },
+        {
+          "year": 2020,
+          "event": "Multiple acquisitions",
+          "description": "You Sure, GeoDynamics, ALBA Baving, MDT, Innovad, Kersia, Questel, Colisée, Signature Foods acquisitions"
+        },
+        {
+          "year": 2021,
+          "event": "Portfolio expansion",
+          "description": "Multiple buy/sell events across portfolio companies"
+        },
+        {
+          "year": 2022,
+          "event": "Strategic acquisitions",
+          "description": "MÜPRO acquisition, You Sure, GeoDynamics, ALBA Baving, MDT, Innovad, Kersia, Questel, Colisée, Signature Foods transactions"
+        },
+        {
+          "year": 2023,
+          "event": "Aspia exit",
+          "description": "Sells Aspia to Vitruvian"
+        },
+        {
+          "year": 2023,
+          "event": "Advisense rebrand",
+          "description": "Advisense rebrand (FCG+Transcendent) with IK as owner"
+        },
+        {
+          "year": 2023,
+          "event": "Kooi investment",
+          "description": "Invests in Kooi"
+        },
+        {
+          "year": 2024,
+          "event": "Carspect exit",
+          "description": "Carspect to TÜV SÜD"
+        },
+        {
+          "year": 2024,
+          "event": "Defibrion primary",
+          "description": "Defibrion primary investment"
+        },
+        {
+          "year": 2024,
+          "event": "Multiple acquisitions",
+          "description": "OCTIME, Sansidor, BIOBank, Qconcepts acquisitions"
+        },
+        {
+          "year": 2024,
+          "event": "Sitevision expansion",
+          "description": "Sitevision acquires CustomPublish"
+        },
+        {
+          "year": 2024,
+          "event": "DRIESCHER acquisition",
+          "description": "Acquires DRIESCHER"
+        },
+        {
+          "year": 2024,
+          "event": "Blanchon expansion",
+          "description": "Blanchon acquires Dr Schutz"
+        },
+        {
+          "year": 2024,
+          "event": "Mabtech exit",
+          "description": "Mabtech sale to EQT"
+        },
+        {
+          "year": 2024,
+          "event": "Truesec expansion",
+          "description": "Truesec add-on Foresights"
+        },
+        {
+          "year": 2024,
+          "event": "Yellow Hive continuation",
+          "description": "Yellow Hive continuation fund"
+        },
+        {
+          "year": 2024,
+          "event": "Renta expansion",
+          "description": "Renta series of acquisitions"
+        },
+        {
+          "year": 2025,
+          "event": "Fund closures",
+          "description": "Closes Mid Cap Fund X €3.3bn (Apr), Small Cap IV €2.0bn (Jul)"
+        },
+        {
+          "year": 2025,
+          "event": "Munich office",
+          "description": "Opens Munich office; Partner promotions"
+        },
+        {
+          "year": 2025,
+          "event": "PwC Norway carve-out",
+          "description": "PwC Norway carve-out (audit/advisory parts) with re-investing partners (Sep)"
+        },
+        {
+          "year": 2025,
+          "event": "Francks Kylindustri",
+          "description": "Acquires Francks Kylindustri (Aug)"
+        },
+        {
+          "year": 2025,
+          "event": "Sterimed acquisition",
+          "description": "Acquires Sterimed (May)"
+        },
+        {
+          "year": 2025,
+          "event": "Kestrel Capital",
+          "description": "Acquires Kestrel Capital (May)"
+        },
+        {
+          "year": 2025,
+          "event": "DATAPART Factoring",
+          "description": "Acquires DATAPART Factoring (May)"
+        },
+        {
+          "year": 2025,
+          "event": "Lohoff Pension Services",
+          "description": "Acquires Lohoff Pension Services (May)"
+        },
+        {
+          "year": 2025,
+          "event": "Tecomatic acquisition",
+          "description": "Acquires Tecomatic (Mar)"
+        },
+        {
+          "year": 2025,
+          "event": "HSL Compliance",
+          "description": "Acquires HSL Compliance (Feb)"
+        },
+        {
+          "year": 2025,
+          "event": "Renta add-ons",
+          "description": "Renta add-ons: Containertech, WGS/AGTunnel (tunnelling), TBM, tunnelling assets (May–Oct)"
+        },
+        {
+          "year": 2025,
+          "event": "Ipsum add-ons",
+          "description": "Ipsum add-ons: Aquaflow (Jun), RJ Power (Jun)"
+        },
+        {
+          "year": 2025,
+          "event": "GoodLife Foods expansion",
+          "description": "GoodLife Foods to acquire TNS Food (Jun)"
+        },
+        {
+          "year": 2025,
+          "event": "MÜPRO expansion",
+          "description": "MÜPRO acquires MSS (IE) (Apr)"
+        },
+        {
+          "year": 2025,
+          "event": "Defibrion expansion",
+          "description": "Defibrion acquires Ecosafety (Aug)"
+        },
+        {
+          "year": 2025,
+          "event": "Dains add-ons",
+          "description": "Dains add-ons: Consilium (Feb), Barnes Roffe (Jun), TBAT (Sep), Curo (Oct)"
+        },
+        {
+          "year": 2025,
+          "event": "GeoDynamics exit",
+          "description": "GeoDynamics sold to Blinqx (Jan)"
+        },
+        {
+          "year": 2025,
+          "event": "Netel partial exit",
+          "description": "Netel – sells 22.6M shares (~12.9%) (May)"
+        }
+      ],
       "portfolio_companies": [
         {
           "name": "Aspia",
@@ -1156,24 +1653,27 @@
         "Oslo",
         "Stockholm",
         "Copenhagen",
-        "Helsinki",
-        "London"
+        "Berlin",
+        "London",
+        "Munich"
       ],
-      "description": "Verdane is a specialist growth equity investor focusing on fast-growing tech and healthcare companies in Northern Europe.",
+      "description": "Verdane is a pan-European growth investor focusing on technology and sustainability. Among Europe's top three independent growth funds by AUM (~€7bn+ across Edda, Freya, Idun, Capital series). Specializes in software & digital growth, flexible growth/buyouts, and impact investing.",
       "investment_focus": {
         "sectors": [
-          "Software",
-          "Digital Services",
+          "Software & Digital Growth",
+          "Technology",
+          "Sustainability",
           "Healthcare Tech"
         ],
         "geography": [
-          "Nordic region",
-          "Northern Europe"
+          "Pan-European",
+          "Nordic region"
         ],
-        "deal_size": "€50M - €300M",
+        "deal_size": "€50M - €500M",
         "investment_type": [
           "Growth equity",
-          "Buy-and-build"
+          "Buy-and-build",
+          "Impact investing"
         ]
       },
       "team": [
@@ -1196,9 +1696,109 @@
           "name": "Rikke Stampe Skov",
           "title": "Partner",
           "location": "Copenhagen"
+        },
+        {
+          "name": "Moez Gharbi",
+          "title": "Partner",
+          "location": "Munich",
+          "background": "Joined 2023"
+        },
+        {
+          "name": "Bjarne Abrahamsen",
+          "title": "COO",
+          "location": "Oslo",
+          "background": "Joined 2023"
+        },
+        {
+          "name": "Helena Svancar",
+          "title": "Partner",
+          "location": "Stockholm",
+          "background": "Joined 2022"
         }
       ],
-      "recent_activity": "Verdane is an active private equity firm focused on Nordic investments. Please visit their website for the latest news and updates.",
+      "fundraising": {
+        "funds": {
+          "freya_xii": "€2bn (2025)",
+          "edda_iii": "€1.1bn (2024)",
+          "idun_ii": "€700m (2024)",
+          "capital_xi": "€1.1bn (2023)",
+          "total_aum": "~€7bn+"
+        },
+        "strategy": "Pan-European growth investor focusing on technology and sustainability",
+        "fund_lineup": "Edda (software & digital growth), Freya (flexible growth/buyouts), Idun (impact/Article 9), Capital (continuation/structured secondary)"
+      },
+      "recent_activity": "2025: Closes Freya XII at €2bn hard cap (flagship flexible growth/buyout fund). Partners with Konvekta (HVAC energy-recovery tech), Natlink (outdoor/hunting community platform). Realises Hornetsecurity, Danelec (marine IoT), Parkopedia. Partially realises Voyado, Lumene Group. fiskaly acquires DF Deutsche Fiskal (Germany). Wellhub merges with Urban Sports Club – Europe's largest corporate wellbeing group. 2024: Closes Idun II at €700m (impact/Article 9 fund). Partners with Sitoo (unified commerce), Cropster (coffee software), Corlytics (RegTech), Ingrid (e-commerce delivery). Closes Edda III at €1.1bn. Leads €95m round in Urban Sports Club. Danelec acquires Nautilus Labs (AI platform). Publishes 2023 Sustainability Report.",
+      "timeline": [
+        { "year": 2025, "event": "Freya XII closes", "description": "Closes Freya XII at €2bn hard cap (flagship flexible growth/buyout fund)" },
+        { "year": 2025, "event": "Konvekta partnership", "description": "Partners with Konvekta – scaling HVAC energy-recovery tech globally" },
+        { "year": 2025, "event": "Natlink partnership", "description": "Partners with Natlink – outdoor/hunting community platform" },
+        { "year": 2025, "event": "Voyado partial realisation", "description": "Partially realises Voyado" },
+        { "year": 2025, "event": "Hornetsecurity realisation", "description": "Realises Hornetsecurity" },
+        { "year": 2025, "event": "Danelec realisation", "description": "Realises Danelec (marine IoT)" },
+        { "year": 2025, "event": "fiskaly add-on", "description": "fiskaly acquires DF Deutsche Fiskal (Germany)" },
+        { "year": 2025, "event": "Wellhub merger", "description": "Wellhub merges with Urban Sports Club – Europe's largest corporate wellbeing group" },
+        { "year": 2025, "event": "Lumene partial realisation", "description": "Partially realises Lumene Group" },
+        { "year": 2025, "event": "Parkopedia realisation", "description": "Realises Parkopedia" },
+        { "year": 2024, "event": "Idun II closes", "description": "Closes Idun II at €700m (impact/Article 9 fund)" },
+        { "year": 2024, "event": "Sitoo partnership", "description": "Partners with Sitoo (Scandinavian unified commerce platform)" },
+        { "year": 2024, "event": "Talentech add-on", "description": "Talentech acquires Jobtip" },
+        { "year": 2024, "event": "Cropster partnership", "description": "Partners with Cropster (coffee software)" },
+        { "year": 2024, "event": "Corlytics partnership", "description": "Partners with Corlytics (global RegTech) → Corlytics acquires Deloitte UK RegTech platform" },
+        { "year": 2024, "event": "Ingrid investment", "description": "Backs Ingrid (Nordic e-commerce delivery software)" },
+        { "year": 2024, "event": "Vade joins Hornetsecurity", "description": "Vade joins Hornetsecurity Group (creating a European cyber leader)" },
+        { "year": 2024, "event": "Edda III closes", "description": "Closes Edda III at €1.1bn, total six-month fundraising = €2.2bn" },
+        { "year": 2024, "event": "VNV Global portfolio", "description": "Intends to acquire portfolio of 3 tech companies from VNV Global" },
+        { "year": 2024, "event": "Fountain Venture co-invest", "description": "Invests in Fountain Venture portfolio (Meltwater) with Altor & Marlin" },
+        { "year": 2024, "event": "Urban Sports Club round", "description": "Leads €95m round in Urban Sports Club" },
+        { "year": 2024, "event": "Danelec add-on", "description": "Danelec acquires Nautilus Labs (AI platform)" },
+        { "year": 2024, "event": "Sustainability Report", "description": "Publishes 2023 Sustainability Report" },
+        { "year": 2023, "event": "Capital XI closes", "description": "Verdane closes oversubscribed Capital XI at €1.1bn" },
+        { "year": 2023, "event": "UrbanVolt partnership", "description": "Partners with UrbanVolt – building European Solar-as-a-Service champion" },
+        { "year": 2023, "event": "HQ Equita portfolio", "description": "Acquires portfolio of five German tech companies from HQ Equita" },
+        { "year": 2023, "event": "EasyPark Group", "description": "EasyPark Group intends to acquire Flowbird Group" },
+        { "year": 2023, "event": "Mathem & Oda merge", "description": "Mathem & Oda merge – largest Nordic online grocery retailer" },
+        { "year": 2023, "event": "Papirfly add-on", "description": "Papirfly acquires French DAM player Keepeek SA" },
+        { "year": 2023, "event": "Verified add-on", "description": "Verified acquires Pliance after Verdane investment and earlier acquisition of Assently" },
+        { "year": 2023, "event": "Nomentia realisation", "description": "Verdane & PSG realise Nomentia (treasury software) to Inflexion" },
+        { "year": 2023, "event": "Eduhouse add-on", "description": "Eduhouse acquires GoLearn (DK) → Nordic edtech leader" },
+        { "year": 2023, "event": "B Corp certification", "description": "Awarded B Corp certification" },
+        { "year": 2023, "event": "Germany expansion", "description": "Expands presence in Germany (new Munich office + Partner appointment)" },
+        { "year": 2023, "event": "Team expansion", "description": "Welcomes Moez Gharbi (Partner) & Bjarne Abrahamsen (COO)" },
+        { "year": 2022, "event": "Fashion Cloud round", "description": "Fashion Cloud receives €25m round led by Verdane" },
+        { "year": 2022, "event": "NORNORM funding", "description": "NORNORM secures €110m scale-up funding led by Verdane (circular furniture)" },
+        { "year": 2022, "event": "Oda funding", "description": "Oda raises NOK 1.5bn" },
+        { "year": 2022, "event": "Instabox & Budbee merge", "description": "Instabox & Budbee merge – last-mile delivery consolidation" },
+        { "year": 2022, "event": "Helena Svancar joins", "description": "Bolsters team with Helena Svancar as Partner" },
+        { "year": 2022, "event": "Hornetsecurity investment", "description": "Hornetsecurity receives strategic growth investment from TA" },
+        { "year": 2022, "event": "Idun Fund investments", "description": "Idun Fund invests in two new sustainable companies" },
+        { "year": 2022, "event": "EVA Global activity", "description": "EVA Global bolsters EV-charging infrastructure (portco activity)" },
+        { "year": 2022, "event": "Danish investments", "description": "Two new Danish investments: Onomondo & Apoteka" },
+        { "year": 2022, "event": "Apoteka partnership", "description": "Partners with Apoteka (online pharmacy, DK)" },
+        { "year": 2022, "event": "Onomondo partnership", "description": "Partners with Onomondo (IoT connectivity)" },
+        { "year": 2022, "event": "Cleanwatts partnership", "description": "Partners with Cleanwatts (energy-management software)" },
+        { "year": 2022, "event": "Kappa Bioscience realisation", "description": "Realises Kappa Bioscience (EBITDA × 4 in 3 yrs)" },
+        { "year": 2022, "event": "Amp Eleven partnership", "description": "Partners with Amp Eleven to build 3 European fintech/app leaders" },
+        { "year": 2022, "event": "Scanmarket realisation", "description": "Realises Scanmarket (ARR × 2 in 3 yrs)" },
+        { "year": 2022, "event": "Clausion realisation", "description": "Realises Clausion to insightsoftware (ARR + 100%)" },
+        { "year": 2022, "event": "Scanbio Marine acquisition", "description": "Verdane & Pioneer Point acquire Scanbio Marine (aquaculture waste mgmt)" },
+        { "year": 2022, "event": "Instabox round", "description": "Instabox closes $190m round led by Verdane" },
+        { "year": 2022, "event": "Hobbii partnership", "description": "Partners with Hobbii (global D2C crafts)" },
+        { "year": 2022, "event": "Carbon neutrality commitment", "description": "Commits to neutralise all residual emissions via engineered carbon removals" },
+        { "year": 2022, "event": "Active Brands co-invest", "description": "FSN Capital + Verdane invest in Active Brands (sports apparel)" },
+        { "year": 2022, "event": "EVA Global investment", "description": "Invests in EVA Global (EV-charging managed services)" },
+        { "year": 2022, "event": "Swappie investment", "description": "Invests in Swappie (circular consumer tech)" },
+        { "year": 2022, "event": "Forsta realisation", "description": "EQT + Verdane sell Forsta to Press Ganey" },
+        { "year": 2022, "event": "Papirfly investment", "description": "Invests in Papirfly Group (brand-management SaaS)" },
+        { "year": 2022, "event": "Porterbuddy acquisition", "description": "Porterbuddy (Verdane-backed) acquired by Instabox" },
+        { "year": 2022, "event": "Idun I launch", "description": "Launches Europe's largest growth impact fund (Idun I)" },
+        { "year": 2022, "event": "PremiumXL add-on", "description": "PremiumXL acquires Lomado" },
+        { "year": 2022, "event": "InnoNature partnership", "description": "Partners with InnoNature (women's health)" },
+        { "year": 2022, "event": "Danelec Marine add-on", "description": "Danelec Marine acquires KYMA" },
+        { "year": 2022, "event": "Centra partnership", "description": "Partners with Centra (e-commerce SaaS)" },
+        { "year": 2022, "event": "Scanmarket add-on", "description": "Scanmarket acquires Symfact AG" },
+        { "year": 2022, "event": "Langholm Capital portfolio", "description": "Acquires portfolio of 3 consumer companies from Langholm Capital (UK)" },
+        { "year": 2022, "event": "Team strengthening", "description": "Strengthens investment & IR teams" }
+      ],
       "portfolio_companies": [
         {
           "name": "Voyado",
@@ -1464,7 +2064,7 @@
       "offices": [
         "Stockholm"
       ],
-      "description": "Bure Equity is a Swedish investment company focusing on STEM-related sectors with active ownership approach.",
+      "description": "Bure Equity is a listed evergreen investment company (Nasdaq Stockholm) with permanent capital. It combines listed control stakes (Mycronic, Vitrolife, XVIVO, Ovzon) with growth ventures via its Atle Asset Management platform.",
       "investment_focus": {
         "sectors": [
           "Healthcare",
@@ -1483,22 +2083,27 @@
       },
       "team": [
         {
+          "name": "Patrik Tigerschiöld",
+          "title": "Chair",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Anders Ljungberg",
+          "title": "CFO",
+          "location": "Stockholm"
+        },
+        {
           "name": "Henrik Blomquist",
           "title": "CEO",
           "location": "Stockholm"
-        },
-        {
-          "name": "Max Jonson",
-          "title": "Investment Director",
-          "location": "Stockholm"
-        },
-        {
-          "name": "Charlotta Jonson",
-          "title": "CFO",
-          "location": "Stockholm"
         }
       ],
-      "recent_activity": "Bure Equity is an active private equity firm focused on Nordic investments. Please visit their website for the latest news and updates."
+      "fundraising": {
+        "structure": "Listed evergreen investment company (Nasdaq Stockholm)",
+        "aum": "c. SEK 25bn",
+        "approach": "Permanent capital; expanding Atle Asset Management into Norway / active-management consolidation"
+      },
+      "recent_activity": "2025–2024: Leads consortium to acquire majority of Silex Microsystems (2025). Becomes co-owner of Mentimeter (2025). Increases BioLamina to 52% and new Biolaminin® 521 LN batches (2025). Yubico: merger with ACQ Bure and lists on Nasdaq First North (2024). XVIVO: SEK 440m directed issue; new CEO; positive heart-preservation trial. Ovzon 3 satellite launch. Mycronic acquires atg Luther & Maelzer; transitions to solid-state lasers. Atle acquires First Fondene (NO) and absorbs HealthInvest Partners."
     },
     "CapMan": {
       "name": "CapMan",
@@ -1565,7 +2170,7 @@
       "recent_activity": "CapMan is an active private equity firm focused on Nordic investments. Please visit their website for the latest news and updates."
     },
     "Celero": {
-      "name": "Celero",
+      "name": "Celero Capital",
       "logo_url": "https://ui-avatars.com/api/?name=Celero&background=7c2d12&color=ffffff&size=64",
       "website": "https://www.celero.eu",
       "headquarters": "Stockholm, Sweden",
@@ -1576,25 +2181,32 @@
         "Stockholm",
         "Oslo"
       ],
-      "description": "Celero is a specialized Nordic private equity firm focused on growth capital investments in technology and services companies with proven business models and international expansion potential.",
+      "description": "Celero Capital is a Nordic lower mid-market private equity firm founded by Peter Möller, former senior partner at FSN Capital. The firm focuses on service companies, consumer goods companies, and specialized industrial companies with strong growth potential.",
       "investment_focus": {
         "sectors": [
-          "Technology",
           "Services",
-          "B2B Software",
-          "SaaS"
+          "Consumer Goods",
+          "Specialized Industrial",
+          "Property Services",
+          "Manufacturing Solutions"
         ],
         "geography": [
           "Nordic region"
         ],
         "deal_size": "€20M - €150M",
         "investment_type": [
+          "Lower mid-market buyouts",
           "Growth capital",
-          "Minority stakes",
-          "Buy-and-build"
+          "Platform investments"
         ]
       },
       "team": [
+        {
+          "name": "Peter Möller",
+          "title": "Founder & Managing Partner",
+          "location": "Stockholm",
+          "background": "Former Senior Partner at FSN Capital"
+        },
         {
           "name": "Lennart Altmann",
           "title": "Managing Partner",
@@ -1606,6 +2218,18 @@
           "location": "Stockholm"
         },
         {
+          "name": "Viktor Hansson",
+          "title": "Partner",
+          "location": "Stockholm",
+          "background": "Promoted to Partner in 2023"
+        },
+        {
+          "name": "Gustaf von Platen",
+          "title": "Principal",
+          "location": "Stockholm",
+          "background": "Former FSN Capital, joined 2023"
+        },
+        {
           "name": "Erik Viklund",
           "title": "Principal",
           "location": "Oslo"
@@ -1614,13 +2238,73 @@
           "name": "Marcus Johansson",
           "title": "Principal",
           "location": "Stockholm"
+        },
+        {
+          "name": "Oscar Haglund",
+          "title": "Investment Manager",
+          "location": "Stockholm",
+          "background": "Joined 2024"
+        },
+        {
+          "name": "Emil Erbing",
+          "title": "Investment Associate",
+          "location": "Stockholm",
+          "background": "Joined 2024"
+        },
+        {
+          "name": "Johanna Kull",
+          "title": "Investment Associate",
+          "location": "Stockholm",
+          "background": "Joined 2024"
         }
       ],
-      "recent_activity": "Celero is an active private equity firm focused on Nordic investments. Please visit their website for the latest news and updates."
+      "recent_activity": "March 2025: Established Aterion with six entrepreneur-led companies to become a leading Nordic power industry player. December 2024: Successfully closed Celero Capital Fund I raising €300M+. Current platform investments: Corteco (property renovation & maintenance), Reledo (facility management), Opima (manufacturing solutions), and Aterion (power industry). Strong team expansion with key hires from FSN Capital and other leading firms.",
+      "timeline": [
+        {
+          "year": 2015,
+          "event": "Celero Capital founded",
+          "description": "Peter Möller founded Celero Capital after leaving FSN Capital as Senior Partner"
+        },
+        {
+          "year": 2022,
+          "event": "Corteco platform established",
+          "description": "Partnered with three entrepreneur-owned firms to establish Corteco in property renovation & maintenance"
+        },
+        {
+          "year": 2023,
+          "event": "Reledo platform launched",
+          "description": "Established Reledo through partnership with four facility management companies"
+        },
+        {
+          "year": 2023,
+          "event": "Team expansion",
+          "description": "Gustaf von Platen joined as Principal (former FSN Capital), Viktor Hansson promoted to Partner"
+        },
+        {
+          "year": 2024,
+          "event": "Opima platform created",
+          "description": "Partnered with four specialized companies to serve Swedish manufacturing industry"
+        },
+        {
+          "year": 2024,
+          "event": "Fund I closure",
+          "description": "Successfully closed Celero Capital Fund I raising €300M+"
+        },
+        {
+          "year": 2024,
+          "event": "NAXS commitment expansion",
+          "description": "NAXS increased commitment to Celero Capital Fund (E) AB from €1.5M to €3.2M"
+        },
+        {
+          "year": 2025,
+          "event": "Aterion platform launch",
+          "description": "Established Aterion with six entrepreneur-led companies targeting Nordic power industry leadership"
+        }
+      ]
     },
     "Polaris": {
       "name": "Polaris",
-      "logo_url": "https://ui-avatars.com/api/?name=Polaris&background=1e40af&color=ffffff&size=64",
+      "logo_url": "https://logo.clearbit.com/polarisprivateequity.com",
       "website": "https://www.polarisprivateequity.com",
       "headquarters": "Copenhagen, Denmark",
       "founded": 1998,
@@ -1630,7 +2314,7 @@
         "Copenhagen",
         "Oslo"
       ],
-      "description": "Polaris Private Equity is a Nordic private equity firm investing in mid-market companies with strong market positions and growth potential.",
+      "description": "Polaris Private Equity is a Nordic private equity firm investing in mid-market companies with strong market positions and growth potential. Nordic mid-cap industrial and business-services specialist with flexible hold model. Pioneering 'industrial decarbonisation' theme through Micropower / LEAB / Vinnergi platforms.",
       "investment_focus": {
         "sectors": [
           "Services",
@@ -1649,6 +2333,18 @@
         ]
       },
       "team": [
+        {
+          "name": "Jan-Ove Holmen",
+          "title": "CEO",
+          "location": "Copenhagen",
+          "background": "CEO"
+        },
+        {
+          "name": "Martin Møller",
+          "title": "Chair",
+          "location": "Copenhagen",
+          "background": "Chair"
+        },
         {
           "name": "Lars Fischer",
           "title": "Managing Partner",
@@ -1670,7 +2366,410 @@
           "location": "Copenhagen"
         }
       ],
+      "fundraising": {
+        "funds": {
+          "fund_v": "DKK 4.5bn (2021)",
+          "flexible_capital_i": "DKK 1bn (2023) for minority/credit hybrid deals"
+        },
+        "strategy": "Nordic mid-cap industrial and business-services specialist; flexible hold model",
+        "themes": "Pioneering 'industrial decarbonisation' theme through Micropower / LEAB / Vinnergi"
+      },
       "recent_activity": "Polaris is an active private equity firm focused on Nordic investments. Please visit their website for the latest news and updates."
+    },
+    "Nordstjernan": {
+      "name": "Nordstjernan",
+      "logo_url": "https://logo.clearbit.com/nordstjernan.se",
+      "website": "https://www.nordstjernan.se",
+      "headquarters": "Stockholm, Sweden",
+      "founded": 1890,
+      "aum": "SEK 25 billion",
+      "employees": "80+",
+      "offices": [
+        "Stockholm"
+      ],
+      "description": "Nordstjernan is a family-owned evergreen investment company (Ax:son Johnson Group) with long-term holding periods (10+ years), focused on Nordic industrials, healthcare, real estate, and selective growth via Nordstjernan Growth AB.",
+      "investment_focus": {
+        "sectors": [
+          "Industrials",
+          "Healthcare",
+          "Real Estate",
+          "Technology & Growth"
+        ],
+        "geography": [
+          "Nordic region"
+        ],
+        "deal_size": "SEK 200M - SEK 5B",
+        "investment_type": [
+          "Control and significant minority",
+          "Evergreen holdings",
+          "Growth capital"
+        ]
+      },
+      "team": [
+        {
+          "name": "Viveka Ekberg",
+          "title": "CEO",
+          "location": "Stockholm",
+          "background": "CEO (2025)"
+        },
+        {
+          "name": "Patrik Tigerschiöld",
+          "title": "Chair",
+          "location": "Stockholm",
+          "background": "Chair & key figure"
+        },
+        {
+          "name": "Anders Ljungberg",
+          "title": "CFO",
+          "location": "Stockholm"
+        }
+      ],
+      "fundraising": {
+        "structure": "Listed evergreen investment company (Nasdaq Stockholm)",
+        "approach": "Permanent capital; combines listed control stakes with growth ventures via Atle platform",
+        "portfolio_structure": "Alligo, Momentum Group, Etac, Rosti, Oden Tech, Mentimeter, Aidian, etc."
+      },
+      "recent_activity": "2025: Divests Norva24. Sells remaining shares in engcon AB. Issues call options in Alligo. Sells Nordstjernan Growth AB (vehicle holding Mentimeter/Roaring/Insurello/Zimpler/Oden, etc.). 2024–2020: Invests in Oden Technologies (2024); sells all shares in NCC (2024); sells shares in Momentum Group (2023); invests in Mentimeter (2022); increases BioLamina to 52% (2025); multiple strategic moves across Vitrolife, Mycronic, XVIVO, Ovzon, Rosti, Aidian.",
+      "timeline": [
+        { "year": 1890, "event": "Nordstjernan founded", "description": "Family-owned investment company established (Ax:son Johnson Group)" },
+        { "year": 2021, "event": "Portfolio strategy", "description": "Permanent capital model across listed and private holdings" },
+        { "year": 2022, "event": "Mentimeter investment", "description": "Becomes co-owner of Mentimeter" },
+        { "year": 2023, "event": "Momentum Group sell-down", "description": "Sells shares in Momentum Group" },
+        { "year": 2024, "event": "NCC exit", "description": "Sells all shares in NCC; earlier partial sell-downs" },
+        { "year": 2024, "event": "Oden Technologies investment", "description": "Invests in Oden Technologies" },
+        { "year": 2025, "event": "Norva24 divestment", "description": "Divests Norva24" },
+        { "year": 2025, "event": "engcon exit", "description": "Sells remaining shares in engcon AB" },
+        { "year": 2025, "event": "Alligo options", "description": "Issues call options in Alligo" },
+        { "year": 2025, "event": "Nordstjernan Growth AB sale", "description": "Sells vehicle holding Mentimeter/Roaring/Insurello/Zimpler/Oden" }
+      ]
+    },
+    "Norvestor": {
+      "name": "Norvestor",
+      "logo_url": "https://logo.clearbit.com/norvestor.com",
+      "website": "https://norvestor.com",
+      "headquarters": "Oslo, Norway",
+      "founded": 1991,
+      "aum": "€2.0 billion",
+      "employees": "70+",
+      "offices": [
+        "Oslo",
+        "Stockholm",
+        "Helsinki"
+      ],
+      "description": "Norvestor is a Nordic lower-midcap buy-and-build specialist practicing 'industrialised entrepreneurship'. Very active GP-led continuation model and frequent Nordic-platform-to-Pan-EU expansion (Rantalainen, PHM, Serwent).",
+      "investment_focus": {
+        "sectors": [
+          "Business Services",
+          "Industrial Services",
+          "Technology"
+        ],
+        "geography": [
+          "Nordic region"
+        ],
+        "deal_size": "€20M - €200M",
+        "investment_type": [
+          "Lower mid-market buyouts",
+          "Buy-and-build",
+          "Continuation vehicles"
+        ]
+      },
+      "team": [
+        {
+          "name": "Henrik Aspén",
+          "title": "Managing Partner",
+          "location": "Oslo"
+        }
+      ],
+      "fundraising": {
+        "funds": {
+          "norvestor_ix": "€1.5bn (2023)",
+          "nova_i": "€0.5bn (2025)"
+        },
+        "strategy": "Lower-midcap Nordic buy-and-build; 'industrialised entrepreneurship'",
+        "geography": "Oslo HQ; Stockholm / Oslo / Helsinki presence"
+      },
+      "recent_activity": "2025: Acquires Norautron; divests Monti; Rantalainen combines with BDO Norway Business Services (Nordic expansion); divests PHM Group and Sperre Air Power to Norvestor-managed funds (GP-led continuation); divests Globeteam; partners with PSA (legal-tech); closes Nova I €500m; co-invests in PCS Modulsystem; closes sale of Neuver Maritime with Kongsberg. 2024–2020: Divests 4Service (2024); invests in Wint (2024); Kongsberg Maritime steering/rudder business acquisition and later Neuver sale; partners with glueckkanja; PHM €300m bond (2021); Foxway co-invest with Nordic Capital (2023); Rantalainen/Colmec/Serwent growth; multiple platform and add-ons across 2020–2023.",
+      "timeline": [
+        { "year": 2021, "event": "PHM €300m bond", "description": "PHM Group issues €300m bond and continues Nordic consolidation" },
+        { "year": 2023, "event": "Flagship fund closes", "description": "Closes flagship Fund at €1.5bn" },
+        { "year": 2023, "event": "Foxway co-invest", "description": "Co-invests in Foxway with Nordic Capital" },
+        { "year": 2024, "event": "4Service divestment", "description": "Divests 4Service" },
+        { "year": 2025, "event": "Norautron acquisition", "description": "Acquires Norautron (Nordic EMS)" },
+        { "year": 2025, "event": "GP-led continuation", "description": "Divests PHM Group and Sperre Air Power to Norvestor-managed funds" },
+        { "year": 2025, "event": "Nova I closes", "description": "Closes Nova I opportunity/growth sleeve at €500m" }
+      ]
+    },
+    "Helix Kapital": {
+      "name": "Helix Kapital",
+      "logo_url": "https://logo.clearbit.com/helixkapital.se",
+      "website": "https://helixkapital.se",
+      "headquarters": "Stockholm, Sweden",
+      "founded": 2018,
+      "aum": "SEK 3.5 billion",
+      "employees": "20+",
+      "offices": [
+        "Stockholm"
+      ],
+      "description": "Helix Kapital backs founder-led, niche B2B services and industrial tech/software companies, executing buy-and-build across focused platforms.",
+      "investment_focus": {
+        "sectors": [
+          "Industrial Tech",
+          "Business Services",
+          "Software",
+          "Media & Entertainment"
+        ],
+        "geography": [
+          "Sweden",
+          "Nordics"
+        ],
+        "deal_size": "SEK 100M - 1.0B",
+        "investment_type": [
+          "Lower mid-market buyouts",
+          "Founder partnerships",
+          "Buy-and-build"
+        ]
+      },
+      "fundraising": {
+        "funds": {
+          "fund_iii": "SEK 1.566bn (Apr 4, 2024)"
+        },
+        "strategy": "Fresh dry powder for new platforms and add-ons across targeted niches"
+      },
+      "timeline": [
+        { "year": 2025, "event": "Revivo Group platform", "description": "Helix Kapital establishes Revivo Group (Sep 4)", "company": "Revivo Group" },
+        { "year": 2025, "event": "Revivo Group add-on", "description": "Revivo Group acquires Lejon Entreprenad (Oct 27)", "company": "Revivo Group" },
+        { "year": 2025, "event": "Trinax add-on", "description": "Trinax acquires Struqtur (May 25)", "company": "Trinax" },
+        { "year": 2025, "event": "Sacpro add-on", "description": "Sacpro acquires UVRelining (Apr 8)", "company": "Sacpro" },
+        { "year": 2025, "event": "Growth partnership", "description": "Partners with Recycling Partner RP AB (Feb 2)" },
+        { "year": 2025, "event": "VisionSense add-on", "description": "VisionSense Technologies acquires Autepra UAB (Jan 10)", "company": "VisionSense Technologies" },
+        { "year": 2024, "event": "VisionSense add-on", "description": "VisionSense Technologies acquires Vidamin Oy (Dec 31)", "company": "VisionSense Technologies" },
+        { "year": 2024, "event": "Spring Media exit", "description": "Divests stake in Spring Media (Oct 28)", "company": "Spring Media" },
+        { "year": 2024, "event": "Trinax add-on", "description": "Trinax acquires Jiricom (Jun 27)", "company": "Trinax" },
+        { "year": 2024, "event": "Fund III close", "description": "Fund III closes oversubscribed at SEK 1.566bn (Apr 4)" },
+        { "year": 2024, "event": "Lucky Bowl add-on", "description": "Lucky Bowl acquires five bowling centers from Bowling 1 (Jan 4)", "company": "Lucky Bowl" },
+        { "year": 2023, "event": "Sacpro partnership", "description": "Becomes growth partner to Sacpro (Dec 19)", "company": "Sacpro" },
+        { "year": 2023, "event": "L5 add-on", "description": "L5 Navigation acquires ROCKMA System (Dec 6)", "company": "L5 Navigation" },
+        { "year": 2023, "event": "Xamera partnership", "description": "New strategic owner/partner to Xamera (Dec 3)" },
+        { "year": 2023, "event": "L5 add-on", "description": "L5 Navigation acquires GeoFix businesses in Sweden & Finland (Oct 30)" },
+        { "year": 2023, "event": "Heda exit", "description": "Divests Heda Security (Sep 25)" },
+        { "year": 2023, "event": "Trinax partnership", "description": "Partners with Trinax AB (Sep 3)" },
+        { "year": 2023, "event": "Holms exit", "description": "Divests Holms Attachments to Ejendal Invest (Jul 3)" },
+        { "year": 2023, "event": "Heda add-on", "description": "Heda Security acquires Tuna Stängsel (Feb 17)" },
+        { "year": 2022, "event": "Heda add-on", "description": "Heda Security acquires M&M Stängsel Service (Nov 13)" },
+        { "year": 2022, "event": "Education platforms investment", "description": "Invests in training/health education platforms in NO & SE (Nov 6)" },
+        { "year": 2022, "event": "Spring Media add-ons", "description": "Spring Media acquires Athletic Sports Group & Fight Globe (Oct 20) and Hogmore (Oct 12)" },
+        { "year": 2022, "event": "L5 Navigation investment", "description": "Invests in L5 Navigation Systems (Oct 10)" },
+        { "year": 2022, "event": "Heda add-ons", "description": "Heda Security acquires MSS Nordic (May 19) and Teknoinfra Oy (Apr 7)" },
+        { "year": 2021, "event": "Spring Media & Future Sports", "description": "Invests in Spring Media & Future Sports Agency (Sep 21)" },
+        { "year": 2021, "event": "Heda add-on", "description": "Heda Security acquires Syd Stängsel AB (Sep 4)" },
+        { "year": 2021, "event": "Sensebit add-on", "description": "Sensebit acquires Visy Oy (Jan 29)" },
+        { "year": 2020, "event": "Sensebit investment", "description": "Invests in Sensebit Group (Feb 21)" },
+        { "year": 2020, "event": "Member 24 add-on", "description": "Member 24 acquires eight gyms (Jan 24)" },
+        { "year": 2019, "event": "Member 24 investment", "description": "Invests in Member 24 (Apr 3)" },
+        { "year": 2019, "event": "Heda add-on", "description": "Heda Skandinavien acquires Upplands Stängsel (Jan 17)" },
+        { "year": 2018, "event": "Heda add-on", "description": "Heda Skandinavien acquires Heab Stängsel (Nov 8)" },
+        { "year": 2018, "event": "Heda investment", "description": "Invests in Heda Skandinavien (Jun 11)" },
+        { "year": 2018, "event": "Holms Industri investment", "description": "Invests in Holms Industri (Jun 6)" }
+      ]
+    },
+    "FSN Capital": {
+      "name": "FSN Capital",
+      "logo_url": "https://ui-avatars.com/api/?name=FSN+Capital&background=059669&color=ffffff&size=64",
+      "website": "https://www.fsncapital.com",
+      "headquarters": "Oslo, Norway",
+      "founded": 1999,
+      "aum": "€2.5 billion",
+      "employees": "40+",
+      "offices": [
+        "Oslo",
+        "Stockholm",
+        "Copenhagen"
+      ],
+      "description": "FSN Capital is a Nordic private equity firm focused on mid-market investments in companies with strong market positions and growth potential across various sectors. Mid-cap transformational owner (EV 100M–1B €) with Bridge between Nordic and Continental Europe. Known for creation of FSN Compass continuation-vehicle platform (2024) — top-quartile exit liquidity mechanism.",
+      "investment_focus": {
+        "sectors": [
+          "Services",
+          "Industrial",
+          "Healthcare",
+          "Technology",
+          "Consumer"
+        ],
+        "geography": [
+          "Nordic region"
+        ],
+        "deal_size": "€50M - €500M",
+        "investment_type": [
+          "Mid-market buyouts",
+          "Growth capital",
+          "Management buyouts"
+        ]
+      },
+      "team": [
+        {
+          "name": "Frode Strand-Nielsen",
+          "title": "Founder & Managing Partner",
+          "location": "Oslo",
+          "background": "Transitioning to Chair; generation hand-off"
+        },
+        {
+          "name": "Morten Welo",
+          "title": "Managing Partner",
+          "location": "Oslo",
+          "background": "New Co-Managing Partner"
+        },
+        {
+          "name": "Bjørn Erik Næss",
+          "title": "Partner",
+          "location": "Oslo"
+        },
+        {
+          "name": "Christian Rynning-Tønnesen",
+          "title": "Partner",
+          "location": "Oslo"
+        }
+      ],
+      "fundraising": {
+        "funds": {
+          "fsn_vi": "€1.8bn (2021)",
+          "compass_i": "Continuation fund",
+          "fsn_vii": "In market 2025"
+        },
+        "strategy": "Mid-cap transformational owner (EV 100M–1B €) with Bridge between Nordic and Continental Europe",
+        "differentiator": "FSN Compass continuation-vehicle platform (2024) — top-quartile exit liquidity mechanism"
+      },
+      "recent_activity": "2025: FSN VI to acquire Volue Infrastructure (infra software), Compass I invests in UHL Bau (Austrian civil engineering), FSN IV signs to sell Fibo, Saferoad accelerates European M&A (Confluence platform). 2024: Confluence continuation fund closes (LGT lead), Nordlo completes SEK 3.6bn refinancing. 2023: Acquires Solcellespesialisten, sells Skamol, forms Danish technical-installation leader via 11 companies, invests in Polytech with Verdane, acquires Lobster (no-code data integration), acquires ilionx (IT-services, NL). Strong track record across multiple funds.",
+      "timeline": [
+        {
+          "year": 1999,
+          "event": "FSN Capital founded",
+          "description": "Founded by Frode Strand-Nielsen in Oslo, Norway"
+        },
+        {
+          "year": 2015,
+          "event": "Peter Möller departure",
+          "description": "Peter Möller left FSN Capital as Senior Partner to found Celero Capital"
+        },
+        {
+          "year": 2021,
+          "event": "FSN VI fundraising",
+          "description": "Raises FSN VI €1.8bn"
+        },
+        {
+          "year": 2021,
+          "event": "OptiGroup/Hygas combination",
+          "description": "Creates OptiGroup/Hygas combination"
+        },
+        {
+          "year": 2021,
+          "event": "EET exit",
+          "description": "Sells EET"
+        },
+        {
+          "year": 2021,
+          "event": "Kjell & Co listing",
+          "description": "Kjell & Co listed"
+        },
+        {
+          "year": 2021,
+          "event": "Adragos Pharma investment",
+          "description": "Invests in Adragos Pharma"
+        },
+        {
+          "year": 2021,
+          "event": "MEGABAD investment",
+          "description": "Invests in MEGABAD"
+        },
+        {
+          "year": 2021,
+          "event": "Omegapoint acquisition",
+          "description": "Acquires Omegapoint"
+        },
+        {
+          "year": 2022,
+          "event": "ilionx acquisition",
+          "description": "Acquires ilionx (IT-services, NL)"
+        },
+        {
+          "year": 2022,
+          "event": "Mørenot merger",
+          "description": "Merges Mørenot into Hampiðjan"
+        },
+        {
+          "year": 2022,
+          "event": "Bäcker Görtz investment",
+          "description": "Invests in Bäcker Görtz"
+        },
+        {
+          "year": 2022,
+          "event": "Firesafe acquisition",
+          "description": "Acquires Firesafe"
+        },
+        {
+          "year": 2022,
+          "event": "Epista Life Science acquisition",
+          "description": "Acquires Epista Life Science"
+        },
+        {
+          "year": 2022,
+          "event": "Seriline investment",
+          "description": "Invests in Seriline"
+        },
+        {
+          "year": 2023,
+          "event": "Solcellespesialisten acquisition",
+          "description": "Acquires Solcellespesialisten"
+        },
+        {
+          "year": 2023,
+          "event": "Skamol exit",
+          "description": "Sells Skamol"
+        },
+        {
+          "year": 2023,
+          "event": "Danish technical-installation platform",
+          "description": "Forms Danish technical-installation leader via 11 companies"
+        },
+        {
+          "year": 2023,
+          "event": "Polytech investment",
+          "description": "Invests in Polytech with Verdane"
+        },
+        {
+          "year": 2023,
+          "event": "Lobster acquisition",
+          "description": "Acquires Lobster (no-code data integration)"
+        },
+        {
+          "year": 2024,
+          "event": "Confluence continuation fund",
+          "description": "Confluence continuation fund closes (LGT lead)"
+        },
+        {
+          "year": 2024,
+          "event": "Nordlo refinancing",
+          "description": "Nordlo completes SEK 3.6bn refinancing"
+        },
+        {
+          "year": 2025,
+          "event": "Volue Infrastructure acquisition",
+          "description": "FSN VI to acquire Volue Infrastructure (infra software)"
+        },
+        {
+          "year": 2025,
+          "event": "UHL Bau investment",
+          "description": "Compass I invests in UHL Bau (Austrian civil engineering)"
+        },
+        {
+          "year": 2025,
+          "event": "Fibo exit",
+          "description": "FSN IV signs to sell Fibo"
+        },
+        {
+          "year": 2025,
+          "event": "Saferoad expansion",
+          "description": "Saferoad accelerates European M&A (Confluence platform)"
+        }
+      ]
     }
   }
 }

@@ -402,7 +402,7 @@ async function loadFirmPortfolio(firmName) {
         const data = await response.json();
         
         if (data.success) {
-            const firmCompanies = data.companies.filter(c => c.source === firmName);
+            const firmCompanies = data.companies.filter(c => c.source === firmName && (c.status !== 'Exited'));
             const container = document.getElementById('firmPortfolio');
             
             if (firmCompanies.length === 0) {
@@ -833,8 +833,116 @@ async function loadFirmTimeline(firm, firmName) {
             // Build timeline events
             const events = [];
             
-            // Add founding event
-            if (firm.founded) {
+            // Add custom timeline events first (if they exist)
+            if (firm.timeline && firm.timeline.length > 0) {
+                // Group events by year and category
+                const eventsByYear = {};
+                
+                firm.timeline.forEach(timelineEvent => {
+                    const year = timelineEvent.year;
+                    if (!eventsByYear[year]) {
+                        eventsByYear[year] = {
+                            acquisitions: [],
+                            exits: [],
+                            fundActivities: [],
+                            other: []
+                        };
+                    }
+                    
+                    // Try to match event to portfolio company for logo display
+                    if (timelineEvent.company) {
+                        const matchingCompany = firmCompanies.find(c => c.company === timelineEvent.company);
+                        if (matchingCompany) {
+                            timelineEvent.companyData = matchingCompany;
+                        }
+                    }
+                    
+                    const eventType = timelineEvent.event.toLowerCase();
+                    if (eventType.includes('fund') || eventType.includes('closes') || eventType.includes('raises') || eventType.includes('continuation')) {
+                        eventsByYear[year].fundActivities.push(timelineEvent);
+                    } else if (eventType.includes('exit') || eventType.includes('sells') || eventType.includes('divests') || eventType.includes('sale')) {
+                        eventsByYear[year].exits.push(timelineEvent);
+                    } else if (eventType.includes('acquires') || eventType.includes('invests') || eventType.includes('acquisition') || eventType.includes('investment') || eventType.includes('add-on') || eventType.includes('partnership')) {
+                        eventsByYear[year].acquisitions.push(timelineEvent);
+                    } else {
+                        eventsByYear[year].other.push(timelineEvent);
+                    }
+                });
+                
+                // Create consolidated events
+                Object.keys(eventsByYear).forEach(year => {
+                    const yearEvents = eventsByYear[year];
+                    
+                    // Fund activities
+                    if (yearEvents.fundActivities.length > 0) {
+                        events.push({
+                            year: parseInt(year),
+                            type: 'fund',
+                            title: yearEvents.fundActivities.length === 1 ? yearEvents.fundActivities[0].event : `${yearEvents.fundActivities.length} Fund Activities`,
+                            description: yearEvents.fundActivities.length === 1 ? 
+                                yearEvents.fundActivities[0].description : 
+                                yearEvents.fundActivities.map(e => e.event).join(', '),
+                            icon: 'fa-coins',
+                            color: '#10b981',
+                            events: yearEvents.fundActivities
+                        });
+                    }
+                    
+                    // Acquisitions
+                    if (yearEvents.acquisitions.length > 0) {
+                        // Check if any acquisition has company data for logo display
+                        const hasCompanyData = yearEvents.acquisitions.some(e => e.companyData);
+                        const primaryCompany = yearEvents.acquisitions.find(e => e.companyData)?.companyData;
+                        
+                        events.push({
+                            year: parseInt(year),
+                            type: 'acquisition',
+                            title: yearEvents.acquisitions.length === 1 ? yearEvents.acquisitions[0].event : `${yearEvents.acquisitions.length} Acquisitions`,
+                            description: yearEvents.acquisitions.length === 1 ? 
+                                yearEvents.acquisitions[0].description : 
+                                yearEvents.acquisitions.map(e => e.event).join(', '),
+                            icon: 'fa-handshake',
+                            color: '#8b5cf6',
+                            events: yearEvents.acquisitions,
+                            company: primaryCompany,
+                            companies: yearEvents.acquisitions.filter(e => e.companyData).map(e => e.companyData)
+                        });
+                    }
+                    
+                    // Exits
+                    if (yearEvents.exits.length > 0) {
+                        // Check if any exit has company data for logo display
+                        const primaryCompany = yearEvents.exits.find(e => e.companyData)?.companyData;
+                        
+                        events.push({
+                            year: parseInt(year),
+                            type: 'exit',
+                            title: yearEvents.exits.length === 1 ? yearEvents.exits[0].event : `${yearEvents.exits.length} Exits`,
+                            description: yearEvents.exits.length === 1 ? 
+                                yearEvents.exits[0].description : 
+                                yearEvents.exits.map(e => e.event).join(', '),
+                            icon: 'fa-sign-out-alt',
+                            color: '#ef4444',
+                            events: yearEvents.exits,
+                            company: primaryCompany,
+                            companies: yearEvents.exits.filter(e => e.companyData).map(e => e.companyData)
+                        });
+                    }
+                    
+                    // Other events
+                    yearEvents.other.forEach(event => {
+                        events.push({
+                            year: parseInt(year),
+                            type: event.event.toLowerCase().includes('founded') ? 'founding' : 'milestone',
+                            title: event.event,
+                            description: event.description,
+                            icon: event.event.toLowerCase().includes('founded') ? 'fa-flag-checkered' : 'fa-star',
+                            color: event.event.toLowerCase().includes('founded') ? '#667eea' : '#f59e0b'
+                        });
+                    });
+                });
+            } else if (firm.founded) {
+                // Fallback to basic founding event if no custom timeline
                 events.push({
                     year: firm.founded,
                     type: 'founding',
