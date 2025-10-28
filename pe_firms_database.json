@@ -1114,6 +1114,27 @@
         "next_fund": "Fund VIII in planning/early marketing (expected 2025–26)",
         "strategy": "Lower-midcap Nordics (EV 250–1,500 MSEK); strong heritage in industrial services and niche manufacturing"
       },
+      "company_updates": [
+        { "date": "2025-07-15", "type": "Investment", "title": "Accent Equity invests in Logent", "text": "Logistics and supply-chain provider Logent welcomes Accent as new majority owner to support Nordic expansion. The investment strengthens Accent’s focus on scalable industrial and logistics platforms." },
+        { "date": "2024-09-12", "type": "Exit", "title": "Accent Equity divests Lakrids by Bülow to Valedo Partners", "text": "Accent Equity exits the premium confectionery company after several years of international growth. Valedo takes over as new majority owner." },
+        { "date": "2024-02-28", "type": "Investment", "title": "Accent Equity invests in Car-O-Liner distributor in Finland", "text": "The acquisition expands Accent’s presence in the Nordic automotive aftermarket and body repair equipment market." },
+        { "date": "2023-06-05", "type": "Investment", "title": "Accent Equity Fund V invests in Scandza", "text": "Accent enters into partnership with the Nordic food and beverage group Scandza, supporting further brand growth and operational efficiency improvements." },
+        { "date": "2022-10-14", "type": "Exit", "title": "Accent Equity divests Optinova Group", "text": "The firm sells its ownership in Optinova, a global manufacturer of advanced polymer tubing for the medical device industry, to Nalka Invest." },
+        { "date": "2021-04-29", "type": "Exit", "title": "Accent Equity Fund IV divests Omegapoint to FSN Capital", "text": "Accent completes the sale of Omegapoint, one of Sweden’s leading cybersecurity and IT consulting firms, to FSN Capital Partners. The company grew substantially under Accent’s ownership." },
+        { "date": "2020-09-01", "type": "Investment", "title": "Accent Equity invests in LP Ventilation", "text": "Investment in the leading Swedish manufacturer of ventilation and climate solutions. The deal supports product development and internationalization." },
+        { "date": "2020-03-17", "type": "Exit", "title": "Accent Equity divests Netel Group", "text": "Exit from network construction company Netel, following a successful Nordic expansion phase." },
+        { "date": "2019-08-12", "type": "Investment", "title": "Accent Equity invests in Stål & Rörmontage", "text": "Investment in industrial steel construction specialist to strengthen market position in large-scale infrastructure projects." },
+        { "date": "2018-12-14", "type": "Exit", "title": "Accent Equity divests Semantix", "text": "Accent sells its interest in Semantix, the largest language service provider in the Nordics, after significant growth and digital transformation." },
+        { "date": "2017-10-03", "type": "Investment", "title": "Accent Equity invests in Scandza", "text": "First entry into the Nordic food segment through partnership with Scandza Group, a platform for branded consumer products." },
+        { "date": "2016-05-25", "type": "Exit", "title": "Accent Equity divests Skandinavisk Kommunalteknik", "text": "Exit from infrastructure services company SKT to private investors after strong growth in Sweden and Finland." },
+        { "date": "2015-09-18", "type": "Investment", "title": "Accent Equity invests in Autotube Group", "text": "Investment in automotive component supplier, supporting product innovation and export growth." },
+        { "date": "2014-06-12", "type": "Exit", "title": "Accent Equity divests Hilding Anders", "text": "Accent exits the leading European bedding manufacturer after restructuring and growth initiatives across the continent." },
+        { "date": "2013-11-22", "type": "Investment", "title": "Accent Equity invests in Ålö AB", "text": "Investment in world-leading front loader manufacturer to support product development and global expansion." },
+        { "date": "2012-09-07", "type": "Exit", "title": "Accent Equity divests KVD Kvarndammen", "text": "Online car auction platform sold to Ratos after successful digital scale-up period." },
+        { "date": "2011-12-19", "type": "Investment", "title": "Accent Equity invests in BE Group", "text": "Strategic minority investment in steel and metal distribution company to support restructuring and operational turnaround." },
+        { "date": "2010-04-13", "type": "Exit", "title": "Accent Equity divests Silex Microsystems", "text": "Exit from MEMS semiconductor manufacturer to Gävle Holding and Chinese investors." },
+        { "date": "2009-08-21", "type": "Investment", "title": "Accent Equity invests in Coromatic Group", "text": "Investment in Nordic critical power and data center infrastructure provider, forming the base for a decade of M&A expansion." }
+      ],
       "recent_activity": "2025: Plockmatic Group acquires Renz (Accent VII), Tempcon Group issues SEK 550M senior secured bonds. 2024: Invests in Unisport (new platform, Fund VII), acquires Brimer (Fund VII), TSG acquires AF Shipping, Malte Månson acquires Skandinaviska Buss & Truck, Triarca + Stitec combine (low voltage/eMobility/FTTH group), acquires Helkama Bica (specialty cables; Fund VII), Linotol acquires C M Betong, divests Norco Interior to Götessons Design Group, invests in Plockmatic (growth partner; Fund VII), Malte Månson acquires Experten Group. Strong Fund VII deployment across multiple platforms.",
       "timeline": [
         {

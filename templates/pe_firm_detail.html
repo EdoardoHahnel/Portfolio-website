@@ -1179,14 +1179,78 @@ function loadCompanyUpdates(firm) {
         container.innerHTML = '<p style="color: var(--text-secondary);">No company updates yet.</p>';
         return;
     }
-    const items = updates.sort((a,b) => (b.date || '').localeCompare(a.date || '')).map(u => `
-        <div class="news-item-mini" style="padding: 0.35rem 0; border-bottom: 1px solid #f0f0f0;">
-            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.5rem;">
-                <div style="font-size: 0.52rem; color:#1a1a1a; line-height:1.4;">${escapeHtml(u.text)}</div>
-                <div style="font-size:0.42rem; color:#4c1d95; font-weight:600;">${u.date || ''}</div>
+
+    // Normalize and group by year
+    const normalized = updates.map(u => ({
+        date: u.date || '',
+        year: (u.date || '').slice(0,4),
+        type: (u.type || inferTypeFromTitle(u.title || u.text || '')).toLowerCase(),
+        title: u.title || '',
+        text: u.text || ''
+    })).sort((a,b) => (b.date || '').localeCompare(a.date || ''));
+
+    const byYear = {};
+    normalized.forEach(u => {
+        const y = u.year || 'Other';
+        if (!byYear[y]) byYear[y] = [];
+        byYear[y].push(u);
+    });
+
+    const yearOrder = Object.keys(byYear).sort((a,b) => b.localeCompare(a));
+
+    const html = yearOrder.map(year => {
+        const items = byYear[year].map(u => `
+            <div class="news-item-mini" style="padding: 0.4rem 0; border-bottom: 1px solid #f1f5f9;">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.6rem;">
+                    <div style="flex:1;">
+                        ${u.title ? `<div style=\"font-size:0.55rem; font-weight:700; color:#0f172a; margin-bottom:0.1rem;\">${escapeHtml(u.title)}</div>` : ''}
+                        <div style="font-size:0.5rem; color:#334155; line-height:1.5;">${escapeHtml(u.text)}</div>
+                    </div>
+                    <div style="text-align:right; min-width: 92px;">
+                        <div class="badge" style="display:inline-block; padding:0.1rem 0.35rem; font-size:0.42rem; font-weight:700; border-radius:999px; background:${badgeBg(u.type)}; color:${badgeFg(u.type)}; text-transform:uppercase;">${escapeHtml(u.type)}</div>
+                        <div style="font-size:0.42rem; color:#4c1d95; font-weight:700; margin-top:0.15rem;">${u.date}</div>
+                    </div>
+                </div>
             </div>
-        </div>`).join('');
-    container.innerHTML = `<div class="recent-news-list" style="max-height: 360px; overflow-y: auto;">${items}</div>`;
+        `).join('');
+        return `
+            <div class="updates-year-group" style="margin-bottom:0.6rem;">
+                <div style="display:flex; align-items:center; gap:0.4rem; margin:0.2rem 0 0.35rem 0;">
+                    <div style="font-size:0.65rem; font-weight:800; color:#111827;">${year}</div>
+                    <div style="font-size:0.42rem; color:#64748b;">${byYear[year].length} updates</div>
+                </div>
+                ${items}
+            </div>
+        `;
+    }).join('');
+
+    container.innerHTML = `<div class="recent-news-list" style="max-height: 420px; overflow-y:auto;">${html}</div>`;
+}
+
+function inferTypeFromTitle(text) {
+    const t = (text || '').toLowerCase();
+    if (t.includes('divest') || t.includes('exit') || t.includes('sell')) return 'Exit';
+    if (t.includes('invest') || t.includes('acquire') || t.includes('merg') || t.includes('partner')) return 'Investment';
+    if (t.includes('fund') || t.includes('close')) return 'Fund';
+    return 'Update';
+}
+
+function badgeBg(type) {
+    switch ((type || '').toLowerCase()) {
+        case 'investment': return '#eef2ff';
+        case 'exit': return '#fee2e2';
+        case 'fund': return '#dcfce7';
+        default: return '#f1f5f9';
+    }
+}
+
+function badgeFg(type) {
+    switch ((type || '').toLowerCase()) {
+        case 'investment': return '#4338ca';
+        case 'exit': return '#b91c1c';
+        case 'fund': return '#166534';
+        default: return '#0f172a';
+    }
 }
 
 function displayTimeline(events) {
