@@ -82,6 +82,9 @@ function displayFirmDetail(firm) {
             <button class="tab-btn" data-tab="portfolio" style="padding: 0.3rem 0.5rem; border: none; background: none; cursor: pointer; font-size: 0.55rem; font-weight: 600; color: #666; border-bottom: 2px solid transparent;">
                 <i class="fas fa-briefcase" style="font-size: 0.5rem;"></i> Portfolio (${getPortfolioCount(firmName)})
             </button>
+            <button class="tab-btn" data-tab="company-updates" style="padding: 0.3rem 0.5rem; border: none; background: none; cursor: pointer; font-size: 0.55rem; font-weight: 600; color: #666; border-bottom: 2px solid transparent;">
+                <i class="fas fa-stream" style="font-size: 0.5rem;"></i> Company updates
+            </button>
             <button class="tab-btn" data-tab="team" style="padding: 0.3rem 0.5rem; border: none; background: none; cursor: pointer; font-size: 0.55rem; font-weight: 600; color: #666; border-bottom: 2px solid transparent;">
                 <i class="fas fa-users" style="font-size: 0.5rem;"></i> Team (${firm.team.length})
             </button>
@@ -178,6 +181,14 @@ function displayFirmDetail(firm) {
                     </h3>
                 </div>
                 <div class="content-card-body">
+                    <div class="timeline-filters" style="display:flex; gap:0.4rem; margin-bottom:0.4rem; flex-wrap: wrap;">
+                        <button class="timeline-filter-btn active" data-type="all" style="font-size:0.45rem; padding:0.2rem 0.4rem; border:1px solid #e2e8f0; border-radius:4px; background:#f8fafc;">All</button>
+                        <button class="timeline-filter-btn" data-type="fund" style="font-size:0.45rem; padding:0.2rem 0.4rem; border:1px solid #e2e8f0; border-radius:4px; background:#fff;">Fund</button>
+                        <button class="timeline-filter-btn" data-type="investment" style="font-size:0.45rem; padding:0.2rem 0.4rem; border:1px solid #e2e8f0; border-radius:4px; background:#fff;">Investment</button>
+                        <button class="timeline-filter-btn" data-type="acquisition" style="font-size:0.45rem; padding:0.2rem 0.4rem; border:1px solid #e2e8f0; border-radius:4px; background:#fff;">Acquisition</button>
+                        <button class="timeline-filter-btn" data-type="exit" style="font-size:0.45rem; padding:0.2rem 0.4rem; border:1px solid #e2e8f0; border-radius:4px; background:#fff;">Exit</button>
+                        <button class="timeline-filter-btn" data-type="other" style="font-size:0.45rem; padding:0.2rem 0.4rem; border:1px solid #e2e8f0; border-radius:4px; background:#fff;">Other</button>
+                    </div>
                     <div id="firmTimeline">
                         <div class="loading-spinner">
                             <div class="spinner"></div>
@@ -254,6 +265,18 @@ function displayFirmDetail(firm) {
                             <div style="font-size: 0.45rem; color: #059669; font-weight: 600;">Team Size</div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content" id="tab-company-updates">
+            <div class="content-card">
+                <div class="content-card-header">
+                    <h3 class="content-card-title" style="font-size: 0.65rem;">
+                        <i class="fas fa-stream" style="font-size: 0.6rem;"></i> Company updates
+                    </h3>
+                </div>
+                <div class="content-card-body" id="companyUpdatesContainer">
+                    <!-- Filled dynamically -->
                 </div>
             </div>
         </div>
@@ -369,6 +392,7 @@ function displayFirmDetail(firm) {
     
     // Load timeline
     loadFirmTimeline(firm, firmName);
+    loadCompanyUpdates(firm);
 }
 
 function setupTabs() {
@@ -1147,6 +1171,24 @@ async function loadFirmTimeline(firm, firmName) {
     }
 }
 
+function loadCompanyUpdates(firm) {
+    const container = document.getElementById('companyUpdatesContainer');
+    const updates = firm.company_updates || firm.companyUpdates || [];
+    if (!container) return;
+    if (!updates || updates.length === 0) {
+        container.innerHTML = '<p style="color: var(--text-secondary);">No company updates yet.</p>';
+        return;
+    }
+    const items = updates.sort((a,b) => (b.date || '').localeCompare(a.date || '')).map(u => `
+        <div class="news-item-mini" style="padding: 0.35rem 0; border-bottom: 1px solid #f0f0f0;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.5rem;">
+                <div style="font-size: 0.52rem; color:#1a1a1a; line-height:1.4;">${escapeHtml(u.text)}</div>
+                <div style="font-size:0.42rem; color:#4c1d95; font-weight:600;">${u.date || ''}</div>
+            </div>
+        </div>`).join('');
+    container.innerHTML = `<div class="recent-news-list" style="max-height: 360px; overflow-y: auto;">${items}</div>`;
+}
+
 function displayTimeline(events) {
     const container = document.getElementById('firmTimeline');
     
@@ -1251,6 +1293,33 @@ function displayTimeline(events) {
     
     html += '</div></div>';
     container.innerHTML = html;
+    
+    // Setup filter buttons
+    const filterButtons = document.querySelectorAll('.timeline-filter-btn');
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const type = btn.getAttribute('data-type');
+            const items = container.querySelectorAll('.timeline-item-horizontal');
+            items.forEach(item => {
+                const badge = item.querySelector('.timeline-event-type');
+                const label = (badge?.innerText || '').toLowerCase();
+                if (type === 'all') {
+                    item.style.display = '';
+                } else if (type === 'fund') {
+                    item.style.display = label.includes('fund') ? '' : 'none';
+                } else if (type === 'investment' || type === 'acquisition') {
+                    // Treat acquisitions/investments similarly for filtering
+                    item.style.display = (label.includes('investment') || label.includes('acquisition')) ? '' : 'none';
+                } else if (type === 'exit') {
+                    item.style.display = label.includes('exit') ? '' : 'none';
+                } else if (type === 'other') {
+                    item.style.display = (!label.includes('fund') && !label.includes('investment') && !label.includes('acquisition') && !label.includes('exit')) ? '' : 'none';
+                }
+            });
+        });
+    });
     
     // Auto-scroll to the right (newest events) after a brief delay
     setTimeout(() => {
