@@ -585,6 +585,73 @@
         "offices": "Stockholm, Copenhagen, Munich (opened 2023)"
       },
       "recent_activity": "Active platform builder across B2B services, IT/software and healthcare. Fund IV (€932m, 2021) and Fund IV (€1.6bn, 2025) closed; growing DACH presence (Munich). Recent moves include Cedra formation (DK/NO), Retta B2B acquisition, Bryntum partnership, EITCO acquisition, and exit of Europa Biosite.",
+      "timeline": [
+        { "year": 2013, "event": "Adelis Equity Partners founded", "description": "Founded in Stockholm, Sweden by Jan Åström, Joel Russell, and Anders Björk" },
+        { "year": 2014, "event": "Fund I closes", "description": "Closes SEK 3,690m (€420m) maiden fund" },
+        { "year": 2014, "event": "NGI acquisition", "description": "Acquires majority stake in NGI" },
+        { "year": 2014, "event": "Green Team Group acquisition", "description": "Acquires majority stake in Green Team Group" },
+        { "year": 2015, "event": "Med Group acquisition", "description": "Acquires Finnish healthcare services provider Med Group with founders and management" },
+        { "year": 2015, "event": "INTERSPORT Sweden investment", "description": "Becomes majority shareholder in INTERSPORT Sweden" },
+        { "year": 2016, "event": "Nordomatic acquisition", "description": "Becomes new majority owner in Nordomatic AB" },
+        { "year": 2016, "event": "SSI Diagnostica acquisition", "description": "Acquires SSI Diagnostica from State of Denmark in privatization process" },
+        { "year": 2016, "event": "Puuilo acquisition", "description": "Acquires Finnish discount retailer Puuilo with management team" },
+        { "year": 2017, "event": "Fund II closes", "description": "Closes €600m second fund" },
+        { "year": 2017, "event": "Knightec acquisition", "description": "Becomes new owner in Knightec" },
+        { "year": 2017, "event": "QMG acquisition", "description": "Becomes new majority owner in Quattro Mikenti Group" },
+        { "year": 2017, "event": "AddPro acquisition", "description": "Becomes new majority owner in AddPro" },
+        { "year": 2018, "event": "Hantverksdata acquisition", "description": "Becomes new majority owner in Hantverksdata" },
+        { "year": 2018, "event": "Didriksons acquisition", "description": "Acquires Didriksons" },
+        { "year": 2018, "event": "Presto acquisition", "description": "Becomes new majority owner in Presto Brandsäkerhet" },
+        { "year": 2018, "event": "IT Relation exit", "description": "Completes sale of IT Relation" },
+        { "year": 2018, "event": "Med Group exit", "description": "Secures successful exit of Med Group" },
+        { "year": 2018, "event": "NGI Holding exit", "description": "Habasit Group acquires majority stake in NGI Holding A/S" },
+        { "year": 2019, "event": "Mobilhouse acquisition", "description": "Acquires Mobilhouse targeting accelerated growth" },
+        { "year": 2019, "event": "Ropo Capital acquisition", "description": "Becomes new majority owner in Ropo Capital" },
+        { "year": 2019, "event": "Logent exit", "description": "Successfully exits Logent" },
+        { "year": 2020, "event": "Säkra acquisition", "description": "Becomes majority owner of Säkra" },
+        { "year": 2020, "event": "Axentia partnership", "description": "Partners with Axentia" },
+        { "year": 2020, "event": "AddPro exit", "description": "Exits AddPro following strong growth" },
+        { "year": 2020, "event": "Nordomatic exit", "description": "Successfully divests Nordomatic" },
+        { "year": 2020, "event": "Kanari partnership", "description": "Becomes new partner to Kanari" },
+        { "year": 2020, "event": "Valamis partnership", "description": "Partners with Valamis to accelerate global expansion" },
+        { "year": 2020, "event": "SSI Diagnostica add-on", "description": "SSI Diagnostica acquires US-based CTK Biotech" },
+        { "year": 2021, "event": "Fund III closes", "description": "Closes €932m third fund" },
+        { "year": 2021, "event": "Martin Welna joins", "description": "Martin Welna joins as Partner based in Denmark" },
+        { "year": 2021, "event": "Nordic BioSite investment", "description": "Becomes new partner to Nordic BioSite Group" },
+        { "year": 2021, "event": "QMG exit", "description": "Exits Quattro Mikenti Group (QMG)" },
+        { "year": 2022, "event": "Aderian acquisition", "description": "Becomes new majority owner in IT services company Aderian" },
+        { "year": 2022, "event": "Mobilhouse exit", "description": "Exits Mobilhouse" },
+        { "year": 2022, "event": "Avidly investment", "description": "Backs Avidly in its growth journey" },
+        { "year": 2022, "event": "Säkra exit", "description": "Divests majority stake in Säkra" },
+        { "year": 2022, "event": "Nordentic exit", "description": "Passes baton in Nordentic to Corus" },
+        { "year": 2022, "event": "SSI Diagnostica CV", "description": "Raises Fund Continuation Vehicle for SSI Diagnostica Group" },
+        { "year": 2022, "event": "Avidly tender offer", "description": "Announces public cash tender offer for all shares in Avidly" },
+        { "year": 2022, "event": "UniSea partnership", "description": "Partners with UniSea to accelerate growth and global expansion" },
+        { "year": 2022, "event": "netIP acquisition", "description": "Acquires IT company netIP" },
+        { "year": 2022, "event": "Knightec exit", "description": "Successfully exits Knightec" },
+        { "year": 2022, "event": "Håndverkskompaniet partnership", "description": "Partners to create leading rehabilitation services group in Norway" },
+        { "year": 2022, "event": "Diakrit partnership", "description": "Diakrit and Virtuance join forces, backed by Adelis" },
+        { "year": 2022, "event": "Westpack partnership", "description": "Management team partners with Adelis for international expansion" },
+        { "year": 2022, "event": "Pixelz partnership", "description": "Management team partners with Adelis in growth buyout" },
+        { "year": 2022, "event": "Circura establishment", "description": "Establishes Circura, leading building rehabilitation services group" },
+        { "year": 2023, "event": "Franz Reiffenstuel joins", "description": "Franz Reiffenstuel joins as Partner in newly opened Munich office" },
+        { "year": 2023, "event": "Europa Biosite formation", "description": "Nordic BioSite Group announces acquisition of LubioScience & name change to Europa Biosite" },
+        { "year": 2023, "event": "Presto add-on", "description": "Presto acquires German market leader Jockel" },
+        { "year": 2023, "event": "Hedvig investment", "description": "Becomes controlling shareholder in Hedvig" },
+        { "year": 2024, "event": "Presto/HVD CV", "description": "Exits Presto and HVD Group to Continuation Vehicle led by HarbourVest Partners" },
+        { "year": 2024, "event": "Bruhn NewTech acquisition", "description": "Becomes partner and majority shareholder in Bruhn NewTech" },
+        { "year": 2024, "event": "IonOpticks partnership", "description": "Partners with international life science company IonOpticks" },
+        { "year": 2024, "event": "SeaCross add-on", "description": "SeaCross joins Adelis' defence technology group" },
+        { "year": 2024, "event": "Btwentyfour partnership", "description": "Partners with supply chain data automation software company Btwentyfour" },
+        { "year": 2025, "event": "Fund IV closes", "description": "Closes EUR 1.6 billion Fourth Fund" },
+        { "year": 2025, "event": "Circura Denmark formation", "description": "Creates Circura Danmark with four entrepreneur-led companies" },
+        { "year": 2025, "event": "EITCO acquisition", "description": "Becomes new majority owner in ECM specialist EITCO" },
+        { "year": 2025, "event": "Bryntum partnership", "description": "Partners with Bryntum to drive continued growth and expansion" },
+        { "year": 2025, "event": "Europa Biosite exit", "description": "Exits investment in Europa Biosite" },
+        { "year": 2025, "event": "Retta B2B acquisition", "description": "Acquires Retta B2B Real Estate Management" },
+        { "year": 2025, "event": "Cedra Norway formation", "description": "Acquires Deloitte Norway's SMB business and forms Cedra Norway" },
+        { "year": 2025, "event": "Cedra Denmark formation", "description": "Enters partnership with Roesgaard and Inforevision to establish Cedra Denmark" }
+      ],
       "company_updates": [
         { "date": "2025-09-25", "type": "Investment", "title": "Adelis enters partnership with Roesgaard and Inforevision to establish Cedra Denmark", "text": "Formation of Cedra Denmark alongside leading audit firms to build a Nordic audit and advisory platform." },
         { "date": "2025-09-01", "type": "Investment", "title": "Adelis acquires Retta B2B Real Estate Management", "text": "Platform acquisition to accelerate Nordic growth in B2B real estate management." },
@@ -1429,6 +1496,121 @@
           "year": 2025,
           "event": "Tempcon financing",
           "description": "Tempcon Group issues SEK 550M senior secured bonds (portco financing)"
+        },
+        {
+          "year": 2025,
+          "event": "Fund VII closes",
+          "description": "Successfully closes Fund VII at SEK 2,250 million"
+        },
+        {
+          "year": 2025,
+          "event": "Oscar Claeson promotion",
+          "description": "Promotes Oscar Claeson to Partner"
+        },
+        {
+          "year": 2024,
+          "event": "Unisport investment",
+          "description": "Invests in Unisport as new growth partner (Fund VII)"
+        },
+        {
+          "year": 2024,
+          "event": "Brimer acquisition",
+          "description": "Acquires Brimer to support accelerated growth (Fund VII)"
+        },
+        {
+          "year": 2024,
+          "event": "Linotol platform creation",
+          "description": "Acquires Linotol and C Holmqvist Entreprenad, creating platform for industrial flooring solutions"
+        },
+        {
+          "year": 2024,
+          "event": "Malte Månson acquisition",
+          "description": "Acquires Malte Månson, Sweden's leading independent service and repair provider for trucks"
+        },
+        {
+          "year": 2023,
+          "event": "Sustainability targets",
+          "description": "Climate targets approved by Science-Based Target initiative"
+        },
+        {
+          "year": 2023,
+          "event": "Sustainability manager",
+          "description": "Appoints Sustainability Manager"
+        },
+        {
+          "year": 2022,
+          "event": "Paris Agreement commitment",
+          "description": "Commits to reduce emissions in line with Paris Agreement"
+        },
+        {
+          "year": 2022,
+          "event": "Steen-Hansen investment",
+          "description": "Invests in Steen-Hansen as new partner to management"
+        },
+        {
+          "year": 2021,
+          "event": "Sustainability manager appointment",
+          "description": "Appoints Sustainability Manager"
+        },
+        {
+          "year": 2020,
+          "event": "LP Ventilation investment",
+          "description": "Invests in LP Ventilation, leading Swedish manufacturer of ventilation and climate solutions"
+        },
+        {
+          "year": 2019,
+          "event": "Stål & Rörmontage investment",
+          "description": "Invests in Stål & Rörmontage, industrial steel construction specialist"
+        },
+        {
+          "year": 2018,
+          "event": "Semantix exit",
+          "description": "Divests Semantix, largest language service provider in Nordics"
+        },
+        {
+          "year": 2017,
+          "event": "Scandza investment",
+          "description": "First entry into Nordic food segment through partnership with Scandza Group"
+        },
+        {
+          "year": 2016,
+          "event": "Skandinavisk Kommunalteknik exit",
+          "description": "Exits infrastructure services company SKT to private investors"
+        },
+        {
+          "year": 2015,
+          "event": "Autotube Group investment",
+          "description": "Invests in Autotube Group, automotive component supplier"
+        },
+        {
+          "year": 2014,
+          "event": "Hilding Anders exit",
+          "description": "Exits leading European bedding manufacturer after restructuring and growth initiatives"
+        },
+        {
+          "year": 2013,
+          "event": "Ålö AB investment",
+          "description": "Invests in Ålö AB, world-leading front loader manufacturer"
+        },
+        {
+          "year": 2012,
+          "event": "KVD exit",
+          "description": "Divests KVD Kvarndammen online car auction platform to Ratos"
+        },
+        {
+          "year": 2011,
+          "event": "BE Group investment",
+          "description": "Strategic minority investment in steel and metal distribution company"
+        },
+        {
+          "year": 2010,
+          "event": "Silex Microsystems exit",
+          "description": "Exits MEMS semiconductor manufacturer to Gävle Holding and Chinese investors"
+        },
+        {
+          "year": 2009,
+          "event": "Coromatic Group investment",
+          "description": "Investment in Nordic critical power and data center infrastructure provider"
         }
       ]
     },
