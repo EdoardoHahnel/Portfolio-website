@@ -493,8 +493,7 @@ function displayPortfolio(companies) {
         // Create table for this firm
         const table = document.createElement('table');
         table.className = 'portfolio-table';
-        table.style.minWidth = '2000px';
-        table.style.width = '2000px';
+        // Remove fixed width - let CSS handle responsive sizing
         console.log('🔧 DEBUG: Created table with class:', table.className);
         
         // Table header
@@ -628,11 +627,16 @@ function displayPortfolio(companies) {
         });
         table.appendChild(tbody);
         
-        firmSection.appendChild(table);
+        // Wrap table in scrollable container
+        const tableWrapper = document.createElement('div');
+        tableWrapper.className = 'portfolio-table-wrapper';
+        tableWrapper.appendChild(table);
+        
+        firmSection.appendChild(tableWrapper);
         container.appendChild(firmSection);
         
         // DEBUG: Check if wrapper has proper overflow
-        console.log('🔧 DEBUG: Table wrapper styles:', window.getComputedStyle(container));
+        console.log('🔧 DEBUG: Table wrapper styles:', window.getComputedStyle(tableWrapper));
         console.log('🔧 DEBUG: Table styles:', window.getComputedStyle(table));
     });
 }

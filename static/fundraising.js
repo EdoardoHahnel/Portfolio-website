@@ -244,19 +244,20 @@ function displayFundraising(fundraising) {
     
     // Build table
     let html = `
-        <table class="fundraising-table">
-            <thead>
-                <tr>
-                    <th>Firm</th>
-                    <th>Fund Name</th>
-                    <th>Size</th>
-                    <th>Status</th>
-                    <th>Strategy</th>
-                    <th>Geography</th>
-                    <th>Vintage</th>
-                </tr>
-            </thead>
-            <tbody>
+        <div class="fundraising-table-wrapper">
+            <table class="fundraising-table">
+                <thead>
+                    <tr>
+                        <th>Firm</th>
+                        <th>Fund Name</th>
+                        <th>Size</th>
+                        <th>Status</th>
+                        <th>Strategy</th>
+                        <th>Geography</th>
+                        <th>Vintage</th>
+                    </tr>
+                </thead>
+                <tbody>
     `;
     
     filtered.forEach(fund => {
@@ -292,7 +293,7 @@ function displayFundraising(fundraising) {
         `;
     });
     
-    html += '</tbody></table>';
+    html += '</tbody></table></div>';
     container.innerHTML = html;
     // After rendering, try to replace any remaining with mapped firm logos
     enhanceWithMappedFirmLogos();
@@ -418,7 +419,7 @@ function showFundDetails(fund) {
                        fund.status === 'Marketing' ? 'status-marketing' : 'status-active';
     
     modalFundDetails.innerHTML = `
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 30px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-bottom: 30px;">
             <div style="padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; color: white;">
                 <div style="font-size: 12px; opacity: 0.9; margin-bottom: 8px;">Target Size</div>
                 <div style="font-size: 28px; font-weight: 700;">${fund.target_size}</div>
@@ -429,7 +430,7 @@ function showFundDetails(fund) {
             </div>
         </div>
         
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 30px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; margin-bottom: 30px;">
             <div style="padding: 16px; background: #f3f4f6; border-radius: 10px;">
                 <div style="font-size: 12px; color: #6b7280; margin-bottom: 6px;">Progress</div>
                 <div style="font-size: 24px; font-weight: 600; color: #1f2937;">${fund.progress}%</div>
@@ -451,7 +452,7 @@ function showFundDetails(fund) {
             </div>
         </div>
         
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
             <div>
                 <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 10px; color: #1a1a2e;">First Close</h3>
                 <p style="margin: 0; color: #6b7280;">${fund.first_close || 'Not disclosed'}</p>
