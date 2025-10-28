@@ -672,9 +672,21 @@ def get_pe_firm_detail(firm_name):
                                     if not company_name:
                                         continue
                                     
-                                    # Check if company name is mentioned in title or description
-                                    if (company_name.lower() in article_title.lower() or 
-                                        company_name.lower() in article_desc.lower()):
+                                    # More precise matching: company name should be a complete word match
+                                    # and not just a substring of another company name
+                                    company_lower = company_name.lower()
+                                    title_lower = article_title.lower()
+                                    desc_lower = article_desc.lower()
+                                    
+                                    # Check for exact word boundaries to avoid false matches
+                                    import re
+                                    pattern = r'\b' + re.escape(company_lower) + r'\b'
+                                    
+                                    if (re.search(pattern, title_lower) or re.search(pattern, desc_lower)):
+                                        # Additional check: make sure it's not about a different company
+                                        # Skip if the article is clearly about a different firm
+                                        if article_firm and article_firm.lower() != firm_name.lower():
+                                            continue
                                         
                                         if article_id not in seen_articles:
                                             # Add firm context to the article

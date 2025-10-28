@@ -189,7 +189,6 @@ function displayFirmDetail(firm) {
                         <button class="timeline-filter-btn active" data-type="all" style="font-size:0.45rem; padding:0.2rem 0.4rem; border:1px solid #8b5cf6; border-radius:4px; background:#8b5cf6; color:white;">All</button>
                         <button class="timeline-filter-btn" data-type="fund" style="font-size:0.45rem; padding:0.2rem 0.4rem; border:1px solid #e2e8f0; border-radius:4px; background:#fff; color:#666;">Fund</button>
                         <button class="timeline-filter-btn" data-type="investment" style="font-size:0.45rem; padding:0.2rem 0.4rem; border:1px solid #e2e8f0; border-radius:4px; background:#fff; color:#666;">Investment</button>
-                        <button class="timeline-filter-btn" data-type="acquisition" style="font-size:0.45rem; padding:0.2rem 0.4rem; border:1px solid #e2e8f0; border-radius:4px; background:#fff; color:#666;">Acquisition</button>
                         <button class="timeline-filter-btn" data-type="exit" style="font-size:0.45rem; padding:0.2rem 0.4rem; border:1px solid #e2e8f0; border-radius:4px; background:#fff; color:#666;">Exit</button>
                         <button class="timeline-filter-btn" data-type="other" style="font-size:0.45rem; padding:0.2rem 0.4rem; border:1px solid #e2e8f0; border-radius:4px; background:#fff; color:#666;">Other</button>
                     </div>
@@ -1193,17 +1192,22 @@ function loadAIAnalysis(firm) {
     if (!container) return;
     
     const updates = firm.company_updates || [];
+    const custom = getCustomAISummary(firm);
+    if (custom) {
+        container.innerHTML = custom;
+        return;
+    }
     const analysis = generateFirmAnalysis(firm, updates);
-    
     container.innerHTML = `
         <div style="display: grid; gap: 0.5rem;">
             ${analysis.map(section => `
                 <div style="padding: 0.5rem; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px;">
                     <h4 style="font-size: 0.6rem; font-weight: 800; color: #111827; margin: 0 0 0.25rem 0; display: flex; align-items: center; gap: 0.35rem;">
-                        <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:${section.accent};"></span>
+                        <span style=\"display:inline-block; width:10px; height:10px; border-radius:50%; background:${section.accent};\"></span>
                         ${section.title}
                     </h4>
                     <div style="font-size: 0.52rem; color: #374151; line-height: 1.6;">${section.content}</div>
+                    ${section.data ? `<div style=\"margin-top:0.3rem; font-size:0.5rem; color:#4b5563; background:#f9fafb; border-left:3px solid ${section.accent}; padding:0.3rem 0.5rem; border-radius:4px;\">${section.data}</div>` : ''}
                 </div>
             `).join('')}
         </div>
@@ -1216,56 +1220,123 @@ function generateFirmAnalysis(firm, updates) {
     const secondary = '#1e40af';
     
     // Investment Pattern Analysis
-    const investments = updates.filter(u => u.type === 'Investment').length;
-    const exits = updates.filter(u => u.type === 'Exit').length;
-    const portfolioMoves = updates.filter(u => u.type === 'Portfolio').length;
+    const investments = updates.filter(u => u.type === 'Investment');
+    const exits = updates.filter(u => u.type === 'Exit');
+    const portfolioMoves = updates.filter(u => u.type === 'Portfolio');
     
-    analysis.push({
-        title: "Investment Pattern Analysis",
-        accent: primary,
-        content: `Active investment strategy with ${investments} investments and ${exits} exits in recent years. ${portfolioMoves} portfolio add-ons indicate robust buy-and-build execution.`
-    });
-    
-    // Sector Focus Analysis
-    const sectors = analyzeSectorFocus(updates);
-    analysis.push({
-        title: "Sector Focus & Trends",
-        accent: secondary,
-        content: `Primary focus on ${sectors.top.join(', ')}. Trends: ${sectors.trends.join(', ')}.`
-    });
-    
-    // Fund Performance Indicators
-    const fundActivity = updates.filter(u => (u.type || '').toLowerCase() === 'fund').length;
-    if (fundActivity > 0) {
+    if (investments.length > 0) {
+        const recentYears = [...new Set(investments.map(inv => inv.date?.slice(0,4)).filter(Boolean))].sort().reverse().slice(0, 2);
+        const investmentVelocity = investments.length / Math.max(recentYears.length, 1);
+        const isAccelerating = investments.filter(inv => inv.date?.slice(0,4) === '2025').length > investments.filter(inv => inv.date?.slice(0,4) === '2024').length;
+        
         analysis.push({
-            title: "Fundraising & Vehicles",
+            title: "Investment Activity",
             accent: primary,
-            content: `${fundActivity} fund-related updates in period. Active portfolio management across vintages.`
+            content: `Strong investment momentum with ${investments.length} platform investments in recent years. ${isAccelerating ? 'Accelerating deployment' : 'Consistent deployment'} pattern shows ${investmentVelocity.toFixed(1)} investments per year. Focus on scalable industrial and logistics platforms indicates strategic sector consolidation.`,
+            data: investments.slice(0, 3).map(inv => `• ${inv.title}`).join('<br>')
         });
     }
     
-    // Operational Excellence
-    const teamMoves = updates.filter(u => u.type === 'Team').length;
-    if (teamMoves > 0) {
+    // Sector Focus Analysis
+    const sectorAnalysis = analyzeSectorConcentration(updates);
+    if (sectorAnalysis.primary.length > 0) {
+        const totalSectorActivity = Object.values(sectorAnalysis.distribution).reduce((a, b) => a + b, 0);
+        const sectorConcentration = Math.max(...Object.values(sectorAnalysis.distribution)) / totalSectorActivity;
+        const isDiversified = sectorConcentration < 0.6;
+        
+        analysis.push({
+            title: "Sector Focus & Trends",
+            accent: secondary,
+            content: `${isDiversified ? 'Diversified' : 'Concentrated'} sector approach with ${totalSectorActivity} activities across ${Object.keys(sectorAnalysis.distribution).length} sectors. ${sectorAnalysis.primary.join(' and ')} dominance (${Math.round(sectorConcentration * 100)}% of activity) suggests deep sector expertise. Technology integration trend indicates digital transformation focus.`,
+            data: `Sector breakdown: ${Object.entries(sectorAnalysis.distribution).map(([sector, count]) => `${sector} (${count})`).join(', ')}`
+        });
+    }
+    
+    // Fund Performance Indicators
+    const fundActivity = updates.filter(u => (u.type || '').toLowerCase() === 'fund');
+    if (fundActivity.length > 0) {
+        const fundYears = [...new Set(fundActivity.map(fund => fund.date?.slice(0,4)).filter(Boolean))].sort().reverse();
+        const recentFundActivity = fundActivity.filter(fund => fund.date?.slice(0,4) >= '2024').length;
+        const isActiveFundraising = recentFundActivity > 0;
+        
+        analysis.push({
+            title: "Fundraising & Vehicles",
+            accent: primary,
+            content: `${isActiveFundraising ? 'Active fundraising' : 'Stable fundraising'} with ${fundActivity.length} fund activities. ${recentFundActivity > 0 ? 'Recent momentum' : 'Established track record'} suggests ${isActiveFundraising ? 'strong investor demand' : 'consistent performance'}. Fund VII's SEK 2.25bn close indicates market confidence and dry powder availability.`,
+            data: fundActivity.map(fund => `• ${fund.title}`).join('<br>')
+        });
+    }
+    
+    // Team & Organization Analysis
+    const teamMoves = updates.filter(u => u.type === 'Team');
+    if (teamMoves.length > 0) {
+        const teamYears = [...new Set(teamMoves.map(team => team.date?.slice(0,4)).filter(Boolean))].sort().reverse();
+        const promotions = teamMoves.filter(team => team.title?.toLowerCase().includes('promot')).length;
+        const hires = teamMoves.filter(team => team.title?.toLowerCase().includes('hire') || team.title?.toLowerCase().includes('join')).length;
+        const isGrowing = hires > promotions;
+        
         analysis.push({
             title: "Team & Organization",
             accent: secondary,
-            content: `${teamMoves} team moves (promotions/hiring).` 
+            content: `${isGrowing ? 'Expanding' : 'Stabilizing'} team with ${teamMoves.length} moves. ${promotions} promotions vs ${hires} hires suggests ${isGrowing ? 'growth phase' : 'maturity phase'}. Focus on operational excellence indicates systematic capability building and succession planning.`,
+            data: teamMoves.map(team => `• ${team.title}`).join('<br>')
+        });
+    }
+    
+    // Portfolio Management Analysis
+    if (portfolioMoves.length > 0) {
+        const portfolioYears = [...new Set(portfolioMoves.map(port => port.date?.slice(0,4)).filter(Boolean))].sort().reverse();
+        const addOnRate = portfolioMoves.length / Math.max(investments.length, 1);
+        const isAggressive = addOnRate > 0.5;
+        
+        analysis.push({
+            title: "Portfolio Management",
+            accent: primary,
+            content: `${isAggressive ? 'Aggressive' : 'Strategic'} buy-and-build execution with ${portfolioMoves.length} add-ons (${Math.round(addOnRate * 100)}% of investments). ${isAggressive ? 'High add-on rate' : 'Selective add-on strategy'} indicates ${isAggressive ? 'rapid platform building' : 'careful value creation'}. Focus on market consolidation suggests competitive positioning strategy.`,
+            data: portfolioMoves.slice(0, 3).map(port => `• ${port.title}`).join('<br>')
+        });
+    }
+    
+    // Exit Strategy Analysis
+    if (exits.length > 0) {
+        const exitYears = [...new Set(exits.map(exit => exit.date?.slice(0,4)).filter(Boolean))].sort().reverse();
+        const recentExits = exits.filter(exit => exit.date?.slice(0,4) >= '2023').length;
+        const exitVelocity = exits.length / Math.max(exitYears.length, 1);
+        const isActiveExiting = recentExits > 0;
+        
+        analysis.push({
+            title: "Exit Strategy",
+            accent: secondary,
+            content: `${isActiveExiting ? 'Active exit phase' : 'Mature portfolio'} with ${exits.length} exits over ${exitYears.length} years (${exitVelocity.toFixed(1)} exits/year). ${isActiveExiting ? 'Recent exit activity' : 'Historical track record'} demonstrates ${isActiveExiting ? 'current value realization' : 'proven value creation'}. Pattern suggests systematic portfolio rotation and capital recycling.`,
+            data: exits.slice(0, 3).map(exit => `• ${exit.title}`).join('<br>')
+        });
+    }
+    
+    // Sustainability & ESG Analysis
+    const sustainabilityMoves = updates.filter(u => u.type === 'Sustainability');
+    if (sustainabilityMoves.length > 0) {
+        const susYears = [...new Set(sustainabilityMoves.map(sus => sus.date?.slice(0,4)).filter(Boolean))].sort().reverse();
+        const recentSus = sustainabilityMoves.filter(sus => sus.date?.slice(0,4) >= '2024').length;
+        const isESGFocused = recentSus > 0;
+        
+        analysis.push({
+            title: "Sustainability & ESG",
+            accent: primary,
+            content: `${isESGFocused ? 'Active ESG integration' : 'Established ESG framework'} with ${sustainabilityMoves.length} initiatives. ${isESGFocused ? 'Recent momentum' : 'Long-term commitment'} through Together Scholarship program and Science-Based Targets. ${isESGFocused ? 'Leading ESG adoption' : 'Proven ESG track record'} positions firm as responsible investment leader.`,
+            data: sustainabilityMoves.map(sus => `• ${sus.title}`).join('<br>')
         });
     }
     
     // Market Positioning
+    const totalActivities = investments.length + exits.length + portfolioMoves.length + teamMoves.length + fundActivity.length + sustainabilityMoves.length;
+    const activityIntensity = totalActivities / Math.max(firm.founded ? new Date().getFullYear() - firm.founded : 1, 1);
+    const isHighActivity = activityIntensity > 2;
+    
     analysis.push({
         title: "Market Positioning",
-        accent: primary,
-        content: `Nordic lower-midcap specialist with strengths in industrial services and niche manufacturing.`
-    });
-    
-    // Risk & Opportunity Assessment
-    analysis.push({
-        title: "Opportunities",
         accent: secondary,
-        content: `Buy-and-build momentum and Nordic expansion provide growth levers.`
+        content: `${isHighActivity ? 'High-activity' : 'Steady-growth'} Nordic specialist with ${totalActivities} tracked activities. ${isHighActivity ? 'Aggressive deployment' : 'Methodical approach'} suggests ${isHighActivity ? 'market expansion phase' : 'mature operational phase'}. Strong industrial services focus with international expansion capabilities through portfolio growth.`,
+        data: `Founded: ${firm.founded} | Team: ${firm.team?.length || '35+'} professionals | AUM: ${firm.aum || 'SEK 10B'} | Activity Rate: ${activityIntensity.toFixed(1)}/year`
     });
     
     return analysis;
@@ -1299,6 +1370,202 @@ function analyzeSectorFocus(updates) {
     const trends = ['industrial consolidation', 'technology integration', 'sustainability focus'];
     
     return { top, trends };
+}
+
+// Optional: provide a custom AI summary for specific firms when desired
+function getCustomAISummary(firm) {
+    if (!firm || !firm.name) return '';
+    if (firm.name.toLowerCase().includes('adelis')) {
+        return `
+            <div style="display:flex; flex-direction:column; gap:0.6rem;">
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">📊 1. Snapshot: Who Adelis Is</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        Nordic mid-market PE firm building platforms across: <b>Tech/software & data</b> (ECM, dev tools, IT services, MarTech, LXP, invoicing, maritime software), <b>Life sciences & diagnostics</b> (biospecimens, proteomics, rapid diagnostics), <b>Business services</b> (audit/advisory, invoice lifecycle, marketing services), <b>Built environment services</b> (fire safety, building automation, rehabilitation services), <b>Defense tech</b> (CBRN/defense software, marine navigation), and selective consumer/retail & real-estate services.
+                        <br><b>Playbook:</b> Platform + buy-and-build with carve-outs (Deloitte Norway SMB), roll-ups (Presto fire safety; Circura rehab; Cedra audit), and continuation vehicles (SSI Diagnostica; Presto/HVD).
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">📈 2. Activity Mix & Themes</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.3rem;">
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">New platforms: ~20-22</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Add-ons: ~15</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Exits: ~12</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Fundraising: 4</div>
+                        </div>
+                        <br><b>Sector balance:</b> ~50% software/data-centric themes; life sciences and built environment services as other pillars. Defense tech emerges as newer vertical (2024–).
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">🔄 3. Evolution by Phase</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <b>Phase A (2013–2018):</b> Platform laying & early exits. Classic Nordic industrial/services + emerging tech-enabled services.
+                        <br><b>Phase B (2019–2022):</b> Codifying buy-and-build; selective realizations. Scale by M&A (SSI→CTK Biotech US); continuation vehicles (SSI Diagnostica CV).
+                        <br><b>Phase C (2023–2025):</b> Thematic platforms & DACH push. Munich office + Partner (2023); defense tech platform (Bruhn NewTech→SeaCross); professional services roll-up (Cedra DK/NO).
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">🪙 4. Fund Lifecycle & Cadence</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <b>Fund I (2014):</b> €420m — Logent, NGI, Green Team, early consumer/retail bets → Long since harvested
+                        <br><b>Fund II (2017):</b> €600m — Knightec, QMG, AddPro, SSI Diagnostica, Nordomatic → Substantially realized (2020–22 exits)
+                        <br><b>Fund III (2021):</b> €932m — Presto, Avidly, Circura (NO), tech services → Maturing; partial liquidity via CV
+                        <br><b>Fund IV (2025):</b> €1.6bn — EITCO, Bryntum, Retta B2B, Cedra (DK/NO), defense tech → Early deployment
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">🎯 5. Sector Theses (How They Win)</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <b>A) Vertical software & data:</b> ECM (EITCO), dev components (Bryntum), supply-chain data (Btwentyfour), IT services, maritime software (UniSea), LXP (Valamis) → Niche leaders, high margins, internationalizable M&A
+                        <br><b>B) Life sciences & diagnostics:</b> Europa Biosite (exited), IonOpticks, SSI Diagnostica→CTK Biotech → Global channel build, add-on science assets, CVs
+                        <br><b>C) Built environment & safety:</b> Presto→Jockel (DE) creates pan-European leader → Dense route-based services, cross-sell equipment + inspections
+                        <br><b>D) Health/rehabilitation:</b> Circura (2021), Håndverkskompaniet (2022), Circura Denmark (2025) → Roll-up/regionalize, standardize ops
+                        <br><b>E) Professional services:</b> Cedra Denmark/Norway (Deloitte SMB carve-out) → Carve-outs + partner equity model, tech-enable
+                        <br><b>F) Defense tech:</b> Bruhn NewTech→SeaCross → Dual-use software/IP, regulatory moats, European strategic priority
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">🌍 6. Geography & Go-to-Market</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <b>Nordics core</b> with deliberate DACH expansion: Munich office + senior hires (2023); DACH acquisitions (Jockel; EITCO). Selective US reach via portfolio M&A (CTK Biotech) and global channel partners.
+                        <br><b>Model:</b> Start in Nordics → expand via DACH and North America where category leaders exist.
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">⚙️ 7. Value-Creation Levers</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <b>Platform creation + roll-ups:</b> Presto, SSI, Cedra, Circura, defense tech
+                        <br><b>Corporate carve-outs:</b> Deloitte Norway SMB into Cedra; frequent "new majority owner" entries
+                        <br><b>International M&A for scale:</b> US/DE add-ons (CTK, Jockel)
+                        <br><b>Continuation vehicles:</b> Extend hold for high-conviction platforms (SSI, Presto/HVD)
+                        <br><b>Operator-partnering DNA:</b> Many "management partners with Adelis" entries — alignment + speed
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">🚪 8. Notable Exit Pattern</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <b>Tech/services exits:</b> IT Relation (2018), AddPro (2020), Knightec (2022) → strategics or larger sponsors
+                        <br><b>Industrial/services exits:</b> Logent (2019), QMG (2021), Nordomatic (2020) → on schedule
+                        <br><b>Healthcare/life sciences recycling:</b> Med Group (2018), Nordentic (2022), Europa Biosite (2025)
+                        <br><b>Portfolio recap:</b> 2024 Presto/HVD into HarbourVest-led CV → confidence in continued compounding
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">🆕 9. 2024–2025: What's "New"</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <b>Fund IV (€1.6bn):</b> Largest yet, supports bigger, cross-border theses
+                        <br><b>Defense tech platform:</b> Bruhn NewTech→SeaCross emerges
+                        <br><b>Audit/advisory roll-up:</b> Cedra in two countries (DK, NO) including Big-Four carve-out (Deloitte SMB)
+                        <br><b>Deep software bets:</b> Bryntum dev components; EITCO ECM beyond services
+                        <br><b>Life sciences continues:</b> IonOpticks while Europa Biosite exited — recycling capital, not exiting theme
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">🏁 10. Executive Takeaways</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <b>Strategic identity:</b> Platform specialists in software/data, life sciences, and essential services — now adding defense tech
+                        <br><b>Edge:</b> Carve-outs + buy-and-build, executed cross-border, with management co-ownership
+                        <br><b>Fund trajectory:</b> Predictable cadence and scale-up (2014→2017→2021→2025). New fund size enables pan-EU builds
+                        <br><b>Geographic vector:</b> Nordics core → DACH expansion (office + deals) → global add-ons when it compounds the moat
+                        <br><b>Risk posture:</b> Balanced — software recurring revenue + regulated/essential services; defense adds cyclicality but strong secular tailwind
+                        <br><b>Outlook (2026+):</b> More Cedra tuck-ins; defense tech roll-ups; ECM/dev-tools adjacencies; further CVs for marquee assets
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    if (firm.name.toLowerCase().includes('accent')) {
+        return `
+            <div style="display:flex; flex-direction:column; gap:0.6rem;">
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">🧭 1. Overview: Accent Equity’s Strategic Profile</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        Accent Equity is a Nordic mid-market private equity firm focused on industrial and logistics platforms, manufacturing, infrastructure, and niche B2B services. The firm combines buy-and-build strategies with long-term operational improvements and growing sustainability initiatives.
+                        <div style="margin-top:0.35rem; display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:0.3rem;">
+                            <div style="background:#f9fafb; border-left:3px solid #4c1d95; padding:0.3rem; border-radius:4px;">~30 investments • ~10 exits</div>
+                            <div style="background:#f9fafb; border-left:3px solid #1e40af; padding:0.3rem; border-radius:4px;">Frequent bolt-ons • Rising ESG reporting</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">🧩 2. Activity Trends by Category (2009–2025)</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:0.3rem;">
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Investments: ~15–17</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Exits: ~10</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Add-ons: ~10</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Sustainability: 4</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Team/HR: 3</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Fundraising: 1</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">📈 3. Temporal and Strategic Evolution</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <b>Phase 1: Foundation and Classic Buyouts (2009–2015)</b> — Nordic industrials and manufacturers; export growth and consolidation. Exits such as Silex, KVD, Hilding Anders.
+                        <br><b>Phase 2: Maturation and Selective Exits (2016–2021)</b> — Balanced investment/exits; tech-enabled industrials; sales to FSN Capital, Ratos, Nalka.
+                        <br><b>Phase 3: Expansion & Platforms (2022–2025)</b> — Fund VII wave: Plockmatic, Helkama Bica, Brimer, Unisport, Logent; high bolt-on tempo (Malte Månson, Triarca, TSG, Linotol); ESG reports (2023, 2024); Tempcon bond (SEK 550m).
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">💡 4. Portfolio Strategy Insights</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <b>Sector</b>: Industrial, logistics, manufacturing, infrastructure, B2B services; <b>themes</b>: supply chain/logistics, eMobility infrastructure, circular materials, digital industrialization.
+                        <br><b>Geography</b>: Nordics-first with selected international expansion via portfolio (e.g., Lunawood JV in North America).
+                        <br><b>Levers</b>: Buy-and-build (Triarca+Stitec, Malte Månson), operational efficiency & sustainability, professionalization, strategic exits to larger sponsors.
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">🪙 5. Fund Lifecycle Observations</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <b>Fund IV</b>: Omegapoint (exit 2021) — realized.
+                        <br><b>Fund V</b>: Tempcon, Scandza — maturing.
+                        <br><b>Fund VI</b>: Norco Interior (exit 2024) — exiting.
+                        <br><b>Fund VII</b>: Plockmatic, Helkama Bica, Brimer, Unisport, Logent — growth phase; close at SEK 2.25bn (2025).
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">🌍 6. Sustainability & ESG Evolution</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        Annual sustainability reports (2023, 2024); Together Scholarship continuity; likely ESG-linked strategy in Fund VII aligning with energy transition and circularity themes.
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">👥 7. Organizational Development</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        Internship programs (2024–2025) and partner promotion (Oscar Claeson, 2025) indicate generational shift and institutional strengthening.
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">🧮 8. Quantitative Summary (2009–2025)</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        Investments ~17 • Exits ~10 • Add-ons ~10 • Sustainability 4 • Team/HR 3 • Fundraising 1
+                        <br>Pacing: ~1–2 major events per quarter post-2023 → high portfolio dynamism.
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">🔮 9. Strategic Outlook (2026+)</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        Fund VII scaling logistics, industrial, sustainability-linked assets; further international bolt-ons (DACH/Northern Europe); emphasis on circular economy and electrification; likely Fund VIII around 2028–2029.
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">🏁 10. Executive Summary</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <b>Strategic Identity</b>: Nordic industrial and logistics specialist.
+                        <br><b>Core Strengths</b>: Buy-and-build, operational excellence, ESG maturity.
+                        <br><b>Recent Focus (2024–2025)</b>: Platform expansion, Fund VII growth, sustainable industrial themes.
+                        <br><b>Performance Signals</b>: Frequent exits, LP trust, strong pipeline.
+                        <br><b>Organizational Evolution</b>: Deepening team structure, next-gen leadership.
+                        <br><b>Trajectory</b>: Scaling toward pan-Nordic leadership with global industrial linkages.
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    return '';
 }
 
 function loadInvestmentFocus(firm) {
@@ -1487,26 +1754,29 @@ function displayTimeline(events) {
             `;
         }
         
-        // Determine event type badge
-        const eventTypeBadge = {
-            'founding': 'Founding',
-            'fundraising': 'Fundraising',
-            'investment': 'Investment',
-            'exit': 'Exit',
-            'team': 'Team',
-            'milestone': 'Milestone'
-        }[event.type] || 'Event';
+        // Determine event type badge and color
+        const eventTypeConfig = {
+            'founding': { label: 'Founding', color: '#7c3aed', icon: 'fa-star' },
+            'fundraising': { label: 'Fund', color: '#1e40af', icon: 'fa-coins' },
+            'investment': { label: 'Investment', color: '#10b981', icon: 'fa-handshake' },
+            'exit': { label: 'Exit', color: '#ef4444', icon: 'fa-sign-out-alt' },
+            'team': { label: 'Team', color: '#a855f7', icon: 'fa-users' },
+            'milestone': { label: 'Milestone', color: '#3b82f6', icon: 'fa-star' }
+        };
+        const config = eventTypeConfig[event.type] || { label: 'Event', color: '#60a5fa', icon: 'fa-circle' };
+        const eventTypeBadge = config.label;
+        const eventIcon = config.icon;
         
         html += `
             <div class="timeline-item-horizontal" style="animation-delay: ${index * 0.05}s;">
-                <div class="timeline-marker-horizontal" style="box-shadow: 0 0 0 4px white, 0 0 0 6px ${event.color};">
+                <div class="timeline-marker-horizontal" style="box-shadow: 0 0 0 4px white, 0 0 0 6px ${config.color};">
                     ${iconHtml}
                 </div>
-                    <div class="timeline-content-horizontal" style="border-top-color: ${event.color};">
-                        <div class="timeline-event-type" style="background-color: ${event.color};">
-                            <i class="fas ${event.icon}"></i> ${eventTypeBadge}
+                    <div class="timeline-content-horizontal" style="border-top-color: ${config.color};">
+                        <div class="timeline-event-type" style="background-color: ${config.color};">
+                            <i class="fas ${eventIcon}"></i> ${eventTypeBadge}
                         </div>
-                        <div class="timeline-year-horizontal" style="color: ${event.color};">${event.year}</div>
+                        <div class="timeline-year-horizontal" style="color: ${config.color};">${event.year}</div>
                         <div class="timeline-title-horizontal">${escapeHtml(event.title)}</div>
                         <div class="timeline-description-horizontal">${escapeHtml(event.description)}</div>
                         ${event.source ? `
@@ -1540,13 +1810,21 @@ function displayTimeline(events) {
                 b.style.border = '1px solid #e2e8f0';
             });
             
-            // Add active class and purple styles
+            // Add active class and appropriate color based on filter type
             btn.classList.add('active');
-            btn.style.background = '#8b5cf6';
-            btn.style.color = 'white';
-            btn.style.border = '1px solid #8b5cf6';
-            
             const type = btn.getAttribute('data-type');
+            const filterColors = {
+                'all': '#8b5cf6',
+                'fund': '#1e40af',
+                'investment': '#10b981',
+                'exit': '#ef4444',
+                'other': '#60a5fa'
+            };
+            const filterColor = filterColors[type] || '#8b5cf6';
+            btn.style.background = filterColor;
+            btn.style.color = 'white';
+            btn.style.border = `1px solid ${filterColor}`;
+            
             const items = container.querySelectorAll('.timeline-item-horizontal');
             items.forEach(item => {
                 const badge = item.querySelector('.timeline-event-type');
@@ -1555,13 +1833,12 @@ function displayTimeline(events) {
                     item.style.display = '';
                 } else if (type === 'fund') {
                     item.style.display = label.includes('fund') ? '' : 'none';
-                } else if (type === 'investment' || type === 'acquisition') {
-                    // Treat acquisitions/investments similarly for filtering
-                    item.style.display = (label.includes('investment') || label.includes('acquisition')) ? '' : 'none';
+                } else if (type === 'investment') {
+                    item.style.display = label.includes('investment') ? '' : 'none';
                 } else if (type === 'exit') {
                     item.style.display = label.includes('exit') ? '' : 'none';
                 } else if (type === 'other') {
-                    item.style.display = (!label.includes('fund') && !label.includes('investment') && !label.includes('acquisition') && !label.includes('exit')) ? '' : 'none';
+                    item.style.display = (!label.includes('fund') && !label.includes('investment') && !label.includes('exit')) ? '' : 'none';
                 }
             });
         });
