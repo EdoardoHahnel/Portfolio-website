@@ -217,10 +217,18 @@
 <div class="content-card">
     <div class="content-card-header">
         <h2 class="content-card-title">All Fundraising Activity</h2>
-        <div class="filter-buttons">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="Marketing">In Market</button>
-            <button class="filter-btn" data-filter="Closed">Closed</button>
+        <div style="display:flex; gap:12px; align-items:center;">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="Marketing">In Market</button>
+                <button class="filter-btn" data-filter="Closed">Closed</button>
+            </div>
+            <div>
+                <label for="vintageFilter" style="font-size:12px; color:#555; margin-right:6px;">Vintage</label>
+                <select id="vintageFilter" style="padding:6px 8px; border:1px solid #ddd; border-radius:6px; font-size:12px;">
+                    <option value="all">All</option>
+                </select>
+            </div>
         </div>
     </div>
     <div class="content-card-body">

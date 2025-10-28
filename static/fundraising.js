@@ -4,6 +4,60 @@ Fundraising Tracker - Interactive fundraising data
 
 let allFundraising = [];
 let currentFilter = 'all';
+let currentVintageFilter = 'all';
+let peFirmLogos = {};
+let peFirmNameVariants = new Set();
+const fallbackFirmDomainMap = {
+    // Core
+    'axcel': 'axcel.dk',
+    'alfa framtak': 'alfaframtak.is',
+    'apax partners': 'apax.com',
+    'apax': 'apax.com',
+    'bridgepoint': 'bridgepoint.eu',
+    'credo partners': 'credopartners.no',
+    'credo': 'credopartners.no',
+    'cvc': 'cvc.com',
+    'cvc capital partners': 'cvc.com',
+    'ik partners': 'ikpartners.com',
+    'ik investment partners': 'ikpartners.com',
+    'nordic capital': 'nordiccapital.com',
+    'polaris private equity': 'polarisequity.dk',
+    'triton': 'triton-partners.com',
+    'triton partners': 'triton-partners.com',
+    'vitruvian partners': 'vitruvianpartners.com',
+    'norvestor': 'norvestor.com',
+
+    // User-listed missing
+    'via equity': 'viaequity.com',
+    'waterland private equity investments': 'waterland.pe',
+    'waterland': 'waterland.pe',
+    'evolver equity': 'evolverequity.se',
+    'invl asset management group': 'invl.com',
+    'invl': 'invl.com',
+    'peq private equity': 'peqab.se',
+    'seb asset management': 'sebgroup.com',
+    'seb': 'sebgroup.com',
+    'triple private equity': 'triple.no',
+    'acathia capital': 'acathia.com',
+    'devco': 'devco.fi',
+    'devco partners': 'devco.fi',
+    'main capital partners': 'main.nl',
+    'mvi advisors': 'mvi.se',
+    'vaaka partners': 'vaakapartners.fi',
+    'vendis capital': 'vendiscapital.com',
+    'bny mellon investment management': 'im.bnymellon.com',
+    'maj invest': 'majinvest.com',
+    'trill impact': 'trillimpact.com',
+    'equip capital': 'equip.no',
+    'impilo': 'impilo.se',
+    'helix kapital': 'helixkapital.se',
+    'systematic growth': 'systematicgrowth.io',
+    'mentor capital': 'menthacapital.com',
+    'mentha capital': 'menthacapital.com',
+    'fsn capital': 'fsncapital.com',
+    'adelis equity': 'adelisequity.com',
+    'adelis equity partners': 'adelisequity.com'
+};
 let nordicFundsChartInstance = null;
 let europeanFundsChartInstance = null;
 let cumChartInstance = null;
@@ -18,6 +72,13 @@ document.addEventListener('DOMContentLoaded', function() {
 function init() {
     setupFilters();
     setupTabs();
+    // Load PE firm logos in parallel; refresh table when available
+    loadPeFirmLogos().finally(() => {
+        // If table already rendered, enhance logos
+        enhanceWithMappedFirmLogos();
+        // Re-render to apply firm filtering and links
+        if (allFundraising.length) displayFundraising(allFundraising);
+    });
     loadFundraisingData();
     setupModalClose();
     
@@ -51,6 +112,15 @@ function setupFilters() {
             displayFundraising(allFundraising);
         });
     });
+
+    // Vintage year filter
+    const vintageSelect = document.getElementById('vintageFilter');
+    if (vintageSelect) {
+        vintageSelect.addEventListener('change', () => {
+            currentVintageFilter = vintageSelect.value;
+            displayFundraising(allFundraising);
+        });
+    }
 }
 
 function setupTabs() {
@@ -82,15 +152,69 @@ async function loadFundraisingData() {
         const response = await fetch('/api/fundraising');
         const data = await response.json();
         
-        if (data.success) {
-            allFundraising = data.fundraising;
+        if (data.fundraising) {
+            // Only include rows that came from the Excel import
+            allFundraising = data.fundraising.filter(f => (f.source || '').toLowerCase() === 'excel import');
+            // Filter to Nordic funds only (exclude US, Europe, Global, etc.)
+            allFundraising = allFundraising.filter(f => isNordicFund(f));
+            // Derive normalized fields for display and sorting
+            allFundraising = allFundraising.map(f => ({
+                ...f,
+                _vintageYear: deriveVintageYear(f),
+                _displaySize: deriveDisplaySize(f),
+                _displayGeography: f.geography || f.geographic_focus || f.region || f.country || 'N/A',
+                _displayStrategy: f.strategy || f.core_industries || f.industry_verticals || 'N/A'
+            }));
             displayFundraising(allFundraising);
             updateStats(data);
+            populateVintageFilter(allFundraising);
             createCharts(allFundraising);
         }
     } catch (error) {
         console.error('Error loading fundraising:', error);
     }
+}
+
+// Load PE firms and their canonical logos to ensure correct branding (e.g., EQT)
+async function loadPeFirmLogos() {
+    try {
+        const resp = await fetch('/api/pe-firms');
+        const data = await resp.json();
+        const firms = data.firms || {};
+        const map = {};
+        const names = new Set();
+        Object.keys(firms).forEach(key => {
+            const firm = firms[key] || {};
+            const logo = firm.logo_url || firm.logo || '';
+            if (!logo) return;
+            const variants = buildFirmNameVariants(key, firm.name);
+            variants.forEach(v => { map[v] = logo; names.add(v); });
+        });
+        peFirmLogos = map;
+        peFirmNameVariants = names;
+    } catch (e) {
+        // ignore
+    }
+}
+
+function buildFirmNameVariants(...names) {
+    const out = new Set();
+    names.filter(Boolean).forEach(n => {
+        const base = String(n).trim();
+        if (!base) return;
+        const lower = base.toLowerCase();
+        out.add(lower);
+        // Strip common suffixes
+        out.add(lower.replace(/\bpartners\b/g, '').replace(/\s+/g, ' ').trim());
+        out.add(lower.replace(/\bcapital\b/g, '').replace(/\s+/g, ' ').trim());
+        out.add(lower.replace(/\bequity\b/g, '').replace(/\s+/g, ' ').trim());
+        out.add(lower.replace(/\bmanagement\b/g, '').replace(/\s+/g, ' ').trim());
+        out.add(lower.replace(/\binvestments?\b/g, '').replace(/\s+/g, ' ').trim());
+        out.add(lower.replace(/\basset\b|\bmanagement\b/gi, '').replace(/\s+/g, ' ').trim());
+        out.add(lower.replace(/\bprivate\b\s+\bequity\b/gi, ' ').replace(/\s+/g, ' ').trim());
+        out.add(lower.replace(/\bpartners?\b|\bcapital\b|\bequity\b|\bmanagement\b|\binvestments?\b|\basset\b/gi, '').replace(/\s+/g, ' ').trim());
+    });
+    return [...out].filter(Boolean);
 }
 
 function displayFundraising(fundraising) {
@@ -101,12 +225,21 @@ function displayFundraising(fundraising) {
     if (currentFilter !== 'all') {
         filtered = fundraising.filter(f => f.status === currentFilter);
     }
+    if (currentVintageFilter !== 'all') {
+        const sel = parseInt(currentVintageFilter, 10);
+        filtered = filtered.filter(f => (f._vintageYear || 0) === sel);
+    }
     
-    // Sort by progress (active first, then by progress)
+    // Sort by most recent vintage first, then status (Marketing first), then name
     filtered.sort((a, b) => {
+        const va = a._vintageYear || 0;
+        const vb = b._vintageYear || 0;
+        if (vb !== va) return vb - va; // desc by vintage
+        if (a.status === 'Marketing' && b.status !== 'Marketing') return -1;
+        if (a.status !== 'Marketing' && b.status === 'Marketing') return 1;
         if (a.status === 'Closed' && b.status !== 'Closed') return 1;
         if (a.status !== 'Closed' && b.status === 'Closed') return -1;
-        return b.progress - a.progress;
+        return (a.firm || '').localeCompare(b.firm || '');
     });
     
     // Build table
@@ -116,11 +249,11 @@ function displayFundraising(fundraising) {
                 <tr>
                     <th>Firm</th>
                     <th>Fund Name</th>
-                    <th>Target Size</th>
+                    <th>Size</th>
                     <th>Status</th>
-                    <th>Progress</th>
-                    <th>Expected Close</th>
                     <th>Strategy</th>
+                    <th>Geography</th>
+                    <th>Vintage</th>
                 </tr>
             </thead>
             <tbody>
@@ -130,49 +263,147 @@ function displayFundraising(fundraising) {
         const statusClass = fund.status === 'Closed' ? 'status-closed' : 
                            fund.status === 'Marketing' ? 'status-marketing' : 'status-active';
         
+        // Use final_size if available, otherwise target_size
+        const displaySize = fund.final_size && fund.final_size !== 'N/A' ? fund.final_size : fund.target_size;
+        
+        const fallbackLogo = `https://ui-avatars.com/api/?name=${encodeURIComponent(fund.firm || 'Fund')}&background=1e3a8a&color=fff&size=32`;
+        const mapped = getMappedFirmLogo(fund.firm);
+        const initialLogo = mapped || (fund.firm_logo_url && fund.firm_logo_url.trim() !== '' ? fund.firm_logo_url : fallbackLogo);
+        const isKnownFirm = peFirmExists(fund.firm);
+        const rowAttrs = isKnownFirm 
+            ? `onclick='showFundDetails(${JSON.stringify(fund).replace(/'/g, "&#39;")})' style="cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='#f8f9fa'" onmouseout="this.style.background=''"`
+            : `style="transition: background 0.2s;"`;
+
         html += `
-            <tr onclick='showFundDetails(${JSON.stringify(fund).replace(/'/g, "&#39;")})' style="cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='#f8f9fa'" onmouseout="this.style.background=''">
+            <tr ${rowAttrs}>
                 <td>
                     <div style="display: flex; align-items: center; gap: 12px;">
-                        ${fund.firm_logo_url ? `<img src="${fund.firm_logo_url}" alt="${fund.firm}" style="width: 32px; height: 32px; object-fit: contain;" onerror="this.style.display='none'">` : ''}
-                        <strong>${escapeHtml(fund.firm)}</strong>
+                        <img src="${initialLogo}" data-firm="${escapeHtml(fund.firm || '')}" class="fund-logo-img" alt="${escapeHtml(fund.firm || 'Firm')}" style="width: 32px; height: 32px; object-fit: contain; border-radius: 4px; background:#fff" onerror="this.onerror=null;this.src='${fallbackLogo}';">
+                        ${isKnownFirm ? `<a href="/pe-firm/${encodeURIComponent(fund.firm)}" style="text-decoration:none; color:inherit; cursor:pointer;" onclick="event.stopPropagation();"><strong>${escapeHtml(fund.firm)}</strong></a>` : `<strong>${escapeHtml(fund.firm)}</strong>`}
                     </div>
                 </td>
-                <td>${escapeHtml(fund.fund_name)}</td>
-                <td class="amount">${escapeHtml(fund.target_size)}</td>
-                <td><span class="status-badge ${statusClass}">${escapeHtml(fund.status)}</span></td>
-                <td>
-                    <div class="progress-container">
-                        <div class="progress-bar-table">
-                            <div class="progress-fill-table" style="width: ${fund.progress}%"></div>
-                        </div>
-                        <span class="progress-text">${fund.progress}%</span>
-                    </div>
-                </td>
-                <td>${escapeHtml(fund.final_close)}</td>
-                <td><span class="strategy-tag">${escapeHtml(fund.strategy)}</span></td>
+                <td>${escapeHtml(fund.fund_name || 'N/A')}</td>
+                <td class="amount">${escapeHtml((fund._displaySize || displaySize || 'N/A'))}</td>
+                <td><span class="status-badge ${statusClass}">${escapeHtml(fund.status || 'N/A')}</span></td>
+                <td><span class="strategy-tag">${escapeHtml(fund._displayStrategy)}</span></td>
+                <td>${escapeHtml(fund._displayGeography)}</td>
+                <td>${escapeHtml((fund._vintageYear || fund.vintage || fund.vintage_year || 'N/A').toString())}</td>
             </tr>
         `;
     });
     
     html += '</tbody></table>';
     container.innerHTML = html;
+    // After rendering, try to replace any remaining with mapped firm logos
+    enhanceWithMappedFirmLogos();
 }
 
 function updateStats(data) {
     // Update stats cards
-    const activeFunds = data.fundraising.filter(f => f.status !== 'Closed').length;
-    const recentCloses = data.fundraising.filter(f => f.status === 'Closed' && f.vintage >= 2024).length;
+    const fundraising = data.fundraising || [];
+    const activeFunds = fundraising.filter(f => f.status !== 'Closed').length;
+    const recentCloses = fundraising.filter(f => f.status === 'Closed' && f.vintage >= 2024).length;
     
     document.getElementById('activeFunds').textContent = activeFunds;
     document.getElementById('recentCloses').textContent = recentCloses;
-    document.getElementById('totalRaised').textContent = data.metadata.total_capital_raised;
+    document.getElementById('totalRaised').textContent = data.metadata ? data.metadata.total_capital_raised : 'N/A';
 }
 
 function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
+}
+
+function deriveVintageYear(fund) {
+    // Prefer explicit numeric vintage
+    const candidates = [fund.vintage, fund.vintage_year, fund.vintageYear];
+    for (const c of candidates) {
+        const n = parseInt(c, 10);
+        if (!isNaN(n) && n > 1900 && n < 3000) return n;
+    }
+    // Try to parse from final_close_date / first_close / final_close like '2024-Q2' or ISO dates
+    const dateFields = [fund.final_close_date, fund.first_close_date, fund.first_close, fund.final_close];
+    for (const d of dateFields) {
+        if (!d) continue;
+        const m = String(d).match(/(20\d{2}|19\d{2})/);
+        if (m) {
+            const year = parseInt(m[1], 10);
+            if (!isNaN(year)) return year;
+        }
+    }
+    return undefined;
+}
+
+function deriveDisplaySize(fund) {
+    // Normalize size from different possible fields
+    return fund.final_size || fund.fund_size || fund.target_size || fund.final_close_size || 'N/A';
+}
+
+function populateVintageFilter(funds) {
+    const select = document.getElementById('vintageFilter');
+    if (!select) return;
+    const years = [...new Set(funds.map(f => f._vintageYear).filter(Boolean))].sort((a,b) => b-a);
+    // Clear existing except first option
+    while (select.options.length > 1) select.remove(1);
+    years.forEach(y => {
+        const opt = document.createElement('option');
+        opt.value = String(y);
+        opt.text = String(y);
+        select.add(opt);
+    });
+}
+
+function getMappedFirmLogo(name) {
+    if (!name) return undefined;
+    const key = String(name).toLowerCase().trim();
+    if (peFirmLogos[key]) return peFirmLogos[key];
+    // Try stripped variants
+    const variants = buildFirmNameVariants(name);
+    for (const v of variants) {
+        if (peFirmLogos[v]) return peFirmLogos[v];
+    }
+    // Try curated domain fallbacks
+    if (fallbackFirmDomainMap[key]) return `https://logo.clearbit.com/${fallbackFirmDomainMap[key]}`;
+    for (const v of variants) {
+        if (fallbackFirmDomainMap[v]) return `https://logo.clearbit.com/${fallbackFirmDomainMap[v]}`;
+    }
+    return undefined;
+}
+
+function enhanceWithMappedFirmLogos() {
+    const imgs = document.querySelectorAll('.fund-logo-img');
+    imgs.forEach(img => {
+        const firm = img.getAttribute('data-firm');
+        const mapped = getMappedFirmLogo(firm);
+        if (mapped) {
+            img.src = mapped;
+        }
+    });
+}
+
+function peFirmExists(name) {
+    if (!name) return false;
+    const variants = buildFirmNameVariants(name);
+    for (const v of variants) {
+        if (peFirmNameVariants.has(v)) return true;
+    }
+    return false;
+}
+
+function isNordicFund(fund) {
+    const geography = (fund.geography || fund.geographic_focus || fund.region || fund.country || '').toLowerCase();
+    const firm = (fund.firm || '').toLowerCase();
+    
+    // Check if geography indicates Nordic region
+    const nordicGeos = ['nordic', 'denmark', 'sweden', 'norway', 'finland', 'iceland', 'baltic', 'nordic region', 'nordic countries'];
+    const isNordicGeo = nordicGeos.some(geo => geography.includes(geo));
+    
+    // Check if firm name suggests Nordic origin
+    const nordicFirms = ['nordic', 'adelis', 'altor', 'axcel', 'eqt', 'fsn', 'herkules', 'ik', 'norvestor', 'polaris', 'procuritas', 'summa', 'triton', 'verdane', 'waterland', 'via equity', 'alfa framtak', 'credo', 'evolver', 'invl', 'peq', 'seb', 'triple', 'acathia', 'devco', 'main capital', 'mvi', 'vaaka', 'vendis', 'maj invest', 'trill impact', 'equip', 'impilo', 'helix', 'systematic', 'mentha', 'bny mellon'];
+    const isNordicFirm = nordicFirms.some(nf => firm.includes(nf));
+    
+    return isNordicGeo || isNordicFirm;
 }
 
 // Show fund details in modal

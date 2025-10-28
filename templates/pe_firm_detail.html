@@ -146,22 +146,22 @@ function displayFirmDetail(firm) {
         
         <!-- Tabs -->
         <div class="tabs" style="display: flex; gap: 0.2rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e0e0e0; overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
-            <button class="tab-btn active" data-tab="overview" style="padding: 0.3rem 0.4rem; border: none; background: none; cursor: pointer; font-size: 0.5rem; font-weight: 600; color: #4c1d95; border-bottom: 2px solid #4c1d95; white-space: nowrap; flex-shrink: 0;">
+            <button class="tab-btn active" data-tab="overview" style="padding: 0.3rem 0.4rem; border: none; background: #1e40af; cursor: pointer; font-size: 0.5rem; font-weight: 700; color: #ffffff; border-radius: 6px; white-space: nowrap; flex-shrink: 0;">
                 <i class="fas fa-info-circle" style="font-size: 0.45rem;"></i> Overview
             </button>
-            <button class="tab-btn" data-tab="portfolio" style="padding: 0.3rem 0.4rem; border: none; background: none; cursor: pointer; font-size: 0.5rem; font-weight: 600; color: #666; border-bottom: 2px solid transparent; white-space: nowrap; flex-shrink: 0;">
+            <button class="tab-btn" data-tab="portfolio" style="padding: 0.3rem 0.4rem; border: none; background: #f3f4f6; cursor: pointer; font-size: 0.5rem; font-weight: 600; color: #111827; border-radius: 6px; white-space: nowrap; flex-shrink: 0;">
                 <i class="fas fa-briefcase" style="font-size: 0.45rem;"></i> Portfolio (${getPortfolioCount(firmName)})
             </button>
-            <button class="tab-btn" data-tab="company-updates" style="padding: 0.3rem 0.4rem; border: none; background: none; cursor: pointer; font-size: 0.5rem; font-weight: 600; color: #666; border-bottom: 2px solid transparent; white-space: nowrap; flex-shrink: 0;">
+            <button class="tab-btn" data-tab="company-updates" style="padding: 0.3rem 0.4rem; border: none; background: #f3f4f6; cursor: pointer; font-size: 0.5rem; font-weight: 600; color: #111827; border-radius: 6px; white-space: nowrap; flex-shrink: 0;">
                 <i class="fas fa-stream" style="font-size: 0.45rem;"></i> Updates
             </button>
-            <button class="tab-btn" data-tab="ai-analysis" style="padding: 0.3rem 0.4rem; border: none; background: none; cursor: pointer; font-size: 0.5rem; font-weight: 600; color: #666; border-bottom: 2px solid transparent; white-space: nowrap; flex-shrink: 0;">
+            <button class="tab-btn" data-tab="ai-analysis" style="padding: 0.3rem 0.4rem; border: none; background: #f3f4f6; cursor: pointer; font-size: 0.5rem; font-weight: 600; color: #111827; border-radius: 6px; white-space: nowrap; flex-shrink: 0;">
                 <i class="fas fa-brain" style="font-size: 0.45rem;"></i> AI
             </button>
-            <button class="tab-btn" data-tab="team" style="padding: 0.3rem 0.4rem; border: none; background: none; cursor: pointer; font-size: 0.5rem; font-weight: 600; color: #666; border-bottom: 2px solid transparent; white-space: nowrap; flex-shrink: 0;">
+            <button class="tab-btn" data-tab="team" style="padding: 0.3rem 0.4rem; border: none; background: #f3f4f6; cursor: pointer; font-size: 0.5rem; font-weight: 600; color: #111827; border-radius: 6px; white-space: nowrap; flex-shrink: 0;">
                 <i class="fas fa-users" style="font-size: 0.45rem;"></i> Team (${firm.team.length})
             </button>
-            <button class="tab-btn" data-tab="focus" style="padding: 0.3rem 0.4rem; border: none; background: none; cursor: pointer; font-size: 0.5rem; font-weight: 600; color: #666; border-bottom: 2px solid transparent; white-space: nowrap; flex-shrink: 0;">
+            <button class="tab-btn" data-tab="focus" style="padding: 0.3rem 0.4rem; border: none; background: #f3f4f6; cursor: pointer; font-size: 0.5rem; font-weight: 600; color: #111827; border-radius: 6px; white-space: nowrap; flex-shrink: 0;">
                 <i class="fas fa-bullseye" style="font-size: 0.45rem;"></i> Focus
             </button>
         </div>
@@ -399,15 +399,17 @@ function setupTabs() {
             // Remove active from all tabs and reset their styles
             tabBtns.forEach(b => {
                 b.classList.remove('active');
-                b.style.color = '#666';
-                b.style.borderBottom = '2px solid transparent';
+                b.style.color = '#111827';
+                b.style.background = '#f3f4f6';
+                b.style.border = 'none';
             });
             tabContents.forEach(c => c.classList.remove('active'));
             
             // Add active to clicked tab and update its styles
             btn.classList.add('active');
-            btn.style.color = '#4c1d95';
-            btn.style.borderBottom = '2px solid #4c1d95';
+            btn.style.color = '#ffffff';
+            btn.style.background = '#1e40af';
+            btn.style.border = 'none';
             document.getElementById(`tab-${tabName}`).classList.add('active');
         });
     });
@@ -1448,97 +1450,97 @@ function getCustomAISummary(firm) {
         return `
             <div style="display:flex; flex-direction:column; gap:0.6rem;">
                 <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
-                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">📊 1. Snapshot: Who Adelis Is</h4>
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">1. Strategic Overview</h4>
                     <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
-                        Nordic mid-market PE firm building platforms across: <b>Tech/software & data</b> (ECM, dev tools, IT services, MarTech, LXP, invoicing, maritime software), <b>Life sciences & diagnostics</b> (biospecimens, proteomics, rapid diagnostics), <b>Business services</b> (audit/advisory, invoice lifecycle, marketing services), <b>Built environment services</b> (fire safety, building automation, rehabilitation services), <b>Defense tech</b> (CBRN/defense software, marine navigation), and selective consumer/retail & real-estate services.
-                        <br><b>Playbook:</b> Platform + buy-and-build with carve-outs (Deloitte Norway SMB), roll-ups (Presto fire safety; Circura rehab; Cedra audit), and continuation vehicles (SSI Diagnostica; Presto/HVD).
+                        Nordic mid-market private equity firm specializing in platform development across technology and software, life sciences and diagnostics, business services, built environment services, defense technology, and selective consumer/retail sectors.
+                        <br><b>Investment Strategy:</b> Platform creation with buy-and-build execution, including corporate carve-outs, industry roll-ups, and continuation vehicles for high-conviction assets.
                     </div>
                 </div>
                 <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
-                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">📈 2. Activity Mix & Themes</h4>
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">2. Investment Activity & Themes</h4>
                     <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
                         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.3rem;">
-                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">New platforms: ~20-22</div>
-                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Add-ons: ~15</div>
-                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Exits: ~12</div>
-                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Fundraising: 4</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Platform investments: 20-22</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Add-on acquisitions: 15</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Portfolio exits: 12</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Fund closings: 4</div>
                         </div>
-                        <br><b>Sector balance:</b> ~50% software/data-centric themes; life sciences and built environment services as other pillars. Defense tech emerges as newer vertical (2024–).
+                        <br><b>Sector allocation:</b> Approximately 50% technology and software investments, with life sciences and built environment services forming additional core pillars. Defense technology represents an emerging vertical since 2024.
                     </div>
                 </div>
                 <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
-                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">🔄 3. Evolution by Phase</h4>
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">3. Strategic Evolution</h4>
                     <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
-                        <b>Phase A (2013–2018):</b> Platform laying & early exits. Classic Nordic industrial/services + emerging tech-enabled services.
-                        <br><b>Phase B (2019–2022):</b> Codifying buy-and-build; selective realizations. Scale by M&A (SSI→CTK Biotech US); continuation vehicles (SSI Diagnostica CV).
-                        <br><b>Phase C (2023–2025):</b> Thematic platforms & DACH push. Munich office + Partner (2023); defense tech platform (Bruhn NewTech→SeaCross); professional services roll-up (Cedra DK/NO).
+                        <b>Phase A (2013–2018):</b> Platform establishment and early exits. Focus on Nordic industrial and services sectors with emerging technology-enabled services.
+                        <br><b>Phase B (2019–2022):</b> Buy-and-build strategy refinement and selective realizations. International expansion through M&A (SSI to CTK Biotech US) and continuation vehicles (SSI Diagnostica CV).
+                        <br><b>Phase C (2023–2025):</b> Thematic platform development and DACH expansion. Munich office establishment and senior hires (2023); defense technology platform creation (Bruhn NewTech to SeaCross); professional services consolidation (Cedra Denmark/Norway).
                     </div>
                 </div>
                 <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
-                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">🪙 4. Fund Lifecycle & Cadence</h4>
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">4. Fund Lifecycle & Performance</h4>
                     <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
-                        <b>Fund I (2014):</b> €420m — Logent, NGI, Green Team, early consumer/retail bets → Long since harvested
-                        <br><b>Fund II (2017):</b> €600m — Knightec, QMG, AddPro, SSI Diagnostica, Nordomatic → Substantially realized (2020–22 exits)
-                        <br><b>Fund III (2021):</b> €932m — Presto, Avidly, Circura (NO), tech services → Maturing; partial liquidity via CV
-                        <br><b>Fund IV (2025):</b> €1.6bn — EITCO, Bryntum, Retta B2B, Cedra (DK/NO), defense tech → Early deployment
+                        <b>Fund I (2014):</b> €420m — Logent, NGI, Green Team, early consumer/retail investments. Portfolio fully realized.
+                        <br><b>Fund II (2017):</b> €600m — Knightec, QMG, AddPro, SSI Diagnostica, Nordomatic. Substantially realized through 2020-2022 exits.
+                        <br><b>Fund III (2021):</b> €932m — Presto, Avidly, Circura (Norway), technology services. Maturing portfolio with partial liquidity through continuation vehicles.
+                        <br><b>Fund IV (2025):</b> €1.6bn — EITCO, Bryntum, Retta B2B, Cedra (Denmark/Norway), defense technology. Early deployment phase.
                     </div>
                 </div>
                 <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
-                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">🎯 5. Sector Theses (How They Win)</h4>
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">5. Sector Investment Theses</h4>
                     <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
-                        <b>A) Vertical software & data:</b> ECM (EITCO), dev components (Bryntum), supply-chain data (Btwentyfour), IT services, maritime software (UniSea), LXP (Valamis) → Niche leaders, high margins, internationalizable M&A
-                        <br><b>B) Life sciences & diagnostics:</b> Europa Biosite (exited), IonOpticks, SSI Diagnostica→CTK Biotech → Global channel build, add-on science assets, CVs
-                        <br><b>C) Built environment & safety:</b> Presto→Jockel (DE) creates pan-European leader → Dense route-based services, cross-sell equipment + inspections
-                        <br><b>D) Health/rehabilitation:</b> Circura (2021), Håndverkskompaniet (2022), Circura Denmark (2025) → Roll-up/regionalize, standardize ops
-                        <br><b>E) Professional services:</b> Cedra Denmark/Norway (Deloitte SMB carve-out) → Carve-outs + partner equity model, tech-enable
-                        <br><b>F) Defense tech:</b> Bruhn NewTech→SeaCross → Dual-use software/IP, regulatory moats, European strategic priority
+                        <b>A) Vertical software and data:</b> ECM (EITCO), development components (Bryntum), supply-chain data (Btwentyfour), IT services, maritime software (UniSea), learning platforms (Valamis). Focus on niche market leaders with high margins and international expansion potential.
+                        <br><b>B) Life sciences and diagnostics:</b> Europa Biosite (exited), IonOpticks, SSI Diagnostica to CTK Biotech. Strategy focuses on global channel development, add-on acquisitions, and continuation vehicles.
+                        <br><b>C) Built environment and safety:</b> Presto to Jockel (Germany) creates pan-European leadership. Dense route-based services with equipment and inspection cross-selling opportunities.
+                        <br><b>D) Health and rehabilitation:</b> Circura (2021), Håndverkskompaniet (2022), Circura Denmark (2025). Regional roll-up strategy with operational standardization.
+                        <br><b>E) Professional services:</b> Cedra Denmark/Norway (Deloitte SMB carve-out). Carve-out strategy with partner equity models and technology enablement.
+                        <br><b>F) Defense technology:</b> Bruhn NewTech to SeaCross. Dual-use software and intellectual property with regulatory advantages and European strategic priority.
                     </div>
                 </div>
                 <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
-                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">🌍 6. Geography & Go-to-Market</h4>
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">6. Geographic Strategy</h4>
                     <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
-                        <b>Nordics core</b> with deliberate DACH expansion: Munich office + senior hires (2023); DACH acquisitions (Jockel; EITCO). Selective US reach via portfolio M&A (CTK Biotech) and global channel partners.
-                        <br><b>Model:</b> Start in Nordics → expand via DACH and North America where category leaders exist.
+                        <b>Nordic core</b> with strategic DACH expansion: Munich office establishment and senior hires (2023); DACH acquisitions (Jockel; EITCO). Selective US market entry through portfolio M&A (CTK Biotech) and global channel partnerships.
+                        <br><b>Expansion model:</b> Nordic foundation followed by DACH and North American expansion where category leaders exist.
                     </div>
                 </div>
                 <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
-                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">⚙️ 7. Value-Creation Levers</h4>
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">7. Value Creation Strategy</h4>
                     <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
-                        <b>Platform creation + roll-ups:</b> Presto, SSI, Cedra, Circura, defense tech
-                        <br><b>Corporate carve-outs:</b> Deloitte Norway SMB into Cedra; frequent "new majority owner" entries
-                        <br><b>International M&A for scale:</b> US/DE add-ons (CTK, Jockel)
-                        <br><b>Continuation vehicles:</b> Extend hold for high-conviction platforms (SSI, Presto/HVD)
-                        <br><b>Operator-partnering DNA:</b> Many "management partners with Adelis" entries — alignment + speed
+                        <b>Platform creation and roll-ups:</b> Presto, SSI, Cedra, Circura, defense technology platforms.
+                        <br><b>Corporate carve-outs:</b> Deloitte Norway SMB into Cedra; frequent majority ownership transitions.
+                        <br><b>International M&A for scale:</b> US/German add-on acquisitions (CTK, Jockel).
+                        <br><b>Continuation vehicles:</b> Extended hold periods for high-conviction platforms (SSI, Presto/HVD).
+                        <br><b>Management partnership approach:</b> Strong emphasis on management co-ownership and operational alignment.
                     </div>
                 </div>
                 <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
-                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">🚪 8. Notable Exit Pattern</h4>
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">8. Exit Strategy & Performance</h4>
                     <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
-                        <b>Tech/services exits:</b> IT Relation (2018), AddPro (2020), Knightec (2022) → strategics or larger sponsors
-                        <br><b>Industrial/services exits:</b> Logent (2019), QMG (2021), Nordomatic (2020) → on schedule
-                        <br><b>Healthcare/life sciences recycling:</b> Med Group (2018), Nordentic (2022), Europa Biosite (2025)
-                        <br><b>Portfolio recap:</b> 2024 Presto/HVD into HarbourVest-led CV → confidence in continued compounding
+                        <b>Technology and services exits:</b> IT Relation (2018), AddPro (2020), Knightec (2022) to strategic buyers or larger sponsors.
+                        <br><b>Industrial and services exits:</b> Logent (2019), QMG (2021), Nordomatic (2020) executed on schedule.
+                        <br><b>Healthcare and life sciences recycling:</b> Med Group (2018), Nordentic (2022), Europa Biosite (2025).
+                        <br><b>Portfolio recapitalization:</b> 2024 Presto/HVD continuation vehicle led by HarbourVest demonstrates confidence in continued value creation.
                     </div>
                 </div>
                 <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
-                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">🆕 9. 2024–2025: What's "New"</h4>
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">9. Recent Developments (2024-2025)</h4>
                     <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
-                        <b>Fund IV (€1.6bn):</b> Largest yet, supports bigger, cross-border theses
-                        <br><b>Defense tech platform:</b> Bruhn NewTech→SeaCross emerges
-                        <br><b>Audit/advisory roll-up:</b> Cedra in two countries (DK, NO) including Big-Four carve-out (Deloitte SMB)
-                        <br><b>Deep software bets:</b> Bryntum dev components; EITCO ECM beyond services
-                        <br><b>Life sciences continues:</b> IonOpticks while Europa Biosite exited — recycling capital, not exiting theme
+                        <b>Fund IV (€1.6bn):</b> Largest fund to date, supporting larger cross-border investment theses.
+                        <br><b>Defense technology platform:</b> Bruhn NewTech to SeaCross platform development.
+                        <br><b>Professional services consolidation:</b> Cedra expansion in Denmark and Norway including Big Four carve-out (Deloitte SMB).
+                        <br><b>Deep software investments:</b> Bryntum development components; EITCO ECM expansion beyond services.
+                        <br><b>Life sciences continuity:</b> IonOpticks investment while Europa Biosite exit demonstrates capital recycling within the theme.
                     </div>
                 </div>
                 <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
-                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">🏁 10. Executive Takeaways</h4>
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">10. Strategic Summary</h4>
                     <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
-                        <b>Strategic identity:</b> Platform specialists in software/data, life sciences, and essential services — now adding defense tech
-                        <br><b>Edge:</b> Carve-outs + buy-and-build, executed cross-border, with management co-ownership
-                        <br><b>Fund trajectory:</b> Predictable cadence and scale-up (2014→2017→2021→2025). New fund size enables pan-EU builds
-                        <br><b>Geographic vector:</b> Nordics core → DACH expansion (office + deals) → global add-ons when it compounds the moat
-                        <br><b>Risk posture:</b> Balanced — software recurring revenue + regulated/essential services; defense adds cyclicality but strong secular tailwind
-                        <br><b>Outlook (2026+):</b> More Cedra tuck-ins; defense tech roll-ups; ECM/dev-tools adjacencies; further CVs for marquee assets
+                        <b>Strategic identity:</b> Platform specialists in software and data, life sciences, and essential services, now expanding into defense technology.
+                        <br><b>Competitive advantage:</b> Corporate carve-outs combined with buy-and-build execution, implemented cross-border with management co-ownership.
+                        <br><b>Fund trajectory:</b> Predictable fundraising cadence and scale progression (2014 to 2017 to 2021 to 2025). New fund size enables pan-European platform development.
+                        <br><b>Geographic expansion:</b> Nordic foundation expanding through DACH region (office and acquisitions) and global add-ons where they enhance competitive positioning.
+                        <br><b>Risk management:</b> Balanced portfolio approach combining software recurring revenue with regulated essential services; defense technology adds cyclicality but benefits from strong secular trends.
+                        <br><b>Future outlook (2026+):</b> Additional Cedra acquisitions; defense technology roll-ups; ECM and development tools adjacencies; further continuation vehicles for marquee assets.
                     </div>
                 </div>
             </div>
@@ -1548,22 +1550,22 @@ function getCustomAISummary(firm) {
         return `
             <div style="display:flex; flex-direction:column; gap:0.6rem;">
                 <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
-                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">🧭 1. Overview: Accent Equity’s Strategic Profile</h4>
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">1. Strategic Profile</h4>
                     <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
-                        Accent Equity is a Nordic mid-market private equity firm focused on industrial and logistics platforms, manufacturing, infrastructure, and niche B2B services. The firm combines buy-and-build strategies with long-term operational improvements and growing sustainability initiatives.
+                        Accent Equity is a Nordic mid-market private equity firm focused on industrial and logistics platforms, manufacturing, infrastructure, and specialized B2B services. The firm combines buy-and-build strategies with long-term operational improvements and growing sustainability initiatives.
                         <div style="margin-top:0.35rem; display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:0.3rem;">
-                            <div style="background:#f9fafb; border-left:3px solid #4c1d95; padding:0.3rem; border-radius:4px;">~30 investments • ~10 exits</div>
-                            <div style="background:#f9fafb; border-left:3px solid #1e40af; padding:0.3rem; border-radius:4px;">Frequent bolt-ons • Rising ESG reporting</div>
+                            <div style="background:#f9fafb; border-left:3px solid #4c1d95; padding:0.3rem; border-radius:4px;">30 investments • 10 exits</div>
+                            <div style="background:#f9fafb; border-left:3px solid #1e40af; padding:0.3rem; border-radius:4px;">Frequent add-ons • ESG reporting</div>
                         </div>
                     </div>
                 </div>
                 <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
-                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">🧩 2. Activity Trends by Category (2009–2025)</h4>
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">2. Investment Activity Trends</h4>
                     <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
                         <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:0.3rem;">
-                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Investments: ~15–17</div>
-                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Exits: ~10</div>
-                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Add-ons: ~10</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Investments: 15-17</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Exits: 10</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Add-ons: 10</div>
                             <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Sustainability: 4</div>
                             <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Team/HR: 3</div>
                             <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Fundraising: 1</div>
@@ -1571,64 +1573,367 @@ function getCustomAISummary(firm) {
                     </div>
                 </div>
                 <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
-                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">📈 3. Temporal and Strategic Evolution</h4>
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">3. Strategic Evolution</h4>
                     <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
-                        <b>Phase 1: Foundation and Classic Buyouts (2009–2015)</b> — Nordic industrials and manufacturers; export growth and consolidation. Exits such as Silex, KVD, Hilding Anders.
-                        <br><b>Phase 2: Maturation and Selective Exits (2016–2021)</b> — Balanced investment/exits; tech-enabled industrials; sales to FSN Capital, Ratos, Nalka.
-                        <br><b>Phase 3: Expansion & Platforms (2022–2025)</b> — Fund VII wave: Plockmatic, Helkama Bica, Brimer, Unisport, Logent; high bolt-on tempo (Malte Månson, Triarca, TSG, Linotol); ESG reports (2023, 2024); Tempcon bond (SEK 550m).
+                        <b>Phase 1: Foundation and Classic Buyouts (2009–2015)</b> — Nordic industrials and manufacturers; export growth and consolidation. Notable exits include Silex, KVD, Hilding Anders.
+                        <br><b>Phase 2: Maturation and Selective Exits (2016–2021)</b> — Balanced investment and exit activity; technology-enabled industrials; strategic sales to FSN Capital, Ratos, Nalka.
+                        <br><b>Phase 3: Expansion and Platforms (2022–2025)</b> — Fund VII deployment: Plockmatic, Helkama Bica, Brimer, Unisport, Logent; high add-on acquisition tempo (Malte Månson, Triarca, TSG, Linotol); ESG reporting (2023, 2024); Tempcon bond (SEK 550m).
                     </div>
                 </div>
                 <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
-                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">💡 4. Portfolio Strategy Insights</h4>
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">4. Portfolio Strategy</h4>
                     <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
-                        <b>Sector</b>: Industrial, logistics, manufacturing, infrastructure, B2B services; <b>themes</b>: supply chain/logistics, eMobility infrastructure, circular materials, digital industrialization.
-                        <br><b>Geography</b>: Nordics-first with selected international expansion via portfolio (e.g., Lunawood JV in North America).
-                        <br><b>Levers</b>: Buy-and-build (Triarca+Stitec, Malte Månson), operational efficiency & sustainability, professionalization, strategic exits to larger sponsors.
+                        <b>Sectors:</b> Industrial, logistics, manufacturing, infrastructure, B2B services; <b>themes:</b> supply chain and logistics, eMobility infrastructure, circular materials, digital industrialization.
+                        <br><b>Geography:</b> Nordic-first with selected international expansion through portfolio companies (e.g., Lunawood joint venture in North America).
+                        <br><b>Value creation:</b> Buy-and-build strategies (Triarca+Stitec, Malte Månson), operational efficiency and sustainability, professionalization, strategic exits to larger sponsors.
                     </div>
                 </div>
                 <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
-                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">🪙 5. Fund Lifecycle Observations</h4>
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">5. Fund Performance</h4>
                     <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
-                        <b>Fund IV</b>: Omegapoint (exit 2021) — realized.
-                        <br><b>Fund V</b>: Tempcon, Scandza — maturing.
-                        <br><b>Fund VI</b>: Norco Interior (exit 2024) — exiting.
-                        <br><b>Fund VII</b>: Plockmatic, Helkama Bica, Brimer, Unisport, Logent — growth phase; close at SEK 2.25bn (2025).
+                        <b>Fund IV:</b> Omegapoint (exit 2021) — fully realized.
+                        <br><b>Fund V:</b> Tempcon, Scandza — maturing portfolio.
+                        <br><b>Fund VI:</b> Norco Interior (exit 2024) — exit phase.
+                        <br><b>Fund VII:</b> Plockmatic, Helkama Bica, Brimer, Unisport, Logent — growth phase; closed at SEK 2.25bn (2025).
                     </div>
                 </div>
                 <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
-                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">🌍 6. Sustainability & ESG Evolution</h4>
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">6. Sustainability & ESG</h4>
                     <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
-                        Annual sustainability reports (2023, 2024); Together Scholarship continuity; likely ESG-linked strategy in Fund VII aligning with energy transition and circularity themes.
+                        Annual sustainability reports (2023, 2024); Together Scholarship program continuity; ESG-linked strategy in Fund VII aligning with energy transition and circular economy themes.
                     </div>
                 </div>
                 <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
-                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">👥 7. Organizational Development</h4>
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">7. Organizational Development</h4>
                     <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
-                        Internship programs (2024–2025) and partner promotion (Oscar Claeson, 2025) indicate generational shift and institutional strengthening.
+                        Internship programs (2024–2025) and partner promotion (Oscar Claeson, 2025) indicate generational transition and institutional strengthening.
                     </div>
                 </div>
                 <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
-                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">🧮 8. Quantitative Summary (2009–2025)</h4>
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">8. Performance Metrics</h4>
                     <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
-                        Investments ~17 • Exits ~10 • Add-ons ~10 • Sustainability 4 • Team/HR 3 • Fundraising 1
-                        <br>Pacing: ~1–2 major events per quarter post-2023 → high portfolio dynamism.
+                        Investments: 17 • Exits: 10 • Add-ons: 10 • Sustainability initiatives: 4 • Team/HR developments: 3 • Fundraising: 1
+                        <br>Activity pace: 1–2 major events per quarter post-2023, indicating high portfolio dynamism.
                     </div>
                 </div>
                 <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
-                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">🔮 9. Strategic Outlook (2026+)</h4>
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">9. Strategic Outlook</h4>
                     <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
-                        Fund VII scaling logistics, industrial, sustainability-linked assets; further international bolt-ons (DACH/Northern Europe); emphasis on circular economy and electrification; likely Fund VIII around 2028–2029.
+                        Fund VII scaling logistics, industrial, and sustainability-linked assets; further international add-on acquisitions (DACH/Northern Europe); emphasis on circular economy and electrification; Fund VIII expected around 2028–2029.
                     </div>
                 </div>
                 <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
-                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">🏁 10. Executive Summary</h4>
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">10. Executive Summary</h4>
                     <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
-                        <b>Strategic Identity</b>: Nordic industrial and logistics specialist.
-                        <br><b>Core Strengths</b>: Buy-and-build, operational excellence, ESG maturity.
-                        <br><b>Recent Focus (2024–2025)</b>: Platform expansion, Fund VII growth, sustainable industrial themes.
-                        <br><b>Performance Signals</b>: Frequent exits, LP trust, strong pipeline.
-                        <br><b>Organizational Evolution</b>: Deepening team structure, next-gen leadership.
-                        <br><b>Trajectory</b>: Scaling toward pan-Nordic leadership with global industrial linkages.
+                        <b>Strategic Identity:</b> Nordic industrial and logistics specialist.
+                        <br><b>Core Strengths:</b> Buy-and-build execution, operational excellence, ESG maturity.
+                        <br><b>Recent Focus (2024–2025):</b> Platform expansion, Fund VII growth, sustainable industrial themes.
+                        <br><b>Performance Indicators:</b> Frequent exits, limited partner confidence, strong investment pipeline.
+                        <br><b>Organizational Evolution:</b> Deepening team structure, next-generation leadership development.
+                        <br><b>Strategic Trajectory:</b> Scaling toward pan-Nordic leadership with global industrial linkages.
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    if (firm.name.toLowerCase().includes('fsn')) {
+        return `
+            <div style="display:flex; flex-direction:column; gap:0.6rem;">
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">1. Strategic Overview</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        Nordic mid-market private equity firm with sector focus in essential services and software, complemented by an institutional ESG approach. Strategy includes core buyout funds, continuation vehicles (Confluence) for high-conviction assets, and impact-tilted Compass fund for purpose-driven companies.
+                        <br><b>Where they invest:</b> Infrastructure-adjacent B2B services, vertical and infrastructure software, energy transition, regulated industrials, and life science services.
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">2. Activity Mix (2016–2025)</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.3rem;">
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">New platforms and majorities: 12–14</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Add-ons and platform builds: 6–8</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Exits and partial exits: 8–10</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Fundraising and vehicles: 4–5</div>
+                        </div>
+                        <br><b>Pattern:</b> Barbell between software and industrial services, with continuation vehicles to compound winners and Compass for critical infrastructure and impact themes.
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">3. Evolution by Phase</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <b>2016–2020:</b> Build-out of essential services platforms (security, fire safety, B2B distribution); software tilt begins.
+                        <br><b>2021–2023:</b> Fund VI enables larger software bets and energy transition; Danish installations roll-up; ESG formalization (Net Zero; science-based targets); IPOs and signed exits.
+                        <br><b>2024–2025:</b> Vehicle innovation (Confluence; Compass), infrastructure software push (Volue Infrastructure), refinancing and exit momentum (Nordlo refi; Fibo; Kjell sell-downs).
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">4. Sector Investment Theses</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <b>A) Infrastructure and essential services:</b> Regulation-driven demand, route density, cross-border procurement. Playbook: consolidate fragmented markets into regional leaders.
+                        <br><b>B) Vertical and infrastructure software:</b> Mission-critical workflows, high margins, recurring revenue. Playbook: expand ACV via modules/geographies; acquire adjacencies.
+                        <br><b>C) Energy transition:</b> Wind and solar ecosystem scaling. Playbook: supply-chain depth, equipment partnerships, services cadence.
+                        <br><b>D) Life science and regulated quality:</b> Regulation-driven recurring spend. Playbook: broaden capability stack, near-software services.
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">5. Value Creation Levers</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        Buy-and-build at scale, continuation vehicles to extend holds (Confluence), thematic add-ons (infra software; installers), operational upgrades and refinancings, and disciplined exits (IPOs; trade sales).
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">6. 2024–2025 Highlights</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        Vehicle architecture becomes a competitive edge (Compass and Confluence). Infrastructure software named beachhead (Volue Infrastructure). Energy transition remains core. Exits streamline portfolio focus (Fibo; Kjell residuals).
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">7. Executive Takeaways</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <b>Identity:</b> Nordic PE with software and essential services barbell and institutional ESG.
+                        <br><b>Edge:</b> Vehicles (Confluence and Compass) optimize hold periods and impact theses.
+                        <br><b>Risk posture:</b> Resilient end markets (regulated infrastructure) plus higher-growth software.
+                        <br><b>2026+ outlook:</b> Add-ons in installers and road safety; infrastructure software tuck-ins; additional Compass deals in critical infrastructure and energy transition.
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    if (firm.name.toLowerCase().includes('summa')) {
+        return `
+            <div style="display:flex; flex-direction:column; gap:0.6rem;">
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">1. Strategic Overview</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        Impact-led Nordic private equity firm with explicit system themes: circular economy, energy transition, tech-enabled social infrastructure, and fraud/cyber resilience. Strong narrative discipline through thought leadership and heavy platform building across mission-critical sectors.
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">2. Activity Mix (2024–2025)</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.3rem;">
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">New platforms: EA Technology, NetGuardians, Nutris, Bollegraaf</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Platform builds: myneva, waste equipment</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Exits: Documaster, Infobric, Milarex</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Awards: Real Deals double award</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">3. Evolution by Phase</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <b>2024:</b> Aggressive entry into circular economy stack (Fortum Recycling & Waste + NG Group; Bollegraaf), financial crime technology (NetGuardians), and smart grid (EA Technology). Proteomics synergy via Sengenics merger into Standard BioTools.
+                        <br><b>2025:</b> Execute exits (Documaster, Infobric, Milarex). Scale myneva in social care IT; build waste equipment aggregator; position cybersecurity as firm-level theme through thought leadership.
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">4. Sector Investment Theses</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <b>A) Circular and waste technology:</b> Vertically integrate collection, equipment, and processing to build Nordic/European leadership (NG Group + Fortum Recycling & Waste + Bollegraaf; Schulz & Berger).
+                        <br><b>B) Critical infrastructure digitization:</b> EA Technology (grid intelligence) + Vyntra (financial crime) for resilience infrastructure.
+                        <br><b>C) Social infrastructure software:</b> myneva roll-up across DACH with standards and process optimization.
+                        <br><b>D) Food and agriculture transition:</b> Nutris (plant proteins), regenerative agriculture thesis development for pipeline signaling.
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">5. Value Creation Strategy</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        Platform M&A across mission-critical nodes (circular, social, infrastructure security). Thesis-driven branding for proprietary deal flow and pricing power. Industrial logic integrations (NG+Fortum; NetGuardians+Intix). Timely exits of earlier vintages to recycle capital into 2024–2025 platforms.
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">6. 2025 Highlights</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        Three exits free capacity for new deployments. Cybersecurity and infrastructure security pushed to firm-level theme. myneva and waste equipment platforms compounding via add-ons. Continued thought leadership in regenerative agriculture and planetary boundaries.
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">7. Executive Summary</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <b>Strategic Identity:</b> Pure-play impact GP with real industrial depth in critical infrastructure sectors.
+                        <br><b>Competitive Edge:</b> Systems thinking combined with platform stitching in regulated and critical niches.
+                        <br><b>Future Outlook:</b> More EU circular technology bolt-ons; cyber and financial-crime suite expansion; continued social-care digitization M&A.
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    if (firm.name.toLowerCase().includes('altor')) {
+        return `
+            <div style="display:flex; flex-direction:column; gap:0.6rem;">
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">1. Strategic Overview</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        Large-cap Nordic private equity firm with sector range spanning climate/energy transition, financial services, industrial technology, brand/consumer, and software/AI. Very active in public markets through stakes in listed companies, take-privates, and control buyouts. Fast portfolio rotations characterize 2024–2025 activity.
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">2. Activity Mix (2009–2025)</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.3rem;">
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">New platforms: Kommunalkredit, Nordic Climate Group, VTU, F24, Aira</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Public stakes: Mandatum, FLSmidth</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Exits: Wrist, Marshall Group, XXL, Qmatic, Carnegie</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Partnerships: Silo AI, WovenLight AI</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">3. Evolution by Phase</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <b>2013–2018:</b> Classic buyouts (Rossignol, Trioplast, Apotek Hjärtat divestment, Norican) with strong exits; builds media/technology stack (BTI/Iyuno).
+                        <br><b>2019–2023:</b> Climate/infrastructure pivot strengthens (H2 Green Steel, Tibber, OX2), plus financial services (Kommunalkredit, Mandatum). Public stakes strategy ramps (FLSmidth).
+                        <br><b>2024–2025:</b> Portfolio pruning through multiple exits; record fund raised (2024); continued climate/infrastructure focus (renewable cotton push), AI partnerships, and platform activity (F24 majority 2024; IMBOX 2025).
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">4. Sector Investment Theses</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <b>A) Energy and climate transition:</b> Heat pumps (Aira), battery materials (Vianode), renewable developers (OX2), grid/industrial decarbonization (Permascand).
+                        <br><b>B) Critical communications and resilience:</b> F24, Qmatic (exited), VTU, industrial software palette.
+                        <br><b>C) Financial services:</b> Kommunalkredit, Carnegie (exited), Mandatum stake.
+                        <br><b>D) Consumer and brand:</b> Selective investments (Totême, Aarke) with multiple exits in 2024–2025 to rebalance portfolio.
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">5. Value Creation Strategy</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        Blend of control investments and public stakes to shape strategic direction. Industrial partnerships (AI, materials, energy) to add capability beyond capital. Aggressive portfolio rotation to concentrate in climate/infrastructure and software resilience. Global buyer access for exits (Brunswick for Navico; J.F. Lehman for Wrist; DNB for Carnegie).
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">6. 2025 Highlights</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        Retta divestment to Adelis (portfolio reshuffle), RevolutionRace exit, AI push through WovenLight partnership, IMBOX entry. Senior leadership transition (Co-Managing Partner step-down) with continuity maintained through advisory role.
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">7. Executive Summary</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <b>Strategic Identity:</b> Pan-Nordic platform with climate/infrastructure core, adept in public/private crossover transactions.
+                        <br><b>Competitive Edge:</b> Scale, complex transaction execution, and capability partnerships (AI/industrial).
+                        <br><b>Future Outlook:</b> More climate infrastructure control investments and selective listed stakes; AI enablement across portfolio companies.
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    if (firm.name.toLowerCase().includes('nordstjernan')) {
+        return `
+            <div style="display:flex; flex-direction:column; gap:0.6rem;">
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">1. Strategic Overview</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        Evergreen Swedish investment company with industrial roots. Investment style blends control/anchor stakes in listed and private Nordic companies with long-duration orientation and option programs in industrial holdings (Alligo, Momentum). Mix of core platforms (Etac, Rosti, Alligo, Momentum) and growth/venture investments (Growth AB; technology bets like Oden Technologies).
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">2. Activity Mix (2020–2025)</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.3rem;">
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Portfolio shaping: NCC exit, engcon exit, Norva24 divestment</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">New investments: Oden Technologies, Aidian, Mentimeter</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Subsidiary M&A: Rosti, Etac acquisitions</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Governance: CEO transition, board refresh</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">3. Evolution by Phase</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <b>2020–2022:</b> Consolidate and strengthen industrial core (Momentum public offer path; Rosti, Etac expansion), add growth technology (Zimpler, Mentimeter), diagnostics (Aidian).
+                        <br><b>2023–2025:</b> Leadership transition; portfolio rationalization (NCC exit, Norva24 exit, engcon exit), new Industry 4.0 angle (Oden). Ongoing use of call options to align management in listed industrial platforms.
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">4. Sector Investment Theses</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <b>A) Industrial and medtech platforms:</b> Etac (assistive technology), Rosti (plastics/contract manufacturing), Alligo/Momentum (industrial tools/MRO).
+                        <br><b>B) Data and Industry 4.0:</b> Oden (manufacturing analytics), Mentimeter (engagement), Roaring (fintech data).
+                        <br><b>C) Healthcare and diagnostics:</b> Aidian; Ascilion (medtech sensors).
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">5. Value Creation Strategy</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        Anchor ownership in listed industrials with option programs to drive management alignment. Bolt-on acquisitions via subsidiaries (Etac, Rosti). Selective growth bets via Growth AB (now sold in 2025) to seed pipelines. Active portfolio pruning (NCC, engcon, Norva24) to recycle capital into priority themes.
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">6. 2025 Highlights</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        Multiple disposals (engcon remaining stake; Norva24), Alligo option program, board refresh, Annual Report 2024. Growth AB divestment leads to tighter focus on core platforms.
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">7. Executive Summary</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <b>Strategic Identity:</b> Long-term Nordic industrial owner with pragmatic technology overlay.
+                        <br><b>Competitive Edge:</b> Governance heft, option-driven alignment in listed platforms, patient capital approach.
+                        <br><b>Future Outlook:</b> More bolt-on acquisitions via Etac/Rosti; disciplined rotation from minority growth bets into core industrial control positions.
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    if (firm.name.toLowerCase().includes('polaris')) {
+        return `
+            <div style="display:flex; flex-direction:column; gap:0.6rem;">
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">1. Strategic Overview</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        Regional Nordic buyout platform with adjacent strategies in flexible capital (private credit-style) and public equity. Sector coverage spans industrial technology and manufacturing, B2B services, maritime/transport, consumer and design brands, and safety and training.
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">2. Activity Mix (2016–2025)</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.3rem;">
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">New platforms and majorities: 12–15</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Add-ons and platform builds: 20+</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Exits and partial exits: 12–14</div>
+                            <div style="background:#f9fafb; padding:0.3rem; border-radius:4px;">Fundraising and new vehicles: 4–5</div>
+                        </div>
+                        <br><b>Pattern:</b> Portfolio engineering with carve-outs, mergers, minority/credit flexibility, and public-to-private transactions.
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">3. Evolution by Phase</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <b>2016–2019:</b> Industrial and consumer core; Configit software; Louis Poulsen exit; Molslinjen expansion and acquisitions.
+                        <br><b>2020–2022:</b> Portfolio rotations and resilience; exits of Babysam, PWT, and Molslinjen; build-outs in safety training, insurance brokerage, prop-tech content, maritime components; Fund V closes; Flexible Capital launched.
+                        <br><b>2023–2025:</b> Multi-arm capital and consolidation; Public Equity strategy launch; Awardit take-private journey; IT services scale via Globeteam + 7N; electrification deepening (Micropower + LEAB); continued service roll-ups and partnerships.
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">4. Sector Investment Theses</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <b>A) Technology and IT services consolidation:</b> Carve-outs, MBOs, and merger-orchestration to create national champions.
+                        <br><b>B) Industrial technology and electrification:</b> Niche components with global OEM exposure; add-ons to deepen product and aftermarket.
+                        <br><b>C) Business services and risk:</b> Route density, local M&A, and cross-sell across SMEs.
+                        <br><b>D) Consumer, brand, and design:</b> Brand premiumization, category extensions, and selective exits to strategics.
+                        <br><b>E) Safety/training and energy:</b> Scale and exit readiness across safety and alternative fuels experimentation.
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">5. Value Creation Levers</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        Buy-and-build orchestration, carve-outs and MBOs, merger engineering, flexible capital to finance bolt-ons and public optionality, operational upgrades and leadership installs, and disciplined exits to global strategics and sponsors.
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">6. 2024–2025 Highlights</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        Flexible Capital and Public Equity are fully active; Awardit public-to-private; IT services national champion move via Globeteam + 7N; electrification deepening around Micropower and LEAB; continued roll-up momentum.
+                    </div>
+                </div>
+                <div style="padding:0.6rem; background:#fff; border:1px solid #e5e7eb; border-radius:8px;">
+                    <h4 style="margin:0 0 0.3rem 0; font-size:0.65rem; font-weight:800; color:#111827;">7. Executive Takeaways</h4>
+                    <div style="font-size:0.52rem; color:#374151; line-height:1.6;">
+                        <b>Identity:</b> Nordic PE with multi-strategy platform (buyout, credit, public).
+                        <br><b>Edge:</b> Transaction structuring (carve-outs, mergers, take-privates) and flexible capital to fuel inorganic growth.
+                        <br><b>Risk posture:</b> Balanced across cyclical consumer/brand and resilient B2B/industrial tech; credit adds uncorrelated exposure.
+                        <br><b>2026+ outlook:</b> Expect additional take-privates, IT services consolidation, electrification-aligned industrial add-ons, and credit-funded proprietary pipelines.
                     </div>
                 </div>
             </div>
