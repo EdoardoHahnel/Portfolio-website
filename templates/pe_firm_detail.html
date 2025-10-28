@@ -6,6 +6,39 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script src="{{ url_for('static', filename='logo-utils.js') }}"></script>
+<style>
+    /* Hide scrollbar for tabs */
+    .tabs::-webkit-scrollbar {
+        display: none;
+    }
+    
+    /* Prevent horizontal scrolling on mobile */
+    #firmDetailContainer {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+    
+    /* Mobile responsive adjustments */
+    @media (max-width: 768px) {
+        .firm-detail-header-content {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+        }
+        
+        .firm-detail-header-content > div:first-child {
+            width: 100% !important;
+            margin-bottom: 0.5rem;
+        }
+        
+        .firm-detail-header-content > div:last-child {
+            align-self: flex-end !important;
+        }
+        
+        .tab-content > div[style*="grid-template-columns"] {
+            grid-template-columns: 1fr !important;
+        }
+    }
+</style>
 {% endblock %}
 
 {% block content %}
@@ -52,48 +85,50 @@ function displayFirmDetail(firm) {
     container.innerHTML = `
         <!-- Firm Header -->
         <div class="firm-detail-header" style="background: linear-gradient(135deg, #4c1d95 0%, #581c87 100%); padding: 0.6rem 0.8rem; border-radius: 6px; color: white; margin-bottom: 0.5rem;">
-            <div class="firm-detail-header-content" style="display: flex; align-items: center; gap: 0.5rem;">
-                ${window.LogoUtils ? window.LogoUtils.createRobustLogoElement(firm.logo_url, firm.name, '35px', '🏢', '#4c1d95') : 
-                  `<img src="${firm.logo_url}" alt="${escapeHtml(firm.name)}" 
-                        style="height: 35px; border-radius: 4px; background: white; padding: 0.2rem;"
-                        onerror="this.style.display='none'">`}
-                <div>
-                    <h1 style="margin: 0; font-size: 0.8rem; font-weight: 700;">${escapeHtml(firm.name)}</h1>
-                    <div style="display: flex; gap: 0.5rem; margin-top: 0.2rem; font-size: 0.45rem; opacity: 0.9; flex-wrap: wrap;">
-                        <span><i class="fas fa-map-marker-alt"></i> ${escapeHtml(firm.headquarters)}</span>
-                        <span><i class="fas fa-calendar"></i> Founded ${firm.founded}</span>
-                        <span><i class="fas fa-dollar-sign"></i> AUM: ${escapeHtml(firm.aum)}</span>
-                        <span><i class="fas fa-users"></i> ${firm.employees} employees</span>
+            <div class="firm-detail-header-content" style="display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; flex: 1; min-width: 0;">
+                    ${window.LogoUtils ? window.LogoUtils.createRobustLogoElement(firm.logo_url, firm.name, '35px', '🏢', '#4c1d95') : 
+                      `<img src="${firm.logo_url}" alt="${escapeHtml(firm.name)}" 
+                            style="height: 35px; border-radius: 4px; background: white; padding: 0.2rem; flex-shrink: 0;"
+                            onerror="this.style.display='none'">`}
+                    <div style="min-width: 0; flex: 1;">
+                        <h1 style="margin: 0; font-size: 0.8rem; font-weight: 700; word-wrap: break-word;">${escapeHtml(firm.name)}</h1>
+                        <div style="display: flex; gap: 0.5rem; margin-top: 0.2rem; font-size: 0.45rem; opacity: 0.9; flex-wrap: wrap;">
+                            <span><i class="fas fa-map-marker-alt"></i> ${escapeHtml(firm.headquarters)}</span>
+                            <span><i class="fas fa-calendar"></i> Founded ${firm.founded}</span>
+                            <span><i class="fas fa-dollar-sign"></i> AUM: ${escapeHtml(firm.aum)}</span>
+                            <span><i class="fas fa-users"></i> ${firm.employees} employees</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div>
-                <a href="${firm.website}" target="_blank" style="padding: 0.25rem 0.5rem; background: white; color: #4c1d95; border-radius: 4px; text-decoration: none; font-size: 0.5rem; font-weight: 600;">
-                    <i class="fas fa-external-link-alt"></i> Visit Website
-                </a>
+                <div style="flex-shrink: 0;">
+                    <a href="${firm.website}" target="_blank" style="padding: 0.25rem 0.5rem; background: white; color: #4c1d95; border-radius: 4px; text-decoration: none; font-size: 0.5rem; font-weight: 600; white-space: nowrap;">
+                        <i class="fas fa-external-link-alt"></i> Visit Website
+                    </a>
+                </div>
             </div>
         </div>
         
         
         <!-- Tabs -->
-        <div class="tabs" style="display: flex; gap: 0.3rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e0e0e0;">
-            <button class="tab-btn active" data-tab="overview" style="padding: 0.3rem 0.5rem; border: none; background: none; cursor: pointer; font-size: 0.55rem; font-weight: 600; color: #4c1d95; border-bottom: 2px solid #4c1d95;">
-                <i class="fas fa-info-circle" style="font-size: 0.5rem;"></i> Overview
+        <div class="tabs" style="display: flex; gap: 0.2rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e0e0e0; overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
+            <button class="tab-btn active" data-tab="overview" style="padding: 0.3rem 0.4rem; border: none; background: none; cursor: pointer; font-size: 0.5rem; font-weight: 600; color: #4c1d95; border-bottom: 2px solid #4c1d95; white-space: nowrap; flex-shrink: 0;">
+                <i class="fas fa-info-circle" style="font-size: 0.45rem;"></i> Overview
             </button>
-            <button class="tab-btn" data-tab="portfolio" style="padding: 0.3rem 0.5rem; border: none; background: none; cursor: pointer; font-size: 0.55rem; font-weight: 600; color: #666; border-bottom: 2px solid transparent;">
-                <i class="fas fa-briefcase" style="font-size: 0.5rem;"></i> Portfolio (${getPortfolioCount(firmName)})
+            <button class="tab-btn" data-tab="portfolio" style="padding: 0.3rem 0.4rem; border: none; background: none; cursor: pointer; font-size: 0.5rem; font-weight: 600; color: #666; border-bottom: 2px solid transparent; white-space: nowrap; flex-shrink: 0;">
+                <i class="fas fa-briefcase" style="font-size: 0.45rem;"></i> Portfolio (${getPortfolioCount(firmName)})
             </button>
-            <button class="tab-btn" data-tab="company-updates" style="padding: 0.3rem 0.5rem; border: none; background: none; cursor: pointer; font-size: 0.55rem; font-weight: 600; color: #666; border-bottom: 2px solid transparent;">
-                <i class="fas fa-stream" style="font-size: 0.5rem;"></i> Company updates
+            <button class="tab-btn" data-tab="company-updates" style="padding: 0.3rem 0.4rem; border: none; background: none; cursor: pointer; font-size: 0.5rem; font-weight: 600; color: #666; border-bottom: 2px solid transparent; white-space: nowrap; flex-shrink: 0;">
+                <i class="fas fa-stream" style="font-size: 0.45rem;"></i> Updates
             </button>
-            <button class="tab-btn" data-tab="ai-analysis" style="padding: 0.3rem 0.5rem; border: none; background: none; cursor: pointer; font-size: 0.55rem; font-weight: 600; color: #666; border-bottom: 2px solid transparent;">
-                <i class="fas fa-brain" style="font-size: 0.5rem;"></i> AI Analysis
+            <button class="tab-btn" data-tab="ai-analysis" style="padding: 0.3rem 0.4rem; border: none; background: none; cursor: pointer; font-size: 0.5rem; font-weight: 600; color: #666; border-bottom: 2px solid transparent; white-space: nowrap; flex-shrink: 0;">
+                <i class="fas fa-brain" style="font-size: 0.45rem;"></i> AI
             </button>
-            <button class="tab-btn" data-tab="team" style="padding: 0.3rem 0.5rem; border: none; background: none; cursor: pointer; font-size: 0.55rem; font-weight: 600; color: #666; border-bottom: 2px solid transparent;">
-                <i class="fas fa-users" style="font-size: 0.5rem;"></i> Team (${firm.team.length})
+            <button class="tab-btn" data-tab="team" style="padding: 0.3rem 0.4rem; border: none; background: none; cursor: pointer; font-size: 0.5rem; font-weight: 600; color: #666; border-bottom: 2px solid transparent; white-space: nowrap; flex-shrink: 0;">
+                <i class="fas fa-users" style="font-size: 0.45rem;"></i> Team (${firm.team.length})
             </button>
-            <button class="tab-btn" data-tab="focus" style="padding: 0.3rem 0.5rem; border: none; background: none; cursor: pointer; font-size: 0.55rem; font-weight: 600; color: #666; border-bottom: 2px solid transparent;">
-                <i class="fas fa-bullseye" style="font-size: 0.5rem;"></i> Investment Focus
+            <button class="tab-btn" data-tab="focus" style="padding: 0.3rem 0.4rem; border: none; background: none; cursor: pointer; font-size: 0.5rem; font-weight: 600; color: #666; border-bottom: 2px solid transparent; white-space: nowrap; flex-shrink: 0;">
+                <i class="fas fa-bullseye" style="font-size: 0.45rem;"></i> Focus
             </button>
         </div>
         
