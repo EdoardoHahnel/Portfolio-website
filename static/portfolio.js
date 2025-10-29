@@ -600,15 +600,18 @@ function displayPortfolio(companies) {
             
             tbody.appendChild(row);
             
-            // Add click handler to company name to open modal
+            // Add click handler to company name to navigate to detail page
             const companyNameCell = row.querySelector('.company-name');
             if (companyNameCell) {
                 const companyLinkModal = companyNameCell.querySelector('.company-link-modal');
                 if (companyLinkModal) {
+                    // Generate slug for URL
+                    const slug = generateCompanySlug(company);
+                    
                     companyLinkModal.addEventListener('click', function(e) {
                         e.preventDefault();
                         e.stopPropagation();
-                        openCompanyModal(company);
+                        window.location.href = `/company/${slug}`;
                     });
                     
                     // Add hover effect
@@ -736,6 +739,18 @@ function extractDomain(url) {
     } catch (e) {
         return '';
     }
+}
+
+// Helper function to generate company slug for URL
+function generateCompanySlug(company) {
+    const companyName = (company.company || 'company').toLowerCase()
+        .replace(/[^a-z0-9\s]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/&/g, 'and');
+    const source = (company.source || 'firm').toLowerCase()
+        .replace(/[^a-z0-9\s]/g, '')
+        .replace(/\s+/g, '-');
+    return `${companyName}-${source}`;
 }
 
 // Helper function to get PE firm domain

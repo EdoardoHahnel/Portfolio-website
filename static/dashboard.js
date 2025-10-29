@@ -2,6 +2,14 @@
 Dashboard - Main page interactivity
 */
 
+// Available PE firms with profiles
+const availablePEFirms = new Set([
+    'EQT', 'Nordic Capital', 'Triton Partners', 'Altor', 'Litorina', 
+    'Adelis Equity', 'Ratos', 'Summa Equity', 'Accent Equity', 'IK Partners', 
+    'Verdane', 'Valedo Partners', 'Alder', 'Bure Equity', 'CapMan', 
+    'Celero', 'Polaris', 'Nordstjernan', 'Norvestor', 'Helix Kapital', 'FSN Capital'
+]);
+
 // ===== TRUNCATE TEXT FUNCTION =====
 // Truncates text to specified length and adds ellipsis
 function truncateText(text, maxLength) {
@@ -15,8 +23,12 @@ document.addEventListener('DOMContentLoaded', function() {
     loadDashboard();
 });
 
+// Cache for PE firm logos (from /api/pe-firms)
+let peFirmLogosMap = null;
+
 async function loadDashboard() {
     await Promise.all([
+        ensurePeFirmLogos(),
         loadLatestNews(),
         loadActiveFundraising(),
         loadPEFirms(),
@@ -143,27 +155,60 @@ async function loadActiveFundraising() {
             
             container.innerHTML = '';
             
-            // Filter active fundraising and limit to 5
-            const active = data.fundraising.filter(f => f.status !== 'Closed').slice(0, 5);
+            // Mirror fundraising table logic: Nordic funds from Excel import, sorted by vintage/status
+            let funds = data.fundraising.slice();
+            // Filter to Excel import rows only
+            funds = funds.filter(f => (f.source || '').toLowerCase() === 'excel import');
+            // Filter to Nordic funds
+            funds = funds.filter(isNordicFund);
+            // Normalize fields for sorting
+            funds = funds.map(f => ({
+                ...f,
+                _vintageYear: deriveVintageYear(f),
+                _displaySize: f.final_size && f.final_size !== 'N/A' ? f.final_size : (f.target_size || 'N/A')
+            }));
+            // Sort: vintage desc, Marketing first, non-Closed before Closed, then firm
+            funds.sort((a, b) => {
+                const va = a._vintageYear || 0;
+                const vb = b._vintageYear || 0;
+                if (vb !== va) return vb - va;
+                if (a.status === 'Marketing' && b.status !== 'Marketing') return -1;
+                if (a.status !== 'Marketing' && b.status === 'Marketing') return 1;
+                if (a.status === 'Closed' && b.status !== 'Closed') return 1;
+                if (a.status !== 'Closed' && b.status === 'Closed') return -1;
+                return (a.firm || '').localeCompare(b.firm || '');
+            });
+            // Take top 10
+            const topFunds = funds.slice(0, 10);
             
-            console.log(`Displaying ${active.length} active fundraising items`);
+            console.log(`Displaying ${topFunds.length} fundraising items`);
             
-            if (active.length > 0) {
-                active.forEach((fund, index) => {
+            if (topFunds.length > 0) {
+                topFunds.forEach((fund, index) => {
                     try {
                         const item = document.createElement('div');
                         item.className = 'fundraising-item-compact';
+                        const firm = fund.firm || 'Fund';
+                        const firmLogo = getFirmLogoForName(firm) || `https://ui-avatars.com/api/?name=${encodeURIComponent(firm)}&background=1e3a8a&color=ffffff&size=32`;
+                        const progressVal = Number.isFinite(Number(fund.progress)) ? Number(fund.progress) : null;
+                        // Check if firm has a profile
+                        const hasProfile = availablePEFirms.has(firm);
+                        
                         item.innerHTML = `
                             <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
-                                <div>
-                                    <div class="fund-name-compact">${escapeHtml(fund.firm)} - ${escapeHtml(fund.fund_name)}</div>
-                                    <div class="fund-details-compact">Target: ${escapeHtml(fund.target_size)} | ${escapeHtml(fund.status)}</div>
+                                <div style="display:flex; gap:10px; align-items:center;">
+                                    ${hasProfile ? 
+                                        `<a href="/pe-firm/${encodeURIComponent(firm)}" style="text-decoration: none; display: inline-block;">
+                                            <img src="${firmLogo}" alt="${escapeHtml(firm)}" style="width:32px; height:32px; object-fit:contain; border-radius:4px; background:#fff; cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                                        </a>` : 
+                                        `<img src="${firmLogo}" alt="${escapeHtml(firm)}" style="width:32px; height:32px; object-fit:contain; border-radius:4px; background:#fff">`
+                                    }
+                                    <div class="fund-name-compact">${escapeHtml(firm)} - ${escapeHtml(fund.fund_name)}</div>
+                                    <div class="fund-details-compact">Target: ${escapeHtml((fund.final_size && fund.final_size !== 'N/A') ? fund.final_size : (fund.target_size || 'N/A'))} | ${escapeHtml(fund.status)}</div>
                                 </div>
-                                <span class="progress-badge">${fund.progress}%</span>
+                                ${progressVal !== null ? `<span class="progress-badge">${progressVal}%</span>` : ''}
                             </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: ${fund.progress}%"></div>
-                            </div>
+                            ${progressVal !== null ? `<div class=\"progress-bar\"><div class=\"progress-fill\" style=\"width: ${progressVal}%\"></div></div>` : ''}
                         `;
                         container.appendChild(item);
                     } catch (itemError) {
@@ -181,7 +226,7 @@ async function loadActiveFundraising() {
                 container.innerHTML = `
                     <div style="text-align: center; padding: 20px; color: #666;">
                         <i class="fas fa-chart-line" style="font-size: 24px; margin-bottom: 10px; opacity: 0.5;"></i>
-                        <p>No active fundraising campaigns</p>
+                        <p>No fundraising data</p>
                         <a href="/fundraising" class="btn btn-primary btn-sm">View All Funds</a>
                     </div>
                 `;
@@ -212,6 +257,109 @@ async function loadActiveFundraising() {
             `;
         }
     }
+}
+
+// Helpers mirrored from fundraising table to keep ordering consistent
+function deriveVintageYear(fund) {
+    const candidates = [fund.vintage, fund.vintage_year, fund.vintageYear];
+    for (const c of candidates) {
+        const n = parseInt(c, 10);
+        if (!isNaN(n) && n > 1900 && n < 3000) return n;
+    }
+    const dateFields = [fund.final_close_date, fund.first_close_date, fund.first_close, fund.final_close];
+    for (const d of dateFields) {
+        if (!d) continue;
+        const m = String(d).match(/(20\d{2}|19\d{2})/);
+        if (m) {
+            const year = parseInt(m[1], 10);
+            if (!isNaN(year)) return year;
+        }
+    }
+    return undefined;
+}
+
+function isNordicFund(fund) {
+    const geography = (fund.geography || fund.geographic_focus || fund.region || fund.country || '').toLowerCase();
+    const firm = (fund.firm || '').toLowerCase();
+    const nordicGeos = ['nordic', 'denmark', 'sweden', 'norway', 'finland', 'iceland', 'baltic', 'nordic region', 'nordic countries'];
+    const isNordicGeo = nordicGeos.some(geo => geography.includes(geo));
+    const nordicFirms = ['nordic', 'adelis', 'altor', 'axcel', 'eqt', 'fsn', 'herkules', 'ik', 'norvestor', 'polaris', 'procuritas', 'summa', 'triton', 'verdane', 'waterland', 'via equity', 'alfa framtak', 'credo', 'evolver', 'invl', 'peq', 'seb', 'triple', 'acathia', 'devco', 'main capital', 'mvi', 'vaaka', 'vendis', 'maj invest', 'trill impact', 'equip', 'impilo', 'helix', 'systematic', 'mentha', 'bny mellon'];
+    const isNordicFirm = nordicFirms.some(nf => firm.includes(nf));
+    return isNordicGeo || isNordicFirm;
+}
+
+// ===== PE firm logos (from /api/pe-firms) =====
+async function ensurePeFirmLogos() {
+    if (peFirmLogosMap !== null) return;
+    try {
+        const resp = await fetch('/api/pe-firms');
+        const data = await resp.json();
+        const firms = data.firms || {};
+        const map = {};
+        Object.keys(firms).forEach(key => {
+            const firm = firms[key] || {};
+            const logo = firm.logo_url || firm.logo || '';
+            const variants = buildFirmNameVariants(key, firm.name);
+            variants.forEach(v => { if (logo) map[v] = logo; });
+        });
+        peFirmLogosMap = map;
+    } catch (e) {
+        peFirmLogosMap = {};
+    }
+}
+
+function buildFirmNameVariants(...names) {
+    const out = new Set();
+    names.filter(Boolean).forEach(n => {
+        const base = String(n).trim();
+        if (!base) return;
+        const lower = base.toLowerCase();
+        out.add(lower);
+        out.add(lower.replace(/\bpartners\b/g, '').replace(/\s+/g, ' ').trim());
+        out.add(lower.replace(/\bcapital\b/g, '').replace(/\s+/g, ' ').trim());
+        out.add(lower.replace(/\bequity\b/g, '').replace(/\s+/g, ' ').trim());
+        out.add(lower.replace(/\bmanagement\b/g, '').replace(/\s+/g, ' ').trim());
+        out.add(lower.replace(/\binvestments?\b/g, '').replace(/\s+/g, ' ').trim());
+        out.add(lower.replace(/\basset\b|\bmanagement\b/gi, '').replace(/\s+/g, ' ').trim());
+        out.add(lower.replace(/\bprivate\b\s+\bequity\b/gi, ' ').replace(/\s+/g, ' ').trim());
+        out.add(lower.replace(/\bpartners?\b|\bcapital\b|\bequity\b|\bmanagement\b|\binvestments?\b|\basset\b/gi, '').replace(/\s+/g, ' ').trim());
+    });
+    return [...out].filter(Boolean);
+}
+
+function getFirmLogoForName(name) {
+    if (!name || !peFirmLogosMap) return undefined;
+    const lower = String(name).toLowerCase().trim();
+    if (peFirmLogosMap[lower]) return peFirmLogosMap[lower];
+    const variants = buildFirmNameVariants(name);
+    for (const v of variants) {
+        if (peFirmLogosMap[v]) return peFirmLogosMap[v];
+    }
+    // curated clearbit domain fallbacks for common firms
+    const fallbackDomains = {
+        'eqt': 'eqtgroup.com',
+        'nordic capital': 'nordiccapital.com',
+        'triton': 'triton-partners.com',
+        'altor': 'altor.com',
+        'summa equity': 'summaequity.com',
+        'litorina': 'litorina.com',
+        'ratos': 'ratos.se',
+        'adelis': 'adelisequity.com',
+        'ik partners': 'ikpartners.com',
+        'bure': 'bure.se',
+        'accent equity': 'accentequity.com',
+        'axcel': 'axcel.dk',
+        'capman': 'capman.com',
+        'fsn capital': 'fsncapital.com',
+        'polaris': 'polarisequity.dk',
+        'verdane': 'verdanecapital.com',
+        'procuritas': 'procuritas.com',
+        'impilo': 'impilo.se',
+        'vaaka partners': 'vaakapartners.fi'
+    };
+    const key = Object.keys(fallbackDomains).find(k => lower.includes(k));
+    if (key) return `https://logo.clearbit.com/${fallbackDomains[key]}`;
+    return undefined;
 }
 
 async function loadPEFirms() {

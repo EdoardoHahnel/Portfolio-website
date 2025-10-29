@@ -106,6 +106,18 @@
         overflow-y: visible !important;
     }
     
+    /* Ensure page can scroll properly */
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    
+    .main-container {
+        overflow-x: hidden;
+        overflow-y: auto;
+        min-height: 100vh;
+    }
+    
     .fundraising-table {
         width: 100%;
         min-width: 800px; /* Minimum width for horizontal scrolling */

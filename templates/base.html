@@ -40,13 +40,11 @@
                 
                 <div class="brand" style="display: flex; align-items: center; gap: 15px; margin-left: -10px; cursor: pointer;" onclick="window.location.href='/'">
                     <img src="{{ url_for('static', filename='Port.png') }}" alt="Portföljbolagen" style="height: 35px; width: auto; border-radius: 6px; margin-top: 0px;">
-                    <span style="font-size: 1.2rem; font-weight: 700; color: white;">Portföljbolagen</span>
+                    <div style="display: flex; flex-direction: column; gap: 2px;">
+                        <span style="font-size: 1.2rem; font-weight: 700; color: white;">Portföljbolagen</span>
+                        <span style="font-size: 0.45rem; color: rgba(255, 255, 255, 0.5); font-weight: 400; line-height: 1;">A ForteCo Initiative</span>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- ForteCo attribution -->
-            <div style="margin-left: auto; margin-right: 1rem; white-space: nowrap;">
-                <span style="font-size: 0.5rem; color: rgba(255, 255, 255, 0.5); font-weight: 400;">A ForteCo Initiative</span>
             </div>
             
         </div>
@@ -54,82 +52,56 @@
     
             <!-- Sidebar Navigation -->
             <aside class="sidebar">
-                <!-- Navigation Links -->
+                <!-- Flat Navigation Links -->
                 <div class="sidebar-section">
                     <a href="/" class="sidebar-link {% if request.path == '/' %}active{% endif %}">
                         <i class="fas fa-tachometer-alt"></i>
                         <span>Dashboard</span>
                     </a>
-                </div>
-                
-                <!-- Private Equity Category -->
-                <div class="sidebar-section">
-                    <div class="sidebar-category" onclick="toggleDropdown('private-equity')">
-                        <div class="category-header">
-                            <i class="fas fa-briefcase"></i>
-                            <span>Private Equity</span>
-                            <i class="fas fa-chevron-down dropdown-arrow" id="private-equity-arrow"></i>
-                        </div>
-                    </div>
-                    <div class="sidebar-dropdown" id="private-equity-dropdown">
-                        <a href="/pe-firms" class="sidebar-link {% if request.path == '/pe-firms' %}active{% endif %}">
-                            <i class="fas fa-building"></i>
-                            <span>PE Firms</span>
-                        </a>
-                        <a href="/news" class="sidebar-link {% if request.path == '/news' %}active{% endif %}">
-                            <i class="fas fa-newspaper"></i>
-                            <span>Investment News</span>
-                        </a>
-                        <a href="/portfolio" class="sidebar-link {% if request.path == '/portfolio' %}active{% endif %}">
-                            <i class="fas fa-chart-line"></i>
-                            <span>Portfolio Companies</span>
-                        </a>
-                        <a href="/fundraising" class="sidebar-link {% if request.path == '/fundraising' %}active{% endif %}">
-                            <i class="fas fa-chart-pie"></i>
-                            <span>Fundraising</span>
-                        </a>
-                        <a href="/league-tables" class="sidebar-link {% if request.path == '/league-tables' %}active{% endif %}">
-                            <i class="fas fa-trophy"></i>
-                            <span>League Tables</span>
-                        </a>
-                        <a href="/deal-flow" class="sidebar-link {% if request.path == '/deal-flow' %}active{% endif %}">
-                            <i class="fas fa-exchange-alt"></i>
-                            <span>Deal Flow</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- AI & Technology Category -->
-                <div class="sidebar-section">
-                    <div class="sidebar-category" onclick="toggleDropdown('ai-technology')">
-                        <div class="category-header">
-                            <i class="fas fa-robot"></i>
-                            <span>AI & Technology</span>
-                            <i class="fas fa-chevron-down dropdown-arrow" id="ai-technology-arrow"></i>
-                        </div>
-                    </div>
-                    <div class="sidebar-dropdown" id="ai-technology-dropdown">
-                        <a href="/ai-companies" class="sidebar-link {% if request.path == '/ai-companies' %}active{% endif %}">
-                            <i class="fas fa-microchip"></i>
-                            <span>AI Companies</span>
-                        </a>
-                        <a href="/ai-news" class="sidebar-link {% if request.path == '/ai-news' %}active{% endif %}">
-                            <i class="fas fa-brain"></i>
-                            <span>AI News</span>
-                        </a>
-                        <a href="/ai-investors" class="sidebar-link {% if request.path == '/ai-investors' %}active{% endif %}">
-                            <i class="fas fa-users"></i>
-                            <span>AI Investors</span>
-                        </a>
-                        <a href="/ai-trends" class="sidebar-link {% if request.path == '/ai-trends' %}active{% endif %}">
-                            <i class="fas fa-chart-area"></i>
-                            <span>Trends & Analysis</span>
-                        </a>
-                        <a href="/ai-map" class="sidebar-link {% if request.path == '/ai-map' %}active{% endif %}">
-                            <i class="fas fa-map-marked-alt"></i>
-                            <span>Nordic AI Map</span>
-                        </a>
-                    </div>
+                    <a href="/pe-firms" class="sidebar-link {% if request.path == '/pe-firms' %}active{% endif %}">
+                        <i class="fas fa-building"></i>
+                        <span>PE Firms</span>
+                    </a>
+                    <a href="/news" class="sidebar-link {% if request.path == '/news' %}active{% endif %}">
+                        <i class="fas fa-newspaper"></i>
+                        <span>Investment News</span>
+                    </a>
+                    <a href="/portfolio" class="sidebar-link {% if request.path == '/portfolio' %}active{% endif %}">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Portfolio Companies</span>
+                    </a>
+                    <a href="/fundraising" class="sidebar-link {% if request.path == '/fundraising' %}active{% endif %}">
+                        <i class="fas fa-chart-pie"></i>
+                        <span>Fundraising</span>
+                    </a>
+                    <a href="/league-tables" class="sidebar-link {% if request.path == '/league-tables' %}active{% endif %}">
+                        <i class="fas fa-trophy"></i>
+                        <span>League Tables</span>
+                    </a>
+                    <a href="/deal-flow" class="sidebar-link {% if request.path == '/deal-flow' %}active{% endif %}">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Deal Flow</span>
+                    </a>
+                    <a href="/ai-companies" class="sidebar-link {% if request.path == '/ai-companies' %}active{% endif %}">
+                        <i class="fas fa-microchip"></i>
+                        <span>AI Companies</span>
+                    </a>
+                    <a href="/ai-news" class="sidebar-link {% if request.path == '/ai-news' %}active{% endif %}">
+                        <i class="fas fa-brain"></i>
+                        <span>AI News</span>
+                    </a>
+                    <a href="/ai-investors" class="sidebar-link {% if request.path == '/ai-investors' %}active{% endif %}">
+                        <i class="fas fa-users"></i>
+                        <span>AI Investors</span>
+                    </a>
+                    <a href="/ai-trends" class="sidebar-link {% if request.path == '/ai-trends' %}active{% endif %}">
+                        <i class="fas fa-chart-area"></i>
+                        <span>Trends & Analysis</span>
+                    </a>
+                    <a href="/ai-map" class="sidebar-link {% if request.path == '/ai-map' %}active{% endif %}">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>Nordic AI Map</span>
+                    </a>
                 </div>
             </aside>
     
@@ -160,16 +132,10 @@
             }
         }
         
-        // Initialize dropdowns as open by default
+        // Initialize sidebar links active animation without dropdowns
         document.addEventListener('DOMContentLoaded', function() {
-            // Open dropdowns by default
-            toggleDropdown('private-equity');
-            toggleDropdown('ai-technology');
-            
-            // Add smooth scrolling to sidebar links
             document.querySelectorAll('.sidebar-link').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    // Add active state with animation
+                link.addEventListener('click', function() {
                     document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
                     this.classList.add('active');
                 });

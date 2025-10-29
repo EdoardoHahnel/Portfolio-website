@@ -1,0 +1,645 @@
+{% extends "base.html" %}
+
+{% block title %}{{ company_slug }}{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='components.css') }}">
+<style>
+    .company-detail-header {
+        background: linear-gradient(135deg, #4c1d95 0%, #581c87 50%, #6b21a8 100%);
+        color: white;
+        padding: 2rem 2rem 3rem 2rem;
+        margin: -1.5rem -1.5rem 2rem -1.5rem;
+        border-radius: 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .company-detail-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path fill="rgba(255,255,255,0.05)" d="M0,0 L1200,0 L1200,40 Q900,80 600,40 T0,40 Z"/></svg>');
+        background-size: cover;
+        opacity: 0.3;
+    }
+
+    .company-header-content {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        flex-wrap: wrap;
+    }
+
+    .company-header-left {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        flex: 1;
+        min-width: 280px;
+    }
+
+    .company-logo-large {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        background: white;
+        border-radius: 12px;
+        padding: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .company-header-text h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 0 0 0.75rem 0;
+        color: white;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .company-header-meta {
+        display: flex;
+        gap: 0.75rem;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 0.75rem;
+    }
+
+    .back-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        margin-bottom: 1rem;
+    }
+
+    .back-button:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateX(-4px);
+    }
+
+    .company-detail-content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .stats-banner {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-bottom: 2rem;
+        background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+        border: 1px solid #e9d5ff;
+        border-radius: 12px;
+        padding: 1.5rem;
+    }
+
+    .stat-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .stat-icon {
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+    }
+
+    .stat-content {
+        flex: 1;
+    }
+
+    .stat-value {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 0.25rem;
+    }
+
+    .stat-label {
+        font-size: 0.875rem;
+        color: #64748b;
+        font-weight: 500;
+    }
+
+    .detail-section {
+        background: white;
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e5e7eb;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #1e293b;
+        margin: 0 0 1.5rem 0;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .section-title i {
+        color: #667eea;
+        font-size: 1.25rem;
+    }
+
+    .detail-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .detail-card {
+        background: #f8f9ff;
+        border-radius: 8px;
+        padding: 1.25rem;
+        border: 1px solid #e9d5ff;
+    }
+
+    .detail-card-icon {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.75rem;
+        font-size: 1.125rem;
+    }
+
+    .detail-label {
+        font-size: 0.75rem;
+        color: #667eea;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.5px;
+    }
+
+    .detail-value {
+        font-size: 1rem;
+        color: #1e293b;
+        font-weight: 600;
+        line-height: 1.5;
+    }
+
+    .description-text {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #475569;
+        margin: 0;
+    }
+
+    .loading-state {
+        text-align: center;
+        padding: 4rem 2rem;
+    }
+
+    .error-state {
+        text-align: center;
+        padding: 4rem 2rem;
+        color: #dc2626;
+    }
+
+    .badge {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.875rem;
+        font-weight: 600;
+    }
+
+    .badge-sector {
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(10px);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .badge-status {
+        background: rgba(255, 255, 255, 0.95);
+        color: #4c1d95;
+    }
+
+    .badge-geography {
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        font-size: 0.875rem;
+        font-weight: 600;
+    }
+
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 768px) {
+        .company-detail-header {
+            padding: 1.5rem 1rem 2rem 1rem;
+            margin: -1rem -1rem 1.5rem -1rem;
+        }
+
+        .company-header-content {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .company-header-left {
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        .company-header-text h1 {
+            font-size: 1.5rem;
+        }
+
+        .company-logo-large {
+            width: 64px;
+            height: 64px;
+        }
+
+        .stats-banner {
+            grid-template-columns: 1fr;
+        }
+
+        .detail-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .detail-section {
+            padding: 1.5rem;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="company-detail-content">
+    <div class="company-detail-header">
+        <a href="/portfolio" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            Back to Portfolio
+        </a>
+        <div class="company-header-content">
+            <div class="company-header-left">
+                <img id="companyLogo" src="" alt="" class="company-logo-large">
+                <div class="company-header-text">
+                    <h1 id="companyName">Loading...</h1>
+                    <div class="company-header-meta">
+                        <span id="companySector" class="badge badge-sector"></span>
+                        <span id="companyStatus" class="badge badge-status"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading State -->
+    <div id="loadingState" class="loading-state">
+        <div class="spinner" style="width: 48px; height: 48px; border: 4px solid #e5e7eb; border-top-color: #667eea; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 1rem;"></div>
+        <p style="color: #64748b;">Loading company details...</p>
+    </div>
+
+    <!-- Error State -->
+    <div id="errorState" class="error-state" style="display: none;">
+        <i class="fas fa-exclamation-triangle" style="font-size: 48px; margin-bottom: 1rem; opacity: 0.5;"></i>
+        <h2>Company Not Found</h2>
+        <p>The requested company could not be found.</p>
+        <a href="/portfolio" class="back-button" style="margin-top: 1rem;">
+            <i class="fas fa-arrow-left"></i>
+            Back to Portfolio
+        </a>
+    </div>
+
+    <!-- Company Details -->
+    <div id="companyDetails" style="display: none;">
+        <!-- Quick Stats -->
+        <div class="stats-banner">
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-calendar-plus"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-value" id="statEntry">—</div>
+                    <div class="stat-label">Entry Year</div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-hourglass-half"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-value" id="statHolding">—</div>
+                    <div class="stat-label">Holding Period</div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-value" id="statEmployees">—</div>
+                    <div class="stat-label">Employees</div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-coins"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-value" id="statDealSize">—</div>
+                    <div class="stat-label">Deal Size</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Company Overview -->
+        <div class="detail-section">
+            <h2 class="section-title">
+                <i class="fas fa-building"></i>
+                Company Overview
+            </h2>
+            <p id="companyDescription" class="description-text"></p>
+        </div>
+
+        <!-- Investment Details -->
+        <div class="detail-section">
+            <h2 class="section-title">
+                <i class="fas fa-chart-line"></i>
+                Investment Details
+            </h2>
+            <div class="detail-grid">
+                <div class="detail-card">
+                    <div class="detail-card-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="detail-label">Private Equity Firm</div>
+                    <div class="detail-value" id="peFirm">—</div>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-card-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <div class="detail-label">Fund Name</div>
+                    <div class="detail-value" id="fundName">—</div>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-card-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="detail-label">Investment Date</div>
+                    <div class="detail-value" id="entryYear">—</div>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-card-icon">
+                        <i class="fas fa-sack-dollar"></i>
+                    </div>
+                    <div class="detail-label">Transaction Value</div>
+                    <div class="detail-value" id="dealSize">—</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Geographic & Market Information -->
+        <div class="detail-section">
+            <h2 class="section-title">
+                <i class="fas fa-globe-europe"></i>
+                Geographic & Market Information
+            </h2>
+            <div class="detail-grid">
+                <div class="detail-card">
+                    <div class="detail-card-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="detail-label">Headquarters</div>
+                    <div class="detail-value" id="headquarters">—</div>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-card-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="detail-label">Primary Market</div>
+                    <div class="detail-value" id="market">—</div>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-card-icon">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <div class="detail-label">Geography Type</div>
+                    <div class="detail-value">
+                        <span id="geography" class="badge badge-geography"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Operational Metrics -->
+        <div class="detail-section">
+            <h2 class="section-title">
+                <i class="fas fa-tachometer-alt"></i>
+                Operational Metrics
+            </h2>
+            <div class="detail-grid">
+                <div class="detail-card">
+                    <div class="detail-card-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="detail-label">Workforce Size</div>
+                    <div class="detail-value" id="employees">—</div>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-card-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="detail-label">Years Under Ownership</div>
+                    <div class="detail-value" id="holdingPeriod">—</div>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-card-icon">
+                        <i class="fas fa-signal"></i>
+                    </div>
+                    <div class="detail-label">Investment Status</div>
+                    <div class="detail-value">
+                        <span id="status" class="badge badge-status"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="detail-section" style="text-align: center; padding: 2rem;">
+            <a id="websiteBtn" href="#" target="_blank" class="btn btn-primary" style="display: none;">
+                <i class="fas fa-external-link-alt"></i>
+                Visit Company Website
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', async function() {
+    const companySlug = '{{ company_slug }}';
+    const loadingState = document.getElementById('loadingState');
+    const errorState = document.getElementById('errorState');
+    const companyDetails = document.getElementById('companyDetails');
+
+    try {
+        const response = await fetch(`/api/company/${encodeURIComponent(companySlug)}`);
+        const data = await response.json();
+
+        if (data.success && data.company) {
+            const company = data.company;
+            loadCompanyData(company);
+            loadingState.style.display = 'none';
+            companyDetails.style.display = 'block';
+        } else {
+            loadingState.style.display = 'none';
+            errorState.style.display = 'block';
+        }
+    } catch (error) {
+        console.error('Error loading company:', error);
+        loadingState.style.display = 'none';
+        errorState.style.display = 'block';
+    }
+});
+
+function loadCompanyData(company) {
+    // Calculate metrics
+    const currentYear = 2025;
+    const entryYear = company.entry ? parseInt(company.entry) : null;
+    const holdingPeriod = entryYear ? currentYear - entryYear : null;
+    const status = company.status || (holdingPeriod && holdingPeriod > 0 ? 'Active' : 'N/A');
+    
+    // Categorize geography
+    const geography = categorizeGeography(company.market);
+    
+    // Header
+    const logoUrl = company.logo_url || (company.website ? 
+        `https://logo.clearbit.com/${extractDomain(company.website)}` : 
+        'https://ui-avatars.com/api/?name=' + encodeURIComponent(company.company || 'Company') + '&background=667eea&color=fff&size=80');
+    
+    document.getElementById('companyLogo').src = logoUrl;
+    document.getElementById('companyLogo').alt = company.company;
+    document.getElementById('companyName').textContent = company.company || 'Company';
+    document.getElementById('companySector').textContent = company.sector || 'N/A';
+    document.getElementById('companyStatus').textContent = status;
+    
+    // Update page title
+    document.title = `${company.company} - Portfolio Company - Portföljbolagen`;
+    
+    // Quick Stats
+    document.getElementById('statEntry').textContent = company.entry || '—';
+    document.getElementById('statHolding').textContent = holdingPeriod ? `${holdingPeriod} yrs` : '—';
+    document.getElementById('statEmployees').textContent = company.employees || '—';
+    document.getElementById('statDealSize').textContent = company.deal_size || '—';
+    
+    // Description
+    const descriptionText = company.description || company.detailed_description || 
+        `${company.company} is a ${company.sector || 'business'} company based in ${company.headquarters || company.market || 'the Nordic region'}. The company operates in the ${company.sector || 'business services'} sector and is a portfolio company of ${company.source || 'a leading PE firm'}.`;
+    document.getElementById('companyDescription').textContent = descriptionText;
+    
+    // Investment Details
+    document.getElementById('peFirm').textContent = company.source || 'N/A';
+    document.getElementById('fundName').textContent = company.fund || 'N/A';
+    document.getElementById('entryYear').textContent = company.entry || 'N/A';
+    document.getElementById('dealSize').textContent = company.deal_size || '—';
+    
+    // Geographic Information
+    document.getElementById('headquarters').textContent = company.headquarters || 'N/A';
+    document.getElementById('market').textContent = company.market || 'N/A';
+    
+    const geoBadge = document.getElementById('geography');
+    geoBadge.textContent = geography;
+    if (geography === 'Domestic') {
+        geoBadge.style.background = '#8b5cf620';
+        geoBadge.style.color = '#7c3aed';
+    } else if (geography === 'Nordic') {
+        geoBadge.style.background = '#06b6d620';
+        geoBadge.style.color = '#0891b2';
+    } else {
+        geoBadge.style.background = '#f59e0b20';
+        geoBadge.style.color = '#d97706';
+    }
+    
+    // Operational Metrics
+    document.getElementById('employees').textContent = company.employees || '—';
+    document.getElementById('holdingPeriod').textContent = holdingPeriod ? `${holdingPeriod} years` : '—';
+    
+    const statusBadge = document.getElementById('status');
+    statusBadge.textContent = status;
+    if (status === 'Active') {
+        statusBadge.style.background = '#10b98120';
+        statusBadge.style.color = '#059669';
+    } else if (status === 'Exited') {
+        statusBadge.style.background = '#6b728020';
+        statusBadge.style.color = '#475569';
+    } else if (status === 'IPO') {
+        statusBadge.style.background = '#3b82f620';
+        statusBadge.style.color = '#2563eb';
+    } else {
+        statusBadge.style.background = '#94a3b820';
+        statusBadge.style.color = '#64748b';
+    }
+    
+    // Website button
+    const websiteBtn = document.getElementById('websiteBtn');
+    if (company.website) {
+        websiteBtn.href = company.website;
+        websiteBtn.style.display = 'inline-flex';
+    } else {
+        websiteBtn.style.display = 'none';
+    }
+}
+
+function categorizeGeography(market) {
+    if (!market) return 'International';
+    const marketLower = market.toLowerCase();
+    if (marketLower.includes('sweden') || marketLower.includes('norway') || 
+        marketLower.includes('denmark') || marketLower.includes('finland') || 
+        marketLower.includes('iceland')) {
+        if (marketLower.includes('sweden') && !marketLower.includes('nordic') && !marketLower.includes('finland') && !marketLower.includes('norway') && !marketLower.includes('denmark')) {
+            return 'Domestic';
+        }
+        return 'Nordic';
+    }
+    return 'International';
+}
+
+function extractDomain(url) {
+    if (!url) return '';
+    try {
+        const urlObj = new URL(url.startsWith('http') ? url : 'https://' + url);
+        return urlObj.hostname.replace('www.', '');
+    } catch (e) {
+        return url.replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0];
+    }
+}
+</script>
+{% endblock %}
+

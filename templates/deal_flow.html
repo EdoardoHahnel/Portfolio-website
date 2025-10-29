@@ -5,90 +5,54 @@
 {% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
 <style>
-    .deal-flow-header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        padding: 0.6rem 0.8rem;
-        border-radius: 6px;
-        color: white;
-        margin-bottom: 0.5rem;
-        box-shadow: 0 2px 8px rgba(102, 126, 234, 0.25);
-    }
-    
-    .deal-title-section h1 {
-        font-size: 0.8rem;
-        font-weight: 800;
-        margin: 0 0 0.3rem 0;
-        display: flex;
-        align-items: center;
-        gap: 0.3rem;
-    }
-    
-    .deal-stats {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 0.3rem;
-        margin-top: 0px;
-    }
-    
-    .deal-stat-box {
-        background: rgba(255, 255, 255, 0.18);
-        padding: 0.3rem 0.4rem;
-        border-radius: 4px;
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        transition: all 0.3s;
-        text-align: center;
-    }
-    
-    .deal-stat-box:hover {
-        background: rgba(255, 255, 255, 0.25);
-        transform: translateY(-1px);
-    }
-    
-    .deal-stat-number {
-        font-size: 0.6rem;
-        font-weight: 800;
-        margin-bottom: 0.1rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.15rem;
-    }
-    
-    .deal-stat-label {
-        font-size: 0.45rem;
-        opacity: 0.9;
-        text-transform: uppercase;
-        letter-spacing: 0.3px;
-        font-weight: 600;
-    }
-    
-    .filters-bar {
+    .deal-flow-container {
         background: white;
-        padding: 8px 12px;
-        border-radius: 6px;
-        margin-bottom: 16px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        border-radius: 8px;
+        padding: 0.4rem;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        border: 1px solid #e8e8e8;
+    }
+    
+    .deal-flow-header {
         display: flex;
-        gap: 6px;
-        flex-wrap: wrap;
+        justify-content: space-between;
         align-items: center;
-        border: 1px solid #f0f0f0;
+        margin-bottom: 0.4rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid #e8e8e8;
+    }
+    
+    .deal-flow-header h2 {
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin: 0;
+    }
+    
+    /* Responsive table wrapper for horizontal scroll on small screens */
+    .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 6px;
+    }
+    
+    .filter-buttons {
+        display: flex;
+        gap: 0.3rem;
+        flex-wrap: wrap;
     }
     
     .filter-btn {
-        padding: 3px 6px;
+        padding: 0.2rem 0.4rem;
         border: 1px solid #e5e5e5;
         background: white;
         border-radius: 4px;
         cursor: pointer;
-        font-size: 0.65rem;
+        font-size: 0.6rem;
         font-weight: 500;
         transition: all 0.2s;
         white-space: nowrap;
-        display: flex;
-        align-items: center;
-        gap: 3px;
     }
     
     .filter-btn:hover {
@@ -101,752 +65,365 @@
         background: #4c1d95;
         color: white;
         border-color: #4c1d95;
-        font-weight: 600;
     }
     
-    .filter-btn i {
-        font-size: 0.55rem;
-    }
-    
-    
-    .filter-dropdown {
-        position: relative;
-        display: inline-block;
-    }
-    
-    .filter-dropdown-btn {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        padding: 8px 12px;
-        background: #f8fafc;
-        color: #4a5568;
-        border: 1px solid #e2e8f0;
-        border-radius: 6px;
-        cursor: pointer;
-        font-size: 0.65rem;
-        font-weight: 600;
-        transition: all 0.2s;
-        min-width: 120px;
-        justify-content: space-between;
-    }
-    
-    .filter-dropdown-btn:hover {
-        border-color: #667eea;
-        background: #eff6ff;
-        color: #667eea;
-    }
-    
-    .filter-dropdown-btn i {
-        font-size: 0.7rem;
-    }
-    
-    .filter-dropdown-btn #filterDropdownChevron {
-        transition: transform 0.2s;
+    .deals-table {
+        width: 100%;
+        border-collapse: collapse;
         font-size: 0.6rem;
+        min-width: 900px; /* force horizontal scroll on narrow screens */
     }
     
-    .filter-dropdown-btn.open #filterDropdownChevron {
-        transform: rotate(180deg);
+    .deals-table thead {
+        background: #f8f9fa;
+        border-bottom: 2px solid #e8e8e8;
     }
     
-    .filter-dropdown-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: white;
-        border: 2px solid #e5e7eb;
-        border-top: none;
-        border-radius: 0 0 8px 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
+    .deals-table th {
+        padding: 0.4rem 0.3rem;
+        text-align: left;
+        font-weight: 700;
+        color: #1a1a1a;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+    }
+    
+    .deals-table td {
+        padding: 0.4rem 0.3rem;
+        border-bottom: 1px solid #f0f0f0;
+        color: #333;
+        white-space: nowrap;
+    }
+    
+    .deals-table tbody tr {
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    
+    .deals-table tbody tr:hover {
+        background: #f8f9ff;
+    }
+    
+    .deals-table tbody tr:active {
+        background: #f0f0ff;
+    }
+    
+    .deal-company {
+        font-weight: 600;
+        color: #1a1a1a;
+        max-width: 180px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .deal-pe-firm {
+        color: #4c1d95;
+        font-weight: 500;
+        max-width: 180px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .deal-type-badge {
+        display: inline-block;
+        padding: 0.1rem 0.3rem;
+        background: #e3f2fd;
+        color: #1976d2;
+        border-radius: 4px;
+        font-size: 0.55rem;
+        font-weight: 500;
+    }
+    
+    .deal-status-badge {
+        display: inline-block;
+        padding: 0.1rem 0.3rem;
+        border-radius: 4px;
+        font-size: 0.55rem;
+        font-weight: 600;
+    }
+    
+    .deal-status-badge.completed {
+        background: #e8f5e9;
+        color: #2e7d32;
+    }
+    
+    .deal-status-badge.announced {
+        background: #fff3e0;
+        color: #f57c00;
+    }
+    
+    .deal-status-badge.pending {
+        background: #e3f2fd;
+        color: #1976d2;
+    }
+    
+    .deal-date {
+        color: #666;
+        white-space: nowrap;
+    }
+    
+    .deal-size {
+        color: #4c1d95;
+        font-weight: 600;
+    }
+
+    @media (max-width: 640px) {
+        .deal-flow-container { padding: 0.3rem; }
+        .filter-btn { font-size: 0.55rem; }
+        .deals-table { font-size: 0.55rem; min-width: 800px; }
+        .deal-company, .deal-pe-firm { max-width: 140px; }
+    }
+    
+    /* Modal Styles */
+    .deal-modal {
         display: none;
-        max-height: 300px;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.7);
+    }
+    
+    .deal-modal-content {
+        background-color: #fefefe;
+        margin: 2% auto;
+        padding: 0;
+        border-radius: 12px;
+        width: 90%;
+        max-width: 800px;
+        max-height: 90vh;
         overflow-y: auto;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.3);
     }
     
-    .filter-dropdown-menu.show {
-        display: block;
-        animation: slideDown 0.2s ease-out;
+    .deal-modal-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 1rem 1.5rem;
+        border-radius: 12px 12px 0 0;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
     
-    .filter-dropdown-item {
+    .deal-modal-header h2 {
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+    
+    .deal-modal-close {
+        color: white;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        opacity: 0.8;
+        transition: opacity 0.2s;
+        border: none;
+        background: none;
+        padding: 0;
+        width: 32px;
+        height: 32px;
         display: flex;
         align-items: center;
-        gap: 10px;
-        padding: 12px 16px;
-        cursor: pointer;
-        font-size: 0.8rem;
-        transition: all 0.2s;
-        border-bottom: 1px solid #f3f4f6;
+        justify-content: center;
     }
     
-    .filter-dropdown-item:last-child {
+    .deal-modal-close:hover {
+        opacity: 1;
+    }
+    
+    .deal-modal-body {
+        padding: 1.5rem;
+    }
+    
+    .deal-detail-row {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 0.5rem;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .deal-detail-row:last-child {
         border-bottom: none;
     }
     
-    .filter-dropdown-item:hover {
-        background: #f8fafc;
-        color: #2563eb;
-    }
-    
-    .filter-dropdown-item.active {
-        background: #eff6ff;
-        color: #2563eb;
-        font-weight: 600;
-    }
-    
-    .filter-dropdown-item i {
-        font-size: 0.7rem;
-        width: 16px;
-        text-align: center;
-    }
-    
-    @keyframes slideDown {
-        from {
-            opacity: 0;
-            transform: translateY(-5px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    .deal-card {
-        background: white;
-        border-radius: 6px;
-        padding: 8px;
-        margin-bottom: 4px;
-        box-shadow: 0 1px 2px rgba(0,0,0,0.02);
-        border: 1px solid #f0f0f0;
-        transition: all 0.2s ease;
-        position: relative;
-    }
-    
-    .deal-card:hover {
-        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        transform: translateY(-2px);
-        border-color: #4c1d95;
-    }
-    
-    .deal-card-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 4px;
-    }
-    
-    .deal-title {
-        font-size: 0.85rem;
-        font-weight: 600;
-        color: #1a1a1a;
-        line-height: 1.1;
-        margin: 0;
-    }
-    
-    .deal-year-badge {
-        display: inline-flex;
-        align-items: center;
-        background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%);
-        color: white;
-        padding: 2px 6px;
-        border-radius: 12px;
-        font-size: 0.65rem;
-        font-weight: 500;
-        box-shadow: 0 1px 3px rgba(76, 29, 149, 0.2);
-    }
-    
-    .deal-parties {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        margin-bottom: 4px;
-        padding: 4px 0;
-    }
-    
-    .party-info {
-        display: flex;
-        align-items: center;
-        gap: 4px;
-        flex: 1;
-    }
-    
-    .party-name {
-        font-weight: 500;
-        color: #1a1a1a;
-        font-size: 0.75rem;
-    }
-    
-    .deal-arrow {
-        color: #4c1d95;
-        font-size: 0.9rem;
-        font-weight: 600;
-        margin: 0 4px;
-    }
-    
-    .deal-meta {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 4px;
-        padding-top: 4px;
-        border-top: 1px solid #f0f0f0;
-    }
-    
-    .deal-tags {
-        display: flex;
-        gap: 4px;
-        align-items: center;
-    }
-    
-    .deal-status-info {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-    }
-    
-    .deal-status {
-        padding: 3px 6px;
-        border-radius: 12px;
-        font-size: 0.65rem;
-        font-weight: 600;
-        text-align: center;
-    }
-    
-    .deal-value {
-        font-size: 0.7rem;
-        font-weight: 600;
-        color: #4c1d95;
-        background: #f8f9ff;
-        padding: 2px 4px;
-        border-radius: 4px;
-    }
-    
-    .sector-tag, .deal-type-tag {
-        padding: 2px 4px;
-        border-radius: 8px;
-        font-size: 0.55rem;
-        font-weight: 500;
-    }
-    
-    .sector-tag {
-        background: #e8f5e9;
-        color: #2e7d32;
-    }
-    
-    .deal-type-tag {
-        background: #e3f2fd;
-        color: #1976d2;
-    }
-    
-    .deal-description {
-        margin-top: 16px;
-        padding: 12px 16px;
-        background: #f8f9fa;
-        border-radius: 8px;
-        font-size: 0.85rem;
-        color: #555;
-        line-height: 1.5;
-        border-left: 3px solid #4c1d95;
-    }
-    
-    .status-completed {
-        background: #e8f5e9;
-        color: #2e7d32;
-    }
-    
-    
-    .status-rumored {
-        background: #f3e5f5;
-        color: #7b1fa2;
-    }
-    
-    .status-milestone {
-        background: #e3f2fd;
-        color: #1976d2;
-    }
-    
-    .deal-description {
-        font-size: 0.75rem;
-        line-height: 1.4;
-        color: #555;
-        margin-bottom: 0.3rem;
-    }
-    
-    .deal-details {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-        gap: 0.3rem;
-        padding: 0.3rem;
-        background: #f8f9fa;
-        border-radius: 4px;
-    }
-    
-    .deal-detail {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .detail-label {
-        font-size: 0.5rem;
-        color: #666;
-        margin-bottom: 0.1rem;
-        text-transform: uppercase;
-        font-weight: 600;
-    }
-    
-    .detail-value {
-        font-size: 0.65rem;
+    .deal-detail-label {
         font-weight: 700;
+        color: #666;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .deal-detail-value {
         color: #1a1a1a;
+        font-size: 0.75rem;
+        line-height: 1.5;
     }
     
-    .sector-tag {
-        display: inline-block;
-        background: #e3f2fd;
-        color: #1976d2;
-        padding: 0.15rem 0.3rem;
-        border-radius: 8px;
-        font-size: 0.55rem;
-        font-weight: 500;
-        margin-right: 0.2rem;
+    .deal-detail-value.description {
+        white-space: pre-wrap;
+        line-height: 1.6;
     }
     
-    .deal-type-tag {
-        display: inline-block;
-        background: #f3e5f5;
-        color: #7b1fa2;
-        padding: 0.1rem 0.2rem;
-        border-radius: 6px;
-        font-size: 0.4rem;
+    .deal-detail-value a {
+        color: #667eea;
+        text-decoration: none;
         font-weight: 500;
+    }
+    
+    .deal-detail-value a:hover {
+        text-decoration: underline;
+    }
+    
+    .loading {
+        text-align: center;
+        padding: 2rem;
+        color: #999;
+    }
+    
+    .no-deals {
+        text-align: center;
+        padding: 2rem;
+        color: #999;
     }
 </style>
 {% endblock %}
 
 {% block content %}
+<div class="deal-flow-container">
+    <div class="deal-flow-header">
+        <h2><i class="fas fa-exchange-alt"></i> Deal Flow Tracker</h2>
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="Investment">Investment</button>
+            <button class="filter-btn" data-filter="Acquisition">Acquisition</button>
+            <button class="filter-btn" data-filter="Divestment">Divestment</button>
+            <button class="filter-btn" data-filter="Completed">Completed</button>
+            <button class="filter-btn" data-filter="Announced">Announced</button>
+        </div>
+    </div>
+    
+    <div id="dealsContainer">
+        <div class="loading">
+            <i class="fas fa-spinner fa-spin" style="font-size: 24px; margin-bottom: 10px;"></i>
+            <p>Loading deals...</p>
+        </div>
+    </div>
+</div>
 
-
-<!-- Analytics Tabs -->
-<div class="analytics-section" style="background: white; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-    <div class="analytics-tabs" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #f0f0f0;">
-        <div style="display: flex;">
-            <button class="analytics-tab active" data-tab="deals" style="padding: 12px 18px; border: none; background: none; cursor: pointer; font-weight: 600; color: #667eea; border-bottom: 3px solid #667eea; font-size: 0.65rem;">
-                <i class="fas fa-list"></i> Deal Flow
-            </button>
-            <button class="analytics-tab" data-tab="market-trends" style="padding: 12px 18px; border: none; background: none; cursor: pointer; font-weight: 600; color: #666; border-bottom: 3px solid transparent; font-size: 0.65rem;">
-                <i class="fas fa-chart-line"></i> Market Trends
-            </button>
-            <button class="analytics-tab" data-tab="country-analysis" style="padding: 12px 18px; border: none; background: none; cursor: pointer; font-weight: 600; color: #666; border-bottom: 3px solid transparent; font-size: 0.65rem;">
-                <i class="fas fa-flag"></i> Country Analysis
-            </button>
-            <button class="analytics-tab" data-tab="sector-analysis" style="padding: 12px 18px; border: none; background: none; cursor: pointer; font-weight: 600; color: #666; border-bottom: 3px solid transparent; font-size: 0.65rem;">
-                <i class="fas fa-industry"></i> Sector Analysis
-            </button>
+<!-- Deal Detail Modal -->
+<div id="dealModal" class="deal-modal">
+    <div class="deal-modal-content">
+        <div class="deal-modal-header">
+            <h2 id="modalTitle">Deal Details</h2>
+            <button class="deal-modal-close" onclick="closeDealModal()">&times;</button>
         </div>
-        
-        <!-- Filter Dropdown -->
-        <div class="filter-dropdown">
-            <button class="filter-dropdown-btn" id="filterDropdownBtn">
-                <i class="fas fa-filter"></i>
-                <span id="filterDropdownText">Buyouts</span>
-                <i class="fas fa-chevron-down" id="filterDropdownChevron"></i>
-            </button>
-            <div class="filter-dropdown-menu" id="filterDropdownMenu">
-                <div class="filter-dropdown-item" data-filter="all">
-                    <i class="fas fa-list"></i>
-                    <span>All Deals</span>
-                </div>
-                <div class="filter-dropdown-item active" data-filter="buyout">
-                    <i class="fas fa-briefcase"></i>
-                    <span>Buyouts</span>
-                </div>
-                <div class="filter-dropdown-item" data-filter="addon">
-                    <i class="fas fa-plus-circle"></i>
-                    <span>Add-ons</span>
-                </div>
-                <div class="filter-dropdown-item" data-filter="secondary-buyout">
-                    <i class="fas fa-exchange-alt"></i>
-                    <span>Secondary Buyouts</span>
-                </div>
-                <div class="filter-dropdown-item" data-filter="growth">
-                    <i class="fas fa-chart-line"></i>
-                    <span>Growth Capital</span>
-                </div>
-                <div class="filter-dropdown-item" data-filter="trade-sale">
-                    <i class="fas fa-store"></i>
-                    <span>Trade Sales</span>
-                </div>
-                <div class="filter-dropdown-item" data-filter="merger">
-                    <i class="fas fa-handshake"></i>
-                    <span>Mergers</span>
-                </div>
-                <div class="filter-dropdown-item" data-filter="lp-direct">
-                    <i class="fas fa-university"></i>
-                    <span>LP Direct</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Deal Flow Tab Content -->
-    <div id="tab-deals" class="analytics-content active">
-        <div id="dealsContainer">
-            <div style="text-align: center; padding: 60px; color: #999;">
-                <i class="fas fa-spinner fa-spin" style="font-size: 48px; margin-bottom: 20px;"></i>
-                <p style="font-size: 18px;">Loading deal flow...</p>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Market Trends Tab Content -->
-    <div id="tab-market-trends" class="analytics-content" style="display: none; padding: 30px; background: #f8fafc;">
-        <div style="margin-bottom: 30px;">
-            <h3 style="margin: 0 0 10px 0; color: #1e293b; font-size: 1.1rem; font-weight: 700;">Market Trends</h3>
-            <p style="color: #64748b; margin: 0; font-size: 0.8rem; font-weight: 500;">Real-time market intelligence & deal flow analytics</p>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: 1fr; gap: 30px;">
-            <div class="chart-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
-                <h4 style="margin: 0 0 25px 0; color: #1e293b; font-size: 1rem; font-weight: 700;">
-                    Buyout Volume Analysis
-                </h4>
-                <canvas id="buyoutChart" style="height: 800px; width: 100%;"></canvas>
-            </div>
-            
-            <div class="chart-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
-                <h4 style="margin: 0 0 25px 0; color: #1e293b; font-size: 1rem; font-weight: 700;">
-                    VC Volume Analysis
-                </h4>
-                <canvas id="vcChart" style="height: 800px; width: 100%;"></canvas>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Country Analysis Tab Content -->
-    <div id="tab-country-analysis" class="analytics-content" style="display: none; padding: 30px; background: #f8fafc;">
-        <div style="margin-bottom: 30px;">
-            <h3 style="margin: 0 0 10px 0; color: #1e293b; font-size: 1.1rem; font-weight: 700;">Country Analysis</h3>
-            <p style="color: #64748b; margin: 0; font-size: 0.8rem; font-weight: 500;">Nordic market performance across key regions</p>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: 1fr; gap: 30px;">
-            <div class="chart-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
-                <h4 style="margin: 0 0 25px 0; color: #1e293b; font-size: 1rem; font-weight: 700;">
-                    Finland
-                </h4>
-                <canvas id="finlandChart" style="height: 800px; width: 100%;"></canvas>
-            </div>
-            
-            <div class="chart-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
-                <h4 style="margin: 0 0 25px 0; color: #1e293b; font-size: 1rem; font-weight: 700;">
-                    Sweden
-                </h4>
-                <canvas id="swedenChart" style="height: 800px; width: 100%;"></canvas>
-            </div>
-            
-            <div class="chart-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
-                <h4 style="margin: 0 0 25px 0; color: #1e293b; font-size: 1rem; font-weight: 700;">
-                    Norway
-                </h4>
-                <canvas id="norwayChart" style="height: 800px; width: 100%;"></canvas>
-            </div>
-            
-            <div class="chart-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
-                <h4 style="margin: 0 0 25px 0; color: #1e293b; font-size: 1rem; font-weight: 700;">
-                    Denmark
-                </h4>
-                <canvas id="denmarkChart" style="height: 800px; width: 100%;"></canvas>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Sector Analysis Tab Content -->
-    <div id="tab-sector-analysis" class="analytics-content" style="display: none; padding: 30px; background: #f8fafc;">
-        <div style="margin-bottom: 30px;">
-            <h3 style="margin: 0 0 10px 0; color: #1e293b; font-size: 1.1rem; font-weight: 700;">Sector Analysis</h3>
-            <p style="color: #64748b; margin: 0; font-size: 0.8rem; font-weight: 500;">Industry performance across key sectors</p>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: 1fr; gap: 30px;">
-            <div class="chart-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
-                <h4 style="margin: 0 0 25px 0; color: #1e293b; font-size: 1rem; font-weight: 700;">
-                    Industrial Manufacturing
-                </h4>
-                <canvas id="industrialChart" style="height: 800px; width: 100%;"></canvas>
-            </div>
-            
-            <div class="chart-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
-                <h4 style="margin: 0 0 25px 0; color: #1e293b; font-size: 1rem; font-weight: 700;">
-                    Technology
-                </h4>
-                <canvas id="techChart" style="height: 800px; width: 100%;"></canvas>
-            </div>
-            
-            <div class="chart-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
-                <h4 style="margin: 0 0 25px 0; color: #1e293b; font-size: 1rem; font-weight: 700;">
-                    Business Services
-                </h4>
-                <canvas id="businessServicesChart" style="height: 800px; width: 100%;"></canvas>
-            </div>
-            
-            <div class="chart-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
-                <h4 style="margin: 0 0 25px 0; color: #1e293b; font-size: 1rem; font-weight: 700;">
-                    Consumer & Retail
-                </h4>
-                <canvas id="consumerChart" style="height: 800px; width: 100%;"></canvas>
-            </div>
+        <div class="deal-modal-body" id="modalBody">
+            <!-- Details will be populated by JavaScript -->
         </div>
     </div>
 </div>
 
 <script>
 let allDeals = [];
-let currentFilter = 'buyout';
+let currentFilter = 'all';
 
 document.addEventListener('DOMContentLoaded', function() {
     loadDeals();
     setupFilters();
-    setupAnalyticsTabs();
-    initializeCharts();
+});
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    const modal = document.getElementById('dealModal');
+    if (event.target === modal) {
+        closeDealModal();
+    }
+};
+
+// Close modal on Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeDealModal();
+    }
 });
 
 async function loadDeals() {
     try {
-        console.log('Loading deals...');
         const response = await fetch('/api/deal-flow');
-        console.log('Response status:', response.status);
         
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         
         const data = await response.json();
-        console.log('Data received:', data);
         
         if (data.success) {
-            console.log('Deals loaded:', data.deals.length);
             // Sort deals by date - newest first
             allDeals = data.deals.sort((a, b) => {
                 const dateA = a.date || '1900-01-01';
                 const dateB = b.date || '1900-01-01';
                 return new Date(dateB) - new Date(dateA);
             });
-            updateStats(allDeals);
             displayDeals(allDeals);
         } else {
-            console.error('API returned success: false', data);
             document.getElementById('dealsContainer').innerHTML = `
-                <div style="text-align: center; padding: 60px; color: #999;">
-                    <i class="fas fa-exclamation-triangle" style="font-size: 48px; margin-bottom: 20px; opacity: 0.3;"></i>
-                    <p style="font-size: 18px;">Error loading deals: ${data.message || 'Unknown error'}</p>
+                <div class="no-deals">
+                    <i class="fas fa-exclamation-triangle" style="font-size: 24px; margin-bottom: 10px; opacity: 0.3;"></i>
+                    <p>Error loading deals: ${data.message || 'Unknown error'}</p>
                 </div>
             `;
         }
     } catch (error) {
         console.error('Error loading deals:', error);
         document.getElementById('dealsContainer').innerHTML = `
-            <div style="text-align: center; padding: 60px; color: #999;">
-                <i class="fas fa-exclamation-triangle" style="font-size: 48px; margin-bottom: 20px; opacity: 0.3;"></i>
-                <p style="font-size: 18px;">Error loading deals: ${error.message}</p>
+            <div class="no-deals">
+                <i class="fas fa-exclamation-triangle" style="font-size: 24px; margin-bottom: 10px; opacity: 0.3;"></i>
+                <p>Error loading deals: ${error.message}</p>
             </div>
         `;
     }
-}
-
-function updateStats(deals) {
-    // Update stats only if elements exist (they were removed when we removed the header)
-    const totalDealsEl = document.getElementById('totalDeals');
-    const completedDealsEl = document.getElementById('completedDeals');
-    const aiDealsEl = document.getElementById('aiDeals');
-    const totalValueEl = document.getElementById('totalValue');
-    const nordic2025El = document.getElementById('nordic2025');
-    
-    if (totalDealsEl) totalDealsEl.textContent = deals.length;
-    if (completedDealsEl) completedDealsEl.textContent = deals.filter(d => d.status === 'Completed').length;
-    if (aiDealsEl) aiDealsEl.textContent = deals.filter(d => d.sector && d.sector.toLowerCase().includes('ai')).length;
-    if (totalValueEl) totalValueEl.textContent = '$280B+';
-    
-    // Count Nordic 2025 deals
-    const nordic2025 = deals.filter(d => d.year === 2025 && isNordicDeal(d)).length;
-    if (nordic2025El) nordic2025El.textContent = nordic2025;
-}
-
-function displayDeals(deals) {
-    const container = document.getElementById('dealsContainer');
-    
-    if (!container) {
-        console.error('dealsContainer not found');
-        return;
-    }
-    
-    if (deals.length === 0) {
-        container.innerHTML = `
-            <div style="text-align: center; padding: 60px; color: #999;">
-                <i class="fas fa-search" style="font-size: 48px; margin-bottom: 20px; opacity: 0.3;"></i>
-                <p style="font-size: 18px;">No deals match your filter</p>
-            </div>
-        `;
-        return;
-    }
-    
-    let html = '';
-    
-    deals.forEach(deal => {
-        html += createDealCard(deal);
-    });
-    
-    container.innerHTML = html;
-    
-    // Convert emoji flags to images using Twemoji (for Windows compatibility)
-    setTimeout(() => {
-        if (typeof twemoji !== 'undefined') {
-            document.querySelectorAll('.country-flag-emoji').forEach(el => {
-                twemoji.parse(el, {
-                    folder: 'svg',
-                    ext: '.svg',
-                    base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/'
-                });
-            });
-        }
-    }, 100);
-}
-
-function isNordicDeal(deal) {
-    const nordicCountries = ['Sweden', 'Norway', 'Denmark', 'Finland', 'Iceland', 'Nordic', 'Nordics'];
-    return nordicCountries.some(country => 
-        (deal.geography && deal.geography.includes(country)) ||
-        (deal.description && deal.description.toLowerCase().includes(country.toLowerCase()))
-    );
-}
-
-function getCompanyLogo(companyName) {
-    if (!companyName) return '';
-    
-    // Clean company name for logo URL
-    const cleanName = companyName.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '');
-    const logoUrl = `https://logo.clearbit.com/${cleanName.toLowerCase()}.com`;
-    const fallbackUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(companyName)}&background=4c1d95&color=ffffff&size=32`;
-    
-    return `
-        <div style="display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; flex-shrink: 0;">
-            <img src="${logoUrl}" 
-                 alt="${companyName}" 
-                 style="width: 100%; height: 100%; border-radius: 4px; object-fit: contain; background: white; padding: 2px;"
-                 onerror="this.onerror=null; this.src='${fallbackUrl}'; this.style.padding='0'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';}">
-            <div style="display: none; width: 100%; height: 100%; background: #4c1d95; color: white; border-radius: 4px; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">
-                🏢
-            </div>
-        </div>
-    `;
-}
-
-function getStatusIcon(status) {
-    const statusIcons = {
-        'Completed': '<i class="fas fa-check-circle"></i>',
-        'Announced': '<i class="fas fa-bullhorn"></i>',
-        'Pending': '<i class="fas fa-hourglass-half"></i>',
-        'Cancelled': '<i class="fas fa-times-circle"></i>',
-        'Withdrawn': '<i class="fas fa-undo"></i>'
-    };
-    return statusIcons[status] || '<i class="fas fa-circle"></i>';
 }
 
 function setupFilters() {
-    const dropdownBtn = document.getElementById('filterDropdownBtn');
-    const dropdownMenu = document.getElementById('filterDropdownMenu');
-    const dropdownText = document.getElementById('filterDropdownText');
-    const dropdownChevron = document.getElementById('filterDropdownChevron');
-    
-    // Toggle dropdown
-    dropdownBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        const isOpen = dropdownMenu.classList.contains('show');
-        
-        if (isOpen) {
-            dropdownMenu.classList.remove('show');
-            dropdownBtn.classList.remove('open');
-        } else {
-            dropdownMenu.classList.add('show');
-            dropdownBtn.classList.add('open');
-        }
-    });
-    
-    // Handle dropdown item clicks
-    document.querySelectorAll('.filter-dropdown-item').forEach(item => {
-        item.addEventListener('click', function() {
-            const filter = this.dataset.filter;
-            const text = this.querySelector('span').textContent;
-            
-            // Update active state
-            document.querySelectorAll('.filter-dropdown-item').forEach(i => i.classList.remove('active'));
-            this.classList.add('active');
-            
-            // Update button text
-            dropdownText.textContent = text;
-            
-            // Close dropdown
-            dropdownMenu.classList.remove('show');
-            dropdownBtn.classList.remove('open');
-            
-            // Apply filter
-            currentFilter = filter;
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentFilter = btn.dataset.filter;
             applyFilter();
         });
-    });
-    
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!dropdownBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
-            dropdownMenu.classList.remove('show');
-            dropdownBtn.classList.remove('open');
-        }
     });
 }
 
 function applyFilter() {
     let filtered = allDeals;
     
-    switch(currentFilter) {
-        case 'all':
-            filtered = allDeals;
-            break;
-            
-        case 'buyout':
-            filtered = allDeals.filter(d => d.deal_type === 'Buyout');
-            break;
-            
-        case 'addon':
-            filtered = allDeals.filter(d => d.deal_type && d.deal_type.toLowerCase().includes('add-on'));
-            break;
-            
-        case 'secondary-buyout':
-            filtered = allDeals.filter(d => d.deal_type === 'Secondary Buyout');
-            break;
-            
-        case 'growth':
-            filtered = allDeals.filter(d => d.deal_type === 'Growth');
-            break;
-            
-        case 'trade-sale':
-            filtered = allDeals.filter(d => d.deal_type && d.deal_type.toLowerCase().includes('trade sale'));
-            break;
-            
-        case 'merger':
-            filtered = allDeals.filter(d => d.deal_type === 'Merger');
-            break;
-            
-        case 'lp-direct':
-            filtered = allDeals.filter(d => d.deal_type && d.deal_type.toLowerCase().includes('lp direct'));
-            break;
-            
-        default:
-            filtered = allDeals;
+    if (currentFilter !== 'all') {
+        if (currentFilter === 'Completed' || currentFilter === 'Announced') {
+            filtered = allDeals.filter(d => d.status === currentFilter);
+        } else {
+            filtered = allDeals.filter(d => d.deal_type === currentFilter);
+        }
     }
     
     displayDeals(filtered);
+}
+
+function escapeHtml(text) {
+    if (!text) return '';
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
 }
 
 function displayDeals(deals) {
@@ -854,1717 +431,142 @@ function displayDeals(deals) {
     
     if (deals.length === 0) {
         container.innerHTML = `
-            <div style="text-align: center; padding: 60px; color: #999;">
-                <i class="fas fa-search" style="font-size: 48px; margin-bottom: 20px; opacity: 0.3;"></i>
-                <p style="font-size: 18px;">No deals match your filter</p>
+            <div class="no-deals">
+                <i class="fas fa-search" style="font-size: 24px; margin-bottom: 10px; opacity: 0.3;"></i>
+                <p>No deals match your filter</p>
             </div>
         `;
         return;
     }
     
-    let html = '';
+    let html = `
+        <div class="table-wrapper">
+        <table class="deals-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Company</th>
+                    <th>PE Firm</th>
+                    <th>Deal Type</th>
+                    <th>Sector</th>
+                    <th>Size</th>
+                    <th>Status</th>
+                    <th>Geography</th>
+                </tr>
+            </thead>
+            <tbody>
+    `;
     
     deals.forEach(deal => {
-        html += createDealCard(deal);
+        const date = deal.date ? new Date(deal.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : 'N/A';
+        const statusClass = deal.status ? deal.status.toLowerCase().replace(/\s+/g, '-') : 'unknown';
+        
+        html += `
+            <tr onclick="showDealModal('${deal.id || ''}')" data-deal-id="${deal.id || ''}">
+                <td class="deal-date">${escapeHtml(date)}</td>
+                <td class="deal-company">${escapeHtml(deal.company || 'N/A')}</td>
+                <td class="deal-pe-firm">${escapeHtml(deal.pe_firm || 'N/A')}</td>
+                <td><span class="deal-type-badge">${escapeHtml(deal.deal_type || 'N/A')}</span></td>
+                <td>${escapeHtml(deal.sector || 'N/A')}</td>
+                <td class="deal-size">${escapeHtml(deal.deal_size || 'N/A')}</td>
+                <td><span class="deal-status-badge ${statusClass}">${escapeHtml(deal.status || 'N/A')}</span></td>
+                <td>${escapeHtml(deal.geography || 'N/A')}</td>
+            </tr>
+        `;
     });
+    
+    html += `
+            </tbody>
+        </table>
+        </div>
+    `;
     
     container.innerHTML = html;
-    
-    // Convert emoji flags to images using Twemoji (for Windows compatibility)
-    setTimeout(() => {
-        if (typeof twemoji !== 'undefined') {
-            document.querySelectorAll('.country-flag-emoji').forEach(el => {
-                twemoji.parse(el, {
-                    folder: 'svg',
-                    ext: '.svg',
-                    base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/'
-                });
-            });
-        }
-    }, 100);
 }
 
-function createDealCard(deal) {
-    const statusClass = `status-${deal.status.toLowerCase().replace(/\s+/g, '-')}`;
-    
-    // Get company logos
-    const peFirmLogo = getCompanyLogo(deal.pe_firm);
-    const companyLogo = getCompanyLogo(deal.company);
-    
-    // Check if 2025 deal
-    const dealYear = new Date(deal.date).getFullYear();
-    const year2025Badge = dealYear === 2025 ? '<span class="deal-year-badge">2025</span>' : '';
-    
-    const cardHTML = `
-        <div class="deal-card">
-            <div class="deal-card-header">
-                <div class="deal-title">
-                    ${deal.company} - ${deal.deal_type}
-                </div>
-                ${year2025Badge}
-            </div>
-            
-            <div class="deal-parties">
-                <div class="party-info">
-                    ${peFirmLogo}
-                    <span class="party-name">${deal.pe_firm}</span>
-                </div>
-                <div class="deal-arrow">→</div>
-                <div class="party-info">
-                    ${companyLogo}
-                    <span class="party-name">${deal.company}</span>
-                </div>
-            </div>
-            
-            <div class="deal-meta">
-                <div class="deal-tags">
-                    <span class="sector-tag">${deal.sector}</span>
-                    <span class="deal-type-tag">${deal.deal_type}</span>
-                </div>
-                <div class="deal-status-info">
-                    <div class="deal-status ${statusClass}">
-                        ${getStatusIcon(deal.status)} ${deal.status}
-                    </div>
-                    <div class="deal-value">
-                        ${deal.deal_size && deal.deal_size !== 'N/A' && deal.deal_size !== 'Undisclosed' ? deal.deal_size : 'Undisclosed'}
-                    </div>
-                </div>
-            </div>
-            
-            ${deal.description ? `
-            <div class="deal-description">
-                ${deal.description}
-            </div>
-            ` : ''}
-        </div>
-    `;
-    
-    return cardHTML;
-}
-
-function getCountryFlag(geography, size = 'medium') {
-    if (!geography) return size === 'small' ? '<span class="country-flag-emoji" style="display: inline-block; font-size: 16px; margin-right: 6px;">🌍</span>' : '<span class="country-flag-emoji" style="font-size: 22px;">🌍</span>';
-    
-    const geo = geography.toLowerCase();
-    const fontSize = size === 'small' ? '16px' : '22px';
-    const marginRight = size === 'small' ? ' margin-right: 6px;' : '';
-    const display = size === 'small' ? ' display: inline-block;' : '';
-    
-    // Check for specific countries - using class for Twemoji parsing
-    if (geo.includes('sweden') || geo.includes('swedish')) return `<span class="country-flag-emoji" style="font-size: ${fontSize};${display}${marginRight}">🇸🇪</span>`;
-    if (geo.includes('norway') || geo.includes('norwegian')) return `<span class="country-flag-emoji" style="font-size: ${fontSize};${display}${marginRight}">🇳🇴</span>`;
-    if (geo.includes('denmark') || geo.includes('danish')) return `<span class="country-flag-emoji" style="font-size: ${fontSize};${display}${marginRight}">🇩🇰</span>`;
-    if (geo.includes('finland') || geo.includes('finnish')) return `<span class="country-flag-emoji" style="font-size: ${fontSize};${display}${marginRight}">🇫🇮</span>`;
-    if (geo.includes('iceland')) return `<span class="country-flag-emoji" style="font-size: ${fontSize};${display}${marginRight}">🇮🇸</span>`;
-    if (geo.includes('nordic') || geo.includes('scandinavia')) return `<span class="country-flag-emoji" style="font-size: ${fontSize};${display}${marginRight}">🇪🇺</span>`;
-    if (geo.includes('europe')) return `<span class="country-flag-emoji" style="font-size: ${fontSize};${display}${marginRight}">🇪🇺</span>`;
-    if (geo.includes('global')) return `<span class="country-flag-emoji" style="font-size: ${fontSize};${display}${marginRight}">🌍</span>`;
-    
-    // Default for unknown
-    return `<span class="country-flag-emoji" style="font-size: ${fontSize};${display}${marginRight}">🌍</span>`;
-}
-
-function getStatusIcon(status) {
-    const iconMap = {
-        'Completed': '<i class="fas fa-check-circle"></i>',
-        'Rumored': '<i class="fas fa-question-circle"></i>',
-        'Milestone': '<i class="fas fa-flag"></i>',
-        'Failed': '<i class="fas fa-times-circle"></i>'
-    };
-    
-    return iconMap[status] || '<i class="fas fa-circle"></i>';
-}
-
-function getCompanyLogo(companyName) {
-    if (!companyName) return '';
-    
-    // Clean company name - remove parentheses and extra info
-    const cleanName = companyName.split('(')[0].split('-')[0].split('/')[0].trim();
-    
-    // Try to get a known company logo first
-    const directLogo = getKnownCompanyLogo(cleanName);
-    
-    // Create smart fallback with full company name for better initials
-    const initials = cleanName.split(' ').slice(0, 2).join('+');
-    const fallbackUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(initials)}&background=667eea&color=fff&size=48&bold=true&format=png&rounded=true`;
-    
-    return `
-        <div class="company-logo" style="width: 24px; height: 24px; border-radius: 4px; overflow: hidden; border: 1px solid #e0e0e0; display: flex; align-items: center; justify-content: center; background: white; flex-shrink: 0;">
-            <img src="${directLogo || fallbackUrl}" 
-                 alt="${cleanName}"
-                 onerror="this.src='${fallbackUrl}'"
-                 style="width: 100%; height: 100%; object-fit: contain; padding: 3px;">
-        </div>
-    `;
-}
-
-function getKnownCompanyLogo(companyName) {
-    const name = companyName.toLowerCase();
-    
-    // PE Firms - More comprehensive mapping
-    const peFirms = {
-        'eqt': 'https://logo.clearbit.com/eqtgroup.com',
-        'nordic capital': 'https://logo.clearbit.com/nordiccapital.com',
-        'altor': 'https://logo.clearbit.com/altor.com',
-        'triton': 'https://logo.clearbit.com/triton-partners.com',
-        'investor ab': 'https://logo.clearbit.com/investorab.com',
-        'kinnevik': 'https://logo.clearbit.com/kinnevik.com',
-        'industrivärden': 'https://logo.clearbit.com/industrivarden.se',
-        'ratos': 'https://logo.clearbit.com/ratos.se',
-        'litorina': 'https://logo.clearbit.com/litorina.se',
-        'polaris': 'https://logo.clearbit.com/polarisequity.dk',
-        'axcel': 'https://logo.clearbit.com/axcel.dk',
-        'fsn capital': 'https://logo.clearbit.com/fsncapital.com',
-        'verdane': 'https://logo.clearbit.com/verdane.com',
-        'adelis': 'https://logo.clearbit.com/adelisequity.com',
-        'blackstone': 'https://logo.clearbit.com/blackstone.com',
-        'kkr': 'https://logo.clearbit.com/kkr.com',
-        'carlyle': 'https://logo.clearbit.com/carlyle.com',
-        'apollo': 'https://logo.clearbit.com/apollo.com',
-        'bain capital': 'https://logo.clearbit.com/baincapital.com',
-        'thoma bravo': 'https://logo.clearbit.com/thomabravo.com',
-        'permira': 'https://logo.clearbit.com/permira.com',
-        'warburg pincus': 'https://logo.clearbit.com/warburgpincus.com',
-        'general atlantic': 'https://logo.clearbit.com/generalatlantic.com',
-        'silver lake': 'https://logo.clearbit.com/silverlake.com'
-    };
-    
-    // Check PE firms first
-    for (const [firm, logo] of Object.entries(peFirms)) {
-        if (name.includes(firm)) return logo;
+function showDealModal(dealId) {
+    const deal = allDeals.find(d => d.id === dealId);
+    if (!deal) {
+        console.error('Deal not found:', dealId);
+        return;
     }
     
-    // Well-known companies - Comprehensive database
-    const knownCompanies = {
-        // Nordic Tech & Unicorns
-        'spotify': 'https://logo.clearbit.com/spotify.com',
-        'klarna': 'https://logo.clearbit.com/klarna.com',
-        'northvolt': 'https://logo.clearbit.com/northvolt.com',
-        'rovio': 'https://logo.clearbit.com/rovio.com',
-        'supercell': 'https://logo.clearbit.com/supercell.com',
-        'wolt': 'https://logo.clearbit.com/wolt.com',
-        'voi': 'https://logo.clearbit.com/voiscooters.com',
-        'gelato': 'https://logo.clearbit.com/gelato.com',
-        'kahoot': 'https://logo.clearbit.com/kahoot.com',
-        'einride': 'https://logo.clearbit.com/einride.com',
-        'budbee': 'https://logo.clearbit.com/budbee.com',
-        'truecaller': 'https://logo.clearbit.com/truecaller.com',
-        'storytel': 'https://logo.clearbit.com/storytel.com',
-        'epidemic sound': 'https://logo.clearbit.com/epidemicsound.com',
-        'polestar': 'https://logo.clearbit.com/polestar.com',
-        'trustly': 'https://logo.clearbit.com/trustly.com',
-        'mathem': 'https://logo.clearbit.com/mathem.se',
-        
-        // Swedish Industrials & Manufacturing
-        'volvo': 'https://logo.clearbit.com/volvo.com',
-        'atlas copco': 'https://logo.clearbit.com/atlascopco.com',
-        'ericsson': 'https://logo.clearbit.com/ericsson.com',
-        'electrolux': 'https://logo.clearbit.com/electrolux.com',
-        'sandvik': 'https://logo.clearbit.com/sandvik.com',
-        'scania': 'https://logo.clearbit.com/scania.com',
-        'abb': 'https://logo.clearbit.com/abb.com',
-        'skf': 'https://logo.clearbit.com/skf.com',
-        'hexagon': 'https://logo.clearbit.com/hexagon.com',
-        'alfa laval': 'https://logo.clearbit.com/alfalaval.com',
-        
-        // Telecom & Communications
-        'telia': 'https://logo.clearbit.com/telia.com',
-        'telenor': 'https://logo.clearbit.com/telenor.com',
-        'tdc': 'https://logo.clearbit.com/tdc.dk',
-        'sinch': 'https://logo.clearbit.com/sinch.com',
-        'ice group': 'https://logo.clearbit.com/icegroup.com',
-        
-        // Danish Companies
-        'ørsted': 'https://logo.clearbit.com/orsted.com',
-        'orsted': 'https://logo.clearbit.com/orsted.com',
-        'vestas': 'https://logo.clearbit.com/vestas.com',
-        'novo nordisk': 'https://logo.clearbit.com/novonordisk.com',
-        'novo holdings': 'https://logo.clearbit.com/novonordisk.com',
-        'chr. hansen': 'https://logo.clearbit.com/chr-hansen.com',
-        'chr hansen': 'https://logo.clearbit.com/chr-hansen.com',
-        'maersk': 'https://logo.clearbit.com/maersk.com',
-        'saxo bank': 'https://logo.clearbit.com/saxobank.com',
-        'coloplast': 'https://logo.clearbit.com/coloplast.com',
-        'carlsberg': 'https://logo.clearbit.com/carlsberg.com',
-        'novozymes': 'https://logo.clearbit.com/novozymes.com',
-        'genmab': 'https://logo.clearbit.com/genmab.com',
-        'iss': 'https://logo.clearbit.com/issworld.com',
-        'dsv': 'https://logo.clearbit.com/dsv.com',
-        'pandora': 'https://logo.clearbit.com/pandora.net',
-        'lego': 'https://logo.clearbit.com/lego.com',
-        
-        // Finnish Companies
-        'nokia': 'https://logo.clearbit.com/nokia.com',
-        'kone': 'https://logo.clearbit.com/kone.com',
-        'fortum': 'https://logo.clearbit.com/fortum.com',
-        'oura': 'https://logo.clearbit.com/ouraring.com',
-        'swappie': 'https://logo.clearbit.com/swappie.com',
-        'supercell': 'https://logo.clearbit.com/supercell.com',
-        'wärtsilä': 'https://logo.clearbit.com/wartsila.com',
-        'wartsila': 'https://logo.clearbit.com/wartsila.com',
-        'neste': 'https://logo.clearbit.com/neste.com',
-        'konecranes': 'https://logo.clearbit.com/konecranes.com',
-        'metso': 'https://logo.clearbit.com/metso.com',
-        'upm': 'https://logo.clearbit.com/upm.com',
-        'stora enso': 'https://logo.clearbit.com/storaenso.com',
-        
-        // Norwegian Companies
-        'equinor': 'https://logo.clearbit.com/equinor.com',
-        'yara': 'https://logo.clearbit.com/yara.com',
-        'autostore': 'https://logo.clearbit.com/autostoresystem.com',
-        'vipps': 'https://logo.clearbit.com/vipps.no',
-        'norsk hydro': 'https://logo.clearbit.com/hydro.com',
-        'orkla': 'https://logo.clearbit.com/orkla.com',
-        'mowi': 'https://logo.clearbit.com/mowi.com',
-        'tomra': 'https://logo.clearbit.com/tomra.com',
-        'freyr': 'https://logo.clearbit.com/freyrbattery.com',
-        
-        // Swedish Retail & Consumer
-        'h&m': 'https://logo.clearbit.com/hm.com',
-        'ikea': 'https://logo.clearbit.com/ikea.com',
-        'axfood': 'https://logo.clearbit.com/axfood.se',
-        'ica': 'https://logo.clearbit.com/ica.se',
-        'coop': 'https://logo.clearbit.com/coop.se',
-        'granngården': 'https://logo.clearbit.com/granngarden.se',
-        'granngarden': 'https://logo.clearbit.com/granngarden.se',
-        
-        // Healthcare & Pharma
-        'zeus': 'https://logo.clearbit.com/zeusinc.com',
-        'zeus company': 'https://logo.clearbit.com/zeusinc.com',
-        'catalent': 'https://logo.clearbit.com/catalent.com',
-        'lundbeck': 'https://logo.clearbit.com/lundbeck.com',
-        'medtronic': 'https://logo.clearbit.com/medtronic.com',
-        'astrazeneca': 'https://logo.clearbit.com/astrazeneca.com',
-        'getinge': 'https://logo.clearbit.com/getinge.com',
-        'mentice': 'https://logo.clearbit.com/mentice.com',
-        'humana': 'https://logo.clearbit.com/humana.se',
-        'bioinvent': 'https://logo.clearbit.com/bioinvent.com',
-        'addlife': 'https://logo.clearbit.com/addlife.com',
-        'kry': 'https://logo.clearbit.com/kry.se',
-        'min doktor': 'https://logo.clearbit.com/mindoktor.se',
-        'tandem health': 'https://logo.clearbit.com/tandemhealth.com',
-        
-        // Building & Industrial Services
-        'assemblin': 'https://logo.clearbit.com/assemblin.com',
-        'caverion': 'https://logo.clearbit.com/caverion.com',
-        'ahlsell': 'https://logo.clearbit.com/ahlsell.com',
-        'inwido': 'https://logo.clearbit.com/inwido.com',
-        'coor': 'https://logo.clearbit.com/coor.com',
-        'elfa': 'https://logo.clearbit.com/elfa.com',
-        'instalco': 'https://logo.clearbit.com/instalco.se',
-        'wallenius wilhelmsen': 'https://logo.clearbit.com/wallwil.com',
-        'dahl': 'https://logo.clearbit.com/dahl.no',
-        'ragn-sells': 'https://logo.clearbit.com/ragnsells.com',
-        
-        // Software & Tech
-        'visma': 'https://logo.clearbit.com/visma.com',
-        'sinch': 'https://logo.clearbit.com/sinch.com',
-        'squarespace': 'https://logo.clearbit.com/squarespace.com',
-        'dayforce': 'https://logo.clearbit.com/dayforce.com',
-        'quinyx': 'https://logo.clearbit.com/quinyx.com',
-        'scrive': 'https://logo.clearbit.com/scrive.com',
-        'bisnode': 'https://logo.clearbit.com/bisnode.com',
-        'macrobond': 'https://logo.clearbit.com/macrobond.com',
-        'penneo': 'https://logo.clearbit.com/penneo.com',
-        'planacy': 'https://logo.clearbit.com/planacy.com',
-        
-        // AI & Deep Tech
-        'sana': 'https://logo.clearbit.com/sana.ai',
-        'legora': 'https://logo.clearbit.com/legora.com',
-        'kognic': 'https://logo.clearbit.com/kognic.com',
-        'rerun': 'https://logo.clearbit.com/rerun.io',
-        'validio': 'https://logo.clearbit.com/validio.io',
-        'normative': 'https://logo.clearbit.com/normative.io',
-        'scape': 'https://logo.clearbit.com/scape.io',
-        'intuicell': 'https://logo.clearbit.com/intuicell.com',
-        'listen labs': 'https://logo.clearbit.com/listenlabs.ai',
-        'aris machina': 'https://logo.clearbit.com/arismachina.com',
-        'terra labs': 'https://logo.clearbit.com/terralabs.io',
-        'freda': 'https://logo.clearbit.com/freda.ai',
-        'superb ai': 'https://logo.clearbit.com/superb-ai.com',
-        
-        // Financial Services
-        'doordash': 'https://logo.clearbit.com/doordash.com',
-        'discover': 'https://logo.clearbit.com/discover.com',
-        'capital one': 'https://logo.clearbit.com/capitalone.com',
-        'blackrock': 'https://logo.clearbit.com/blackrock.com',
-        'sony': 'https://logo.clearbit.com/sony.com',
-        'gilion': 'https://logo.clearbit.com/gilion.co',
-        'quartr': 'https://logo.clearbit.com/quartr.com',
-        
-        // Energy & CleanTech
-        'h2 green steel': 'https://logo.clearbit.com/h2greensteel.com',
-        'ekkio': 'https://logo.clearbit.com/ekkio.com',
-        'santos': 'https://logo.clearbit.com/santos.com',
-        'origin energy': 'https://logo.clearbit.com/originenergy.com.au',
-        'nipsco': 'https://logo.clearbit.com/nisource.com',
-        'ninedot': 'https://logo.clearbit.com/ninedotenergy.com',
-        'air france': 'https://logo.clearbit.com/airfrance.com',
-        'aeromexico': 'https://logo.clearbit.com/aeromexico.com',
-        
-        // Retail & E-commerce
-        'zalando': 'https://logo.clearbit.com/zalando.com',
-        'home depot': 'https://logo.clearbit.com/homedepot.com',
-        'srs distribution': 'https://logo.clearbit.com/srs.com',
-        'morrisons': 'https://logo.clearbit.com/morrisons.com',
-        'dustin': 'https://logo.clearbit.com/dustin.com',
-        
-        // Tech Infrastructure
-        'ingram micro': 'https://logo.clearbit.com/ingrammicro.com',
-        'telecom italia': 'https://logo.clearbit.com/telecomitalia.com',
-        'eltel': 'https://logo.clearbit.com/eltelnetworks.com',
-        'osttra': 'https://logo.clearbit.com/osttra.com',
-        'inteliquent': 'https://logo.clearbit.com/inteliquent.com',
-        
-        // Enterprise Software
-        'powerschool': 'https://logo.clearbit.com/powerschool.com',
-        'pluralsight': 'https://logo.clearbit.com/pluralsight.com',
-        'darktrace': 'https://logo.clearbit.com/darktrace.com',
-        'thoughtworks': 'https://logo.clearbit.com/thoughtworks.com',
-        'suse': 'https://logo.clearbit.com/suse.com',
-        'waystar': 'https://logo.clearbit.com/waystar.com',
-        'navan': 'https://logo.clearbit.com/navan.com',
-        'tripactions': 'https://logo.clearbit.com/navan.com',
-        
-        // Media & Entertainment
-        'axel springer': 'https://logo.clearbit.com/axelspringer.com',
-        'caa': 'https://logo.clearbit.com/caa.com',
-        'endeavor': 'https://logo.clearbit.com/endeavor.com',
-        'wme': 'https://logo.clearbit.com/wmeagency.com',
-        'todaytix': 'https://logo.clearbit.com/todaytix.com',
-        'secret cinema': 'https://logo.clearbit.com/secretcinema.org',
-        'formula 1': 'https://logo.clearbit.com/formula1.com',
-        'f1': 'https://logo.clearbit.com/formula1.com',
-        
-        // Healthcare Services & Devices
-        'hologic': 'https://logo.clearbit.com/hologic.com',
-        'verisure': 'https://logo.clearbit.com/verisure.com',
-        'helping hand': 'https://logo.clearbit.com/helpinghand.org.au',
-        'moment group': 'https://logo.clearbit.com/momentgruppen.se',
-        'vertica': 'https://logo.clearbit.com/verticacare.com',
-        
-        // Industrial Distribution & Services
-        'kaman': 'https://logo.clearbit.com/kaman.com',
-        'tricon': 'https://logo.clearbit.com/triconresidential.com',
-        'fraikin': 'https://logo.clearbit.com/fraikin.com',
-        'anticimex': 'https://logo.clearbit.com/anticimex.com',
-        'stada': 'https://logo.clearbit.com/stada.com',
-        'karo healthcare': 'https://logo.clearbit.com/karo.se',
-        'norican': 'https://logo.clearbit.com/norican.com',
-        'envirotainer': 'https://logo.clearbit.com/envirotainer.com',
-        
-        // Food & Consumer Products
-        'orkla': 'https://logo.clearbit.com/orkla.com',
-        'brödernas': 'https://logo.clearbit.com/brodernas.se',
-        'brodernas': 'https://logo.clearbit.com/brodernas.se',
-        'swedish match': 'https://logo.clearbit.com/swedishmatch.com',
-        
-        // Shipping & Logistics
-        'havyard': 'https://logo.clearbit.com/havyard.com',
-        
-        // Defense & Aerospace
-        'anduril': 'https://logo.clearbit.com/anduril.com',
-        
-        // Global Investment Firms & Banks
-        'goldman sachs': 'https://logo.clearbit.com/goldmansachs.com',
-        'morgan stanley': 'https://logo.clearbit.com/morganstanley.com',
-        'jpmorgan': 'https://logo.clearbit.com/jpmorganchase.com',
-        'bank of america': 'https://logo.clearbit.com/bankofamerica.com',
-        'citigroup': 'https://logo.clearbit.com/citigroup.com',
-        'softbank': 'https://logo.clearbit.com/softbank.com',
-        'sequoia': 'https://logo.clearbit.com/sequoiacap.com',
-        'andreessen horowitz': 'https://logo.clearbit.com/a16z.com',
-        'a16z': 'https://logo.clearbit.com/a16z.com',
-        'accel': 'https://logo.clearbit.com/accel.com',
-        'benchmark': 'https://logo.clearbit.com/benchmark.com',
-        'greylock': 'https://logo.clearbit.com/greylock.com',
-        'iconiq': 'https://logo.clearbit.com/iconiqcapital.com',
-        'tiger global': 'https://logo.clearbit.com/tigerglobal.com',
-        'insight partners': 'https://logo.clearbit.com/insightpartners.com',
-        'tpg': 'https://logo.clearbit.com/tpg.com',
-        'vista equity': 'https://logo.clearbit.com/vistaequitypartners.com',
-        'thoma bravo': 'https://logo.clearbit.com/thomabravo.com',
-        'menlo ventures': 'https://logo.clearbit.com/menlovc.com',
-        'lightspeed': 'https://logo.clearbit.com/lsvp.com',
-        'atomico': 'https://logo.clearbit.com/atomico.com',
-        'northzone': 'https://logo.clearbit.com/northzone.com',
-        'creandum': 'https://logo.clearbit.com/creandum.com',
-        'lakestar': 'https://logo.clearbit.com/lakestar.com',
-        'balderton': 'https://logo.clearbit.com/balderton.com',
-        'village global': 'https://logo.clearbit.com/villageglobal.vc',
-        'y combinator': 'https://logo.clearbit.com/ycombinator.com',
-        
-        // Global Tech Companies
-        'microsoft': 'https://logo.clearbit.com/microsoft.com',
-        'google': 'https://logo.clearbit.com/google.com',
-        'amazon': 'https://logo.clearbit.com/amazon.com',
-        'meta': 'https://logo.clearbit.com/meta.com',
-        'facebook': 'https://logo.clearbit.com/meta.com',
-        'apple': 'https://logo.clearbit.com/apple.com',
-        'nvidia': 'https://logo.clearbit.com/nvidia.com',
-        'samsung': 'https://logo.clearbit.com/samsung.com',
-        'ibm': 'https://logo.clearbit.com/ibm.com',
-        'oracle': 'https://logo.clearbit.com/oracle.com',
-        'salesforce': 'https://logo.clearbit.com/salesforce.com',
-        
-        // Automotive
-        'volkswagen': 'https://logo.clearbit.com/volkswagen.com',
-        'bmw': 'https://logo.clearbit.com/bmw.com',
-        'mercedes': 'https://logo.clearbit.com/mercedes-benz.com',
-        'mercedes-benz': 'https://logo.clearbit.com/mercedes-benz.com',
-        'tesla': 'https://logo.clearbit.com/tesla.com',
-        'ford': 'https://logo.clearbit.com/ford.com',
-        'general motors': 'https://logo.clearbit.com/gm.com',
-        'toyota': 'https://logo.clearbit.com/toyota.com',
-        'sega': 'https://logo.clearbit.com/sega.com',
-        
-        // Real Estate & Services
-        'liberty media': 'https://logo.clearbit.com/libertymedia.com',
-        'philip morris': 'https://logo.clearbit.com/pmi.com',
-        'ares': 'https://logo.clearbit.com/aresmgmt.com',
-        'ares management': 'https://logo.clearbit.com/aresmgmt.com',
-        'oaktree': 'https://logo.clearbit.com/oaktreecapital.com',
-        'brookfield': 'https://logo.clearbit.com/brookfield.com',
-        'cvc': 'https://logo.clearbit.com/cvc.com',
-        'mari': 'https://logo.clearbit.com/wmeagency.com',
-        
-        // Additional PE Portfolio Companies
-        'bisnode': 'https://logo.clearbit.com/bisnode.com',
-        'talentium': 'https://logo.clearbit.com/talentium.com',
-        'nebula': 'https://logo.clearbit.com/nebula.fi',
-        'superside': 'https://logo.clearbit.com/superside.com',
-        'industry ventures': 'https://logo.clearbit.com/industryventures.com',
-        'global infrastructure partners': 'https://logo.clearbit.com/global-infra.com',
-        'gip': 'https://logo.clearbit.com/global-infra.com',
-        
-        // Recent 2025 Deal Companies
-        'bavarian nordic': 'https://logo.clearbit.com/bavarian-nordic.com',
-        'waters': 'https://logo.clearbit.com/waters.com',
-        'waters corporation': 'https://logo.clearbit.com/waters.com',
-        'becton dickinson': 'https://logo.clearbit.com/bd.com',
-        'bd': 'https://logo.clearbit.com/bd.com',
-        'smartsheet': 'https://logo.clearbit.com/smartsheet.com',
-        'marshall': 'https://logo.clearbit.com/marshallheadphones.com',
-        'marshall group': 'https://logo.clearbit.com/marshallheadphones.com',
-        'hongshan': 'https://logo.clearbit.com/hongshancap.com',
-        'sequoia china': 'https://logo.clearbit.com/sequoiacap.com',
-        'northwind': 'https://logo.clearbit.com/northwindmidstream.com',
-        'mplx': 'https://logo.clearbit.com/mplx.com',
-        'marathon': 'https://logo.clearbit.com/marathonpetroleum.com',
-        'eco material': 'https://logo.clearbit.com/ecomaterial.com',
-        'crh': 'https://logo.clearbit.com/crh.com',
-        'one equity': 'https://logo.clearbit.com/oneequity.com',
-        'hbc': 'https://logo.clearbit.com/hbc-insurance.de',
-        'casepoint': 'https://logo.clearbit.com/casepoint.com',
-        'opexus': 'https://logo.clearbit.com/opexus.com',
-        'gemspring': 'https://logo.clearbit.com/gemspring.com',
-        'henry schein': 'https://logo.clearbit.com/henryschein.com',
-        
-        // More PE Firms
-        'summa equity': 'https://logo.clearbit.com/summaequity.com',
-        'capman': 'https://logo.clearbit.com/capman.com',
-        'bridgefield': 'https://logo.clearbit.com/bridgefieldcapital.com',
-        'investindustrial': 'https://logo.clearbit.com/investindustrial.com',
-        'five point': 'https://logo.clearbit.com/fivepointcapital.com',
-        'advent': 'https://logo.clearbit.com/adventinternational.com',
-        'cinven': 'https://logo.clearbit.com/cinven.com',
-        'pai partners': 'https://logo.clearbit.com/paipartners.com',
-        'apax': 'https://logo.clearbit.com/apax.com',
-        'hg capital': 'https://logo.clearbit.com/hgcapital.com',
-        'capvest': 'https://logo.clearbit.com/capvest.com',
-        'platinum equity': 'https://logo.clearbit.com/platinumequity.com',
-        'cd&r': 'https://logo.clearbit.com/cdr-inc.com',
-        'clayton dubilier': 'https://logo.clearbit.com/cdr-inc.com'
-    };
+    const modal = document.getElementById('dealModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBody = document.getElementById('modalBody');
     
-    for (const [company, logo] of Object.entries(knownCompanies)) {
-        if (name.includes(company)) return logo;
+    modalTitle.textContent = `${deal.company || 'Deal'} - ${deal.deal_type || 'Transaction'}`;
+    
+    let html = '';
+    
+    // Create detail rows for all available fields (excluding source-related fields)
+    const fields = [
+        { label: 'Company', value: deal.company },
+        { label: 'PE Firm', value: deal.pe_firm },
+        { label: 'Deal Type', value: deal.deal_type },
+        { label: 'Status', value: deal.status },
+        { label: 'Sector', value: deal.sector },
+        { label: 'Deal Size', value: deal.deal_size },
+        { label: 'Date', value: deal.date ? new Date(deal.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : null },
+        { label: 'Geography', value: deal.geography },
+        { label: 'URL', value: deal.url, isLink: true },
+        { label: 'Title', value: deal.title },
+        { label: 'Description', value: deal.description, isDescription: true }
+    ];
+    
+    // Fields to exclude (source-related field names)
+    const excludeFieldNames = ['source'];
+    
+    // Check if a value looks like a source identifier (e.g., "excel_deal_123", "excel import")
+    function isSourceIdentifier(value) {
+        if (!value) return false;
+        const str = String(value).toLowerCase();
+        return str.includes('excel_') || str.includes('excel import') || str.includes('import_') || 
+               (str.startsWith('excel') && str.includes('deal'));
     }
     
-    // Fallback to UI Avatars for unknown companies
-    return null;
-}
-
-// Analytics Tab Functions
-function setupAnalyticsTabs() {
-    document.querySelectorAll('.analytics-tab').forEach(tab => {
-        tab.addEventListener('click', function() {
-            const tabId = this.dataset.tab;
+    fields.forEach(field => {
+        if (field.value && !isSourceIdentifier(field.value)) {
+            html += `
+                <div class="deal-detail-row">
+                    <div class="deal-detail-label">${escapeHtml(field.label)}</div>
+                    <div class="deal-detail-value ${field.isDescription ? 'description' : ''}">
+                        ${field.isLink ? `<a href="${escapeHtml(field.value)}" target="_blank" rel="noopener noreferrer">${escapeHtml(field.value)}</a>` : escapeHtml(field.value)}
+                    </div>
+                </div>
+            `;
+        }
+    });
+    
+    // Show any additional fields that might exist (excluding source-related)
+    Object.keys(deal).forEach(key => {
+        const lowerKey = key.toLowerCase();
+        const isExcludedName = excludeFieldNames.some(exclude => lowerKey === exclude);
+        const fieldExists = fields.some(f => f.label.toLowerCase() === key.toLowerCase());
+        
+        if (!fieldExists && !isExcludedName && deal[key] && typeof deal[key] !== 'object') {
+            // Only exclude if it's an ID field with source identifier pattern
+            if (lowerKey === 'id' && isSourceIdentifier(deal[key])) {
+                return; // Skip this field
+            }
             
-            // Update tab styles
-            document.querySelectorAll('.analytics-tab').forEach(t => {
-                t.style.color = '#666';
-                t.style.borderBottom = '3px solid transparent';
-            });
-            this.style.color = '#667eea';
-            this.style.borderBottom = '3px solid #667eea';
-            
-            // Show/hide content
-            document.querySelectorAll('.analytics-content').forEach(content => {
-                content.style.display = 'none';
-            });
-            document.getElementById(`tab-${tabId}`).style.display = 'block';
-            
-            // Initialize charts when tab becomes visible
-            if (tabId !== 'deals') {
-                setTimeout(() => {
-                    initializeCharts();
-                }, 100);
-            }
-        });
-    });
-}
-
-function initializeCharts() {
-    // Market Trends Charts
-    createBuyoutChart();
-    createVCChart();
-    
-    // Country Analysis Charts
-    createFinlandChart();
-    createSwedenChart();
-    createNorwayChart();
-    createDenmarkChart();
-    
-    // Sector Analysis Charts
-    createIndustrialChart();
-    createTechChart();
-    createBusinessServicesChart();
-    createConsumerChart();
-}
-
-// Market Trends Charts
-function createBuyoutChart() {
-    const ctx = document.getElementById('buyoutChart');
-    if (!ctx || ctx.chart) return;
-    
-    const quarterlyData = [456, 324, 337, 374, 357, 325, 318, 358, 364, 356, 380, 347, 382];
-    const ltmData = [1635, 1611, 1521, 1491, 1392, 1393, 1374, 1358, 1365, 1396, 1458, 1447, 1465];
-    const labels = ['Q2\'22', 'Q3\'22', 'Q4\'22', 'Q1\'23', 'Q2\'23', 'Q3\'23', 'Q4\'23', 'Q1\'24', 'Q2\'24', 'Q3\'24', 'Q4\'24', 'Q1\'25', 'Q2\'25'];
-    
-    ctx.chart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'Quarterly Deal Volume',
-                data: quarterlyData,
-                backgroundColor: function(context) {
-                    const ctx = context.chart.ctx;
-                    const gradient = ctx.createLinearGradient(0, 0, 0, 400);
-                    gradient.addColorStop(0, '#6366F1');
-                    gradient.addColorStop(0.5, '#7C3AED');
-                    gradient.addColorStop(1, '#4F46E5');
-                    return gradient;
-                },
-                borderRadius: 8,
-                borderWidth: 0,
-                borderSkipped: false,
-                yAxisID: 'y'
-            }, {
-                label: 'LTM Aggregate',
-                data: ltmData,
-                type: 'line',
-                backgroundColor: 'rgba(99, 102, 241, 0.1)',
-                borderColor: '#6366F1',
-                borderWidth: 3,
-                fill: true,
-                tension: 0.4,
-                pointBackgroundColor: '#6366F1',
-                pointBorderColor: '#fff',
-                pointBorderWidth: 2,
-                pointRadius: 4,
-                pointHoverRadius: 6,
-                yAxisID: 'y1'
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'top',
-                    labels: {
-                        font: { size: 12, weight: '600' },
-                        padding: 15,
-                        usePointStyle: true
-                    }
-                },
-                tooltip: {
-                    backgroundColor: 'rgba(0,0,0,0.85)',
-                    padding: 12,
-                    titleFont: { size: 13, weight: 'bold' },
-                    bodyFont: { size: 12 }
-                }
-            },
-            scales: {
-                y: {
-                    type: 'linear',
-                    display: true,
-                    position: 'left',
-                    title: {
-                        display: true,
-                        text: 'Quarterly Deals',
-                        font: { size: 11, weight: '600' }
-                    },
-                    ticks: { 
-                        font: { size: 10 }
-                    },
-                    grid: { color: '#f3f4f6' }
-                },
-                y1: {
-                    type: 'linear',
-                    display: true,
-                    position: 'right',
-                    title: {
-                        display: true,
-                        text: 'LTM Aggregate',
-                        font: { size: 11, weight: '600' }
-                    },
-                    ticks: { 
-                        font: { size: 10 }
-                    },
-                    grid: {
-                        drawOnChartArea: false,
-                    }
-                },
-                x: {
-                    ticks: { font: { size: 10, weight: '600' } },
-                    grid: { display: false }
-                }
+            if (!isSourceIdentifier(deal[key])) {
+                html += `
+                    <div class="deal-detail-row">
+                        <div class="deal-detail-label">${escapeHtml(key.charAt(0).toUpperCase() + key.slice(1))}</div>
+                        <div class="deal-detail-value">${escapeHtml(String(deal[key]))}</div>
+                    </div>
+                `;
             }
         }
     });
+    
+    modalBody.innerHTML = html;
+    modal.style.display = 'block';
 }
 
-function createVCChart() {
-    const ctx = document.getElementById('vcChart');
-    if (!ctx || ctx.chart) return;
-    
-    const quarterlyData = [579, 458, 544, 677, 436, 395, 400, 560, 434, 346, 388, 386, 325];
-    const ltmData = [2327, 2323, 2263, 2258, 2115, 2052, 1908, 1791, 1789, 1740, 1728, 1554, 1445];
-    const labels = ['Q2\'22', 'Q3\'22', 'Q4\'22', 'Q1\'23', 'Q2\'23', 'Q3\'23', 'Q4\'23', 'Q1\'24', 'Q2\'24', 'Q3\'24', 'Q4\'24', 'Q1\'25', 'Q2\'25'];
-    
-    ctx.chart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'Quarterly Deal Volume',
-                data: quarterlyData,
-                backgroundColor: function(context) {
-                    const ctx = context.chart.ctx;
-                    const gradient = ctx.createLinearGradient(0, 0, 0, 400);
-                    gradient.addColorStop(0, '#6366F1');
-                    gradient.addColorStop(0.5, '#7C3AED');
-                    gradient.addColorStop(1, '#4F46E5');
-                    return gradient;
-                },
-                borderRadius: 12,
-                borderWidth: 0,
-                borderSkipped: false,
-                yAxisID: 'y'
-            }, {
-                label: 'LTM Aggregate',
-                data: ltmData,
-                type: 'line',
-                backgroundColor: 'rgba(99, 102, 241, 0.1)',
-                borderColor: '#6366F1',
-                borderWidth: 3,
-                fill: true,
-                tension: 0.4,
-                pointBackgroundColor: '#6366F1',
-                pointBorderColor: '#fff',
-                pointBorderWidth: 2,
-                pointRadius: 4,
-                pointHoverRadius: 6,
-                yAxisID: 'y1'
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'top',
-                    labels: {
-                        font: { size: 12, weight: '600' },
-                        padding: 15,
-                        usePointStyle: true
-                    }
-                },
-                tooltip: {
-                    backgroundColor: 'rgba(0,0,0,0.85)',
-                    padding: 12,
-                    titleFont: { size: 13, weight: 'bold' },
-                    bodyFont: { size: 12 }
-                }
-            },
-            scales: {
-                y: {
-                    type: 'linear',
-                    display: true,
-                    position: 'left',
-                    title: {
-                        display: true,
-                        text: 'Quarterly Deals',
-                        font: { size: 11, weight: '600' }
-                    },
-                    ticks: { 
-                        font: { size: 10 }
-                    },
-                    grid: { color: '#f3f4f6' }
-                },
-                y1: {
-                    type: 'linear',
-                    display: true,
-                    position: 'right',
-                    title: {
-                        display: true,
-                        text: 'LTM Aggregate',
-                        font: { size: 11, weight: '600' }
-                    },
-                    ticks: { 
-                        font: { size: 10 }
-                    },
-                    grid: {
-                        drawOnChartArea: false,
-                    }
-                },
-                x: {
-                    ticks: { font: { size: 10, weight: '600' } },
-                    grid: { display: false }
-                }
-            }
-        }
-    });
-}
-
-// Country Analysis Charts
-function createFinlandChart() {
-    const ctx = document.getElementById('finlandChart');
-    if (!ctx || ctx.chart) return;
-    
-    const data = [84, 51, 55, 74, 69, 50, 55, 60, 59, 71, 60, 56, 67];
-    const labels = ['Q2\'22', 'Q3\'22', 'Q4\'22', 'Q1\'23', 'Q2\'23', 'Q3\'23', 'Q4\'23', 'Q1\'24', 'Q2\'24', 'Q3\'24', 'Q4\'24', 'Q1\'25', 'Q2\'25'];
-    
-    // Calculate moving average
-    const movingAvg = data.map((_, i) => {
-        if (i < 2) return data[i];
-        return (data[i-2] + data[i-1] + data[i]) / 3;
-    });
-    
-    // Calculate linear trend
-    const linearTrend = data.map((_, i) => {
-        const x = i;
-        const y = 60 + (x * 0.5); // Simple linear trend
-        return Math.round(y);
-    });
-    
-    ctx.chart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'Finland Deal Volume',
-                data: data,
-                backgroundColor: function(context) {
-                    const ctx = context.chart.ctx;
-                    const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-                    gradient.addColorStop(0, '#6366F1');
-                    gradient.addColorStop(0.5, '#7C3AED');
-                    gradient.addColorStop(1, '#4F46E5');
-                    return gradient;
-                },
-                borderRadius: 12,
-                borderWidth: 0,
-                borderSkipped: false
-            }, {
-                label: 'Moving Average (3Q)',
-                data: movingAvg,
-                type: 'line',
-                borderColor: '#7C3AED',
-                borderWidth: 4,
-                fill: false,
-                tension: 0.6,
-                pointBackgroundColor: '#7C3AED',
-                pointBorderColor: '#fff',
-                pointBorderWidth: 3,
-                pointRadius: 6,
-                pointHoverRadius: 8,
-                borderDash: [8, 4],
-                pointStyle: 'circle',
-                pointHoverBackgroundColor: '#7C3AED',
-                pointHoverBorderColor: '#fff',
-                pointHoverBorderWidth: 3
-            }, {
-                label: 'Linear Trend',
-                data: linearTrend,
-                type: 'line',
-                borderColor: '#4F46E5',
-                borderWidth: 3,
-                fill: false,
-                tension: 0,
-                pointBackgroundColor: 'transparent',
-                pointBorderColor: 'transparent',
-                pointRadius: 0,
-                pointHoverRadius: 0,
-                borderDash: [2, 6],
-                pointStyle: 'line'
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: { 
-                    display: true,
-                    position: 'top',
-                    labels: {
-                        font: { size: 11, weight: '600' },
-                        padding: 15,
-                        usePointStyle: true,
-                        boxWidth: 12
-                    }
-                },
-                tooltip: {
-                    backgroundColor: 'rgba(0,0,0,0.85)',
-                    padding: 12,
-                    titleFont: { size: 13, weight: 'bold' },
-                    bodyFont: { size: 12 }
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    title: {
-                        display: true,
-                        text: 'Number of Deals',
-                        font: { size: 11, weight: '600' }
-                    },
-                    ticks: { 
-                        font: { size: 10 }
-                    },
-                    grid: { color: '#f3f4f6' }
-                },
-                x: {
-                    ticks: { font: { size: 10, weight: '600' } },
-                    grid: { display: false }
-                }
-            }
-        }
-    });
-}
-
-function createSwedenChart() {
-    const ctx = document.getElementById('swedenChart');
-    if (!ctx || ctx.chart) return;
-    
-    const data = [178, 137, 143, 168, 153, 139, 162, 144, 161, 156, 159, 144, 154];
-    const labels = ['Q2\'22', 'Q3\'22', 'Q4\'22', 'Q1\'23', 'Q2\'23', 'Q3\'23', 'Q4\'23', 'Q1\'24', 'Q2\'24', 'Q3\'24', 'Q4\'24', 'Q1\'25', 'Q2\'25'];
-    
-    // Calculate moving average
-    const movingAvg = data.map((_, i) => {
-        if (i < 2) return data[i];
-        return (data[i-2] + data[i-1] + data[i]) / 3;
-    });
-    
-    // Calculate linear trend
-    const linearTrend = data.map((_, i) => {
-        const x = i;
-        const y = 150 + (x * 0.3); // Simple linear trend
-        return Math.round(y);
-    });
-    
-    ctx.chart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'Sweden Deal Volume',
-                data: data,
-                backgroundColor: function(context) {
-                    const ctx = context.chart.ctx;
-                    const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-                    gradient.addColorStop(0, '#6366F1');
-                    gradient.addColorStop(0.5, '#7C3AED');
-                    gradient.addColorStop(1, '#4F46E5');
-                    return gradient;
-                },
-                borderRadius: 12,
-                borderWidth: 0,
-                borderSkipped: false
-            }, {
-                label: 'Moving Average (3Q)',
-                data: movingAvg,
-                type: 'line',
-                borderColor: '#7C3AED',
-                borderWidth: 4,
-                fill: false,
-                tension: 0.6,
-                pointBackgroundColor: '#7C3AED',
-                pointBorderColor: '#fff',
-                pointBorderWidth: 3,
-                pointRadius: 6,
-                pointHoverRadius: 8,
-                borderDash: [8, 4],
-                pointStyle: 'circle',
-                pointHoverBackgroundColor: '#7C3AED',
-                pointHoverBorderColor: '#fff',
-                pointHoverBorderWidth: 3
-            }, {
-                label: 'Linear Trend',
-                data: linearTrend,
-                type: 'line',
-                borderColor: '#4F46E5',
-                borderWidth: 3,
-                fill: false,
-                tension: 0,
-                pointBackgroundColor: 'transparent',
-                pointBorderColor: 'transparent',
-                pointRadius: 0,
-                pointHoverRadius: 0,
-                borderDash: [2, 6],
-                pointStyle: 'line'
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: { 
-                    display: true,
-                    position: 'top',
-                    labels: {
-                        font: { size: 11, weight: '600' },
-                        padding: 15,
-                        usePointStyle: true,
-                        boxWidth: 12
-                    }
-                },
-                tooltip: {
-                    backgroundColor: 'rgba(0,0,0,0.85)',
-                    padding: 12,
-                    titleFont: { size: 13, weight: 'bold' },
-                    bodyFont: { size: 12 }
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    title: {
-                        display: true,
-                        text: 'Number of Deals',
-                        font: { size: 11, weight: '600' }
-                    },
-                    ticks: { 
-                        font: { size: 10 }
-                    },
-                    grid: { color: '#f3f4f6' }
-                },
-                x: {
-                    ticks: { font: { size: 10, weight: '600' } },
-                    grid: { display: false }
-                }
-            }
-        }
-    });
-}
-
-function createNorwayChart() {
-    const ctx = document.getElementById('norwayChart');
-    if (!ctx || ctx.chart) return;
-    
-    const data = [81, 74, 60, 59, 77, 59, 49, 78, 72, 65, 89, 60, 81];
-    const labels = ['Q2\'22', 'Q3\'22', 'Q4\'22', 'Q1\'23', 'Q2\'23', 'Q3\'23', 'Q4\'23', 'Q1\'24', 'Q2\'24', 'Q3\'24', 'Q4\'24', 'Q1\'25', 'Q2\'25'];
-    
-    // Calculate moving average
-    const movingAvg = data.map((_, i) => {
-        if (i < 2) return data[i];
-        return (data[i-2] + data[i-1] + data[i]) / 3;
-    });
-    
-    // Calculate linear trend
-    const linearTrend = data.map((_, i) => {
-        const x = i;
-        const y = 70 + (x * 0.2); // Simple linear trend
-        return Math.round(y);
-    });
-    
-    ctx.chart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'Norway Deal Volume',
-                data: data,
-                backgroundColor: function(context) {
-                    const ctx = context.chart.ctx;
-                    const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-                    gradient.addColorStop(0, '#6366F1');
-                    gradient.addColorStop(0.5, '#7C3AED');
-                    gradient.addColorStop(1, '#4F46E5');
-                    return gradient;
-                },
-                borderRadius: 12,
-                borderWidth: 0,
-                borderSkipped: false
-            }, {
-                label: 'Moving Average (3Q)',
-                data: movingAvg,
-                type: 'line',
-                borderColor: '#7C3AED',
-                borderWidth: 4,
-                fill: false,
-                tension: 0.6,
-                pointBackgroundColor: '#7C3AED',
-                pointBorderColor: '#fff',
-                pointBorderWidth: 3,
-                pointRadius: 6,
-                pointHoverRadius: 8,
-                borderDash: [8, 4],
-                pointStyle: 'circle',
-                pointHoverBackgroundColor: '#7C3AED',
-                pointHoverBorderColor: '#fff',
-                pointHoverBorderWidth: 3
-            }, {
-                label: 'Linear Trend',
-                data: linearTrend,
-                type: 'line',
-                borderColor: '#4F46E5',
-                borderWidth: 3,
-                fill: false,
-                tension: 0,
-                pointBackgroundColor: 'transparent',
-                pointBorderColor: 'transparent',
-                pointRadius: 0,
-                pointHoverRadius: 0,
-                borderDash: [2, 6],
-                pointStyle: 'line'
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: { 
-                    display: true,
-                    position: 'top',
-                    labels: {
-                        font: { size: 11, weight: '600' },
-                        padding: 15,
-                        usePointStyle: true,
-                        boxWidth: 12
-                    }
-                },
-                tooltip: {
-                    backgroundColor: 'rgba(0,0,0,0.85)',
-                    padding: 12,
-                    titleFont: { size: 13, weight: 'bold' },
-                    bodyFont: { size: 12 }
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    title: {
-                        display: true,
-                        text: 'Number of Deals',
-                        font: { size: 11, weight: '600' }
-                    },
-                    ticks: { 
-                        font: { size: 10 }
-                    },
-                    grid: { color: '#f3f4f6' }
-                },
-                x: {
-                    ticks: { font: { size: 10, weight: '600' } },
-                    grid: { display: false }
-                }
-            }
-        }
-    });
-}
-
-function createDenmarkChart() {
-    const ctx = document.getElementById('denmarkChart');
-    if (!ctx || ctx.chart) return;
-    
-    const data = [113, 62, 79, 73, 58, 77, 52, 76, 72, 64, 72, 87, 80];
-    const labels = ['Q2\'22', 'Q3\'22', 'Q4\'22', 'Q1\'23', 'Q2\'23', 'Q3\'23', 'Q4\'23', 'Q1\'24', 'Q2\'24', 'Q3\'24', 'Q4\'24', 'Q1\'25', 'Q2\'25'];
-    
-    // Calculate moving average
-    const movingAvg = data.map((_, i) => {
-        if (i < 2) return data[i];
-        return (data[i-2] + data[i-1] + data[i]) / 3;
-    });
-    
-    // Calculate linear trend
-    const linearTrend = data.map((_, i) => {
-        const x = i;
-        const y = 70 + (x * 0.1); // Simple linear trend
-        return Math.round(y);
-    });
-    
-    ctx.chart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'Denmark Deal Volume',
-                data: data,
-                backgroundColor: function(context) {
-                    const ctx = context.chart.ctx;
-                    const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-                    gradient.addColorStop(0, '#6366F1');
-                    gradient.addColorStop(0.5, '#7C3AED');
-                    gradient.addColorStop(1, '#4F46E5');
-                    return gradient;
-                },
-                borderRadius: 12,
-                borderWidth: 0,
-                borderSkipped: false
-            }, {
-                label: 'Moving Average (3Q)',
-                data: movingAvg,
-                type: 'line',
-                borderColor: '#7C3AED',
-                borderWidth: 4,
-                fill: false,
-                tension: 0.6,
-                pointBackgroundColor: '#7C3AED',
-                pointBorderColor: '#fff',
-                pointBorderWidth: 3,
-                pointRadius: 6,
-                pointHoverRadius: 8,
-                borderDash: [8, 4],
-                pointStyle: 'circle',
-                pointHoverBackgroundColor: '#7C3AED',
-                pointHoverBorderColor: '#fff',
-                pointHoverBorderWidth: 3
-            }, {
-                label: 'Linear Trend',
-                data: linearTrend,
-                type: 'line',
-                borderColor: '#4F46E5',
-                borderWidth: 3,
-                fill: false,
-                tension: 0,
-                pointBackgroundColor: 'transparent',
-                pointBorderColor: 'transparent',
-                pointRadius: 0,
-                pointHoverRadius: 0,
-                borderDash: [2, 6],
-                pointStyle: 'line'
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: { 
-                    display: true,
-                    position: 'top',
-                    labels: {
-                        font: { size: 11, weight: '600' },
-                        padding: 15,
-                        usePointStyle: true,
-                        boxWidth: 12
-                    }
-                },
-                tooltip: {
-                    backgroundColor: 'rgba(0,0,0,0.85)',
-                    padding: 12,
-                    titleFont: { size: 13, weight: 'bold' },
-                    bodyFont: { size: 12 }
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    title: {
-                        display: true,
-                        text: 'Number of Deals',
-                        font: { size: 11, weight: '600' }
-                    },
-                    ticks: { 
-                        font: { size: 10 }
-                    },
-                    grid: { color: '#f3f4f6' }
-                },
-                x: {
-                    ticks: { font: { size: 10, weight: '600' } },
-                    grid: { display: false }
-                }
-            }
-        }
-    });
-}
-
-// Sector Analysis Charts
-function createIndustrialChart() {
-    const ctx = document.getElementById('industrialChart');
-    if (!ctx || ctx.chart) return;
-    
-    const data = [88, 60, 55, 66, 54, 54, 57, 58, 56, 59, 66, 56, 54];
-    const labels = ['Q2\'22', 'Q3\'22', 'Q4\'22', 'Q1\'23', 'Q2\'23', 'Q3\'23', 'Q4\'23', 'Q1\'24', 'Q2\'24', 'Q3\'24', 'Q4\'24', 'Q1\'25', 'Q2\'25'];
-    
-    // Calculate moving average
-    const movingAvg = data.map((_, i) => {
-        if (i < 2) return data[i];
-        return (data[i-2] + data[i-1] + data[i]) / 3;
-    });
-    
-    // Calculate linear trend
-    const linearTrend = data.map((_, i) => {
-        const x = i;
-        const y = 60 + (x * 0.1); // Simple linear trend
-        return Math.round(y);
-    });
-    
-    ctx.chart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'Industrial Manufacturing',
-                data: data,
-                backgroundColor: function(context) {
-                    const ctx = context.chart.ctx;
-                    const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-                    gradient.addColorStop(0, '#6366F1');
-                    gradient.addColorStop(0.5, '#7C3AED');
-                    gradient.addColorStop(1, '#4F46E5');
-                    return gradient;
-                },
-                borderRadius: 12,
-                borderWidth: 0,
-                borderSkipped: false
-            }, {
-                label: 'Moving Average (3Q)',
-                data: movingAvg,
-                type: 'line',
-                borderColor: '#7C3AED',
-                borderWidth: 4,
-                fill: false,
-                tension: 0.6,
-                pointBackgroundColor: '#7C3AED',
-                pointBorderColor: '#fff',
-                pointBorderWidth: 3,
-                pointRadius: 6,
-                pointHoverRadius: 8,
-                borderDash: [8, 4],
-                pointStyle: 'circle',
-                pointHoverBackgroundColor: '#7C3AED',
-                pointHoverBorderColor: '#fff',
-                pointHoverBorderWidth: 3
-            }, {
-                label: 'Linear Trend',
-                data: linearTrend,
-                type: 'line',
-                borderColor: '#4F46E5',
-                borderWidth: 3,
-                fill: false,
-                tension: 0,
-                pointBackgroundColor: 'transparent',
-                pointBorderColor: 'transparent',
-                pointRadius: 0,
-                pointHoverRadius: 0,
-                borderDash: [2, 6],
-                pointStyle: 'line'
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: { 
-                    display: true,
-                    position: 'top',
-                    labels: {
-                        font: { size: 11, weight: '600' },
-                        padding: 15,
-                        usePointStyle: true,
-                        boxWidth: 12
-                    }
-                },
-                tooltip: {
-                    backgroundColor: 'rgba(0,0,0,0.85)',
-                    padding: 12,
-                    titleFont: { size: 13, weight: 'bold' },
-                    bodyFont: { size: 12 }
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    title: {
-                        display: true,
-                        text: 'Number of Deals',
-                        font: { size: 11, weight: '600' }
-                    },
-                    ticks: { 
-                        font: { size: 10 }
-                    },
-                    grid: { color: '#f3f4f6' }
-                },
-                x: {
-                    ticks: { font: { size: 10, weight: '600' } },
-                    grid: { display: false }
-                }
-            }
-        }
-    });
-}
-
-function createTechChart() {
-    const ctx = document.getElementById('techChart');
-    if (!ctx || ctx.chart) return;
-    
-    const data = [148, 85, 100, 98, 106, 112, 83, 103, 96, 88, 124, 87, 115];
-    const labels = ['Q2\'22', 'Q3\'22', 'Q4\'22', 'Q1\'23', 'Q2\'23', 'Q3\'23', 'Q4\'23', 'Q1\'24', 'Q2\'24', 'Q3\'24', 'Q4\'24', 'Q1\'25', 'Q2\'25'];
-    
-    // Calculate moving average
-    const movingAvg = data.map((_, i) => {
-        if (i < 2) return data[i];
-        return (data[i-2] + data[i-1] + data[i]) / 3;
-    });
-    
-    // Calculate linear trend
-    const linearTrend = data.map((_, i) => {
-        const x = i;
-        const y = 100 + (x * 0.5); // Simple linear trend
-        return Math.round(y);
-    });
-    
-    ctx.chart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'Tech',
-                data: data,
-                backgroundColor: function(context) {
-                    const ctx = context.chart.ctx;
-                    const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-                    gradient.addColorStop(0, '#6366F1');
-                    gradient.addColorStop(0.5, '#7C3AED');
-                    gradient.addColorStop(1, '#4F46E5');
-                    return gradient;
-                },
-                borderRadius: 12,
-                borderWidth: 0,
-                borderSkipped: false
-            }, {
-                label: 'Moving Average (3Q)',
-                data: movingAvg,
-                type: 'line',
-                borderColor: '#7C3AED',
-                borderWidth: 4,
-                fill: false,
-                tension: 0.6,
-                pointBackgroundColor: '#7C3AED',
-                pointBorderColor: '#fff',
-                pointBorderWidth: 3,
-                pointRadius: 6,
-                pointHoverRadius: 8,
-                borderDash: [8, 4],
-                pointStyle: 'circle',
-                pointHoverBackgroundColor: '#7C3AED',
-                pointHoverBorderColor: '#fff',
-                pointHoverBorderWidth: 3
-            }, {
-                label: 'Linear Trend',
-                data: linearTrend,
-                type: 'line',
-                borderColor: '#4F46E5',
-                borderWidth: 3,
-                fill: false,
-                tension: 0,
-                pointBackgroundColor: 'transparent',
-                pointBorderColor: 'transparent',
-                pointRadius: 0,
-                pointHoverRadius: 0,
-                borderDash: [2, 6],
-                pointStyle: 'line'
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: { 
-                    display: true,
-                    position: 'top',
-                    labels: {
-                        font: { size: 11, weight: '600' },
-                        padding: 15,
-                        usePointStyle: true,
-                        boxWidth: 12
-                    }
-                },
-                tooltip: {
-                    backgroundColor: 'rgba(0,0,0,0.85)',
-                    padding: 12,
-                    titleFont: { size: 13, weight: 'bold' },
-                    bodyFont: { size: 12 }
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    title: {
-                        display: true,
-                        text: 'Number of Deals',
-                        font: { size: 11, weight: '600' }
-                    },
-                    ticks: { 
-                        font: { size: 10 }
-                    },
-                    grid: { color: '#f3f4f6' }
-                },
-                x: {
-                    ticks: { font: { size: 10, weight: '600' } },
-                    grid: { display: false }
-                }
-            }
-        }
-    });
-}
-
-function createBusinessServicesChart() {
-    const ctx = document.getElementById('businessServicesChart');
-    if (!ctx || ctx.chart) return;
-    
-    const data = [228, 172, 180, 206, 207, 169, 173, 193, 223, 217, 213, 204, 220];
-    const labels = ['Q2\'22', 'Q3\'22', 'Q4\'22', 'Q1\'23', 'Q2\'23', 'Q3\'23', 'Q4\'23', 'Q1\'24', 'Q2\'24', 'Q3\'24', 'Q4\'24', 'Q1\'25', 'Q2\'25'];
-    
-    // Calculate moving average
-    const movingAvg = data.map((_, i) => {
-        if (i < 2) return data[i];
-        return (data[i-2] + data[i-1] + data[i]) / 3;
-    });
-    
-    // Calculate linear trend
-    const linearTrend = data.map((_, i) => {
-        const x = i;
-        const y = 200 + (x * 0.2); // Simple linear trend
-        return Math.round(y);
-    });
-    
-    ctx.chart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'Business Services',
-                data: data,
-                backgroundColor: function(context) {
-                    const ctx = context.chart.ctx;
-                    const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-                    gradient.addColorStop(0, '#6366F1');
-                    gradient.addColorStop(0.5, '#7C3AED');
-                    gradient.addColorStop(1, '#4F46E5');
-                    return gradient;
-                },
-                borderRadius: 12,
-                borderWidth: 0,
-                borderSkipped: false
-            }, {
-                label: 'Moving Average (3Q)',
-                data: movingAvg,
-                type: 'line',
-                borderColor: '#7C3AED',
-                borderWidth: 4,
-                fill: false,
-                tension: 0.6,
-                pointBackgroundColor: '#7C3AED',
-                pointBorderColor: '#fff',
-                pointBorderWidth: 3,
-                pointRadius: 6,
-                pointHoverRadius: 8,
-                borderDash: [8, 4],
-                pointStyle: 'circle',
-                pointHoverBackgroundColor: '#7C3AED',
-                pointHoverBorderColor: '#fff',
-                pointHoverBorderWidth: 3
-            }, {
-                label: 'Linear Trend',
-                data: linearTrend,
-                type: 'line',
-                borderColor: '#4F46E5',
-                borderWidth: 3,
-                fill: false,
-                tension: 0,
-                pointBackgroundColor: 'transparent',
-                pointBorderColor: 'transparent',
-                pointRadius: 0,
-                pointHoverRadius: 0,
-                borderDash: [2, 6],
-                pointStyle: 'line'
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: { 
-                    display: true,
-                    position: 'top',
-                    labels: {
-                        font: { size: 11, weight: '600' },
-                        padding: 15,
-                        usePointStyle: true,
-                        boxWidth: 12
-                    }
-                },
-                tooltip: {
-                    backgroundColor: 'rgba(0,0,0,0.85)',
-                    padding: 12,
-                    titleFont: { size: 13, weight: 'bold' },
-                    bodyFont: { size: 12 }
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    title: {
-                        display: true,
-                        text: 'Number of Deals',
-                        font: { size: 11, weight: '600' }
-                    },
-                    ticks: { 
-                        font: { size: 10 }
-                    },
-                    grid: { color: '#f3f4f6' }
-                },
-                x: {
-                    ticks: { font: { size: 10, weight: '600' } },
-                    grid: { display: false }
-                }
-            }
-        }
-    });
-}
-
-function createConsumerChart() {
-    const ctx = document.getElementById('consumerChart');
-    if (!ctx || ctx.chart) return;
-    
-    const data = [110, 78, 73, 88, 73, 73, 79, 79, 64, 83, 84, 88, 63];
-    const labels = ['Q2\'22', 'Q3\'22', 'Q4\'22', 'Q1\'23', 'Q2\'23', 'Q3\'23', 'Q4\'23', 'Q1\'24', 'Q2\'24', 'Q3\'24', 'Q4\'24', 'Q1\'25', 'Q2\'25'];
-    
-    // Calculate moving average
-    const movingAvg = data.map((_, i) => {
-        if (i < 2) return data[i];
-        return (data[i-2] + data[i-1] + data[i]) / 3;
-    });
-    
-    // Calculate linear trend
-    const linearTrend = data.map((_, i) => {
-        const x = i;
-        const y = 80 + (x * 0.1); // Simple linear trend
-        return Math.round(y);
-    });
-    
-    ctx.chart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'Consumer & Retail',
-                data: data,
-                backgroundColor: function(context) {
-                    const ctx = context.chart.ctx;
-                    const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-                    gradient.addColorStop(0, '#6366F1');
-                    gradient.addColorStop(0.5, '#7C3AED');
-                    gradient.addColorStop(1, '#4F46E5');
-                    return gradient;
-                },
-                borderRadius: 12,
-                borderWidth: 0,
-                borderSkipped: false
-            }, {
-                label: 'Moving Average (3Q)',
-                data: movingAvg,
-                type: 'line',
-                borderColor: '#7C3AED',
-                borderWidth: 4,
-                fill: false,
-                tension: 0.6,
-                pointBackgroundColor: '#7C3AED',
-                pointBorderColor: '#fff',
-                pointBorderWidth: 3,
-                pointRadius: 6,
-                pointHoverRadius: 8,
-                borderDash: [8, 4],
-                pointStyle: 'circle',
-                pointHoverBackgroundColor: '#7C3AED',
-                pointHoverBorderColor: '#fff',
-                pointHoverBorderWidth: 3
-            }, {
-                label: 'Linear Trend',
-                data: linearTrend,
-                type: 'line',
-                borderColor: '#4F46E5',
-                borderWidth: 3,
-                fill: false,
-                tension: 0,
-                pointBackgroundColor: 'transparent',
-                pointBorderColor: 'transparent',
-                pointRadius: 0,
-                pointHoverRadius: 0,
-                borderDash: [2, 6],
-                pointStyle: 'line'
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: { 
-                    display: true,
-                    position: 'top',
-                    labels: {
-                        font: { size: 11, weight: '600' },
-                        padding: 15,
-                        usePointStyle: true,
-                        boxWidth: 12
-                    }
-                },
-                tooltip: {
-                    backgroundColor: 'rgba(0,0,0,0.85)',
-                    padding: 12,
-                    titleFont: { size: 13, weight: 'bold' },
-                    bodyFont: { size: 12 }
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    title: {
-                        display: true,
-                        text: 'Number of Deals',
-                        font: { size: 11, weight: '600' }
-                    },
-                    ticks: { 
-                        font: { size: 10 }
-                    },
-                    grid: { color: '#f3f4f6' }
-                },
-                x: {
-                    ticks: { font: { size: 10, weight: '600' } },
-                    grid: { display: false }
-                }
-            }
-        }
-    });
+function closeDealModal() {
+    document.getElementById('dealModal').style.display = 'none';
 }
 </script>
-
-<!-- Chart.js for analytics -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-<!-- Twemoji for flag rendering -->
-<script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
 {% endblock %}

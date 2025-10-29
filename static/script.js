@@ -320,15 +320,26 @@ function getFirmFromTitle(title) {
     return null;
 }
 
+// Available PE firms with profiles
+const availablePEFirms = new Set([
+    'EQT', 'Nordic Capital', 'Triton Partners', 'Altor', 'Litorina', 
+    'Adelis Equity', 'Ratos', 'Summa Equity', 'Accent Equity', 'IK Partners', 
+    'Verdane', 'Valedo Partners', 'Alder', 'Bure Equity', 'CapMan', 
+    'Celero', 'Polaris', 'Nordstjernan', 'Norvestor', 'Helix Kapital', 'FSN Capital'
+]);
+
 function createRobustLogoHTML(firmName, size = '32px') {
     if (!firmName) return '';
+    
+    // Check if firm has a profile
+    const hasProfile = availablePEFirms.has(firmName);
     
     // Try exact match first
     if (firmLogos[firmName]) {
         const logoData = firmLogos[firmName];
         const escapedName = escapeHtml(firmName);
         
-        return `
+        const logoHTML = `
             <div class="news-firm-logo" style="position: relative; display: inline-block; margin-right: 8px;">
                 <img src="${logoData.primary}" 
                      alt="${escapedName}" 
@@ -339,6 +350,17 @@ function createRobustLogoHTML(firmName, size = '32px') {
                 </div>
             </div>
         `;
+        
+        // Make clickable only if firm has a profile
+        if (hasProfile) {
+            return `
+                <a href="/pe-firm/${encodeURIComponent(firmName)}" style="text-decoration: none; display: inline-block;">
+                    ${logoHTML}
+                </a>
+            `;
+        }
+        
+        return logoHTML;
     }
     
     // Try partial matches for related companies
@@ -346,15 +368,15 @@ function createRobustLogoHTML(firmName, size = '32px') {
         'Opti': 'FSN Capital',
         'Opti Group': 'FSN Capital',
         'Optigroup': 'FSN Capital',
-        'HENT': 'Ratos AB',
-        'LEDiL': 'Ratos AB',
-        'Semcon': 'Ratos AB',
-        'Aibel': 'Ratos AB',
-        'HL Display': 'Ratos AB',
-        'Adapteo': 'Ratos AB',
-        'Delete': 'Ratos AB',
-        'Plantasjen': 'Ratos AB',
-        'Expin': 'Ratos AB',
+        'HENT': 'Ratos',
+        'LEDiL': 'Ratos',
+        'Semcon': 'Ratos',
+        'Aibel': 'Ratos',
+        'HL Display': 'Ratos',
+        'Adapteo': 'Ratos',
+        'Delete': 'Ratos',
+        'Plantasjen': 'Ratos',
+        'Expin': 'Ratos',
         'NOBA': 'Nordic Capital',
         'Minerva': 'Nordic Capital',
         'Sensio': 'Nordic Capital',
@@ -365,12 +387,12 @@ function createRobustLogoHTML(firmName, size = '32px') {
         'One Inc': 'Nordic Capital',
         'ActiveViam': 'Nordic Capital',
         'Sesol': 'Nordic Capital',
-        'Circura': 'Adelis Equity Partners',
-        'Nordic BioSite': 'Adelis Equity Partners',
-        'SSI Diagnostica': 'Adelis Equity Partners',
-        'Kanari': 'Adelis Equity Partners',
-        'Nordomatic': 'Adelis Equity Partners',
-        'Axentia': 'Adelis Equity Partners',
+        'Circura': 'Adelis Equity',
+        'Nordic BioSite': 'Adelis Equity',
+        'SSI Diagnostica': 'Adelis Equity',
+        'Kanari': 'Adelis Equity',
+        'Nordomatic': 'Adelis Equity',
+        'Axentia': 'Adelis Equity',
         'Infobric': 'Summa Equity',
         'Lakers': 'Summa Equity',
         'Pumppulohja': 'Summa Equity',
@@ -380,11 +402,11 @@ function createRobustLogoHTML(firmName, size = '32px') {
         'Eltel': 'Triton Partners',
         'HiQ': 'Triton Partners',
         'Mecenat': 'IK Partners',
-        'Nordic Tyre': 'Axcel',
-        'Nordstjernan': 'Axcel',
-        'Aidian': 'Axcel',
-        'XPartners': 'Axcel',
-        'Mirovia': 'Axcel',
+        'Nordic Tyre': 'Accent Equity',
+        'Nordstjernan': 'Accent Equity',
+        'Aidian': 'Accent Equity',
+        'XPartners': 'Accent Equity',
+        'Mirovia': 'Accent Equity',
         'JM': 'CapMan',
         'Rexel': 'CapMan',
         'Scandic': 'CapMan',
@@ -565,8 +587,9 @@ function createRobustLogoHTML(firmName, size = '32px') {
         const logoData = firmLogos[relatedFirm];
         const escapedName = escapeHtml(firmName);
         const escapedRelated = escapeHtml(relatedFirm);
+        const hasProfile = availablePEFirms.has(relatedFirm);
         
-        return `
+        const logoHTML = `
             <div class="news-firm-logo" style="position: relative; display: inline-block; margin-right: 8px;" title="Related to ${escapedRelated}">
                 <img src="${logoData.primary}" 
                      alt="${escapedName} (${escapedRelated})" 
@@ -578,6 +601,17 @@ function createRobustLogoHTML(firmName, size = '32px') {
                 <div style="position: absolute; bottom: -2px; right: -2px; background: #fbbf24; color: #1f2937; border-radius: 50%; width: 12px; height: 12px; font-size: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold;">R</div>
             </div>
         `;
+        
+        // Make clickable only if firm has a profile
+        if (hasProfile) {
+            return `
+                <a href="/pe-firm/${encodeURIComponent(relatedFirm)}" style="text-decoration: none; display: inline-block;">
+                    ${logoHTML}
+                </a>
+            `;
+        }
+        
+        return logoHTML;
     }
     
     // Fallback: create a generic logo

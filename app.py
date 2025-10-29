@@ -105,6 +105,14 @@ def portfolio():
     return render_template('portfolio.html')
 
 
+@app.route('/company/<company_slug>')
+def company_detail(company_slug):
+    """
+    Individual company detail page
+    """
+    return render_template('company_detail.html', company_slug=company_slug)
+
+
 @app.route('/pe-firms')
 def pe_firms_list():
     """
@@ -1027,6 +1035,79 @@ def get_ai_investors():
             })
     except Exception as e:
         return jsonify({'success': False, 'message': str(e)}), 500
+
+
+@app.route('/api/company/<company_slug>', methods=['GET'])
+def get_company_by_slug(company_slug):
+    """
+    Get a portfolio company by slug
+    """
+    try:
+        # Load portfolio data
+        if not portfolio_storage:
+            if os.path.exists('portfolio_enriched.json'):
+                with open('portfolio_enriched.json', 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                    all_companies = data.get('companies', [])
+                    portfolio_storage.extend(all_companies)
+            elif os.path.exists('portfolio_complete.json'):
+                with open('portfolio_complete.json', 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                    all_companies = []
+                    for firm_name, firm_data in data.get('pe_firms', {}).items():
+                        companies = firm_data.get('companies', [])
+                        for company in companies:
+                            company['source'] = firm_name
+                            all_companies.append(company)
+                    portfolio_storage.extend(all_companies)
+        
+        # Decode slug to find company (slug format: company-name-source)
+        import urllib.parse
+        decoded_slug = urllib.parse.unquote(company_slug)
+        
+        # Try to find company by matching slug pattern
+        # Slug is typically: company-name-source-firm
+        parts = decoded_slug.split('-')
+        if len(parts) >= 2:
+            # Last part is usually the source
+            source_match = '-'.join(parts[-2:]) if len(parts) >= 2 else parts[-1]
+            company_name_parts = parts[:-2] if len(parts) > 2 else [parts[0]]
+            company_name_match = ' '.join(company_name_parts)
+            
+            # Try exact match first
+            for company in portfolio_storage:
+                slug_name = company.get('company', '').lower().replace(' ', '-').replace('&', 'and')
+                slug_source = company.get('source', '').lower().replace(' ', '-')
+                expected_slug = f"{slug_name}-{slug_source}"
+                
+                if decoded_slug.lower() == expected_slug:
+                    return jsonify({
+                        'success': True,
+                        'company': company
+                    })
+            
+            # Fallback: try fuzzy matching
+            for company in portfolio_storage:
+                company_name = company.get('company', '').lower()
+                source = company.get('source', '').lower()
+                
+                if (company_name_match.lower() in company_name and 
+                    source_match.lower() in source):
+                    return jsonify({
+                        'success': True,
+                        'company': company
+                    })
+        
+        return jsonify({
+            'success': False,
+            'message': 'Company not found'
+        }), 404
+        
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'message': str(e)
+        }), 500
 
 
 @app.route('/api/portfolio/research/<company_name>', methods=['GET'])

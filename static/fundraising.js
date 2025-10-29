@@ -106,9 +106,12 @@ function setupFilters() {
     const filterBtns = document.querySelectorAll('.filter-btn');
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
+            console.log('Filter button clicked:', btn.dataset.filter);
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             currentFilter = btn.dataset.filter;
+            console.log('Current filter set to:', currentFilter);
+            console.log('All fundraising data length:', allFundraising.length);
             displayFundraising(allFundraising);
         });
     });
@@ -118,6 +121,7 @@ function setupFilters() {
     if (vintageSelect) {
         vintageSelect.addEventListener('change', () => {
             currentVintageFilter = vintageSelect.value;
+            console.log('Vintage filter changed to:', currentVintageFilter);
             displayFundraising(allFundraising);
         });
     }
@@ -149,14 +153,21 @@ function setupTabs() {
 
 async function loadFundraisingData() {
     try {
+        console.log('Loading fundraising data...');
         const response = await fetch('/api/fundraising');
         const data = await response.json();
+        
+        console.log('Raw fundraising data:', data);
         
         if (data.fundraising) {
             // Only include rows that came from the Excel import
             allFundraising = data.fundraising.filter(f => (f.source || '').toLowerCase() === 'excel import');
+            console.log('After Excel import filter:', allFundraising.length);
+            
             // Filter to Nordic funds only (exclude US, Europe, Global, etc.)
             allFundraising = allFundraising.filter(f => isNordicFund(f));
+            console.log('After Nordic filter:', allFundraising.length);
+            
             // Derive normalized fields for display and sorting
             allFundraising = allFundraising.map(f => ({
                 ...f,
@@ -165,6 +176,10 @@ async function loadFundraisingData() {
                 _displayGeography: f.geography || f.geographic_focus || f.region || f.country || 'N/A',
                 _displayStrategy: f.strategy || f.core_industries || f.industry_verticals || 'N/A'
             }));
+            
+            console.log('Final allFundraising length:', allFundraising.length);
+            console.log('Sample fund:', allFundraising[0]);
+            
             displayFundraising(allFundraising);
             updateStats(data);
             populateVintageFilter(allFundraising);
@@ -220,25 +235,50 @@ function buildFirmNameVariants(...names) {
 function displayFundraising(fundraising) {
     const container = document.getElementById('fundraisingTable');
     
+    console.log('displayFundraising called with:', fundraising.length, 'funds');
+    console.log('Current filter:', currentFilter, 'Vintage filter:', currentVintageFilter);
+    
     // Filter data
     let filtered = fundraising;
     if (currentFilter !== 'all') {
-        filtered = fundraising.filter(f => f.status === currentFilter);
+        // Map filter values to actual status values in data
+        const statusMap = {
+            'Marketing': ['Marketing', 'In Market', 'Raising', 'First Close'],
+            'Closed': ['Closed', 'Liquidated']
+        };
+        
+        const targetStatuses = statusMap[currentFilter] || [currentFilter];
+        filtered = fundraising.filter(f => targetStatuses.includes(f.status));
+        console.log('After status filter:', filtered.length, 'funds');
+        console.log('Looking for statuses:', targetStatuses);
+        console.log('Available statuses in data:', [...new Set(fundraising.map(f => f.status))]);
     }
     if (currentVintageFilter !== 'all') {
         const sel = parseInt(currentVintageFilter, 10);
         filtered = filtered.filter(f => (f._vintageYear || 0) === sel);
+        console.log('After vintage filter:', filtered.length, 'funds');
     }
     
-    // Sort by most recent vintage first, then status (Marketing first), then name
+    // Sort by most recent vintage first, then status (active funds first), then name
     filtered.sort((a, b) => {
         const va = a._vintageYear || 0;
         const vb = b._vintageYear || 0;
         if (vb !== va) return vb - va; // desc by vintage
-        if (a.status === 'Marketing' && b.status !== 'Marketing') return -1;
-        if (a.status !== 'Marketing' && b.status === 'Marketing') return 1;
-        if (a.status === 'Closed' && b.status !== 'Closed') return 1;
-        if (a.status !== 'Closed' && b.status === 'Closed') return -1;
+        
+        // Define status priority: active funds first, then closed
+        const getStatusPriority = (status) => {
+            const activeStatuses = ['Marketing', 'In Market', 'Raising', 'First Close'];
+            const closedStatuses = ['Closed', 'Liquidated'];
+            
+            if (activeStatuses.includes(status)) return 1;
+            if (closedStatuses.includes(status)) return 3;
+            return 2; // other statuses
+        };
+        
+        const priorityA = getStatusPriority(a.status);
+        const priorityB = getStatusPriority(b.status);
+        
+        if (priorityA !== priorityB) return priorityA - priorityB;
         return (a.firm || '').localeCompare(b.firm || '');
     });
     
@@ -261,8 +301,16 @@ function displayFundraising(fundraising) {
     `;
     
     filtered.forEach(fund => {
-        const statusClass = fund.status === 'Closed' ? 'status-closed' : 
-                           fund.status === 'Marketing' ? 'status-marketing' : 'status-active';
+        const getStatusClass = (status) => {
+            const closedStatuses = ['Closed', 'Liquidated'];
+            const activeStatuses = ['Marketing', 'In Market', 'Raising', 'First Close'];
+            
+            if (closedStatuses.includes(status)) return 'status-closed';
+            if (activeStatuses.includes(status)) return 'status-marketing';
+            return 'status-active';
+        };
+        
+        const statusClass = getStatusClass(fund.status);
         
         // Use final_size if available, otherwise target_size
         const displaySize = fund.final_size && fund.final_size !== 'N/A' ? fund.final_size : fund.target_size;
@@ -279,7 +327,12 @@ function displayFundraising(fundraising) {
             <tr ${rowAttrs}>
                 <td>
                     <div style="display: flex; align-items: center; gap: 12px;">
-                        <img src="${initialLogo}" data-firm="${escapeHtml(fund.firm || '')}" class="fund-logo-img" alt="${escapeHtml(fund.firm || 'Firm')}" style="width: 32px; height: 32px; object-fit: contain; border-radius: 4px; background:#fff" onerror="this.onerror=null;this.src='${fallbackLogo}';">
+                        ${isKnownFirm ? 
+                            `<a href="/pe-firm/${encodeURIComponent(fund.firm)}" style="text-decoration: none; display: inline-block;" onclick="event.stopPropagation();">
+                                <img src="${initialLogo}" data-firm="${escapeHtml(fund.firm || '')}" class="fund-logo-img" alt="${escapeHtml(fund.firm || 'Firm')}" style="width: 32px; height: 32px; object-fit: contain; border-radius: 4px; background:#fff; cursor: pointer; transition: transform 0.2s;" onerror="this.onerror=null;this.src='${fallbackLogo}';" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                            </a>` : 
+                            `<img src="${initialLogo}" data-firm="${escapeHtml(fund.firm || '')}" class="fund-logo-img" alt="${escapeHtml(fund.firm || 'Firm')}" style="width: 32px; height: 32px; object-fit: contain; border-radius: 4px; background:#fff" onerror="this.onerror=null;this.src='${fallbackLogo}';">`
+                        }
                         ${isKnownFirm ? `<a href="/pe-firm/${encodeURIComponent(fund.firm)}" style="text-decoration:none; color:inherit; cursor:pointer;" onclick="event.stopPropagation();"><strong>${escapeHtml(fund.firm)}</strong></a>` : `<strong>${escapeHtml(fund.firm)}</strong>`}
                     </div>
                 </td>
@@ -295,6 +348,7 @@ function displayFundraising(fundraising) {
     
     html += '</tbody></table></div>';
     container.innerHTML = html;
+    console.log('Rendered table with', filtered.length, 'rows');
     // After rendering, try to replace any remaining with mapped firm logos
     enhanceWithMappedFirmLogos();
 }
