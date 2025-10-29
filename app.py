@@ -631,113 +631,123 @@ def get_pe_firm_detail(firm_name):
     Get detailed information about a specific PE firm with real news integration
     """
     try:
-        # Try enriched database first
-        if os.path.exists('portfolio_enriched.json'):
-            with open('portfolio_enriched.json', 'r', encoding='utf-8') as f:
-                data = json.load(f)
-                all_companies = data.get('companies', [])
-                
-                # Filter companies for this firm
-                firm_companies = [c for c in all_companies if c.get('source') == firm_name]
-                
-                if firm_companies:
-                    # Get firm metadata from pe_firms_database if available
-                    firm_metadata = {}
-                    if os.path.exists('pe_firms_database.json'):
-                        with open('pe_firms_database.json', 'r', encoding='utf-8') as pf:
-                            pe_data = json.load(pf)
-                            firm_metadata = pe_data.get('pe_firms', {}).get(firm_name, {})
-                    
-                    # Get real news for this firm
-                    real_news = []
-                    seen_articles = set()  # Track articles we've already added to avoid duplicates
-                    
-                    if os.path.exists('pe_news_database.json'):
-                        with open('pe_news_database.json', 'r', encoding='utf-8') as nf:
-                            news_data = json.load(nf)
-                            all_news = news_data.get('news', [])
-                            
-                            # Filter news for this firm (exact match ONLY on firm field)
-                            for article in all_news:
-                                article_firm = article.get('firm', '')
-                                article_title = article.get('title', '')
-                                article_desc = article.get('description', '')
-                                article_link = article.get('link', '')
-                                
-                                # Use the link as a unique identifier to avoid duplicates
-                                article_id = article_link
-                                
-                                # PRIORITY 1: Direct firm match from the 'firm' field
-                                if article_firm and article_firm.lower() == firm_name.lower():
-                                    if article_id not in seen_articles:
-                                        real_news.append(article)
-                                        seen_articles.add(article_id)
-                                        continue
-                                
-                                # PRIORITY 2: Check if article mentions portfolio companies (more selective)
-                                for company in firm_companies:
-                                    company_name = company.get('company', '')
-                                    if not company_name:
-                                        continue
-                                    
-                                    # More precise matching: company name should be a complete word match
-                                    # and not just a substring of another company name
-                                    company_lower = company_name.lower()
-                                    title_lower = article_title.lower()
-                                    desc_lower = article_desc.lower()
-                                    
-                                    # Check for exact word boundaries to avoid false matches
-                                    import re
-                                    pattern = r'\b' + re.escape(company_lower) + r'\b'
-                                    
-                                    if (re.search(pattern, title_lower) or re.search(pattern, desc_lower)):
-                                        # Additional check: make sure it's not about a different company
-                                        # Skip if the article is clearly about a different firm
-                                        if article_firm and article_firm.lower() != firm_name.lower():
-                                            continue
-                                        
-                                        if article_id not in seen_articles:
-                                            # Add firm context to the article
-                                            article_copy = article.copy()
-                                            article_copy['related_firm'] = firm_name
-                                            article_copy['related_company'] = company_name
-                                            real_news.append(article_copy)
-                                            seen_articles.add(article_id)
-                                            break  # Only add once per company match
-                    
-                    # Sort news by date (most recent first)
-                    real_news.sort(key=lambda x: x.get('date', ''), reverse=True)
-                    
-                    # Build firm data structure with real news
-                    firm_data = {
-                        'name': firm_name,
-                        'companies': firm_companies,
-                        'company_count': len(firm_companies),
-                        'real_news': real_news[:10],  # Latest 10 news items
-                        'total_news_count': len(real_news),
-                        **firm_metadata  # Add any metadata from old database
-                    }
-                    
-                    return jsonify({
-                        'success': True,
-                        'firm': firm_data
-                    })
+        # Get firm metadata from pe_firms_database first
+        firm_metadata = {}
+        if os.path.exists('pe_firms_database.json'):
+            with open('pe_firms_database.json', 'r', encoding='utf-8') as pf:
+                pe_data = json.load(pf)
+                firm_metadata = pe_data.get('pe_firms', {}).get(firm_name, {})
         
-        # Fallback to old database
-        with open('pe_firms_database.json', 'r', encoding='utf-8') as f:
-            data = json.load(f)
-            firm_data = data.get('pe_firms', {}).get(firm_name)
+        # For Altor, prioritize portfolio_companies from pe_firms_database
+        if firm_name == 'Altor' and firm_metadata.get('portfolio_companies'):
+            firm_companies = []
+            for pc in firm_metadata['portfolio_companies']:
+                # Convert portfolio_companies format to enriched format
+                company_data = {
+                    'company': pc.get('name', ''),
+                    'sector': pc.get('sector', ''),
+                    'market': pc.get('country', ''),
+                    'entry': '',
+                    'status': 'Active',
+                    'source': firm_name,
+                    'website': pc.get('website', ''),
+                    'logo_url': pc.get('logo', ''),
+                    'description': pc.get('description', ''),
+                    'headquarters': pc.get('country', ''),
+                    'deal_size': '',
+                    'fund': '',
+                    'geography': 'Nordic' if pc.get('country') in ['Sweden', 'Denmark', 'Norway', 'Finland'] else 'International'
+                }
+                firm_companies.append(company_data)
+        else:
+            # Try enriched database for other firms
+            firm_companies = []
+            if os.path.exists('portfolio_enriched.json'):
+                with open('portfolio_enriched.json', 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                    all_companies = data.get('companies', [])
+                    firm_companies = [c for c in all_companies if c.get('source') == firm_name]
+        
+        if firm_companies or firm_metadata:
+            # Get real news for this firm
+            real_news = []
+            seen_articles = set()  # Track articles we've already added to avoid duplicates
             
-            if firm_data:
-                return jsonify({
-                    'success': True,
-                    'firm': firm_data
-                })
-            else:
-                return jsonify({
-                    'success': False,
-                    'message': 'Firm not found'
-                }), 404
+            if os.path.exists('pe_news_database.json'):
+                with open('pe_news_database.json', 'r', encoding='utf-8') as nf:
+                    news_data = json.load(nf)
+                    all_news = news_data.get('news', [])
+                    
+                    # Filter news for this firm (exact match ONLY on firm field)
+                    for article in all_news:
+                        article_firm = article.get('firm', '')
+                        article_title = article.get('title', '')
+                        article_desc = article.get('description', '')
+                        article_link = article.get('link', '')
+                        
+                        # Use the link as a unique identifier to avoid duplicates
+                        article_id = article_link
+                        
+                        # PRIORITY 1: Direct firm match from the 'firm' field
+                        if article_firm and article_firm.lower() == firm_name.lower():
+                            if article_id not in seen_articles:
+                                real_news.append(article)
+                                seen_articles.add(article_id)
+                                continue
+                        
+                        # PRIORITY 2: Check if article mentions portfolio companies (more selective)
+                        for company in firm_companies:
+                            company_name = company.get('company', '')
+                            if not company_name:
+                                continue
+                            
+                            # More precise matching: company name should be a complete word match
+                            # and not just a substring of another company name
+                            company_lower = company_name.lower()
+                            title_lower = article_title.lower()
+                            desc_lower = article_desc.lower()
+                            
+                            # Check for exact word boundaries to avoid false matches
+                            import re
+                            pattern = r'\b' + re.escape(company_lower) + r'\b'
+                            
+                            if (re.search(pattern, title_lower) or re.search(pattern, desc_lower)):
+                                # Additional check: make sure it's not about a different company
+                                # Skip if the article is clearly about a different firm
+                                if article_firm and article_firm.lower() != firm_name.lower():
+                                    continue
+                                
+                                if article_id not in seen_articles:
+                                    # Add firm context to the article
+                                    article_copy = article.copy()
+                                    article_copy['related_firm'] = firm_name
+                                    article_copy['related_company'] = company_name
+                                    real_news.append(article_copy)
+                                    seen_articles.add(article_id)
+                                    break  # Only add once per company match
+            
+            # Sort news by date (most recent first)
+            real_news.sort(key=lambda x: x.get('date', ''), reverse=True)
+            
+            # Build firm data structure with real news
+            firm_data = {
+                'name': firm_name,
+                'companies': firm_companies,
+                'company_count': len(firm_companies),
+                'real_news': real_news[:10],  # Latest 10 news items
+                'total_news_count': len(real_news),
+                **firm_metadata  # Add any metadata from database
+            }
+            
+            return jsonify({
+                'success': True,
+                'firm': firm_data
+            })
+        else:
+            return jsonify({
+                'success': False,
+                'message': 'Firm not found'
+            }), 404
     except Exception as e:
         return jsonify({'success': False, 'message': str(e)}), 500
 
