@@ -638,8 +638,8 @@ def get_pe_firm_detail(firm_name):
                 pe_data = json.load(pf)
                 firm_metadata = pe_data.get('pe_firms', {}).get(firm_name, {})
         
-        # For Altor, prioritize portfolio_companies from pe_firms_database
-        if firm_name == 'Altor' and firm_metadata.get('portfolio_companies'):
+        # For Altor and Adelis Equity, prioritize portfolio_companies from pe_firms_database
+        if firm_name in ['Altor', 'Adelis Equity'] and firm_metadata.get('portfolio_companies'):
             firm_companies = []
             for pc in firm_metadata['portfolio_companies']:
                 # Convert portfolio_companies format to enriched format
@@ -647,7 +647,7 @@ def get_pe_firm_detail(firm_name):
                     'company': pc.get('name', ''),
                     'sector': pc.get('sector', ''),
                     'market': pc.get('country', ''),
-                    'entry': '',
+                    'entry': pc.get('entry_year', ''),
                     'status': 'Active',
                     'source': firm_name,
                     'website': pc.get('website', ''),

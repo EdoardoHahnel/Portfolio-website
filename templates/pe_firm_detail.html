@@ -426,8 +426,8 @@ async function loadFirmPortfolio(firmName) {
             firmCompanies = data.companies.filter(c => c.source === firmName && (c.status !== 'Exited'));
         }
 
-        // Fallback or override for Altor: use pe_firms_database portfolio_companies
-        if (firmName === 'Altor' || firmCompanies.length === 0) {
+        // Fallback or override for Altor and Adelis Equity: use pe_firms_database portfolio_companies
+        if ((firmName === 'Altor' || firmName === 'Adelis Equity') || firmCompanies.length === 0) {
             try {
                 const peResp = await fetch('/api/pe-firms');
                 const peData = await peResp.json();

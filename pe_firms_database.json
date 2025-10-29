@@ -1131,326 +1131,236 @@
       ],
       "portfolio_companies": [
         {
-          "name": "Retta",
-          "sector": "Business Services",
-          "country": "Sweden",
-          "logo": "https://logo.clearbit.com/retta.se",
-          "description": "Leading Nordic business services provider"
-        },
-        {
           "name": "Bryntum",
-          "sector": "Technology & Software",
+          "sector": "Tech & Software",
           "country": "Sweden",
           "logo": "https://logo.clearbit.com/bryntum.com",
-          "description": "JavaScript UI components for web applications"
+          "description": "Leading provider of advanced scheduling web-components",
+          "entry_year": "2025"
         },
         {
-          "name": "Circura Denmark",
-          "sector": "Construction Services",
+          "name": "Circura Danmark",
+          "sector": "Business Services",
           "country": "Denmark",
           "logo": "https://logo.clearbit.com/circura.dk",
-          "description": "Specialized construction and renovation services"
+          "description": "Building rehabilitation services in Denmark",
+          "entry_year": "2025"
         },
         {
-          "name": "Btwentyfour",
-          "sector": "Business Services",
-          "country": "Nordic",
-          "logo": "https://logo.clearbit.com/btwentyfour.com",
-          "description": "24/7 business process outsourcing"
+          "name": "EITCO",
+          "sector": "Tech & Software",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/eitco.de",
+          "description": "Enterprise Content Management specialist",
+          "entry_year": "2025"
         },
         {
           "name": "Cedra",
-          "sector": "Healthcare & Pharmacy",
-          "country": "Nordic",
-          "logo": "https://logo.clearbit.com/cedra.se",
-          "description": "Pharmacy chain and healthcare services"
-        },
-        {
-          "name": "Citco",
           "sector": "Business Services",
-          "country": "Nordic",
-          "logo": "https://logo.clearbit.com/citco.se",
-          "description": "Corporate services and administration"
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/cedra.se",
+          "description": "Leading provider of audit and advisory services",
+          "entry_year": "2025"
         },
         {
-          "name": "Hedvig",
-          "sector": "Insurance & Fintech",
+          "name": "Retta",
+          "sector": "Business Services",
+          "country": "Finland & Sweden",
+          "logo": "https://logo.clearbit.com/retta.se",
+          "description": "B2B real estate management services",
+          "entry_year": "2025"
+        },
+        {
+          "name": "Btwentyfour",
+          "sector": "Tech & Software",
           "country": "Sweden",
-          "logo": "https://logo.clearbit.com/hedvig.com",
-          "description": "Digital insurance platform with AI-powered claims"
+          "logo": "https://logo.clearbit.com/btwentyfour.com",
+          "description": "Supply chain data automation software platform",
+          "entry_year": "2024"
+        },
+        {
+          "name": "IonOpticks",
+          "sector": "Healthcare & Life Sciences",
+          "country": "Australia",
+          "logo": "https://logo.clearbit.com/ionopticks.com",
+          "description": "HPLC columns for proteomics research",
+          "entry_year": "2024"
         },
         {
           "name": "Evallic",
-          "sector": "Technology & Software",
-          "country": "Nordic",
-          "logo": "https://logo.clearbit.com/evallic.com",
-          "description": "Enterprise software solutions"
-        },
-        {
-          "name": "Ionopticks",
-          "sector": "Manufacturing",
+          "sector": "Tech & Software",
           "country": "Sweden",
-          "logo": "https://logo.clearbit.com/ionopticks.com",
-          "description": "Precision optical components manufacturer"
+          "logo": "https://logo.clearbit.com/evallic.com",
+          "description": "Home to Leading European Defence Technologies",
+          "entry_year": "2024"
         },
         {
-          "name": "Avidly",
-          "sector": "Marketing Services",
-          "country": "Finland",
-          "logo": "https://logo.clearbit.com/avidlyagency.com",
-          "description": "Digital marketing and communications agency"
-        },
-        {
-          "name": "netIP",
-          "sector": "IT Services",
-          "country": "Denmark",
-          "logo": "https://logo.clearbit.com/netip.dk",
-          "description": "Managed IT services and cloud solutions"
+          "name": "Hedvig",
+          "sector": "Business Services",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/hedvig.com",
+          "description": "Fast-growing digital insurance company",
+          "entry_year": "2023"
         },
         {
           "name": "Aderian",
           "sector": "Business Services",
-          "country": "Nordic",
+          "country": "Sweden",
           "logo": "https://logo.clearbit.com/aderian.com",
-          "description": "Professional services and consulting"
+          "description": "IT services for SME customers",
+          "entry_year": "2023"
+        },
+        {
+          "name": "NetIP",
+          "sector": "Business Services",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/netip.dk",
+          "description": "Managed IT services",
+          "entry_year": "2022"
+        },
+        {
+          "name": "Avidly",
+          "sector": "Business Services",
+          "country": "Finland",
+          "logo": "https://logo.clearbit.com/avidlyagency.com",
+          "description": "Marketing technology services",
+          "entry_year": "2022"
+        },
+        {
+          "name": "Håndverkskompaniet",
+          "sector": "Business Services",
+          "country": "Norway",
+          "logo": "https://logo.clearbit.com/haandverkskompaniet.no",
+          "description": "Building rehabilitation services",
+          "entry_year": "2022"
+        },
+        {
+          "name": "UniSea",
+          "sector": "Tech & Software",
+          "country": "Norway",
+          "logo": "https://logo.clearbit.com/unisea.com",
+          "description": "Maritime fleet-management SaaS",
+          "entry_year": "2022"
         },
         {
           "name": "Diakrit",
-          "sector": "Healthcare Services",
-          "country": "Norway",
-          "logo": "https://logo.clearbit.com/diakrit.no",
-          "description": "Healthcare diagnostics and laboratory services"
-        },
-        {
-          "name": "Unisea",
           "sector": "Business Services",
-          "country": "Nordic",
-          "logo": "https://logo.clearbit.com/unisea.com",
-          "description": "Unified business service platform"
-        },
-        {
-          "name": "Vokstr",
-          "sector": "Technology & Software",
-          "country": "Nordic",
-          "logo": "https://logo.clearbit.com/vokstr.com",
-          "description": "Voice and communication technology"
-        },
-        {
-          "name": "Dlvry",
-          "sector": "Logistics Tech",
-          "country": "Nordic",
-          "logo": "https://logo.clearbit.com/dlvry.com",
-          "description": "Last-mile delivery optimization platform"
-        },
-        {
-          "name": "QP Westpack",
-          "sector": "Packaging Manufacturing",
-          "country": "Denmark",
-          "logo": "https://logo.clearbit.com/westpack.dk",
-          "description": "Custom packaging solutions for luxury goods"
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/diakrit.se",
+          "description": "Digital property marketing content",
+          "entry_year": "2022"
         },
         {
           "name": "Pixelz",
-          "sector": "Digital Services",
-          "country": "Sweden",
-          "logo": "https://logo.clearbit.com/pixelz.com",
-          "description": "E-commerce image editing and optimization"
-        },
-        {
-          "name": "Europe BioSite",
-          "sector": "Environmental Services",
+          "sector": "Business Services",
           "country": "Denmark",
-          "logo": "https://logo.clearbit.com/europebiosite.com",
-          "description": "Environmental consulting and bio-remediation"
+          "logo": "https://logo.clearbit.com/pixelz.com",
+          "description": "AI-powered post-production for fashion assets",
+          "entry_year": "2022"
         },
         {
-          "name": "Remount",
-          "sector": "Construction Services",
-          "country": "Nordic",
-          "logo": "https://logo.clearbit.com/remount.com",
-          "description": "Construction and infrastructure services"
+          "name": "Westpack",
+          "sector": "Industrial",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/westpack.dk",
+          "description": "Custom packaging for jewelry, watches & eyewear",
+          "entry_year": "2022"
+        },
+        {
+          "name": "DLVRY",
+          "sector": "Business Services",
+          "country": "Norway",
+          "logo": "https://logo.clearbit.com/dlvry.no",
+          "description": "Foodservice supplier focused on local markets",
+          "entry_year": "2021"
         },
         {
           "name": "Circura",
-          "sector": "Construction Services",
+          "sector": "Business Services",
           "country": "Sweden",
           "logo": "https://logo.clearbit.com/circura.se",
-          "description": "Construction and renovation services"
+          "description": "Building rehabilitation services",
+          "entry_year": "2021"
         },
         {
-          "name": "Säkra",
-          "sector": "Insurance Broker",
+          "name": "Renevo",
+          "sector": "Business Services",
+          "country": "Finland",
+          "logo": "https://logo.clearbit.com/renevo.fi",
+          "description": "Building renovation services",
+          "entry_year": "2021"
+        },
+        {
+          "name": "Europa Biosite",
+          "sector": "Healthcare & Life Sciences",
           "country": "Sweden",
-          "logo": "https://logo.clearbit.com/sakra.se",
-          "description": "Leading pension and insurance broker"
+          "logo": "https://logo.clearbit.com/europabiosite.com",
+          "description": "Life-science research product distributor",
+          "entry_year": "2021"
         },
         {
           "name": "Valamis",
-          "sector": "EdTech",
+          "sector": "Tech & Software",
           "country": "Finland",
           "logo": "https://logo.clearbit.com/valamis.com",
-          "description": "Learning experience platform and digital education"
-        },
-        {
-          "name": "Kanari",
-          "sector": "Business Services",
-          "country": "Nordic",
-          "logo": "https://logo.clearbit.com/kanari.com",
-          "description": "Business intelligence and analytics services"
-        },
-        {
-          "name": "RO Capital",
-          "sector": "Financial Services",
-          "country": "Nordic",
-          "logo": "https://logo.clearbit.com/rocapital.com",
-          "description": "Investment and financial advisory services"
-        },
-        {
-          "name": "Mobilhouse",
-          "sector": "Modular Buildings",
-          "country": "Denmark",
-          "logo": "https://logo.clearbit.com/mobilhouse.dk",
-          "description": "Modular construction and temporary buildings"
+          "description": "Corporate learning platform",
+          "entry_year": "2021"
         },
         {
           "name": "Axentia",
           "sector": "Business Services",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/axentia.se",
+          "description": "Display systems for public transport",
+          "entry_year": "2020"
+        },
+        {
+          "name": "Ropo Capital",
+          "sector": "Business Services",
+          "country": "Finland",
+          "logo": "https://logo.clearbit.com/ropo.fi",
+          "description": "Tech-enabled invoice lifecycle management",
+          "entry_year": "2019"
+        },
+        {
+          "name": "Generaxion",
+          "sector": "Business Services",
           "country": "Denmark",
-          "logo": "https://logo.clearbit.com/axentia.com",
-          "description": "Professional services and consulting"
+          "logo": "https://logo.clearbit.com/generaxion.com",
+          "description": "Digital marketing in the Nordics",
+          "entry_year": "2018"
+        },
+        {
+          "name": "HVD Group",
+          "sector": "Tech & Software",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/hvdgroup.se",
+          "description": "ERP/FSM/project software for construction & skilled trades",
+          "entry_year": "2018"
         },
         {
           "name": "Didriksons",
-          "sector": "Consumer & Apparel",
+          "sector": "Consumer",
           "country": "Sweden",
           "logo": "https://logo.clearbit.com/didriksons.com",
-          "description": "Outdoor clothing and weather protection"
+          "description": "Functional, sustainable everyday outdoor jackets",
+          "entry_year": "2018"
         },
         {
-          "name": "Aceve",
+          "name": "Presto",
           "sector": "Business Services",
-          "country": "Nordic",
-          "logo": "https://logo.clearbit.com/aceve.com",
-          "description": "Business acceleration and venture services"
-        },
-        {
-          "name": "Generation",
-          "sector": "Business Services",
-          "country": "Nordic",
-          "logo": "https://logo.clearbit.com/generation.se",
-          "description": "Next-generation business services"
-        },
-        {
-          "name": "Knightex",
-          "sector": "Business Services",
-          "country": "Nordic",
-          "logo": "https://logo.clearbit.com/knightex.com",
-          "description": "Executive search and talent services"
-        },
-        {
-          "name": "Valtti",
-          "sector": "Technology & Software",
-          "country": "Finland",
-          "logo": "https://logo.clearbit.com/valtti.fi",
-          "description": "Software development and IT services"
-        },
-        {
-          "name": "Presto Brandsäkerhet",
-          "sector": "Safety & Training",
           "country": "Sweden",
           "logo": "https://logo.clearbit.com/presto.se",
-          "description": "Fire safety equipment and training leader"
-        },
-        {
-          "name": "Norddentic",
-          "sector": "Dental Services",
-          "country": "Nordic",
-          "logo": "https://logo.clearbit.com/norddentic.com",
-          "description": "Dental care and oral health services"
-        },
-        {
-          "name": "Mikelti",
-          "sector": "Business Services",
-          "country": "Nordic",
-          "logo": "https://logo.clearbit.com/mikelti.com",
-          "description": "Business process management and consulting"
-        },
-        {
-          "name": "Quattro Group",
-          "sector": "Construction Services",
-          "country": "Denmark",
-          "logo": "https://logo.clearbit.com/quattrogroup.dk",
-          "description": "Multi-service construction and maintenance"
-        },
-        {
-          "name": "AddPro",
-          "sector": "Installation Services",
-          "country": "Sweden",
-          "logo": "https://logo.clearbit.com/addpro.se",
-          "description": "Professional installation and technical services"
+          "description": "Leading fire safety & training provider",
+          "entry_year": "2018"
         },
         {
           "name": "SSI Diagnostica",
-          "sector": "Healthcare & Diagnostics",
+          "sector": "Healthcare & Life Sciences",
           "country": "Denmark",
           "logo": "https://logo.clearbit.com/ssidiagnostica.com",
-          "description": "In vitro diagnostics and medical testing"
-        },
-        {
-          "name": "IT Relation",
-          "sector": "IT Services",
-          "country": "Denmark",
-          "logo": "https://logo.clearbit.com/it-relation.dk",
-          "description": "IT consulting and digital transformation"
-        },
-        {
-          "name": "Nordomatic",
-          "sector": "Building Automation",
-          "country": "Sweden",
-          "logo": "https://logo.clearbit.com/nordomatic.com",
-          "description": "Building automation and energy management leader"
-        },
-        {
-          "name": "Green Team Group",
-          "sector": "Agriculture & Consumer",
-          "country": "Denmark",
-          "logo": "https://logo.clearbit.com/greenteam.dk",
-          "description": "Premium Christmas tree producer and retailer"
-        },
-        {
-          "name": "Puuilo",
-          "sector": "Retail",
-          "country": "Finland",
-          "logo": "https://logo.clearbit.com/puuilo.fi",
-          "description": "DIY and home improvement discount retailer"
-        },
-        {
-          "name": "Intersport Sweden",
-          "sector": "Retail",
-          "country": "Sweden",
-          "logo": "https://logo.clearbit.com/intersport.se",
-          "description": "Leading sports and outdoor equipment retailer"
-        },
-        {
-          "name": "Logent",
-          "sector": "Logistics",
-          "country": "Sweden/Norway",
-          "logo": "https://logo.clearbit.com/logent.se",
-          "description": "Logistics and supply chain management services"
-        },
-        {
-          "name": "NGI",
-          "sector": "Manufacturing",
-          "country": "Sweden",
-          "logo": "https://logo.clearbit.com/ngi-global.com",
-          "description": "Hygienic leveling systems for food industry"
-        },
-        {
-          "name": "Med Group",
-          "sector": "Healthcare Services",
-          "country": "Finland",
-          "logo": "https://logo.clearbit.com/medgroup.fi",
-          "description": "Comprehensive dental and home care services"
+          "description": "Infectious-disease IVD & vaccine QC",
+          "entry_year": "2016"
         }
       ]
     },
