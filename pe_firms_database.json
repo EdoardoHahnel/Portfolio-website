@@ -432,6 +432,316 @@
         { "year": 2025, "event": "Marshall Group exit", "description": "Signs to divest Marshall Group to HSG" },
         { "year": 2025, "event": "IMBOX investment", "description": "Invests in IMBOX with founder and family partners" },
         { "year": 2025, "event": "AI partnership", "description": "Advances AI leadership via strategic partnership with WovenLight" }
+      ],
+      "portfolio_companies": [
+        {
+          "name": "Aarke",
+          "sector": "Consumer & Lifestyle",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/aarke.com",
+          "description": "A tap water revolution"
+        },
+        {
+          "name": "Aira",
+          "sector": "Clean Energy & Technology",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/aira.com",
+          "description": "Clean energy-tech to every home"
+        },
+        {
+          "name": "Audiowell",
+          "sector": "Consumer & Technology",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/audiowell.com",
+          "description": "Every mood has its own music"
+        },
+        {
+          "name": "C WorldWide",
+          "sector": "Financial Services",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/cworldwide.com",
+          "description": "Leading global active asset manager"
+        },
+        {
+          "name": "CCM Hockey",
+          "sector": "Sports & Consumer",
+          "country": "Canada",
+          "logo": "https://logo.clearbit.com/ccmhockey.com",
+          "description": "Equipping hockey lovers across the globe"
+        },
+        {
+          "name": "Circulose",
+          "sector": "Sustainable Materials",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/circulose.com",
+          "description": "Making fashion circular"
+        },
+        {
+          "name": "Dale of Norway",
+          "sector": "Consumer & Fashion",
+          "country": "Norway",
+          "logo": "https://logo.clearbit.com/daleofnorway.com",
+          "description": "Making outdoor adventures enjoyable"
+        },
+        {
+          "name": "Eidra",
+          "sector": "Digital Transformation",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/eidra.com",
+          "description": "Creating growth by digital transformation of brands and businesses"
+        },
+        {
+          "name": "Eleda",
+          "sector": "Infrastructure",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/eleda.com",
+          "description": "Infrastructure built for the future"
+        },
+        {
+          "name": "F24",
+          "sector": "Digital Solutions",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/f24.com",
+          "description": "Improving business resilience with digital solutions"
+        },
+        {
+          "name": "Faun Gruppen",
+          "sector": "Consumer & Real Estate",
+          "country": "Norway",
+          "logo": "https://logo.clearbit.com/faun.no",
+          "description": "A 'hytte' for everyone"
+        },
+        {
+          "name": "Flex IT",
+          "sector": "Technology & Circular Economy",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/flexit.se",
+          "description": "Making hardware circular"
+        },
+        {
+          "name": "FLSmidth",
+          "sector": "Industrial & Manufacturing",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/flsmidth.com",
+          "description": "Driving sustainable productivity"
+        },
+        {
+          "name": "Gunnebo",
+          "sector": "Security Technology",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/gunnebo.com",
+          "description": "For a safer world"
+        },
+        {
+          "name": "Haarslev Industries",
+          "sector": "Industrial & Manufacturing",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/haarslev.com",
+          "description": "Taking care of tomorrow's production process"
+        },
+        {
+          "name": "Hamlet Protein",
+          "sector": "Food & Agriculture",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/hamletprotein.com",
+          "description": "Healthy animals – healthy business"
+        },
+        {
+          "name": "iDeal of Sweden",
+          "sector": "Consumer & Design",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/idealofsweden.com",
+          "description": "Award winning Swedish design since 2013"
+        },
+        {
+          "name": "Imbox",
+          "sector": "Consumer & Fashion",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/imbox.com",
+          "description": "Redefining shoe protection"
+        },
+        {
+          "name": "Iyuno",
+          "sector": "Media & Entertainment",
+          "country": "Global",
+          "logo": "https://logo.clearbit.com/iyuno.com",
+          "description": "Bringing you the stories of the world"
+        },
+        {
+          "name": "KAEFER",
+          "sector": "Industrial Services",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/kaefer.com",
+          "description": "The most reliable and efficient provider of technical industrial services"
+        },
+        {
+          "name": "Kommunalkredit",
+          "sector": "Financial Services",
+          "country": "Austria",
+          "logo": "https://logo.clearbit.com/kommunalkredit.at",
+          "description": "Financing the green transition"
+        },
+        {
+          "name": "Ludvig & Co",
+          "sector": "Financial Services",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/ludvigco.se",
+          "description": "Sweden's most local advisors"
+        },
+        {
+          "name": "Mandatum",
+          "sector": "Financial Services",
+          "country": "Finland",
+          "logo": "https://logo.clearbit.com/mandatum.com",
+          "description": "Combining expertise in money and life"
+        },
+        {
+          "name": "Meltwater",
+          "sector": "Technology & Software",
+          "country": "Norway",
+          "logo": "https://logo.clearbit.com/meltwater.com",
+          "description": "Helping you understand and influence the world"
+        },
+        {
+          "name": "Multi-Wing",
+          "sector": "Industrial & Manufacturing",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/multi-wing.com",
+          "description": "Shaping airflow for future generations"
+        },
+        {
+          "name": "Network of Design",
+          "sector": "Consumer & Design",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/networkofdesign.com",
+          "description": "Bringing unique Scandinavian design to every corner of the world"
+        },
+        {
+          "name": "Nordic Leisure Travel Group",
+          "sector": "Travel & Leisure",
+          "country": "Nordic",
+          "logo": "https://logo.clearbit.com/nltg.se",
+          "description": "Best weeks of the year leaving long-lasting memories"
+        },
+        {
+          "name": "Nordic Climate Group",
+          "sector": "Environmental Services",
+          "country": "Nordic",
+          "logo": "https://logo.clearbit.com/nordicclimategroup.com",
+          "description": "For a better climate"
+        },
+        {
+          "name": "Norican Group",
+          "sector": "Industrial & Manufacturing",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/norican.com",
+          "description": "Shaping industry"
+        },
+        {
+          "name": "O'Learys Group",
+          "sector": "Consumer & Entertainment",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/olearys.se",
+          "description": "Creating experiences worth remembering"
+        },
+        {
+          "name": "OptiGroup",
+          "sector": "Business Services",
+          "country": "Nordic",
+          "logo": "https://logo.clearbit.com/optigroup.com",
+          "description": "All essentials for business"
+        },
+        {
+          "name": "Orchid Orthopedic Solutions",
+          "sector": "Healthcare & Medical Devices",
+          "country": "USA",
+          "logo": "https://logo.clearbit.com/orchidortho.com",
+          "description": "Bringing medical products to life"
+        },
+        {
+          "name": "Permascand",
+          "sector": "Industrial & Manufacturing",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/permascand.com",
+          "description": "Electrochemical solutions for hard to abate industries"
+        },
+        {
+          "name": "QNTM Group",
+          "sector": "Technology & Software",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/qntmgroup.com",
+          "description": "Accelerating growth and the next big leap"
+        },
+        {
+          "name": "Raw Fury",
+          "sector": "Gaming & Entertainment",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/rawfury.com",
+          "description": "Creators of experience and emotion"
+        },
+        {
+          "name": "Rillion",
+          "sector": "Technology & Software",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/rillion.com",
+          "description": "Peace of mind through automation"
+        },
+        {
+          "name": "Rossignol Group",
+          "sector": "Sports & Consumer",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/rossignol.com",
+          "description": "Another best day"
+        },
+        {
+          "name": "Stegra",
+          "sector": "Clean Energy & Technology",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/stegra.com",
+          "description": "Powering a new, clean industrial revolution"
+        },
+        {
+          "name": "Svea Solar",
+          "sector": "Clean Energy & Technology",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/sveasolar.se",
+          "description": "Powering a sustainable future"
+        },
+        {
+          "name": "Toteme",
+          "sector": "Consumer & Fashion",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/toteme.com",
+          "description": "Swedish style universe"
+        },
+        {
+          "name": "Transcom",
+          "sector": "Business Services",
+          "country": "Luxembourg",
+          "logo": "https://logo.clearbit.com/transcom.com",
+          "description": "Brilliance in customer experience"
+        },
+        {
+          "name": "Tresu",
+          "sector": "Industrial & Manufacturing",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/tresu.com",
+          "description": "Serving the industry"
+        },
+        {
+          "name": "Trioworld",
+          "sector": "Industrial & Manufacturing",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/trioworld.com",
+          "description": "Rethinking plastics"
+        },
+        {
+          "name": "Vianode",
+          "sector": "Clean Energy & Technology",
+          "country": "Norway",
+          "logo": "https://logo.clearbit.com/vianode.com",
+          "description": "Perfecting the E in EVs"
+        }
       ]
     },
     "Litorina": {
