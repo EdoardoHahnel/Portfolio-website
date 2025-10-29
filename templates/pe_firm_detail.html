@@ -417,62 +417,81 @@ function setupTabs() {
 
 async function loadFirmPortfolio(firmName) {
     try {
+        const container = document.getElementById('firmPortfolio');
         const response = await fetch('/api/portfolio');
         const data = await response.json();
-        
-        if (data.success) {
-            const firmCompanies = data.companies.filter(c => c.source === firmName && (c.status !== 'Exited'));
-            const container = document.getElementById('firmPortfolio');
-            
-            if (firmCompanies.length === 0) {
-                container.innerHTML = '<p>No portfolio companies found. Visit the Portfolio page and click "Refresh" to load data.</p>';
-                return;
-            }
-            
-            // Charts removed - using simpler content instead
-            
-            // Create table
-            let html = `
-                <table class="portfolio-table">
-                    <thead>
-                        <tr>
-                            <th>Company</th>
-                            <th>Sector</th>
-                            <th>Market</th>
-                            <th>Entry Year</th>
-                            <th>Website</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-            `;
-            
-            firmCompanies.forEach(company => {
-                // Generate logo URL from website (like portfolio.js does)
-                const logoUrl = company.logo_url || (company.website ? 
-                    `https://logo.clearbit.com/${extractDomain(company.website)}` : '');
-                
-                html += `
-                    <tr>
-                        <td class="company-name">
-                            ${logoUrl ? `<img src="${logoUrl}" class="company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">` : ''}
-                            <i class="fas fa-building company-icon-fallback" style="display:none;"></i>
-                            ${escapeHtml(company.company)}
-                        </td>
-                        <td>${escapeHtml(company.sector)}</td>
-                        <td>${escapeHtml(company.market)}</td>
-                        <td>${escapeHtml(company.entry || '-')}</td>
-                        <td>
-                            ${company.website ? `<a href="${company.website}" target="_blank" class="btn btn-sm btn-secondary">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>` : '-'}
-                        </td>
-                    </tr>
-                `;
-            });
-            
-            html += '</tbody></table>';
-            container.innerHTML = html;
+
+        let firmCompanies = [];
+        if (data.success && Array.isArray(data.companies)) {
+            firmCompanies = data.companies.filter(c => c.source === firmName && (c.status !== 'Exited'));
         }
+
+        // Fallback or override for Altor: use pe_firms_database portfolio_companies
+        if (firmName === 'Altor' || firmCompanies.length === 0) {
+            try {
+                const peResp = await fetch('/api/pe-firms');
+                const peData = await peResp.json();
+                const firmMeta = peData && peData.firms ? peData.firms[firmName] : null;
+
+                if (firmMeta && Array.isArray(firmMeta.portfolio_companies) && firmMeta.portfolio_companies.length > 0) {
+                    // Map to a common shape used by the table renderer
+                    firmCompanies = firmMeta.portfolio_companies.map(pc => ({
+                        company: pc.name || '',
+                        sector: pc.sector || '',
+                        market: pc.country || '',
+                        entry: '',
+                        website: pc.website || '',
+                        logo_url: pc.logo || ''
+                    }));
+                }
+            } catch (e) {
+                console.warn('Fallback to pe_firms_database failed:', e);
+            }
+        }
+
+        // Render results
+        if (!firmCompanies || firmCompanies.length === 0) {
+            container.innerHTML = '<p>No portfolio companies found for this firm.</p>';
+            return;
+        }
+
+        let html = `
+            <table class="portfolio-table">
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th>Sector</th>
+                        <th>Market</th>
+                        <th>Entry Year</th>
+                        <th>Website</th>
+                    </tr>
+                </thead>
+                <tbody>
+        `;
+
+        firmCompanies.forEach(company => {
+            const logoUrl = company.logo_url || (company.website ? `https://logo.clearbit.com/${extractDomain(company.website)}` : '');
+            html += `
+                <tr>
+                    <td class="company-name">
+                        ${logoUrl ? `<img src="${logoUrl}" class="company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">` : ''}
+                        <i class="fas fa-building company-icon-fallback" style="display:none;"></i>
+                        ${escapeHtml(company.company)}
+                    </td>
+                    <td>${escapeHtml(company.sector || '')}</td>
+                    <td>${escapeHtml(company.market || '')}</td>
+                    <td>${escapeHtml(company.entry || '-')}</td>
+                    <td>
+                        ${company.website ? `<a href="${company.website}" target="_blank" class="btn btn-sm btn-secondary">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>` : '-'}
+                    </td>
+                </tr>
+            `;
+        });
+
+        html += '</tbody></table>';
+        container.innerHTML = html;
     } catch (error) {
         console.error('Error loading portfolio:', error);
     }
