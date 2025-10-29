@@ -482,8 +482,8 @@ def get_portfolio():
             if portfolio_storage:
                 print(f"Loaded {len(portfolio_storage)} companies from database")
         
-        # For Altor and Adelis Equity, replace with database portfolio
-        firms_to_replace = ['Altor', 'Adelis Equity']
+        # For Altor, Adelis Equity, and Polaris, replace with database portfolio
+        firms_to_replace = ['Altor', 'Adelis Equity', 'Polaris']
         final_companies = []
         
         # Filter out companies from firms that need replacement
@@ -578,8 +578,8 @@ def search_portfolio():
     """
     query = request.args.get('q', '').lower()
     
-    # For Altor and Adelis Equity, replace with database portfolio
-    firms_to_replace = ['Altor', 'Adelis Equity']
+    # For Altor, Adelis Equity, and Polaris, replace with database portfolio
+    firms_to_replace = ['Altor', 'Adelis Equity', 'Polaris']
     final_companies = []
     
     # Filter out companies from firms that need replacement
@@ -712,27 +712,27 @@ def get_pe_firm_detail(firm_name):
                 pe_data = json.load(pf)
                 firm_metadata = pe_data.get('pe_firms', {}).get(firm_name, {})
         
-        # For Altor and Adelis Equity, prioritize portfolio_companies from pe_firms_database
-        if firm_name in ['Altor', 'Adelis Equity'] and firm_metadata.get('portfolio_companies'):
-            firm_companies = []
-            for pc in firm_metadata['portfolio_companies']:
-                # Convert portfolio_companies format to enriched format
-                company_data = {
-                    'company': pc.get('name', ''),
-                    'sector': pc.get('sector', ''),
-                    'market': pc.get('country', ''),
-                    'entry': pc.get('entry_year', ''),
-                    'status': 'Active',
-                    'source': firm_name,
-                    'website': pc.get('website', ''),
-                    'logo_url': pc.get('logo', ''),
-                    'description': pc.get('description', ''),
-                    'headquarters': pc.get('country', ''),
-                    'deal_size': '',
-                    'fund': '',
-                    'geography': 'Nordic' if pc.get('country') in ['Sweden', 'Denmark', 'Norway', 'Finland'] else 'International'
-                }
-                firm_companies.append(company_data)
+            # For Altor, Adelis Equity, and Polaris, prioritize portfolio_companies from pe_firms_database
+            if firm_name in ['Altor', 'Adelis Equity', 'Polaris'] and firm_metadata.get('portfolio_companies'):
+                firm_companies = []
+                for pc in firm_metadata['portfolio_companies']:
+                    # Convert portfolio_companies format to enriched format
+                    company_data = {
+                        'company': pc.get('name', ''),
+                        'sector': pc.get('sector', ''),
+                        'market': pc.get('country', ''),
+                        'entry': pc.get('entry_year', ''),
+                        'status': 'Active',
+                        'source': firm_name,
+                        'website': pc.get('website', ''),
+                        'logo_url': pc.get('logo', ''),
+                        'description': pc.get('description', ''),
+                        'headquarters': pc.get('country', ''),
+                        'deal_size': '',
+                        'fund': '',
+                        'geography': 'Nordic' if pc.get('country') in ['Sweden', 'Denmark', 'Norway', 'Finland'] else 'International'
+                    }
+                    firm_companies.append(company_data)
         else:
             # Try enriched database for other firms
             firm_companies = []

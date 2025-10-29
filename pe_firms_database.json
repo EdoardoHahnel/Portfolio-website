@@ -3203,6 +3203,215 @@
         { "year": 2025, "event": "LEAB integration", "description": "LEAB Becomes Part of Micropower Group" },
         { "year": 2025, "event": "Globeteam/7N merger", "description": "Creates powerful strategic IT partner through acquisition of Globeteam and merger with 7N" },
         { "year": 2025, "event": "Awardit German partnership", "description": "Awardit enters partnership with German Incentive & Loyalty Specialist Buben & Mädchen" }
+      ],
+      "portfolio_companies": [
+        {
+          "name": "Salfarm",
+          "sector": "Healthcare & Life Sciences",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/salfarm.com",
+          "description": "Nordic animal pharma player",
+          "entry_year": "2024",
+          "headquarters": "Kolding, Denmark",
+          "employees": "30"
+        },
+        {
+          "name": "7N",
+          "sector": "Tech & Software",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/7n.com",
+          "description": "Premium freelancer IT consultancy",
+          "entry_year": "2024",
+          "headquarters": "Copenhagen, Denmark",
+          "revenue": "€210m",
+          "employees": "220+"
+        },
+        {
+          "name": "Vinnergi",
+          "sector": "Industrial & Manufacturing",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/vinnergi.se",
+          "description": "Technical engineering consultancy (telecom, energy, buildings)",
+          "entry_year": "2024",
+          "headquarters": "Linköping, Sweden",
+          "revenue": "€66m",
+          "employees": "550"
+        },
+        {
+          "name": "Awardit",
+          "sector": "Business Services",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/awardit.com",
+          "description": "Customer clubs and loyalty programs operator",
+          "entry_year": "2023",
+          "headquarters": "Stockholm, Sweden",
+          "revenue": "€91m",
+          "employees": "256"
+        },
+        {
+          "name": "Micropower Group",
+          "sector": "Industrial & Manufacturing",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/micropowergroup.com",
+          "description": "Battery and charger manufacturer",
+          "entry_year": "2023",
+          "headquarters": "Växjö, Sweden",
+          "revenue": "€130m",
+          "employees": "460"
+        },
+        {
+          "name": "Cepheo",
+          "sector": "Tech & Software",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/cepheo.com",
+          "description": "Microsoft Dynamics IT consulting services",
+          "entry_year": "2023",
+          "headquarters": "Copenhagen, Denmark",
+          "revenue": "€67m",
+          "employees": "400+"
+        },
+        {
+          "name": "ESoft",
+          "sector": "Tech & Software",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/esoft.com",
+          "description": "Global provider of photo, video, and marketing content for real estate",
+          "entry_year": "2022",
+          "headquarters": "Højby, Denmark",
+          "revenue": "€43m",
+          "employees": "850+"
+        },
+        {
+          "name": "G&O Maritime Group",
+          "sector": "Industrial & Manufacturing",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/gomaritime.com",
+          "description": "Supplier of niche maritime equipment",
+          "entry_year": "2021",
+          "headquarters": "Lyngby, Denmark",
+          "revenue": "€100m",
+          "employees": "450+"
+        },
+        {
+          "name": "Contour Design",
+          "sector": "Consumer & Technology",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/contourdesign.com",
+          "description": "Ergonomic computer pointing devices manufacturer",
+          "entry_year": "2021",
+          "headquarters": "Copenhagen, Denmark",
+          "employees": "98+"
+        },
+        {
+          "name": "Stronger",
+          "sector": "Consumer & Fashion",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/stronger.com",
+          "description": "Athleisure wear for women",
+          "entry_year": "2021",
+          "headquarters": "Stockholm, Sweden",
+          "revenue": "€28m",
+          "employees": "80+"
+        },
+        {
+          "name": "Sinful",
+          "sector": "Consumer & E-commerce",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/sinful.com",
+          "description": "Northern Europe's largest e-commerce provider of sex toys",
+          "entry_year": "2021",
+          "headquarters": "Aarhus, Denmark",
+          "revenue": "€48m",
+          "employees": "140+"
+        },
+        {
+          "name": "VIKINGBUS",
+          "sector": "Transportation & Logistics",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/vikingbus.com",
+          "description": "Bus operation services",
+          "entry_year": "2021",
+          "headquarters": "Hvidovre, Denmark",
+          "revenue": "€145m",
+          "employees": "1,200"
+        },
+        {
+          "name": "Distriktstandvården",
+          "sector": "Healthcare Services",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/distriktstandvarden.se",
+          "description": "Private dental care chain",
+          "entry_year": "2020",
+          "headquarters": "Stockholm, Sweden",
+          "revenue": "€47m",
+          "employees": "400"
+        },
+        {
+          "name": "Link Logistics",
+          "sector": "Transportation & Logistics",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/linklogistics.dk",
+          "description": "Courier Express Parcel market solutions",
+          "entry_year": "2019",
+          "headquarters": "Brøndby, Denmark",
+          "revenue": "€130m",
+          "employees": "150"
+        },
+        {
+          "name": "Futur",
+          "sector": "Financial Services",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/futur.se",
+          "description": "Tech-enabled savings and pension platform",
+          "entry_year": "2019",
+          "headquarters": "Stockholm, Sweden",
+          "revenue": "€70m",
+          "employees": "80"
+        },
+        {
+          "name": "Akademikliniken",
+          "sector": "Healthcare Services",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/akademikliniken.se",
+          "description": "Aesthetic treatments",
+          "entry_year": "2016",
+          "headquarters": "Stockholm, Sweden",
+          "revenue": "€46m",
+          "employees": "225"
+        },
+        {
+          "name": "Configit",
+          "sector": "Tech & Software",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/configit.com",
+          "description": "Business-critical software solutions",
+          "entry_year": "2016",
+          "headquarters": "Copenhagen, Denmark",
+          "revenue": "€19m",
+          "employees": "155"
+        },
+        {
+          "name": "Scanmetals",
+          "sector": "Industrial & Manufacturing",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/scanmetals.dk",
+          "description": "Specialist metals recycling",
+          "entry_year": "2025",
+          "headquarters": "Slagelse, Denmark",
+          "revenue": "€147m",
+          "employees": "200"
+        },
+        {
+          "name": "Hoyer",
+          "sector": "Industrial & Manufacturing",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/hoyer.com",
+          "description": "Manufacturer of electric motors, drives, and controls",
+          "entry_year": "2025",
+          "headquarters": "Hadsten, Denmark",
+          "revenue": "€98m",
+          "employees": "250"
+        }
       ]
     },
     "Nordstjernan": {
