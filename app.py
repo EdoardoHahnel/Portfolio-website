@@ -482,10 +482,47 @@ def get_portfolio():
             if portfolio_storage:
                 print(f"Loaded {len(portfolio_storage)} companies from database")
         
+        # For Altor and Adelis Equity, replace with database portfolio
+        firms_to_replace = ['Altor', 'Adelis Equity']
+        final_companies = []
+        
+        # Filter out companies from firms that need replacement
+        for company in portfolio_storage:
+            if company.get('source') not in firms_to_replace:
+                final_companies.append(company)
+        
+        # Add database portfolio companies for these firms
+        if os.path.exists('pe_firms_database.json'):
+            with open('pe_firms_database.json', 'r', encoding='utf-8') as pf:
+                pe_data = json.load(pf)
+                pe_firms = pe_data.get('pe_firms', {})
+                
+                for firm_name in firms_to_replace:
+                    if firm_name in pe_firms:
+                        firm_metadata = pe_firms[firm_name]
+                        if firm_metadata.get('portfolio_companies'):
+                            for pc in firm_metadata['portfolio_companies']:
+                                company_data = {
+                                    'company': pc.get('name', ''),
+                                    'sector': pc.get('sector', ''),
+                                    'market': pc.get('country', ''),
+                                    'entry': pc.get('entry_year', ''),
+                                    'status': 'Active',
+                                    'source': firm_name,
+                                    'website': pc.get('website', ''),
+                                    'logo_url': pc.get('logo', ''),
+                                    'description': pc.get('description', ''),
+                                    'headquarters': pc.get('country', ''),
+                                    'deal_size': '',
+                                    'fund': '',
+                                    'geography': 'Nordic' if pc.get('country') in ['Sweden', 'Denmark', 'Norway', 'Finland'] else 'International'
+                                }
+                                final_companies.append(company_data)
+        
         return jsonify({
             'success': True,
-            'count': len(portfolio_storage),
-            'companies': portfolio_storage
+            'count': len(final_companies),
+            'companies': final_companies
         })
     except Exception as e:
         return jsonify({
@@ -541,15 +578,52 @@ def search_portfolio():
     """
     query = request.args.get('q', '').lower()
     
+    # For Altor and Adelis Equity, replace with database portfolio
+    firms_to_replace = ['Altor', 'Adelis Equity']
+    final_companies = []
+    
+    # Filter out companies from firms that need replacement
+    for company in portfolio_storage:
+        if company.get('source') not in firms_to_replace:
+            final_companies.append(company)
+    
+    # Add database portfolio companies for these firms
+    if os.path.exists('pe_firms_database.json'):
+        with open('pe_firms_database.json', 'r', encoding='utf-8') as pf:
+            pe_data = json.load(pf)
+            pe_firms = pe_data.get('pe_firms', {})
+            
+            for firm_name in firms_to_replace:
+                if firm_name in pe_firms:
+                    firm_metadata = pe_firms[firm_name]
+                    if firm_metadata.get('portfolio_companies'):
+                        for pc in firm_metadata['portfolio_companies']:
+                            company_data = {
+                                'company': pc.get('name', ''),
+                                'sector': pc.get('sector', ''),
+                                'market': pc.get('country', ''),
+                                'entry': pc.get('entry_year', ''),
+                                'status': 'Active',
+                                'source': firm_name,
+                                'website': pc.get('website', ''),
+                                'logo_url': pc.get('logo', ''),
+                                'description': pc.get('description', ''),
+                                'headquarters': pc.get('country', ''),
+                                'deal_size': '',
+                                'fund': '',
+                                'geography': 'Nordic' if pc.get('country') in ['Sweden', 'Denmark', 'Norway', 'Finland'] else 'International'
+                            }
+                            final_companies.append(company_data)
+    
     if not query:
         return jsonify({
             'success': True,
-            'results': portfolio_storage
+            'results': final_companies
         })
     
     # Search in company name, sector, and market
     results = [
-        company for company in portfolio_storage
+        company for company in final_companies
         if query in company.get('company', '').lower() or 
            query in company.get('sector', '').lower() or
            query in company.get('market', '').lower()
