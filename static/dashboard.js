@@ -451,11 +451,18 @@ async function loadPEFirms() {
                 const card = document.createElement('a');
                 card.href = `/pe-firm/${firmKey}`;
                 card.className = 'pe-firm-card-compact';
+                const websiteDomain = (firm.website || '').replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0];
+                const overrideDomain = firmDomainOverrides[firm.name] || websiteDomain;
+                const apiLogo = firm.logo_url || '';
+                const useApiLogo = apiLogo && !apiLogo.includes('ui-avatars.com');
+                const clearbitLogo = overrideDomain ? `https://logo.clearbit.com/${overrideDomain}` : '';
+                const fallbackFavicon = overrideDomain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(overrideDomain)}&sz=128` : '';
+                const primaryLogo = useApiLogo ? apiLogo : clearbitLogo;
                 card.innerHTML = `
                     <div class="firm-logo-container">
-                        <img src="${firm.logo_url}" 
+                        <img src="${primaryLogo}" 
                              alt="${escapeHtml(firm.name)}" 
-                             onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name='+encodeURIComponent('${escapeHtml(firm.name)}')+'&background=4c1d95&color=ffffff&size=120'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';}">
+                             onerror="this.onerror=null; this.src='${fallbackFavicon}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';}">
                         <div class="firm-logo-fallback" style="display: none; width: 60px; height: 60px; background: #4c1d95; color: white; border-radius: 12px; align-items: center; justify-content: center; font-size: 24px; font-weight: bold;">
                             🏢
                         </div>
