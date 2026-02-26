@@ -18,6 +18,30 @@ function truncateText(text, maxLength) {
     return text.substring(0, maxLength).trim() + '...';
 }
 
+function getInitials(name) {
+    if (!name) return 'NA';
+    const words = String(name).trim().split(/\s+/).filter(Boolean);
+    if (words.length === 0) return 'NA';
+    if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
+    return (words[0][0] + words[1][0]).toUpperCase();
+}
+
+function createInlineLogoHTML(name, primarySrc, size = 32, borderRadius = 6) {
+    const safeName = escapeHtml(name || 'Unknown');
+    const initials = getInitials(name);
+    const encodedName = encodeURIComponent(name || 'Unknown');
+    const numericSize = Number.isFinite(Number(size)) ? Number(size) : 32;
+    const uiAvatarSrc = `https://ui-avatars.com/api/?name=${encodedName}&background=3f7de8&color=ffffff&size=${Math.max(64, numericSize * 2)}`;
+
+    return `<span style="position: relative; display: inline-flex; width:${numericSize}px; height:${numericSize}px; align-items:center; justify-content:center;">
+        <img src="${primarySrc || uiAvatarSrc}"
+             alt="${safeName}"
+             style="width:${numericSize}px; height:${numericSize}px; object-fit:contain; border-radius:${borderRadius}px; background:#fff;"
+             onerror="this.onerror=null; this.src='${uiAvatarSrc}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};">
+        <span style="display:none; width:${numericSize}px; height:${numericSize}px; border-radius:${borderRadius}px; background:#3f7de8; color:#fff; font-size:${Math.max(11, Math.floor(numericSize * 0.38))}px; font-weight:700; letter-spacing:0.02em; align-items:center; justify-content:center;">${initials}</span>
+    </span>`;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log('📊 Dashboard initialized!');
     loadDashboard();
@@ -25,15 +49,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Cache for PE firm logos (from /api/pe-firms)
 let peFirmLogosMap = null;
+const firmDomainOverrides = {
+    'Alder': 'alder.se',
+    'Celero Capital': 'celerocapital.com',
+    'Celero': 'celerocapital.com',
+    'FSN Capital': 'fsncapital.com',
+    'Polaris': 'polarisequity.dk',
+    'Nordstjernan': 'nordstjernan.se',
+    'Valedo Partners': 'valedopartners.com',
+    'IK Partners': 'ikpartners.com',
+    'Adelis Equity': 'adelisequity.com',
+    'Altor': 'altor.com'
+};
 
 async function loadDashboard() {
-    await Promise.all([
-        ensurePeFirmLogos(),
-        loadLatestNews(),
-        loadActiveFundraising(),
-        loadPEFirms(),
-        loadStats()
-    ]);
+    try { await ensurePeFirmLogos(); } catch (e) { console.error('Logo map init failed:', e); }
+    try { await loadLatestNews(); } catch (e) { console.error('Latest news failed:', e); }
+    try { await loadActiveFundraising(); } catch (e) { console.error('Fundraising failed:', e); }
+    try { await loadPEFirms(); } catch (e) { console.error('PE firms failed:', e); }
+    try { await loadStats(); } catch (e) { console.error('Stats failed:', e); }
 }
 
 async function loadStats() {
@@ -189,20 +223,19 @@ async function loadActiveFundraising() {
                         const item = document.createElement('div');
                         item.className = 'fundraising-item-compact';
                         const firm = fund.firm || 'Fund';
-                        const firmLogo = getFirmLogoForName(firm) || `https://ui-avatars.com/api/?name=${encodeURIComponent(firm)}&background=1e3a8a&color=ffffff&size=32`;
+                        const firmLogo = getFirmLogoForName(firm) || guessFirmLogoUrl(firm);
                         const progressVal = Number.isFinite(Number(fund.progress)) ? Number(fund.progress) : null;
                         // Check if firm has a profile
                         const hasProfile = availablePEFirms.has(firm);
+                        const logoImgHtml = createInlineLogoHTML(firm, firmLogo, 32, 6);
+                        const firmLogoHtml = hasProfile
+                            ? `<a href="/pe-firm/${encodeURIComponent(firm)}" style="text-decoration: none; display: inline-block;">${logoImgHtml}</a>`
+                            : logoImgHtml;
                         
                         item.innerHTML = `
                             <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
                                 <div style="display:flex; gap:10px; align-items:center;">
-                                    ${hasProfile ? 
-                                        `<a href="/pe-firm/${encodeURIComponent(firm)}" style="text-decoration: none; display: inline-block;">
-                                            <img src="${firmLogo}" alt="${escapeHtml(firm)}" style="width:32px; height:32px; object-fit:contain; border-radius:4px; background:#fff; cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-                                        </a>` : 
-                                        `<img src="${firmLogo}" alt="${escapeHtml(firm)}" style="width:32px; height:32px; object-fit:contain; border-radius:4px; background:#fff">`
-                                    }
+                                    ${firmLogoHtml}
                                     <div class="fund-name-compact">${escapeHtml(firm)} - ${escapeHtml(fund.fund_name)}</div>
                                     <div class="fund-details-compact">Target: ${escapeHtml((fund.final_size && fund.final_size !== 'N/A') ? fund.final_size : (fund.target_size || 'N/A'))} | ${escapeHtml(fund.status)}</div>
                                 </div>
@@ -298,7 +331,12 @@ async function ensurePeFirmLogos() {
         const map = {};
         Object.keys(firms).forEach(key => {
             const firm = firms[key] || {};
-            const logo = firm.logo_url || firm.logo || '';
+            const rawLogo = firm.logo_url || firm.logo || '';
+            const websiteDomain = (firm.website || '').replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0];
+            const overrideDomain = firmDomainOverrides[firm.name] || firmDomainOverrides[key] || websiteDomain;
+            const logo = rawLogo.includes('ui-avatars.com')
+                ? (overrideDomain ? `https://logo.clearbit.com/${overrideDomain}` : '')
+                : rawLogo;
             const variants = buildFirmNameVariants(key, firm.name);
             variants.forEach(v => { if (logo) map[v] = logo; });
         });
@@ -327,6 +365,18 @@ function buildFirmNameVariants(...names) {
     return [...out].filter(Boolean);
 }
 
+function domainFromUrl(url) {
+    try {
+        const parsed = new URL(url);
+        if (parsed.hostname.includes('logo.clearbit.com')) {
+            return parsed.pathname.replace(/^\/+/, '').split('/')[0];
+        }
+        return parsed.hostname.replace(/^www\./, '');
+    } catch {
+        return '';
+    }
+}
+
 function getFirmLogoForName(name) {
     if (!name || !peFirmLogosMap) return undefined;
     const lower = String(name).toLowerCase().trim();
@@ -351,15 +401,39 @@ function getFirmLogoForName(name) {
         'axcel': 'axcel.dk',
         'capman': 'capman.com',
         'fsn capital': 'fsncapital.com',
+        'fsn': 'fsncapital.com',
         'polaris': 'polarisequity.dk',
         'verdane': 'verdanecapital.com',
         'procuritas': 'procuritas.com',
         'impilo': 'impilo.se',
-        'vaaka partners': 'vaakapartners.fi'
+        'vaaka partners': 'vaakapartners.fi',
+        'alder': 'alder.se',
+        'celero': 'celerocapital.com',
+        'nordstjernan': 'nordstjernan.se',
+        'valedo': 'valedopartners.com',
+        'ahlström': 'ahlstromcapital.com',
+        'ahlstrom': 'ahlstromcapital.com',
+        'bridgepoint': 'bridgepoint.eu',
+        'montagu': 'montagu.com',
+        'sponsor capital': 'sponsorcapital.fi',
+        'via equity': 'viaequity.com',
+        'northzone': 'northzone.com',
+        'atomico': 'atomico.com',
+        'creandum': 'creandum.com',
+        'industrifonden': 'industrifonden.com'
     };
     const key = Object.keys(fallbackDomains).find(k => lower.includes(k));
     if (key) return `https://logo.clearbit.com/${fallbackDomains[key]}`;
     return undefined;
+}
+
+function guessFirmLogoUrl(name) {
+    if (!name) return undefined;
+    const normalized = String(name).toLowerCase()
+        .replace(/\b(private|equity|partners?|capital|buyout|management)\b/g, '')
+        .replace(/[^a-z0-9]/g, '');
+    if (!normalized) return undefined;
+    return `https://logo.clearbit.com/${normalized}.com`;
 }
 
 async function loadPEFirms() {
@@ -718,20 +792,23 @@ function getFirmLogo(firmName) {
 
 function createRobustLogoHTML(firmName, size = '24px') {
     if (!firmName) return '';
+    const initials = getInitials(firmName);
     
     // Try exact match first
     if (firmLogos[firmName]) {
         const logoData = firmLogos[firmName];
         const escapedName = escapeHtml(firmName);
+        const domain = domainFromUrl(logoData.primary);
+        const favicon = domain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=${Math.max(64, parseInt(size) * 2)}` : logoData.fallback;
         
         return `
             <div class="news-firm-logo" style="position: relative; display: inline-block; margin-right: 8px;">
                 <img src="${logoData.primary}" 
                      alt="${escapedName}" 
                      style="width: ${size}; height: ${size}; border-radius: 6px; object-fit: contain;"
-                     onerror="this.onerror=null; this.src='${logoData.fallback}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';}">
+                     onerror="this.onerror=null; this.src='${favicon}'; this.onerror=function(){this.onerror=null; this.src='${logoData.fallback}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};}">
                 <div class="logo-fallback" style="display: none; width: ${size}; height: ${size}; background: #4c1d95; color: white; border-radius: 6px; align-items: center; justify-content: center; font-size: 14px; font-weight: bold;">
-                    ${logoData.icon}
+                    ${initials}
                 </div>
             </div>
         `;
@@ -816,15 +893,17 @@ function createRobustLogoHTML(firmName, size = '24px') {
         const logoData = firmLogos[relatedFirm];
         const escapedName = escapeHtml(firmName);
         const escapedRelated = escapeHtml(relatedFirm);
+        const domain = domainFromUrl(logoData.primary);
+        const favicon = domain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=${Math.max(64, parseInt(size) * 2)}` : logoData.fallback;
         
         return `
             <div class="news-firm-logo" style="position: relative; display: inline-block; margin-right: 8px;" title="Related to ${escapedRelated}">
                 <img src="${logoData.primary}" 
                      alt="${escapedName} (${escapedRelated})" 
                      style="width: ${size}; height: ${size}; border-radius: 6px; object-fit: contain; border: 2px solid #fbbf24;"
-                     onerror="this.onerror=null; this.src='${logoData.fallback}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';}">
+                     onerror="this.onerror=null; this.src='${favicon}'; this.onerror=function(){this.onerror=null; this.src='${logoData.fallback}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};}">
                 <div class="logo-fallback" style="display: none; width: ${size}; height: ${size}; background: #fbbf24; color: #1f2937; border-radius: 6px; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; border: 2px solid #f59e0b;">
-                    ${logoData.icon}
+                    ${initials}
                 </div>
                 <div style="position: absolute; bottom: -2px; right: -2px; background: #fbbf24; color: #1f2937; border-radius: 50%; width: 12px; height: 12px; font-size: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold;">R</div>
             </div>
@@ -842,7 +921,7 @@ function createRobustLogoHTML(firmName, size = '24px') {
                  style="width: ${size}; height: ${size}; border-radius: 6px; object-fit: contain;"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="logo-fallback" style="display: none; width: ${size}; height: ${size}; background: #6b7280; color: white; border-radius: 6px; align-items: center; justify-content: center; font-size: 14px; font-weight: bold;">
-                🏢
+                ${initials}
             </div>
         </div>
     `;

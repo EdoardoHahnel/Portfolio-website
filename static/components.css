@@ -69,11 +69,11 @@ Component Styles - All UI components for the M&A platform
 }
 
 .news-title-compact {
-    font-size: 2.2rem;
+    font-size: 0.92rem;
     font-weight: 700;
     color: var(--text-primary);
-    margin: 0.8rem 0;
-    line-height: 1.2;
+    margin: 0.4rem 0;
+    line-height: 1.35;
 }
 
 .news-link-small {
@@ -147,17 +147,17 @@ Component Styles - All UI components for the M&A platform
 /* ===== PE FIRMS GRID ===== */
 .pe-firms-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 0.9rem;
 }
 
 .pe-firm-card-compact {
     display: flex;
     align-items: center;
-    padding: 1.5rem;
+    padding: 0.9rem;
     background: white;
     border: 2px solid var(--border-color);
-    border-radius: 12px;
+    border-radius: 10px;
     text-decoration: none;
     transition: var(--transition);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -170,14 +170,14 @@ Component Styles - All UI components for the M&A platform
 }
 
 .firm-logo-container {
-    width: 60px;
-    height: 60px;
-    border-radius: 12px;
+    width: 52px;
+    height: 52px;
+    border-radius: 10px;
     background: var(--bg-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 1.2rem;
+    margin-right: 0.8rem;
     flex-shrink: 0;
 }
 
@@ -194,14 +194,14 @@ Component Styles - All UI components for the M&A platform
 .firm-name-compact {
     font-weight: 600;
     color: var(--text-primary);
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
+    margin-bottom: 0.35rem;
+    font-size: 0.92rem;
 }
 
 .firm-stats-compact {
     display: flex;
-    gap: 1.2rem;
-    font-size: 1rem;
+    gap: 0.7rem;
+    font-size: 0.78rem;
     color: var(--text-secondary);
 }
 
