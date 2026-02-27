@@ -102,10 +102,19 @@
         });
 
         nav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', closeMenu);
+            link.addEventListener('click', function (event) {
+                if (isMobileWidth()) {
+                    const href = link.getAttribute('href');
+                    closeMenu();
+                    if (href && href.startsWith('/')) {
+                        event.preventDefault();
+                        window.location.assign(href);
+                    }
+                    return;
+                }
+                closeMenu();
+            });
         });
-
-        backdrop.addEventListener('click', closeMenu);
 
         document.addEventListener('keydown', function (event) {
             if (event.key === 'Escape') closeMenu();
