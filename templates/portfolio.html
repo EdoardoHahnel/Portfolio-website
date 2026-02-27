@@ -7,13 +7,9 @@
 <style>
 .portfolio-charts-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.75rem;
     margin-bottom: 0.5rem;
-}
-
-.portfolio-charts-grid .portfolio-chart-card:nth-child(3) {
-    grid-column: 1 / -1;
 }
 
 .portfolio-chart-card .content-card-body {
@@ -27,13 +23,43 @@
     max-width: 100%;
 }
 
+.portfolio-filters-row {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 @media (max-width: 768px) {
     .portfolio-charts-grid {
         grid-template-columns: 1fr;
     }
+    
+    .portfolio-filters-row {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.45rem;
+    }
 
-    .portfolio-charts-grid .portfolio-chart-card:nth-child(3) {
-        grid-column: auto;
+    .portfolio-filters-row .portfolio-filter-select,
+    .portfolio-filters-row .btn {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .control-panel {
+        align-items: stretch;
+        gap: 0.6rem;
+    }
+
+    .control-panel .controls-left {
+        width: 100%;
+    }
+
+    .control-panel .search-box,
+    .control-panel .search-box input {
+        width: 100%;
     }
 
 }
@@ -140,9 +166,9 @@
                         <input type="text" id="portfolioSearchInput" placeholder="Search companies, sectors, markets...">
                     </div>
                 </div>
-                <div class="controls-left" style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+                <div class="controls-left portfolio-filters-row">
                     <select id="sectorFilter" class="portfolio-filter-select">
-                        <option value="">All Sectors</option>
+                        <option value="">All Sector Groups</option>
                     </select>
                     <select id="marketFilter" class="portfolio-filter-select">
                         <option value="">All Markets</option>

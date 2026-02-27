@@ -533,6 +533,7 @@ function applyPortfolioFilters(companies, filters) {
     return companies.filter(company => {
         const cleanCompany = normalizeFilterValue(company.company);
         const cleanSector = normalizeFilterValue(company.sector);
+        const sectorGroup = categorizeSector(cleanSector);
         const cleanMarket = normalizeFilterValue(company.market);
         const cleanHQ = normalizeFilterValue(company.headquarters || company.market);
         const cleanEntry = normalizeFilterValue(company.entry);
@@ -549,7 +550,7 @@ function applyPortfolioFilters(companies, filters) {
         ].some(val => val.toLowerCase().includes(filters.query));
 
         return matchesQuery &&
-            (!filters.sector || cleanSector === filters.sector) &&
+            (!filters.sector || sectorGroup === filters.sector) &&
             (!filters.market || cleanMarket === filters.market) &&
             (!filters.headquarters || cleanHQ === filters.headquarters) &&
             (!filters.entry || cleanEntry === filters.entry) &&
@@ -564,12 +565,16 @@ function populateFilterOptions(companies) {
     const entryYearFilter = document.getElementById('entryYearFilter');
     if (!sectorFilter || !marketFilter || !hqFilter || !entryYearFilter) return;
 
-    const sectors = [...new Set(companies.map(c => normalizeFilterValue(c.sector)).filter(Boolean))].sort();
+    const sectors = [...new Set(
+        companies
+            .map(c => categorizeSector(normalizeFilterValue(c.sector)))
+            .filter(Boolean)
+    )].sort();
     const markets = [...new Set(companies.map(c => normalizeFilterValue(c.market)).filter(Boolean))].sort();
     const hqs = [...new Set(companies.map(c => normalizeFilterValue(c.headquarters || c.market)).filter(Boolean))].sort();
     const years = [...new Set(companies.map(c => normalizeFilterValue(c.entry)).filter(Boolean))].sort((a, b) => Number(b) - Number(a));
 
-    setSelectOptions(sectorFilter, 'All Sectors', sectors);
+    setSelectOptions(sectorFilter, 'All Sector Groups', sectors);
     setSelectOptions(marketFilter, 'All Markets', markets);
     setSelectOptions(hqFilter, 'All HQ', hqs);
     setSelectOptions(entryYearFilter, 'All Entry Years', years);
@@ -928,6 +933,22 @@ function categorizeGeography(market) {
     } else {
         return 'International';
     }
+}
+
+function categorizeSector(sector) {
+    const value = String(sector || '').toLowerCase();
+    if (!value || value === 'n/a') return 'Other';
+
+    if (/(software|saas|it|tech|digital|data|cyber|cloud|platform|semiconductor)/.test(value)) return 'Technology';
+    if (/(industr|manufactur|engineering|machin|automation|construction|building|infrastructure|energy|materials)/.test(value)) return 'Industrials';
+    if (/(health|medtech|medical|pharma|biotech|care)/.test(value)) return 'Healthcare';
+    if (/(financ|fintech|bank|insurance|asset|payment)/.test(value)) return 'Financial Services';
+    if (/(consumer|retail|e-?commerce|fashion|food|beverage|hospitality|travel|leisure)/.test(value)) return 'Consumer';
+    if (/(business service|b2b|consult|outsourc|professional service|facility|support service)/.test(value)) return 'Business Services';
+    if (/(logistics|transport|shipping|supply chain|distribution)/.test(value)) return 'Logistics & Transport';
+    if (/(media|telecom|entertainment|gaming|advertis)/.test(value)) return 'Media & Telecom';
+
+    return 'Other';
 }
 
 // Helper functions

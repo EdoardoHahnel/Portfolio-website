@@ -71,6 +71,18 @@
         .tab-content > div[style*="grid-template-columns"] {
             grid-template-columns: 1fr !important;
         }
+
+        .portfolio-filters-row {
+            flex-direction: column !important;
+            align-items: stretch !important;
+        }
+
+        .portfolio-filters-row input,
+        .portfolio-filters-row select,
+        .portfolio-filters-row button {
+            width: 100% !important;
+            min-width: 0 !important;
+        }
     }
 
     /* Light table header styling for GP profile page */
@@ -126,6 +138,7 @@
 
 <script>
 const firmName = "{{ firm_name }}";
+let firmPortfolioCompanies = [];
 
 document.addEventListener('DOMContentLoaded', async function() {
     await loadFirmDetail();
@@ -351,6 +364,28 @@ function displayFirmDetail(firm) {
                     <h3 class="content-card-title">Portfolio Companies</h3>
                 </div>
                 <div class="content-card-body">
+                    <div class="portfolio-filters-row" style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center; margin-bottom:0.75rem;">
+                        <input type="text" id="firmPortfolioSearchInput" placeholder="Search companies, sectors, markets..." style="flex:1; min-width:180px; height:34px; padding:0 0.6rem; border:1px solid #d5e0ef; border-radius:6px; font-size:0.8rem;">
+                        <select id="firmPortfolioSectorFilter" class="portfolio-filter-select" style="min-width:170px;">
+                            <option value="">All Sector Groups</option>
+                        </select>
+                        <select id="firmPortfolioMarketFilter" class="portfolio-filter-select">
+                            <option value="">All Markets</option>
+                        </select>
+                        <select id="firmPortfolioHqFilter" class="portfolio-filter-select">
+                            <option value="">All HQ</option>
+                        </select>
+                        <select id="firmPortfolioEntryYearFilter" class="portfolio-filter-select">
+                            <option value="">All Entry Years</option>
+                        </select>
+                        <select id="firmPortfolioGeographyFilter" class="portfolio-filter-select">
+                            <option value="">All Geography</option>
+                            <option value="Domestic">Domestic</option>
+                            <option value="Nordic">Nordic</option>
+                            <option value="International">International</option>
+                        </select>
+                        <button id="firmPortfolioClearFiltersBtn" class="btn btn-secondary btn-sm" type="button">Clear</button>
+                    </div>
                     <div id="firmPortfolio">Loading portfolio...</div>
                 </div>
             </div>
@@ -438,6 +473,220 @@ function setupTabs() {
     });
 }
 
+function categorizeSectorGroup(sector) {
+    const value = String(sector || '').toLowerCase();
+    if (!value || value === 'n/a') return 'Other';
+    if (/(software|saas|it|tech|digital|data|cyber|cloud|platform|semiconductor)/.test(value)) return 'Technology';
+    if (/(industr|manufactur|engineering|machin|automation|construction|building|infrastructure|energy|materials)/.test(value)) return 'Industrials';
+    if (/(health|medtech|medical|pharma|biotech|care)/.test(value)) return 'Healthcare';
+    if (/(financ|fintech|bank|insurance|asset|payment)/.test(value)) return 'Financial Services';
+    if (/(consumer|retail|e-?commerce|fashion|food|beverage|hospitality|travel|leisure)/.test(value)) return 'Consumer';
+    if (/(business service|b2b|consult|outsourc|professional service|facility|support service)/.test(value)) return 'Business Services';
+    if (/(logistics|transport|shipping|supply chain|distribution)/.test(value)) return 'Logistics & Transport';
+    if (/(media|telecom|entertainment|gaming|advertis)/.test(value)) return 'Media & Telecom';
+    return 'Other';
+}
+
+function getFirmPortfolioFilters() {
+    return {
+        query: (document.getElementById('firmPortfolioSearchInput')?.value || '').trim().toLowerCase(),
+        sector: (document.getElementById('firmPortfolioSectorFilter')?.value || '').trim(),
+        market: (document.getElementById('firmPortfolioMarketFilter')?.value || '').trim(),
+        headquarters: (document.getElementById('firmPortfolioHqFilter')?.value || '').trim(),
+        entry: (document.getElementById('firmPortfolioEntryYearFilter')?.value || '').trim(),
+        geography: (document.getElementById('firmPortfolioGeographyFilter')?.value || '').trim()
+    };
+}
+
+function populateFirmPortfolioFilterOptions(companies) {
+    const sectorFilter = document.getElementById('firmPortfolioSectorFilter');
+    const marketFilter = document.getElementById('firmPortfolioMarketFilter');
+    const hqFilter = document.getElementById('firmPortfolioHqFilter');
+    const yearFilter = document.getElementById('firmPortfolioEntryYearFilter');
+    if (!sectorFilter || !marketFilter || !hqFilter || !yearFilter) return;
+
+    const selectedSector = sectorFilter.value;
+    const selectedMarket = marketFilter.value;
+    const selectedHq = hqFilter.value;
+    const selectedYear = yearFilter.value;
+
+    const sectors = [...new Set(companies.map(c => categorizeSectorGroup(cleanPortfolioText(c.sector || ''))).filter(Boolean))].sort();
+    const markets = [...new Set(companies.map(c => cleanPortfolioText(c.market || '')).filter(Boolean))].sort();
+    const hqs = [...new Set(companies.map(c => cleanPortfolioText(c.headquarters || c.market || '')).filter(Boolean))].sort();
+    const years = [...new Set(companies.map(c => cleanPortfolioText(c.entry || '')).filter(Boolean))].sort((a, b) => Number(b) - Number(a));
+
+    const fillSelect = (el, placeholder, values, selected) => {
+        el.innerHTML = `<option value="">${placeholder}</option>`;
+        values.forEach(value => {
+            const option = document.createElement('option');
+            option.value = value;
+            option.textContent = value;
+            el.appendChild(option);
+        });
+        el.value = values.includes(selected) ? selected : '';
+    };
+
+    fillSelect(sectorFilter, 'All Sector Groups', sectors, selectedSector);
+    fillSelect(marketFilter, 'All Markets', markets, selectedMarket);
+    fillSelect(hqFilter, 'All HQ', hqs, selectedHq);
+    fillSelect(yearFilter, 'All Entry Years', years, selectedYear);
+}
+
+function getFilteredFirmPortfolioCompanies() {
+    const filters = getFirmPortfolioFilters();
+    return firmPortfolioCompanies.filter(company => {
+        const cleanCompany = cleanPortfolioText(company.company || '');
+        const cleanSector = cleanPortfolioText(company.sector || '');
+        const cleanMarket = cleanPortfolioText(company.market || '');
+        const cleanHQ = cleanPortfolioText(company.headquarters || company.market || '');
+        const cleanEntry = cleanPortfolioText(company.entry || '');
+        const sectorGroup = categorizeSectorGroup(cleanSector);
+        const geography = categorizeGeography(cleanMarket);
+
+        const matchesQuery = !filters.query || [
+            cleanCompany,
+            cleanSector,
+            cleanMarket,
+            cleanHQ,
+            cleanEntry,
+            geography
+        ].some(value => value.toLowerCase().includes(filters.query));
+
+        return matchesQuery &&
+            (!filters.sector || sectorGroup === filters.sector) &&
+            (!filters.market || cleanMarket === filters.market) &&
+            (!filters.headquarters || cleanHQ === filters.headquarters) &&
+            (!filters.entry || cleanEntry === filters.entry) &&
+            (!filters.geography || geography === filters.geography);
+    });
+}
+
+function setupFirmPortfolioFilters() {
+    const searchInput = document.getElementById('firmPortfolioSearchInput');
+    const sectorFilter = document.getElementById('firmPortfolioSectorFilter');
+    const marketFilter = document.getElementById('firmPortfolioMarketFilter');
+    const hqFilter = document.getElementById('firmPortfolioHqFilter');
+    const yearFilter = document.getElementById('firmPortfolioEntryYearFilter');
+    const geographyFilter = document.getElementById('firmPortfolioGeographyFilter');
+    const clearBtn = document.getElementById('firmPortfolioClearFiltersBtn');
+
+    const rerender = () => renderFirmPortfolioTable(getFilteredFirmPortfolioCompanies());
+
+    [searchInput, sectorFilter, marketFilter, hqFilter, yearFilter, geographyFilter].forEach(el => {
+        if (!el) return;
+        const eventName = el.tagName === 'INPUT' ? 'input' : 'change';
+        el.addEventListener(eventName, rerender);
+    });
+
+    if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+            if (searchInput) searchInput.value = '';
+            if (sectorFilter) sectorFilter.value = '';
+            if (marketFilter) marketFilter.value = '';
+            if (hqFilter) hqFilter.value = '';
+            if (yearFilter) yearFilter.value = '';
+            if (geographyFilter) geographyFilter.value = '';
+            rerender();
+        });
+    }
+}
+
+function renderFirmPortfolioTable(companies) {
+    const container = document.getElementById('firmPortfolio');
+    if (!container) return;
+    if (!companies || companies.length === 0) {
+        container.innerHTML = '<p style="color:#64748b;">No portfolio companies match the current filters.</p>';
+        return;
+    }
+
+    let html = `
+        <table class="portfolio-table">
+            <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Sector</th>
+                    <th>Fund</th>
+                    <th>Market</th>
+                    <th>Headquarters</th>
+                    <th>Entry Year</th>
+                    <th>Holding Period</th>
+                    <th>Status</th>
+                    <th>Deal Size</th>
+                    <th>Geography</th>
+                    <th>Description</th>
+                    <th>Website</th>
+                </tr>
+            </thead>
+            <tbody>
+    `;
+
+    companies.forEach(company => {
+        const rawLogo = company.logo_url || '';
+        const logoUrl = (rawLogo && !rawLogo.includes('ui-avatars.com'))
+            ? rawLogo
+            : (company.website ? `https://logo.clearbit.com/${extractDomain(company.website)}` : '');
+        const cleanCompany = cleanPortfolioText(company.company || 'N/A');
+        const cleanSector = cleanPortfolioText(company.sector || 'N/A');
+        const cleanFund = cleanPortfolioText(company.fund || 'N/A');
+        const cleanMarket = cleanPortfolioText(company.market || 'N/A');
+        const cleanHQ = cleanPortfolioText(company.headquarters || company.market || 'N/A');
+        const cleanEntry = cleanPortfolioText(company.entry || 'N/A');
+        const companyDomain = extractCompanyDomain(company);
+        const companyFaviconUrl = companyDomain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(companyDomain)}&sz=128` : '';
+        const guessedDomain = cleanCompany.toLowerCase().replace(/[^a-z0-9]/g, '');
+        const guessedLogoUrl = guessedDomain ? `https://logo.clearbit.com/${guessedDomain}.com` : '';
+        const companyAvatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(cleanCompany)}&background=3f7de8&color=ffffff&size=64`;
+        const holdingPeriod = calculateHoldingPeriod(company.entry);
+        const status = cleanPortfolioText(company.status || 'Active');
+        const statusColor = status === 'Active' ? '#10b981' : status === 'Exited' ? '#6b7280' : status === 'IPO' ? '#3b82f6' : '#94a3b8';
+        const dealSize = cleanPortfolioText(company.deal_size || '—');
+        const geography = cleanPortfolioText(company.geography || categorizeGeography(company.market));
+        const geographyColor = geography === 'Domestic' ? '#3f7de8' : geography === 'Nordic' ? '#0ea5a8' : '#d8a24c';
+        const description = cleanPortfolioText(company.description || '—');
+        html += `
+            <tr>
+                <td class="portfolio-cell-uniform company-name" title="${escapeHtml(description)}">
+                    <img src="${logoUrl || companyFaviconUrl || guessedLogoUrl || companyAvatarUrl}" class="company-logo" onerror="this.onerror=null; this.src='${companyFaviconUrl || guessedLogoUrl || companyAvatarUrl}'; this.onerror=function(){this.onerror=null; this.src='${companyAvatarUrl}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='inline';};};">
+                    <i class="fas fa-building company-icon-fallback" style="display:none;"></i>
+                    ${escapeHtml(cleanCompany)}
+                </td>
+                <td>${escapeHtml(cleanSector)}</td>
+                <td><span class="fund-badge">${escapeHtml(cleanFund)}</span></td>
+                <td class="portfolio-cell-uniform">${escapeHtml(cleanMarket)}</td>
+                <td class="portfolio-cell-uniform">${escapeHtml(cleanHQ)}</td>
+                <td class="portfolio-cell-uniform">${escapeHtml(cleanEntry)}</td>
+                <td style="text-align: center; font-weight: 600; color: ${holdingPeriod !== '—' ? '#3f7de8' : '#94a3b8'}; font-size: 0.65rem;">
+                    ${escapeHtml(holdingPeriod)}
+                </td>
+                <td style="text-align: center;">
+                    <span style="background: ${statusColor}15; color: ${statusColor}; padding: 2px 6px; border-radius: 8px; font-size: 0.55rem; font-weight: 600; display: inline-block;">
+                        ${escapeHtml(status)}
+                    </span>
+                </td>
+                <td style="text-align: center; font-size: 0.65rem; color: ${dealSize !== '—' ? '#1f4b82' : '#94a3b8'}; font-weight: ${dealSize !== '—' ? '600' : 'normal'};">
+                    ${escapeHtml(dealSize)}
+                </td>
+                <td style="text-align: center;">
+                    <span style="background: ${geographyColor}15; color: ${geographyColor}; padding: 2px 6px; border-radius: 6px; font-size: 0.55rem; font-weight: 600;">
+                        ${escapeHtml(geography)}
+                    </span>
+                </td>
+                <td style="max-width: 400px; font-size: 0.6rem; color: #64748b; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${escapeHtml(description)}">
+                    ${escapeHtml(description.length > 120 ? description.substring(0, 120) + '...' : description)}
+                </td>
+                <td>
+                    ${company.website ? `<a href="${company.website}" target="_blank" class="btn btn-sm btn-secondary">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>` : '-'}
+                </td>
+            </tr>
+        `;
+    });
+
+    html += '</tbody></table>';
+    container.innerHTML = `<div class="portfolio-table-wrapper">${html}</div>`;
+}
+
 async function loadFirmPortfolio(firmName) {
     try {
         const container = document.getElementById('firmPortfolio');
@@ -478,98 +727,15 @@ async function loadFirmPortfolio(firmName) {
             }
         }
 
-        // Render results
         if (!firmCompanies || firmCompanies.length === 0) {
             container.innerHTML = '<p>No portfolio companies found for this firm.</p>';
             return;
         }
 
-        let html = `
-            <table class="portfolio-table">
-                <thead>
-                    <tr>
-                        <th>Company</th>
-                        <th>Sector</th>
-                        <th>Fund</th>
-                        <th>Market</th>
-                        <th>Headquarters</th>
-                        <th>Entry Year</th>
-                        <th>Holding Period</th>
-                        <th>Status</th>
-                        <th>Deal Size</th>
-                        <th>Geography</th>
-                        <th>Description</th>
-                        <th>Website</th>
-                    </tr>
-                </thead>
-                <tbody>
-        `;
-
-        firmCompanies.forEach(company => {
-            const rawLogo = company.logo_url || '';
-            const logoUrl = (rawLogo && !rawLogo.includes('ui-avatars.com'))
-                ? rawLogo
-                : (company.website ? `https://logo.clearbit.com/${extractDomain(company.website)}` : '');
-            const cleanCompany = cleanPortfolioText(company.company || 'N/A');
-            const cleanSector = cleanPortfolioText(company.sector || 'N/A');
-            const cleanFund = cleanPortfolioText(company.fund || 'N/A');
-            const cleanMarket = cleanPortfolioText(company.market || 'N/A');
-            const cleanHQ = cleanPortfolioText(company.headquarters || company.market || 'N/A');
-            const cleanEntry = cleanPortfolioText(company.entry || 'N/A');
-            const companyDomain = extractCompanyDomain(company);
-            const companyFaviconUrl = companyDomain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(companyDomain)}&sz=128` : '';
-            const guessedDomain = cleanCompany.toLowerCase().replace(/[^a-z0-9]/g, '');
-            const guessedLogoUrl = guessedDomain ? `https://logo.clearbit.com/${guessedDomain}.com` : '';
-            const companyAvatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(cleanCompany)}&background=3f7de8&color=ffffff&size=64`;
-            const holdingPeriod = calculateHoldingPeriod(company.entry);
-            const status = cleanPortfolioText(company.status || 'Active');
-            const statusColor = status === 'Active' ? '#10b981' : status === 'Exited' ? '#6b7280' : status === 'IPO' ? '#3b82f6' : '#94a3b8';
-            const dealSize = cleanPortfolioText(company.deal_size || '—');
-            const geography = cleanPortfolioText(company.geography || categorizeGeography(company.market));
-            const geographyColor = geography === 'Domestic' ? '#3f7de8' : geography === 'Nordic' ? '#0ea5a8' : '#d8a24c';
-            const description = cleanPortfolioText(company.description || '—');
-            html += `
-                <tr>
-                    <td class="portfolio-cell-uniform company-name" title="${escapeHtml(description)}">
-                        <img src="${logoUrl || companyFaviconUrl || guessedLogoUrl || companyAvatarUrl}" class="company-logo" onerror="this.onerror=null; this.src='${companyFaviconUrl || guessedLogoUrl || companyAvatarUrl}'; this.onerror=function(){this.onerror=null; this.src='${companyAvatarUrl}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='inline';};};">
-                        <i class="fas fa-building company-icon-fallback" style="display:none;"></i>
-                        ${escapeHtml(cleanCompany)}
-                    </td>
-                    <td>${escapeHtml(cleanSector)}</td>
-                    <td><span class="fund-badge">${escapeHtml(cleanFund)}</span></td>
-                    <td class="portfolio-cell-uniform">${escapeHtml(cleanMarket)}</td>
-                    <td class="portfolio-cell-uniform">${escapeHtml(cleanHQ)}</td>
-                    <td class="portfolio-cell-uniform">${escapeHtml(cleanEntry)}</td>
-                    <td style="text-align: center; font-weight: 600; color: ${holdingPeriod !== '—' ? '#3f7de8' : '#94a3b8'}; font-size: 0.65rem;">
-                        ${escapeHtml(holdingPeriod)}
-                    </td>
-                    <td style="text-align: center;">
-                        <span style="background: ${statusColor}15; color: ${statusColor}; padding: 2px 6px; border-radius: 8px; font-size: 0.55rem; font-weight: 600; display: inline-block;">
-                            ${escapeHtml(status)}
-                        </span>
-                    </td>
-                    <td style="text-align: center; font-size: 0.65rem; color: ${dealSize !== '—' ? '#1f4b82' : '#94a3b8'}; font-weight: ${dealSize !== '—' ? '600' : 'normal'};">
-                        ${escapeHtml(dealSize)}
-                    </td>
-                    <td style="text-align: center;">
-                        <span style="background: ${geographyColor}15; color: ${geographyColor}; padding: 2px 6px; border-radius: 6px; font-size: 0.55rem; font-weight: 600;">
-                            ${escapeHtml(geography)}
-                        </span>
-                    </td>
-                    <td style="max-width: 400px; font-size: 0.6rem; color: #64748b; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${escapeHtml(description)}">
-                        ${escapeHtml(description.length > 120 ? description.substring(0, 120) + '...' : description)}
-                    </td>
-                    <td>
-                        ${company.website ? `<a href="${company.website}" target="_blank" class="btn btn-sm btn-secondary">
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>` : '-'}
-                    </td>
-                </tr>
-            `;
-        });
-
-        html += '</tbody></table>';
-        container.innerHTML = `<div class="portfolio-table-wrapper">${html}</div>`;
+        firmPortfolioCompanies = firmCompanies;
+        populateFirmPortfolioFilterOptions(firmPortfolioCompanies);
+        renderFirmPortfolioTable(firmPortfolioCompanies);
+        setupFirmPortfolioFilters();
     } catch (error) {
         console.error('Error loading portfolio:', error);
     }
