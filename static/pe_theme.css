@@ -479,14 +479,14 @@ body.pe-mobile-nav-open {
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-        z-index: 210;
+        z-index: 230;
         transition: opacity 200ms ease, visibility 0s linear 200ms;
     }
 
     .pe-mobile-backdrop.is-open {
         opacity: 1;
         visibility: visible;
-        pointer-events: none;
+        pointer-events: auto;
         transition: opacity 200ms ease;
     }
 
@@ -510,6 +510,24 @@ body.pe-mobile-nav-open {
         font-weight: 650;
         padding: 13px 12px;
         border-radius: 10px;
+    }
+
+    /* Prevent sticky touch hover from showing multiple blue highlights on mobile */
+    .pe-nav-link:hover,
+    .pe-nav-link:focus,
+    .pe-nav-link:active {
+        color: #2e4d72;
+        background: transparent;
+        border-color: transparent;
+    }
+
+    .pe-nav-link.is-active,
+    .pe-nav-link.is-active:hover,
+    .pe-nav-link.is-active:focus,
+    .pe-nav-link.is-active:active {
+        color: #1f4b82;
+        background: #e6efff;
+        border-color: #cadefb;
     }
 
     .pe-hero-title {
