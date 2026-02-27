@@ -393,7 +393,7 @@ body.pe-mobile-nav-open {
 
     .pe-top-nav {
         position: relative;
-        z-index: 120;
+        z-index: 220;
     }
 
     .pe-nav-shell {
@@ -455,7 +455,7 @@ body.pe-mobile-nav-open {
         border-radius: 0;
         box-shadow: -10px 0 28px rgba(15, 34, 59, 0.16);
         padding: 76px 14px 18px;
-        z-index: 170;
+        z-index: 240;
         transform: translateX(100%);
         opacity: 0;
         visibility: hidden;
@@ -479,7 +479,7 @@ body.pe-mobile-nav-open {
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-        z-index: 160;
+        z-index: 210;
         transition: opacity 200ms ease, visibility 0s linear 200ms;
     }
 
