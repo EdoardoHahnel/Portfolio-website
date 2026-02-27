@@ -3,6 +3,13 @@ PE Firms List Page
 */
 
 let allFirms = [];
+const firmDomainOverrides = {
+    'Alder': 'alder.se',
+    'Celero Capital': 'celerocapital.com',
+    'Celero': 'celerocapital.com',
+    'FSN Capital': 'fsncapital.com',
+    'Polaris': 'polarisequity.dk'
+};
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🏢 PE Firms page initialized!');
@@ -43,11 +50,17 @@ function displayFirms(firms) {
         card.href = `/pe-firm/${firm.key}`;
         card.className = 'pe-firm-card';
         card.style.animationDelay = `${index * 0.1}s`;
+        const websiteDomain = (firm.website || '').replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0];
+        const overrideDomain = firmDomainOverrides[firm.name] || websiteDomain;
+        const firmLogoFromApi = (firm.logo_url || '').includes('ui-avatars.com') ? '' : (firm.logo_url || '');
+        const clearbitLogo = firmLogoFromApi || (overrideDomain ? `https://logo.clearbit.com/${overrideDomain}` : '');
+        const faviconLogo = overrideDomain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(overrideDomain)}&sz=128` : '';
+        const avatarLogo = `https://ui-avatars.com/api/?name=${encodeURIComponent(firm.name)}&background=3f7de8&color=ffffff&size=128`;
         
         card.innerHTML = `
             <div class="pe-firm-card-header">
-                <img src="${firm.logo_url}" alt="${escapeHtml(firm.name)}" class="pe-firm-logo"
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <img src="${clearbitLogo || faviconLogo || avatarLogo}" alt="${escapeHtml(firm.name)}" class="pe-firm-logo"
+                     onerror="this.onerror=null; this.src='${faviconLogo || avatarLogo}'; this.onerror=function(){this.onerror=null; this.src='${avatarLogo}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};}">
                 <div class="pe-firm-icon-fallback" style="display: none;">
                     <i class="fas fa-briefcase"></i>
                 </div>

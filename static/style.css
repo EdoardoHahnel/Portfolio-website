@@ -19,15 +19,15 @@ CSS (Cascading Style Sheets) controls how your website LOOKS.
 }
 
 :root {
-    /* CSS Variables - Dark Blue Professional Theme */
-    --primary-color: #1e3a8a;
-    --primary-dark: #1e40af;
-    --secondary-color: #312e81;
-    --success-color: #1e40af;
+    /* Shared light-blue dashboard palette */
+    --primary-color: #3f7de8;
+    --primary-dark: #2f64c0;
+    --secondary-color: #6b88b3;
+    --success-color: #1f8f5f;
     --danger-color: #ef4444;
     --warning-color: #f59e0b;
     
-    --bg-color: #f8fafc;
+    --bg-color: #edf3fb;
     --card-bg: #ffffff;
     --text-primary: #1e293b;
     --text-secondary: #64748b;
@@ -227,6 +227,210 @@ body {
     outline: none;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.portfolio-filter-select {
+    min-width: 140px;
+    height: 34px;
+    padding: 0 2rem 0 0.6rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: #ffffff;
+    color: var(--text-primary);
+    font-size: 0.8rem;
+    font-family: inherit;
+    cursor: pointer;
+    outline: none;
+}
+
+.portfolio-filter-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.portfolio-chart-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.portfolio-chart-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.chart-focus-count-pill {
+    background: #dbeafe;
+    color: #1d4ed8;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.25rem 0.55rem;
+}
+
+.insights-toolbar-card {
+    margin-bottom: 0.25rem;
+}
+
+.insights-toolbar-body {
+    padding: 0.6rem 0.75rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.insights-switch-group {
+    display: flex;
+    gap: 0.45rem;
+    flex-wrap: wrap;
+}
+
+.insights-switch-group .btn.active {
+    background: #dbeafe;
+    color: #1d4ed8;
+    box-shadow: inset 0 0 0 1px #93c5fd;
+}
+
+.insights-breakdown-card {
+    margin-bottom: 0.18rem;
+}
+
+.insights-breakdown-card .content-card-header {
+    padding: 0.75rem 0.9rem;
+}
+
+.insights-breakdown-body {
+    padding: 0.35rem 0.55rem 0.2rem 0.55rem !important;
+    overflow: hidden !important;
+}
+
+.insights-side-panel {
+    border: 1px solid #dbeafe;
+    border-radius: 12px;
+    background: #ffffff;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    min-height: 240px;
+}
+
+.insights-side-panel--full {
+    width: 100%;
+}
+
+.insights-side-kpi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.45rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.insights-side-kpi {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.4rem 0.5rem;
+}
+
+.insights-side-kpi-label {
+    color: #64748b;
+    font-size: 0.65rem;
+}
+
+.insights-side-kpi-value {
+    color: #0f172a;
+    font-size: 0.78rem;
+    font-weight: 700;
+    margin-top: 0.2rem;
+}
+
+.insights-side-list-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.45rem 0.55rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.insights-side-list-head h3 {
+    margin: 0;
+    font-size: 0.76rem;
+    color: #1e293b;
+}
+
+.insights-side-list-wrap {
+    overflow: auto;
+    padding: 0.3rem;
+    max-height: 230px;
+}
+
+.insights-side-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.insights-category-item {
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 0.36rem 0.5rem;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 10px minmax(0, 1fr) auto;
+    gap: 0.45rem;
+    align-items: center;
+    cursor: pointer;
+}
+
+.insights-category-item:hover {
+    border-color: #93c5fd;
+    background: #f8fbff;
+}
+
+.insights-category-item.active {
+    border-color: #60a5fa;
+    background: #eff6ff;
+}
+
+.insights-category-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.insights-category-text {
+    font-size: 0.73rem;
+    color: #0f172a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.insights-category-meta {
+    font-size: 0.68rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.insights-table-card {
+    margin-top: 0;
+}
+
+.insights-table-card .content-card-header {
+    padding: 0.7rem 0.9rem;
+}
+
+.insights-table-card .content-card-body {
+    padding: 0.35rem 0.6rem 0.55rem 0.6rem;
+}
+
+@media (max-width: 1100px) {
+    .insights-side-panel {
+        min-height: 230px;
+        max-height: 320px;
+    }
 }
 
 /* ===== STATS ===== */
@@ -516,7 +720,7 @@ body {
 .portfolio-table-wrapper {
     width: 100%;
     overflow-x: auto;
-    overflow-y: visible;
+    overflow-y: hidden;
     border-radius: 8px;
     box-shadow: var(--shadow-sm);
     -webkit-overflow-scrolling: touch;
@@ -539,8 +743,8 @@ body {
 }
 
 .firm-header {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    color: white;
+    background: linear-gradient(135deg, #eaf2ff 0%, #f4f8ff 100%);
+    color: #1f3f68;
     padding: 0.65rem 1rem;
     display: flex;
     justify-content: space-between;
@@ -550,7 +754,7 @@ body {
 
 .firm-header-link {
     text-decoration: none;
-    color: white;
+    color: #1f3f68;
     flex: 1;
     transition: var(--transition);
 }
@@ -592,7 +796,7 @@ body {
 }
 
 .firm-count {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #dce8fb;
     padding: 0.3rem 0.6rem;
     border-radius: 12px;
     font-weight: 600;
@@ -610,16 +814,16 @@ body {
 }
 
 .portfolio-table thead {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    color: white;
+    background: #eaf2ff;
+    color: #1f3f68;
     position: sticky;
     top: 0;
     z-index: 10;
 }
 
 .portfolio-table th {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    color: white;
+    background: #eaf2ff;
+    color: #1f3f68;
     padding: 0.4rem 0.4rem;
     text-align: left;
     font-weight: 600;
@@ -627,7 +831,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.1px;
     white-space: nowrap;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid #d4e2f5;
     position: sticky;
     top: 0;
     z-index: 10;
@@ -911,13 +1115,20 @@ body {
 }
 
 .fund-badge {
-    background-color: var(--primary-color);
-    color: white;
+    background-color: #e7f0ff;
+    color: #25507f;
+    border: 1px solid #cddff8;
     padding: 0.15rem 0.4rem;
     border-radius: 12px;
     font-size: 0.5rem;
     font-weight: 600;
     display: inline-block;
+}
+
+.portfolio-uniform-cell {
+    font-size: 0.65rem;
+    color: #425b79;
+    font-weight: 600;
 }
 
 /* ===== RESPONSIVE DESIGN ===== */

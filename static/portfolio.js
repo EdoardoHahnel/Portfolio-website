@@ -11,19 +11,59 @@ document.addEventListener('DOMContentLoaded', function() {
     initModal();
 });
 
+const firmDomainOverrides = {
+    'Alder': 'alder.se',
+    'Celero Capital': 'celerocapital.com',
+    'Celero': 'celerocapital.com',
+    'FSN Capital': 'fsncapital.com',
+    'Polaris': 'polarisequity.dk'
+};
+let allPortfolioCompanies = [];
+
 function init() {
-    const refreshBtn = document.getElementById('refreshPortfolioBtn');
     const searchInput = document.getElementById('portfolioSearchInput');
-    
-    refreshBtn.addEventListener('click', reloadPortfolio);
-    searchInput.addEventListener('input', handlePortfolioSearch);
+    const sectorFilter = document.getElementById('sectorFilter');
+    const marketFilter = document.getElementById('marketFilter');
+    const hqFilter = document.getElementById('hqFilter');
+    const entryYearFilter = document.getElementById('entryYearFilter');
+    const geographyFilter = document.getElementById('geographyFilter');
+    const clearFiltersBtn = document.getElementById('clearFiltersBtn');
+
+    if (searchInput) searchInput.addEventListener('input', handlePortfolioSearch);
+    [sectorFilter, marketFilter, hqFilter, entryYearFilter, geographyFilter].forEach(el => {
+        if (el) el.addEventListener('change', scheduleRenderFilteredPortfolio);
+    });
+    if (clearFiltersBtn) {
+        clearFiltersBtn.addEventListener('click', clearAllFilters);
+    }
+    initChartCardNavigation();
     
     // Auto-load portfolio data on page load
     loadPortfolio();
 }
 
+function initChartCardNavigation() {
+    const chartMap = {
+        yearChart: 'year',
+        sectorChart: 'sector',
+        countryChart: 'country'
+    };
+    const cards = document.querySelectorAll('.portfolio-chart-card');
+    cards.forEach(card => {
+        const canvasId = card.getAttribute('data-chart-canvas');
+        const chartKey = chartMap[canvasId];
+        if (!chartKey) return;
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', (event) => {
+            if (event.target && event.target.closest('canvas')) return;
+            window.location.href = `/portfolio-insights?chart=${encodeURIComponent(chartKey)}`;
+        });
+    });
+}
+
 async function scrapePortfolio() {
     const refreshBtn = document.getElementById('refreshPortfolioBtn');
+    if (!refreshBtn) return;
     const originalText = refreshBtn.innerHTML;
     
     refreshBtn.disabled = true;
@@ -61,6 +101,7 @@ async function scrapePortfolio() {
 
 async function reloadPortfolio() {
     const refreshBtn = document.getElementById('refreshPortfolioBtn');
+    if (!refreshBtn) return;
     const originalText = refreshBtn.innerHTML;
     
     refreshBtn.disabled = true;
@@ -105,9 +146,10 @@ async function loadPortfolio() {
         const data = await response.json();
         
         if (data.success) {
-            document.getElementById('portfolioTotalCount').textContent = data.count;
-            displayPortfolio(data.companies);
-            calculateStatistics(data.companies);
+            allPortfolioCompanies = Array.isArray(data.companies) ? data.companies : [];
+            populateFilterOptions(allPortfolioCompanies);
+            renderFilteredPortfolio();
+            calculateStatistics(allPortfolioCompanies);
         } else {
             showStatusMessage('❌ Failed to load portfolio data', 'error');
         }
@@ -164,6 +206,7 @@ function calculateStatistics(companies) {
 function createYearChart(companies) {
     const ctx = document.getElementById('yearChart');
     if (!ctx) return;
+    ctx.title = 'Click a year to filter portfolio companies';
     
     // Count by year
     const yearCounts = {};
@@ -210,6 +253,17 @@ function createYearChart(companies) {
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            onClick: (event, elements, chart) => {
+                if (!elements || elements.length === 0) return;
+                const index = elements[0].index;
+                const year = chart.data.labels[index];
+                window.location.href = `/portfolio-insights?chart=year&value=${encodeURIComponent(String(year))}`;
+            },
+            onHover: (event, elements) => {
+                if (event && event.native && event.native.target) {
+                    event.native.target.style.cursor = elements && elements.length ? 'pointer' : 'default';
+                }
+            },
             plugins: {
                 legend: { display: false },
                 tooltip: {
@@ -245,6 +299,7 @@ function createYearChart(companies) {
 function createSectorChart(companies) {
     const ctx = document.getElementById('sectorChart');
     if (!ctx) return;
+    ctx.title = 'Click a sector to filter portfolio companies';
     
     // Count by sector
     const sectorCounts = {};
@@ -272,7 +327,7 @@ function createSectorChart(companies) {
     ];
     
     sectorChartInstance = new Chart(ctx, {
-        type: 'polarArea',
+        type: 'pie',
         data: {
             labels: labels,
             datasets: [{
@@ -287,6 +342,17 @@ function createSectorChart(companies) {
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            onClick: (event, elements, chart) => {
+                if (!elements || elements.length === 0) return;
+                const index = elements[0].index;
+                const sector = chart.data.labels[index];
+                window.location.href = `/portfolio-insights?chart=sector&value=${encodeURIComponent(String(sector))}`;
+            },
+            onHover: (event, elements) => {
+                if (event && event.native && event.native.target) {
+                    event.native.target.style.cursor = elements && elements.length ? 'pointer' : 'default';
+                }
+            },
             animation: {
                 animateRotate: true,
                 animateScale: true,
@@ -325,16 +391,7 @@ function createSectorChart(companies) {
                     }
                 }
             },
-            scales: {
-                r: {
-                    ticks: {
-                        display: false
-                    },
-                    grid: {
-                        color: 'rgba(0, 0, 0, 0.05)'
-                    }
-                }
-            }
+            scales: {}
         }
     });
 }
@@ -342,6 +399,7 @@ function createSectorChart(companies) {
 function createCountryChart(companies) {
     const ctx = document.getElementById('countryChart');
     if (!ctx) return;
+    ctx.title = 'Click a market to filter portfolio companies';
     
     // Count by country/market
     const countryCounts = {};
@@ -369,7 +427,7 @@ function createCountryChart(companies) {
     });
     
     countryChartInstance = new Chart(ctx, {
-        type: 'doughnut',
+        type: 'pie',
         data: {
             labels: labels,
             datasets: [{
@@ -387,7 +445,17 @@ function createCountryChart(companies) {
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            cutout: '60%',
+            onClick: (event, elements, chart) => {
+                if (!elements || elements.length === 0) return;
+                const index = elements[0].index;
+                const market = chart.data.labels[index];
+                window.location.href = `/portfolio-insights?chart=country&value=${encodeURIComponent(String(market))}`;
+            },
+            onHover: (event, elements) => {
+                if (event && event.native && event.native.target) {
+                    event.native.target.style.cursor = elements && elements.length ? 'pointer' : 'default';
+                }
+            },
             animation: {
                 animateRotate: true,
                 animateScale: true,
@@ -430,6 +498,171 @@ function createCountryChart(companies) {
     });
 }
 
+function normalizeFilterValue(value) {
+    return cleanDisplayText(value || '');
+}
+
+function getSelectedValue(id) {
+    const el = document.getElementById(id);
+    return el ? el.value.trim() : '';
+}
+
+function getActiveFilters() {
+    return {
+        query: getSelectedValue('portfolioSearchInput').toLowerCase(),
+        sector: getSelectedValue('sectorFilter'),
+        market: getSelectedValue('marketFilter'),
+        headquarters: getSelectedValue('hqFilter'),
+        entry: getSelectedValue('entryYearFilter'),
+        geography: getSelectedValue('geographyFilter')
+    };
+}
+
+function hasActiveFilters(filters) {
+    return Boolean(
+        filters.query ||
+        filters.sector ||
+        filters.market ||
+        filters.headquarters ||
+        filters.entry ||
+        filters.geography
+    );
+}
+
+function applyPortfolioFilters(companies, filters) {
+    return companies.filter(company => {
+        const cleanCompany = normalizeFilterValue(company.company);
+        const cleanSector = normalizeFilterValue(company.sector);
+        const cleanMarket = normalizeFilterValue(company.market);
+        const cleanHQ = normalizeFilterValue(company.headquarters || company.market);
+        const cleanEntry = normalizeFilterValue(company.entry);
+        const owner = normalizeFilterValue(company.source);
+        const geography = categorizeGeography(cleanMarket);
+
+        const matchesQuery = !filters.query || [
+            cleanCompany,
+            cleanSector,
+            cleanMarket,
+            cleanHQ,
+            cleanEntry,
+            owner
+        ].some(val => val.toLowerCase().includes(filters.query));
+
+        return matchesQuery &&
+            (!filters.sector || cleanSector === filters.sector) &&
+            (!filters.market || cleanMarket === filters.market) &&
+            (!filters.headquarters || cleanHQ === filters.headquarters) &&
+            (!filters.entry || cleanEntry === filters.entry) &&
+            (!filters.geography || geography === filters.geography);
+    });
+}
+
+function populateFilterOptions(companies) {
+    const sectorFilter = document.getElementById('sectorFilter');
+    const marketFilter = document.getElementById('marketFilter');
+    const hqFilter = document.getElementById('hqFilter');
+    const entryYearFilter = document.getElementById('entryYearFilter');
+    if (!sectorFilter || !marketFilter || !hqFilter || !entryYearFilter) return;
+
+    const sectors = [...new Set(companies.map(c => normalizeFilterValue(c.sector)).filter(Boolean))].sort();
+    const markets = [...new Set(companies.map(c => normalizeFilterValue(c.market)).filter(Boolean))].sort();
+    const hqs = [...new Set(companies.map(c => normalizeFilterValue(c.headquarters || c.market)).filter(Boolean))].sort();
+    const years = [...new Set(companies.map(c => normalizeFilterValue(c.entry)).filter(Boolean))].sort((a, b) => Number(b) - Number(a));
+
+    setSelectOptions(sectorFilter, 'All Sectors', sectors);
+    setSelectOptions(marketFilter, 'All Markets', markets);
+    setSelectOptions(hqFilter, 'All HQ', hqs);
+    setSelectOptions(entryYearFilter, 'All Entry Years', years);
+}
+
+function setSelectOptions(selectEl, placeholder, values) {
+    const selected = selectEl.value;
+    selectEl.innerHTML = '';
+    const defaultOption = document.createElement('option');
+    defaultOption.value = '';
+    defaultOption.textContent = placeholder;
+    selectEl.appendChild(defaultOption);
+    values.forEach(value => {
+        const option = document.createElement('option');
+        option.value = value;
+        option.textContent = value;
+        selectEl.appendChild(option);
+    });
+    selectEl.value = values.includes(selected) ? selected : '';
+}
+
+function clearAllFilters() {
+    ['portfolioSearchInput', 'sectorFilter', 'marketFilter', 'hqFilter', 'entryYearFilter', 'geographyFilter'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.value = '';
+    });
+    scheduleRenderFilteredPortfolio();
+}
+
+function renderFilteredPortfolio() {
+    const filters = getActiveFilters();
+    const filteredCompanies = applyPortfolioFilters(allPortfolioCompanies, filters);
+    const totalEl = document.getElementById('portfolioTotalCount');
+    if (totalEl) totalEl.textContent = filteredCompanies.length;
+
+    if (hasActiveFilters(filters)) {
+        displayFilteredPortfolioFlat(filteredCompanies);
+    } else {
+        displayPortfolio(filteredCompanies);
+    }
+}
+
+function displayFilteredPortfolioFlat(companies) {
+    const container = document.getElementById('portfolioContainer');
+    const emptyState = document.getElementById('portfolioEmptyState');
+    if (!companies || companies.length === 0) {
+        container.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        return;
+    }
+
+    emptyState.classList.add('hidden');
+    const rows = companies.map(company => {
+        const cleanCompany = cleanDisplayText(company.company || 'N/A');
+        const cleanSector = cleanDisplayText(company.sector || 'N/A');
+        const cleanMarket = cleanDisplayText(company.market || 'N/A');
+        const cleanHQ = cleanDisplayText(company.headquarters || company.market || 'N/A');
+        const cleanEntry = cleanDisplayText(company.entry || 'N/A');
+        const cleanOwner = cleanDisplayText(company.source || 'N/A');
+        const geography = categorizeGeography(cleanMarket);
+        return `
+            <tr>
+                <td>${escapeHtml(cleanCompany)}</td>
+                <td>${escapeHtml(cleanOwner)}</td>
+                <td>${escapeHtml(cleanSector)}</td>
+                <td>${escapeHtml(cleanMarket)}</td>
+                <td>${escapeHtml(cleanHQ)}</td>
+                <td>${escapeHtml(cleanEntry)}</td>
+                <td>${escapeHtml(geography)}</td>
+            </tr>
+        `;
+    }).join('');
+
+    container.innerHTML = `
+        <div class="portfolio-table-wrapper">
+            <table class="portfolio-table">
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th>Owner (GP)</th>
+                        <th>Sector</th>
+                        <th>Market</th>
+                        <th>Headquarters</th>
+                        <th>Entry Year</th>
+                        <th>Geography</th>
+                    </tr>
+                </thead>
+                <tbody>${rows}</tbody>
+            </table>
+        </div>
+    `;
+}
+
 function displayPortfolio(companies) {
     const container = document.getElementById('portfolioContainer');
     const emptyState = document.getElementById('portfolioEmptyState');
@@ -466,19 +699,21 @@ function displayPortfolio(companies) {
         firmHeader.className = 'firm-header';
         
         // Get firm logo from Clearbit
-        const firmDomain = getFirmDomain(source);
+        const firmDomain = firmDomainOverrides[source] || getFirmDomain(source);
         const firmLogoUrl = `https://logo.clearbit.com/${firmDomain}`;
+        const firmFaviconUrl = `https://www.google.com/s2/favicons?domain=${encodeURIComponent(firmDomain)}&sz=128`;
+        const firmAvatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(source)}&background=3f7de8&color=ffffff&size=96`;
         
         // Create clickable header
         const firmLink = document.createElement('a');
-        firmLink.href = `/pe-firm/${source}`;
+        firmLink.href = `/pe-firm/${encodeURIComponent(source)}`;
         firmLink.className = 'firm-header-link';
         firmLink.innerHTML = `
             <h3>
                 <img src="${firmLogoUrl}" 
                      alt="${escapeHtml(source)}" 
                      class="firm-logo"
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                     onerror="this.onerror=null; this.src='${firmFaviconUrl}'; this.onerror=function(){this.onerror=null; this.src='${firmAvatarUrl}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='inline';};}">
                 <i class="fas fa-briefcase firm-icon-fallback" style="display:none;"></i>
                 ${escapeHtml(source)}
                 <i class="fas fa-external-link-alt" style="font-size: 1rem; margin-left: 0.5rem; opacity: 0.6;"></i>
@@ -523,17 +758,31 @@ function displayPortfolio(companies) {
             row.style.animationDelay = `${index * 0.02}s`;
             
             // Make company name clickable with logo
-            const logoUrl = company.logo_url || (company.website ? 
-                `https://logo.clearbit.com/${extractDomain(company.website)}` : '');
+            const rawLogo = company.logo_url || '';
+            const logoUrl = (rawLogo && !rawLogo.includes('ui-avatars.com'))
+                ? rawLogo
+                : (company.website ? `https://logo.clearbit.com/${extractDomain(company.website)}` : '');
             
-            const companyNameHtml = `<span class="company-link-modal" style="cursor: pointer;">
-                    <img src="${logoUrl}" 
-                         alt="${escapeHtml(company.company)}" 
+            const cleanCompany = cleanDisplayText(company.company || 'N/A');
+            const cleanSector = cleanDisplayText(company.sector || 'N/A');
+            const cleanFund = cleanDisplayText(company.fund || 'N/A');
+            const cleanMarket = cleanDisplayText(company.market || 'N/A');
+            const cleanHQ = cleanDisplayText(company.headquarters || 'N/A');
+            const cleanEntry = cleanDisplayText(company.entry || 'N/A');
+            const companyDomain = extractCompanyDomain(company);
+            const companyFaviconUrl = companyDomain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(companyDomain)}&sz=128` : '';
+            const companyAvatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(cleanCompany)}&background=3f7de8&color=ffffff&size=64`;
+            const guessedDomain = cleanCompany.toLowerCase().replace(/[^a-z0-9]/g, '');
+            const guessedLogoUrl = guessedDomain ? `https://logo.clearbit.com/${guessedDomain}.com` : '';
+            const companyLogoSrc = logoUrl || companyFaviconUrl || guessedLogoUrl || companyAvatarUrl;
+            const companyNameHtml = `<span class="company-link-modal portfolio-uniform-cell" style="cursor: pointer;">
+                    <img src="${companyLogoSrc}" 
+                         alt="${escapeHtml(cleanCompany)}" 
                          class="company-logo"
-                         onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                         onerror="this.onerror=null; this.src='${companyFaviconUrl || guessedLogoUrl || companyAvatarUrl}'; this.onerror=function(){this.onerror=null; this.src='${companyAvatarUrl}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='inline';};}">
                     <i class="fas fa-building company-icon-fallback" style="display:none;"></i>
-                    ${escapeHtml(company.company)}
-                    <i class="fas fa-info-circle" style="margin-left: 8px; color: #667eea; opacity: 0.7;"></i>
+                    ${escapeHtml(cleanCompany)}
+                    <i class="fas fa-info-circle" style="margin-left: 8px; color: #3f7de8; opacity: 0.7;"></i>
                 </span>`;
             
             // Add description as tooltip - check both description and detailed_description fields
@@ -553,23 +802,22 @@ function displayPortfolio(companies) {
             
             // Categorize geography
             const geography = categorizeGeography(company.market);
-            const geographyColor = geography === 'Domestic' ? '#8b5cf6' : geography === 'Nordic' ? '#06b6d4' : '#f59e0b';
+            const geographyColor = geography === 'Domestic' ? '#3f7de8' : geography === 'Nordic' ? '#0ea5a8' : '#d8a24c';
             
             row.innerHTML = `
-                <td class="company-name" title="${escapeHtml(description)}">
+                <td class="company-name portfolio-uniform-cell" title="${escapeHtml(description)}">
                     ${companyNameHtml}
                 </td>
-                <td>${escapeHtml(company.sector || 'N/A')}</td>
+                <td>${escapeHtml(cleanSector)}</td>
                 <td>
-                    <span class="fund-badge">${escapeHtml(company.fund || 'N/A')}</span>
+                    <span class="fund-badge">${escapeHtml(cleanFund)}</span>
                 </td>
-                <td>${escapeHtml(company.market || 'N/A')}</td>
-                <td style="font-size: 0.65rem; color: #64748b;">
-                    <i class="fas fa-map-marker-alt" style="color: #667eea; margin-right: 4px;"></i>
-                    ${escapeHtml(company.headquarters || 'N/A')}
+                <td class="portfolio-uniform-cell">${escapeHtml(cleanMarket)}</td>
+                <td class="portfolio-uniform-cell">
+                    ${escapeHtml(cleanHQ)}
                 </td>
-                <td style="color: ${company.entry ? 'inherit' : '#94a3b8'}; font-size: 0.65rem;">${escapeHtml(company.entry || 'N/A')}</td>
-                <td style="text-align: center; font-weight: 600; color: ${holdingPeriod ? '#667eea' : '#94a3b8'}; font-size: 0.65rem;">
+                <td class="portfolio-uniform-cell">${escapeHtml(cleanEntry)}</td>
+                <td style="text-align: center; font-weight: 600; color: ${holdingPeriod ? '#3f7de8' : '#94a3b8'}; font-size: 0.65rem;">
                     ${holdingPeriod ? `${holdingPeriod} yrs` : '—'}
                 </td>
                 <td style="text-align: center;">
@@ -590,7 +838,7 @@ function displayPortfolio(companies) {
                 </td>
                 <td style="text-align: center;">
                     ${company.website ? 
-                        `<a href="${escapeHtml(company.website)}" target="_blank" style="color: #667eea; font-size: 16px; text-decoration: none;" title="${escapeHtml(company.website)}">
+                        `<a href="${escapeHtml(company.website)}" target="_blank" style="color: #3f7de8; font-size: 16px; text-decoration: none;" title="${escapeHtml(company.website)}">
                             <i class="fas fa-external-link-alt"></i>
                         </a>` : 
                         `<span style="color: #cbd5e1;">—</span>`
@@ -644,41 +892,24 @@ function displayPortfolio(companies) {
     });
 }
 
+function cleanDisplayText(value) {
+    return String(value || 'N/A').replace(/\s*\([^)]*\)\s*/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
 let searchTimeout;
-async function handlePortfolioSearch(event) {
-    const query = event.target.value.trim();
-    
+let filterRenderTimeout;
+function handlePortfolioSearch() {
     clearTimeout(searchTimeout);
-    searchTimeout = setTimeout(async () => {
-        
-        if (query === '') {
-            loadPortfolio();
-            return;
-        }
-        
-        showLoading(true);
-        
-        try {
-            const response = await fetch(`/api/portfolio/search?q=${encodeURIComponent(query)}`);
-            const data = await response.json();
-            
-            if (data.success) {
-                document.getElementById('portfolioTotalCount').textContent = data.count;
-                displayPortfolio(data.results);
-                
-                if (data.count === 0) {
-                    showStatusMessage(`No companies found for "${query}"`, 'error');
-                }
-            }
-            
-        } catch (error) {
-            console.error('Error searching portfolio:', error);
-            showStatusMessage('❌ Search failed', 'error');
-        } finally {
-            showLoading(false);
-        }
-        
+    searchTimeout = setTimeout(() => {
+        scheduleRenderFilteredPortfolio();
     }, 300);
+}
+
+function scheduleRenderFilteredPortfolio() {
+    clearTimeout(filterRenderTimeout);
+    filterRenderTimeout = setTimeout(() => {
+        renderFilteredPortfolio();
+    }, 80);
 }
 
 // ===================================================================
@@ -739,6 +970,22 @@ function extractDomain(url) {
     } catch (e) {
         return '';
     }
+}
+
+function extractCompanyDomain(company) {
+    const websiteDomain = extractDomain((company && company.website) || '');
+    if (websiteDomain) return websiteDomain;
+
+    const rawLogo = (company && company.logo_url) || '';
+    const clearbitPrefix = 'logo.clearbit.com/';
+    const idx = rawLogo.indexOf(clearbitPrefix);
+    if (idx >= 0) {
+        const tail = rawLogo.substring(idx + clearbitPrefix.length);
+        const domain = tail.split(/[/?#]/)[0].trim();
+        return domain.replace(/^www\./, '');
+    }
+
+    return '';
 }
 
 // Helper function to generate company slug for URL

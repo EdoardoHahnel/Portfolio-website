@@ -105,6 +105,14 @@ def portfolio():
     return render_template('portfolio.html')
 
 
+@app.route('/portfolio-insights')
+def portfolio_insights():
+    """
+    Portfolio chart drill-down page
+    """
+    return render_template('portfolio_insights.html')
+
+
 @app.route('/company/<company_slug>')
 def company_detail(company_slug):
     """
@@ -482,8 +490,10 @@ def get_portfolio():
             if portfolio_storage:
                 print(f"Loaded {len(portfolio_storage)} companies from database")
         
-        # For Altor, Adelis Equity, and Polaris, replace with database portfolio
-        firms_to_replace = ['Altor', 'Adelis Equity', 'Polaris']
+        # For selected firms, replace with curated database portfolio.
+        # Keep Altor and Adelis Equity on enriched source to preserve stronger company logo/website coverage.
+        # Triton will use the enriched dataset (has full coverage) until the full curated list is populated
+        firms_to_replace = ['Polaris', 'FSN Capital', 'Nordstjernan', 'Valedo Partners', 'IK Partners']
         final_companies = []
         
         # Filter out companies from firms that need replacement
@@ -510,7 +520,7 @@ def get_portfolio():
                                     'status': 'Active',
                                     'source': firm_name,
                                     'website': pc.get('website', ''),
-                                    'logo_url': pc.get('logo', ''),
+                                    'logo_url': pc.get('logo_url', '') or pc.get('logo', ''),
                                     'description': pc.get('description', ''),
                                     'headquarters': pc.get('country', ''),
                                     'deal_size': '',
@@ -578,8 +588,10 @@ def search_portfolio():
     """
     query = request.args.get('q', '').lower()
     
-    # For Altor, Adelis Equity, and Polaris, replace with database portfolio
-    firms_to_replace = ['Altor', 'Adelis Equity', 'Polaris']
+    # For selected firms, replace with curated database portfolio.
+    # Keep Altor and Adelis Equity on enriched source to preserve stronger company logo/website coverage.
+    # Triton will use the enriched dataset (has full coverage) until the full curated list is populated
+    firms_to_replace = ['Polaris', 'FSN Capital', 'Nordstjernan', 'Valedo Partners', 'IK Partners']
     final_companies = []
     
     # Filter out companies from firms that need replacement
@@ -606,7 +618,7 @@ def search_portfolio():
                                 'status': 'Active',
                                 'source': firm_name,
                                 'website': pc.get('website', ''),
-                                'logo_url': pc.get('logo', ''),
+                                'logo_url': pc.get('logo_url', '') or pc.get('logo', ''),
                                 'description': pc.get('description', ''),
                                 'headquarters': pc.get('country', ''),
                                 'deal_size': '',
@@ -705,42 +717,68 @@ def get_pe_firm_detail(firm_name):
     Get detailed information about a specific PE firm with real news integration
     """
     try:
-        # Get firm metadata from pe_firms_database first
+        # Resolve aliases (e.g. "Accent" -> "Accent Equity")
+        requested_name = firm_name
         firm_metadata = {}
+        firm_companies = []
+        canonical_firm_name = firm_name
+
+        manual_aliases = {
+            'accent': 'Accent Equity',
+            'triton': 'Triton Partners',
+            'adelis': 'Adelis Equity',
+            'ik': 'IK Partners',
+            'bure': 'Bure Equity'
+        }
+
         if os.path.exists('pe_firms_database.json'):
             with open('pe_firms_database.json', 'r', encoding='utf-8') as pf:
                 pe_data = json.load(pf)
-                firm_metadata = pe_data.get('pe_firms', {}).get(firm_name, {})
-        
-            # For Altor, Adelis Equity, and Polaris, prioritize portfolio_companies from pe_firms_database
-            if firm_name in ['Altor', 'Adelis Equity', 'Polaris'] and firm_metadata.get('portfolio_companies'):
-                firm_companies = []
-                for pc in firm_metadata['portfolio_companies']:
-                    # Convert portfolio_companies format to enriched format
-                    company_data = {
-                        'company': pc.get('name', ''),
-                        'sector': pc.get('sector', ''),
-                        'market': pc.get('country', ''),
-                        'entry': pc.get('entry_year', ''),
-                        'status': 'Active',
-                        'source': firm_name,
-                        'website': pc.get('website', ''),
-                        'logo_url': pc.get('logo', ''),
-                        'description': pc.get('description', ''),
-                        'headquarters': pc.get('country', ''),
-                        'deal_size': '',
-                        'fund': '',
-                        'geography': 'Nordic' if pc.get('country') in ['Sweden', 'Denmark', 'Norway', 'Finland'] else 'International'
-                    }
-                    firm_companies.append(company_data)
-        else:
-            # Try enriched database for other firms
-            firm_companies = []
-            if os.path.exists('portfolio_enriched.json'):
-                with open('portfolio_enriched.json', 'r', encoding='utf-8') as f:
-                    data = json.load(f)
-                    all_companies = data.get('companies', [])
-                    firm_companies = [c for c in all_companies if c.get('source') == firm_name]
+                pe_firms = pe_data.get('pe_firms', {})
+
+                # Exact key, case-insensitive key, then alias mapping
+                if firm_name in pe_firms:
+                    canonical_firm_name = firm_name
+                else:
+                    lowered = firm_name.lower()
+                    matched_key = next((k for k in pe_firms.keys() if k.lower() == lowered), None)
+                    if matched_key:
+                        canonical_firm_name = matched_key
+                    else:
+                        alias_target = manual_aliases.get(lowered)
+                        if alias_target and alias_target in pe_firms:
+                            canonical_firm_name = alias_target
+
+                firm_metadata = pe_firms.get(canonical_firm_name, {})
+
+                # For selected firms with curated portfolio_companies, prioritize curated records.
+                # Keep Altor and Adelis Equity on enriched source to preserve stronger company logo/website coverage.
+                curated_firms = ['Polaris', 'FSN Capital', 'Nordstjernan', 'Valedo Partners', 'IK Partners']
+                if canonical_firm_name in curated_firms and firm_metadata.get('portfolio_companies'):
+                    for pc in firm_metadata['portfolio_companies']:
+                        company_data = {
+                            'company': pc.get('name', ''),
+                            'sector': pc.get('sector', ''),
+                            'market': pc.get('country', ''),
+                            'entry': pc.get('entry_year', ''),
+                            'status': 'Active',
+                            'source': canonical_firm_name,
+                            'website': pc.get('website', ''),
+                            'logo_url': pc.get('logo_url', '') or pc.get('logo', ''),
+                            'description': pc.get('description', ''),
+                            'headquarters': pc.get('country', ''),
+                            'deal_size': '',
+                            'fund': '',
+                            'geography': 'Nordic' if pc.get('country') in ['Sweden', 'Denmark', 'Norway', 'Finland'] else 'International'
+                        }
+                        firm_companies.append(company_data)
+
+        # Fallback: build firm companies from enriched portfolio using canonical name
+        if not firm_companies and os.path.exists('portfolio_enriched.json'):
+            with open('portfolio_enriched.json', 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                all_companies = data.get('companies', [])
+                firm_companies = [c for c in all_companies if c.get('source') == canonical_firm_name]
         
         if firm_companies or firm_metadata:
             # Get real news for this firm
@@ -763,7 +801,7 @@ def get_pe_firm_detail(firm_name):
                         article_id = article_link
                         
                         # PRIORITY 1: Direct firm match from the 'firm' field
-                        if article_firm and article_firm.lower() == firm_name.lower():
+                        if article_firm and article_firm.lower() == canonical_firm_name.lower():
                             if article_id not in seen_articles:
                                 real_news.append(article)
                                 seen_articles.add(article_id)
@@ -788,13 +826,13 @@ def get_pe_firm_detail(firm_name):
                             if (re.search(pattern, title_lower) or re.search(pattern, desc_lower)):
                                 # Additional check: make sure it's not about a different company
                                 # Skip if the article is clearly about a different firm
-                                if article_firm and article_firm.lower() != firm_name.lower():
+                                if article_firm and article_firm.lower() != canonical_firm_name.lower():
                                     continue
                                 
                                 if article_id not in seen_articles:
                                     # Add firm context to the article
                                     article_copy = article.copy()
-                                    article_copy['related_firm'] = firm_name
+                                    article_copy['related_firm'] = canonical_firm_name
                                     article_copy['related_company'] = company_name
                                     real_news.append(article_copy)
                                     seen_articles.add(article_id)
@@ -805,7 +843,7 @@ def get_pe_firm_detail(firm_name):
             
             # Build firm data structure with real news
             firm_data = {
-                'name': firm_name,
+                'name': canonical_firm_name,
                 'companies': firm_companies,
                 'company_count': len(firm_companies),
                 'real_news': real_news[:10],  # Latest 10 news items

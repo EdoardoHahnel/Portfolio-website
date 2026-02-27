@@ -338,13 +338,15 @@ function createRobustLogoHTML(firmName, size = '32px') {
     if (firmLogos[firmName]) {
         const logoData = firmLogos[firmName];
         const escapedName = escapeHtml(firmName);
+        const domain = extractLogoDomain(logoData.primary);
+        const favicon = domain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=${Math.max(64, parseInt(size) * 2)}` : logoData.fallback;
         
         const logoHTML = `
             <div class="news-firm-logo" style="position: relative; display: inline-block; margin-right: 8px;">
                 <img src="${logoData.primary}" 
                      alt="${escapedName}" 
                      style="width: ${size}; height: ${size}; border-radius: 6px; object-fit: contain;"
-                     onerror="this.onerror=null; this.src='${logoData.fallback}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';}">
+                     onerror="this.onerror=null; this.src='${favicon}'; this.onerror=function(){this.onerror=null; this.src='${logoData.fallback}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};}">
                 <div class="logo-fallback" style="display: none; width: ${size}; height: ${size}; background: #4c1d95; color: white; border-radius: 6px; align-items: center; justify-content: center; font-size: 14px; font-weight: bold;">
                     ${logoData.icon}
                 </div>
@@ -588,13 +590,15 @@ function createRobustLogoHTML(firmName, size = '32px') {
         const escapedName = escapeHtml(firmName);
         const escapedRelated = escapeHtml(relatedFirm);
         const hasProfile = availablePEFirms.has(relatedFirm);
+        const domain = extractLogoDomain(logoData.primary);
+        const favicon = domain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=${Math.max(64, parseInt(size) * 2)}` : logoData.fallback;
         
         const logoHTML = `
             <div class="news-firm-logo" style="position: relative; display: inline-block; margin-right: 8px;" title="Related to ${escapedRelated}">
                 <img src="${logoData.primary}" 
                      alt="${escapedName} (${escapedRelated})" 
                      style="width: ${size}; height: ${size}; border-radius: 6px; object-fit: contain; border: 2px solid #fbbf24;"
-                     onerror="this.onerror=null; this.src='${logoData.fallback}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';}">
+                     onerror="this.onerror=null; this.src='${favicon}'; this.onerror=function(){this.onerror=null; this.src='${logoData.fallback}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};}">
                 <div class="logo-fallback" style="display: none; width: ${size}; height: ${size}; background: #fbbf24; color: #1f2937; border-radius: 6px; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; border: 2px solid #f59e0b;">
                     ${logoData.icon}
                 </div>
@@ -629,6 +633,18 @@ function createRobustLogoHTML(firmName, size = '32px') {
             </div>
         </div>
     `;
+}
+
+function extractLogoDomain(url) {
+    try {
+        const parsed = new URL(url);
+        if (parsed.hostname.includes('logo.clearbit.com')) {
+            return parsed.pathname.replace(/^\/+/, '').split('/')[0];
+        }
+        return parsed.hostname.replace(/^www\./, '');
+    } catch {
+        return '';
+    }
 }
 
 // ===== WAIT FOR PAGE TO LOAD =====

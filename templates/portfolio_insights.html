@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}Portfolio Insights{% endblock %}
+
+{% block extra_css %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1 class="page-title">Portfolio Insights</h1>
+    <p class="page-subtitle">Interactive drill-down by investment year, industry, and country.</p>
+</div>
+
+<div class="content-card insights-toolbar-card">
+    <div class="content-card-body insights-toolbar-body">
+        <div class="insights-switch-group">
+            <a id="insightsTabYear" href="/portfolio-insights?chart=year" class="btn btn-secondary btn-sm">Investment Year</a>
+            <a id="insightsTabSector" href="/portfolio-insights?chart=sector" class="btn btn-secondary btn-sm">Industry</a>
+            <a id="insightsTabCountry" href="/portfolio-insights?chart=country" class="btn btn-secondary btn-sm">Country</a>
+        </div>
+        <a href="/portfolio" class="btn btn-primary btn-sm"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+    </div>
+</div>
+
+<div class="content-card insights-breakdown-card">
+    <div class="content-card-header">
+        <h2 id="insightsChartTitle" class="content-card-title">Category Breakdown</h2>
+        <span id="insightsSelectionPill" class="chart-focus-count-pill">Selection: None</span>
+    </div>
+    <div class="content-card-body insights-breakdown-body">
+        <aside class="insights-side-panel insights-side-panel--full">
+            <div class="insights-side-kpi-grid">
+                <div class="insights-side-kpi">
+                    <div class="insights-side-kpi-label">Visible Categories</div>
+                    <div id="insightsVisibleCategories" class="insights-side-kpi-value">0</div>
+                </div>
+                <div class="insights-side-kpi">
+                    <div class="insights-side-kpi-label">Top Segment</div>
+                    <div id="insightsTopSegment" class="insights-side-kpi-value">-</div>
+                </div>
+            </div>
+            <div class="insights-side-list-head">
+                <h3>Category Breakdown</h3>
+                <span id="insightsTotalCompanies" class="chart-focus-count-pill">0 total</span>
+            </div>
+            <div class="insights-side-list-wrap">
+                <div id="insightsCategoryList" class="insights-side-list"></div>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<div class="content-card insights-table-card">
+    <div class="content-card-header">
+        <h2 id="insightsTableTitle" class="content-card-title">Portfolio Companies</h2>
+        <span id="insightsTableCount" class="chart-focus-count-pill">0 companies</span>
+    </div>
+    <div class="content-card-body">
+        <div class="portfolio-table-wrapper">
+            <table class="portfolio-table">
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th>Owner (GP)</th>
+                        <th>Sector</th>
+                        <th>Market</th>
+                        <th>Headquarters</th>
+                        <th>Entry Year</th>
+                        <th>Geography</th>
+                    </tr>
+                </thead>
+                <tbody id="insightsTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='portfolio_insights.js') }}"></script>
+{% endblock %}
+

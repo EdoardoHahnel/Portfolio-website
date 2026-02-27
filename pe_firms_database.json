@@ -199,8 +199,8 @@
       ],
       "recent_activity": "Q3 2024: Nordic Capital Fund XI closed at €7.5B (oversubscribed by 50%). Recent exits: Parexel sold to EQT (€2.8B), Cerba HealthCare to KKR (€1.9B). New investments: Ellab healthcare monitoring (€400M), Inexto technology platform (€300M). Team growth: 15 new partners across Nordic offices. Sustainability focus: 100% portfolio ESG integration. Strong performance: Fund X showing 28% IRR. Exploring AI healthcare and fintech opportunities. New Copenhagen office expansion planned."
     },
-    "Triton Partners": {
-      "name": "Triton Partners",
+    "Triton": {
+      "name": "Triton",
       "logo_url": "https://logo.clearbit.com/triton-partners.com",
       "website": "https://www.triton-partners.com",
       "headquarters": "London, UK",
@@ -285,7 +285,89 @@
           "location": "Stockholm"
         }
       ],
-      "recent_activity": "Q3 2024: Major portfolio restructuring: Assemblin Caverion Group formation (€2.1B combined entity), IFCO exit to KKR (€1.2B). New investments: Acre Security acquisition (€800M), Bergman Clinics expansion (€300M). Fund V deployment: 60% committed across 8 platform investments. Team expansion: 20 new hires across European offices. Sustainability initiatives: 30% portfolio companies carbon neutral. Strong performance: Fund IV showing 22% IRR. Exploring industrial tech and healthcare opportunities. New Munich office opened."
+      "recent_activity": "Q3 2024: Major portfolio restructuring: Assemblin Caverion Group formation (€2.1B combined entity), IFCO exit to KKR (€1.2B). New investments: Acre Security acquisition (€800M), Bergman Clinics expansion (€300M). Fund V deployment: 60% committed across 8 platform investments. Team expansion: 20 new hires across European offices. Sustainability initiatives: 30% portfolio companies carbon neutral. Strong performance: Fund IV showing 22% IRR. Exploring industrial tech and healthcare opportunities. New Munich office opened.",
+      "portfolio_companies": [
+        {
+          "name": "All4Labels",
+          "sector": "Industrial Tech",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/all4labels.com",
+          "description": "Global manufacturer of premium labels and packaging solutions",
+          "entry_year": "2019"
+        },
+        {
+          "name": "Aleris",
+          "sector": "Healthcare",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/aleris.se",
+          "description": "Leading private healthcare provider in the Nordic region",
+          "entry_year": "2019"
+        },
+        {
+          "name": "DeepOcean",
+          "sector": "Business Services",
+          "country": "Norway",
+          "logo": "https://logo.clearbit.com/deepoceangroup.com",
+          "description": "Provider of subsea services to the offshore energy industry",
+          "entry_year": "2016"
+        },
+        {
+          "name": "Fertiberia",
+          "sector": "Industrial Tech",
+          "country": "Spain",
+          "logo": "https://logo.clearbit.com/fertiberia.com",
+          "description": "European producer of fertilizers and industrial chemicals",
+          "entry_year": "2020"
+        },
+        {
+          "name": "IFCO",
+          "sector": "Business Services",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/ifco.com",
+          "description": "World's largest provider of reusable plastic containers",
+          "entry_year": "2019"
+        },
+        {
+          "name": "Pharmanovia",
+          "sector": "Healthcare",
+          "country": "United Kingdom",
+          "logo": "https://logo.clearbit.com/pharmanovia.com",
+          "description": "Specialty pharmaceutical company focused on established brands",
+          "entry_year": "2019"
+        },
+        {
+          "name": "Acre Security",
+          "sector": "Industrial Tech",
+          "country": "United States",
+          "logo": "https://logo.clearbit.com/acresecurity.com",
+          "description": "North American provider of commercial security integration",
+          "entry_year": "2021"
+        },
+        {
+          "name": "Arvos Group",
+          "sector": "Industrial Tech",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/arvos-group.com",
+          "description": "Global provider of thermal processing equipment",
+          "entry_year": "2014"
+        },
+        {
+          "name": "Assemblin Caverion Group",
+          "sector": "Business Services",
+          "country": "Nordic",
+          "logo": "https://logo.clearbit.com/assemblin.com",
+          "description": "Leading Nordic provider of technical installation services",
+          "entry_year": "2024"
+        },
+        {
+          "name": "Bergman Clinics",
+          "sector": "Healthcare",
+          "country": "Netherlands",
+          "logo": "https://logo.clearbit.com/bergmanclinics.nl",
+          "description": "Netherlands' largest independent provider of outpatient care",
+          "entry_year": "2021"
+        }
+      ]
     },
     "Altor": {
       "name": "Altor Equity Partners",
@@ -1518,6 +1600,620 @@
         { "year": 2025, "event": "Infobric full exit", "description": "Completed full exit of Infobric" },
         { "year": 2025, "event": "Milarex exit", "description": "Exited Milarex" },
         { "year": 2025, "event": "Documaster exit", "description": "Exited Documaster" }
+      ],
+      "portfolio_companies": [
+        {
+          "name": "A-SAFE",
+          "sector": "Industrials",
+          "country": "UK",
+          "logo": "https://logo.clearbit.com/a-safe.com",
+          "description": "Safety barrier systems",
+          "entry_year": "2024-04",
+          "fund": "Partnership Fund"
+        },
+        {
+          "name": "Formue",
+          "sector": "Business Services",
+          "country": "Norway",
+          "logo": "https://logo.clearbit.com/formue.no",
+          "description": "Wealth management services",
+          "entry_year": "2021-06",
+          "fund": "Partnership Fund"
+        },
+        {
+          "name": "GEDH",
+          "sector": "Business Services",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/gedh.com",
+          "description": "Business services",
+          "entry_year": "2022-07",
+          "fund": "Partnership Fund"
+        },
+        {
+          "name": "iM Global Partner",
+          "sector": "Business Services",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/imglobalpartner.com",
+          "description": "Investment management services",
+          "entry_year": "2021-05",
+          "fund": "Partnership Fund"
+        },
+        {
+          "name": "Marle",
+          "sector": "Healthcare",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/marle.com",
+          "description": "Healthcare services",
+          "entry_year": "2019-12",
+          "fund": "Partnership Fund"
+        },
+        {
+          "name": "OCTIME Group",
+          "sector": "Business Services",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/octime.com",
+          "description": "Business services",
+          "entry_year": "2024-10",
+          "fund": "Partnership Fund"
+        },
+        {
+          "name": "Safic-Alcan",
+          "sector": "Industrials",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/safic-alcan.com",
+          "description": "Chemical distribution",
+          "entry_year": "2022-06",
+          "fund": "Partnership Fund"
+        },
+        {
+          "name": "Seventeen Group",
+          "sector": "Business Services",
+          "country": "UK",
+          "logo": "https://logo.clearbit.com/seventeengroup.com",
+          "description": "Business services",
+          "entry_year": "2025-05",
+          "fund": "Partnership Fund"
+        },
+        {
+          "name": "Third Bridge",
+          "sector": "Business Services",
+          "country": "UK",
+          "logo": "https://logo.clearbit.com/thirdbridge.com",
+          "description": "Investment research platform",
+          "entry_year": "2021-02",
+          "fund": "Partnership Fund"
+        },
+        {
+          "name": "Unither Pharmaceuticals",
+          "sector": "Healthcare",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/unither.com",
+          "description": "Pharmaceutical services",
+          "entry_year": "2023-03",
+          "fund": "Partnership Fund"
+        },
+        {
+          "name": "Valoria Capital",
+          "sector": "Business Services",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/valoriacapital.com",
+          "description": "Financial services",
+          "entry_year": "2023-09",
+          "fund": "Partnership Fund"
+        },
+        {
+          "name": "Vivalto Santé",
+          "sector": "Healthcare",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/vivalto-sante.com",
+          "description": "Healthcare services",
+          "entry_year": "2021-11",
+          "fund": "Partnership Fund"
+        },
+        {
+          "name": "Wishcard",
+          "sector": "Business Services",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/wishcard.com",
+          "description": "Gift card services",
+          "entry_year": "2022-10",
+          "fund": "Partnership Fund"
+        },
+        {
+          "name": "Advania",
+          "sector": "Business Services",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/advania.com",
+          "description": "IT services and solutions",
+          "entry_year": "2021-09",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Alanta Health Group",
+          "sector": "Healthcare",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/alanta.de",
+          "description": "Healthcare services",
+          "entry_year": "2016-12",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Batisanté",
+          "sector": "Business Services",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/batisante.com",
+          "description": "Business services",
+          "entry_year": "2022-07",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "BOMA",
+          "sector": "Healthcare",
+          "country": "Belgium",
+          "logo": "https://logo.clearbit.com/boma.be",
+          "description": "Healthcare services",
+          "entry_year": "2024-10",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "CONET",
+          "sector": "Business Services",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/conet.de",
+          "description": "IT consulting and services",
+          "entry_year": "2021-10",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Cinerius Financial Partners",
+          "sector": "Business Services",
+          "country": "Switzerland",
+          "logo": "https://logo.clearbit.com/cinerius.com",
+          "description": "Financial services",
+          "entry_year": "2024-01",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Dains Accountants",
+          "sector": "Business Services",
+          "country": "UK",
+          "logo": "https://logo.clearbit.com/dains.com",
+          "description": "Accounting and advisory services",
+          "entry_year": "2025-01",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "DRIESCHER",
+          "sector": "Industrials",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/driescher.de",
+          "description": "Industrial services",
+          "entry_year": "2024-12",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Eurobio Scientific",
+          "sector": "Healthcare",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/eurobio-scientific.com",
+          "description": "Diagnostic solutions",
+          "entry_year": "2024-12",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Eurofeu",
+          "sector": "Business Services",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/eurofeu.com",
+          "description": "Fire safety services",
+          "entry_year": "2024-05",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "GoodLife Foods",
+          "sector": "Industrials",
+          "country": "Netherlands",
+          "logo": "https://logo.clearbit.com/goodlifefoods.com",
+          "description": "Food manufacturing",
+          "entry_year": "2023-07",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "iad",
+          "sector": "Business Services",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/iad.fr",
+          "description": "Real estate services",
+          "entry_year": "2021-04",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "IG&H",
+          "sector": "Business Services",
+          "country": "Netherlands",
+          "logo": "https://logo.clearbit.com/igh.com",
+          "description": "Business services",
+          "entry_year": "2022-08",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Innovad",
+          "sector": "Healthcare",
+          "country": "Belgium",
+          "logo": "https://logo.clearbit.com/innovad.com",
+          "description": "Healthcare services",
+          "entry_year": "2021-04",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Kersia",
+          "sector": "Healthcare",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/kersia.com",
+          "description": "Food safety solutions",
+          "entry_year": "2020-12",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Kooi",
+          "sector": "Industrials",
+          "country": "Netherlands",
+          "logo": "https://logo.clearbit.com/kooi.com",
+          "description": "Industrial services",
+          "entry_year": "2024-03",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "LAP Group",
+          "sector": "Healthcare",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/lap-group.de",
+          "description": "Healthcare services",
+          "entry_year": "2019-07",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "MDT Technologies",
+          "sector": "Industrials",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/mdt-technologies.com",
+          "description": "Industrial technology",
+          "entry_year": "2020-03",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Medica",
+          "sector": "Healthcare",
+          "country": "UK",
+          "logo": "https://logo.clearbit.com/medica.com",
+          "description": "Healthcare services",
+          "entry_year": "2023-07",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "MÜPRO",
+          "sector": "Industrials",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/mupro.de",
+          "description": "Industrial services",
+          "entry_year": "2022-07",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Ondal Medical Systems",
+          "sector": "Healthcare",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/ondal.com",
+          "description": "Medical technology",
+          "entry_year": "2020-01",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Optimum Group",
+          "sector": "Industrials",
+          "country": "Netherlands",
+          "logo": "https://logo.clearbit.com/optimumgroup.nl",
+          "description": "Industrial services",
+          "entry_year": "2018-01",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Questel",
+          "sector": "Business Services",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/questel.com",
+          "description": "Intellectual property services",
+          "entry_year": "2020-12",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Renta",
+          "sector": "Industrials",
+          "country": "Finland",
+          "logo": "https://logo.clearbit.com/renta.com",
+          "description": "Equipment rental services",
+          "entry_year": "2022-02",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Skill & You",
+          "sector": "Business Services",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/skillandyou.com",
+          "description": "Education and training services",
+          "entry_year": "2021-03",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Truesec",
+          "sector": "Business Services",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/truesec.com",
+          "description": "Cybersecurity services",
+          "entry_year": "2021-11",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Advisense",
+          "sector": "Business Services",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/advisense.se",
+          "description": "Business services",
+          "entry_year": "2022-05",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "BIOBank",
+          "sector": "Healthcare",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/biobank.com",
+          "description": "Biobanking services",
+          "entry_year": "2024-08",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "Blanchon Group",
+          "sector": "Industrials",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/blanchon.com",
+          "description": "Industrial coatings",
+          "entry_year": "2021-09",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "coin4 Solutions",
+          "sector": "Business Services",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/coin4.com",
+          "description": "Business services",
+          "entry_year": "2017-11",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "Dals",
+          "sector": "Business Services",
+          "country": "UK",
+          "logo": "https://logo.clearbit.com/dals.com",
+          "description": "Business services",
+          "entry_year": "2021-12",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "DATAPART",
+          "sector": "Business Services",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/datapart.de",
+          "description": "Financial services",
+          "entry_year": "2025-10",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "EQQO",
+          "sector": "Business Services",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/eqqo.com",
+          "description": "Business services",
+          "entry_year": "2020-11",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "HSL Compliance",
+          "sector": "Industrials",
+          "country": "UK",
+          "logo": "https://logo.clearbit.com/hslcompliance.com",
+          "description": "Compliance services",
+          "entry_year": "2025-03",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "Ipsum",
+          "sector": "Business Services",
+          "country": "UK",
+          "logo": "https://logo.clearbit.com/ipsum.com",
+          "description": "Business services",
+          "entry_year": "2023-05",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "Kran og Industri Service",
+          "sector": "Industrials",
+          "country": "Norway",
+          "logo": "https://logo.clearbit.com/kis.no",
+          "description": "Crane and industrial services",
+          "entry_year": "2024-09",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "MWM",
+          "sector": "Healthcare",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/mwm.de",
+          "description": "Healthcare services",
+          "entry_year": "2021-08",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "Plastiflex",
+          "sector": "Healthcare",
+          "country": "Belgium",
+          "logo": "https://logo.clearbit.com/plastiflex.com",
+          "description": "Healthcare products",
+          "entry_year": "2021-12",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "Qconcepts",
+          "sector": "Business Services",
+          "country": "Netherlands",
+          "logo": "https://logo.clearbit.com/qconcepts.nl",
+          "description": "Business services",
+          "entry_year": "2024-05",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "Sansidor",
+          "sector": "Industrials",
+          "country": "Netherlands",
+          "logo": "https://logo.clearbit.com/sansidor.com",
+          "description": "Industrial services",
+          "entry_year": "2024-09",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "Schwingshandl",
+          "sector": "Industrials",
+          "country": "Austria",
+          "logo": "https://logo.clearbit.com/schwingshandl.com",
+          "description": "Industrial services",
+          "entry_year": "2024-04",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "Sofia Développement",
+          "sector": "Healthcare",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/sofia-developpement.com",
+          "description": "Healthcare services",
+          "entry_year": "2022-03",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "Yellow Hive",
+          "sector": "Business Services",
+          "country": "Netherlands",
+          "logo": "https://logo.clearbit.com/yellowhive.com",
+          "description": "Business services",
+          "entry_year": "2024-04",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "Checkmate Fire",
+          "sector": "Business Services",
+          "country": "UK",
+          "logo": "https://logo.clearbit.com/checkmatefire.com",
+          "description": "Fire safety services",
+          "entry_year": "2024-03",
+          "fund": "Development Capital"
+        },
+        {
+          "name": "Defibrion",
+          "sector": "Healthcare",
+          "country": "Netherlands",
+          "logo": "https://logo.clearbit.com/defibrion.com",
+          "description": "Healthcare services",
+          "entry_year": "2024-08",
+          "fund": "Development Capital"
+        },
+        {
+          "name": "Linxea",
+          "sector": "Business Services",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/linxea.com",
+          "description": "Financial services",
+          "entry_year": "2023-07",
+          "fund": "Development Capital"
+        },
+        {
+          "name": "Lohoff",
+          "sector": "Business Services",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/lohoff.de",
+          "description": "Pension services",
+          "entry_year": "2025-06",
+          "fund": "Development Capital"
+        },
+        {
+          "name": "MMS",
+          "sector": "Industrials",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/mms.com",
+          "description": "Industrial services",
+          "entry_year": "2023-07",
+          "fund": "Development Capital"
+        },
+        {
+          "name": "NEVERHACK",
+          "sector": "Business Services",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/neverhack.com",
+          "description": "Cybersecurity services",
+          "entry_year": "2023-11",
+          "fund": "Development Capital"
+        },
+        {
+          "name": "Remazing",
+          "sector": "Business Services",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/remazing.com",
+          "description": "Business services",
+          "entry_year": "2022-09",
+          "fund": "Development Capital"
+        },
+        {
+          "name": "Responda Group",
+          "sector": "Business Services",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/responda.se",
+          "description": "Business services",
+          "entry_year": "2023-03",
+          "fund": "Development Capital"
+        },
+        {
+          "name": "Sitevision",
+          "sector": "Business Services",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/sitevision.com",
+          "description": "Web development services",
+          "entry_year": "2022-04",
+          "fund": "Development Capital"
+        },
+        {
+          "name": "STEIN HGS",
+          "sector": "Industrials",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/stein-hgs.com",
+          "description": "Industrial services",
+          "entry_year": "2022-01",
+          "fund": "Development Capital"
+        },
+        {
+          "name": "Tecomatic",
+          "sector": "Industrials",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/tecomatic.com",
+          "description": "Industrial technology",
+          "entry_year": "2025-04",
+          "fund": "Development Capital"
+        },
+        {
+          "name": "Veldeman",
+          "sector": "Industrials",
+          "country": "Belgium",
+          "logo": "https://logo.clearbit.com/veldemangroup.com",
+          "description": "Industrial services",
+          "entry_year": "2023-04",
+          "fund": "Development Capital"
+        }
       ]
     },
     "Accent Equity": {
@@ -2183,74 +2879,616 @@
       ],
       "portfolio_companies": [
         {
-          "name": "Aspia",
+          "name": "A-SAFE",
+          "sector": "Industrials",
+          "country": "UK",
+          "logo": "https://logo.clearbit.com/a-safe.com",
+          "description": "Safety barrier systems",
+          "entry_year": "2024-04",
+          "fund": "Partnership Fund"
+        },
+        {
+          "name": "Formue",
+          "sector": "Business Services",
+          "country": "Norway",
+          "logo": "https://logo.clearbit.com/formue.no",
+          "description": "Wealth management services",
+          "entry_year": "2021-06",
+          "fund": "Partnership Fund"
+        },
+        {
+          "name": "GEDH",
+          "sector": "Business Services",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/gedh.com",
+          "description": "Business services",
+          "entry_year": "2022-07",
+          "fund": "Partnership Fund"
+        },
+        {
+          "name": "iM Global Partner",
+          "sector": "Business Services",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/imglobalpartner.com",
+          "description": "Investment management services",
+          "entry_year": "2021-05",
+          "fund": "Partnership Fund"
+        },
+        {
+          "name": "Marle",
+          "sector": "Healthcare",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/marle.com",
+          "description": "Healthcare services",
+          "entry_year": "2019-12",
+          "fund": "Partnership Fund"
+        },
+        {
+          "name": "OCTIME Group",
+          "sector": "Business Services",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/octime.com",
+          "description": "Business services",
+          "entry_year": "2024-10",
+          "fund": "Partnership Fund"
+        },
+        {
+          "name": "Safic-Alcan",
+          "sector": "Industrials",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/safic-alcan.com",
+          "description": "Chemical distribution",
+          "entry_year": "2022-06",
+          "fund": "Partnership Fund"
+        },
+        {
+          "name": "Seventeen Group",
+          "sector": "Business Services",
+          "country": "UK",
+          "logo": "https://logo.clearbit.com/seventeengroup.com",
+          "description": "Business services",
+          "entry_year": "2025-05",
+          "fund": "Partnership Fund"
+        },
+        {
+          "name": "Third Bridge",
+          "sector": "Business Services",
+          "country": "UK",
+          "logo": "https://logo.clearbit.com/thirdbridge.com",
+          "description": "Investment research platform",
+          "entry_year": "2021-02",
+          "fund": "Partnership Fund"
+        },
+        {
+          "name": "Unither Pharmaceuticals",
+          "sector": "Healthcare",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/unither.com",
+          "description": "Pharmaceutical services",
+          "entry_year": "2023-03",
+          "fund": "Partnership Fund"
+        },
+        {
+          "name": "Valoria Capital",
+          "sector": "Business Services",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/valoriacapital.com",
+          "description": "Financial services",
+          "entry_year": "2023-09",
+          "fund": "Partnership Fund"
+        },
+        {
+          "name": "Vivalto Santé",
+          "sector": "Healthcare",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/vivalto-sante.com",
+          "description": "Healthcare services",
+          "entry_year": "2021-11",
+          "fund": "Partnership Fund"
+        },
+        {
+          "name": "Wishcard",
+          "sector": "Business Services",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/wishcard.com",
+          "description": "Gift card services",
+          "entry_year": "2022-10",
+          "fund": "Partnership Fund"
+        },
+        {
+          "name": "Advania",
           "sector": "Business Services",
           "country": "Sweden",
-          "logo": "https://logo.clearbit.com/aspia.se",
-          "description": "Leading accounting, payroll, tax, and advisory services"
+          "logo": "https://logo.clearbit.com/advania.com",
+          "description": "IT services and solutions",
+          "entry_year": "2021-09",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Alanta Health Group",
+          "sector": "Healthcare",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/alanta.de",
+          "description": "Healthcare services",
+          "entry_year": "2016-12",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Batisanté",
+          "sector": "Business Services",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/batisante.com",
+          "description": "Business services",
+          "entry_year": "2022-07",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "BOMA",
+          "sector": "Healthcare",
+          "country": "Belgium",
+          "logo": "https://logo.clearbit.com/boma.be",
+          "description": "Healthcare services",
+          "entry_year": "2024-10",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "CONET",
+          "sector": "Business Services",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/conet.de",
+          "description": "IT consulting and services",
+          "entry_year": "2021-10",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Cinerius Financial Partners",
+          "sector": "Business Services",
+          "country": "Switzerland",
+          "logo": "https://logo.clearbit.com/cinerius.com",
+          "description": "Financial services",
+          "entry_year": "2024-01",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Dains Accountants",
+          "sector": "Business Services",
+          "country": "UK",
+          "logo": "https://logo.clearbit.com/dains.com",
+          "description": "Accounting and advisory services",
+          "entry_year": "2025-01",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "DRIESCHER",
+          "sector": "Industrials",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/driescher.de",
+          "description": "Industrial services",
+          "entry_year": "2024-12",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Eurobio Scientific",
+          "sector": "Healthcare",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/eurobio-scientific.com",
+          "description": "Diagnostic solutions",
+          "entry_year": "2024-12",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Eurofeu",
+          "sector": "Business Services",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/eurofeu.com",
+          "description": "Fire safety services",
+          "entry_year": "2024-05",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "GoodLife Foods",
+          "sector": "Industrials",
+          "country": "Netherlands",
+          "logo": "https://logo.clearbit.com/goodlifefoods.com",
+          "description": "Food manufacturing",
+          "entry_year": "2023-07",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "iad",
+          "sector": "Business Services",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/iad.fr",
+          "description": "Real estate services",
+          "entry_year": "2021-04",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "IG&H",
+          "sector": "Business Services",
+          "country": "Netherlands",
+          "logo": "https://logo.clearbit.com/igh.com",
+          "description": "Business services",
+          "entry_year": "2022-08",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Innovad",
+          "sector": "Healthcare",
+          "country": "Belgium",
+          "logo": "https://logo.clearbit.com/innovad.com",
+          "description": "Healthcare services",
+          "entry_year": "2021-04",
+          "fund": "Mid Cap"
         },
         {
           "name": "Kersia",
-          "sector": "Industrial & Manufacturing",
+          "sector": "Healthcare",
           "country": "France",
-          "logo": "https://logo.clearbit.com/kersia-group.com",
-          "description": "Global leader in biosecurity and food safety solutions"
+          "logo": "https://logo.clearbit.com/kersia.com",
+          "description": "Food safety solutions",
+          "entry_year": "2020-12",
+          "fund": "Mid Cap"
         },
         {
-          "name": "Colisée",
-          "sector": "Healthcare Services",
-          "country": "France",
-          "logo": "https://logo.clearbit.com/colisee.com",
-          "description": "European leader in elderly care services"
+          "name": "Kooi",
+          "sector": "Industrials",
+          "country": "Netherlands",
+          "logo": "https://logo.clearbit.com/kooi.com",
+          "description": "Industrial services",
+          "entry_year": "2024-03",
+          "fund": "Mid Cap"
         },
         {
-          "name": "Mamut Software",
-          "sector": "Technology & Software",
-          "country": "Norway",
-          "logo": "https://logo.clearbit.com/mamut.com",
-          "description": "Business software solutions for SMEs"
+          "name": "LAP Group",
+          "sector": "Healthcare",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/lap-group.de",
+          "description": "Healthcare services",
+          "entry_year": "2019-07",
+          "fund": "Mid Cap"
         },
         {
-          "name": "Iver",
+          "name": "MDT Technologies",
+          "sector": "Industrials",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/mdt-technologies.com",
+          "description": "Industrial technology",
+          "entry_year": "2020-03",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Medica",
+          "sector": "Healthcare",
+          "country": "UK",
+          "logo": "https://logo.clearbit.com/medica.com",
+          "description": "Healthcare services",
+          "entry_year": "2023-07",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "MÜPRO",
+          "sector": "Industrials",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/mupro.de",
+          "description": "Industrial services",
+          "entry_year": "2022-07",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Ondal Medical Systems",
+          "sector": "Healthcare",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/ondal.com",
+          "description": "Medical technology",
+          "entry_year": "2020-01",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Optimum Group",
+          "sector": "Industrials",
+          "country": "Netherlands",
+          "logo": "https://logo.clearbit.com/optimumgroup.nl",
+          "description": "Industrial services",
+          "entry_year": "2018-01",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Questel",
           "sector": "Business Services",
-          "country": "Norway",
-          "logo": "https://logo.clearbit.com/iver.no",
-          "description": "Professional services and consulting"
+          "country": "France",
+          "logo": "https://logo.clearbit.com/questel.com",
+          "description": "Intellectual property services",
+          "entry_year": "2020-12",
+          "fund": "Mid Cap"
         },
         {
-          "name": "Jollyroom",
-          "sector": "E-commerce & Retail",
-          "country": "Sweden",
-          "logo": "https://logo.clearbit.com/jollyroom.se",
-          "description": "Leading Nordic children's e-commerce platform"
-        },
-        {
-          "name": "Egmont Media",
-          "sector": "Media & Entertainment",
-          "country": "Nordic",
-          "logo": "https://logo.clearbit.com/egmont.com",
-          "description": "Nordic media and entertainment company"
-        },
-        {
-          "name": "Visma",
-          "sector": "Technology & Software",
-          "country": "Nordic",
-          "logo": "https://logo.clearbit.com/visma.com",
-          "description": "Leading Nordic business software company"
-        },
-        {
-          "name": "Loomis",
-          "sector": "Financial Services",
-          "country": "Sweden",
-          "logo": "https://logo.clearbit.com/loomis.com",
-          "description": "Cash handling and security services"
-        },
-        {
-          "name": "Terveystalo",
-          "sector": "Healthcare Services",
+          "name": "Renta",
+          "sector": "Industrials",
           "country": "Finland",
-          "logo": "https://logo.clearbit.com/terveystalo.com",
-          "description": "Leading private healthcare provider"
+          "logo": "https://logo.clearbit.com/renta.com",
+          "description": "Equipment rental services",
+          "entry_year": "2022-02",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Skill & You",
+          "sector": "Business Services",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/skillandyou.com",
+          "description": "Education and training services",
+          "entry_year": "2021-03",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Truesec",
+          "sector": "Business Services",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/truesec.com",
+          "description": "Cybersecurity services",
+          "entry_year": "2021-11",
+          "fund": "Mid Cap"
+        },
+        {
+          "name": "Advisense",
+          "sector": "Business Services",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/advisense.se",
+          "description": "Business services",
+          "entry_year": "2022-05",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "BIOBank",
+          "sector": "Healthcare",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/biobank.com",
+          "description": "Biobanking services",
+          "entry_year": "2024-08",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "Blanchon Group",
+          "sector": "Industrials",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/blanchon.com",
+          "description": "Industrial coatings",
+          "entry_year": "2021-09",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "coin4 Solutions",
+          "sector": "Business Services",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/coin4.com",
+          "description": "Business services",
+          "entry_year": "2017-11",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "Dals",
+          "sector": "Business Services",
+          "country": "UK",
+          "logo": "https://logo.clearbit.com/dals.com",
+          "description": "Business services",
+          "entry_year": "2021-12",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "DATAPART",
+          "sector": "Business Services",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/datapart.de",
+          "description": "Financial services",
+          "entry_year": "2025-10",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "EQQO",
+          "sector": "Business Services",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/eqqo.com",
+          "description": "Business services",
+          "entry_year": "2020-11",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "HSL Compliance",
+          "sector": "Industrials",
+          "country": "UK",
+          "logo": "https://logo.clearbit.com/hslcompliance.com",
+          "description": "Compliance services",
+          "entry_year": "2025-03",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "Ipsum",
+          "sector": "Business Services",
+          "country": "UK",
+          "logo": "https://logo.clearbit.com/ipsum.com",
+          "description": "Business services",
+          "entry_year": "2023-05",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "Kran og Industri Service",
+          "sector": "Industrials",
+          "country": "Norway",
+          "logo": "https://logo.clearbit.com/kis.no",
+          "description": "Crane and industrial services",
+          "entry_year": "2024-09",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "MWM",
+          "sector": "Healthcare",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/mwm.de",
+          "description": "Healthcare services",
+          "entry_year": "2021-08",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "Plastiflex",
+          "sector": "Healthcare",
+          "country": "Belgium",
+          "logo": "https://logo.clearbit.com/plastiflex.com",
+          "description": "Healthcare products",
+          "entry_year": "2021-12",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "Qconcepts",
+          "sector": "Business Services",
+          "country": "Netherlands",
+          "logo": "https://logo.clearbit.com/qconcepts.nl",
+          "description": "Business services",
+          "entry_year": "2024-05",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "Sansidor",
+          "sector": "Industrials",
+          "country": "Netherlands",
+          "logo": "https://logo.clearbit.com/sansidor.com",
+          "description": "Industrial services",
+          "entry_year": "2024-09",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "Schwingshandl",
+          "sector": "Industrials",
+          "country": "Austria",
+          "logo": "https://logo.clearbit.com/schwingshandl.com",
+          "description": "Industrial services",
+          "entry_year": "2024-04",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "Sofia Développement",
+          "sector": "Healthcare",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/sofia-developpement.com",
+          "description": "Healthcare services",
+          "entry_year": "2022-03",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "Yellow Hive",
+          "sector": "Business Services",
+          "country": "Netherlands",
+          "logo": "https://logo.clearbit.com/yellowhive.com",
+          "description": "Business services",
+          "entry_year": "2024-04",
+          "fund": "Small Cap"
+        },
+        {
+          "name": "Checkmate Fire",
+          "sector": "Business Services",
+          "country": "UK",
+          "logo": "https://logo.clearbit.com/checkmatefire.com",
+          "description": "Fire safety services",
+          "entry_year": "2024-03",
+          "fund": "Development Capital"
+        },
+        {
+          "name": "Defibrion",
+          "sector": "Healthcare",
+          "country": "Netherlands",
+          "logo": "https://logo.clearbit.com/defibrion.com",
+          "description": "Healthcare services",
+          "entry_year": "2024-08",
+          "fund": "Development Capital"
+        },
+        {
+          "name": "Linxea",
+          "sector": "Business Services",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/linxea.com",
+          "description": "Financial services",
+          "entry_year": "2023-07",
+          "fund": "Development Capital"
+        },
+        {
+          "name": "Lohoff",
+          "sector": "Business Services",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/lohoff.de",
+          "description": "Pension services",
+          "entry_year": "2025-06",
+          "fund": "Development Capital"
+        },
+        {
+          "name": "MMS",
+          "sector": "Industrials",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/mms.com",
+          "description": "Industrial services",
+          "entry_year": "2023-07",
+          "fund": "Development Capital"
+        },
+        {
+          "name": "NEVERHACK",
+          "sector": "Business Services",
+          "country": "France",
+          "logo": "https://logo.clearbit.com/neverhack.com",
+          "description": "Cybersecurity services",
+          "entry_year": "2023-11",
+          "fund": "Development Capital"
+        },
+        {
+          "name": "Remazing",
+          "sector": "Business Services",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/remazing.com",
+          "description": "Business services",
+          "entry_year": "2022-09",
+          "fund": "Development Capital"
+        },
+        {
+          "name": "Responda Group",
+          "sector": "Business Services",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/responda.se",
+          "description": "Business services",
+          "entry_year": "2023-03",
+          "fund": "Development Capital"
+        },
+        {
+          "name": "Sitevision",
+          "sector": "Business Services",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/sitevision.com",
+          "description": "Web development services",
+          "entry_year": "2022-04",
+          "fund": "Development Capital"
+        },
+        {
+          "name": "STEIN HGS",
+          "sector": "Industrials",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/stein-hgs.com",
+          "description": "Industrial services",
+          "entry_year": "2022-01",
+          "fund": "Development Capital"
+        },
+        {
+          "name": "Tecomatic",
+          "sector": "Industrials",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/tecomatic.com",
+          "description": "Industrial technology",
+          "entry_year": "2025-04",
+          "fund": "Development Capital"
+        },
+        {
+          "name": "Veldeman",
+          "sector": "Industrials",
+          "country": "Belgium",
+          "logo": "https://logo.clearbit.com/veldemangroup.com",
+          "description": "Industrial services",
+          "entry_year": "2023-04",
+          "fund": "Development Capital"
         }
       ]
     },
@@ -2567,32 +3805,32 @@
       "recent_activity": "Q3 2024: Active portfolio management across 5 listed holdings. Inwido building products performing well. Paradox Interactive gaming expansion. Doro technology turnaround ongoing. CTT Systems aerospace growth. Fund II planning stages.",
       "portfolio_companies": [
         {
-          "name": "Paradox Interactive",
-          "sector": "Gaming & Entertainment",
+          "name": "Admento",
+          "sector": "Business Services",
           "country": "Sweden",
-          "logo": "https://logo.clearbit.com/paradoxinteractive.com",
-          "description": "Leading developer and publisher of strategy games"
+          "logo": "https://logo.clearbit.com/admento.com",
+          "description": "Business services company"
         },
         {
-          "name": "Inwido",
-          "sector": "Building Products",
+          "name": "Compusoft",
+          "sector": "Technology",
           "country": "Sweden",
-          "logo": "https://logo.clearbit.com/inwido.com",
-          "description": "Leading European window and door manufacturer"
+          "logo": "https://logo.clearbit.com/compusoft.com",
+          "description": "Technology solutions"
         },
         {
-          "name": "Doro",
-          "sector": "Technology & Telecom",
+          "name": "Eltera Gruppen",
+          "sector": "Business Services",
           "country": "Sweden",
-          "logo": "https://logo.clearbit.com/doro.com",
-          "description": "Mobile phone solutions for seniors and accessibility"
+          "logo": "https://logo.clearbit.com/eltera.se",
+          "description": "Business services group"
         },
         {
-          "name": "CTT Systems",
-          "sector": "Aerospace & Defense",
+          "name": "Gung",
+          "sector": "Consumer",
           "country": "Sweden",
-          "logo": "https://logo.clearbit.com/cttsystems.se",
-          "description": "Aircraft humidity control and cabin air systems"
+          "logo": "https://logo.clearbit.com/gung.se",
+          "description": "Consumer products"
         },
         {
           "name": "Lakrids by Johan Bülow",
@@ -2602,11 +3840,39 @@
           "description": "Premium liquorice brand and confectionery"
         },
         {
-          "name": "Norva 24",
-          "sector": "Environmental Services",
-          "country": "Norway",
-          "logo": "https://logo.clearbit.com/norva24.no",
-          "description": "Sludge suction and environmental services"
+          "name": "Nordward",
+          "sector": "Business Services",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/nordward.se",
+          "description": "Business services"
+        },
+        {
+          "name": "Origo",
+          "sector": "Technology",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/origo.se",
+          "description": "Technology solutions"
+        },
+        {
+          "name": "Pincho Nation",
+          "sector": "Consumer & Food",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/pincho.se",
+          "description": "Restaurant and food service chain"
+        },
+        {
+          "name": "Prosero Security",
+          "sector": "Business Services",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/prosero.se",
+          "description": "Security services"
+        },
+        {
+          "name": "Proteria",
+          "sector": "Business Services",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/proteria.se",
+          "description": "Business services"
         },
         {
           "name": "Rapunzel of Sweden",
@@ -2614,6 +3880,34 @@
           "country": "Sweden",
           "logo": "https://logo.clearbit.com/rapunzel.se",
           "description": "Hair extensions and beauty products"
+        },
+        {
+          "name": "Restolution",
+          "sector": "Business Services",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/restolution.com",
+          "description": "Restaurant and food service solutions"
+        },
+        {
+          "name": "SmartCraft",
+          "sector": "Technology",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/smartcraft.com",
+          "description": "Technology solutions"
+        },
+        {
+          "name": "Tabellae",
+          "sector": "Technology",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/tabellae.com",
+          "description": "Technology solutions"
+        },
+        {
+          "name": "Twig",
+          "sector": "Consumer",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/twig.se",
+          "description": "Consumer products"
         }
       ]
     },
@@ -3528,6 +4822,116 @@
         { "year": 2025, "event": "engcon exit", "description": "Sells remaining shares in engcon AB" },
         { "year": 2025, "event": "Alligo options", "description": "Issues call options in Alligo" },
         { "year": 2025, "event": "Nordstjernan Growth AB sale", "description": "Sells vehicle holding Mentimeter/Roaring/Insurello/Zimpler/Oden" }
+      ],
+      "portfolio_companies": [
+        {
+          "name": "Aidian",
+          "sector": "Healthcare",
+          "country": "Finland",
+          "logo": "https://logo.clearbit.com/aidian.com",
+          "description": "Finnish diagnostics company developing, manufacturing, and selling instruments and tests for healthcare",
+          "entry_year": "2022",
+          "status": "Private"
+        },
+        {
+          "name": "Dacke Industri",
+          "sector": "Industrial",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/dackeindustri.se",
+          "description": "Developer and investor in technical industrial companies with proprietary products and customer-specific components",
+          "entry_year": "2016",
+          "status": "Private"
+        },
+        {
+          "name": "Etac",
+          "sector": "Healthcare",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/etac.com",
+          "description": "World-leading supplier of assistive devices for people with disabilities and products for patient transfers",
+          "entry_year": "2007",
+          "status": "Private"
+        },
+        {
+          "name": "Prima Vård",
+          "sector": "Healthcare",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/primavard.se",
+          "description": "Swedish healthcare company within primary care, women's and children's health, mental health, and occupational health",
+          "entry_year": "2017",
+          "status": "Private"
+        },
+        {
+          "name": "Rosti",
+          "sector": "Industrial",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/rosti.com",
+          "description": "Global contract manufacturer specializing in plastic injection molding with 80+ years of experience",
+          "entry_year": "2004",
+          "status": "Private"
+        },
+        {
+          "name": "Sunparadise",
+          "sector": "Industrial",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/sunparadise.com",
+          "description": "Developer and manufacturer of glazing products for homes, balconies, and facades (active in DACH, Scandinavia, and wider Europe)",
+          "entry_year": "2009",
+          "status": "Private"
+        },
+        {
+          "name": "Gnothis",
+          "sector": "Healthcare",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/gnothis.com",
+          "description": "Small med-tech company",
+          "entry_year": "2022",
+          "status": "Private"
+        },
+        {
+          "name": "Alligo",
+          "sector": "Industrial",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/alligo.se",
+          "description": "Leading Nordic specialist in workwear, PPE, tools, and supplies",
+          "entry_year": "2015",
+          "status": "Public"
+        },
+        {
+          "name": "Attendo",
+          "sector": "Healthcare",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/attendo.se",
+          "description": "Nordic region's largest care company with 700+ operations and 30,000 employees across Sweden, Denmark, and Finland",
+          "entry_year": "2015",
+          "status": "Public"
+        },
+        {
+          "name": "Bonava",
+          "sector": "Real Estate",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/bonava.com",
+          "description": "One of Northern Europe's largest housing developers with ~8,000 homes in production",
+          "entry_year": "2016",
+          "status": "Public"
+        },
+        {
+          "name": "Momentum Group",
+          "sector": "Industrial",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/momentumgroup.se",
+          "description": "Group of companies forming a leading Nordic supplier of industrial components and related services",
+          "entry_year": "2019",
+          "status": "Public"
+        },
+        {
+          "name": "Nobia",
+          "sector": "Consumer",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/nobia.com",
+          "description": "One of Europe's largest kitchen specialists, designing, manufacturing, and selling kitchens",
+          "entry_year": "2010",
+          "status": "Public"
+        }
       ]
     },
     "Norvestor": {
@@ -3966,6 +5370,235 @@
           "year": 2025,
           "event": "Saferoad expansion",
           "description": "Saferoad Group accelerates international growth with strategic acquisitions across Europe"
+        }
+      ],
+      "portfolio_companies": [
+        {
+          "name": "Active Brands",
+          "sector": "Consumer",
+          "country": "Norway",
+          "logo": "https://logo.clearbit.com/activebrands.no",
+          "description": "Sports apparel and activewear",
+          "entry_year": "2022-03"
+        },
+        {
+          "name": "Adragos Pharma",
+          "sector": "Services",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/adragos.com",
+          "description": "Pharmaceutical services",
+          "entry_year": "2021-09",
+          "headquarters": "Germany, France, Japan"
+        },
+        {
+          "name": "Bäcker Görtz",
+          "sector": "Industrials",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/baeckergoertz.de",
+          "description": "Bakery goods and quick-service-restaurant market",
+          "entry_year": "2022-10"
+        },
+        {
+          "name": "ilionx",
+          "sector": "Technology",
+          "country": "Netherlands",
+          "logo": "https://logo.clearbit.com/ilionx.com",
+          "description": "IT-Services provider",
+          "entry_year": "2023-02"
+        },
+        {
+          "name": "InstallatørGruppen",
+          "sector": "Services",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/installatorgruppen.dk",
+          "description": "Danish technical-installation leader",
+          "entry_year": "2023-03"
+        },
+        {
+          "name": "Lobster",
+          "sector": "Technology",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/lobster-app.com",
+          "description": "Leading no-code data integration software provider",
+          "entry_year": "2023-02"
+        },
+        {
+          "name": "Obton",
+          "sector": "Green Transition",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/obton.com",
+          "description": "Solar energy investments",
+          "entry_year": "2021-07"
+        },
+        {
+          "name": "Omegapoint",
+          "sector": "Technology",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/omegapoint.se",
+          "description": "Cybersecurity and IT consulting",
+          "entry_year": "2021-06"
+        },
+        {
+          "name": "Optigroup",
+          "sector": "Services",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/optigroup.com",
+          "description": "B2B distribution",
+          "entry_year": "2022-03"
+        },
+        {
+          "name": "Polytech",
+          "sector": "Green Transition",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/polytech.com",
+          "description": "Wind energy components",
+          "entry_year": "2023-03"
+        },
+        {
+          "name": "Swash Group",
+          "sector": "Services",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/swashgroup.com",
+          "description": "Bathroom solutions (formerly MEGABAD)",
+          "entry_year": "2021-08"
+        },
+        {
+          "name": "Volue Infrastructure",
+          "sector": "Technology",
+          "country": "Norway",
+          "logo": "https://logo.clearbit.com/volue.com",
+          "description": "Niche infrastructure software",
+          "entry_year": "2025-09"
+        },
+        {
+          "name": "BoldR",
+          "sector": "Services",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/boldr.com",
+          "description": "Formerly Rameder",
+          "entry_year": "2019-01"
+        },
+        {
+          "name": "Ecovium",
+          "sector": "Technology",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/ecovium.com",
+          "description": "Technology solutions",
+          "entry_year": "2020-11"
+        },
+        {
+          "name": "Fellowmind",
+          "sector": "Technology",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/fellowmind.com",
+          "description": "Technology consulting",
+          "entry_year": "2019-12",
+          "headquarters": "Sweden, Netherlands, Germany, Finland, Denmark, Poland"
+        },
+        {
+          "name": "Gram Equipment",
+          "sector": "Industrials",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/gram.dk",
+          "description": "Industrial equipment",
+          "entry_year": "2018-01"
+        },
+        {
+          "name": "Håndverksgruppen",
+          "sector": "Services",
+          "country": "Norway",
+          "logo": "https://logo.clearbit.com/handverksgruppen.no",
+          "description": "Services group",
+          "entry_year": "2020-07"
+        },
+        {
+          "name": "Holmbergs Safety System",
+          "sector": "Industrials",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/holmbergs.com",
+          "description": "Safety systems",
+          "entry_year": "2017-07"
+        },
+        {
+          "name": "IMPREG",
+          "sector": "Industrials",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/impreg.dk",
+          "description": "Industrial solutions",
+          "entry_year": "2019-12"
+        },
+        {
+          "name": "TASKING",
+          "sector": "Technology",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/tasking.com",
+          "description": "Technology solutions",
+          "entry_year": "2020-12"
+        },
+        {
+          "name": "ViaCon",
+          "sector": "Industrials",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/viacon.se",
+          "description": "Industrial infrastructure",
+          "entry_year": "2018-09"
+        },
+        {
+          "name": "Epista Life Science",
+          "sector": "Technology",
+          "country": "Denmark",
+          "logo": "https://logo.clearbit.com/epista.com",
+          "description": "Life science technology",
+          "entry_year": "2022-05"
+        },
+        {
+          "name": "Firesafe",
+          "sector": "Services",
+          "country": "Norway",
+          "logo": "https://logo.clearbit.com/firesafe.no",
+          "description": "Fire safety services",
+          "entry_year": "2022-05",
+          "headquarters": "Norway, Sweden, Denmark, Finland"
+        },
+        {
+          "name": "Seriline",
+          "sector": "Services",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/seriline.com",
+          "description": "Services provider",
+          "entry_year": "2022-02"
+        },
+        {
+          "name": "Solcellespesialisten",
+          "sector": "Green Transition",
+          "country": "Norway",
+          "logo": "https://logo.clearbit.com/solcellespesialisten.no",
+          "description": "Norway's largest supplier and installer of solar energy systems",
+          "entry_year": "2023-07"
+        },
+        {
+          "name": "Uhl Bau",
+          "sector": "Services",
+          "country": "Austria",
+          "logo": "https://logo.clearbit.com/uhlbau.at",
+          "description": "Austrian civil engineering market for critical infrastructure",
+          "entry_year": "2025-07"
+        },
+        {
+          "name": "Nordlo",
+          "sector": "Technology",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/nordlo.com",
+          "description": "Technology solutions",
+          "entry_year": "2024-08"
+        },
+        {
+          "name": "Saferoad",
+          "sector": "Industrials",
+          "country": "Norway",
+          "logo": "https://logo.clearbit.com/saferoad.com",
+          "description": "Infrastructure solutions",
+          "entry_year": "2024-08"
         }
       ]
     }
