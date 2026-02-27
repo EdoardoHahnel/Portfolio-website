@@ -1,0 +1,327 @@
+.forum-toolbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.forum-filters {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.forum-input,
+.forum-select,
+.forum-textarea {
+    border: 1px solid #d5e0ef;
+    border-radius: 8px;
+    padding: 0.5rem 0.65rem;
+    font-size: 0.85rem;
+    font-family: inherit;
+    background: #ffffff;
+    color: #122238;
+}
+
+.forum-input {
+    min-width: 220px;
+}
+
+.forum-textarea {
+    width: 100%;
+    resize: vertical;
+}
+
+.forum-thread-list,
+.forum-comment-list {
+    display: grid;
+    gap: 0.8rem;
+}
+
+.forum-thread-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.6rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.forum-thread-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #173c66;
+    text-decoration: none;
+}
+
+.forum-thread-snippet {
+    color: #4f647f;
+    line-height: 1.45;
+    margin: 0.45rem 0 0.55rem;
+}
+
+.forum-thread-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    font-size: 0.75rem;
+    color: #5f7696;
+}
+
+.forum-thread-actions {
+    margin-top: 0.65rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+}
+
+.forum-chip {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #cadefb;
+    background: #e6efff;
+    color: #1f4b82;
+    border-radius: 999px;
+    padding: 0.1rem 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.forum-form-grid {
+    display: grid;
+    gap: 0.55rem;
+}
+
+.forum-auth-wrap {
+    max-width: 520px;
+}
+
+.forum-error {
+    color: #b91c1c;
+    font-size: 0.8rem;
+    margin: 0 0 0.5rem;
+}
+
+.forum-profile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.7rem;
+}
+
+.forum-profile-item {
+    border: 1px solid #d5e0ef;
+    border-radius: 10px;
+    padding: 0.6rem;
+    background: #f8fbff;
+}
+
+.forum-profile-label {
+    font-size: 0.7rem;
+    color: #5f7696;
+    display: block;
+}
+
+.forum-profile-value {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #173c66;
+}
+
+.forum-replies {
+    margin-top: 0.65rem;
+    display: grid;
+    gap: 0.45rem;
+}
+
+.forum-reply {
+    border-left: 2px solid #d8e6fa;
+    padding-left: 0.65rem;
+}
+
+.forum-admin-row {
+    border-bottom: 1px solid #e3ecf8;
+    padding: 0.55rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+}
+
+.forum-admin-item {
+    border: 1px solid #dce7f5;
+    border-radius: 8px;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.inline-form {
+    display: inline;
+}
+
+.hidden-form {
+    display: none;
+}
+
+/* Forum Fund Map Section */
+.forum-fund-map-section {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #e3ecf8;
+}
+
+.forum-fund-map-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #173c66;
+    margin-bottom: 0.4rem;
+}
+
+.forum-fund-map-desc {
+    font-size: 0.82rem;
+    color: #5f7696;
+    margin-bottom: 1rem;
+}
+
+.forum-fund-map-img-wrap {
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #f8fbff;
+    padding: 0.5rem;
+}
+
+.forum-fund-map-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* Email Signup Form (Admin Post) */
+.forum-email-signup-card {
+    border: 1px solid #667eea;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.06) 0%, rgba(118, 75, 162, 0.06) 100%);
+}
+
+.forum-email-signup-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.forum-email-signup-desc {
+    font-size: 0.85rem;
+    color: #4f647f;
+    margin-bottom: 1rem;
+}
+
+.forum-email-form {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.forum-email-input {
+    flex: 1;
+    min-width: 200px;
+    padding: 0.6rem 0.85rem;
+    border: 1px solid #cadefb;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.forum-email-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+}
+
+.forum-email-btn {
+    padding: 0.6rem 1.2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.forum-email-btn:hover {
+    opacity: 0.95;
+}
+
+.forum-email-success {
+    color: #059669;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.forum-email-error {
+    color: #b91c1c;
+    font-size: 0.85rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    .forum-input,
+    .forum-select,
+    .forum-textarea {
+        background: #0f172a;
+        color: #e5edf8;
+        border-color: #2b3952;
+    }
+
+    .forum-thread-snippet,
+    .forum-profile-label,
+    .forum-thread-meta {
+        color: #9db0ca;
+    }
+
+    .forum-thread-title,
+    .forum-profile-value {
+        color: #d5e6ff;
+    }
+
+    .forum-profile-item,
+    .forum-admin-item {
+        background: #0f172a;
+        border-color: #2b3952;
+    }
+
+    .forum-fund-map-section {
+        border-top-color: #2b3952;
+    }
+
+    .forum-fund-map-title {
+        color: #d5e6ff;
+    }
+
+    .forum-fund-map-desc {
+        color: #9db0ca;
+    }
+
+    .forum-fund-map-img-wrap {
+        background: #0f172a;
+    }
+
+    .forum-email-signup-card {
+        border-color: #667eea;
+        background: linear-gradient(135deg, rgba(102, 126, 234, 0.12) 0%, rgba(118, 75, 162, 0.12) 100%);
+    }
+
+    .forum-email-signup-title {
+        color: #e5edf8;
+    }
+
+    .forum-email-signup-desc {
+        color: #9db0ca;
+    }
+
+    .forum-email-input {
+        background: #0f172a;
+        color: #e5edf8;
+        border-color: #2b3952;
+    }
+}

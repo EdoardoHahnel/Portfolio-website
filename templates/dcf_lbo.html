@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{% block title %}DCF / LBO Modeller{% endblock %}
+
+{% block extra_css %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='dcf_lbo.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1 class="page-title">DCF / LBO</h1>
+    <p class="page-subtitle">Interactive valuation and buyout modelling toolkit with basic and advanced complexity modes.</p>
+</div>
+
+<div class="content-card model-toolbar">
+    <div class="content-card-body model-toolbar-body">
+        <div class="model-switch">
+            <button id="modelTabDcf" class="btn btn-primary btn-sm">DCF Model</button>
+            <button id="modelTabLbo" class="btn btn-secondary btn-sm">LBO Model</button>
+        </div>
+        <div class="mode-switch">
+            <label><input type="radio" name="complexityMode" value="basic" checked> Basic Mode</label>
+            <label><input type="radio" name="complexityMode" value="advanced"> Advanced Mode</label>
+        </div>
+    </div>
+</div>
+
+<section id="dcfSection" class="model-section is-active">
+    <div class="model-grid">
+        <div class="content-card">
+            <div class="content-card-header"><h3 class="content-card-title">DCF Assumptions</h3></div>
+            <div class="content-card-body model-input-grid">
+                <label>Starting Revenue<input type="number" id="dcfRevenueStart" value="500"></label>
+                <label>Revenue Growth %<input type="number" step="0.1" id="dcfRevenueGrowth" value="8"></label>
+                <label>EBITDA Margin %<input type="number" step="0.1" id="dcfEbitdaMargin" value="24"></label>
+                <label>Tax Rate %<input type="number" step="0.1" id="dcfTaxRate" value="22"></label>
+                <label>CapEx %<input type="number" step="0.1" id="dcfCapexPct" value="4"></label>
+                <label>NWC %<input type="number" step="0.1" id="dcfNwcPct" value="2"></label>
+                <label>WACC %<input type="number" step="0.1" id="dcfWacc" value="9.5"></label>
+                <label>Terminal Growth %<input type="number" step="0.1" id="dcfTerminalGrowth" value="2.5"></label>
+                <label>Net Debt<input type="number" step="0.1" id="dcfNetDebt" value="300"></label>
+                <label>Shares Outstanding<input type="number" step="0.1" id="dcfShares" value="100"></label>
+                <label class="checkbox-row"><input type="checkbox" id="dcfUseExitMultiple"> Use Exit Multiple</label>
+                <label id="dcfExitMultipleWrap" class="hidden">Exit Multiple (x)<input type="number" step="0.1" id="dcfExitMultiple" value="10"></label>
+                <button class="btn btn-primary btn-sm" id="runDcfBtn" type="button">Run DCF</button>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="content-card-header"><h3 class="content-card-title">DCF Output Summary</h3></div>
+            <div class="content-card-body">
+                <div class="kpi-grid">
+                    <div class="kpi"><span>Enterprise Value</span><strong id="dcfEv">-</strong></div>
+                    <div class="kpi"><span>Equity Value</span><strong id="dcfEqv">-</strong></div>
+                    <div class="kpi"><span>Implied Share Price</span><strong id="dcfSharePrice">-</strong></div>
+                    <div class="kpi"><span>Terminal Value</span><strong id="dcfTv">-</strong></div>
+                </div>
+                <div class="table-wrap">
+                    <table class="portfolio-table" id="dcfForecastTable">
+                        <thead>
+                            <tr><th>Year</th><th>Revenue</th><th>EBITDA</th><th>FCF</th><th>Discount Factor</th><th>PV of FCF</th></tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="model-grid">
+        <div class="content-card">
+            <div class="content-card-header"><h3 class="content-card-title">DCF Sensitivity (WACC vs Terminal Growth)</h3></div>
+            <div class="content-card-body table-wrap">
+                <table class="portfolio-table" id="dcfSensitivityTable"><tbody></tbody></table>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="content-card-header"><h3 class="content-card-title">DCF Visuals</h3></div>
+            <div class="content-card-body chart-stack">
+                <canvas id="dcfRevenueChart"></canvas>
+                <canvas id="dcfFcfChart"></canvas>
+                <canvas id="dcfBridgeChart"></canvas>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="lboSection" class="model-section">
+    <div class="model-grid">
+        <div class="content-card">
+            <div class="content-card-header"><h3 class="content-card-title">LBO Assumptions</h3></div>
+            <div class="content-card-body model-input-grid">
+                <label>Starting Revenue<input type="number" id="lboRevenueStart" value="600"></label>
+                <label>Entry Multiple (x)<input type="number" step="0.1" id="lboEntryMultiple" value="9"></label>
+                <label>Exit Multiple (x)<input type="number" step="0.1" id="lboExitMultiple" value="10"></label>
+                <label>Revenue Growth %<input type="number" step="0.1" id="lboRevenueGrowth" value="7"></label>
+                <label>EBITDA Margin %<input type="number" step="0.1" id="lboEbitdaMargin" value="23"></label>
+                <label>Debt at Entry %<input type="number" step="0.1" id="lboDebtPct" value="60"></label>
+                <label>Interest Rate %<input type="number" step="0.1" id="lboInterestRate" value="8.5"></label>
+                <label>Amortization %<input type="number" step="0.1" id="lboAmortPct" value="8"></label>
+                <label>Transaction Fees %<input type="number" step="0.1" id="lboFeesPct" value="2"></label>
+                <label>Hold Period (years)<input type="number" id="lboHoldPeriod" value="5"></label>
+                <label id="lboPikWrap" class="hidden">PIK Rate % (Advanced)<input type="number" step="0.1" id="lboPikRate" value="6"></label>
+                <label id="lboRevolverWrap" class="hidden">Revolver Limit (Advanced)<input type="number" id="lboRevolverLimit" value="150"></label>
+                <button class="btn btn-primary btn-sm" id="runLboBtn" type="button">Run LBO</button>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="content-card-header"><h3 class="content-card-title">LBO Output Summary</h3></div>
+            <div class="content-card-body">
+                <div class="kpi-grid">
+                    <div class="kpi"><span>Entry EV</span><strong id="lboEntryEv">-</strong></div>
+                    <div class="kpi"><span>Exit Equity Value</span><strong id="lboExitEq">-</strong></div>
+                    <div class="kpi"><span>MOIC</span><strong id="lboMoic">-</strong></div>
+                    <div class="kpi"><span>IRR</span><strong id="lboIrr">-</strong></div>
+                </div>
+                <div class="table-wrap">
+                    <table class="portfolio-table" id="lboDebtTable">
+                        <thead>
+                            <tr><th>Year</th><th>Revenue</th><th>EBITDA</th><th>Opening Debt</th><th>Interest</th><th>Paydown</th><th>Closing Debt</th></tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="table-wrap" style="margin-top:0.75rem;">
+                    <table class="portfolio-table" id="lboSourcesUsesTable"><tbody></tbody></table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="model-grid">
+        <div class="content-card">
+            <div class="content-card-header"><h3 class="content-card-title">LBO Sensitivity (Entry vs Exit Multiple, IRR %)</h3></div>
+            <div class="content-card-body table-wrap">
+                <table class="portfolio-table" id="lboSensitivityTable"><tbody></tbody></table>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="content-card-header"><h3 class="content-card-title">LBO Visuals</h3></div>
+            <div class="content-card-body chart-stack">
+                <canvas id="lboIrrChart"></canvas>
+                <canvas id="lboEquityChart"></canvas>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='financial_engine.js') }}"></script>
+<script src="{{ url_for('static', filename='dcf_lbo.js') }}"></script>
+{% endblock %}

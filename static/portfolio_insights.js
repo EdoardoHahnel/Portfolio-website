@@ -5,6 +5,7 @@ Portfolio Insights page
 let portfolioCompanies = [];
 let activeChartType = 'year';
 let activeSelection = '';
+let tableSortState = { column: 'company', direction: 'asc' };
 
 const CHART_CONFIG = {
     year: { title: 'Investment Year Distribution', filterLabel: 'Year', field: 'entry', chartType: 'bar' },
@@ -18,10 +19,40 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!CHART_CONFIG[activeChartType]) activeChartType = 'year';
     activeSelection = (params.get('value') || '').trim();
     highlightActiveInsightsTab();
+    setupTableSorting();
 
     await loadPortfolioData();
     renderInsightsView();
 });
+
+function setupTableSorting() {
+    const headers = document.querySelectorAll('.insights-table-sortable');
+    headers.forEach(header => {
+        header.addEventListener('click', () => {
+            const column = header.getAttribute('data-sort');
+            if (!column) return;
+            if (tableSortState.column === column) {
+                tableSortState.direction = tableSortState.direction === 'asc' ? 'desc' : 'asc';
+            } else {
+                tableSortState.column = column;
+                tableSortState.direction = 'asc';
+            }
+            updateTableSortHeaderUI();
+            renderCompaniesTable(CHART_CONFIG[activeChartType]);
+        });
+    });
+    updateTableSortHeaderUI();
+}
+
+function updateTableSortHeaderUI() {
+    const headers = document.querySelectorAll('.insights-table-sortable');
+    headers.forEach(header => {
+        const column = header.getAttribute('data-sort');
+        header.classList.remove('sorted-asc', 'sorted-desc');
+        if (column !== tableSortState.column) return;
+        header.classList.add(tableSortState.direction === 'asc' ? 'sorted-asc' : 'sorted-desc');
+    });
+}
 
 function highlightActiveInsightsTab() {
     const tabMap = {
@@ -135,16 +166,17 @@ function renderCompaniesTable(cfg) {
     if (!body || !title || !count) return;
 
     const filtered = portfolioCompanies.filter(company => cleanValue(company[cfg.field]) === activeSelection);
+    const sorted = [...filtered].sort(compareCompaniesBySort);
 
     title.textContent = `${cfg.filterLabel}: ${activeSelection || 'None'}`;
-    count.textContent = `${filtered.length} companies`;
+    count.textContent = `${sorted.length} companies`;
 
-    if (!filtered.length) {
+    if (!sorted.length) {
         body.innerHTML = `<tr><td colspan="7" style="text-align:center;color:#64748b;padding:1rem;">No companies found.</td></tr>`;
         return;
     }
 
-    body.innerHTML = filtered.map(company => {
+    body.innerHTML = sorted.map(company => {
         const cleanCompany = cleanValue(company.company) || 'N/A';
         const owner = cleanValue(company.source) || 'N/A';
         const sector = cleanValue(company.sector) || 'N/A';
@@ -164,6 +196,41 @@ function renderCompaniesTable(cfg) {
             </tr>
         `;
     }).join('');
+}
+
+function compareCompaniesBySort(a, b) {
+    const column = tableSortState.column;
+    const dir = tableSortState.direction === 'asc' ? 1 : -1;
+    const aValue = getSortValueForColumn(a, column);
+    const bValue = getSortValueForColumn(b, column);
+    if (typeof aValue === 'number' && typeof bValue === 'number') {
+        return (aValue - bValue) * dir;
+    }
+    return String(aValue).localeCompare(String(bValue), undefined, { sensitivity: 'base', numeric: true }) * dir;
+}
+
+function getSortValueForColumn(company, column) {
+    const market = cleanValue(company.market);
+    switch (column) {
+        case 'company':
+            return cleanValue(company.company) || 'ZZZ';
+        case 'owner':
+            return cleanValue(company.source) || 'ZZZ';
+        case 'sector':
+            return cleanValue(company.sector) || 'ZZZ';
+        case 'market':
+            return market || 'ZZZ';
+        case 'headquarters':
+            return cleanValue(company.headquarters || company.market) || 'ZZZ';
+        case 'entry': {
+            const parsed = Number(cleanValue(company.entry));
+            return Number.isFinite(parsed) ? parsed : -Infinity;
+        }
+        case 'geography':
+            return categorizeGeography(market);
+        default:
+            return '';
+    }
 }
 
 function updateSelectionPill(cfg) {

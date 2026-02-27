@@ -838,10 +838,6 @@ function createNewsCard(article, index) {
         <div class="news-card-header">
             <div style="display: flex; align-items: center; gap: 8px;">
                 ${firmLogoHtml}
-                <span class="news-source">
-                    ${sourceIcon}
-                    ${escapeHtml(article.source || 'Cision')}
-                </span>
             </div>
         </div>
         <h3 class="news-title">${escapeHtml(truncateText(article.title, 80))}</h3>
@@ -851,10 +847,16 @@ function createNewsCard(article, index) {
                 <i class="far fa-calendar"></i>
                 ${escapeHtml(date)}
             </span>
-            <a href="${escapeHtml(article.link)}" target="_blank" class="news-link">
-                Read More
-                <i class="fas fa-arrow-right"></i>
-            </a>
+            <div class="news-actions">
+                <a href="${escapeHtml(article.link)}" target="_blank" class="news-link">
+                    Read More
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <span class="news-source-mini">
+                    ${sourceIcon}
+                    ${escapeHtml(article.source || 'Cision')}
+                </span>
+            </div>
         </div>
     `;
     

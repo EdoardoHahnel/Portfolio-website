@@ -13,10 +13,12 @@ import os
 from scraper import MAScraper
 import subprocess
 import sys
+from forum_feature import forum_bp, init_forum_db
 
 # Create a Flask application
 # Flask is a framework that helps create web applications easily
 app = Flask(__name__)
+app.secret_key = os.environ.get('FLASK_SECRET_KEY', 'dev-forum-secret-change-me')
 
 # This will store our news articles in memory
 # In a real application, you'd use a database (we'll keep it simple for beginners)
@@ -75,6 +77,8 @@ def load_portfolio_database():
 # Load news and portfolio on startup
 load_news_database()
 load_portfolio_database()
+init_forum_db()
+app.register_blueprint(forum_bp)
 
 
 # ROUTES: These are the different pages/endpoints of your website
@@ -111,6 +115,14 @@ def portfolio_insights():
     Portfolio chart drill-down page
     """
     return render_template('portfolio_insights.html')
+
+
+@app.route('/dcf-lbo')
+def dcf_lbo():
+    """
+    Interactive DCF / LBO modelling page
+    """
+    return render_template('dcf_lbo.html')
 
 
 @app.route('/company/<company_slug>')

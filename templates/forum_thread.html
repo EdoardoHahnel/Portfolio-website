@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+
+{% block title %}Forum Thread{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='forum.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="content-card forum-thread-detail">
+    <div class="content-card-body">
+        <div class="forum-thread-head">
+            <h1 class="forum-thread-title">{{ thread.title }}</h1>
+            <span class="forum-chip">{{ thread.category }}</span>
+        </div>
+        <p class="forum-thread-snippet" style="white-space: pre-wrap;">{{ thread.content }}</p>
+        <div class="forum-thread-meta">
+            <span>By <a href="/forum/profile/{{ thread.username }}">{{ thread.username }}</a> ({{ thread.user_role }})</span>
+            <span>{{ thread.created_at[:19].replace('T', ' ') }}</span>
+        </div>
+        <div class="forum-thread-actions">
+            {% if current_user %}
+            <button type="button" class="btn btn-secondary btn-sm js-thread-upvote" data-thread-id="{{ thread.id }}">
+                <i class="fas fa-arrow-up"></i> <span class="js-thread-score">{{ thread.upvotes }}</span>
+            </button>
+            {% else %}
+            <a class="btn btn-secondary btn-sm" href="/forum/login"><i class="fas fa-arrow-up"></i> {{ thread.upvotes }}</a>
+            {% endif %}
+            <a class="btn btn-secondary btn-sm" href="/forum">Back to Forum</a>
+            {% if current_user %}
+            <button type="button" class="btn btn-secondary btn-sm js-report-btn" data-content-type="thread" data-content-id="{{ thread.id }}">Report</button>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% if show_email_form %}
+<div class="content-card forum-email-signup-card">
+    <div class="content-card-body">
+        <h2 class="forum-email-signup-title"><i class="fas fa-envelope"></i> Få gratis modelleringsmaterial</h2>
+        <p class="forum-email-signup-desc">Fyll i din e-postadress nedan för att ta emot Excel-mallar (LBO, DCF, 3-statement), modelleringsfiler och PDF-föreläsningar om finansiell modellering.</p>
+        <form method="post" action="{{ url_for('forum.forum_email_signup') }}" class="forum-email-form js-email-signup-form">
+            <input type="email" name="email" class="forum-email-input" placeholder="din.epost@foretag.se" required autocomplete="email">
+            <button type="submit" class="forum-email-btn">Skicka</button>
+        </form>
+        <p class="forum-email-success js-email-success" style="display:none; margin-top:0.5rem;"></p>
+        <p class="forum-email-error js-email-error" style="display:none; margin-top:0.5rem;"></p>
+    </div>
+</div>
+{% endif %}
+
+{% if current_user %}
+<div class="content-card">
+    <div class="content-card-header">
+        <h2 class="content-card-title">Post a Comment</h2>
+    </div>
+    <div class="content-card-body">
+        <form method="post" action="/forum/thread/{{ thread.id }}/comment">
+            <textarea class="forum-textarea" name="content" rows="4" placeholder="Add your perspective..." required></textarea>
+            <button type="submit" class="btn btn-primary btn-sm">Comment</button>
+        </form>
+    </div>
+</div>
+{% endif %}
+
+<div class="forum-comment-list">
+    {% for comment in comments %}
+    <div class="content-card forum-comment-card">
+        <div class="content-card-body">
+            <div class="forum-thread-meta">
+                <span><strong>{{ comment.username }}</strong> ({{ comment.user_role }})</span>
+                <span>{{ comment.created_at[:19].replace('T', ' ') }}</span>
+            </div>
+            <p class="forum-thread-snippet" style="white-space: pre-wrap;">{{ comment.content }}</p>
+            <div class="forum-thread-actions">
+                {% if current_user %}
+                <button type="button" class="btn btn-secondary btn-sm js-comment-upvote" data-comment-id="{{ comment.id }}">
+                    <i class="fas fa-thumbs-up"></i> <span class="js-comment-score">{{ comment.upvotes }}</span>
+                </button>
+                {% else %}
+                <a class="btn btn-secondary btn-sm" href="/forum/login"><i class="fas fa-thumbs-up"></i> {{ comment.upvotes }}</a>
+                {% endif %}
+                {% if current_user %}
+                <button type="button" class="btn btn-secondary btn-sm js-report-btn" data-content-type="comment" data-content-id="{{ comment.id }}">Report</button>
+                <form method="post" action="/forum/thread/{{ thread.id }}/comment" class="inline-form">
+                    <input type="hidden" name="parent_id" value="{{ comment.id }}">
+                    <input type="hidden" name="content" value="@{{ comment.username }} ">
+                    <button type="submit" class="btn btn-secondary btn-sm">Quick Reply</button>
+                </form>
+                {% endif %}
+            </div>
+
+            {% if comment.replies %}
+            <div class="forum-replies">
+                {% for reply in comment.replies %}
+                <div class="forum-reply">
+                    <div class="forum-thread-meta">
+                        <span><strong>{{ reply.username }}</strong> ({{ reply.user_role }})</span>
+                        <span>{{ reply.created_at[:19].replace('T', ' ') }}</span>
+                    </div>
+                    <p class="forum-thread-snippet" style="white-space: pre-wrap;">{{ reply.content }}</p>
+                    <div class="forum-thread-actions">
+                        {% if current_user %}
+                        <button type="button" class="btn btn-secondary btn-sm js-comment-upvote" data-comment-id="{{ reply.id }}">
+                            <i class="fas fa-thumbs-up"></i> <span class="js-comment-score">{{ reply.upvotes }}</span>
+                        </button>
+                        {% else %}
+                        <a class="btn btn-secondary btn-sm" href="/forum/login"><i class="fas fa-thumbs-up"></i> {{ reply.upvotes }}</a>
+                        {% endif %}
+                        {% if current_user %}
+                        <button type="button" class="btn btn-secondary btn-sm js-report-btn" data-content-type="comment" data-content-id="{{ reply.id }}">Report</button>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% else %}
+    <div class="content-card">
+        <div class="content-card-body">
+            <p class="page-subtitle">No comments yet. Start the discussion.</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% if current_user %}
+<form id="forumReportForm" method="post" action="/forum/report" class="hidden-form">
+    <input type="hidden" name="content_type" id="forumReportType">
+    <input type="hidden" name="content_id" id="forumReportId">
+    <input type="hidden" name="reason" id="forumReportReason">
+</form>
+{% endif %}
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='forum.js') }}"></script>
+{% endblock %}

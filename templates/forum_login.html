@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Forum Login{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='forum.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="forum-auth-wrap">
+    <div class="content-card forum-auth-card">
+        <div class="content-card-header">
+            <h2 class="content-card-title">Sign In to Forum</h2>
+        </div>
+        <div class="content-card-body">
+            {% if error %}
+            <p class="forum-error">{{ error }}</p>
+            {% endif %}
+            <form method="post" action="/forum/login" class="forum-form-grid">
+                <input class="forum-input" type="text" name="username" placeholder="Username" required>
+                <input class="forum-input" type="password" name="password" placeholder="Password" required>
+                <button type="submit" class="btn btn-primary btn-sm">Login</button>
+            </form>
+            <p class="page-subtitle" style="margin-top:0.6rem;">No account? <a href="/forum/register">Register here</a>.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Forum Profile{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='forum.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="content-card-header">
+        <h2 class="content-card-title">{{ profile_user.username }}</h2>
+    </div>
+    <div class="content-card-body">
+        <div class="forum-profile-grid">
+            <div class="forum-profile-item">
+                <span class="forum-profile-label">Role</span>
+                <span class="forum-profile-value">{{ profile_user.role }}</span>
+            </div>
+            <div class="forum-profile-item">
+                <span class="forum-profile-label">Experience</span>
+                <span class="forum-profile-value">{{ profile_user.experience_level }}</span>
+            </div>
+            <div class="forum-profile-item">
+                <span class="forum-profile-label">Threads</span>
+                <span class="forum-profile-value">{{ thread_count }}</span>
+            </div>
+            <div class="forum-profile-item">
+                <span class="forum-profile-label">Comments</span>
+                <span class="forum-profile-value">{{ comment_count }}</span>
+            </div>
+            <div class="forum-profile-item">
+                <span class="forum-profile-label">Karma</span>
+                <span class="forum-profile-value">{{ karma }}</span>
+            </div>
+            <div class="forum-profile-item">
+                <span class="forum-profile-label">Joined</span>
+                <span class="forum-profile-value">{{ profile_user.created_at[:10] }}</span>
+            </div>
+        </div>
+        <div style="margin-top:0.8rem;">
+            <a class="btn btn-secondary btn-sm" href="/forum">Back to Forum</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

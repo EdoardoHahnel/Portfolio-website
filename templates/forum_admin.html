@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}Forum Moderation{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='forum.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1 class="page-title">Forum Moderation</h1>
+    <p class="page-subtitle">Review reports and moderate threads/comments.</p>
+</div>
+
+<div class="content-card">
+    <div class="content-card-header"><h2 class="content-card-title">Reports</h2></div>
+    <div class="content-card-body">
+        {% if reports %}
+            {% for report in reports %}
+            <div class="forum-admin-row">
+                <div>
+                    <strong>#{{ report.id }} - {{ report.content_type }} {{ report.content_id }}</strong>
+                    <div class="page-subtitle">By {{ report.reporter }} | {{ report.created_at[:19].replace('T',' ') }} | Status: {{ report.status }}</div>
+                    <p style="margin:0.25rem 0;">{{ report.reason }}</p>
+                </div>
+                {% if report.status != 'resolved' %}
+                <form method="post" action="/forum/admin/report/{{ report.id }}/resolve">
+                    <button class="btn btn-secondary btn-sm" type="submit">Resolve</button>
+                </form>
+                {% endif %}
+            </div>
+            {% endfor %}
+        {% else %}
+        <p class="page-subtitle">No reports found.</p>
+        {% endif %}
+    </div>
+</div>
+
+<div class="content-card">
+    <div class="content-card-header"><h2 class="content-card-title">Threads</h2></div>
+    <div class="content-card-body">
+        {% for thread in threads %}
+        <details class="forum-admin-item">
+            <summary>{{ thread.title }} ({{ thread.username }})</summary>
+            <form method="post" action="/forum/admin/thread/{{ thread.id }}/edit" class="forum-form-grid" style="margin-top:0.5rem;">
+                <input class="forum-input" type="text" name="title" value="{{ thread.title }}" required>
+                <input class="forum-input" type="text" name="category" value="{{ thread.category }}" required>
+                <input class="forum-input" type="text" name="tags" value="{{ thread.tags }}">
+                <textarea class="forum-textarea" name="content" rows="4" required>{{ thread.content }}</textarea>
+                <button class="btn btn-secondary btn-sm" type="submit">Save</button>
+            </form>
+            <form method="post" action="/forum/admin/thread/{{ thread.id }}/delete" style="margin-top:0.4rem;">
+                <button class="btn btn-secondary btn-sm" type="submit">Delete Thread</button>
+            </form>
+        </details>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="content-card">
+    <div class="content-card-header"><h2 class="content-card-title">Comments</h2></div>
+    <div class="content-card-body">
+        {% for comment in comments %}
+        <details class="forum-admin-item">
+            <summary>Comment #{{ comment.id }} by {{ comment.username }}</summary>
+            <form method="post" action="/forum/admin/comment/{{ comment.id }}/edit" class="forum-form-grid" style="margin-top:0.5rem;">
+                <textarea class="forum-textarea" name="content" rows="3" required>{{ comment.content }}</textarea>
+                <button class="btn btn-secondary btn-sm" type="submit">Save</button>
+            </form>
+            <form method="post" action="/forum/admin/comment/{{ comment.id }}/delete" style="margin-top:0.4rem;">
+                <button class="btn btn-secondary btn-sm" type="submit">Delete Comment</button>
+            </form>
+        </details>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

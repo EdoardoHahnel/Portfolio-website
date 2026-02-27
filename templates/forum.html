@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block title %}Forum{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='forum.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1 class="page-title">Forum</h1>
+    <p class="page-subtitle">Finance-focused discussions for IB, PE, recruiting, compensation, and technical prep.</p>
+</div>
+
+<div class="content-card forum-toolbar-card">
+    <div class="content-card-body forum-toolbar">
+        <form method="get" action="/forum" class="forum-filters">
+            <input type="text" name="q" value="{{ query }}" placeholder="Search threads..." class="forum-input">
+            <select name="category" class="forum-select">
+                <option value="">All Categories</option>
+                {% for cat in categories %}
+                <option value="{{ cat }}" {% if selected_category == cat %}selected{% endif %}>{{ cat }}</option>
+                {% endfor %}
+            </select>
+            <select name="sort" class="forum-select">
+                <option value="latest" {% if selected_sort == 'latest' %}selected{% endif %}>Latest</option>
+                <option value="upvoted" {% if selected_sort == 'upvoted' %}selected{% endif %}>Most Upvoted</option>
+                <option value="trending" {% if selected_sort == 'trending' %}selected{% endif %}>Trending</option>
+            </select>
+            <button type="submit" class="btn btn-secondary btn-sm">Apply</button>
+        </form>
+        <div class="forum-auth-actions">
+            {% if current_user %}
+            <a class="btn btn-secondary btn-sm" href="/forum/profile/{{ current_user.username }}">{{ current_user.username }}</a>
+            {% if current_user.is_admin %}
+            <a class="btn btn-secondary btn-sm" href="/forum/admin">Moderation</a>
+            {% endif %}
+            <form method="post" action="/forum/logout" class="inline-form">
+                <button type="submit" class="btn btn-secondary btn-sm">Logout</button>
+            </form>
+            {% else %}
+            <a class="btn btn-secondary btn-sm" href="/forum/login">Login</a>
+            <a class="btn btn-primary btn-sm" href="/forum/register">Register</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% if current_user %}
+<div class="content-card" style="margin-bottom:1rem;">
+    <div class="content-card-header">
+        <h2 class="content-card-title">Start a New Thread</h2>
+    </div>
+    <div class="content-card-body">
+        <form method="post" action="/forum/thread/create" class="forum-form-grid">
+            <input class="forum-input" type="text" name="title" placeholder="Thread title" required>
+            <select class="forum-select" name="category" required>
+                {% for cat in categories %}
+                <option value="{{ cat }}">{{ cat }}</option>
+                {% endfor %}
+            </select>
+            <input class="forum-input" type="text" name="tags" placeholder="Tags (comma-separated)">
+            <textarea class="forum-textarea" name="content" rows="5" placeholder="Write your question or insight..." required></textarea>
+            <button type="submit" class="btn btn-primary btn-sm">Post Thread</button>
+        </form>
+    </div>
+</div>
+{% endif %}
+
+<div class="forum-thread-list">
+    {% if threads %}
+        {% for thread in threads %}
+        <article class="content-card forum-thread-card">
+            <div class="content-card-body">
+                <div class="forum-thread-head">
+                    <a class="forum-thread-title" href="/forum/thread/{{ thread.id }}">{{ thread.title }}</a>
+                    <span class="forum-chip">{{ thread.category }}</span>
+                </div>
+                <p class="forum-thread-snippet">{{ thread.content[:220] }}{% if thread.content|length > 220 %}...{% endif %}</p>
+                <div class="forum-thread-meta">
+                    <span>By <a href="/forum/profile/{{ thread.username }}">{{ thread.username }}</a> ({{ thread.user_role }})</span>
+                    <span>{{ thread.created_at[:10] }}</span>
+                    <span>{{ thread.comment_count }} comments</span>
+                </div>
+                <div class="forum-thread-actions">
+                    {% if current_user %}
+                    <button type="button" class="btn btn-secondary btn-sm js-thread-upvote" data-thread-id="{{ thread.id }}">
+                        <i class="fas fa-arrow-up"></i> <span class="js-thread-score">{{ thread.upvotes }}</span>
+                    </button>
+                    {% else %}
+                    <a class="btn btn-secondary btn-sm" href="/forum/login"><i class="fas fa-arrow-up"></i> {{ thread.upvotes }}</a>
+                    {% endif %}
+                    <a class="btn btn-secondary btn-sm" href="/forum/thread/{{ thread.id }}">Open</a>
+                    {% if current_user %}
+                    <button type="button" class="btn btn-secondary btn-sm js-report-btn" data-content-type="thread" data-content-id="{{ thread.id }}">Report</button>
+                    {% endif %}
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+    {% else %}
+        <div class="content-card">
+            <div class="content-card-body">
+                <p class="page-subtitle">No threads found for the current filter. Start the first discussion.</p>
+            </div>
+        </div>
+    {% endif %}
+</div>
+
+{% if current_user %}
+<form id="forumReportForm" method="post" action="/forum/report" class="hidden-form">
+    <input type="hidden" name="content_type" id="forumReportType">
+    <input type="hidden" name="content_id" id="forumReportId">
+    <input type="hidden" name="reason" id="forumReportReason">
+</form>
+{% endif %}
+
+<section class="forum-fund-map-section">
+    <div class="content-card">
+        <div class="content-card-body">
+            <h2 class="forum-fund-map-title">Nordic & European PE Fund Size Landscape</h2>
+            <p class="forum-fund-map-desc">Private equity firms mapped by fund size and geography.</p>
+            <div class="forum-fund-map-img-wrap">
+                <img src="{{ url_for('static', filename='images/pe-fund-size-map.png') }}" alt="Private Equity Fund Size Map" class="forum-fund-map-img" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='forum.js') }}"></script>
+{% endblock %}

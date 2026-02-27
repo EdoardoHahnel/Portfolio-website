@@ -4,6 +4,34 @@
 
 {% block extra_css %}
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+.insights-table-sortable {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    padding-right: 1.15rem !important;
+}
+
+.insights-table-sortable::after {
+    content: '↕';
+    position: absolute;
+    right: 0.35rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.62rem;
+    color: #94a3b8;
+}
+
+.insights-table-sortable.sorted-asc::after {
+    content: '↑';
+    color: #1f4b82;
+}
+
+.insights-table-sortable.sorted-desc::after {
+    content: '↓';
+    color: #1f4b82;
+}
+</style>
 {% endblock %}
 
 {% block content %}
@@ -61,13 +89,13 @@
             <table class="portfolio-table">
                 <thead>
                     <tr>
-                        <th>Company</th>
-                        <th>Owner (GP)</th>
-                        <th>Sector</th>
-                        <th>Market</th>
-                        <th>Headquarters</th>
-                        <th>Entry Year</th>
-                        <th>Geography</th>
+                        <th class="insights-table-sortable" data-sort="company">Company</th>
+                        <th class="insights-table-sortable" data-sort="owner">Owner (GP)</th>
+                        <th class="insights-table-sortable" data-sort="sector">Sector</th>
+                        <th class="insights-table-sortable" data-sort="market">Market</th>
+                        <th class="insights-table-sortable" data-sort="headquarters">Headquarters</th>
+                        <th class="insights-table-sortable" data-sort="entry">Entry Year</th>
+                        <th class="insights-table-sortable" data-sort="geography">Geography</th>
                     </tr>
                 </thead>
                 <tbody id="insightsTableBody"></tbody>

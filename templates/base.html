@@ -51,7 +51,7 @@
                         <a href="/" class="pe-nav-link {% if request.path == '/' %}is-active{% endif %}">Dashboard</a>
                     </li>
                     <li class="pe-nav-item">
-                        <a href="/pe-firms" class="pe-nav-link {% if request.path == '/pe-firms' %}is-active{% endif %}">PE Firms</a>
+                        <a href="/pe-firms" class="pe-nav-link {% if request.path == '/pe-firms' %}is-active{% endif %}">Firms</a>
                     </li>
                     <li class="pe-nav-item">
                         <a href="/portfolio" class="pe-nav-link {% if request.path == '/portfolio' %}is-active{% endif %}">Portfolio</a>
@@ -61,6 +61,12 @@
                     </li>
                     <li class="pe-nav-item">
                         <a href="/fundraising" class="pe-nav-link {% if request.path == '/fundraising' %}is-active{% endif %}">Fundraising</a>
+                    </li>
+                    <li class="pe-nav-item">
+                        <a href="/forum" class="pe-nav-link {% if request.path.startswith('/forum') %}is-active{% endif %}">Forum</a>
+                    </li>
+                    <li class="pe-nav-item">
+                        <a href="/dcf-lbo" class="pe-nav-link {% if request.path == '/dcf-lbo' %}is-active{% endif %}">DCF / LBO</a>
                     </li>
                 </ul>
             </div>
@@ -80,7 +86,7 @@
                 <a href="/" class="pe-mobile-drawer-link {% if request.path == '/' %}is-active{% endif %}">Dashboard</a>
             </li>
             <li class="pe-mobile-drawer-item">
-                <a href="/pe-firms" class="pe-mobile-drawer-link {% if request.path == '/pe-firms' %}is-active{% endif %}">PE Firms</a>
+                <a href="/pe-firms" class="pe-mobile-drawer-link {% if request.path == '/pe-firms' %}is-active{% endif %}">Firms</a>
             </li>
             <li class="pe-mobile-drawer-item">
                 <a href="/portfolio" class="pe-mobile-drawer-link {% if request.path == '/portfolio' %}is-active{% endif %}">Portfolio</a>
@@ -90,6 +96,12 @@
             </li>
             <li class="pe-mobile-drawer-item">
                 <a href="/fundraising" class="pe-mobile-drawer-link {% if request.path == '/fundraising' %}is-active{% endif %}">Fundraising</a>
+            </li>
+            <li class="pe-mobile-drawer-item">
+                <a href="/forum" class="pe-mobile-drawer-link {% if request.path.startswith('/forum') %}is-active{% endif %}">Forum</a>
+            </li>
+            <li class="pe-mobile-drawer-item">
+                <a href="/dcf-lbo" class="pe-mobile-drawer-link {% if request.path == '/dcf-lbo' %}is-active{% endif %}">DCF / LBO</a>
             </li>
         </ul>
     </aside>
