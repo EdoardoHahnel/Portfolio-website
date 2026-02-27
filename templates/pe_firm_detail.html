@@ -1285,29 +1285,43 @@ async function loadFirmTimeline(firm, firmName) {
 function loadCompanyUpdates(firm) {
     const container = document.getElementById('companyUpdatesContainer');
     const updates = firm.company_updates || firm.companyUpdates || [];
+    const newsUpdates = (firm.real_news || []).map(article => ({
+        date: article.date || '',
+        type: inferTypeFromTitle(`${article.title || ''} ${article.description || ''}`),
+        title: article.title || '',
+        text: article.description || '',
+        link: article.link || '',
+        source: article.source || 'Cision'
+    }));
+
+    const mergedUpdates = [...updates, ...newsUpdates];
     console.log('Company Updates Debug:', { 
         container: !!container, 
-        updatesCount: updates.length, 
+        updatesCount: updates.length,
+        newsUpdatesCount: newsUpdates.length,
+        mergedCount: mergedUpdates.length,
         firmName: firm.name,
-        updates: updates.slice(0, 3) // Show first 3 for debugging
+        updates: mergedUpdates.slice(0, 3) // Show first 3 for debugging
     });
     if (!container) {
         console.error('Company updates container not found');
         return;
     }
-    if (!updates || updates.length === 0) {
+    if (!mergedUpdates || mergedUpdates.length === 0) {
         console.log('No company updates found');
         container.innerHTML = '<p style="color: var(--text-secondary);">No company updates yet.</p>';
         return;
     }
 
     // Normalize and group by year
-    const normalized = updates.map(u => ({
+    const normalized = mergedUpdates.map(u => ({
         date: u.date || '',
         year: (u.date || '').slice(0,4),
         type: (u.type || inferTypeFromTitle(u.title || u.text || '')).toLowerCase(),
         title: u.title || '',
-        text: u.text || ''
+        text: u.text || '',
+        link: u.link || '',
+        source: u.source || ''
     })).sort((a,b) => (b.date || '').localeCompare(a.date || ''));
 
     const byYear = {};
@@ -1326,6 +1340,12 @@ function loadCompanyUpdates(firm) {
                     <div style="flex:1; min-width:0;">
                         ${u.title ? `<div style=\"font-size:0.55rem; font-weight:700; color:#0f172a; margin-bottom:0.12rem;\">${escapeHtml(u.title)}</div>` : ''}
                         <div style="font-size:0.5rem; color:#334155; line-height:1.5;">${escapeHtml(u.text)}</div>
+                        ${(u.source || u.link) ? `
+                            <div style="font-size:0.42rem; color:#64748b; margin-top:0.15rem;">
+                                ${u.source ? `<span>${escapeHtml(u.source)}</span>` : ''}
+                                ${u.link ? `<a href="${escapeHtml(u.link)}" target="_blank" style="margin-left:0.35rem; color:#1e40af; text-decoration:none;">Read source <i class='fas fa-external-link-alt'></i></a>` : ''}
+                            </div>
+                        ` : ''}
                     </div>
                     <div style="display:flex; flex-direction:column; align-items:flex-end; justify-content:center; gap:0.18rem; min-width:120px; text-align:right;">
                         <span style="display:inline-block; padding:0.12rem 0.45rem; font-size:0.42rem; font-weight:700; border-radius:999px; background:#4c1d95; color:#ffffff; text-transform:uppercase; letter-spacing:0.02em;">${escapeHtml(u.type)}</span>

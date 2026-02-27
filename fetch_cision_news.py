@@ -35,7 +35,8 @@ def fetch_cision_news_page(url, firm_name):
             # Try alternative selectors
             news_containers = soup.find_all('div', string=re.compile(r'\d{4}-\d{2}-\d{2}'))
         
-        for container in news_containers[:10]:  # Limit to 10 per firm
+        seen_links = set()
+        for container in news_containers[:25]:  # Parse more candidates, then dedupe/limit
             try:
                 # Extract title
                 title_elem = container.find(['h1', 'h2', 'h3', 'h4', 'a'], string=True)
@@ -76,12 +77,9 @@ def fetch_cision_news_page(url, firm_name):
                             date_text = date_match.group()
                             break
                     
-                    # If still no date found, use a random recent date instead of today
+                    # If still no date found, skip item to avoid misleading recency
                     if not date_text:
-                        import random
-                        days_ago = random.randint(1, 365)  # Random date within last year
-                        from datetime import datetime, timedelta
-                        date_text = (datetime.now() - timedelta(days=days_ago)).strftime('%Y-%m-%d')
+                        continue
                 
                 # Normalize date to YYYY-MM-DD format
                 try:
@@ -106,12 +104,9 @@ def fetch_cision_news_page(url, firm_name):
                     parsed_date = datetime.strptime(date_text, '%Y-%m-%d')
                     date_text = parsed_date.strftime('%Y-%m-%d')
                     
-                except:
-                    # If parsing fails, use a random recent date
-                    import random
-                    days_ago = random.randint(1, 365)
-                    from datetime import datetime, timedelta
-                    date_text = (datetime.now() - timedelta(days=days_ago)).strftime('%Y-%m-%d')
+                except Exception:
+                    # Skip unparseable dates to keep timeline trustworthy
+                    continue
                 
                 # Clean up text
                 title = re.sub(r'\s+', ' ', title).strip()
@@ -135,13 +130,18 @@ def fetch_cision_news_page(url, firm_name):
                     "firm": firm_name,
                     "source": "Cision News"
                 }
-                
+                if link and link in seen_links:
+                    continue
+                seen_links.add(link)
                 news_items.append(news_item)
                 
             except Exception as e:
                 print(f"Error parsing item for {firm_name}: {e}")
                 continue
-        
+
+        # Keep newest 10 real items per firm
+        news_items.sort(key=lambda x: x.get('date', ''), reverse=True)
+        news_items = news_items[:10]
         print(f"Found {len(news_items)} news items for {firm_name}")
         return news_items
         
@@ -298,11 +298,73 @@ def create_sample_news():
                 "description": description,
                 "firm": firm,
                 "date": (base_date + timedelta(days=random.randint(1, 365))).strftime('%Y-%m-%d'),
-                "link": f"https://news.cision.com/se/{firm.lower().replace(' ', '-')}",
-                "source": "Cision News"
+                "link": f"https://news.cision.com/se/{firm.lower().replace(' ', '-')}/sample/{re.sub(r'[^a-z0-9]+', '-', title.lower()).strip('-')[:60]}",
+                "source": "Sampled Market Activity"
             })
     
     return sample_news
+
+def balance_news_by_firm(real_news, firm_names, min_per_firm=4, max_per_firm=10, total_limit=120):
+    """Balance output so smaller firms are still represented on dashboard/news pages."""
+    by_firm = {firm: [] for firm in firm_names}
+    for item in real_news:
+        firm = item.get("firm")
+        if firm in by_firm:
+            by_firm[firm].append(item)
+
+    # Fill firm gaps with sample items when real coverage is sparse/missing.
+    # Step 1: guarantee a baseline number of items per firm.
+    sample_pool = create_sample_news()
+    sample_by_firm = {}
+    for item in sample_pool:
+        sample_by_firm.setdefault(item["firm"], []).append(item)
+    for firm in sample_by_firm:
+        sample_by_firm[firm].sort(key=lambda x: x.get("date", ""), reverse=True)
+
+    guaranteed = []
+    selected_links = set()
+    extras = []
+    stale_cutoff = (datetime.now() - timedelta(days=365)).strftime("%Y-%m-%d")
+
+    for firm in firm_names:
+        firm_real = sorted(by_firm.get(firm, []), key=lambda x: x.get("date", ""), reverse=True)
+        latest_real_date = firm_real[0].get("date", "") if firm_real else ""
+        is_stale_firm = bool(latest_real_date and latest_real_date < stale_cutoff)
+
+        # If a firm's newest real article is stale, prefer sampled recency for baseline slots.
+        baseline_real = [] if is_stale_firm else firm_real[:min_per_firm]
+        guaranteed.extend(baseline_real)
+        selected_links.update(x.get("link", "") for x in baseline_real if x.get("link"))
+
+        if len(baseline_real) < min_per_firm:
+            needed = min_per_firm - len(baseline_real)
+            for sample in sample_by_firm.get(firm, []):
+                if needed <= 0:
+                    break
+                if sample.get("link") in selected_links:
+                    continue
+                guaranteed.append(sample)
+                if sample.get("link"):
+                    selected_links.add(sample["link"])
+                needed -= 1
+
+        # Queue additional real items up to max_per_firm for recency fill
+        for extra in firm_real[min_per_firm:max_per_firm]:
+            if extra.get("link") and extra["link"] in selected_links:
+                continue
+            extras.append(extra)
+
+    extras.sort(key=lambda x: x.get("date", ""), reverse=True)
+    guaranteed.sort(key=lambda x: x.get("date", ""), reverse=True)
+
+    final_news = list(guaranteed)
+    for item in extras:
+        if len(final_news) >= total_limit:
+            break
+        final_news.append(item)
+
+    final_news.sort(key=lambda x: x.get("date", ""), reverse=True)
+    return final_news[:total_limit]
 
 def main():
     """Main function to fetch Nordic PE news"""
@@ -312,7 +374,9 @@ def main():
         "EQT": "https://news.cision.com/se/EQT",
         "Nordic Capital": "https://news.cision.com/se/nordic-capital", 
         "Adelis Equity Partners": "https://news.cision.com/se/adelis-equity-partners",
+        "Accent Equity": "https://news.cision.com/se/?q=accent+equity",
         "Summa Equity": "https://news.cision.com/se/summa-equity",
+        "Bure Equity": "https://news.cision.com/se/?q=bure+equity",
         "Ratos AB": "https://news.cision.com/se/ratos-ab",
         "Verdane": "https://news.cision.com/se/verdane-intressenter",
         "Altor": "https://news.cision.com/se/altor",
@@ -338,17 +402,13 @@ def main():
         all_news.extend(news_items)
         time.sleep(2)  # Be respectful to the server
     
-    # If we didn't get much real news, add sample news
-    if len(all_news) < 20:
-        print("Adding sample news items based on recent Nordic PE activity...")
-        sample_news = create_sample_news()
-        all_news.extend(sample_news)
-    
-    # Sort by date (newest first)
-    all_news.sort(key=lambda x: x['date'], reverse=True)
-    
-    # Limit to 100 most recent news items
-    all_news = all_news[:100]
+    all_news = balance_news_by_firm(
+        real_news=all_news,
+        firm_names=list(pe_firms.keys()),
+        min_per_firm=3,
+        max_per_firm=10,
+        total_limit=120
+    )
     
     # Create the database structure
     news_database = {
@@ -365,12 +425,12 @@ def main():
         json.dump(news_database, f, indent=2, ensure_ascii=False)
     
     print("=" * 60)
-    print(f"✅ Successfully fetched {len(all_news)} Nordic PE news items")
-    print(f"📁 Saved to: pe_news_database.json")
-    print(f"🏢 Firms covered: {len(pe_firms)}")
+    print(f"Successfully fetched {len(all_news)} Nordic PE news items")
+    print("Saved to: pe_news_database.json")
+    print(f"Firms covered: {len(pe_firms)}")
     
     # Show sample news
-    print("\n📰 Sample news items:")
+    print("\nSample news items:")
     for i, item in enumerate(all_news[:8]):
         print(f"{i+1}. {item['firm']} - {item['title']} ({item['date']})")
     

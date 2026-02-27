@@ -372,7 +372,7 @@ def update_real_news():
         
         # Run the real news fetcher
         result = subprocess.run([
-            sys.executable, 'fetch_real_news.py'
+            sys.executable, 'fetch_cision_news.py'
         ], capture_output=True, text=True, cwd=os.getcwd())
         
         if result.returncode == 0:

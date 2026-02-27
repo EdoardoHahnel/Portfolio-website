@@ -34,6 +34,9 @@
     <nav class="top-nav pe-top-nav">
         <div class="top-nav-container pe-nav-shell">
             <div class="pe-nav-left">
+                <button class="pe-mobile-toggle" id="peMobileMenuToggle" aria-label="Toggle menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <div class="brand pe-brand" onclick="window.location.href='/'">
                     <img src="{{ url_for('static', filename='Port.png') }}" alt="Portföljbolagen" class="pe-brand-logo">
                     <div class="pe-brand-text">
@@ -42,7 +45,7 @@
                     </div>
                 </div>
             </div>
-            <div class="pe-nav-right" aria-label="Primary Navigation">
+            <div class="pe-nav-right" id="peMobileNav" aria-label="Primary Navigation">
                 <ul class="pe-nav-menu">
                     <li class="pe-nav-item">
                         <a href="/" class="pe-nav-link {% if request.path == '/' %}is-active{% endif %}">Dashboard</a>
@@ -72,6 +75,31 @@
     
     <script src="{{ url_for('static', filename='common.js') }}"></script>
     <script src="{{ url_for('static', filename='news_ticker.js') }}"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const toggle = document.getElementById('peMobileMenuToggle');
+        const nav = document.getElementById('peMobileNav');
+        if (!toggle || !nav) return;
+
+        const closeMenu = function () {
+            nav.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+        };
+
+        toggle.addEventListener('click', function () {
+            const isOpen = nav.classList.toggle('is-open');
+            toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        window.addEventListener('resize', function () {
+            if (window.innerWidth > 1024) closeMenu();
+        });
+    });
+    </script>
     
     {% block extra_js %}{% endblock %}
 </body>
