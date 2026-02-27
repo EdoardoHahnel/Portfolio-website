@@ -83,9 +83,11 @@ body.pe-theme.modern-layout {
 }
 
 .pe-brand-title {
-    color: #102138;
-    font-size: 1.05rem;
-    font-weight: 700;
+    color: #0f2a4a;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.015em;
+    font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
     line-height: 1.1;
 }
 
@@ -371,7 +373,7 @@ body.pe-theme.modern-layout {
     border: 1px solid #cddff8 !important;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
     body.pe-theme.modern-layout {
         grid-template-rows: auto 1fr;
     }
@@ -395,11 +397,12 @@ body.pe-theme.modern-layout {
     .pe-nav-left {
         width: 100%;
         justify-self: stretch;
-        justify-content: space-between;
+        justify-content: flex-start;
         gap: 8px;
     }
 
     .pe-brand {
+        order: 1;
         min-width: 0;
     }
 
@@ -412,6 +415,7 @@ body.pe-theme.modern-layout {
     }
 
     .pe-mobile-toggle {
+        order: 2;
         display: inline-flex !important;
         align-items: center;
         justify-content: center;

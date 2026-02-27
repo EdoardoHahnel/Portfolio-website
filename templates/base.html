@@ -82,7 +82,7 @@
         if (!toggle || !nav) return;
 
         const isMobileWidth = function () {
-            return window.innerWidth <= 1024;
+            return window.innerWidth <= 900;
         };
 
         const closeMenu = function () {
@@ -111,7 +111,7 @@
         });
 
         window.addEventListener('resize', function () {
-            if (window.innerWidth > 1024) closeMenu();
+            if (window.innerWidth > 900) closeMenu();
         });
     });
     </script>
