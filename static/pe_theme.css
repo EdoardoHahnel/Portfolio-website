@@ -143,11 +143,12 @@ body.pe-theme.modern-layout {
     border-color: #cadefb;
 }
 
-.pe-mobile-backdrop {
+.pe-mobile-overlay,
+.pe-mobile-drawer {
     display: none;
 }
 
-body.pe-mobile-nav-open {
+body.pe-mobile-menu-open {
     overflow: hidden;
 }
 
@@ -443,35 +444,10 @@ body.pe-mobile-nav-open {
     }
 
     .pe-nav-right {
-        display: block !important;
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: auto;
-        height: 100dvh;
-        width: min(86vw, 360px);
-        background: #ffffff;
-        border-left: 1px solid var(--pe-border);
-        border-radius: 0;
-        box-shadow: -10px 0 28px rgba(15, 34, 59, 0.16);
-        padding: 76px 14px 18px;
-        z-index: 10060;
-        transform: translateX(100%);
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        transition: transform 220ms ease, opacity 220ms ease, visibility 0s linear 220ms;
+        display: none !important;
     }
 
-    .pe-nav-right.is-open {
-        transform: translateX(0);
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-        transition: transform 220ms ease, opacity 220ms ease;
-    }
-
-    .pe-mobile-backdrop {
+    .pe-mobile-overlay {
         display: block;
         position: fixed;
         inset: 0;
@@ -480,53 +456,92 @@ body.pe-mobile-nav-open {
         visibility: hidden;
         pointer-events: none;
         z-index: 10040;
-        transition: opacity 200ms ease, visibility 0s linear 200ms;
+        transition: opacity 220ms ease, visibility 0s linear 220ms;
     }
 
-    .pe-mobile-backdrop.is-open {
+    .pe-mobile-overlay.is-open {
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
-        transition: opacity 200ms ease;
+        transition: opacity 220ms ease;
     }
 
-    .pe-nav-menu {
-        justify-content: flex-start;
-        flex-wrap: nowrap;
+    .pe-mobile-drawer {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100dvh;
+        width: min(86vw, 360px);
+        background: #ffffff;
+        border-left: 1px solid var(--pe-border);
+        box-shadow: -12px 0 28px rgba(15, 34, 59, 0.16);
+        z-index: 10060;
+        transform: translateX(100%);
+        transition: transform 240ms ease;
+        padding: 14px 14px 18px;
+        box-sizing: border-box;
+    }
+
+    .pe-mobile-drawer.is-open {
+        transform: translateX(0);
+    }
+
+    .pe-mobile-drawer-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 6px 4px 10px;
+        border-bottom: 1px solid #e2eaf5;
+        margin-bottom: 8px;
+    }
+
+    .pe-mobile-drawer-title {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: #24466f;
+    }
+
+    .pe-mobile-drawer-close {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        border: 1px solid #d8e4f4;
+        background: #f5f9ff;
+        color: #1f4068;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .pe-mobile-drawer-menu {
+        list-style: none;
+        margin: 0;
+        padding: 6px 0 0;
+        display: flex;
         flex-direction: column;
-        align-items: stretch;
         gap: 8px;
-        padding-top: 0;
     }
 
-    .pe-nav-item {
+    .pe-mobile-drawer-item {
         width: 100%;
     }
 
-    .pe-nav-link {
+    .pe-mobile-drawer-link {
+        display: block;
         width: 100%;
-        justify-content: flex-start;
-        font-size: 0.98rem;
-        font-weight: 650;
-        padding: 13px 12px;
-        border-radius: 10px;
-        position: relative;
-        z-index: 1;
-    }
-
-    /* Prevent sticky touch hover from showing multiple blue highlights on mobile */
-    .pe-nav-link:hover,
-    .pe-nav-link:focus,
-    .pe-nav-link:active {
+        text-decoration: none;
         color: #2e4d72;
-        background: transparent;
-        border-color: transparent;
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 12px 12px;
+        border-radius: 10px;
+        border: 1px solid transparent;
+        box-sizing: border-box;
     }
 
-    .pe-nav-link.is-active,
-    .pe-nav-link.is-active:hover,
-    .pe-nav-link.is-active:focus,
-    .pe-nav-link.is-active:active {
+    .pe-mobile-drawer-link.is-active {
         color: #1f4b82;
         background: #e6efff;
         border-color: #cadefb;

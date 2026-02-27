@@ -45,7 +45,7 @@
                     </div>
                 </div>
             </div>
-            <div class="pe-nav-right" id="peMobileNav" aria-label="Primary Navigation">
+            <div class="pe-nav-right" aria-label="Primary Navigation">
                 <ul class="pe-nav-menu">
                     <li class="pe-nav-item">
                         <a href="/" class="pe-nav-link {% if request.path == '/' %}is-active{% endif %}">Dashboard</a>
@@ -67,7 +67,32 @@
             
         </div>
     </nav>
-    <div class="pe-mobile-backdrop" id="peMobileBackdrop" aria-hidden="true"></div>
+    <div class="pe-mobile-overlay" id="peMobileOverlay" aria-hidden="true"></div>
+    <aside class="pe-mobile-drawer" id="peMobileDrawer" aria-hidden="true">
+        <div class="pe-mobile-drawer-header">
+            <span class="pe-mobile-drawer-title">Menu</span>
+            <button class="pe-mobile-drawer-close" id="peMobileDrawerClose" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="pe-mobile-drawer-menu">
+            <li class="pe-mobile-drawer-item">
+                <a href="/" class="pe-mobile-drawer-link {% if request.path == '/' %}is-active{% endif %}">Dashboard</a>
+            </li>
+            <li class="pe-mobile-drawer-item">
+                <a href="/pe-firms" class="pe-mobile-drawer-link {% if request.path == '/pe-firms' %}is-active{% endif %}">PE Firms</a>
+            </li>
+            <li class="pe-mobile-drawer-item">
+                <a href="/portfolio" class="pe-mobile-drawer-link {% if request.path == '/portfolio' %}is-active{% endif %}">Portfolio</a>
+            </li>
+            <li class="pe-mobile-drawer-item">
+                <a href="/news" class="pe-mobile-drawer-link {% if request.path == '/news' %}is-active{% endif %}">News</a>
+            </li>
+            <li class="pe-mobile-drawer-item">
+                <a href="/fundraising" class="pe-mobile-drawer-link {% if request.path == '/fundraising' %}is-active{% endif %}">Fundraising</a>
+            </li>
+        </ul>
+    </aside>
 
     <!-- Main Content Area -->
     <main class="main-container">
@@ -79,18 +104,20 @@
     <script>
     document.addEventListener('DOMContentLoaded', function () {
         const toggle = document.getElementById('peMobileMenuToggle');
-        const nav = document.getElementById('peMobileNav');
-        const backdrop = document.getElementById('peMobileBackdrop');
-        if (!toggle || !nav || !backdrop) return;
+        const drawer = document.getElementById('peMobileDrawer');
+        const overlay = document.getElementById('peMobileOverlay');
+        const closeBtn = document.getElementById('peMobileDrawerClose');
+        if (!toggle || !drawer || !overlay || !closeBtn) return;
 
         const isMobileWidth = function () {
             return window.innerWidth <= 768;
         };
 
         const setMenuOpen = function (open) {
-            nav.classList.toggle('is-open', open);
-            backdrop.classList.toggle('is-open', open);
-            document.body.classList.toggle('pe-mobile-nav-open', open);
+            drawer.classList.toggle('is-open', open);
+            overlay.classList.toggle('is-open', open);
+            document.body.classList.toggle('pe-mobile-menu-open', open);
+            drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
             toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
         };
 
@@ -100,10 +127,15 @@
 
         toggle.addEventListener('click', function () {
             if (!isMobileWidth()) return;
-            setMenuOpen(!nav.classList.contains('is-open'));
+            setMenuOpen(!drawer.classList.contains('is-open'));
         });
 
-        backdrop.addEventListener('click', closeMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+
+        drawer.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
 
         document.addEventListener('keydown', function (event) {
             if (event.key === 'Escape') closeMenu();
