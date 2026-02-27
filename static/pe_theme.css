@@ -393,7 +393,7 @@ body.pe-mobile-nav-open {
 
     .pe-top-nav {
         position: relative;
-        z-index: 320;
+        z-index: 10050;
     }
 
     .pe-nav-shell {
@@ -455,7 +455,7 @@ body.pe-mobile-nav-open {
         border-radius: 0;
         box-shadow: -10px 0 28px rgba(15, 34, 59, 0.16);
         padding: 76px 14px 18px;
-        z-index: 330;
+        z-index: 10060;
         transform: translateX(100%);
         opacity: 0;
         visibility: hidden;
@@ -479,7 +479,7 @@ body.pe-mobile-nav-open {
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-        z-index: 310;
+        z-index: 10040;
         transition: opacity 200ms ease, visibility 0s linear 200ms;
     }
 
@@ -510,6 +510,8 @@ body.pe-mobile-nav-open {
         font-weight: 650;
         padding: 13px 12px;
         border-radius: 10px;
+        position: relative;
+        z-index: 1;
     }
 
     /* Prevent sticky touch hover from showing multiple blue highlights on mobile */

@@ -103,10 +103,6 @@
             setMenuOpen(!nav.classList.contains('is-open'));
         });
 
-        nav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', closeMenu);
-        });
-
         backdrop.addEventListener('click', closeMenu);
 
         document.addEventListener('keydown', function (event) {
