@@ -805,7 +805,7 @@ body {
 
 .portfolio-table {
     width: 100%;
-    min-width: 1200px; /* Reduced for better mobile experience */
+    min-width: 1080px;
     border-collapse: separate;
     border-spacing: 0;
     background: var(--card-bg);
@@ -946,7 +946,6 @@ body {
 
 .portfolio-table tbody tr:hover {
     background-color: var(--bg-color);
-    transform: scale(1.01);
 }
 
 .portfolio-table tbody tr.has-description {
@@ -981,10 +980,30 @@ body {
     line-height: 1.4;
 }
 
+/* Use the same bounded page behavior as other tabs:
+   keep portfolio inside container and scroll only inside table wrapper. */
+.portfolio-container,
+.firm-section,
+.portfolio-table-wrapper {
+    max-width: 100%;
+}
+
+.portfolio-table {
+    min-width: 100%;
+    table-layout: auto;
+}
+
+.portfolio-table th,
+.portfolio-table td {
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+}
+
 /* ===== MOBILE RESPONSIVE BREAKPOINTS ===== */
 @media (max-width: 768px) {
     .portfolio-table {
-        min-width: 1000px; /* Further reduced for mobile */
+        min-width: 100%;
     }
     
     .portfolio-table th,
@@ -1018,7 +1037,7 @@ body {
 
 @media (max-width: 480px) {
     .portfolio-table {
-        min-width: 900px; /* Even more compact for small phones */
+        min-width: 100%;
     }
     
     .portfolio-table th,

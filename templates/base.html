@@ -67,6 +67,7 @@
             
         </div>
     </nav>
+    <div class="pe-mobile-backdrop" id="peMobileBackdrop" aria-hidden="true"></div>
 
     <!-- Main Content Area -->
     <main class="main-container">
@@ -79,19 +80,24 @@
     document.addEventListener('DOMContentLoaded', function () {
         const toggle = document.getElementById('peMobileMenuToggle');
         const nav = document.getElementById('peMobileNav');
-        if (!toggle || !nav) return;
+        const backdrop = document.getElementById('peMobileBackdrop');
+        if (!toggle || !nav || !backdrop) return;
 
         const isMobileWidth = function () {
-            return window.innerWidth <= 900;
+            return window.innerWidth <= 768;
         };
 
         const closeMenu = function () {
             nav.classList.remove('is-open');
+            backdrop.classList.remove('is-open');
+            document.body.classList.remove('pe-mobile-nav-open');
             toggle.setAttribute('aria-expanded', 'false');
         };
 
         toggle.addEventListener('click', function () {
             const isOpen = nav.classList.toggle('is-open');
+            backdrop.classList.toggle('is-open', isOpen);
+            document.body.classList.toggle('pe-mobile-nav-open', isOpen);
             toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         });
 
@@ -99,20 +105,17 @@
             link.addEventListener('click', closeMenu);
         });
 
-        document.addEventListener('click', function (event) {
-            if (!isMobileWidth()) return;
-            const clickInsideMenu = nav.contains(event.target);
-            const clickToggle = toggle.contains(event.target);
-            if (!clickInsideMenu && !clickToggle) closeMenu();
-        });
+        backdrop.addEventListener('click', closeMenu);
 
         document.addEventListener('keydown', function (event) {
             if (event.key === 'Escape') closeMenu();
         });
 
         window.addEventListener('resize', function () {
-            if (window.innerWidth > 900) closeMenu();
+            if (window.innerWidth > 768) closeMenu();
         });
+
+        if (!isMobileWidth()) closeMenu();
     });
     </script>
     

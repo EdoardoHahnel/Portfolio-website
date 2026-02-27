@@ -4,6 +4,40 @@
 
 {% block extra_css %}
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+.portfolio-charts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-charts-grid .portfolio-chart-card:nth-child(3) {
+    grid-column: 1 / -1;
+}
+
+.portfolio-chart-card .content-card-body {
+    overflow: hidden;
+}
+
+.content-card,
+.firm-section,
+.portfolio-table-wrapper,
+.portfolio-container {
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .portfolio-charts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-charts-grid .portfolio-chart-card:nth-child(3) {
+        grid-column: auto;
+    }
+
+}
+</style>
 {% endblock %}
 
 {% block content %}
@@ -56,7 +90,7 @@
 </div>
 
 <!-- Charts Section -->
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.2rem; margin-bottom: 0.2rem;">
+<div class="portfolio-charts-grid">
     <div class="content-card portfolio-chart-card" data-chart-canvas="yearChart" data-chart-title="Investment Year Distribution">
         <div class="content-card-header">
             <h3 class="content-card-title" style="font-size: 0.55rem;">

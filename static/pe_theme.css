@@ -36,10 +36,10 @@ body.pe-theme.modern-layout {
 }
 
 .pe-nav-shell {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    position: relative;
+    display: flex;
     align-items: center;
-    gap: 16px;
+    justify-content: flex-start;
     height: 62px;
     padding: 0 20px;
 }
@@ -49,6 +49,8 @@ body.pe-theme.modern-layout {
     align-items: center;
     gap: 10px;
     justify-self: start;
+    position: relative;
+    z-index: 2;
 }
 
 .pe-mobile-toggle {
@@ -84,8 +86,8 @@ body.pe-theme.modern-layout {
 
 .pe-brand-title {
     color: #0f2a4a;
-    font-size: 1rem;
-    font-weight: 800;
+    font-size: 0.95rem;
+    font-weight: 600;
     letter-spacing: 0.015em;
     font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
     line-height: 1.1;
@@ -93,7 +95,7 @@ body.pe-theme.modern-layout {
 
 .pe-brand-subtitle {
     color: var(--pe-text-muted);
-    font-size: 0.67rem;
+    font-size: 0.58rem;
     line-height: 1;
 }
 
@@ -101,7 +103,9 @@ body.pe-theme.modern-layout {
     display: flex !important;
     align-items: center;
     gap: 0;
-    justify-self: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .pe-nav-menu {
@@ -137,6 +141,14 @@ body.pe-theme.modern-layout {
     color: #1f4b82;
     background: #e6efff;
     border-color: #cadefb;
+}
+
+.pe-mobile-backdrop {
+    display: none;
+}
+
+body.pe-mobile-nav-open {
+    overflow: hidden;
 }
 
 .pe-theme .sidebar {
@@ -184,6 +196,7 @@ body.pe-theme.modern-layout {
 .main-container {
     padding-top: 28px;
     overflow-y: visible;
+    overflow-x: hidden;
 }
 
 .pe-hero {
@@ -373,7 +386,7 @@ body.pe-theme.modern-layout {
     border: 1px solid #cddff8 !important;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     body.pe-theme.modern-layout {
         grid-template-rows: auto 1fr;
     }
@@ -411,7 +424,8 @@ body.pe-theme.modern-layout {
     }
 
     .pe-brand-title {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+        font-weight: 600;
     }
 
     .pe-mobile-toggle {
@@ -429,22 +443,51 @@ body.pe-theme.modern-layout {
     }
 
     .pe-nav-right {
-        display: none !important;
-        position: absolute;
-        top: calc(100% + 8px);
-        left: 12px;
-        right: 12px;
-        width: auto;
+        display: block !important;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: auto;
+        height: 100dvh;
+        width: min(86vw, 360px);
         background: #ffffff;
-        border: 1px solid var(--pe-border);
-        border-radius: 12px;
-        box-shadow: 0 12px 26px rgba(15, 34, 59, 0.14);
-        padding: 8px;
-        z-index: 130;
+        border-left: 1px solid var(--pe-border);
+        border-radius: 0;
+        box-shadow: -10px 0 28px rgba(15, 34, 59, 0.16);
+        padding: 76px 14px 18px;
+        z-index: 170;
+        transform: translateX(100%);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: transform 220ms ease, opacity 220ms ease, visibility 0s linear 220ms;
     }
 
     .pe-nav-right.is-open {
-        display: block !important;
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transition: transform 220ms ease, opacity 220ms ease;
+    }
+
+    .pe-mobile-backdrop {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(8, 22, 40, 0.34);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        z-index: 160;
+        transition: opacity 200ms ease, visibility 0s linear 200ms;
+    }
+
+    .pe-mobile-backdrop.is-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transition: opacity 200ms ease;
     }
 
     .pe-nav-menu {
@@ -452,7 +495,7 @@ body.pe-theme.modern-layout {
         flex-wrap: nowrap;
         flex-direction: column;
         align-items: stretch;
-        gap: 6px;
+        gap: 8px;
         padding-top: 0;
     }
 
@@ -463,8 +506,9 @@ body.pe-theme.modern-layout {
     .pe-nav-link {
         width: 100%;
         justify-content: flex-start;
-        font-size: 0.92rem;
-        padding: 11px 12px;
+        font-size: 0.98rem;
+        font-weight: 650;
+        padding: 13px 12px;
         border-radius: 10px;
     }
 
