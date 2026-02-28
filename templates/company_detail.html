@@ -7,123 +7,129 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='components.css') }}">
 <style>
     .company-detail-header {
-        background: linear-gradient(135deg, #4c1d95 0%, #581c87 50%, #6b21a8 100%);
+        background: linear-gradient(135deg, #3f7de8 0%, #2f64c0 100%);
         color: white;
-        padding: 2rem 2rem 3rem 2rem;
-        margin: -1.5rem -1.5rem 2rem -1.5rem;
+        padding: 1rem 1.5rem 1.25rem;
+        margin: -1.5rem -1.5rem 1.25rem -1.5rem;
         border-radius: 0;
         position: relative;
-        overflow: hidden;
-    }
-
-    .company-detail-header::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path fill="rgba(255,255,255,0.05)" d="M0,0 L1200,0 L1200,40 Q900,80 600,40 T0,40 Z"/></svg>');
-        background-size: cover;
-        opacity: 0.3;
     }
 
     .company-header-content {
         display: flex;
-        gap: 2rem;
+        gap: 1rem;
         align-items: center;
-        position: relative;
-        z-index: 1;
         flex-wrap: wrap;
     }
 
     .company-header-left {
         display: flex;
-        gap: 2rem;
+        gap: 0.85rem;
         align-items: center;
         flex: 1;
-        min-width: 280px;
+        min-width: 200px;
+    }
+
+    .company-logo-wrap {
+        position: relative;
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .company-logo-large {
-        width: 80px;
-        height: 80px;
+        width: 48px;
+        height: 48px;
         object-fit: contain;
         background: white;
-        border-radius: 12px;
-        padding: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        padding: 4px;
+    }
+
+    .company-logo-fallback {
+        display: none;
+        width: 48px;
+        height: 48px;
+        background: rgba(255,255,255,0.25);
+        color: white;
+        border-radius: 8px;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
     }
 
     .company-header-text h1 {
-        font-size: 2rem;
+        font-size: 1.2rem;
         font-weight: 700;
-        margin: 0 0 0.75rem 0;
+        margin: 0 0 0.35rem 0;
         color: white;
-        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
     }
 
     .company-header-meta {
         display: flex;
-        gap: 0.75rem;
+        gap: 0.5rem;
         align-items: center;
         flex-wrap: wrap;
-        margin-top: 0.75rem;
+        margin-top: 0.35rem;
     }
 
     .back-button {
         display: inline-flex;
         align-items: center;
-        gap: 0.5rem;
-        padding: 0.75rem 1.5rem;
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
+        gap: 0.4rem;
+        padding: 0.4rem 0.75rem;
+        background: rgba(255, 255, 255, 0.1);
         color: white;
         text-decoration: none;
-        border-radius: 8px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        margin-bottom: 1rem;
+        border-radius: 6px;
+        font-weight: 500;
+        font-size: 0.85rem;
+        margin-bottom: 0.65rem;
+        border: 1px solid rgba(255, 255, 255, 0.15);
     }
 
     .back-button:hover {
-        background: rgba(255, 255, 255, 0.3);
-        transform: translateX(-4px);
+        background: rgba(255, 255, 255, 0.18);
+        color: white;
     }
 
     .company-detail-content {
-        max-width: 1200px;
+        max-width: 960px;
         margin: 0 auto;
     }
 
     .stats-banner {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem;
-        margin-bottom: 2rem;
-        background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
-        border: 1px solid #e9d5ff;
-        border-radius: 12px;
-        padding: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 0.65rem;
+        margin-bottom: 1.25rem;
+        background: linear-gradient(140deg, #eef5ff, #f8fbff);
+        border: 1px solid #d5e0ef;
+        border-radius: 8px;
+        padding: 0.85rem 1rem;
     }
 
     .stat-item {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 0.65rem;
     }
 
     .stat-icon {
-        width: 48px;
-        height: 48px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        width: 36px;
+        height: 36px;
+        background: linear-gradient(135deg, #3f7de8, #2f64c0);
         color: white;
-        border-radius: 12px;
+        border-radius: 6px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.25rem;
+        font-size: 0.9rem;
     }
 
     .stat-content {
@@ -131,126 +137,125 @@
     }
 
     .stat-value {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #1e293b;
-        margin-bottom: 0.25rem;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #122238;
+        margin-bottom: 0.15rem;
     }
 
     .stat-label {
-        font-size: 0.875rem;
-        color: #64748b;
+        font-size: 0.7rem;
+        color: #5f7696;
         font-weight: 500;
     }
 
     .detail-section {
         background: white;
-        border-radius: 12px;
-        padding: 2rem;
-        margin-bottom: 2rem;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 1rem 1.25rem;
+        margin-bottom: 1rem;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        border: 1px solid #d5e0ef;
     }
 
     .section-title {
-        font-size: 1.5rem;
+        font-size: 1rem;
         font-weight: 700;
-        color: #1e293b;
-        margin: 0 0 1.5rem 0;
+        color: #143052;
+        margin: 0 0 0.75rem 0;
         display: flex;
         align-items: center;
-        gap: 0.75rem;
+        gap: 0.5rem;
     }
 
     .section-title i {
-        color: #667eea;
-        font-size: 1.25rem;
+        color: #3f7de8;
+        font-size: 0.95rem;
     }
 
     .detail-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 0.75rem;
     }
 
     .detail-card {
-        background: #f8f9ff;
-        border-radius: 8px;
-        padding: 1.25rem;
-        border: 1px solid #e9d5ff;
+        background: #f6f9ff;
+        border-radius: 6px;
+        padding: 0.75rem 1rem;
+        border: 1px solid #d5e0ef;
     }
 
     .detail-card-icon {
-        width: 40px;
-        height: 40px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        width: 28px;
+        height: 28px;
+        background: linear-gradient(135deg, #3f7de8, #2f64c0);
         color: white;
-        border-radius: 8px;
+        border-radius: 6px;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 0.75rem;
-        font-size: 1.125rem;
+        margin-bottom: 0.5rem;
+        font-size: 0.75rem;
     }
 
     .detail-label {
-        font-size: 0.75rem;
-        color: #667eea;
+        font-size: 0.65rem;
+        color: #2e5ea9;
         font-weight: 600;
         text-transform: uppercase;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.25rem;
         letter-spacing: 0.5px;
     }
 
     .detail-value {
-        font-size: 1rem;
-        color: #1e293b;
+        font-size: 0.88rem;
+        color: #122238;
         font-weight: 600;
-        line-height: 1.5;
+        line-height: 1.4;
     }
 
     .description-text {
-        font-size: 1rem;
-        line-height: 1.7;
-        color: #475569;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: #4e6788;
         margin: 0;
     }
 
     .loading-state {
         text-align: center;
-        padding: 4rem 2rem;
+        padding: 2.5rem 1.5rem;
     }
 
     .error-state {
         text-align: center;
-        padding: 4rem 2rem;
+        padding: 2.5rem 1.5rem;
         color: #dc2626;
     }
 
     .badge {
         display: inline-block;
-        padding: 0.5rem 1rem;
-        border-radius: 20px;
-        font-size: 0.875rem;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        font-size: 0.72rem;
         font-weight: 600;
     }
 
     .badge-sector {
-        background: rgba(255, 255, 255, 0.25);
-        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.2);
         color: white;
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.25);
     }
 
     .badge-status {
         background: rgba(255, 255, 255, 0.95);
-        color: #4c1d95;
+        color: #1f4b82;
     }
 
     .badge-geography {
-        padding: 0.5rem 1rem;
-        border-radius: 6px;
-        font-size: 0.875rem;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        font-size: 0.72rem;
         font-weight: 600;
     }
 
@@ -260,8 +265,8 @@
 
     @media (max-width: 768px) {
         .company-detail-header {
-            padding: 1.5rem 1rem 2rem 1rem;
-            margin: -1rem -1rem 1.5rem -1rem;
+            padding: 0.85rem 1rem 1rem;
+            margin: -1rem -1rem 1rem -1rem;
         }
 
         .company-header-content {
@@ -276,24 +281,27 @@
         }
 
         .company-header-text h1 {
-            font-size: 1.5rem;
+            font-size: 1.1rem;
         }
 
+        .company-logo-wrap,
         .company-logo-large {
-            width: 64px;
-            height: 64px;
+            width: 40px;
+            height: 40px;
+        }
+
+        .company-logo-fallback {
+            width: 40px;
+            height: 40px;
+            font-size: 12px;
         }
 
         .stats-banner {
-            grid-template-columns: 1fr;
-        }
-
-        .detail-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, 1fr);
         }
 
         .detail-section {
-            padding: 1.5rem;
+            padding: 0.9rem 1rem;
         }
     }
 </style>
@@ -308,7 +316,10 @@
         </a>
         <div class="company-header-content">
             <div class="company-header-left">
-                <img id="companyLogo" src="" alt="" class="company-logo-large">
+                <div class="company-logo-wrap">
+                    <img id="companyLogo" src="" alt="" class="company-logo-large">
+                    <span id="companyLogoFallback" class="company-logo-fallback">—</span>
+                </div>
                 <div class="company-header-text">
                     <h1 id="companyName">Loading...</h1>
                     <div class="company-header-meta">
@@ -322,7 +333,7 @@
 
     <!-- Loading State -->
     <div id="loadingState" class="loading-state">
-        <div class="spinner" style="width: 48px; height: 48px; border: 4px solid #e5e7eb; border-top-color: #667eea; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 1rem;"></div>
+        <div class="spinner" style="width: 36px; height: 36px; border: 3px solid #d5e0ef; border-top-color: #3f7de8; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 0.75rem;"></div>
         <p style="color: #64748b;">Loading company details...</p>
     </div>
 
@@ -459,42 +470,9 @@
             </div>
         </div>
 
-        <!-- Operational Metrics -->
-        <div class="detail-section">
-            <h2 class="section-title">
-                <i class="fas fa-tachometer-alt"></i>
-                Operational Metrics
-            </h2>
-            <div class="detail-grid">
-                <div class="detail-card">
-                    <div class="detail-card-icon">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <div class="detail-label">Workforce Size</div>
-                    <div class="detail-value" id="employees">—</div>
-                </div>
-                <div class="detail-card">
-                    <div class="detail-card-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div class="detail-label">Years Under Ownership</div>
-                    <div class="detail-value" id="holdingPeriod">—</div>
-                </div>
-                <div class="detail-card">
-                    <div class="detail-card-icon">
-                        <i class="fas fa-signal"></i>
-                    </div>
-                    <div class="detail-label">Investment Status</div>
-                    <div class="detail-value">
-                        <span id="status" class="badge badge-status"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- Action Buttons -->
-        <div class="detail-section" style="text-align: center; padding: 2rem;">
-            <a id="websiteBtn" href="#" target="_blank" class="btn btn-primary" style="display: none;">
+        <div class="detail-section" style="text-align: center; padding: 1rem;">
+            <a id="websiteBtn" href="#" target="_blank" class="btn btn-primary btn-sm" style="display: none;">
                 <i class="fas fa-external-link-alt"></i>
                 Visit Company Website
             </a>
@@ -529,23 +507,48 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
 });
 
+function getInitials(name) {
+    if (!name) return '—';
+    const words = String(name).trim().split(/\s+/).filter(Boolean);
+    if (words.length === 0) return '—';
+    if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
+    return (words[0][0] + words[words.length - 1][0]).toUpperCase();
+}
+
 function loadCompanyData(company) {
-    // Calculate metrics
     const currentYear = 2025;
     const entryYear = company.entry ? parseInt(company.entry) : null;
     const holdingPeriod = entryYear ? currentYear - entryYear : null;
     const status = company.status || (holdingPeriod && holdingPeriod > 0 ? 'Active' : 'N/A');
-    
-    // Categorize geography
     const geography = categorizeGeography(company.market);
-    
-    // Header
-    const logoUrl = company.logo_url || (company.website ? 
-        `https://logo.clearbit.com/${extractDomain(company.website)}` : 
-        'https://ui-avatars.com/api/?name=' + encodeURIComponent(company.company || 'Company') + '&background=667eea&color=fff&size=80');
-    
-    document.getElementById('companyLogo').src = logoUrl;
-    document.getElementById('companyLogo').alt = company.company;
+
+    const COMPANY_DOMAIN_OVERRIDES = { 'Brimer': 'brimersverige.com', 'Lunawood': 'lunawood.com', 'Enerco Group': 'enerco.se' };
+    const domain = (company.company && COMPANY_DOMAIN_OVERRIDES[company.company]) || extractDomain(company.website);
+    const faviconUrl = domain ? 'https://www.google.com/s2/favicons?domain=' + encodeURIComponent(domain) + '&sz=128' : '';
+    const clearbitUrl = (company.logo_url && !company.logo_url.includes('ui-avatars.com'))
+        ? company.logo_url
+        : (domain ? 'https://logo.clearbit.com/' + domain : '');
+    const avatarUrl = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(company.company || 'Company') + '&background=3f7de8&color=fff&size=96';
+    const initials = getInitials(company.company);
+
+    const logoEl = document.getElementById('companyLogo');
+    const fallbackEl = document.getElementById('companyLogoFallback');
+    fallbackEl.textContent = initials;
+
+    logoEl.alt = company.company;
+    logoEl.onerror = function() {
+        logoEl.onerror = null;
+        logoEl.src = clearbitUrl || avatarUrl;
+        logoEl.onerror = function() {
+            logoEl.onerror = null;
+            logoEl.src = avatarUrl;
+            logoEl.onerror = function() {
+                logoEl.style.display = 'none';
+                if (fallbackEl) fallbackEl.style.display = 'flex';
+            };
+        };
+    };
+    logoEl.src = faviconUrl || clearbitUrl || avatarUrl;
     document.getElementById('companyName').textContent = company.company || 'Company';
     document.getElementById('companySector').textContent = company.sector || 'N/A';
     document.getElementById('companyStatus').textContent = status;
@@ -577,34 +580,14 @@ function loadCompanyData(company) {
     const geoBadge = document.getElementById('geography');
     geoBadge.textContent = geography;
     if (geography === 'Domestic') {
-        geoBadge.style.background = '#8b5cf620';
-        geoBadge.style.color = '#7c3aed';
+        geoBadge.style.background = 'rgba(63, 125, 232, 0.15)';
+        geoBadge.style.color = '#2f64c0';
     } else if (geography === 'Nordic') {
-        geoBadge.style.background = '#06b6d620';
+        geoBadge.style.background = 'rgba(6, 182, 214, 0.15)';
         geoBadge.style.color = '#0891b2';
     } else {
-        geoBadge.style.background = '#f59e0b20';
+        geoBadge.style.background = 'rgba(245, 158, 11, 0.15)';
         geoBadge.style.color = '#d97706';
-    }
-    
-    // Operational Metrics
-    document.getElementById('employees').textContent = company.employees || '—';
-    document.getElementById('holdingPeriod').textContent = holdingPeriod ? `${holdingPeriod} years` : '—';
-    
-    const statusBadge = document.getElementById('status');
-    statusBadge.textContent = status;
-    if (status === 'Active') {
-        statusBadge.style.background = '#10b98120';
-        statusBadge.style.color = '#059669';
-    } else if (status === 'Exited') {
-        statusBadge.style.background = '#6b728020';
-        statusBadge.style.color = '#475569';
-    } else if (status === 'IPO') {
-        statusBadge.style.background = '#3b82f620';
-        statusBadge.style.color = '#2563eb';
-    } else {
-        statusBadge.style.background = '#94a3b820';
-        statusBadge.style.color = '#64748b';
     }
     
     // Website button

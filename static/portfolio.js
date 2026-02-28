@@ -762,12 +762,7 @@ function displayPortfolio(companies) {
             const row = document.createElement('tr');
             row.style.animationDelay = `${index * 0.02}s`;
             
-            // Make company name clickable with logo
-            const rawLogo = company.logo_url || '';
-            const logoUrl = (rawLogo && !rawLogo.includes('ui-avatars.com'))
-                ? rawLogo
-                : (company.website ? `https://logo.clearbit.com/${extractDomain(company.website)}` : '');
-            
+            // Make company name clickable with logo (prioritize favicon over Clearbit for Nordic .se/.no/.dk)
             const cleanCompany = cleanDisplayText(company.company || 'N/A');
             const cleanSector = cleanDisplayText(company.sector || 'N/A');
             const cleanFund = cleanDisplayText(company.fund || 'N/A');
@@ -775,16 +770,17 @@ function displayPortfolio(companies) {
             const cleanHQ = cleanDisplayText(company.headquarters || 'N/A');
             const cleanEntry = cleanDisplayText(company.entry || 'N/A');
             const companyDomain = extractCompanyDomain(company);
-            const companyFaviconUrl = companyDomain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(companyDomain)}&sz=128` : '';
             const companyAvatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(cleanCompany)}&background=3f7de8&color=ffffff&size=64`;
-            const guessedDomain = cleanCompany.toLowerCase().replace(/[^a-z0-9]/g, '');
-            const guessedLogoUrl = guessedDomain ? `https://logo.clearbit.com/${guessedDomain}.com` : '';
-            const companyLogoSrc = logoUrl || companyFaviconUrl || guessedLogoUrl || companyAvatarUrl;
+            const rawLogo = company.logo_url || '';
+            const clearbitUrl = (rawLogo && !rawLogo.includes('ui-avatars.com')) ? rawLogo
+                : (companyDomain ? `https://logo.clearbit.com/${companyDomain}` : '');
+            const companyLogoSrc = getCompanyLogoUrl(company, companyDomain, cleanCompany);
+            const fallback2 = clearbitUrl || companyAvatarUrl;
             const companyNameHtml = `<span class="company-link-modal portfolio-uniform-cell" style="cursor: pointer;">
-                    <img src="${companyLogoSrc}" 
-                         alt="${escapeHtml(cleanCompany)}" 
+                    <img src="${companyLogoSrc}"
+                         alt="${escapeHtml(cleanCompany)}"
                          class="company-logo"
-                         onerror="this.onerror=null; this.src='${companyFaviconUrl || guessedLogoUrl || companyAvatarUrl}'; this.onerror=function(){this.onerror=null; this.src='${companyAvatarUrl}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='inline';};}">
+                         onerror="this.onerror=null; this.src='${fallback2}'; this.onerror=function(){this.onerror=null; this.src='${companyAvatarUrl}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='inline';};}">
                     <i class="fas fa-building company-icon-fallback" style="display:none;"></i>
                     ${escapeHtml(cleanCompany)}
                     <i class="fas fa-info-circle" style="margin-left: 8px; color: #3f7de8; opacity: 0.7;"></i>
@@ -986,14 +982,36 @@ function escapeHtml(text) {
 function extractDomain(url) {
     if (!url) return '';
     try {
-        const domain = url.replace('https://', '').replace('http://', '').replace('www.', '').split('/')[0];
-        return domain;
+        const u = (url.startsWith('http') ? url : 'https://' + url);
+        const urlObj = new URL(u);
+        return urlObj.hostname.replace(/^www\./, '');
     } catch (e) {
-        return '';
+        return (url || '').replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0];
     }
 }
 
+// Company logo: prefer Google Favicon (reliable for .se/.no/.dk) over Clearbit (often missing for Nordic companies)
+function getCompanyLogoUrl(company, domain, cleanName) {
+    const favicon = domain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=128` : '';
+    const avatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(cleanName || 'Co')}&background=3f7de8&color=ffffff&size=64`;
+    const rawLogo = (company && company.logo_url) || '';
+    const clearbit = (rawLogo && !rawLogo.includes('ui-avatars.com')) ? rawLogo
+        : (domain ? `https://logo.clearbit.com/${domain}` : '');
+    return favicon || clearbit || avatar;
+}
+
+// Known correct domains when DB has wrong/old URLs (add more as you find them)
+const COMPANY_DOMAIN_OVERRIDES = {
+    'Brimer': 'brimersverige.com',
+    'Lunawood': 'lunawood.com',
+    'Enerco Group': 'enerco.se'
+};
+
 function extractCompanyDomain(company) {
+    const name = (company && company.company) ? String(company.company).trim() : '';
+    if (name && COMPANY_DOMAIN_OVERRIDES[name]) {
+        return COMPANY_DOMAIN_OVERRIDES[name];
+    }
     const websiteDomain = extractDomain((company && company.website) || '');
     if (websiteDomain) return websiteDomain;
 
@@ -1080,12 +1098,23 @@ async function openCompanyModal(company) {
     const status = company.status || (holdingPeriod && holdingPeriod > 0 ? 'Active' : 'N/A');
     const geography = categorizeGeography(company.market);
     
-    // Header Section
-    const logoUrl = company.logo_url || (company.website ? 
-        `https://logo.clearbit.com/${extractDomain(company.website)}` : '');
-    
-    document.getElementById('modalCompanyLogo').src = logoUrl;
-    document.getElementById('modalCompanyLogo').alt = company.company;
+    // Header Section - use favicon first (reliable for Nordic .se/.no/.dk)
+    const modalDomain = extractCompanyDomain(company);
+    const modalLogoUrl = getCompanyLogoUrl(company, modalDomain, company.company);
+    const modalLogo = document.getElementById('modalCompanyLogo');
+    modalLogo.style.display = '';
+    modalLogo.src = modalLogoUrl;
+    modalLogo.alt = company.company;
+    modalLogo.onerror = function() {
+        modalLogo.onerror = null;
+        const clearbit = modalDomain ? `https://logo.clearbit.com/${modalDomain}` : '';
+        modalLogo.src = clearbit || `https://ui-avatars.com/api/?name=${encodeURIComponent(company.company || 'Co')}&background=3f7de8&color=fff&size=96`;
+        modalLogo.onerror = function() {
+            modalLogo.onerror = null;
+            modalLogo.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(company.company || 'Co')}&background=3f7de8&color=fff&size=96`;
+            modalLogo.onerror = function() { modalLogo.style.display = 'none'; };
+        };
+    };
     document.getElementById('modalCompanyName').textContent = company.company;
     document.getElementById('modalCompanySector').textContent = company.sector || 'N/A';
     document.getElementById('modalStatusHeader').textContent = status;

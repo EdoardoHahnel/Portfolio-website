@@ -621,21 +621,20 @@ function renderFirmPortfolioTable(companies) {
     `;
 
     companies.forEach(company => {
-        const rawLogo = company.logo_url || '';
-        const logoUrl = (rawLogo && !rawLogo.includes('ui-avatars.com'))
-            ? rawLogo
-            : (company.website ? `https://logo.clearbit.com/${extractDomain(company.website)}` : '');
         const cleanCompany = cleanPortfolioText(company.company || 'N/A');
+        const companyDomain = extractCompanyDomain(company);
+        const companyFaviconUrl = companyDomain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(companyDomain)}&sz=128` : '';
+        const rawLogo = company.logo_url || '';
+        const clearbitUrl = (rawLogo && !rawLogo.includes('ui-avatars.com')) ? rawLogo
+            : (companyDomain ? `https://logo.clearbit.com/${companyDomain}` : '');
+        const companyAvatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(cleanCompany)}&background=3f7de8&color=ffffff&size=64`;
+        const companyLogoSrc = companyFaviconUrl || clearbitUrl || companyAvatarUrl;
+        const logoFallback = clearbitUrl || companyAvatarUrl;
         const cleanSector = cleanPortfolioText(company.sector || 'N/A');
         const cleanFund = cleanPortfolioText(company.fund || 'N/A');
         const cleanMarket = cleanPortfolioText(company.market || 'N/A');
         const cleanHQ = cleanPortfolioText(company.headquarters || company.market || 'N/A');
         const cleanEntry = cleanPortfolioText(company.entry || 'N/A');
-        const companyDomain = extractCompanyDomain(company);
-        const companyFaviconUrl = companyDomain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(companyDomain)}&sz=128` : '';
-        const guessedDomain = cleanCompany.toLowerCase().replace(/[^a-z0-9]/g, '');
-        const guessedLogoUrl = guessedDomain ? `https://logo.clearbit.com/${guessedDomain}.com` : '';
-        const companyAvatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(cleanCompany)}&background=3f7de8&color=ffffff&size=64`;
         const holdingPeriod = calculateHoldingPeriod(company.entry);
         const status = cleanPortfolioText(company.status || 'Active');
         const statusColor = status === 'Active' ? '#10b981' : status === 'Exited' ? '#6b7280' : status === 'IPO' ? '#3b82f6' : '#94a3b8';
@@ -646,7 +645,7 @@ function renderFirmPortfolioTable(companies) {
         html += `
             <tr>
                 <td class="portfolio-cell-uniform company-name" title="${escapeHtml(description)}">
-                    <img src="${logoUrl || companyFaviconUrl || guessedLogoUrl || companyAvatarUrl}" class="company-logo" onerror="this.onerror=null; this.src='${companyFaviconUrl || guessedLogoUrl || companyAvatarUrl}'; this.onerror=function(){this.onerror=null; this.src='${companyAvatarUrl}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='inline';};};">
+                    <img src="${companyLogoSrc}" class="company-logo" onerror="this.onerror=null; this.src='${logoFallback}'; this.onerror=function(){this.onerror=null; this.src='${companyAvatarUrl}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='inline';};};">
                     <i class="fas fa-building company-icon-fallback" style="display:none;"></i>
                     ${escapeHtml(cleanCompany)}
                 </td>
@@ -2544,7 +2543,10 @@ function extractDomain(url) {
     }
 }
 
+const COMPANY_DOMAIN_OVERRIDES = { 'Brimer': 'brimersverige.com', 'Lunawood': 'lunawood.com', 'Enerco Group': 'enerco.se' };
 function extractCompanyDomain(company) {
+    const name = (company && company.company) ? String(company.company).trim() : '';
+    if (name && COMPANY_DOMAIN_OVERRIDES[name]) return COMPANY_DOMAIN_OVERRIDES[name];
     const websiteDomain = extractDomain((company && company.website) || '');
     if (websiteDomain) return websiteDomain;
 
