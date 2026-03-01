@@ -1,6 +1,10 @@
+import hashlib
 import os
+import smtplib
 import sqlite3
 from datetime import datetime, timezone
+from email.mime.text import MIMEText
+from email.utils import formataddr
 from functools import wraps
 
 from flask import (
@@ -152,30 +156,83 @@ def init_forum_db():
     )
     cur.execute("CREATE INDEX IF NOT EXISTS idx_email_signups_created ON email_signups(created_at DESC)")
 
+    cur.execute(
+        """
+        CREATE TABLE IF NOT EXISTS page_views (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            path TEXT NOT NULL,
+            date TEXT NOT NULL,
+            ip_hash TEXT,
+            created_at TEXT NOT NULL
+        )
+        """
+    )
+    cur.execute("CREATE INDEX IF NOT EXISTS idx_page_views_date ON page_views(date)")
+    cur.execute("CREATE INDEX IF NOT EXISTS idx_page_views_path ON page_views(path)")
+
     conn.commit()
     conn.close()
 
+    _ensure_admin_user()
     _seed_forum_data()
 
 
+def log_page_view(path: str, ip: str | None = None):
+    """Log a page view for analytics (path, date, ip_hash)."""
+    try:
+        date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+        ip_hash = ""
+        if ip:
+            ip_hash = hashlib.sha256((ip + "portfoljbolagen_salt").encode()).hexdigest()[:16]
+        conn = _get_db()
+        cur = conn.cursor()
+        cur.execute(
+            "INSERT INTO page_views (path, date, ip_hash, created_at) VALUES (?, ?, ?, ?)",
+            (path, date_str, ip_hash or None, _now_iso()),
+        )
+        conn.commit()
+        conn.close()
+    except Exception:
+        pass
+
+
+def _ensure_admin_user():
+    """Ensure Admin@gmail.com exists with password Admin (is_admin=1)."""
+    conn = _get_db()
+    cur = conn.cursor()
+    r = cur.execute("SELECT id FROM users WHERE LOWER(username)=LOWER(?)", ("Admin@gmail.com",)).fetchone()
+    if not r:
+        cur.execute(
+            "INSERT INTO users (username, password_hash, role, experience_level, is_admin, created_at) VALUES (?, ?, ?, ?, 1, ?)",
+            ("Admin@gmail.com", generate_password_hash("Admin"), "Admin", "10+ years", _now_iso()),
+        )
+        conn.commit()
+    conn.close()
+
+
 def _seed_forum_data():
-    """Seed forum with Admin Post, Swedish threads and comments if DB is empty."""
+    """Seed forum with realistic usernames, threads and comments if DB is empty.
+    To get updated seed content (e.g. after changing usernames/posts), delete forum.db and restart the app.
+    """
     conn = _get_db()
     cur = conn.cursor()
     row = cur.execute("SELECT COUNT(*) AS c FROM threads").fetchone()
     if row["c"] > 0:
         conn.close()
-        return
+        return  # Only seed when empty; use Admin → Reseed to refresh
 
     now = _now_iso()
 
+    # Forum usernames – casual handles (first name + initial/number)
     seed_users = [
         ("Portfoljbolagen", "changeme123", "Admin", "10+ years", 1),
-        ("Erik_Lindqvist", "changeme123", "Associate", "2-4 years", 0),
-        ("Sofia_Andersson", "changeme123", "Analyst", "0-2 years", 0),
-        ("Marcus_Berg", "changeme123", "VP", "5-8 years", 0),
-        ("Anna_Karlsson", "changeme123", "Analyst", "0-2 years", 0),
-        ("Johan_Nilsson", "changeme123", "Principal", "8-10 years", 0),
+        ("HenrikD", "changeme123", "Associate", "2-4 years", 0),
+        ("Joppe9", "changeme123", "Analyst", "0-2 years", 0),
+        ("Siwvers", "changeme123", "VP", "5-8 years", 0),
+        ("Erikm", "changeme123", "Analyst", "0-2 years", 0),
+        ("MarcusL", "changeme123", "Principal", "8-10 years", 0),
+        ("AnnaK2", "changeme123", "Associate", "2-4 years", 0),
+        ("JohanS", "changeme123", "VP", "5-8 years", 0),
     ]
 
     user_ids = {}
@@ -190,6 +247,7 @@ def _seed_forum_data():
 
     admin_id = user_ids.get("Portfoljbolagen") or list(user_ids.values())[0]
 
+    # Realistic threads – casual tone, abbreviations, how people actually write
     threads_data = [
         (
             admin_id,
@@ -212,44 +270,60 @@ Välkommen!
             12,
         ),
         (
-            user_ids.get("Erik_Lindqvist", admin_id),
-            "Nordisk PE-marknad 2025 – era åsikter?",
-            "Jag jobbar som associate på en nordisk PE-fond och undrar vad andra tycker om marknadsläget just nu. Exit-möjligheterna har blivit svårare, räntan påverkar värderingarna – hur ser ni på kommande 12–18 månader? Särskilt intresserad av erfarenheter från både buy- och sell-side.",
+            user_ids.get("HenrikD", admin_id),
+            "Nordisk PE 2025 – hur ser ni på exits?",
+            "Jobbar på en mindre fond i Sthlm. Känns som exit-möjligheterna har stängt igen – secondary? strategic? IPO känns ute. Vad hör ni? Vi har 2 bolag vi borde exit:a men budgivningen har varit patetisk.",
             "Industry Insights",
-            "private equity, nordic, outlook",
+            "private equity, nordic, exits, 2025",
             8,
         ),
         (
-            user_ids.get("Sofia_Andersson", admin_id),
-            "LBO-case till intervju – tips på bra källor",
-            "Ska snart göra LBO-case under intervju. Har ni bra tips på var man hittar övningsfall eller mallar? Brukar ni använda någon specifik struktur (Sources & Uses, Debt schedule etc.)? Tack på förhand!",
+            user_ids.get("Joppe9", admin_id),
+            "LBO-case inför intervju – var hittar man övningsfall?",
+            "Första PE-intervjun om 2 v, LBO case. Tips på övningsmaterial? Rosenbaum? Brukar ni köra S&U först eller direkt in i modellen?",
             "Recruiting",
-            "LBO, case, intervju, recruiting",
+            "LBO, case, intervju",
             5,
         ),
         (
-            user_ids.get("Marcus_Berg", admin_id),
-            "Erfarenheter från M&A-process – säljare vs köpare",
-            "Har varit med i flera M&A-processer från båda sidor. Vill dela några lärdomar om hur man strukturerar en due diligence, vad köpare ofta missar och vad säljare bör vara förberedda på. Är det intresse kan jag skriva ett längre inlägg med konkreta punkter.",
+            user_ids.get("Siwvers", admin_id),
+            "Sell-side vs buy-side DD – vad köpare glömmer",
+            "Varit med i typ 15 processer, båda sidor. Köpare missar ofta: (1) WC-sving Q3-Q4 (2) capex backlog (3) management alignment post-LBO. Säljare: förbered er på 100+ frågor, inte 20.",
             "M&A",
-            "M&A, due diligence, process",
+            "M&A, due diligence, buyside, sellside",
             14,
         ),
         (
-            user_ids.get("Anna_Karlsson", admin_id),
-            "Lönenivåer för analyst i Stockholm – 2025",
-            "Någon som har koll på typiska base + bonus för förstaårs analyst i Stockholm (IB/PE)? Hört olika siffror och undrar vad som är rimligt nu. Antar att Big 4 och boutiquer skiljer sig åt.",
+            user_ids.get("Erikm", admin_id),
+            "Base + bonus analyst Stockholm 2025?",
+            "Första jobbet som analyst. Hört 55-80k base, bonus 30-100%. Big4 vs boutique vs BB?",
             "Salaries",
-            "lön, analyst, stockholm, 2025",
+            "lön, analyst, stockholm, 2025, comp",
             22,
         ),
         (
-            user_ids.get("Johan_Nilsson", admin_id),
-            "DCF vs multipler – när väljer ni vad?",
-            "I min erfarenhet används DCF mer i growth-bolag och multipler i tillgångstunga/cykliska. Men det varierar mycket mellan bolag och förvaltare. Hur resonerar ni när ni väljer valueringsmetod? Några tumregler som fungerar bra?",
+            user_ids.get("MarcusL", admin_id),
+            "DCF vs multipler – praktiska tumregler",
+            "Vi kör DCF som anchor, multipler som sanity. Men TV gör DCF superkänslig – 0.5% WACC = 20% värdering. Rules of thumb för när man skippar DCF?",
             "Corporate Finance",
-            "DCF, valuation, multipler",
+            "DCF, valuation, multipler, terminal value",
             9,
+        ),
+        (
+            user_ids.get("AnnaK2", admin_id),
+            "Add-on vs organic – vad ger mest nu?",
+            "Vår fond satsar hårt på add-ons. Men är integration värt stressen vs organic? Vi hade en add-on som tog 18 mån att integrera, värde = minus.",
+            "Industry Insights",
+            "add-on, organic growth, integration",
+            6,
+        ),
+        (
+            user_ids.get("JohanS", admin_id),
+            "Är DCF värd det för cykliska bolag?",
+            "Seriöst – modellerar ni industriella bolag med 5y DCF? Vi kör nästan bara EV/EBITDA, historik + peers. DCF = checkbox för styrelsen, ingen tror på TV. Same?",
+            "Corporate Finance",
+            "DCF, cyclical, valuation",
+            11,
         ),
     ]
 
@@ -268,18 +342,24 @@ Välkommen!
     ma_id = thread_ids[3] if len(thread_ids) > 3 else None
     salary_id = thread_ids[4] if len(thread_ids) > 4 else None
     dcf_id = thread_ids[5] if len(thread_ids) > 5 else None
+    addon_id = thread_ids[6] if len(thread_ids) > 6 else None
+    dcf_skeptic_id = thread_ids[7] if len(thread_ids) > 7 else None
 
     comments_data = [
-        (admin_post_id, user_ids.get("Erik_Lindqvist", admin_id), None, "Stort tack! Ser fram emot att få materialet."),
-        (admin_post_id, user_ids.get("Sofia_Andersson", admin_id), None, "Perfekt timing inför mina intervjuer. Tack!"),
-        (nordic_id, user_ids.get("Marcus_Berg", admin_id), None, "Håller med – det känns som att 2025 blir ett väntande år. Mycket kapital som sitter stilla. Jag tror att add-on acquisitions blir viktigare för att skapa värde."),
-        (nordic_id, user_ids.get("Johan_Nilsson", admin_id), None, "Exit via strategisk köpare känns mer realistiskt nu än via secondary. IPO-marknaden är fortfarande död i Norden."),
-        (lbo_id, user_ids.get("Marcus_Berg", admin_id), None, "Rekommenderar Rosenbaum – det finns bra Excel-mallar som följer med boken. Annars kan du kolla M&I eller WSO, de har ofta övningsfall."),
-        (lbo_id, user_ids.get("Erik_Lindqvist", admin_id), None, "Strukturera tydligt: Deal overview → Investment thesis → Sources & Uses → Returns. Håll Debt schedule enkel – senior + mezz räcker för de flesta case."),
-        (ma_id, user_ids.get("Erik_Lindqvist", admin_id), None, "Bra initiativ! DD-checklistor som köpare använder skulle vara superhjälpsamt. Särskilt commercial DD och synergy-modellering."),
-        (salary_id, user_ids.get("Marcus_Berg", admin_id), None, "På större housen i Stockholm: Base runt 65–75k, bonus 50–80% första året. Boutiquer ofta lägre base men högre bonuspotential."),
-        (salary_id, user_ids.get("Erik_Lindqvist", admin_id), None, "Bekräftar ungefär samma spann. Stor skillnad mellan BB och MM – MM ger ofta mer ansvar tidigt men lägre total comp första åren."),
-        (dcf_id, user_ids.get("Marcus_Berg", admin_id), None, "Vi använder ofta båda – DCF som anchor och multipler som sanity check. Terminal value gör DCF känslig; multipler ger snabb marknadsjämförelse."),
+        (admin_post_id, user_ids.get("HenrikD", admin_id), None, "Tack! Behöver uppdatera mina excel-mallar, perfekt timing."),
+        (admin_post_id, user_ids.get("Joppe9", admin_id), None, "Perfekt inför intervjuerna. Skickar till min mail!"),
+        (nordic_id, user_ids.get("Siwvers", admin_id), None, "Samma här. Mycket dry powder stilla. Add-ons känns som enda sättet just nu. Strategiska har börjat buda igen iaf inom healthcare."),
+        (nordic_id, user_ids.get("MarcusL", admin_id), None, "Exit via strateg känns mer realistiskt. Secondary-premierna har varit sjuka. IPO i Norden = dött, kolla hur få som listat."),
+        (lbo_id, user_ids.get("Siwvers", admin_id), None, "Rosenbaum bra. M&I och WSO har gratis fall. Struktur: overview → thesis → S&U → returns. Debt schedule enkel, senior + mezz räcker."),
+        (lbo_id, user_ids.get("HenrikD", admin_id), None, "Följ den strukturen. Öva 45-min case – det är standard. Ha template i huvudet."),
+        (ma_id, user_ids.get("HenrikD", admin_id), None, "DD-listan vore guld. Commercial DD – vi har missat revenue conc risks flera gånger."),
+        (salary_id, user_ids.get("Siwvers", admin_id), None, "Stora housen Sthlm: base 65–75k, bonus 50–80% år 1. Boutiquer lägre base, högre bonus. MM ger mer ansvar tidigt men lägre comp första 2 åren."),
+        (salary_id, user_ids.get("HenrikD", admin_id), None, "Stämmer. Stor skillnad stated vs paid bonus lol"),
+        (dcf_id, user_ids.get("Siwvers", admin_id), None, "Samma. DCF=anchor, multipler=sanity. TV är 70%+ av DCF så WACC är allt. Vi kör base/upside/downside istället för en punkt."),
+        (dcf_id, user_ids.get("JohanS", admin_id), None, "För industriella = DCF mest teater. Multipler + precedent ger bättre feel för vad marknaden betalar."),
+        (addon_id, user_ids.get("MarcusL", admin_id), None, "Beror på. Add-on som complement = bra. Synergier som kräver 50% cost cut = pain. Vi kör DD på integration innan sign, brukar ta bort 30% av deals."),
+        (addon_id, user_ids.get("AnnaK2", admin_id), None, "Haha känner igen. Vi hade en som tog 2 år. Synergies försvann i integration. Nu striktare på fit."),
+        (dcf_skeptic_id, user_ids.get("MarcusL", admin_id), None, "100%. DCF för cykliska = GIGO. Peer comps + precedent, LBO-first-money-in som floor. Styrelsen vill ha en siffra så man får hitta på nåt."),
     ]
 
     for thread_id, user_id, parent_id, content in comments_data:
@@ -534,6 +614,39 @@ def forum_thread(thread_id):
     )
 
 
+def _send_modelling_request_email(to_email: str) -> bool:
+    """Send notification email when someone requests modelling material. Returns True if sent."""
+    recipient = (os.environ.get("MODELLING_REQUEST_EMAIL") or "").strip()
+    if not recipient:
+        return False
+    server = (os.environ.get("MAIL_SERVER") or "").strip()
+    port = int(os.environ.get("MAIL_PORT") or "587")
+    user = (os.environ.get("MAIL_USERNAME") or "").strip()
+    password = (os.environ.get("MAIL_PASSWORD") or "").strip()
+    use_tls = (os.environ.get("MAIL_USE_TLS") or "true").lower() in ("1", "true", "yes")
+    sender = (os.environ.get("MAIL_DEFAULT_SENDER") or user or "noreply@portfoljbolagen.se").strip()
+    if not server or not user or not password:
+        return False
+    try:
+        msg = MIMEText(
+            f"Någon har begärt gratis modelleringsmaterial.\n\nE-postadress: {to_email}\nDatum: {_now_iso()}\n\nSkicka materialet till denna adress.",
+            "plain",
+            "utf-8",
+        )
+        msg["Subject"] = f"[Portföljbolagen] Begäran om modelleringsmaterial – {to_email}"
+        msg["From"] = formataddr(("Portföljbolagen", sender))
+        msg["To"] = recipient
+        with smtplib.SMTP(server, port) as smtp:
+            if use_tls:
+                smtp.starttls()
+            smtp.login(user, password)
+            smtp.sendmail(sender, recipient, msg.as_string())
+        return True
+    except Exception as e:
+        print(f"[Forum] Email notification failed: {e}")
+        return False
+
+
 @forum_bp.route("/forum/email-signup", methods=["POST"])
 def forum_email_signup():
     import re
@@ -554,6 +667,8 @@ def forum_email_signup():
         return jsonify({"success": False, "error": "Den här e-postadressen är redan registrerad."})
     finally:
         conn.close()
+
+    _send_modelling_request_email(email)
     return jsonify({"success": True, "message": "Tack! Du kommer få material inom kort."})
 
 
@@ -681,6 +796,32 @@ def forum_profile(username):
 @_admin_required
 def forum_admin():
     conn = _get_db()
+    signups = conn.execute(
+        "SELECT * FROM email_signups ORDER BY created_at DESC LIMIT 200"
+    ).fetchall()
+    # Analytics: page views
+    total_views = conn.execute("SELECT COUNT(*) as c FROM page_views").fetchone()["c"]
+    unique_visitors = conn.execute(
+        "SELECT COUNT(DISTINCT ip_hash) as c FROM page_views WHERE ip_hash IS NOT NULL AND ip_hash != ''"
+    ).fetchone()["c"]
+    views_by_path = conn.execute(
+        """
+        SELECT path, COUNT(*) as cnt FROM page_views
+        GROUP BY path ORDER BY cnt DESC LIMIT 20
+        """
+    ).fetchall()
+    views_by_date = conn.execute(
+        """
+        SELECT date, COUNT(*) as cnt FROM page_views
+        GROUP BY date ORDER BY date DESC LIMIT 30
+        """
+    ).fetchall()
+    analytics = {
+        "total_views": total_views,
+        "unique_visitors": unique_visitors,
+        "views_by_path": [dict(r) for r in views_by_path],
+        "views_by_date": [dict(r) for r in views_by_date],
+    }
     reports = conn.execute(
         """
         SELECT r.*, u.username AS reporter
@@ -712,6 +853,8 @@ def forum_admin():
     conn.close()
     return render_template(
         "forum_admin.html",
+        email_signups=[dict(s) for s in signups],
+        analytics=analytics,
         reports=[dict(r) for r in reports],
         threads=[dict(t) for t in threads],
         comments=[dict(c) for c in comments],
@@ -768,6 +911,25 @@ def forum_admin_edit_comment(comment_id):
     conn.execute("UPDATE comments SET content = ?, updated_at = ? WHERE id = ?", (content, _now_iso(), comment_id))
     conn.commit()
     conn.close()
+    return redirect(url_for("forum.forum_admin"))
+
+
+@forum_bp.route("/forum/admin/reseed", methods=["POST"])
+@_admin_required
+def forum_admin_reseed():
+    """Reset forum to seed state – replaces Name_Surname users with anonymous handles."""
+    conn = _get_db()
+    try:
+        conn.execute("DELETE FROM thread_votes")
+        conn.execute("DELETE FROM comment_votes")
+        conn.execute("DELETE FROM reports")
+        conn.execute("DELETE FROM comments")
+        conn.execute("DELETE FROM threads")
+        conn.execute("DELETE FROM users WHERE is_admin = 0")
+        conn.commit()
+    finally:
+        conn.close()
+    _seed_forum_data()
     return redirect(url_for("forum.forum_admin"))
 
 

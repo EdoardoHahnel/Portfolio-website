@@ -411,8 +411,10 @@ Modern Layout - Dashboard Style
 .main-container {
     grid-area: main;
     background: var(--bg-color);
-    overflow-y: auto;
+    overflow-x: hidden;
+    overflow-y: visible;
     padding: 0.75rem;
+    min-width: 0; /* Prevent flex/grid overflow */
 }
 
 /* ===== PAGE HEADER ===== */

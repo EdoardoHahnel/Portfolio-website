@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "created": "2025-03-01",
+    "source": "Web research",
+    "description": "Enrichment data for FSN Capital (28 companies) and Helix Kapital (9 companies)"
+  },
+  "fsn_capital": {
+    "companies": [
+      {
+        "company": "Active Brands",
+        "fund": "FSN Capital VI",
+        "headquarters": "Oslo, Norway",
+        "website": "https://www.activebrands.com",
+        "detailed_description": "Active Brands is a house of premium outdoor sports apparel and equipment brands based in Oslo. Founded in 2009, it operates as a global brand accelerator with eight brands including Kari Traa, Sweet Protection, Dæhlie, Johaug, Bula, Åsnes, Vossatassar, and Pilago. The company accelerates strong and sustainable outdoor sports brands into global leaders, with offices in Oslo, Voss, Trysil, Broomfield, Shanghai, Gothenburg, Helsinki, Copenhagen, and Munich. FSN Capital and Verdane are co-investors."
+      },
+      {
+        "company": "Adragos Pharma",
+        "fund": "FSN Capital VI",
+        "headquarters": "Munich, Germany",
+        "website": "https://www.adragos-pharma.com",
+        "detailed_description": "Adragos Pharma is a contract development and manufacturing organization (CDMO) for pharmaceuticals headquartered in Munich. The company specializes in manufacturing small molecules, particularly injectables and semi-solid forms, with production sites across Livron (France), Leipzig (Germany), Athens (Greece), Halden (Norway), Jura (Switzerland), and Kawagoe (Japan). Employing over 400 staff, Adragos pursues a buy-and-build strategy to expand its manufacturing network across Europe and North America."
+      },
+      {
+        "company": "Bäcker Görtz",
+        "fund": "FSN Capital VI",
+        "headquarters": "Ludwigshafen, Germany",
+        "website": null,
+        "detailed_description": "Bäcker Görtz is a leading German bakery chain and quick-service restaurant operator, family-owned since 1963 and headquartered in Ludwigshafen. With approximately 200 branches in the Rhine-Neckar region and around 1,400-1,900 employees, the company generates revenues of approximately EUR 130 million. It focuses on data-driven production, state-of-the-art facilities, and high branch density, with FSN Capital supporting organic expansion and add-on acquisitions across Germany's fragmented bakery market."
+      },
+      {
+        "company": "ilionx",
+        "fund": "FSN Capital VI",
+        "headquarters": "Utrecht, Netherlands",
+        "website": "https://www.ilionx.com",
+        "detailed_description": "ilionx is a Dutch IT services provider specializing in digital strategy, cloud-oriented application development, data & AI solutions, hyperautomation, and managed services. With over 1,200 employees across thirteen locations in the Netherlands, the company focuses on customers in regulated industries and the public sector, including healthcare institutions and governmental organizations. 2022 sales were EUR 205 million."
+      },
+      {
+        "company": "InstallatørGruppen",
+        "fund": "FSN Capital VI",
+        "headquarters": "Roskilde, Denmark",
+        "website": "https://www.installergroup.com",
+        "detailed_description": "InstallatørGruppen is a Danish market leader formed in 2023 when FSN Capital VI partnered with 11 technical installation companies. The group specializes in electricity, plumbing, optical fiber, ventilation, and cooling systems with an initial turnover of approximately DKK 1.3 billion. Member companies include A-Comfort, Alvent Ventilation, Byens VVS & Blik, CH VVS, El Team Fyn, GL VVS, Jesper Hansen VVS, John Jensen VVS, Kjellerup Group, MH Elektric, and WeCon."
+      },
+      {
+        "company": "Lobster",
+        "fund": "FSN Capital VI",
+        "headquarters": "Tutzing, Germany",
+        "website": "https://www.lobster-data.com",
+        "detailed_description": "Lobster is a leading no-code data integration and digital process automation software provider founded in 2002 and headquartered in Tutzing, Germany. The company serves over 1,500 customers in logistics, commerce, and manufacturing with products including Lobster_data (data and application integration), Lobster_pro (digital process automation), Lobster_pim (product information management), and logistics.cloud. With over 250 employees, Lobster has achieved profitable revenue growth exceeding 20% annually."
+      },
+      {
+        "company": "Obton",
+        "fund": "FSN Capital VI",
+        "headquarters": "Aarhus, Denmark",
+        "website": "https://www.obton.com",
+        "detailed_description": "Obton Group is a Denmark-based alternative investment provider specializing in developing, structuring, and managing solar photovoltaic (PV) projects for approximately 4,000 high-net-worth investors. Headquartered in Aarhus, Obton is Europe's 9th largest solar PV manager overseeing nearly 1 GW of solar power capacity across 8 markets. At the time of FSN Capital's 45% investment in December 2020, Obton managed approximately $2.3 billion in assets."
+      },
+      {
+        "company": "Omegapoint",
+        "fund": "FSN Capital VI",
+        "headquarters": "Stockholm, Sweden",
+        "website": "https://www.omegapoint.se",
+        "detailed_description": "Omegapoint is a Swedish cybersecurity and secure digital transformation consulting firm founded in 2001 and headquartered in Stockholm. With over 950 employees across Scandinavia, the company serves blue-chip customers in banking, automotive, healthcare, and government sectors. Omegapoint provides services in application security, secure development, and digital transformation, with annual sales of around SEK 500 million at acquisition."
+      },
+      {
+        "company": "Optigroup",
+        "fund": "FSN Capital VI",
+        "headquarters": "Mölndal, Sweden",
+        "website": "https://www.optigroup.com",
+        "detailed_description": "OptiGroup is a European B2B distribution champion formed by FSN Capital VI's combination of OptiGroup and Dutch company Hygas in 2022. Headquartered in Mölndal, Sweden, the merged group has combined revenues of approximately EUR 1.3 billion, EBITDA exceeding EUR 100 million, serves over 100,000 B2B customers across 20 countries with 1,900 employees and 70 distribution centers. The company focuses on the EUR 150 billion European B2B distribution market."
+      },
+      {
+        "company": "Polytech",
+        "fund": "FSN Capital VI",
+        "headquarters": "Bramming, Denmark",
+        "website": "https://www.poly-tech.dk",
+        "detailed_description": "Polytech is a global leader in sophisticated technical solutions for wind turbines, including lightning protection, leading edge protection, sensor technology, and subsea solutions. Founded in 1994 and headquartered in Bramming, Denmark, the company's products are used on more than 60% of all wind turbine blades produced globally. With approximately 500 employees and facilities in Denmark, China, Germany, and Mexico, Polytech received approximately €135 million investment from FSN Capital VI and Verdane in 2023."
+      },
+      {
+        "company": "Swash Group",
+        "fund": "FSN Capital VI",
+        "headquarters": "Kerpen, Germany",
+        "website": "https://www.megabad.de",
+        "detailed_description": "Swash Group is a pan-European e-commerce and services platform for bathroom and sanitary products, formed from the merger of German MEGABAD and French Groupe Le Monde du Bain. Headquartered in Kerpen, Germany, the group operates megabad.de and serves the DACH region and beyond with over 500,000 bathroom products. FSN Capital acquired a majority stake in MEGABAD in 2021; the combined Swash Group aims to become the pan-European market leader in digital bathroom and sanitary ware trade."
+      },
+      {
+        "company": "Volue Infrastructure",
+        "fund": "FSN Capital VI",
+        "headquarters": "Trondheim, Norway",
+        "website": "https://www.volue.com",
+        "detailed_description": "Volue Infrastructure is a Norwegian provider of mission-critical software for water, roads, and municipal infrastructure management, operating primarily under the Gemini brand. Headquartered in Trondheim, the company provides digital solutions for infrastructure planning, operation, and administration including water asset management, leakage detection, and hydraulic modeling. The division serves public and private customers across Northern Europe, with around 100 customers in Sweden. FSN Capital VI agreed to acquire the business in July 2025."
+      },
+      {
+        "company": "BoldR",
+        "fund": "FSN Capital V",
+        "headquarters": "Leutenberg, Germany",
+        "website": "https://www.rameder.eu",
+        "detailed_description": "BoldR (formerly Rameder Group) is Europe's leading distributor of towbars, bike carriers, and roof racks, founded in 1996. Headquartered in Leutenberg, Germany, the company employs approximately 200 people across offices in Ingolstadt (Germany), Lille (France), and Prague (Czech Republic), with online shops in over ten countries. BoldR sells approximately 300,000 towbars annually and operates 16 assembly points, making it one of Germany's largest professional towbar installation service providers. Revenue at acquisition was approximately €70 million."
+      },
+      {
+        "company": "Ecovium",
+        "fund": "FSN Capital V",
+        "headquarters": "Neustadt am Rübenberge, Germany",
+        "website": "https://www.ecovium.com",
+        "detailed_description": "Ecovium is a leading provider of end-to-end logistics software solutions in the DACH region, acquired by FSN Capital V in November 2020. Headquartered in Neustadt am Rübenberge, Germany, the company employs around 300 people across twelve European locations. Ecovium offers integrated software and hardware solutions for customs, warehousing, shipping, and transport. In 2022, Ecovium acquired Mantis Informatics to expand international supply chain management capabilities."
+      },
+      {
+        "company": "Fellowmind",
+        "fund": "FSN Capital V",
+        "headquarters": "Stockholm, Sweden",
+        "website": "https://www.fellowmind.com",
+        "detailed_description": "Fellowmind is a leading European Microsoft partner focused on digital innovation and cloud transformation, founded in 2019 and backed by FSN Capital V. The company employs approximately 1,800 professionals across the Netherlands, Finland, Denmark, Sweden, and Poland. Fellowmind has maintained a seat in Microsoft's Inner Circle since 2013 (top 1% of partners globally) and specializes in Microsoft Business Applications, Modern Workplace solutions, data and analytics. The company has grown through acquisitions including ProActive, Orango, eCraft, Bonair, and aXon."
+      },
+      {
+        "company": "Gram Equipment",
+        "fund": "FSN Capital V",
+        "headquarters": "Kolding, Denmark",
+        "website": "https://www.gram.dk",
+        "detailed_description": "Gram Equipment is a 116-year-old Danish company and global market leader in advanced ice cream processing equipment. Headquartered in Kolding, the company has more than 350 employees and revenues of approximately €90 million. Gram designs and manufactures equipment for ice cream production, extrusion, filling, and hardening. FSN Capital V acquired a majority stake in January 2018, supporting operational excellence, geographical expansion, aftermarket growth, and potential add-on acquisitions."
+      },
+      {
+        "company": "Håndverksgruppen",
+        "fund": "FSN Capital V",
+        "headquarters": "Oslo, Norway",
+        "website": "https://www.handverksgruppen.com",
+        "detailed_description": "Håndverksgruppen is Norway's largest consortium in painting, flooring, masonry, and tile work, formed in 2020 when FSN Capital V became majority owner. The group consolidated 30 member companies with approximately 1.1 billion NOK revenue and around 1,000 employees, operating from Svalbard to Kristiansand. Member companies maintain individual names and local operations while benefiting from group scale. The strategy targets revenue growth to 3 billion NOK through organic growth and acquisitions."
+      },
+      {
+        "company": "Holmbergs Safety System",
+        "fund": "FSN Capital V",
+        "headquarters": "Forserum, Sweden",
+        "website": "https://www.holmbergs.se",
+        "detailed_description": "Holmbergs Safety System is a global leader in mission-critical safety systems for the child safety seat industry, founded in 1938. Headquartered in Forserum, Sweden, the company operates across three continents with over 1,300 employees. Holmbergs develops harness systems, LATCH/IsoFix connectors, the RollFix harness system, and DigitalSafety technology. FSN Capital V acquired a majority stake in June 2017; the company has since expanded through acquisitions including Fasching Salzburg, Safety Plus in China, and TeRox in Romania."
+      },
+      {
+        "company": "IMPREG",
+        "fund": "FSN Capital V",
+        "headquarters": "Hellerup, Denmark",
+        "website": "https://www.impreg.com",
+        "detailed_description": "IMPREG is a manufacturer of glass-reinforced plastic (GRP) cured-in-place-pipe (CIPP) liners used for trenchless repair of damaged sewer and wastewater pipes. Founded in 1999 and headquartered in Hellerup, Denmark, the company had €49 million revenue and 194 employees at FSN Capital's November 2019 acquisition. IMPREG has expanded from Europe into a global leader with manufacturing in China and the US, with 2022 sales reaching €84 million."
+      },
+      {
+        "company": "TASKING",
+        "fund": "FSN Capital V",
+        "headquarters": "Munich, Germany",
+        "website": "https://www.tasking.com",
+        "detailed_description": "TASKING is a leading global provider of embedded software development tools for automotive and industrial applications. Founded in 1977 and headquartered in Munich, the company specializes in compilers, linkers, and debuggers for microcontrollers, particularly for ADAS and autonomous driving. Over 50,000 engineers use TASKING tools globally; millions of vehicles run code developed with TASKING software. FSN Capital acquired TASKING from Altium in December 2020 for approximately $146 million. 2022 sales were €25 million."
+      },
+      {
+        "company": "ViaCon",
+        "fund": "FSN Capital V",
+        "headquarters": "Lidköping, Sweden",
+        "website": "https://www.viacon.se",
+        "detailed_description": "ViaCon is a market-leading European provider of sustainable civil engineering corrugated steel structures, geotechnical, and storm-water solutions. Founded in 1986 and headquartered in Lidköping, Sweden, the company operates in 18 countries with approximately 700 employees across three business units: Bridges & Culverts, Geotechnical, and StormWater Solutions. ViaCon was separated from Saferoad Group in 2019. FSN Capital V ownership supports organic growth and strategic initiatives."
+      },
+      {
+        "company": "Epista Life Science",
+        "fund": "FSN Capital Compass I",
+        "headquarters": "Hørsholm, Denmark",
+        "website": "https://www.epista.com",
+        "detailed_description": "Epista Life Science is a specialized IT services and consulting firm serving the life science industry since 2009. Headquartered in Hørsholm, Denmark, the company helps pharmaceutical, biotech, and medical device companies with compliance and digital transformation, offering consulting, software implementation, and managed operations. With approximately 150 employees across Denmark, Switzerland, Sweden, and Germany, Epista achieved DKK 119m revenue in 2021 with over 30% annual growth. FSN Capital acquired a majority stake in May 2022 to build a global life science IT platform."
+      },
+      {
+        "company": "Firesafe",
+        "fund": "FSN Capital Compass I",
+        "headquarters": "Oslo, Norway",
+        "website": "https://www.firesafe.no",
+        "detailed_description": "Firesafe is a fire safety services provider founded in 1981 and headquartered in Oslo, Norway. The company offers installation, maintenance, inspection, and advisory services for both active and passive fire protection systems across commercial, public, and residential properties. Operating across Norway, Sweden, Denmark, and Finland with over 1,000 employees, Firesafe generates approximately NOK 1.4 billion in annual revenue. FSN Capital acquired a majority stake in May 2022 to support Nordic expansion."
+      },
+      {
+        "company": "Seriline",
+        "fund": "FSN Capital Compass I",
+        "headquarters": "Stockholm, Sweden",
+        "website": "https://www.seriline.com",
+        "detailed_description": "Seriline is a Stockholm-based provider of Identity and Access Management (IAM) solutions, including physical access management (credentials, card readers) and online identity management systems. Founded in 1990, the company had 29 employees and SEK 84 million in sales in 2021. FSN Capital acquired a majority stake in February 2022 to position Seriline as a Nordic IAM leader through a buy-and-build strategy. Seriline serves blue-chip corporations, universities, hospitals, and public sector institutions."
+      },
+      {
+        "company": "Solcellespesialisten",
+        "fund": "FSN Capital Compass I",
+        "headquarters": "Rolvsøy, Norway",
+        "website": "https://www.solcellespesialisten.no",
+        "detailed_description": "Solcellespesialisten is Norway's largest supplier and installer of solar energy systems, founded in 2005. Headquartered in Rolvsøy, the company has installed more than 4,000 solar systems and provides turnkey solutions across commercial, residential, and utility segments. FSN Capital signed an agreement to acquire a majority stake in June 2023. The company benefits from Norway's growing solar energy adoption driven by energy supply-demand balance and decarbonization needs. Note: Divested December 2025."
+      },
+      {
+        "company": "Uhl Bau",
+        "fund": "FSN Capital Compass I",
+        "headquarters": "Wiener Neustadt, Austria",
+        "website": null,
+        "detailed_description": "UHL Bau is a leading Austrian provider of underground civil engineering services for critical infrastructure including electricity, gas, water, sewage, district heating, and telecommunications networks. Founded by the Uhl family in 1966 and headquartered in Wiener Neustadt, the company generated revenues over €80 million in 2024 with around 460 employees. FSN Capital Compass I acquired a majority stake in May 2025—FSN's first platform investment in Austria. The transaction includes UHL Elektro, specializing in energy solutions and e-charging infrastructure."
+      },
+      {
+        "company": "Nordlo",
+        "fund": "FSN Capital Confluence",
+        "headquarters": "Stockholm, Sweden",
+        "website": "https://www.nordlo.com",
+        "detailed_description": "Nordlo is an IT services company operating in Sweden and Norway, providing cloud, infrastructure, and security solutions. Headquartered in Stockholm, the company serves as an external IT department for clients across retail, public sector, manufacturing, and real estate. Nordlo transferred from FSN Capital V to FSN Capital Confluence in August 2024. In December 2024, Nordlo completed a SEK 3.6 billion refinancing to support its buy-and-build strategy."
+      },
+      {
+        "company": "Saferoad",
+        "fund": "FSN Capital Confluence",
+        "headquarters": "Ørsta, Norway",
+        "website": "https://www.saferoad.com",
+        "detailed_description": "Saferoad Group is a leading European provider of road safety solutions with over 75 years of experience, headquartered in Ørsta, Norway. The company employs approximately 2,500 people across 13 countries with 19 production sites, offering road barriers, signs, and safety infrastructure. Originally acquired by FSN Capital V in 2018, Saferoad transferred to FSN Capital Confluence in August 2024. 2024 performance: underlying operating revenue NOK 7,584 million and underlying EBITDA NOK 820 million."
+      }
+    ]
+  },
+  "helix_kapital": {
+    "companies": [
+      {
+        "company": "L5 Navigation",
+        "detailed_description": "L5 Navigation is a Nordic company specializing in GNSS-based positioning solutions for construction, mining, and surveying applications. Founded in 2013, the company offers machine control systems for excavators, wheel loaders, and drill rigs, plus survey-grade GNSS receivers. L5 Navigation provides centimeter-level accuracy through GPS, GLONASS, Galileo, and BeiDou support, serving customers across Sweden, Norway, and Finland. Helix Kapital's investment supports continued international expansion, including the acquisition of Rockma System."
+      },
+      {
+        "company": "Trinax",
+        "detailed_description": "Trinax is a Swedish software company based in Trollhättan that provides module-based time reporting and project management software for construction and craft businesses. Founded in 2010, the platform includes time tracking, project management, invoicing, payroll, and receipt documentation for plumbers, painters, and construction contractors. Trinax integrates with Fortnox, Visma, and Hogia. Under Helix Kapital, Trinax acquired Struqtur in 2025 to expand its work order solutions for craft businesses across the Nordics."
+      },
+      {
+        "company": "Sacpro",
+        "detailed_description": "Sacpro is a Swedish producer and supplier of relining technology and training for trenchless pipe rehabilitation in buildings. Helix Kapital invested to accelerate Sacpro's growth in the Nordic and US markets. The partnership focuses on expanding the company's relining solutions for building pipe systems while maintaining strong ties with the founder and management team. Svalner provided financial and tax due diligence for the investment."
+      },
+      {
+        "company": "VisionSense Technologies",
+        "detailed_description": "VisionSense Technologies is a leading Nordic software and technology provider specializing in intelligent traffic management and infrastructure automation, with deployments in over 30 countries. The company operates through subsidiaries including Visy (AI-powered vision for cargo and asset handling), Sensebit, Trafikia, Vidamin, and Autepra. Under Helix Kapital, VisionSense has acquired Vidamin Oy (Finnish access control) and Autepra UAB (Lithuanian container terminal systems integrator) to expand its capabilities."
+      },
+      {
+        "company": "Revivo Group",
+        "detailed_description": "Revivo Group is a Swedish group of surface treatment specialist companies backed by Helix Kapital. The company provides industrial surface treatment services including blasting, powder coating, wet coating, and fire protection painting. In January 2026, Revivo Group acquired Finnish surface treatment firm Haapanen, expanding into the Finnish market. Haapanen serves manufacturing, defence, and infrastructure sectors nationwide."
+      },
+      {
+        "company": "Lucky Bowl",
+        "detailed_description": "Lucky Bowl is one of the Nordic region's largest bowling chains, operating 16 bowling alleys across Sweden and Norway with venues in Stockholm (Kungsholmen, Sveavägen) and other cities. The company offers bowling alongside arcade games, darts, and pool tables, plus restaurants serving American cuisine. Lucky Bowl partnered with Nenda in 2023 to install Effect TV streaming across all venues. The company is in a growth phase expanding its entertainment offering."
+      },
+      {
+        "company": "Heda Security",
+        "detailed_description": "Heda Security is a Swedish perimeter security solutions provider founded in 1991 and based in Nyköping. The company offers mechanical and technical security solutions including fences, automatic gates, camera surveillance, and outdoor alarm systems. Under Helix Kapital ownership, Heda became the Swedish market leader through organic growth and the acquisition of Tuna Stängsel. Helix Kapital divested to EMK Capital in September 2023; Heda subsequently merged with Garda Sikring and Kibo Security Group."
+      },
+      {
+        "company": "Holms Attachments",
+        "detailed_description": "Holms Attachments is Europe's leading manufacturer of high-quality road maintenance equipment, founded in 1927 and based in Motala, Sweden. The company produces pick-up sweepers, sweepers, and snowplows with approximately 50-55 employees. Holms sells through distributors and OEM collaborations across the Nordics, Europe, Americas, and Asia, generating approximately SEK 150 million revenue in 2022. Helix Kapital sold Holms Attachments to Ejendal Invest in June 2023."
+      },
+      {
+        "company": "Spring Media",
+        "detailed_description": "Spring Media is a leading sports media rights management company founded in 2011, providing rights sales, live production, and streaming services. The company partners with over 500 broadcasters worldwide and serves sports federations, leagues, and media companies. Under Helix Kapital from approximately 2021-2024, Spring Media tripled in size through strategic acquisitions. Helix divested its stake to Two Circles in October 2024."
+      }
+    ]
+  }
+}

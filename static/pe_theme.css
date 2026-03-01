@@ -22,10 +22,15 @@ body.pe-theme.modern-layout {
         "main";
     grid-template-columns: 1fr;
     grid-template-rows: 62px 1fr;
-    height: auto;
+    height: 100vh;
     min-height: 100vh;
+    overflow: hidden;
+    overflow-x: hidden;
+}
+body.pe-theme.modern-layout .main-container {
     overflow-y: auto;
     overflow-x: hidden;
+    min-height: 0; /* required for flex/grid child to scroll */
 }
 
 .pe-top-nav {

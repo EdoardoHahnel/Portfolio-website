@@ -7,9 +7,73 @@
 {% endblock %}
 
 {% block content %}
-<div class="page-header">
-    <h1 class="page-title">Forum Moderation</h1>
-    <p class="page-subtitle">Review reports and moderate threads/comments.</p>
+<div class="page-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+    <div>
+        <h1 class="page-title">Forum Moderation</h1>
+        <p class="page-subtitle">Review reports, moderate content, and see modelling material signups.</p>
+    </div>
+    <form method="post" action="/forum/admin/reseed" onsubmit="return confirm('Reseed forum? This will replace all threads and comments with default content (anonymous usernames, no full names). Registered users (except admin) will be removed.');">
+        <button type="submit" class="btn btn-secondary btn-sm">Reseed forum</button>
+    </form>
+</div>
+
+<div class="content-card">
+    <div class="content-card-header"><h2 class="content-card-title"><i class="fas fa-envelope"></i> Modelleringsmaterial – e-postsignup</h2></div>
+    <div class="content-card-body">
+        <p class="page-subtitle" style="margin-bottom:0.5rem;">När någon fyller i e-post i "Få gratis modelleringsmaterial" sparas signup i databasen och visas här (du får också mail om SMTP är konfigurerat).</p>
+        {% if email_signups %}
+        <table class="forum-admin-table" style="width:100%; font-size:0.7rem;">
+            <thead><tr><th>E-post</th><th>Datum</th></tr></thead>
+            <tbody>
+            {% for s in email_signups %}
+            <tr><td>{{ s.email }}</td><td>{{ s.created_at[:19].replace('T',' ') }}</td></tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p class="page-subtitle">Inga signups ännu.</p>
+        {% endif %}
+    </div>
+</div>
+
+<div class="content-card">
+    <div class="content-card-header"><h2 class="content-card-title"><i class="fas fa-chart-line"></i> Webbplatssstatistik</h2></div>
+    <div class="content-card-body">
+        <div style="display:flex; gap:1.5rem; flex-wrap:wrap; margin-bottom:1rem;">
+            <div>
+                <span class="page-subtitle">Sidvisningar totalt</span>
+                <div style="font-size:1.5rem; font-weight:600;">{{ analytics.total_views }}</div>
+            </div>
+            <div>
+                <span class="page-subtitle">Unika besökare (beräknat)</span>
+                <div style="font-size:1.5rem; font-weight:600;">{{ analytics.unique_visitors }}</div>
+            </div>
+        </div>
+        <h3 style="font-size:0.9rem; margin:0.5rem 0;">Populäraste sidor</h3>
+        <table class="forum-admin-table" style="width:100%; font-size:0.7rem;">
+            <thead><tr><th>Sida</th><th>Antal</th></tr></thead>
+            <tbody>
+            {% for row in analytics.views_by_path %}
+            <tr><td>{{ row.path }}</td><td>{{ row.cnt }}</td></tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% if not analytics.views_by_path %}
+        <p class="page-subtitle">Ingen statistik ännu.</p>
+        {% endif %}
+        <h3 style="font-size:0.9rem; margin:1rem 0 0.5rem;">Besök per dag (senaste 30 dagarna)</h3>
+        <table class="forum-admin-table" style="width:100%; font-size:0.7rem;">
+            <thead><tr><th>Datum</th><th>Antal</th></tr></thead>
+            <tbody>
+            {% for row in analytics.views_by_date %}
+            <tr><td>{{ row.date }}</td><td>{{ row.cnt }}</td></tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% if not analytics.views_by_date %}
+        <p class="page-subtitle">Ingen statistik ännu.</p>
+        {% endif %}
+    </div>
 </div>
 
 <div class="content-card">

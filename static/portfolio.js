@@ -142,7 +142,7 @@ async function loadPortfolio() {
     hideStatusMessage();
     
     try {
-        const response = await fetch('/api/portfolio');
+        const response = await fetch('/api/portfolio?_=' + Date.now(), { cache: 'no-store' });
         const data = await response.json();
         
         if (data.success) {
@@ -184,15 +184,21 @@ function calculateStatistics(companies) {
     if (marketCountEl) marketCountEl.textContent = markets.size + '+';
     
     // Calculate recent additions (2024-2025)
-    const recentCount = companies.filter(c => c.entry === '2024' || c.entry === '2025').length;
+    const recentCount = companies.filter(c => {
+        const y = normalizeEntryYear(c.entry);
+        return y === '2024' || y === '2025';
+    }).length;
     const recentCountEl = document.getElementById('statsRecentCount');
     if (recentCountEl) recentCountEl.textContent = recentCount;
     
     // Calculate average holding period (only for companies with entry year)
     const currentYear = new Date().getFullYear();
-    const companiesWithYear = companies.filter(c => c.entry && c.entry !== '' && !isNaN(c.entry));
+    const companiesWithYear = companies.filter(c => {
+        const y = normalizeEntryYear(c.entry);
+        return y && /^\d{4}$/.test(y);
+    });
     if (companiesWithYear.length > 0) {
-        const avgYears = companiesWithYear.reduce((sum, c) => sum + (currentYear - parseInt(c.entry)), 0) / companiesWithYear.length;
+        const avgYears = companiesWithYear.reduce((sum, c) => sum + (currentYear - parseInt(normalizeEntryYear(c.entry), 10)), 0) / companiesWithYear.length;
         const avgEl = document.getElementById('statsAvgHoldingPeriod');
         if (avgEl) avgEl.textContent = avgYears.toFixed(1) + ' yrs';
     }
@@ -208,11 +214,12 @@ function createYearChart(companies) {
     if (!ctx) return;
     ctx.title = 'Click a year to filter portfolio companies';
     
-    // Count by year
+    // Count by year (normalize e.g. '2025-05' -> '2025')
     const yearCounts = {};
     companies.forEach(c => {
-        if (c.entry && c.entry !== '' && !isNaN(c.entry)) {
-            yearCounts[c.entry] = (yearCounts[c.entry] || 0) + 1;
+        const y = normalizeEntryYear(c.entry);
+        if (y && /^\d{4}$/.test(y)) {
+            yearCounts[y] = (yearCounts[y] || 0) + 1;
         }
     });
     
@@ -296,12 +303,18 @@ function createYearChart(companies) {
     });
 }
 
+// Shared dashboard-aligned colour palette for circle charts
+const DASHBOARD_CHART_COLORS = [
+    '#3f7de8', '#2f64c0', '#4a8ef4', '#2563eb',
+    '#1e40af', '#3b82f6', '#60a5fa', '#0ea5e9',
+    '#0284c7', '#0369a1'
+];
+
 function createSectorChart(companies) {
     const ctx = document.getElementById('sectorChart');
     if (!ctx) return;
     ctx.title = 'Click a sector to filter portfolio companies';
     
-    // Count by sector
     const sectorCounts = {};
     companies.forEach(c => {
         if (c.sector && c.sector !== '') {
@@ -309,7 +322,6 @@ function createSectorChart(companies) {
         }
     });
     
-    // Sort by count and take top 10
     const sortedSectors = Object.entries(sectorCounts)
         .sort((a, b) => b[1] - a[1])
         .slice(0, 10);
@@ -317,31 +329,27 @@ function createSectorChart(companies) {
     const labels = sortedSectors.map(s => s[0]);
     const data = sortedSectors.map(s => s[1]);
     
-    // Destroy old chart if exists
     if (sectorChartInstance) sectorChartInstance.destroy();
     
-    const colors = [
-        '#6366F1', '#4F46E5', '#8B5CF6', '#7C3AED',
-        '#3B82F6', '#5B21B6', '#6D28D9', '#4338CA',
-        '#818CF8', '#A78BFA'
-    ];
-    
     sectorChartInstance = new Chart(ctx, {
-        type: 'pie',
+        type: 'doughnut',
         data: {
             labels: labels,
             datasets: [{
                 data: data,
-                backgroundColor: colors.map(c => c + 'CC'),
-                borderWidth: 2,
+                backgroundColor: labels.map((_, i) => DASHBOARD_CHART_COLORS[i % DASHBOARD_CHART_COLORS.length]),
+                borderWidth: 3,
                 borderColor: '#ffffff',
-                hoverBorderWidth: 3,
-                hoverBorderColor: '#ffffff'
+                hoverBorderWidth: 4,
+                hoverBorderColor: '#ffffff',
+                hoverOffset: 6
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            cutout: '58%',
+            spacing: 2,
             onClick: (event, elements, chart) => {
                 if (!elements || elements.length === 0) return;
                 const index = elements[0].index;
@@ -349,49 +357,48 @@ function createSectorChart(companies) {
                 window.location.href = `/portfolio-insights?chart=sector&value=${encodeURIComponent(String(sector))}`;
             },
             onHover: (event, elements) => {
-                if (event && event.native && event.native.target) {
-                    event.native.target.style.cursor = elements && elements.length ? 'pointer' : 'default';
+                if (event?.native?.target) {
+                    event.native.target.style.cursor = elements?.length ? 'pointer' : 'default';
                 }
             },
             animation: {
                 animateRotate: true,
                 animateScale: true,
-                duration: 1500,
-                easing: 'easeInOutQuart'
+                duration: 800,
+                easing: 'easeOutQuart'
             },
             plugins: {
                 legend: {
                     position: 'bottom',
                     labels: {
-                        boxWidth: 6,
-                        padding: 3,
-                        font: { size: 6, weight: '700' },
+                        boxWidth: 8,
+                        padding: 6,
+                        font: { size: 9, weight: '600' },
                         usePointStyle: true,
-                        pointStyle: 'rectRounded',
-                        color: '#1f2937'
+                        pointStyle: 'circle',
+                        color: '#1e293b'
                     }
                 },
                 tooltip: {
-                    backgroundColor: 'rgba(17, 24, 39, 0.95)',
-                    padding: 14,
-                    titleFont: { size: 14, weight: 'bold' },
-                    bodyFont: { size: 13 },
-                    borderColor: '#667eea',
-                    borderWidth: 2,
+                    backgroundColor: 'rgba(31, 41, 55, 0.96)',
+                    padding: 12,
+                    titleFont: { size: 12, weight: 'bold' },
+                    bodyFont: { size: 11 },
+                    borderColor: '#3f7de8',
+                    borderWidth: 1,
                     cornerRadius: 8,
                     displayColors: true,
+                    boxPadding: 4,
                     callbacks: {
                         label: function(context) {
-                            const label = context.label || '';
-                            const value = context.parsed.r || 0;
+                            const value = context.parsed;
                             const total = context.dataset.data.reduce((a, b) => a + b, 0);
-                            const percentage = ((value / total) * 100).toFixed(1);
-                            return ` ${label}: ${value} companies (${percentage}%)`;
+                            const pct = ((value / total) * 100).toFixed(1);
+                            return ` ${context.label}: ${value} companies (${pct}%)`;
                         }
                     }
                 }
-            },
-            scales: {}
+            }
         }
     });
 }
@@ -401,7 +408,6 @@ function createCountryChart(companies) {
     if (!ctx) return;
     ctx.title = 'Click a market to filter portfolio companies';
     
-    // Count by country/market
     const countryCounts = {};
     companies.forEach(c => {
         if (c.market && c.market !== '' && c.market !== 'N/A') {
@@ -409,7 +415,6 @@ function createCountryChart(companies) {
         }
     });
     
-    // Sort by count and take top 10
     const sortedCountries = Object.entries(countryCounts)
         .sort((a, b) => b[1] - a[1])
         .slice(0, 10);
@@ -417,34 +422,27 @@ function createCountryChart(companies) {
     const labels = sortedCountries.map(s => s[0]);
     const data = sortedCountries.map(s => s[1]);
     
-    // Destroy old chart if exists
     if (countryChartInstance) countryChartInstance.destroy();
     
-    // Blue and purple color palette
-    const colors = labels.map((_, i) => {
-        const colorPalette = ['#4F46E5', '#6366F1', '#7C3AED', '#8B5CF6', '#3B82F6', '#5B21B6', '#6D28D9', '#4338CA', '#818CF8', '#A78BFA'];
-        return colorPalette[i % colorPalette.length];
-    });
-    
     countryChartInstance = new Chart(ctx, {
-        type: 'pie',
+        type: 'doughnut',
         data: {
             labels: labels,
             datasets: [{
-                label: 'Companies',
                 data: data,
-                backgroundColor: colors.map(c => c + 'DD'),
-                borderWidth: 4,
+                backgroundColor: labels.map((_, i) => DASHBOARD_CHART_COLORS[i % DASHBOARD_CHART_COLORS.length]),
+                borderWidth: 3,
                 borderColor: '#ffffff',
-                hoverBorderWidth: 6,
-                hoverBorderColor: '#667eea',
-                hoverOffset: 12,
+                hoverBorderWidth: 4,
+                hoverBorderColor: '#ffffff',
+                hoverOffset: 6,
                 spacing: 2
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            cutout: '58%',
             onClick: (event, elements, chart) => {
                 if (!elements || elements.length === 0) return;
                 const index = elements[0].index;
@@ -452,44 +450,44 @@ function createCountryChart(companies) {
                 window.location.href = `/portfolio-insights?chart=country&value=${encodeURIComponent(String(market))}`;
             },
             onHover: (event, elements) => {
-                if (event && event.native && event.native.target) {
-                    event.native.target.style.cursor = elements && elements.length ? 'pointer' : 'default';
+                if (event?.native?.target) {
+                    event.native.target.style.cursor = elements?.length ? 'pointer' : 'default';
                 }
             },
             animation: {
                 animateRotate: true,
                 animateScale: true,
-                duration: 1500,
-                easing: 'easeInOutQuart'
+                duration: 800,
+                easing: 'easeOutQuart'
             },
             plugins: {
                 legend: {
                     position: 'bottom',
                     labels: {
-                        boxWidth: 6,
-                        padding: 3,
-                        font: { size: 6, weight: '700' },
+                        boxWidth: 8,
+                        padding: 6,
+                        font: { size: 9, weight: '600' },
                         usePointStyle: true,
-                        pointStyle: 'rectRounded',
-                        color: '#1f2937'
+                        pointStyle: 'circle',
+                        color: '#1e293b'
                     }
                 },
                 tooltip: {
-                    backgroundColor: 'rgba(17, 24, 39, 0.95)',
-                    padding: 14,
-                    titleFont: { size: 14, weight: 'bold' },
-                    bodyFont: { size: 13 },
-                    borderColor: '#667eea',
-                    borderWidth: 2,
+                    backgroundColor: 'rgba(31, 41, 55, 0.96)',
+                    padding: 12,
+                    titleFont: { size: 12, weight: 'bold' },
+                    bodyFont: { size: 11 },
+                    borderColor: '#3f7de8',
+                    borderWidth: 1,
                     cornerRadius: 8,
                     displayColors: true,
+                    boxPadding: 4,
                     callbacks: {
                         label: function(context) {
-                            const label = context.label || '';
-                            const value = context.parsed || 0;
+                            const value = context.parsed;
                             const total = context.dataset.data.reduce((a, b) => a + b, 0);
-                            const percentage = ((value / total) * 100).toFixed(1);
-                            return ` ${label}: ${value} companies (${percentage}%)`;
+                            const pct = ((value / total) * 100).toFixed(1);
+                            return ` ${context.label}: ${value} companies (${pct}%)`;
                         }
                     }
                 }
@@ -500,6 +498,17 @@ function createCountryChart(companies) {
 
 function normalizeFilterValue(value) {
     return cleanDisplayText(value || '');
+}
+
+/** Extract year only from entry (e.g. '2025-05' -> '2025', '2023' -> '2023'). */
+function normalizeEntryYear(raw) {
+    if (raw == null || raw === '') return '';
+    const s = String(raw).trim();
+    if (s.includes('-')) {
+        const y = s.split('-')[0];
+        return (y.length === 4 && /^\d{4}$/.test(y)) ? y : s;
+    }
+    return (/^\d{4}$/.test(s) || /^\d{4}/.test(s)) ? s.substring(0, 4) : s;
 }
 
 function getSelectedValue(id) {
@@ -536,7 +545,7 @@ function applyPortfolioFilters(companies, filters) {
         const sectorGroup = categorizeSector(cleanSector);
         const cleanMarket = normalizeFilterValue(company.market);
         const cleanHQ = normalizeFilterValue(company.headquarters || company.market);
-        const cleanEntry = normalizeFilterValue(company.entry);
+        const cleanEntry = normalizeFilterValue(normalizeEntryYear(company.entry));
         const owner = normalizeFilterValue(company.source);
         const geography = categorizeGeography(cleanMarket);
 
@@ -572,7 +581,7 @@ function populateFilterOptions(companies) {
     )].sort();
     const markets = [...new Set(companies.map(c => normalizeFilterValue(c.market)).filter(Boolean))].sort();
     const hqs = [...new Set(companies.map(c => normalizeFilterValue(c.headquarters || c.market)).filter(Boolean))].sort();
-    const years = [...new Set(companies.map(c => normalizeFilterValue(c.entry)).filter(Boolean))].sort((a, b) => Number(b) - Number(a));
+    const years = [...new Set(companies.map(c => normalizeFilterValue(normalizeEntryYear(c.entry))).filter(Boolean))].sort((a, b) => Number(b) - Number(a));
 
     setSelectOptions(sectorFilter, 'All Sector Groups', sectors);
     setSelectOptions(marketFilter, 'All Markets', markets);
@@ -632,7 +641,7 @@ function displayFilteredPortfolioFlat(companies) {
         const cleanSector = cleanDisplayText(company.sector || 'N/A');
         const cleanMarket = cleanDisplayText(company.market || 'N/A');
         const cleanHQ = cleanDisplayText(company.headquarters || company.market || 'N/A');
-        const cleanEntry = cleanDisplayText(company.entry || 'N/A');
+        const cleanEntry = cleanDisplayText(normalizeEntryYear(company.entry) || 'N/A');
         const cleanOwner = cleanDisplayText(company.source || 'N/A');
         const geography = categorizeGeography(cleanMarket);
         return `
@@ -768,7 +777,7 @@ function displayPortfolio(companies) {
             const cleanFund = cleanDisplayText(company.fund || 'N/A');
             const cleanMarket = cleanDisplayText(company.market || 'N/A');
             const cleanHQ = cleanDisplayText(company.headquarters || 'N/A');
-            const cleanEntry = cleanDisplayText(company.entry || 'N/A');
+            const cleanEntry = cleanDisplayText(normalizeEntryYear(company.entry) || 'N/A');
             const companyDomain = extractCompanyDomain(company);
             const companyAvatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(cleanCompany)}&background=3f7de8&color=ffffff&size=64`;
             const rawLogo = company.logo_url || '';
@@ -791,7 +800,7 @@ function displayPortfolio(companies) {
             
             // Calculate additional metrics
             const currentYear = 2025;
-            const entryYear = company.entry ? parseInt(company.entry) : null;
+            const entryYear = company.entry ? parseInt(normalizeEntryYear(company.entry), 10) : null;
             const holdingPeriod = entryYear ? currentYear - entryYear : null;
             
             // Determine status
@@ -1002,9 +1011,27 @@ function getCompanyLogoUrl(company, domain, cleanName) {
 
 // Known correct domains when DB has wrong/old URLs (add more as you find them)
 const COMPANY_DOMAIN_OVERRIDES = {
-    'Brimer': 'brimersverige.com',
+    'Brimer': 'brimer.no',
     'Lunawood': 'lunawood.com',
-    'Enerco Group': 'enerco.se'
+    'Enerco Group': 'enerco.se',
+    'Nordic Grid Solutions': 'triarca.dk',
+    'EITCO': 'eitco.de',
+    'Cedra': 'cedra.se',
+    'Vokstr': 'vokstr.no',
+    're:mount': 'remount.fi',
+    'netIP': 'netip.dk',
+    'Ropo Capital': 'ropo.com',
+    'Circura Danmark': 'circuradanmark.dk',
+    'Circura': 'circuragroup.com',
+    'DLVRY': 'dlvry.se',
+    'RETTA': 'innagroup.se',
+    '3Button Group': '3bg.se',
+    'Briab': 'briab.se',
+    'EWGroup': 'ewgroup.se',
+    'eivis': 'eivis-group.com',
+    'SI - Sustainable Intelligence': 'wearesi.se',
+    'Umia': 'umia.se',
+    'Safe Monitoring Group': 'safemonitoringgroup.com'
 };
 
 function extractCompanyDomain(company) {
@@ -1120,7 +1147,7 @@ async function openCompanyModal(company) {
     document.getElementById('modalStatusHeader').textContent = status;
     
     // Quick Stats Banner
-    document.getElementById('modalBannerEntry').textContent = company.entry || 'N/A';
+    document.getElementById('modalBannerEntry').textContent = normalizeEntryYear(company.entry) || 'N/A';
     document.getElementById('modalBannerHolding').textContent = holdingPeriod ? `${holdingPeriod} yrs` : '—';
     document.getElementById('modalBannerEmployees').textContent = company.employees || '—';
     document.getElementById('modalBannerDeal').textContent = company.deal_size || '—';
@@ -1133,7 +1160,7 @@ async function openCompanyModal(company) {
     // Investment Details
     document.getElementById('modalPEFirm').textContent = company.source || 'N/A';
     document.getElementById('modalFund').textContent = company.fund || 'N/A';
-    document.getElementById('modalEntryYear').textContent = company.entry || 'N/A';
+    document.getElementById('modalEntryYear').textContent = normalizeEntryYear(company.entry) || 'N/A';
     document.getElementById('modalDealSize').textContent = company.deal_size || '—';
     
     // Geographic & Market Information

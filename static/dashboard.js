@@ -32,12 +32,20 @@ function createInlineLogoHTML(name, primarySrc, size = 32, borderRadius = 6) {
     const encodedName = encodeURIComponent(name || 'Unknown');
     const numericSize = Number.isFinite(Number(size)) ? Number(size) : 32;
     const uiAvatarSrc = `https://ui-avatars.com/api/?name=${encodedName}&background=3f7de8&color=ffffff&size=${Math.max(64, numericSize * 2)}`;
+    let faviconSrc = '';
+    if (primarySrc && primarySrc.includes('clearbit.com')) {
+        try {
+            const m = primarySrc.match(/clearbit\.com\/([^/?]+)/);
+            if (m && m[1]) faviconSrc = `https://www.google.com/s2/favicons?domain=${encodeURIComponent(m[1])}&sz=128`;
+        } catch (_) {}
+    }
+    const fallbackChain = faviconSrc ? `this.onerror=null; this.src='${faviconSrc}'; this.onerror=function(){this.src='${uiAvatarSrc}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};};` : `this.src='${uiAvatarSrc}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};`;
 
     return `<span style="position: relative; display: inline-flex; width:${numericSize}px; height:${numericSize}px; align-items:center; justify-content:center;">
         <img src="${primarySrc || uiAvatarSrc}"
              alt="${safeName}"
-             style="width:${numericSize}px; height:${numericSize}px; object-fit:contain; border-radius:${borderRadius}px; background:#fff;"
-             onerror="this.onerror=null; this.src='${uiAvatarSrc}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};">
+             style="width:${numericSize}px; height:${numericSize}px; object-fit:contain; border-radius:${borderRadius}px; background:#fff; flex-shrink:0;"
+             onerror="${fallbackChain}">
         <span style="display:none; width:${numericSize}px; height:${numericSize}px; border-radius:${borderRadius}px; background:#3f7de8; color:#fff; font-size:${Math.max(11, Math.floor(numericSize * 0.38))}px; font-weight:700; letter-spacing:0.02em; align-items:center; justify-content:center;">${initials}</span>
     </span>`;
 }
@@ -57,15 +65,20 @@ const firmDomainOverrides = {
     'Polaris': 'polarisequity.dk',
     'Nordstjernan': 'nordstjernan.se',
     'Valedo Partners': 'valedopartners.com',
+    'Valedo': 'valedopartners.com',
     'IK Partners': 'ikpartners.com',
     'Adelis Equity': 'adelisequity.com',
-    'Altor': 'altor.com'
+    'Altor': 'altor.com',
+    'Axcel': 'axcel.dk',
+    'CVC': 'cvc.com',
+    'CVC Capital Partners': 'cvc.com'
 };
 
 async function loadDashboard() {
     try { await ensurePeFirmLogos(); } catch (e) { console.error('Logo map init failed:', e); }
     try { await loadLatestNews(); } catch (e) { console.error('Latest news failed:', e); }
     try { await loadActiveFundraising(); } catch (e) { console.error('Fundraising failed:', e); }
+    try { await loadPortfolioTrends(); } catch (e) { console.error('Portfolio trends failed:', e); }
     try { await loadPEFirms(); } catch (e) { console.error('PE firms failed:', e); }
     try { await loadStats(); } catch (e) { console.error('Stats failed:', e); }
 }
@@ -223,7 +236,7 @@ async function loadActiveFundraising() {
                         const item = document.createElement('div');
                         item.className = 'fundraising-item-compact';
                         const firm = fund.firm || 'Fund';
-                        const firmLogo = getFirmLogoForName(firm) || guessFirmLogoUrl(firm);
+                        const firmLogo = (fund.firm_logo_url && fund.firm_logo_url.trim()) || getFirmLogoForName(firm) || guessFirmLogoUrl(firm);
                         const progressVal = Number.isFinite(Number(fund.progress)) ? Number(fund.progress) : null;
                         // Check if firm has a profile
                         const hasProfile = availablePEFirms.has(firm);
@@ -290,6 +303,177 @@ async function loadActiveFundraising() {
             `;
         }
     }
+}
+
+// ===== PORTFOLIO TRENDS =====
+let trendsYearChartInstance = null;
+let trendsSectorChartInstance = null;
+let trendsCountryChartInstance = null;
+
+async function loadPortfolioTrends() {
+    try {
+        const response = await fetch('/api/portfolio?_=' + Date.now(), { cache: 'no-store' });
+        const data = await response.json();
+        if (!data.success || !data.companies || data.companies.length === 0) {
+            renderTrendsEmpty();
+            return;
+        }
+        const companies = data.companies;
+
+        // Aggregate by entry year
+        const yearCounts = {};
+        companies.forEach(c => {
+            const y = (c.entry || '').toString().trim();
+            const year = /^\d{4}$/.test(y) ? parseInt(y, 10) : null;
+            if (year && year >= 2010 && year <= 2030) {
+                yearCounts[year] = (yearCounts[year] || 0) + 1;
+            }
+        });
+        const yearLabels = Object.keys(yearCounts).map(Number).sort((a, b) => a - b);
+        const yearValues = yearLabels.map(y => yearCounts[y]);
+
+        // Aggregate by sector
+        const sectorCounts = {};
+        companies.forEach(c => {
+            const s = (c.sector || 'Other').trim() || 'Other';
+            sectorCounts[s] = (sectorCounts[s] || 0) + 1;
+        });
+        const sectorEntries = Object.entries(sectorCounts)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 8);
+        const sectorLabels = sectorEntries.map(([k]) => k);
+        const sectorValues = sectorEntries.map(([, v]) => v);
+
+        // Aggregate by country (market or headquarters)
+        const countryCounts = {};
+        companies.forEach(c => {
+            const country = (c.market || c.headquarters || c.country || 'Other').trim() || 'Other';
+            countryCounts[country] = (countryCounts[country] || 0) + 1;
+        });
+        const countryEntries = Object.entries(countryCounts)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 8);
+        const countryLabels = countryEntries.map(([k]) => k);
+        const countryValues = countryEntries.map(([, v]) => v);
+
+        createTrendsYearChart(yearLabels, yearValues);
+        createTrendsSectorChart(sectorLabels, sectorValues);
+        createTrendsCountryChart(countryLabels, countryValues);
+        initTrendsChartNavigation();
+    } catch (e) {
+        console.error('Portfolio trends error:', e);
+        renderTrendsEmpty();
+    }
+}
+
+function initTrendsChartNavigation() {
+    document.querySelectorAll('.trends-chart-card[data-chart-link]').forEach(card => {
+        const chartKey = card.getAttribute('data-chart-link');
+        if (!chartKey) return;
+        card.addEventListener('click', () => {
+            window.location.href = `/portfolio-insights?chart=${encodeURIComponent(chartKey)}`;
+        });
+    });
+}
+
+function createTrendsYearChart(labels, values) {
+    const ctx = document.getElementById('trendsYearChart');
+    if (!ctx || typeof Chart === 'undefined') return;
+    if (trendsYearChartInstance) trendsYearChartInstance.destroy();
+    if (!labels.length || !values.length) return;
+    const palette = ['#3f7de8', '#2f64c0', '#2563eb', '#1d4ed8', '#1e40af'];
+    trendsYearChartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Investments',
+                data: values,
+                backgroundColor: labels.map((_, i) => palette[i % palette.length]),
+                borderRadius: 6,
+                borderSkipped: false
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { stepSize: 1 } },
+                x: { grid: { display: false } }
+            }
+        }
+    });
+}
+
+function createTrendsSectorChart(labels, values) {
+    const ctx = document.getElementById('trendsSectorChart');
+    if (!ctx || typeof Chart === 'undefined') return;
+    if (trendsSectorChartInstance) trendsSectorChartInstance.destroy();
+    if (!labels.length || !values.length) return;
+    const palette = ['#3f7de8', '#2f64c0', '#6366f1', '#8b5cf6', '#a855f7', '#c084fc', '#d8b4fe', '#e9d5ff'];
+    trendsSectorChartInstance = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: labels,
+            datasets: [{
+                data: values,
+                backgroundColor: labels.map((_, i) => palette[i % palette.length]),
+                borderWidth: 2,
+                borderColor: '#fff'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: '58%',
+            layout: { padding: { top: 4, right: 4, bottom: 4, left: 4 } },
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    align: 'center',
+                    labels: { boxWidth: 10, font: { size: 9 }, padding: 6, usePointStyle: true }
+                }
+            }
+        }
+    });
+}
+
+function createTrendsCountryChart(labels, values) {
+    const ctx = document.getElementById('trendsCountryChart');
+    if (!ctx || typeof Chart === 'undefined') return;
+    if (trendsCountryChartInstance) trendsCountryChartInstance.destroy();
+    if (!labels.length || !values.length) return;
+    const palette = ['#3f7de8', '#2f64c0', '#2563eb', '#1d4ed8', '#1e40af', '#1e3a8a', '#312e81', '#3730a3'];
+    trendsCountryChartInstance = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: labels,
+            datasets: [{
+                data: values,
+                backgroundColor: labels.map((_, i) => palette[i % palette.length]),
+                borderWidth: 2,
+                borderColor: '#fff'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: '58%',
+            layout: { padding: { top: 4, right: 4, bottom: 4, left: 4 } },
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    align: 'center',
+                    labels: { boxWidth: 10, font: { size: 9 }, padding: 6, usePointStyle: true }
+                }
+            }
+        }
+    });
+}
+
+function renderTrendsEmpty() {
+    // No-op when using charts only
 }
 
 // Helpers mirrored from fundraising table to keep ordering consistent
@@ -399,6 +583,7 @@ function getFirmLogoForName(name) {
         'bure': 'bure.se',
         'accent equity': 'accentequity.com',
         'axcel': 'axcel.dk',
+        'cvc': 'cvc.com',
         'capman': 'capman.com',
         'fsn capital': 'fsncapital.com',
         'fsn': 'fsncapital.com',

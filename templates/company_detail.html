@@ -522,7 +522,7 @@ function loadCompanyData(company) {
     const status = company.status || (holdingPeriod && holdingPeriod > 0 ? 'Active' : 'N/A');
     const geography = categorizeGeography(company.market);
 
-    const COMPANY_DOMAIN_OVERRIDES = { 'Brimer': 'brimersverige.com', 'Lunawood': 'lunawood.com', 'Enerco Group': 'enerco.se' };
+    const COMPANY_DOMAIN_OVERRIDES = { 'Brimer': 'brimer.no', 'Lunawood': 'lunawood.com', 'Enerco Group': 'enerco.se', 'Nordic Grid Solutions': 'triarca.dk', 'EITCO': 'eitco.de', 'Cedra': 'cedra.se', 'Vokstr': 'vokstr.no', 're:mount': 'remount.fi', 'netIP': 'netip.dk', 'Ropo Capital': 'ropo.com', 'Circura Danmark': 'circuradanmark.dk', 'Circura': 'circuragroup.com', 'DLVRY': 'dlvry.se', 'RETTA': 'innagroup.se', '3Button Group': '3bg.se', 'Briab': 'briab.se', 'EWGroup': 'ewgroup.se', 'eivis': 'eivis-group.com', 'SI - Sustainable Intelligence': 'wearesi.se', 'Umia': 'umia.se', 'Safe Monitoring Group': 'safemonitoringgroup.com' };
     const domain = (company.company && COMPANY_DOMAIN_OVERRIDES[company.company]) || extractDomain(company.website);
     const faviconUrl = domain ? 'https://www.google.com/s2/favicons?domain=' + encodeURIComponent(domain) + '&sz=128' : '';
     const clearbitUrl = (company.logo_url && !company.logo_url.includes('ui-avatars.com'))

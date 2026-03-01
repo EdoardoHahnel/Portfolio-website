@@ -69,7 +69,7 @@ function highlightActiveInsightsTab() {
 }
 
 async function loadPortfolioData() {
-    const response = await fetch('/api/portfolio');
+    const response = await fetch('/api/portfolio?_=' + Date.now(), { cache: 'no-store' });
     const data = await response.json();
     portfolioCompanies = data.success && Array.isArray(data.companies) ? data.companies : [];
 }
@@ -97,8 +97,9 @@ function renderInsightsView() {
 
 function aggregateByField(companies, field) {
     const counter = {};
+    const normalize = (field === 'entry') ? v => normalizeEntryYear(cleanValue(v)) : v => cleanValue(v);
     companies.forEach(company => {
-        const raw = cleanValue(company[field]);
+        const raw = normalize(company[field]);
         if (!raw) return;
         counter[raw] = (counter[raw] || 0) + 1;
     });
@@ -123,7 +124,7 @@ function renderInsightsSidePanel(cfg, labels, values) {
     topEl.textContent = topText;
     totalEl.textContent = `${total} total`;
 
-    const colorPalette = ['#4F46E5', '#6366F1', '#7C3AED', '#8B5CF6', '#3B82F6', '#5B21B6', '#6D28D9', '#4338CA', '#818CF8', '#A78BFA'];
+    const colorPalette = ['#3f7de8', '#2f64c0', '#4a8ef4', '#2563eb', '#1e40af', '#3b82f6', '#60a5fa', '#0ea5e9', '#0284c7', '#0369a1'];
     listEl.innerHTML = labels.map((label, idx) => {
         const count = Number(values[idx]) || 0;
         const pct = total ? ((count / total) * 100).toFixed(1) : '0.0';
@@ -165,7 +166,8 @@ function renderCompaniesTable(cfg) {
     const count = document.getElementById('insightsTableCount');
     if (!body || !title || !count) return;
 
-    const filtered = portfolioCompanies.filter(company => cleanValue(company[cfg.field]) === activeSelection);
+    const getFieldValue = (c, f) => f === 'entry' ? normalizeEntryYear(cleanValue(c[f])) : cleanValue(c[f]);
+    const filtered = portfolioCompanies.filter(company => getFieldValue(company, cfg.field) === activeSelection);
     const sorted = [...filtered].sort(compareCompaniesBySort);
 
     title.textContent = `${cfg.filterLabel}: ${activeSelection || 'None'}`;
@@ -182,11 +184,28 @@ function renderCompaniesTable(cfg) {
         const sector = cleanValue(company.sector) || 'N/A';
         const market = cleanValue(company.market) || 'N/A';
         const hq = cleanValue(company.headquarters || company.market) || 'N/A';
-        const entry = cleanValue(company.entry) || 'N/A';
+        const entry = normalizeEntryYear(cleanValue(company.entry)) || 'N/A';
         const geography = categorizeGeography(market);
+        const description = company.description || company.detailed_description || '';
+        const domain = extractCompanyDomain(company);
+        const avatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(cleanCompany)}&background=3f7de8&color=ffffff&size=64`;
+        const logoUrl = getCompanyLogoUrl(company, domain, cleanCompany);
+        const fallback2 = (domain ? `https://logo.clearbit.com/${domain}` : '') || avatarUrl;
+        const slug = generateCompanySlug(company);
+        const companyCell = `
+            <span class="company-link-modal portfolio-uniform-cell" style="cursor: pointer;" data-slug="${escapeHtml(slug)}">
+                <img src="${logoUrl}"
+                     alt="${escapeHtml(cleanCompany)}"
+                     class="company-logo"
+                     onerror="this.onerror=null; this.src='${fallback2}'; this.onerror=function(){this.onerror=null; this.src='${avatarUrl}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='inline';};}">
+                <i class="fas fa-building company-icon-fallback" style="display:none;"></i>
+                ${escapeHtml(cleanCompany)}
+                <i class="fas fa-info-circle" style="margin-left: 8px; color: #3f7de8; opacity: 0.7;"></i>
+            </span>
+        `;
         return `
             <tr>
-                <td>${escapeHtml(cleanCompany)}</td>
+                <td class="company-name portfolio-uniform-cell" title="${escapeHtml(description)}">${companyCell}</td>
                 <td>${escapeHtml(owner)}</td>
                 <td>${escapeHtml(sector)}</td>
                 <td>${escapeHtml(market)}</td>
@@ -196,6 +215,24 @@ function renderCompaniesTable(cfg) {
             </tr>
         `;
     }).join('');
+
+    body.querySelectorAll('.company-link-modal').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const slug = link.getAttribute('data-slug');
+            if (slug) window.location.href = `/company/${slug}`;
+        });
+        link.addEventListener('mouseenter', () => {
+            link.style.color = '#667eea';
+            link.style.transform = 'translateX(4px)';
+            link.style.transition = 'all 0.3s ease';
+        });
+        link.addEventListener('mouseleave', () => {
+            link.style.color = '';
+            link.style.transform = 'translateX(0)';
+        });
+    });
 }
 
 function compareCompaniesBySort(a, b) {
@@ -223,7 +260,8 @@ function getSortValueForColumn(company, column) {
         case 'headquarters':
             return cleanValue(company.headquarters || company.market) || 'ZZZ';
         case 'entry': {
-            const parsed = Number(cleanValue(company.entry));
+            const y = normalizeEntryYear(cleanValue(company.entry));
+            const parsed = Number(y);
             return Number.isFinite(parsed) ? parsed : -Infinity;
         }
         case 'geography':
@@ -243,6 +281,16 @@ function cleanValue(value) {
     return String(value || '').replace(/\s*\([^)]*\)\s*/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
+function normalizeEntryYear(raw) {
+    if (raw == null || raw === '') return '';
+    const s = String(raw).trim();
+    if (s.includes('-')) {
+        const y = s.split('-')[0];
+        return (y.length === 4 && /^\d{4}$/.test(y)) ? y : s;
+    }
+    return (/^\d{4}$/.test(s) || /^\d{4}/.test(s)) ? s.substring(0, 4) : s;
+}
+
 function categorizeGeography(market) {
     const nordicCountries = ['Sweden', 'Denmark', 'Norway', 'Finland', 'Iceland'];
     if (market === 'Sweden') return 'Domestic';
@@ -254,5 +302,75 @@ function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
+}
+
+// ---- Company logo & detail link helpers (aligned with portfolio.js) ----
+function extractDomain(url) {
+    if (!url) return '';
+    try {
+        const u = (url.startsWith('http') ? url : 'https://' + url);
+        const urlObj = new URL(u);
+        return urlObj.hostname.replace(/^www\./, '');
+    } catch (e) {
+        return (url || '').replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0];
+    }
+}
+
+const COMPANY_DOMAIN_OVERRIDES = {
+    'Brimer': 'brimer.no',
+    'Lunawood': 'lunawood.com',
+    'Enerco Group': 'enerco.se',
+    'Nordic Grid Solutions': 'triarca.dk',
+    'EITCO': 'eitco.de',
+    'Cedra': 'cedra.se',
+    'Vokstr': 'vokstr.no',
+    're:mount': 'remount.fi',
+    'netIP': 'netip.dk',
+    'Ropo Capital': 'ropo.com',
+    'Circura Danmark': 'circuradanmark.dk',
+    'Circura': 'circuragroup.com',
+    'DLVRY': 'dlvry.se',
+    'RETTA': 'innagroup.se',
+    '3Button Group': '3bg.se',
+    'Briab': 'briab.se',
+    'EWGroup': 'ewgroup.se',
+    'eivis': 'eivis-group.com',
+    'SI - Sustainable Intelligence': 'wearesi.se',
+    'Umia': 'umia.se',
+    'Safe Monitoring Group': 'safemonitoringgroup.com'
+};
+
+function extractCompanyDomain(company) {
+    const name = (company && company.company) ? String(company.company).trim() : '';
+    if (name && COMPANY_DOMAIN_OVERRIDES[name]) return COMPANY_DOMAIN_OVERRIDES[name];
+    const websiteDomain = extractDomain((company && company.website) || '');
+    if (websiteDomain) return websiteDomain;
+    const rawLogo = (company && company.logo_url) || '';
+    const idx = rawLogo.indexOf('logo.clearbit.com/');
+    if (idx >= 0) {
+        const tail = rawLogo.substring(idx + 18);
+        return tail.split(/[/?#]/)[0].trim().replace(/^www\./, '');
+    }
+    return '';
+}
+
+function getCompanyLogoUrl(company, domain, cleanName) {
+    const favicon = domain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=128` : '';
+    const avatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(cleanName || 'Co')}&background=3f7de8&color=ffffff&size=64`;
+    const rawLogo = (company && company.logo_url) || '';
+    const clearbit = (rawLogo && !rawLogo.includes('ui-avatars.com')) ? rawLogo
+        : (domain ? `https://logo.clearbit.com/${domain}` : '');
+    return favicon || clearbit || avatar;
+}
+
+function generateCompanySlug(company) {
+    const companyName = (company.company || 'company').toLowerCase()
+        .replace(/[^a-z0-9\s]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/&/g, 'and');
+    const source = (company.source || 'firm').toLowerCase()
+        .replace(/[^a-z0-9\s]/g, '')
+        .replace(/\s+/g, '-');
+    return `${companyName}-${source}`;
 }
 

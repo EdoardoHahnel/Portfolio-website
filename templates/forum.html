@@ -114,18 +114,6 @@
     <input type="hidden" name="reason" id="forumReportReason">
 </form>
 {% endif %}
-
-<section class="forum-fund-map-section">
-    <div class="content-card">
-        <div class="content-card-body">
-            <h2 class="forum-fund-map-title">Nordic & European PE Fund Size Landscape</h2>
-            <p class="forum-fund-map-desc">Private equity firms mapped by fund size and geography.</p>
-            <div class="forum-fund-map-img-wrap">
-                <img src="{{ url_for('static', filename='images/pe-fund-size-map.png') }}" alt="Private Equity Fund Size Map" class="forum-fund-map-img" loading="lazy">
-            </div>
-        </div>
-    </div>
-</section>
 {% endblock %}
 
 {% block extra_js %}

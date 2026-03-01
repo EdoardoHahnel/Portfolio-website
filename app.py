@@ -13,12 +13,18 @@ import os
 from scraper import MAScraper
 import subprocess
 import sys
-from forum_feature import forum_bp, init_forum_db
+from forum_feature import forum_bp, init_forum_db, log_page_view
 
 # Create a Flask application
 # Flask is a framework that helps create web applications easily
 app = Flask(__name__)
 app.secret_key = os.environ.get('FLASK_SECRET_KEY', 'dev-forum-secret-change-me')
+
+# Use absolute paths so file lookups work regardless of working directory (e.g. Flask reloader)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+def data_path(filename):
+    return os.path.join(BASE_DIR, filename)
 
 # This will store our news articles in memory
 # In a real application, you'd use a database (we'll keep it simple for beginners)
@@ -33,8 +39,8 @@ def load_news_database():
     """Load news articles from ma_news_database.json into memory"""
     global news_storage
     try:
-        if os.path.exists('ma_news_database.json'):
-            with open('ma_news_database.json', 'r', encoding='utf-8') as f:
+        if os.path.exists(data_path('ma_news_database.json')):
+            with open(data_path('ma_news_database.json'), 'r', encoding='utf-8') as f:
                 data = json.load(f)
                 if 'articles' in data:
                     news_storage = data['articles']
@@ -52,8 +58,8 @@ def load_portfolio_database():
     global portfolio_storage
     try:
         # Load from enriched database first
-        if os.path.exists('portfolio_enriched.json'):
-            with open('portfolio_enriched.json', 'r', encoding='utf-8') as f:
+        if os.path.exists(data_path('portfolio_enriched.json')):
+            with open(data_path('portfolio_enriched.json'), 'r', encoding='utf-8') as f:
                 data = json.load(f)
                 portfolio_storage = data.get('companies', [])
                 print(f"Loaded {len(portfolio_storage)} portfolio companies from enriched database")
@@ -61,8 +67,8 @@ def load_portfolio_database():
                 verdane_count = len([c for c in portfolio_storage if c.get('source') == 'Verdane'])
                 print(f"   Valedo Partners: {valedo_count}, Verdane: {verdane_count}")
         # Fallback to old database
-        elif os.path.exists('portfolio_complete.json'):
-            with open('portfolio_complete.json', 'r', encoding='utf-8') as f:
+        elif os.path.exists(data_path(data_path('portfolio_complete.json'))):
+            with open(data_path(data_path('portfolio_complete.json')), 'r', encoding='utf-8') as f:
                 data = json.load(f)
                 if 'portfolio_companies' in data:
                     portfolio_storage = data['portfolio_companies']
@@ -79,6 +85,23 @@ load_news_database()
 load_portfolio_database()
 init_forum_db()
 app.register_blueprint(forum_bp)
+
+
+@app.after_request
+def _track_page_views(response):
+    """Log page views for main HTML pages (exclude static, API, admin)."""
+    if response.status_code != 200:
+        return response
+    path = request.path or ""
+    if path.startswith(("/static/", "/api/", "/forum/admin")) or path == "/favicon.ico":
+        return response
+    if "text/html" not in (response.content_type or ""):
+        return response
+    try:
+        log_page_view(path, request.remote_addr)
+    except Exception:
+        pass
+    return response
 
 
 # ROUTES: These are the different pages/endpoints of your website
@@ -195,7 +218,7 @@ def get_deal_flow():
     Get all deals from deal flow database
     """
     try:
-        with open('deal_flow_database.json', 'r', encoding='utf-8') as f:
+        with open(data_path('deal_flow_database.json'), 'r', encoding='utf-8') as f:
             data = json.load(f)
             return jsonify({
                 'success': True,
@@ -237,7 +260,7 @@ def ai_company_detail(company_name):
     """
     # Load AI companies data
     try:
-        with open('ai_companies_database.json', 'r', encoding='utf-8') as f:
+        with open(data_path('ai_companies_database.json'), 'r', encoding='utf-8') as f:
             data = json.load(f)
             companies = data.get('ai_companies', [])
             
@@ -312,8 +335,8 @@ def get_investment_news():
     API endpoint to get real Nordic PE investment news from Cision
     """
     try:
-        if os.path.exists('pe_news_database.json'):
-            with open('pe_news_database.json', 'r', encoding='utf-8') as f:
+        if os.path.exists(data_path('pe_news_database.json')):
+            with open(data_path('pe_news_database.json'), 'r', encoding='utf-8') as f:
                 data = json.load(f)
                 return jsonify({
                     'success': True,
@@ -385,7 +408,7 @@ def update_real_news():
         # Run the real news fetcher
         result = subprocess.run([
             sys.executable, 'fetch_cision_news.py'
-        ], capture_output=True, text=True, cwd=os.getcwd())
+        ], capture_output=True, text=True, cwd=BASE_DIR)
         
         if result.returncode == 0:
             # Reload the news database
@@ -470,21 +493,27 @@ def search_news():
 @app.route('/api/portfolio', methods=['GET'])
 def get_portfolio():
     """
-    API endpoint to get all portfolio companies
+    API endpoint to get all portfolio companies.
+    Always reads fresh from portfolio_enriched.json so data updates are visible immediately.
     """
+    global portfolio_storage
     try:
-        # Load from enriched JSON file if portfolio_storage is empty
-        if not portfolio_storage:
+        # Always reload from file to ensure fresh data (no restart needed)
+        if os.path.exists(data_path('portfolio_enriched.json')):
+            with open(data_path('portfolio_enriched.json'), 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                portfolio_storage = data.get('companies', [])
+        elif not portfolio_storage:
             # Try enriched database first
-            if os.path.exists('portfolio_enriched.json'):
-                with open('portfolio_enriched.json', 'r', encoding='utf-8') as f:
+            if os.path.exists(data_path('portfolio_enriched.json')):
+                with open(data_path('portfolio_enriched.json'), 'r', encoding='utf-8') as f:
                     data = json.load(f)
                     all_companies = data.get('companies', [])
                     # Update global storage
                     portfolio_storage.extend(all_companies)
             # Fallback to old format
-            elif os.path.exists('portfolio_complete.json'):
-                with open('portfolio_complete.json', 'r', encoding='utf-8') as f:
+            elif os.path.exists(data_path('portfolio_complete.json')):
+                with open(data_path('portfolio_complete.json'), 'r', encoding='utf-8') as f:
                     data = json.load(f)
                     all_companies = []
                     
@@ -508,14 +537,42 @@ def get_portfolio():
         firms_to_replace = ['Polaris', 'FSN Capital', 'Nordstjernan', 'Valedo Partners', 'IK Partners']
         final_companies = []
         
+        def _normalize_entry_year(raw):
+            """Extract year only from entry. Handles '2025-05', '2020-2024', '2023'."""
+            if not raw:
+                return ''
+            s = str(raw).strip()
+            if '-' in s:
+                parts = s.split('-')
+                first = parts[0]
+                if first.isdigit() and len(first) == 4:
+                    return first  # e.g. '2025-05' -> '2025', '2020-2024' -> '2020'
+            if len(s) >= 4 and s[:4].isdigit():
+                return s[:4]
+            return s
+
         # Filter out companies from firms that need replacement
         for company in portfolio_storage:
             if company.get('source') not in firms_to_replace:
-                final_companies.append(company)
-        
-        # Add database portfolio companies for these firms
-        if os.path.exists('pe_firms_database.json'):
-            with open('pe_firms_database.json', 'r', encoding='utf-8') as pf:
+                c = dict(company)
+                if c.get('entry'):
+                    c['entry'] = _normalize_entry_year(c['entry'])
+                final_companies.append(c)
+
+        def _expand_description(desc, name, sector, country, firm_name):
+            """Expand short descriptions to ~3 sentences."""
+            desc = (desc or '').strip()
+            if len(desc) >= 120:
+                return desc
+            sector_str = sector or 'business'
+            country_str = country or 'the region'
+            if not desc:
+                return f"{name} is a {sector_str} company headquartered in {country_str}. The company is a portfolio investment of {firm_name}."
+            base = desc.rstrip('.')
+            return f"{name} is a {sector_str} company headquartered in {country_str}. {base}. The company is a portfolio investment of {firm_name}."
+
+        if os.path.exists(data_path('pe_firms_database.json')):
+            with open(data_path('pe_firms_database.json'), 'r', encoding='utf-8') as pf:
                 pe_data = json.load(pf)
                 pe_firms = pe_data.get('pe_firms', {})
                 
@@ -524,28 +581,35 @@ def get_portfolio():
                         firm_metadata = pe_firms[firm_name]
                         if firm_metadata.get('portfolio_companies'):
                             for pc in firm_metadata['portfolio_companies']:
+                                name = pc.get('name', '')
+                                sector = pc.get('sector', '')
+                                country = pc.get('country', '')
+                                raw_entry = pc.get('entry_year', '')
+                                raw_desc = pc.get('description', '')
                                 company_data = {
-                                    'company': pc.get('name', ''),
-                                    'sector': pc.get('sector', ''),
-                                    'market': pc.get('country', ''),
-                                    'entry': pc.get('entry_year', ''),
+                                    'company': name,
+                                    'sector': sector,
+                                    'market': country,
+                                    'entry': _normalize_entry_year(raw_entry),
                                     'status': 'Active',
                                     'source': firm_name,
                                     'website': pc.get('website', ''),
                                     'logo_url': pc.get('logo_url', '') or pc.get('logo', ''),
-                                    'description': pc.get('description', ''),
-                                    'headquarters': pc.get('country', ''),
+                                    'description': _expand_description(raw_desc, name, sector, country, firm_name),
+                                    'headquarters': country,
                                     'deal_size': '',
-                                    'fund': '',
-                                    'geography': 'Nordic' if pc.get('country') in ['Sweden', 'Denmark', 'Norway', 'Finland'] else 'International'
+                                    'fund': pc.get('fund', ''),
+                                    'geography': 'Nordic' if country in ['Sweden', 'Denmark', 'Norway', 'Finland'] else 'International'
                                 }
                                 final_companies.append(company_data)
         
-        return jsonify({
+        resp = jsonify({
             'success': True,
             'count': len(final_companies),
             'companies': final_companies
         })
+        resp.headers['Cache-Control'] = 'no-store, no-cache, must-revalidate, max-age=0'
+        return resp
     except Exception as e:
         return jsonify({
             'success': False,
@@ -606,14 +670,40 @@ def search_portfolio():
     firms_to_replace = ['Polaris', 'FSN Capital', 'Nordstjernan', 'Valedo Partners', 'IK Partners']
     final_companies = []
     
+    def _norm_entry(raw):
+        if not raw:
+            return ''
+        s = str(raw).strip()
+        if '-' in s:
+            first = s.split('-')[0]
+            if first.isdigit() and len(first) == 4:
+                return first
+        if len(s) >= 4 and s[:4].isdigit():
+            return s[:4]
+        return s
+
     # Filter out companies from firms that need replacement
     for company in portfolio_storage:
         if company.get('source') not in firms_to_replace:
-            final_companies.append(company)
+            c = dict(company)
+            if c.get('entry'):
+                c['entry'] = _norm_entry(c['entry'])
+            final_companies.append(c)
     
-    # Add database portfolio companies for these firms
-    if os.path.exists('pe_firms_database.json'):
-        with open('pe_firms_database.json', 'r', encoding='utf-8') as pf:
+    # Add database portfolio companies for these firms (with same helpers as main portfolio API)
+    def _expand_desc(desc, name, sector, country, firm_name):
+        desc = (desc or '').strip()
+        if len(desc) >= 120:
+            return desc
+        sector_str = sector or 'business'
+        country_str = country or 'the region'
+        if not desc:
+            return f"{name} is a {sector_str} company headquartered in {country_str}. The company is a portfolio investment of {firm_name}."
+        base = desc.rstrip('.')
+        return f"{name} is a {sector_str} company headquartered in {country_str}. {base}. The company is a portfolio investment of {firm_name}."
+
+    if os.path.exists(data_path('pe_firms_database.json')):
+        with open(data_path('pe_firms_database.json'), 'r', encoding='utf-8') as pf:
             pe_data = json.load(pf)
             pe_firms = pe_data.get('pe_firms', {})
             
@@ -622,20 +712,23 @@ def search_portfolio():
                     firm_metadata = pe_firms[firm_name]
                     if firm_metadata.get('portfolio_companies'):
                         for pc in firm_metadata['portfolio_companies']:
+                            name = pc.get('name', '')
+                            sector = pc.get('sector', '')
+                            country = pc.get('country', '')
                             company_data = {
-                                'company': pc.get('name', ''),
-                                'sector': pc.get('sector', ''),
-                                'market': pc.get('country', ''),
-                                'entry': pc.get('entry_year', ''),
+                                'company': name,
+                                'sector': sector,
+                                'market': country,
+                                'entry': _norm_entry(pc.get('entry_year', '')),
                                 'status': 'Active',
                                 'source': firm_name,
                                 'website': pc.get('website', ''),
                                 'logo_url': pc.get('logo_url', '') or pc.get('logo', ''),
-                                'description': pc.get('description', ''),
-                                'headquarters': pc.get('country', ''),
-                                'deal_size': '',
-                                'fund': '',
-                                'geography': 'Nordic' if pc.get('country') in ['Sweden', 'Denmark', 'Norway', 'Finland'] else 'International'
+                                'description': _expand_desc(pc.get('description', ''), name, sector, country, firm_name),
+                                'headquarters': pc.get('headquarters', country),
+                                'deal_size': pc.get('deal_size', ''),
+                                'fund': pc.get('fund', ''),
+                                'geography': 'Nordic' if country in ['Sweden', 'Denmark', 'Norway', 'Finland'] else 'International'
                             }
                             final_companies.append(company_data)
     
@@ -673,8 +766,8 @@ def reload_portfolio():
         print("Clearing portfolio cache...")
         
         # Reload from enriched database
-        if os.path.exists('portfolio_enriched.json'):
-            with open('portfolio_enriched.json', 'r', encoding='utf-8') as f:
+        if os.path.exists(data_path('portfolio_enriched.json')):
+            with open(data_path('portfolio_enriched.json'), 'r', encoding='utf-8') as f:
                 data = json.load(f)
                 all_companies = data.get('companies', [])
                 portfolio_storage.extend(all_companies)
@@ -713,7 +806,7 @@ def get_pe_firms():
     Get all PE firms with details
     """
     try:
-        with open('pe_firms_database.json', 'r', encoding='utf-8') as f:
+        with open(data_path('pe_firms_database.json'), 'r', encoding='utf-8') as f:
             data = json.load(f)
             return jsonify({
                 'success': True,
@@ -743,8 +836,8 @@ def get_pe_firm_detail(firm_name):
             'bure': 'Bure Equity'
         }
 
-        if os.path.exists('pe_firms_database.json'):
-            with open('pe_firms_database.json', 'r', encoding='utf-8') as pf:
+        if os.path.exists(data_path('pe_firms_database.json')):
+            with open(data_path('pe_firms_database.json'), 'r', encoding='utf-8') as pf:
                 pe_data = json.load(pf)
                 pe_firms = pe_data.get('pe_firms', {})
 
@@ -778,16 +871,16 @@ def get_pe_firm_detail(firm_name):
                             'website': pc.get('website', ''),
                             'logo_url': pc.get('logo_url', '') or pc.get('logo', ''),
                             'description': pc.get('description', ''),
-                            'headquarters': pc.get('country', ''),
-                            'deal_size': '',
-                            'fund': '',
+                            'headquarters': pc.get('headquarters', pc.get('country', '')),
+                            'deal_size': pc.get('deal_size', ''),
+                            'fund': pc.get('fund', ''),
                             'geography': 'Nordic' if pc.get('country') in ['Sweden', 'Denmark', 'Norway', 'Finland'] else 'International'
                         }
                         firm_companies.append(company_data)
 
         # Fallback: build firm companies from enriched portfolio using canonical name
-        if not firm_companies and os.path.exists('portfolio_enriched.json'):
-            with open('portfolio_enriched.json', 'r', encoding='utf-8') as f:
+        if not firm_companies and os.path.exists(data_path('portfolio_enriched.json')):
+            with open(data_path('portfolio_enriched.json'), 'r', encoding='utf-8') as f:
                 data = json.load(f)
                 all_companies = data.get('companies', [])
                 firm_companies = [c for c in all_companies if c.get('source') == canonical_firm_name]
@@ -862,6 +955,8 @@ def get_pe_firm_detail(firm_name):
                 'total_news_count': len(real_news),
                 **firm_metadata  # Add any metadata from database
             }
+            # Ensure team is always a list (some firms e.g. Helix Kapital lack it in JSON)
+            firm_data['team'] = firm_data.get('team') or []
             
             return jsonify({
                 'success': True,
@@ -878,19 +973,123 @@ def get_pe_firm_detail(firm_name):
 
 # ===== FUNDRAISING ENDPOINTS =====
 
+# Domain fallbacks for PE firm logos (firms not in pe_firms_database or Excel Import)
+FUNDRAISING_FIRM_LOGO_FALLBACKS = {
+    'acathia capital': 'acathia.com',
+    'adelis equity': 'adelisequity.com',
+    'ahlström capital': 'ahlstromcapital.com',
+    'ahlstrom capital': 'ahlstromcapital.com',
+    'axcel': 'axcel.dk',
+    'bridgepoint': 'bridgepoint.eu',
+    'broodstock capital': 'broodstockcapital.com',
+    'capman': 'capman.com',
+    'capman buyout': 'capman.com',
+    'cataCap': 'catacap.dk',
+    'catacap': 'catacap.dk',
+    'cvc': 'cvc.com',
+    'cvc capital partners': 'cvc.com',
+    'credo partners': 'credopartners.no',
+    'credo': 'credopartners.no',
+    'dania capital': 'daniacapital.dk',
+    'devco': 'devco.fi',
+    'equip capital': 'equip.no',
+    'evolver equity': 'evolverequity.se',
+    'fsn capital': 'fsncapital.com',
+    'herkules capital': 'herkulescapital.no',
+    'helix kapital': 'helixkapital.se',
+    'impilo': 'impilo.se',
+    'invl': 'invl.com',
+    'kkr': 'kkr.com',
+    'main capital partners': 'main.nl',
+    'maj invest': 'majinvest.com',
+    'montagu private equity': 'montagu.com',
+    'montagu': 'montagu.com',
+    'mvi advisors': 'mvi.se',
+    'pai partners': 'paipartners.com',
+    'peq private equity': 'peqab.se',
+    'polaris': 'polarisequity.dk',
+    'polaris private equity': 'polarisequity.dk',
+    'procuritas': 'procuritas.com',
+    'segulah': 'segulah.se',
+    'seb': 'sebgroup.com',
+    'sponsor capital': 'sponsorcapital.fi',
+    'summa equity': 'summaequity.com',
+    'triton': 'triton-partners.com',
+    'triton partners': 'triton-partners.com',
+    'triple private equity': 'triple.no',
+    'vaaka partners': 'vaakapartners.fi',
+    'valedo': 'valedopartners.com',
+    'valedo partners': 'valedopartners.com',
+    'vendis capital': 'vendiscapital.com',
+    'via equity': 'viaequity.com',
+    'waterland': 'waterland.pe',
+    'trill impact': 'trillimpact.com',
+}
+
+def _build_firm_logo_map():
+    """Build firm name -> logo URL map from pe_firms_database and fallbacks."""
+    logo_map = {}
+    # Fallbacks first (lowercase firm -> clearbit URL)
+    for firm_lower, domain in FUNDRAISING_FIRM_LOGO_FALLBACKS.items():
+        logo_map[firm_lower] = f'https://logo.clearbit.com/{domain}'
+    # From pe_firms_database
+    if os.path.exists(data_path('pe_firms_database.json')):
+        try:
+            with open(data_path('pe_firms_database.json'), 'r', encoding='utf-8') as pf:
+                pe_data = json.load(pf)
+                for key, firm in (pe_data.get('pe_firms') or {}).items():
+                    logo = firm.get('logo_url') or firm.get('logo') or ''
+                    if not logo or 'ui-avatars.com' in logo:
+                        domain = (firm.get('website') or '').replace('https://', '').replace('http://', '').replace('www.', '').split('/')[0]
+                        if domain:
+                            logo = f'https://logo.clearbit.com/{domain}'
+                    if logo:
+                        logo_map[key.lower().strip()] = logo
+                        # Add stripped variants
+                        for suffix in [' partners', ' capital', ' equity', ' management']:
+                            stripped = key.lower().replace(suffix, '').strip()
+                            if stripped and stripped not in logo_map:
+                                logo_map[stripped] = logo
+        except Exception:
+            pass
+    return logo_map
+
+def _get_firm_logo(firm_name, logo_map):
+    """Resolve logo URL for a firm name."""
+    if not firm_name:
+        return ''
+    key = str(firm_name).lower().strip()
+    if key in logo_map:
+        return logo_map[key]
+    for suffix in [' partners', ' capital', ' equity', ' management', ' private equity', ' buyout']:
+        stripped = key.replace(suffix, '').strip()
+        if stripped in logo_map:
+            return logo_map[stripped]
+    return ''
+
 @app.route('/api/fundraising', methods=['GET'])
 def get_fundraising():
     """
-    Get fundraising tracker data
+    Get fundraising tracker data. Enriches each fund with firm_logo_url when missing.
     """
     try:
-        with open('fundraising_database.json', 'r', encoding='utf-8') as f:
+        with open(data_path('fundraising_database.json'), 'r', encoding='utf-8') as f:
             data = json.load(f)
-            return jsonify({
-                'success': True,
-                'fundraising': data.get('fundraising_activities', []),
-                'metadata': data.get('metadata', {})
-            })
+        activities = data.get('fundraising_activities', [])
+        logo_map = _build_firm_logo_map()
+        enriched = []
+        for fund in activities:
+            f = dict(fund)
+            if not f.get('firm_logo_url') or not f['firm_logo_url'].strip():
+                logo = _get_firm_logo(f.get('firm'), logo_map)
+                if logo:
+                    f['firm_logo_url'] = logo
+            enriched.append(f)
+        return jsonify({
+            'success': True,
+            'fundraising': enriched,
+            'metadata': data.get('metadata', {})
+        })
     except Exception as e:
         return jsonify({'success': False, 'message': str(e)}), 500
 
@@ -903,7 +1102,7 @@ def get_family_offices():
     Get Nordic family offices data
     """
     try:
-        with open('family_offices_database.json', 'r', encoding='utf-8') as f:
+        with open(data_path('family_offices_database.json'), 'r', encoding='utf-8') as f:
             data = json.load(f)
             return jsonify({
                 'success': True,
@@ -922,7 +1121,7 @@ def search_family_offices():
     try:
         query = request.args.get('q', '').lower()
         
-        with open('family_offices_database.json', 'r', encoding='utf-8') as f:
+        with open(data_path('family_offices_database.json'), 'r', encoding='utf-8') as f:
             data = json.load(f)
             all_offices = data.get('family_offices', [])
             
@@ -973,7 +1172,7 @@ def get_investment_companies():
     Get Swedish investment companies with NAV discount data
     """
     try:
-        with open('investmentbolag_database.json', 'r', encoding='utf-8') as f:
+        with open(data_path('investmentbolag_database.json'), 'r', encoding='utf-8') as f:
             data = json.load(f)
             return jsonify({
                 'success': True,
@@ -992,7 +1191,7 @@ def search_investment_companies():
     try:
         query = request.args.get('q', '').lower()
         
-        with open('investmentbolag_database.json', 'r', encoding='utf-8') as f:
+        with open(data_path('investmentbolag_database.json'), 'r', encoding='utf-8') as f:
             data = json.load(f)
             all_companies = data.get('investment_companies', [])
             
@@ -1024,7 +1223,7 @@ def get_ai_companies():
     Get Swedish AI companies and global AI investments
     """
     try:
-        with open('ai_companies_database.json', 'r', encoding='utf-8') as f:
+        with open(data_path('ai_companies_database.json'), 'r', encoding='utf-8') as f:
             data = json.load(f)
             return jsonify({
                 'success': True,
@@ -1044,7 +1243,7 @@ def search_ai_companies():
     try:
         query = request.args.get('q', '').lower()
         
-        with open('ai_companies_database.json', 'r', encoding='utf-8') as f:
+        with open(data_path('ai_companies_database.json'), 'r', encoding='utf-8') as f:
             data = json.load(f)
             all_companies = data.get('ai_companies', [])
             
@@ -1076,7 +1275,7 @@ def get_ai_companies_by_category(category):
     Get AI companies filtered by category
     """
     try:
-        with open('ai_companies_database.json', 'r', encoding='utf-8') as f:
+        with open(data_path('ai_companies_database.json'), 'r', encoding='utf-8') as f:
             data = json.load(f)
             all_companies = data.get('ai_companies', [])
             
@@ -1101,7 +1300,7 @@ def get_ai_analytics():
     Get analytics about AI companies ecosystem
     """
     try:
-        with open('ai_companies_database.json', 'r', encoding='utf-8') as f:
+        with open(data_path('ai_companies_database.json'), 'r', encoding='utf-8') as f:
             data = json.load(f)
             all_companies = data.get('ai_companies', [])
             
@@ -1145,7 +1344,7 @@ def get_ai_educational():
     Get AI educational content for investment analysis
     """
     try:
-        with open('ai_educational_database.json', 'r', encoding='utf-8') as f:
+        with open(data_path('ai_educational_database.json'), 'r', encoding='utf-8') as f:
             data = json.load(f)
             return jsonify({
                 'success': True,
@@ -1160,7 +1359,7 @@ def get_ai_investors():
     Get AI investors database
     """
     try:
-        with open('ai_investors_database.json', 'r', encoding='utf-8') as f:
+        with open(data_path('ai_investors_database.json'), 'r', encoding='utf-8') as f:
             data = json.load(f)
             return jsonify({
                 'success': True,
@@ -1179,13 +1378,13 @@ def get_company_by_slug(company_slug):
     try:
         # Load portfolio data
         if not portfolio_storage:
-            if os.path.exists('portfolio_enriched.json'):
-                with open('portfolio_enriched.json', 'r', encoding='utf-8') as f:
+            if os.path.exists(data_path('portfolio_enriched.json')):
+                with open(data_path('portfolio_enriched.json'), 'r', encoding='utf-8') as f:
                     data = json.load(f)
                     all_companies = data.get('companies', [])
                     portfolio_storage.extend(all_companies)
-            elif os.path.exists('portfolio_complete.json'):
-                with open('portfolio_complete.json', 'r', encoding='utf-8') as f:
+            elif os.path.exists(data_path('portfolio_complete.json')):
+                with open(data_path('portfolio_complete.json'), 'r', encoding='utf-8') as f:
                     data = json.load(f)
                     all_companies = []
                     for firm_name, firm_data in data.get('pe_firms', {}).items():
@@ -1231,6 +1430,48 @@ def get_company_by_slug(company_slug):
                         'success': True,
                         'company': company
                     })
+
+        # Fallback: check pe_firms_database portfolio_companies (for FSN Capital, etc.)
+        def _normalize_slug(s):
+            if not s:
+                return ''
+            s = s.lower().strip().replace('&', 'and')
+            s = ''.join(c for c in s if c.isalnum() or c.isspace())
+            return s.replace(' ', '-')
+
+        if os.path.exists(data_path('pe_firms_database.json')):
+            with open(data_path('pe_firms_database.json'), 'r', encoding='utf-8') as pf:
+                pe_data = json.load(pf)
+                pe_firms = pe_data.get('pe_firms', {})
+                for firm_name, firm_data in pe_firms.items():
+                    if firm_data.get('portfolio_companies'):
+                        slug_firm = _normalize_slug(firm_name)
+                        for pc in firm_data['portfolio_companies']:
+                            pc_slug = _normalize_slug(pc.get('name') or '')
+                            expected = f"{pc_slug}-{slug_firm}"
+                            norm_decoded = _normalize_slug(decoded_slug.replace('-', ' '))
+                            if decoded_slug.lower() == expected or norm_decoded == expected or (
+                                company_name_match and _normalize_slug(company_name_match) in pc_slug and
+                                source_match.lower() in slug_firm):
+                                company_data = {
+                                    'company': pc.get('name', ''),
+                                    'sector': pc.get('sector', ''),
+                                    'market': pc.get('country', ''),
+                                    'entry': pc.get('entry_year', ''),
+                                    'status': pc.get('status', 'Active'),
+                                    'source': firm_name,
+                                    'website': pc.get('website', ''),
+                                    'logo_url': pc.get('logo_url') or pc.get('logo', ''),
+                                    'description': pc.get('description', ''),
+                                    'detailed_description': pc.get('detailed_description', pc.get('description', '')),
+                                    'headquarters': pc.get('headquarters', pc.get('country', '')),
+                                    'deal_size': pc.get('deal_size', ''),
+                                    'fund': pc.get('fund', ''),
+                                    'geography': 'Nordic' if pc.get('country') in ['Sweden', 'Denmark', 'Norway', 'Finland'] else 'International'
+                                }
+                                if pc.get('website') and not company_data['website'].startswith('http'):
+                                    company_data['website'] = 'https://' + company_data['website']
+                                return jsonify({'success': True, 'company': company_data})
         
         return jsonify({
             'success': False,
@@ -1257,7 +1498,7 @@ def research_portfolio_company(company_name):
         
         # Try to load from enriched database first
         enriched_data = None
-        for filename in ['portfolio_enriched.json', 'portfolio_enriched_sample.json']:
+        for filename in [data_path('portfolio_enriched.json'), data_path('portfolio_enriched_sample.json')]:
             if os.path.exists(filename):
                 try:
                     with open(filename, 'r', encoding='utf-8') as f:

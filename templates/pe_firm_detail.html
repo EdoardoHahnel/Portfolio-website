@@ -166,18 +166,42 @@ async function loadFirmDetail() {
     }
 }
 
+// Same domain overrides as dashboard - ensures logos work for Alder, Celero, Polaris, etc.
+const firmDomainOverrides = {
+    'Alder': 'alder.se', 'Celero': 'celerocapital.com', 'Celero Capital': 'celerocapital.com',
+    'FSN Capital': 'fsncapital.com', 'Polaris': 'polarisequity.dk', 'Nordstjernan': 'nordstjernan.se',
+    'Valedo Partners': 'valedopartners.com', 'IK Partners': 'ikpartners.com', 'Adelis Equity': 'adelisequity.com',
+    'Adelis Equity Partners': 'adelisequity.com', 'Altor': 'altor.com', 'Helix Kapital': 'helixkapital.se'
+};
+
+function getEffectiveFirmLogoUrl(firm) {
+    const websiteDomain = (firm.website || '').replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0];
+    const overrideDomain = firmDomainOverrides[firm.name] || websiteDomain;
+    const apiLogo = firm.logo_url || '';
+    const useApiLogo = apiLogo && !apiLogo.includes('ui-avatars.com');
+    const clearbitLogo = overrideDomain ? `https://logo.clearbit.com/${overrideDomain}` : '';
+    return useApiLogo ? apiLogo : clearbitLogo;
+}
+
 function displayFirmDetail(firm) {
     const container = document.getElementById('firmDetailContainer');
-    
+    const effectiveLogoUrl = getEffectiveFirmLogoUrl(firm);
+    const websiteDomain = (firm.website || '').replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0];
+    const overrideDomain = firmDomainOverrides[firm.name] || websiteDomain;
+    const fallbackFavicon = overrideDomain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(overrideDomain)}&sz=128` : '';
+    const avatarFallback = `https://ui-avatars.com/api/?name=${encodeURIComponent(firm.name)}&background=3f7de8&color=ffffff&size=64`;
+
     container.innerHTML = `
         <!-- Firm Header -->
         <div class="firm-detail-header" style="background: linear-gradient(135deg, #eaf2ff 0%, #f4f8ff 100%); padding: 0.6rem 0.8rem; border-radius: 6px; color: #1f3f68; margin-bottom: 0.5rem; border: 1px solid #d8e4f5;">
             <div class="firm-detail-header-content" style="display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap;">
                 <div style="display: flex; align-items: center; gap: 0.5rem; flex: 1; min-width: 0;">
-                    ${window.LogoUtils ? window.LogoUtils.createRobustLogoElement(firm.logo_url, firm.name, '35px', '🏢', '#3f7de8') : 
-                      `<img src="${firm.logo_url}" alt="${escapeHtml(firm.name)}" 
-                            style="height: 35px; border-radius: 4px; background: white; padding: 0.2rem; flex-shrink: 0;"
-                            onerror="this.style.display='none'">`}
+                    <div class="firm-logo-container" style="flex-shrink: 0;">
+                        <img src="${effectiveLogoUrl || fallbackFavicon || avatarFallback}" alt="${escapeHtml(firm.name)}"
+                            style="height: 35px; width: 35px; border-radius: 4px; background: white; padding: 0.2rem; object-fit: contain;"
+                            onerror="this.onerror=null; this.src='${fallbackFavicon || avatarFallback}'; this.onerror=function(){this.onerror=null; this.src='${avatarFallback}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};};">
+                        <div class="firm-logo-fallback" style="display: none; width: 35px; height: 35px; background: #3f7de8; color: white; border-radius: 4px; align-items: center; justify-content: center; font-size: 18px;">🏢</div>
+                    </div>
                     <div style="min-width: 0; flex: 1;">
                         <h1 style="margin: 0; font-size: 0.8rem; font-weight: 700; word-wrap: break-word;">${escapeHtml(firm.name)}</h1>
                         <div style="display: flex; gap: 0.5rem; margin-top: 0.2rem; font-size: 0.45rem; opacity: 0.9; flex-wrap: wrap;">
@@ -189,7 +213,7 @@ function displayFirmDetail(firm) {
                     </div>
                 </div>
                 <div style="flex-shrink: 0;">
-                    <a href="${firm.website}" target="_blank" style="padding: 0.25rem 0.5rem; background: #ffffff; color: #1f4b82; border-radius: 4px; text-decoration: none; font-size: 0.5rem; font-weight: 600; white-space: nowrap; border: 1px solid #d2e2f9;">
+                    <a href="${firm.website || '#'}" target="_blank" style="padding: 0.25rem 0.5rem; background: #ffffff; color: #1f4b82; border-radius: 4px; text-decoration: none; font-size: 0.5rem; font-weight: 600; white-space: nowrap; border: 1px solid #d2e2f9;">
                         <i class="fas fa-external-link-alt"></i> Visit Website
                     </a>
                 </div>
@@ -623,13 +647,10 @@ function renderFirmPortfolioTable(companies) {
     companies.forEach(company => {
         const cleanCompany = cleanPortfolioText(company.company || 'N/A');
         const companyDomain = extractCompanyDomain(company);
-        const companyFaviconUrl = companyDomain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(companyDomain)}&sz=128` : '';
-        const rawLogo = company.logo_url || '';
-        const clearbitUrl = (rawLogo && !rawLogo.includes('ui-avatars.com')) ? rawLogo
-            : (companyDomain ? `https://logo.clearbit.com/${companyDomain}` : '');
-        const companyAvatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(cleanCompany)}&background=3f7de8&color=ffffff&size=64`;
-        const companyLogoSrc = companyFaviconUrl || clearbitUrl || companyAvatarUrl;
-        const logoFallback = clearbitUrl || companyAvatarUrl;
+        const companyLogoSrc = getCompanyLogoUrl(company, companyDomain, cleanCompany);
+        const logoFallback = (companyDomain ? `https://logo.clearbit.com/${companyDomain}` : '') || `https://ui-avatars.com/api/?name=${encodeURIComponent(cleanCompany)}&background=3f7de8&color=ffffff&size=64`;
+        const companyAvatarUrl = logoFallback;
+        const slug = generateCompanySlug({ ...company, source: company.source || firmName });
         const cleanSector = cleanPortfolioText(company.sector || 'N/A');
         const cleanFund = cleanPortfolioText(company.fund || 'N/A');
         const cleanMarket = cleanPortfolioText(company.market || 'N/A');
@@ -642,13 +663,15 @@ function renderFirmPortfolioTable(companies) {
         const geography = cleanPortfolioText(company.geography || categorizeGeography(company.market));
         const geographyColor = geography === 'Domestic' ? '#3f7de8' : geography === 'Nordic' ? '#0ea5a8' : '#d8a24c';
         const description = cleanPortfolioText(company.description || '—');
+        const companyCell = `<span class="company-link-modal portfolio-uniform-cell" style="cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" data-slug="${escapeHtml(slug)}" title="${escapeHtml(description)}">
+                <img src="${companyLogoSrc}" class="company-logo" onerror="this.onerror=null; this.src='${logoFallback}'; this.onerror=function(){this.onerror=null; this.src='${companyAvatarUrl}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='inline';};};">
+                <i class="fas fa-building company-icon-fallback" style="display:none;"></i>
+                ${escapeHtml(cleanCompany)}
+                <i class="fas fa-info-circle" style="margin-left: 4px; color: #3f7de8; opacity: 0.7; font-size: 0.7rem;"></i>
+            </span>`;
         html += `
             <tr>
-                <td class="portfolio-cell-uniform company-name" title="${escapeHtml(description)}">
-                    <img src="${companyLogoSrc}" class="company-logo" onerror="this.onerror=null; this.src='${logoFallback}'; this.onerror=function(){this.onerror=null; this.src='${companyAvatarUrl}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='inline';};};">
-                    <i class="fas fa-building company-icon-fallback" style="display:none;"></i>
-                    ${escapeHtml(cleanCompany)}
-                </td>
+                <td class="portfolio-cell-uniform company-name" title="${escapeHtml(description)}">${companyCell}</td>
                 <td>${escapeHtml(cleanSector)}</td>
                 <td><span class="fund-badge">${escapeHtml(cleanFund)}</span></td>
                 <td class="portfolio-cell-uniform">${escapeHtml(cleanMarket)}</td>
@@ -684,12 +707,23 @@ function renderFirmPortfolioTable(companies) {
 
     html += '</tbody></table>';
     container.innerHTML = `<div class="portfolio-table-wrapper">${html}</div>`;
+
+    container.querySelectorAll('.company-link-modal').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const slug = link.getAttribute('data-slug');
+            if (slug) window.location.href = `/company/${slug}`;
+        });
+        link.addEventListener('mouseenter', function() { this.style.color = '#3f7de8'; });
+        link.addEventListener('mouseleave', function() { this.style.color = ''; });
+    });
 }
 
 async function loadFirmPortfolio(firmName) {
     try {
         const container = document.getElementById('firmPortfolio');
-        const response = await fetch('/api/portfolio');
+        const response = await fetch('/api/portfolio?_=' + Date.now(), { cache: 'no-store' });
         const data = await response.json();
 
         let firmCompanies = [];
@@ -709,8 +743,9 @@ async function loadFirmPortfolio(firmName) {
                     firmCompanies = firmMeta.portfolio_companies.map(pc => ({
                         company: pc.name || '',
                         sector: pc.sector || '',
-                        fund: '',
+                        fund: pc.fund || '',
                         market: pc.country || '',
+                        source: firmName,
                         headquarters: pc.country || '',
                         entry: pc.entry_year || '',
                         status: 'Active',
@@ -1076,7 +1111,7 @@ function createFirmCharts(companies) {
 
 async function loadLatestAcquisitions(firmName) {
     try {
-        const response = await fetch('/api/portfolio');
+        const response = await fetch('/api/portfolio?_=' + Date.now(), { cache: 'no-store' });
         const data = await response.json();
         
         if (data.success) {
@@ -1124,7 +1159,7 @@ async function loadLatestAcquisitions(firmName) {
 async function loadFirmTimeline(firm, firmName) {
     try {
         // Fetch portfolio data to get investments
-        const response = await fetch('/api/portfolio');
+        const response = await fetch('/api/portfolio?_=' + Date.now(), { cache: 'no-store' });
         const data = await response.json();
         
         if (data.success) {
@@ -1478,16 +1513,22 @@ function loadCompanyUpdates(firm) {
         return;
     }
 
-    // Normalize and group by year
-    const normalized = mergedUpdates.map(u => ({
-        date: u.date || '',
-        year: (u.date || '').slice(0,4),
-        type: (u.type || inferTypeFromTitle(u.title || u.text || '')).toLowerCase(),
-        title: u.title || '',
-        text: u.text || '',
-        link: u.link || '',
-        source: u.source || ''
-    })).sort((a,b) => (b.date || '').localeCompare(a.date || ''));
+    // Normalize and group by year — ensure consistent display: bold title + grey text for all
+    const normalized = mergedUpdates.map(u => {
+        const hasTitle = !!(u.title && u.title.trim());
+        const hasText = !!(u.text && u.text.trim());
+        const displayTitle = hasTitle ? u.title : (hasText ? u.text : '');
+        const displayText = (hasTitle && hasText) ? u.text : '';
+        return {
+            date: u.date || '',
+            year: (u.date || '').slice(0,4),
+            type: (u.type || inferTypeFromTitle(u.title || u.text || '')).toLowerCase(),
+            title: displayTitle,
+            text: displayText,
+            link: u.link || '',
+            source: u.source || ''
+        };
+    }).sort((a,b) => (b.date || '').localeCompare(a.date || ''));
 
     const byYear = {};
     normalized.forEach(u => {
@@ -1503,8 +1544,8 @@ function loadCompanyUpdates(firm) {
             <div class="news-item-mini" style="padding: 0.45rem 0; border-bottom: 1px solid #eef2f7;">
                 <div style="display:flex; justify-content:space-between; align-items:stretch; gap:0.75rem;">
                     <div style="flex:1; min-width:0;">
-                        ${u.title ? `<div style=\"font-size:0.55rem; font-weight:700; color:#0f172a; margin-bottom:0.12rem;\">${escapeHtml(u.title)}</div>` : ''}
-                        <div style="font-size:0.5rem; color:#334155; line-height:1.5;">${escapeHtml(u.text)}</div>
+                        <div style="font-size:0.55rem; font-weight:700; color:#0f172a; margin-bottom:0.12rem;">${escapeHtml(u.title)}</div>
+                        ${u.text ? `<div style="font-size:0.5rem; color:#334155; line-height:1.5;">${escapeHtml(u.text)}</div>` : ''}
                         ${(u.source || u.link) ? `
                             <div style="font-size:0.42rem; color:#64748b; margin-top:0.15rem;">
                                 ${u.source ? `<span>${escapeHtml(u.source)}</span>` : ''}
@@ -2248,7 +2289,43 @@ function loadInvestmentFocus(firm) {
     if (!container) return;
     
     const updates = firm.company_updates || [];
-    const analysis = generateInvestmentFocusAnalysis(firm, updates);
+    const analysis = [];
+    
+    // Investment focus from database (Accent-style structure)
+    if (firm.investment_focus) {
+        const f = firm.investment_focus;
+        const sectors = (f.sectors || []).join(', ');
+        const geography = (f.geography || []).join(', ');
+        const dealSize = f.deal_size || '—';
+        const types = (f.investment_type || []).join(', ');
+        if (sectors || geography || dealSize) {
+            analysis.push({
+                title: "Investment Focus",
+                color: "#1e40af",
+                content: `${sectors ? `Sectors: ${sectors}. ` : ''}${geography ? `Geography: ${geography}. ` : ''}${dealSize !== '—' ? `Deal size: ${dealSize}. ` : ''}${types ? `Investment types: ${types}.` : ''}`,
+                data: sectors ? `Sectors: ${sectors}` : null
+            });
+        }
+    }
+    
+    // Fundraising from database
+    if (firm.fundraising) {
+        const fr = firm.fundraising;
+        const current = fr.current_fund || fr.funds?.altor_vi || fr.funds?.fund_iv || (typeof fr.funds === 'object' ? Object.values(fr.funds)[0] : null) || fr.structure || fr.aum;
+        const next = fr.next_fund || '';
+        const strategy = fr.strategy || fr.approach || '';
+        const parts = [current && `Current: ${current}`, next && `Next: ${next}`, strategy && `Strategy: ${strategy}`].filter(Boolean);
+        if (parts.length > 0) {
+            analysis.push({
+                title: "Fundraising",
+                color: "#059669",
+                content: parts.join(' '),
+                data: null
+            });
+        }
+    }
+    
+    analysis.push(...generateInvestmentFocusAnalysis(firm, updates));
     
     container.innerHTML = `
         <div style="display: flex; flex-direction: column; gap: 0.6rem;">
@@ -2543,7 +2620,25 @@ function extractDomain(url) {
     }
 }
 
-const COMPANY_DOMAIN_OVERRIDES = { 'Brimer': 'brimersverige.com', 'Lunawood': 'lunawood.com', 'Enerco Group': 'enerco.se' };
+const COMPANY_DOMAIN_OVERRIDES = { 'Brimer': 'brimer.no', 'Lunawood': 'lunawood.com', 'Enerco Group': 'enerco.se', 'Nordic Grid Solutions': 'triarca.dk', 'EITCO': 'eitco.de', 'Cedra': 'cedra.se', 'Vokstr': 'vokstr.no', 're:mount': 'remount.fi', 'netIP': 'netip.dk', 'Ropo Capital': 'ropo.com', 'Circura Danmark': 'circuradanmark.dk', 'Circura': 'circuragroup.com', 'DLVRY': 'dlvry.se', 'RETTA': 'innagroup.se', '3Button Group': '3bg.se', 'Briab': 'briab.se', 'EWGroup': 'ewgroup.se', 'eivis': 'eivis-group.com', 'SI - Sustainable Intelligence': 'wearesi.se', 'Umia': 'umia.se', 'Safe Monitoring Group': 'safemonitoringgroup.com' };
+
+function generateCompanySlug(company) {
+    const companyName = (company.company || 'company').toLowerCase()
+        .replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-').replace(/&/g, 'and');
+    const source = (company.source || firmName || 'firm').toLowerCase()
+        .replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-');
+    return `${companyName}-${source}`;
+}
+
+function getCompanyLogoUrl(company, domain, cleanName) {
+    const favicon = domain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=128` : '';
+    const avatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(cleanName || 'Co')}&background=3f7de8&color=ffffff&size=64`;
+    const rawLogo = (company && company.logo_url) || '';
+    const clearbit = (rawLogo && !rawLogo.includes('ui-avatars.com')) ? rawLogo
+        : (domain ? `https://logo.clearbit.com/${domain}` : '');
+    return favicon || clearbit || avatar;
+}
+
 function extractCompanyDomain(company) {
     const name = (company && company.company) ? String(company.company).trim() : '';
     if (name && COMPANY_DOMAIN_OVERRIDES[name]) return COMPANY_DOMAIN_OVERRIDES[name];

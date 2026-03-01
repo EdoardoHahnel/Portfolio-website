@@ -318,6 +318,12 @@ function displayFundraising(fundraising) {
         const fallbackLogo = `https://ui-avatars.com/api/?name=${encodeURIComponent(fund.firm || 'Fund')}&background=1e3a8a&color=fff&size=32`;
         const mapped = getMappedFirmLogo(fund.firm);
         const initialLogo = mapped || (fund.firm_logo_url && fund.firm_logo_url.trim() !== '' ? fund.firm_logo_url : fallbackLogo);
+        let faviconFallback = '';
+        if (initialLogo && initialLogo.includes('clearbit.com')) {
+            const dm = initialLogo.match(/clearbit\.com\/([^/?]+)/);
+            if (dm && dm[1]) faviconFallback = `https://www.google.com/s2/favicons?domain=${encodeURIComponent(dm[1])}&sz=128`;
+        }
+        const imgOnError = faviconFallback ? `this.onerror=null;this.src='${faviconFallback}';this.onerror=function(){this.src='${fallbackLogo}';};` : `this.onerror=null;this.src='${fallbackLogo}';`;
         const isKnownFirm = peFirmExists(fund.firm);
         const rowAttrs = isKnownFirm 
             ? `onclick='showFundDetails(${JSON.stringify(fund).replace(/'/g, "&#39;")})' style="cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='#f8f9fa'" onmouseout="this.style.background=''"`
@@ -329,9 +335,9 @@ function displayFundraising(fundraising) {
                     <div style="display: flex; align-items: center; gap: 12px;">
                         ${isKnownFirm ? 
                             `<a href="/pe-firm/${encodeURIComponent(fund.firm)}" style="text-decoration: none; display: inline-block;" onclick="event.stopPropagation();">
-                                <img src="${initialLogo}" data-firm="${escapeHtml(fund.firm || '')}" class="fund-logo-img" alt="${escapeHtml(fund.firm || 'Firm')}" style="width: 32px; height: 32px; object-fit: contain; border-radius: 4px; background:#fff; cursor: pointer; transition: transform 0.2s;" onerror="this.onerror=null;this.src='${fallbackLogo}';" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                                <img src="${initialLogo}" data-firm="${escapeHtml(fund.firm || '')}" class="fund-logo-img" alt="${escapeHtml(fund.firm || 'Firm')}" style="width: 32px; height: 32px; object-fit: contain; border-radius: 4px; background:#fff; cursor: pointer; transition: transform 0.2s;" onerror="${imgOnError}" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
                             </a>` : 
-                            `<img src="${initialLogo}" data-firm="${escapeHtml(fund.firm || '')}" class="fund-logo-img" alt="${escapeHtml(fund.firm || 'Firm')}" style="width: 32px; height: 32px; object-fit: contain; border-radius: 4px; background:#fff" onerror="this.onerror=null;this.src='${fallbackLogo}';">`
+                            `<img src="${initialLogo}" data-firm="${escapeHtml(fund.firm || '')}" class="fund-logo-img" alt="${escapeHtml(fund.firm || 'Firm')}" style="width: 32px; height: 32px; object-fit: contain; border-radius: 4px; background:#fff; flex-shrink:0;" onerror="${imgOnError}">`
                         }
                         ${isKnownFirm ? `<a href="/pe-firm/${encodeURIComponent(fund.firm)}" style="text-decoration:none; color:inherit; cursor:pointer;" onclick="event.stopPropagation();"><strong>${escapeHtml(fund.firm)}</strong></a>` : `<strong>${escapeHtml(fund.firm)}</strong>`}
                     </div>
