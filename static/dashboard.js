@@ -306,6 +306,13 @@ async function loadActiveFundraising() {
 }
 
 // ===== PORTFOLIO TRENDS =====
+// Shared with portfolio.js – identical format for circle charts
+const DASHBOARD_CHART_COLORS = [
+    '#3f7de8', '#2f64c0', '#4a8ef4', '#2563eb',
+    '#1e40af', '#3b82f6', '#60a5fa', '#0ea5e9',
+    '#0284c7', '#0369a1'
+];
+
 let trendsYearChartInstance = null;
 let trendsSectorChartInstance = null;
 let trendsCountryChartInstance = null;
@@ -411,28 +418,72 @@ function createTrendsSectorChart(labels, values) {
     if (!ctx || typeof Chart === 'undefined') return;
     if (trendsSectorChartInstance) trendsSectorChartInstance.destroy();
     if (!labels.length || !values.length) return;
-    const palette = ['#3f7de8', '#2f64c0', '#6366f1', '#8b5cf6', '#a855f7', '#c084fc', '#d8b4fe', '#e9d5ff'];
     trendsSectorChartInstance = new Chart(ctx, {
         type: 'doughnut',
         data: {
             labels: labels,
             datasets: [{
                 data: values,
-                backgroundColor: labels.map((_, i) => palette[i % palette.length]),
-                borderWidth: 2,
-                borderColor: '#fff'
+                backgroundColor: labels.map((_, i) => DASHBOARD_CHART_COLORS[i % DASHBOARD_CHART_COLORS.length]),
+                borderWidth: 3,
+                borderColor: '#ffffff',
+                hoverBorderWidth: 4,
+                hoverBorderColor: '#ffffff',
+                hoverOffset: 6
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
             cutout: '58%',
-            layout: { padding: { top: 4, right: 4, bottom: 4, left: 4 } },
+            spacing: 2,
+            onClick: (event, elements, chart) => {
+                if (!elements || elements.length === 0) return;
+                const index = elements[0].index;
+                const sector = chart.data.labels[index];
+                window.location.href = `/portfolio-insights?chart=sector&value=${encodeURIComponent(String(sector))}`;
+            },
+            onHover: (event, elements) => {
+                if (event?.native?.target) {
+                    event.native.target.style.cursor = elements?.length ? 'pointer' : 'default';
+                }
+            },
+            animation: {
+                animateRotate: true,
+                animateScale: true,
+                duration: 800,
+                easing: 'easeOutQuart'
+            },
             plugins: {
                 legend: {
                     position: 'bottom',
-                    align: 'center',
-                    labels: { boxWidth: 10, font: { size: 9 }, padding: 6, usePointStyle: true }
+                    labels: {
+                        boxWidth: 8,
+                        padding: 6,
+                        font: { size: 9, weight: '600' },
+                        usePointStyle: true,
+                        pointStyle: 'circle',
+                        color: '#1e293b'
+                    }
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(31, 41, 55, 0.96)',
+                    padding: 12,
+                    titleFont: { size: 12, weight: 'bold' },
+                    bodyFont: { size: 11 },
+                    borderColor: '#3f7de8',
+                    borderWidth: 1,
+                    cornerRadius: 8,
+                    displayColors: true,
+                    boxPadding: 4,
+                    callbacks: {
+                        label: function(context) {
+                            const value = context.parsed;
+                            const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                            const pct = ((value / total) * 100).toFixed(1);
+                            return ` ${context.label}: ${value} (${pct}%)`;
+                        }
+                    }
                 }
             }
         }
@@ -444,28 +495,72 @@ function createTrendsCountryChart(labels, values) {
     if (!ctx || typeof Chart === 'undefined') return;
     if (trendsCountryChartInstance) trendsCountryChartInstance.destroy();
     if (!labels.length || !values.length) return;
-    const palette = ['#3f7de8', '#2f64c0', '#2563eb', '#1d4ed8', '#1e40af', '#1e3a8a', '#312e81', '#3730a3'];
     trendsCountryChartInstance = new Chart(ctx, {
         type: 'doughnut',
         data: {
             labels: labels,
             datasets: [{
                 data: values,
-                backgroundColor: labels.map((_, i) => palette[i % palette.length]),
-                borderWidth: 2,
-                borderColor: '#fff'
+                backgroundColor: labels.map((_, i) => DASHBOARD_CHART_COLORS[i % DASHBOARD_CHART_COLORS.length]),
+                borderWidth: 3,
+                borderColor: '#ffffff',
+                hoverBorderWidth: 4,
+                hoverBorderColor: '#ffffff',
+                hoverOffset: 6,
+                spacing: 2
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
             cutout: '58%',
-            layout: { padding: { top: 4, right: 4, bottom: 4, left: 4 } },
+            onClick: (event, elements, chart) => {
+                if (!elements || elements.length === 0) return;
+                const index = elements[0].index;
+                const market = chart.data.labels[index];
+                window.location.href = `/portfolio-insights?chart=country&value=${encodeURIComponent(String(market))}`;
+            },
+            onHover: (event, elements) => {
+                if (event?.native?.target) {
+                    event.native.target.style.cursor = elements?.length ? 'pointer' : 'default';
+                }
+            },
+            animation: {
+                animateRotate: true,
+                animateScale: true,
+                duration: 800,
+                easing: 'easeOutQuart'
+            },
             plugins: {
                 legend: {
                     position: 'bottom',
-                    align: 'center',
-                    labels: { boxWidth: 10, font: { size: 9 }, padding: 6, usePointStyle: true }
+                    labels: {
+                        boxWidth: 8,
+                        padding: 6,
+                        font: { size: 9, weight: '600' },
+                        usePointStyle: true,
+                        pointStyle: 'circle',
+                        color: '#1e293b'
+                    }
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(31, 41, 55, 0.96)',
+                    padding: 12,
+                    titleFont: { size: 12, weight: 'bold' },
+                    bodyFont: { size: 11 },
+                    borderColor: '#3f7de8',
+                    borderWidth: 1,
+                    cornerRadius: 8,
+                    displayColors: true,
+                    boxPadding: 4,
+                    callbacks: {
+                        label: function(context) {
+                            const value = context.parsed;
+                            const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                            const pct = ((value / total) * 100).toFixed(1);
+                            return ` ${context.label}: ${value} (${pct}%)`;
+                        }
+                    }
                 }
             }
         }

@@ -9,7 +9,7 @@
 .trends-section .content-card-body { padding: 1.25rem; }
 .trends-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.25rem;
 }
 .trends-chart-card {
@@ -20,6 +20,8 @@
     border: 1px solid rgba(63, 125, 232, 0.12);
     box-shadow: 0 2px 12px rgba(0,0,0,0.04);
     transition: transform 0.2s, box-shadow 0.2s;
+    min-width: 0;
+    overflow: hidden;
 }
 .trends-chart-card:hover {
     transform: translateY(-2px);
@@ -43,13 +45,29 @@
 .trends-chart-title i { color: var(--primary-color, #3f7de8); }
 .trends-chart-container {
     position: relative;
-    height: 180px;
     width: 100%;
-    min-height: 0;
+    min-height: 140px;
+    height: 140px;
 }
-.trends-chart-container canvas { max-height: 180px !important; }
-@media (max-width: 768px) {
+.trends-chart-container canvas {
+    max-height: 140px !important;
+    width: 100% !important;
+    height: auto !important;
+}
+@media (max-width: 900px) {
     .trends-grid { grid-template-columns: 1fr; }
+    .trends-chart-container {
+        min-height: 180px;
+        height: 180px;
+    }
+    .trends-chart-container canvas { max-height: 180px !important; }
+}
+@media (max-width: 480px) {
+    .trends-chart-container {
+        min-height: 200px;
+        height: 200px;
+    }
+    .trends-chart-container canvas { max-height: 200px !important; }
 }
 </style>
 {% endblock %}
