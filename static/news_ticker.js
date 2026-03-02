@@ -1,13 +1,18 @@
-// News Ticker - Scrolling news headlines
+// News Ticker - Scrolling news headlines (latest first)
 
 async function loadNewsTicker() {
     try {
-        // Fetch latest news
-        const response = await fetch('/api/news');
+        const response = await fetch('/api/investment-news');
         const data = await response.json();
         
         if (data.success && data.news && data.news.length > 0) {
-            displayNewsTicker(data.news.slice(0, 15)); // Top 15 news
+            // Sort by date descending: latest first, oldest last
+            const sorted = [...data.news].sort((a, b) => {
+                const dateA = new Date(a.date || '2000-01-01');
+                const dateB = new Date(b.date || '2000-01-01');
+                return dateB - dateA;
+            });
+            displayNewsTicker(sorted.slice(0, 15));
         }
     } catch (error) {
         console.error('Error loading news ticker:', error);
@@ -22,15 +27,16 @@ function displayNewsTicker(articles) {
     
     articles.forEach(article => {
         const badge = getBadgeType(article);
+        const link = article.link || '#';
+        const escapedTitle = (article.title || '').replace(/</g, '&lt;').replace(/>/g, '&gt;');
         html += `
-            <span class="news-ticker-item">
+            <a href="${link}" target="_blank" rel="noopener" class="news-ticker-item" title="${escapedTitle}">
                 <span class="ticker-badge ${badge.class}">${badge.text}</span>
-                ${article.title}
-            </span>
+                ${escapedTitle}
+            </a>
         `;
     });
     
-    // Duplicate for seamless loop
     ticker.innerHTML = html + html;
 }
 

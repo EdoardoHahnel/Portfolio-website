@@ -21,6 +21,8 @@ const fallbackFirmDomainMap = {
     'ik partners': 'ikpartners.com',
     'ik investment partners': 'ikpartners.com',
     'nordic capital': 'nordiccapital.com',
+    'nalka': 'nalka.com',
+    'amplio': 'amplio.se',
     'polaris private equity': 'polarisequity.dk',
     'triton': 'triton-partners.com',
     'triton partners': 'triton-partners.com',
@@ -96,9 +98,48 @@ function setupModalClose() {
     // Close modal when clicking outside
     window.onclick = function(event) {
         const modal = document.getElementById('fundModal');
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
+        const downloadModal = document.getElementById('fundraisingDownloadModal');
+        if (event.target == modal) modal.style.display = 'none';
+        if (event.target == downloadModal) downloadModal.style.display = 'none';
+    };
+
+    // Download button - show email signup modal
+    const downloadBtn = document.getElementById('fundraisingDownloadBtn');
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', () => {
+            document.getElementById('fundraisingDownloadModal').style.display = 'block';
+            document.getElementById('fundraisingDownloadSuccess').style.display = 'none';
+            document.getElementById('fundraisingDownloadError').style.display = 'none';
+        });
+    }
+
+    // Fundraising download form - submit email
+    const downloadForm = document.getElementById('fundraisingDownloadForm');
+    if (downloadForm) {
+        downloadForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = (downloadForm.querySelector('input[name="email"]') || {}).value;
+            const successEl = document.getElementById('fundraisingDownloadSuccess');
+            const errorEl = document.getElementById('fundraisingDownloadError');
+            successEl.style.display = 'none';
+            errorEl.style.display = 'none';
+            try {
+                const fd = new FormData(downloadForm);
+                const resp = await fetch('/forum/fundraising-download-signup', { method: 'POST', body: fd });
+                const data = await resp.json();
+                if (data.success) {
+                    successEl.textContent = data.message || 'Tack! Du kommer få datan via e-post.';
+                    successEl.style.display = 'block';
+                    downloadForm.reset();
+                } else {
+                    errorEl.textContent = data.error || 'Något gick fel.';
+                    errorEl.style.display = 'block';
+                }
+            } catch (err) {
+                errorEl.textContent = 'Nätverksfel. Försök igen.';
+                errorEl.style.display = 'block';
+            }
+        });
     }
 }
 
@@ -324,22 +365,13 @@ function displayFundraising(fundraising) {
             if (dm && dm[1]) faviconFallback = `https://www.google.com/s2/favicons?domain=${encodeURIComponent(dm[1])}&sz=128`;
         }
         const imgOnError = faviconFallback ? `this.onerror=null;this.src='${faviconFallback}';this.onerror=function(){this.src='${fallbackLogo}';};` : `this.onerror=null;this.src='${fallbackLogo}';`;
-        const isKnownFirm = peFirmExists(fund.firm);
-        const rowAttrs = isKnownFirm 
-            ? `onclick='showFundDetails(${JSON.stringify(fund).replace(/'/g, "&#39;")})' style="cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='#f8f9fa'" onmouseout="this.style.background=''"`
-            : `style="transition: background 0.2s;"`;
 
         html += `
-            <tr ${rowAttrs}>
+            <tr style="transition: background 0.2s;">
                 <td>
                     <div style="display: flex; align-items: center; gap: 12px;">
-                        ${isKnownFirm ? 
-                            `<a href="/pe-firm/${encodeURIComponent(fund.firm)}" style="text-decoration: none; display: inline-block;" onclick="event.stopPropagation();">
-                                <img src="${initialLogo}" data-firm="${escapeHtml(fund.firm || '')}" class="fund-logo-img" alt="${escapeHtml(fund.firm || 'Firm')}" style="width: 32px; height: 32px; object-fit: contain; border-radius: 4px; background:#fff; cursor: pointer; transition: transform 0.2s;" onerror="${imgOnError}" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-                            </a>` : 
-                            `<img src="${initialLogo}" data-firm="${escapeHtml(fund.firm || '')}" class="fund-logo-img" alt="${escapeHtml(fund.firm || 'Firm')}" style="width: 32px; height: 32px; object-fit: contain; border-radius: 4px; background:#fff; flex-shrink:0;" onerror="${imgOnError}">`
-                        }
-                        ${isKnownFirm ? `<a href="/pe-firm/${encodeURIComponent(fund.firm)}" style="text-decoration:none; color:inherit; cursor:pointer;" onclick="event.stopPropagation();"><strong>${escapeHtml(fund.firm)}</strong></a>` : `<strong>${escapeHtml(fund.firm)}</strong>`}
+                        <img src="${initialLogo}" data-firm="${escapeHtml(fund.firm || '')}" class="fund-logo-img" alt="${escapeHtml(fund.firm || 'Firm')}" style="width: 32px; height: 32px; object-fit: contain; border-radius: 4px; background:#fff; flex-shrink:0;" onerror="${imgOnError}">
+                        <strong>${escapeHtml(fund.firm)}</strong>
                     </div>
                 </td>
                 <td>${escapeHtml(fund.fund_name || 'N/A')}</td>
@@ -443,8 +475,19 @@ function enhanceWithMappedFirmLogos() {
     });
 }
 
+// Firms with company profiles - used when API may not have loaded or for explicit name matching
+const firmsWithProfiles = new Set([
+    'eqt', 'eqt partners', 'eqt private equity', 'eqt infrastructure',
+    'nordic capital', 'triton', 'triton partners', 'accent equity', 'accent equity partners',
+    'adelis', 'adelis equity', 'adelis equity partners', 'amplio', 'verdane', 'axcel', 'ik partners',
+    'summa equity', 'bure equity', 'capman', 'fsn capital', 'nalka', 'norvestor', 'polaris',
+    'valedo partners', 'segulah', 'procuritas', 'waterland', 'bridgepoint', 'cvc'
+]);
+
 function peFirmExists(name) {
     if (!name) return false;
+    const lower = String(name).toLowerCase().trim();
+    if (firmsWithProfiles.has(lower)) return true;
     const variants = buildFirmNameVariants(name);
     for (const v of variants) {
         if (peFirmNameVariants.has(v)) return true;
@@ -461,7 +504,7 @@ function isNordicFund(fund) {
     const isNordicGeo = nordicGeos.some(geo => geography.includes(geo));
     
     // Check if firm name suggests Nordic origin
-    const nordicFirms = ['nordic', 'adelis', 'altor', 'axcel', 'eqt', 'fsn', 'herkules', 'ik', 'norvestor', 'polaris', 'procuritas', 'summa', 'triton', 'verdane', 'waterland', 'via equity', 'alfa framtak', 'credo', 'evolver', 'invl', 'peq', 'seb', 'triple', 'acathia', 'devco', 'main capital', 'mvi', 'vaaka', 'vendis', 'maj invest', 'trill impact', 'equip', 'impilo', 'helix', 'systematic', 'mentha', 'bny mellon'];
+    const nordicFirms = ['nordic', 'adelis', 'altor', 'amplio', 'axcel', 'eqt', 'fsn', 'herkules', 'ik', 'nalka', 'norvestor', 'polaris', 'procuritas', 'segulah', 'summa', 'triton', 'verdane', 'waterland', 'via equity', 'alfa framtak', 'credo', 'evolver', 'invl', 'peq', 'seb', 'triple', 'acathia', 'devco', 'main capital', 'mvi', 'vaaka', 'vendis', 'maj invest', 'trill impact', 'equip', 'impilo', 'helix', 'systematic', 'mentha', 'bny mellon'];
     const isNordicFirm = nordicFirms.some(nf => firm.includes(nf));
     
     return isNordicGeo || isNordicFirm;

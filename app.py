@@ -1157,7 +1157,7 @@ def get_analytics_summary():
         'summary': {
             'total_companies': len(portfolio_storage),
             'total_news': len(news_storage),
-            'total_pe_firms': 14,
+            'total_pe_firms': 21,
             'total_family_offices': 35,
             'latest_deals': len([n for n in news_storage if 'Deal' in n.get('category', '')]),
         }

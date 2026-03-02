@@ -37,6 +37,25 @@
 </div>
 
 <div class="content-card">
+    <div class="content-card-header"><h2 class="content-card-title"><i class="fas fa-download"></i> Fundraising – nedladdningssignup</h2></div>
+    <div class="content-card-body">
+        <p class="page-subtitle" style="margin-bottom:0.5rem;">När någon begär nedladdning av fundraising-data sparas e-postadressen här. Skicka datan manuellt till dessa adresser.</p>
+        {% if fundraising_signups %}
+        <table class="forum-admin-table" style="width:100%; font-size:0.7rem;">
+            <thead><tr><th>E-post</th><th>Datum</th></tr></thead>
+            <tbody>
+            {% for s in fundraising_signups %}
+            <tr><td>{{ s.email }}</td><td>{{ s.created_at[:19].replace('T',' ') }}</td></tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p class="page-subtitle">Inga signups ännu.</p>
+        {% endif %}
+    </div>
+</div>
+
+<div class="content-card">
     <div class="content-card-header"><h2 class="content-card-title"><i class="fas fa-chart-line"></i> Webbplatssstatistik</h2></div>
     <div class="content-card-body">
         <div style="display:flex; gap:1.5rem; flex-wrap:wrap; margin-bottom:1rem;">

@@ -4,10 +4,11 @@ Dashboard - Main page interactivity
 
 // Available PE firms with profiles
 const availablePEFirms = new Set([
-    'EQT', 'Nordic Capital', 'Triton Partners', 'Altor', 'Litorina', 
+    'EQT', 'Nordic Capital', 'Triton Partners', 'Altor', 'Amplio', 'Litorina', 
     'Adelis Equity', 'Ratos', 'Summa Equity', 'Accent Equity', 'IK Partners', 
     'Verdane', 'Valedo Partners', 'Alder', 'Bure Equity', 'CapMan', 
-    'Celero', 'Polaris', 'Nordstjernan', 'Norvestor', 'Helix Kapital', 'FSN Capital'
+    'Celero', 'Polaris', 'Nordstjernan', 'Nalka', 'Norvestor', 'Helix Kapital', 'FSN Capital',
+    'Impilo', 'Axcel', 'MVI', 'Equip', 'Trill Impact'
 ]);
 
 // ===== TRUNCATE TEXT FUNCTION =====
@@ -59,6 +60,8 @@ document.addEventListener('DOMContentLoaded', function() {
 let peFirmLogosMap = null;
 const firmDomainOverrides = {
     'Alder': 'alder.se',
+    'Amplio': 'amplio.se',
+    'Nalka': 'nalka.com',
     'Celero Capital': 'celerocapital.com',
     'Celero': 'celerocapital.com',
     'FSN Capital': 'fsncapital.com',
@@ -76,6 +79,7 @@ const firmDomainOverrides = {
 
 async function loadDashboard() {
     try { await ensurePeFirmLogos(); } catch (e) { console.error('Logo map init failed:', e); }
+    try { await loadPELogoMarquee(); } catch (e) { console.error('PE logo marquee failed:', e); }
     try { await loadLatestNews(); } catch (e) { console.error('Latest news failed:', e); }
     try { await loadActiveFundraising(); } catch (e) { console.error('Fundraising failed:', e); }
     try { await loadPortfolioTrends(); } catch (e) { console.error('Portfolio trends failed:', e); }
@@ -645,8 +649,13 @@ function buildFirmNameVariants(...names) {
 }
 
 function domainFromUrl(url) {
+    if (!url) return '';
     try {
         const parsed = new URL(url);
+        if (parsed.hostname.includes('google.com') && parsed.pathname.includes('favicons')) {
+            const domain = parsed.searchParams.get('domain');
+            return domain || '';
+        }
         if (parsed.hostname.includes('logo.clearbit.com')) {
             return parsed.pathname.replace(/^\/+/, '').split('/')[0];
         }
@@ -674,6 +683,8 @@ function getFirmLogoForName(name) {
         'litorina': 'litorina.com',
         'ratos': 'ratos.se',
         'adelis': 'adelisequity.com',
+        'amplio': 'amplio.se',
+        'segulah': 'amplio.se',
         'ik partners': 'ikpartners.com',
         'bure': 'bure.se',
         'accent equity': 'accentequity.com',
@@ -690,6 +701,7 @@ function getFirmLogoForName(name) {
         'alder': 'alder.se',
         'celero': 'celerocapital.com',
         'nordstjernan': 'nordstjernan.se',
+        'nalka': 'nalka.com',
         'valedo': 'valedopartners.com',
         'ahlström': 'ahlstromcapital.com',
         'ahlstrom': 'ahlstromcapital.com',
@@ -714,6 +726,33 @@ function guessFirmLogoUrl(name) {
         .replace(/[^a-z0-9]/g, '');
     if (!normalized) return undefined;
     return `https://logo.clearbit.com/${normalized}.com`;
+}
+
+async function loadPELogoMarquee() {
+    const container = document.getElementById('peLogoMarquee');
+    if (!container) return;
+    try {
+        const response = await fetch('/api/pe-firms');
+        const data = await response.json();
+        if (!data.firms) return;
+        const firms = data.firms;
+        let html = '';
+        Object.keys(firms).forEach(firmKey => {
+            const firm = firms[firmKey];
+            const websiteDomain = (firm.website || '').replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0];
+            const overrideDomain = firmDomainOverrides[firm.name] || firmDomainOverrides[firmKey] || websiteDomain;
+            const apiLogo = firm.logo_url || '';
+            const useApiLogo = apiLogo && !apiLogo.includes('ui-avatars.com');
+            const clearbitLogo = overrideDomain ? `https://logo.clearbit.com/${overrideDomain}` : '';
+            const primaryLogo = useApiLogo ? apiLogo : clearbitLogo || `https://ui-avatars.com/api/?name=${encodeURIComponent(firm.name || firmKey)}&background=4c1d95&color=fff&size=64`;
+            const fallbackFavicon = overrideDomain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(overrideDomain)}&sz=128` : primaryLogo;
+            const encodedKey = encodeURIComponent(firmKey);
+            html += `<a href="/pe-firm/${encodedKey}" class="pe-logo-marquee-item" title="${escapeHtml(firm.name || firmKey)}"><img src="${primaryLogo}" alt="${escapeHtml(firm.name || firmKey)}" onerror="this.src='${fallbackFavicon}'; this.onerror=null;"></a>`;
+        });
+        container.innerHTML = html + html;
+    } catch (e) {
+        container.innerHTML = '';
+    }
 }
 
 async function loadPEFirms() {
@@ -869,8 +908,48 @@ const firmLogos = {
         icon: '🏢'
     },
     'Segulah': {
-        primary: 'https://logo.clearbit.com/segulah.com',
+        primary: 'https://www.google.com/s2/favicons?domain=amplio.se&sz=128',
         fallback: 'https://ui-avatars.com/api/?name=Segulah&background=1f2937&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Amplio': {
+        primary: 'https://www.google.com/s2/favicons?domain=amplio.se&sz=128',
+        fallback: 'https://ui-avatars.com/api/?name=Amplio&background=7c3aed&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Nalka': {
+        primary: 'https://www.google.com/s2/favicons?domain=nalka.com&sz=128',
+        fallback: 'https://ui-avatars.com/api/?name=Nalka&background=059669&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Impilo': {
+        primary: 'https://www.google.com/s2/favicons?domain=impilo.se&sz=128',
+        fallback: 'https://ui-avatars.com/api/?name=Impilo&background=0d9488&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Axcel': {
+        primary: 'https://www.google.com/s2/favicons?domain=axcel.com&sz=128',
+        fallback: 'https://ui-avatars.com/api/?name=Axcel&background=dc2626&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'MVI': {
+        primary: 'https://www.google.com/s2/favicons?domain=mvi.se&sz=128',
+        fallback: 'https://ui-avatars.com/api/?name=MVI&background=0891b2&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Equip': {
+        primary: 'https://www.google.com/s2/favicons?domain=equip.no&sz=128',
+        fallback: 'https://ui-avatars.com/api/?name=Equip&background=7c3aed&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Trill Impact': {
+        primary: 'https://www.google.com/s2/favicons?domain=trillimpact.com&sz=128',
+        fallback: 'https://ui-avatars.com/api/?name=Trill+Impact&background=059669&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Nordstjernan': {
+        primary: 'https://www.google.com/s2/favicons?domain=nordstjernan.se&sz=128',
+        fallback: 'https://ui-avatars.com/api/?name=Nordstjernan&background=1e40af&color=ffffff&size=64',
         icon: '🏢'
     },
     'Procuritas': {
@@ -1129,22 +1208,21 @@ function createRobustLogoHTML(firmName, size = '24px') {
         'Nordic BioSite': 'Adelis Equity Partners',
         'SSI Diagnostica': 'Adelis Equity Partners',
         'Kanari': 'Adelis Equity Partners',
-        'Nordomatic': 'Adelis Equity Partners',
+        'Nordomatic': 'Trill Impact',
         'Axentia': 'Adelis Equity Partners',
         'Infobric': 'Summa Equity',
         'Lakers': 'Summa Equity',
         'Pumppulohja': 'Summa Equity',
-        'Zengun': 'Segulah',
-        'Zengun Group': 'Segulah',
+        'Zengun': 'Amplio',
+        'Zengun Group': 'Amplio',
         'Rebellion': 'Triton Partners',
         'Eltel': 'Triton Partners',
         'HiQ': 'Triton Partners',
         'Mecenat': 'IK Partners',
         'Nordic Tyre': 'Axcel',
-        'Nordstjernan': 'Axcel',
-        'Aidian': 'Axcel',
+        'Nordic Tyre Group': 'Axcel',
         'XPartners': 'Axcel',
-        'Mirovia': 'Axcel',
+        'Aidian': 'Nordstjernan',
         'JM': 'CapMan',
         'Rexel': 'CapMan',
         'Scandic': 'CapMan',

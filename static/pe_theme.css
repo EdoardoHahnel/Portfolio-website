@@ -565,3 +565,145 @@ body.pe-mobile-menu-open {
         grid-template-columns: 1fr;
     }
 }
+
+/* ============================================================
+   SITE-WIDE POLISH - Consistent modern effects across all pages
+   ============================================================ */
+
+/* Ambient gradient background - all pages */
+.pe-theme .main-container {
+    position: relative;
+}
+.pe-theme .main-container::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 55vh;
+    background: radial-gradient(ellipse 75% 45% at 50% -15%, rgba(99, 102, 241, 0.07), transparent),
+                radial-gradient(ellipse 55% 35% at 100% 0%, rgba(59, 130, 246, 0.05), transparent),
+                radial-gradient(ellipse 55% 35% at 0% 0%, rgba(99, 102, 241, 0.04), transparent);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Page header - News, Portfolio, Firms, Fundraising, Forum, etc. */
+.pe-theme .page-header {
+    animation: pageHeaderFade 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+@keyframes pageHeaderFade {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.pe-theme .page-title {
+    background: linear-gradient(135deg, #0f223b 0%, #1e3f68 50%, #2563eb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Content cards - enhanced hover site-wide */
+.pe-theme .content-card {
+    transition: box-shadow 0.4s ease, transform 0.3s ease, border-color 0.3s;
+}
+.pe-theme .content-card:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+/* Primary & secondary buttons - shine on hover */
+.pe-theme .btn-primary,
+.pe-theme .btn.btn-primary {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+.pe-theme .btn-primary::after,
+.pe-theme .btn.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transition: left 0.5s ease;
+}
+.pe-theme .btn-primary:hover,
+.pe-theme .btn.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(63, 125, 232, 0.3);
+}
+.pe-theme .btn-primary:hover::after,
+.pe-theme .btn.btn-primary:hover::after { left: 100%; }
+
+.pe-theme .btn-secondary,
+.pe-theme .btn.btn-secondary {
+    transition: transform 0.2s, box-shadow 0.3s, background 0.2s;
+}
+.pe-theme .btn-secondary:hover,
+.pe-theme .btn.btn-secondary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* News cards - hover lift */
+.pe-theme .news-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.pe-theme .news-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* PE firm cards - list and grid views */
+.pe-theme .pe-firm-card,
+.pe-theme .pe-firm-card-compact {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.pe-theme .pe-firm-card:hover,
+.pe-theme .pe-firm-card-compact:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Stat cards - mini cards on Portfolio, etc. */
+.pe-theme .stat-card-mini,
+.pe-theme .stat-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.pe-theme .stat-card-mini:hover,
+.pe-theme .stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* Forum thread cards */
+.pe-theme .forum-thread-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.pe-theme .forum-thread-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* Fundraising table rows - subtle feedback */
+.pe-theme .fundraising-table tr[style*="cursor: pointer"]:hover {
+    box-shadow: inset 0 0 0 1px rgba(99, 102, 241, 0.15);
+}
+
+/* Fundraising tabs - align with site theme (blue instead of purple) */
+.pe-theme .tab-button:hover {
+    color: var(--pe-primary-strong, #2f64c0);
+    background: rgba(63, 125, 232, 0.08);
+}
+.pe-theme .tab-button.active {
+    color: var(--pe-primary-strong, #2f64c0);
+    border-bottom-color: var(--pe-primary-strong, #2f64c0);
+    background: rgba(63, 125, 232, 0.12);
+}
+
+/* Scroll reveal - smoother transitions (when used) */
+.pe-theme .scroll-reveal-item {
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}

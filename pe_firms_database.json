@@ -384,6 +384,164 @@
         }
       ]
     },
+    "Amplio": {
+      "name": "Amplio",
+      "logo_url": "https://logo.clearbit.com/amplio.se",
+      "website": "https://www.amplio.se",
+      "headquarters": "Stockholm, Sweden",
+      "founded": 2004,
+      "aum": "Undisclosed (Amplio I + Segulah V under management)",
+      "employees": "15+",
+      "offices": [
+        "Stockholm"
+      ],
+      "description": "Amplio (formerly Segulah) is a Swedish private equity firm specializing in the Nordic lower mid-market. Rebranded from Segulah on 1 February 2024. The firm invests in Business Services and IT & Technology Services, with sustainability at its core through three themes: Sustainable Solutions, Digital Business Efficiency, and Smart Urbanisation. Emphasizes organic growth, buy-and-build consolidation, professionalisation, and active ownership with industrial advisory networks built over 20 years.",
+      "investment_focus": {
+        "sectors": [
+          "Business Services",
+          "IT & Technology Services"
+        ],
+        "geography": [
+          "Nordic region"
+        ],
+        "deal_size": "Lower mid-market",
+        "investment_type": [
+          "Buy-and-build",
+          "Professionalisation",
+          "Active ownership"
+        ]
+      },
+      "team": [
+        {
+          "name": "Marcus Planting-Bergloo",
+          "title": "Managing Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Percy Calissendorff",
+          "title": "Partner & Executive Chairman",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Johan Möllerström",
+          "title": "Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Håkan Dahlin",
+          "title": "CFO",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Anton Cederling",
+          "title": "Investment Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Jacob Andersson",
+          "title": "Investment Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Fabian Boberg",
+          "title": "Associate",
+          "location": "Stockholm"
+        }
+      ],
+      "fundraising": {
+        "current_fund": "Amplio I, Segulah V (legacy fund under management)",
+        "strategy": "Nordic lower mid-market; Business Services and IT & Technology Services"
+      },
+      "recent_activity": "2025: Invests in S R Intelligence (regulatory compliance & personnel security). Divests Francks Kylindustri. 2024: Rebrands from Segulah to Amplio (Feb). Portfolio includes Tedge (energy optimisation), Co-native (cloud specialists), SELATEK (security/electrical/automation), Multisoft (low code), IT-Total (IT infrastructure), Hermes (medical imaging), Pelly Group (storage components). Recent exits: Francks (2025), NVBS (2022), Sandbäckens (2021), Conapto (2021).",
+      "portfolio_companies": [
+        {
+          "name": "S R Intelligence (SRI)",
+          "sector": "Business Services / IT & Technology",
+          "country": "Sweden",
+          "entry_year": "2025",
+          "status": "Active",
+          "detailed_description": "Leading Swedish specialist within regulatory compliance and personnel security"
+        },
+        {
+          "name": "Tedge",
+          "sector": "Business Services",
+          "country": "Nordics",
+          "entry_year": "2023",
+          "status": "Active",
+          "detailed_description": "Platform within energy optimisation"
+        },
+        {
+          "name": "Co-native",
+          "sector": "IT & Technology Services",
+          "country": "Sweden",
+          "entry_year": "2022",
+          "status": "Active",
+          "detailed_description": "Leading group of cloud specialists in Sweden"
+        },
+        {
+          "name": "SELATEK",
+          "sector": "Business Services",
+          "country": "Nordics",
+          "entry_year": "2021",
+          "status": "Active",
+          "detailed_description": "Leading provider of security solutions, electrical installation & automation"
+        },
+        {
+          "name": "Multisoft",
+          "sector": "IT & Technology Services",
+          "country": "Nordics",
+          "entry_year": "2021",
+          "status": "Active",
+          "detailed_description": "Low code software provider (Segulah V)"
+        },
+        {
+          "name": "IT-Total",
+          "sector": "IT & Technology Services",
+          "country": "Nordics",
+          "entry_year": "2019",
+          "status": "Active",
+          "detailed_description": "IT infrastructure services provider (Segulah V)"
+        },
+        {
+          "name": "Hermes",
+          "sector": "IT & Technology Services",
+          "country": "Nordics",
+          "entry_year": "2016",
+          "status": "Active",
+          "detailed_description": "Provider of advanced medical imaging software (Segulah V)"
+        },
+        {
+          "name": "Pelly Group",
+          "sector": "Other",
+          "country": "Nordics",
+          "entry_year": "2018",
+          "status": "Active",
+          "detailed_description": "Manufacturer of functional storage components for the kitchen and wardrobe markets (Segulah V)"
+        }
+      ],
+      "company_updates": [
+        {
+          "date": "2025-01-01",
+          "text": "Amplio invests in S R Intelligence (SRI) – regulatory compliance and personnel security specialist"
+        },
+        {
+          "date": "2025-01-01",
+          "text": "Amplio divests Francks Kylindustri (industrial and commercial refrigeration)"
+        },
+        {
+          "date": "2022-01-01",
+          "text": "Amplio divests NVBS (rail infrastructure services)"
+        },
+        {
+          "date": "2021-01-01",
+          "text": "Amplio divests Sandbäckens (heating/sanitation), Conapto (data center)"
+        },
+        {
+          "date": "2024-02-01",
+          "text": "Segulah rebrands to Amplio Private Equity"
+        }
+      ]
+    },
     "Altor": {
       "name": "Altor Equity Partners",
       "logo_url": "https://logo.clearbit.com/altor.com",
@@ -7406,6 +7564,376 @@
           "entry_year": "2010",
           "status": "Public"
         }
+      ]
+    },
+    "Nalka": {
+      "name": "Nalka",
+      "logo_url": "https://logo.clearbit.com/nalka.com",
+      "website": "https://www.nalka.com",
+      "headquarters": "Stockholm, Sweden",
+      "founded": 2009,
+      "aum": "Undisclosed (portfolio ~€3bn revenue, 7,000+ employees)",
+      "employees": "23",
+      "offices": [
+        "Stockholm",
+        "Munich"
+      ],
+      "description": "Nalka is a Nordic-focused private equity firm established in 2009 in Stockholm. The firm invests in market-leading small- and medium-sized businesses in the Nordic and DACH regions (Germany, Austria, Switzerland). Nalka acts as a committed owner providing strategic support beyond capital, emphasizing long-term sustainable value creation. Owned by Interogo Holding, a Switzerland-based foundation-owned investment group ultimately linked to the Interogo Foundation (Liechtenstein), supporting the IKEA Concept's independence.",
+      "investment_focus": {
+        "sectors": [
+          "Business Services",
+          "Industrial",
+          "Technology",
+          "Logistics",
+          "Consumer"
+        ],
+        "geography": [
+          "Nordic region",
+          "DACH (Germany, Austria, Switzerland)"
+        ],
+        "deal_size": "€5-30M EBITA",
+        "investment_type": [
+          "Active ownership (30-100%)",
+          "Buy-and-build",
+          "Family succession"
+        ]
+      },
+      "team": [
+        {
+          "name": "Henrik Jonsson",
+          "title": "Chair",
+          "location": "Stockholm",
+          "background": "Former MD of Nalka Invest (2009-2018)"
+        },
+        {
+          "name": "Petra Sjögren",
+          "title": "CFO",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Mimmi Hedelin",
+          "title": "Senior Investment Director",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Mikael Jast",
+          "title": "Senior Investment Director",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Pontus Boman",
+          "title": "Senior Investment Director",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Joachim Braun",
+          "title": "Managing Director",
+          "location": "Munich",
+          "background": "Heads DACH operations; joined 2022 from Silverfleet Capital"
+        },
+        {
+          "name": "Louise Tilja",
+          "title": "Investment Director",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Johan Symmons",
+          "title": "Investment Director",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Daniel Ahlenius",
+          "title": "Investment Director",
+          "location": "Stockholm"
+        }
+      ],
+      "fundraising": {
+        "current_fund": "Permanent capital via Interogo Holding",
+        "strategy": "No traditional fund structure; invests via balance sheet of Interogo Holding"
+      },
+      "recent_activity": "2025: Norstat acquires Sample Solutions (B2B sampling). 2024: Norstat acquires PFM Research (Swedish data collection); Munich office active on DACH deals. Portfolio includes Certego (locksmith/security, SEK 2.6bn), Uniwater (water/wastewater), Precis Digital (digital marketing), Norres Baggerman Group (DACH), Best Transport (logistics), Norstat (market research).",
+      "portfolio_companies": [
+        {
+          "name": "Norstat",
+          "sector": "Market Research",
+          "country": "Norway",
+          "entry_year": "2024",
+          "revenue": "NOK 1.1bn",
+          "status": "Active"
+        },
+        {
+          "name": "Norres Baggerman Group",
+          "sector": "Industrial",
+          "country": "Germany",
+          "entry_year": "2023",
+          "revenue": "EUR 100m",
+          "status": "Active"
+        },
+        {
+          "name": "Precis Digital",
+          "sector": "Digital Marketing",
+          "country": "Sweden",
+          "entry_year": "2022",
+          "revenue": "SEK 580m",
+          "status": "Active"
+        },
+        {
+          "name": "Certego",
+          "sector": "Security / Locksmith",
+          "country": "Nordics",
+          "entry_year": "2021",
+          "revenue": "SEK 2.6bn",
+          "status": "Active",
+          "detailed_description": "Market-leading Nordic locksmith and security solutions business with ~70 locations and 1,200 employees across Sweden, Finland, Norway and Denmark. Acquired from ASSA ABLOY."
+        },
+        {
+          "name": "Uniwater",
+          "sector": "Water / Wastewater",
+          "country": "Sweden",
+          "entry_year": "2021",
+          "revenue": "SEK 1.7bn",
+          "status": "Active",
+          "detailed_description": "Leading Nordic group specializing in water and wastewater infrastructure solutions."
+        },
+        {
+          "name": "Best Transport",
+          "sector": "Logistics",
+          "country": "Nordics",
+          "entry_year": "2020",
+          "revenue": "SEK 900m",
+          "status": "Active",
+          "detailed_description": "Leading Nordic logistics provider with ~550 vehicles; time-critical logistics, distribution, IT-logistics, last-mile. 100% climate-compensated deliveries."
+        },
+        {
+          "name": "Prototal",
+          "sector": "Industrial",
+          "country": "Nordics",
+          "entry_year": "2019",
+          "revenue": "SEK 800m",
+          "status": "Active"
+        },
+        {
+          "name": "Cibes Lift Group",
+          "sector": "Industrial",
+          "country": "Sweden",
+          "entry_year": "2017",
+          "revenue": "SEK 4.6bn",
+          "status": "Active"
+        }
+      ],
+      "company_updates": [
+        {
+          "date": "2025-01-01",
+          "text": "Norstat acquires Sample Solutions to strengthen premium B2B capabilities"
+        },
+        {
+          "date": "2024-12-01",
+          "text": "Norstat acquires Swedish data collection specialist PFM Research"
+        },
+        {
+          "date": "2022-01-01",
+          "text": "Nalka establishes Munich office (Nalka Advisors Germany GmbH) to focus on DACH region"
+        },
+        {
+          "date": "2021-06-01",
+          "text": "Nalka becomes new main owner of Uniwater"
+        },
+        {
+          "date": "2021-01-01",
+          "text": "ASSA ABLOY sells Certego to Nalka Invest"
+        }
+      ]
+    },
+    "Impilo": {
+      "name": "Impilo",
+      "logo_url": "https://logo.clearbit.com/impilo.se",
+      "website": "https://www.impilo.se",
+      "headquarters": "Stockholm, Sweden",
+      "founded": 2018,
+      "aum": "€700M Fund II (2025), portfolio revenue SEK 8.4bn (2023), 15,000 employees",
+      "employees": "16 Nordic healthcare investments since inception",
+      "offices": ["Stockholm", "Copenhagen"],
+      "description": "Impilo is a Nordic investment company solely focused on pharmaceutical, medtech, specialist pharma services, and healthcare & related services. The firm targets enterprise values of EUR 50–200m and invests in companies that contribute to sustainable healthcare development. Fund II closed at €700M hard cap in 2025.",
+      "investment_focus": {
+        "sectors": ["Healthcare", "Pharmaceuticals", "MedTech", "Specialist Pharma Services"],
+        "geography": ["Nordic region"],
+        "deal_size": "Mid-market healthcare",
+        "investment_type": ["Buyouts", "Growth equity"]
+      },
+      "team": [],
+      "fundraising": { "strategy": "Healthcare-focused Nordic buyouts" },
+      "recent_activity": "Portfolio includes Immedica (orphan pharma), Humana (care services), Euro Accident (health insurance), Scantox (pre-clinical CRO), tandlægen.dk (dental), VaccinDirekt (retail vaccination), Pelago Bioscience (CETSA drug discovery), Stille (surgical instruments), Qufora (TAI products). Prior exits: TFP Fertility, Ferrosan Medical Devices, NutraQ, Cavidi.",
+      "portfolio_companies": [
+        {"name": "Immedica", "sector": "Pharmaceuticals", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Launch, commercialisation and distribution of orphan and niche specialty pharmaceuticals"},
+        {"name": "Humana", "sector": "Healthcare & Related Services", "country": "Sweden", "entry_year": "2021", "status": "Active", "detailed_description": "Leading Nordic private care provider"},
+        {"name": "Euro Accident", "sector": "Healthcare & Related Services", "country": "Sweden", "entry_year": "2020", "status": "Active", "detailed_description": "Leading Swedish specialist in health-related insurance and employee wellbeing"},
+        {"name": "Scantox", "sector": "Specialist Pharma Services", "country": "Denmark", "entry_year": "2021", "status": "Active", "detailed_description": "Leading Nordic pre-clinical contract research organization"},
+        {"name": "tandlægen.dk", "sector": "Healthcare & Related Services", "country": "Denmark", "entry_year": "2022", "status": "Active", "detailed_description": "Leading Danish dental care chain"},
+        {"name": "Lowenco", "sector": "Specialist Pharma Services", "country": "Sweden", "entry_year": "2023", "status": "Active", "detailed_description": "Ultra-low temperature storage solutions for biopharma market"},
+        {"name": "Pelago Bioscience", "sector": "Healthcare & Related Services", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Drug discovery CRO with patented CETSA-technology"},
+        {"name": "VaccinDirekt", "sector": "Healthcare & Related Services", "country": "Sweden", "entry_year": "2021", "status": "Active", "detailed_description": "Largest Nordic retail vaccination provider"},
+        {"name": "Decon", "sector": "MedTech", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Power-assisted electrical solutions for wheelchairs"},
+        {"name": "Avia Pharma", "sector": "Pharmaceuticals", "country": "Sweden", "entry_year": "2021", "status": "Active", "detailed_description": "Leading North European OTC/Rx platform"},
+        {"name": "Stille", "sector": "MedTech", "country": "Sweden", "entry_year": "2020", "status": "Active", "detailed_description": "Premium surgical instruments and advanced surgical tables"},
+        {"name": "Qufora", "sector": "MedTech", "country": "Denmark", "entry_year": "2023", "status": "Active", "detailed_description": "TAI products and collecting devices"},
+        {"name": "Oticon Medical", "sector": "MedTech", "country": "Sweden", "entry_year": "2025", "status": "Active", "detailed_description": "Global leader in bone-anchored hearing solutions (BAHS), acquired from Demant"}
+      ]
+    },
+    "Axcel": {
+      "name": "Axcel",
+      "logo_url": "https://logo.clearbit.com/axcel.com",
+      "website": "https://www.axcel.com",
+      "headquarters": "Copenhagen, Denmark",
+      "founded": 1994,
+      "aum": "Undisclosed",
+      "employees": "55+",
+      "offices": ["Copenhagen", "Stockholm", "Frankfurt"],
+      "description": "Axcel is a Nordic private equity firm founded in 1994, investing in Nordic mid-market companies with strong growth potential. The firm focuses on business services, technology, healthcare, and consumer sectors across Denmark, Sweden, Norway, and Iceland.",
+      "investment_focus": {
+        "sectors": ["Technology", "Business Services & Industrials", "Healthcare", "Consumer"],
+        "geography": ["Nordic region"],
+        "deal_size": "Mid-market",
+        "investment_type": ["Buyouts", "Growth equity"]
+      },
+      "team": [],
+      "fundraising": { "strategy": "Nordic mid-market buyouts" },
+      "recent_activity": "Current portfolio includes Bekk, LS Retail, Capture One, SuperOffice, GUBI, NTI Group, DANX Carousel Group, Vetopia, Oral Care, The Nutriment Company, and others across technology, business services, and consumer.",
+      "portfolio_companies": [
+        {"name": "Bekk", "sector": "Technology", "country": "Norway", "entry_year": "2026", "status": "Active"},
+        {"name": "LS Retail", "sector": "Technology", "country": "Iceland", "entry_year": "2025", "status": "Active"},
+        {"name": "AGRD Partners", "sector": "Business Services & Industrials", "country": "Sweden", "entry_year": "2025", "status": "Active"},
+        {"name": "Nordic Tyre Group", "sector": "Business Services & Industrials", "country": "Sweden", "entry_year": "2025", "status": "Active"},
+        {"name": "Accru Partners", "sector": "Business Services & Industrials", "country": "Sweden", "entry_year": "2024", "status": "Active"},
+        {"name": "Acurum Group", "sector": "Business Services & Industrials", "country": "Sweden", "entry_year": "2024", "status": "Active"},
+        {"name": "Elcor", "sector": "Business Services & Industrials", "country": "Denmark", "entry_year": "2023", "status": "Active"},
+        {"name": "Progrits", "sector": "Technology", "country": "Sweden", "entry_year": "2023", "status": "Active"},
+        {"name": "XPartners", "sector": "Business Services & Industrials", "country": "Sweden", "entry_year": "2023", "status": "Active"},
+        {"name": "Oral Care", "sector": "Healthcare", "country": "Sweden", "entry_year": "2022", "status": "Active"},
+        {"name": "The Nutriment Company", "sector": "Consumer", "country": "Sweden", "entry_year": "2022", "status": "Active"},
+        {"name": "NTI Group", "sector": "Technology", "country": "Denmark", "entry_year": "2022", "status": "Active"},
+        {"name": "itm8", "sector": "Technology", "country": "Denmark", "entry_year": "2022", "status": "Active"},
+        {"name": "BullWall", "sector": "Technology", "country": "Denmark", "entry_year": "2022", "status": "Active"},
+        {"name": "Init", "sector": "Technology", "country": "Denmark", "entry_year": "2022", "status": "Active"},
+        {"name": "DANX Carousel Group", "sector": "Business Services & Industrials", "country": "Denmark", "entry_year": "2022", "status": "Active"},
+        {"name": "Vetopia", "sector": "Healthcare", "country": "Denmark", "entry_year": "2021", "status": "Active"},
+        {"name": "emagine", "sector": "Technology", "country": "Denmark", "entry_year": "2021", "status": "Active"},
+        {"name": "Edda Group", "sector": "Business Services & Industrials", "country": "Denmark", "entry_year": "2020", "status": "Active"},
+        {"name": "Currentum", "sector": "Business Services & Industrials", "country": "Sweden", "entry_year": "2020", "status": "Active"},
+        {"name": "SuperOffice", "sector": "Technology", "country": "Norway", "entry_year": "2020", "status": "Active"},
+        {"name": "Phase One", "sector": "Technology", "country": "Denmark", "entry_year": "2019", "status": "Active"},
+        {"name": "Capture One", "sector": "Technology", "country": "Denmark", "entry_year": "2019", "status": "Active"},
+        {"name": "GUBI", "sector": "Consumer", "country": "Denmark", "entry_year": "2018", "status": "Active"}
+      ]
+    },
+    "MVI": {
+      "name": "MVI",
+      "logo_url": "https://logo.clearbit.com/mvi.se",
+      "website": "https://www.mvi.se",
+      "headquarters": "Stockholm, Sweden",
+      "founded": 1992,
+      "aum": "Fund I (2016), Fund II (2020, closed Dec 2021)",
+      "employees": "11",
+      "offices": ["Stockholm"],
+      "description": "MVI invests in profitable Nordic SME companies with structural growth potential, focusing on buy-outs with strong operational performance. Targets SEK 50–250 million turnover across three themes: Digitalisation, Circularity, and Societal Transformation. 21 companies helped to grow since inception.",
+      "investment_focus": {
+        "sectors": ["Technology", "Business Services", "Circular Economy", "Infrastructure"],
+        "geography": ["Nordic region"],
+        "deal_size": "SEK 50–250M turnover",
+        "investment_type": ["Buyouts", "Buy-and-build"]
+      },
+      "team": [],
+      "fundraising": { "strategy": "Nordic SME buyouts; themes: Digitalisering, Cirkuläritet, Samhällsomvandling" },
+      "recent_activity": "2026: Establishes Nordic manufacturing platform (Be-Pe, Prolego, HITAB); Freedom Group add-ons. 2024: Divested Biototal Group to SEB Private Equity. Portfolio includes Nestit Group, Ascenco, SMP Parts, Great Security, Freedom Group, Flow Fastighetsvärden.",
+      "portfolio_companies": [
+        {"name": "Nestit Group", "sector": "Technology", "country": "Sweden", "entry_year": "2024", "status": "Active", "detailed_description": "Pan-Nordic office IT infrastructure partner for SMEs, created through DSolution and Easy Partner partnership"},
+        {"name": "Ascenco Group", "sector": "Business Services", "country": "Sweden", "entry_year": "2023", "status": "Active", "detailed_description": "Critical infrastructure services"},
+        {"name": "SMP Parts", "sector": "Business Services", "country": "Sweden", "entry_year": "2023", "status": "Active", "detailed_description": "Smart digging systems"},
+        {"name": "PS Auction", "sector": "Business Services", "country": "Sweden", "entry_year": "2022", "status": "Active"},
+        {"name": "Art Clinic", "sector": "Healthcare", "country": "Sweden", "entry_year": "2022", "status": "Active"},
+        {"name": "Great Security", "sector": "Business Services", "country": "Sweden", "entry_year": "2021", "status": "Active", "detailed_description": "Intelligent security solutions"},
+        {"name": "Freedom Group", "sector": "Technology", "country": "Sweden", "entry_year": "2023", "status": "Active", "detailed_description": "Accounting digitization and financial software"}
+      ]
+    },
+    "Equip": {
+      "name": "Equip",
+      "logo_url": "https://logo.clearbit.com/equip.no",
+      "website": "https://www.equip.no",
+      "headquarters": "Oslo, Norway",
+      "founded": 2018,
+      "aum": "Fund I, Fund II",
+      "employees": "15+",
+      "offices": ["Oslo"],
+      "description": "Equip Capital is a Norwegian private equity firm founded in 2018, investing in Nordic companies across business services, consumer, and technology. The firm focuses on profitable companies with growth potential and operational improvement opportunities.",
+      "investment_focus": {
+        "sectors": ["Business Services", "Consumer", "Technology", "Leisure"],
+        "geography": ["Nordic region"],
+        "deal_size": "Mid-market",
+        "investment_type": ["Buyouts", "Growth equity"]
+      },
+      "team": [],
+      "fundraising": { "strategy": "Nordic mid-market buyouts" },
+      "recent_activity": "Portfolio includes Activeon (trampoline parks), Bastard Burgers, Funplays, Miles, Cloud Connection, Holy Greens, House of Discs, River Group, Cure, Makeup Mekka, North Travel.",
+      "portfolio_companies": [
+        {"name": "Activeon", "sector": "Consumer", "country": "Norway", "entry_year": "2022", "status": "Active", "detailed_description": "Leading European operator of indoor trampoline and interactive attraction parks"},
+        {"name": "Bastard Burgers", "sector": "Consumer", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Fast-casual burger chain with 70+ restaurants across Sweden and Norway"},
+        {"name": "Busspart", "sector": "Business Services", "country": "Norway", "entry_year": "2023", "status": "Active", "detailed_description": "Full-service provider of bus maintenance and inspection solutions"},
+        {"name": "Cares", "sector": "Business Services", "country": "Norway", "entry_year": "2022", "status": "Active", "detailed_description": "Cleaning and canteen services for SMEs and public sector"},
+        {"name": "Cautus Geo", "sector": "Technology", "country": "Norway", "entry_year": "2022", "status": "Active", "detailed_description": "Automatic monitoring of structures, land, water, climate and environment"},
+        {"name": "Cloud Connection", "sector": "Technology", "country": "Norway", "entry_year": "2021", "status": "Active", "detailed_description": "ERP, HRM and CRM software and services"},
+        {"name": "Cure", "sector": "Technology", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Leading influencer marketing platform in the Nordics"},
+        {"name": "Dura", "sector": "Business Services", "country": "Norway", "entry_year": "2021", "status": "Active", "detailed_description": "Property maintenance services for ageing Scandinavian housing"},
+        {"name": "Funplays", "sector": "Consumer", "country": "Norway", "entry_year": "2022", "status": "Active", "detailed_description": "Indoor play centres across Sweden, Norway and Denmark"},
+        {"name": "Holy Greens", "sector": "Consumer", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Fast-growing chain of salad restaurants in Sweden"},
+        {"name": "House of Discs", "sector": "Consumer", "country": "Norway", "entry_year": "2023", "status": "Active", "detailed_description": "Globally leading player in disc golf market"},
+        {"name": "iteam", "sector": "Technology", "country": "Norway", "entry_year": "2021", "status": "Active", "detailed_description": "Leading IT services player in Norwegian SME market"},
+        {"name": "Makeup Mekka", "sector": "Consumer", "country": "Norway", "entry_year": "2022", "status": "Active", "detailed_description": "Norwegian online retailer of vegan and cruelty-free cosmetics"},
+        {"name": "Miles", "sector": "Technology", "country": "Norway", "entry_year": "2021", "status": "Active", "detailed_description": "Leading Norwegian IT consulting firm"},
+        {"name": "North Travel", "sector": "Consumer", "country": "Norway", "entry_year": "2022", "status": "Active", "detailed_description": "Nordic Destination Management Companies including Nordic Tours and 50 Degrees North"},
+        {"name": "River Group", "sector": "Business Services", "country": "Norway", "entry_year": "2021", "status": "Active", "detailed_description": "Aftermarket service for water and wastewater pumps"},
+        {"name": "Ryde", "sector": "Technology", "country": "Norway", "entry_year": "2022", "status": "Active", "detailed_description": "Provider of rentable e-scooters in micro mobility market"},
+        {"name": "Stenbolaget", "sector": "Consumer", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Retailer, wholesaler and manufacturer of stone products"},
+        {"name": "TIND", "sector": "Technology", "country": "Norway", "entry_year": "2021", "status": "Active", "detailed_description": "Library management software for academic and research institutions"}
+      ]
+    },
+    "Trill Impact": {
+      "name": "Trill Impact",
+      "logo_url": "https://logo.clearbit.com/trillimpact.com",
+      "website": "https://www.trillimpact.com",
+      "headquarters": "Stockholm, Sweden",
+      "founded": 2019,
+      "aum": "€1.4 billion",
+      "employees": "30+",
+      "offices": ["Stockholm"],
+      "description": "Trill Impact is a European private markets firm with EUR 1.4 billion in assets under management, investing in companies that provide solutions for a Sustainable Planet, a Resilient Society and for Healthy People. The firm aims to deliver attractive financial returns while exclusively making investments that matter for current and future generations.",
+      "investment_focus": {
+        "sectors": ["Sustainability", "Healthcare", "Education", "Infrastructure", "Cybersecurity", "Agriculture"],
+        "geography": ["Europe"],
+        "deal_size": "Mid-market",
+        "investment_type": ["Buyout", "Ventures"]
+      },
+      "team": [],
+      "fundraising": { "strategy": "Impact investing; Buyout and Ventures strategies" },
+      "recent_activity": "Portfolio spans Nordomatic (building automation), ILT Education (Polylino), Mesalvo (healthcare software), Allurity (cybersecurity), Karriere Tutor, Infrakraft (rail infrastructure), Komet (irrigation), Renewtech (refurbished IT), Cinclus Pharma, May Health, Soil Capital, tado°, Open Cosmos.",
+      "portfolio_companies": [
+        {"name": "Nordomatic", "sector": "Business Services", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Leading independent partner for building automation, smart buildings and energy efficiency"},
+        {"name": "ILT Education", "sector": "Education", "country": "Sweden", "entry_year": "2021", "status": "Active", "detailed_description": "Market-leading supplier of educational tools and Polylino digital learning for schools"},
+        {"name": "Mesalvo", "sector": "Digital Healthcare", "country": "Germany", "entry_year": "2023", "status": "Active", "detailed_description": "Healthcare software for hospitals, radiologists and laboratories"},
+        {"name": "Allurity", "sector": "Cybersecurity Services", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Pan-European cybersecurity service provider"},
+        {"name": "Karriere Tutor", "sector": "Education", "country": "Germany", "entry_year": "2022", "status": "Active", "detailed_description": "Digital provider of government-subsidized vocational training"},
+        {"name": "Infrakraft", "sector": "Infrastructure", "country": "Sweden", "entry_year": "2023", "status": "Active", "detailed_description": "Sustainable rail infrastructure development"},
+        {"name": "Komet", "sector": "Agriculture", "country": "Austria", "entry_year": "2022", "status": "Active", "detailed_description": "Irrigation components for pivot and hose reel systems"},
+        {"name": "Delivery Associates", "sector": "Consulting Services", "country": "UK", "entry_year": "2022", "status": "Active", "detailed_description": "Impact consultancy for governments"},
+        {"name": "Renewtech", "sector": "IT Refurbishment", "country": "Denmark", "entry_year": "2022", "status": "Active", "detailed_description": "B2B supplier of refurbished IT enterprise hardware"},
+        {"name": "TT Medic", "sector": "MedTech", "country": "Austria", "entry_year": "2023", "status": "Active", "detailed_description": "Precision medical injection molding CDMO"},
+        {"name": "Primutec", "sector": "Business Services", "country": "Netherlands", "entry_year": "2022", "status": "Active", "detailed_description": "Building envelope services, flat roofing, solar PV"},
+        {"name": "Noova Energy Systems", "sector": "Business Services", "country": "Norway", "entry_year": "2022", "status": "Active", "detailed_description": "Energy management systems for SMEs"},
+        {"name": "Cinclus Pharma", "sector": "Pharmaceuticals", "country": "Sweden", "entry_year": "2023", "status": "Active", "detailed_description": "Late-stage biopharmaceutical for stomach acid disorders"},
+        {"name": "May Health", "sector": "MedTech", "country": "France", "entry_year": "2023", "status": "Active", "detailed_description": "Medical device for PCOS-related fertility"},
+        {"name": "Soil Capital", "sector": "Agriculture", "country": "Belgium", "entry_year": "2022", "status": "Active", "detailed_description": "Regenerative agriculture, certified B Corp"},
+        {"name": "Rail-Flow", "sector": "Business Services", "country": "Germany", "entry_year": "2023", "status": "Active", "detailed_description": "Digital B2B SaaS platform for rail and intermodal freight"},
+        {"name": "tado°", "sector": "Technology", "country": "Germany", "entry_year": "2022", "status": "Active", "detailed_description": "Smart home climate management controls"},
+        {"name": "Open Cosmos", "sector": "Technology", "country": "UK", "entry_year": "2023", "status": "Active", "detailed_description": "Space tech and satellite data for climate and disasters"},
+        {"name": "MinervaX", "sector": "Pharmaceuticals", "country": "Denmark", "entry_year": "2023", "status": "Active", "detailed_description": "Maternal vaccine for Group B streptococcus"}
       ]
     },
     "Norvestor": {

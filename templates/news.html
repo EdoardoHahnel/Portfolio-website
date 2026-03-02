@@ -3,20 +3,30 @@
 {% block title %}M&A News{% endblock %}
 
 {% block content %}
-<div class="page-header">
+<div class="page-header scroll-reveal">
     <h1 class="page-title">Investment News & Deals</h1>
     <p class="page-subtitle">Latest mergers, acquisitions, private equity, and investment activity in the Nordic region</p>
 </div>
 
 <!-- Control Panel -->
-<div class="content-card" style="margin-bottom: 1.5rem;">
+<div class="content-card scroll-reveal-item" style="margin-bottom: 1.5rem;">
     <div class="content-card-body">
-        <div class="controls-left">
-            <div class="search-box">
+        <div class="controls-left" style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+            <div class="search-box" style="flex: 1; min-width: 180px;">
                 <i class="fas fa-search"></i>
                 <input type="text" id="searchInput" placeholder="Search articles...">
             </div>
-            
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+                <select id="newsCompanyFilter" style="padding: 8px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 13px; min-width: 140px;">
+                    <option value="">All Companies</option>
+                </select>
+                <select id="newsThemeFilter" style="padding: 8px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 13px; min-width: 130px;">
+                    <option value="">All Themes</option>
+                </select>
+                <select id="newsCountryFilter" style="padding: 8px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 13px; min-width: 120px;">
+                    <option value="">All Countries</option>
+                </select>
+            </div>
             <div class="stats">
                 <div class="stat-item">
                     <span class="stat-label">Total Articles:</span>
@@ -31,7 +41,7 @@
 <div id="statusMessage" class="status-message hidden"></div>
 
 <!-- News Grid -->
-<div class="content-card">
+<div class="content-card scroll-reveal-item">
     <div class="content-card-header">
         <h2 class="content-card-title">All Articles</h2>
         <button id="refreshBtn" class="btn btn-primary btn-sm">

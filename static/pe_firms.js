@@ -8,7 +8,12 @@ const firmDomainOverrides = {
     'Celero Capital': 'celerocapital.com',
     'Celero': 'celerocapital.com',
     'FSN Capital': 'fsncapital.com',
-    'Polaris': 'polarisequity.dk'
+    'Polaris': 'polarisequity.dk',
+    'Impilo': 'impilo.se',
+    'Axcel': 'axcel.dk',
+    'MVI': 'mvi.se',
+    'Equip': 'equip.no',
+    'Trill Impact': 'trillimpact.com'
 };
 
 document.addEventListener('DOMContentLoaded', function() {

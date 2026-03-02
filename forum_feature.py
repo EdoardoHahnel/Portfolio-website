@@ -158,6 +158,17 @@ def init_forum_db():
 
     cur.execute(
         """
+        CREATE TABLE IF NOT EXISTS fundraising_download_signups (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            email TEXT NOT NULL,
+            created_at TEXT NOT NULL
+        )
+        """
+    )
+    cur.execute("CREATE INDEX IF NOT EXISTS idx_fundraising_signups_created ON fundraising_download_signups(created_at DESC)")
+
+    cur.execute(
+        """
         CREATE TABLE IF NOT EXISTS page_views (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             path TEXT NOT NULL,
@@ -647,6 +658,30 @@ def _send_modelling_request_email(to_email: str) -> bool:
         return False
 
 
+@forum_bp.route("/forum/fundraising-download-signup", methods=["POST"])
+def fundraising_download_signup():
+    """Signup for fundraising data download - stores email for admin to send data."""
+    import re
+    email = (request.form.get("email") or "").strip().lower()
+    if not email:
+        return jsonify({"success": False, "error": "E-postadress krävs."})
+    if not re.match(r"^[^@]+@[^@]+\.[^@]+$", email):
+        return jsonify({"success": False, "error": "Ange en giltig e-postadress."})
+    conn = _get_db()
+    try:
+        conn.execute(
+            "INSERT INTO fundraising_download_signups (email, created_at) VALUES (?, ?)",
+            (email, _now_iso()),
+        )
+        conn.commit()
+    except Exception as e:
+        conn.rollback()
+        return jsonify({"success": False, "error": f"Kunde inte spara: {str(e)}"})
+    finally:
+        conn.close()
+    return jsonify({"success": True, "message": "Tack! Du kommer få fundraising-datan via e-post inom kort."})
+
+
 @forum_bp.route("/forum/email-signup", methods=["POST"])
 def forum_email_signup():
     import re
@@ -799,6 +834,9 @@ def forum_admin():
     signups = conn.execute(
         "SELECT * FROM email_signups ORDER BY created_at DESC LIMIT 200"
     ).fetchall()
+    fundraising_signups = conn.execute(
+        "SELECT * FROM fundraising_download_signups ORDER BY created_at DESC LIMIT 200"
+    ).fetchall()
     # Analytics: page views
     total_views = conn.execute("SELECT COUNT(*) as c FROM page_views").fetchone()["c"]
     unique_visitors = conn.execute(
@@ -854,6 +892,7 @@ def forum_admin():
     return render_template(
         "forum_admin.html",
         email_signups=[dict(s) for s in signups],
+        fundraising_signups=[dict(s) for s in fundraising_signups],
         analytics=analytics,
         reports=[dict(r) for r in reports],
         threads=[dict(t) for t in threads],

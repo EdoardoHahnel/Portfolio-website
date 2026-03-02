@@ -1,12 +1,104 @@
 {
   "news": [
     {
+      "title": "Segulah evolves into Amplio Private Equity",
+      "description": "Swedish PE firm Segulah rebrands to Amplio on 1 February 2024. Same team, evolved investment strategy focused on Business Services and IT & Technology Services.",
+      "link": "https://www.amplio.se/segulah-evolves-into-amplio-private-equity-amplio/",
+      "date": "2024-02-01",
+      "firm": "Amplio",
+      "source": "Amplio",
+      "theme": "Governance",
+      "country": "Sweden"
+    },
+    {
+      "title": "Amplio divests Francks Kylindustri in another successful exit",
+      "description": "Amplio completes exit of Francks Kylindustri (industrial and commercial refrigeration & cooling installation).",
+      "link": "https://www.amplio.se/amplio-divests-francks-in-another-successful-exit-for-fund-v/",
+      "date": "2025-08-01",
+      "firm": "Amplio",
+      "source": "Amplio",
+      "theme": "Exit",
+      "country": "Sweden"
+    },
+    {
+      "title": "Nalka portfolio company Norstat acquires Sample Solutions",
+      "description": "Norstat strengthens premium B2B capabilities through acquisition of Sample Solutions, a B2B sampling specialist.",
+      "link": "https://www.nalka.com/news/nalka-portfolio-company-norstat-acquires-sample-solutions-to-strengthen-premium-b2b-capabilities/",
+      "date": "2025-09-01",
+      "firm": "Nalka",
+      "source": "Nalka",
+      "theme": "M&A",
+      "country": "Nordics"
+    },
+    {
+      "title": "Norstat acquires Swedish data collection specialist PFM Research",
+      "description": "Nalka-backed Norstat expands data collection capabilities in Sweden through PFM Research acquisition.",
+      "link": "https://www.nalka.com/news/norstat-acquires-swedish-data-collection-specialist-pfm-research/",
+      "date": "2024-12-01",
+      "firm": "Nalka",
+      "source": "Nalka",
+      "theme": "M&A",
+      "country": "Sweden"
+    },
+    {
+      "title": "Consortium Led by Global Infrastructure Partners and EQT Agrees to Acquire AES",
+      "description": "GIP, EQT Infrastructure VI, CalPERS and QIA to acquire AES for $15/share ($10.7B equity, ~$33.4B enterprise value). Positions AES to accelerate growth as leading clean energy platform across the Americas.",
+      "link": "https://www.prnewswire.com/news-releases/consortium-led-by-global-infrastructure-partners-and-eqt-agrees-to-acquire-aes-302700916.html",
+      "date": "2026-03-02",
+      "firm": "EQT",
+      "source": "PR Newswire",
+      "theme": "M&A",
+      "country": "USA"
+    },
+    {
+      "title": "EQT and GIP Consortium to Acquire AES - Clean Energy Platform",
+      "description": "People Solar AES-Renewables. Consortium led by GIP and EQT agrees to acquire AES Corporation.",
+      "link": "https://news.cision.com/eqt/i/people-solar-aes-renewables-clover-creek-00039,c3515040",
+      "date": "2026-03-02",
+      "firm": "EQT",
+      "source": "Cision News",
+      "theme": "Infrastructure",
+      "country": "USA"
+    },
+    {
+      "title": "Nordic Capital Is Said to Weigh €2 Billion Sale of Conscia",
+      "description": "Nordic Capital is considering a sale of Danish cybersecurity firm Conscia and seeking a valuation of more than €2 billion. The firm is working with Arma Partners on the potential divestment.",
+      "link": "https://www.bloomberg.com/news/articles/2026-02-06/nordic-capital-is-said-to-weigh-2-billion-sale-of-conscia",
+      "date": "2026-02-06",
+      "firm": "Nordic Capital",
+      "source": "Bloomberg",
+      "theme": "Exit",
+      "country": "Denmark"
+    },
+    {
+      "title": "Triton Partners on How to Drive Value Creation in Complex Carve-Outs",
+      "description": "PEI examines Triton's approach to value creation in complex carve-out transactions.",
+      "link": "https://www.privateequityinternational.com/triton-partners-on-how-to-drive-value-creation-in-complex-carve-outs/",
+      "date": "2026-02-01",
+      "firm": "Triton Partners",
+      "source": "Private Equity International",
+      "theme": "Value Creation",
+      "country": "Europe"
+    },
+    {
+      "title": "Triton Forms Technical Services Platform Tendra Technical Services",
+      "description": "Triton establishes new technical services platform Tendra Technical Services.",
+      "link": "https://themepsource.com/triton-forms-news-technical-services-platform-tendra-technical-services/",
+      "date": "2026-01-15",
+      "firm": "Triton Partners",
+      "source": "PE News",
+      "theme": "Platform",
+      "country": "UK"
+    },
+    {
       "title": "Valberedning i Vitrolife AB (publ) inför årsstämma 2026",
-      "description": "",
+      "description": "Nominations for the 2026 AGM. Årsstämma will be held in Gothenburg on 6 May 2026.",
       "link": "https://news.cision.com/se/vitrolife-ab--publ-/r/valberedning-i-vitrolife-ab--publ--infor-arsstamma-2026,c4257539",
-      "date": "2026-05-06",
+      "date": "2025-10-29",
       "firm": "Bure Equity",
-      "source": "Cision News"
+      "source": "Cision News",
+      "theme": "Governance",
+      "country": "Sweden"
     },
     {
       "title": "Adelis Equity Partners Backs Healthcare Technology Company",
@@ -14,7 +106,9 @@
       "firm": "Adelis Equity Partners",
       "date": "2026-02-10",
       "link": "https://news.cision.com/se/adelis-equity-partners/sample/adelis-equity-partners-backs-healthcare-technology-company",
-      "source": "Sampled Market Activity"
+      "source": "Sampled Market Activity",
+      "theme": "Investment",
+      "country": "Nordics"
     },
     {
       "title": "Förändringar i styrelse och ledning för Assemblin Caverion Group",
@@ -22,7 +116,9 @@
       "link": "https://news.cision.com/se/assemblin/r/forandringar-i-styrelse-och-ledning-for-assemblin-caverion-group,c4301662",
       "date": "2026-02-03",
       "firm": "Triton Partners",
-      "source": "Cision News"
+      "source": "Cision News",
+      "theme": "Governance",
+      "country": "Nordics"
     },
     {
       "title": "Successful Exit from IK Small Cap III Fund",
@@ -30,7 +126,9 @@
       "firm": "IK Partners",
       "date": "2026-01-24",
       "link": "https://news.cision.com/se/ik-partners/sample/successful-exit-from-ik-small-cap-iii-fund",
-      "source": "Sampled Market Activity"
+      "source": "Sampled Market Activity",
+      "theme": "Exit",
+      "country": "Nordics"
     },
     {
       "title": "EQT AB (publ) Bokslutskommuniké 2025",
@@ -38,7 +136,9 @@
       "link": "https://news.cision.com/se/eqt/r/eqt-ab--publ--bokslutskommunike-2025,c4296064",
       "date": "2026-01-22",
       "firm": "EQT",
-      "source": "Cision News"
+      "source": "Cision News",
+      "theme": "Fundraising",
+      "country": "Sweden"
     },
     {
       "title": "EQT går samman med Coller Capital och expanderar till secondaries, vilket markerar nästa steg på ...",
@@ -46,7 +146,9 @@
       "link": "https://news.cision.com/se/eqt/r/eqt-gar-samman-med-coller-capital-och-expanderar-till-secondaries--vilket-markerar-nasta-steg-pa-eqt,c4296061",
       "date": "2026-01-22",
       "firm": "EQT",
-      "source": "Cision News"
+      "source": "Cision News",
+      "theme": "Fundraising",
+      "country": "Sweden"
     },
     {
       "title": "Enrique Patrickson utnämnd till ny finansdirektör för Hexagon",
@@ -94,7 +196,9 @@
       "firm": "Verdane",
       "date": "2026-01-02",
       "link": "https://news.cision.com/se/verdane/sample/successful-exit-verdane-sells-to-strategic-buyer",
-      "source": "Sampled Market Activity"
+      "source": "Sampled Market Activity",
+      "theme": "Exit",
+      "country": "Nordics"
     },
     {
       "title": "Segulah Completes Strategic Exit",

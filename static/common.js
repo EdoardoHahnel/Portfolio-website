@@ -2,14 +2,40 @@
 Common JavaScript - Shared functionality across all pages
 */
 
-// Mobile menu toggle
+// Scroll reveal - animate elements into view (all pages)
 document.addEventListener('DOMContentLoaded', function() {
-    // Add mobile menu button if needed
-    const sidebar = document.querySelector('.sidebar');
-    if (sidebar && window.innerWidth < 1024) {
-        // Mobile functionality here
-    }
-    
+    const observerOptions = {
+        root: null,
+        threshold: 0.08,
+        rootMargin: '0px 0px -40px 0px'
+    };
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                const counters = entry.target.querySelectorAll('.counter-animate');
+                counters.forEach(function(counter) {
+                    if (!counter.classList.contains('counted') && counter.getAttribute('data-target')) {
+                        const target = parseInt(counter.getAttribute('data-target'), 10);
+                        const duration = 1800;
+                        const start = performance.now();
+                        function animate(now) {
+                            const elapsed = now - start;
+                            const progress = Math.min(elapsed / duration, 1);
+                            counter.textContent = Math.floor(progress * target);
+                            if (progress < 1) requestAnimationFrame(animate);
+                            else { counter.textContent = target; counter.classList.add('counted'); }
+                        }
+                        requestAnimationFrame(animate);
+                    }
+                });
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    document.querySelectorAll('.scroll-reveal, .scroll-reveal-item').forEach(function(el) {
+        observer.observe(el);
+    });
 });
 
 

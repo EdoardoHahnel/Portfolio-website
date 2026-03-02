@@ -26,6 +26,13 @@ const firmMapping = {
     'ik partners': 'IK Partners',
     'bure': 'Bure Equity',
     'accent': 'Accent Equity',
+    'amplio': 'Amplio',
+    'nalka': 'Nalka',
+    'impilo': 'Impilo',
+    'axcel': 'Axcel',
+    'mvi': 'MVI',
+    'equip': 'Equip',
+    'trill impact': 'Trill Impact',
     
     // VCs and AI Investors
     'sequoia': 'Sequoia Capital',
@@ -137,7 +144,7 @@ const firmLogos = {
         icon: '🏢'
     },
     'Segulah': {
-        primary: 'https://logo.clearbit.com/segulah.com',
+        primary: 'https://www.google.com/s2/favicons?domain=amplio.se&sz=128',
         fallback: 'https://ui-avatars.com/api/?name=Segulah&background=1f2937&color=ffffff&size=64',
         icon: '🏢'
     },
@@ -154,6 +161,46 @@ const firmLogos = {
     'Accent Equity': {
         primary: 'https://logo.clearbit.com/accentequity.com',
         fallback: 'https://ui-avatars.com/api/?name=Accent&background=dc2626&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Amplio': {
+        primary: 'https://www.google.com/s2/favicons?domain=amplio.se&sz=128',
+        fallback: 'https://ui-avatars.com/api/?name=Amplio&background=7c3aed&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Nalka': {
+        primary: 'https://www.google.com/s2/favicons?domain=nalka.com&sz=128',
+        fallback: 'https://ui-avatars.com/api/?name=Nalka&background=059669&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Impilo': {
+        primary: 'https://www.google.com/s2/favicons?domain=impilo.se&sz=128',
+        fallback: 'https://ui-avatars.com/api/?name=Impilo&background=0d9488&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Axcel': {
+        primary: 'https://www.google.com/s2/favicons?domain=axcel.com&sz=128',
+        fallback: 'https://ui-avatars.com/api/?name=Axcel&background=dc2626&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'MVI': {
+        primary: 'https://www.google.com/s2/favicons?domain=mvi.se&sz=128',
+        fallback: 'https://ui-avatars.com/api/?name=MVI&background=0891b2&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Equip': {
+        primary: 'https://www.google.com/s2/favicons?domain=equip.no&sz=128',
+        fallback: 'https://ui-avatars.com/api/?name=Equip&background=7c3aed&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Trill Impact': {
+        primary: 'https://www.google.com/s2/favicons?domain=trillimpact.com&sz=128',
+        fallback: 'https://ui-avatars.com/api/?name=Trill+Impact&background=059669&color=ffffff&size=64',
+        icon: '🏢'
+    },
+    'Nordstjernan': {
+        primary: 'https://www.google.com/s2/favicons?domain=nordstjernan.se&sz=128',
+        fallback: 'https://ui-avatars.com/api/?name=Nordstjernan&background=1e40af&color=ffffff&size=64',
         icon: '🏢'
     },
     
@@ -322,10 +369,11 @@ function getFirmFromTitle(title) {
 
 // Available PE firms with profiles
 const availablePEFirms = new Set([
-    'EQT', 'Nordic Capital', 'Triton Partners', 'Altor', 'Litorina', 
+    'EQT', 'Nordic Capital', 'Triton Partners', 'Altor', 'Amplio', 'Litorina', 
     'Adelis Equity', 'Ratos', 'Summa Equity', 'Accent Equity', 'IK Partners', 
     'Verdane', 'Valedo Partners', 'Alder', 'Bure Equity', 'CapMan', 
-    'Celero', 'Polaris', 'Nordstjernan', 'Norvestor', 'Helix Kapital', 'FSN Capital'
+    'Celero', 'Polaris', 'Nordstjernan', 'Nalka', 'Norvestor', 'Helix Kapital', 'FSN Capital',
+    'Impilo', 'Axcel', 'MVI', 'Equip', 'Trill Impact'
 ]);
 
 function createRobustLogoHTML(firmName, size = '32px') {
@@ -393,21 +441,23 @@ function createRobustLogoHTML(firmName, size = '32px') {
         'Nordic BioSite': 'Adelis Equity',
         'SSI Diagnostica': 'Adelis Equity',
         'Kanari': 'Adelis Equity',
-        'Nordomatic': 'Adelis Equity',
+        'Nordomatic': 'Trill Impact',
         'Axentia': 'Adelis Equity',
         'Infobric': 'Summa Equity',
         'Lakers': 'Summa Equity',
         'Pumppulohja': 'Summa Equity',
-        'Zengun': 'Segulah',
-        'Zengun Group': 'Segulah',
+        'Zengun': 'Amplio',
+        'Zengun Group': 'Amplio',
+        'Segulah': 'Amplio',
         'Rebellion': 'Triton Partners',
         'Eltel': 'Triton Partners',
         'HiQ': 'Triton Partners',
         'Mecenat': 'IK Partners',
-        'Nordic Tyre': 'Accent Equity',
-        'Nordstjernan': 'Accent Equity',
-        'Aidian': 'Accent Equity',
-        'XPartners': 'Accent Equity',
+        'Nordic Tyre': 'Axcel',
+        'Nordic Tyre Group': 'Axcel',
+        'Nordstjernan': 'Nordstjernan',
+        'Aidian': 'Nordstjernan',
+        'XPartners': 'Axcel',
         'Mirovia': 'Accent Equity',
         'JM': 'CapMan',
         'Rexel': 'CapMan',
@@ -636,8 +686,12 @@ function createRobustLogoHTML(firmName, size = '32px') {
 }
 
 function extractLogoDomain(url) {
+    if (!url) return '';
     try {
         const parsed = new URL(url);
+        if (parsed.hostname.includes('google.com') && parsed.pathname.includes('favicons')) {
+            return parsed.searchParams.get('domain') || '';
+        }
         if (parsed.hostname.includes('logo.clearbit.com')) {
             return parsed.pathname.replace(/^\/+/, '').split('/')[0];
         }
@@ -665,6 +719,13 @@ function init() {
     // Add event listeners (respond to user actions)
     refreshBtn.addEventListener('click', scrapeNews);
     searchInput.addEventListener('input', handleSearch);
+
+    const companyFilter = document.getElementById('newsCompanyFilter');
+    const themeFilter = document.getElementById('newsThemeFilter');
+    const countryFilter = document.getElementById('newsCountryFilter');
+    if (companyFilter) companyFilter.addEventListener('change', applyNewsFilters);
+    if (themeFilter) themeFilter.addEventListener('change', applyNewsFilters);
+    if (countryFilter) countryFilter.addEventListener('change', applyNewsFilters);
     
     // Load existing news when page loads
     loadNews();
@@ -724,6 +785,9 @@ async function scrapeNews() {
     }
 }
 
+// Store full news array for filtering (company, theme, country)
+let allNewsData = [];
+
 // ===== LOAD NEWS FUNCTION =====
 // Fetches and displays PE/investment news articles (filters out AI news)
 async function loadNews() {
@@ -732,7 +796,6 @@ async function loadNews() {
     
     try {
         console.log('🔍 Loading investment news with cache-busting...');
-        // Force fresh data with multiple cache-busting parameters
         const timestamp = Date.now();
         const response = await fetch('/api/investment-news?_=' + timestamp + '&t=' + Math.random(), {
             cache: 'no-store',
@@ -743,42 +806,91 @@ async function loadNews() {
         });
         const data = await response.json();
         
-        console.log('📊 Investment news response:', data);
-        console.log('📈 News count:', data.count);
-        console.log('📰 First few titles:', data.news?.slice(0, 3).map(n => n.title));
-        
         if (data.success && data.news) {
-            // Use ALL news (no filtering, no limiting)
-            const filteredNews = data.news;
-            
-            console.log('✅ Displaying', filteredNews.length, 'news items');
-            
+            allNewsData = data.news;
             // Sort by date (most recent first)
-            filteredNews.sort((a, b) => {
+            allNewsData.sort((a, b) => {
                 const dateA = new Date(a.date || '2000-01-01');
                 const dateB = new Date(b.date || '2000-01-01');
-                return dateB - dateA; // Most recent first
+                return dateB - dateA;
             });
-            
-            // Update the total count
-            document.getElementById('totalCount').textContent = filteredNews.length;
-            
-            // Force display all items - no filtering
-            displayNews(filteredNews);
-            
-            // Show success message
-            showStatusMessage(`✅ Loaded ${filteredNews.length} investment news articles!`, 'success');
+            populateNewsFilters(allNewsData);
+            applyNewsFilters();
+            showStatusMessage(`✅ Loaded ${allNewsData.length} investment news articles!`, 'success');
         } else {
             console.error('❌ API response indicates failure:', data);
             showStatusMessage('❌ Failed to load news', 'error');
         }
-        
     } catch (error) {
         console.error('❌ Error loading news:', error);
         showStatusMessage('❌ Failed to load news. Please check if the server is running.', 'error');
     } finally {
         showLoading(false);
     }
+}
+
+function populateNewsFilters(news) {
+    const companies = new Set();
+    const themes = new Set();
+    const countries = new Set();
+    news.forEach(n => {
+        if (n.firm) companies.add(n.firm);
+        if (n.theme) themes.add(n.theme);
+        if (n.country) countries.add(n.country);
+    });
+    const companySelect = document.getElementById('newsCompanyFilter');
+    const themeSelect = document.getElementById('newsThemeFilter');
+    const countrySelect = document.getElementById('newsCountryFilter');
+    if (companySelect) {
+        while (companySelect.options.length > 1) companySelect.remove(1);
+        [...companies].sort().forEach(c => {
+            const opt = document.createElement('option');
+            opt.value = c;
+            opt.textContent = c;
+            companySelect.add(opt);
+        });
+    }
+    if (themeSelect) {
+        while (themeSelect.options.length > 1) themeSelect.remove(1);
+        [...themes].sort().forEach(t => {
+            const opt = document.createElement('option');
+            opt.value = t;
+            opt.textContent = t;
+            themeSelect.add(opt);
+        });
+    }
+    if (countrySelect) {
+        while (countrySelect.options.length > 1) countrySelect.remove(1);
+        [...countries].sort().forEach(c => {
+            const opt = document.createElement('option');
+            opt.value = c;
+            opt.textContent = c;
+            countrySelect.add(opt);
+        });
+    }
+}
+
+function applyNewsFilters() {
+    if (!allNewsData || allNewsData.length === 0) return;
+    const company = (document.getElementById('newsCompanyFilter') || {}).value || '';
+    const theme = (document.getElementById('newsThemeFilter') || {}).value || '';
+    const country = (document.getElementById('newsCountryFilter') || {}).value || '';
+    const searchQuery = ((document.getElementById('searchInput') || {}).value || '').trim().toLowerCase();
+    
+    let filtered = allNewsData.filter(n => {
+        if (company && (n.firm || '') !== company) return false;
+        if (theme && (n.theme || '') !== theme) return false;
+        if (country && (n.country || '') !== country) return false;
+        if (searchQuery) {
+            const title = (n.title || '').toLowerCase();
+            const desc = (n.description || '').toLowerCase();
+            const firm = (n.firm || '').toLowerCase();
+            if (!title.includes(searchQuery) && !desc.includes(searchQuery) && !firm.includes(searchQuery)) return false;
+        }
+        return true;
+    });
+    document.getElementById('totalCount').textContent = filtered.length;
+    displayNews(filtered);
 }
 
 // ===== DISPLAY NEWS FUNCTION =====
@@ -864,43 +976,21 @@ function createNewsCard(article, index) {
 }
 
 // ===== SEARCH FUNCTION =====
-// Filters news based on search input
+// Filters news based on search input (works with company/theme/country filters)
 let searchTimeout;
-async function handleSearch(event) {
-    const query = event.target.value.trim();
-    
-    // Debounce: wait 300ms after user stops typing
+function handleSearch(event) {
+    const query = (event.target.value || '').trim();
     clearTimeout(searchTimeout);
-    searchTimeout = setTimeout(async () => {
-        
-        if (query === '') {
-            // If search is empty, load all news
-            loadNews();
-            return;
-        }
-        
-        showLoading(true);
-        
-        try {
-            const response = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
-            const data = await response.json();
-            
-            if (data.success) {
-                document.getElementById('totalCount').textContent = data.count;
-                displayNews(data.results);
-                
-                if (data.count === 0) {
-                    showStatusMessage(`No articles found for "${query}"`, 'error');
-                }
+    searchTimeout = setTimeout(() => {
+        if (allNewsData.length > 0) {
+            applyNewsFilters(); // applyNewsFilters uses searchInput value
+            const count = parseInt(document.getElementById('totalCount').textContent || '0', 10);
+            if (query && count === 0) {
+                showStatusMessage(`No articles found for "${query}"`, 'error');
             }
-            
-        } catch (error) {
-            console.error('Error searching:', error);
-            showStatusMessage('❌ Search failed', 'error');
-        } finally {
-            showLoading(false);
+        } else {
+            loadNews();
         }
-        
     }, 300);
 }
 

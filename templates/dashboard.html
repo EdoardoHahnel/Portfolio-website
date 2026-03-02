@@ -5,6 +5,167 @@
 {% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
 <style>
+/* ===== COOL DASHBOARD EFFECTS ===== */
+/* Ambient gradient background */
+.main-container {
+    position: relative;
+}
+.main-container::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60vh;
+    background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.08), transparent),
+                radial-gradient(ellipse 60% 40% at 100% 0%, rgba(59, 130, 246, 0.06), transparent),
+                radial-gradient(ellipse 60% 40% at 0% 0%, rgba(99, 102, 241, 0.05), transparent);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Hero - subtle animated gradient & glow */
+.pe-hero {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+}
+.pe-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, transparent 50%, rgba(99,102,241,0.03) 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.pe-hero:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 40px rgba(63, 125, 232, 0.08), 0 4px 12px rgba(0,0,0,0.04);
+}
+.pe-hero:hover::before { opacity: 1; }
+.pe-hero-title span {
+    background: linear-gradient(135deg, #2563eb 0%, #6366f1 50%, #3a73cf 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.pe-cta {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+.pe-cta::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s ease;
+}
+.pe-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(63, 125, 232, 0.25);
+}
+.pe-cta:hover::after { left: 100%; }
+
+/* Metric cards - staggered reveal + glow on hover */
+.pe-metric-card {
+    position: relative;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease, border-color 0.3s;
+}
+.pe-metric-card::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(99,102,241,0.2), rgba(59,130,246,0.1));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.pe-metric-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 16px 40px rgba(63, 125, 232, 0.12);
+}
+.pe-metric-card:hover::after { opacity: 1; }
+.pe-metric-grid .scroll-reveal-item:nth-child(1) { animation-delay: 0.1s; }
+.pe-metric-grid .scroll-reveal-item:nth-child(2) { animation-delay: 0.2s; }
+.pe-metric-grid .scroll-reveal-item:nth-child(3) { animation-delay: 0.3s; }
+
+/* Content cards - soft glass effect on hover */
+.content-card {
+    transition: box-shadow 0.4s ease, transform 0.3s ease;
+}
+.content-card:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+}
+
+/* Trends chart cards - enhanced hover */
+.trends-chart-card {
+    position: relative;
+    overflow: hidden;
+}
+.trends-chart-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(99,102,241,0.4), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.trends-chart-card:hover::before { opacity: 1; }
+.trends-chart-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(63, 125, 232, 0.15);
+}
+
+/* PE firm cards - subtle lift */
+.pe-firm-card-compact {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.pe-firm-card-compact:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Smoother scroll reveal */
+.scroll-reveal-item {
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hero entrance - fade up on load */
+.pe-hero {
+    animation: heroFadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+@keyframes heroFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Metric cards entrance stagger */
+.pe-metric-grid {
+    animation: fadeIn 0.6s 0.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* Trends Section */
 .trends-section .content-card-body { padding: 1.25rem; }
 .trends-grid {
@@ -69,10 +230,69 @@
     }
     .trends-chart-container canvas { max-height: 200px !important; }
 }
+
+/* PE Logo Marquee - Small, subtle, no dark background */
+.pe-logo-marquee-section {
+    margin-bottom: 0.75rem;
+    padding: 0.4rem 0;
+    overflow: hidden;
+}
+.pe-logo-marquee-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+}
+.pe-logo-marquee-container {
+    overflow: hidden;
+}
+.pe-logo-marquee {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding-left: 100%;
+    animation: pe-marquee-scroll 50s linear infinite;
+}
+.pe-logo-marquee:hover {
+    animation-play-state: paused;
+}
+@keyframes pe-marquee-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.pe-logo-marquee-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background: #f8fafc;
+    border-radius: 6px;
+    padding: 4px;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.pe-logo-marquee-item:hover {
+    transform: scale(1.15);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.pe-logo-marquee-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
 </style>
 {% endblock %}
 
 {% block content %}
+<!-- PE Logo Marquee - Small horizontal scrolling, above hero -->
+<section class="pe-logo-marquee-section">
+    <div class="pe-logo-marquee-wrapper">
+        <div class="pe-logo-marquee-container">
+            <div class="pe-logo-marquee" id="peLogoMarquee"></div>
+        </div>
+    </div>
+</section>
+
 <section class="pe-hero">
     <div class="pe-hero-eyebrow">Private Markets Intelligence</div>
     <h1 class="pe-hero-title">The Nordic PE <span>Operating Dashboard</span></h1>
@@ -96,7 +316,7 @@
     </a>
     <a href="/pe-firms" class="pe-metric-card scroll-reveal-item">
         <div class="pe-metric-kicker">Manager Universe</div>
-        <div class="pe-metric-value counter-animate" data-target="14">0</div>
+        <div class="pe-metric-value counter-animate" data-target="16">0</div>
         <div class="pe-metric-label">Nordic PE Firms</div>
     </a>
 </section>
@@ -163,60 +383,6 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script src="{{ url_for('static', filename='logo-utils.js') }}"></script>
 <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
-
-<script>
-// Scroll Animation System
-document.addEventListener('DOMContentLoaded', function() {
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-        root: null,
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('revealed');
-                
-                // Trigger counter animation if this element has counters
-                const counters = entry.target.querySelectorAll('.counter-animate');
-                counters.forEach(counter => {
-                    if (!counter.classList.contains('counted')) {
-                        animateCounter(counter);
-                        counter.classList.add('counted');
-                    }
-                });
-                
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    // Observe all scroll reveal elements
-    document.querySelectorAll('.scroll-reveal, .scroll-reveal-item').forEach(el => {
-        observer.observe(el);
-    });
-});
-
-// Counter Animation
-function animateCounter(element) {
-    const target = parseInt(element.getAttribute('data-target'));
-    const duration = 2000; // 2 seconds
-    const increment = target / (duration / 16); // 60fps
-    let current = 0;
-
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            element.textContent = target;
-            clearInterval(timer);
-        } else {
-            element.textContent = Math.floor(current);
-        }
-    }, 16);
-}
-</script>
 
 {% endblock %}
 
