@@ -1,13 +1,14 @@
 {
   "metadata": {
     "last_updated": "2026-03-02",
-    "total_companies": 524,
+    "total_companies": 645,
     "nalka_companies": 8,
     "amplio_companies": 8,
     "description": "Updated portfolio database with current IK Partners investments only",
     "ik_partners_companies": 19,
     "adelis_companies": 45,
-    "eqt_fixes_applied": "Verified and corrected via web research"
+    "eqt_fixes_applied": "Verified and corrected via web research",
+    "altor_companies": 46
   },
   "companies": [
     {
@@ -20368,895 +20369,6 @@
       "logo_url": "https://logo.clearbit.com/ctt.se"
     },
     {
-      "company": "Karnov Group",
-      "sector": "Information Services",
-      "fund": "Altor Fund V",
-      "market": "Sweden",
-      "entry": "2017",
-      "source": "Altor",
-      "enriched": true,
-      "research_date": "2025-10-21T08:45:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.karnovgroup.com",
-      "employees": "600+ employees including legal editors",
-      "detailed_description": "Karnov Group is the leading provider of legal and regulatory information, databases, and workflow solutions in the Nordic region, serving legal professionals, companies, government agencies, and academics with mission-critical research tools and compliance information. Founded through consolidation of Nordic legal publishers, Karnov provides comprehensive digital platforms featuring legislation, case law, legal commentary, regulatory updates, and practice tools for lawyers, judges, compliance professionals, and government officials. The company's databases cover Swedish, Danish, Norwegian, and Finnish law with annotated legislation, court decisions, legal commentary, international law, and EU regulations. Karnov's platforms are used daily by virtually every law firm, corporate legal department, court, and government agency in the Nordic region for legal research and compliance monitoring. The company combines content (legislation, cases, commentary) with software tools for legal research, document automation, case management, and compliance tracking. Karnov operates under multiple brands including Karnov, Norstedts Juridik, and others serving different market segments. The business model features high recurring revenue through annual subscriptions with very high retention rates (95%+) as legal professionals cannot perform their work without access to updated legal information. Karnov invests continuously in digitizing content, adding new sources, improving search and AI capabilities, and developing workflow tools. The company went public in 2019 and Altor maintains significant ownership.",
-      "founded_year": "2000s (through consolidation)",
-      "employee_count_detailed": "600+ employees including legal editors",
-      "revenue": "SEK 1.5+ billion (2023)",
-      "revenue_growth": "8-12% annual growth",
-      "valuation": "SEK 10+ billion (public company market cap)",
-      "total_funding": "Altor-backed, public company",
-      "ceo": "Pontus Bodelsson",
-      "leadership_team": [
-        {
-          "name": "Pontus Bodelsson",
-          "role": "CEO",
-          "background": "Information services and publishing executive"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Karnov Legal Databases",
-          "description": "Comprehensive legal information platforms with legislation, cases, and commentary for Nordic jurisdictions"
-        },
-        {
-          "name": "Regulatory Compliance Tools",
-          "description": "Compliance monitoring, regulatory change tracking, and alert services for regulated industries"
-        },
-        {
-          "name": "Legal Practice Software",
-          "description": "Workflow tools, document automation, and practice management for lawyers"
-        },
-        {
-          "name": "Public Procurement Intelligence",
-          "description": "Public tender databases and procurement information services"
-        }
-      ],
-      "technology_stack": [
-        "Legal content databases and CMS",
-        "Search and retrieval with AI/NLP",
-        "Document management",
-        "Alerting and monitoring systems",
-        "Web and mobile platforms",
-        "Integration APIs",
-        "Analytics and usage tracking"
-      ],
-      "recent_news": [
-        {
-          "date": "2019",
-          "title": "IPO",
-          "content": "Karnov Group listed on Nasdaq Stockholm"
-        },
-        {
-          "date": "2023",
-          "title": "Acquisitions",
-          "content": "Strategic acquisitions expanding content and capabilities"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2000s",
-          "event": "Platform Formation",
-          "description": "Karnov Group formed through consolidation of Nordic legal publishers"
-        },
-        {
-          "year": "2017",
-          "event": "Altor Investment",
-          "description": "Altor became major shareholder"
-        },
-        {
-          "year": "2019",
-          "event": "Public Listing",
-          "description": "IPO on Nasdaq Stockholm"
-        }
-      ],
-      "competitive_advantages": [
-        "Near-monopoly position in Nordic legal information",
-        "Mission-critical nature for legal professionals",
-        "Exceptionally high retention (95%+)",
-        "High barriers to entry (content aggregation, relationships)",
-        "Network effects as more users contribute annotations",
-        "Comprehensive coverage of all Nordic jurisdictions",
-        "Strong brand trust and reputation",
-        "Recurring subscription model with pricing power"
-      ],
-      "target_customers": "Law firms, corporate legal departments, courts, government agencies, compliance professionals, legal academics across Nordic countries",
-      "market_share": "Dominant market leader in Nordic legal information (70%+ share)",
-      "geographic_presence": [
-        "Sweden (HQ - Stockholm, largest market)",
-        "Denmark",
-        "Norway",
-        "Finland",
-        "Covering all Nordic legal systems"
-      ],
-      "business_model": "Subscription-based legal information model. Annual subscriptions per user or organization. Highly recurring revenue with minimal churn. Pricing power from essential nature. Expansion through new products and customer segments.",
-      "strategic_priorities": [
-        "Digital transformation and UX improvements",
-        "AI and natural language search enhancements",
-        "Workflow and practice tools expansion beyond content",
-        "Corporate and compliance segment growth",
-        "Content expansion and depth",
-        "Operational efficiency and margins"
-      ],
-      "sustainability_initiatives": [
-        "Digital delivery eliminates print publishing",
-        "Supporting legal profession and rule of law",
-        "Accessibility and legal information access",
-        "Environmental reporting for ESG customers"
-      ],
-      "investment_thesis": "Altor invested recognizing Karnov's exceptional business quality with near-monopoly in Nordic legal information, mission-critical nature driving 95%+ retention, highly recurring and predictable revenue, strong cash generation, pricing power, and opportunities for digital innovation and adjacent product expansion.",
-      "deal_size": "SEK 2.8B",
-      "logo_url": "https://logo.clearbit.com/karnovgroup.com"
-    },
-    {
-      "company": "AddSecure",
-      "sector": "Security Technology",
-      "fund": "Altor Fund V",
-      "market": "Sweden",
-      "entry": "2018",
-      "status": "Exited",
-      "exit_year": "2019",
-      "source": "Altor",
-      "enriched": true,
-      "research_date": "2025-10-21T08:50:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.addsecure.com",
-      "employees": "500+ employees",
-      "detailed_description": "AddSecure is a leading Nordic provider of security and safety solutions, offering comprehensive security services including alarm monitoring, access control, video surveillance, and mobile security services across Sweden, Norway, Denmark, and Finland. Founded through consolidation of Nordic security companies, AddSecure serves residential customers, small businesses, and large enterprises requiring integrated security solutions. The company operates 24/7 monitoring centers, provides installation and maintenance services, and offers mobile security solutions for vehicles and assets. AddSecure's services include intrusion detection, fire alarms, access control systems, video surveillance, and mobile tracking services. The company serves both B2C customers (home security) and B2B customers (commercial and industrial security) with tailored solutions. AddSecure benefits from Nordic markets' high security awareness, insurance requirements for security systems, and growing demand for integrated security solutions. The company has grown through acquisitions consolidating the fragmented Nordic security market. AddSecure's recurring revenue model through monitoring contracts provides stable cash flows. The security industry is defensive with steady demand regardless of economic conditions. In 2018, Altor invested in AddSecure recognizing the company's market leadership and consolidation opportunities in the Nordic security market.",
-      "founded_year": "2010s (through consolidation)",
-      "employee_count_detailed": "500+ employees across Nordic region",
-      "revenue": "SEK 1+ billion (estimated)",
-      "revenue_growth": "10-15% annual growth",
-      "valuation": "SEK 3+ billion (estimated)",
-      "total_funding": "Altor-backed",
-      "ceo": "Security industry executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Security services and technology expertise"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Alarm Monitoring",
-          "description": "24/7 monitoring services for intrusion detection, fire alarms, and emergency response"
-        },
-        {
-          "name": "Access Control Systems",
-          "description": "Electronic access control for buildings and facilities"
-        },
-        {
-          "name": "Video Surveillance",
-          "description": "CCTV systems with remote monitoring and analytics"
-        },
-        {
-          "name": "Mobile Security",
-          "description": "Vehicle and asset tracking services"
-        }
-      ],
-      "technology_stack": [
-        "Alarm monitoring systems",
-        "Access control hardware and software",
-        "Video surveillance platforms",
-        "Mobile tracking technology",
-        "Cloud-based monitoring",
-        "Integration platforms"
-      ],
-      "recent_news": [
-        {
-          "date": "2018",
-          "title": "Altor Investment",
-          "content": "Altor invested in AddSecure for Nordic security market consolidation"
-        },
-        {
-          "date": "2019-2023",
-          "title": "Strategic Acquisitions",
-          "content": "Multiple acquisitions expanding Nordic footprint"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2010s",
-          "event": "Platform Formation",
-          "description": "AddSecure formed through consolidation of Nordic security companies"
-        },
-        {
-          "year": "2018",
-          "event": "Altor Partnership",
-          "description": "Strategic PE investment"
-        }
-      ],
-      "competitive_advantages": [
-        "Largest Nordic security services provider",
-        "Comprehensive service offering from monitoring to installation",
-        "24/7 monitoring center operations",
-        "Strong brand recognition in Nordic markets",
-        "Recurring revenue from monitoring contracts",
-        "M&A platform for market consolidation",
-        "Defensive industry characteristics",
-        "Insurance industry relationships"
-      ],
-      "target_customers": "Residential customers, small businesses, and large enterprises requiring security solutions across Nordic region",
-      "market_share": "Market leader in Nordic security services",
-      "geographic_presence": [
-        "Sweden (HQ - Stockholm)",
-        "Norway",
-        "Denmark",
-        "Finland",
-        "Nordic region focus"
-      ],
-      "business_model": "Security services model: Recurring revenue from monitoring contracts, installation and maintenance services, equipment sales. Mix of B2C and B2B customers with long-term contracts.",
-      "strategic_priorities": [
-        "Market consolidation through M&A",
-        "Service expansion and cross-selling",
-        "Technology innovation and digital transformation",
-        "Operational efficiency improvements",
-        "Customer retention and satisfaction",
-        "Geographic expansion"
-      ],
-      "sustainability_initiatives": [
-        "Supporting safety and security in communities",
-        "Digital solutions reduce physical security needs",
-        "Employee safety and training programs"
-      ],
-      "investment_thesis": "Altor invested recognizing AddSecure's market leadership in defensive Nordic security market, recurring revenue model with high retention, consolidation opportunities in fragmented market, and essential nature of security services driving steady demand.",
-      "deal_size": "SEK 2.7B",
-      "logo_url": "https://logo.clearbit.com/addsecure.com"
-    },
-    {
-      "company": "Byggmax",
-      "sector": "Retail",
-      "fund": "Altor Fund IV",
-      "market": "Sweden",
-      "entry": "2021",
-      "source": "Altor",
-      "enriched": true,
-      "research_date": "2025-10-21T08:55:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.byggmax.se",
-      "employees": "1,000+ employees",
-      "detailed_description": "Byggmax is a leading Nordic building materials retailer operating a warehouse concept focused on serving DIY consumers and small contractors with quality building materials at competitive prices. Founded in 1993 in Sweden, Byggmax operates approximately 180 stores across Sweden, Norway, and Finland, offering lumber, construction materials, flooring, paint, tools, and home improvement products. The company pioneered a no-frills warehouse format with self-service, outdoor material yards, and limited staff to minimize operating costs and pass savings to customers. Byggmax targets price-conscious consumers undertaking renovation, construction, and home improvement projects. The company's product range focuses on essentials with limited SKU count (5,000-6,000 products) versus traditional hardware stores with 20,000+ SKUs, enabling efficient inventory management and purchasing power. Byggmax generates revenue from in-store sales with increasing e-commerce and click-and-collect capabilities. The company serves a large customer base with stores located in suburban and smaller city locations with good accessibility and parking. Byggmax went public in 2010 and in 2021 was taken private by Altor in a deal valuing the company at SEK 4+ billion. The Nordic building materials market is attractive with high DIY culture, housing stock requiring maintenance, and steady renovation activity. Byggmax competes with Bauhaus, Jula, and local building merchants, differentiated by discount warehouse positioning and simplified assortment.",
-      "founded_year": "1993",
-      "employee_count_detailed": "1,000+ employees",
-      "revenue": "SEK 6+ billion (2023)",
-      "revenue_growth": "5-10% annual growth",
-      "valuation": "SEK 4+ billion (2021 Altor take-private)",
-      "total_funding": "Public company acquired by Altor 2021",
-      "ceo": "Mattias Ankarberg",
-      "leadership_team": [
-        {
-          "name": "Mattias Ankarberg",
-          "role": "CEO",
-          "background": "Retail executive with building materials expertise"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Building Materials",
-          "description": "Lumber, boards, construction materials, insulation for building and renovation projects"
-        },
-        {
-          "name": "Flooring & Interior",
-          "description": "Laminate, wood flooring, tiles, and interior finishing materials"
-        },
-        {
-          "name": "Paint & Tools",
-          "description": "Paint, brushes, hand tools, and equipment for home improvement"
-        },
-        {
-          "name": "Outdoor & Garden",
-          "description": "Decking, fencing, outdoor furniture materials"
-        }
-      ],
-      "technology_stack": [
-        "Retail point-of-sale systems",
-        "E-commerce platform",
-        "Inventory management",
-        "Supply chain and procurement systems",
-        "Customer loyalty programs",
-        "Mobile apps and digital marketing"
-      ],
-      "recent_news": [
-        {
-          "date": "2021",
-          "title": "Altor Take-Private",
-          "content": "Altor acquired Byggmax at SEK 4B+ valuation, delisting from Nasdaq Stockholm"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "1993",
-          "event": "First Store Opened",
-          "description": "Byggmax founded with first warehouse store in Sweden"
-        },
-        {
-          "year": "2010",
-          "event": "IPO",
-          "description": "Listed on Nasdaq Stockholm"
-        },
-        {
-          "year": "2021",
-          "event": "Altor Acquisition",
-          "description": "Take-private by Altor"
-        }
-      ],
-      "competitive_advantages": [
-        "Low-cost warehouse format provides price competitiveness",
-        "180 stores across Nordic markets with strong coverage",
-        "Brand recognition among DIY consumers",
-        "Efficient operations with self-service model",
-        "Purchasing power from scale",
-        "Prime locations with good accessibility",
-        "Loyalty program and customer base",
-        "Nordic DIY culture drives demand"
-      ],
-      "target_customers": "DIY consumers, homeowners, and small contractors undertaking building, renovation, and home improvement projects in Nordic countries",
-      "market_share": "Top 3 building materials retailer in Nordics",
-      "geographic_presence": [
-        "Sweden (HQ - Stockholm, ~100 stores)",
-        "Norway (~50 stores)",
-        "Finland (~30 stores)",
-        "180 total stores"
-      ],
-      "business_model": "Retail model: Revenue from in-store and online sales. Margins from purchasing and operational efficiency. Seasonal patterns with peak in spring/summer.",
-      "strategic_priorities": [
-        "Like-for-like sales growth",
-        "E-commerce and omnichannel development",
-        "Operational efficiency improvements",
-        "Customer experience enhancement",
-        "Loyalty program expansion",
-        "Private label product development",
-        "Selective new store openings"
-      ],
-      "sustainability_initiatives": [
-        "Sustainable sourcing of lumber and materials",
-        "Energy efficiency in stores and logistics",
-        "Waste reduction and recycling programs",
-        "Promoting sustainable building practices",
-        "FSC-certified wood products"
-      ],
-      "investment_thesis": "Altor invested recognizing Byggmax's strong market position in attractive Nordic DIY market, opportunities for like-for-like growth and operational improvements as private company, potential for margin enhancement through efficiency and private label, stable cash generation, and defensive characteristics from essential home maintenance demand.",
-      "deal_size": "SEK 4B",
-      "deal_value_source": "Recent news",
-      "deal_value_context": "Altor Take-Private Altor acquired Byggmax at SEK 4B+ valuation, delisting from Nasdaq Stockholm",
-      "deal_value_updated": "2025-10-20T20:11:01.257205",
-      "logo_url": "https://logo.clearbit.com/byggmax.se"
-    },
-    {
-      "company": "Dustin",
-      "sector": "IT Distribution",
-      "fund": "Altor Fund IV",
-      "market": "Sweden",
-      "entry": "2015",
-      "source": "Altor",
-      "enriched": true,
-      "research_date": "2025-10-21T09:00:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.dustin.se",
-      "employees": "1,800+ employees across Nordics",
-      "detailed_description": "Dustin is the leading Nordic IT reseller and solutions provider offering hardware, software, cloud services, and IT solutions to businesses, public sector organizations, and consumers across Sweden, Denmark, Norway, Finland, and Netherlands. Founded in 1984, Dustin operates both B2B and B2C channels, serving over 800,000 business customers and millions of consumer customers. The company's B2B business provides comprehensive IT procurement for SMEs and enterprises including PCs, servers, networking equipment, software licenses, cloud subscriptions, and managed services. Dustin acts as one-stop-shop for IT procurement with strong relationships with vendors like Dell, HP, Lenovo, Microsoft, Cisco, and thousands of other suppliers. The company provides value through consolidated ordering, volume pricing, technical advice, installation services, and ongoing support. Dustin also operates online consumer electronics stores selling computers, accessories, and electronics to individuals. The company's services division provides IT consulting, managed services, and cloud solutions helping customers with digital transformation. Dustin operates with efficient online platforms complemented by field sales teams and showrooms. The company went public in 2015 and in 2023 was taken private by Altor at SEK 15+ billion valuation. Dustin benefits from Nordic organizations' high IT spending, cloud migration trends driving software and services growth, and hybrid work driving PC refresh cycles. The company competes with global distributors but maintains strong Nordic market position through local expertise and customer relationships.",
-      "founded_year": "1984",
-      "employee_count_detailed": "1,800+ employees across Nordics",
-      "revenue": "SEK 18+ billion (2023)",
-      "revenue_growth": "8-12% annual growth",
-      "valuation": "SEK 15+ billion (2023 Altor take-private)",
-      "total_funding": "Public company acquired by Altor 2023",
-      "ceo": "Thomas Ekman",
-      "leadership_team": [
-        {
-          "name": "Thomas Ekman",
-          "role": "CEO",
-          "background": "IT distribution and retail executive"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Dustin Business",
-          "description": "B2B IT procurement platform for businesses and public sector with hardware, software, and services"
-        },
-        {
-          "name": "Dustin Consumer",
-          "description": "Consumer electronics e-commerce for individuals"
-        },
-        {
-          "name": "Managed Services",
-          "description": "IT services including cloud solutions, infrastructure management, and support"
-        },
-        {
-          "name": "Software Licensing",
-          "description": "Microsoft, Adobe, and other software licensing and cloud subscriptions"
-        }
-      ],
-      "technology_stack": [
-        "E-commerce platforms (B2B and B2C)",
-        "Inventory and procurement systems",
-        "Warehouse management",
-        "CRM and customer portals",
-        "ERP and financial systems",
-        "Services delivery and ticketing platforms"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Altor Take-Private",
-          "content": "Altor acquired Dustin for SEK 15B+, delisting from Nasdaq Stockholm"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "1984",
-          "event": "Company Founded",
-          "description": "Dustin started as mail-order computer business"
-        },
-        {
-          "year": "2000s",
-          "event": "B2B Focus",
-          "description": "Shifted focus to corporate and public sector IT"
-        },
-        {
-          "year": "2015",
-          "event": "IPO",
-          "description": "Listed on Nasdaq Stockholm"
-        },
-        {
-          "year": "2023",
-          "event": "Altor Acquisition",
-          "description": "Take-private by Altor"
-        }
-      ],
-      "competitive_advantages": [
-        "Market leader in Nordic IT distribution",
-        "800,000+ business customers and deep relationships",
-        "Comprehensive product and service portfolio",
-        "Strong vendor partnerships and volume purchasing",
-        "Efficient e-commerce and logistics operations",
-        "Public sector expertise and framework agreements",
-        "Local market knowledge and customer service",
-        "Services capabilities differentiate from pure resellers"
-      ],
-      "target_customers": "Nordic businesses, public sector organizations, educational institutions, and consumers purchasing IT equipment and services",
-      "market_share": "Market leader in Nordic IT distribution",
-      "geographic_presence": [
-        "Sweden (HQ - Stockholm, largest market)",
-        "Denmark",
-        "Norway",
-        "Finland",
-        "Netherlands"
-      ],
-      "business_model": "Distribution model: Revenue from product sales and services. Mix of transactional and framework agreement business. Higher-margin services and cloud subscriptions growing. Product refresh cycles drive recurring demand.",
-      "strategic_priorities": [
-        "Services and solutions mix shift from pure product",
-        "Cloud and software revenue growth",
-        "Margin improvement and operational efficiency",
-        "E-commerce platform enhancement",
-        "Public sector framework maximization",
-        "Strategic suppliers and vendor relationships"
-      ],
-      "sustainability_initiatives": [
-        "Product recycling and take-back programs",
-        "Energy-efficient product offerings",
-        "Sustainable logistics and packaging",
-        "Circular economy initiatives",
-        "E-waste management"
-      ],
-      "investment_thesis": "Altor invested recognizing Dustin's market leadership in Nordic IT distribution, opportunities for margin improvement through services mix shift and operational efficiency, defensive characteristics from IT replacement cycles, potential for enhanced e-commerce and cloud revenue growth, and value creation through strategic initiatives as private company.",
-      "deal_size": "SEK 15B",
-      "deal_value_source": "Recent news",
-      "deal_value_context": "Altor Take-Private Altor acquired Dustin for SEK 15B+, delisting from Nasdaq Stockholm",
-      "deal_value_updated": "2025-10-20T20:11:01.258361",
-      "logo_url": "https://logo.clearbit.com/dustin.se"
-    },
-    {
-      "company": "Fortress",
-      "sector": "Security",
-      "fund": "Altor Fund V",
-      "market": "Denmark",
-      "entry": "2019",
-      "source": "Altor",
-      "enriched": true,
-      "research_date": "2025-10-21T09:05:00",
-      "headquarters": "Copenhagen, Denmark",
-      "website": "https://www.fortress.com",
-      "employees": "500+ employees",
-      "detailed_description": "Fortress is a leading Nordic security services provider offering comprehensive security solutions including manned guarding, mobile patrols, alarm response, access control, and security consulting across Denmark, Sweden, Norway, and Finland. Founded through consolidation of Nordic security companies, Fortress serves corporate clients, public sector organizations, retail chains, industrial facilities, and residential communities requiring professional security services. The company operates 24/7 security operations centers, provides trained security personnel, and offers integrated security solutions combining physical security with technology. Fortress's services include static guarding, mobile patrols, alarm monitoring and response, access control systems, security consulting, and event security. The company serves both B2B clients requiring ongoing security services and event organizers needing temporary security coverage. Fortress benefits from Nordic markets' high security awareness, regulatory requirements for security in certain industries, and growing demand for professional security services. The company has grown through acquisitions consolidating the fragmented Nordic security market. Fortress's recurring revenue model through long-term security contracts provides stable cash flows. The security industry is defensive with steady demand regardless of economic conditions. In 2019, Altor invested in Fortress recognizing the company's market leadership and consolidation opportunities in the Nordic security market.",
-      "founded_year": "2010s (through consolidation)",
-      "employee_count_detailed": "500+ employees across Nordic region",
-      "revenue": "DKK 1+ billion (estimated)",
-      "revenue_growth": "10-15% annual growth",
-      "valuation": "DKK 2+ billion (estimated)",
-      "total_funding": "Altor-backed",
-      "ceo": "Security industry executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Security services and operations expertise"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Manned Guarding",
-          "description": "Static security guards for buildings, facilities, and events"
-        },
-        {
-          "name": "Mobile Patrols",
-          "description": "Regular security patrols and alarm response services"
-        },
-        {
-          "name": "Access Control",
-          "description": "Electronic access control systems and monitoring"
-        },
-        {
-          "name": "Security Consulting",
-          "description": "Security risk assessments and advisory services"
-        }
-      ],
-      "technology_stack": [
-        "Security management systems",
-        "Access control hardware and software",
-        "Alarm monitoring platforms",
-        "Mobile patrol management",
-        "Customer portals",
-        "Integration systems"
-      ],
-      "recent_news": [
-        {
-          "date": "2019",
-          "title": "Altor Investment",
-          "content": "Altor invested in Fortress for Nordic security market consolidation"
-        },
-        {
-          "date": "2020-2023",
-          "title": "Strategic Acquisitions",
-          "content": "Multiple acquisitions expanding Nordic footprint"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2010s",
-          "event": "Platform Formation",
-          "description": "Fortress formed through consolidation of Nordic security companies"
-        },
-        {
-          "year": "2019",
-          "event": "Altor Partnership",
-          "description": "Strategic PE investment"
-        }
-      ],
-      "competitive_advantages": [
-        "Largest Nordic security services provider",
-        "Comprehensive service offering from guarding to technology",
-        "24/7 operations center capabilities",
-        "Strong brand recognition in Nordic markets",
-        "Recurring revenue from long-term contracts",
-        "M&A platform for market consolidation",
-        "Defensive industry characteristics",
-        "Trained and certified security personnel"
-      ],
-      "target_customers": "Corporate clients, public sector organizations, retail chains, industrial facilities, and residential communities requiring professional security services across Nordic region",
-      "market_share": "Market leader in Nordic security services",
-      "geographic_presence": [
-        "Denmark (HQ - Copenhagen)",
-        "Sweden",
-        "Norway",
-        "Finland",
-        "Nordic region focus"
-      ],
-      "business_model": "Security services model: Recurring revenue from long-term security contracts, hourly rates for manned services, technology installation and maintenance. Mix of B2B and B2C customers with contract-based revenue.",
-      "strategic_priorities": [
-        "Market consolidation through M&A",
-        "Service expansion and cross-selling",
-        "Technology integration and innovation",
-        "Operational efficiency improvements",
-        "Customer retention and satisfaction",
-        "Geographic expansion"
-      ],
-      "sustainability_initiatives": [
-        "Supporting safety and security in communities",
-        "Employee training and development programs",
-        "Digital solutions reduce travel",
-        "Community safety partnerships"
-      ],
-      "investment_thesis": "Altor invested recognizing Fortress's market leadership in defensive Nordic security market, recurring revenue model with high retention, consolidation opportunities in fragmented market, and essential nature of security services driving steady demand.",
-      "deal_size": "SEK 1.9B",
-      "logo_url": "https://logo.clearbit.com/fortress.com"
-    },
-    {
-      "company": "Moment Group",
-      "sector": "Healthcare",
-      "fund": "Altor Fund V",
-      "market": "Sweden",
-      "entry": "2021",
-      "source": "Altor",
-      "enriched": true,
-      "research_date": "2025-10-21T09:10:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.moment.com",
-      "employees": "500+ employees",
-      "detailed_description": "Moment Group operates specialized care and wellbeing services, providing outsourced solutions to municipalities and healthcare organizations. Services include disability care units, residential care homes, and support services with a focus on quality, compliance, and staff training across Sweden.",
-      "founded_year": "2000s",
-      "employee_count_detailed": "500+ care professionals and staff",
-      "revenue": "SEK 1+ billion (estimated)",
-      "revenue_growth": "5-10% annual growth",
-      "valuation": "SEK 2+ billion (estimated)",
-      "total_funding": "Altor-backed",
-      "ceo": "Healthcare services executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Healthcare operations and compliance"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Disability Care Units",
-          "description": "Residential and day-care services for individuals with special needs"
-        },
-        {
-          "name": "Residential Care Homes",
-          "description": "Outsourced care homes operating under municipal contracts"
-        }
-      ],
-      "technology_stack": [
-        "Care documentation systems",
-        "Scheduling",
-        "Quality compliance platforms"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Contract Wins",
-          "content": "New municipal contracts across Swedish regions"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2021",
-          "event": "Altor Investment",
-          "description": "Altor invested to support growth and quality programs"
-        }
-      ],
-      "competitive_advantages": [
-        "Quality metrics and compliance",
-        "Experienced staff",
-        "Municipal relationships"
-      ],
-      "target_customers": "Municipalities and regional healthcare authorities",
-      "market_share": "Growing provider in specialized care services",
-      "geographic_presence": [
-        "Sweden (national footprint)"
-      ],
-      "deal_size": "SEK 2.5B",
-      "logo_url": "https://logo.clearbit.com/moment.com"
-    },
-    {
-      "company": "Nokas",
-      "sector": "Security Services",
-      "fund": "Altor Fund IV",
-      "market": "Norway",
-      "entry": "2016",
-      "source": "Altor",
-      "enriched": true,
-      "research_date": "2025-10-21T09:12:00",
-      "headquarters": "Oslo, Norway",
-      "website": "https://www.nokas.no",
-      "employees": "10,000+ employees across Nordics",
-      "detailed_description": "Nokas is a leading Nordic security services company offering guarding, alarm monitoring, cash handling, technical security, and airport security. The company operates 24/7 operations centers and serves corporate, public sector, transport, and retail clients across Norway, Sweden, Denmark, and Finland.",
-      "founded_year": "1987",
-      "employee_count_detailed": "10,000+ employees across 4 countries",
-      "revenue": "NOK 8+ billion (estimated)",
-      "revenue_growth": "5-8% annual growth",
-      "valuation": "NOK 10+ billion (estimated)",
-      "total_funding": "Altor-backed",
-      "ceo": "Security industry executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Security services and operations"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Guarding & Patrol",
-          "description": "Manned guarding and mobile patrol services"
-        },
-        {
-          "name": "Alarm Monitoring",
-          "description": "24/7 alarm receiving centers and response"
-        },
-        {
-          "name": "Cash Handling",
-          "description": "Cash logistics and ATM services"
-        }
-      ],
-      "technology_stack": [
-        "Alarm monitoring",
-        "Workforce management",
-        "Access control"
-      ],
-      "recent_news": [
-        {
-          "date": "2022",
-          "title": "Airport Security Wins",
-          "content": "New multi-year airport security contracts"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2016",
-          "event": "Altor Investment",
-          "description": "Platform for Nordic consolidation"
-        }
-      ],
-      "competitive_advantages": [
-        "Scale and nationwide coverage",
-        "Mission-critical operations",
-        "Long-term contracts"
-      ],
-      "target_customers": "Corporate, public sector, transport hubs, retail chains",
-      "market_share": "Top 3 security services provider in Nordics",
-      "geographic_presence": [
-        "Norway (HQ - Oslo)",
-        "Sweden",
-        "Denmark",
-        "Finland"
-      ],
-      "deal_size": "NOK 6B",
-      "logo_url": "https://logo.clearbit.com/nokas.no"
-    },
-    {
-      "company": "Norva24",
-      "sector": "Business Services",
-      "fund": "Altor Fund V",
-      "market": "Norway",
-      "entry": "2018",
-      "source": "Altor",
-      "enriched": true,
-      "research_date": "2025-10-21T09:14:00",
-      "headquarters": "Stavanger, Norway",
-      "website": "https://www.norva24.com",
-      "employees": "2,000+ employees",
-      "detailed_description": "Norva24 is the leading Nordic provider of UIM (Underground Infrastructure Maintenance) services including pipe cleaning, CCTV inspection, high-pressure flushing, sludge/suction services, and industrial cleaning. The company serves municipalities, utilities, industrial sites, and construction firms across Norway, Sweden, Denmark, Germany, and Netherlands.",
-      "founded_year": "2015 (platform)",
-      "employee_count_detailed": "2,000+ employees across Nordics and DACH",
-      "revenue": "NOK 3+ billion (estimated)",
-      "revenue_growth": "15%+ annual (organic + M&A)",
-      "valuation": "NOK 8+ billion (estimated)",
-      "total_funding": "Altor-backed",
-      "ceo": "Industrial services executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Infrastructure maintenance"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Pipe Cleaning & Flushing",
-          "description": "High-pressure flushing and cleaning of pipelines"
-        },
-        {
-          "name": "CCTV Inspection",
-          "description": "Video inspections to assess pipe condition"
-        },
-        {
-          "name": "Sludge/Suction",
-          "description": "Suction trucks for sludge and waste removal"
-        }
-      ],
-      "technology_stack": [
-        "CCTV inspection systems",
-        "Fleet telematics",
-        "Scheduling"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Expansion in Germany",
-          "content": "Acquisitions broaden DACH footprint"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2018",
-          "event": "Altor Investment",
-          "description": "Platform for Nordic consolidation"
-        }
-      ],
-      "competitive_advantages": [
-        "Scale and fleet density",
-        "Regulatory compliance expertise",
-        "Mission-critical services"
-      ],
-      "target_customers": "Municipalities, utilities, industry, construction",
-      "market_share": "Market leader in Nordic UIM services",
-      "geographic_presence": [
-        "Norway (HQ - Stavanger)",
-        "Sweden",
-        "Denmark",
-        "Germany",
-        "Netherlands"
-      ],
-      "deal_size": "€450M",
-      "logo_url": "https://logo.clearbit.com/norva24.com"
-    },
-    {
-      "company": "Mekonomen",
-      "sector": "Automotive",
-      "fund": "Altor Fund IV",
-      "market": "Sweden",
-      "entry": "2016",
-      "source": "Altor",
-      "enriched": true,
-      "research_date": "2025-10-21T09:16:00",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.mekonomen.com",
-      "employees": "5,000+ employees",
-      "detailed_description": "Mekonomen Group is the leading independent automotive spare parts distributor and car service network in the Nordics, operating brands including Mekonomen, MECA, and Sørensen og Balchen. The company supplies workshops with parts and operates affiliated car service centers across Sweden, Norway, Denmark, and Finland.",
-      "founded_year": "1973",
-      "employee_count_detailed": "5,000+ employees across the Nordics",
-      "revenue": "SEK 12+ billion (estimated)",
-      "revenue_growth": "3-6% annual growth",
-      "valuation": "SEK 10+ billion (estimated)",
-      "total_funding": "Altor-backed",
-      "ceo": "Automotive aftermarket executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Aftermarket and distribution"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Spare Parts Distribution",
-          "description": "Distribution of OEM and aftermarket parts to independent workshops"
-        },
-        {
-          "name": "Service Network",
-          "description": "Branded workshop networks providing maintenance and repair"
-        }
-      ],
-      "technology_stack": [
-        "Inventory and logistics systems",
-        "Workshop management",
-        "E-commerce ordering"
-      ],
-      "recent_news": [
-        {
-          "date": "2023",
-          "title": "Network Expansion",
-          "content": "Growth in affiliated workshops and online ordering"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2016",
-          "event": "Altor Investment",
-          "description": "Transformation and network growth"
-        }
-      ],
-      "competitive_advantages": [
-        "Scale and purchasing power",
-        "Brand recognition",
-        "Dense workshop network"
-      ],
-      "target_customers": "Independent workshops, fleets, and consumers",
-      "market_share": "Leading Nordic independent aftermarket player",
-      "geographic_presence": [
-        "Sweden (HQ - Stockholm)",
-        "Norway",
-        "Denmark",
-        "Finland"
-      ],
-      "deal_size": "SEK 6.1B",
-      "logo_url": "https://logo.clearbit.com/mekonomen.com"
-    },
-    {
       "company": "Cavotec",
       "sector": "Industrial Tech",
       "fund": "Bure Equity",
@@ -34720,6 +33832,8 @@
       "market": "Sweden",
       "entry": "2021",
       "source": "Adelis Equity",
+      "status": "Exited",
+      "exit_year": "2022",
       "headquarters": "Sweden",
       "website": "https://www.säkra.com",
       "enriched": true,
@@ -35363,87 +34477,1404 @@
       "market_position": "To be researched",
       "logo_url": "https://logo.clearbit.com/medgroup.com"
     },
-    {"company": "Immedica", "sector": "Pharmaceuticals", "fund": "Impilo", "market": "Nordics", "entry": "2022", "source": "Impilo", "headquarters": "Sweden", "status": "Active", "detailed_description": "Orphan and niche specialty pharmaceuticals launch and distribution"},
-    {"company": "Humana", "sector": "Healthcare", "fund": "Impilo", "market": "Nordics", "entry": "2021", "source": "Impilo", "headquarters": "Stockholm, Sweden", "status": "Active", "detailed_description": "Leading Nordic private care provider"},
-    {"company": "Euro Accident", "sector": "Healthcare", "fund": "Impilo", "market": "Sweden", "entry": "2020", "source": "Impilo", "headquarters": "Sweden", "status": "Active", "detailed_description": "Health-related insurance and employee wellbeing"},
-    {"company": "Scantox", "sector": "Pharma Services", "fund": "Impilo", "market": "Denmark", "entry": "2021", "source": "Impilo", "headquarters": "Denmark", "status": "Active", "detailed_description": "Nordic pre-clinical contract research organization"},
-    {"company": "tandlægen.dk", "sector": "Healthcare", "fund": "Impilo", "market": "Denmark", "entry": "2022", "source": "Impilo", "headquarters": "Denmark", "status": "Active", "detailed_description": "Leading Danish dental care chain"},
-    {"company": "Lowenco", "sector": "Pharma Services", "fund": "Impilo", "market": "Sweden", "entry": "2023", "source": "Impilo", "headquarters": "Sweden", "status": "Active", "detailed_description": "Ultra-low temperature storage for biopharma"},
-    {"company": "Pelago Bioscience", "sector": "Healthcare", "fund": "Impilo", "market": "Sweden", "entry": "2022", "source": "Impilo", "headquarters": "Sweden", "status": "Active", "detailed_description": "Drug discovery CRO with CETSA-technology"},
-    {"company": "VaccinDirekt", "sector": "Healthcare", "fund": "Impilo", "market": "Nordics", "entry": "2021", "source": "Impilo", "headquarters": "Sweden", "status": "Active", "detailed_description": "Largest Nordic retail vaccination provider"},
-    {"company": "Decon", "sector": "MedTech", "fund": "Impilo", "market": "Sweden", "entry": "2022", "source": "Impilo", "headquarters": "Sweden", "status": "Active", "detailed_description": "Power-assisted wheelchair solutions"},
-    {"company": "Avia Pharma", "sector": "Pharmaceuticals", "fund": "Impilo", "market": "Nordics", "entry": "2021", "source": "Impilo", "headquarters": "Sweden", "status": "Active", "detailed_description": "North European OTC/Rx platform"},
-    {"company": "Stille", "sector": "MedTech", "fund": "Impilo", "market": "Sweden", "entry": "2020", "source": "Impilo", "headquarters": "Sweden", "status": "Active", "detailed_description": "Surgical instruments and surgical tables"},
-    {"company": "Qufora", "sector": "MedTech", "fund": "Impilo", "market": "Denmark", "entry": "2023", "source": "Impilo", "headquarters": "Denmark", "status": "Active", "detailed_description": "TAI products and collecting devices"},
-    {"company": "Oticon Medical", "sector": "MedTech", "fund": "Impilo", "market": "Sweden", "entry": "2025", "source": "Impilo", "headquarters": "Sweden", "status": "Active", "detailed_description": "Bone-anchored hearing solutions, acquired from Demant"},
-    {"company": "Bekk", "sector": "Technology", "fund": "Axcel", "market": "Norway", "entry": "2026", "source": "Axcel", "headquarters": "Oslo, Norway", "status": "Active", "detailed_description": "Technology consultancy"},
-    {"company": "LS Retail", "sector": "Technology", "fund": "Axcel", "market": "Iceland", "entry": "2025", "source": "Axcel", "headquarters": "Iceland", "status": "Active", "detailed_description": "Retail software solutions"},
-    {"company": "AGRD Partners", "sector": "Business Services", "fund": "Axcel", "market": "Sweden", "entry": "2025", "source": "Axcel", "headquarters": "Sweden", "status": "Active"},
-    {"company": "Nordic Tyre Group", "sector": "Business Services", "fund": "Axcel", "market": "Sweden", "entry": "2025", "source": "Axcel", "headquarters": "Sweden", "status": "Active"},
-    {"company": "Accru Partners", "sector": "Business Services", "fund": "Axcel", "market": "Sweden", "entry": "2024", "source": "Axcel", "headquarters": "Sweden", "status": "Active"},
-    {"company": "Acurum Group", "sector": "Business Services", "fund": "Axcel", "market": "Sweden", "entry": "2024", "source": "Axcel", "headquarters": "Sweden", "status": "Active"},
-    {"company": "Elcor", "sector": "Business Services", "fund": "Axcel", "market": "Denmark", "entry": "2023", "source": "Axcel", "headquarters": "Denmark", "status": "Active"},
-    {"company": "Progrits", "sector": "Technology", "fund": "Axcel", "market": "Sweden", "entry": "2023", "source": "Axcel", "headquarters": "Sweden", "status": "Active"},
-    {"company": "XPartners", "sector": "Business Services", "fund": "Axcel", "market": "Sweden", "entry": "2023", "source": "Axcel", "headquarters": "Sweden", "status": "Active"},
-    {"company": "Oral Care", "sector": "Healthcare", "fund": "Axcel", "market": "Sweden", "entry": "2022", "source": "Axcel", "headquarters": "Sweden", "status": "Active"},
-    {"company": "The Nutriment Company", "sector": "Consumer", "fund": "Axcel", "market": "Sweden", "entry": "2022", "source": "Axcel", "headquarters": "Sweden", "status": "Active"},
-    {"company": "NTI Group", "sector": "Technology", "fund": "Axcel", "market": "Denmark", "entry": "2022", "source": "Axcel", "headquarters": "Denmark", "status": "Active"},
-    {"company": "itm8", "sector": "Technology", "fund": "Axcel", "market": "Denmark", "entry": "2022", "source": "Axcel", "headquarters": "Denmark", "status": "Active"},
-    {"company": "BullWall", "sector": "Technology", "fund": "Axcel", "market": "Denmark", "entry": "2022", "source": "Axcel", "headquarters": "Denmark", "status": "Active"},
-    {"company": "Init", "sector": "Technology", "fund": "Axcel", "market": "Denmark", "entry": "2022", "source": "Axcel", "headquarters": "Denmark", "status": "Active"},
-    {"company": "DANX Carousel Group", "sector": "Business Services", "fund": "Axcel", "market": "Denmark", "entry": "2022", "source": "Axcel", "headquarters": "Denmark", "status": "Active"},
-    {"company": "Vetopia", "sector": "Healthcare", "fund": "Axcel", "market": "Denmark", "entry": "2021", "source": "Axcel", "headquarters": "Denmark", "status": "Active"},
-    {"company": "emagine", "sector": "Technology", "fund": "Axcel", "market": "Denmark", "entry": "2021", "source": "Axcel", "headquarters": "Denmark", "status": "Active"},
-    {"company": "Edda Group", "sector": "Business Services", "fund": "Axcel", "market": "Denmark", "entry": "2020", "source": "Axcel", "headquarters": "Denmark", "status": "Active"},
-    {"company": "Currentum", "sector": "Business Services", "fund": "Axcel", "market": "Sweden", "entry": "2020", "source": "Axcel", "headquarters": "Sweden", "status": "Active"},
-    {"company": "SuperOffice", "sector": "Technology", "fund": "Axcel", "market": "Norway", "entry": "2020", "source": "Axcel", "headquarters": "Norway", "status": "Active", "detailed_description": "CRM software"},
-    {"company": "Phase One", "sector": "Technology", "fund": "Axcel", "market": "Denmark", "entry": "2019", "source": "Axcel", "headquarters": "Denmark", "status": "Active"},
-    {"company": "Capture One", "sector": "Technology", "fund": "Axcel", "market": "Denmark", "entry": "2019", "source": "Axcel", "headquarters": "Denmark", "status": "Active", "detailed_description": "Professional photo editing software"},
-    {"company": "GUBI", "sector": "Consumer", "fund": "Axcel", "market": "Denmark", "entry": "2018", "source": "Axcel", "headquarters": "Copenhagen, Denmark", "status": "Active", "detailed_description": "Design furniture"},
-    {"company": "Nestit Group", "sector": "Technology", "fund": "MVI Fund II", "market": "Nordics", "entry": "2024", "source": "MVI", "headquarters": "Sweden", "status": "Active", "detailed_description": "Pan-Nordic IT infrastructure for SMEs"},
-    {"company": "Ascenco Group", "sector": "Business Services", "fund": "MVI Fund II", "market": "Sweden", "entry": "2023", "source": "MVI", "headquarters": "Sweden", "status": "Active", "detailed_description": "Critical infrastructure services"},
-    {"company": "SMP Parts", "sector": "Business Services", "fund": "MVI Fund II", "market": "Sweden", "entry": "2023", "source": "MVI", "headquarters": "Sweden", "status": "Active", "detailed_description": "Smart digging systems"},
-    {"company": "PS Auction", "sector": "Business Services", "fund": "MVI", "market": "Sweden", "entry": "2022", "source": "MVI", "headquarters": "Sweden", "status": "Active"},
-    {"company": "Art Clinic", "sector": "Healthcare", "fund": "MVI", "market": "Sweden", "entry": "2022", "source": "MVI", "headquarters": "Sweden", "status": "Active"},
-    {"company": "Great Security", "sector": "Business Services", "fund": "MVI", "market": "Sweden", "entry": "2021", "source": "MVI", "headquarters": "Sweden", "status": "Active"},
-    {"company": "Freedom Group", "sector": "Technology", "fund": "MVI Fund II", "market": "Sweden", "entry": "2023", "source": "MVI", "headquarters": "Sweden", "status": "Active", "detailed_description": "Accounting digitization and financial software"},
-    {"company": "Activeon", "sector": "Consumer", "fund": "Equip", "market": "Nordics", "entry": "2022", "source": "Equip", "headquarters": "Norway", "status": "Active", "detailed_description": "Indoor trampoline and attraction parks"},
-    {"company": "Bastard Burgers", "sector": "Consumer", "fund": "Equip", "market": "Nordics", "entry": "2022", "source": "Equip", "headquarters": "Stockholm, Sweden", "status": "Active", "detailed_description": "Fast-casual burger chain, 70+ restaurants"},
-    {"company": "Busspart", "sector": "Business Services", "fund": "Equip", "market": "Nordics", "entry": "2023", "source": "Equip", "headquarters": "Norway", "status": "Active"},
-    {"company": "Cares", "sector": "Business Services", "fund": "Equip", "market": "Nordics", "entry": "2022", "source": "Equip", "headquarters": "Norway", "status": "Active"},
-    {"company": "Cautus Geo", "sector": "Technology", "fund": "Equip", "market": "Norway", "entry": "2022", "source": "Equip", "headquarters": "Norway", "status": "Active"},
-    {"company": "Cloud Connection", "sector": "Technology", "fund": "Equip", "market": "Nordics", "entry": "2021", "source": "Equip", "headquarters": "Norway", "status": "Active"},
-    {"company": "Cure", "sector": "Technology", "fund": "Equip", "market": "Nordics", "entry": "2022", "source": "Equip", "headquarters": "Stockholm, Sweden", "status": "Active", "detailed_description": "Influencer marketing platform"},
-    {"company": "Dura", "sector": "Business Services", "fund": "Equip", "market": "Norway", "entry": "2021", "source": "Equip", "headquarters": "Norway", "status": "Active"},
-    {"company": "Funplays", "sector": "Consumer", "fund": "Equip", "market": "Nordics", "entry": "2022", "source": "Equip", "headquarters": "Norway", "status": "Active"},
-    {"company": "Holy Greens", "sector": "Consumer", "fund": "Equip", "market": "Sweden", "entry": "2022", "source": "Equip", "headquarters": "Sweden", "status": "Active"},
-    {"company": "House of Discs", "sector": "Consumer", "fund": "Equip", "market": "Norway", "entry": "2023", "source": "Equip", "headquarters": "Norway", "status": "Active"},
-    {"company": "iteam", "sector": "Technology", "fund": "Equip", "market": "Norway", "entry": "2021", "source": "Equip", "headquarters": "Oslo, Norway", "status": "Active"},
-    {"company": "Makeup Mekka", "sector": "Consumer", "fund": "Equip", "market": "Norway", "entry": "2022", "source": "Equip", "headquarters": "Norway", "status": "Active"},
-    {"company": "Miles", "sector": "Technology", "fund": "Equip", "market": "Norway", "entry": "2021", "source": "Equip", "headquarters": "Oslo, Norway", "status": "Active"},
-    {"company": "North Travel", "sector": "Consumer", "fund": "Equip", "market": "Nordics", "entry": "2022", "source": "Equip", "headquarters": "Norway", "status": "Active"},
-    {"company": "River Group", "sector": "Business Services", "fund": "Equip", "market": "Nordics", "entry": "2021", "source": "Equip", "headquarters": "Norway", "status": "Active"},
-    {"company": "Ryde", "sector": "Technology", "fund": "Equip", "market": "Norway", "entry": "2022", "source": "Equip", "headquarters": "Norway", "status": "Active", "detailed_description": "E-scooter sharing"},
-    {"company": "Stenbolaget", "sector": "Consumer", "fund": "Equip", "market": "Sweden", "entry": "2022", "source": "Equip", "headquarters": "Sweden", "status": "Active"},
-    {"company": "TIND", "sector": "Technology", "fund": "Equip", "market": "Norway", "entry": "2021", "source": "Equip", "headquarters": "Norway", "status": "Active"},
-    {"company": "Nordomatic", "sector": "Business Services", "fund": "Trill Impact", "market": "Sweden", "entry": "2022", "source": "Trill Impact", "headquarters": "Stockholm, Sweden", "status": "Active", "detailed_description": "Building automation and smart buildings"},
-    {"company": "ILT Education", "sector": "Education", "fund": "Trill Impact", "market": "Sweden", "entry": "2021", "source": "Trill Impact", "headquarters": "Sweden", "status": "Active"},
-    {"company": "Mesalvo", "sector": "Healthcare", "fund": "Trill Impact", "market": "Germany", "entry": "2023", "source": "Trill Impact", "headquarters": "Germany", "status": "Active"},
-    {"company": "Allurity", "sector": "Technology", "fund": "Trill Impact", "market": "Sweden", "entry": "2022", "source": "Trill Impact", "headquarters": "Stockholm, Sweden", "status": "Active"},
-    {"company": "Karriere Tutor", "sector": "Education", "fund": "Trill Impact", "market": "Germany", "entry": "2022", "source": "Trill Impact", "headquarters": "Germany", "status": "Active"},
-    {"company": "Infrakraft", "sector": "Infrastructure", "fund": "Trill Impact", "market": "Sweden", "entry": "2023", "source": "Trill Impact", "headquarters": "Sweden", "status": "Active"},
-    {"company": "Komet", "sector": "Agriculture", "fund": "Trill Impact", "market": "Austria", "entry": "2022", "source": "Trill Impact", "headquarters": "Austria", "status": "Active"},
-    {"company": "Delivery Associates", "sector": "Business Services", "fund": "Trill Impact", "market": "UK", "entry": "2022", "source": "Trill Impact", "headquarters": "London, UK", "status": "Active"},
-    {"company": "Renewtech", "sector": "Technology", "fund": "Trill Impact", "market": "Denmark", "entry": "2022", "source": "Trill Impact", "headquarters": "Denmark", "status": "Active"},
-    {"company": "TT Medic", "sector": "MedTech", "fund": "Trill Impact", "market": "Austria", "entry": "2023", "source": "Trill Impact", "headquarters": "Austria", "status": "Active"},
-    {"company": "Primutec", "sector": "Business Services", "fund": "Trill Impact", "market": "Netherlands", "entry": "2022", "source": "Trill Impact", "headquarters": "Netherlands", "status": "Active"},
-    {"company": "Noova Energy Systems", "sector": "Business Services", "fund": "Trill Impact", "market": "Norway", "entry": "2022", "source": "Trill Impact", "headquarters": "Norway", "status": "Active"},
-    {"company": "Cinclus Pharma", "sector": "Pharmaceuticals", "fund": "Trill Impact", "market": "Sweden", "entry": "2023", "source": "Trill Impact", "headquarters": "Sweden", "status": "Active"},
-    {"company": "May Health", "sector": "MedTech", "fund": "Trill Impact", "market": "France", "entry": "2023", "source": "Trill Impact", "headquarters": "France", "status": "Active"},
-    {"company": "Soil Capital", "sector": "Agriculture", "fund": "Trill Impact", "market": "Belgium", "entry": "2022", "source": "Trill Impact", "headquarters": "Belgium", "status": "Active"},
-    {"company": "Rail-Flow", "sector": "Business Services", "fund": "Trill Impact", "market": "Germany", "entry": "2023", "source": "Trill Impact", "headquarters": "Germany", "status": "Active"},
-    {"company": "tado°", "sector": "Technology", "fund": "Trill Impact", "market": "Germany", "entry": "2022", "source": "Trill Impact", "headquarters": "Munich, Germany", "status": "Active"},
-    {"company": "Open Cosmos", "sector": "Technology", "fund": "Trill Impact", "market": "UK", "entry": "2023", "source": "Trill Impact", "headquarters": "UK", "status": "Active"},
-    {"company": "MinervaX", "sector": "Pharmaceuticals", "fund": "Trill Impact", "market": "Denmark", "entry": "2023", "source": "Trill Impact", "headquarters": "Copenhagen, Denmark", "status": "Active"}
+    {
+      "company": "Immedica",
+      "sector": "Pharmaceuticals",
+      "fund": "Impilo",
+      "market": "Nordics",
+      "entry": "2022",
+      "source": "Impilo",
+      "headquarters": "Sweden",
+      "status": "Active",
+      "detailed_description": "Orphan and niche specialty pharmaceuticals launch and distribution"
+    },
+    {
+      "company": "Humana",
+      "sector": "Healthcare",
+      "fund": "Impilo",
+      "market": "Nordics",
+      "entry": "2021",
+      "source": "Impilo",
+      "headquarters": "Stockholm, Sweden",
+      "status": "Active",
+      "detailed_description": "Leading Nordic private care provider"
+    },
+    {
+      "company": "Euro Accident",
+      "sector": "Healthcare",
+      "fund": "Impilo",
+      "market": "Sweden",
+      "entry": "2020",
+      "source": "Impilo",
+      "headquarters": "Sweden",
+      "status": "Active",
+      "detailed_description": "Health-related insurance and employee wellbeing"
+    },
+    {
+      "company": "Scantox",
+      "sector": "Pharma Services",
+      "fund": "Impilo",
+      "market": "Denmark",
+      "entry": "2021",
+      "source": "Impilo",
+      "headquarters": "Denmark",
+      "status": "Active",
+      "detailed_description": "Nordic pre-clinical contract research organization"
+    },
+    {
+      "company": "tandlægen.dk",
+      "sector": "Healthcare",
+      "fund": "Impilo",
+      "market": "Denmark",
+      "entry": "2022",
+      "source": "Impilo",
+      "headquarters": "Denmark",
+      "status": "Active",
+      "detailed_description": "Leading Danish dental care chain"
+    },
+    {
+      "company": "Lowenco",
+      "sector": "Pharma Services",
+      "fund": "Impilo",
+      "market": "Sweden",
+      "entry": "2023",
+      "source": "Impilo",
+      "headquarters": "Sweden",
+      "status": "Active",
+      "detailed_description": "Ultra-low temperature storage for biopharma"
+    },
+    {
+      "company": "Pelago Bioscience",
+      "sector": "Healthcare",
+      "fund": "Impilo",
+      "market": "Sweden",
+      "entry": "2022",
+      "source": "Impilo",
+      "headquarters": "Sweden",
+      "status": "Active",
+      "detailed_description": "Drug discovery CRO with CETSA-technology"
+    },
+    {
+      "company": "VaccinDirekt",
+      "sector": "Healthcare",
+      "fund": "Impilo",
+      "market": "Nordics",
+      "entry": "2021",
+      "source": "Impilo",
+      "headquarters": "Sweden",
+      "status": "Active",
+      "detailed_description": "Largest Nordic retail vaccination provider"
+    },
+    {
+      "company": "Decon",
+      "sector": "MedTech",
+      "fund": "Impilo",
+      "market": "Sweden",
+      "entry": "2022",
+      "source": "Impilo",
+      "headquarters": "Sweden",
+      "status": "Active",
+      "detailed_description": "Power-assisted wheelchair solutions"
+    },
+    {
+      "company": "Avia Pharma",
+      "sector": "Pharmaceuticals",
+      "fund": "Impilo",
+      "market": "Nordics",
+      "entry": "2021",
+      "source": "Impilo",
+      "headquarters": "Sweden",
+      "status": "Active",
+      "detailed_description": "North European OTC/Rx platform"
+    },
+    {
+      "company": "Stille",
+      "sector": "MedTech",
+      "fund": "Impilo",
+      "market": "Sweden",
+      "entry": "2020",
+      "source": "Impilo",
+      "headquarters": "Sweden",
+      "status": "Active",
+      "detailed_description": "Surgical instruments and surgical tables"
+    },
+    {
+      "company": "Qufora",
+      "sector": "MedTech",
+      "fund": "Impilo",
+      "market": "Denmark",
+      "entry": "2023",
+      "source": "Impilo",
+      "headquarters": "Denmark",
+      "status": "Active",
+      "detailed_description": "TAI products and collecting devices"
+    },
+    {
+      "company": "Oticon Medical",
+      "sector": "MedTech",
+      "fund": "Impilo",
+      "market": "Sweden",
+      "entry": "2025",
+      "source": "Impilo",
+      "headquarters": "Sweden",
+      "status": "Active",
+      "detailed_description": "Bone-anchored hearing solutions, acquired from Demant"
+    },
+    {
+      "company": "Bekk",
+      "sector": "Technology",
+      "fund": "Axcel",
+      "market": "Norway",
+      "entry": "2026",
+      "source": "Axcel",
+      "headquarters": "Oslo, Norway",
+      "status": "Active",
+      "detailed_description": "Technology consultancy"
+    },
+    {
+      "company": "LS Retail",
+      "sector": "Technology",
+      "fund": "Axcel",
+      "market": "Iceland",
+      "entry": "2025",
+      "source": "Axcel",
+      "headquarters": "Iceland",
+      "status": "Active",
+      "detailed_description": "Retail software solutions"
+    },
+    {
+      "company": "AGRD Partners",
+      "sector": "Business Services",
+      "fund": "Axcel",
+      "market": "Sweden",
+      "entry": "2025",
+      "source": "Axcel",
+      "headquarters": "Sweden",
+      "status": "Active"
+    },
+    {
+      "company": "Nordic Tyre Group",
+      "sector": "Business Services",
+      "fund": "Axcel",
+      "market": "Sweden",
+      "entry": "2025",
+      "source": "Axcel",
+      "headquarters": "Sweden",
+      "status": "Active"
+    },
+    {
+      "company": "Accru Partners",
+      "sector": "Business Services",
+      "fund": "Axcel",
+      "market": "Sweden",
+      "entry": "2024",
+      "source": "Axcel",
+      "headquarters": "Sweden",
+      "status": "Active"
+    },
+    {
+      "company": "Acurum Group",
+      "sector": "Business Services",
+      "fund": "Axcel",
+      "market": "Sweden",
+      "entry": "2024",
+      "source": "Axcel",
+      "headquarters": "Sweden",
+      "status": "Active"
+    },
+    {
+      "company": "Elcor",
+      "sector": "Business Services",
+      "fund": "Axcel",
+      "market": "Denmark",
+      "entry": "2023",
+      "source": "Axcel",
+      "headquarters": "Denmark",
+      "status": "Active"
+    },
+    {
+      "company": "Progrits",
+      "sector": "Technology",
+      "fund": "Axcel",
+      "market": "Sweden",
+      "entry": "2023",
+      "source": "Axcel",
+      "headquarters": "Sweden",
+      "status": "Active"
+    },
+    {
+      "company": "XPartners",
+      "sector": "Business Services",
+      "fund": "Axcel",
+      "market": "Sweden",
+      "entry": "2023",
+      "source": "Axcel",
+      "headquarters": "Sweden",
+      "status": "Active"
+    },
+    {
+      "company": "Oral Care",
+      "sector": "Healthcare",
+      "fund": "Axcel",
+      "market": "Sweden",
+      "entry": "2022",
+      "source": "Axcel",
+      "headquarters": "Sweden",
+      "status": "Active"
+    },
+    {
+      "company": "The Nutriment Company",
+      "sector": "Consumer",
+      "fund": "Axcel",
+      "market": "Sweden",
+      "entry": "2022",
+      "source": "Axcel",
+      "headquarters": "Sweden",
+      "status": "Active"
+    },
+    {
+      "company": "NTI Group",
+      "sector": "Technology",
+      "fund": "Axcel",
+      "market": "Denmark",
+      "entry": "2022",
+      "source": "Axcel",
+      "headquarters": "Denmark",
+      "status": "Active"
+    },
+    {
+      "company": "itm8",
+      "sector": "Technology",
+      "fund": "Axcel",
+      "market": "Denmark",
+      "entry": "2022",
+      "source": "Axcel",
+      "headquarters": "Denmark",
+      "status": "Active"
+    },
+    {
+      "company": "BullWall",
+      "sector": "Technology",
+      "fund": "Axcel",
+      "market": "Denmark",
+      "entry": "2022",
+      "source": "Axcel",
+      "headquarters": "Denmark",
+      "status": "Active"
+    },
+    {
+      "company": "Init",
+      "sector": "Technology",
+      "fund": "Axcel",
+      "market": "Denmark",
+      "entry": "2022",
+      "source": "Axcel",
+      "headquarters": "Denmark",
+      "status": "Active"
+    },
+    {
+      "company": "DANX Carousel Group",
+      "sector": "Business Services",
+      "fund": "Axcel",
+      "market": "Denmark",
+      "entry": "2022",
+      "source": "Axcel",
+      "headquarters": "Denmark",
+      "status": "Active"
+    },
+    {
+      "company": "Vetopia",
+      "sector": "Healthcare",
+      "fund": "Axcel",
+      "market": "Denmark",
+      "entry": "2021",
+      "source": "Axcel",
+      "headquarters": "Denmark",
+      "status": "Active"
+    },
+    {
+      "company": "emagine",
+      "sector": "Technology",
+      "fund": "Axcel",
+      "market": "Denmark",
+      "entry": "2021",
+      "source": "Axcel",
+      "headquarters": "Denmark",
+      "status": "Active"
+    },
+    {
+      "company": "Edda Group",
+      "sector": "Business Services",
+      "fund": "Axcel",
+      "market": "Denmark",
+      "entry": "2020",
+      "source": "Axcel",
+      "headquarters": "Denmark",
+      "status": "Active"
+    },
+    {
+      "company": "Currentum",
+      "sector": "Business Services",
+      "fund": "Axcel",
+      "market": "Sweden",
+      "entry": "2020",
+      "source": "Axcel",
+      "headquarters": "Sweden",
+      "status": "Active"
+    },
+    {
+      "company": "SuperOffice",
+      "sector": "Technology",
+      "fund": "Axcel",
+      "market": "Norway",
+      "entry": "2020",
+      "source": "Axcel",
+      "headquarters": "Norway",
+      "status": "Active",
+      "detailed_description": "CRM software"
+    },
+    {
+      "company": "Phase One",
+      "sector": "Technology",
+      "fund": "Axcel",
+      "market": "Denmark",
+      "entry": "2019",
+      "source": "Axcel",
+      "headquarters": "Denmark",
+      "status": "Active"
+    },
+    {
+      "company": "Capture One",
+      "sector": "Technology",
+      "fund": "Axcel",
+      "market": "Denmark",
+      "entry": "2019",
+      "source": "Axcel",
+      "headquarters": "Denmark",
+      "status": "Active",
+      "detailed_description": "Professional photo editing software"
+    },
+    {
+      "company": "GUBI",
+      "sector": "Consumer",
+      "fund": "Axcel",
+      "market": "Denmark",
+      "entry": "2018",
+      "source": "Axcel",
+      "headquarters": "Copenhagen, Denmark",
+      "status": "Active",
+      "detailed_description": "Design furniture"
+    },
+    {
+      "company": "Nestit Group",
+      "sector": "Technology",
+      "fund": "MVI Fund II",
+      "market": "Nordics",
+      "entry": "2024",
+      "source": "MVI",
+      "headquarters": "Sweden",
+      "status": "Active",
+      "detailed_description": "Pan-Nordic IT infrastructure for SMEs"
+    },
+    {
+      "company": "Ascenco Group",
+      "sector": "Business Services",
+      "fund": "MVI Fund II",
+      "market": "Sweden",
+      "entry": "2023",
+      "source": "MVI",
+      "headquarters": "Sweden",
+      "status": "Active",
+      "detailed_description": "Critical infrastructure services"
+    },
+    {
+      "company": "SMP Parts",
+      "sector": "Business Services",
+      "fund": "MVI Fund II",
+      "market": "Sweden",
+      "entry": "2023",
+      "source": "MVI",
+      "headquarters": "Sweden",
+      "status": "Active",
+      "detailed_description": "Smart digging systems"
+    },
+    {
+      "company": "PS Auction",
+      "sector": "Business Services",
+      "fund": "MVI",
+      "market": "Sweden",
+      "entry": "2022",
+      "source": "MVI",
+      "headquarters": "Sweden",
+      "status": "Active"
+    },
+    {
+      "company": "Art Clinic",
+      "sector": "Healthcare",
+      "fund": "MVI",
+      "market": "Sweden",
+      "entry": "2022",
+      "source": "MVI",
+      "headquarters": "Sweden",
+      "status": "Active"
+    },
+    {
+      "company": "Great Security",
+      "sector": "Business Services",
+      "fund": "MVI",
+      "market": "Sweden",
+      "entry": "2021",
+      "source": "MVI",
+      "headquarters": "Sweden",
+      "status": "Active"
+    },
+    {
+      "company": "Freedom Group",
+      "sector": "Technology",
+      "fund": "MVI Fund II",
+      "market": "Sweden",
+      "entry": "2023",
+      "source": "MVI",
+      "headquarters": "Sweden",
+      "status": "Active",
+      "detailed_description": "Accounting digitization and financial software"
+    },
+    {
+      "company": "Activeon",
+      "sector": "Consumer",
+      "fund": "Equip",
+      "market": "Nordics",
+      "entry": "2022",
+      "source": "Equip",
+      "headquarters": "Norway",
+      "status": "Active",
+      "detailed_description": "Indoor trampoline and attraction parks"
+    },
+    {
+      "company": "Bastard Burgers",
+      "sector": "Consumer",
+      "fund": "Equip",
+      "market": "Nordics",
+      "entry": "2022",
+      "source": "Equip",
+      "headquarters": "Stockholm, Sweden",
+      "status": "Active",
+      "detailed_description": "Fast-casual burger chain, 70+ restaurants"
+    },
+    {
+      "company": "Busspart",
+      "sector": "Business Services",
+      "fund": "Equip",
+      "market": "Nordics",
+      "entry": "2023",
+      "source": "Equip",
+      "headquarters": "Norway",
+      "status": "Active"
+    },
+    {
+      "company": "Cares",
+      "sector": "Business Services",
+      "fund": "Equip",
+      "market": "Nordics",
+      "entry": "2022",
+      "source": "Equip",
+      "headquarters": "Norway",
+      "status": "Active"
+    },
+    {
+      "company": "Cautus Geo",
+      "sector": "Technology",
+      "fund": "Equip",
+      "market": "Norway",
+      "entry": "2022",
+      "source": "Equip",
+      "headquarters": "Norway",
+      "status": "Active"
+    },
+    {
+      "company": "Cloud Connection",
+      "sector": "Technology",
+      "fund": "Equip",
+      "market": "Nordics",
+      "entry": "2021",
+      "source": "Equip",
+      "headquarters": "Norway",
+      "status": "Active"
+    },
+    {
+      "company": "Cure",
+      "sector": "Technology",
+      "fund": "Equip",
+      "market": "Nordics",
+      "entry": "2022",
+      "source": "Equip",
+      "headquarters": "Stockholm, Sweden",
+      "status": "Active",
+      "detailed_description": "Influencer marketing platform"
+    },
+    {
+      "company": "Dura",
+      "sector": "Business Services",
+      "fund": "Equip",
+      "market": "Norway",
+      "entry": "2021",
+      "source": "Equip",
+      "headquarters": "Norway",
+      "status": "Active"
+    },
+    {
+      "company": "Funplays",
+      "sector": "Consumer",
+      "fund": "Equip",
+      "market": "Nordics",
+      "entry": "2022",
+      "source": "Equip",
+      "headquarters": "Norway",
+      "status": "Active"
+    },
+    {
+      "company": "Holy Greens",
+      "sector": "Consumer",
+      "fund": "Equip",
+      "market": "Sweden",
+      "entry": "2022",
+      "source": "Equip",
+      "headquarters": "Sweden",
+      "status": "Active"
+    },
+    {
+      "company": "House of Discs",
+      "sector": "Consumer",
+      "fund": "Equip",
+      "market": "Norway",
+      "entry": "2023",
+      "source": "Equip",
+      "headquarters": "Norway",
+      "status": "Active"
+    },
+    {
+      "company": "iteam",
+      "sector": "Technology",
+      "fund": "Equip",
+      "market": "Norway",
+      "entry": "2021",
+      "source": "Equip",
+      "headquarters": "Oslo, Norway",
+      "status": "Active"
+    },
+    {
+      "company": "Makeup Mekka",
+      "sector": "Consumer",
+      "fund": "Equip",
+      "market": "Norway",
+      "entry": "2022",
+      "source": "Equip",
+      "headquarters": "Norway",
+      "status": "Active"
+    },
+    {
+      "company": "Miles",
+      "sector": "Technology",
+      "fund": "Equip",
+      "market": "Norway",
+      "entry": "2021",
+      "source": "Equip",
+      "headquarters": "Oslo, Norway",
+      "status": "Active"
+    },
+    {
+      "company": "North Travel",
+      "sector": "Consumer",
+      "fund": "Equip",
+      "market": "Nordics",
+      "entry": "2022",
+      "source": "Equip",
+      "headquarters": "Norway",
+      "status": "Active"
+    },
+    {
+      "company": "River Group",
+      "sector": "Business Services",
+      "fund": "Equip",
+      "market": "Nordics",
+      "entry": "2021",
+      "source": "Equip",
+      "headquarters": "Norway",
+      "status": "Active"
+    },
+    {
+      "company": "Ryde",
+      "sector": "Technology",
+      "fund": "Equip",
+      "market": "Norway",
+      "entry": "2022",
+      "source": "Equip",
+      "headquarters": "Norway",
+      "status": "Active",
+      "detailed_description": "E-scooter sharing"
+    },
+    {
+      "company": "Stenbolaget",
+      "sector": "Consumer",
+      "fund": "Equip",
+      "market": "Sweden",
+      "entry": "2022",
+      "source": "Equip",
+      "headquarters": "Sweden",
+      "status": "Active"
+    },
+    {
+      "company": "TIND",
+      "sector": "Technology",
+      "fund": "Equip",
+      "market": "Norway",
+      "entry": "2021",
+      "source": "Equip",
+      "headquarters": "Norway",
+      "status": "Active"
+    },
+    {
+      "company": "Nordomatic",
+      "sector": "Business Services",
+      "fund": "Trill Impact",
+      "market": "Sweden",
+      "entry": "2022",
+      "source": "Trill Impact",
+      "headquarters": "Stockholm, Sweden",
+      "status": "Active",
+      "detailed_description": "Building automation and smart buildings"
+    },
+    {
+      "company": "ILT Education",
+      "sector": "Education",
+      "fund": "Trill Impact",
+      "market": "Sweden",
+      "entry": "2021",
+      "source": "Trill Impact",
+      "headquarters": "Sweden",
+      "status": "Active"
+    },
+    {
+      "company": "Mesalvo",
+      "sector": "Healthcare",
+      "fund": "Trill Impact",
+      "market": "Germany",
+      "entry": "2023",
+      "source": "Trill Impact",
+      "headquarters": "Germany",
+      "status": "Active"
+    },
+    {
+      "company": "Allurity",
+      "sector": "Technology",
+      "fund": "Trill Impact",
+      "market": "Sweden",
+      "entry": "2022",
+      "source": "Trill Impact",
+      "headquarters": "Stockholm, Sweden",
+      "status": "Active"
+    },
+    {
+      "company": "Karriere Tutor",
+      "sector": "Education",
+      "fund": "Trill Impact",
+      "market": "Germany",
+      "entry": "2022",
+      "source": "Trill Impact",
+      "headquarters": "Germany",
+      "status": "Active"
+    },
+    {
+      "company": "Infrakraft",
+      "sector": "Infrastructure",
+      "fund": "Trill Impact",
+      "market": "Sweden",
+      "entry": "2023",
+      "source": "Trill Impact",
+      "headquarters": "Sweden",
+      "status": "Active"
+    },
+    {
+      "company": "Komet",
+      "sector": "Agriculture",
+      "fund": "Trill Impact",
+      "market": "Austria",
+      "entry": "2022",
+      "source": "Trill Impact",
+      "headquarters": "Austria",
+      "status": "Active"
+    },
+    {
+      "company": "Delivery Associates",
+      "sector": "Business Services",
+      "fund": "Trill Impact",
+      "market": "UK",
+      "entry": "2022",
+      "source": "Trill Impact",
+      "headquarters": "London, UK",
+      "status": "Active"
+    },
+    {
+      "company": "Renewtech",
+      "sector": "Technology",
+      "fund": "Trill Impact",
+      "market": "Denmark",
+      "entry": "2022",
+      "source": "Trill Impact",
+      "headquarters": "Denmark",
+      "status": "Active"
+    },
+    {
+      "company": "TT Medic",
+      "sector": "MedTech",
+      "fund": "Trill Impact",
+      "market": "Austria",
+      "entry": "2023",
+      "source": "Trill Impact",
+      "headquarters": "Austria",
+      "status": "Active"
+    },
+    {
+      "company": "Primutec",
+      "sector": "Business Services",
+      "fund": "Trill Impact",
+      "market": "Netherlands",
+      "entry": "2022",
+      "source": "Trill Impact",
+      "headquarters": "Netherlands",
+      "status": "Active"
+    },
+    {
+      "company": "Noova Energy Systems",
+      "sector": "Business Services",
+      "fund": "Trill Impact",
+      "market": "Norway",
+      "entry": "2022",
+      "source": "Trill Impact",
+      "headquarters": "Norway",
+      "status": "Active"
+    },
+    {
+      "company": "Cinclus Pharma",
+      "sector": "Pharmaceuticals",
+      "fund": "Trill Impact",
+      "market": "Sweden",
+      "entry": "2023",
+      "source": "Trill Impact",
+      "headquarters": "Sweden",
+      "status": "Active"
+    },
+    {
+      "company": "May Health",
+      "sector": "MedTech",
+      "fund": "Trill Impact",
+      "market": "France",
+      "entry": "2023",
+      "source": "Trill Impact",
+      "headquarters": "France",
+      "status": "Active"
+    },
+    {
+      "company": "Soil Capital",
+      "sector": "Agriculture",
+      "fund": "Trill Impact",
+      "market": "Belgium",
+      "entry": "2022",
+      "source": "Trill Impact",
+      "headquarters": "Belgium",
+      "status": "Active"
+    },
+    {
+      "company": "Rail-Flow",
+      "sector": "Business Services",
+      "fund": "Trill Impact",
+      "market": "Germany",
+      "entry": "2023",
+      "source": "Trill Impact",
+      "headquarters": "Germany",
+      "status": "Active"
+    },
+    {
+      "company": "tado°",
+      "sector": "Technology",
+      "fund": "Trill Impact",
+      "market": "Germany",
+      "entry": "2022",
+      "source": "Trill Impact",
+      "headquarters": "Munich, Germany",
+      "status": "Active"
+    },
+    {
+      "company": "Open Cosmos",
+      "sector": "Technology",
+      "fund": "Trill Impact",
+      "market": "UK",
+      "entry": "2023",
+      "source": "Trill Impact",
+      "headquarters": "UK",
+      "status": "Active"
+    },
+    {
+      "company": "MinervaX",
+      "sector": "Pharmaceuticals",
+      "fund": "Trill Impact",
+      "market": "Denmark",
+      "entry": "2023",
+      "source": "Trill Impact",
+      "headquarters": "Copenhagen, Denmark",
+      "status": "Active"
+    },
+    {
+      "company": "Aarke",
+      "sector": "Consumer",
+      "market": "Sweden",
+      "headquarters": "Stockholm, Sweden",
+      "entry": "Nov 2020",
+      "fund": "Fund V",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Aarke is a Swedish engineering and design company and world leader in premium carbonator machines, with sleek Scandinavian design and a sustainable way to drink carbonated water. Founded in 2013, Aarke's mission is to inspire sustainable living by turning ordinary tap water into tasteful experiences through products like the Carbonator 3, Carbonator Pro, and Aarke Purifier water filter. The company sells in more than 30 countries and has established itself as market leader in the premium segment.",
+      "website": "https://aarke.com"
+    },
+    {
+      "company": "Aira",
+      "sector": "Industrial",
+      "market": "Sweden",
+      "headquarters": "Stockholm, Sweden",
+      "entry": "Aug 2023",
+      "fund": "Fund VI",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Aira was established in 2022 to accelerate the electrification of residential heating in Europe, where over 90% of homes still rely on fossil fuel heating. The company manufactures, sells and installs heat pumps at scale through a vertically integrated model and direct-to-consumer offering with heating-as-a-service. Heat pumps are the most efficient and affordable decarbonisation technology for homes, reducing energy consumption by around 75%.",
+      "website": "https://airahome.com"
+    },
+    {
+      "company": "Audiowell",
+      "sector": "Consumer",
+      "market": "Sweden",
+      "headquarters": "Stockholm, Sweden",
+      "entry": "Dec 2021",
+      "fund": "Fund V",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Audiowell is a Stockholm-based company focused on increasing the quality of lifestyle music and helping professional songwriters, musicians and creators earn a living from their music. Operating from a music studio complex in central Stockholm, the company offers production services and licensing for mood-based and functional music. Every mood has its own music through Audiowell's curated catalog.",
+      "website": "https://audiowell.com"
+    },
+    {
+      "company": "C WorldWide",
+      "sector": "Financial Services",
+      "market": "Denmark",
+      "headquarters": "Copenhagen, Denmark",
+      "entry": "May 2009",
+      "fund": "Fund III",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "C WorldWide Asset Management is a focused, independent active asset manager with global reach and approximately EUR 20bn in assets under management. The firm delivers consistent long-term growth for institutional investors through discretionary asset management and mutual funds across 13 equity strategies. Its investment philosophy combines careful stock-picking with long-term global trends and has produced world-class results since 1986.",
+      "website": "https://cworldwide.com"
+    },
+    {
+      "company": "CCM Hockey",
+      "sector": "Consumer",
+      "market": "International",
+      "headquarters": "Montreal, Canada",
+      "entry": "Oct 2024",
+      "fund": "Fund VI",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "CCM Hockey is an iconic global hockey equipment brand founded in 1905, equipping hockey players across the globe with skates, sticks, protective gear and apparel. With over EUR 300M in turnover and 400 employees, the company has driven innovation in hockey for over 125 years. Altor partnered with CCM in 2024 to support the brand's next chapter of growth and geographic expansion.",
+      "website": "https://ccmhockey.com"
+    },
+    {
+      "company": "Circulose",
+      "sector": "Industrial",
+      "market": "Sweden",
+      "headquarters": "Sundsvall, Sweden",
+      "entry": "Jun 2024",
+      "fund": "Fund VI",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Circulose produces branded dissolving pulp made from 100% textile waste such as worn-out cotton jeans and production scraps, making fashion circular. The company operates the world's first commercial-scale chemical textile recycling plant at Ortviken in Sundsvall, Sweden. Altor acquired the former Renewcell business in 2024 and rebranded it as Circulose, with major fashion brands including H&M and Mango as customers.",
+      "website": "https://circulose.com"
+    },
+    {
+      "company": "Dale of Norway",
+      "sector": "Consumer",
+      "market": "Norway",
+      "headquarters": "Dale, Norway",
+      "entry": "Dec 2017",
+      "fund": "Fund III",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Dale of Norway is a heritage Norwegian knitwear brand with its factory running since 1879, making outdoor adventures enjoyable with premium outdoor apparel. The company produces iconic sweaters and outerwear appealing to Norwegians and tourists alike, combining traditional craftsmanship with modern design. Dale is one of Norway's best-known export brands in the apparel sector.",
+      "website": "https://daleofnorway.com"
+    },
+    {
+      "company": "Eidra",
+      "sector": "Business Services",
+      "market": "Sweden",
+      "headquarters": "Stockholm, Sweden",
+      "entry": "Dec 2019",
+      "fund": "Fund V",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Eidra is a digital transformation company that creates growth for brands and businesses through technology-driven change. With around EUR 100M in turnover and 1,000 employees, the company helps clients modernise operations, improve customer experience and unlock new digital revenue streams. Eidra specialises in guiding established companies through digital transformation journeys.",
+      "website": "https://eidra.com"
+    },
+    {
+      "company": "Eleda",
+      "sector": "Industrial",
+      "market": "Sweden",
+      "headquarters": "Stockholm, Sweden",
+      "entry": "Jun 2020",
+      "fund": "Fund V",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Eleda is the Nordic region's leading provider of critical infrastructure solutions, focusing on power distribution, technology, water and transportation. With over 3,500 employees across 50+ subsidiary companies and revenue exceeding SEK 22 billion, the group delivers infrastructure built for the future. Eleda has completed over 40 acquisitions and operates a decentralised model where local leaders maintain autonomy while benefiting from group support.",
+      "website": "https://eleda.se"
+    },
+    {
+      "company": "F24",
+      "sector": "Technology",
+      "market": "International",
+      "headquarters": "Vienna, Austria",
+      "entry": "Sep 2024",
+      "fund": "Fund VI",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "F24 provides crisis and emergency communication solutions that improve business resilience with digital technology. With around EUR 50M in turnover and 200 employees, the company helps organisations manage critical situations through automated alerts, mass notification and incident management systems. F24 serves customers across multiple industries requiring robust communication during emergencies.",
+      "website": "https://f24.com"
+    },
+    {
+      "company": "Faun Gruppen",
+      "sector": "Consumer",
+      "market": "Norway",
+      "headquarters": "Norway",
+      "entry": "Apr 2018",
+      "fund": "Fund IV",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Faun Gruppen offers a \"hytte\" (cabin) for everyone through its portfolio of Norwegian cabin and cottage brands. With around EUR 50M in turnover and 200 employees, the company serves the Nordic passion for outdoor living and second homes. Faun makes quality cabin products accessible to a broad customer base across Norway and the Nordics.",
+      "website": "https://faungruppen.no"
+    },
+    {
+      "company": "Flex IT",
+      "sector": "Technology",
+      "market": "Denmark",
+      "headquarters": "Copenhagen, Denmark",
+      "entry": "Mar 2016",
+      "fund": "Fund IV",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Flex IT is a Danish IT lifecycle and circular economy company that makes hardware circular through refurbishment, reuse and responsible recycling. With around EUR 100M in turnover and 200 employees, the company extends the life of IT equipment and reduces electronic waste. Flex IT helps businesses and consumers participate in the circular economy for technology.",
+      "website": "https://flex-it.dk"
+    },
+    {
+      "company": "FLSmidth",
+      "sector": "Industrial",
+      "market": "Denmark",
+      "headquarters": "Copenhagen, Denmark",
+      "entry": "Jan 2023",
+      "fund": "Fund V",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "FLSmidth is a global leader in sustainable productivity for the mining and cement industries, providing equipment, systems and services that drive efficiency and reduce environmental impact. With around EUR 2 billion in turnover and 7,500 employees, the Danish company helps customers achieve sustainable operations. FLSmidth combines over 140 years of engineering expertise with focus on decarbonisation and circular economy solutions.",
+      "website": "https://flsmidth.com"
+    },
+    {
+      "company": "Gunnebo",
+      "sector": "Industrial",
+      "market": "Sweden",
+      "headquarters": "Gothenburg, Sweden",
+      "entry": "Nov 2020",
+      "fund": "Fund V",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Gunnebo provides security solutions for a safer world, offering products and systems for cash management, safe storage, entrance control and integrated security. With around EUR 400M in turnover and 3,500 employees globally, the Swedish company serves banks, retail, critical infrastructure and public sector. Gunnebo combines physical security products with digital solutions for comprehensive protection.",
+      "website": "https://gunnebo.com"
+    },
+    {
+      "company": "Haarslev Industries",
+      "sector": "Industrial",
+      "market": "Denmark",
+      "headquarters": "Søborg, Denmark",
+      "entry": "Mar 2012",
+      "fund": "Fund III",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Haarslev Industries designs and manufactures processing equipment for the food, feed and waste industries, taking care of tomorrow's production process. With around EUR 200M in turnover and 500 employees, the Danish company supplies solutions for rendering, pet food, fish meal and biomass processing. Haarslev's equipment ensures efficient, sustainable resource recovery across the value chain.",
+      "website": "https://haarslev.com"
+    },
+    {
+      "company": "Hamlet Protein",
+      "sector": "Industrial",
+      "market": "Denmark",
+      "headquarters": "Horsens, Denmark",
+      "entry": "Sep 2015",
+      "fund": "Fund IV",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Hamlet Protein produces specialty protein ingredients for young animal nutrition, supporting healthy animals and healthy business for pig and poultry producers. With around EUR 50M in turnover and 100 employees, the Danish company offers non-GMO, easily digestible protein that reduces the need for antibiotics. Hamlet Protein's products improve animal health, welfare and performance from weaning.",
+      "website": "https://hamletprotein.com"
+    },
+    {
+      "company": "iDeal of Sweden",
+      "sector": "Consumer",
+      "market": "Sweden",
+      "headquarters": "Stockholm, Sweden",
+      "entry": "Jul 2019",
+      "fund": "Fund IV",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "iDeal of Sweden is an award-winning Swedish design brand since 2013, offering phone cases, accessories and lifestyle products with distinctive Scandinavian aesthetics. The company has built a strong direct-to-consumer and retail presence across Europe and beyond. iDeal combines fashion-forward design with functional protection for mobile devices.",
+      "website": "https://idealofsweden.com"
+    },
+    {
+      "company": "Imbox",
+      "sector": "Consumer",
+      "market": "Norway",
+      "headquarters": "Oslo, Norway",
+      "entry": "Sep 2025",
+      "fund": "Fund VI",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Imbox is redefining shoe protection with innovative products that keep footwear dry, clean and in good condition. Altor invested in Imbox in September 2025 in partnership with founder René Marker and the Grundtvig family. The Norwegian company targets the growing market for shoe care and protection solutions.",
+      "website": "https://imbox.no"
+    },
+    {
+      "company": "Iyuno",
+      "sector": "Business Services",
+      "market": "International",
+      "headquarters": "Los Angeles, USA",
+      "entry": "Aug 2017",
+      "fund": "Fund IV",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Iyuno is a global media localisation and dubbing company, bringing the stories of the world to audiences through subtitling, dubbing and accessibility services. With around EUR 200M in turnover and 1,500 employees, the company serves streaming platforms, studios and content creators. Iyuno supports 100+ languages and works with major entertainment brands worldwide.",
+      "website": "https://iyuno.com"
+    },
+    {
+      "company": "KAEFER",
+      "sector": "Industrial",
+      "market": "International",
+      "headquarters": "Bremen, Germany",
+      "entry": "Dec 2021",
+      "fund": "Fund V",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "KAEFER is one of the world's most reliable and efficient providers of technical industrial services, specialising in insulation, surface protection, access and scaffolding. With around EUR 2 billion in turnover and 30,000 employees across 20+ countries, the German company serves oil and gas, power, process industries and LNG. Altor partners with the founding family and SMS Group as co-owners.",
+      "website": "https://kaefer.com"
+    },
+    {
+      "company": "Kommunalkredit",
+      "sector": "Financial Services",
+      "market": "Austria",
+      "headquarters": "Vienna, Austria",
+      "entry": "2024",
+      "fund": "Fund VI",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Kommunalkredit is Austria's leading infra banking expert, specialising in financing public infrastructure, renewable energy and sustainable projects. With around EUR 200M in turnover and 400 employees, the bank supports municipalities, utilities and project developers across Austria and CEE. Altor acquired a stake in 2024 to support the bank's growth in sustainable infrastructure finance.",
+      "website": "https://kommunalkredit.at"
+    },
+    {
+      "company": "Ludvig & Co",
+      "sector": "Business Services",
+      "market": "Sweden",
+      "headquarters": "Stockholm, Sweden",
+      "entry": "May 2018",
+      "fund": "Fund IV",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Ludvig & Co is Sweden's most local advisory firm, providing accounting, tax and business advisory services through a nationwide network of local offices. With around EUR 100M in turnover and 1,000 employees, the company combines local presence with national strength. Ludvig & Co serves SMEs, entrepreneurs and private individuals across Sweden.",
+      "website": "https://ludvigco.se"
+    },
+    {
+      "company": "Mandatum",
+      "sector": "Financial Services",
+      "market": "Finland",
+      "headquarters": "Helsinki, Finland",
+      "entry": "Oct 2023",
+      "fund": "Fund VI",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Mandatum is a Finnish financial services company combining expertise in money and life through asset management, life insurance and wealth advisory. With over EUR 1 billion in assets under management and 500 employees, the company serves institutional and private clients. Altor became a significant shareholder in 2023 and has since increased its stake.",
+      "website": "https://mandatum.com"
+    },
+    {
+      "company": "Meltwater",
+      "sector": "Technology",
+      "market": "Norway",
+      "headquarters": "Oslo, Norway",
+      "entry": "Oct 2012",
+      "fund": "Fund III",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Meltwater is a global media intelligence and social listening platform, helping businesses understand and influence the world through real-time monitoring of news, social media and market signals. With around EUR 400M in turnover and 2,000 employees, the Norwegian company serves PR, marketing and insights teams worldwide. Meltwater combines AI-powered analytics with comprehensive data coverage.",
+      "website": "https://meltwater.com"
+    },
+    {
+      "company": "Multi-Wing",
+      "sector": "Industrial",
+      "market": "Denmark",
+      "headquarters": "Sønderborg, Denmark",
+      "entry": "Sep 2021",
+      "fund": "Fund V",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Multi-Wing is a global leader in engineered fan and airflow solutions, shaping airflow for future generations across HVAC, refrigeration, industrial and automotive applications. With around EUR 100M in turnover and 500 employees, the Danish company was founded by Finn Sigurd Andersen. Multi-Wing's products improve efficiency, reduce noise and support electrification in vehicles and machinery.",
+      "website": "https://multi-wing.com"
+    },
+    {
+      "company": "Network of Design",
+      "sector": "Consumer",
+      "market": "Nordics",
+      "headquarters": "Stockholm, Sweden",
+      "entry": "Dec 2020",
+      "fund": "Fund V",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Network of Design (NOD) is an umbrella for Scandinavian design-driven brands, bringing unique Nordic design to every corner of the world. With around EUR 50M in turnover and 200 employees, the group includes furniture, home accessories and lifestyle brands. Altor formed NOD to create a network of complementary Scandinavian design companies under one ownership.",
+      "website": "https://networkofdesign.com"
+    },
+    {
+      "company": "Nordic Leisure Travel Group",
+      "sector": "Consumer",
+      "market": "Nordics",
+      "headquarters": "Copenhagen, Denmark",
+      "entry": "Oct 2019",
+      "fund": "Fund V",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Nordic Leisure Travel Group operates vacation and holiday brands across the Nordics, creating the best weeks of the year and long-lasting memories for families. With around EUR 1 billion in turnover and 2,500 employees, the group includes holiday park, camping and resort concepts. NLTG connects people with nature and leisure experiences across Denmark, Sweden, Norway and Germany.",
+      "website": "https://nltg.com"
+    },
+    {
+      "company": "Nordic Climate Group",
+      "sector": "Industrial",
+      "market": "Nordics",
+      "headquarters": "Stockholm, Sweden",
+      "entry": "Jun 2022",
+      "fund": "Fund V",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Nordic Climate Group provides heating, cooling and climate solutions for a better climate, serving residential, commercial and industrial customers across the Nordics. With around EUR 400M in turnover and 1,500 employees, the company installs and maintains heat pumps, ventilation and energy-efficient systems. NCG supports the transition away from fossil fuel heating.",
+      "website": "https://nordicclimategroup.com"
+    },
+    {
+      "company": "Norican group",
+      "sector": "Industrial",
+      "market": "Denmark",
+      "headquarters": "Copenhagen, Denmark",
+      "entry": "Feb 2015",
+      "fund": "Fund IV",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Norican Group is a global supplier of metallurgical equipment and solutions that shape industry through foundry, metal surface treatment and additive manufacturing technology. With around EUR 500M in turnover and 1,500 employees, the Danish company helps customers improve productivity, reduce scrap and lower carbon emissions. Norican's brands include DISA, Wheelabrator, Italpresse Gauss and StrikoWestphal.",
+      "website": "https://norican.com"
+    },
+    {
+      "company": "O'Learys Group",
+      "sector": "Consumer",
+      "market": "Sweden",
+      "headquarters": "Stockholm, Sweden",
+      "entry": "Mar 2018",
+      "fund": "Fund IV",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "O'Learys Group operates sports bar and casual dining restaurants across the Nordics, creating experiences worth remembering through food, drinks and entertainment. With around 200 employees, the Swedish company combines restaurant dining with bowling, shuffleboard and big-screen sports. O'Learys is part of Altor's Social Eatertainment Group community of fun-dining concepts.",
+      "website": "https://olearys.se"
+    },
+    {
+      "company": "OptiGroup",
+      "sector": "Business Services",
+      "market": "Nordics",
+      "headquarters": "Malmö, Sweden",
+      "entry": "Jan 2010",
+      "fund": "Fund II",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "OptiGroup is a leading Northern European B2B distributor providing all essentials for business across facility, safety, foodservice, packaging and office supplies. With around EUR 1 billion in turnover and 2,000 employees across 70 distribution centres in 20 countries, the group serves 100,000+ customers. OptiGroup was formed through the combination of OptiGroup and Hygas, with Altor as an early investor.",
+      "website": "https://optigroup.com"
+    },
+    {
+      "company": "Orchid Orthopedic Solutions",
+      "sector": "Healthcare",
+      "market": "International",
+      "headquarters": "Holt, Michigan, USA",
+      "entry": "Jun 2011",
+      "fund": "Fund III",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Orchid Orthopedic Solutions manufactures orthopaedic implants and instruments, bringing medical products to life for joint replacement, spine and trauma surgery. With around EUR 300M in turnover and 1,000 employees, the US-based company serves OEMs and hospital customers globally. Orchid provides contract manufacturing from design through production for leading orthopaedic device companies.",
+      "website": "https://orchid-solutions.com"
+    },
+    {
+      "company": "Permascand",
+      "sector": "Industrial",
+      "market": "Sweden",
+      "headquarters": "Ljungaverk, Sweden",
+      "entry": "Feb 2024",
+      "fund": "Fund VI",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Permascand develops and manufactures electrochemical solutions for hard-to-abate industries including green hydrogen, chlor-alkali and metal recovery. With around EUR 100M in turnover and 100 employees, the Swedish company provides dimensionally stable anodes (DSAs) and electrodes critical for electrolysis. Permascand supports the green transition in energy-intensive industries.",
+      "website": "https://permascand.com"
+    },
+    {
+      "company": "QNTM Group",
+      "sector": "Business Services",
+      "market": "Sweden",
+      "headquarters": "Stockholm, Sweden",
+      "entry": "Jan 2021",
+      "fund": "Fund V",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "QNTM Group is a Swedish management consulting and advisory firm that accelerates growth and the next big leap for mid-market companies. With around EUR 50M in turnover and 500 consultants, the group supports strategy, performance improvement and M&A. QNTM helps Nordic businesses scale and transform.",
+      "website": "https://qntm.se"
+    },
+    {
+      "company": "Raw Fury",
+      "sector": "Technology",
+      "market": "Sweden",
+      "headquarters": "Stockholm, Sweden",
+      "entry": "Jul 2021",
+      "fund": "Fund V",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Raw Fury is an independent games publisher that creates experiences and emotion through unique, artist-driven video games. With around 100 employees, the Stockholm-based company has published titles including Sable, Kingdom, Call of the Sea and West of Loathing. Raw Fury partners with indie developers worldwide to bring distinctive games to players.",
+      "website": "https://rawfury.com"
+    },
+    {
+      "company": "Rillion",
+      "sector": "Technology",
+      "market": "Sweden",
+      "headquarters": "Stockholm, Sweden",
+      "entry": "Jul 2021",
+      "fund": "Fund V",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Rillion provides accounts payable automation software that delivers peace of mind through digitalisation of invoice processing and supplier management. With around 100 employees, the Swedish company helps businesses automate AP workflows, reduce errors and gain visibility. Rillion's solution fits customer needs through deep knowledge of both software and finance processes.",
+      "website": "https://rillion.com"
+    },
+    {
+      "company": "Rossignol Group",
+      "sector": "Consumer",
+      "market": "International",
+      "headquarters": "Saint-Jean-de-Moirans, France",
+      "entry": "Oct 2013",
+      "fund": "Fund III",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Rossignol Group is a global winter sports company creating another best day on the slopes through skis, snowboards, boots, bindings and apparel. With around EUR 300M in turnover and 1,000 employees, the French company's brands include Rossignol, Dynastar, Lange and Look. Rossignol has been at the heart of ski innovation for over 115 years.",
+      "website": "https://rossignol.com"
+    },
+    {
+      "company": "Stegra",
+      "sector": "Industrial",
+      "market": "Sweden",
+      "headquarters": "Stockholm, Sweden",
+      "entry": "Mar 2021",
+      "fund": "Fund V",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Stegra develops and manufactures industrial electric motors and powertrains, powering a new, clean industrial revolution through electrification. With around 300 employees, the Swedish company serves manufacturers shifting from fossil fuels to electric drivetrains. Stegra is backed by Altor Fund V, Fund VI and ACT, supporting the green transition in industry.",
+      "website": "https://stegra.com"
+    },
+    {
+      "company": "Svea Solar",
+      "sector": "Technology",
+      "market": "Sweden",
+      "headquarters": "Stockholm, Sweden",
+      "entry": "Mar 2022",
+      "fund": "Fund V",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Svea Solar installs and finances rooftop and ground-mounted solar panels, powering a sustainable future for homes and businesses across Sweden and Europe. Founded on the belief that solar is the best solution for most buildings, the company has proven the power of the sun with strong growth. With around EUR 100M in turnover and 500 employees, Svea Solar makes renewable energy accessible.",
+      "website": "https://sveasolar.se"
+    },
+    {
+      "company": "Toteme",
+      "sector": "Consumer",
+      "market": "Sweden",
+      "headquarters": "Stockholm, Sweden",
+      "entry": "Jun 2021",
+      "fund": "Fund V",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Toteme is a Swedish fashion brand founded in 2014 by Elin Kling and Karl Lindman, offering a Swedish style universe through minimalistic, trans-seasonal design. With around EUR 100M in turnover and 150 employees, the company has evolved into a strong iconic brand based on a uniform concept. Toteme represents slow fashion with fast growth through timeless, quality pieces.",
+      "website": "https://toteme.com"
+    },
+    {
+      "company": "Transcom",
+      "sector": "Business Services",
+      "market": "International",
+      "headquarters": "Luxembourg",
+      "entry": "Mar 2015",
+      "fund": "Fund IV",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Transcom delivers brilliance in customer experience through contact centre and customer engagement services across 30 countries. With around EUR 700M in turnover and 30,000 employees, the company supports brands in customer service, sales and technical support. Transcom combines people, technology and process excellence for leading global companies.",
+      "website": "https://transcom.com"
+    },
+    {
+      "company": "Tresu",
+      "sector": "Industrial",
+      "market": "Denmark",
+      "headquarters": "Struer, Denmark",
+      "entry": "Jun 2017",
+      "fund": "Fund IV",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Tresu manufactures flexographic printing equipment and consumables, serving the packaging and print industry with solutions for corrugated board, folding carton and labels. With around 150 employees, the Danish company provides printing chambers, anilox rollers and complete printing lines. Tresu helps packaging producers improve quality, efficiency and sustainability.",
+      "website": "https://tresu.com"
+    },
+    {
+      "company": "Trioworld",
+      "sector": "Industrial",
+      "market": "Sweden",
+      "headquarters": "Helsingborg, Sweden",
+      "entry": "Mar 2018",
+      "fund": "Fund IV",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Trioworld produces flexible plastic packaging and is rethinking plastics through a strong focus on circularity, recycled content and sustainable film solutions. With around EUR 900M in turnover and 2,000 employees, the Swedish company serves food, beverage, hygiene and industrial customers. Trioworld aims to become the most sustainable option in the plastic film industry.",
+      "website": "https://trioworld.com"
+    },
+    {
+      "company": "Vianode",
+      "sector": "Industrial",
+      "market": "Norway",
+      "headquarters": "Oslo, Norway",
+      "entry": "Sep 2022",
+      "fund": "Fund V",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Vianode produces synthetic graphite for lithium-ion battery anodes, perfecting the E in EVs through sustainable, high-performance materials. With around 200 employees, the Norwegian company offers graphite with lower carbon footprint than conventional production. Vianode is building large-scale production to supply the growing electric vehicle and energy storage markets.",
+      "website": "https://vianode.com"
+    },
+    {
+      "company": "VTU",
+      "sector": "Industrial",
+      "market": "Austria",
+      "headquarters": "Graz, Austria",
+      "entry": "Feb 2023",
+      "fund": "Fund VI",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "VTU Group provides process design and engineering services for the pharma, biotech, chemical and food industries, offering engineering to rely on. With around EUR 100M in turnover and 1,000 employees, the Austrian company delivers FEED, detailed design and digital twin solutions. VTU supports clients from laboratory scale through to commercial production.",
+      "website": "https://vtu-group.com"
+    },
+    {
+      "company": "Zahneins",
+      "sector": "Healthcare",
+      "market": "International",
+      "headquarters": "Munich, Germany",
+      "entry": "May 2018",
+      "fund": "Fund IV",
+      "source": "Altor",
+      "status": "Active",
+      "detailed_description": "Zahneins operates a network of dental clinics and lab services, delivering the dentistry of the future through modern practices and digital workflows. With around EUR 200M in turnover and 2,500 employees across Germany and Austria, the company combines clinical excellence with efficient operations. Zahneins makes high-quality dental care more accessible.",
+      "website": "https://zahneins.com"
+    }
   ]
 }

@@ -16,7 +16,10 @@ const firmDomainOverrides = {
     'Celero Capital': 'celerocapital.com',
     'Celero': 'celerocapital.com',
     'FSN Capital': 'fsncapital.com',
-    'Polaris': 'polarisequity.dk'
+    'Polaris': 'polarisequity.dk',
+    'CapMan': 'capman.com',
+    'Axcel': 'axcel.dk',
+    'Amplio': 'amplio.se'
 };
 let allPortfolioCompanies = [];
 
@@ -500,7 +503,7 @@ function normalizeFilterValue(value) {
     return cleanDisplayText(value || '');
 }
 
-/** Extract year only from entry (e.g. '2025-05' -> '2025', '2023' -> '2023'). */
+/** Extract year only from entry (e.g. '2025-05' -> '2025', '2023' -> '2023', 'Nov 2020' -> '2020'). */
 function normalizeEntryYear(raw) {
     if (raw == null || raw === '') return '';
     const s = String(raw).trim();
@@ -508,6 +511,9 @@ function normalizeEntryYear(raw) {
         const y = s.split('-')[0];
         return (y.length === 4 && /^\d{4}$/.test(y)) ? y : s;
     }
+    // Handle "Nov 2020", "Aug 2023", etc.
+    const yearMatch = s.match(/\b(19|20)\d{2}\b/);
+    if (yearMatch) return yearMatch[0];
     return (/^\d{4}$/.test(s) || /^\d{4}/.test(s)) ? s.substring(0, 4) : s;
 }
 
@@ -1031,7 +1037,58 @@ const COMPANY_DOMAIN_OVERRIDES = {
     'eivis': 'eivis-group.com',
     'SI - Sustainable Intelligence': 'wearesi.se',
     'Umia': 'umia.se',
-    'Safe Monitoring Group': 'safemonitoringgroup.com'
+    'Safe Monitoring Group': 'safemonitoringgroup.com',
+    // Amplio portfolio
+    'S R Intelligence (SRI)': 'sri.se',
+    'Tedge': 'tedge.se',
+    'Co-native': 'conative.se',
+    'SELATEK': 'selatek.se',
+    // Axcel portfolio
+    'Bekk': 'bekk.no',
+    'LS Retail': 'lsretail.com',
+    'Nordic Tyre Group': 'nordictyregroup.com',
+    'Progrits': 'progrits.com',
+    'SuperOffice': 'superoffice.com',
+    'Capture One': 'captureone.com',
+    'Phase One': 'phaseone.com',
+    'GUBI': 'gubi.com',
+    'NTI Group': 'ntigroup.dk',
+    'XPartners': 'xpartners.se',
+    'Edda Group': 'edda.dk',
+    // Altor portfolio
+    'Aarke': 'aarke.com',
+    'Aira': 'airahome.com',
+    'C WorldWide': 'cworldwide.com',
+    'CCM Hockey': 'ccmhockey.com',
+    'Circulose': 'circulose.com',
+    'Dale of Norway': 'daleofnorway.com',
+    'Eleda': 'eleda.se',
+    'F24': 'f24.com',
+    'FLSmidth': 'flsmidth.com',
+    'Gunnebo': 'gunnebo.com',
+    'Haarslev Industries': 'haarslev.com',
+    'Hamlet Protein': 'hamletprotein.com',
+    'iDeal of Sweden': 'idealofsweden.com',
+    'Imbox': 'imbox.no',
+    'Iyuno': 'iyuno.com',
+    'KAEFER': 'kaefer.com',
+    'Meltwater': 'meltwater.com',
+    'Norican group': 'norican.com',
+    "O'Learys Group": 'olearys.se',
+    'OptiGroup': 'optigroup.com',
+    'Orchid Orthopedic Solutions': 'orchid-solutions.com',
+    'Permascand': 'permascand.com',
+    'QNTM Group': 'qntm.se',
+    'Raw Fury': 'rawfury.com',
+    'Rillion': 'rillion.com',
+    'Rossignol Group': 'rossignol.com',
+    'Svea Solar': 'sveasolar.se',
+    'Toteme': 'toteme.com',
+    'Transcom': 'transcom.com',
+    'Trioworld': 'trioworld.com',
+    'Vianode': 'vianode.com',
+    'VTU': 'vtu-group.com',
+    'Zahneins': 'zahneins.com'
 };
 
 function extractCompanyDomain(company) {
@@ -1082,7 +1139,10 @@ function getFirmDomain(firmName) {
         'Adelis Equity': 'adelisequity.com',
         'IK Partners': 'ikpartners.com',
         'Accent Equity': 'accentequity.se',
-        'Alder': 'alder.se'
+        'Alder': 'alder.se',
+        'CapMan': 'capman.com',
+        'Axcel': 'axcel.dk',
+        'Amplio': 'amplio.se'
     };
     return firmDomains[firmName] || '';
 }

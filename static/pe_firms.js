@@ -11,6 +11,8 @@ const firmDomainOverrides = {
     'Polaris': 'polarisequity.dk',
     'Impilo': 'impilo.se',
     'Axcel': 'axcel.dk',
+    'CapMan': 'capman.com',
+    'Amplio': 'amplio.se',
     'MVI': 'mvi.se',
     'Equip': 'equip.no',
     'Trill Impact': 'trillimpact.com'
