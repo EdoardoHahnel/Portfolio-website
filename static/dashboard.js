@@ -95,6 +95,11 @@ async function loadStats() {
         if (data.success) {
             document.getElementById('totalCompanies').textContent = data.summary.total_companies || 349;
             document.getElementById('totalNews').textContent = data.summary.total_news || 50;
+            const muEl = document.getElementById('managerUniverseCount');
+            if (muEl && data.summary.total_pe_firms) {
+                muEl.textContent = data.summary.total_pe_firms;
+                muEl.setAttribute('data-target', data.summary.total_pe_firms);
+            }
         }
     } catch (error) {
         console.error('Error loading stats:', error);

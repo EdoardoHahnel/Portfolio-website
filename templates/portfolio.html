@@ -23,11 +23,102 @@
     max-width: 100%;
 }
 
+/* Scroll target - prevent fixed header from hiding firm section */
+.firm-section {
+    scroll-margin-top: 1rem;
+}
+
 .portfolio-filters-row {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
     align-items: center;
+}
+
+/* PE Firm Logo Strip - NO container, NO border, NO background - applies always */
+.portfolio-firm-logos {
+    margin-bottom: 1rem;
+    padding: 0.4rem 0;
+    overflow: visible;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+.portfolio-firm-logos.hidden { display: none; }
+.portfolio-firm-logos-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: #64748b;
+    margin: 0 0 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+.portfolio-firm-logos-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    line-height: 0;
+    background: none !important;
+    border: none !important;
+    padding: 0;
+    margin: 0;
+}
+.portfolio-firm-logo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+    padding: 0;
+    margin: 0;
+    border: none !important;
+    outline: none !important;
+    background: none !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+    line-height: 0;
+    overflow: visible;
+    box-shadow: none !important;
+}
+.portfolio-firm-logo-btn:hover,
+.portfolio-firm-logo-btn:focus {
+    transform: scale(1.15);
+    opacity: 0.9;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+.portfolio-firm-logo-btn img {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    min-height: 16px !important;
+    max-width: 16px !important;
+    max-height: 16px !important;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    flex-shrink: 0;
+    vertical-align: middle;
+}
+.portfolio-firm-logo-btn .logo-fallback-icon {
+    font-size: 0.55rem;
+    color: #6366f1;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media (max-width: 768px) {
@@ -203,6 +294,12 @@
 <!-- Status Messages -->
 <div id="portfolioStatusMessage" class="status-message hidden"></div>
 
+<!-- PE Firm Logo Strip - standalone, no card/border/background -->
+<div id="portfolioFirmLogos" class="portfolio-firm-logos hidden">
+    <p class="portfolio-firm-logos-label"><i class="fas fa-building"></i> Jump to firm</p>
+    <div id="portfolioFirmLogosInner" class="portfolio-firm-logos-inner"></div>
+</div>
+
 <!-- Portfolio Section -->
 <div class="content-card">
     <div class="content-card-header">
@@ -216,8 +313,6 @@
             <p>Loading portfolio data...</p>
         </div>
 
-        
-        
         <!-- Portfolio Table Container -->
         <div id="portfolioContainer" class="portfolio-container">
             <!-- Portfolio table will be inserted here by JavaScript -->

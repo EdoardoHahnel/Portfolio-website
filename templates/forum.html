@@ -46,6 +46,64 @@
     </div>
 </div>
 
+<div class="content-card scroll-reveal-item" style="margin-bottom:1rem;">
+    <div class="content-card-header">
+        <h2 class="content-card-title"><i class="fas fa-book-open"></i> Case Studies & Resources</h2>
+    </div>
+    <div class="content-card-body">
+        <ul class="forum-resource-list">
+            <li class="forum-resource-item-with-logo">
+                <div class="firm-logo-container forum-case-logo">
+                    <img src="https://logo.clearbit.com/fsncapital.com" alt="FSN Capital" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=fsncapital.com&amp;sz=64';this.onerror=function(){this.style.display='none';this.nextElementSibling.style.display='flex';};">
+                    <span class="forum-logo-fb" style="display:none;">FSN</span>
+                </div>
+                <div>
+                    <a href="/case-study/troax">
+                        <i class="fas fa-file-pdf"></i> FSN, Troax and the Satech acquisition opportunity
+                    </a>
+                    <span class="forum-resource-meta">Case study: Swedish House of Finance — Add-on acquisition, high-yield financing</span>
+                </div>
+            </li>
+            <li class="forum-resource-item-with-logo">
+                <div class="firm-logo-container forum-case-logo">
+                    <img src="https://logo.clearbit.com/nordiccapital.com" alt="Nordic Capital" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=nordiccapital.com&amp;sz=64';this.onerror=function(){this.style.display='none';this.nextElementSibling.style.display='flex';};">
+                    <span class="forum-logo-fb" style="display:none;">NC</span>
+                </div>
+                <div>
+                    <a href="/case-study/thule">
+                        <i class="fas fa-file-pdf"></i> Thule (Nordic Capital)
+                    </a>
+                    <span class="forum-resource-meta">Case study: Covenant breach, 2008 crisis restructuring</span>
+                </div>
+            </li>
+            <li class="forum-resource-item-with-logo">
+                <div class="firm-logo-container forum-case-logo">
+                    <img src="https://logo.clearbit.com/ratos.com" alt="Ratos" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=ratos.com&amp;sz=64';this.onerror=function(){this.style.display='none';this.nextElementSibling.style.display='flex';};">
+                    <span class="forum-logo-fb" style="display:none;">R</span>
+                </div>
+                <div>
+                    <a href="/case-study/hl-display">
+                        <i class="fas fa-file-pdf"></i> Buying for the Sake of Building? — Ratos & HL Display
+                    </a>
+                    <span class="forum-resource-meta">Case study: Buy-and-build strategies in Nordic PE (SSE thesis)</span>
+                </div>
+            </li>
+            <li class="forum-resource-item-with-logo">
+                <div class="firm-logo-container forum-case-logo">
+                    <img src="https://logo.clearbit.com/eqtpartners.com" alt="EQT" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=eqtpartners.com&amp;sz=64';this.onerror=function(){this.style.display='none';this.nextElementSibling.style.display='flex';};">
+                    <span class="forum-logo-fb" style="display:none;">EQT</span>
+                </div>
+                <div>
+                    <a href="/case-study/eqt">
+                        <i class="fas fa-file-pdf"></i> EQT Case Study — An ownership approach to responsible business practices
+                    </a>
+                    <span class="forum-resource-meta">Case study: Responsible ownership, sustainability, transparency, Anticimex (SSE)</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
 {% if current_user %}
 <div class="content-card scroll-reveal-item" style="margin-bottom:1rem;">
     <div class="content-card-header">
@@ -70,15 +128,15 @@
 <div class="forum-thread-list scroll-reveal-item">
     {% if threads %}
         {% for thread in threads %}
-        <article class="content-card forum-thread-card">
+        <article class="content-card forum-thread-card js-forum-thread-card" data-thread-url="/forum/thread/{{ thread.id }}">
             <div class="content-card-body">
                 <div class="forum-thread-head">
-                    <a class="forum-thread-title" href="/forum/thread/{{ thread.id }}">{{ thread.title }}</a>
+                    <span class="forum-thread-title">{{ thread.title }}</span>
                     <span class="forum-chip">{{ thread.category }}</span>
                 </div>
                 <p class="forum-thread-snippet">{{ thread.content[:220] }}{% if thread.content|length > 220 %}...{% endif %}</p>
                 <div class="forum-thread-meta">
-                    <span>By <a href="/forum/profile/{{ thread.username }}">{{ thread.username }}</a> ({{ thread.user_role }})</span>
+                    <span>By <a href="/forum/profile/{{ thread.username }}" onclick="event.stopPropagation()">{{ thread.username }}</a> ({{ thread.user_role }})</span>
                     <span>{{ thread.created_at[:10] }}</span>
                     <span>{{ thread.comment_count }} comments</span>
                 </div>

@@ -172,7 +172,8 @@ const firmDomainOverrides = {
     'FSN Capital': 'fsncapital.com', 'Polaris': 'polarisequity.dk', 'Nordstjernan': 'nordstjernan.se',
     'Valedo Partners': 'valedopartners.com', 'IK Partners': 'ikpartners.com', 'Adelis Equity': 'adelisequity.com',
     'Adelis Equity Partners': 'adelisequity.com', 'Altor': 'altor.com', 'Helix Kapital': 'helixkapital.se',
-    'CapMan': 'capman.com', 'Axcel': 'axcel.dk', 'Amplio': 'amplio.se'
+    'CapMan': 'capman.com', 'Axcel': 'axcel.dk', 'Amplio': 'amplio.se', 'Equip': 'equip.no',
+    'Impilo': 'impilo.se', 'MVI': 'mvi.se', 'Nalka': 'nalka.com'
 };
 
 function getEffectiveFirmLogoUrl(firm) {
@@ -2621,7 +2622,7 @@ function extractDomain(url) {
     }
 }
 
-const COMPANY_DOMAIN_OVERRIDES = { 'Brimer': 'brimer.no', 'Lunawood': 'lunawood.com', 'Enerco Group': 'enerco.se', 'Nordic Grid Solutions': 'triarca.dk', 'EITCO': 'eitco.de', 'Cedra': 'cedra.se', 'Vokstr': 'vokstr.no', 're:mount': 'remount.fi', 'netIP': 'netip.dk', 'Ropo Capital': 'ropo.com', 'Circura Danmark': 'circuradanmark.dk', 'Circura': 'circuragroup.com', 'DLVRY': 'dlvry.se', 'RETTA': 'innagroup.se', '3Button Group': '3bg.se', 'Briab': 'briab.se', 'EWGroup': 'ewgroup.se', 'eivis': 'eivis-group.com', 'SI - Sustainable Intelligence': 'wearesi.se', 'Umia': 'umia.se', 'Safe Monitoring Group': 'safemonitoringgroup.com' };
+const COMPANY_DOMAIN_OVERRIDES = { 'Brimer': 'brimer.no', 'Lunawood': 'lunawood.com', 'Enerco Group': 'enerco.se', 'Nordic Grid Solutions': 'triarca.dk', 'EITCO': 'eitco.de', 'Cedra': 'cedra.se', 'Vokstr': 'vokstr.no', 're:mount': 'remount.fi', 'netIP': 'netip.dk', 'Ropo Capital': 'ropo.com', 'Circura Danmark': 'circuradanmark.dk', 'Circura': 'circuragroup.com', 'DLVRY': 'dlvry.se', 'RETTA': 'innagroup.se', '3Button Group': '3bg.se', 'Briab': 'briab.se', 'EWGroup': 'ewgroup.se', 'eivis': 'eivis-group.com', 'SI - Sustainable Intelligence': 'wearesi.se', 'Umia': 'umia.se', 'Safe Monitoring Group': 'safemonitoringgroup.com', 'Humana': 'humanagroup.se', 'Cure': 'cure.agency', 'Immedica': 'immedica.com', 'Activeon': 'activeon.no', 'Bastard Burgers': 'bastardburgers.se', 'Nestit Group': 'nestit.com', 'Freedom Group': 'freedomgroup.se' };
 
 function generateCompanySlug(company) {
     const companyName = (company.company || 'company').toLowerCase()

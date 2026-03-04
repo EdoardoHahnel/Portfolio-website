@@ -19,7 +19,16 @@ const firmDomainOverrides = {
     'Polaris': 'polarisequity.dk',
     'CapMan': 'capman.com',
     'Axcel': 'axcel.dk',
-    'Amplio': 'amplio.se'
+    'Amplio': 'amplio.se',
+    'Helix Kapital': 'helixkapital.se',
+    'Nordstjernan': 'nordstjernan.se',
+    'Equip': 'equip.no',
+    'Impilo': 'impilo.se',
+    'MVI': 'mvi.se',
+    'Nalka': 'nalka.com',
+    'Triton': 'triton-partners.com',
+    'Triton Partners': 'triton-partners.com',
+    'Trill Impact': 'trillimpact.com'
 };
 let allPortfolioCompanies = [];
 
@@ -635,6 +644,8 @@ function renderFilteredPortfolio() {
 function displayFilteredPortfolioFlat(companies) {
     const container = document.getElementById('portfolioContainer');
     const emptyState = document.getElementById('portfolioEmptyState');
+    const logoStrip = document.getElementById('portfolioFirmLogos');
+    if (logoStrip) logoStrip.classList.add('hidden');
     if (!companies || companies.length === 0) {
         container.innerHTML = '';
         emptyState.classList.remove('hidden');
@@ -683,12 +694,53 @@ function displayFilteredPortfolioFlat(companies) {
     `;
 }
 
+function getFirmSectionId(source) {
+    const slug = String(source || '').toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '') || 'other';
+    return 'firm-section-' + slug;
+}
+
+function renderFirmLogoStrip(groupedCompanies) {
+    const strip = document.getElementById('portfolioFirmLogos');
+    const inner = document.getElementById('portfolioFirmLogosInner');
+    if (!strip || !inner) return;
+    if (!groupedCompanies || Object.keys(groupedCompanies).length === 0) {
+        strip.classList.add('hidden');
+        return;
+    }
+    inner.innerHTML = '';
+    const sources = Object.keys(groupedCompanies).sort();
+    sources.forEach(source => {
+        const firmCompanies = groupedCompanies[source];
+        const firmDomain = firmDomainOverrides[source] || getFirmDomain(source);
+        const firmLogoUrl = firmDomain ? `https://logo.clearbit.com/${firmDomain}?size=64` : '';
+        const firmFaviconUrl = firmDomain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(firmDomain)}&sz=32` : '';
+        const firmAvatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(source)}&background=6366f1&color=ffffff&size=64`;
+        const sectionId = getFirmSectionId(source);
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'portfolio-firm-logo-btn';
+        btn.title = `${source} (${firmCompanies.length} ${firmCompanies.length === 1 ? 'company' : 'companies'}) – click to scroll`;
+        btn.setAttribute('aria-label', `Scroll to ${source}`);
+        btn.innerHTML = firmLogoUrl
+            ? `<img src="${firmLogoUrl}" alt="${escapeHtml(source)}" onerror="this.onerror=null; this.src='${firmFaviconUrl}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};"><i class="fas fa-briefcase logo-fallback-icon" style="display:none;"></i>`
+            : `<i class="fas fa-briefcase logo-fallback-icon"></i>`;
+        btn.addEventListener('click', () => {
+            const el = document.getElementById(sectionId);
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        inner.appendChild(btn);
+    });
+    strip.classList.remove('hidden');
+}
+
 function displayPortfolio(companies) {
     const container = document.getElementById('portfolioContainer');
     const emptyState = document.getElementById('portfolioEmptyState');
+    const logoStrip = document.getElementById('portfolioFirmLogos');
     
     if (!companies || companies.length === 0) {
         container.innerHTML = '';
+        if (logoStrip) logoStrip.classList.add('hidden');
         emptyState.classList.remove('hidden');
         return;
     }
@@ -706,13 +758,17 @@ function displayPortfolio(companies) {
         groupedCompanies[source].push(company);
     });
     
+    // Render firm logo strip (click to scroll)
+    renderFirmLogoStrip(groupedCompanies);
+    
     // Create a section for each PE firm
     Object.keys(groupedCompanies).sort().forEach(source => {
         const firmCompanies = groupedCompanies[source];
         
-        // Create firm section
+        // Create firm section with id for scroll target
         const firmSection = document.createElement('div');
         firmSection.className = 'firm-section';
+        firmSection.id = getFirmSectionId(source);
         
         // Firm header with logo (clickable to go to firm detail page)
         const firmHeader = document.createElement('div');
@@ -1088,7 +1144,49 @@ const COMPANY_DOMAIN_OVERRIDES = {
     'Trioworld': 'trioworld.com',
     'Vianode': 'vianode.com',
     'VTU': 'vtu-group.com',
-    'Zahneins': 'zahneins.com'
+    'Zahneins': 'zahneins.com',
+    // Impilo portfolio
+    'Immedica': 'immedica.com',
+    'Humana': 'humanagroup.se',
+    'Euro Accident': 'euroaccident.se',
+    'Scantox': 'scantox.com',
+    'tandlægen.dk': 'tandlaegen.dk',
+    'Lowenco': 'lowenco.com',
+    'Pelago Bioscience': 'pelagobioscience.com',
+    'VaccinDirekt': 'vaccindirekt.se',
+    'Decon': 'decon.se',
+    'Avia Pharma': 'aviapharma.se',
+    'Stille': 'stillesurgical.com',
+    'Qufora': 'qufora.com',
+    'Oticon Medical': 'oticon.com',
+    // MVI portfolio
+    'Nestit Group': 'nestit.com',
+    'Ascenco Group': 'ascenco.se',
+    'SMP Parts': 'smpparts.se',
+    'PS Auction': 'psauktion.se',
+    'Art Clinic': 'artclinic.se',
+    'Great Security': 'greatsecurity.se',
+    'Freedom Group': 'freedomgroup.se',
+    // Equip portfolio
+    'Activeon': 'activeon.no',
+    'Bastard Burgers': 'bastardburgers.se',
+    'Busspart': 'busspart.no',
+    'Cares': 'cares.no',
+    'Cautus Geo': 'cautus.no',
+    'Cloud Connection': 'cloudconnection.no',
+    'Cure': 'cure.agency',
+    'Dura': 'durabemanning.no',
+    'Funplays': 'funplays.no',
+    'Holy Greens': 'holygreens.se',
+    'House of Discs': 'houseofdiscs.com',
+    'iteam': 'iteam.no',
+    'Makeup Mekka': 'makeuomekka.no',
+    'Miles': 'miles.no',
+    'North Travel': 'northtravel.no',
+    'River Group': 'rivergroup.no',
+    'Ryde': 'ryde.io',
+    'Stenbolaget': 'stenbolaget.se',
+    'TIND': 'tind.io'
 };
 
 function extractCompanyDomain(company) {
@@ -1127,7 +1225,9 @@ function generateCompanySlug(company) {
 function getFirmDomain(firmName) {
     const firmDomains = {
         'EQT': 'eqtgroup.com',
+        'Triton': 'triton-partners.com',
         'Triton Partners': 'triton-partners.com',
+        'Trill Impact': 'trillimpact.com',
         'Nordic Capital': 'nordiccapital.com',
         'Litorina': 'litorina.se',
         'Valedo Partners': 'valedopartners.com',
@@ -1142,7 +1242,13 @@ function getFirmDomain(firmName) {
         'Alder': 'alder.se',
         'CapMan': 'capman.com',
         'Axcel': 'axcel.dk',
-        'Amplio': 'amplio.se'
+        'Amplio': 'amplio.se',
+        'Helix Kapital': 'helixkapital.se',
+        'Nordstjernan': 'nordstjernan.se',
+        'Equip': 'equip.no',
+        'Impilo': 'impilo.se',
+        'MVI': 'mvi.se',
+        'Nalka': 'nalka.com'
     };
     return firmDomains[firmName] || '';
 }

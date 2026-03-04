@@ -6,7 +6,7 @@ It handles requests from your browser and serves web pages.
 """
 # Updated: Added 45+ Swedish AI news (Klarna, H&M, Spotify, Scania, Volvo, Nordea, etc.); Enhanced cards with company logos & colored borders
 
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, jsonify, request, abort
 from datetime import datetime
 import json
 import os
@@ -170,6 +170,59 @@ def pe_firm_detail(firm_name):
     Individual PE firm detail page
     """
     return render_template('pe_firm_detail.html', firm_name=firm_name)
+
+
+@app.route('/case-study/<slug>')
+def case_study(slug):
+    """
+    Case study landing page with brief description and link to PDF
+    """
+    CASE_STUDIES = {
+        'troax': {
+            'title': 'FSN, Troax and the Satech acquisition opportunity',
+            'firm': 'FSN Capital',
+            'firm_initials': 'FSN',
+            'firm_logo_domain': 'fsncapital.com',
+            'source': 'Swedish House of Finance',
+            'description': 'FSN Capital invests in Troax, a leading manufacturer of metal mesh panel solutions. The case examines Troax\'s potential acquisition of Satech, the Italian market leader, including strategic rationale, valuation, financing options (cash vs equity), and the opportunity to refinance via the Nordic high-yield bond market.',
+            'topics': ['Add-on acquisition', 'High-yield financing', 'Strategic M&A', 'Valuation'],
+            'pdf_url': 'https://www.hhs.se/contentassets/dd8251e6b9f041bf83865e5a47e687c1/troax-case-20170814.pdf',
+        },
+        'thule': {
+            'title': 'Thule (Nordic Capital)',
+            'firm': 'Nordic Capital',
+            'firm_initials': 'NC',
+            'firm_logo_domain': 'nordiccapital.com',
+            'source': 'Swedish House of Finance',
+            'description': 'Nordic Capital faces a critical decision with its investment in Thule, a Swedish car accessory and roof box manufacturer. After a tertiary buyout in 2007, Thule breaches its loan covenants during the 2008 financial crisis. The case explores restructuring options, lender negotiations, and whether Nordic Capital should inject additional equity to save the investment.',
+            'topics': ['Covenant breach', 'Financial restructuring', '2008 crisis', 'Lender negotiations'],
+            'pdf_url': 'https://www.hhs.se/contentassets/dd8251e6b9f041bf83865e5a47e687c1/thule-case-2015-02-02.pdf',
+        },
+        'hl-display': {
+            'title': 'Buying for the Sake of Building? — Ratos & HL Display',
+            'firm': 'Ratos',
+            'firm_initials': 'R',
+            'firm_logo_domain': 'ratos.com',
+            'source': 'Stockholm School of Economics',
+            'description': 'A qualitative study on buy-and-build strategies in the Nordic PE market, featuring Ratos\' implementation at HL Display, a POS equipment platform. The thesis analyzes value creation, key success factors, integration approaches, and how B&B quality is reflected in exit considerations.',
+            'topics': ['Buy-and-build', 'Value creation', 'Nordic PE', 'Integration'],
+            'pdf_url': 'https://arc.hhs.se/download.aspx?MediumId=5844',
+        },
+        'eqt': {
+            'title': 'EQT Case Study — An ownership approach to responsible business practices',
+            'firm': 'EQT',
+            'firm_initials': 'EQT',
+            'firm_logo_domain': 'eqtpartners.com',
+            'source': 'Stockholm School of Economics',
+            'description': 'EQT, founded in 1994 with Investor AB, has built a vision to become the most reputable investor and owner in the industry. This case explores how that vision is integrated with responsible business practices in portfolio companies through a long-term, ownership mindset. Using Anticimex (pest control) as a role model example, the case illustrates transparency, stakeholder relations, sustainable value creation, and the TROIKA governance model.',
+            'topics': ['Responsible investment', 'Sustainability', 'Transparency', 'Anticimex'],
+            'pdf_url': 'https://www.hhs.se/contentassets/ee2dfba842c848678d9907c1b5941508/eqt-case-study-201810307ny-titlesida.pdf',
+        },
+    }
+    study = CASE_STUDIES.get(slug)
+    if not study:
+        abort(404)
+    return render_template('case_study.html', study=study, slug=slug)
 
 
 @app.route('/fundraising')
@@ -1152,12 +1205,20 @@ def get_analytics_summary():
     """
     Get summary analytics for dashboard
     """
+    total_pe_firms = 28
+    if os.path.exists(data_path('pe_firms_database.json')):
+        try:
+            with open(data_path('pe_firms_database.json'), 'r', encoding='utf-8') as f:
+                pe_data = json.load(f)
+                total_pe_firms = len(pe_data.get('pe_firms', {}))
+        except Exception:
+            pass
     return jsonify({
         'success': True,
         'summary': {
             'total_companies': len(portfolio_storage),
             'total_news': len(news_storage),
-            'total_pe_firms': 21,
+            'total_pe_firms': total_pe_firms,
             'total_family_offices': 35,
             'latest_deals': len([n for n in news_storage if 'Deal' in n.get('category', '')]),
         }

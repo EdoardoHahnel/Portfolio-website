@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block title %}Case Study: {{ study.title }}{% endblock %}
+
+{% block extra_css %}
+<style>
+.case-study-hero {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.case-study-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.case-study-logo-wrap {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    border-radius: 10px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+.case-study-logo-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.case-study-logo-fb {
+    width: 56px;
+    height: 56px;
+    border-radius: 10px;
+    background: #4c1d95;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.case-study-title-block {
+    flex: 1;
+    min-width: 0;
+}
+.case-study-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 0.25rem 0;
+}
+.case-study-meta {
+    font-size: 0.8rem;
+    color: #64748b;
+}
+.case-study-desc {
+    margin: 1rem 0 1rem 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #334155;
+}
+.case-study-topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+.case-study-topic {
+    padding: 0.2rem 0.5rem;
+    background: #e0e7ff;
+    color: #3730a3;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+.case-study-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.25rem;
+    background: linear-gradient(135deg, #3f7de8 0%, #2563eb 100%);
+    color: #fff !important;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.case-study-cta:hover {
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+    transform: translateY(-1px);
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="page-header scroll-reveal">
+    <p class="page-subtitle" style="margin-bottom: 0.25rem;">Case Study</p>
+    <h1 class="page-title">{{ study.title }}</h1>
+</div>
+
+<div class="content-card scroll-reveal case-study-hero">
+    <div class="case-study-header">
+        <span class="case-study-logo-wrap">
+            <img src="https://logo.clearbit.com/{{ study.firm_logo_domain }}" alt="{{ study.firm }}" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain={{ study.firm_logo_domain }}&sz=64';this.onerror=function(){this.style.display='none';this.nextElementSibling.style.display='flex';};">
+            <span class="case-study-logo-fb" style="display:none;">{{ study.firm_initials }}</span>
+        </span>
+        <div class="case-study-title-block">
+            <h2 class="case-study-title">{{ study.title }}</h2>
+            <p class="case-study-meta">{{ study.firm }} · {{ study.source }}</p>
+        </div>
+    </div>
+
+    <p class="case-study-desc">{{ study.description }}</p>
+
+    <div class="case-study-topics">
+        {% for topic in study.topics %}
+        <span class="case-study-topic">{{ topic }}</span>
+        {% endfor %}
+    </div>
+
+    <a href="{{ study.pdf_url }}" target="_blank" rel="noopener noreferrer" class="case-study-cta">
+        <i class="fas fa-file-pdf"></i> Open case study (PDF)
+    </a>
+</div>
+{% endblock %}

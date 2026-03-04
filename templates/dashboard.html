@@ -280,6 +280,104 @@
     height: 100%;
     object-fit: contain;
 }
+
+/* Trending Case Studies - compact strip */
+.pe-trending-compact {
+    margin-bottom: 1rem;
+    padding: 0.5rem 0.75rem;
+    background: rgba(248, 250, 252, 0.8);
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+}
+.pe-trending-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.4rem;
+}
+.pe-trending-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #64748b;
+}
+.pe-trending-label i { color: #f59e0b; margin-right: 0.25rem; }
+.pe-trending-more {
+    font-size: 0.65rem;
+    color: #3f7de8;
+    text-decoration: none;
+}
+.pe-trending-more:hover { text-decoration: underline; }
+.pe-trending-row {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.5rem;
+}
+@media (max-width: 960px) {
+    .pe-trending-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) {
+    .pe-trending-row { grid-template-columns: 1fr; }
+}
+.pe-trending-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.65rem;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    text-decoration: none;
+    color: #334155;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    min-height: 48px;
+}
+.pe-trending-chip:hover {
+    border-color: #93c5fd;
+    box-shadow: 0 1px 4px rgba(59, 130, 246, 0.15);
+}
+.pe-trending-logo-wrap {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    border-radius: 6px;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.pe-trending-logo-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.pe-trending-logo-fb {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    background: #4c1d95;
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 700;
+    align-items: center;
+    justify-content: center;
+}
+.pe-trending-chip-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.05rem;
+    min-width: 0;
+}
+.pe-trending-chip-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+.pe-trending-chip-desc {
+    font-size: 0.65rem;
+    color: #64748b;
+    line-height: 1.2;
+}
 </style>
 {% endblock %}
 
@@ -316,7 +414,7 @@
     </a>
     <a href="/pe-firms" class="pe-metric-card scroll-reveal-item">
         <div class="pe-metric-kicker">Manager Universe</div>
-        <div class="pe-metric-value counter-animate" data-target="16">0</div>
+        <div class="pe-metric-value counter-animate" id="managerUniverseCount" data-target="28">0</div>
         <div class="pe-metric-label">Nordic PE Firms</div>
     </a>
 </section>
@@ -368,6 +466,56 @@
         </div>
     </div>
     <p class="trends-click-hint"><i class="fas fa-arrow-right"></i> Click any chart to open portfolio insights with live drill-down.</p>
+</section>
+
+<!-- Trending Case Studies - compact strip before PE Firms -->
+<section class="pe-trending-compact scroll-reveal">
+    <div class="pe-trending-header">
+        <span class="pe-trending-label"><i class="fas fa-fire"></i> Trending</span>
+        <a href="/forum" class="pe-trending-more">More on Forum</a>
+    </div>
+    <div class="pe-trending-row">
+        <a class="pe-trending-chip" href="/case-study/troax" title="FSN Capital – Troax & Satech acquisition case study">
+            <span class="pe-trending-logo-wrap">
+                <img src="https://logo.clearbit.com/fsncapital.com" alt="FSN Capital" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=fsncapital.com&amp;sz=64';this.onerror=function(){this.style.display='none';this.nextElementSibling.style.display='flex';};">
+                <span class="pe-trending-logo-fb" style="display:none;">FSN</span>
+            </span>
+            <span class="pe-trending-chip-body">
+                <span class="pe-trending-chip-title">Troax &amp; Satech</span>
+                <span class="pe-trending-chip-desc">Case study: Add-on acquisition, high-yield financing (SHOF)</span>
+            </span>
+        </a>
+        <a class="pe-trending-chip" href="/case-study/thule" title="Nordic Capital – Thule case study">
+            <span class="pe-trending-logo-wrap">
+                <img src="https://logo.clearbit.com/nordiccapital.com" alt="Nordic Capital" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=nordiccapital.com&amp;sz=64';this.onerror=function(){this.style.display='none';this.nextElementSibling.style.display='flex';};">
+                <span class="pe-trending-logo-fb" style="display:none;">NC</span>
+            </span>
+            <span class="pe-trending-chip-body">
+                <span class="pe-trending-chip-title">Thule</span>
+                <span class="pe-trending-chip-desc">Case study: Covenant breach, 2008 crisis restructuring (SHOF)</span>
+            </span>
+        </a>
+        <a class="pe-trending-chip" href="/case-study/hl-display" title="Ratos – HL Display buy-and-build case study">
+            <span class="pe-trending-logo-wrap">
+                <img src="https://logo.clearbit.com/ratos.com" alt="Ratos" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=ratos.com&amp;sz=64';this.onerror=function(){this.style.display='none';this.nextElementSibling.style.display='flex';};">
+                <span class="pe-trending-logo-fb" style="display:none;">R</span>
+            </span>
+            <span class="pe-trending-chip-body">
+                <span class="pe-trending-chip-title">HL Display</span>
+                <span class="pe-trending-chip-desc">Case study: Buy-and-build in Nordic PE (SSE thesis)</span>
+            </span>
+        </a>
+        <a class="pe-trending-chip" href="/case-study/eqt" title="EQT – Responsible business & Anticimex case study">
+            <span class="pe-trending-logo-wrap">
+                <img src="https://logo.clearbit.com/eqtpartners.com" alt="EQT" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=eqtpartners.com&amp;sz=64';this.onerror=function(){this.style.display='none';this.nextElementSibling.style.display='flex';};">
+                <span class="pe-trending-logo-fb" style="display:none;">EQT</span>
+            </span>
+            <span class="pe-trending-chip-body">
+                <span class="pe-trending-chip-title">EQT &amp; Anticimex</span>
+                <span class="pe-trending-chip-desc">Case study: Responsible ownership, sustainability, transparency (SSE)</span>
+            </span>
+        </a>
+    </div>
 </section>
 
 <section class="content-card scroll-reveal">

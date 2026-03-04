@@ -3,6 +3,15 @@ async function postVote(url) {
     return response.json();
 }
 
+document.addEventListener("click", (event) => {
+    const threadCard = event.target.closest(".js-forum-thread-card");
+    if (threadCard && !event.target.closest(".forum-thread-actions")) {
+        const url = threadCard.getAttribute("data-thread-url");
+        if (url) window.location = url;
+        return;
+    }
+});
+
 document.addEventListener("click", async (event) => {
     const threadBtn = event.target.closest(".js-thread-upvote");
     if (threadBtn) {
