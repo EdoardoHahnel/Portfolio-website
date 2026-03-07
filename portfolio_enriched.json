@@ -5,7 +5,7 @@
     "nalka_companies": 8,
     "amplio_companies": 8,
     "description": "Updated portfolio database with current IK Partners investments only",
-    "ik_partners_companies": 19,
+    "ik_partners_companies": 69,
     "adelis_companies": 45,
     "eqt_fixes_applied": "Verified and corrected via web research",
     "altor_companies": 46
@@ -29,7 +29,7 @@
       "market": "Nordics",
       "entry": "2023",
       "source": "Amplio",
-      "headquarters": "Sweden",
+      "headquarters": "Örebro, Sweden",
       "status": "Active",
       "detailed_description": "Platform within energy optimisation. Amplio invested in 2023."
     },
@@ -51,7 +51,7 @@
       "market": "Nordics",
       "entry": "2021",
       "source": "Amplio",
-      "headquarters": "Sweden",
+      "headquarters": "Hässleholm, Sweden",
       "status": "Active",
       "detailed_description": "Leading provider of security solutions, electrical installation & automation. Amplio invested in 2021."
     },
@@ -95,7 +95,7 @@
       "market": "Nordics",
       "entry": "2018",
       "source": "Amplio",
-      "headquarters": "Sweden",
+      "headquarters": "Jönköping, Sweden",
       "status": "Active",
       "detailed_description": "Manufacturer of functional storage components for the kitchen and wardrobe markets. Under Segulah V, managed by Amplio."
     },
@@ -528,21 +528,21 @@
     {
       "company": "Fortnox",
       "sector": "Technology",
-      "fund": "EQT",
+      "fund": "EQT X",
       "market": "Sweden",
       "entry": "2025",
       "source": "EQT",
-      "deal_size": "SEK 33B",
+      "deal_size": "SEK 55B",
       "enriched": true,
       "research_date": "2025-10-20T11:00:00",
       "headquarters": "Växjö, Sweden",
       "website": "https://www.fortnox.se",
-      "detailed_description": "Fortnox is Sweden's leading cloud-based business software platform, providing comprehensive accounting, invoicing, payroll, and ERP solutions primarily for small and medium-sized enterprises (SMEs). Founded in 2001, Fortnox has grown to become the dominant player in the Swedish SME software market, serving over 500,000 customers. The company's platform integrates financial management, HR, e-commerce, and business intelligence tools into a unified ecosystem that simplifies business administration for entrepreneurs and accountants. Fortnox operates on a freemium model where basic accounting software is free, while advanced features and integrations are offered through subscriptions. The company went public on Nasdaq Stockholm in 2015 and has maintained strong growth through both organic expansion and strategic acquisitions. In 2025, EQT Partners acquired Fortnox in a take-private transaction valued at approximately SEK 33 billion, recognizing the company's market leadership, strong recurring revenue model, and significant opportunities for Nordic and European expansion. Fortnox's cloud-native architecture, extensive partner ecosystem of accountants and bookkeepers, and continuous product innovation position it as the category leader in Nordic SME business software.",
+      "detailed_description": "Fortnox is Sweden's leading cloud-based business software platform, providing comprehensive accounting, invoicing, payroll, and ERP solutions primarily for small and medium-sized enterprises (SMEs). Founded in 2001, Fortnox has grown to become the dominant player in the Swedish SME software market, serving over 500,000 customers. The company's platform integrates financial management, HR, e-commerce, and business intelligence tools into a unified ecosystem that simplifies business administration for entrepreneurs and accountants. Fortnox operates on a freemium model where basic accounting software is free, while advanced features and integrations are offered through subscriptions. The company went public on Nasdaq Stockholm in 2015 and has maintained strong growth through both organic expansion and strategic acquisitions. In 2025, EQT X and First Kraft acquired Fortnox in a take-private transaction valued at approximately SEK 55 billion, recognizing the company's market leadership, strong recurring revenue model, and significant opportunities for Nordic and European expansion. Fortnox's cloud-native architecture, extensive partner ecosystem of accountants and bookkeepers, and continuous product innovation position it as the category leader in Nordic SME business software.",
       "founded_year": "2001",
       "employee_count_detailed": "800+ employees",
       "revenue": "SEK 1.5+ billion (2024)",
       "revenue_growth": "25-30% annual growth",
-      "valuation": "SEK 33 billion (2025 take-private)",
+      "valuation": "SEK 55 billion (2025 take-private)",
       "total_funding": "Public company acquired by EQT",
       "ceo": "Tommy Eklund",
       "leadership_team": [
@@ -1108,7 +1108,7 @@
       "source": "EQT",
       "enriched": true,
       "research_date": "2025-10-20T12:30:00",
-      "headquarters": "São Paulo, Brazil (Global HQ) + New York",
+      "headquarters": "New York, United States",
       "website": "https://www.wellhub.com",
       "detailed_description": "Wellhub (formerly Gympass) is the world's leading corporate wellness platform, providing employees access to a global network of gyms, fitness studios, personal trainers, wellness apps, and mental health services through a single subscription. Founded in 2012 in Brazil, the company rebranded from Gympass to Wellhub in 2023 to reflect its evolution from gym-focused to comprehensive wellbeing. Wellhub partners with over 15,000 companies globally to offer their 3+ million employees flexible access to 50,000+ fitness and wellness partners across 50+ countries. The platform's innovative business model charges companies a monthly fee per employee (similar to health insurance) while employees get discounted or free access to partnered facilities and services. This B2B2C approach creates value for all stakeholders: companies improve employee health and retention, employees get affordable wellness access, and fitness partners fill unused capacity. Wellhub has achieved strong unit economics by aggregating demand and negotiating favorable rates with suppliers while providing them with incremental revenue and reduced customer acquisition costs. The company grew rapidly during COVID-19 by expanding digital offerings including on-demand fitness classes, meditation apps, therapy sessions, and nutrition coaching. With the increasing focus on employee wellbeing and mental health, Wellhub is positioned at the intersection of HR tech, healthtech, and the $96 billion corporate wellness market.",
       "founded_year": "2012",
@@ -1253,17 +1253,17 @@
     {
       "company": "Zeus",
       "sector": "Healthcare",
-      "fund": "EQT",
+      "fund": "EQT X",
       "market": "United States",
       "entry": "2024",
       "source": "EQT",
       "enriched": true,
       "research_date": "2025-10-20T12:45:00",
       "headquarters": "Orangeburg, South Carolina, United States",
-      "website": "https://www.zeus-healthcare.com",
-      "detailed_description": "Zeus is a leading healthcare services and technology company focused on improving patient outcomes and operational efficiency across healthcare systems. The company operates in specialized healthcare segments including medical equipment services, healthcare IT solutions, and clinical workflow optimization. Zeus has built a strong reputation for delivering mission-critical services to hospitals, healthcare systems, and medical facilities, ensuring uptime of essential medical equipment and seamless integration of healthcare technologies. The company's comprehensive service offerings span preventive maintenance, rapid response repairs, IT infrastructure management, and clinical engineering services. Zeus serves thousands of healthcare facilities across multiple regions, providing 24/7 support for life-saving medical equipment including imaging systems, surgical equipment, patient monitoring systems, and diagnostic devices. The company combines technical expertise with healthcare domain knowledge to optimize equipment performance, reduce downtime, extend asset lifecycles, and ensure regulatory compliance. Zeus has grown through both organic expansion and strategic acquisitions, consolidating a fragmented market of regional service providers into a scaled platform with national reach and comprehensive capabilities. The company's technology platform enables predictive maintenance, asset tracking, and performance analytics, helping healthcare providers maximize equipment ROI while ensuring patient safety and care quality.",
-      "founded_year": "2010s",
-      "employee_count_detailed": "3,500+ technicians and engineers",
+      "website": "https://www.zeusinc.com",
+      "detailed_description": "Zeus is a global leader in designing and manufacturing advanced fluoropolymer tubing and polymer components for medical devices and industrial applications. Founded in 1966 in Orangeburg, South Carolina, the company pioneered the development of minimally invasive medical procedure components including catheters for structural heart, peripheral, and neurovascular interventions. Zeus's mission-critical components enable life-saving procedures with better health outcomes, faster recovery, and lower costs compared to traditional open surgeries. The company operates eight U.S. facilities and one in Ireland, employing approximately 2,400 people and serving over 300 customers across 100+ countries. EQT X acquired Zeus in 2024 at a valuation of approximately $3.4 billion, supporting continued investment in R&D, expanded facilities, and new product innovation.",
+      "founded_year": "1966",
+      "employee_count_detailed": "~2,400 employees globally",
       "revenue": "$500M+ (estimated)",
       "revenue_growth": "25%+ annual growth",
       "valuation": "Private",
@@ -1271,73 +1271,60 @@
       "ceo": "Leadership team",
       "leadership_team": [
         {
-          "name": "CEO",
-          "role": "Chief Executive Officer",
-          "background": "Healthcare services executive with deep industry experience"
-        },
-        {
-          "name": "CTO",
-          "role": "Chief Technology Officer",
-          "background": "Healthcare IT and medical equipment technology expertise"
+          "name": "John Groetelaars",
+          "role": "Executive Chairman",
+          "background": "Former Hillrom CEO, EQT industrial adviser"
         }
       ],
       "key_products": [
         {
-          "name": "Medical Equipment Services",
-          "description": "Comprehensive maintenance, repair, and lifecycle management for medical equipment including imaging, surgical, and diagnostic systems"
+          "name": "Fluoropolymer Tubing",
+          "description": "Advanced polymer tubing for catheters used in structural heart, peripheral, and neurovascular interventions"
         },
         {
-          "name": "Clinical Engineering",
-          "description": "On-site clinical engineering teams providing expertise in medical device management and hospital equipment operations"
+          "name": "Medical Device Components",
+          "description": "Mission-critical polymer components enabling minimally invasive procedures with better outcomes"
         },
         {
-          "name": "Healthcare IT Solutions",
-          "description": "IT infrastructure, network management, and technology integration services for healthcare facilities"
-        },
-        {
-          "name": "Zeus Platform",
-          "description": "Technology platform for asset management, preventive maintenance scheduling, and performance analytics"
+          "name": "Industrial Components",
+          "description": "Polymer components for industrial applications beyond healthcare"
         }
       ],
       "technology_stack": [
-        "Asset management platform",
-        "Predictive maintenance algorithms",
-        "IoT sensors for equipment monitoring",
-        "Mobile apps for field technicians",
-        "Integration with hospital CMMS systems",
-        "Analytics and reporting dashboards"
+        "Advanced polymer extrusion",
+        "Fluoropolymer manufacturing",
+        "Medical-grade quality systems",
+        "R&D for new applications"
       ],
       "recent_news": [
         {
           "date": "2024",
-          "title": "EQT Investment",
-          "content": "EQT acquired Zeus to accelerate growth and consolidation strategy in healthcare services market"
+          "title": "EQT Acquisition",
+          "content": "EQT X acquired Zeus at $3.4B valuation to support R&D, facility expansion, and new product innovation"
         }
       ],
       "key_milestones": [
         {
-          "year": "2010s",
-          "event": "Company Formation",
-          "description": "Zeus established as healthcare services provider"
+          "year": "1966",
+          "event": "Company Founded",
+          "description": "Zeus founded in Orangeburg, SC by Tourville family"
         },
         {
           "year": "2024",
           "event": "EQT Partnership",
-          "description": "Major investment from EQT to scale operations"
+          "description": "EQT X acquired at $3.4B valuation"
         }
       ],
       "competitive_advantages": [
-        "National scale with local service capabilities",
-        "Multi-vendor equipment expertise",
-        "24/7 emergency response capabilities",
-        "Strong relationships with healthcare systems",
-        "Comprehensive service portfolio vs. point solutions",
-        "Technology-enabled service delivery",
-        "Regulatory and compliance expertise",
-        "Recurring revenue model with high retention"
+        "Pioneer in fluoropolymer tubing for medical devices",
+        "Mission-critical components for life-saving procedures",
+        "Eight U.S. facilities plus Ireland",
+        "300+ customers across 100+ countries",
+        "Strong R&D and product innovation",
+        "Regulatory expertise in medical device manufacturing"
       ],
-      "target_customers": "Hospitals, healthcare systems, ambulatory surgery centers, imaging centers, and healthcare facilities requiring medical equipment services",
-      "market_share": "Growing consolidator in fragmented medical equipment services market",
+      "target_customers": "Medical device OEMs, catheter manufacturers, and industrial companies requiring advanced polymer components",
+      "market_share": "Global leader in fluoropolymer tubing for medical devices",
       "geographic_presence": [
         "United States (nationwide coverage)",
         "Multiple regional service centers",
@@ -1491,7 +1478,7 @@
     {
       "company": "ReliaQuest",
       "sector": "Enterprise Technology",
-      "fund": "EQT X",
+      "fund": "EQT Growth",
       "market": "United States",
       "entry": "2025",
       "source": "EQT",
@@ -1504,7 +1491,7 @@
       "employee_count_detailed": "1,300+ employees including security analysts",
       "revenue": "$500M+ ARR (2024)",
       "revenue_growth": "40%+ annual growth",
-      "valuation": "$5+ billion (2025)",
+      "valuation": "$3.4 billion (2025)",
       "total_funding": "$700M+ raised",
       "ceo": "Brian Murphy",
       "leadership_team": [
@@ -1546,7 +1533,7 @@
         {
           "date": "2025",
           "title": "EQT Major Investment",
-          "content": "EQT invested in ReliaQuest at $5+ billion valuation supporting continued growth"
+          "content": "EQT led $500M+ funding round at $3.4B valuation (Mar 2025)"
         },
         {
           "date": "2023",
@@ -1583,7 +1570,7 @@
         {
           "year": "2025",
           "event": "EQT Investment",
-          "description": "Partnered with EQT at $5B+ valuation"
+          "description": "EQT led $500M+ round at $3.4B valuation"
         }
       ],
       "competitive_advantages": [
@@ -1620,8 +1607,8 @@
         "Cloud-based platform efficiency"
       ],
       "investment_thesis": "EQT invested recognizing ReliaQuest's strong position in high-growth cybersecurity market, proven platform with sticky customers, attractive SaaS unit economics, significant market opportunity, and potential for accelerated growth through international expansion and M&A.",
-      "deal_size": "$5B",
-      "deal_value_source": "Key milestones",
+      "deal_size": "$500M+",
+      "deal_value_source": "EQT-led $500M+ round at $3.4B valuation (Mar 2025)",
       "deal_value_context": "Partnered with EQT at $5B+ valuation",
       "deal_value_updated": "2025-10-20T20:11:00.688901",
       "logo_url": "https://logo.clearbit.com/reliaquest.com"
@@ -2877,7 +2864,7 @@
     {
       "company": "Harvey",
       "sector": "Enterprise Tech",
-      "fund": "EQT Ventures",
+      "fund": "EQT Growth",
       "market": "United States",
       "entry": "2025",
       "source": "EQT",
@@ -3018,7 +3005,7 @@
       "source": "EQT",
       "enriched": true,
       "research_date": "2025-10-20T16:45:00",
-      "headquarters": "Oslo, Norway (and San Francisco)",
+      "headquarters": "Moss, Norway",
       "website": "https://www.1x.tech",
       "detailed_description": "1X (formerly Halodi Robotics) is a pioneering humanoid robotics company developing safe, intelligent androids designed to work alongside humans in real-world environments. Founded in Norway in 2014, 1X's mission is to create abundant labor capacity through android systems that can perform useful physical work in homes, workplaces, and society. The company's flagship products include EVE, a wheeled android designed for industrial and commercial applications, and NEO, a bipedal humanoid robot for consumer and home applications. 1X takes a unique approach focused on safety-first design, using actuators with safe force limitations and compliant materials that enable robots to work safely near humans without cages or barriers. The company's technology combines advanced robotics hardware, computer vision, machine learning for task execution, and increasingly sophisticated AI for decision-making and learning. 1X is training its robots using both simulated environments and real-world deployments, with EVE units already operating in security patrol and logistics roles. The company has attracted significant attention and investment from the AI and robotics community, with backing from OpenAI among others. 1X represents a bet on the coming era of embodied AI where large language models and AI systems are integrated into physical robots capable of performing complex real-world tasks. The total addressable market encompasses labor in numerous industries where robots could augment or replace human workers in repetitive, dangerous, or physically demanding roles. In 2024, EQT Ventures invested in 1X recognizing the company's technical leadership and the massive long-term opportunity in humanoid robotics.",
       "founded_year": "2014",
@@ -4071,14 +4058,14 @@
       "company": "GotPhoto",
       "sector": "Consumer",
       "fund": "EQT Ventures",
-      "market": "Norway",
+      "market": "Germany",
       "entry": "2023",
       "source": "EQT",
       "enriched": true,
       "research_date": "2025-10-20T19:00:00",
-      "headquarters": "Oslo, Norway",
+      "headquarters": "Berlin, Germany",
       "website": "https://www.gotphoto.com",
-      "detailed_description": "GotPhoto is a leading SaaS platform for professional photographers specializing in volume photography including school pictures, sports teams, events, and group photography. Founded in Norway, GotPhoto provides an end-to-end solution that helps photographers manage their entire workflow from scheduling shoots, capturing images, automated photo organization using AI face recognition, online galleries for customer viewing, order processing, payment collection, and product fulfillment. The platform's killer feature is AI-powered face recognition that automatically matches individual photos to the correct students, athletes, or event participants, dramatically reducing manual sorting time. This automation enables photographers to handle much larger volumes and serve more schools and organizations profitably. GotPhoto serves thousands of professional photographers across schools, sports organizations, dance studios, and event photography businesses. The company's business model includes SaaS subscriptions for photographers plus revenue sharing on print and product sales through integrated e-commerce. GotPhoto handles the logistics of print production and delivery through partnerships with photo labs, providing turnkey solution for photographers. The platform has strong retention as it becomes central to photographers' business operations and customer relationships. GotPhoto is expanding internationally and adding new photography verticals. In 2023, EQT Ventures invested recognizing the company's strong product-market fit and opportunity to modernize the fragmented volume photography industry through technology.",
+      "detailed_description": "GotPhoto is a leading SaaS platform for professional photographers specializing in volume photography including school pictures, sports teams, events, and group photography. Founded in 2012 in Berlin, Germany, GotPhoto provides an end-to-end solution that helps photographers manage their entire workflow from scheduling shoots, capturing images, automated photo organization using AI face recognition, online galleries for customer viewing, order processing, payment collection, and product fulfillment. The platform's killer feature is AI-powered face recognition that automatically matches individual photos to the correct students, athletes, or event participants, dramatically reducing manual sorting time. This automation enables photographers to handle much larger volumes and serve more schools and organizations profitably. GotPhoto serves thousands of professional photographers across schools, sports organizations, dance studios, and event photography businesses. The company's business model includes SaaS subscriptions for photographers plus revenue sharing on print and product sales through integrated e-commerce. GotPhoto handles the logistics of print production and delivery through partnerships with photo labs, providing turnkey solution for photographers. The platform has strong retention as it becomes central to photographers' business operations and customer relationships. GotPhoto is expanding internationally and adding new photography verticals. In 2023, EQT Ventures invested recognizing the company's strong product-market fit and opportunity to modernize the fragmented volume photography industry through technology.",
       "founded_year": "2015",
       "employee_count_detailed": "100+ employees",
       "revenue": "$15M+ (estimated)",
@@ -5070,7 +5057,7 @@
     {
       "company": "OEM International",
       "sector": "Industrial Distribution",
-      "fund": "EQT",
+      "fund": "EQT X",
       "market": "Sweden",
       "entry": "2025",
       "source": "EQT",
@@ -5080,7 +5067,7 @@
       "website": "https://www.oem-international.com",
       "detailed_description": "OEM International is a leading value-added distributor of components and systems for industrial applications. Founded in 1974 and headquartered in Tranås, Sweden, the company distributes over 60,000 components from 400+ suppliers for automation, pressure & flow systems, and electrification. Employing ~1,050 people across 15 countries in Northern, Central, and Eastern Europe. EQT X acquired in 2025.",
       "founded_year": "1990s",
-      "employee_count_detailed": "15,000+ service workers",
+      "employee_count_detailed": "~1,050 employees across 15 countries",
       "revenue": "€600M+ (estimated)",
       "revenue_growth": "10-15% annual growth",
       "valuation": "Private",
@@ -5095,25 +5082,25 @@
       ],
       "key_products": [
         {
-          "name": "Cleaning Services",
-          "description": "Office cleaning, industrial cleaning, healthcare cleaning with quality assurance programs"
+          "name": "Automation Components",
+          "description": "Components and systems for industrial automation from 400+ suppliers"
         },
         {
-          "name": "Technical Services",
-          "description": "HVAC maintenance, electrical services, plumbing, and general building maintenance"
+          "name": "Pressure & Flow Systems",
+          "description": "Hydraulic, pneumatic, and flow control components for industrial applications"
         },
         {
-          "name": "Integrated Facility Management",
-          "description": "Comprehensive FM solutions managing all facility service needs under single contract"
+          "name": "Electrification",
+          "description": "Electrical components and systems for industrial electrification"
         },
         {
-          "name": "Specialist Services",
-          "description": "Cleanroom services, healthcare environmental services, food industry cleaning"
+          "name": "Value-Added Distribution",
+          "description": "60,000+ components with technical support and supply chain solutions"
         }
       ],
       "technology_stack": [
-        "Workforce management systems",
-        "Quality control and inspection apps",
+        "E-commerce and ordering platforms",
+        "Inventory management systems",
         "Customer portals and reporting",
         "Scheduling and routing optimization",
         "Training and certification platforms",
@@ -6897,6 +6884,7 @@
       "market": "UK",
       "entry": "2020",
       "source": "Nordic Capital",
+      "status": "Exited",
       "enriched": true,
       "research_date": "2025-10-21T08:35:00",
       "headquarters": "London, United Kingdom",
@@ -7908,6 +7896,7 @@
       "market": "Sweden",
       "entry": "2019",
       "source": "Nordic Capital",
+      "status": "Exited",
       "enriched": true,
       "research_date": "2025-10-21T11:08:00",
       "headquarters": "Stockholm, Sweden",
@@ -11290,9 +11279,9 @@
     {
       "company": "Sortera",
       "sector": "Circularity",
-      "fund": "Summa Equity Fund I",
+      "fund": "Nordic Capital",
       "market": "Sweden",
-      "entry": "2017",
+      "entry": "2021",
       "source": "Nordic Capital",
       "enriched": true,
       "research_date": "2025-10-20",
@@ -14370,7 +14359,7 @@
       "fund": "Triton",
       "market": "Norway",
       "entry": "2014",
-      "source": "Nordic Capital",
+      "source": "Triton",
       "enriched": true,
       "research_date": "2025-10-20",
       "description": "Flokk is a leading European manufacturer of high-quality office and workspace furniture, offering ergonomic seating, desks, and workspace solutions under premium Scandinavian brands. The company's portfolio includes iconic brands like HÅG, RH, RBM, BMA, Offecct, and Giroflex, serving corporate offices, public institutions, and coworking spaces across Europe with sustainable, design-led furniture solutions.",
@@ -17044,6 +17033,7 @@
       "market": "Denmark",
       "entry": "2016",
       "source": "EQT",
+      "headquarters": "Copenhagen, Denmark",
       "enriched": true,
       "research_date": "2025-10-20",
       "description": "Sitecore is a global leader in digital experience platforms (DXP), providing enterprise content management, personalization, marketing automation, and commerce solutions. The company's cloud-based platform enables large enterprises to create, manage, and optimize digital experiences across web, mobile, and other channels, serving over 5,000 brands worldwide including Fortune 500 companies with AI-powered personalization and omnichannel capabilities.",
@@ -17914,10 +17904,10 @@
     {
       "company": "Avinode",
       "sector": "Technology",
-      "fund": "EQT VII",
+      "fund": "CAMP Systems",
       "market": "Sweden",
-      "entry": "2017",
-      "source": "EQT",
+      "entry": "2014",
+      "source": "CAMP Systems",
       "headquarters": "Gothenburg, Sweden",
       "website": "https://www.avinode.com",
       "enriched": true,
@@ -20373,7 +20363,7 @@
       "sector": "Industrial Tech",
       "fund": "Bure Equity",
       "market": "Switzerland",
-      "entry": "2011",
+      "entry": "2014",
       "source": "Bure Equity",
       "headquarters": "Lugano, Switzerland",
       "website": "https://www.cavotec.com",
@@ -20425,9 +20415,9 @@
           "description": "Established as engineering company"
         },
         {
-          "year": "2011",
+          "year": "2014",
           "event": "Bure Investment",
-          "description": "Growth investment"
+          "description": "Growth investment (9.9% via directed share issue)"
         }
       ],
       "competitive_advantages": [
@@ -20462,7 +20452,7 @@
       "sector": "Healthcare",
       "fund": "Bure Equity",
       "market": "Sweden",
-      "entry": "1994",
+      "entry": "2010",
       "source": "Bure Equity",
       "headquarters": "Gothenburg, Sweden",
       "website": "https://www.vitrolife.com",
@@ -20563,7 +20553,7 @@
       "sector": "Healthcare",
       "fund": "Bure Equity",
       "market": "Sweden",
-      "entry": "2010",
+      "entry": "2012",
       "source": "Bure Equity",
       "headquarters": "Gothenburg, Sweden",
       "website": "https://www.xvivoperfusion.com",
@@ -20652,8 +20642,10 @@
       "fund": "Bure Equity",
       "market": "Sweden",
       "entry": "2003",
+      "exit_year": "2021",
       "source": "Bure Equity",
       "headquarters": "Lund, Sweden",
+      "status": "Exited",
       "website": "https://www.cellavision.com",
       "enriched": true,
       "research_date": "2025-10-20T19:05:00",
@@ -20746,7 +20738,7 @@
       "sector": "Technology",
       "fund": "Bure Equity",
       "market": "Sweden",
-      "entry": "1994",
+      "entry": "2010",
       "source": "Bure Equity",
       "headquarters": "Täby, Sweden",
       "website": "https://www.mycronic.com",
@@ -20840,7 +20832,7 @@
       "sector": "Business Services",
       "fund": "Bure Equity",
       "market": "Sweden",
-      "entry": "2016",
+      "entry": "1998",
       "source": "Bure Equity",
       "headquarters": "Stockholm, Sweden",
       "website": "https://www.mercuri.net",
@@ -30047,6 +30039,8 @@
       "market": "Nordic/Europe",
       "entry": "2015",
       "source": "Alder",
+      "status": "Exited",
+      "exit_year": "2025",
       "headquarters": "Umeå, Sweden",
       "website": "https://www.umia.se",
       "enriched": true,
@@ -32263,15 +32257,15 @@
     {
       "company": "A-SAFE",
       "sector": "Industrials",
-      "fund": "IK Fund",
-      "market": "Europe",
+      "fund": "Partnership Fund",
+      "market": "UK",
       "entry": "2024",
       "source": "IK Partners",
-      "headquarters": "London, UK",
+      "headquarters": "Elland, UK",
       "website": "https://www.asafe.com",
       "enriched": true,
       "research_date": "2025-10-24T20:58:58",
-      "detailed_description": "A-SAFE is a leading manufacturer of safety barriers and traffic management solutions",
+      "detailed_description": "A-SAFE is a leading manufacturer of industrial polymer safety barrier systems and traffic management solutions. Founded 1984, headquartered in Elland, Yorkshire.",
       "employees": "50-2000 employees",
       "revenue": "EUR 20M - EUR 500M",
       "revenue_growth": "5-15% annual growth",
@@ -32312,11 +32306,11 @@
     {
       "company": "Blanchon Group",
       "sector": "Industrials",
-      "fund": "IK Fund",
-      "market": "Europe",
+      "fund": "Small Cap",
+      "market": "France",
       "entry": "2021",
       "source": "IK Partners",
-      "headquarters": "Paris, France",
+      "headquarters": "Saint-Priest, France",
       "website": "https://www.blanchon.com",
       "enriched": true,
       "research_date": "2025-10-24T20:58:58",
@@ -32361,8 +32355,8 @@
     {
       "company": "DRIESCHER",
       "sector": "Industrials",
-      "fund": "IK Fund",
-      "market": "Europe",
+      "fund": "Mid Cap",
+      "market": "Germany",
       "entry": "2024",
       "source": "IK Partners",
       "headquarters": "Munich, Germany",
@@ -32410,15 +32404,15 @@
     {
       "company": "Forthglade",
       "sector": "Industrials",
-      "fund": "IK Fund",
-      "market": "Europe",
+      "fund": "Small Cap",
+      "market": "UK",
       "entry": "2020",
       "source": "IK Partners",
       "headquarters": "London, UK",
       "website": "https://www.forthglade.com",
       "enriched": true,
       "research_date": "2025-10-24T20:58:58",
-      "detailed_description": "Forthglade is a UK-based industrial company",
+      "detailed_description": "UK-based natural pet food manufacturer. Premium dog and cat food. IK Partners acquired from Piper in 2020.",
       "employees": "50-2000 employees",
       "revenue": "EUR 20M - EUR 500M",
       "revenue_growth": "5-15% annual growth",
@@ -32459,8 +32453,8 @@
     {
       "company": "GoodLife Foods",
       "sector": "Industrials",
-      "fund": "IK Fund",
-      "market": "Europe",
+      "fund": "Mid Cap",
+      "market": "Netherlands",
       "entry": "2023",
       "source": "IK Partners",
       "headquarters": "Amsterdam, Netherlands",
@@ -32507,9 +32501,9 @@
     },
     {
       "company": "HSL Compliance",
-      "sector": "Industrials",
-      "fund": "IK Fund",
-      "market": "Europe",
+      "sector": "Business Services",
+      "fund": "Small Cap",
+      "market": "UK",
       "entry": "2025",
       "source": "IK Partners",
       "headquarters": "London, UK",
@@ -32557,8 +32551,8 @@
     {
       "company": "Kooi",
       "sector": "Industrials",
-      "fund": "IK Fund",
-      "market": "Europe",
+      "fund": "Mid Cap",
+      "market": "Netherlands",
       "entry": "2024",
       "source": "IK Partners",
       "headquarters": "Amsterdam, Netherlands",
@@ -32606,8 +32600,8 @@
     {
       "company": "Kran og Industri Service",
       "sector": "Industrials",
-      "fund": "IK Fund",
-      "market": "Europe",
+      "fund": "Small Cap",
+      "market": "Norway",
       "entry": "2024",
       "source": "IK Partners",
       "headquarters": "Oslo, Norway",
@@ -32655,8 +32649,8 @@
     {
       "company": "MDT Technologies",
       "sector": "Industrials",
-      "fund": "IK Fund",
-      "market": "Europe",
+      "fund": "Mid Cap",
+      "market": "Germany",
       "entry": "2020",
       "source": "IK Partners",
       "headquarters": "Munich, Germany",
@@ -32704,8 +32698,8 @@
     {
       "company": "MMS",
       "sector": "Industrials",
-      "fund": "IK Fund",
-      "market": "Europe",
+      "fund": "Development Capital",
+      "market": "France",
       "entry": "2023",
       "source": "IK Partners",
       "headquarters": "Paris, France",
@@ -32753,8 +32747,8 @@
     {
       "company": "MÜPRO",
       "sector": "Industrials",
-      "fund": "IK Fund",
-      "market": "Europe",
+      "fund": "Mid Cap",
+      "market": "Germany",
       "entry": "2022",
       "source": "IK Partners",
       "headquarters": "Munich, Germany",
@@ -32802,8 +32796,8 @@
     {
       "company": "Optimum Group",
       "sector": "Industrials",
-      "fund": "IK Fund",
-      "market": "Europe",
+      "fund": "Mid Cap",
+      "market": "Netherlands",
       "entry": "2018",
       "source": "IK Partners",
       "headquarters": "Amsterdam, Netherlands",
@@ -32851,8 +32845,8 @@
     {
       "company": "Renta",
       "sector": "Industrials",
-      "fund": "IK Fund",
-      "market": "Europe",
+      "fund": "Mid Cap",
+      "market": "Finland",
       "entry": "2022",
       "source": "IK Partners",
       "headquarters": "Helsinki, Finland",
@@ -32900,8 +32894,8 @@
     {
       "company": "Safic-Alcan",
       "sector": "Industrials",
-      "fund": "IK Fund",
-      "market": "Europe",
+      "fund": "Partnership Fund",
+      "market": "France",
       "entry": "2022",
       "source": "IK Partners",
       "headquarters": "Paris, France",
@@ -32949,8 +32943,8 @@
     {
       "company": "Sansidor",
       "sector": "Industrials",
-      "fund": "IK Fund",
-      "market": "Europe",
+      "fund": "Small Cap",
+      "market": "Netherlands",
       "entry": "2024",
       "source": "IK Partners",
       "headquarters": "Amsterdam, Netherlands",
@@ -32998,8 +32992,8 @@
     {
       "company": "Schwingshandl",
       "sector": "Industrials",
-      "fund": "IK Fund",
-      "market": "Europe",
+      "fund": "Small Cap",
+      "market": "Austria",
       "entry": "2024",
       "source": "IK Partners",
       "headquarters": "Vienna, Austria",
@@ -33047,8 +33041,8 @@
     {
       "company": "STEIN HGS",
       "sector": "Industrials",
-      "fund": "IK Fund",
-      "market": "Europe",
+      "fund": "Development Capital",
+      "market": "Germany",
       "entry": "2022",
       "source": "IK Partners",
       "headquarters": "Munich, Germany",
@@ -33096,8 +33090,8 @@
     {
       "company": "Tecomatic",
       "sector": "Industrials",
-      "fund": "IK Fund",
-      "market": "Europe",
+      "fund": "Development Capital",
+      "market": "Sweden",
       "entry": "2025",
       "source": "IK Partners",
       "headquarters": "Stockholm, Sweden",
@@ -33145,8 +33139,8 @@
     {
       "company": "Veldeman",
       "sector": "Industrials",
-      "fund": "IK Fund",
-      "market": "Europe",
+      "fund": "Development Capital",
+      "market": "Belgium",
       "entry": "2023",
       "source": "IK Partners",
       "headquarters": "Brussels, Belgium",
@@ -33192,92 +33186,323 @@
       "strategy": "Development Capital"
     },
     {
-      "company": "JM AB",
-      "sector": "Construction & Real Estate",
-      "market": "Sweden",
-      "entry": 2019,
-      "logo_url": "https://logo.clearbit.com/jm.se",
-      "website": "https://www.jm.se",
-      "description": "Leading Nordic residential developer. JM constructs and develops housing, commercial properties and public buildings across Sweden, Norway and Finland. Founded 1965.",
-      "headquarters": "Stockholm, Sweden",
-      "source": "CapMan"
+      "company": "Groweo",
+      "sector": "Technology",
+      "fund": "CapMan Growth III",
+      "market": "Finland",
+      "entry": "2024",
+      "source": "CapMan",
+      "headquarters": "Helsinki, Finland",
+      "website": "https://groweo.com",
+      "status": "Active",
+      "detailed_description": "AI-based SaaS platform for SMEs. Interactive tools for digital sales, marketing and customer service. Cloud-based software transforms websites into growth platforms. Founded 2022, ~2,000 customers, 100+ experts. CapMan Growth III invested 2024.",
+      "logo_url": "https://logo.clearbit.com/groweo.com"
     },
     {
-      "company": "Scandic Hotels",
-      "sector": "Hospitality",
-      "market": "Nordic",
-      "entry": 2018,
-      "logo_url": "https://logo.clearbit.com/scandichotels.com",
-      "website": "https://www.scandichotels.com",
-      "description": "Leading Nordic hotel chain. 280+ hotels across Nordic and Baltic countries. Sustainability-focused with Nordic by Nature concept.",
-      "headquarters": "Stockholm, Sweden",
-      "source": "CapMan"
+      "company": "Innofactor",
+      "sector": "Technology",
+      "fund": "CapMan Growth III",
+      "market": "Finland",
+      "entry": "2024",
+      "source": "CapMan",
+      "headquarters": "Espoo, Finland",
+      "website": "https://www.innofactor.com",
+      "status": "Active",
+      "detailed_description": "Leading Nordic IT services company. Design, implementation and maintenance of Microsoft ecosystem solutions. ~1,000 customers in public and private sector, ~600 specialists across Finland, Sweden, Denmark, Norway. CapMan going-private acquisition 2024.",
+      "logo_url": "https://logo.clearbit.com/innofactor.com"
     },
     {
-      "company": "Nobia",
-      "sector": "Furniture & Kitchens",
-      "market": "Nordic",
-      "entry": 2009,
-      "logo_url": "https://logo.clearbit.com/nobia.com",
-      "website": "https://www.nobia.com",
-      "description": "Europe's leading kitchen company. Brands include Magnet, HTH, Poggenpohl, Nobia. CapMan Public Market Fund stake since 2009.",
-      "headquarters": "Stockholm, Sweden",
-      "source": "CapMan"
+      "company": "Tana",
+      "sector": "Industrial",
+      "fund": "CapMan Growth III",
+      "market": "Finland",
+      "entry": "2024",
+      "source": "CapMan",
+      "headquarters": "Jyväskylä, Finland",
+      "website": "https://www.tana.fi",
+      "status": "Active",
+      "detailed_description": "Finnish environmental technology company. Global leader in waste pre-treatment equipment and solid waste management. Shredders, screens, landfill compactors, TanaConnect digital solutions. Exports to 50+ countries. Founded 1971. CapMan Growth III invested 2024.",
+      "logo_url": "https://logo.clearbit.com/tana.fi"
     },
     {
-      "company": "Nordlo",
-      "sector": "Security Services",
-      "market": "Nordic",
-      "entry": 2021,
-      "logo_url": "https://logo.clearbit.com/nordlo.se",
-      "website": "https://www.nordlo.se",
-      "description": "Nordic security and alarm services. Guarding, alarm monitoring, access control. Operates across Sweden, Norway, Denmark.",
-      "headquarters": "Stockholm, Sweden",
-      "source": "CapMan"
+      "company": "Silmäasema",
+      "sector": "Healthcare",
+      "fund": "CapMan Growth II",
+      "market": "Finland",
+      "entry": "2023",
+      "source": "CapMan",
+      "headquarters": "Helsinki, Finland",
+      "website": "https://www.silmaasema.fi",
+      "status": "Active",
+      "detailed_description": "Finland's largest eye health and optical retail operator. ~150 optical stores, 18 private eye hospitals, 7 public eye health providers. Vision care, ophthalmologist services, laser surgery. ~1,000 employees, ~1M clients annually. CapMan Growth II invested 2023.",
+      "logo_url": "https://logo.clearbit.com/silmaasema.fi"
     },
     {
-      "company": "Rexel",
-      "sector": "Industrial Distribution",
-      "market": "Nordic",
-      "entry": 2019,
-      "logo_url": "https://logo.clearbit.com/rexel.com",
-      "website": "https://www.rexel.com",
-      "description": "Global electrical products distributor. Wiring, lighting, heating, tools. Operates in 25+ countries. CapMan Real Estate has Rexel as logistics tenant.",
-      "headquarters": "Paris, France",
-      "source": "CapMan"
+      "company": "Fennoa",
+      "sector": "Technology",
+      "fund": "CapMan Growth II",
+      "market": "Finland",
+      "entry": "2022",
+      "source": "CapMan",
+      "headquarters": "Hämeenlinna, Finland",
+      "website": "https://fennoa.com",
+      "status": "Active",
+      "detailed_description": "Cloud-based financial management software for accounting firms and businesses. 750+ accounting firms, 38,000+ client companies. Founded 2014. 100%+ CAGR. CapMan Growth II invested 2022 with Ilmarinen.",
+      "logo_url": "https://logo.clearbit.com/fennoa.com"
     },
     {
-      "company": "team.blue",
-      "sector": "Technology & Hosting",
-      "market": "Europe",
-      "entry": 2021,
-      "logo_url": "https://logo.clearbit.com/team.blue",
-      "website": "https://www.team.blue",
-      "description": "European web hosting and digital services. Domain registration, hosting, cloud, email. Serves SMBs across Europe. Formed from TransIP, Combell, Register Group.",
-      "headquarters": "Lummen, Belgium",
-      "source": "CapMan"
+      "company": "Cloud2",
+      "sector": "Technology",
+      "fund": "CapMan Growth II",
+      "market": "Finland",
+      "entry": "2022",
+      "source": "CapMan",
+      "headquarters": "Helsinki, Finland",
+      "website": "https://www.cloud2.fi",
+      "status": "Active",
+      "detailed_description": "Multi-cloud service provider. AWS, Azure, GCP expertise. Consulting, managed services, Spotter cloud management software. Founded 2017. ~60 employees, ~100 clients. CapMan Growth II minority stake 2022.",
+      "logo_url": "https://logo.clearbit.com/cloud2.fi"
+    },
+    {
+      "company": "Suomen Avustajapalvelut",
+      "sector": "Healthcare",
+      "fund": "CapMan Growth II",
+      "market": "Finland",
+      "entry": "2021",
+      "source": "CapMan",
+      "headquarters": "Helsinki, Finland",
+      "website": "https://www.suomenavustajapalvelut.fi",
+      "status": "Active",
+      "detailed_description": "Finnish leader in personal assistance services. Service vouchers and municipal partnerships for people with chronic illness, disabilities, injuries. Founded 2017. 3,000+ personal assistants. CapMan Growth II invested 2021.",
+      "logo_url": "https://logo.clearbit.com/suomenavustajapalvelut.fi"
+    },
+    {
+      "company": "Sofigate",
+      "sector": "Technology",
+      "fund": "CapMan Growth II",
+      "market": "Finland",
+      "entry": "2021",
+      "source": "CapMan",
+      "headquarters": "Helsinki, Finland",
+      "website": "https://www.sofigate.com",
+      "status": "Active",
+      "detailed_description": "Nordic business technology transformation company. IT consulting, digital transformation. ~600 employees in Finland, Sweden, Denmark. €143M turnover 2023. CapMan Growth and Mandatum minority stake 2021.",
+      "logo_url": "https://logo.clearbit.com/sofigate.com"
+    },
+    {
+      "company": "Emblasoft",
+      "sector": "Technology",
+      "fund": "CapMan Growth II",
+      "market": "Finland",
+      "entry": "2020",
+      "source": "CapMan",
+      "headquarters": "Helsinki, Finland",
+      "website": "https://emblasoft.com",
+      "status": "Active",
+      "detailed_description": "Service assurance and testing solutions for mobile networks and 5G. Validation for telecom operators and equipment vendors. Spun off from Polystar. CapMan Growth II invested 2020.",
+      "logo_url": "https://logo.clearbit.com/emblasoft.com"
+    },
+    {
+      "company": "Unikie",
+      "sector": "Technology",
+      "fund": "CapMan Growth II",
+      "market": "Finland",
+      "entry": "2020",
+      "source": "CapMan",
+      "headquarters": "Tampere, Finland",
+      "website": "https://www.unikie.com",
+      "status": "Active",
+      "detailed_description": "Embedded software and autonomous vehicle technology. Unikie AI Vision for self-driving. German OEMs, heavy machinery. ~600 employees, €65M net sales 2023. CapMan Growth II and Tesi invested 2020.",
+      "logo_url": "https://logo.clearbit.com/unikie.com"
+    },
+    {
+      "company": "Neural DSP",
+      "sector": "Technology",
+      "fund": "CapMan Growth II",
+      "market": "Finland",
+      "entry": "2020",
+      "source": "CapMan",
+      "headquarters": "Helsinki, Finland",
+      "website": "https://neuraldsp.com",
+      "status": "Active",
+      "detailed_description": "Audio software for musicians. Guitar amplifier modeling, audio plug-ins. Founded 2017. First investment from CapMan Growth II Fund. Products used by world-class artists globally.",
+      "logo_url": "https://logo.clearbit.com/neuraldsp.com"
+    },
+    {
+      "company": "Insplan",
+      "sector": "Business Services",
+      "fund": "CapMan Growth",
+      "market": "Finland",
+      "entry": "2019",
+      "source": "CapMan",
+      "headquarters": "Helsinki, Finland",
+      "website": "https://www.insplan.fi",
+      "status": "Active",
+      "detailed_description": "Infrastructure expert services. Power, lighting, data networks engineering. 13 locations, 40+ experts. Founded 2015. CapMan Growth Equity Fund 2017 invested 2019.",
+      "logo_url": "https://logo.clearbit.com/insplan.fi"
+    },
+    {
+      "company": "Front AI",
+      "sector": "Technology",
+      "fund": "CapMan Growth",
+      "market": "Finland",
+      "entry": "2019",
+      "source": "CapMan",
+      "headquarters": "Helsinki, Finland",
+      "website": "https://front.ai",
+      "status": "Active",
+      "detailed_description": "Conversational AI and chatbot solutions. Automates customer service for financial services, telecom, insurance. Transactional bots integrated with ERP/CRM. CapMan Growth seed investment 2019.",
+      "logo_url": "https://logo.clearbit.com/front.ai"
+    },
+    {
+      "company": "Digital Workforce",
+      "sector": "Technology",
+      "fund": "CapMan Growth",
+      "market": "Finland",
+      "entry": "2018",
+      "source": "CapMan",
+      "headquarters": "Helsinki, Finland",
+      "website": "https://digitalworkforce.com",
+      "status": "Active",
+      "detailed_description": "Nordic RPA and intelligent automation. Digital Worker cloud platform, cognitive technologies. 175+ employees, 800+ processes automated. Finland, Sweden, Norway, Denmark, Poland. CapMan Growth invested 2018.",
+      "logo_url": "https://logo.clearbit.com/digitalworkforce.com"
+    },
+    {
+      "company": "Arctic Security",
+      "sector": "Technology",
+      "fund": "CapMan Growth",
+      "market": "Finland",
+      "entry": "2018",
+      "source": "CapMan",
+      "headquarters": "Oulu, Finland",
+      "website": "https://www.arcticsecurity.com",
+      "status": "Active",
+      "detailed_description": "Cybersecurity threat intelligence. Converts raw threat data into actionable intelligence. Arctic Hub, Arctic Node, Early Warning Service. Government and enterprise clients. Founded 2017. CapMan Growth original investor.",
+      "logo_url": "https://logo.clearbit.com/arcticsecurity.com"
+    },
+    {
+      "company": "Aste Helsinki",
+      "sector": "Business Services",
+      "fund": "CapMan Growth",
+      "market": "Finland",
+      "entry": "2018",
+      "source": "CapMan",
+      "headquarters": "Helsinki, Finland",
+      "website": "https://www.aste.fi",
+      "status": "Active",
+      "detailed_description": "Digital and print marketing solutions. Communications, materials production, technical platforms for organizations, publishers, media, brands. 135+ professionals. CapMan Growth Equity Fund 2017 invested 2018.",
+      "logo_url": "https://logo.clearbit.com/aste.fi"
+    },
+    {
+      "company": "Coronaria",
+      "sector": "Healthcare",
+      "fund": "CapMan Growth II",
+      "market": "Finland",
+      "entry": "2019",
+      "exit_year": "2023",
+      "source": "CapMan",
+      "headquarters": "Helsinki, Finland",
+      "status": "Exited",
+      "detailed_description": "Eye care and optical retail. CapMan Growth exited 2023; continued as investor in Silmäasema.",
+      "website": "https://www.silmaasema.fi",
+      "logo_url": "https://logo.clearbit.com/silmaasema.fi"
+    },
+    {
+      "company": "Picosun",
+      "sector": "Technology",
+      "fund": "CapMan Growth",
+      "market": "Finland",
+      "entry": "2017",
+      "exit_year": "2022",
+      "source": "CapMan",
+      "headquarters": "Espoo, Finland",
+      "status": "Exited",
+      "detailed_description": "ALD (Atomic Layer Deposition) equipment for semiconductor industry. CapMan Growth exit 2022."
+    },
+    {
+      "company": "Avidly",
+      "sector": "Technology",
+      "fund": "CapMan Growth",
+      "market": "Finland",
+      "entry": "2018",
+      "exit_year": "2022",
+      "source": "CapMan",
+      "headquarters": "Helsinki, Finland",
+      "status": "Exited",
+      "detailed_description": "Marketing technology and digital marketing services. CapMan Growth exit 2022."
+    },
+    {
+      "company": "RealMachinery",
+      "sector": "Industrial",
+      "fund": "CapMan Growth",
+      "market": "Finland",
+      "entry": "2018",
+      "exit_year": "2021",
+      "source": "CapMan",
+      "headquarters": "Finland",
+      "status": "Exited",
+      "detailed_description": "Industrial machinery. CapMan Growth exit 2021."
+    },
+    {
+      "company": "Touhula",
+      "sector": "Healthcare",
+      "fund": "CapMan Growth",
+      "market": "Finland",
+      "entry": "2017",
+      "exit_year": "2020",
+      "source": "CapMan",
+      "headquarters": "Finland",
+      "status": "Exited",
+      "detailed_description": "Childcare and early education. CapMan Growth exit 2020."
+    },
+    {
+      "company": "Polystar",
+      "sector": "Technology",
+      "fund": "CapMan Growth",
+      "market": "Finland",
+      "entry": "2017",
+      "exit_year": "2019",
+      "source": "CapMan",
+      "headquarters": "Helsinki, Finland",
+      "status": "Exited",
+      "detailed_description": "Telecom testing solutions. Predecessor to Emblasoft. CapMan Growth exit 2019."
+    },
+    {
+      "company": "Fluido",
+      "sector": "Technology",
+      "fund": "CapMan Growth",
+      "market": "Finland",
+      "entry": "2016",
+      "exit_year": "2018",
+      "source": "CapMan",
+      "headquarters": "Helsinki, Finland",
+      "status": "Exited",
+      "detailed_description": "Salesforce consulting and implementation. CapMan Growth exit 2018."
+    },
+    {
+      "company": "Idean Enterprises",
+      "sector": "Technology",
+      "fund": "CapMan Growth",
+      "market": "Finland",
+      "entry": "2015",
+      "exit_year": "2017",
+      "source": "CapMan",
+      "headquarters": "Helsinki, Finland",
+      "status": "Exited",
+      "detailed_description": "Design and innovation consultancy. CapMan Growth exit 2017."
     },
     {
       "company": "Loopia",
       "sector": "Technology & Hosting",
       "market": "Sweden",
-      "entry": 2022,
+      "entry": "2018",
+      "exit_year": "2024",
+      "status": "Exited",
       "logo_url": "https://logo.clearbit.com/loopia.se",
       "website": "https://www.loopia.se",
-      "description": "Swedish web hosting provider. Domains, hosting, email. Part of team.blue group. Swedish market leader in SMB hosting.",
+      "description": "Swedish web hosting provider. Domains, hosting, email. Axcel owned 2018-2024; sold to team.blue (Hg Capital) May 2024. Swedish market leader in SMB hosting.",
       "headquarters": "Stockholm, Sweden",
-      "source": "CapMan"
-    },
-    {
-      "company": "NAXS",
-      "sector": "Investment",
-      "market": "Sweden",
-      "entry": 2020,
-      "logo_url": "https://logo.clearbit.com/naxs.se",
-      "website": "https://www.naxs.se",
-      "description": "Investment company focused on Nordic private equity funds. Listed on Nasdaq Stockholm. Provides access to PE fund investments.",
-      "headquarters": "Stockholm, Sweden",
-      "source": "CapMan"
+      "source": "Axcel"
     },
     {
       "company": "RETTA",
@@ -33830,7 +34055,7 @@
       "sector": "Business Services",
       "fund": "Adelis III",
       "market": "Sweden",
-      "entry": "2021",
+      "entry": "2020",
       "source": "Adelis Equity",
       "status": "Exited",
       "exit_year": "2022",
@@ -34454,7 +34679,7 @@
       "sector": "Healthcare & Life Sciences",
       "fund": "Adelis III",
       "market": "Finland",
-      "entry": "2014",
+      "entry": "2015",
       "source": "Adelis Equity",
       "status": "Exited",
       "exit_year": "2018",
@@ -34482,7 +34707,7 @@
       "sector": "Pharmaceuticals",
       "fund": "Impilo",
       "market": "Nordics",
-      "entry": "2022",
+      "entry": "2018",
       "source": "Impilo",
       "headquarters": "Sweden",
       "status": "Active",
@@ -34493,7 +34718,7 @@
       "sector": "Healthcare",
       "fund": "Impilo",
       "market": "Nordics",
-      "entry": "2021",
+      "entry": "2019",
       "source": "Impilo",
       "headquarters": "Stockholm, Sweden",
       "status": "Active",
@@ -34504,9 +34729,9 @@
       "sector": "Healthcare",
       "fund": "Impilo",
       "market": "Sweden",
-      "entry": "2020",
+      "entry": "2019",
       "source": "Impilo",
-      "headquarters": "Sweden",
+      "headquarters": "Stockholm, Sweden",
       "status": "Active",
       "detailed_description": "Health-related insurance and employee wellbeing"
     },
@@ -34517,7 +34742,7 @@
       "market": "Denmark",
       "entry": "2021",
       "source": "Impilo",
-      "headquarters": "Denmark",
+      "headquarters": "Lille Skensved, Denmark",
       "status": "Active",
       "detailed_description": "Nordic pre-clinical contract research organization"
     },
@@ -34526,9 +34751,9 @@
       "sector": "Healthcare",
       "fund": "Impilo",
       "market": "Denmark",
-      "entry": "2022",
+      "entry": "2021",
       "source": "Impilo",
-      "headquarters": "Denmark",
+      "headquarters": "Lyngby, Denmark",
       "status": "Active",
       "detailed_description": "Leading Danish dental care chain"
     },
@@ -34536,21 +34761,21 @@
       "company": "Lowenco",
       "sector": "Pharma Services",
       "fund": "Impilo",
-      "market": "Sweden",
-      "entry": "2023",
+      "market": "Denmark",
+      "entry": "2022",
       "source": "Impilo",
-      "headquarters": "Sweden",
+      "headquarters": "Vamdrup, Denmark",
       "status": "Active",
       "detailed_description": "Ultra-low temperature storage for biopharma"
     },
     {
       "company": "Pelago Bioscience",
-      "sector": "Healthcare",
+      "sector": "Pharma Services",
       "fund": "Impilo",
       "market": "Sweden",
-      "entry": "2022",
+      "entry": "2023",
       "source": "Impilo",
-      "headquarters": "Sweden",
+      "headquarters": "Solna, Sweden",
       "status": "Active",
       "detailed_description": "Drug discovery CRO with CETSA-technology"
     },
@@ -34570,9 +34795,9 @@
       "sector": "MedTech",
       "fund": "Impilo",
       "market": "Sweden",
-      "entry": "2022",
+      "entry": "2023",
       "source": "Impilo",
-      "headquarters": "Sweden",
+      "headquarters": "Hyltebruk, Sweden",
       "status": "Active",
       "detailed_description": "Power-assisted wheelchair solutions"
     },
@@ -34581,9 +34806,9 @@
       "sector": "Pharmaceuticals",
       "fund": "Impilo",
       "market": "Nordics",
-      "entry": "2021",
+      "entry": "2024",
       "source": "Impilo",
-      "headquarters": "Sweden",
+      "headquarters": "Stockholm, Sweden",
       "status": "Active",
       "detailed_description": "North European OTC/Rx platform"
     },
@@ -34592,9 +34817,9 @@
       "sector": "MedTech",
       "fund": "Impilo",
       "market": "Sweden",
-      "entry": "2020",
+      "entry": "2024",
       "source": "Impilo",
-      "headquarters": "Sweden",
+      "headquarters": "Eskilstuna, Sweden",
       "status": "Active",
       "detailed_description": "Surgical instruments and surgical tables"
     },
@@ -34603,9 +34828,9 @@
       "sector": "MedTech",
       "fund": "Impilo",
       "market": "Denmark",
-      "entry": "2023",
+      "entry": "2024",
       "source": "Impilo",
-      "headquarters": "Denmark",
+      "headquarters": "Allerød, Denmark",
       "status": "Active",
       "detailed_description": "TAI products and collecting devices"
     },
@@ -34638,9 +34863,9 @@
       "market": "Iceland",
       "entry": "2025",
       "source": "Axcel",
-      "headquarters": "Iceland",
+      "headquarters": "Kópavogur, Iceland",
       "status": "Active",
-      "detailed_description": "Retail software solutions"
+      "detailed_description": "Leading independent provider of vertical software for retail and hospitality. Built on Microsoft Dynamics platform."
     },
     {
       "company": "AGRD Partners",
@@ -34659,8 +34884,9 @@
       "market": "Sweden",
       "entry": "2025",
       "source": "Axcel",
-      "headquarters": "Sweden",
-      "status": "Active"
+      "headquarters": "Malmö, Sweden",
+      "status": "Active",
+      "detailed_description": "Leading independent tyre wholesaler in the Nordics and Baltics. Technology-driven platform serving 10,000+ customers."
     },
     {
       "company": "Accru Partners",
@@ -34829,9 +35055,9 @@
       "market": "Norway",
       "entry": "2020",
       "source": "Axcel",
-      "headquarters": "Norway",
+      "headquarters": "Oslo, Norway",
       "status": "Active",
-      "detailed_description": "CRM software"
+      "detailed_description": "Leading provider of CRM software to Northern European SMEs. SaaS solutions for sales, marketing and customer care."
     },
     {
       "company": "Phase One",
@@ -34892,7 +35118,7 @@
       "sector": "Business Services",
       "fund": "MVI Fund II",
       "market": "Sweden",
-      "entry": "2023",
+      "entry": "2022",
       "source": "MVI",
       "headquarters": "Sweden",
       "status": "Active",
@@ -34903,41 +35129,77 @@
       "sector": "Business Services",
       "fund": "MVI",
       "market": "Sweden",
-      "entry": "2022",
+      "entry": "2020",
       "source": "MVI",
       "headquarters": "Sweden",
-      "status": "Active"
+      "status": "Exited",
+      "detailed_description": "Sold to TBAuctions in March 2022"
     },
     {
       "company": "Art Clinic",
       "sector": "Healthcare",
-      "fund": "MVI",
+      "fund": "MVI Fund I",
       "market": "Sweden",
-      "entry": "2022",
+      "entry": "2018",
       "source": "MVI",
       "headquarters": "Sweden",
-      "status": "Active"
+      "status": "Exited",
+      "detailed_description": "Sold to Aleris in May 2022"
     },
     {
       "company": "Great Security",
       "sector": "Business Services",
       "fund": "MVI",
       "market": "Sweden",
-      "entry": "2021",
+      "entry": "2017",
       "source": "MVI",
       "headquarters": "Sweden",
-      "status": "Active"
+      "status": "Exited",
+      "detailed_description": "MVI divested in July 2023"
     },
     {
       "company": "Freedom Group",
       "sector": "Technology",
-      "fund": "MVI Fund II",
+      "fund": "MVI",
       "market": "Sweden",
-      "entry": "2023",
+      "entry": "2021",
       "source": "MVI",
       "headquarters": "Sweden",
       "status": "Active",
       "detailed_description": "Accounting digitization and financial software"
+    },
+    {
+      "company": "Nordic Drives Group",
+      "sector": "Business Services",
+      "fund": "MVI Fund II",
+      "market": "Nordics",
+      "entry": "2021",
+      "source": "MVI",
+      "headquarters": "Sweden",
+      "status": "Active",
+      "detailed_description": "Electric drives and power systems. Nordic group in electric motors, frequency converters and industrial automation. Revenue ~SEK 450m."
+    },
+    {
+      "company": "Ametal",
+      "sector": "Business Services",
+      "fund": "MVI Fund II",
+      "market": "Nordics",
+      "entry": "2025",
+      "source": "MVI",
+      "headquarters": "Sweden",
+      "status": "Active",
+      "detailed_description": "Nordic environmental and sustainability consulting platform. Technical consulting and environmental advisory services. Revenue ~SEK 130m."
+    },
+    {
+      "company": "Flow Fastighetsvärden",
+      "sector": "Real Estate",
+      "fund": "MVI Fund II",
+      "market": "Sweden",
+      "entry": "2024",
+      "source": "MVI",
+      "headquarters": "Sweden",
+      "status": "Active",
+      "detailed_description": "Swedish real estate company owning and managing properties where grocery stores and food retail are main tenants. Focus on locations enabling access to healthy food. MVI invested in 2024."
     },
     {
       "company": "Activeon",
@@ -35142,7 +35404,8 @@
       "source": "Trill Impact",
       "headquarters": "Stockholm, Sweden",
       "status": "Active",
-      "detailed_description": "Building automation and smart buildings"
+      "detailed_description": "Building automation and smart buildings",
+      "logo": "https://logo.clearbit.com/nordomatic.com"
     },
     {
       "company": "ILT Education",
@@ -35152,7 +35415,8 @@
       "entry": "2021",
       "source": "Trill Impact",
       "headquarters": "Sweden",
-      "status": "Active"
+      "status": "Active",
+      "logo": "https://logo.clearbit.com/ilteducation.com"
     },
     {
       "company": "Mesalvo",
@@ -35162,7 +35426,8 @@
       "entry": "2023",
       "source": "Trill Impact",
       "headquarters": "Germany",
-      "status": "Active"
+      "status": "Active",
+      "logo": "https://logo.clearbit.com/mesalvo.com"
     },
     {
       "company": "Allurity",
@@ -35172,7 +35437,8 @@
       "entry": "2022",
       "source": "Trill Impact",
       "headquarters": "Stockholm, Sweden",
-      "status": "Active"
+      "status": "Active",
+      "logo": "https://logo.clearbit.com/allurity.com"
     },
     {
       "company": "Karriere Tutor",
@@ -35182,7 +35448,8 @@
       "entry": "2022",
       "source": "Trill Impact",
       "headquarters": "Germany",
-      "status": "Active"
+      "status": "Active",
+      "logo": "https://logo.clearbit.com/karrieretutor.de"
     },
     {
       "company": "Infrakraft",
@@ -35192,7 +35459,8 @@
       "entry": "2023",
       "source": "Trill Impact",
       "headquarters": "Sweden",
-      "status": "Active"
+      "status": "Active",
+      "logo": "https://logo.clearbit.com/infrakraft.se"
     },
     {
       "company": "Komet",
@@ -35202,7 +35470,8 @@
       "entry": "2022",
       "source": "Trill Impact",
       "headquarters": "Austria",
-      "status": "Active"
+      "status": "Active",
+      "logo": "https://logo.clearbit.com/komet.at"
     },
     {
       "company": "Delivery Associates",
@@ -35212,7 +35481,8 @@
       "entry": "2022",
       "source": "Trill Impact",
       "headquarters": "London, UK",
-      "status": "Active"
+      "status": "Active",
+      "logo": "https://logo.clearbit.com/deliveryassociates.com"
     },
     {
       "company": "Renewtech",
@@ -35222,7 +35492,8 @@
       "entry": "2022",
       "source": "Trill Impact",
       "headquarters": "Denmark",
-      "status": "Active"
+      "status": "Active",
+      "logo": "https://logo.clearbit.com/renewtech.dk"
     },
     {
       "company": "TT Medic",
@@ -35232,7 +35503,8 @@
       "entry": "2023",
       "source": "Trill Impact",
       "headquarters": "Austria",
-      "status": "Active"
+      "status": "Active",
+      "logo": "https://logo.clearbit.com/ttmedic.com"
     },
     {
       "company": "Primutec",
@@ -35242,7 +35514,8 @@
       "entry": "2022",
       "source": "Trill Impact",
       "headquarters": "Netherlands",
-      "status": "Active"
+      "status": "Active",
+      "logo": "https://logo.clearbit.com/primutec.nl"
     },
     {
       "company": "Noova Energy Systems",
@@ -35252,7 +35525,8 @@
       "entry": "2022",
       "source": "Trill Impact",
       "headquarters": "Norway",
-      "status": "Active"
+      "status": "Active",
+      "logo": "https://logo.clearbit.com/noova.no"
     },
     {
       "company": "Cinclus Pharma",
@@ -35262,7 +35536,8 @@
       "entry": "2023",
       "source": "Trill Impact",
       "headquarters": "Sweden",
-      "status": "Active"
+      "status": "Active",
+      "logo": "https://logo.clearbit.com/cincluspharma.com"
     },
     {
       "company": "May Health",
@@ -35272,7 +35547,8 @@
       "entry": "2023",
       "source": "Trill Impact",
       "headquarters": "France",
-      "status": "Active"
+      "status": "Active",
+      "logo": "https://logo.clearbit.com/may-health.com"
     },
     {
       "company": "Soil Capital",
@@ -35282,7 +35558,8 @@
       "entry": "2022",
       "source": "Trill Impact",
       "headquarters": "Belgium",
-      "status": "Active"
+      "status": "Active",
+      "logo": "https://logo.clearbit.com/soilcapital.com"
     },
     {
       "company": "Rail-Flow",
@@ -35292,7 +35569,8 @@
       "entry": "2023",
       "source": "Trill Impact",
       "headquarters": "Germany",
-      "status": "Active"
+      "status": "Active",
+      "logo": "https://logo.clearbit.com/rail-flow.com"
     },
     {
       "company": "tado°",
@@ -35302,7 +35580,8 @@
       "entry": "2022",
       "source": "Trill Impact",
       "headquarters": "Munich, Germany",
-      "status": "Active"
+      "status": "Active",
+      "logo": "https://logo.clearbit.com/tado.com"
     },
     {
       "company": "Open Cosmos",
@@ -35312,7 +35591,8 @@
       "entry": "2023",
       "source": "Trill Impact",
       "headquarters": "UK",
-      "status": "Active"
+      "status": "Active",
+      "logo": "https://logo.clearbit.com/open-cosmos.com"
     },
     {
       "company": "MinervaX",
@@ -35322,7 +35602,8 @@
       "entry": "2023",
       "source": "Trill Impact",
       "headquarters": "Copenhagen, Denmark",
-      "status": "Active"
+      "status": "Active",
+      "logo": "https://logo.clearbit.com/minervax.com"
     },
     {
       "company": "Aarke",
@@ -35531,13 +35812,13 @@
     {
       "company": "Imbox",
       "sector": "Consumer",
-      "market": "Norway",
-      "headquarters": "Oslo, Norway",
+      "market": "Denmark",
+      "headquarters": "Skødstrup, Denmark",
       "entry": "Sep 2025",
       "fund": "Fund VI",
       "source": "Altor",
       "status": "Active",
-      "detailed_description": "Imbox is redefining shoe protection with innovative products that keep footwear dry, clean and in good condition. Altor invested in Imbox in September 2025 in partnership with founder René Marker and the Grundtvig family. The Norwegian company targets the growing market for shoe care and protection solutions.",
+      "detailed_description": "Imbox is redefining shoe protection with innovative products that keep footwear dry, clean and in good condition. Altor invested in Imbox in September 2025 in partnership with founder René Marker and the Grundtvig family. The Danish company (Imbox Protection A/S) is headquartered in Skødstrup and targets the growing market for shoe care and protection solutions.",
       "website": "https://imbox.no"
     },
     {
@@ -35875,6 +36156,556 @@
       "status": "Active",
       "detailed_description": "Zahneins operates a network of dental clinics and lab services, delivering the dentistry of the future through modern practices and digital workflows. With around EUR 200M in turnover and 2,500 employees across Germany and Austria, the company combines clinical excellence with efficient operations. Zahneins makes high-quality dental care more accessible.",
       "website": "https://zahneins.com"
+    },
+    {
+      "company": "Formue",
+      "sector": "Business Services",
+      "fund": "Partnership Fund",
+      "market": "Norway",
+      "entry": "2021",
+      "headquarters": "Oslo, Norway",
+      "detailed_description": "Wealth management services. IK and ICG acquired minority stake in 2021.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "GEDH",
+      "sector": "Business Services",
+      "fund": "Partnership Fund",
+      "market": "France",
+      "entry": "2022",
+      "headquarters": "France",
+      "detailed_description": "French private higher education group. IK reinvested alongside Five Arrows in 2022.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "iM Global Partner",
+      "sector": "Business Services",
+      "fund": "Partnership Fund",
+      "market": "France",
+      "entry": "2021",
+      "headquarters": "Paris, France",
+      "detailed_description": "Investment management services. Global asset management network.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Marle",
+      "sector": "Healthcare",
+      "fund": "Partnership Fund",
+      "market": "France",
+      "entry": "2019",
+      "headquarters": "France",
+      "detailed_description": "Healthcare services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "OCTIME Group",
+      "sector": "Business Services",
+      "fund": "Partnership Fund",
+      "market": "France",
+      "entry": "2024",
+      "headquarters": "France",
+      "detailed_description": "Business services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Seventeen Group",
+      "sector": "Business Services",
+      "fund": "Partnership Fund",
+      "market": "UK",
+      "entry": "2025",
+      "headquarters": "London, UK",
+      "detailed_description": "UK insurance and risk management. IK invested March 2025.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Third Bridge",
+      "sector": "Business Services",
+      "fund": "Partnership Fund",
+      "market": "UK",
+      "entry": "2021",
+      "headquarters": "London, UK",
+      "detailed_description": "Investment research platform. IK reinvested alongside Astorg in 2021.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Unither Pharmaceuticals",
+      "sector": "Healthcare",
+      "fund": "Partnership Fund",
+      "market": "France",
+      "entry": "2023",
+      "headquarters": "France",
+      "detailed_description": "Pharmaceutical services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Valoria Capital",
+      "sector": "Business Services",
+      "fund": "Partnership Fund",
+      "market": "France",
+      "entry": "2023",
+      "headquarters": "Paris, France",
+      "detailed_description": "French independent financial advisor platform. IK reinvested via Partnership Fund II in 2023.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Vivalto Santé",
+      "sector": "Healthcare",
+      "fund": "Partnership Fund",
+      "market": "France",
+      "entry": "2021",
+      "headquarters": "France",
+      "detailed_description": "Healthcare services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Wishcard",
+      "sector": "Business Services",
+      "fund": "Partnership Fund",
+      "market": "Germany",
+      "entry": "2022",
+      "headquarters": "Germany",
+      "detailed_description": "Gift card services. Europe's leading B2C/B2B gift voucher provider in DACH.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Advania",
+      "sector": "Business Services",
+      "fund": "Mid Cap",
+      "market": "Sweden",
+      "entry": "2021",
+      "headquarters": "Sweden",
+      "detailed_description": "IT services and solutions.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Alanta Health Group",
+      "sector": "Healthcare",
+      "fund": "Mid Cap",
+      "market": "Germany",
+      "entry": "2016",
+      "headquarters": "Germany",
+      "detailed_description": "Healthcare services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Batisanté",
+      "sector": "Business Services",
+      "fund": "Mid Cap",
+      "market": "France",
+      "entry": "2022",
+      "headquarters": "France",
+      "detailed_description": "Business services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "BOMA",
+      "sector": "Healthcare",
+      "fund": "Mid Cap",
+      "market": "Belgium",
+      "entry": "2024",
+      "headquarters": "Belgium",
+      "detailed_description": "Healthcare services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "CONET",
+      "sector": "Business Services",
+      "fund": "Mid Cap",
+      "market": "Germany",
+      "entry": "2021",
+      "headquarters": "Germany",
+      "detailed_description": "IT consulting and services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Cinerius Financial Partners",
+      "sector": "Business Services",
+      "fund": "Mid Cap",
+      "market": "Switzerland",
+      "entry": "2024",
+      "headquarters": "Switzerland",
+      "detailed_description": "Financial services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Dains Accountants",
+      "sector": "Business Services",
+      "fund": "Mid Cap",
+      "market": "UK",
+      "entry": "2025",
+      "headquarters": "UK",
+      "detailed_description": "Accounting and advisory services. IK acquired Dec 2024.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Eurobio Scientific",
+      "sector": "Healthcare",
+      "fund": "Mid Cap",
+      "market": "France",
+      "entry": "2024",
+      "headquarters": "France",
+      "detailed_description": "Diagnostic solutions.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Eurofeu",
+      "sector": "Business Services",
+      "fund": "Mid Cap",
+      "market": "France",
+      "entry": "2024",
+      "headquarters": "France",
+      "detailed_description": "Fire safety services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "iad",
+      "sector": "Business Services",
+      "fund": "Mid Cap",
+      "market": "France",
+      "entry": "2021",
+      "headquarters": "France",
+      "detailed_description": "Real estate services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "IG&H",
+      "sector": "Business Services",
+      "fund": "Mid Cap",
+      "market": "Netherlands",
+      "entry": "2022",
+      "headquarters": "Netherlands",
+      "detailed_description": "Business services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Innovad",
+      "sector": "Healthcare",
+      "fund": "Mid Cap",
+      "market": "Belgium",
+      "entry": "2021",
+      "headquarters": "Belgium",
+      "detailed_description": "Healthcare services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Kersia",
+      "sector": "Healthcare",
+      "fund": "Mid Cap",
+      "market": "France",
+      "entry": "2020",
+      "headquarters": "France",
+      "detailed_description": "Food safety solutions.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "LAP Group",
+      "sector": "Healthcare",
+      "fund": "Mid Cap",
+      "market": "Germany",
+      "entry": "2019",
+      "headquarters": "Germany",
+      "detailed_description": "Healthcare services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Medica",
+      "sector": "Healthcare",
+      "fund": "Mid Cap",
+      "market": "UK",
+      "entry": "2023",
+      "headquarters": "UK",
+      "detailed_description": "Healthcare services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Ondal Medical Systems",
+      "sector": "Healthcare",
+      "fund": "Mid Cap",
+      "market": "Germany",
+      "entry": "2020",
+      "headquarters": "Germany",
+      "detailed_description": "Medical technology.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Questel",
+      "sector": "Business Services",
+      "fund": "Mid Cap",
+      "market": "France",
+      "entry": "2020",
+      "headquarters": "France",
+      "detailed_description": "Intellectual property services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Skill & You",
+      "sector": "Business Services",
+      "fund": "Mid Cap",
+      "market": "France",
+      "entry": "2021",
+      "headquarters": "France",
+      "detailed_description": "Education and training services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Truesec",
+      "sector": "Business Services",
+      "fund": "Mid Cap",
+      "market": "Sweden",
+      "entry": "2021",
+      "headquarters": "Sweden",
+      "detailed_description": "Cybersecurity services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Advisense",
+      "sector": "Business Services",
+      "fund": "Small Cap",
+      "market": "Sweden",
+      "entry": "2022",
+      "headquarters": "Sweden",
+      "detailed_description": "Business services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "BIOBank",
+      "sector": "Healthcare",
+      "fund": "Small Cap",
+      "market": "France",
+      "entry": "2024",
+      "headquarters": "France",
+      "detailed_description": "Biobanking services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "coin4 Solutions",
+      "sector": "Business Services",
+      "fund": "Small Cap",
+      "market": "Germany",
+      "entry": "2017",
+      "headquarters": "Germany",
+      "detailed_description": "Business services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Dals",
+      "sector": "Business Services",
+      "fund": "Small Cap",
+      "market": "UK",
+      "entry": "2021",
+      "headquarters": "UK",
+      "detailed_description": "Business services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "DATAPART",
+      "sector": "Business Services",
+      "fund": "Small Cap",
+      "market": "Germany",
+      "entry": "2025",
+      "headquarters": "Germany",
+      "detailed_description": "Financial services. Factoring.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "EQQO",
+      "sector": "Business Services",
+      "fund": "Small Cap",
+      "market": "Germany",
+      "entry": "2020",
+      "headquarters": "Germany",
+      "detailed_description": "Business services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Ipsum",
+      "sector": "Business Services",
+      "fund": "Small Cap",
+      "market": "UK",
+      "entry": "2023",
+      "headquarters": "UK",
+      "detailed_description": "Business services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "MWM",
+      "sector": "Healthcare",
+      "fund": "Small Cap",
+      "market": "Germany",
+      "entry": "2021",
+      "headquarters": "Germany",
+      "detailed_description": "Healthcare services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Plastiflex",
+      "sector": "Healthcare",
+      "fund": "Small Cap",
+      "market": "Belgium",
+      "entry": "2021",
+      "headquarters": "Belgium",
+      "detailed_description": "Plastic hoses and tubing for healthcare and industrial markets.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Qconcepts",
+      "sector": "Business Services",
+      "fund": "Small Cap",
+      "market": "Netherlands",
+      "entry": "2024",
+      "headquarters": "Netherlands",
+      "detailed_description": "Business services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Sofia Développement",
+      "sector": "Healthcare",
+      "fund": "Small Cap",
+      "market": "France",
+      "entry": "2022",
+      "headquarters": "France",
+      "detailed_description": "Healthcare services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Yellow Hive",
+      "sector": "Business Services",
+      "fund": "Small Cap",
+      "market": "Netherlands",
+      "entry": "2024",
+      "headquarters": "Netherlands",
+      "detailed_description": "Business services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Checkmate Fire",
+      "sector": "Business Services",
+      "fund": "Development Capital",
+      "market": "UK",
+      "entry": "2024",
+      "headquarters": "UK",
+      "detailed_description": "Fire safety services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Defibrion",
+      "sector": "Healthcare",
+      "fund": "Development Capital",
+      "market": "Netherlands",
+      "entry": "2024",
+      "headquarters": "Netherlands",
+      "detailed_description": "Healthcare services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Linxea",
+      "sector": "Business Services",
+      "fund": "Development Capital",
+      "market": "France",
+      "entry": "2023",
+      "headquarters": "France",
+      "detailed_description": "Financial services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Lohoff",
+      "sector": "Business Services",
+      "fund": "Development Capital",
+      "market": "Germany",
+      "entry": "2025",
+      "headquarters": "Isernhagen, Germany",
+      "detailed_description": "Pension services. Occupational pension administration.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "NEVERHACK",
+      "sector": "Business Services",
+      "fund": "Development Capital",
+      "market": "France",
+      "entry": "2023",
+      "headquarters": "France",
+      "detailed_description": "Cybersecurity services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Remazing",
+      "sector": "Business Services",
+      "fund": "Development Capital",
+      "market": "Germany",
+      "entry": "2022",
+      "headquarters": "Germany",
+      "detailed_description": "Business services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Responda Group",
+      "sector": "Business Services",
+      "fund": "Development Capital",
+      "market": "Sweden",
+      "entry": "2023",
+      "headquarters": "Sweden",
+      "detailed_description": "Business services.",
+      "source": "IK Partners",
+      "status": "Active"
+    },
+    {
+      "company": "Sitevision",
+      "sector": "Business Services",
+      "fund": "Development Capital",
+      "market": "Sweden",
+      "entry": "2022",
+      "headquarters": "Sweden",
+      "detailed_description": "Web development services.",
+      "source": "IK Partners",
+      "status": "Active"
     }
   ]
 }

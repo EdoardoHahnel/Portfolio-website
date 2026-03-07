@@ -625,6 +625,17 @@ function renderFirmPortfolioTable(companies) {
         return;
     }
 
+    const isEQT = (firmName && String(firmName).toUpperCase().includes('EQT')) ||
+        (companies.length > 0 && String(companies[0].source || '').toUpperCase().includes('EQT'));
+    const eqtBannerBar = isEQT ? `
+        <div class="eqt-premium-banner" style="display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; padding: 0.5rem 0.75rem; background: #eaf2ff; border: 1px solid #d8e4f5; border-bottom: none; border-radius: 6px 6px 0 0;">
+            <img src="https://logo.clearbit.com/eqtgroup.com" alt="EQT" style="height: 28px; width: 28px; border-radius: 4px; background: white; object-fit: contain; flex-shrink: 0;" onerror="this.style.display='none'">
+            <span style="padding: 0.25rem 0.5rem; background: #fef3c7; color: #92400e; border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin-left: auto;">
+                Complete list available for Premium users
+            </span>
+        </div>
+    ` : '';
+
     let html = `
         <table class="portfolio-table">
             <thead>
@@ -658,7 +669,7 @@ function renderFirmPortfolioTable(companies) {
         const cleanMarket = cleanPortfolioText(company.market || 'N/A');
         const cleanHQ = cleanPortfolioText(company.headquarters || company.market || 'N/A');
         const cleanEntry = cleanPortfolioText(company.entry || 'N/A');
-        const holdingPeriod = calculateHoldingPeriod(company.entry);
+        const holdingPeriod = calculateHoldingPeriod(company);
         const status = cleanPortfolioText(company.status || 'Active');
         const statusColor = status === 'Active' ? '#10b981' : status === 'Exited' ? '#6b7280' : status === 'IPO' ? '#3b82f6' : '#94a3b8';
         const dealSize = cleanPortfolioText(company.deal_size || '—');
@@ -708,7 +719,8 @@ function renderFirmPortfolioTable(companies) {
     });
 
     html += '</tbody></table>';
-    container.innerHTML = `<div class="portfolio-table-wrapper">${html}</div>`;
+
+    container.innerHTML = `<div class="portfolio-table-wrapper">${eqtBannerBar}<div style="border: 1px solid #d8e4f5; border-radius: ${isEQT ? '0 0 6px 6px' : '6px'}; overflow: hidden;">${html}</div></div>`;
 
     container.querySelectorAll('.company-link-modal').forEach(link => {
         link.addEventListener('click', (e) => {
@@ -729,8 +741,9 @@ async function loadFirmPortfolio(firmName) {
         const data = await response.json();
 
         let firmCompanies = [];
+        const firmNameLower = (firmName || '').toLowerCase();
         if (data.success && Array.isArray(data.companies)) {
-            firmCompanies = data.companies.filter(c => c.source === firmName);
+            firmCompanies = data.companies.filter(c => (c.source || '').toLowerCase() === firmNameLower);
         }
 
             // Fallback: only use curated pe_firms_database records when no portfolio rows were found
@@ -738,7 +751,9 @@ async function loadFirmPortfolio(firmName) {
             try {
                 const peResp = await fetch('/api/pe-firms');
                 const peData = await peResp.json();
-                const firmMeta = peData && peData.firms ? peData.firms[firmName] : null;
+                const firms = peData && peData.firms ? peData.firms : {};
+                const canonicalKey = Object.keys(firms).find(k => k.toLowerCase() === firmNameLower) || firmName;
+                const firmMeta = firms[canonicalKey] || null;
 
                 if (firmMeta && Array.isArray(firmMeta.portfolio_companies) && firmMeta.portfolio_companies.length > 0) {
                     // Map to a common shape used by the table renderer
@@ -781,18 +796,23 @@ function cleanPortfolioText(value) {
     return String(value || '').replace(/\s*\([^)]*\)\s*/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
-function calculateHoldingPeriod(entryYear) {
-    const year = parseInt(entryYear, 10);
-    if (!Number.isFinite(year) || year < 1900) return '—';
+function calculateHoldingPeriod(company) {
+    const entryYear = company && company.entry ? parseInt(String(company.entry).replace(/\D/g, '').slice(0, 4), 10) : NaN;
+    if (!Number.isFinite(entryYear) || entryYear < 1900) return '—';
     const currentYear = new Date().getFullYear();
-    const period = Math.max(0, currentYear - year);
-    return `${period} yrs`;
+    const status = (company && company.status) ? String(company.status).trim() : 'Active';
+    const isExited = status === 'Exited' || status === 'IPO';
+    const exitYear = (company && company.exit_year) ? parseInt(String(company.exit_year).replace(/\D/g, '').slice(0, 4), 10) : NaN;
+    const endYear = (isExited && Number.isFinite(exitYear)) ? exitYear : currentYear;
+    const period = Math.max(0, endYear - entryYear);
+    return isExited ? (period === 1 ? 'Held for 1 year' : `Held for ${period} years`) : (period === 1 ? '1 yr' : `${period} yrs`);
 }
 
 function categorizeGeography(market) {
     const nordicCountries = ['Sweden', 'Denmark', 'Norway', 'Finland', 'Iceland'];
-    if (market === 'Sweden') return 'Domestic';
-    if (nordicCountries.includes(market)) return 'Nordic';
+    const m = String(market || '').trim();
+    if (m === 'Sweden') return 'Domestic';
+    if (nordicCountries.includes(m) || m === 'Nordics') return 'Nordic';
     return 'International';
 }
 

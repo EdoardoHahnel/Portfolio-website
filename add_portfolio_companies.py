@@ -7,14 +7,22 @@ with open('portfolio_enriched.json', 'r', encoding='utf-8') as f:
 # Add portfolio companies for new firms
 new_companies = {
     "CapMan": [
-        {"company": "JM AB", "sector": "Construction & Real Estate", "market": "Sweden", "entry": 2019, "logo_url": "https://logo.clearbit.com/jm.se", "website": "https://www.jm.se", "description": "Leading Nordic residential developer"},
-        {"company": "Scandic Hotels", "sector": "Hospitality", "market": "Nordic", "entry": 2018, "logo_url": "https://logo.clearbit.com/scandichotels.com", "website": "https://www.scandichotels.com", "description": "Leading Nordic hotel chain"},
-        {"company": "Nobia", "sector": "Furniture & Kitchens", "market": "Nordic", "entry": 2020, "logo_url": "https://logo.clearbit.com/nobia.com", "website": "https://www.nobia.com", "description": "Nordic kitchen manufacturer"},
-        {"company": "Nordlo", "sector": "Security Services", "market": "Nordic", "entry": 2021, "logo_url": "https://logo.clearbit.com/nordlo.se", "website": "https://www.nordlo.se", "description": "Security and alarm services provider"},
-        {"company": "Rexel", "sector": "Industrial Distribution", "market": "Nordic", "entry": 2019, "logo_url": "https://logo.clearbit.com/rexel.com", "website": "https://www.rexel.com", "description": "Electrical products distributor"},
-        {"company": "team.blue", "sector": "Technology & Hosting", "market": "Europe", "entry": 2021, "logo_url": "https://logo.clearbit.com/team.blue", "website": "https://www.team.blue", "description": "Web hosting and digital services platform"},
-        {"company": "Loopia", "sector": "Technology & Hosting", "market": "Sweden", "entry": 2022, "logo_url": "https://logo.clearbit.com/loopia.se", "website": "https://www.loopia.se", "description": "Swedish web hosting provider"},
-        {"company": "NAXS", "sector": "Investment", "market": "Sweden", "entry": 2020, "logo_url": "https://logo.clearbit.com/naxs.se", "website": "https://www.naxs.se", "description": "Investment company focused on private equity funds"},
+        {"company": "Groweo", "sector": "Technology", "market": "Finland", "entry": 2024, "logo_url": "https://logo.clearbit.com/groweo.com", "website": "https://groweo.com", "description": "AI-based SaaS for SMEs. Digital sales, marketing and customer service tools."},
+        {"company": "Innofactor", "sector": "Technology", "market": "Finland", "entry": 2024, "logo_url": "https://logo.clearbit.com/innofactor.com", "website": "https://www.innofactor.com", "description": "Leading Nordic Microsoft ecosystem IT services. ~1,000 customers, ~600 specialists."},
+        {"company": "Tana", "sector": "Industrial", "market": "Finland", "entry": 2024, "logo_url": "https://logo.clearbit.com/tana.fi", "website": "https://www.tana.fi", "description": "Environmental tech. Waste pre-treatment equipment, shredders, landfill compactors. 50+ countries."},
+        {"company": "Silmäasema", "sector": "Healthcare", "market": "Finland", "entry": 2023, "logo_url": "https://logo.clearbit.com/silmaasema.fi", "website": "https://www.silmaasema.fi", "description": "Finland's largest eye health and optical retail. ~150 stores, 18 eye hospitals."},
+        {"company": "Fennoa", "sector": "Technology", "market": "Finland", "entry": 2022, "logo_url": "https://logo.clearbit.com/fennoa.com", "website": "https://fennoa.com", "description": "Cloud-based financial management software for accounting firms."},
+        {"company": "Cloud2", "sector": "Technology", "market": "Finland", "entry": 2022, "logo_url": "https://logo.clearbit.com/cloud2.fi", "website": "https://www.cloud2.fi", "description": "Multi-cloud services. AWS, Azure, GCP expertise."},
+        {"company": "Suomen Avustajapalvelut", "sector": "Healthcare", "market": "Finland", "entry": 2021, "logo_url": "https://logo.clearbit.com/suomenavustajapalvelut.fi", "website": "https://www.suomenavustajapalvelut.fi", "description": "Personal assistance services. Service vouchers for people with disabilities."},
+        {"company": "Sofigate", "sector": "Technology", "market": "Finland", "entry": 2021, "logo_url": "https://logo.clearbit.com/sofigate.com", "website": "https://www.sofigate.com", "description": "Business technology transformation. ~600 employees in Finland, Sweden, Denmark."},
+        {"company": "Emblasoft", "sector": "Technology", "market": "Finland", "entry": 2020, "logo_url": "https://logo.clearbit.com/emblasoft.com", "website": "https://emblasoft.com", "description": "Telecom testing and service assurance. 5G network testing solutions."},
+        {"company": "Unikie", "sector": "Technology", "market": "Finland", "entry": 2020, "logo_url": "https://logo.clearbit.com/unikie.com", "website": "https://www.unikie.com", "description": "Embedded software and autonomous vehicle technology. AI Vision for self-driving."},
+        {"company": "Neural DSP", "sector": "Technology", "market": "Finland", "entry": 2020, "logo_url": "https://logo.clearbit.com/neuraldsp.com", "website": "https://neuraldsp.com", "description": "Audio software. Guitar amplifier modeling, audio plug-ins for musicians."},
+        {"company": "Insplan", "sector": "Business Services", "market": "Finland", "entry": 2019, "logo_url": "https://logo.clearbit.com/insplan.fi", "website": "https://www.insplan.fi", "description": "Infrastructure engineering. Power, lighting, data networks. 13 locations."},
+        {"company": "Front AI", "sector": "Technology", "market": "Finland", "entry": 2019, "logo_url": "https://logo.clearbit.com/front.ai", "website": "https://front.ai", "description": "Conversational AI. Chatbots for customer service automation."},
+        {"company": "Digital Workforce", "sector": "Technology", "market": "Finland", "entry": 2018, "logo_url": "https://logo.clearbit.com/digitalworkforce.com", "website": "https://digitalworkforce.com", "description": "RPA and intelligent automation. Nordic market leader."},
+        {"company": "Arctic Security", "sector": "Technology", "market": "Finland", "entry": 2018, "logo_url": "https://logo.clearbit.com/arcticsecurity.com", "website": "https://www.arcticsecurity.com", "description": "Cybersecurity. Threat intelligence, Early Warning Service."},
+        {"company": "Aste Helsinki", "sector": "Business Services", "market": "Finland", "entry": 2018, "logo_url": "https://logo.clearbit.com/aste.fi", "website": "https://www.aste.fi", "description": "Digital and print marketing solutions. 135+ professionals."},
     ],
     "Celero": [
         {"company": "TechCorp Solutions", "sector": "Technology & SaaS", "market": "Nordic", "entry": 2022, "logo_url": "https://ui-avatars.com/api/?name=TechCorp&background=7c2d12&color=ffffff&size=64", "website": "https://www.techcorp.com", "description": "Nordic B2B SaaS platform"},
@@ -29,15 +37,21 @@ new_companies = {
     ]
 }
 
-# Add companies to portfolio
+# Add companies to portfolio (skip duplicates)
+existing_keys = {(c.get('company'), c.get('source')) for c in portfolio_data['companies']}
+added = 0
 for firm, companies in new_companies.items():
     for company in companies:
         company['source'] = firm
-        portfolio_data['companies'].append(company)
+        key = (company.get('company'), firm)
+        if key not in existing_keys:
+            portfolio_data['companies'].append(company)
+            existing_keys.add(key)
+            added += 1
 
 # Save updated portfolio
 with open('portfolio_enriched.json', 'w', encoding='utf-8') as f:
     json.dump(portfolio_data, f, indent=2, ensure_ascii=False)
 
-print(f"✅ Added portfolio companies for CapMan, Celero, Polaris")
+print(f"✅ Added {added} new portfolio companies (skipped duplicates)")
 print(f"Total companies in portfolio: {len(portfolio_data['companies'])}")

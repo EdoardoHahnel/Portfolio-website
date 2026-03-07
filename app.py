@@ -587,7 +587,7 @@ def get_portfolio():
         # For selected firms, replace with curated database portfolio.
         # Keep Altor and Adelis Equity on enriched source to preserve stronger company logo/website coverage.
         # Triton will use the enriched dataset (has full coverage) until the full curated list is populated
-        firms_to_replace = ['Polaris', 'FSN Capital', 'Nordstjernan', 'Valedo Partners', 'IK Partners']
+        firms_to_replace = ['Polaris', 'FSN Capital', 'Nordstjernan', 'Valedo Partners', 'IK Partners', 'Equip']
         final_companies = []
         
         def _normalize_entry_year(raw):
@@ -610,6 +610,12 @@ def get_portfolio():
                 c = dict(company)
                 if c.get('entry'):
                     c['entry'] = _normalize_entry_year(c['entry'])
+                # Use detailed_description as description when description is missing (for table display)
+                if not c.get('description') and c.get('detailed_description'):
+                    c['description'] = c['detailed_description']
+                # Ensure logo_url for frontend (accepts logo as fallback)
+                if not c.get('logo_url') and c.get('logo'):
+                    c['logo_url'] = c['logo']
                 final_companies.append(c)
 
         def _expand_description(desc, name, sector, country, firm_name):
@@ -638,7 +644,7 @@ def get_portfolio():
                                 sector = pc.get('sector', '')
                                 country = pc.get('country', '')
                                 raw_entry = pc.get('entry_year', '')
-                                raw_desc = pc.get('description', '')
+                                raw_desc = pc.get('detailed_description', '') or pc.get('description', '')
                                 company_data = {
                                     'company': name,
                                     'sector': sector,
@@ -649,9 +655,9 @@ def get_portfolio():
                                     'website': pc.get('website', ''),
                                     'logo_url': pc.get('logo_url', '') or pc.get('logo', ''),
                                     'description': _expand_description(raw_desc, name, sector, country, firm_name),
-                                    'headquarters': country,
-                                    'deal_size': '',
-                                    'fund': pc.get('fund', ''),
+                                    'headquarters': pc.get('headquarters', country),
+                                    'deal_size': pc.get('deal_size', ''),
+                                    'fund': pc.get('fund', firm_name),
                                     'geography': 'Nordic' if country in ['Sweden', 'Denmark', 'Norway', 'Finland'] else 'International'
                                 }
                                 final_companies.append(company_data)
@@ -720,7 +726,7 @@ def search_portfolio():
     # For selected firms, replace with curated database portfolio.
     # Keep Altor and Adelis Equity on enriched source to preserve stronger company logo/website coverage.
     # Triton will use the enriched dataset (has full coverage) until the full curated list is populated
-    firms_to_replace = ['Polaris', 'FSN Capital', 'Nordstjernan', 'Valedo Partners', 'IK Partners']
+    firms_to_replace = ['Polaris', 'FSN Capital', 'Nordstjernan', 'Valedo Partners', 'IK Partners', 'Equip']
     final_companies = []
     
     def _norm_entry(raw):
@@ -741,8 +747,10 @@ def search_portfolio():
             c = dict(company)
             if c.get('entry'):
                 c['entry'] = _norm_entry(c['entry'])
+            if not c.get('logo_url') and c.get('logo'):
+                c['logo_url'] = c['logo']
             final_companies.append(c)
-    
+
     # Add database portfolio companies for these firms (with same helpers as main portfolio API)
     def _expand_desc(desc, name, sector, country, firm_name):
         desc = (desc or '').strip()
@@ -780,7 +788,7 @@ def search_portfolio():
                                 'description': _expand_desc(pc.get('description', ''), name, sector, country, firm_name),
                                 'headquarters': pc.get('headquarters', country),
                                 'deal_size': pc.get('deal_size', ''),
-                                'fund': pc.get('fund', ''),
+                                'fund': pc.get('fund', firm_name),
                                 'geography': 'Nordic' if country in ['Sweden', 'Denmark', 'Norway', 'Finland'] else 'International'
                             }
                             final_companies.append(company_data)
@@ -926,7 +934,7 @@ def get_pe_firm_detail(firm_name):
                             'description': pc.get('description', ''),
                             'headquarters': pc.get('headquarters', pc.get('country', '')),
                             'deal_size': pc.get('deal_size', ''),
-                            'fund': pc.get('fund', ''),
+                            'fund': pc.get('fund', firm_name),
                             'geography': 'Nordic' if pc.get('country') in ['Sweden', 'Denmark', 'Norway', 'Finland'] else 'International'
                         }
                         firm_companies.append(company_data)
@@ -1527,7 +1535,7 @@ def get_company_by_slug(company_slug):
                                     'detailed_description': pc.get('detailed_description', pc.get('description', '')),
                                     'headquarters': pc.get('headquarters', pc.get('country', '')),
                                     'deal_size': pc.get('deal_size', ''),
-                                    'fund': pc.get('fund', ''),
+                                    'fund': pc.get('fund', firm_name),
                                     'geography': 'Nordic' if pc.get('country') in ['Sweden', 'Denmark', 'Norway', 'Finland'] else 'International'
                                 }
                                 if pc.get('website') and not company_data['website'].startswith('http'):

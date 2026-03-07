@@ -29,7 +29,7 @@ new_firms = {
             {"name": "Hannu Törmänen", "title": "Managing Partner, Real Estate", "location": "Helsinki"},
             {"name": "Erik Lekander", "title": "Managing Partner, Infrastructure", "location": "Stockholm"}
         ],
-        "recent_activity": "Q3 2024: CapMan Buyout XI launched and oversubscribed. Recent exits: Scandic Hotels sale (€2.1B), JM AB divestment. New investments: Healthcare services platform (€200M), Technology SaaS company (€150M). CapMan Real Estate acquires logistics portfolio (€300M). Infrastructure fund invests in renewable energy projects. Strong portfolio performance across all strategies."
+        "recent_activity": "2025: CapMan Wealth raises $120M for US mid-market buyout program. 2024: Groweo, Innofactor, Tana investments (CapMan Growth III); Coronaria exit. Growth portfolio: Silmäasema, Fennoa, Cloud2, Sofigate, Unikie, Neural DSP, Digital Workforce, Arctic Security, Aste Helsinki. Exits: Picosun, Avidly (2022), RealMachinery, Touhula, Polystar, Fluido, Idean Enterprises."
     },
     "Celero": {
         "name": "Celero",

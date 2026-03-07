@@ -7563,6 +7563,16 @@
           "detailed_description": "Nobia is one of Europe's largest kitchen specialists, designing, manufacturing, and selling kitchens under brands including Marbodal, Magnet, Älvsjö, and HTH. Nordstjernan has been a shareholder since 2010. The company operates across the Nordics and parts of Europe. Nordstjernan has issued call options in Nobia (2020).",
           "entry_year": "2010",
           "status": "Public"
+        },
+        {
+          "name": "Circura Group",
+          "sector": "Industrial",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/circuragroup.com",
+          "description": "Nordic platform for building renewal services",
+          "detailed_description": "Circura Group is a newly established Nordic platform for building renewal services, targeting SEK 20 billion in revenue by 2030. The platform combines expertise in facade renovation, roofing, and building maintenance. Nordstjernan invested in 2025.",
+          "entry_year": "2025",
+          "status": "Private"
         }
       ]
     },
@@ -7764,18 +7774,18 @@
       "fundraising": { "strategy": "Healthcare-focused Nordic buyouts" },
       "recent_activity": "Portfolio includes Immedica (orphan pharma), Humana (care services), Euro Accident (health insurance), Scantox (pre-clinical CRO), tandlægen.dk (dental), VaccinDirekt (retail vaccination), Pelago Bioscience (CETSA drug discovery), Stille (surgical instruments), Qufora (TAI products). Prior exits: TFP Fertility, Ferrosan Medical Devices, NutraQ, Cavidi.",
       "portfolio_companies": [
-        {"name": "Immedica", "logo": "https://logo.clearbit.com/immedica.com", "sector": "Pharmaceuticals", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Launch, commercialisation and distribution of orphan and niche specialty pharmaceuticals"},
-        {"name": "Humana", "logo": "https://logo.clearbit.com/humanagroup.se", "sector": "Healthcare & Related Services", "country": "Sweden", "entry_year": "2021", "status": "Active", "detailed_description": "Leading Nordic private care provider"},
-        {"name": "Euro Accident", "logo": "https://logo.clearbit.com/euroaccident.se", "sector": "Healthcare & Related Services", "country": "Sweden", "entry_year": "2020", "status": "Active", "detailed_description": "Leading Swedish specialist in health-related insurance and employee wellbeing"},
+        {"name": "Immedica", "logo": "https://logo.clearbit.com/immedica.com", "sector": "Pharmaceuticals", "country": "Sweden", "entry_year": "2018", "status": "Active", "detailed_description": "Launch, commercialisation and distribution of orphan and niche specialty pharmaceuticals"},
+        {"name": "Humana", "logo": "https://logo.clearbit.com/humanagroup.se", "sector": "Healthcare & Related Services", "country": "Sweden", "entry_year": "2019", "status": "Active", "detailed_description": "Leading Nordic private care provider"},
+        {"name": "Euro Accident", "logo": "https://logo.clearbit.com/euroaccident.se", "sector": "Healthcare & Related Services", "country": "Sweden", "entry_year": "2019", "status": "Active", "detailed_description": "Leading Swedish specialist in health-related insurance and employee wellbeing"},
         {"name": "Scantox", "logo": "https://logo.clearbit.com/scantox.com", "sector": "Specialist Pharma Services", "country": "Denmark", "entry_year": "2021", "status": "Active", "detailed_description": "Leading Nordic pre-clinical contract research organization"},
-        {"name": "tandlægen.dk", "logo": "https://logo.clearbit.com/tandlaegen.dk", "sector": "Healthcare & Related Services", "country": "Denmark", "entry_year": "2022", "status": "Active", "detailed_description": "Leading Danish dental care chain"},
-        {"name": "Lowenco", "logo": "https://logo.clearbit.com/lowenco.com", "sector": "Specialist Pharma Services", "country": "Sweden", "entry_year": "2023", "status": "Active", "detailed_description": "Ultra-low temperature storage solutions for biopharma market"},
-        {"name": "Pelago Bioscience", "logo": "https://logo.clearbit.com/pelagobioscience.com", "sector": "Healthcare & Related Services", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Drug discovery CRO with patented CETSA-technology"},
+        {"name": "tandlægen.dk", "logo": "https://logo.clearbit.com/tandlaegen.dk", "sector": "Healthcare & Related Services", "country": "Denmark", "entry_year": "2021", "status": "Active", "detailed_description": "Leading Danish dental care chain"},
+        {"name": "Lowenco", "logo": "https://logo.clearbit.com/lowenco.com", "sector": "Specialist Pharma Services", "country": "Denmark", "entry_year": "2022", "status": "Active", "detailed_description": "Ultra-low temperature storage solutions for biopharma market"},
+        {"name": "Pelago Bioscience", "logo": "https://logo.clearbit.com/pelagobioscience.com", "sector": "Specialist Pharma Services", "country": "Sweden", "entry_year": "2023", "status": "Active", "detailed_description": "Drug discovery CRO with patented CETSA-technology"},
         {"name": "VaccinDirekt", "logo": "https://logo.clearbit.com/vaccindirekt.se", "sector": "Healthcare & Related Services", "country": "Sweden", "entry_year": "2021", "status": "Active", "detailed_description": "Largest Nordic retail vaccination provider"},
-        {"name": "Decon", "logo": "https://logo.clearbit.com/decon.se", "sector": "MedTech", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Power-assisted electrical solutions for wheelchairs"},
-        {"name": "Avia Pharma", "logo": "https://logo.clearbit.com/aviapharma.se", "sector": "Pharmaceuticals", "country": "Sweden", "entry_year": "2021", "status": "Active", "detailed_description": "Leading North European OTC/Rx platform"},
-        {"name": "Stille", "logo": "https://logo.clearbit.com/stillesurgical.com", "sector": "MedTech", "country": "Sweden", "entry_year": "2020", "status": "Active", "detailed_description": "Premium surgical instruments and advanced surgical tables"},
-        {"name": "Qufora", "logo": "https://logo.clearbit.com/qufora.com", "sector": "MedTech", "country": "Denmark", "entry_year": "2023", "status": "Active", "detailed_description": "TAI products and collecting devices"},
+        {"name": "Decon", "logo": "https://logo.clearbit.com/decon.se", "sector": "MedTech", "country": "Sweden", "entry_year": "2023", "status": "Active", "detailed_description": "Power-assisted electrical solutions for wheelchairs"},
+        {"name": "Avia Pharma", "logo": "https://logo.clearbit.com/aviapharma.se", "sector": "Pharmaceuticals", "country": "Sweden", "entry_year": "2024", "status": "Active", "detailed_description": "Leading North European OTC/Rx platform"},
+        {"name": "Stille", "logo": "https://logo.clearbit.com/stillesurgical.com", "sector": "MedTech", "country": "Sweden", "entry_year": "2024", "status": "Active", "detailed_description": "Premium surgical instruments and advanced surgical tables"},
+        {"name": "Qufora", "logo": "https://logo.clearbit.com/qufora.com", "sector": "MedTech", "country": "Denmark", "entry_year": "2024", "status": "Active", "detailed_description": "TAI products and collecting devices"},
         {"name": "Oticon Medical", "logo": "https://logo.clearbit.com/oticon.com", "sector": "MedTech", "country": "Sweden", "entry_year": "2025", "status": "Active", "detailed_description": "Global leader in bone-anchored hearing solutions (BAHS), acquired from Demant"}
       ]
     },
@@ -7843,15 +7853,15 @@
       },
       "team": [],
       "fundraising": { "strategy": "Nordic SME buyouts; themes: Digitalisering, Cirkuläritet, Samhällsomvandling" },
-      "recent_activity": "2026: Establishes Nordic manufacturing platform (Be-Pe, Prolego, HITAB); Freedom Group add-ons. 2024: Divested Biototal Group to SEB Private Equity. Portfolio includes Nestit Group, Ascenco, SMP Parts, Great Security, Freedom Group, Flow Fastighetsvärden.",
+      "recent_activity": "2026: Establishes Nordic manufacturing platform (Be-Pe, Prolego, HITAB); Freedom Group add-ons. 2024: Divested Biototal Group to SEB Private Equity. Portfolio includes Nestit Group, Ascenco, SMP Parts, Nordic Drives Group, Ametal, Freedom Group. Prior exits: PS Auction (2022), Art Clinic (2022), Great Security (2023).",
       "portfolio_companies": [
         {"name": "Nestit Group", "logo": "https://logo.clearbit.com/nestit.com", "sector": "Technology", "country": "Sweden", "entry_year": "2024", "status": "Active", "detailed_description": "Pan-Nordic office IT infrastructure partner for SMEs, created through DSolution and Easy Partner partnership"},
         {"name": "Ascenco Group", "logo": "https://logo.clearbit.com/ascenco.se", "sector": "Business Services", "country": "Sweden", "entry_year": "2023", "status": "Active", "detailed_description": "Critical infrastructure services"},
-        {"name": "SMP Parts", "logo": "https://logo.clearbit.com/smpparts.se", "sector": "Business Services", "country": "Sweden", "entry_year": "2023", "status": "Active", "detailed_description": "Smart digging systems"},
-        {"name": "PS Auction", "logo": "https://logo.clearbit.com/psauktion.se", "sector": "Business Services", "country": "Sweden", "entry_year": "2022", "status": "Active"},
-        {"name": "Art Clinic", "logo": "https://logo.clearbit.com/artclinic.se", "sector": "Healthcare", "country": "Sweden", "entry_year": "2022", "status": "Active"},
-        {"name": "Great Security", "logo": "https://logo.clearbit.com/greatsecurity.se", "sector": "Business Services", "country": "Sweden", "entry_year": "2021", "status": "Active", "detailed_description": "Intelligent security solutions"},
-        {"name": "Freedom Group", "logo": "https://logo.clearbit.com/freedomgroup.se", "sector": "Technology", "country": "Sweden", "entry_year": "2023", "status": "Active", "detailed_description": "Accounting digitization and financial software"}
+        {"name": "SMP Parts", "logo": "https://logo.clearbit.com/smpparts.se", "sector": "Business Services", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Smart digging systems, excavator attachments"},
+        {"name": "Nordic Drives Group", "logo": "https://logo.clearbit.com/nordicdrives.com", "sector": "Industrial", "country": "Sweden", "entry_year": "2021", "status": "Active", "detailed_description": "Electric drives and power systems, electric motors and industrial automation"},
+        {"name": "Ametal", "logo": "https://logo.clearbit.com/ametalis.com", "sector": "Business Services", "country": "Sweden", "entry_year": "2025", "status": "Active", "detailed_description": "Nordic environmental and sustainability consulting platform"},
+        {"name": "Flow Fastighetsvärden", "logo": "https://logo.clearbit.com/flowfastigheter.se", "sector": "Real Estate", "country": "Sweden", "entry_year": "2024", "status": "Active", "detailed_description": "Real estate company owning properties where grocery stores and food retail are main tenants"},
+        {"name": "Freedom Group", "logo": "https://logo.clearbit.com/freedomgroup.se", "sector": "Technology", "country": "Sweden", "entry_year": "2021", "status": "Active", "detailed_description": "Accounting digitization and financial software"}
       ]
     },
     "Equip": {
@@ -7874,7 +7884,7 @@
       "fundraising": { "strategy": "Nordic mid-market buyouts" },
       "recent_activity": "Portfolio includes Activeon (trampoline parks), Bastard Burgers, Funplays, Miles, Cloud Connection, Holy Greens, House of Discs, River Group, Cure, Makeup Mekka, North Travel.",
       "portfolio_companies": [
-        {"name": "Activeon", "logo": "https://logo.clearbit.com/activeon.no", "sector": "Consumer", "country": "Norway", "entry_year": "2022", "status": "Active", "detailed_description": "Leading European operator of indoor trampoline and interactive attraction parks"},
+        {"name": "Activeon", "logo": "https://logo.clearbit.com/activeon.no", "sector": "Consumer", "country": "Norway", "entry_year": "2019", "status": "Active", "detailed_description": "Leading European operator of indoor trampoline and interactive attraction parks with 57+ parks across Nordics, Germany, Netherlands and UK. Equip acquired in 2019."},
         {"name": "Bastard Burgers", "logo": "https://logo.clearbit.com/bastardburgers.se", "sector": "Consumer", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Fast-casual burger chain with 70+ restaurants across Sweden and Norway"},
         {"name": "Busspart", "logo": "https://logo.clearbit.com/busspart.no", "sector": "Business Services", "country": "Norway", "entry_year": "2023", "status": "Active", "detailed_description": "Full-service provider of bus maintenance and inspection solutions"},
         {"name": "Cares", "logo": "https://logo.clearbit.com/cares.no", "sector": "Business Services", "country": "Norway", "entry_year": "2022", "status": "Active", "detailed_description": "Cleaning and canteen services for SMEs and public sector"},
@@ -7915,25 +7925,25 @@
       "fundraising": { "strategy": "Impact investing; Buyout and Ventures strategies" },
       "recent_activity": "Portfolio spans Nordomatic (building automation), ILT Education (Polylino), Mesalvo (healthcare software), Allurity (cybersecurity), Karriere Tutor, Infrakraft (rail infrastructure), Komet (irrigation), Renewtech (refurbished IT), Cinclus Pharma, May Health, Soil Capital, tado°, Open Cosmos.",
       "portfolio_companies": [
-        {"name": "Nordomatic", "sector": "Business Services", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Leading independent partner for building automation, smart buildings and energy efficiency"},
-        {"name": "ILT Education", "sector": "Education", "country": "Sweden", "entry_year": "2021", "status": "Active", "detailed_description": "Market-leading supplier of educational tools and Polylino digital learning for schools"},
-        {"name": "Mesalvo", "sector": "Digital Healthcare", "country": "Germany", "entry_year": "2023", "status": "Active", "detailed_description": "Healthcare software for hospitals, radiologists and laboratories"},
-        {"name": "Allurity", "sector": "Cybersecurity Services", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Pan-European cybersecurity service provider"},
-        {"name": "Karriere Tutor", "sector": "Education", "country": "Germany", "entry_year": "2022", "status": "Active", "detailed_description": "Digital provider of government-subsidized vocational training"},
-        {"name": "Infrakraft", "sector": "Infrastructure", "country": "Sweden", "entry_year": "2023", "status": "Active", "detailed_description": "Sustainable rail infrastructure development"},
-        {"name": "Komet", "sector": "Agriculture", "country": "Austria", "entry_year": "2022", "status": "Active", "detailed_description": "Irrigation components for pivot and hose reel systems"},
-        {"name": "Delivery Associates", "sector": "Consulting Services", "country": "UK", "entry_year": "2022", "status": "Active", "detailed_description": "Impact consultancy for governments"},
-        {"name": "Renewtech", "sector": "IT Refurbishment", "country": "Denmark", "entry_year": "2022", "status": "Active", "detailed_description": "B2B supplier of refurbished IT enterprise hardware"},
-        {"name": "TT Medic", "sector": "MedTech", "country": "Austria", "entry_year": "2023", "status": "Active", "detailed_description": "Precision medical injection molding CDMO"},
-        {"name": "Primutec", "sector": "Business Services", "country": "Netherlands", "entry_year": "2022", "status": "Active", "detailed_description": "Building envelope services, flat roofing, solar PV"},
-        {"name": "Noova Energy Systems", "sector": "Business Services", "country": "Norway", "entry_year": "2022", "status": "Active", "detailed_description": "Energy management systems for SMEs"},
-        {"name": "Cinclus Pharma", "sector": "Pharmaceuticals", "country": "Sweden", "entry_year": "2023", "status": "Active", "detailed_description": "Late-stage biopharmaceutical for stomach acid disorders"},
-        {"name": "May Health", "sector": "MedTech", "country": "France", "entry_year": "2023", "status": "Active", "detailed_description": "Medical device for PCOS-related fertility"},
-        {"name": "Soil Capital", "sector": "Agriculture", "country": "Belgium", "entry_year": "2022", "status": "Active", "detailed_description": "Regenerative agriculture, certified B Corp"},
-        {"name": "Rail-Flow", "sector": "Business Services", "country": "Germany", "entry_year": "2023", "status": "Active", "detailed_description": "Digital B2B SaaS platform for rail and intermodal freight"},
-        {"name": "tado°", "sector": "Technology", "country": "Germany", "entry_year": "2022", "status": "Active", "detailed_description": "Smart home climate management controls"},
-        {"name": "Open Cosmos", "sector": "Technology", "country": "UK", "entry_year": "2023", "status": "Active", "detailed_description": "Space tech and satellite data for climate and disasters"},
-        {"name": "MinervaX", "sector": "Pharmaceuticals", "country": "Denmark", "entry_year": "2023", "status": "Active", "detailed_description": "Maternal vaccine for Group B streptococcus"}
+        {"name": "Nordomatic", "logo": "https://logo.clearbit.com/nordomatic.com", "sector": "Business Services", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Leading independent partner for building automation, smart buildings and energy efficiency"},
+        {"name": "ILT Education", "logo": "https://logo.clearbit.com/ilteducation.com", "sector": "Education", "country": "Sweden", "entry_year": "2021", "status": "Active", "detailed_description": "Market-leading supplier of educational tools and Polylino digital learning for schools"},
+        {"name": "Mesalvo", "logo": "https://logo.clearbit.com/mesalvo.com", "sector": "Digital Healthcare", "country": "Germany", "entry_year": "2023", "status": "Active", "detailed_description": "Healthcare software for hospitals, radiologists and laboratories"},
+        {"name": "Allurity", "logo": "https://logo.clearbit.com/allurity.com", "sector": "Cybersecurity Services", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Pan-European cybersecurity service provider"},
+        {"name": "Karriere Tutor", "logo": "https://logo.clearbit.com/karrieretutor.de", "sector": "Education", "country": "Germany", "entry_year": "2022", "status": "Active", "detailed_description": "Digital provider of government-subsidized vocational training"},
+        {"name": "Infrakraft", "logo": "https://logo.clearbit.com/infrakraft.se", "sector": "Infrastructure", "country": "Sweden", "entry_year": "2023", "status": "Active", "detailed_description": "Sustainable rail infrastructure development"},
+        {"name": "Komet", "logo": "https://logo.clearbit.com/komet.at", "sector": "Agriculture", "country": "Austria", "entry_year": "2022", "status": "Active", "detailed_description": "Irrigation components for pivot and hose reel systems"},
+        {"name": "Delivery Associates", "logo": "https://logo.clearbit.com/deliveryassociates.com", "sector": "Consulting Services", "country": "UK", "entry_year": "2022", "status": "Active", "detailed_description": "Impact consultancy for governments"},
+        {"name": "Renewtech", "logo": "https://logo.clearbit.com/renewtech.dk", "sector": "IT Refurbishment", "country": "Denmark", "entry_year": "2022", "status": "Active", "detailed_description": "B2B supplier of refurbished IT enterprise hardware"},
+        {"name": "TT Medic", "logo": "https://logo.clearbit.com/ttmedic.com", "sector": "MedTech", "country": "Austria", "entry_year": "2023", "status": "Active", "detailed_description": "Precision medical injection molding CDMO"},
+        {"name": "Primutec", "logo": "https://logo.clearbit.com/primutec.nl", "sector": "Business Services", "country": "Netherlands", "entry_year": "2022", "status": "Active", "detailed_description": "Building envelope services, flat roofing, solar PV"},
+        {"name": "Noova Energy Systems", "logo": "https://logo.clearbit.com/noova.no", "sector": "Business Services", "country": "Norway", "entry_year": "2022", "status": "Active", "detailed_description": "Energy management systems for SMEs"},
+        {"name": "Cinclus Pharma", "logo": "https://logo.clearbit.com/cincluspharma.com", "sector": "Pharmaceuticals", "country": "Sweden", "entry_year": "2023", "status": "Active", "detailed_description": "Late-stage biopharmaceutical for stomach acid disorders"},
+        {"name": "May Health", "logo": "https://logo.clearbit.com/may-health.com", "sector": "MedTech", "country": "France", "entry_year": "2023", "status": "Active", "detailed_description": "Medical device for PCOS-related fertility"},
+        {"name": "Soil Capital", "logo": "https://logo.clearbit.com/soilcapital.com", "sector": "Agriculture", "country": "Belgium", "entry_year": "2022", "status": "Active", "detailed_description": "Regenerative agriculture, certified B Corp"},
+        {"name": "Rail-Flow", "logo": "https://logo.clearbit.com/rail-flow.com", "sector": "Business Services", "country": "Germany", "entry_year": "2023", "status": "Active", "detailed_description": "Digital B2B SaaS platform for rail and intermodal freight"},
+        {"name": "tado°", "logo": "https://logo.clearbit.com/tado.com", "sector": "Technology", "country": "Germany", "entry_year": "2022", "status": "Active", "detailed_description": "Smart home climate management controls"},
+        {"name": "Open Cosmos", "logo": "https://logo.clearbit.com/open-cosmos.com", "sector": "Technology", "country": "UK", "entry_year": "2023", "status": "Active", "detailed_description": "Space tech and satellite data for climate and disasters"},
+        {"name": "MinervaX", "logo": "https://logo.clearbit.com/minervax.com", "sector": "Pharmaceuticals", "country": "Denmark", "entry_year": "2023", "status": "Active", "detailed_description": "Maternal vaccine for Group B streptococcus"}
       ]
     },
     "Norvestor": {

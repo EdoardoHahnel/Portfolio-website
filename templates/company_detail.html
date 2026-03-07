@@ -516,10 +516,14 @@ function getInitials(name) {
 }
 
 function loadCompanyData(company) {
-    const currentYear = 2025;
-    const entryYear = company.entry ? parseInt(company.entry) : null;
-    const holdingPeriod = entryYear ? currentYear - entryYear : null;
-    const status = company.status || (holdingPeriod && holdingPeriod > 0 ? 'Active' : 'N/A');
+    const currentYear = new Date().getFullYear();
+    const entryYear = company.entry ? parseInt(String(company.entry).replace(/\D/g, '').slice(0, 4), 10) : null;
+    const status = company.status || (entryYear && currentYear - entryYear > 0 ? 'Active' : 'N/A');
+    const isExited = status === 'Exited' || status === 'IPO';
+    const exitYear = (company.exit_year && parseInt(String(company.exit_year).replace(/\D/g, '').slice(0, 4), 10)) || null;
+    const endYear = (isExited && exitYear) ? exitYear : currentYear;
+    const holdingPeriod = entryYear ? Math.max(0, endYear - entryYear) : null;
+    const holdingPeriodText = holdingPeriod ? (isExited ? (holdingPeriod === 1 ? 'Held for 1 year' : `Held for ${holdingPeriod} years`) : (holdingPeriod === 1 ? '1 yr' : `${holdingPeriod} yrs`)) : '—';
     const geography = categorizeGeography(company.market);
 
     const COMPANY_DOMAIN_OVERRIDES = { 'Brimer': 'brimer.no', 'Lunawood': 'lunawood.com', 'Enerco Group': 'enerco.se', 'Nordic Grid Solutions': 'triarca.dk', 'EITCO': 'eitco.de', 'Cedra': 'cedra.se', 'Vokstr': 'vokstr.no', 're:mount': 'remount.fi', 'netIP': 'netip.dk', 'Ropo Capital': 'ropo.com', 'Circura Danmark': 'circuradanmark.dk', 'Circura': 'circuragroup.com', 'DLVRY': 'dlvry.se', 'RETTA': 'innagroup.se', '3Button Group': '3bg.se', 'Briab': 'briab.se', 'EWGroup': 'ewgroup.se', 'eivis': 'eivis-group.com', 'SI - Sustainable Intelligence': 'wearesi.se', 'Umia': 'umia.se', 'Safe Monitoring Group': 'safemonitoringgroup.com' };
@@ -558,7 +562,7 @@ function loadCompanyData(company) {
     
     // Quick Stats
     document.getElementById('statEntry').textContent = company.entry || '—';
-    document.getElementById('statHolding').textContent = holdingPeriod ? `${holdingPeriod} yrs` : '—';
+    document.getElementById('statHolding').textContent = holdingPeriodText;
     document.getElementById('statEmployees').textContent = company.employees || '—';
     document.getElementById('statDealSize').textContent = company.deal_size || '—';
     

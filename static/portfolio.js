@@ -653,6 +653,7 @@ function displayFilteredPortfolioFlat(companies) {
     }
 
     emptyState.classList.add('hidden');
+    const currentYear = new Date().getFullYear();
     const rows = companies.map(company => {
         const cleanCompany = cleanDisplayText(company.company || 'N/A');
         const cleanSector = cleanDisplayText(company.sector || 'N/A');
@@ -661,6 +662,14 @@ function displayFilteredPortfolioFlat(companies) {
         const cleanEntry = cleanDisplayText(normalizeEntryYear(company.entry) || 'N/A');
         const cleanOwner = cleanDisplayText(company.source || 'N/A');
         const geography = categorizeGeography(cleanMarket);
+        const entryYear = company.entry ? parseInt(normalizeEntryYear(company.entry), 10) : null;
+        const status = company.status || (entryYear && currentYear - entryYear > 0 ? 'Active' : 'N/A');
+        const isExited = status === 'Exited' || status === 'IPO';
+        const exitYear = (company.exit_year && parseInt(String(company.exit_year).replace(/\D/g, '').slice(0, 4), 10)) || null;
+        const endYear = (isExited && exitYear) ? exitYear : currentYear;
+        const holdingPeriod = entryYear ? Math.max(0, endYear - entryYear) : null;
+        const holdingPeriodText = holdingPeriod ? (isExited ? (holdingPeriod === 1 ? 'Held for 1 year' : `Held for ${holdingPeriod} years`) : (holdingPeriod === 1 ? '1 yr' : `${holdingPeriod} yrs`)) : '—';
+        const statusColor = status === 'Active' ? '#10b981' : status === 'Exited' ? '#6b7280' : status === 'IPO' ? '#3b82f6' : '#94a3b8';
         return `
             <tr>
                 <td>${escapeHtml(cleanCompany)}</td>
@@ -669,6 +678,8 @@ function displayFilteredPortfolioFlat(companies) {
                 <td>${escapeHtml(cleanMarket)}</td>
                 <td>${escapeHtml(cleanHQ)}</td>
                 <td>${escapeHtml(cleanEntry)}</td>
+                <td style="text-align: center; font-weight: 600; color: ${holdingPeriod ? '#3f7de8' : '#94a3b8'}; font-size: 0.65rem;">${holdingPeriodText}</td>
+                <td style="text-align: center;"><span style="background: ${statusColor}15; color: ${statusColor}; padding: 2px 6px; border-radius: 8px; font-size: 0.55rem; font-weight: 600;">${escapeHtml(status)}</span></td>
                 <td>${escapeHtml(geography)}</td>
             </tr>
         `;
@@ -685,6 +696,8 @@ function displayFilteredPortfolioFlat(companies) {
                         <th>Market</th>
                         <th>Headquarters</th>
                         <th>Entry Year</th>
+                        <th>Holding Period</th>
+                        <th>Status</th>
                         <th>Geography</th>
                     </tr>
                 </thead>
@@ -861,12 +874,16 @@ function displayPortfolio(companies) {
             const description = company.description || company.detailed_description || '';
             
             // Calculate additional metrics
-            const currentYear = 2025;
+            const currentYear = new Date().getFullYear();
             const entryYear = company.entry ? parseInt(normalizeEntryYear(company.entry), 10) : null;
-            const holdingPeriod = entryYear ? currentYear - entryYear : null;
-            
-            // Determine status
-            const status = company.status || (holdingPeriod && holdingPeriod > 0 ? 'Active' : 'N/A');
+            const status = company.status || (entryYear && currentYear - entryYear > 0 ? 'Active' : 'N/A');
+            const isExited = status === 'Exited' || status === 'IPO';
+            const exitYear = (company.exit_year && parseInt(String(company.exit_year).replace(/\D/g, '').slice(0, 4), 10)) || null;
+            const endYear = (isExited && exitYear) ? exitYear : currentYear;
+            const holdingPeriod = entryYear ? Math.max(0, endYear - entryYear) : null;
+            const holdingPeriodText = holdingPeriod
+                ? (isExited ? (holdingPeriod === 1 ? 'Held for 1 year' : `Held for ${holdingPeriod} years`) : (holdingPeriod === 1 ? '1 yr' : `${holdingPeriod} yrs`))
+                : '—';
             const statusColor = status === 'Active' ? '#10b981' : status === 'Exited' ? '#6b7280' : status === 'IPO' ? '#3b82f6' : '#94a3b8';
             
             // Deal size - only show if we have actual data
@@ -890,7 +907,7 @@ function displayPortfolio(companies) {
                 </td>
                 <td class="portfolio-uniform-cell">${escapeHtml(cleanEntry)}</td>
                 <td style="text-align: center; font-weight: 600; color: ${holdingPeriod ? '#3f7de8' : '#94a3b8'}; font-size: 0.65rem;">
-                    ${holdingPeriod ? `${holdingPeriod} yrs` : '—'}
+                    ${holdingPeriodText}
                 </td>
                 <td style="text-align: center;">
                     <span style="background: ${statusColor}15; color: ${statusColor}; padding: 2px 6px; border-radius: 8px; font-size: 0.55rem; font-weight: 600; display: inline-block;">
@@ -989,17 +1006,11 @@ function scheduleRenderFilteredPortfolio() {
 // ===================================================================
 
 function categorizeGeography(market) {
-    // Categorize geography type
     const nordicCountries = ['Sweden', 'Denmark', 'Norway', 'Finland', 'Iceland'];
-    const domesticCountry = 'Sweden'; // Assuming Swedish PE firms primarily
-    
-    if (market === domesticCountry) {
-        return 'Domestic';
-    } else if (nordicCountries.includes(market)) {
-        return 'Nordic';
-    } else {
-        return 'International';
-    }
+    const m = String(market || '').trim();
+    if (m === 'Sweden') return 'Domestic';
+    if (nordicCountries.includes(m) || m === 'Nordics') return 'Nordic';
+    return 'International';
 }
 
 function categorizeSector(sector) {
@@ -1285,10 +1296,14 @@ async function openCompanyModal(company) {
     const modal = document.getElementById('companyModal');
     
     // Calculate metrics
-    const currentYear = 2025;
-    const entryYear = company.entry ? parseInt(company.entry) : null;
-    const holdingPeriod = entryYear ? currentYear - entryYear : null;
-    const status = company.status || (holdingPeriod && holdingPeriod > 0 ? 'Active' : 'N/A');
+    const currentYear = new Date().getFullYear();
+    const entryYear = company.entry ? parseInt(normalizeEntryYear(company.entry), 10) : null;
+    const status = company.status || (entryYear && currentYear - entryYear > 0 ? 'Active' : 'N/A');
+    const isExited = status === 'Exited' || status === 'IPO';
+    const exitYear = (company.exit_year && parseInt(String(company.exit_year).replace(/\D/g, '').slice(0, 4), 10)) || null;
+    const endYear = (isExited && exitYear) ? exitYear : currentYear;
+    const holdingPeriod = entryYear ? Math.max(0, endYear - entryYear) : null;
+    const holdingPeriodText = holdingPeriod ? (isExited ? (holdingPeriod === 1 ? 'Held for 1 year' : `Held for ${holdingPeriod} years`) : (holdingPeriod === 1 ? '1 yr' : `${holdingPeriod} yrs`)) : '—';
     const geography = categorizeGeography(company.market);
     
     // Header Section - use favicon first (reliable for Nordic .se/.no/.dk)
@@ -1314,7 +1329,7 @@ async function openCompanyModal(company) {
     
     // Quick Stats Banner
     document.getElementById('modalBannerEntry').textContent = normalizeEntryYear(company.entry) || 'N/A';
-    document.getElementById('modalBannerHolding').textContent = holdingPeriod ? `${holdingPeriod} yrs` : '—';
+    document.getElementById('modalBannerHolding').textContent = holdingPeriodText;
     document.getElementById('modalBannerEmployees').textContent = company.employees || '—';
     document.getElementById('modalBannerDeal').textContent = company.deal_size || '—';
     
@@ -1349,7 +1364,7 @@ async function openCompanyModal(company) {
     
     // Operational Metrics
     document.getElementById('modalEmployees').textContent = company.employees || '—';
-    document.getElementById('modalHoldingPeriod').textContent = holdingPeriod ? `${holdingPeriod} years` : '—';
+    document.getElementById('modalHoldingPeriod').textContent = holdingPeriodText;
     
     // Status badge styling
     const statusBadge = document.getElementById('modalStatus');
