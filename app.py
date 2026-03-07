@@ -1465,18 +1465,46 @@ def get_company_by_slug(company_slug):
         
         # Decode slug to find company (slug format: company-name-source)
         import urllib.parse
+        import re
         decoded_slug = urllib.parse.unquote(company_slug)
         
-        # Try to find company by matching slug pattern
-        # Slug is typically: company-name-source-firm
+        # Normalize slug to match frontend generateCompanySlug: strip non-alphanumeric, lowercase
+        def _normalize_slug(s):
+            if not s:
+                return ''
+            s = s.lower().strip().replace('&', 'and')
+            s = re.sub(r'[^a-z0-9\s]', '', s)
+            return s.replace(' ', '-')
+        
+        def _prepare_company_for_response(c):
+            """Ensure logo_url is set (some records use 'logo' field)"""
+            out = dict(c)
+            if not out.get('logo_url') and out.get('logo'):
+                out['logo_url'] = out['logo']
+            return out
+        
+        norm_decoded = _normalize_slug(decoded_slug.replace('-', ' '))
+        
+        # 1. Normalized slug match (handles Brödernas->brdernas, G-CON->gcon, etc.)
+        for company in portfolio_storage:
+            slug_name = _normalize_slug(company.get('company', ''))
+            slug_source = _normalize_slug(company.get('source', ''))
+            expected = f"{slug_name}-{slug_source}" if slug_name and slug_source else ""
+            if norm_decoded == expected:
+                return jsonify({
+                    'success': True,
+                    'company': _prepare_company_for_response(company)
+                })
+        
+        # 2. Exact match (original logic)
         parts = decoded_slug.split('-')
+        company_name_match = ''
+        source_match = ''
         if len(parts) >= 2:
-            # Last part is usually the source
             source_match = '-'.join(parts[-2:]) if len(parts) >= 2 else parts[-1]
             company_name_parts = parts[:-2] if len(parts) > 2 else [parts[0]]
             company_name_match = ' '.join(company_name_parts)
             
-            # Try exact match first
             for company in portfolio_storage:
                 slug_name = company.get('company', '').lower().replace(' ', '-').replace('&', 'and')
                 slug_source = company.get('source', '').lower().replace(' ', '-')
@@ -1485,10 +1513,10 @@ def get_company_by_slug(company_slug):
                 if decoded_slug.lower() == expected_slug:
                     return jsonify({
                         'success': True,
-                        'company': company
+                        'company': _prepare_company_for_response(company)
                     })
             
-            # Fallback: try fuzzy matching
+            # 3. Fuzzy matching
             for company in portfolio_storage:
                 company_name = company.get('company', '').lower()
                 source = company.get('source', '').lower()
@@ -1497,11 +1525,11 @@ def get_company_by_slug(company_slug):
                     source_match.lower() in source):
                     return jsonify({
                         'success': True,
-                        'company': company
+                        'company': _prepare_company_for_response(company)
                     })
 
-        # Fallback: check pe_firms_database portfolio_companies (for FSN Capital, etc.)
-        def _normalize_slug(s):
+        # 4. Fallback: check pe_firms_database portfolio_companies (for FSN Capital, etc.)
+        def _normalize_slug_legacy(s):
             if not s:
                 return ''
             s = s.lower().strip().replace('&', 'and')
@@ -1514,13 +1542,13 @@ def get_company_by_slug(company_slug):
                 pe_firms = pe_data.get('pe_firms', {})
                 for firm_name, firm_data in pe_firms.items():
                     if firm_data.get('portfolio_companies'):
-                        slug_firm = _normalize_slug(firm_name)
+                        slug_firm = _normalize_slug_legacy(firm_name)
                         for pc in firm_data['portfolio_companies']:
-                            pc_slug = _normalize_slug(pc.get('name') or '')
+                            pc_slug = _normalize_slug_legacy(pc.get('name') or '')
                             expected = f"{pc_slug}-{slug_firm}"
-                            norm_decoded = _normalize_slug(decoded_slug.replace('-', ' '))
-                            if decoded_slug.lower() == expected or norm_decoded == expected or (
-                                company_name_match and _normalize_slug(company_name_match) in pc_slug and
+                            norm_decoded_legacy = _normalize_slug_legacy(decoded_slug.replace('-', ' '))
+                            if decoded_slug.lower() == expected or norm_decoded_legacy == expected or (
+                                len(parts) >= 2 and company_name_match and _normalize_slug_legacy(company_name_match) in pc_slug and
                                 source_match.lower() in slug_firm):
                                 company_data = {
                                     'company': pc.get('name', ''),

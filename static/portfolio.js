@@ -654,7 +654,29 @@ function displayFilteredPortfolioFlat(companies) {
 
     emptyState.classList.add('hidden');
     const currentYear = new Date().getFullYear();
-    const rows = companies.map(company => {
+    const tableWrapper = document.createElement('div');
+    tableWrapper.className = 'portfolio-table-wrapper';
+    const table = document.createElement('table');
+    table.className = 'portfolio-table';
+    table.innerHTML = `
+        <thead>
+            <tr>
+                <th>Company</th>
+                <th>Owner (GP)</th>
+                <th>Sector</th>
+                <th>Market</th>
+                <th>Headquarters</th>
+                <th>Entry Year</th>
+                <th>Holding Period</th>
+                <th>Status</th>
+                <th>Geography</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    `;
+    const tbody = table.querySelector('tbody');
+
+    companies.forEach((company, index) => {
         const cleanCompany = cleanDisplayText(company.company || 'N/A');
         const cleanSector = cleanDisplayText(company.sector || 'N/A');
         const cleanMarket = cleanDisplayText(company.market || 'N/A');
@@ -670,41 +692,61 @@ function displayFilteredPortfolioFlat(companies) {
         const holdingPeriod = entryYear ? Math.max(0, endYear - entryYear) : null;
         const holdingPeriodText = holdingPeriod ? (isExited ? (holdingPeriod === 1 ? 'Held for 1 year' : `Held for ${holdingPeriod} years`) : (holdingPeriod === 1 ? '1 yr' : `${holdingPeriod} yrs`)) : '—';
         const statusColor = status === 'Active' ? '#10b981' : status === 'Exited' ? '#6b7280' : status === 'IPO' ? '#3b82f6' : '#94a3b8';
-        return `
-            <tr>
-                <td>${escapeHtml(cleanCompany)}</td>
-                <td>${escapeHtml(cleanOwner)}</td>
-                <td>${escapeHtml(cleanSector)}</td>
-                <td>${escapeHtml(cleanMarket)}</td>
-                <td>${escapeHtml(cleanHQ)}</td>
-                <td>${escapeHtml(cleanEntry)}</td>
-                <td style="text-align: center; font-weight: 600; color: ${holdingPeriod ? '#3f7de8' : '#94a3b8'}; font-size: 0.65rem;">${holdingPeriodText}</td>
-                <td style="text-align: center;"><span style="background: ${statusColor}15; color: ${statusColor}; padding: 2px 6px; border-radius: 8px; font-size: 0.55rem; font-weight: 600;">${escapeHtml(status)}</span></td>
-                <td>${escapeHtml(geography)}</td>
-            </tr>
-        `;
-    }).join('');
+        const description = company.description || company.detailed_description || '';
 
-    container.innerHTML = `
-        <div class="portfolio-table-wrapper">
-            <table class="portfolio-table">
-                <thead>
-                    <tr>
-                        <th>Company</th>
-                        <th>Owner (GP)</th>
-                        <th>Sector</th>
-                        <th>Market</th>
-                        <th>Headquarters</th>
-                        <th>Entry Year</th>
-                        <th>Holding Period</th>
-                        <th>Status</th>
-                        <th>Geography</th>
-                    </tr>
-                </thead>
-                <tbody>${rows}</tbody>
-            </table>
-        </div>
-    `;
+        const companyDomain = extractCompanyDomain(company);
+        const companyLogoSrc = getCompanyLogoUrl(company, companyDomain, cleanCompany);
+        const companyAvatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(cleanCompany)}&background=3f7de8&color=ffffff&size=64`;
+        const rawLogo = company.logo_url || '';
+        const clearbitUrl = (rawLogo && !rawLogo.includes('ui-avatars.com')) ? rawLogo : (companyDomain ? `https://logo.clearbit.com/${companyDomain}` : '');
+        const fallback2 = clearbitUrl || companyAvatarUrl;
+
+        const row = document.createElement('tr');
+        row.style.animationDelay = `${index * 0.02}s`;
+        row.innerHTML = `
+            <td class="company-name" title="${escapeHtml(description)}">
+                <span class="company-link-modal portfolio-uniform-cell" style="cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" data-slug="${escapeHtml(generateCompanySlug(company))}">
+                    <img src="${companyLogoSrc}" alt="${escapeHtml(cleanCompany)}" class="company-logo" style="width: 28px; height: 28px; object-fit: contain; border-radius: 4px;"
+                         onerror="this.onerror=null; this.src='${fallback2}'; this.onerror=function(){this.onerror=null; this.src='${companyAvatarUrl}'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='inline';};}">
+                    <i class="fas fa-building company-icon-fallback" style="display:none; width: 28px; height: 28px; align-items: center; justify-content: center;"></i>
+                    ${escapeHtml(cleanCompany)}
+                    <i class="fas fa-info-circle" style="margin-left: 4px; color: #3f7de8; opacity: 0.7; font-size: 0.75rem;"></i>
+                </span>
+            </td>
+            <td>${escapeHtml(cleanOwner)}</td>
+            <td>${escapeHtml(cleanSector)}</td>
+            <td>${escapeHtml(cleanMarket)}</td>
+            <td>${escapeHtml(cleanHQ)}</td>
+            <td>${escapeHtml(cleanEntry)}</td>
+            <td style="text-align: center; font-weight: 600; color: ${holdingPeriod ? '#3f7de8' : '#94a3b8'}; font-size: 0.65rem;">${holdingPeriodText}</td>
+            <td style="text-align: center;"><span style="background: ${statusColor}15; color: ${statusColor}; padding: 2px 6px; border-radius: 8px; font-size: 0.55rem; font-weight: 600;">${escapeHtml(status)}</span></td>
+            <td>${escapeHtml(geography)}</td>
+        `;
+
+        const companyLinkModal = row.querySelector('.company-link-modal');
+        if (companyLinkModal) {
+            const slug = generateCompanySlug(company);
+            companyLinkModal.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                window.location.href = `/company/${slug}`;
+            });
+            companyLinkModal.addEventListener('mouseenter', function() {
+                companyLinkModal.style.color = '#667eea';
+                companyLinkModal.style.transform = 'translateX(4px)';
+                companyLinkModal.style.transition = 'all 0.3s ease';
+            });
+            companyLinkModal.addEventListener('mouseleave', function() {
+                companyLinkModal.style.color = '';
+                companyLinkModal.style.transform = 'translateX(0)';
+            });
+        }
+        tbody.appendChild(row);
+    });
+
+    tableWrapper.appendChild(table);
+    container.innerHTML = '';
+    container.appendChild(tableWrapper);
 }
 
 function getFirmSectionId(source) {
@@ -1094,7 +1136,7 @@ const COMPANY_DOMAIN_OVERRIDES = {
     're:mount': 'remount.fi',
     'netIP': 'netip.dk',
     'Ropo Capital': 'ropo.com',
-    'Circura Danmark': 'circuradanmark.dk',
+    'Circura Danmark': 'circura.dk',
     'Circura': 'circuragroup.com',
     'DLVRY': 'dlvry.se',
     'RETTA': 'innagroup.se',
@@ -1122,6 +1164,19 @@ const COMPANY_DOMAIN_OVERRIDES = {
     'NTI Group': 'ntigroup.dk',
     'XPartners': 'xpartners.se',
     'Edda Group': 'edda.dk',
+    'AGRD Partners': 'agrdpartners.com',
+    'Accru Partners': 'accrupartners.com',
+    'Acurum Group': 'acurumgroup.com',
+    'Elcor': 'elcor.dk',
+    'Oral Care': 'oralcare.se',
+    'The Nutriment Company': 'nutriment.com',
+    'itm8': 'itm8.dk',
+    'BullWall': 'bullwall.com',
+    'Init': 'initgroup.com',
+    'DANX Carousel Group': 'danxcarousel.com',
+    'Vetopia': 'vetopia.com',
+    'emagine': 'emagine.dk',
+    'Currentum': 'currentumgroup.com',
     // Altor portfolio
     'Aarke': 'aarke.com',
     'Aira': 'airahome.com',
@@ -1136,14 +1191,14 @@ const COMPANY_DOMAIN_OVERRIDES = {
     'Haarslev Industries': 'haarslev.com',
     'Hamlet Protein': 'hamletprotein.com',
     'iDeal of Sweden': 'idealofsweden.com',
-    'Imbox': 'imbox.no',
+    'Imbox': 'imbox.se',
     'Iyuno': 'iyuno.com',
     'KAEFER': 'kaefer.com',
     'Meltwater': 'meltwater.com',
     'Norican group': 'norican.com',
     "O'Learys Group": 'olearys.se',
     'OptiGroup': 'optigroup.com',
-    'Orchid Orthopedic Solutions': 'orchid-solutions.com',
+    'Orchid Orthopedic Solutions': 'orchid-ortho.com',
     'Permascand': 'permascand.com',
     'QNTM Group': 'qntm.se',
     'Raw Fury': 'rawfury.com',
@@ -1154,7 +1209,7 @@ const COMPANY_DOMAIN_OVERRIDES = {
     'Transcom': 'transcom.com',
     'Trioworld': 'trioworld.com',
     'Vianode': 'vianode.com',
-    'VTU': 'vtu-group.com',
+    'VTU': 'vtu.com',
     'Zahneins': 'zahneins.com',
     // Impilo portfolio
     'Immedica': 'immedica.com',
@@ -1185,25 +1240,153 @@ const COMPANY_DOMAIN_OVERRIDES = {
     'Cares': 'cares.no',
     'Cautus Geo': 'cautus.no',
     'Cloud Connection': 'cloudconnection.no',
-    'Cure': 'cure.agency',
-    'Dura': 'durabemanning.no',
-    'Funplays': 'funplays.no',
+    'Cure': 'cure.no',
+    'Dura': 'duragroup.se',
+    'Funplays': 'funplays.com',
     'Holy Greens': 'holygreens.se',
-    'House of Discs': 'houseofdiscs.com',
+    'House of Discs': 'latitude64.com',
     'iteam': 'iteam.no',
-    'Makeup Mekka': 'makeuomekka.no',
+    'Makeup Mekka': 'makeupmekka.no',
     'Miles': 'miles.no',
     'North Travel': 'northtravel.no',
-    'River Group': 'rivergroup.no',
-    'Ryde': 'ryde.io',
+    'River Group': 'river-group.com',
+    'Ryde': 'ryde-technology.com',
     'Stenbolaget': 'stenbolaget.se',
-    'TIND': 'tind.io'
+    'TIND': 'tind.io',
+    // Additional portfolio companies
+    'WP Westpack': 'westpack.se',
+    'Mobilhouse': 'mobilhouse.dk',
+    'Quattro Mikenti Group': 'qmg.fi',
+    'Puuilo': 'puuilo.fi',
+    'Intersport Sweden': 'intersport.se',
+    'Med Group': 'medgroup.fi',
+    'Microbas Precision': 'microbas.se',
+    'Faun Gruppen': 'faun.no',
+    'Flex IT': 'flex-it.dk',
+    'Network of Design': 'networkofdesign.com',
+    'Nordic Leisure Travel Group': 'nltg.com',
+    'Tresu': 'tresu.com',
+    'Multisoft': 'multisoft.no',
+    'IT-Total': 'it-total.no',
+    'Hermes': 'hermesas.no',
+    'Pelly Group': 'pellygroup.com',
+    'Sofigate': 'sofigate.com',
+    'Aste Helsinki': 'astehelsinki.fi',
+    'Picosun': 'picosun.com',
+    'Avidly': 'avidlyagency.com',
+    'Real Machinery': 'realmachinery.com',
+    'Touhula': 'touhula.fi',
+    'Polystar': 'polystar.com',
+    'Fluido': 'fluido.com',
+    'Idean Enterprises': 'idean.com',
+    'Dechra Pharmaceuticals': 'dechrapharmaceuticals.com',
+    'Advanced MedAesthetic Partners': 'advancedmedaesthetic.com',
+    'Talentium': 'talentium.fi',
+    'Icon Group': 'icongroup.com.au',
+    'CFC': 'cfcunderwriting.com',
+    'OEM International': 'oeminternational.se',
+    'HQ': 'hq.se',
+    'Acacium': 'acaciumgroup.com',
+    'Lobster': 'lobster.es',
+    'VisionSense Technologies': 'visionsense.com',
+    'GEDH': 'groupe-edh.com',
+    'IM Global': 'imgp.com',
+    'IM Global Partner': 'imgp.com',
+    'iM Global Partner': 'imgp.com',
+    'Seventeen Group': 'seventeengroup.co.uk',
+    'IVC Evidensia': 'ivcevidensia.com',
+    'Ludvig & Co': 'ludvig.se',
+    'Ondal Medical Systems': 'ondal.com',
+    'Enerco': 'enerco.se',
+    'Wishcard': 'wishcard.de',
+    'Atlanda Health Group': 'atlanda.se',
+    'Batisante': 'batisante.com',
+    'Goodlife Foods': 'goodlifefoods.com',
+    'MDT Technologies': 'mdt-technologies.com',
+    'Medica': 'medica.co.uk',
+    'Mupro': 'mupro.de',
+    'Ondal': 'ondal.com',
+    'Coin4 Solutions': 'coin4solutions.com',
+    'Datapart': 'datapart.fi',
+    'Eqqo': 'eqqo.com',
+    'Ipsum': 'ipsum.com',
+    'Sofia Developpement': 'sofiadeveloppement.com',
+    'Remazing': 'remazing.com',
+    'Implema': 'implema.fi',
+    'Nordic Drives Group': 'nordicdrives.com',
+    'Ametal': 'ametal.fi',
+    'Flow Fastighetsvärden': 'flowfastigheter.se',
+    'Autocirc': 'autocirc.com',
+    'Cary Group': 'carygroup.com',
+    'Equipe Zorgbedrijven': 'equipezorgbedrijven.nl',
+    'Hjo Installation': 'hjoinstallation.se',
+    'One Inc': 'oneinc.com',
+    'Resman': 'resman.fi',
+    'Team Relocations': 'teamrelocations.com',
+    'Alligo': 'alligo.se',
+    'Momentum Group': 'momentumgroup.se',
+    'Nobia': 'nobia.com',
+    'Micropower': 'micropower.no',
+    'G&O': 'go.no',
+    'Stronger': 'stronger.se',
+    'Link Logistics': 'linklogistics.no',
+    'Hoyer': 'hoyer.com',
+    'KVD': 'kvd.no',
+    'Presis Infra': 'presisinfra.no',
+    'G-CON Manufacturing': 'g-conmanufacturing.com',
+    'Myneva': 'myneva.fi',
+    'Komet': 'komet.at',
+    'Primutec': 'primutec.nl',
+    'May Health': 'may-health.com',
+    'BFC': 'bfcgroup.com',
+    'Bluu Unit': 'bluuunit.com',
+    'DYQIDAG': 'dyqidag.no',
+    'Geia Group': 'geiagroup.no',
+    'Inwerk': 'inwerk.com',
+    'Kährs': 'kahrs.com',
+    'Kinios': 'kinios.com',
+    'Medon': 'medon.no',
+    'Nuent': 'nuent.no',
+    'Prodriven': 'prodriven.com',
+    'Schock': 'schock.com',
+    'Unica': 'unica.no',
+    'Aleris': 'aleris.com',
+    'Arvos Group': 'arvos-group.com',
+    'Esperi': 'esperi.com',
+    'HiQ': 'hiq.se',
+    'Leadec': 'leadec.com',
+    'Neprune': 'neprune.com',
+    'Nuent Group': 'nuent.no',
+    'Lakrids by Bülow': 'lakridsbybulow.com',
+    'Origo': 'origo.dk',
+    'Restolution': 'restolution.de',
+    'Apoteka': 'apoteka.no',
+    'Autie': 'autie.com',
+    'Bildeler': 'bildeler.no',
+    'Carla': 'carla.se',
+    'Cleanwatts': 'cleanwatts.energy',
+    'Educations Media Group': 'emg.se',
+    'Indevis': 'indevis.de',
+    'Innonature': 'innonature.com',
+    'Instabee': 'instabee.com',
+    'Once Upon': 'onceupon.com',
+    'Pflegecampus': 'pflegecampus.de',
+    'Porterbuddy': 'porterbuddy.com',
+    'Press Ganey': 'pressganey.com',
+    'Purity': 'purity.no',
+    'Remember': 'remember.dk',
+    'Ropro': 'ropro.no'
 };
 
 function extractCompanyDomain(company) {
     const name = (company && company.company) ? String(company.company).trim() : '';
-    if (name && COMPANY_DOMAIN_OVERRIDES[name]) {
-        return COMPANY_DOMAIN_OVERRIDES[name];
+    if (name) {
+        if (COMPANY_DOMAIN_OVERRIDES[name]) return COMPANY_DOMAIN_OVERRIDES[name];
+        // Case-insensitive fallback for name variants
+        const nameLower = name.toLowerCase();
+        for (const key of Object.keys(COMPANY_DOMAIN_OVERRIDES)) {
+            if (key.toLowerCase() === nameLower) return COMPANY_DOMAIN_OVERRIDES[key];
+        }
     }
     const websiteDomain = extractDomain((company && company.website) || '');
     if (websiteDomain) return websiteDomain;

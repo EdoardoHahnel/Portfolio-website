@@ -20,7 +20,7 @@
       "source": "Amplio",
       "headquarters": "Stockholm, Sweden",
       "status": "Active",
-      "detailed_description": "Leading Swedish specialist within regulatory compliance and personnel security. Amplio invested in 2025."
+      "detailed_description": "S R Intelligence (SRI) is a leading Swedish specialist within regulatory compliance and personnel security. The company provides background checks, security vetting, and compliance services to employers across Sweden. Amplio invested in 2025."
     },
     {
       "company": "Tedge",
@@ -31,7 +31,7 @@
       "source": "Amplio",
       "headquarters": "Örebro, Sweden",
       "status": "Active",
-      "detailed_description": "Platform within energy optimisation. Amplio invested in 2023."
+      "detailed_description": "Tedge is a Swedish platform company within energy optimization. The Örebro-based company helps businesses and property owners reduce energy consumption and costs through smart monitoring and control solutions. Amplio invested in 2023."
     },
     {
       "company": "Co-native",
@@ -42,7 +42,7 @@
       "source": "Amplio",
       "headquarters": "Sweden",
       "status": "Active",
-      "detailed_description": "Leading group of cloud specialists in Sweden. Amplio invested in 2022."
+      "detailed_description": "Co-native is a leading Swedish group of cloud specialists. The company helps organizations with cloud migration, Microsoft Azure, and modern software development, combining deep technical expertise with business understanding. Amplio invested in 2022."
     },
     {
       "company": "SELATEK",
@@ -53,7 +53,7 @@
       "source": "Amplio",
       "headquarters": "Hässleholm, Sweden",
       "status": "Active",
-      "detailed_description": "Leading provider of security solutions, electrical installation & automation. Amplio invested in 2021."
+      "detailed_description": "SELATEK is a leading Nordic provider of security solutions, electrical installation, and automation. Headquartered in Hässleholm, Sweden, the company serves commercial and industrial customers with integrated security systems, electrical contracting, and building automation. Amplio invested in 2021."
     },
     {
       "company": "Multisoft",
@@ -64,7 +64,7 @@
       "source": "Amplio",
       "headquarters": "Sweden",
       "status": "Active",
-      "detailed_description": "Low code software provider. Under Segulah V, managed by Amplio."
+      "detailed_description": "Multisoft is a Swedish low-code software provider enabling rapid application development. The company's platform allows businesses to build custom applications without extensive coding. Under Segulah V, managed by Amplio since 2021."
     },
     {
       "company": "IT-Total",
@@ -75,7 +75,7 @@
       "source": "Amplio",
       "headquarters": "Sweden",
       "status": "Active",
-      "detailed_description": "IT infrastructure services provider. Under Segulah V, managed by Amplio."
+      "detailed_description": "IT-Total is a Nordic IT infrastructure services provider. The company delivers managed IT, cloud services, and infrastructure solutions to mid-market customers. Under Segulah V, managed by Amplio since 2019."
     },
     {
       "company": "Hermes",
@@ -86,7 +86,7 @@
       "source": "Amplio",
       "headquarters": "Sweden",
       "status": "Active",
-      "detailed_description": "Provider of advanced medical imaging software. Under Segulah V, managed by Amplio."
+      "detailed_description": "Hermes is a provider of advanced medical imaging software for the Nordic healthcare sector. The company's solutions support radiologists and clinicians with diagnostic imaging and workflow tools. Under Segulah V, managed by Amplio since 2016."
     },
     {
       "company": "Pelly Group",
@@ -97,7 +97,7 @@
       "source": "Amplio",
       "headquarters": "Jönköping, Sweden",
       "status": "Active",
-      "detailed_description": "Manufacturer of functional storage components for the kitchen and wardrobe markets. Under Segulah V, managed by Amplio."
+      "detailed_description": "Pelly Group is a manufacturer of functional storage components for the kitchen and wardrobe markets. Headquartered in Jönköping, Sweden, the company produces drawer systems, interior fittings, and storage solutions for furniture manufacturers and retailers. Under Segulah V, managed by Amplio since 2018."
     },
     {
       "company": "Norstat",
@@ -17902,137 +17902,6 @@
       "logo_url": "https://logo.clearbit.com/alvogen.com"
     },
     {
-      "company": "Avinode",
-      "sector": "Technology",
-      "fund": "CAMP Systems",
-      "market": "Sweden",
-      "entry": "2014",
-      "source": "CAMP Systems",
-      "headquarters": "Gothenburg, Sweden",
-      "website": "https://www.avinode.com",
-      "enriched": true,
-      "research_date": "2025-10-20T15:00:00",
-      "detailed_description": "Avinode is the world's leading marketplace and business management software provider for private aviation. The company's platform connects aircraft operators, brokers, and charter customers, facilitating the booking and management of private jet flights globally. Avinode provides comprehensive solutions including flight booking, fleet management, customer relationship management, and operational tools. The platform processes thousands of flight requests daily, serving over 3,000 aviation professionals across 180+ countries, making private aviation more accessible and efficient.",
-      "founded_year": "2003",
-      "employee_count_detailed": "~250 employees",
-      "revenue": "€50-70 million",
-      "revenue_growth": "Strong double-digit growth driven by platform adoption and transaction volume",
-      "ceo": "Mark Wainwright",
-      "leadership_team": [
-        {
-          "name": "Mark Wainwright",
-          "role": "CEO",
-          "background": "Extensive experience in aviation technology and marketplace businesses"
-        },
-        {
-          "name": "Product and Technology Leadership",
-          "role": "Executive Team",
-          "background": "Software and aviation industry professionals driving platform innovation"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Avinode Marketplace",
-          "description": "Global online marketplace connecting charter brokers with aircraft operators, enabling real-time aircraft availability searches, instant quotes, and booking confirmations. The platform facilitates transparent price discovery and efficient matching."
-        },
-        {
-          "name": "Avinode Business Management",
-          "description": "Comprehensive software suite for aircraft operators including flight scheduling, crew management, maintenance tracking, and financial management tools optimized for private aviation operations."
-        },
-        {
-          "name": "Avinode Broker Suite",
-          "description": "CRM and booking management tools designed specifically for charter brokers, streamlining client relationships, quote generation, and booking workflows."
-        },
-        {
-          "name": "Avinode Schedule",
-          "description": "Advanced scheduling and dispatch software for flight operations, optimizing aircraft utilization and crew assignments."
-        }
-      ],
-      "technology_stack": [
-        "Cloud-based SaaS platform",
-        "Marketplace matching algorithms",
-        "Real-time data synchronization",
-        "Mobile applications (iOS/Android)",
-        "API integrations with aviation systems",
-        "Business intelligence and analytics",
-        "Payment processing infrastructure"
-      ],
-      "recent_news": [
-        {
-          "date": "2017",
-          "headline": "EQT VII investment to accelerate product development and global expansion",
-          "impact": "Growth capital"
-        },
-        {
-          "date": "2019",
-          "headline": "Surpassed 3,000 members on global marketplace platform",
-          "impact": "Network effects"
-        },
-        {
-          "date": "2020-2023",
-          "headline": "Strong growth in platform usage and transaction volumes post-pandemic",
-          "impact": "Market recovery"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2003",
-          "event": "Company Founded",
-          "description": "Avinode established to digitize private aviation charter booking process"
-        },
-        {
-          "year": "2010-2016",
-          "event": "Platform Growth",
-          "description": "Built global network of operators and brokers, becoming industry standard"
-        },
-        {
-          "year": "2017",
-          "event": "EQT VII Investment",
-          "description": "Partnership with EQT to scale platform and enhance product offerings"
-        },
-        {
-          "year": "2018-2024",
-          "event": "Product Expansion",
-          "description": "Launched comprehensive business management tools and expanded marketplace functionality"
-        }
-      ],
-      "competitive_advantages": [
-        "Dominant market position as largest global private aviation marketplace",
-        "Network effects with 3,000+ members creating liquidity and value",
-        "Mission-critical software embedded in daily operations",
-        "High switching costs due to operational integration",
-        "Comprehensive product suite serving entire charter ecosystem",
-        "Strong brand recognition in private aviation industry",
-        "First-mover advantage and 20+ years of market data"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "SaaS subscription fees from operators and brokers",
-          "Marketplace transaction fees",
-          "Premium feature add-ons",
-          "API and integration services"
-        ],
-        "customer_segments": [
-          "Aircraft operators and charter companies",
-          "Charter brokers",
-          "Flight management companies",
-          "Aircraft owners"
-        ],
-        "value_proposition": "Leading marketplace and business management platform that increases booking efficiency, improves aircraft utilization, and reduces empty leg flights while providing comprehensive operational tools for the private aviation industry"
-      },
-      "strategic_priorities": [
-        "Grow marketplace liquidity and transaction volumes",
-        "Expand business management software adoption",
-        "Enhance platform features and user experience",
-        "Develop data analytics and intelligence capabilities",
-        "Expand into adjacent aviation services and segments",
-        "Strengthen API ecosystem and partner integrations",
-        "Increase penetration in North American market"
-      ],
-      "investment_thesis": "Avinode benefits from structural growth in private aviation driven by increasing demand for flexible, personalized travel and growing high-net-worth populations. The company's dominant marketplace position with strong network effects creates a defensible moat. High switching costs and mission-critical nature of software drive recurring revenue and retention. Expansion from marketplace to comprehensive business management platform increases value proposition and revenue per customer. Significant runway for market penetration and product attach rate improvement. Asset-light SaaS model with high margins and scalability.",
-      "logo_url": "https://logo.clearbit.com/avinode.com"
-    },
-    {
       "company": "Banijay Group",
       "sector": "Media",
       "fund": "EQT",
@@ -22399,7 +22268,7 @@
       ],
       "exit_status": "Active",
       "current_status": "Portfolio company",
-      "logo_url": "https://logo.clearbit.com/east.se"
+      "logo_url": "https://logo.clearbit.com/enerco.se"
     },
     {
       "company": "Enerco Group",
@@ -33801,7 +33670,7 @@
       "website": "https://www.aderian.com",
       "enriched": true,
       "research_date": "2025-02-26T12:00:00",
-      "detailed_description": "Leading IT services provider to mid-sized customers in Sweden and Norway. Managed IT, cloud and digital transformation.",
+      "detailed_description": "Aderian is a leading IT services provider to mid-sized customers in Sweden and Norway. The company offers managed IT, cloud migration, digital transformation, and cybersecurity services, helping businesses modernize their technology infrastructure. Adelis invested in 2023.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -33892,7 +33761,7 @@
       "recent_developments": [],
       "financial_highlights": [],
       "market_position": "To be researched",
-      "logo_url": "https://logo.clearbit.com/vokstr.com"
+      "logo_url": "https://logo.clearbit.com/vokstr.no"
     },
     {
       "company": "DLVRY",
@@ -33905,7 +33774,7 @@
       "website": "https://www.dlvry.se",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "Foodservice supplier focused on the local markets",
+      "detailed_description": "DLVRY is a leading Nordic foodservice supplier headquartered in Stockholm. The company provides food and beverage products, equipment, and services to restaurants, hotels, canteens, and institutional customers across Sweden and the Nordics. Adelis acquired the company in 2021 to build a platform in the fragmented foodservice distribution market.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -33918,7 +33787,7 @@
       "recent_developments": [],
       "financial_highlights": [],
       "market_position": "To be researched",
-      "logo_url": "https://logo.clearbit.com/dlvry.com"
+      "logo_url": "https://logo.clearbit.com/dlvry.se"
     },
     {
       "company": "WP Westpack",
@@ -33931,7 +33800,7 @@
       "website": "https://www.wpwestpack.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "Custom made packaging solutions for the jewelry, watch and eyewear market. Premium packaging for luxury brands.",
+      "detailed_description": "WP Westpack is a European manufacturer of custom-made packaging solutions for the jewelry, watch, and eyewear industries. Headquartered in Antwerp, Belgium, the company produces premium packaging for luxury brands including cases, boxes, and display materials. Adelis invested in 2022.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -34711,7 +34580,7 @@
       "source": "Impilo",
       "headquarters": "Sweden",
       "status": "Active",
-      "detailed_description": "Orphan and niche specialty pharmaceuticals launch and distribution"
+      "detailed_description": "Immedica is a Nordic pharmaceutical company focused on the launch, commercialization, and distribution of orphan and niche specialty pharmaceuticals. The company brings rare disease treatments to patients across the Nordics and Europe. Impilo invested in 2018."
     },
     {
       "company": "Humana",
@@ -34722,7 +34591,7 @@
       "source": "Impilo",
       "headquarters": "Stockholm, Sweden",
       "status": "Active",
-      "detailed_description": "Leading Nordic private care provider"
+      "detailed_description": "Humana is the leading Nordic private care provider, offering elderly care, disability services, and individual and family care across Sweden. With thousands of employees, the company operates care homes and provides home care services. Impilo invested in 2019."
     },
     {
       "company": "Euro Accident",
@@ -34733,7 +34602,7 @@
       "source": "Impilo",
       "headquarters": "Stockholm, Sweden",
       "status": "Active",
-      "detailed_description": "Health-related insurance and employee wellbeing"
+      "detailed_description": "Euro Accident provides health-related insurance and employee wellbeing solutions in Sweden. The company offers occupational health services, insurance products, and wellness programs to employers. Impilo invested in 2019."
     },
     {
       "company": "Scantox",
@@ -34744,7 +34613,7 @@
       "source": "Impilo",
       "headquarters": "Lille Skensved, Denmark",
       "status": "Active",
-      "detailed_description": "Nordic pre-clinical contract research organization"
+      "detailed_description": "Scantox is a Nordic pre-clinical contract research organization (CRO) headquartered in Lille Skensved, Denmark. The company provides toxicology, safety pharmacology, and regulatory support services to pharmaceutical and chemical companies. Impilo invested in 2021."
     },
     {
       "company": "tandlægen.dk",
@@ -34755,7 +34624,7 @@
       "source": "Impilo",
       "headquarters": "Lyngby, Denmark",
       "status": "Active",
-      "detailed_description": "Leading Danish dental care chain"
+      "detailed_description": "tandlægen.dk is a leading Danish dental care chain operating clinics across Denmark. Headquartered in Lyngby, the company provides general and specialist dental care to private patients. Impilo invested in 2021."
     },
     {
       "company": "Lowenco",
@@ -34766,7 +34635,7 @@
       "source": "Impilo",
       "headquarters": "Vamdrup, Denmark",
       "status": "Active",
-      "detailed_description": "Ultra-low temperature storage for biopharma"
+      "detailed_description": "Lowenco provides ultra-low temperature storage and logistics services for the biopharma industry. Based in Vamdrup, Denmark, the company offers cold chain solutions for biologics, vaccines, and temperature-sensitive pharmaceuticals. Impilo invested in 2022."
     },
     {
       "company": "Pelago Bioscience",
@@ -34777,7 +34646,7 @@
       "source": "Impilo",
       "headquarters": "Solna, Sweden",
       "status": "Active",
-      "detailed_description": "Drug discovery CRO with CETSA-technology"
+      "detailed_description": "Pelago Bioscience is a Swedish drug discovery CRO specializing in CETSA (Cellular Thermal Shift Assay) technology. The Solna-based company helps pharma and biotech companies identify drug targets and validate mechanisms of action. Impilo invested in 2023."
     },
     {
       "company": "VaccinDirekt",
@@ -34788,7 +34657,7 @@
       "source": "Impilo",
       "headquarters": "Sweden",
       "status": "Active",
-      "detailed_description": "Largest Nordic retail vaccination provider"
+      "detailed_description": "VaccinDirekt is the largest Nordic retail vaccination provider, offering travel vaccines and immunization services through pharmacies and healthcare outlets. The company makes vaccinations accessible to the general public. Impilo invested in 2021."
     },
     {
       "company": "Decon",
@@ -34799,7 +34668,7 @@
       "source": "Impilo",
       "headquarters": "Hyltebruk, Sweden",
       "status": "Active",
-      "detailed_description": "Power-assisted wheelchair solutions"
+      "detailed_description": "Decon develops and manufactures power-assisted wheelchair solutions in Hyltebruk, Sweden. The company's products enhance mobility and independence for wheelchair users. Impilo invested in 2023."
     },
     {
       "company": "Avia Pharma",
@@ -34810,7 +34679,7 @@
       "source": "Impilo",
       "headquarters": "Stockholm, Sweden",
       "status": "Active",
-      "detailed_description": "North European OTC/Rx platform"
+      "detailed_description": "Avia Pharma is a North European platform for over-the-counter (OTC) and prescription (Rx) pharmaceuticals. The Stockholm-based company focuses on niche products and regional brands. Impilo invested in 2024."
     },
     {
       "company": "Stille",
@@ -34821,7 +34690,7 @@
       "source": "Impilo",
       "headquarters": "Eskilstuna, Sweden",
       "status": "Active",
-      "detailed_description": "Surgical instruments and surgical tables"
+      "detailed_description": "Stille is a Swedish manufacturer of surgical instruments and surgical tables. Based in Eskilstuna, the company has supplied the global healthcare sector since 1848. Impilo acquired the company from Demant in 2024."
     },
     {
       "company": "Qufora",
@@ -34832,7 +34701,7 @@
       "source": "Impilo",
       "headquarters": "Allerød, Denmark",
       "status": "Active",
-      "detailed_description": "TAI products and collecting devices"
+      "detailed_description": "Qufora develops and manufactures transanal irrigation (TAI) products and collecting devices for patients with bowel dysfunction. The Danish MedTech company, based in Allerød, improves quality of life for people with spinal cord injury, multiple sclerosis, and other conditions. Impilo invested in 2024."
     },
     {
       "company": "Oticon Medical",
@@ -34843,7 +34712,7 @@
       "source": "Impilo",
       "headquarters": "Sweden",
       "status": "Active",
-      "detailed_description": "Bone-anchored hearing solutions, acquired from Demant"
+      "detailed_description": "Oticon Medical provides bone-anchored hearing solutions for people with conductive hearing loss, mixed hearing loss, or single-sided deafness. Impilo acquired the business from Demant in 2025."
     },
     {
       "company": "Bekk",
@@ -34854,7 +34723,7 @@
       "source": "Axcel",
       "headquarters": "Oslo, Norway",
       "status": "Active",
-      "detailed_description": "Technology consultancy"
+      "detailed_description": "Bekk is a Norwegian technology consultancy specializing in digital transformation, software development, and agile delivery."
     },
     {
       "company": "LS Retail",
@@ -34875,7 +34744,8 @@
       "entry": "2025",
       "source": "Axcel",
       "headquarters": "Sweden",
-      "status": "Active"
+      "status": "Active",
+      "detailed_description": "AGRD Partners is a Swedish legal group formed in 2025 by six leading business law firms. The group operates with around 250 professionals across eight offices, focusing on corporate and commercial legal advice. Backed by Axcel."
     },
     {
       "company": "Nordic Tyre Group",
@@ -34896,7 +34766,8 @@
       "entry": "2024",
       "source": "Axcel",
       "headquarters": "Sweden",
-      "status": "Active"
+      "status": "Active",
+      "detailed_description": "Accru Partners is an alliance of independent accounting, tax, audit, and advisory firms headquartered in Sweden, with 33 partner firms and over 800 employees across the Nordics and Europe."
     },
     {
       "company": "Acurum Group",
@@ -34906,7 +34777,8 @@
       "entry": "2024",
       "source": "Axcel",
       "headquarters": "Sweden",
-      "status": "Active"
+      "status": "Active",
+      "detailed_description": "Acurum Group is a Nordic provider of property well-being services. The company offers testing, inspection, and certification related to indoor air quality, moisture, and piping. Established by Axcel in 2024."
     },
     {
       "company": "Elcor",
@@ -34916,7 +34788,8 @@
       "entry": "2023",
       "source": "Axcel",
       "headquarters": "Denmark",
-      "status": "Active"
+      "status": "Active",
+      "detailed_description": "Elcor is Northern Europe leading full-service supplier of electrical panels and intelligent energy solutions, with over 1,100 employees across 13 sites in the Nordics."
     },
     {
       "company": "Progrits",
@@ -34926,7 +34799,8 @@
       "entry": "2023",
       "source": "Axcel",
       "headquarters": "Sweden",
-      "status": "Active"
+      "status": "Active",
+      "detailed_description": "Progrits is a Swedish technology company providing software solutions for businesses. The company supports organizations with digital tools and platforms to improve operations, efficiency, and growth. Axcel invested in 2023."
     },
     {
       "company": "XPartners",
@@ -34936,7 +34810,8 @@
       "entry": "2023",
       "source": "Axcel",
       "headquarters": "Sweden",
-      "status": "Active"
+      "status": "Active",
+      "detailed_description": "XPartners is a Swedish business services company providing consulting and advisory services. The company supports corporate development, operational excellence, and strategic initiatives. Axcel invested in 2023."
     },
     {
       "company": "Oral Care",
@@ -34946,7 +34821,8 @@
       "entry": "2022",
       "source": "Axcel",
       "headquarters": "Sweden",
-      "status": "Active"
+      "status": "Active",
+      "detailed_description": "Oral Care is a Swedish dental care chain founded in 1989, operating 31 clinics and providing home dental care in 8 regions. Acquired by Axcel in 2022."
     },
     {
       "company": "The Nutriment Company",
@@ -34956,7 +34832,8 @@
       "entry": "2022",
       "source": "Axcel",
       "headquarters": "Sweden",
-      "status": "Active"
+      "status": "Active",
+      "detailed_description": "The Nutriment Company is Europe leading provider of natural premium pet nutrition with Swedish headquarters, with 10+ brands and 16 production facilities across Europe."
     },
     {
       "company": "NTI Group",
@@ -34966,7 +34843,8 @@
       "entry": "2022",
       "source": "Axcel",
       "headquarters": "Denmark",
-      "status": "Active"
+      "status": "Active",
+      "detailed_description": "NTI Group is a Danish technology company providing IT solutions and services across the Nordic region. The group supports businesses with infrastructure, software, cloud, and digital transformation. Axcel invested in 2022."
     },
     {
       "company": "itm8",
@@ -34976,7 +34854,8 @@
       "entry": "2022",
       "source": "Axcel",
       "headquarters": "Denmark",
-      "status": "Active"
+      "status": "Active",
+      "detailed_description": "itm8 is a Danish IT company with over 1,700 employees, serving 5,000+ customers with cloud, cybersecurity, and IT operations. A top-5 Microsoft partner in Denmark."
     },
     {
       "company": "BullWall",
@@ -34986,7 +34865,8 @@
       "entry": "2022",
       "source": "Axcel",
       "headquarters": "Denmark",
-      "status": "Active"
+      "status": "Active",
+      "detailed_description": "BullWall is a Danish cybersecurity company focused on protecting IT infrastructure from ransomware. Founded in 2016, serving over 1,000 customers across 19 countries."
     },
     {
       "company": "Init",
@@ -34996,7 +34876,8 @@
       "entry": "2022",
       "source": "Axcel",
       "headquarters": "Denmark",
-      "status": "Active"
+      "status": "Active",
+      "detailed_description": "Init is a Danish industrial IT and automation company with over 800 employees in 35 offices, delivering automation solutions for manufacturing, food, energy, and life science."
     },
     {
       "company": "DANX Carousel Group",
@@ -35006,7 +34887,8 @@
       "entry": "2022",
       "source": "Axcel",
       "headquarters": "Denmark",
-      "status": "Active"
+      "status": "Active",
+      "detailed_description": "DANX Carousel Group is a leading European logistics specialist focused on time-critical solutions, formed in 2022 through the merger of Danish DANX and UK-based Carousel Logistics."
     },
     {
       "company": "Vetopia",
@@ -35016,7 +34898,8 @@
       "entry": "2021",
       "source": "Axcel",
       "headquarters": "Denmark",
-      "status": "Active"
+      "status": "Active",
+      "detailed_description": "Vetopia is a leading European veterinary group with over 200 clinics and 3,000+ employees across nine countries. Established in 2021 through the merger of VetGruppen and EMPET."
     },
     {
       "company": "emagine",
@@ -35026,7 +34909,8 @@
       "entry": "2021",
       "source": "Axcel",
       "headquarters": "Denmark",
-      "status": "Active"
+      "status": "Active",
+      "detailed_description": "emagine is a high-end business and IT consulting company headquartered in Copenhagen, with over 900 employees across 10 countries."
     },
     {
       "company": "Edda Group",
@@ -35036,7 +34920,8 @@
       "entry": "2020",
       "source": "Axcel",
       "headquarters": "Denmark",
-      "status": "Active"
+      "status": "Active",
+      "detailed_description": "Edda Group is a Danish business services company providing specialized services across the Nordic region. The group supports corporate operations, growth, and operational excellence. Axcel invested in 2020."
     },
     {
       "company": "Currentum",
@@ -35046,7 +34931,8 @@
       "entry": "2020",
       "source": "Axcel",
       "headquarters": "Sweden",
-      "status": "Active"
+      "status": "Active",
+      "detailed_description": "Currentum is a Swedish group of installation companies operating across Sweden, Norway, and Finland, with approximately 80 companies and 350+ employees."
     },
     {
       "company": "SuperOffice",
@@ -35067,7 +34953,8 @@
       "entry": "2019",
       "source": "Axcel",
       "headquarters": "Denmark",
-      "status": "Active"
+      "status": "Active",
+      "detailed_description": "Phase One is a Danish company manufacturing medium format cameras and imaging solutions for professional photographers."
     },
     {
       "company": "Capture One",
@@ -35078,7 +34965,7 @@
       "source": "Axcel",
       "headquarters": "Denmark",
       "status": "Active",
-      "detailed_description": "Professional photo editing software"
+      "detailed_description": "Capture One is a Danish company providing professional photo editing and raw image processing software."
     },
     {
       "company": "GUBI",
@@ -35089,7 +34976,7 @@
       "source": "Axcel",
       "headquarters": "Copenhagen, Denmark",
       "status": "Active",
-      "detailed_description": "Design furniture"
+      "detailed_description": "GUBI is a Danish design furniture company founded in 1967, creating contemporary furniture and lighting for residential and commercial spaces worldwide."
     },
     {
       "company": "Nestit Group",
@@ -35404,7 +35291,7 @@
       "source": "Trill Impact",
       "headquarters": "Stockholm, Sweden",
       "status": "Active",
-      "detailed_description": "Building automation and smart buildings",
+      "detailed_description": "Nordomatic is a Nordic leader in building automation, energy optimization, and smart building solutions. The company provides integrated systems for HVAC, lighting, and energy management, helping commercial and public buildings reduce energy consumption and improve indoor climate. Acquired by Trill Impact from Adelis in 2022.",
       "logo": "https://logo.clearbit.com/nordomatic.com"
     },
     {
@@ -35416,7 +35303,8 @@
       "source": "Trill Impact",
       "headquarters": "Sweden",
       "status": "Active",
-      "logo": "https://logo.clearbit.com/ilteducation.com"
+      "logo": "https://logo.clearbit.com/ilteducation.com",
+      "detailed_description": "ILT Education is a Swedish provider of vocational and professional training, focusing on skills development for the labor market. The company offers courses and programs in areas such as healthcare, technology, and trades, supporting lifelong learning and workforce readiness."
     },
     {
       "company": "Mesalvo",
@@ -35427,7 +35315,8 @@
       "source": "Trill Impact",
       "headquarters": "Germany",
       "status": "Active",
-      "logo": "https://logo.clearbit.com/mesalvo.com"
+      "logo": "https://logo.clearbit.com/mesalvo.com",
+      "detailed_description": "Mesalvo is a German healthcare company providing medical devices and solutions. The company focuses on innovative products that improve patient outcomes and clinical workflows in healthcare settings across Europe."
     },
     {
       "company": "Allurity",
@@ -35438,7 +35327,8 @@
       "source": "Trill Impact",
       "headquarters": "Stockholm, Sweden",
       "status": "Active",
-      "logo": "https://logo.clearbit.com/allurity.com"
+      "logo": "https://logo.clearbit.com/allurity.com",
+      "detailed_description": "Allurity is a Swedish cybersecurity company offering managed detection and response (MDR) services. The company helps organizations protect against cyber threats through 24/7 monitoring, threat intelligence, and incident response capabilities."
     },
     {
       "company": "Karriere Tutor",
@@ -35449,7 +35339,8 @@
       "source": "Trill Impact",
       "headquarters": "Germany",
       "status": "Active",
-      "logo": "https://logo.clearbit.com/karrieretutor.de"
+      "logo": "https://logo.clearbit.com/karrieretutor.de",
+      "detailed_description": "Karriere Tutor is a German education technology company offering online tutoring and career coaching services. The platform connects students and professionals with qualified tutors for personalized learning and career development."
     },
     {
       "company": "Infrakraft",
@@ -35460,7 +35351,8 @@
       "source": "Trill Impact",
       "headquarters": "Sweden",
       "status": "Active",
-      "logo": "https://logo.clearbit.com/infrakraft.se"
+      "logo": "https://logo.clearbit.com/infrakraft.se",
+      "detailed_description": "Infrakraft is a Swedish infrastructure company specializing in electrical grid solutions and renewable energy integration. The company supports the transition to sustainable energy through grid modernization and smart infrastructure."
     },
     {
       "company": "Komet",
@@ -35471,7 +35363,8 @@
       "source": "Trill Impact",
       "headquarters": "Austria",
       "status": "Active",
-      "logo": "https://logo.clearbit.com/komet.at"
+      "logo": "https://logo.clearbit.com/komet.at",
+      "detailed_description": "Komet is an Austrian agricultural technology company manufacturing precision farming equipment. The company produces seed drills and tillage machinery that help farmers improve efficiency and sustainability in crop production."
     },
     {
       "company": "Delivery Associates",
@@ -35482,7 +35375,8 @@
       "source": "Trill Impact",
       "headquarters": "London, UK",
       "status": "Active",
-      "logo": "https://logo.clearbit.com/deliveryassociates.com"
+      "logo": "https://logo.clearbit.com/deliveryassociates.com",
+      "detailed_description": "Delivery Associates is a UK-based consultancy that helps governments and public sector organizations deliver results. Founded by Sir Michael Barber, the company supports implementation of major policy initiatives and public service improvements."
     },
     {
       "company": "Renewtech",
@@ -35493,7 +35387,8 @@
       "source": "Trill Impact",
       "headquarters": "Denmark",
       "status": "Active",
-      "logo": "https://logo.clearbit.com/renewtech.dk"
+      "logo": "https://logo.clearbit.com/renewtech.dk",
+      "detailed_description": "Renewtech is a Danish technology company focused on renewable energy and sustainability solutions. The company supports the green transition through innovative products and services in the clean tech sector."
     },
     {
       "company": "TT Medic",
@@ -35504,7 +35399,8 @@
       "source": "Trill Impact",
       "headquarters": "Austria",
       "status": "Active",
-      "logo": "https://logo.clearbit.com/ttmedic.com"
+      "logo": "https://logo.clearbit.com/ttmedic.com",
+      "detailed_description": "TT Medic is an Austrian MedTech company developing medical devices and healthcare solutions. The company focuses on products that improve patient care and clinical efficiency."
     },
     {
       "company": "Primutec",
@@ -35515,7 +35411,8 @@
       "source": "Trill Impact",
       "headquarters": "Netherlands",
       "status": "Active",
-      "logo": "https://logo.clearbit.com/primutec.nl"
+      "logo": "https://logo.clearbit.com/primutec.nl",
+      "detailed_description": "Primutec is a Dutch business services company. The company provides specialized services to support industrial and commercial operations in the Benelux region."
     },
     {
       "company": "Noova Energy Systems",
@@ -35526,7 +35423,8 @@
       "source": "Trill Impact",
       "headquarters": "Norway",
       "status": "Active",
-      "logo": "https://logo.clearbit.com/noova.no"
+      "logo": "https://logo.clearbit.com/noova.no",
+      "detailed_description": "Noova Energy Systems is a Norwegian company in the energy and business services sector. The company supports the transition to sustainable energy solutions in the Nordic market."
     },
     {
       "company": "Cinclus Pharma",
@@ -35537,7 +35435,8 @@
       "source": "Trill Impact",
       "headquarters": "Sweden",
       "status": "Active",
-      "logo": "https://logo.clearbit.com/cincluspharma.com"
+      "logo": "https://logo.clearbit.com/cincluspharma.com",
+      "detailed_description": "Cinclus Pharma is a Swedish pharmaceutical company developing treatments for gastrointestinal disorders. The company focuses on innovative therapies for conditions such as gastroesophageal reflux disease (GERD)."
     },
     {
       "company": "May Health",
@@ -35548,7 +35447,8 @@
       "source": "Trill Impact",
       "headquarters": "France",
       "status": "Active",
-      "logo": "https://logo.clearbit.com/may-health.com"
+      "logo": "https://logo.clearbit.com/may-health.com",
+      "detailed_description": "May Health is a French MedTech company developing digital health solutions. The company focuses on women's health and wellness through technology-enabled care."
     },
     {
       "company": "Soil Capital",
@@ -35559,7 +35459,8 @@
       "source": "Trill Impact",
       "headquarters": "Belgium",
       "status": "Active",
-      "logo": "https://logo.clearbit.com/soilcapital.com"
+      "logo": "https://logo.clearbit.com/soilcapital.com",
+      "detailed_description": "Soil Capital is a Belgian agricultural company that helps farmers transition to regenerative practices. The company provides carbon insetting programs and soil health monitoring to support sustainable agriculture."
     },
     {
       "company": "Rail-Flow",
@@ -35570,7 +35471,8 @@
       "source": "Trill Impact",
       "headquarters": "Germany",
       "status": "Active",
-      "logo": "https://logo.clearbit.com/rail-flow.com"
+      "logo": "https://logo.clearbit.com/rail-flow.com",
+      "detailed_description": "Rail-Flow is a German company providing logistics and rail freight services. The company supports sustainable transportation through rail-based freight solutions."
     },
     {
       "company": "tado°",
@@ -35581,7 +35483,8 @@
       "source": "Trill Impact",
       "headquarters": "Munich, Germany",
       "status": "Active",
-      "logo": "https://logo.clearbit.com/tado.com"
+      "logo": "https://logo.clearbit.com/tado.com",
+      "detailed_description": "tado° is a German smart home company specializing in intelligent heating and cooling control. The Munich-based company offers smart thermostats and energy management solutions that help homeowners reduce energy consumption."
     },
     {
       "company": "Open Cosmos",
@@ -35592,7 +35495,8 @@
       "source": "Trill Impact",
       "headquarters": "UK",
       "status": "Active",
-      "logo": "https://logo.clearbit.com/open-cosmos.com"
+      "logo": "https://logo.clearbit.com/open-cosmos.com",
+      "detailed_description": "Open Cosmos is a UK-based space technology company that designs, builds, and operates satellites. The company provides end-to-end space missions for Earth observation, connectivity, and scientific research."
     },
     {
       "company": "MinervaX",
@@ -35603,7 +35507,8 @@
       "source": "Trill Impact",
       "headquarters": "Copenhagen, Denmark",
       "status": "Active",
-      "logo": "https://logo.clearbit.com/minervax.com"
+      "logo": "https://logo.clearbit.com/minervax.com",
+      "detailed_description": "MinervaX is a Danish pharmaceutical company developing vaccines. The company focuses on innovative vaccine candidates for infectious diseases."
     },
     {
       "company": "Aarke",

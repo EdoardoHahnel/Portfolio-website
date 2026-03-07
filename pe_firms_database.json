@@ -2794,7 +2794,7 @@
           "name": "GEDH",
           "sector": "Business Services",
           "country": "France",
-          "logo": "https://logo.clearbit.com/gedh.com",
+          "logo": "https://logo.clearbit.com/groupe-edh.com",
           "description": "Business services",
           "entry_year": "2022-07",
           "fund": "Partnership Fund"
@@ -2803,7 +2803,7 @@
           "name": "iM Global Partner",
           "sector": "Business Services",
           "country": "France",
-          "logo": "https://logo.clearbit.com/imglobalpartner.com",
+          "logo": "https://logo.clearbit.com/imgp.com",
           "description": "Investment management services",
           "entry_year": "2021-05",
           "fund": "Partnership Fund"
@@ -2839,7 +2839,7 @@
           "name": "Seventeen Group",
           "sector": "Business Services",
           "country": "UK",
-          "logo": "https://logo.clearbit.com/seventeengroup.com",
+          "logo": "https://logo.clearbit.com/seventeengroup.co.uk",
           "description": "Business services",
           "entry_year": "2025-05",
           "fund": "Partnership Fund"
@@ -4300,7 +4300,7 @@
           "name": "GEDH",
           "sector": "Business Services",
           "country": "France",
-          "logo": "https://logo.clearbit.com/gedh.com",
+          "logo": "https://logo.clearbit.com/groupe-edh.com",
           "description": "Business services",
           "entry_year": "2022-07",
           "fund": "Partnership Fund"
@@ -4309,7 +4309,7 @@
           "name": "iM Global Partner",
           "sector": "Business Services",
           "country": "France",
-          "logo": "https://logo.clearbit.com/imglobalpartner.com",
+          "logo": "https://logo.clearbit.com/imgp.com",
           "description": "Investment management services",
           "entry_year": "2021-05",
           "fund": "Partnership Fund"
@@ -4345,7 +4345,7 @@
           "name": "Seventeen Group",
           "sector": "Business Services",
           "country": "UK",
-          "logo": "https://logo.clearbit.com/seventeengroup.com",
+          "logo": "https://logo.clearbit.com/seventeengroup.co.uk",
           "description": "Business services",
           "entry_year": "2025-05",
           "fund": "Partnership Fund"
@@ -7890,17 +7890,17 @@
         {"name": "Cares", "logo": "https://logo.clearbit.com/cares.no", "sector": "Business Services", "country": "Norway", "entry_year": "2022", "status": "Active", "detailed_description": "Cleaning and canteen services for SMEs and public sector"},
         {"name": "Cautus Geo", "logo": "https://logo.clearbit.com/cautus.no", "sector": "Technology", "country": "Norway", "entry_year": "2022", "status": "Active", "detailed_description": "Automatic monitoring of structures, land, water, climate and environment"},
         {"name": "Cloud Connection", "logo": "https://logo.clearbit.com/cloudconnection.no", "sector": "Technology", "country": "Norway", "entry_year": "2021", "status": "Active", "detailed_description": "ERP, HRM and CRM software and services"},
-        {"name": "Cure", "logo": "https://logo.clearbit.com/cure.agency", "sector": "Technology", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Leading influencer marketing platform in the Nordics"},
-        {"name": "Dura", "logo": "https://logo.clearbit.com/durabemanning.no", "sector": "Business Services", "country": "Norway", "entry_year": "2021", "status": "Active", "detailed_description": "Property maintenance services for ageing Scandinavian housing"},
-        {"name": "Funplays", "logo": "https://logo.clearbit.com/funplays.no", "sector": "Consumer", "country": "Norway", "entry_year": "2022", "status": "Active", "detailed_description": "Indoor play centres across Sweden, Norway and Denmark"},
+        {"name": "Cure", "logo": "https://logo.clearbit.com/cure.no", "sector": "Technology", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Leading influencer marketing platform in the Nordics"},
+        {"name": "Dura", "logo": "https://logo.clearbit.com/duragroup.se", "sector": "Business Services", "country": "Norway", "entry_year": "2021", "status": "Active", "detailed_description": "Property maintenance services for ageing Scandinavian housing"},
+        {"name": "Funplays", "logo": "https://logo.clearbit.com/funplays.com", "sector": "Consumer", "country": "Norway", "entry_year": "2022", "status": "Active", "detailed_description": "Indoor play centres across Sweden, Norway and Denmark"},
         {"name": "Holy Greens", "logo": "https://logo.clearbit.com/holygreens.se", "sector": "Consumer", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Fast-growing chain of salad restaurants in Sweden"},
-        {"name": "House of Discs", "logo": "https://logo.clearbit.com/houseofdiscs.com", "sector": "Consumer", "country": "Norway", "entry_year": "2023", "status": "Active", "detailed_description": "Globally leading player in disc golf market"},
+        {"name": "House of Discs", "logo": "https://logo.clearbit.com/latitude64.com", "sector": "Consumer", "country": "Norway", "entry_year": "2023", "status": "Active", "detailed_description": "Globally leading player in disc golf market"},
         {"name": "iteam", "logo": "https://logo.clearbit.com/iteam.no", "sector": "Technology", "country": "Norway", "entry_year": "2021", "status": "Active", "detailed_description": "Leading IT services player in Norwegian SME market"},
-        {"name": "Makeup Mekka", "logo": "https://logo.clearbit.com/makeuomekka.no", "sector": "Consumer", "country": "Norway", "entry_year": "2022", "status": "Active", "detailed_description": "Norwegian online retailer of vegan and cruelty-free cosmetics"},
+        {"name": "Makeup Mekka", "logo": "https://logo.clearbit.com/makeupmekka.no", "sector": "Consumer", "country": "Norway", "entry_year": "2022", "status": "Active", "detailed_description": "Norwegian online retailer of vegan and cruelty-free cosmetics"},
         {"name": "Miles", "logo": "https://logo.clearbit.com/miles.no", "sector": "Technology", "country": "Norway", "entry_year": "2021", "status": "Active", "detailed_description": "Leading Norwegian IT consulting firm"},
         {"name": "North Travel", "logo": "https://logo.clearbit.com/northtravel.no", "sector": "Consumer", "country": "Norway", "entry_year": "2022", "status": "Active", "detailed_description": "Nordic Destination Management Companies including Nordic Tours and 50 Degrees North"},
-        {"name": "River Group", "logo": "https://logo.clearbit.com/rivergroup.no", "sector": "Business Services", "country": "Norway", "entry_year": "2021", "status": "Active", "detailed_description": "Aftermarket service for water and wastewater pumps"},
-        {"name": "Ryde", "logo": "https://logo.clearbit.com/ryde.io", "sector": "Technology", "country": "Norway", "entry_year": "2022", "status": "Active", "detailed_description": "Provider of rentable e-scooters in micro mobility market"},
+        {"name": "River Group", "logo": "https://logo.clearbit.com/river-group.com", "sector": "Business Services", "country": "Norway", "entry_year": "2021", "status": "Active", "detailed_description": "Aftermarket service for water and wastewater pumps"},
+        {"name": "Ryde", "logo": "https://logo.clearbit.com/ryde-technology.com", "sector": "Technology", "country": "Norway", "entry_year": "2022", "status": "Active", "detailed_description": "Provider of rentable e-scooters in micro mobility market"},
         {"name": "Stenbolaget", "logo": "https://logo.clearbit.com/stenbolaget.se", "sector": "Consumer", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Retailer, wholesaler and manufacturer of stone products"},
         {"name": "TIND", "logo": "https://logo.clearbit.com/tind.io", "sector": "Technology", "country": "Norway", "entry_year": "2021", "status": "Active", "detailed_description": "Library management software for academic and research institutions"}
       ]
