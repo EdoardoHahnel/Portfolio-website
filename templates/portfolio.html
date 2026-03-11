@@ -121,6 +121,69 @@
     justify-content: center;
 }
 
+/* Multi-select filters */
+.filter-multiselect { position: relative; }
+.filter-multiselect .filter-multiselect-dropdown {
+    position: fixed;
+    z-index: 9999;
+}
+.filter-multiselect-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.5rem 0.75rem;
+    background: white;
+    border: 1px solid #d5e0ef;
+    border-radius: 8px;
+    color: #1e3f68;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    min-width: 120px;
+    transition: all 0.2s ease;
+}
+.filter-multiselect-btn:hover {
+    border-color: #3f7de8;
+    background: #f8fbff;
+}
+.filter-multiselect.active .filter-multiselect-btn {
+    border-color: #3f7de8;
+    background: #eaf2ff;
+}
+.filter-btn-count { font-size: 0.7rem; color: #64748b; font-weight: 500; }
+.filter-multiselect-dropdown {
+    display: none;
+    position: fixed;
+    margin-top: 4px;
+    min-width: 200px;
+    max-height: 280px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #d5e0ef;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(15, 42, 74, 0.15);
+    z-index: 9999;
+}
+.filter-multiselect.active .filter-multiselect-dropdown { display: block; }
+.filter-options-list {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+.filter-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    color: #1e3f68;
+}
+.filter-option:hover { background: #f1f6ff; }
+.filter-option input { margin: 0; cursor: pointer; }
+
 @media (max-width: 768px) {
     .portfolio-charts-grid {
         grid-template-columns: 1fr;
@@ -133,7 +196,7 @@
         gap: 0.45rem;
     }
 
-    .portfolio-filters-row .portfolio-filter-select,
+    .portfolio-filters-row .filter-multiselect-btn,
     .portfolio-filters-row .btn {
         width: 100%;
         min-width: 0;
@@ -258,24 +321,100 @@
                     </div>
                 </div>
                 <div class="controls-left portfolio-filters-row">
-                    <select id="sectorFilter" class="portfolio-filter-select">
-                        <option value="">All Sector Groups</option>
-                    </select>
-                    <select id="marketFilter" class="portfolio-filter-select">
-                        <option value="">All Markets</option>
-                    </select>
-                    <select id="hqFilter" class="portfolio-filter-select">
-                        <option value="">All HQ</option>
-                    </select>
-                    <select id="entryYearFilter" class="portfolio-filter-select">
-                        <option value="">All Entry Years</option>
-                    </select>
-                    <select id="geographyFilter" class="portfolio-filter-select">
-                        <option value="">All Geography</option>
-                        <option value="Domestic">Domestic</option>
-                        <option value="Nordic">Nordic</option>
-                        <option value="International">International</option>
-                    </select>
+                    <div class="filter-multiselect" data-filter="sector">
+                        <button type="button" class="filter-multiselect-btn" aria-haspopup="listbox">
+                            <span class="filter-btn-label">Sector</span>
+                            <span class="filter-btn-count"></span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="filter-multiselect-dropdown" role="listbox">
+                            <div id="sectorFilterOptions" class="filter-options-list"></div>
+                        </div>
+                    </div>
+                    <div class="filter-multiselect" data-filter="market">
+                        <button type="button" class="filter-multiselect-btn" aria-haspopup="listbox">
+                            <span class="filter-btn-label">Market</span>
+                            <span class="filter-btn-count"></span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="filter-multiselect-dropdown" role="listbox">
+                            <div id="marketFilterOptions" class="filter-options-list"></div>
+                        </div>
+                    </div>
+                    <div class="filter-multiselect" data-filter="hq">
+                        <button type="button" class="filter-multiselect-btn" aria-haspopup="listbox">
+                            <span class="filter-btn-label">HQ</span>
+                            <span class="filter-btn-count"></span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="filter-multiselect-dropdown" role="listbox">
+                            <div id="hqFilterOptions" class="filter-options-list"></div>
+                        </div>
+                    </div>
+                    <div class="filter-multiselect" data-filter="entryYear">
+                        <button type="button" class="filter-multiselect-btn" aria-haspopup="listbox">
+                            <span class="filter-btn-label">Entry Year</span>
+                            <span class="filter-btn-count"></span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="filter-multiselect-dropdown" role="listbox">
+                            <div id="entryYearFilterOptions" class="filter-options-list"></div>
+                        </div>
+                    </div>
+                    <div class="filter-multiselect" data-filter="holdingPeriod">
+                        <button type="button" class="filter-multiselect-btn" aria-haspopup="listbox">
+                            <span class="filter-btn-label">Holding Period</span>
+                            <span class="filter-btn-count"></span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="filter-multiselect-dropdown" role="listbox">
+                            <div id="holdingPeriodFilterOptions" class="filter-options-list">
+                                <label class="filter-option"><input type="checkbox" value="0-1"> 0–1 years</label>
+                                <label class="filter-option"><input type="checkbox" value="2-3"> 2–3 years</label>
+                                <label class="filter-option"><input type="checkbox" value="4-7"> 4–7 years</label>
+                                <label class="filter-option"><input type="checkbox" value="8-12"> 8–12 years</label>
+                                <label class="filter-option"><input type="checkbox" value="13+"> 13+ years</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-multiselect" data-filter="gp">
+                        <button type="button" class="filter-multiselect-btn" aria-haspopup="listbox">
+                            <span class="filter-btn-label">GP</span>
+                            <span class="filter-btn-count"></span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="filter-multiselect-dropdown" role="listbox">
+                            <div id="gpFilterOptions" class="filter-options-list"></div>
+                        </div>
+                    </div>
+                    <div class="filter-multiselect" data-filter="geography">
+                        <button type="button" class="filter-multiselect-btn" aria-haspopup="listbox">
+                            <span class="filter-btn-label">Geography</span>
+                            <span class="filter-btn-count"></span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="filter-multiselect-dropdown" role="listbox">
+                            <div id="geographyFilterOptions" class="filter-options-list">
+                                <label class="filter-option"><input type="checkbox" value="Domestic"> Domestic</label>
+                                <label class="filter-option"><input type="checkbox" value="Nordic"> Nordic</label>
+                                <label class="filter-option"><input type="checkbox" value="International"> International</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-multiselect" data-filter="status">
+                        <button type="button" class="filter-multiselect-btn" aria-haspopup="listbox">
+                            <span class="filter-btn-label">Status</span>
+                            <span class="filter-btn-count"></span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="filter-multiselect-dropdown" role="listbox">
+                            <div id="statusFilterOptions" class="filter-options-list">
+                                <label class="filter-option"><input type="checkbox" value="Active"> Active</label>
+                                <label class="filter-option"><input type="checkbox" value="Exited"> Exited</label>
+                                <label class="filter-option"><input type="checkbox" value="IPO"> IPO</label>
+                            </div>
+                        </div>
+                    </div>
                     <button id="clearFiltersBtn" class="btn btn-secondary btn-sm" type="button">
                         Clear
                     </button>

@@ -1439,6 +1439,80 @@ def get_ai_investors():
         return jsonify({'success': False, 'message': str(e)}), 500
 
 
+def _company_slug(c):
+    """Generate URL slug for a company"""
+    import re
+    name = (c.get('company') or '').lower().replace('&', 'and')
+    source = (c.get('source') or '').lower()
+    slug_name = re.sub(r'[^a-z0-9\s]', '', name).strip().replace(' ', '-')
+    slug_source = re.sub(r'[^a-z0-9\s]', '', source).strip().replace(' ', '-')
+    return f"{slug_name}-{slug_source}" if slug_name and slug_source else ''
+
+
+def _compute_smart_sections(company, all_companies):
+    """
+    Compute similar companies and sibling companies (same PE firm).
+    Returns dict with similar_companies, sibling_companies.
+    """
+    def _normalize(s):
+        return (s or '').lower().strip()
+
+    cur_name = _normalize(company.get('company', ''))
+    cur_source = _normalize(company.get('source', ''))
+    cur_sector = _normalize(company.get('sector', ''))
+    cur_market = _normalize(company.get('market', ''))
+
+    siblings = []
+    similar = []
+
+    for c in all_companies:
+        name = _normalize(c.get('company', ''))
+        if name == cur_name:
+            continue
+
+        slug = _company_slug(c)
+        if not slug:
+            continue
+
+        out = {
+            'company': c.get('company', ''),
+            'sector': c.get('sector', ''),
+            'market': c.get('market', ''),
+            'source': c.get('source', ''),
+            'slug': slug,
+            'website': c.get('website', ''),
+            'logo_url': c.get('logo_url') or c.get('logo', ''),
+        }
+
+        source = _normalize(c.get('source', ''))
+        sector = _normalize(c.get('sector', ''))
+        market = _normalize(c.get('market', ''))
+
+        # Sibling: same PE firm (source)
+        if source and source == cur_source:
+            siblings.append(out)
+            continue
+
+        # Similar: same sector (direct peers)
+        if sector and sector == cur_sector:
+            # Prefer same market for ranking
+            score = 2 if market and cur_market and (market in cur_market or cur_market in market) else 1
+            similar.append((score, out))
+            continue
+
+    # Sort similar by score (same market first)
+    similar.sort(key=lambda x: -x[0])
+    similar = [x[1] for x in similar[:8]]
+
+    # Limit siblings to 12
+    siblings = siblings[:12]
+
+    return {
+        'similar_companies': similar,
+        'sibling_companies': siblings,
+    }
+
+
 @app.route('/api/company/<company_slug>', methods=['GET'])
 def get_company_by_slug(company_slug):
     """
@@ -1491,9 +1565,12 @@ def get_company_by_slug(company_slug):
             slug_source = _normalize_slug(company.get('source', ''))
             expected = f"{slug_name}-{slug_source}" if slug_name and slug_source else ""
             if norm_decoded == expected:
+                smart = _compute_smart_sections(company, portfolio_storage)
                 return jsonify({
                     'success': True,
-                    'company': _prepare_company_for_response(company)
+                    'company': _prepare_company_for_response(company),
+                    'similar_companies': smart['similar_companies'],
+                    'sibling_companies': smart['sibling_companies'],
                 })
         
         # 2. Exact match (original logic)
@@ -1511,9 +1588,12 @@ def get_company_by_slug(company_slug):
                 expected_slug = f"{slug_name}-{slug_source}"
                 
                 if decoded_slug.lower() == expected_slug:
+                    smart = _compute_smart_sections(company, portfolio_storage)
                     return jsonify({
                         'success': True,
-                        'company': _prepare_company_for_response(company)
+                        'company': _prepare_company_for_response(company),
+                        'similar_companies': smart['similar_companies'],
+                        'sibling_companies': smart['sibling_companies'],
                     })
             
             # 3. Fuzzy matching
@@ -1523,9 +1603,12 @@ def get_company_by_slug(company_slug):
                 
                 if (company_name_match.lower() in company_name and 
                     source_match.lower() in source):
+                    smart = _compute_smart_sections(company, portfolio_storage)
                     return jsonify({
                         'success': True,
-                        'company': _prepare_company_for_response(company)
+                        'company': _prepare_company_for_response(company),
+                        'similar_companies': smart['similar_companies'],
+                        'sibling_companies': smart['sibling_companies'],
                     })
 
         # 4. Fallback: check pe_firms_database portfolio_companies (for FSN Capital, etc.)
@@ -1568,7 +1651,13 @@ def get_company_by_slug(company_slug):
                                 }
                                 if pc.get('website') and not company_data['website'].startswith('http'):
                                     company_data['website'] = 'https://' + company_data['website']
-                                return jsonify({'success': True, 'company': company_data})
+                                smart = _compute_smart_sections(company_data, portfolio_storage)
+                                return jsonify({
+                                    'success': True,
+                                    'company': company_data,
+                                    'similar_companies': smart['similar_companies'],
+                                    'sibling_companies': smart['sibling_companies'],
+                                })
         
         return jsonify({
             'success': False,

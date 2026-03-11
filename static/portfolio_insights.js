@@ -288,6 +288,8 @@ function normalizeEntryYear(raw) {
         const y = s.split('-')[0];
         return (y.length === 4 && /^\d{4}$/.test(y)) ? y : s;
     }
+    const yearMatch = s.match(/\b(19|20)\d{2}\b/);
+    if (yearMatch) return yearMatch[0];
     return (/^\d{4}$/.test(s) || /^\d{4}/.test(s)) ? s.substring(0, 4) : s;
 }
 

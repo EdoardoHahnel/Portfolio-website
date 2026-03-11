@@ -152,6 +152,7 @@ async function loadFirmDetail() {
         if (data.success) {
             const firm = data.firm;
             displayFirmDetail(firm);
+            loadDiscoverGps(firm.name);
         } else {
             document.getElementById('firmDetailContainer').innerHTML = `
                 <div class="error-message">
@@ -368,6 +369,20 @@ function displayFirmDetail(firm) {
                             <div style="font-size: 0.7rem; font-weight: 800; color: #059669; margin-bottom: 0.2rem;">${firm.employees}</div>
                             <div style="font-size: 0.45rem; color: #059669; font-weight: 600;">Team Size</div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Discover GPs -->
+            <div class="content-card discover-gps-card" style="margin-top: 0.5rem;">
+                <div class="content-card-header">
+                    <h3 class="content-card-title" style="font-size: 0.65rem;">
+                        <i class="fas fa-building" style="font-size: 0.6rem;"></i> Discover GPs
+                    </h3>
+                </div>
+                <div class="content-card-body">
+                    <div id="discoverGpsGrid" class="discover-gps-grid">
+                        <div class="discover-gps-loading">Loading...</div>
                     </div>
                 </div>
             </div>
@@ -2477,62 +2492,49 @@ function displayTimeline(events) {
     
     let html = '<div class="timeline-horizontal-wrapper"><div class="timeline-horizontal">';
     
+    function getTimelineCompanyLogoUrl(c) {
+        const domain = extractCompanyDomain(c);
+        return getCompanyLogoUrl(c, domain, c.company);
+    }
+    const avatarFallback = (name, size = 32) => `https://ui-avatars.com/api/?name=${encodeURIComponent(name || 'Co')}&background=3f7de8&color=fff&size=${size}`;
+    
+    const getCompanySlug = (c) => c ? ((c.company || '').toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-').replace(/&/g, 'and') + '-' + (c.source || '').toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-')).replace(/-+$/, '') : '';
+    
     events.forEach((event, index) => {
-        // Determine icon/logo to display
         let iconHtml = '';
         let logoPreviewHtml = '';
+        let markerHref = null;
         
-        if (event.company && event.company.logo_url) {
-            // Use company logo for investment events
-            iconHtml = `
-                ${window.LogoUtils ? window.LogoUtils.createRobustLogoElement(event.company.logo_url, event.company.company, '40px', '🏢', event.color) : 
-                  `<img src="${event.company.logo_url}" alt="${escapeHtml(event.company.company)}" 
-                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                   <div class="timeline-marker-fallback" style="display: none; background-color: ${event.color};">
-                       <i class="fas ${event.icon}"></i>
-                   </div>`}
-            `;
+        if (event.company) {
+            const logoUrl = getTimelineCompanyLogoUrl(event.company);
+            const avatarUrl = avatarFallback(event.company.company);
+            markerHref = (() => { const s = getCompanySlug(event.company); return (s && s !== '-') ? `/company/${s}` : null; })();
+            iconHtml = `<img src="${escapeHtml(logoUrl)}" alt="${escapeHtml(event.company.company)}" onerror="this.onerror=null; this.src='${avatarUrl}'; this.onerror=function(){this.style.display='none'; (this.nextElementSibling||{}).style.display='flex';};"><div class="timeline-marker-fallback" style="display: none; background-color: ${event.color};"><i class="fas ${event.icon}"></i></div>`;
         } else if (event.companies && event.companies.length > 0) {
-            // Show first company logo prominently
             const firstCompany = event.companies[0];
-            iconHtml = `
-                <img src="${firstCompany.logo_url}" alt="${escapeHtml(firstCompany.company)}" 
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div class="timeline-marker-fallback" style="display: none; background-color: ${event.color};">
-                    <i class="fas ${event.icon}"></i>
-                </div>
-            `;
-            
-            // Show logo preview for up to 4 companies
+            const firstLogoUrl = getTimelineCompanyLogoUrl(firstCompany);
+            const avatarUrl = avatarFallback(firstCompany.company);
+            markerHref = (() => { const s = getCompanySlug(firstCompany); return (s && s !== '-') ? `/company/${s}` : null; })();
+            iconHtml = `<img src="${escapeHtml(firstLogoUrl)}" alt="${escapeHtml(firstCompany.company)}" onerror="this.onerror=null; this.src='${avatarUrl}'; this.onerror=function(){this.style.display='none'; (this.nextElementSibling||{}).style.display='flex';};"><div class="timeline-marker-fallback" style="display: none; background-color: ${event.color};"><i class="fas ${event.icon}"></i></div>`;
             const previewCompanies = event.companies.slice(0, 4);
-            logoPreviewHtml = `
-                <div class="company-logos-preview">
-                    ${previewCompanies.map(company => `
-                        <div class="company-logo-item" title="${escapeHtml(company.company)}">
-                            ${window.LogoUtils ? window.LogoUtils.createRobustLogoElement(company.logo_url, company.company, '28px', '🏢', '#4c1d95') : 
-                              `<img src="${company.logo_url}" alt="${escapeHtml(company.company)}" 
-                                   onerror="this.style.display='none';">`}
-                        </div>
-                    `).join('')}
-                    ${event.companies.length > 4 ? `
-                        <div class="company-logo-more">+${event.companies.length - 4}</div>
-                    ` : ''}
-                </div>
-            `;
+            logoPreviewHtml = `<div class="company-logos-preview">${previewCompanies.map(company => {
+                const cLogo = getTimelineCompanyLogoUrl(company);
+                const cAvatar = avatarFallback(company.company, 36);
+                const slug = getCompanySlug(company);
+                const href = (slug && slug !== '-') ? `/company/${slug}` : '#';
+                return `<a href="${escapeHtml(href)}" class="company-logo-item" title="${escapeHtml(company.company)}"><img src="${escapeHtml(cLogo)}" alt="${escapeHtml(company.company)}" width="20" height="20" loading="lazy" onerror="this.onerror=null; this.src='${cAvatar}';"></a>`;
+            }).join('')}${event.companies.length > 4 ? `<div class="company-logo-more">+${event.companies.length - 4}</div>` : ''}</div>`;
         } else {
-            // Use icon for non-investment events
-            iconHtml = `
-                <div class="timeline-marker-icon" style="background-color: ${event.color};">
-                    <i class="fas ${event.icon}"></i>
-                </div>
-            `;
+            iconHtml = `<div class="timeline-marker-icon" style="background-color: ${event.color};"><i class="fas ${event.icon}"></i></div>`;
         }
         
         // Determine event type badge and color
         const eventTypeConfig = {
             'founding': { label: 'Founding', color: '#7c3aed', icon: 'fa-star' },
             'fundraising': { label: 'Fund', color: '#1e40af', icon: 'fa-coins' },
+            'fund': { label: 'Fund', color: '#1e40af', icon: 'fa-coins' },
             'investment': { label: 'Investment', color: '#10b981', icon: 'fa-handshake' },
+            'acquisition': { label: 'Investment', color: '#10b981', icon: 'fa-handshake' },
             'exit': { label: 'Exit', color: '#ef4444', icon: 'fa-sign-out-alt' },
             'team': { label: 'Team', color: '#a855f7', icon: 'fa-users' },
             'milestone': { label: 'Milestone', color: '#3b82f6', icon: 'fa-star' }
@@ -2541,29 +2543,36 @@ function displayTimeline(events) {
         const eventTypeBadge = config.label;
         const eventIcon = config.icon;
         
+        const companyForLink = event.company || (event.companies && event.companies.length === 1 ? event.companies[0] : null);
+        const companySlug = companyForLink ? (companyForLink.company || '').toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-').replace(/&/g, 'and') + '-' + (companyForLink.source || '').toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-') : null;
+        const companyHref = companySlug ? `/company/${companySlug}` : null;
+        const clickableAttr = companyHref ? `cursor: pointer;` : '';
+        
+        const markerTag = markerHref ? 'a' : 'div';
+        const markerAttrs = markerHref ? ` href="${escapeHtml(markerHref)}"` : '';
         html += `
-            <div class="timeline-item-horizontal" style="animation-delay: ${index * 0.05}s;">
-                <div class="timeline-marker-horizontal" style="box-shadow: 0 0 0 4px white, 0 0 0 6px ${config.color};">
+            <div class="timeline-item-horizontal" style="animation-delay: ${index * 0.05}s; ${clickableAttr}"${companyHref ? ` data-company-href="${escapeHtml(companyHref)}"` : ''}>
+                <${markerTag} class="timeline-marker-horizontal${markerHref ? ' timeline-marker-link' : ''}"${markerAttrs} style="box-shadow: 0 0 0 4px white, 0 0 0 6px ${config.color};">
                     ${iconHtml}
-                </div>
-                    <div class="timeline-content-horizontal" style="border-top-color: ${config.color};">
-                        <div class="timeline-event-type" style="background-color: ${config.color};">
-                            <i class="fas ${eventIcon}"></i> ${eventTypeBadge}
+                </${markerTag}>
+                    <div class="timeline-content-horizontal" style="border-top-color: ${config.color}; --event-color: ${config.color};">
+                        <div class="timeline-card-header" style="background: linear-gradient(135deg, ${config.color} 0%, ${config.color}dd 100%);">
+                            <span class="timeline-event-type" style="color: white; text-shadow: 0 0.5px 1px rgba(0,0,0,0.3);">
+                                <i class="fas ${eventIcon}"></i> ${eventTypeBadge}
+                            </span>
+                            <span class="timeline-year-badge" style="color: white; background: rgba(255,255,255,0.25);">${event.year}</span>
                         </div>
-                        <div class="timeline-year-horizontal" style="color: ${config.color};">${event.year}</div>
-                        <div class="timeline-title-horizontal">${escapeHtml(event.title)}</div>
-                        <div class="timeline-description-horizontal">${escapeHtml(event.description)}</div>
-                        ${event.source ? `
-                            <div style="padding: 0.2rem 0.3rem; background: #f9fafb; border-top: 1px solid #e5e7eb; font-size: 0.4rem; color: #059669; display: flex; justify-content: space-between; align-items: center;">
-                                <span><i class="fas fa-newspaper" style="margin-right: 0.2rem;"></i> ${escapeHtml(event.source)}</span>
-                                ${event.link ? `
-                                    <a href="${escapeHtml(event.link)}" target="_blank" style="color: #4c1d95; text-decoration: none;">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
-                                ` : ''}
-                            </div>
-                        ` : ''}
-                        ${logoPreviewHtml}
+                        <div class="timeline-card-body">
+                            <div class="timeline-title-horizontal">${escapeHtml(event.title)}</div>
+                            <div class="timeline-description-horizontal">${escapeHtml(event.description)}</div>
+                            ${event.source ? `
+                                <div class="timeline-source-row">
+                                    <span><i class="fas fa-newspaper"></i> ${escapeHtml(event.source)}</span>
+                                    ${event.link ? `<a href="${escapeHtml(event.link)}" target="_blank" class="timeline-source-link"><i class="fas fa-external-link-alt"></i></a>` : ''}
+                                </div>
+                            ` : ''}
+                            ${logoPreviewHtml ? `<div class="timeline-logos-section"><div class="timeline-logos-label"><i class="fas fa-building"></i> Companies</div>${logoPreviewHtml}</div>` : ''}
+                        </div>
                     </div>
             </div>
         `;
@@ -2571,6 +2580,19 @@ function displayTimeline(events) {
     
     html += '</div></div>';
     container.innerHTML = html;
+    
+    // Make timeline items with company links clickable
+    container.querySelectorAll('.timeline-item-horizontal[data-company-href]').forEach(item => {
+        const href = item.getAttribute('data-company-href');
+        if (href) {
+            item.style.cursor = 'pointer';
+            item.addEventListener('click', (e) => {
+                if (!e.target.closest('a')) {
+                    window.location.href = href;
+                }
+            });
+        }
+    });
     
     // Setup filter buttons
     const filterButtons = document.querySelectorAll('.timeline-filter-btn');
@@ -2628,8 +2650,45 @@ function displayTimeline(events) {
 }
 
 function getPortfolioCount(firmName) {
-    // This will be updated when portfolio loads
     return '...';
+}
+
+async function loadDiscoverGps(currentFirmName) {
+    const grid = document.getElementById('discoverGpsGrid');
+    if (!grid) return;
+    try {
+        const response = await fetch('/api/pe-firms');
+        const data = await response.json();
+        if (!data.success || !data.firms) {
+            grid.innerHTML = '<p style="color: #64748b; font-size: 0.7rem;">No other GPs available.</p>';
+            return;
+        }
+        const firms = Object.entries(data.firms)
+            .filter(([name]) => name !== currentFirmName)
+            .sort((a, b) => a[0].localeCompare(b[0]));
+        if (firms.length === 0) {
+            grid.innerHTML = '<p style="color: #64748b; font-size: 0.7rem;">No other GPs to discover.</p>';
+            return;
+        }
+        grid.innerHTML = firms.map(([name, meta]) => {
+            const website = (meta.website || '').replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0];
+            const domain = firmDomainOverrides[name] || website;
+            const logoUrl = domain ? `https://logo.clearbit.com/${domain}` : '';
+            const faviconUrl = domain ? `https://www.google.com/s2/favicons?domain=${domain}&sz=64` : '';
+            const avatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=3f7de8&color=fff&size=64`;
+            return `
+                <a href="/pe-firm/${encodeURIComponent(name)}" class="discover-gp-card" title="View ${escapeHtml(name)} profile">
+                    <div class="discover-gp-logo-wrap">
+                        <img src="${logoUrl || faviconUrl || avatarUrl}" alt="${escapeHtml(name)}"
+                            onerror="this.onerror=null; this.src='${faviconUrl || avatarUrl}'; this.onerror=function(){this.src='${avatarUrl}';};">
+                    </div>
+                    <div class="discover-gp-name">${escapeHtml(name)}</div>
+                </a>
+            `;
+        }).join('');
+    } catch (e) {
+        grid.innerHTML = '<p style="color: #64748b; font-size: 0.7rem;">Unable to load GPs.</p>';
+    }
 }
 
 function extractDomain(url) {
@@ -2965,10 +3024,11 @@ function escapeHtml(text) {
 .timeline-horizontal {
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
     position: relative;
     min-width: min-content;
     padding: 0 20px;
-    gap: 40px;
+    gap: 24px;
 }
 
 .timeline-horizontal::before {
@@ -3008,8 +3068,10 @@ function escapeHtml(text) {
 
 .timeline-marker-horizontal {
     position: relative;
-    width: 50px;
-    height: 50px;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
     border-radius: 50%;
     background: white;
     display: flex;
@@ -3017,16 +3079,19 @@ function escapeHtml(text) {
     justify-content: center;
     z-index: 2;
     transition: all 0.3s ease;
-    margin-bottom: 20px;
-    overflow: visible;
-    padding: 6px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    padding: 3px;
+    flex-shrink: 0;
 }
 
 .timeline-marker-horizontal img {
-    width: 100%;
-    height: 100%;
+    width: 24px !important;
+    height: 24px !important;
+    max-width: 24px !important;
+    max-height: 24px !important;
     object-fit: contain;
-    border-radius: 6px;
+    border-radius: 4px;
     display: block;
 }
 
@@ -3035,16 +3100,21 @@ function escapeHtml(text) {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
 }
 
+a.timeline-marker-link {
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+}
+
 .timeline-marker-icon {
     width: 100%;
     height: 100%;
     border-radius: 50%;
     display: flex;
     align-items: center;
-    font-size: 0.55rem;
     justify-content: center;
     color: white;
-    font-size: 28px;
+    font-size: 1rem;
 }
 
 .timeline-marker-fallback {
@@ -3055,7 +3125,7 @@ function escapeHtml(text) {
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 24px;
+    font-size: 0.9rem;
 }
 
 .timeline-multi-logos {
@@ -3076,13 +3146,75 @@ function escapeHtml(text) {
 
 .timeline-content-horizontal {
     background: white;
-    border-radius: 6px;
+    border-radius: 8px;
     padding: 0;
-    border-top: 2px solid #4c1d95;
+    border-top: 3px solid var(--event-color, #4c1d95);
+    border-left: 3px solid var(--event-color, #4c1d95);
     transition: all 0.3s ease;
     width: 100%;
+    min-height: 80px;
+    max-height: 240px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.35rem 0.5rem;
+    gap: 0.4rem;
+}
+
+.timeline-card-header .timeline-event-type {
+    font-size: 0.55rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.timeline-year-badge {
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 0.15rem 0.35rem;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+}
+
+.timeline-card-body {
+    padding: 0.4rem 0.5rem 0.5rem;
+    background: linear-gradient(180deg, #fafbfc 0%, #fff 100%);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.timeline-logos-section {
+    margin-top: 0.25rem;
+}
+
+.timeline-logos-label {
+    font-size: 0.5rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 0.2rem;
+    padding: 0 0.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.timeline-logos-label i {
+    font-size: 0.45rem;
+    opacity: 0.8;
 }
 
 .timeline-item-horizontal:hover .timeline-content-horizontal {
@@ -3090,86 +3222,169 @@ function escapeHtml(text) {
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
 }
 
-.timeline-event-type {
-    padding: 0.15rem 0.3rem;
-    color: white;
-    font-size: 0.4rem;
+/* Discover GPs - horizontal scroll */
+.discover-gps-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+}
+.discover-gps-grid::-webkit-scrollbar {
+    height: 6px;
+}
+.discover-gps-grid::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 3px;
+}
+.discover-gps-grid::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+.discover-gps-grid::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+.discover-gp-card {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.75rem 0.6rem;
+    min-width: 85px;
+    background: linear-gradient(145deg, #f8fafc, #f1f5f9);
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #1e293b;
+    font-size: 0.6rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
+    text-align: center;
+    transition: all 0.25s ease;
+}
+.discover-gp-card:hover {
+    background: linear-gradient(145deg, #eef2ff, #e0e7ff);
+    border-color: #3f7de8;
+    color: #2563eb;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(63, 125, 232, 0.2);
+}
+.discover-gp-logo-wrap {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.15rem;
+    border: 1px solid #e2e8f0;
+}
+.discover-gp-logo-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 4px;
+}
+.discover-gp-name {
+    line-height: 1.2;
+    word-break: break-word;
 }
 
-.timeline-event-type i {
-    font-size: 0.4rem;
-}
-
-.timeline-year-horizontal {
-    font-size: 0.7rem;
-    font-weight: 900;
-    color: #4c1d95;
-    margin: 0.3rem 0 0.2rem 0;
-    padding: 0 0.3rem;
-    text-align: center;
-    letter-spacing: 0.5px;
-}
 
 .timeline-title-horizontal {
-    font-size: 0.55rem;
+    font-size: 0.7rem;
     font-weight: 700;
-    color: #111827;
-    margin-bottom: 0.2rem;
-    padding: 0 0.3rem;
-    text-align: center;
-    line-height: 1.4;
+    color: #0f172a;
+    line-height: 1.35;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .timeline-description-horizontal {
-    font-size: 0.5rem;
-    color: #6b7280;
+    font-size: 0.58rem;
+    color: #475569;
     line-height: 1.4;
-    margin-bottom: 0.3rem;
-    padding: 0 0.3rem;
-    text-align: center;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+}
+
+.timeline-source-row {
+    padding: 0.2rem 0.4rem;
+    background: #f9fafb;
+    border-top: 1px solid #e5e7eb;
+    font-size: 0.5rem;
+    color: #059669;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.timeline-source-link {
+    color: #4c1d95;
+    text-decoration: none;
 }
 
 .company-logos-preview {
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
-    gap: 0.2rem;
-    padding: 0.3rem;
-    background: #f9fafb;
-    border-top: 1px solid #e5e7eb;
+    gap: 0.5rem;
+    padding: 0.35rem 0.6rem;
+    background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+    border-top: 1px solid #e2e8f0;
+    flex-shrink: 0;
+    height: 38px;
+    min-height: 38px;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
-.company-logo-item {
+a.company-logo-item {
     width: 28px;
     height: 28px;
+    min-width: 28px;
+    min-height: 28px;
+    max-width: 28px;
+    max-height: 28px;
     background: white;
-    border-radius: 4px;
-    display: flex;
+    border-radius: 50%;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 3px;
-    border: 1px solid #e5e7eb;
+    padding: 0;
+    border: 2px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     transition: all 0.2s ease;
     flex-shrink: 0;
+    overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-.company-logo-item:hover {
-    transform: scale(1.15);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-color: #8b5cf6;
+a.company-logo-item:hover {
+    transform: scale(1.12);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+    border-color: #4c1d95;
     z-index: 10;
 }
 
 .company-logo-item img {
-    width: 100%;
-    height: 100%;
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    max-width: 20px !important;
+    max-height: 20px !important;
     object-fit: contain;
     display: block;
 }
@@ -3177,8 +3392,12 @@ function escapeHtml(text) {
 .company-logo-more {
     width: 28px;
     height: 28px;
+    min-width: 28px;
+    min-height: 28px;
+    max-width: 28px;
+    max-height: 28px;
     background: linear-gradient(135deg, #4c1d95, #1e40af);
-    border-radius: 4px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3233,50 +3452,58 @@ function escapeHtml(text) {
     }
     
     .timeline-marker-horizontal {
-        width: 35px;
-        height: 35px;
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+        min-height: 28px;
+        padding: 3px;
+    }
+    .timeline-marker-horizontal img {
+        width: 20px !important;
+        height: 20px !important;
+        max-width: 20px !important;
+        max-height: 20px !important;
     }
     
     .timeline-marker-icon {
         font-size: 0.5rem;
     }
     
-    .timeline-year-horizontal {
-        font-size: 22px;
-        margin: 12px 0 10px 0;
+    .timeline-year-badge {
+        font-size: 0.6rem;
     }
     
     .timeline-title-horizontal {
-        font-size: 0.5rem;
-        padding: 0 0.3rem;
+        font-size: 0.65rem;
     }
     
     .timeline-description-horizontal {
-        font-size: 0.45rem;
-        padding: 0 0.3rem;
-        margin-bottom: 0.25rem;
+        font-size: 0.52rem;
     }
     
-    .timeline-event-type {
-        font-size: 9px;
-        padding: 6px 12px;
-    }
-    
-    .company-logo-item,
-    .company-logo-more {
-        width: 24px;
-        height: 24px;
+    .timeline-card-header .timeline-event-type {
+        font-size: 0.5rem;
     }
     
     .company-logos-preview {
-        padding: 0.25rem;
-        gap: 0.15rem;
+        height: 34px;
+        min-height: 34px;
+        gap: 0.35rem;
+        padding: 0.2rem 0.4rem;
+    a.company-logo-item,
+    .company-logo-more {
+        width: 24px;
+        height: 24px;
+        min-width: 24px;
+        min-height: 24px;
+        max-width: 24px;
+        max-height: 24px;
     }
-    
-    .timeline-marker-horizontal {
-        width: 45px;
-        height: 45px;
-        padding: 5px;
+    .company-logo-item img {
+        width: 18px !important;
+        height: 18px !important;
+        max-width: 18px !important;
+        max-height: 18px !important;
     }
 }
 </style>

@@ -6,7 +6,7 @@
       "website": "https://eqtgroup.com",
       "headquarters": "Stockholm, Sweden",
       "founded": 1994,
-      "aum": "€220 billion",
+      "aum": "~€267 billion",
       "employees": "1,400+",
       "offices": [
         "Stockholm",
@@ -15,14 +15,17 @@
         "Hong Kong",
         "Singapore",
         "Frankfurt",
+        "Munich",
         "Copenhagen",
-        "Oslo"
+        "Oslo",
+        "Helsinki"
       ],
-      "description": "EQT is a purpose-driven global investment organization focused on active ownership strategies. With a Nordic heritage and global reach, EQT has approximately EUR 220 billion in total assets under management across multiple strategies including Private Capital, Real Assets, and Credit.",
+      "description": "EQT is a purpose-driven global investment organization with 30-year track record and Nordic heritage. ~€267bn AUM; 300+ portfolio companies. Largest alternative investment platform in Europe. Strategies: Private Capital (Equity, Growth, Ventures, Healthcare, Life Sciences, Future), Real Assets (Infrastructure, Real Estate), Credit, Private Wealth. Acquired Coller Capital (2025). Listed Nasdaq Stockholm.",
       "investment_focus": {
         "sectors": [
           "Healthcare",
           "Technology",
+          "Industrial Technology",
           "Services",
           "Infrastructure",
           "Real Estate"
@@ -104,11 +107,11 @@
         }
       ],
       "fundraising": {
-        "current_fund": "EQT XI (€22B, closed 2024), EQT Future (€3B impact, closed 2024)",
-        "next_fund": "Ongoing deployment across Private Capital, Real Assets, Credit",
-        "strategy": "Global multi-strategy; large-cap buyouts, growth equity, infrastructure, impact"
+        "current_fund": "EQT XI (€23B target, closed 2024), EQT Future (€3B impact), EQT Infrastructure VI (hard cap)",
+        "next_fund": "Deployment across Private Capital, Real Assets, Credit; global diversification",
+        "strategy": "Global multi-strategy; large-cap buyouts, growth equity, ventures, infrastructure, real estate, impact; second-largest PE firm globally by capital raised"
       },
-      "recent_activity": "2025: Sells Karo Healthcare to KKR (pan-European consumer health platform). EQT Future portfolio: Anticimex, Bloom Fresh, SHL Medical. 2024: EQT Future final close €3bn; combined PE platform raises >€25bn across fundraisings. New Singapore office. Sustainability: carbon-neutral targets across portfolio. Strong deployment in healthcare, tech, and infrastructure."
+      "recent_activity": "2025: Acquires Coller Capital (secondaries); sells Karo Healthcare to KKR. AUM ~€267bn. EQT Future portfolio: Anticimex, Bloom Fresh, SHL Medical. EQT Infrastructure VI closed at hard cap. 300+ portfolio companies. Sustainability: carbon-neutral targets. Strong deployment in healthcare, tech, infrastructure."
     },
     "Nordic Capital": {
       "name": "Nordic Capital",
@@ -116,8 +119,8 @@
       "website": "https://www.nordiccapital.com",
       "headquarters": "Stockholm, Sweden",
       "founded": 1989,
-      "aum": "€35 billion",
-      "employees": "250+",
+      "aum": "€34 billion",
+      "employees": "280",
       "offices": [
         "Stockholm",
         "London",
@@ -130,7 +133,7 @@
         "Luxembourg",
         "Seoul"
       ],
-      "description": "Nordic Capital is a leading private equity investor in the Nordic region with a strong track record in healthcare, technology & payments, financial services, and services & industrial tech. The firm has raised eleven funds with total commitments of EUR 35 billion.",
+      "description": "Nordic Capital is a leading private equity investor founded in 1989. 13 funds raised; €34bn AUM; €29.5bn invested in 155+ companies; 98 exits. Focus: Healthcare, Technology & Payments, Financial Services, Services & Industrial Tech. 60 current portfolio companies; €18bn revenue; 83,000 employees; >420 material acquisitions. Fund XI (€9bn) and Evolution II (€2bn). 5x PEI Operational Excellence Award.",
       "investment_focus": {
         "sectors": [
           "Healthcare",
@@ -203,11 +206,11 @@
         }
       ],
       "fundraising": {
-        "current_fund": "Nordic Capital Fund XI (€9B hard cap), Evolution II (€2B hard cap, Dec 2024)",
-        "next_fund": "Deployment across Fund XI and Evolution II",
-        "strategy": "Healthcare, technology & payments, financial services, services & industrial tech; Nordic and North America"
+        "current_fund": "Fund XI (€9bn), Evolution II (€2bn, 2024), Evolution I (€1.2bn)",
+        "next_fund": "Deployment across Fund XI and Evolution funds",
+        "strategy": "Healthcare, technology & payments, financial services, services & industrial tech; Nordic and North America; operational excellence"
       },
-      "recent_activity": "2025: Agrees sale of Clario to Thermo Fisher (largest full healthcare PE exit globally 2025); Clario doubled revenue to ~$1.2B under ownership. 2024: Evolution II closes at €2B in four months (65% larger than Evolution I); 10 platform acquisitions; 4 exits including Sunrise Medical, Unisport. Portfolio ~55 companies, €17B revenue, 78k employees."
+      "recent_activity": "2025: Agrees sale of Clario to Thermo Fisher (largest healthcare PE exit); Clario doubled revenue to ~$1.2B. 2024: Evolution II closes €2bn in four months; PEI awards: Fundraise of the Year, ESG Fund of the Year. Portfolio: 60 companies, €18bn revenue, 83,000 employees. UNPRI highest score; ESG-linked credit facility."
     },
     "Triton": {
       "name": "Triton",
@@ -215,8 +218,8 @@
       "website": "https://www.triton-partners.com",
       "headquarters": "London, UK",
       "founded": 1997,
-      "aum": "€11 billion",
-      "employees": "180+",
+      "aum": "~€21 billion",
+      "employees": "150+",
       "offices": [
         "London",
         "Frankfurt",
@@ -224,7 +227,7 @@
         "Stockholm",
         "Jersey"
       ],
-      "description": "Triton is a leading European private equity firm investing in medium-sized businesses in Northern Europe. The firm focuses on building sustainable value through operational improvements and strategic development.",
+      "description": "Triton is an operationally minded European PE firm (founded 1997). ~€21bn AUM; 100+ investments; 700+ add-ons; €24bn+ portfolio revenues; 100,000+ portfolio employees. Buy Well, Build Better, Sell Growth. Accelerator Unit (50+ experts) for operational support. Sectors: Industrial Tech, Business Services, Healthcare.",
       "investment_focus": {
         "sectors": [
           "Industrial Tech",
@@ -389,13 +392,13 @@
       "logo_url": "https://logo.clearbit.com/amplio.se",
       "website": "https://www.amplio.se",
       "headquarters": "Stockholm, Sweden",
-      "founded": 2004,
+      "founded": 2024,
       "aum": "Undisclosed",
       "employees": "15+",
       "offices": [
         "Stockholm"
       ],
-      "description": "Amplio (formerly Segulah) is a Swedish private equity firm specializing in the Nordic lower mid-market. Rebranded from Segulah on 1 February 2024. The firm invests in Business Services and IT & Technology Services, with sustainability at its core through three themes: Sustainable Solutions, Digital Business Efficiency, and Smart Urbanisation. Emphasizes organic growth, buy-and-build consolidation, professionalisation, and active ownership with industrial advisory networks built over 20 years.",
+      "description": "Amplio was established in 2024 by the former Segulah team. Swedish PE firm specializing in the Nordic lower mid-market (EV typically SEK 100–500M). Invests in Business Services and IT & Technology Services; sustainability themes: Sustainable Solutions, Digital Business Efficiency, Smart Urbanisation. Amplio I is SFDR Article 8. Manages Amplio I & Segulah V. Team has +10 years of joint investing; responsible for +80 add-ons across the Nordics.",
       "investment_focus": {
         "sectors": [
           "Business Services",
@@ -404,7 +407,7 @@
         "geography": [
           "Nordic region"
         ],
-        "deal_size": "Lower mid-market",
+        "deal_size": "SEK 100–500M EV",
         "investment_type": [
           "Buy-and-build",
           "Professionalisation",
@@ -449,10 +452,11 @@
         }
       ],
       "fundraising": {
-        "current_fund": "Amplio I, Segulah V (legacy fund under management)",
-        "strategy": "Nordic lower mid-market; Business Services and IT & Technology Services"
+        "current_fund": "Amplio I (Article 8), Segulah V (legacy fund under management)",
+        "next_fund": "Deployment across Amplio I",
+        "strategy": "Nordic lower mid-market (SEK 100–500M EV); Business Services and IT & Technology Services; first institutional owner, buy-and-build"
       },
-      "recent_activity": "2025: Invests in S R Intelligence (regulatory compliance & personnel security). Divests Francks Kylindustri. 2024: Rebrands from Segulah to Amplio (Feb). Portfolio includes Tedge (energy optimisation), Co-native (cloud specialists), SELATEK (security/electrical/automation), Multisoft (low code), IT-Total (IT infrastructure), Hermes (medical imaging), Pelly Group (storage components). Recent exits: Francks (2025), NVBS (2022), Sandbäckens (2021), Conapto (2021).",
+      "recent_activity": "2025: Divests Multisoft (Mar); Tedge acquires Kylmontage (cooling), Berghogens; Invests in S R Intelligence; divests Francks Kylindustri; SELATEK acquires TSTgruppen (revenue >SEK 2bn). 2024: Rebrands from Segulah to Amplio (Feb). Portfolio: S R Intelligence, Tedge, Co-native, SELATEK, IT-Total, Hermes, Pelly Group. Exits: Multisoft, Francks, NVBS, Sandbäckens, Conapto.",
       "portfolio_companies": [
         {
           "name": "S R Intelligence (SRI)",
@@ -491,8 +495,8 @@
           "sector": "IT & Technology Services",
           "country": "Nordics",
           "entry_year": "2021",
-          "status": "Active",
-          "detailed_description": "Low code software provider (Segulah V)"
+          "status": "Divested",
+          "detailed_description": "Low code software provider (Segulah V); divested 2025"
         },
         {
           "name": "IT-Total",
@@ -521,6 +525,22 @@
       ],
       "company_updates": [
         {
+          "date": "2025-03-05",
+          "text": "Amplio divests Multisoft"
+        },
+        {
+          "date": "2025-01-20",
+          "text": "Tedge Energy acquires Kylmontage (cooling solutions)"
+        },
+        {
+          "date": "2025-10-23",
+          "text": "SELATEK acquires TSTgruppen; surpasses SEK 2bn revenue"
+        },
+        {
+          "date": "2025-09-25",
+          "text": "Tedge Energy acquires Berghogens (West Sweden)"
+        },
+        {
           "date": "2025-01-01",
           "text": "Amplio invests in S R Intelligence (SRI) – regulatory compliance and personnel security specialist"
         },
@@ -548,15 +568,16 @@
       "website": "https://www.altor.com",
       "headquarters": "Stockholm, Sweden",
       "founded": 2003,
-      "aum": "€10 billion",
-      "employees": "120+",
+      "aum": ">€12 billion",
+      "employees": "123",
       "offices": [
         "Stockholm",
         "Copenhagen",
         "Oslo",
-        "Helsinki"
+        "Helsinki",
+        "Zurich"
       ],
-      "description": "Altor is a private equity firm focused on upper mid-cap transformational investments across the Nordics, DACH and Benelux. Distinctive themes include digital/AI transformation, energy transition and decarbonisation, with growing global partnerships (e.g., WovenLight AI lab).",
+      "description": "Altor is a Nordic private equity firm founded in 2003, focused on transformational investments across the Nordics and DACH. The firm has invested in close to 100 companies and 300+ add-on acquisitions. Five offices; ~123 employees. Strong ESG commitment; four latest funds have 15-year horizons. Active across value transformations, high-growth partnerships, and selective minority stakes. Themes: digital/AI, energy transition, green transition.",
       "investment_focus": {
         "sectors": [
           "Consumer",
@@ -639,9 +660,9 @@
         }
       ],
       "fundraising": {
-        "current_fund": "Altor VI (>€3.0bn, closed Dec 2023)",
+        "current_fund": "Altor VI (>€3.0bn, closed Dec 2023); seven funds, >€12bn total committed",
         "next_fund": "Deployment across Altor VI",
-        "strategy": "Upper mid-cap transformational PE; Nordic + DACH + Benelux; partnerships with WovenLight AI"
+        "strategy": "Upper mid-cap transformational PE; Nordic + DACH; 15-year fund horizon; ESG-integrated; WovenLight AI partnership"
       },
       "company_updates": [
         {
@@ -1128,29 +1149,26 @@
       "logo_url": "https://logo.clearbit.com/litorina.se",
       "website": "https://litorina.se",
       "headquarters": "Stockholm, Sweden",
-      "founded": 2003,
-      "aum": "SEK 20 billion",
-      "employees": "40+",
+      "founded": 1998,
+      "aum": "SEK 3 billion (latest fund)",
+      "employees": "10",
       "offices": [
         "Stockholm"
       ],
-      "description": "Litorina is a Swedish private equity firm investing in medium-sized Nordic companies with strong market positions. Investment focus on Swedish lower-mid-market consumer and services; buy-and-build across digital, lifestyle and healthcare. Regular co-investments with AP funds and PE secondary investors.",
+      "description": "Litorina is a Swedish private equity firm founded in 1998 (25+ years). Invests in profitable Nordic niche market leaders with EUR 10–100M sales. 100+ years combined team experience; 50+ portfolio investments, 12 current companies. Value creation: consolidation, roll-out, international expansion. Business services and consumer sectors. Litorina playbook framework.",
       "investment_focus": {
         "sectors": [
           "Consumer",
-          "Business Services",
-          "Healthcare"
+          "Business Services"
         ],
         "geography": [
-          "Sweden",
-          "Denmark",
-          "Norway"
+          "Nordic region"
         ],
-        "deal_size": "SEK 300M - SEK 2B",
+        "deal_size": "EUR 10–100M sales",
         "investment_type": [
-          "Mid-market buyouts",
-          "Family succession",
-          "Growth capital"
+          "Lower mid-market buyouts",
+          "Buy-and-build",
+          "Family succession"
         ]
       },
       "team": [
@@ -1203,11 +1221,11 @@
         }
       ],
       "fundraising": {
-        "current_fund": "Litorina V (SEK 4.5bn, 2018 vintage)",
-        "next_fund": "Continuation fund seeking (2025) to reset valuations for select portfolio holdings",
-        "strategy": "Swedish lower-mid-market consumer and services; buy-and-build across digital, lifestyle and healthcare; regular co-investments with AP funds and PE secondary investors"
+        "current_fund": "Litorina V (SEK 3bn latest fund)",
+        "next_fund": "Continuation fund seeking (2025) to reset valuations for select holdings",
+        "strategy": "Nordic niche market leaders; EUR 10–100M sales; business services and consumer; buy-and-build; Litorina playbook"
       },
-      "recent_activity": "2025: Northclean acquires Siskon Siivous (Finland) and Forenede Service (Sweden); seeking continuation fund investors for portfolio reset. 2024: Divests Eton to EQT; sells KungSängen to consortium; Northclean acquires Clean Factory; Implema acquires CoreChange SAP/BI operations; Physical Medicine Group acquires Sørlandsparken; Digpro acquires Evado; Layer Group acquires Indoor Floor & Wall Sweden.",
+      "recent_activity": "2025: Northclean acquires Siskon Siivous (Finland) and Forenede Service (Sweden); Implema acquires CoreChange (SAP/BI). 2025: Physical Medicine Group acquires Sørlandsparken. Portfolio: Layer Group, Northclean, Implema, Digpro, Physical Medicine Group, and others. ~3,500 employees, SEK ~5bn sales across portfolio. 2024: Eton to EQT; KungSängen exit.",
       "timeline": [
         {
           "year": 2003,
@@ -1476,30 +1494,32 @@
       "logo_url": "https://logo.clearbit.com/adelisequity.com",
       "website": "https://adelisequity.com",
       "headquarters": "Stockholm, Sweden",
-      "founded": 2013,
-      "aum": "€3 billion",
-      "employees": "60+",
+      "founded": 2012,
+      "aum": "~€4.5 billion",
+      "employees": "37",
       "offices": [
         "Stockholm",
         "Oslo",
-        "Helsinki"
+        "Helsinki",
+        "Munich"
       ],
-      "description": "Adelis Equity Partners invests in leading Nordic lower mid-market companies within the B2B segment. Buy-and-build specialist in 10–150M€ EV range, Nordic + DACH + Benelux; prefers founder succession and professionalisation stories. Focus on B2B services, IT, healthcare, and sustainability solutions.",
+      "description": "Adelis Equity Partners is a growth-focused private equity firm based in the Nordics and Germany. Founded in 2012, the firm invests in small to medium-sized companies across Northern Europe (typically €10–300M revenue) in three core sectors: Healthcare & Life Science, Tech & Software, and Business Services. Track record: ~50 platform investments and 250+ add-on acquisitions since inception. Fund IV closed at €1.6bn (2025); total capital raised exceeds €4.25bn.",
       "investment_focus": {
         "sectors": [
-          "Business Services",
+          "Healthcare & Life Science",
           "Tech & Software",
-          "Healthcare & Life Sciences"
+          "Business Services"
         ],
         "geography": [
           "Nordic region",
+          "Germany",
           "Northern Europe"
         ],
-        "deal_size": "€50M - €400M",
+        "deal_size": "€10–300M revenue (typically control ~60%)",
         "investment_type": [
-          "Lower mid-market buyouts",
+          "Growth buyouts",
           "Add-on acquisitions",
-          "Growth capital"
+          "Founder succession"
         ]
       },
       "team": [
@@ -1571,14 +1591,14 @@
       "fundraising": {
         "current_fund": "Adelis Fund IV (€1.6bn, closed 2025); Fund III (€932m, 2021)",
         "next_fund": "Deployment across Fund IV",
-        "strategy": "Buy-and-build specialist in €10–150M EV range; Nordic + DACH + Benelux; B2B services, IT, healthcare, sustainability; Munich office (2023)"
+        "strategy": "Growth buyouts in €10–300M revenue companies; Nordic + Germany; Healthcare & Life Science, Tech & Software, Business Services; Munich office (2023)"
       },
       "recent_activity": "2025: Fund IV closes at €1.6bn. Acquires Retta from Altor. 2024: Forms Cedra (DK/NO technical installation); Bryntum partnership; EITCO acquisition; exits Europa Biosite. Munich office expansion.",
       "timeline": [
         {
-          "year": 2013,
+          "year": 2012,
           "event": "Adelis Equity Partners founded",
-          "description": "Founded in Stockholm, Sweden by Jan Åström, Joel Russell, and Anders Björk"
+          "description": "Founded in Stockholm, Sweden"
         },
         {
           "year": 2014,
@@ -2558,12 +2578,12 @@
       "website": "https://www.ratos.com",
       "headquarters": "Stockholm, Sweden",
       "founded": 1866,
-      "aum": "SEK 15 billion",
+      "aum": "SEK 19 billion net sales (portfolio)",
       "employees": "90+",
       "offices": [
         "Stockholm"
       ],
-      "description": "Ratos is a Swedish private equity firm with 150+ years of history. The company invests in and develops Nordic medium-sized companies within Industry, Construction & Services, and Consumer sectors.",
+      "description": "Ratos is a listed Swedish investment company (Nasdaq Stockholm) with 150+ years of history. Owns and develops listed and unlisted Nordic small and mid-sized companies. 14 companies; 9,100 employees (ex Aibel); SEK 19bn net sales; SEK 1.9bn adjusted EBITA (2025). Industry, Construction & Services, Consumer. Sustainability integrated. Subsidiaries remain independent.",
       "investment_focus": {
         "sectors": [
           "Industrial",
@@ -2607,7 +2627,7 @@
         "next_fund": "Ongoing deployment across construction, industry, services",
         "strategy": "Active ownership in Nordic mid-market; construction, industry, consumer, business services"
       },
-      "recent_activity": "2025: Ongoing Sentia deployment. 2024: Consolidates HENT and SSEA Group under Sentia (leading Nordic construction group); HENT ~NOK 9.5bn sales, SSEA ~SEK 2bn; joint projects include Sara Kulturhus, Ersta Hospital. Listed structure enables flexible hold periods."
+      "recent_activity": "2026: HL Display acquires Deinzer Holding; Annual and Sustainability Report 2025. 2025: Jonas Magnusson new CEO at HL Display. Listed structure enables flexible hold periods. Portfolio: 14 companies across industry, construction, services, consumer."
     },
     "Summa Equity": {
       "name": "Summa Equity",
@@ -2615,14 +2635,14 @@
       "website": "https://summaequity.com",
       "headquarters": "Stockholm, Sweden",
       "founded": 2016,
-      "aum": "€4 billion",
-      "employees": "80+",
+      "aum": "~€4 billion",
+      "employees": "~80",
       "offices": [
         "Stockholm",
         "London",
         "Copenhagen"
       ],
-      "description": "Summa Equity is a purpose-driven private equity firm investing in companies that contribute to solving the UN Sustainable Development Goals. Thematic impact investor around UN SDGs (Circular, Tech-enabled, Changing Demographics). Flagship Article 9 fund with verified CO₂ impact model and annual Impact Report 'Transforming Companies'.",
+      "description": "Summa Equity is a thematic impact investment firm (2016). ~€4bn raised; 35 investments; mid-market. Themes: Circularity, Sustainable Food, Energy Transition, Tech-Enabled Resilience. Fund III (c.€2.3bn) largest European impact fund at close (Article 9). Investing to solve global challenges; future-proof world. Summa Foundation; Oda, Nofitech, Tibber, NG Nordic in portfolio.",
       "investment_focus": {
         "sectors": [
           "Circularity",
@@ -2675,7 +2695,7 @@
         "next_fund": "Deployment across Summa III; Impact Engine data model across all funds",
         "strategy": "Thematic impact investor around UN SDGs (Circular, Tech-enabled, Changing Demographics); Europe and North America"
       },
-      "recent_activity": "2025: Exits of Documaster, Milarex; full exit of Infobric; portfolio builds in cybersecurity (NetGuardians/Intix → Vyntra) and circular economy (Bollegraaf, Schulz & Berger). 2024: Fortum Recycling & Waste combined with NG Group; investments in EA Technology; acquisitions of NetGuardians and Nutris; merger of Sengenics into Standard BioTools.",
+      "recent_activity": "2026: Acquires Dignio (digital health); EA Technology acquires Fundamentals. 2025: Acquires Peoplesafe (workforce safety); exits Documaster, Milarex, Infobric; Vyntra (NetGuardians/Intix); Schulz & Berger. 2024: Fortum Recycling & Waste + NG Group; EA Technology; NetGuardians, Nutris; Sengenics→Standard BioTools. Themes: Circularity, Sustainable Food, Energy Transition, Tech-Enabled Resilience.",
       "company_updates": [
         {
           "date": "2025-10-15",
@@ -3391,82 +3411,98 @@
       "logo_url": "https://logo.clearbit.com/accentequity.se",
       "website": "https://accentequity.se",
       "headquarters": "Stockholm, Sweden",
-      "founded": 2013,
+      "founded": 1994,
       "aum": "SEK 10 billion",
       "employees": "35+",
       "offices": [
         "Stockholm"
       ],
-      "description": "Accent Equity Partners invests in Nordic industrial companies with strong market positions and potential for operational improvements and internationalization. Focus on lower-midcap Nordics (EV 250–1,500 MSEK) with strong heritage in industrial services and niche manufacturing. Known for frequent use of industrial roll-up logic across platforms like Tempcon, Enerco, and Triarca.",
+      "description": "Accent Equity Partners has invested in private Nordic companies since 1994. The firm focuses on buyout and expansion capital in mature companies with proven, scalable business models. Investment criteria: at least SEK 100M equity, typically EBITA SEK 20–100M, lead investor with 3–6 year holding period. Sector-diversified with strong track record in industrial services and niche manufacturing (e.g. Tempcon, Enerco, Triarca). Total commitments across seven funds exceed EUR 1.5 billion.",
       "investment_focus": {
         "sectors": [
-          "Industrial",
-          "Business Services",
-          "Technology",
-          "Consumer"
+          "Diversified (Industrial, Business Services, Technology, Consumer)"
         ],
         "geography": [
-          "Nordic region"
+          "Nordic region (add-ons can be outside Nordics)"
         ],
-        "deal_size": "SEK 200M - SEK 1.5B",
+        "deal_size": "SEK 100M+ equity (EBITA typically SEK 20–100M)",
         "investment_type": [
-          "Lower mid-market buyouts",
-          "Family succession"
+          "Buyouts and expansion capital",
+          "Control investments as lead (>50%)",
+          "3–6 year holding period"
         ]
       },
       "team": [
         {
-          "name": "Patrik Johansson",
-          "title": "Managing Partner",
+          "name": "Niklas Sloutski",
+          "title": "CEO and Partner",
           "location": "Stockholm"
         },
         {
-          "name": "Tommi Unkuri",
-          "title": "Partner",
+          "name": "Benny Zakrisson",
+          "title": "Partner and Investment Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Carl Fürstenbach",
+          "title": "Partner and Investment Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Claes Bodell",
+          "title": "Partner and Investment Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Daniel Winberg",
+          "title": "Partner and Investment Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Oscar Claeson",
+          "title": "Partner and Investment Manager",
           "location": "Stockholm",
-          "background": "Long-tenured partner"
+          "background": "Promoted to Partner Jan 2025; leads Accent Academy"
         },
         {
-          "name": "Mikael Grönberg",
-          "title": "Partner",
-          "location": "Stockholm",
-          "background": "Long-tenured partner"
-        },
-        {
-          "name": "Pär Andersson",
-          "title": "Partner",
-          "location": "Stockholm",
-          "background": "Long-tenured partner"
-        },
-        {
-          "name": "Mikael Klingberg",
-          "title": "Partner",
+          "name": "Mikael Strand",
+          "title": "Associate Partner",
           "location": "Stockholm"
         },
         {
-          "name": "Fredrik Carlsson",
-          "title": "Partner",
+          "name": "Tommy Torwald",
+          "title": "Associate Partner",
           "location": "Stockholm"
         },
         {
-          "name": "Sara Norberg",
-          "title": "Partner, Technology",
+          "name": "Caroline Brandt Lilja",
+          "title": "Director",
           "location": "Stockholm"
         },
         {
-          "name": "Anders Holmgren",
+          "name": "Jesper Björkman",
+          "title": "Director",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Lowe Rehnberg",
+          "title": "Director",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Sofia Nyrén",
+          "title": "Director",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Patric Grimhall",
           "title": "CFO",
-          "location": "Stockholm"
-        },
-        {
-          "name": "Emma Lindström",
-          "title": "Investment Director",
           "location": "Stockholm"
         }
       ],
       "fundraising": {
-        "current_fund": "Accent Equity VII (~SEK 3bn, vintage 2017)",
-        "next_fund": "Fund VIII in planning/early marketing (expected 2025–26)",
+        "current_fund": "Accent Equity VII (SEK 2,250 million, 2023 vintage)",
+        "next_fund": "Fund VIII in planning when Fund VII approaches investment target",
         "strategy": "Lower-midcap Nordics (EV 250–1,500 MSEK); strong heritage in industrial services and niche manufacturing"
       },
       "company_updates": [
@@ -3585,6 +3621,12 @@
           "text": "Accent Equity-owned Linotol Group acquires C M Betong, further strengthening its offering within industrial flooring solutions in the Nordic region"
         },
         {
+          "date": "2024-09-12",
+          "type": "Exit",
+          "title": "Accent Equity divests Lakrids by Bülow to Valedo Partners",
+          "text": "Accent Equity exits the premium confectionery company after several years of international growth. Valedo takes over as new majority owner."
+        },
+        {
           "date": "2024-02-01",
           "type": "Exit",
           "title": "Accent Equity divests Norco Interior",
@@ -3601,12 +3643,6 @@
           "type": "Portfolio",
           "title": "Malte Månson acquires Experten Group",
           "text": "Accent Equity-owned Malte Månson acquires Experten Group"
-        },
-        {
-          "date": "2024-09-12",
-          "type": "Exit",
-          "title": "Accent Equity divests Lakrids by Bülow to Valedo Partners",
-          "text": "Accent Equity exits the premium confectionery company after several years of international growth. Valedo takes over as new majority owner."
         },
         {
           "date": "2024-02-28",
@@ -3714,14 +3750,14 @@
       "recent_activity": "2025: Plockmatic Group acquires Renz (Accent VII), Tempcon Group issues SEK 550M senior secured bonds, Fund VII closes at SEK 2.25bn. 2024: Invests in Unisport (new platform, Fund VII), acquires Brimer (Fund VII), TSG acquires AF Shipping, Malte Månson acquires Skandinaviska Buss & Truck, Triarca + Stitec combine (low voltage/eMobility/FTTH group), acquires Helkama Bica (specialty cables; Fund VII), Linotol acquires C M Betong, divests Norco Interior to Götessons Design Group, invests in Plockmatic (growth partner; Fund VII), Malte Månson acquires Experten Group. Strong Fund VII deployment across multiple platforms with focus on industrial consolidation and technology integration.",
       "timeline": [
         {
-          "year": 2013,
-          "event": "Accent Equity Partners founded",
-          "description": "Founded in Stockholm, Sweden"
+          "year": 1994,
+          "event": "Accent Equity founded",
+          "description": "Founded in Stockholm; Nordic buyout pioneer since inception"
         },
         {
-          "year": 2017,
+          "year": 2018,
           "event": "Fund VI closes",
-          "description": "Fund VI closes SEK 3.0bn (platform for 2017 onwards)"
+          "description": "Fund VI closes SEK 3.0bn (2018 vintage)"
         },
         {
           "year": 2017,
@@ -4031,37 +4067,44 @@
       ]
     },
     "IK Partners": {
-      "name": "IK Partners (formerly IK Investment Partners)",
-      "logo_url": "https://logo.clearbit.com/ikpartners.com",
-      "website": "https://www.ikpartners.com",
+      "name": "IK Partners",
+      "logo_url": "https://logo.clearbit.com/ikinvest.com",
+      "website": "https://www.ikinvest.com",
       "headquarters": "London, UK",
       "founded": 1989,
-      "aum": "€14 billion",
-      "employees": "120+",
+      "aum": ">€20 billion",
+      "employees": "230",
       "offices": [
         "London",
         "Stockholm",
         "Hamburg",
         "Paris",
-        "New York"
+        "Amsterdam",
+        "Copenhagen",
+        "Munich",
+        "Luxembourg",
+        "Hong Kong"
       ],
-      "description": "IK Partners is a European private equity firm focused on the Nordic and DACH regions, investing in mid-market companies with strong growth potential. Strategic themes include business services, healthcare, industrial tech, software, and 'Platform + Add-On' excellence with 20+ add-ons in 2025 alone.",
+      "description": "IK Partners is a leading European mid-market private equity firm. Since 1989 raised >€20bn across 17 funds; invested in 200+ European companies. People-first approach. Regions: Benelux, DACH, France, Nordics, UK. Four strategies: Mid Cap (€200M–1B+ EV), Small Cap (to €200M), Development Capital (to €80M), Partnership Fund (minority, €200M+).",
       "investment_focus": {
         "sectors": [
           "Business Services",
-          "Consumer",
           "Healthcare",
-          "Technology"
+          "Industrials"
         ],
         "geography": [
-          "Nordic",
+          "Nordics",
           "DACH",
-          "Western Europe"
+          "Benelux",
+          "France",
+          "UK"
         ],
-        "deal_size": "€100M - €500M",
+        "deal_size": "€20M – €1B+ EV; equity €10M – €300M+",
         "investment_type": [
-          "Mid-market buyouts",
-          "Growth capital"
+          "Mid-cap buyouts",
+          "Small-cap buyouts",
+          "Development capital",
+          "Partnership/minority"
         ]
       },
       "team": [
@@ -4093,14 +4136,9 @@
         }
       ],
       "fundraising": {
-        "funds": {
-          "mid_cap_x": "€3.3bn (2025)",
-          "small_cap_iv": "€2.0bn (2025)",
-          "partnership_iii": "€0.6bn (2025)",
-          "total_aum": ">€14bn"
-        },
-        "offices": "London, Paris, Stockholm, Hamburg, Amsterdam, Luxembourg, Munich (2025 new)",
-        "strategy": "Platform + Add-On excellence; 20+ add-ons in 2025 alone"
+        "current_fund": "Mid Cap X (€3.3bn), Small Cap IV (€2.0bn), Partnership III (€0.6bn)",
+        "next_fund": "Deployment across strategies",
+        "strategy": "European mid-market; Benelux, DACH, France, Nordics, UK; four complementary strategies; platform + add-on"
       },
       "company_updates": [
         {
@@ -4898,17 +4936,18 @@
       "website": "https://www.verdane.com",
       "headquarters": "Oslo, Norway",
       "founded": 2003,
-      "aum": "€7 billion",
-      "employees": "100+",
+      "aum": "€9 billion",
+      "employees": "150+",
       "offices": [
         "Oslo",
         "Stockholm",
         "Copenhagen",
         "Berlin",
+        "Munich",
         "London",
-        "Munich"
+        "Helsinki"
       ],
-      "description": "Verdane is a pan-European growth investor focusing on technology and sustainability. Among Europe's top three independent growth funds by AUM (~€7bn+ across Edda, Freya, Idun, Capital series). Specializes in software & digital growth, flexible growth/buyouts, and impact investing.",
+      "description": "Verdane is a European growth equity investor in tech and sustainability. €9bn raised; 200+ investments; 7 offices. Equity €20–150M; themes: Digitalisation (B2C services/products, software), Decarbonisation (resource efficiency, energy transition). Pledge to neutralise scope 1–3 via engineered carbon removal.",
       "investment_focus": {
         "sectors": [
           "Software & Digital Growth",
@@ -4920,7 +4959,7 @@
           "Pan-European",
           "Nordic region"
         ],
-        "deal_size": "€50M - €500M",
+        "deal_size": "€20M - €150M equity",
         "investment_type": [
           "Growth equity",
           "Buy-and-build",
@@ -4968,15 +5007,9 @@
         }
       ],
       "fundraising": {
-        "funds": {
-          "freya_xii": "€2bn (2025)",
-          "edda_iii": "€1.1bn (2024)",
-          "idun_ii": "€700m (2024)",
-          "capital_xi": "€1.1bn (2023)",
-          "total_aum": "~€7bn+"
-        },
-        "strategy": "Pan-European growth investor focusing on technology and sustainability",
-        "fund_lineup": "Edda (software & digital growth), Freya (flexible growth/buyouts), Idun (impact/Article 9), Capital (continuation/structured secondary)"
+        "current_fund": "Freya XII (€2bn, 2025), Edda III (€1.1bn), Idun II (€700m, Article 9), Capital XI",
+        "next_fund": "Deployment across Edda, Freya, Idun, Capital",
+        "strategy": "Pan-European growth; digitalisation and decarbonisation; Edda (software), Freya (flexible growth/buyouts), Idun (impact), Capital (continuation)"
       },
       "recent_activity": "2025: Closes Freya XII at €2bn hard cap (flagship flexible growth/buyout fund). Partners with Konvekta (HVAC energy-recovery tech), Natlink (outdoor/hunting community platform). Realises Hornetsecurity, Danelec (marine IoT), Parkopedia. Partially realises Voyado, Lumene Group. fiskaly acquires DF Deutsche Fiskal (Germany). Wellhub merges with Urban Sports Club – Europe's largest corporate wellbeing group. 2024: Closes Idun II at €700m (impact/Article 9 fund). Partners with Sitoo (unified commerce), Cropster (coffee software), Corlytics (RegTech), Ingrid (e-commerce delivery). Closes Edda III at €1.1bn. Leads €95m round in Urban Sports Club. Danelec acquires Nautilus Labs (AI platform). Publishes 2023 Sustainability Report.",
       "timeline": [
@@ -5439,26 +5472,28 @@
       "logo_url": "https://logo.clearbit.com/valedopartners.com",
       "website": "https://www.valedopartners.com",
       "headquarters": "Stockholm, Sweden",
-      "founded": 2012,
-      "aum": "SEK 25 billion",
+      "founded": 2006,
+      "aum": "~SEK 2 billion (Fund II)",
       "employees": "40+",
       "offices": [
         "Stockholm"
       ],
-      "description": "Valedo Partners is a Swedish private equity firm investing in listed Nordic small and mid-cap companies with strong fundamentals.",
+      "description": "Valedo Partners is a growth-oriented Swedish PE firm founded in 2006 (spin-off from EQT). 35+ portfolio companies; ~85% in partnership with previous owners; ~350 add-ons; exited businesses grew ~300% on average. Targets SEK 100–500M sales; established, profitable. Active ownership; intends to invest SEK 2bn over 3–5 years.",
       "investment_focus": {
         "sectors": [
           "Technology",
           "Consumer",
-          "Industrial"
+          "Industrial",
+          "Business Services"
         ],
         "geography": [
           "Nordic region"
         ],
-        "deal_size": "SEK 500M - 3B",
+        "deal_size": "SEK 100–500M sales",
         "investment_type": [
-          "Public-to-private",
-          "Listed equity"
+          "Growth buyouts",
+          "Add-on acquisitions",
+          "Partnership with previous owners"
         ]
       },
       "team": [
@@ -5478,7 +5513,7 @@
           "location": "Stockholm"
         }
       ],
-      "recent_activity": "Q3 2024: Active portfolio management across 5 listed holdings. Inwido building products performing well. Paradox Interactive gaming expansion. Doro technology turnaround ongoing. CTT Systems aerospace growth. Fund II planning stages.",
+      "recent_activity": "2025: Admento (accounting/BPO), Restaurant365 (restaurant tech). 2024: Lakrids by Bülow from Accent Equity. Portfolio: Admento, Compusoft, Gung, Lakrids, Nordward, Twig, Eltera, Joe & The Juice, Evidensia, Cambio, INOM. ~350 add-ons; ~85% with previous owners.",
       "portfolio_companies": [
         {
           "name": "Admento",
@@ -5616,57 +5651,86 @@
     },
     "Alder": {
       "name": "Alder",
-      "logo_url": "https://logo.clearbit.com/alderpe.com",
-      "website": "https://www.alderpe.com",
+      "logo_url": "https://logo.clearbit.com/alder.se",
+      "website": "https://alder.se",
       "headquarters": "Stockholm, Sweden",
-      "founded": 2012,
-      "aum": "SEK 12 billion",
-      "employees": "35+",
+      "founded": 2008,
+      "aum": "SEK 3.1 billion (Alder III)",
+      "employees": "~15",
       "offices": [
-        "Stockholm",
-        "New York"
+        "Stockholm"
       ],
-      "description": "Alder is a Swedish private equity firm focused on technology and media companies in Europe and North America.",
+      "description": "Alder is a Nordic private equity firm focused on sustainable technology companies with turnover SEK 100–750M. The firm was founded in 2008 and raised its first fund (Alder I) in 2010. Alder III closed in May 2024 at SEK 3.1bn and is classified as SFDR Article 9 (dark green).",
       "investment_focus": {
         "sectors": [
-          "Technology",
-          "Media",
-          "Market Research"
+          "Sustainable technology",
+          "Industrial tech",
+          "Clean tech"
         ],
         "geography": [
-          "Nordic",
-          "Europe",
-          "North America"
+          "Nordic region",
+          "Selective Europe"
         ],
-        "deal_size": "€100M - €500M",
+        "deal_size": "SEK 100–750M turnover",
         "investment_type": [
           "Buyouts",
-          "Growth capital"
+          "Growth capital",
+          "Sustainable impact"
         ]
       },
       "team": [
         {
-          "name": "Jonas Eriksson",
-          "title": "Managing Partner",
-          "location": "Stockholm"
-        },
-        {
-          "name": "Henrik Blomquist",
+          "name": "Henrik Blomé",
           "title": "Partner",
           "location": "Stockholm"
         },
         {
-          "name": "David Mindus",
+          "name": "Dag Broman",
           "title": "Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Henrik Flygar",
+          "title": "Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Arash Raisse",
+          "title": "Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Johanna Strömqvist",
+          "title": "CFO",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Eva Normell",
+          "title": "Sustainability Officer",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Elise Fahlén",
+          "title": "Investment Director",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Henrik Lindholm",
+          "title": "Investment Director",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Keiward Pham",
+          "title": "Investment Director",
           "location": "Stockholm"
         }
       ],
       "fundraising": {
-        "current_fund": "Alder Fund III in market",
-        "next_fund": "Fund III target deployment across Nordic and North American tech/media",
-        "strategy": "Technology and media; €100M–500M deal size; Nordic, Europe, North America"
+        "current_fund": "Alder III (SEK 3.1bn, closed May 2024, SFDR Article 9)",
+        "next_fund": "Deployment across Alder III",
+        "strategy": "Nordic sustainable technology; turnover SEK 100–750M; Article 9 dark green fund"
       },
-      "recent_activity": "2025: Fund III in market. Cint (market research tech) and NEP (broadcast services) performing strongly; NEP expanding in US. Exploring new media tech and market research opportunities."
+      "recent_activity": "2025: 3Button Group investment (Mar). 2024: Flamonitec and Microbas Precision investments (Sep); Alder III final close SEK 3.1bn (May). Nordic sustainable tech portfolio."
     },
     "Bure Equity": {
       "name": "Bure Equity",
@@ -5674,12 +5738,12 @@
       "website": "https://www.bure.se",
       "headquarters": "Stockholm, Sweden",
       "founded": 1992,
-      "aum": "SEK 20 billion",
+      "aum": "~SEK 20 billion (NAV)",
       "employees": "30+",
       "offices": [
         "Stockholm"
       ],
-      "description": "Bure Equity is a listed evergreen investment company (Nasdaq Stockholm) with permanent capital. It combines listed control stakes (Mycronic, Vitrolife, XVIVO, Ovzon) with growth ventures via its Atle Asset Management platform.",
+      "description": "Bure Equity (Nasdaq Stockholm) is a listed evergreen investment company with permanent capital. Combines listed control stakes (Mycronic, Vitrolife, XVIVO Perfusion, Ovzon, Cavotec, Yubico) with unlisted holdings (Allgon, Atle, Bure Growth, Mentimeter, Mercuri International, Silex Microsystems). Sustainability integrated in ownership model.",
       "investment_focus": {
         "sectors": [
           "Healthcare",
@@ -5715,9 +5779,10 @@
       ],
       "fundraising": {
         "current_fund": "Listed evergreen (Nasdaq Stockholm); Atle Asset Management platform",
-        "next_fund": "Permanent capital deployment; Atle expansion into Norway",
+        "next_fund": "Permanent capital deployment; Atle expansion into Norway (First Fondene)",
         "strategy": "Active ownership in listed and unlisted; healthcare, technology, STEM; Nordic and Europe"
       },
+      "recent_activity": "2025: Leads consortium acquiring Silex Microsystems; new co-owner of Mentimeter; BioLamina stake to 52%; Atle acquires First Fondene (Norway); CEO appointments at Allgon, Mercuri, Mentice, BioLamina; Ovzon 3 launch. 2024: Vitrolife acquires Igenomix; Mycronic acquires atg Luther & Maelzer; XVIVO directed issue; Yubico listed.",
       "company_updates": [
         {
           "date": "2025",
@@ -5832,7 +5897,7 @@
           "text": "Allgon – We have been following Allgon for a long time – 'a quality company'"
         },
         {
-          "date": "2024",
+          "date": "2020",
           "text": "Bure – Patrik Tigerschiöld, Chairman of the Board of Bure Equity, wins 'Guldklubban' 2020"
         },
         {
@@ -5916,33 +5981,40 @@
       "website": "https://www.capman.com",
       "headquarters": "Helsinki, Finland",
       "founded": 1989,
-      "aum": "€4.5 billion",
+      "aum": "€7.1 billion",
       "employees": "200+",
       "offices": [
         "Helsinki",
         "Stockholm",
         "Copenhagen",
         "Oslo",
-        "London"
+        "London",
+        "Luxembourg",
+        "Düsseldorf"
       ],
-      "description": "CapMan is a leading Nordic private equity firm managing assets across Buyout, Growth Equity, Infrastructure, Real Estate, and Russian-focused strategies.",
+      "description": "CapMan is a leading Nordic private asset management company (listed Nasdaq Helsinki). Founded 1989; >35 years of private markets experience. Invests across Real Estate, Infrastructure, Natural Capital, Real Asset Debt, and Private Equity (Buyout, Growth, Special Situations). >€8bn raised since inception; 400+ professional investors. PRI sustainability rating across all investment areas.",
       "investment_focus": {
         "sectors": [
           "Services",
           "Technology",
           "Healthcare",
-          "Industrial"
+          "Industrial",
+          "Real Estate",
+          "Infrastructure",
+          "Natural Capital"
         ],
         "geography": [
           "Nordic region",
-          "Eastern Europe"
+          "Europe"
         ],
         "deal_size": "€30M - €500M",
         "investment_type": [
           "Mid-market buyouts",
           "Growth equity",
           "Real estate",
-          "Infrastructure"
+          "Infrastructure",
+          "Special situations",
+          "Natural capital"
         ]
       },
       "team": [
@@ -5973,25 +6045,25 @@
         }
       ],
       "fundraising": {
-        "current_fund": "Multiple strategy funds (Buyout, Growth, Real Estate, Infrastructure)",
-        "next_fund": "Organic growth toward €10B AUM target",
-        "strategy": "Nordic multi-strategy; buyouts, growth equity, real estate, infrastructure, natural capital"
+        "current_fund": "€7.1bn capital under management; CapMan Growth III (€130m, 2024), CapMan Social Real Estate (2024), Nordic Infrastructure II (€375m), Residential Fund (€803m), Buyout XI",
+        "next_fund": "Organic growth toward €10bn AUM target",
+        "strategy": "Nordic multi-strategy; buyouts, growth equity, real estate, infrastructure, natural capital, special situations"
       },
-      "recent_activity": "2025: CapMan Wealth raises $120M for US mid-market buyout program (AlpInvest partnership). 2024: AUM €6.1bn (+22%); 13 investments, 7 exits; acquires Dasos Capital (Natural Capital); divests CapMan Procurement Services (€75M). Target €10bn AUM. Fee income +15%, profit +81%."
+      "recent_activity": "2025: CapMan Wealth raises $120M for US mid-market buyout program (AlpInvest partnership). 2024: AUM €6.1bn (+22%); 13 investments, 7 exits; acquires Dasos Capital (Natural Capital); divests CapMan Procurement Services (€75M). CapMan Growth III final close. Target €10bn AUM."
     },
     "Celero": {
       "name": "Celero Capital",
-      "logo_url": "https://ui-avatars.com/api/?name=Celero&background=7c2d12&color=ffffff&size=64",
-      "website": "https://www.celero.eu",
+      "logo_url": "https://logo.clearbit.com/celerocapital.com",
+      "website": "https://www.celerocapital.com",
       "headquarters": "Stockholm, Sweden",
-      "founded": 2015,
-      "aum": "€500 million",
+      "founded": 2022,
+      "aum": "€300 million+",
       "employees": "15+",
       "offices": [
         "Stockholm",
         "Oslo"
       ],
-      "description": "Celero Capital is a Nordic lower mid-market private equity firm founded by Peter Möller, former senior partner at FSN Capital. The firm focuses on service companies, consumer goods companies, and specialized industrial companies with strong growth potential.",
+      "description": "Celero Capital is a Nordic lower mid-market private equity firm founded in 2022 by Peter Möller (former FSN Capital, Permira, Goldman Sachs). Focus: services, consumer goods, niche industrials. Implements Celero Accelerator Modules (CAMs) for hands-on value creation. UNPRI signatory; SFDR Article 8. Backed by European Investment Fund (InvestEU).",
       "investment_focus": {
         "sectors": [
           "Services",
@@ -6013,59 +6085,39 @@
       "team": [
         {
           "name": "Peter Möller",
-          "title": "Founder & Managing Partner",
-          "location": "Stockholm",
-          "background": "Former Senior Partner at FSN Capital"
-        },
-        {
-          "name": "Lennart Altmann",
           "title": "Managing Partner",
-          "location": "Stockholm"
+          "location": "Stockholm",
+          "background": "Former FSN Capital, Permira, Goldman Sachs"
         },
         {
-          "name": "Johan Fredriksson",
+          "name": "Kenneth Haavet",
           "title": "Partner",
-          "location": "Stockholm"
+          "location": "Stockholm",
+          "background": "Former CEO Orkla Consumer & Financial Investments, FSN Capital, Macquarie"
         },
         {
           "name": "Viktor Hansson",
           "title": "Partner",
           "location": "Stockholm",
-          "background": "Promoted to Partner in 2023"
+          "background": "Former Head of M&A Nordlo, FSN Capital, Bain"
         },
         {
           "name": "Gustaf von Platen",
           "title": "Principal",
           "location": "Stockholm",
-          "background": "Former FSN Capital, joined 2023"
-        },
-        {
-          "name": "Erik Viklund",
-          "title": "Principal",
-          "location": "Oslo"
-        },
-        {
-          "name": "Marcus Johansson",
-          "title": "Principal",
-          "location": "Stockholm"
+          "background": "Former FSN Capital, J.P. Morgan, joined 2023"
         },
         {
           "name": "Oscar Haglund",
           "title": "Investment Manager",
           "location": "Stockholm",
-          "background": "Joined 2024"
-        },
-        {
-          "name": "Emil Erbing",
-          "title": "Investment Associate",
-          "location": "Stockholm",
-          "background": "Joined 2024"
+          "background": "Former Litorina, Arkwright, joined 2024"
         },
         {
           "name": "Johanna Kull",
-          "title": "Investment Associate",
+          "title": "CFO & Head of ESG",
           "location": "Stockholm",
-          "background": "Joined 2024"
+          "background": "Former Urban Partners, Apollo, joined 2024"
         }
       ],
       "fundraising": {
@@ -6073,12 +6125,12 @@
         "next_fund": "Deployment across platform investments",
         "strategy": "Nordic B2B services; property, facility management, manufacturing, power; entrepreneur-led platform creation"
       },
-      "recent_activity": "2025: Establishes Aterion with six entrepreneur-led companies targeting Nordic power industry leadership. 2024: Closes Fund I at €300M+; platforms Corteco (property renovation), Reledo (facility management), Opima (manufacturing). Team expansion with key hires from FSN Capital.",
+      "recent_activity": "2025: Partners with Sporty (Norwegian fitness, 90+ gyms); establishes Deltra (Nordic distribution platform, five entrepreneur-led companies); Reledo acquires MTM Service (Denmark). 2024: Closes Fund I €300M+; platforms Corteco (outer shell renovation), Reledo (facility management), Opima (manufacturing), Aterion (power infrastructure).",
       "timeline": [
         {
-          "year": 2015,
+          "year": 2022,
           "event": "Celero Capital founded",
-          "description": "Peter Möller founded Celero Capital after leaving FSN Capital as Senior Partner"
+          "description": "Peter Möller founded Celero Capital; team has 50+ years combined Nordic PE experience"
         },
         {
           "year": 2022,
@@ -6118,18 +6170,18 @@
       ]
     },
     "Polaris": {
-      "name": "Polaris",
+      "name": "Polaris Private Equity",
       "logo_url": "https://logo.clearbit.com/polarisprivateequity.com",
       "website": "https://www.polarisprivateequity.com",
       "headquarters": "Copenhagen, Denmark",
       "founded": 1998,
-      "aum": "€1.5 billion",
+      "aum": "DKK 11+ billion (Funds III–V)",
       "employees": "25+",
       "offices": [
         "Copenhagen",
         "Oslo"
       ],
-      "description": "Polaris Private Equity is a Nordic private equity firm investing in mid-market companies with strong market positions and growth potential. Nordic mid-cap industrial and business-services specialist with flexible hold model. Pioneering 'industrial decarbonisation' theme through Micropower / LEAB / Vinnergi platforms.",
+      "description": "Polaris Private Equity is a Copenhagen-based Nordic mid-market firm (25+ years). 50+ investments; 16 active portfolio companies. Funds III–V total DKK 11bn+ (Fund V DKK 4.9bn, 2020). Equity tickets EUR 20–80M; sales EUR 20–300M. Industrial and business services; industrial decarbonisation theme (Micropower, LEAB, Vinnergi). Oslo office.",
       "investment_focus": {
         "sectors": [
           "Services",
@@ -7168,12 +7220,12 @@
       "website": "https://www.nordstjernan.se",
       "headquarters": "Stockholm, Sweden",
       "founded": 1890,
-      "aum": "SEK 25 billion",
+      "aum": "SEK 50 billion",
       "employees": "80+",
       "offices": [
         "Stockholm"
       ],
-      "description": "Nordstjernan is a family-owned evergreen investment company (Ax:son Johnson Group) with long-term holding periods (10+ years), focused on Nordic industrials, healthcare, real estate, and selective growth via Nordstjernan Growth AB.",
+      "description": "Nordstjernan is a foundation-owned investment house (Axel and Margaret Ax:son Johnson foundations). Founded 1890; investment company since 1999. 130+ years of experience. Purpose: safeguard longevity of foundations, custodian of industrial heritage. Permanent capital. Portfolio SEK 50bn. 44 companies invested in over 25 years; 31 exits. Viveka Ekberg CEO.",
       "investment_focus": {
         "sectors": [
           "Industrials",
@@ -7211,10 +7263,11 @@
         }
       ],
       "fundraising": {
-        "structure": "Listed evergreen investment company (Nasdaq Stockholm)",
-        "approach": "Permanent capital; combines listed control stakes with growth ventures via Atle platform",
-        "portfolio_structure": "Alligo, Momentum Group, Etac, Rosti, Oden Tech, Mentimeter, Aidian, etc."
+        "current_fund": "Permanent capital (foundation-owned)",
+        "next_fund": "Ongoing deployment",
+        "strategy": "Active, responsible ownership; strong risk-adjusted returns; may invest for limited time or decades"
       },
+      "recent_activity": "2026: Sells remaining Attendo shares. 2025: Invests in Circura Group; sells engcon; Nordstjernan Growth AB divested; issues call options in Alligo. Portfolio: Dacke Industri, Momentum Group, Etac, Rosti, Alligo, and others.",
       "company_updates": [
         {
           "date": "2025-05-19",
@@ -7582,13 +7635,13 @@
       "website": "https://www.nalka.com",
       "headquarters": "Stockholm, Sweden",
       "founded": 2009,
-      "aum": "Undisclosed (portfolio ~€3bn revenue, 7,000+ employees)",
+      "aum": "Undisclosed (12 portfolio companies, 7,000+ employees, 65+ add-ons since 2020)",
       "employees": "23",
       "offices": [
         "Stockholm",
         "Munich"
       ],
-      "description": "Nalka is a Nordic-focused private equity firm established in 2009 in Stockholm. The firm invests in market-leading small- and medium-sized businesses in the Nordic and DACH regions (Germany, Austria, Switzerland). Nalka acts as a committed owner providing strategic support beyond capital, emphasizing long-term sustainable value creation. Owned by Interogo Holding, a Switzerland-based foundation-owned investment group ultimately linked to the Interogo Foundation (Liechtenstein), supporting the IKEA Concept's independence.",
+      "description": "Nalka is a committed investor in market-leading small- and medium-sized businesses in the Nordic and DACH regions. 12 portfolio companies; 7,000+ employees; 65+ add-on acquisitions since 2020. Develops independent, competitive, sustainable and long-term profitable companies. Two offices (Stockholm, Munich). Owned by Interogo Holding (IKEA-linked).",
       "investment_focus": {
         "sectors": [
           "Business Services",
@@ -7760,10 +7813,10 @@
       "website": "https://www.impilo.se",
       "headquarters": "Stockholm, Sweden",
       "founded": 2018,
-      "aum": "€700M Fund II (2025), portfolio revenue SEK 8.4bn (2023), 15,000 employees",
-      "employees": "16 Nordic healthcare investments since inception",
+      "aum": "€700 million (Fund II)",
+      "employees": "~30",
       "offices": ["Stockholm", "Copenhagen"],
-      "description": "Impilo is a Nordic investment company solely focused on pharmaceutical, medtech, specialist pharma services, and healthcare & related services. The firm targets enterprise values of EUR 50–200m and invests in companies that contribute to sustainable healthcare development. Fund II closed at €700M hard cap in 2025.",
+      "description": "Impilo is a Nordic investment company solely focused on pharmaceutical, medtech, specialist pharma services, and healthcare & related services. Targets EV €50–200M; majority investments with potential for minority. Impilo Health Diamond: improve quality of care, increase availability, lower cost, prevent need for care. Fund II closed at €700M hard cap (June 2025). Sustainability handbook; UNPRI-aligned.",
       "investment_focus": {
         "sectors": ["Healthcare", "Pharmaceuticals", "MedTech", "Specialist Pharma Services"],
         "geography": ["Nordic region"],
@@ -7771,8 +7824,12 @@
         "investment_type": ["Buyouts", "Growth equity"]
       },
       "team": [],
-      "fundraising": { "strategy": "Healthcare-focused Nordic buyouts" },
-      "recent_activity": "Portfolio includes Immedica (orphan pharma), Humana (care services), Euro Accident (health insurance), Scantox (pre-clinical CRO), tandlægen.dk (dental), VaccinDirekt (retail vaccination), Pelago Bioscience (CETSA drug discovery), Stille (surgical instruments), Qufora (TAI products). Prior exits: TFP Fertility, Ferrosan Medical Devices, NutraQ, Cavidi.",
+      "fundraising": {
+        "current_fund": "Fund II (€700M hard cap, closed June 2025)",
+        "next_fund": "Deployment across Fund II",
+        "strategy": "Healthcare-focused Nordic buyouts; EV €50–200M; health impact and sustainability"
+      },
+      "recent_activity": "2026: Immedica Loargys® FDA accelerated approval. 2025: Acquires Oticon Medical from Demant (first Fund II investment). Qufora acquires Rapidcare (UK). Fund II closes €700M. Portfolio: Immedica, Humana, Euro Accident, Scantox, tandlægen.dk, VaccinDirekt, Pelago Bioscience, Stille, Qufora, Oticon Medical, Decon, Avia Pharma, Lowenco.",
       "portfolio_companies": [
         {"name": "Immedica", "logo": "https://logo.clearbit.com/immedica.com", "sector": "Pharmaceuticals", "country": "Sweden", "entry_year": "2018", "status": "Active", "detailed_description": "Launch, commercialisation and distribution of orphan and niche specialty pharmaceuticals"},
         {"name": "Humana", "logo": "https://logo.clearbit.com/humanagroup.se", "sector": "Healthcare & Related Services", "country": "Sweden", "entry_year": "2019", "status": "Active", "detailed_description": "Leading Nordic private care provider"},
@@ -7791,28 +7848,32 @@
     },
     "Axcel": {
       "name": "Axcel",
-      "logo_url": "https://logo.clearbit.com/axcel.com",
-      "website": "https://www.axcel.com",
+      "logo_url": "https://logo.clearbit.com/axcel.dk",
+      "website": "https://www.axcel.dk",
       "headquarters": "Copenhagen, Denmark",
       "founded": 1994,
-      "aum": "Undisclosed",
+      "aum": ">€4.8 billion",
       "employees": "55+",
       "offices": ["Copenhagen", "Stockholm", "Frankfurt"],
-      "description": "Axcel is a Nordic private equity firm founded in 1994, investing in Nordic mid-market companies with strong growth potential. The firm focuses on business services, technology, healthcare, and consumer sectors across Denmark, Sweden, Norway, and Iceland.",
+      "description": "Axcel is a Nordic private equity firm founded in 1994 (30+ years). Invests across Northern Europe in four sectors: Technology, Business Services & Industrials, Healthcare, and Consumer. Nine funds raised with >€4.8bn committed capital. Track record: 26 current companies, 81 platform investments, 400+ add-on acquisitions, 54 exits. Value creation focus: Commercial Excellence, Buy & Build, Digitalisation, Sustainability.",
       "investment_focus": {
         "sectors": ["Technology", "Business Services & Industrials", "Healthcare", "Consumer"],
-        "geography": ["Nordic region"],
+        "geography": ["Nordic region", "Northern Europe", "Germany"],
         "deal_size": "Mid-market",
-        "investment_type": ["Buyouts", "Growth equity"]
+        "investment_type": ["Buyouts", "Growth equity", "Buy-and-build"]
       },
       "team": [],
-      "fundraising": { "strategy": "Nordic mid-market buyouts" },
-      "recent_activity": "Current portfolio includes Bekk, LS Retail, Capture One, SuperOffice, GUBI, NTI Group, DANX Carousel Group, Vetopia, Oral Care, The Nutriment Company, and others across technology, business services, and consumer.",
+      "fundraising": {
+        "current_fund": "Nine funds, >€4.8bn committed; Fund VII (€1.3bn, closed 2024); Elevate Fund; Axcel CV",
+        "next_fund": "Fund VIII in market (target >DKK 10bn / ~€1.33bn)",
+        "strategy": "Nordic and Northern European mid-market; four sectors; Axcelerating Value Creation framework"
+      },
+      "recent_activity": "2026: First platform in Germany (sangro, homecare); first Elevate I investment (KapitalKontroll, Norwegian fintech); Christian Bamberger Bro becomes Managing Partner. 2024–2025: Acquires Nordic Tyre Group from Altor. Portfolio: Bekk, LS Retail, Capture One, SuperOffice, GUBI, NTI Group, DANX Carousel Group, Vetopia, Oral Care, The Nutriment Company, AGRD Partners, Accru Partners, Acurum Group, Progrits, XPartners, and others.",
       "portfolio_companies": [
-        {"name": "Bekk", "sector": "Technology", "country": "Norway", "entry_year": "2026", "status": "Active"},
+        {"name": "Bekk", "sector": "Technology", "country": "Norway", "entry_year": "2025", "status": "Active"},
         {"name": "LS Retail", "sector": "Technology", "country": "Iceland", "entry_year": "2025", "status": "Active"},
         {"name": "AGRD Partners", "sector": "Business Services & Industrials", "country": "Sweden", "entry_year": "2025", "status": "Active"},
-        {"name": "Nordic Tyre Group", "sector": "Business Services & Industrials", "country": "Sweden", "entry_year": "2025", "status": "Active"},
+        {"name": "Nordic Tyre Group", "sector": "Business Services & Industrials", "country": "Sweden", "entry_year": "2024", "status": "Active"},
         {"name": "Accru Partners", "sector": "Business Services & Industrials", "country": "Sweden", "entry_year": "2024", "status": "Active"},
         {"name": "Acurum Group", "sector": "Business Services & Industrials", "country": "Sweden", "entry_year": "2024", "status": "Active"},
         {"name": "Elcor", "sector": "Business Services & Industrials", "country": "Denmark", "entry_year": "2023", "status": "Active"},
@@ -7841,10 +7902,10 @@
       "website": "https://www.mvi.se",
       "headquarters": "Stockholm, Sweden",
       "founded": 1992,
-      "aum": "Fund I (2016), Fund II (2020, closed Dec 2021)",
+      "aum": "Undisclosed (3 funds)",
       "employees": "11",
       "offices": ["Stockholm"],
-      "description": "MVI invests in profitable Nordic SME companies with structural growth potential, focusing on buy-outs with strong operational performance. Targets SEK 50–250 million turnover across three themes: Digitalisation, Circularity, and Societal Transformation. 21 companies helped to grow since inception.",
+      "description": "MVI invests in profitable Nordic SME companies with structural growth potential. Three themes: Digitalisation, Circularity, Societal Transformation. 21 companies helped to grow; 50+ dedicated people in network. Targets SEK 50–250M turnover. Entrepreneur-centric; builds partnerships, trust and future. Meaningful growth focus.",
       "investment_focus": {
         "sectors": ["Technology", "Business Services", "Circular Economy", "Infrastructure"],
         "geography": ["Nordic region"],
@@ -7852,8 +7913,12 @@
         "investment_type": ["Buyouts", "Buy-and-build"]
       },
       "team": [],
-      "fundraising": { "strategy": "Nordic SME buyouts; themes: Digitalisering, Cirkuläritet, Samhällsomvandling" },
-      "recent_activity": "2026: Establishes Nordic manufacturing platform (Be-Pe, Prolego, HITAB); Freedom Group add-ons. 2024: Divested Biototal Group to SEB Private Equity. Portfolio includes Nestit Group, Ascenco, SMP Parts, Nordic Drives Group, Ametal, Freedom Group. Prior exits: PS Auction (2022), Art Clinic (2022), Great Security (2023).",
+      "fundraising": {
+        "current_fund": "Fund I (2016), Fund II (closed Dec 2021), Fund III",
+        "next_fund": "Deployment across portfolio",
+        "strategy": "Nordic SME buyouts; themes: Digitalisering, Cirkuläritet, Samhällsomvandling"
+      },
+      "recent_activity": "2026: Establishes Nordic manufacturing platform (Be-Pe, Prolego, HITAB); Freedom Group add-ons. 2024: Divested Biototal Group to SEB Private Equity. Portfolio: Nestit Group, Ascenco, SMP Parts, Nordic Drives Group, Ametal, Freedom Group, Flow Fastighetsvärden. Exits: PS Auction, Art Clinic, Great Security.",
       "portfolio_companies": [
         {"name": "Nestit Group", "logo": "https://logo.clearbit.com/nestit.com", "sector": "Technology", "country": "Sweden", "entry_year": "2024", "status": "Active", "detailed_description": "Pan-Nordic office IT infrastructure partner for SMEs, created through DSolution and Easy Partner partnership"},
         {"name": "Ascenco Group", "logo": "https://logo.clearbit.com/ascenco.se", "sector": "Business Services", "country": "Sweden", "entry_year": "2023", "status": "Active", "detailed_description": "Critical infrastructure services"},
@@ -7865,24 +7930,28 @@
       ]
     },
     "Equip": {
-      "name": "Equip",
+      "name": "Equip Capital",
       "logo_url": "https://logo.clearbit.com/equip.no",
       "website": "https://www.equip.no",
       "headquarters": "Oslo, Norway",
       "founded": 2018,
-      "aum": "Fund I, Fund II",
-      "employees": "15+",
+      "aum": "NOK 8.6 billion",
+      "employees": "15",
       "offices": ["Oslo"],
-      "description": "Equip Capital is a Norwegian private equity firm founded in 2018, investing in Nordic companies across business services, consumer, and technology. The firm focuses on profitable companies with growth potential and operational improvement opportunities.",
+      "description": "Equip Capital is a Norwegian private equity firm founded in 2018 by five experienced PE professionals. 100+ years combined team experience. Invests in small and mid-sized Nordic companies across consumer, industrials, and business services. 19 portfolio companies; 3 funds. Member of Norwegian Venture Capital & Private Equity Association.",
       "investment_focus": {
-        "sectors": ["Business Services", "Consumer", "Technology", "Leisure"],
+        "sectors": ["Business Services", "Consumer", "Technology", "Industrial", "Leisure"],
         "geography": ["Nordic region"],
-        "deal_size": "Mid-market",
-        "investment_type": ["Buyouts", "Growth equity"]
+        "deal_size": "Small to mid-market",
+        "investment_type": ["Buyouts", "Growth equity", "Control positions"]
       },
       "team": [],
-      "fundraising": { "strategy": "Nordic mid-market buyouts" },
-      "recent_activity": "Portfolio includes Activeon (trampoline parks), Bastard Burgers, Funplays, Miles, Cloud Connection, Holy Greens, House of Discs, River Group, Cure, Makeup Mekka, North Travel.",
+      "fundraising": {
+        "current_fund": "Fund I, Fund II, Fund III (3 funds)",
+        "next_fund": "Deployment across portfolio",
+        "strategy": "Nordic small/mid-market; control positions in profitable businesses with growth potential"
+      },
+      "recent_activity": "Portfolio: Activeon (trampoline parks), iteam (IT services), Holy Greens (salad restaurants), No Dig Alliance (underground pipelines), Bastard Burgers, Funplays, Miles, Cloud Connection, House of Discs, River Group, Cure, Makeup Mekka, North Travel, Busspart, Cares, Cautus Geo, Dura, Stenbolaget, TIND, Ryde.",
       "portfolio_companies": [
         {"name": "Activeon", "logo": "https://logo.clearbit.com/activeon.no", "sector": "Consumer", "country": "Norway", "entry_year": "2019", "status": "Active", "detailed_description": "Leading European operator of indoor trampoline and interactive attraction parks with 57+ parks across Nordics, Germany, Netherlands and UK. Equip acquired in 2019."},
         {"name": "Bastard Burgers", "logo": "https://logo.clearbit.com/bastardburgers.se", "sector": "Consumer", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Fast-casual burger chain with 70+ restaurants across Sweden and Norway"},
@@ -7914,16 +7983,20 @@
       "aum": "€1.4 billion",
       "employees": "30+",
       "offices": ["Stockholm"],
-      "description": "Trill Impact is a European private markets firm with EUR 1.4 billion in assets under management, investing in companies that provide solutions for a Sustainable Planet, a Resilient Society and for Healthy People. The firm aims to deliver attractive financial returns while exclusively making investments that matter for current and future generations.",
+      "description": "Trill Impact is a private markets firm exclusively making impact investments. Buyout (Northern Europe mid-market), Ventures (early-stage environmental/health), Microfinance (emerging markets). BlueMark verification of Impact Principles; top PRI scores. Sustainable Planet, Resilient Society, Healthy People.",
       "investment_focus": {
         "sectors": ["Sustainability", "Healthcare", "Education", "Infrastructure", "Cybersecurity", "Agriculture"],
-        "geography": ["Europe"],
+        "geography": ["Europe", "Northern Europe"],
         "deal_size": "Mid-market",
-        "investment_type": ["Buyout", "Ventures"]
+        "investment_type": ["Buyout", "Ventures", "Microfinance"]
       },
       "team": [],
-      "fundraising": { "strategy": "Impact investing; Buyout and Ventures strategies" },
-      "recent_activity": "Portfolio spans Nordomatic (building automation), ILT Education (Polylino), Mesalvo (healthcare software), Allurity (cybersecurity), Karriere Tutor, Infrakraft (rail infrastructure), Komet (irrigation), Renewtech (refurbished IT), Cinclus Pharma, May Health, Soil Capital, tado°, Open Cosmos.",
+      "fundraising": {
+        "current_fund": "Buyout, Ventures, Microfinance strategies",
+        "next_fund": "Deployment across strategies",
+        "strategy": "Impact-only; verified Impact Principles; PRI top scores"
+      },
+      "recent_activity": "2025: Acquires majority in Noova Energy Systems; Ventures co-leads Rail-Flow EUR 12.5m round. BlueMark verification renewed; top PRI 2025 scores. Portfolio: Nordomatic, ILT Education, Mesalvo, Allurity, Karriere Tutor, Infrakraft, Komet, Renewtech, Cinclus Pharma, May Health, Soil Capital, tado°, Open Cosmos, Noova.",
       "portfolio_companies": [
         {"name": "Nordomatic", "logo": "https://logo.clearbit.com/nordomatic.com", "sector": "Business Services", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Leading independent partner for building automation, smart buildings and energy efficiency"},
         {"name": "ILT Education", "logo": "https://logo.clearbit.com/ilteducation.com", "sector": "Education", "country": "Sweden", "entry_year": "2021", "status": "Active", "detailed_description": "Market-leading supplier of educational tools and Polylino digital learning for schools"},
@@ -7951,15 +8024,15 @@
       "logo_url": "https://logo.clearbit.com/norvestor.com",
       "website": "https://norvestor.com",
       "headquarters": "Oslo, Norway",
-      "founded": 1991,
-      "aum": "€2.0 billion",
+      "founded": 1989,
+      "aum": "€2.0+ billion",
       "employees": "70+",
       "offices": [
         "Oslo",
         "Stockholm",
         "Helsinki"
       ],
-      "description": "Norvestor is a Nordic lower-midcap buy-and-build specialist practicing 'industrialised entrepreneurship'. Very active GP-led continuation model and frequent Nordic-platform-to-Pan-EU expansion (Rantalainen, PHM, Serwent).",
+      "description": "Norvestor is a Nordic private equity firm (30+ years). 80+ platform investments; 25+ unrealized. Norvestor IX (€1.5bn, 2023); Nova I (€500M hard cap, 2024) lower mid-market. Norvestor X in market (2025). Business services, tech-enabled services, consumer services, industrial solutions. GP-led continuation model; Nordic-to-Pan-EU expansion.",
       "investment_focus": {
         "sectors": [
           "Business Services",
@@ -7984,12 +8057,9 @@
         }
       ],
       "fundraising": {
-        "funds": {
-          "norvestor_ix": "€1.5bn (2023)",
-          "nova_i": "€0.5bn (2025)"
-        },
-        "strategy": "Lower-midcap Nordic buy-and-build; 'industrialised entrepreneurship'",
-        "geography": "Oslo HQ; Stockholm / Oslo / Helsinki presence"
+        "current_fund": "Norvestor IX (€1.5bn), Nova I (€500M hard cap, 2024)",
+        "next_fund": "Norvestor X (opened Nov 2025)",
+        "strategy": "Lower-midcap Nordic buy-and-build; industrialised entrepreneurship; continuation vehicles"
       },
       "company_updates": [
         {
@@ -8334,19 +8404,19 @@
       "logo_url": "https://logo.clearbit.com/helixkapital.se",
       "website": "https://helixkapital.se",
       "headquarters": "Stockholm, Sweden",
-      "founded": 2018,
-      "aum": "SEK 3.5 billion",
+      "founded": 2008,
+      "aum": "SEK 1.566 billion (Fund III)",
       "employees": "20+",
       "offices": [
         "Stockholm"
       ],
-      "description": "Helix Kapital backs founder-led, niche B2B services and industrial tech/software companies, executing buy-and-build across focused platforms.",
+      "description": "Helix Kapital is a Swedish growth-oriented private equity firm established in 2008. Partners with entrepreneurial management to accelerate profitable growth. Focus: tech-enabled B2B services and industrial tech that modernize traditional industries. Fund III (SEK 1.566bn, Apr 2024) oversubscribed; Article 8; InvestEU backed.",
       "investment_focus": {
         "sectors": [
           "Industrial Tech",
           "Business Services",
           "Software",
-          "Media & Entertainment"
+          "Tech-enabled B2B"
         ],
         "geography": [
           "Sweden",
@@ -8360,10 +8430,11 @@
         ]
       },
       "fundraising": {
-        "current_fund": "Helix Kapital Fund III (SEK 1.566bn, closed Apr 2024)",
-        "next_fund": "Deployment across new platforms and add-ons",
-        "strategy": "B2B services, industrial tech, software; Sweden/Nordics; lower mid-market buyouts and buy-and-build"
+        "current_fund": "Helix Kapital Fund III (SEK 1.566bn, closed Apr 2024, oversubscribed, Article 8)",
+        "next_fund": "Deployment across platforms and add-ons",
+        "strategy": "B2B services, industrial tech, software; Sweden/Nordics; lower mid-market; buy-and-build; InvestEU backed"
       },
+      "recent_activity": "2025: Establishes Revivo Group; add-ons at Revivo (Lejon), Trinax (Struqtur), Sacpro (UVRelining), VisionSense (Autepra); partners with Recycling Partner. 2024: Fund III close; Spring Media exit; VisionSense acquires Vidamin; Trinax acquires Jiricom. Portfolio: Recycling Partner, Sacpro, Xamera, Trinax, Lucky Bowl, Revivo Group, VisionSense Technologies.",
       "timeline": [
         {
           "year": 2025,
@@ -8550,18 +8621,19 @@
     },
     "FSN Capital": {
       "name": "FSN Capital",
-      "logo_url": "https://ui-avatars.com/api/?name=FSN+Capital&background=059669&color=ffffff&size=64",
+      "logo_url": "https://logo.clearbit.com/fsncapital.com",
       "website": "https://www.fsncapital.com",
       "headquarters": "Oslo, Norway",
       "founded": 1999,
-      "aum": "€2.5 billion",
-      "employees": "40+",
+      "aum": ">€4 billion",
+      "employees": "100+",
       "offices": [
         "Oslo",
         "Stockholm",
-        "Copenhagen"
+        "Copenhagen",
+        "Munich"
       ],
-      "description": "FSN Capital is a Nordic private equity firm focused on mid-market investments in companies with strong market positions and growth potential across various sectors. Mid-cap transformational owner (EV 100M–1B €) with Bridge between Nordic and Continental Europe. Known for creation of FSN Compass continuation-vehicle platform (2024) — top-quartile exit liquidity mechanism.",
+      "description": "FSN Capital is a leading Northern European private equity firm founded in 1999. >€4bn AUM; 60 platform investments, 400+ add-ons, 28 active portfolio companies. Purpose: contribute to welfare of everyday people through transformational ownership. EV range €100M–1B. FSN Compass (continuation fund >€400M) and Confluence (2024) provide exit liquidity. Net Zero committed; science-based targets.",
       "investment_focus": {
         "sectors": [
           "Services",
@@ -8571,13 +8643,15 @@
           "Consumer"
         ],
         "geography": [
-          "Nordic region"
+          "Nordic region",
+          "Northern Europe",
+          "Continental Europe"
         ],
-        "deal_size": "€50M - €500M",
+        "deal_size": "€100M - €1B EV",
         "investment_type": [
           "Mid-market buyouts",
           "Growth capital",
-          "Management buyouts"
+          "Transformational ownership"
         ]
       },
       "team": [
@@ -8605,13 +8679,9 @@
         }
       ],
       "fundraising": {
-        "funds": {
-          "fsn_vi": "€1.8bn (2021)",
-          "compass_i": "Continuation fund",
-          "fsn_vii": "In market 2025"
-        },
-        "strategy": "Mid-cap transformational owner (EV 100M–1B €) with Bridge between Nordic and Continental Europe",
-        "differentiator": "FSN Compass continuation-vehicle platform (2024) — top-quartile exit liquidity mechanism"
+        "current_fund": "FSN VI (€1.8bn, 2021), FSN Compass I (>€400M, 2024), Confluence (continuation fund, LGT lead)",
+        "next_fund": "FSN VII in market; deployment across VI, Compass, Confluence",
+        "strategy": "Mid-cap transformational owner (EV €100M–1B); Nordic–Continental Europe bridge; Compass/Confluence liquidity platform"
       },
       "company_updates": [
         {

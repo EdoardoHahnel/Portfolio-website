@@ -199,6 +199,31 @@
         font-size: 0.75rem;
     }
 
+    .pe-firm-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        color: #122238;
+        margin-top: 0.25rem;
+        padding: 0.35rem 0;
+        border-radius: 6px;
+        transition: all 0.2s ease;
+    }
+    .pe-firm-link:hover {
+        background: #eaf2ff;
+        color: #2f64c0;
+    }
+    .pe-firm-logo {
+        width: 32px;
+        height: 32px;
+        border-radius: 6px;
+        object-fit: contain;
+        background: white;
+        border: 1px solid #d5e0ef;
+        flex-shrink: 0;
+    }
+
     .detail-label {
         font-size: 0.65rem;
         color: #2e5ea9;
@@ -304,6 +329,87 @@
             padding: 0.9rem 1rem;
         }
     }
+
+    /* Smart sections */
+    .smart-sections {
+        margin-top: 1.5rem;
+        padding-top: 1.25rem;
+        border-top: 1px solid #e2e8f0;
+    }
+    .smart-subsection {
+        margin-bottom: 1.25rem;
+    }
+    .smart-subsection:last-child {
+        margin-bottom: 0;
+    }
+    .smart-subtitle {
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: #143052;
+        margin: 0 0 0.35rem 0;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+    }
+    .smart-subtitle i {
+        color: #3f7de8;
+        font-size: 0.85rem;
+    }
+    .smart-desc {
+        font-size: 0.75rem;
+        color: #5f7696;
+        margin: 0 0 0.65rem 0;
+        line-height: 1.4;
+    }
+    .smart-company-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    .smart-company-card {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 0.75rem;
+        background: linear-gradient(145deg, #f8fafc, #f1f5f9);
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        text-decoration: none;
+        color: #122238;
+        font-size: 0.8rem;
+        font-weight: 600;
+        transition: all 0.2s ease;
+    }
+    .smart-company-card:hover {
+        background: linear-gradient(145deg, #eef5ff, #e8f0ff);
+        border-color: #3f7de8;
+        color: #2f64c0;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(63, 125, 232, 0.15);
+    }
+    .smart-company-card .company-logo-sm {
+        width: 28px;
+        height: 28px;
+        border-radius: 6px;
+        object-fit: contain;
+        background: white;
+        border: 1px solid #e2e8f0;
+        flex-shrink: 0;
+    }
+    .smart-company-card .company-meta {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.1rem;
+    }
+    .smart-company-card .company-name {
+        font-weight: 600;
+    }
+    .smart-company-card .company-sector {
+        font-size: 0.65rem;
+        color: #64748b;
+        font-weight: 500;
+    }
 </style>
 {% endblock %}
 
@@ -407,11 +513,12 @@
             </h2>
             <div class="detail-grid">
                 <div class="detail-card">
-                    <div class="detail-card-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
                     <div class="detail-label">Private Equity Firm</div>
-                    <div class="detail-value" id="peFirm">—</div>
+                    <a id="peFirmLink" href="#" class="pe-firm-link" style="display: none;">
+                        <img id="peFirmLogo" src="" alt="" class="pe-firm-logo">
+                        <span id="peFirmName" class="detail-value"></span>
+                    </a>
+                    <div id="peFirmFallback" class="detail-value">—</div>
                 </div>
                 <div class="detail-card">
                     <div class="detail-card-icon">
@@ -468,6 +575,20 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Smart sections: Similar, Sibling, Strategic -->
+            <div class="smart-sections">
+                <div id="siblingSection" class="smart-subsection" style="display: none;">
+                    <h3 class="smart-subtitle"><i class="fas fa-layer-group"></i> Portfolio siblings</h3>
+                    <p class="smart-desc">Other companies backed by the same PE firm. Potential for operational synergies and knowledge sharing.</p>
+                    <div id="siblingList" class="smart-company-list"></div>
+                </div>
+                <div id="similarSection" class="smart-subsection" style="display: none;">
+                    <h3 class="smart-subtitle"><i class="fas fa-chart-bar"></i> Similar companies</h3>
+                    <p class="smart-desc">Direct sector peers operating in comparable markets—benchmarks for performance and strategic positioning.</p>
+                    <div id="similarList" class="smart-company-list"></div>
+                </div>
+            </div>
         </div>
 
         <!-- Action Buttons -->
@@ -493,7 +614,9 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         if (data.success && data.company) {
             const company = data.company;
-            loadCompanyData(company);
+            const similarCompanies = data.similar_companies || [];
+            const siblingCompanies = data.sibling_companies || [];
+            loadCompanyData(company, { similarCompanies, siblingCompanies });
             loadingState.style.display = 'none';
             companyDetails.style.display = 'block';
         } else {
@@ -515,7 +638,7 @@ function getInitials(name) {
     return (words[0][0] + words[words.length - 1][0]).toUpperCase();
 }
 
-function loadCompanyData(company) {
+function loadCompanyData(company, smartData = {}) {
     const currentYear = new Date().getFullYear();
     const entryYear = company.entry ? parseInt(String(company.entry).replace(/\D/g, '').slice(0, 4), 10) : null;
     const status = company.status || (entryYear && currentYear - entryYear > 0 ? 'Active' : 'N/A');
@@ -572,8 +695,31 @@ function loadCompanyData(company) {
         `${company.company} is a ${company.sector || 'business'} company based in ${company.headquarters || company.market || 'the Nordic region'}. The company operates in the ${company.sector || 'business services'} sector and is a portfolio company of ${company.source || 'a leading PE firm'}.`;
     document.getElementById('companyDescription').textContent = descriptionText;
     
-    // Investment Details
-    document.getElementById('peFirm').textContent = company.source || 'N/A';
+    // Investment Details - PE Firm with logo (clickable)
+    const peFirmName = company.source || '';
+    const peFirmLink = document.getElementById('peFirmLink');
+    const peFirmFallback = document.getElementById('peFirmFallback');
+    if (peFirmName) {
+        const firmDomainOverrides = { 'Alder': 'alder.se', 'Celero': 'celerocapital.com', 'Celero Capital': 'celerocapital.com', 'FSN Capital': 'fsncapital.com', 'Polaris': 'polarisequity.dk', 'Nordstjernan': 'nordstjernan.se', 'Valedo Partners': 'valedopartners.com', 'IK Partners': 'ikpartners.com', 'Adelis Equity': 'adelisequity.com', 'Adelis Equity Partners': 'adelisequity.com', 'Altor': 'altor.com', 'Helix Kapital': 'helixkapital.se', 'CapMan': 'capman.com', 'Axcel': 'axcel.dk', 'Amplio': 'amplio.se', 'Equip': 'equip.no', 'Impilo': 'impilo.se', 'MVI': 'mvi.se', 'Nalka': 'nalka.com', 'Trill Impact': 'trillimpact.com', 'EQT': 'eqtgroup.com', 'Triton': 'triton-partners.com', 'Triton Partners': 'triton-partners.com', 'Nordic Capital': 'nordiccapital.com', 'Litorina': 'litorina.se', 'Ratos': 'ratos.com', 'Summa Equity': 'summaequity.com', 'Bure Equity': 'bure.se', 'Verdane': 'verdane.com', 'Accent Equity': 'accentequity.se' };
+        const firmDomains = { 'EQT': 'eqtgroup.com', 'Triton': 'triton-partners.com', 'Triton Partners': 'triton-partners.com', 'Trill Impact': 'trillimpact.com', 'Nordic Capital': 'nordiccapital.com', 'Litorina': 'litorina.se', 'Valedo Partners': 'valedopartners.com', 'Altor': 'altor.com', 'Ratos': 'ratos.com', 'Summa Equity': 'summaequity.com', 'Bure Equity': 'bure.se', 'Verdane': 'verdane.com', 'Adelis Equity': 'adelisequity.com', 'IK Partners': 'ikpartners.com', 'Accent Equity': 'accentequity.se', 'Alder': 'alder.se', 'CapMan': 'capman.com', 'Axcel': 'axcel.dk', 'Amplio': 'amplio.se', 'Helix Kapital': 'helixkapital.se', 'Nordstjernan': 'nordstjernan.se', 'Equip': 'equip.no', 'Impilo': 'impilo.se', 'MVI': 'mvi.se', 'Nalka': 'nalka.com' };
+        const domain = firmDomainOverrides[peFirmName] || firmDomains[peFirmName] || '';
+        const logoUrl = domain ? `https://logo.clearbit.com/${domain}` : '';
+        const faviconUrl = domain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=128` : '';
+        const avatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(peFirmName)}&background=3f7de8&color=fff&size=64`;
+        peFirmLink.href = '/pe-firm/' + encodeURIComponent(peFirmName);
+        peFirmLink.style.display = 'inline-flex';
+        peFirmFallback.style.display = 'none';
+        const logoEl = document.getElementById('peFirmLogo');
+        const nameEl = document.getElementById('peFirmName');
+        logoEl.src = faviconUrl || logoUrl || avatarUrl;
+        logoEl.alt = peFirmName;
+        logoEl.onerror = function() { this.onerror = null; this.src = logoUrl || avatarUrl; this.onerror = function() { this.src = avatarUrl; }; };
+        nameEl.textContent = peFirmName;
+    } else {
+        peFirmLink.style.display = 'none';
+        peFirmFallback.style.display = 'block';
+        peFirmFallback.textContent = 'N/A';
+    }
     document.getElementById('fundName').textContent = company.fund || 'N/A';
     document.getElementById('entryYear').textContent = company.entry || 'N/A';
     document.getElementById('dealSize').textContent = company.deal_size || '—';
@@ -603,6 +749,84 @@ function loadCompanyData(company) {
     } else {
         websiteBtn.style.display = 'none';
     }
+
+    // Smart sections: similar companies, portfolio siblings
+    renderSmartSections(smartData);
+}
+
+// Match portfolio tab logo logic: favicon (reliable for Nordic) > clearbit > avatar
+var COMPANY_DOMAIN_OVERRIDES_DETAIL = { 'Brimer': 'brimer.no', 'Lunawood': 'lunawood.com', 'Enerco Group': 'enerco.se', 'Nordic Grid Solutions': 'triarca.dk', 'EITCO': 'eitco.de', 'Cedra': 'cedra.se', 'Vokstr': 'vokstr.no', 're:mount': 'remount.fi', 'netIP': 'netip.dk', 'Ropo Capital': 'ropo.com', 'Circura Danmark': 'circura.dk', 'Circura': 'circuragroup.com', 'DLVRY': 'dlvry.se', 'RETTA': 'innagroup.se', '3Button Group': '3bg.se', 'Briab': 'briab.se', 'EWGroup': 'ewgroup.se', 'eivis': 'eivis-group.com', 'Norstat': 'norstatgroup.com', 'Norres Baggerman Group': 'norres.com', 'Precis Digital': 'precisdigital.com', 'Certego': 'certego.dk', 'Uniwater': 'uniwater.se', 'Best Transport': 'besttransport.se', 'S R Intelligence (SRI)': 'sri.se', 'Tedge': 'tedge.se', 'Co-native': 'conative.se', 'SELATEK': 'selatek.se', 'Multisoft': 'multisoft.no', 'IT-Total': 'it-total.no', 'Hermes': 'hermesas.no', 'Pelly Group': 'pellygroup.com' };
+function extractDomainFromUrl(url) {
+    if (!url) return '';
+    try {
+        const u = (url.startsWith('http') ? url : 'https://' + url);
+        return new URL(u).hostname.replace(/^www\./, '');
+    } catch (e) {
+        return (url || '').replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0];
+    }
+}
+function extractCompanyDomainDetail(c) {
+    const name = (c && c.company) ? String(c.company).trim() : '';
+    if (name && COMPANY_DOMAIN_OVERRIDES_DETAIL[name]) return COMPANY_DOMAIN_OVERRIDES_DETAIL[name];
+    const nameLower = name ? name.toLowerCase() : '';
+    for (const k of Object.keys(COMPANY_DOMAIN_OVERRIDES_DETAIL)) {
+        if (k.toLowerCase() === nameLower) return COMPANY_DOMAIN_OVERRIDES_DETAIL[k];
+    }
+    const web = extractDomainFromUrl((c && c.website) || '');
+    if (web) return web;
+    const raw = (c && c.logo_url) || '';
+    const idx = raw.indexOf('logo.clearbit.com/');
+    if (idx >= 0) return raw.substring(idx + 18).split(/[/?#]/)[0].trim().replace(/^www\./, '');
+    return '';
+}
+function getCompanyLogoUrlDetail(c) {
+    const domain = extractCompanyDomainDetail(c);
+    const favicon = domain ? 'https://www.google.com/s2/favicons?domain=' + encodeURIComponent(domain) + '&sz=128' : '';
+    const clearbit = domain ? 'https://logo.clearbit.com/' + domain : '';
+    const avatar = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(c.company || 'Co') + '&background=3f7de8&color=fff&size=64';
+    const rawLogo = (c && c.logo_url) || (c && c.logo) || '';
+    const clearbitFromRaw = (rawLogo && !rawLogo.includes('ui-avatars.com')) ? rawLogo : '';
+    return favicon || clearbitFromRaw || clearbit || avatar;
+}
+
+function escapeHtml(text) {
+    if (!text) return '';
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+function renderSmartSections(data) {
+    const { similarCompanies = [], siblingCompanies = [] } = data;
+
+    function renderList(containerId, sectionId, items) {
+        const section = document.getElementById(sectionId);
+        const list = document.getElementById(containerId);
+        if (!section || !list) return;
+        if (items.length === 0) {
+            section.style.display = 'none';
+            return;
+        }
+        list.innerHTML = items.map(c => {
+            const domain = extractCompanyDomainDetail(c);
+            const logoUrl = getCompanyLogoUrlDetail(c);
+            const clearbitUrl = domain ? 'https://logo.clearbit.com/' + domain : '';
+            const avatarUrl = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(c.company || 'Co') + '&background=3f7de8&color=fff&size=64';
+            const fallback2 = clearbitUrl || avatarUrl;
+            const href = '/company/' + encodeURIComponent(c.slug || '');
+            return '<a href="' + href + '" class="smart-company-card">' +
+                '<img src="' + escapeHtml(logoUrl) + '" alt="' + escapeHtml(c.company) + '" class="company-logo-sm" ' +
+                'onerror="this.onerror=null;this.src=\'' + escapeHtml(fallback2) + '\';this.onerror=function(){this.onerror=null;this.src=\'' + escapeHtml(avatarUrl) + '\';this.onerror=function(){this.style.display=\'none\';};}">' +
+                '<div class="company-meta">' +
+                '<span class="company-name">' + escapeHtml(c.company) + '</span>' +
+                '<span class="company-sector">' + escapeHtml(c.sector || '') + (c.market ? ' · ' + escapeHtml(c.market) : '') + '</span>' +
+                '</div></a>';
+        }).join('');
+        section.style.display = 'block';
+    }
+
+    renderList('siblingList', 'siblingSection', siblingCompanies);
+    renderList('similarList', 'similarSection', similarCompanies);
 }
 
 function categorizeGeography(market) {

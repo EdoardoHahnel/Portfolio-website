@@ -34,23 +34,13 @@ let allPortfolioCompanies = [];
 
 function init() {
     const searchInput = document.getElementById('portfolioSearchInput');
-    const sectorFilter = document.getElementById('sectorFilter');
-    const marketFilter = document.getElementById('marketFilter');
-    const hqFilter = document.getElementById('hqFilter');
-    const entryYearFilter = document.getElementById('entryYearFilter');
-    const geographyFilter = document.getElementById('geographyFilter');
     const clearFiltersBtn = document.getElementById('clearFiltersBtn');
 
     if (searchInput) searchInput.addEventListener('input', handlePortfolioSearch);
-    [sectorFilter, marketFilter, hqFilter, entryYearFilter, geographyFilter].forEach(el => {
-        if (el) el.addEventListener('change', scheduleRenderFilteredPortfolio);
-    });
-    if (clearFiltersBtn) {
-        clearFiltersBtn.addEventListener('click', clearAllFilters);
-    }
-    initChartCardNavigation();
+    if (clearFiltersBtn) clearFiltersBtn.addEventListener('click', clearAllFilters);
     
-    // Auto-load portfolio data on page load
+    initMultiSelectFilters();
+    initChartCardNavigation();
     loadPortfolio();
 }
 
@@ -526,31 +516,59 @@ function normalizeEntryYear(raw) {
     return (/^\d{4}$/.test(s) || /^\d{4}/.test(s)) ? s.substring(0, 4) : s;
 }
 
-function getSelectedValue(id) {
-    const el = document.getElementById(id);
-    return el ? el.value.trim() : '';
+function getSelectedCheckboxes(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return [];
+    return Array.from(container.querySelectorAll('input[type="checkbox"]:checked'))
+        .map(cb => cb.value.trim()).filter(Boolean);
 }
 
 function getActiveFilters() {
     return {
-        query: getSelectedValue('portfolioSearchInput').toLowerCase(),
-        sector: getSelectedValue('sectorFilter'),
-        market: getSelectedValue('marketFilter'),
-        headquarters: getSelectedValue('hqFilter'),
-        entry: getSelectedValue('entryYearFilter'),
-        geography: getSelectedValue('geographyFilter')
+        query: (document.getElementById('portfolioSearchInput')?.value || '').toLowerCase().trim(),
+        sectors: getSelectedCheckboxes('sectorFilterOptions'),
+        markets: getSelectedCheckboxes('marketFilterOptions'),
+        hqs: getSelectedCheckboxes('hqFilterOptions'),
+        entryYears: getSelectedCheckboxes('entryYearFilterOptions'),
+        holdingPeriods: getSelectedCheckboxes('holdingPeriodFilterOptions'),
+        gps: getSelectedCheckboxes('gpFilterOptions'),
+        geographies: getSelectedCheckboxes('geographyFilterOptions'),
+        statuses: getSelectedCheckboxes('statusFilterOptions')
     };
 }
 
 function hasActiveFilters(filters) {
     return Boolean(
         filters.query ||
-        filters.sector ||
-        filters.market ||
-        filters.headquarters ||
-        filters.entry ||
-        filters.geography
+        (filters.sectors && filters.sectors.length > 0) ||
+        (filters.markets && filters.markets.length > 0) ||
+        (filters.hqs && filters.hqs.length > 0) ||
+        (filters.entryYears && filters.entryYears.length > 0) ||
+        (filters.holdingPeriods && filters.holdingPeriods.length > 0) ||
+        (filters.gps && filters.gps.length > 0) ||
+        (filters.geographies && filters.geographies.length > 0) ||
+        (filters.statuses && filters.statuses.length > 0)
     );
+}
+
+function computeHoldingPeriod(company) {
+    const currentYear = new Date().getFullYear();
+    const entryYear = company.entry ? parseInt(normalizeEntryYear(company.entry), 10) : null;
+    if (!entryYear) return null;
+    const isExited = company.status === 'Exited' || company.status === 'IPO';
+    const exitYear = (company.exit_year && parseInt(String(company.exit_year).replace(/\D/g, '').slice(0, 4), 10)) || null;
+    const endYear = (isExited && exitYear) ? exitYear : currentYear;
+    return Math.max(0, endYear - entryYear);
+}
+
+function holdingPeriodMatchesRange(years, range) {
+    if (!years || !range) return false;
+    if (range === '0-1') return years >= 0 && years <= 1;
+    if (range === '2-3') return years >= 2 && years <= 3;
+    if (range === '4-7') return years >= 4 && years <= 7;
+    if (range === '8-12') return years >= 8 && years <= 12;
+    if (range === '13+') return years >= 13;
+    return false;
 }
 
 function applyPortfolioFilters(companies, filters) {
@@ -563,6 +581,10 @@ function applyPortfolioFilters(companies, filters) {
         const cleanEntry = normalizeFilterValue(normalizeEntryYear(company.entry));
         const owner = normalizeFilterValue(company.source);
         const geography = categorizeGeography(cleanMarket);
+        const holdingPeriodYears = computeHoldingPeriod(company);
+        const currentYear = new Date().getFullYear();
+        const entryYear = company.entry ? parseInt(normalizeEntryYear(company.entry), 10) : null;
+        const status = company.status || (entryYear && currentYear - entryYear > 0 ? 'Active' : 'N/A');
 
         const matchesQuery = !filters.query || [
             cleanCompany,
@@ -573,58 +595,121 @@ function applyPortfolioFilters(companies, filters) {
             owner
         ].some(val => val.toLowerCase().includes(filters.query));
 
-        return matchesQuery &&
-            (!filters.sector || sectorGroup === filters.sector) &&
-            (!filters.market || cleanMarket === filters.market) &&
-            (!filters.headquarters || cleanHQ === filters.headquarters) &&
-            (!filters.entry || cleanEntry === filters.entry) &&
-            (!filters.geography || geography === filters.geography);
+        const matchesSector = !filters.sectors?.length || filters.sectors.includes(sectorGroup);
+        const matchesMarket = !filters.markets?.length || filters.markets.includes(cleanMarket);
+        const matchesHQ = !filters.hqs?.length || filters.hqs.includes(cleanHQ);
+        const matchesEntry = !filters.entryYears?.length || filters.entryYears.includes(cleanEntry);
+        const matchesHolding = !filters.holdingPeriods?.length ||
+            filters.holdingPeriods.some(range => holdingPeriodMatchesRange(holdingPeriodYears, range));
+        const matchesGP = !filters.gps?.length || filters.gps.includes(owner);
+        const matchesGeography = !filters.geographies?.length || filters.geographies.includes(geography);
+        const matchesStatus = !filters.statuses?.length || filters.statuses.includes(status);
+
+        return matchesQuery && matchesSector && matchesMarket && matchesHQ &&
+            matchesEntry && matchesHolding && matchesGP && matchesGeography && matchesStatus;
     });
 }
 
 function populateFilterOptions(companies) {
-    const sectorFilter = document.getElementById('sectorFilter');
-    const marketFilter = document.getElementById('marketFilter');
-    const hqFilter = document.getElementById('hqFilter');
-    const entryYearFilter = document.getElementById('entryYearFilter');
-    if (!sectorFilter || !marketFilter || !hqFilter || !entryYearFilter) return;
-
     const sectors = [...new Set(
-        companies
-            .map(c => categorizeSector(normalizeFilterValue(c.sector)))
-            .filter(Boolean)
+        companies.map(c => categorizeSector(normalizeFilterValue(c.sector))).filter(Boolean)
     )].sort();
     const markets = [...new Set(companies.map(c => normalizeFilterValue(c.market)).filter(Boolean))].sort();
     const hqs = [...new Set(companies.map(c => normalizeFilterValue(c.headquarters || c.market)).filter(Boolean))].sort();
     const years = [...new Set(companies.map(c => normalizeFilterValue(normalizeEntryYear(c.entry))).filter(Boolean))].sort((a, b) => Number(b) - Number(a));
+    const gps = [...new Set(companies.map(c => normalizeFilterValue(c.source)).filter(Boolean))].sort();
 
-    setSelectOptions(sectorFilter, 'All Sector Groups', sectors);
-    setSelectOptions(marketFilter, 'All Markets', markets);
-    setSelectOptions(hqFilter, 'All HQ', hqs);
-    setSelectOptions(entryYearFilter, 'All Entry Years', years);
+    populateMultiselectOptions('sectorFilterOptions', sectors);
+    populateMultiselectOptions('marketFilterOptions', markets);
+    populateMultiselectOptions('hqFilterOptions', hqs);
+    populateMultiselectOptions('entryYearFilterOptions', years);
+    populateMultiselectOptions('gpFilterOptions', gps);
+    updateFilterButtonCounts();
 }
 
-function setSelectOptions(selectEl, placeholder, values) {
-    const selected = selectEl.value;
-    selectEl.innerHTML = '';
-    const defaultOption = document.createElement('option');
-    defaultOption.value = '';
-    defaultOption.textContent = placeholder;
-    selectEl.appendChild(defaultOption);
-    values.forEach(value => {
-        const option = document.createElement('option');
-        option.value = value;
-        option.textContent = value;
-        selectEl.appendChild(option);
+function populateMultiselectOptions(containerId, values) {
+    const container = document.getElementById(containerId);
+    if (!container || !values.length) return;
+    container.innerHTML = values.map(v => 
+        `<label class="filter-option"><input type="checkbox" value="${escapeHtml(v)}"> ${escapeHtml(v)}</label>`
+    ).join('');
+    container.querySelectorAll('input').forEach(cb => {
+        cb.addEventListener('change', scheduleRenderFilteredPortfolio);
     });
-    selectEl.value = values.includes(selected) ? selected : '';
+}
+
+
+function initMultiSelectFilters() {
+    document.querySelectorAll('.filter-multiselect').forEach(wrapper => {
+        const btn = wrapper.querySelector('.filter-multiselect-btn');
+        const dropdown = wrapper.querySelector('.filter-multiselect-dropdown');
+        if (!btn || !dropdown) return;
+
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const wasActive = wrapper.classList.contains('active');
+            document.querySelectorAll('.filter-multiselect').forEach(w => w.classList.remove('active'));
+            if (!wasActive) {
+                wrapper.classList.add('active');
+                const rect = btn.getBoundingClientRect();
+                dropdown.style.left = rect.left + 'px';
+                dropdown.style.top = (rect.bottom + 4) + 'px';
+                dropdown.style.minWidth = Math.max(rect.width, 200) + 'px';
+            }
+        });
+
+        dropdown.addEventListener('change', (e) => {
+            if (e.target.matches('input[type="checkbox"]')) {
+                scheduleRenderFilteredPortfolio();
+                updateFilterButtonCounts();
+            }
+        });
+    });
+
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.filter-multiselect').forEach(w => w.classList.remove('active'));
+    });
+
+    window.addEventListener('scroll', () => {
+        document.querySelectorAll('.filter-multiselect.active .filter-multiselect-dropdown').forEach(dd => {
+            const btn = dd.closest('.filter-multiselect')?.querySelector('.filter-multiselect-btn');
+            if (btn) {
+                const rect = btn.getBoundingClientRect();
+                dd.style.left = rect.left + 'px';
+                dd.style.top = (rect.bottom + 4) + 'px';
+            }
+        });
+    }, true);
+}
+
+function updateFilterButtonCounts() {
+    const filters = getActiveFilters();
+    const counts = {
+        sector: filters.sectors?.length || 0,
+        market: filters.markets?.length || 0,
+        hq: filters.hqs?.length || 0,
+        entryYear: filters.entryYears?.length || 0,
+        holdingPeriod: filters.holdingPeriods?.length || 0,
+        gp: filters.gps?.length || 0,
+        geography: filters.geographies?.length || 0,
+        status: filters.statuses?.length || 0
+    };
+    document.querySelectorAll('.filter-multiselect').forEach(wrapper => {
+        const filterKey = wrapper.getAttribute('data-filter');
+        const countEl = wrapper.querySelector('.filter-btn-count');
+        if (countEl && counts[filterKey] !== undefined) {
+            countEl.textContent = counts[filterKey] > 0 ? `(${counts[filterKey]})` : '';
+        }
+    });
 }
 
 function clearAllFilters() {
-    ['portfolioSearchInput', 'sectorFilter', 'marketFilter', 'hqFilter', 'entryYearFilter', 'geographyFilter'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.value = '';
+    const searchInput = document.getElementById('portfolioSearchInput');
+    if (searchInput) searchInput.value = '';
+    document.querySelectorAll('.filter-options-list input[type="checkbox"]').forEach(cb => {
+        cb.checked = false;
     });
+    updateFilterButtonCounts();
     scheduleRenderFilteredPortfolio();
 }
 
