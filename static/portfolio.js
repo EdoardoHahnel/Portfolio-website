@@ -31,6 +31,7 @@ const firmDomainOverrides = {
     'Trill Impact': 'trillimpact.com'
 };
 let allPortfolioCompanies = [];
+let portfolioTableSortState = { column: 'company', direction: 'asc' };
 
 function init() {
     const searchInput = document.getElementById('portfolioSearchInput');
@@ -726,6 +727,73 @@ function renderFilteredPortfolio() {
     }
 }
 
+function comparePortfolioCompaniesBySort(a, b) {
+    const column = portfolioTableSortState.column;
+    const dir = portfolioTableSortState.direction === 'asc' ? 1 : -1;
+    const aVal = getPortfolioSortValue(a, column);
+    const bVal = getPortfolioSortValue(b, column);
+    if (typeof aVal === 'number' && typeof bVal === 'number') {
+        return (aVal - bVal) * dir;
+    }
+    return String(aVal).localeCompare(String(bVal), undefined, { sensitivity: 'base', numeric: true }) * dir;
+}
+
+function getPortfolioSortValue(company, column) {
+    const market = normalizeFilterValue(company.market);
+    const clean = (v) => normalizeFilterValue(v);
+    switch (column) {
+        case 'company': return clean(company.company) || 'ZZZ';
+        case 'owner': return clean(company.source) || 'ZZZ';
+        case 'sector': return clean(company.sector) || 'ZZZ';
+        case 'market': return market || 'ZZZ';
+        case 'headquarters': return clean(company.headquarters || company.market) || 'ZZZ';
+        case 'entry': {
+            const y = parseInt(normalizeEntryYear(company.entry), 10);
+            return Number.isFinite(y) ? y : -Infinity;
+        }
+        case 'holdingPeriod': {
+            const hp = computeHoldingPeriod(company);
+            return hp != null ? hp : -1;
+        }
+        case 'status': {
+            const cy = new Date().getFullYear();
+            const ey = company.entry ? parseInt(normalizeEntryYear(company.entry), 10) : null;
+            return clean(company.status || (ey && cy - ey > 0 ? 'Active' : 'N/A')) || 'ZZZ';
+        }
+        case 'geography': return categorizeGeography(market);
+        default: return '';
+    }
+}
+
+function updatePortfolioTableSortUI(table) {
+    if (!table) return;
+    const headers = table.querySelectorAll('.portfolio-table-sortable');
+    headers.forEach(th => {
+        const col = th.getAttribute('data-sort');
+        th.classList.remove('sorted-asc', 'sorted-desc');
+        if (col === portfolioTableSortState.column) {
+            th.classList.add(portfolioTableSortState.direction === 'asc' ? 'sorted-asc' : 'sorted-desc');
+        }
+    });
+}
+
+function setupPortfolioTableSortHandlers(table) {
+    if (!table) return;
+    table.querySelectorAll('.portfolio-table-sortable').forEach(th => {
+        th.addEventListener('click', () => {
+            const col = th.getAttribute('data-sort');
+            if (!col) return;
+            if (portfolioTableSortState.column === col) {
+                portfolioTableSortState.direction = portfolioTableSortState.direction === 'asc' ? 'desc' : 'asc';
+            } else {
+                portfolioTableSortState.column = col;
+                portfolioTableSortState.direction = 'asc';
+            }
+            scheduleRenderFilteredPortfolio();
+        });
+    });
+}
+
 function displayFilteredPortfolioFlat(companies) {
     const container = document.getElementById('portfolioContainer');
     const emptyState = document.getElementById('portfolioEmptyState');
@@ -738,6 +806,7 @@ function displayFilteredPortfolioFlat(companies) {
     }
 
     emptyState.classList.add('hidden');
+    const sortedCompanies = [...companies].sort(comparePortfolioCompaniesBySort);
     const currentYear = new Date().getFullYear();
     const tableWrapper = document.createElement('div');
     tableWrapper.className = 'portfolio-table-wrapper';
@@ -746,22 +815,24 @@ function displayFilteredPortfolioFlat(companies) {
     table.innerHTML = `
         <thead>
             <tr>
-                <th>Company</th>
-                <th>Owner (GP)</th>
-                <th>Sector</th>
-                <th>Market</th>
-                <th>Headquarters</th>
-                <th>Entry Year</th>
-                <th>Holding Period</th>
-                <th>Status</th>
-                <th>Geography</th>
+                <th class="portfolio-table-sortable" data-sort="company">Company</th>
+                <th class="portfolio-table-sortable" data-sort="owner">Owner (GP)</th>
+                <th class="portfolio-table-sortable" data-sort="sector">Sector</th>
+                <th class="portfolio-table-sortable" data-sort="market">Market</th>
+                <th class="portfolio-table-sortable" data-sort="headquarters">Headquarters</th>
+                <th class="portfolio-table-sortable" data-sort="entry">Entry Year</th>
+                <th class="portfolio-table-sortable" data-sort="holdingPeriod">Holding Period</th>
+                <th class="portfolio-table-sortable" data-sort="status">Status</th>
+                <th class="portfolio-table-sortable" data-sort="geography">Geography</th>
             </tr>
         </thead>
         <tbody></tbody>
     `;
     const tbody = table.querySelector('tbody');
+    updatePortfolioTableSortUI(table);
+    setupPortfolioTableSortHandlers(table);
 
-    companies.forEach((company, index) => {
+    sortedCompanies.forEach((company, index) => {
         const cleanCompany = cleanDisplayText(company.company || 'N/A');
         const cleanSector = cleanDisplayText(company.sector || 'N/A');
         const cleanMarket = cleanDisplayText(company.market || 'N/A');

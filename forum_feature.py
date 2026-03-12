@@ -9,6 +9,7 @@ from functools import wraps
 
 from flask import (
     Blueprint,
+    flash,
     jsonify,
     redirect,
     render_template,
@@ -19,7 +20,7 @@ from flask import (
 from werkzeug.security import check_password_hash, generate_password_hash
 
 
-FORUM_DB_PATH = os.path.join(os.getcwd(), "forum.db")
+FORUM_DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "forum.db")
 DEFAULT_CATEGORIES = [
     "Investment Banking",
     "Private Equity",
@@ -169,6 +170,17 @@ def init_forum_db():
 
     cur.execute(
         """
+        CREATE TABLE IF NOT EXISTS platform_access_signups (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            email TEXT NOT NULL,
+            created_at TEXT NOT NULL
+        )
+        """
+    )
+    cur.execute("CREATE INDEX IF NOT EXISTS idx_platform_signups_created ON platform_access_signups(created_at DESC)")
+
+    cur.execute(
+        """
         CREATE TABLE IF NOT EXISTS page_views (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             path TEXT NOT NULL,
@@ -186,6 +198,21 @@ def init_forum_db():
 
     _ensure_admin_user()
     _seed_forum_data()
+
+
+def _load_platform_signups_json():
+    """Load platform access signups from JSON file (used by app.py /signup route)."""
+    import json as _json
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "platform_signups.json")
+    try:
+        if os.path.exists(path):
+            with open(path, "r", encoding="utf-8") as f:
+                data = _json.load(f)
+                if isinstance(data, list):
+                    return sorted(data, key=lambda x: x.get("created_at", ""), reverse=True)[:200]
+    except Exception:
+        pass
+    return []
 
 
 def log_page_view(path: str, ip: str | None = None):
@@ -495,34 +522,39 @@ def forum_register():
 
     username = (request.form.get("username") or "").strip()
     password = (request.form.get("password") or "").strip()
-    role = (request.form.get("role") or "Analyst").strip()
-    experience_level = (request.form.get("experience_level") or "0-2 years").strip()
     if not username or not password:
         return render_template("forum_register.html", current_user=_current_user(), error="Username and password are required.")
 
+    role = (request.form.get("role") or "Analyst").strip()
+    experience_level = (request.form.get("experience_level") or "0-2 years").strip()
+
     conn = _get_db()
-    existing = conn.execute("SELECT id FROM users WHERE LOWER(username)=LOWER(?)", (username,)).fetchone()
-    if existing:
+    try:
+        existing = conn.execute("SELECT id FROM users WHERE LOWER(username)=LOWER(?)", (username,)).fetchone()
+        if existing:
+            conn.close()
+            return render_template("forum_register.html", current_user=_current_user(), error="Username already exists.")
+
+        user_count = conn.execute("SELECT COUNT(*) AS c FROM users").fetchone()[0]
+        is_admin = 1 if user_count == 0 else 0
+
+        conn.execute(
+            """INSERT INTO users (username, password_hash, role, experience_level, is_admin, created_at)
+               VALUES (?, ?, ?, ?, ?, ?)""",
+            (username, generate_password_hash(password), role, experience_level, is_admin, _now_iso()),
+        )
+        conn.commit()
+        user_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
         conn.close()
-        return render_template("forum_register.html", current_user=_current_user(), error="Username already exists.")
 
-    user_count = conn.execute("SELECT COUNT(*) AS c FROM users").fetchone()["c"]
-    admin_seed = (os.environ.get("FORUM_ADMIN_USERNAME") or "").strip().lower()
-    is_admin = int(user_count == 0 or (admin_seed and username.lower() == admin_seed))
-
-    cur = conn.execute(
-        """
-        INSERT INTO users (username, password_hash, role, experience_level, is_admin, created_at)
-        VALUES (?, ?, ?, ?, ?, ?)
-        """,
-        (username, generate_password_hash(password), role, experience_level, is_admin, _now_iso()),
-    )
-    conn.commit()
-    user_id = cur.lastrowid
-    conn.close()
-
-    session["forum_user_id"] = user_id
-    return redirect(url_for("forum.forum_index"))
+        session["forum_user_id"] = user_id
+        return redirect(url_for("forum.forum_index"))
+    except Exception as e:
+        try:
+            conn.close()
+        except Exception:
+            pass
+        return render_template("forum_register.html", current_user=_current_user(), error=f"Registration failed: {e}")
 
 
 @forum_bp.route("/forum/login", methods=["GET", "POST"])
@@ -656,6 +688,32 @@ def _send_modelling_request_email(to_email: str) -> bool:
     except Exception as e:
         print(f"[Forum] Email notification failed: {e}")
         return False
+
+
+@forum_bp.route("/forum/platform-signup", methods=["POST"])
+def platform_signup():
+    """6 months free – save email to JSON. View in Forum → Moderation."""
+    import json as _json
+    email = (request.form.get("email") or "").strip().lower()
+    if email and "@" in email:
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "platform_signups.json")
+        try:
+            data = []
+            if os.path.exists(path):
+                with open(path, "r", encoding="utf-8") as f:
+                    data = _json.load(f)
+            data.append({"email": email, "created_at": _now_iso()})
+            with open(path, "w", encoding="utf-8") as f:
+                _json.dump(data, f, indent=2)
+        except Exception:
+            pass
+    return redirect("/forum/signup-thanks")
+
+
+@forum_bp.route("/forum/signup-thanks")
+def signup_thanks():
+    """Confirmation page after platform signup."""
+    return render_template("signup_thanks.html")
 
 
 @forum_bp.route("/forum/fundraising-download-signup", methods=["POST"])
@@ -837,6 +895,7 @@ def forum_admin():
     fundraising_signups = conn.execute(
         "SELECT * FROM fundraising_download_signups ORDER BY created_at DESC LIMIT 200"
     ).fetchall()
+    platform_signups = _load_platform_signups_json()
     # Analytics: page views
     total_views = conn.execute("SELECT COUNT(*) as c FROM page_views").fetchone()["c"]
     unique_visitors = conn.execute(
@@ -893,6 +952,7 @@ def forum_admin():
         "forum_admin.html",
         email_signups=[dict(s) for s in signups],
         fundraising_signups=[dict(s) for s in fundraising_signups],
+        platform_signups=[dict(s) for s in platform_signups],
         analytics=analytics,
         reports=[dict(r) for r in reports],
         threads=[dict(t) for t in threads],

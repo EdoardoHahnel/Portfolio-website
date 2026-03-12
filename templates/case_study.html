@@ -127,7 +127,7 @@
     </div>
 
     <a href="{{ study.pdf_url }}" target="_blank" rel="noopener noreferrer" class="case-study-cta">
-        <i class="fas fa-file-pdf"></i> Open case study (PDF)
+        <i class="fas {% if study.get('cta_text') %}fa-external-link-alt{% else %}fa-file-pdf{% endif %}"></i> {{ study.get('cta_text', 'Open case study (PDF)') }}
     </a>
 </div>
 {% endblock %}

@@ -6,8 +6,8 @@ It handles requests from your browser and serves web pages.
 """
 # Updated: Added 45+ Swedish AI news (Klarna, H&M, Spotify, Scania, Volvo, Nordea, etc.); Enhanced cards with company logos & colored borders
 
-from flask import Flask, render_template, jsonify, request, abort
-from datetime import datetime
+from flask import Flask, render_template, jsonify, request, abort, redirect, flash
+from datetime import datetime, timezone, timedelta
 import json
 import os
 from scraper import MAScraper
@@ -25,6 +25,22 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def data_path(filename):
     return os.path.join(BASE_DIR, filename)
+
+PLATFORM_SIGNUPS_FILE = data_path("platform_signups.json")
+
+def save_platform_signup_json(email):
+    """Append email to platform_signups.json. Simple file-based storage."""
+    try:
+        data = []
+        if os.path.exists(PLATFORM_SIGNUPS_FILE):
+            with open(PLATFORM_SIGNUPS_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        data.append({"email": email.strip().lower(), "created_at": datetime.now(timezone.utc).isoformat()})
+        with open(PLATFORM_SIGNUPS_FILE, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2)
+        return True
+    except Exception:
+        return False
 
 # This will store our news articles in memory
 # In a real application, you'd use a database (we'll keep it simple for beginners)
@@ -109,10 +125,9 @@ def _track_page_views(response):
 
 @app.route('/')
 def home():
-    """
-    Dashboard - Main landing page
-    """
-    return render_template('dashboard.html')
+    """Dashboard – main landing page."""
+    offer_end = datetime.now(timezone.utc) + timedelta(days=7)
+    return render_template('dashboard.html', offer_end_iso=offer_end.isoformat())
 
 
 @app.route('/news')
@@ -217,6 +232,127 @@ def case_study(slug):
             'description': 'EQT, founded in 1994 with Investor AB, has built a vision to become the most reputable investor and owner in the industry. This case explores how that vision is integrated with responsible business practices in portfolio companies through a long-term, ownership mindset. Using Anticimex (pest control) as a role model example, the case illustrates transparency, stakeholder relations, sustainable value creation, and the TROIKA governance model.',
             'topics': ['Responsible investment', 'Sustainability', 'Transparency', 'Anticimex'],
             'pdf_url': 'https://www.hhs.se/contentassets/ee2dfba842c848678d9907c1b5941508/eqt-case-study-201810307ny-titlesida.pdf',
+        },
+        'nordnet': {
+            'title': 'Nordnet: Creating a best-in-class customer experience',
+            'firm': 'Nordic Capital',
+            'firm_initials': 'NC',
+            'firm_logo_domain': 'nordiccapital.com',
+            'source': 'Nordic Capital',
+            'description': 'In 2017, Nordnet was taken private by Nordic Capital and the Öhman Group, who shared the ambition to create a best-in-class customer experience in the digital savings industry. During four years of ownership, Nordnet became a leading Pan-Nordic savings and investment platform with more than 1.5 million customers. Savings capital more than doubled to SEK 565 billion. Significant platform investments created a more flexible IT infrastructure and accelerated product innovation. Nordnet advanced its sustainability agenda—40% of client investments were in top-rated sustainable funds by 2019 (vs 13% in 2016). Nordnet was successfully re-listed at end of 2020 with a substantially over-subscribed offering. Today Nordnet is uniquely positioned as the only Pan-Nordic platform of scale.',
+            'topics': ['Digital transformation', 'Take-private', 'Financial services', 'IPO exit', 'Sustainability'],
+            'pdf_url': 'https://www.nordiccapital.com/portfolio-cases/case-studies/nordnet/',
+            'cta_text': 'Read case study',
+        },
+        'akademikliniken': {
+            'title': 'Akademikliniken — Nordic leader in plastic surgery and aesthetic treatments',
+            'firm': 'Valedo Partners',
+            'firm_initials': 'V',
+            'firm_logo_domain': 'valedopartners.com',
+            'source': 'Valedo Partners',
+            'description': 'Valedo invested in Akademikliniken in 2011 with a plan for accelerated growth. During ownership, the company evolved into the Nordic market leader in plastic surgery and aesthetic treatments. Key achievements: establishment of three new hospitals and walk-in clinics, two strategic acquisitions (Specialistkliniken, Ellipse Klinikken), units increased from three to sixteen, and significant focus on research and service development. Divested to Polaris Private Equity in June 2016.',
+            'topics': ['Healthcare', 'Buy-and-build', 'Add-on acquisitions', 'Market leader'],
+            'pdf_url': 'https://www.valedopartners.com/en/akademikliniken/',
+            'cta_text': 'Read case study',
+        },
+        'eqt-nord-anglia': {
+            'title': 'How EQT built Nord Anglia Education from six-school minnow to $14.5bn market leader',
+            'firm': 'EQT',
+            'firm_initials': 'EQT',
+            'firm_logo_domain': 'eqtgroup.com',
+            'source': 'Wealth Club',
+            'description': 'EQT took Nord Anglia private in June 2008 for around $400m when it had just six schools. Nearly two decades later, the business operates more than 80 schools across 33 countries, teaching 80,000 students. In late 2024, EQT welcomed a new consortium of investors—the transaction valued Nord Anglia at $14.5 billion, returning $5.4 billion to EQT investors. The case explores M&A strategy, governance improvements, data-driven decision-making, and partnerships with MIT and UNICEF.',
+            'topics': ['Education', 'Take-private', 'Platform growth', 'Asia PE', 'IPO'],
+            'pdf_url': 'https://www.wealthclub.co.uk/news-and-insights/private-equity-case-study-eqt/',
+            'cta_text': 'Read case study',
+        },
+        'eqt-benifex': {
+            'title': 'The EQT success story — Global benefits technology',
+            'firm': 'EQT',
+            'firm_initials': 'EQT',
+            'firm_logo_domain': 'eqtgroup.com',
+            'source': 'Benifex',
+            'description': 'EQT implemented Benifex OneHub to standardise, digitise and automate benefits processes across 20 countries. Previously lacking HR tech infrastructure, EQT wanted a scalable solution to support global growth. The phased rollout achieved up to 80% engagement in the first 30 days. Key principles: globally consistent approach, avoid over-configuration, localise only where needed.',
+            'topics': ['HR technology', 'Digital transformation', 'Global rollout', 'Benefits platform'],
+            'pdf_url': 'https://benifex.com/case-study/the-eqt-success-story',
+            'cta_text': 'Read case study',
+        },
+        'oscar-jacobson': {
+            'title': 'Oscar Jacobson — Revitalisation of an iconic Nordic menswear brand',
+            'firm': 'Valedo Partners',
+            'firm_initials': 'V',
+            'firm_logo_domain': 'valedopartners.com',
+            'source': 'Valedo Partners',
+            'description': 'Valedo invested in Oscar Jacobson in 2008 to revitalise the brand and accelerate growth. During almost 10 years of ownership, the company was transformed into a modern, award-winning brand in the menswear affordable luxury segment. Initiatives included expansion into Norway, widened product collection (outerwear, knitwear), establishment of a fast-growing e-commerce presence, and new store network. Divested to Mellby Gård in June 2018.',
+            'topics': ['Consumer', 'Brand revitalisation', 'Retail', 'E-commerce'],
+            'pdf_url': 'https://www.valedopartners.com/en/oscar-jacobson/',
+            'cta_text': 'Read case study',
+        },
+        'presto': {
+            'title': 'Presto — Building a pan-European compliance services champion',
+            'firm': 'Adelis Equity',
+            'firm_initials': 'A',
+            'firm_logo_domain': 'adelisequity.com',
+            'source': 'Adelis Equity',
+            'description': 'Presto is a pan-European compliance services specialist offering fire safety and occupational safety trainings to over 100,000 B2B customers. Adelis transformed Presto from a Swedish fire safety provider into a leading safety services group across Nordics, Germany, Spain and the Netherlands through more than 70 add-on acquisitions. 8x growth, 34% annualized. In 2024, Adelis raised a continuation vehicle to support further European expansion.',
+            'topics': ['Buy-and-build', 'Compliance services', 'Roll-up', 'Pan-European'],
+            'pdf_url': 'https://adelisequity.com/cases/presto/',
+            'cta_text': 'Read case study',
+        },
+        'joe-the-juice': {
+            'title': 'Joe & The Juice — From Scandinavian concept to global consumer brand',
+            'firm': 'Valedo Partners',
+            'firm_initials': 'V',
+            'firm_logo_domain': 'valedopartners.com',
+            'source': 'Valedo Partners',
+            'description': 'Valedo invested in Joe & The Juice in 2013 when it had approximately 50 units, mostly in Denmark. During 10 years of ownership, the company evolved from DKK ~150m to DKK 2.3bn in revenues, expanded to 16 markets across three continents, and grew from 50 to 350 units. Key initiatives: US and European expansion, digital sales (Joe app, delivery), sustainability framework. Divested to General Atlantic in November 2023.',
+            'topics': ['Consumer', 'Food & beverage', 'International expansion', 'Digital'],
+            'pdf_url': 'https://www.valedopartners.com/en/joe-the-juice/',
+            'cta_text': 'Read case study',
+        },
+        'aceve': {
+            'title': 'Aceve — Building a pan-European SaaS provider in construction and skilled trades',
+            'firm': 'Adelis Equity',
+            'firm_initials': 'A',
+            'firm_logo_domain': 'adelisequity.com',
+            'source': 'Adelis Equity',
+            'description': 'Aceve is a pan-European provider of ERP and FSM vertical software to over 22,000 customers in construction and skilled trades across seven countries. Adelis completed 16 add-on acquisitions across Nordics, Germany and Benelux since entry in 2018. Migrated to fully cloud-based solution; recurring revenue increased from 66% to over 90%. 16x growth, 49% annualized. In 2024, Adelis raised a continuation vehicle and welcomed EQT as partner.',
+            'topics': ['SaaS', 'Software', 'Buy-and-build', 'Cloud transition'],
+            'pdf_url': 'https://adelisequity.com/cases/aceve/',
+            'cta_text': 'Read case study',
+        },
+        'ssi-diagnostica': {
+            'title': 'SSI Diagnostica Group — Unleashing potential of decades of world-class research',
+            'firm': 'Adelis Equity',
+            'firm_initials': 'A',
+            'firm_logo_domain': 'adelisequity.com',
+            'source': 'Adelis Equity',
+            'description': 'SSI Diagnostica Group is a globally active specialty diagnostics company focusing on rapid tests for gastrointestinal, respiratory, and bloodborne diseases, plus antisera for vaccine manufacturers. Adelis carved out the state-owned entity in 2016 and built a new management team. Key acquisitions: CTK Biotech (2020), Techlab (2022), Gulf Coast Scientific (2025). Grew from ~80 to ~600 employees, €20m to over €110m in sales. 5x growth, 20% annualized.',
+            'topics': ['Healthcare', 'Carve-out', 'Diagnostics', 'M&A'],
+            'pdf_url': 'https://adelisequity.com/cases/ssi-diagnostica/',
+            'cta_text': 'Read case study',
+        },
+        'axentia-technologies': {
+            'title': 'Axentia Technologies — Building a global presence in public transport information systems',
+            'firm': 'Adelis Equity',
+            'firm_initials': 'A',
+            'firm_logo_domain': 'adelisequity.com',
+            'source': 'Adelis Equity',
+            'description': 'Axentia Technologies is a global leader in real-time information for public transport. Adelis invested in 2020. Key achievements: global go-to-market model, technology leadership, strategic acquisition of Transit Intelligence, HQ professionalisation including public bond listing in 2024. Grew organically by an average 28% p.a. with industry-leading margins. In 2025, Adelis enabled a continuation bringing onboard new investors.',
+            'topics': ['Technology', 'Transport', 'Organic growth', 'Global expansion'],
+            'pdf_url': 'https://adelisequity.com/cases/axentia-technologies/',
+            'cta_text': 'Read case study',
+        },
+        'aditro-logistics': {
+            'title': 'Aditro Logistics — Leading third-party logistics in Sweden and Norway',
+            'firm': 'Valedo Partners',
+            'firm_initials': 'V',
+            'firm_logo_domain': 'valedopartners.com',
+            'source': 'Valedo Partners',
+            'description': 'Valedo acquired Aditro Logistics in 2012 in partnership with management. During ownership, revenue more than doubled from SEK 400m to over SEK 1bn with 14% annual growth (over 2x market). Four modern logistics centres established; warehousing space increased from 150,000 to 230,000 sqm. Acquisition of Procon Work Solutions added staffing to the service offering. Divested to Posti (Finland) in February 2020.',
+            'topics': ['Logistics', 'Third-party logistics', 'Buy-and-build', 'Infrastructure'],
+            'pdf_url': 'https://www.valedopartners.com/en/aditro-logistics/',
+            'cta_text': 'Read case study',
         },
     }
     study = CASE_STUDIES.get(slug)
@@ -1800,8 +1936,8 @@ if __name__ == '__main__':
         print("\n" + "=" * 60 + "\n")
     
     # Start the Flask server
-    # debug=True in development for helpful error messages and auto-reload
-    # debug=False in production for security
-    app.run(debug=debug_mode, host='0.0.0.0', port=port)
+    # debug=True in development for helpful error messages
+    # use_reloader=False: Windows reloader often hangs on "Restarting with stat"; restart manually for code changes
+    app.run(debug=debug_mode, host='0.0.0.0', port=port, use_reloader=False)
 
 

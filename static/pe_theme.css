@@ -33,6 +33,22 @@ body.pe-theme.modern-layout .main-container {
     min-height: 0; /* required for flex/grid child to scroll */
 }
 
+.pe-flash-wrap {
+    padding: 12px 20px 0;
+}
+
+.pe-flash {
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+
+.pe-flash-success {
+    background: #d1fae5;
+    color: #065f46;
+    border: 1px solid #6ee7b7;
+}
+
 .pe-top-nav {
     background: #f2f7ff !important;
     border-bottom: 1px solid var(--pe-border);
@@ -55,17 +71,30 @@ body.pe-theme.modern-layout .main-container {
     gap: 10px;
     justify-self: start;
     position: relative;
-    z-index: 2;
+    z-index: 20; /* Keep brand above nav links when they overlap at narrow widths */
 }
 
 .pe-mobile-toggle {
     display: none !important;
     width: 38px;
     height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+    padding: 0;
     border-radius: 10px;
     border: 1px solid var(--pe-border);
     background: #f7faff;
     color: #1e3f67;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+}
+.pe-mobile-toggle i {
+    font-size: 1.1rem;
+    line-height: 1;
+    display: block;
 }
 
 .pe-brand {
@@ -271,6 +300,206 @@ body.pe-mobile-menu-open {
     background: #f3f8ff;
 }
 
+/* Free access signup - slim, above hero, dark blue-purple */
+.pe-signup-banner {
+    margin-bottom: 12px;
+}
+
+.pe-signup-banner-inner {
+    position: relative;
+    border-radius: 6px;
+    border: 1px solid rgba(67, 56, 202, 0.4);
+    background: linear-gradient(135deg, #1e1e3f 0%, #16162d 50%, #0f0f1f 100%);
+    padding: 8px 14px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.pe-signup-accent {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    border-radius: 6px 0 0 6px;
+    background: linear-gradient(180deg, #6366f1, #4f46e5);
+}
+
+.pe-signup-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 14px;
+}
+
+.pe-signup-text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pe-signup-sep {
+    width: 1px;
+    height: 20px;
+    background: linear-gradient(180deg, transparent, rgba(99, 102, 241, 0.45), transparent);
+    flex-shrink: 0;
+}
+
+.pe-signup-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.pe-signup-headline {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.01em;
+}
+
+.pe-signup-headline-muted {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.pe-signup-desc {
+    display: block;
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 0.01em;
+}
+
+/* Countdown - same as Explore PE Firms button */
+.pe-signup-countdown {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, var(--pe-primary), var(--pe-primary-strong));
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(47, 100, 192, 0.5);
+    box-shadow: 0 2px 12px rgba(63, 125, 232, 0.35);
+}
+
+.pe-countdown-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    min-width: 44px;
+    color: #fff;
+}
+
+.pe-countdown-block + .pe-countdown-block {
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.pe-countdown-num {
+    font-size: 1.15rem;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.1;
+}
+
+.pe-countdown-label {
+    font-size: 0.58rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.85;
+    margin-top: 1px;
+}
+
+.pe-countdown-ended {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.pe-signup-form-pill {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.pe-signup-input-pill {
+    width: 172px;
+    padding: 5px 11px;
+    font-size: 0.78rem;
+    border: 1px solid rgba(99, 102, 241, 0.4);
+    border-radius: 6px;
+    background: rgba(30, 30, 63, 0.6);
+    color: #c7d2fe;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.pe-signup-input-pill::placeholder {
+    color: rgba(165, 180, 252, 0.5);
+}
+
+.pe-signup-input-pill:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.35);
+}
+
+.pe-signup-btn-pill {
+    padding: 5px 12px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, var(--pe-primary), var(--pe-primary-strong));
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pe-signup-btn-pill:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 12px rgba(63, 125, 232, 0.5);
+}
+
+.pe-signup-btn-pill i {
+    font-size: 0.7em;
+}
+
+@media (max-width: 640px) {
+    .pe-signup-banner-inner {
+        padding: 8px 12px;
+    }
+    .pe-signup-sep {
+        display: none;
+    }
+    .pe-signup-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+    .pe-signup-text {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .pe-signup-form-pill {
+        flex-direction: row;
+    }
+    .pe-signup-input-pill {
+        flex: 1;
+        width: auto;
+        min-width: 0;
+    }
+}
+
 .pe-metric-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -394,16 +623,139 @@ body.pe-mobile-menu-open {
     border: 1px solid #cddff8 !important;
 }
 
+/* Intermediate breakpoint: switch to hamburger nav before overlap with brand (e.g. iPad, narrow desktop) */
+@media (max-width: 960px) {
+    .pe-top-nav {
+        position: relative;
+        z-index: 10050; /* Above news ticker (1001) so hamburger is clickable */
+    }
+    .pe-nav-shell {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 10px 12px;
+    }
+    .pe-nav-left {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .pe-nav-right {
+        display: none !important;
+    }
+    .pe-mobile-toggle {
+        display: inline-flex !important;
+        order: 2;
+        margin-left: auto;
+        flex-shrink: 0;
+    }
+    .pe-brand {
+        order: 1;
+    }
+    /* Overlay and drawer must be display:block for menu to work - they are hidden inside 768px only otherwise */
+    .pe-mobile-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(8, 22, 40, 0.34);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        z-index: 10040;
+        transition: opacity 220ms ease, visibility 0s linear 220ms;
+    }
+    .pe-mobile-overlay.is-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transition: opacity 220ms ease;
+    }
+    .pe-mobile-drawer {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100dvh;
+        width: min(86vw, 360px);
+        background: #ffffff;
+        border-left: 1px solid var(--pe-border);
+        box-shadow: -12px 0 28px rgba(15, 34, 59, 0.16);
+        z-index: 10060;
+        transform: translateX(100%);
+        transition: transform 240ms ease;
+        padding: 14px 14px 18px;
+        box-sizing: border-box;
+    }
+    .pe-mobile-drawer.is-open {
+        transform: translateX(0);
+    }
+    .pe-mobile-drawer-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 6px 4px 10px;
+        border-bottom: 1px solid #e2eaf5;
+        margin-bottom: 8px;
+    }
+    .pe-mobile-drawer-title {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: #24466f;
+    }
+    .pe-mobile-drawer-close {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        border: 1px solid #d8e4f4;
+        background: #f5f9ff;
+        color: #1f4068;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    .pe-mobile-drawer-menu {
+        list-style: none;
+        margin: 0;
+        padding: 6px 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .pe-mobile-drawer-item {
+        width: 100%;
+    }
+    .pe-mobile-drawer-link {
+        display: block;
+        width: 100%;
+        text-decoration: none;
+        color: #2e4d72;
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 12px 12px;
+        border-radius: 10px;
+        border: 1px solid transparent;
+        box-sizing: border-box;
+    }
+    .pe-mobile-drawer-link.is-active {
+        color: #1f4b82;
+        background: #e6efff;
+        border-color: #cadefb;
+    }
+}
+
 @media (max-width: 768px) {
     body.pe-theme.modern-layout {
         grid-template-rows: auto 1fr;
         height: 100dvh;
         min-height: 100dvh;
+        /* Fallback for older mobile browsers */
+        min-height: -webkit-fill-available;
     }
 
     body.pe-theme.modern-layout .main-container {
-        padding-bottom: max(80px, calc(env(safe-area-inset-bottom) + 40px));
+        /* Extra bottom padding so last content (e.g. Bure, Capman) is fully scrollable on phones/iPads */
+        padding-bottom: max(140px, calc(env(safe-area-inset-bottom) + 80px));
         -webkit-overflow-scrolling: touch;
+        touch-action: pan-y;
     }
 
     .pe-top-nav {
@@ -714,4 +1066,33 @@ body.pe-mobile-menu-open {
 /* Scroll reveal - smoother transitions (when used) */
 .pe-theme .scroll-reveal-item {
     transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Sortable portfolio table headers - shared across Portfolio and GP profile */
+.pe-theme .portfolio-table-sortable {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    padding-right: 1.15rem !important;
+    white-space: nowrap;
+}
+.pe-theme .portfolio-table-sortable:hover {
+    color: var(--pe-primary, #3f7de8);
+}
+.pe-theme .portfolio-table-sortable::after {
+    content: '↕';
+    position: absolute;
+    right: 0.35rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.62rem;
+    color: #94a3b8;
+}
+.pe-theme .portfolio-table-sortable.sorted-asc::after {
+    content: '↑';
+    color: var(--pe-primary, #1f4b82);
+}
+.pe-theme .portfolio-table-sortable.sorted-desc::after {
+    content: '↓';
+    color: var(--pe-primary, #1f4b82);
 }

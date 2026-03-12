@@ -55,3 +55,6 @@ Thumbs.db
 
 # Database
 forum.db
+
+# User data (created at runtime)
+platform_signups.json

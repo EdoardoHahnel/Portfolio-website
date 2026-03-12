@@ -23,10 +23,10 @@ function switchLeagueTab(tabName) {
 
 // Top 20 Nordic Investors Data
 const nordicInvestorsData = [
-    {rank: 1, firm: 'EQT', aum: 220000, type: 'PE/VC Firm', hq: 'Sweden', pe: 180000, vc: 5000, re: 25000, infra: 15000, portfolio: '200+', focus: 'Healthcare, Tech, Industrials'},
-    {rank: 2, firm: 'Nordic Capital', aum: 35000, type: 'PE Firm', hq: 'Sweden', pe: 32000, vc: 0, re: 2000, infra: 1000, portfolio: '110+', focus: 'Healthcare, Tech, Financial Services'},
+    {rank: 1, firm: 'EQT', aum: 270000, type: 'PE/VC Firm', hq: 'Sweden', pe: 180000, vc: 5000, re: 25000, infra: 15000, portfolio: '300+', focus: 'Healthcare, Tech, Industrials'},
+    {rank: 2, firm: 'Nordic Capital', aum: 34000, type: 'PE Firm', hq: 'Sweden', pe: 32000, vc: 0, re: 2000, infra: 1000, portfolio: '60', focus: 'Healthcare, Tech, Financial Services'},
     {rank: 3, firm: 'IK Partners', aum: 14000, type: 'PE Firm', hq: 'UK (Nordic-focused)', pe: 14000, vc: 0, re: 0, infra: 0, portfolio: '125+', focus: 'Nordic/European Mid-market'},
-    {rank: 4, firm: 'Triton', aum: 11000, type: 'PE Firm', hq: 'UK (Nordic-focused)', pe: 11000, vc: 0, re: 0, infra: 0, portfolio: '60+', focus: 'Nordic/European Buyouts'},
+    {rank: 4, firm: 'Triton', aum: 21000, type: 'PE Firm', hq: 'UK (Nordic-focused)', pe: 21000, vc: 0, re: 0, infra: 0, portfolio: '60+', focus: 'Nordic/European Buyouts'},
     {rank: 5, firm: 'Altor', aum: 10000, type: 'PE Firm', hq: 'Sweden', pe: 10000, vc: 0, re: 0, infra: 0, portfolio: '50+', focus: 'Nordic Mid-market'},
     {rank: 6, firm: 'Kinnevik', aum: 8000, type: 'Investment Company', hq: 'Sweden', pe: 5000, vc: 3000, re: 0, infra: 0, portfolio: '30+', focus: 'Consumer, Healthcare, Fintech'},
     {rank: 7, firm: 'Verdane', aum: 7000, type: 'PE/VC Firm', hq: 'Norway', pe: 5500, vc: 1500, re: 0, infra: 0, portfolio: '90+', focus: 'Digital, SaaS, Tech'},

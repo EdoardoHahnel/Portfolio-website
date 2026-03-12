@@ -139,6 +139,7 @@
 <script>
 const firmName = "{{ firm_name }}";
 let firmPortfolioCompanies = [];
+let firmPortfolioSortState = { column: 'company', direction: 'asc' };
 
 document.addEventListener('DOMContentLoaded', async function() {
     await loadFirmDetail();
@@ -632,6 +633,40 @@ function setupFirmPortfolioFilters() {
     }
 }
 
+function getFirmPortfolioSortValue(company, column) {
+    const clean = (v) => cleanPortfolioText(v || '');
+    const market = clean(company.market);
+    switch (column) {
+        case 'company': return clean(company.company) || 'ZZZ';
+        case 'sector': return clean(company.sector) || 'ZZZ';
+        case 'fund': return clean(company.fund) || 'ZZZ';
+        case 'market': return market || 'ZZZ';
+        case 'headquarters': return clean(company.headquarters || company.market) || 'ZZZ';
+        case 'entry': {
+            const y = parseInt(clean(company.entry).replace(/\D/g, '').slice(0, 4), 10);
+            return Number.isFinite(y) ? y : -Infinity;
+        }
+        case 'holdingPeriod': {
+            const hp = calculateHoldingPeriod(company);
+            if (hp === '—') return -1;
+            const m = String(hp).match(/(\d+)/);
+            return m ? parseInt(m[1], 10) : -1;
+        }
+        case 'status': return clean(company.status || 'Active') || 'ZZZ';
+        case 'geography': return clean(company.geography || categorizeGeography(company.market)) || 'ZZZ';
+        default: return '';
+    }
+}
+
+function compareFirmPortfolioCompanies(a, b) {
+    const column = firmPortfolioSortState.column;
+    const dir = firmPortfolioSortState.direction === 'asc' ? 1 : -1;
+    const aVal = getFirmPortfolioSortValue(a, column);
+    const bVal = getFirmPortfolioSortValue(b, column);
+    if (typeof aVal === 'number' && typeof bVal === 'number') return (aVal - bVal) * dir;
+    return String(aVal).localeCompare(String(bVal), undefined, { sensitivity: 'base', numeric: true }) * dir;
+}
+
 function renderFirmPortfolioTable(companies) {
     const container = document.getElementById('firmPortfolio');
     if (!container) return;
@@ -639,6 +674,8 @@ function renderFirmPortfolioTable(companies) {
         container.innerHTML = '<p style="color:#64748b;">No portfolio companies match the current filters.</p>';
         return;
     }
+
+    const sortedCompanies = [...companies].sort(compareFirmPortfolioCompanies);
 
     const isEQT = (firmName && String(firmName).toUpperCase().includes('EQT')) ||
         (companies.length > 0 && String(companies[0].source || '').toUpperCase().includes('EQT'));
@@ -655,16 +692,16 @@ function renderFirmPortfolioTable(companies) {
         <table class="portfolio-table">
             <thead>
                 <tr>
-                    <th>Company</th>
-                    <th>Sector</th>
-                    <th>Fund</th>
-                    <th>Market</th>
-                    <th>Headquarters</th>
-                    <th>Entry Year</th>
-                    <th>Holding Period</th>
-                    <th>Status</th>
+                    <th class="portfolio-table-sortable" data-sort="company">Company</th>
+                    <th class="portfolio-table-sortable" data-sort="sector">Sector</th>
+                    <th class="portfolio-table-sortable" data-sort="fund">Fund</th>
+                    <th class="portfolio-table-sortable" data-sort="market">Market</th>
+                    <th class="portfolio-table-sortable" data-sort="headquarters">Headquarters</th>
+                    <th class="portfolio-table-sortable" data-sort="entry">Entry Year</th>
+                    <th class="portfolio-table-sortable" data-sort="holdingPeriod">Holding Period</th>
+                    <th class="portfolio-table-sortable" data-sort="status">Status</th>
                     <th>Deal Size</th>
-                    <th>Geography</th>
+                    <th class="portfolio-table-sortable" data-sort="geography">Geography</th>
                     <th>Description</th>
                     <th>Website</th>
                 </tr>
@@ -672,7 +709,7 @@ function renderFirmPortfolioTable(companies) {
             <tbody>
     `;
 
-    companies.forEach(company => {
+    sortedCompanies.forEach(company => {
         const cleanCompany = cleanPortfolioText(company.company || 'N/A');
         const companyDomain = extractCompanyDomain(company);
         const companyLogoSrc = getCompanyLogoUrl(company, companyDomain, cleanCompany);
@@ -736,6 +773,27 @@ function renderFirmPortfolioTable(companies) {
     html += '</tbody></table>';
 
     container.innerHTML = `<div class="portfolio-table-wrapper">${eqtBannerBar}<div style="border: 1px solid #d8e4f5; border-radius: ${isEQT ? '0 0 6px 6px' : '6px'}; overflow: hidden;">${html}</div></div>`;
+
+    const table = container.querySelector('.portfolio-table');
+    if (table) {
+        table.querySelectorAll('.portfolio-table-sortable').forEach(th => {
+            th.classList.remove('sorted-asc', 'sorted-desc');
+            const col = th.getAttribute('data-sort');
+            if (col === firmPortfolioSortState.column) {
+                th.classList.add(firmPortfolioSortState.direction === 'asc' ? 'sorted-asc' : 'sorted-desc');
+            }
+            th.addEventListener('click', () => {
+                if (!col) return;
+                if (firmPortfolioSortState.column === col) {
+                    firmPortfolioSortState.direction = firmPortfolioSortState.direction === 'asc' ? 'desc' : 'asc';
+                } else {
+                    firmPortfolioSortState.column = col;
+                    firmPortfolioSortState.direction = 'asc';
+                }
+                renderFirmPortfolioTable(getFilteredFirmPortfolioCompanies());
+            });
+        });
+    }
 
     container.querySelectorAll('.company-link-modal').forEach(link => {
         link.addEventListener('click', (e) => {

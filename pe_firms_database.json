@@ -6,8 +6,8 @@
       "website": "https://eqtgroup.com",
       "headquarters": "Stockholm, Sweden",
       "founded": 1994,
-      "aum": "~€267 billion",
-      "employees": "1,400+",
+      "aum": "~€270 billion",
+      "employees": "~1,900",
       "offices": [
         "Stockholm",
         "London",
@@ -20,7 +20,7 @@
         "Oslo",
         "Helsinki"
       ],
-      "description": "EQT is a purpose-driven global investment organization with 30-year track record and Nordic heritage. ~€267bn AUM; 300+ portfolio companies. Largest alternative investment platform in Europe. Strategies: Private Capital (Equity, Growth, Ventures, Healthcare, Life Sciences, Future), Real Assets (Infrastructure, Real Estate), Credit, Private Wealth. Acquired Coller Capital (2025). Listed Nasdaq Stockholm.",
+      "description": "EQT is a purpose-driven global investment organization with 30-year track record and Nordic heritage. ~€270bn AUM; 300+ portfolio companies. Largest alternative investment platform in Europe. Strategies: Private Capital (Equity, Growth, Ventures, Healthcare, Life Sciences, Future), Real Assets (Infrastructure, Real Estate), Credit, Private Wealth. Announced acquisition of Coller Capital (Jan 2026, to close Q3 2026). Listed Nasdaq Stockholm.",
       "investment_focus": {
         "sectors": [
           "Healthcare",
@@ -46,7 +46,7 @@
       },
       "team": [
         {
-          "name": "Christian Sinding",
+          "name": "Per Franzén",
           "title": "CEO and Managing Partner",
           "location": "Stockholm"
         },
@@ -107,11 +107,11 @@
         }
       ],
       "fundraising": {
-        "current_fund": "EQT XI (€23B target, closed 2024), EQT Future (€3B impact), EQT Infrastructure VI (hard cap)",
+        "current_fund": "EQT XI (€24bn hard cap, fundraising 2025, activation mid-2026), EQT X (€22bn, closed 2024), EQT Infrastructure VI (€21.5bn, closed 2025), EQT Future (€3bn impact)",
         "next_fund": "Deployment across Private Capital, Real Assets, Credit; global diversification",
         "strategy": "Global multi-strategy; large-cap buyouts, growth equity, ventures, infrastructure, real estate, impact; second-largest PE firm globally by capital raised"
       },
-      "recent_activity": "2025: Acquires Coller Capital (secondaries); sells Karo Healthcare to KKR. AUM ~€267bn. EQT Future portfolio: Anticimex, Bloom Fresh, SHL Medical. EQT Infrastructure VI closed at hard cap. 300+ portfolio companies. Sustainability: carbon-neutral targets. Strong deployment in healthcare, tech, infrastructure."
+      "recent_activity": "2025: Strongest realization year ever; sells Karo Healthcare to KKR; announces Coller Capital acquisition (Jan 2026). AUM ~€270bn; FAUM €141bn. EQT Infrastructure VI closed €21.5bn. EQT XI hard cap €24bn, activation mid-2026. 300+ portfolio companies. Exits: Karo, IFS (minority), Nord Anglia, Acumatica, Pioneer. Sustainability: carbon-neutral targets."
     },
     "Nordic Capital": {
       "name": "Nordic Capital",
@@ -133,7 +133,7 @@
         "Luxembourg",
         "Seoul"
       ],
-      "description": "Nordic Capital is a leading private equity investor founded in 1989. 13 funds raised; €34bn AUM; €29.5bn invested in 155+ companies; 98 exits. Focus: Healthcare, Technology & Payments, Financial Services, Services & Industrial Tech. 60 current portfolio companies; €18bn revenue; 83,000 employees; >420 material acquisitions. Fund XI (€9bn) and Evolution II (€2bn). 5x PEI Operational Excellence Award.",
+      "description": "Nordic Capital is a leading private equity investor founded in 1989. 13 funds raised; €34bn AUM; €29.5bn invested in 155+ companies; 98 exits. Focus: Healthcare, Technology & Payments, Financial Services, Services & Industrial Tech. 60 current portfolio companies; €18bn revenue; 83,000 employees; >420 material add-ons. Fund XI (€9bn) and Evolution I & II (€3.2bn). 5x PEI Operational Excellence Award.",
       "investment_focus": {
         "sectors": [
           "Healthcare",
@@ -176,7 +176,7 @@
         },
         {
           "name": "Kristoffer Melinder",
-          "title": "Partner, Financial Services",
+          "title": "Managing Partner",
           "location": "London"
         },
         {
@@ -198,19 +198,14 @@
           "name": "Charlotte Strömberg",
           "title": "Partner, Financial Services",
           "location": "Copenhagen"
-        },
-        {
-          "name": "Per Franzén",
-          "title": "Partner, Services & Industrial Tech",
-          "location": "Oslo"
         }
       ],
       "fundraising": {
-        "current_fund": "Fund XI (€9bn), Evolution II (€2bn, 2024), Evolution I (€1.2bn)",
+        "current_fund": "Fund XI (€9bn, closed 2022), Evolution II (€2bn, closed Dec 2024), Evolution I (€1.2bn)",
         "next_fund": "Deployment across Fund XI and Evolution funds",
         "strategy": "Healthcare, technology & payments, financial services, services & industrial tech; Nordic and North America; operational excellence"
       },
-      "recent_activity": "2025: Agrees sale of Clario to Thermo Fisher (largest healthcare PE exit); Clario doubled revenue to ~$1.2B. 2024: Evolution II closes €2bn in four months; PEI awards: Fundraise of the Year, ESG Fund of the Year. Portfolio: 60 companies, €18bn revenue, 83,000 employees. UNPRI highest score; ESG-linked credit facility."
+      "recent_activity": "2025: Agrees sale of Clario to Thermo Fisher (~$9.4bn, largest healthcare PE exit); Clario doubled revenue to ~$1.2B. 2024: Evolution II closes €2bn in four months; 10 platform acquisitions, 4 exits; PEI awards: Fundraise of the Year, ESG Fund of the Year. Portfolio: 60 companies, €18bn revenue, 83,000 employees. UNPRI highest score; ESG-linked credit facility."
     },
     "Triton": {
       "name": "Triton",
@@ -227,7 +222,7 @@
         "Stockholm",
         "Jersey"
       ],
-      "description": "Triton is an operationally minded European PE firm (founded 1997). ~€21bn AUM; 100+ investments; 700+ add-ons; €24bn+ portfolio revenues; 100,000+ portfolio employees. Buy Well, Build Better, Sell Growth. Accelerator Unit (50+ experts) for operational support. Sectors: Industrial Tech, Business Services, Healthcare.",
+      "description": "Triton is an operationally minded European PE firm (founded 1997). €21bn+ capital raised; 100+ investments; ~900 platform and add-on investments; 150+ investment professionals. Buy Well, Build Better, Sell Growth. Accelerator Unit for operational support. Sectors: Industrial Tech, Business Services, Healthcare.",
       "investment_focus": {
         "sectors": [
           "Industrial Tech",
@@ -263,11 +258,6 @@
           "location": "London"
         },
         {
-          "name": "Per Franzén",
-          "title": "Partner",
-          "location": "Stockholm"
-        },
-        {
           "name": "Oliver Stenbäck",
           "title": "Partner, Industrial Tech",
           "location": "Frankfurt"
@@ -299,92 +289,41 @@
         }
       ],
       "fundraising": {
-        "current_fund": "Triton Fund V (€5.2B, 2018 vintage); Triton Debt Opportunities Fund III (>€1B, closed Dec 2024)",
-        "next_fund": "Triton Fund VI in market (€5.5B target)",
+        "current_fund": "Triton Fund VI (€5.3bn, 2021); Triton Smaller Mid-Cap II (€815m, 2021); Triton Debt Opportunities III (>€1bn, 2024)",
+        "next_fund": "Triton Fund VII in fundraising (target €3.5bn+)",
         "strategy": "Mid-market buyouts in business services, industrial tech, healthcare; Northern Europe and DACH"
       },
-      "recent_activity": "2025: Sells Kelvion to Apollo Funds; agrees sale of Ramudden Global to I Squared Capital; establishes formicon (architecture & engineering platform); acquires Bosch security and communications technology business (~4,300 employees, >€1B revenue, closing H1 2025); Triton Smaller Mid-Cap first UK deal (Tendra technical services platform). 2024: Merges Assemblin and Caverion into Assemblin Caverion Group; Stonepeak joins IFCO as co-investor alongside Triton (ADIA divests); MacGregor acquisition.",
+      "recent_activity": "2025–2026: Completes Kelvion sale to Apollo Funds (majority stake, ~€2bn); agrees sale of Ramudden Global to I Squared Capital (~€2.5bn); establishes formicon (architecture & engineering); completes Bosch security & communications acquisition (4,300 employees, >€1B revenue, now Keenfinity Group). Triton Smaller Mid-Cap first UK deal (Tendra). 2024: Merges Assemblin and Caverion; Stonepeak joins IFCO; MacGregor acquisition.",
       "portfolio_companies": [
-        {
-          "name": "All4Labels",
-          "sector": "Industrial Tech",
-          "country": "Germany",
-          "logo": "https://logo.clearbit.com/all4labels.com",
-          "description": "Global manufacturer of premium labels and packaging solutions",
-          "entry_year": "2019"
-        },
-        {
-          "name": "Aleris",
-          "sector": "Healthcare",
-          "country": "Sweden",
-          "logo": "https://logo.clearbit.com/aleris.se",
-          "description": "Leading private healthcare provider in the Nordic region",
-          "entry_year": "2019"
-        },
-        {
-          "name": "DeepOcean",
-          "sector": "Business Services",
-          "country": "Norway",
-          "logo": "https://logo.clearbit.com/deepoceangroup.com",
-          "description": "Provider of subsea services to the offshore energy industry",
-          "entry_year": "2016"
-        },
-        {
-          "name": "Fertiberia",
-          "sector": "Industrial Tech",
-          "country": "Spain",
-          "logo": "https://logo.clearbit.com/fertiberia.com",
-          "description": "European producer of fertilizers and industrial chemicals",
-          "entry_year": "2020"
-        },
-        {
-          "name": "IFCO",
-          "sector": "Business Services",
-          "country": "Germany",
-          "logo": "https://logo.clearbit.com/ifco.com",
-          "description": "World's largest provider of reusable plastic containers",
-          "entry_year": "2019"
-        },
-        {
-          "name": "Pharmanovia",
-          "sector": "Healthcare",
-          "country": "United Kingdom",
-          "logo": "https://logo.clearbit.com/pharmanovia.com",
-          "description": "Specialty pharmaceutical company focused on established brands",
-          "entry_year": "2019"
-        },
-        {
-          "name": "Acre Security",
-          "sector": "Industrial Tech",
-          "country": "United States",
-          "logo": "https://logo.clearbit.com/acresecurity.com",
-          "description": "North American provider of commercial security integration",
-          "entry_year": "2021"
-        },
-        {
-          "name": "Arvos Group",
-          "sector": "Industrial Tech",
-          "country": "Germany",
-          "logo": "https://logo.clearbit.com/arvos-group.com",
-          "description": "Global provider of thermal processing equipment",
-          "entry_year": "2014"
-        },
-        {
-          "name": "Assemblin Caverion Group",
-          "sector": "Business Services",
-          "country": "Nordic",
-          "logo": "https://logo.clearbit.com/assemblin.com",
-          "description": "Leading Nordic provider of technical installation services",
-          "entry_year": "2024"
-        },
-        {
-          "name": "Bergman Clinics",
-          "sector": "Healthcare",
-          "country": "Netherlands",
-          "logo": "https://logo.clearbit.com/bergmanclinics.nl",
-          "description": "Netherlands' largest independent provider of outpatient care",
-          "entry_year": "2021"
-        }
+        {"name": "All4Labels", "sector": "Industrial Tech", "country": "Germany", "logo": "https://logo.clearbit.com/all4labels.com", "description": "Global manufacturer of premium labels and packaging solutions", "entry_year": "2019"},
+        {"name": "Aleris", "sector": "Healthcare", "country": "Sweden", "logo": "https://logo.clearbit.com/aleris.se", "description": "Leading private healthcare provider in the Nordic region", "entry_year": "2019"},
+        {"name": "DeepOcean", "sector": "Business Services", "country": "Norway", "logo": "https://logo.clearbit.com/deepoceangroup.com", "description": "Provider of subsea services to the offshore energy industry", "entry_year": "2016"},
+        {"name": "Fertiberia", "sector": "Industrial Tech", "country": "Spain", "logo": "https://logo.clearbit.com/fertiberia.com", "description": "European producer of fertilizers and industrial chemicals", "entry_year": "2020"},
+        {"name": "IFCO", "sector": "Business Services", "country": "Germany", "logo": "https://logo.clearbit.com/ifco.com", "description": "World's largest provider of reusable plastic containers", "entry_year": "2019"},
+        {"name": "Pharmanovia", "sector": "Healthcare", "country": "United Kingdom", "logo": "https://logo.clearbit.com/pharmanovia.com", "description": "Specialty pharmaceutical company focused on established brands", "entry_year": "2019"},
+        {"name": "Acre Security", "sector": "Industrial Tech", "country": "United States", "logo": "https://logo.clearbit.com/acresecurity.com", "description": "North American provider of commercial security integration", "entry_year": "2021"},
+        {"name": "Arvos Group", "sector": "Industrial Tech", "country": "Germany", "logo": "https://logo.clearbit.com/arvos-group.com", "description": "Global provider of thermal processing equipment", "entry_year": "2014"},
+        {"name": "Assemblin Caverion Group", "sector": "Business Services", "country": "Nordic", "logo": "https://logo.clearbit.com/assemblin.com", "description": "Leading Nordic provider of technical installation services", "entry_year": "2024"},
+        {"name": "Bergman Clinics", "sector": "Healthcare", "country": "Netherlands", "logo": "https://logo.clearbit.com/bergmanclinics.nl", "description": "Netherlands' largest independent provider of outpatient care", "entry_year": "2021"},
+        {"name": "BFC Fahrzeugteile", "sector": "Industrial Tech", "country": "Germany", "description": "Tier-2 automotive supplier of metal-based clamping profiles", "entry_year": "2018"},
+        {"name": "bluu unit", "sector": "Business Services", "country": "Germany", "description": "Natural refrigeration alliance", "entry_year": "2022"},
+        {"name": "Clinigen", "sector": "Healthcare", "country": "United Kingdom", "description": "Global pathfinder accelerating access to critical medicines", "entry_year": "2022"},
+        {"name": "Esperi Care", "sector": "Healthcare", "country": "Finland", "description": "Leading residential care provider in Finland", "entry_year": "2022"},
+        {"name": "formicon", "sector": "Business Services", "country": "Germany", "description": "Nationwide architecture and engineering group", "entry_year": "2026"},
+        {"name": "Geia Group", "sector": "Business Services", "country": "Denmark", "description": "Leading provider of food products and category assortments in Northern Europe", "entry_year": "2021"},
+        {"name": "Glamox", "sector": "Industrial Tech", "country": "Norway", "description": "Leading office chair manufacturer in Europe", "entry_year": "2017"},
+        {"name": "HiQ", "sector": "Business Services", "country": "Sweden", "description": "Leading Nordic digital transformation company", "entry_year": "2020"},
+        {"name": "KEENFINITY Group", "sector": "Industrial Tech", "country": "Germany", "description": "Provider of security and professional communication solutions (ex-Bosch)", "entry_year": "2025"},
+        {"name": "Leadec", "sector": "Business Services", "country": "Germany", "description": "Global technical services specialist for the factory", "entry_year": "2016"},
+        {"name": "MacGregor", "sector": "Industrial Tech", "country": "Finland", "description": "Cargo handling and naval solutions", "entry_year": "2025"},
+        {"name": "Neptune Software", "sector": "Business Services", "country": "Norway", "description": "Low-code/no-code enterprise app development platform", "entry_year": "2022"},
+        {"name": "Ramudden Global", "sector": "Business Services", "country": "Sweden", "description": "Network of infrastructure safety companies", "entry_year": "2017"},
+        {"name": "Royal Reesink", "sector": "Business Services", "country": "Netherlands", "description": "International equipment distribution and aftermarket services", "entry_year": "2019"},
+        {"name": "Sunweb Group", "sector": "Consumer", "country": "Netherlands", "description": "Leading European online tour operator", "entry_year": "2019"},
+        {"name": "Tendra Technical Services", "sector": "Business Services", "country": "United Kingdom", "description": "Triton Smaller Mid-Cap first UK investment", "entry_year": "2025"},
+        {"name": "Trench Group", "sector": "Industrial Tech", "country": "Global", "description": "Power engineering and high voltage electrical products", "entry_year": "2024"},
+        {"name": "Unica", "sector": "Business Services", "country": "Netherlands", "description": "Technology provider in the Netherlands", "entry_year": "2019"},
+        {"name": "Wavelynx", "sector": "Industrial Tech", "country": "United States", "description": "Secure mobile-first identity and access control solutions", "entry_year": "2023"}
       ]
     },
     "Amplio": {
