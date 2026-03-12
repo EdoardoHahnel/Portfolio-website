@@ -29,7 +29,7 @@ def data_path(filename):
 PLATFORM_SIGNUPS_FILE = data_path("platform_signups.json")
 
 # Fixed offer end (UTC) - does not restart on refresh. Override with env OFFER_END_ISO if needed.
-OFFER_END_ISO = os.environ.get("OFFER_END_ISO", "2025-03-26T23:59:59Z")
+OFFER_END_ISO = os.environ.get("OFFER_END_ISO", "2025-12-31T23:59:59Z")
 
 def save_platform_signup_json(email):
     """Append email to platform_signups.json. Simple file-based storage."""
