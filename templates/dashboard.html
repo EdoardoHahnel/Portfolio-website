@@ -400,7 +400,8 @@
                 <div class="pe-signup-countdown" id="peSignupCountdown" data-end="{{ offer_end_iso }}">
                     <span class="pe-countdown-block"><span class="pe-countdown-num" id="peCdDays">7</span><span class="pe-countdown-label">days</span></span>
                     <span class="pe-countdown-block"><span class="pe-countdown-num" id="peCdHrs">0</span><span class="pe-countdown-label">hrs</span></span>
-                    <span class="pe-countdown-block"><span class="pe-countdown-num" id="peCdMin">0</span><span class="pe-countdown-label">min</span></span>
+                    <span class="pe-countdown-block"><span class="pe-countdown-num" id="peCdMin">00</span><span class="pe-countdown-label">min</span></span>
+                    <span class="pe-countdown-block"><span class="pe-countdown-num" id="peCdSec">00</span><span class="pe-countdown-label">sec</span></span>
                 </div>
                 <span class="pe-signup-sep"></span>
                 <div class="pe-signup-copy">
@@ -611,37 +612,73 @@
 document.addEventListener('DOMContentLoaded', function() {
     var el = document.getElementById('peSignupCountdown');
     if (!el) return;
-    var end = el.getAttribute('data-end');
-    if (!end) {
-        var t = new Date();
-        t.setDate(t.getDate() + 7);
-        end = t.toISOString();
-    }
     var daysEl = document.getElementById('peCdDays');
     var hrsEl = document.getElementById('peCdHrs');
     var minEl = document.getElementById('peCdMin');
-    if (!daysEl || !hrsEl || !minEl) return;
+    var secEl = document.getElementById('peCdSec');
+    if (!daysEl || !hrsEl || !minEl || !secEl) return;
 
-    var intervalId;
-    function tick() {
-        var now = new Date();
-        var target = new Date(end);
-        var diff = Math.max(0, target - now);
-        if (diff <= 0) {
-            el.innerHTML = '<span class="pe-countdown-ended">Ended</span>';
-            if (intervalId) clearInterval(intervalId);
-            return;
-        }
-        var totalSec = Math.floor(diff / 1000);
-        var days = Math.floor(totalSec / 86400);
-        var hrs = Math.floor((totalSec % 86400) / 3600);
-        var min = Math.floor((totalSec % 3600) / 60);
-        daysEl.textContent = days;
-        hrsEl.textContent = String(hrs).padStart(2, '0');
-        minEl.textContent = String(min).padStart(2, '0');
+    var STORAGE_KEY = 'pe_offer_end_iso';
+
+    function parseAndValidateEnd(isoStr) {
+        if (!isoStr || typeof isoStr !== 'string') return null;
+        var d = new Date(isoStr.trim());
+        return isNaN(d.getTime()) ? null : d;
     }
-    tick();
-    intervalId = setInterval(tick, 1000);
+
+    function runCountdown(end) {
+        function tick() {
+            var now = new Date();
+            var diff = Math.max(0, end.getTime() - now.getTime());
+            if (diff <= 0) {
+                el.innerHTML = '<span class="pe-countdown-ended">Ended</span>';
+                if (window._peCountdownInterval) {
+                    clearInterval(window._peCountdownInterval);
+                    window._peCountdownInterval = null;
+                }
+                try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+                return;
+            }
+            var totalSec = Math.floor(diff / 1000);
+            daysEl.textContent = Math.floor(totalSec / 86400);
+            hrsEl.textContent = String(Math.floor((totalSec % 86400) / 3600)).padStart(2, '0');
+            minEl.textContent = String(Math.floor((totalSec % 3600) / 60)).padStart(2, '0');
+            secEl.textContent = String(totalSec % 60).padStart(2, '0');
+        }
+        tick();
+        window._peCountdownInterval = setInterval(tick, 1000);
+    }
+
+    function resolveEnd(callback) {
+        fetch('/api/offer-end', { cache: 'no-store' })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                var iso = data && data.end_iso;
+                var d = parseAndValidateEnd(iso);
+                if (d && d.getTime() > Date.now()) {
+                    try { localStorage.setItem(STORAGE_KEY, iso); } catch (e) {}
+                    callback(d);
+                    return;
+                }
+                var stored = null;
+                try { stored = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+                d = parseAndValidateEnd(stored);
+                if (d && d.getTime() > Date.now()) {
+                    callback(d);
+                    return;
+                }
+                var fallback = parseAndValidateEnd(el.getAttribute('data-end'));
+                callback(fallback || new Date(Date.now() + 7 * 86400000));
+            })
+            .catch(function() {
+                var stored = null;
+                try { stored = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+                var d = parseAndValidateEnd(stored) || parseAndValidateEnd(el.getAttribute('data-end'));
+                callback(d || new Date(Date.now() + 7 * 86400000));
+            });
+    }
+
+    resolveEnd(function(end) { runCountdown(end); });
 });
 </script>
 

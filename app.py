@@ -28,6 +28,9 @@ def data_path(filename):
 
 PLATFORM_SIGNUPS_FILE = data_path("platform_signups.json")
 
+# Fixed offer end (UTC) - does not restart on refresh. Override with env OFFER_END_ISO if needed.
+OFFER_END_ISO = os.environ.get("OFFER_END_ISO", "2025-03-26T23:59:59Z")
+
 def save_platform_signup_json(email):
     """Append email to platform_signups.json. Simple file-based storage."""
     try:
@@ -123,11 +126,16 @@ def _track_page_views(response):
 # ROUTES: These are the different pages/endpoints of your website
 # Think of routes as different addresses on your website
 
+@app.route('/api/offer-end', methods=['GET'])
+def api_offer_end():
+    """Return fixed offer end date (UTC ISO) so countdown never restarts on refresh."""
+    return jsonify({'end_iso': OFFER_END_ISO})
+
+
 @app.route('/')
 def home():
     """Dashboard – main landing page."""
-    offer_end = datetime.now(timezone.utc) + timedelta(days=7)
-    return render_template('dashboard.html', offer_end_iso=offer_end.isoformat())
+    return render_template('dashboard.html', offer_end_iso=OFFER_END_ISO)
 
 
 @app.route('/news')
@@ -521,19 +529,24 @@ def get_news():
 @app.route('/api/investment-news', methods=['GET'])
 def get_investment_news():
     """
-    API endpoint to get real Nordic PE investment news from Cision
+    API endpoint to get real Nordic PE investment news from Cision.
+    Excludes sampled/fake articles (source "Sampled Market Activity").
     """
     try:
         if os.path.exists(data_path('pe_news_database.json')):
             with open(data_path('pe_news_database.json'), 'r', encoding='utf-8') as f:
                 data = json.load(f)
-                return jsonify({
-                    'success': True,
-                    'count': data.get('total_news', 0),
-                    'news': data.get('news', []),
-                    'last_updated': data.get('last_updated', ''),
-                    'source': data.get('source', 'Cision RSS feeds')
-                })
+            news = [
+                a for a in data.get('news', [])
+                if (a.get('source') or '').strip().lower() != 'sampled market activity'
+            ]
+            return jsonify({
+                'success': True,
+                'count': len(news),
+                'news': news,
+                'last_updated': data.get('last_updated', ''),
+                'source': data.get('source', 'Cision RSS feeds')
+            })
         else:
             return jsonify({
                 'success': False,
@@ -1094,6 +1107,8 @@ def get_pe_firm_detail(firm_name):
                     
                     # Filter news for this firm (exact match ONLY on firm field)
                     for article in all_news:
+                        if (article.get('source') or '').strip().lower() == 'sampled market activity':
+                            continue
                         article_firm = article.get('firm', '')
                         article_title = article.get('title', '')
                         article_desc = article.get('description', '')
