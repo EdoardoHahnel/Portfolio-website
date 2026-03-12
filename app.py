@@ -106,6 +106,12 @@ init_forum_db()
 app.register_blueprint(forum_bp)
 
 
+@app.context_processor
+def _inject_current_year():
+    """Inject current year for footer copyright."""
+    return {'current_year': datetime.now().year}
+
+
 @app.after_request
 def _track_page_views(response):
     """Log page views for main HTML pages (exclude static, API, admin)."""

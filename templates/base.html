@@ -118,6 +118,12 @@
           {% endif %}
         {% endwith %}
         {% block content %}{% endblock %}
+
+        <footer class="pe-footer">
+            <div class="pe-footer-inner">
+                <p class="pe-footer-copy">&copy; {{ current_year }} Portföljbolagen. All rights reserved.</p>
+            </div>
+        </footer>
     </main>
     
     <script src="{{ url_for('static', filename='common.js') }}"></script>

@@ -6,6 +6,49 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='forum.css') }}">
 {% endblock %}
 
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var viewsData = {{ analytics.views_last_14 | tojson }};
+    var uniqueData = {{ analytics.unique_by_date | tojson }};
+    function last14Dates() {
+        var d = [], now = new Date();
+        for (var i = 13; i >= 0; i--) {
+            var x = new Date(now);
+            x.setDate(x.getDate() - i);
+            d.push(x.toISOString().slice(0, 10));
+        }
+        return d;
+    }
+    var labels = last14Dates();
+    function fillByDate(data, labels) {
+        var byDate = {};
+        (data || []).forEach(function(r) { byDate[r.date] = r.cnt; });
+        return labels.map(function(d) { return byDate[d] || 0; });
+    }
+    if (typeof Chart !== 'undefined') {
+        new Chart(document.getElementById('viewsChart'), {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{ label: 'Sidvisningar', data: fillByDate(viewsData, labels), backgroundColor: 'rgba(59, 130, 246, 0.6)', borderColor: '#2563eb', borderWidth: 1 }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, ticks: { stepSize: 1 } } } }
+        });
+        new Chart(document.getElementById('uniqueChart'), {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{ label: 'Unika besökare', data: fillByDate(uniqueData, labels), fill: true, backgroundColor: 'rgba(34, 197, 94, 0.2)', borderColor: '#16a34a', borderWidth: 2, tension: 0.3 }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, ticks: { stepSize: 1 } } } }
+        });
+    }
+});
+</script>
+{% endblock %}
+
 {% block content %}
 <div class="page-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
     <div>
@@ -77,14 +120,25 @@
 <div class="content-card">
     <div class="content-card-header"><h2 class="content-card-title"><i class="fas fa-chart-line"></i> Webbplatssstatistik</h2></div>
     <div class="content-card-body">
-        <div style="display:flex; gap:1.5rem; flex-wrap:wrap; margin-bottom:1rem;">
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:1rem; margin-bottom:1.5rem;">
+            <div style="background:linear-gradient(135deg, #eef5ff 0%, #e0edff 100%); border:1px solid #c7dcf8; border-radius:10px; padding:1rem; text-align:center;">
+                <span class="page-subtitle" style="display:block; margin-bottom:0.25rem;">Sidvisningar totalt</span>
+                <div style="font-size:1.75rem; font-weight:700; color:#1e40af;">{{ analytics.total_views }}</div>
+            </div>
+            <div style="background:linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border:1px solid #bbf7d0; border-radius:10px; padding:1rem; text-align:center;">
+                <span class="page-subtitle" style="display:block; margin-bottom:0.25rem;">Unika besökare</span>
+                <div style="font-size:1.75rem; font-weight:700; color:#166534;">{{ analytics.unique_visitors }}</div>
+                <span style="font-size:0.65rem; color:#64748b;">(beräknat via IP-hash)</span>
+            </div>
+        </div>
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:1.5rem;">
             <div>
-                <span class="page-subtitle">Sidvisningar totalt</span>
-                <div style="font-size:1.5rem; font-weight:600;">{{ analytics.total_views }}</div>
+                <h3 style="font-size:0.9rem; margin:0 0 0.75rem;">Sidvisningar – senaste 14 dagarna</h3>
+                <div style="height:200px;"><canvas id="viewsChart"></canvas></div>
             </div>
             <div>
-                <span class="page-subtitle">Unika besökare (beräknat)</span>
-                <div style="font-size:1.5rem; font-weight:600;">{{ analytics.unique_visitors }}</div>
+                <h3 style="font-size:0.9rem; margin:0 0 0.75rem;">Unika besökare – senaste 14 dagarna</h3>
+                <div style="height:200px;"><canvas id="uniqueChart"></canvas></div>
             </div>
         </div>
         <h3 style="font-size:0.9rem; margin:0.5rem 0;">Populäraste sidor</h3>

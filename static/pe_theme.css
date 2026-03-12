@@ -307,18 +307,40 @@ body.pe-mobile-menu-open {
     background: #f3f8ff;
 }
 
-/* Free access signup - slim, above hero, dark blue-purple */
+/* Free access signup - slim, above hero, premium dark blue-purple */
 .pe-signup-banner {
     margin-bottom: 12px;
 }
 
 .pe-signup-banner-inner {
     position: relative;
-    border-radius: 6px;
-    border: 1px solid rgba(67, 56, 202, 0.4);
+    border-radius: 10px;
+    border: 1px solid rgba(99, 102, 241, 0.25);
     background: linear-gradient(135deg, #1e1e3f 0%, #16162d 50%, #0f0f1f 100%);
-    padding: 8px 14px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+    padding: 12px 18px;
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.06) inset,
+        0 4px 16px rgba(0, 0, 0, 0.2),
+        0 8px 32px rgba(15, 23, 42, 0.4);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    overflow: hidden;
+}
+
+.pe-signup-banner-inner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, transparent 50%, rgba(59, 130, 246, 0.04) 100%);
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+.pe-signup-banner-inner:hover {
+    transform: translateY(-1px);
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.08) inset,
+        0 6px 24px rgba(0, 0, 0, 0.25),
+        0 12px 40px rgba(15, 23, 42, 0.5);
 }
 
 .pe-signup-accent {
@@ -327,11 +349,15 @@ body.pe-mobile-menu-open {
     top: 0;
     bottom: 0;
     width: 3px;
-    border-radius: 6px 0 0 6px;
-    background: linear-gradient(180deg, #6366f1, #4f46e5);
+    z-index: 2;
+    border-radius: 10px 0 0 10px;
+    background: linear-gradient(180deg, #6366f1, #4f46e5, #4338ca);
+    box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
 }
 
 .pe-signup-row {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -381,17 +407,26 @@ body.pe-mobile-menu-open {
     letter-spacing: 0.01em;
 }
 
-/* Countdown - same as Explore PE Firms button */
+/* Last chance badge - premium emphasis */
 .pe-signup-countdown {
     display: flex;
     align-items: stretch;
     gap: 0;
     flex-shrink: 0;
-    background: linear-gradient(135deg, var(--pe-primary), var(--pe-primary-strong));
+    background: linear-gradient(135deg, #4f46e5 0%, #3730a3 50%, #312e81 100%);
     border-radius: 8px;
     overflow: hidden;
-    border: 1px solid rgba(47, 100, 192, 0.5);
-    box-shadow: 0 2px 12px rgba(63, 125, 232, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.2) inset,
+        0 2px 8px rgba(79, 70, 229, 0.4),
+        0 0 20px rgba(99, 102, 241, 0.15);
+    animation: pe-last-chance-glow 3s ease-in-out infinite;
+}
+
+@keyframes pe-last-chance-glow {
+    0%, 100% { box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 2px 8px rgba(79, 70, 229, 0.4), 0 0 20px rgba(99, 102, 241, 0.15); }
+    50% { box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 2px 12px rgba(79, 70, 229, 0.5), 0 0 28px rgba(99, 102, 241, 0.25); }
 }
 
 .pe-countdown-block {
@@ -425,58 +460,68 @@ body.pe-mobile-menu-open {
 }
 
 .pe-countdown-ended {
-    padding: 8px 14px;
-    font-size: 0.8rem;
+    padding: 10px 18px;
+    font-size: 0.82rem;
     font-weight: 700;
     color: #fff;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .pe-signup-form-pill {
     display: flex;
-    gap: 6px;
+    gap: 8px;
     flex-shrink: 0;
 }
 
 .pe-signup-input-pill {
     width: 172px;
-    padding: 5px 11px;
+    padding: 8px 14px;
     font-size: 0.78rem;
-    border: 1px solid rgba(99, 102, 241, 0.4);
-    border-radius: 6px;
-    background: rgba(30, 30, 63, 0.6);
+    border: 1px solid rgba(99, 102, 241, 0.35);
+    border-radius: 8px;
+    background: rgba(30, 30, 63, 0.7);
     color: #c7d2fe;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
 }
 
 .pe-signup-input-pill::placeholder {
     color: rgba(165, 180, 252, 0.5);
 }
 
+.pe-signup-input-pill:hover {
+    border-color: rgba(99, 102, 241, 0.5);
+    background: rgba(30, 30, 63, 0.85);
+}
+
 .pe-signup-input-pill:focus {
     outline: none;
     border-color: #6366f1;
-    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.35);
+    background: rgba(30, 30, 63, 0.9);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
 }
 
 .pe-signup-btn-pill {
-    padding: 5px 12px;
+    padding: 8px 16px;
     font-size: 0.78rem;
     font-weight: 700;
     color: #fff;
-    background: linear-gradient(135deg, var(--pe-primary), var(--pe-primary-strong));
-    border: none;
-    border-radius: 6px;
+    background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
     cursor: pointer;
     white-space: nowrap;
     display: inline-flex;
     align-items: center;
-    gap: 5px;
-    transition: transform 0.2s, box-shadow 0.2s;
+    gap: 6px;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.35);
 }
 
 .pe-signup-btn-pill:hover {
     transform: translateY(-1px);
-    box-shadow: 0 3px 12px rgba(63, 125, 232, 0.5);
+    box-shadow: 0 4px 16px rgba(79, 70, 229, 0.45);
 }
 
 .pe-signup-btn-pill i {
@@ -1113,4 +1158,24 @@ body.pe-mobile-menu-open {
 .pe-theme .portfolio-table-sortable.sorted-desc::after {
     content: '↓';
     color: var(--pe-primary, #1f4b82);
+}
+
+/* ===== SITE FOOTER ===== */
+.pe-footer {
+    margin-top: 3rem;
+    padding: 20px 20px 24px;
+    background: rgba(15, 34, 63, 0.04);
+    border-top: 1px solid var(--pe-border);
+}
+
+.pe-footer-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.pe-footer-copy {
+    margin: 0;
+    font-size: 0.78rem;
+    color: var(--pe-text-muted);
 }

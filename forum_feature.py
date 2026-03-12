@@ -2,7 +2,7 @@ import hashlib
 import os
 import smtplib
 import sqlite3
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from email.mime.text import MIMEText
 from email.utils import formataddr
 from functools import wraps
@@ -913,11 +913,30 @@ def forum_admin():
         GROUP BY date ORDER BY date DESC LIMIT 30
         """
     ).fetchall()
+    # Last 14 days for charts
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=14)).strftime("%Y-%m-%d")
+    views_last_14 = conn.execute(
+        """
+        SELECT date, COUNT(*) as cnt FROM page_views
+        WHERE date >= ? GROUP BY date ORDER BY date ASC
+        """,
+        (cutoff,),
+    ).fetchall()
+    unique_by_date = conn.execute(
+        """
+        SELECT date, COUNT(DISTINCT ip_hash) as cnt FROM page_views
+        WHERE ip_hash IS NOT NULL AND ip_hash != '' AND date >= ?
+        GROUP BY date ORDER BY date ASC
+        """,
+        (cutoff,),
+    ).fetchall()
     analytics = {
         "total_views": total_views,
         "unique_visitors": unique_visitors,
         "views_by_path": [dict(r) for r in views_by_path],
         "views_by_date": [dict(r) for r in views_by_date],
+        "views_last_14": [dict(r) for r in views_last_14],
+        "unique_by_date": [dict(r) for r in unique_by_date],
     }
     reports = conn.execute(
         """
