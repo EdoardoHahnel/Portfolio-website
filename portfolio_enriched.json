@@ -1,7 +1,7 @@
 {
   "metadata": {
     "last_updated": "2026-03-12",
-    "total_companies": 673,
+    "total_companies": 679,
     "nalka_companies": 8,
     "amplio_companies": 8,
     "description": "Updated portfolio database with current IK Partners investments only",
@@ -9787,11 +9787,24 @@
       "logo_url": "https://logo.clearbit.com/nordnet.se",
       "detailed_description": "Nordnet is the leading Pan-Nordic digital savings and investment platform. Nordic Capital and Öhman Group took Nordnet private in January 2017 via recommended public tender offer. During four years of ownership: customers more than doubled to 1.5M+, savings capital doubled to SEK 565bn, platform investments created scalable IT infrastructure, and 40% of client investments achieved top Morningstar sustainability ratings (vs 13% in 2016). Nordnet was successfully re-listed at end of 2020 with substantially over-subscribed offering. Mission: democratise savings and investments in Sweden, Norway, Denmark and Finland.",
       "employees": "~500",
-      "financials": {"revenue_range": "SEK 2-3B", "savings_capital": "SEK 565bn (2020)", "customers": "1.5M+"},
+      "financials": {
+        "revenue_range": "SEK 2-3B",
+        "savings_capital": "SEK 565bn (2020)",
+        "customers": "1.5M+"
+      },
       "key_milestones": [
-        {"year": "2017", "event": "Nordic Capital and Öhman Group take-private"},
-        {"year": "2020", "event": "One million customers milestone"},
-        {"year": "2020", "event": "Successful IPO / re-listing, substantially over-subscribed"}
+        {
+          "year": "2017",
+          "event": "Nordic Capital and Öhman Group take-private"
+        },
+        {
+          "year": "2020",
+          "event": "One million customers milestone"
+        },
+        {
+          "year": "2020",
+          "event": "Successful IPO / re-listing, substantially over-subscribed"
+        }
       ],
       "case_study_url": "https://www.nordiccapital.com/portfolio-cases/case-studies/nordnet/"
     },
@@ -12206,105 +12219,6 @@
       "investment_thesis": "Azelis benefits from specialty chemicals outsourcing trends, increasing complexity requiring technical expertise, and fragmented market consolidation opportunities. The company's global platform, value-added services, and successful buy-and-build strategy under Nordic Capital's ownership created significant value leading to successful IPO while maintaining strong growth trajectory.",
       "deal_size": "€1.1B",
       "logo_url": "https://logo.clearbit.com/azelis.com"
-    },
-    {
-      "company": "Chr. Hansen",
-      "sector": "Healthcare",
-      "fund": "PAI Europe IV",
-      "market": "Denmark",
-      "entry": "2005",
-      "source": "PAI Partners",
-      "status": "Exited",
-      "enriched": true,
-      "research_date": "2025-10-20",
-      "description": "Chr. Hansen is a global leader in bioscience providing natural solutions for the food, nutritional, pharmaceutical, and agricultural industries. The company develops and produces cultures, enzymes, probiotics, and natural colors used in dairy products, dietary supplements, infant formula, animal health, and more. With 150+ years of heritage, Chr. Hansen serves customers worldwide with microbial and fermentation-based solutions.",
-      "website": "https://www.chr-hansen.com",
-      "employees": "~4,000",
-      "financials": {
-        "revenue_range": "DKK 10-12B",
-        "year": "2023",
-        "ebitda_margin": "~30%"
-      },
-      "leadership": {
-        "ceo": "Mauricio Graber (prior to merger)",
-        "management_team": "Global leadership with bioscience, food ingredients, and pharmaceutical expertise"
-      },
-      "products_services": [
-        "Cultures for dairy (cheese, yogurt)",
-        "Probiotics for human health",
-        "Natural food colors",
-        "Enzymes for food production",
-        "Feed and animal health products",
-        "Probiotic dietary supplements",
-        "Bioprotection solutions",
-        "Plant health products"
-      ],
-      "technology": {
-        "platforms": [
-          "Microbial strain development",
-          "Fermentation technology",
-          "Natural color extraction"
-        ],
-        "digital_capabilities": "Genomics, bioinformatics, strain optimization, fermentation process control"
-      },
-      "recent_news": [
-        {
-          "date": "2023",
-          "headline": "Chr. Hansen merges with Novozymes to create leading biosolutions company",
-          "impact": "Major M&A"
-        },
-        {
-          "date": "2022",
-          "headline": "Expansion of probiotic production capacity for growing health & nutrition demand",
-          "impact": "Capacity expansion"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "1874",
-          "event": "Company founded in Denmark"
-        },
-        {
-          "year": "2019",
-          "event": "Spun off Health & Nutrition division"
-        },
-        {
-          "year": "2023",
-          "event": "Merger with Novozymes creating Novonesis (Nordic Capital involvement in the process)"
-        }
-      ],
-      "competitive_advantages": [
-        "150+ years of microbial and fermentation expertise",
-        "Largest collection of probiotic strains globally",
-        "Strong R&D capabilities and patent portfolio",
-        "Global production and distribution network",
-        "Trusted brand among food manufacturers and consumers"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "Cultures and enzymes sales",
-          "Probiotics and supplements",
-          "Natural colors",
-          "Licensing and royalties"
-        ],
-        "customer_segments": [
-          "Food manufacturers",
-          "Dietary supplement companies",
-          "Pharmaceutical companies",
-          "Animal feed producers"
-        ],
-        "value_proposition": "Natural, science-based biosolutions improving food quality, nutritional value, and health outcomes"
-      },
-      "strategic_priorities": [
-        "Integration with Novozymes creating Novonesis",
-        "Expand human health and probiotic offerings",
-        "Strengthen sustainability and natural solutions positioning",
-        "Geographic expansion in emerging markets",
-        "Innovation in plant-based and alternative proteins"
-      ],
-      "investment_thesis": "Chr. Hansen benefits from growing demand for natural ingredients, probiotics and health solutions, and sustainable food production. The company's leadership in bioscience, strong market positions, and merger with Novozymes creates a powerhouse in biological solutions. Nordic Capital's involvement in the strategic process demonstrates the significant value creation in the bioscience sector.",
-      "deal_size": "€11.4B",
-      "logo_url": "https://logo.clearbit.com/chr-hansen.com"
     },
     {
       "company": "Inexto",
@@ -35151,7 +35065,7 @@
       "sector": "Consumer",
       "fund": "Equip",
       "market": "Nordics",
-      "entry": "2022",
+      "entry": "2019",
       "source": "Equip",
       "headquarters": "Norway",
       "status": "Active",
@@ -35339,6 +35253,28 @@
       "source": "Equip",
       "headquarters": "Norway",
       "status": "Active"
+    },
+    {
+      "company": "No Dig Alliance",
+      "sector": "Business Services",
+      "fund": "Equip",
+      "market": "Sweden",
+      "entry": "2021",
+      "source": "Equip",
+      "headquarters": "Stockholm, Sweden",
+      "status": "Active",
+      "detailed_description": "Nordic leader in trenchless installation, renovation and maintenance of underground pipelines. Operates in Norway, Sweden and Finland for municipalities and grid companies."
+    },
+    {
+      "company": "Remagruppen",
+      "sector": "Business Services",
+      "fund": "Equip",
+      "market": "Sweden",
+      "entry": "2023",
+      "source": "Equip",
+      "headquarters": "Sweden",
+      "status": "Active",
+      "detailed_description": "Leading Nordic group in sustainable property maintenance – roofing, façade, painting, solar. BNB add-on (2023) for demolition and waste management."
     },
     {
       "company": "Nordomatic",
@@ -36669,6 +36605,108 @@
       "detailed_description": "Web development services.",
       "source": "IK Partners",
       "status": "Active"
+    },
+    {
+      "company": "Corteco",
+      "sector": "Construction & Property Services",
+      "fund": "Celero Capital Fund I",
+      "market": "Nordics",
+      "entry": "2022",
+      "source": "Celero",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://corteco.nu",
+      "logo_url": "https://logo.clearbit.com/corteco.nu",
+      "status": "Active",
+      "holding_period": "3-6 years",
+      "employees": "200-500",
+      "deal_size": "€20M - €50M",
+      "geo_type": "Nordic",
+      "detailed_description": "Corteco is a leading provider of renovation and maintenance services for building exteriors. By combining leading niche companies in a group, Corteco delivers complete solutions that improve energy efficiency in properties. Services include roofing, windows, facades, garages, courtyards, balconies and solar installations. The platform was established by Celero Capital in 2022 in partnership with three entrepreneur-owned specialist firms and has expanded across Sweden, Norway and Finland."
+    },
+    {
+      "company": "Reledo",
+      "sector": "Business Services",
+      "fund": "Celero Capital Fund I",
+      "market": "Nordics",
+      "entry": "2023",
+      "source": "Celero",
+      "headquarters": "Stockholm, Sweden",
+      "website": "https://reledo.se",
+      "logo_url": "https://logo.clearbit.com/reledo.se",
+      "status": "Active",
+      "holding_period": "3-6 years",
+      "employees": "400+",
+      "deal_size": "€20M - €50M",
+      "geo_type": "Nordic",
+      "detailed_description": "Reledo is a group of entrepreneur-led companies that together provide tailored Facility Management solutions to the SME segment. Services include cleaning and property services, staffing, catering, office services and waste management. Celero Capital established Reledo in 2023 in partnership with four entrepreneur-owned facility management companies. The platform had pro forma sales of approximately SEK 230 million at inception."
+    },
+    {
+      "company": "Opima",
+      "sector": "Industrial",
+      "fund": "Celero Capital Fund I",
+      "market": "Sweden",
+      "entry": "2024",
+      "source": "Celero",
+      "headquarters": "Sweden",
+      "website": "https://opima.se",
+      "logo_url": "https://logo.clearbit.com/opima.se",
+      "status": "Active",
+      "holding_period": "3-6 years",
+      "employees": "100+",
+      "deal_size": "€20M - €50M",
+      "geo_type": "Nordic",
+      "detailed_description": "Opima is a local partner to the manufacturing industry, offering workshop services, industrial services and automation services. Celero Capital partnered with four Swedish companies to establish Opima in 2024. The combined entity has annual turnover of approximately SEK 230 million. Opima delivers component manufacturing, maintenance and repair, production engineering and automation to Nordic manufacturers."
+    },
+    {
+      "company": "Aterion",
+      "sector": "Power & Utilities",
+      "fund": "Celero Capital Fund I",
+      "market": "Nordics",
+      "entry": "2025",
+      "source": "Celero",
+      "headquarters": "Sweden",
+      "website": "https://aterion.com",
+      "logo_url": "https://logo.clearbit.com/aterion.com",
+      "status": "Active",
+      "holding_period": "3-6 years",
+      "employees": "400+",
+      "deal_size": "€50M - €100M",
+      "geo_type": "Nordic",
+      "detailed_description": "Aterion is a group of entrepreneur-driven companies in the Nordic power industry, offering comprehensive infrastructure services to grid owners and other professional customers. Celero Capital established Aterion in 2025 with six companies. The group generates annual revenues exceeding SEK 800 million and provides design, planning, construction, maintenance and district heating services to grid owners, renewable energy producers and industrial customers."
+    },
+    {
+      "company": "Deltra",
+      "sector": "Distribution",
+      "fund": "Celero Capital Fund I",
+      "market": "Nordics",
+      "entry": "2025",
+      "source": "Celero",
+      "headquarters": "Sweden",
+      "website": "https://deltra.se",
+      "logo_url": "https://logo.clearbit.com/deltra.se",
+      "status": "Active",
+      "holding_period": "3-6 years",
+      "employees": "150-300",
+      "deal_size": "€30M - €70M",
+      "geo_type": "Nordic",
+      "detailed_description": "Deltra is a group of entrepreneur-driven companies in the Nordic distribution market, offering a comprehensive range of industrial supplies, workwear and technical products. Celero Capital partnered with five Swedish companies to establish Deltra in 2025. The platform generates approximately SEK 400 million in annual revenues and distributes tools, work clothing, safety equipment and consumables to construction, industrial and property management customers."
+    },
+    {
+      "company": "Sporty",
+      "sector": "Consumer Services",
+      "fund": "Celero Capital Fund I",
+      "market": "Norway",
+      "entry": "2025",
+      "source": "Celero",
+      "headquarters": "Oslo, Norway",
+      "website": "https://sportygroup.no",
+      "logo_url": "https://logo.clearbit.com/sportygroup.no",
+      "status": "Active",
+      "holding_period": "3-6 years",
+      "employees": "1,300+",
+      "deal_size": "€50M - €150M",
+      "geo_type": "Nordic",
+      "detailed_description": "Sporty is a leading Norwegian player in the fitness and training industry, with over 90 high-quality gyms and more than 130,000 members. Celero Capital acquired a majority stake in Sporty in late 2025 to accelerate growth and strengthen its Nordic market position. The company offers state-of-the-art fitness facilities, group classes, personalized training programs and digital fitness tools."
     }
   ]
 }

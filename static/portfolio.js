@@ -1270,10 +1270,17 @@ function extractDomain(url) {
     }
 }
 
+// Companies where Clearbit/favicon often fail (Nordic .nu/.se) - use ui-avatars for reliable display
+const FORCE_AVATAR_LOGO = ['Corteco', 'Reledo', 'Opima', 'Aterion', 'Deltra', 'Sporty', 'IT-Total', 'Multisoft', 'SELATEK'];
+
 // Company logo: prefer Google Favicon (reliable for .se/.no/.dk) over Clearbit (often missing for Nordic companies)
 function getCompanyLogoUrl(company, domain, cleanName) {
+    const name = (company && company.company) ? String(company.company).trim() : cleanName || 'Co';
+    if (FORCE_AVATAR_LOGO.includes(name)) {
+        return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=7c2d12&color=ffffff&size=64`;
+    }
     const favicon = domain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=128` : '';
-    const avatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(cleanName || 'Co')}&background=3f7de8&color=ffffff&size=64`;
+    const avatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(name || 'Co')}&background=3f7de8&color=ffffff&size=64`;
     const rawLogo = (company && company.logo_url) || '';
     const clearbit = (rawLogo && !rawLogo.includes('ui-avatars.com')) ? rawLogo
         : (domain ? `https://logo.clearbit.com/${domain}` : '');
@@ -1308,6 +1315,13 @@ const COMPANY_DOMAIN_OVERRIDES = {
     'Tedge': 'tedge.se',
     'Co-native': 'conative.se',
     'SELATEK': 'selatek.se',
+    // Celero portfolio
+    'Corteco': 'corteco.nu',
+    'Reledo': 'reledo.se',
+    'Opima': 'opima.se',
+    'Aterion': 'aterion.com',
+    'Deltra': 'deltra.se',
+    'Sporty': 'sportygroup.no',
     // Axcel portfolio
     'Bekk': 'bekk.no',
     'LS Retail': 'lsretail.com',

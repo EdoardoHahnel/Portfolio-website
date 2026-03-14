@@ -1174,6 +1174,11 @@ def get_pe_firm_detail(firm_name):
                 'total_news_count': len(real_news),
                 **firm_metadata  # Add any metadata from database
             }
+            # When firm has curated company_updates (Accent-style), Overview uses those;
+            # do not send real_news so Overview Recent Activity shows formatCompanyUpdates (year + bullets)
+            if firm_data.get('company_updates'):
+                firm_data['real_news'] = []
+                firm_data['total_news_count'] = 0
             # Ensure team is always a list (some firms e.g. Helix Kapital lack it in JSON)
             firm_data['team'] = firm_data.get('team') or []
             
@@ -1224,7 +1229,6 @@ FUNDRAISING_FIRM_LOGO_FALLBACKS = {
     'montagu private equity': 'montagu.com',
     'montagu': 'montagu.com',
     'mvi advisors': 'mvi.se',
-    'pai partners': 'paipartners.com',
     'peq private equity': 'peqab.se',
     'polaris': 'polarisequity.dk',
     'polaris private equity': 'polarisequity.dk',

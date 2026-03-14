@@ -295,35 +295,219 @@
       },
       "recent_activity": "2025–2026: Completes Kelvion sale to Apollo Funds (majority stake, ~€2bn); agrees sale of Ramudden Global to I Squared Capital (~€2.5bn); establishes formicon (architecture & engineering); completes Bosch security & communications acquisition (4,300 employees, >€1B revenue, now Keenfinity Group). Triton Smaller Mid-Cap first UK deal (Tendra). 2024: Merges Assemblin and Caverion; Stonepeak joins IFCO; MacGregor acquisition.",
       "portfolio_companies": [
-        {"name": "All4Labels", "sector": "Industrial Tech", "country": "Germany", "logo": "https://logo.clearbit.com/all4labels.com", "description": "Global manufacturer of premium labels and packaging solutions", "entry_year": "2019"},
-        {"name": "Aleris", "sector": "Healthcare", "country": "Sweden", "logo": "https://logo.clearbit.com/aleris.se", "description": "Leading private healthcare provider in the Nordic region", "entry_year": "2019"},
-        {"name": "DeepOcean", "sector": "Business Services", "country": "Norway", "logo": "https://logo.clearbit.com/deepoceangroup.com", "description": "Provider of subsea services to the offshore energy industry", "entry_year": "2016"},
-        {"name": "Fertiberia", "sector": "Industrial Tech", "country": "Spain", "logo": "https://logo.clearbit.com/fertiberia.com", "description": "European producer of fertilizers and industrial chemicals", "entry_year": "2020"},
-        {"name": "IFCO", "sector": "Business Services", "country": "Germany", "logo": "https://logo.clearbit.com/ifco.com", "description": "World's largest provider of reusable plastic containers", "entry_year": "2019"},
-        {"name": "Pharmanovia", "sector": "Healthcare", "country": "United Kingdom", "logo": "https://logo.clearbit.com/pharmanovia.com", "description": "Specialty pharmaceutical company focused on established brands", "entry_year": "2019"},
-        {"name": "Acre Security", "sector": "Industrial Tech", "country": "United States", "logo": "https://logo.clearbit.com/acresecurity.com", "description": "North American provider of commercial security integration", "entry_year": "2021"},
-        {"name": "Arvos Group", "sector": "Industrial Tech", "country": "Germany", "logo": "https://logo.clearbit.com/arvos-group.com", "description": "Global provider of thermal processing equipment", "entry_year": "2014"},
-        {"name": "Assemblin Caverion Group", "sector": "Business Services", "country": "Nordic", "logo": "https://logo.clearbit.com/assemblin.com", "description": "Leading Nordic provider of technical installation services", "entry_year": "2024"},
-        {"name": "Bergman Clinics", "sector": "Healthcare", "country": "Netherlands", "logo": "https://logo.clearbit.com/bergmanclinics.nl", "description": "Netherlands' largest independent provider of outpatient care", "entry_year": "2021"},
-        {"name": "BFC Fahrzeugteile", "sector": "Industrial Tech", "country": "Germany", "description": "Tier-2 automotive supplier of metal-based clamping profiles", "entry_year": "2018"},
-        {"name": "bluu unit", "sector": "Business Services", "country": "Germany", "description": "Natural refrigeration alliance", "entry_year": "2022"},
-        {"name": "Clinigen", "sector": "Healthcare", "country": "United Kingdom", "description": "Global pathfinder accelerating access to critical medicines", "entry_year": "2022"},
-        {"name": "Esperi Care", "sector": "Healthcare", "country": "Finland", "description": "Leading residential care provider in Finland", "entry_year": "2022"},
-        {"name": "formicon", "sector": "Business Services", "country": "Germany", "description": "Nationwide architecture and engineering group", "entry_year": "2026"},
-        {"name": "Geia Group", "sector": "Business Services", "country": "Denmark", "description": "Leading provider of food products and category assortments in Northern Europe", "entry_year": "2021"},
-        {"name": "Glamox", "sector": "Industrial Tech", "country": "Norway", "description": "Leading office chair manufacturer in Europe", "entry_year": "2017"},
-        {"name": "HiQ", "sector": "Business Services", "country": "Sweden", "description": "Leading Nordic digital transformation company", "entry_year": "2020"},
-        {"name": "KEENFINITY Group", "sector": "Industrial Tech", "country": "Germany", "description": "Provider of security and professional communication solutions (ex-Bosch)", "entry_year": "2025"},
-        {"name": "Leadec", "sector": "Business Services", "country": "Germany", "description": "Global technical services specialist for the factory", "entry_year": "2016"},
-        {"name": "MacGregor", "sector": "Industrial Tech", "country": "Finland", "description": "Cargo handling and naval solutions", "entry_year": "2025"},
-        {"name": "Neptune Software", "sector": "Business Services", "country": "Norway", "description": "Low-code/no-code enterprise app development platform", "entry_year": "2022"},
-        {"name": "Ramudden Global", "sector": "Business Services", "country": "Sweden", "description": "Network of infrastructure safety companies", "entry_year": "2017"},
-        {"name": "Royal Reesink", "sector": "Business Services", "country": "Netherlands", "description": "International equipment distribution and aftermarket services", "entry_year": "2019"},
-        {"name": "Sunweb Group", "sector": "Consumer", "country": "Netherlands", "description": "Leading European online tour operator", "entry_year": "2019"},
-        {"name": "Tendra Technical Services", "sector": "Business Services", "country": "United Kingdom", "description": "Triton Smaller Mid-Cap first UK investment", "entry_year": "2025"},
-        {"name": "Trench Group", "sector": "Industrial Tech", "country": "Global", "description": "Power engineering and high voltage electrical products", "entry_year": "2024"},
-        {"name": "Unica", "sector": "Business Services", "country": "Netherlands", "description": "Technology provider in the Netherlands", "entry_year": "2019"},
-        {"name": "Wavelynx", "sector": "Industrial Tech", "country": "United States", "description": "Secure mobile-first identity and access control solutions", "entry_year": "2023"}
+        {
+          "name": "All4Labels",
+          "sector": "Industrial Tech",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/all4labels.com",
+          "description": "Global manufacturer of premium labels and packaging solutions",
+          "entry_year": "2019"
+        },
+        {
+          "name": "Aleris",
+          "sector": "Healthcare",
+          "country": "Sweden",
+          "logo": "https://logo.clearbit.com/aleris.se",
+          "description": "Leading private healthcare provider in the Nordic region",
+          "entry_year": "2019"
+        },
+        {
+          "name": "DeepOcean",
+          "sector": "Business Services",
+          "country": "Norway",
+          "logo": "https://logo.clearbit.com/deepoceangroup.com",
+          "description": "Provider of subsea services to the offshore energy industry",
+          "entry_year": "2016"
+        },
+        {
+          "name": "Fertiberia",
+          "sector": "Industrial Tech",
+          "country": "Spain",
+          "logo": "https://logo.clearbit.com/fertiberia.com",
+          "description": "European producer of fertilizers and industrial chemicals",
+          "entry_year": "2020"
+        },
+        {
+          "name": "IFCO",
+          "sector": "Business Services",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/ifco.com",
+          "description": "World's largest provider of reusable plastic containers",
+          "entry_year": "2019"
+        },
+        {
+          "name": "Pharmanovia",
+          "sector": "Healthcare",
+          "country": "United Kingdom",
+          "logo": "https://logo.clearbit.com/pharmanovia.com",
+          "description": "Specialty pharmaceutical company focused on established brands",
+          "entry_year": "2019"
+        },
+        {
+          "name": "Acre Security",
+          "sector": "Industrial Tech",
+          "country": "United States",
+          "logo": "https://logo.clearbit.com/acresecurity.com",
+          "description": "North American provider of commercial security integration",
+          "entry_year": "2021"
+        },
+        {
+          "name": "Arvos Group",
+          "sector": "Industrial Tech",
+          "country": "Germany",
+          "logo": "https://logo.clearbit.com/arvos-group.com",
+          "description": "Global provider of thermal processing equipment",
+          "entry_year": "2014"
+        },
+        {
+          "name": "Assemblin Caverion Group",
+          "sector": "Business Services",
+          "country": "Nordic",
+          "logo": "https://logo.clearbit.com/assemblin.com",
+          "description": "Leading Nordic provider of technical installation services",
+          "entry_year": "2024"
+        },
+        {
+          "name": "Bergman Clinics",
+          "sector": "Healthcare",
+          "country": "Netherlands",
+          "logo": "https://logo.clearbit.com/bergmanclinics.nl",
+          "description": "Netherlands' largest independent provider of outpatient care",
+          "entry_year": "2021"
+        },
+        {
+          "name": "BFC Fahrzeugteile",
+          "sector": "Industrial Tech",
+          "country": "Germany",
+          "description": "Tier-2 automotive supplier of metal-based clamping profiles",
+          "entry_year": "2018"
+        },
+        {
+          "name": "bluu unit",
+          "sector": "Business Services",
+          "country": "Germany",
+          "description": "Natural refrigeration alliance",
+          "entry_year": "2022"
+        },
+        {
+          "name": "Clinigen",
+          "sector": "Healthcare",
+          "country": "United Kingdom",
+          "description": "Global pathfinder accelerating access to critical medicines",
+          "entry_year": "2022"
+        },
+        {
+          "name": "Esperi Care",
+          "sector": "Healthcare",
+          "country": "Finland",
+          "description": "Leading residential care provider in Finland",
+          "entry_year": "2022"
+        },
+        {
+          "name": "formicon",
+          "sector": "Business Services",
+          "country": "Germany",
+          "description": "Nationwide architecture and engineering group",
+          "entry_year": "2026"
+        },
+        {
+          "name": "Geia Group",
+          "sector": "Business Services",
+          "country": "Denmark",
+          "description": "Leading provider of food products and category assortments in Northern Europe",
+          "entry_year": "2021"
+        },
+        {
+          "name": "Glamox",
+          "sector": "Industrial Tech",
+          "country": "Norway",
+          "description": "Leading office chair manufacturer in Europe",
+          "entry_year": "2017"
+        },
+        {
+          "name": "HiQ",
+          "sector": "Business Services",
+          "country": "Sweden",
+          "description": "Leading Nordic digital transformation company",
+          "entry_year": "2020"
+        },
+        {
+          "name": "KEENFINITY Group",
+          "sector": "Industrial Tech",
+          "country": "Germany",
+          "description": "Provider of security and professional communication solutions (ex-Bosch)",
+          "entry_year": "2025"
+        },
+        {
+          "name": "Leadec",
+          "sector": "Business Services",
+          "country": "Germany",
+          "description": "Global technical services specialist for the factory",
+          "entry_year": "2016"
+        },
+        {
+          "name": "MacGregor",
+          "sector": "Industrial Tech",
+          "country": "Finland",
+          "description": "Cargo handling and naval solutions",
+          "entry_year": "2025"
+        },
+        {
+          "name": "Neptune Software",
+          "sector": "Business Services",
+          "country": "Norway",
+          "description": "Low-code/no-code enterprise app development platform",
+          "entry_year": "2022"
+        },
+        {
+          "name": "Ramudden Global",
+          "sector": "Business Services",
+          "country": "Sweden",
+          "description": "Network of infrastructure safety companies",
+          "entry_year": "2017"
+        },
+        {
+          "name": "Royal Reesink",
+          "sector": "Business Services",
+          "country": "Netherlands",
+          "description": "International equipment distribution and aftermarket services",
+          "entry_year": "2019"
+        },
+        {
+          "name": "Sunweb Group",
+          "sector": "Consumer",
+          "country": "Netherlands",
+          "description": "Leading European online tour operator",
+          "entry_year": "2019"
+        },
+        {
+          "name": "Tendra Technical Services",
+          "sector": "Business Services",
+          "country": "United Kingdom",
+          "description": "Triton Smaller Mid-Cap first UK investment",
+          "entry_year": "2025"
+        },
+        {
+          "name": "Trench Group",
+          "sector": "Industrial Tech",
+          "country": "Global",
+          "description": "Power engineering and high voltage electrical products",
+          "entry_year": "2024"
+        },
+        {
+          "name": "Unica",
+          "sector": "Business Services",
+          "country": "Netherlands",
+          "description": "Technology provider in the Netherlands",
+          "entry_year": "2019"
+        },
+        {
+          "name": "Wavelynx",
+          "sector": "Industrial Tech",
+          "country": "United States",
+          "description": "Secure mobile-first identity and access control solutions",
+          "entry_year": "2023"
+        }
       ]
     },
     "Amplio": {
@@ -395,7 +579,7 @@
         "next_fund": "Deployment across Amplio I",
         "strategy": "Nordic lower mid-market (SEK 100–500M EV); Business Services and IT & Technology Services; first institutional owner, buy-and-build"
       },
-      "recent_activity": "2025: Divests Multisoft (Mar); Tedge acquires Kylmontage (cooling), Berghogens; Invests in S R Intelligence; divests Francks Kylindustri; SELATEK acquires TSTgruppen (revenue >SEK 2bn). 2024: Rebrands from Segulah to Amplio (Feb). Portfolio: S R Intelligence, Tedge, Co-native, SELATEK, IT-Total, Hermes, Pelly Group. Exits: Multisoft, Francks, NVBS, Sandbäckens, Conapto.",
+      "recent_activity": "2025\n• Divests Multisoft (Mar) – low-code software; to SEB Private Equity; tripled revenue under ownership\n• Invests in S R Intelligence (Mar) – regulatory compliance, personnel security; Stockholm\n• Divests Francks Kylindustri – industrial refrigeration; to IK Partners; 4x revenue, 5x profitability\n• Tedge acquires Kylmontage (cooling), Berghogens – energy optimisation add-ons\n• SELATEK acquires TSTgruppen – revenue exceeds SEK 2bn; security and electrical platform\n\n2024\n• Segulah rebrands to Amplio Private Equity (Feb)\n\nPortfolio: S R Intelligence, Tedge, Co-native, SELATEK, IT-Total, Hermes, Pelly Group (Amplio I & Segulah V)",
       "portfolio_companies": [
         {
           "name": "S R Intelligence (SRI)",
@@ -464,40 +648,98 @@
       ],
       "company_updates": [
         {
-          "date": "2025-03-05",
-          "text": "Amplio divests Multisoft"
+          "date": "2026-03-05",
+          "title": "Amplio divests Multisoft",
+          "text": "Successful exit for Fund V; to SEB Private Equity.",
+          "link": "https://www.amplio.se/amplio-divests-multisoft/"
         },
         {
-          "date": "2025-01-20",
-          "text": "Tedge Energy acquires Kylmontage (cooling solutions)"
+          "date": "2026-01-20",
+          "title": "Tedge Energy acquires Kylmontage",
+          "text": "Strengthens offering within cooling solutions.",
+          "link": "https://www.amplio.se/tedge-energy-acquires-kylmontage/"
         },
         {
           "date": "2025-10-23",
-          "text": "SELATEK acquires TSTgruppen; surpasses SEK 2bn revenue"
+          "title": "SELATEK acquires TSTgruppen",
+          "text": "Surpasses two billion SEK in revenue.",
+          "link": "https://www.amplio.se/selatek-acquires-tstgruppen/"
         },
         {
           "date": "2025-09-25",
-          "text": "Tedge Energy acquires Berghogens (West Sweden)"
+          "title": "Tedge Energy acquires Berghogens",
+          "text": "Strengthens presence in West Sweden.",
+          "link": "https://www.amplio.se/tedge-acquires-berghogens/"
         },
         {
-          "date": "2025-01-01",
-          "text": "Amplio invests in S R Intelligence (SRI) – regulatory compliance and personnel security specialist"
+          "date": "2025-08-20",
+          "title": "SELATEK acquires Triator Brand- & Säkerhetsteknik",
+          "text": "Strengthens security offering; establishes presence in Växjö.",
+          "link": "https://www.amplio.se/selatek-acquires-triator/"
         },
         {
-          "date": "2025-01-01",
-          "text": "Amplio divests Francks Kylindustri (industrial and commercial refrigeration)"
+          "date": "2025-08-15",
+          "title": "SELATEK acquires Kelmo",
+          "text": "Strengthens industrial automation offering.",
+          "link": "https://www.amplio.se/selatek-acquires-kelmo/"
         },
         {
-          "date": "2022-01-01",
-          "text": "Amplio divests NVBS (rail infrastructure services)"
+          "date": "2025-08-12",
+          "title": "Amplio divests Francks Kylindustri",
+          "text": "Successful exit for Fund V; to IK Partners.",
+          "link": "https://www.amplio.se/amplio-divests-francks-in-another-successful-exit-for-fund-v/"
         },
         {
-          "date": "2021-01-01",
-          "text": "Amplio divests Sandbäckens (heating/sanitation), Conapto (data center)"
+          "date": "2025-06-25",
+          "title": "SELATEK acquires Elektromontage Power",
+          "text": "Low and high voltage power solutions.",
+          "link": "https://www.amplio.se/selatek-acquires-elektromontage-power/"
         },
         {
-          "date": "2024-02-01",
-          "text": "Segulah rebrands to Amplio Private Equity"
+          "date": "2025-05-14",
+          "title": "Multisoft acquires Mysoft",
+          "text": "Establishes Norwegian presence.",
+          "link": "https://www.amplio.se/multisoft-acquires-mysoft/"
+        },
+        {
+          "date": "2025-03-13",
+          "title": "Amplio partners with SRI",
+          "text": "Personnel security and regulatory compliance specialist.",
+          "link": "https://www.amplio.se/amplio-partners-with-sri-a-leading-specialist-within-personnel-security-and-regulatory-compliance-in-sweden/"
+        },
+        {
+          "date": "2025-02-27",
+          "title": "Tedge Energy formed",
+          "text": "Amplio and Ferla partner with Edekyl & Värme for energy optimization platform.",
+          "link": "https://www.amplio.se/amplio-and-ferla-partners-up-with-edekyl/"
+        },
+        {
+          "date": "2025-02-04",
+          "title": "Francks Kylindustri acquires NR Kyl",
+          "text": "Strengthens position in Gothenburg region.",
+          "link": "https://www.amplio.se/francks-acquires-nr-kyl/"
+        }
+      ],
+      "timeline": [
+        {
+          "year": 2024,
+          "event": "Amplio rebrand",
+          "description": "Segulah evolves into Amplio Private Equity"
+        },
+        {
+          "year": 2025,
+          "event": "S R Intelligence",
+          "description": "Investment in regulatory compliance specialist"
+        },
+        {
+          "year": 2025,
+          "event": "Multisoft exit",
+          "description": "Divests to SEB Private Equity"
+        },
+        {
+          "year": 2025,
+          "event": "Francks exit",
+          "description": "Divests industrial refrigeration to IK Partners"
         }
       ]
     },
@@ -606,27 +848,42 @@
       "company_updates": [
         {
           "date": "2025-10-24",
-          "text": "Altor divests all its shares in RevolutionRace"
+          "type": "Exit",
+          "title": "Altor divests RevolutionRace",
+          "text": "Divests all 16.3M shares at SEK 60. ~10x sales growth during 8-year ownership; sales to ~SEK 2bn.",
+          "link": "https://altor.com/altor-divests-all-its-shares-in-revolutionrace"
         },
         {
           "date": "2025-09-01",
-          "text": "Altor divests Retta to Adelis Equity Partners"
+          "type": "Exit",
+          "title": "Altor divests Retta to Adelis",
+          "text": "Nordic B2B property management leader (Finland, Sweden) sold to Adelis Equity Partners.",
+          "link": "https://altor.com/altor-divests-retta-to-adelis-equity-partners"
         },
         {
           "date": "2025-07-04",
-          "text": "Altor invests in IMBOX with founder René Marker and the Grundtvig family"
+          "type": "Investment",
+          "title": "Altor invests in IMBOX",
+          "text": "Majority stake in Danish automated footwear protection. Founder and Grundtvig family remain. Target: 3x installed base over 3–5 years.",
+          "link": "https://altor.com/altor-invests-in-imbox-in-partnership-with-the-founder-rene-marker-and-the-grundtvig-family"
         },
         {
           "date": "2025-06-25",
-          "text": "Altor advances AI leadership through a strategic partnership with WovenLight"
+          "type": "Other",
+          "title": "WovenLight AI partnership",
+          "text": "Strategic partnership to advance AI leadership across portfolio."
         },
         {
           "date": "2025-06-11",
-          "text": "Klas Johansson steps down as Co-Managing Partner – continues as Senior Advisor and Board Member"
+          "type": "Team",
+          "title": "Klas Johansson steps down as Co-Managing Partner",
+          "text": "Continues as Senior Advisor and Board Member"
         },
         {
           "date": "2025-05-27",
-          "text": "Altor divests all shares in XXL"
+          "type": "Exit",
+          "title": "Altor divests XXL",
+          "text": "Divests all shares in XXL"
         },
         {
           "date": "2025-04-16",
@@ -634,15 +891,22 @@
         },
         {
           "date": "2025-04-08",
-          "text": "Altor divests Qmatic to Valsoft"
+          "type": "Exit",
+          "title": "Altor divests Qmatic",
+          "text": "Sells Qmatic to Valsoft"
         },
         {
           "date": "2025-03-11",
-          "text": "Altor divests Wrist to J.F. Lehman & Company"
+          "type": "Exit",
+          "title": "Altor divests Wrist",
+          "text": "Sells Wrist to J.F. Lehman & Company"
         },
         {
           "date": "2025-01-24",
-          "text": "Altor divests Marshall Group to HSG"
+          "type": "Exit",
+          "title": "Altor divests Marshall Group to HSG",
+          "text": "HongShan Capital acquires Marshall Group (audio, tech, design) for €1.1bn. Marshall family retains 20%+.",
+          "link": "https://altor.com/altor-divests-marshall-group-to-hongshan-group"
         },
         {
           "date": "2024-12-20",
@@ -709,7 +973,7 @@
           "text": "Altor invests in Aira"
         }
       ],
-      "recent_activity": "2025: Divests RevolutionRace, Retta, XXL, Qmatic, Wrist; announces Marshall Group divestment; invests in IMBOX; formalizes AI initiative with WovenLight. 2024–2023: Divests Nordic Tyre Group, Carnegie, Nova Austral, SATS stake; majority in F24; record fundraise (Dec 2023); invests in Aira; increases Mandatum stake.",
+      "recent_activity": "2025\n• Divests RevolutionRace (Oct), Retta to Adelis (Sept), XXL, Qmatic, Wrist\n• Divests Marshall Group to HongShan Capital (Jan); €1.1bn; iconic audio brand\n• Invests in IMBOX (July) – Danish footwear protection equipment-as-a-service\n• WovenLight AI strategic partnership (June)\n• Klas Johansson steps down as Co-Managing Partner; continues Senior Advisor\n\n2024\n• Divests Nordic Tyre Group (Axcel), Carnegie (DNB), Nova Austral, SATS stake\n• Majority in F24; invests in Aira (clean energy-tech)\n• Increases Mandatum stake; Permascand acquisition\n\n2023\n• Altor VI closes >€3bn (record fundraise)",
       "timeline": [
         {
           "year": 2023,
@@ -1318,8 +1582,8 @@
         },
         {
           "year": 2022,
-          "event": "RugVista stake reduction",
-          "description": "Divests 4.8% of shares and votes in RugVista Group"
+          "event": "RugVista stake reductions",
+          "description": "Divests 4.8% and 4.3% of shares and votes in RugVista Group"
         },
         {
           "year": 2022,
@@ -1355,11 +1619,6 @@
           "year": 2022,
           "event": "Layer Group Finland expansion",
           "description": "Layer Group establishes in Finland by acquiring Kaukomaalaus"
-        },
-        {
-          "year": 2022,
-          "event": "RugVista stake reduction",
-          "description": "Divests 4.3% of shares and votes in RugVista Group"
         },
         {
           "year": 2023,
@@ -1528,11 +1787,11 @@
         }
       ],
       "fundraising": {
-        "current_fund": "Adelis Fund IV (€1.6bn, closed 2025); Fund III (€932m, 2021)",
+        "current_fund": "Fund IV (€1.6bn, closed March 2025); Fund III (€932m, 2021); total raised >€4.25bn",
         "next_fund": "Deployment across Fund IV",
         "strategy": "Growth buyouts in €10–300M revenue companies; Nordic + Germany; Healthcare & Life Science, Tech & Software, Business Services; Munich office (2023)"
       },
-      "recent_activity": "2025: Fund IV closes at €1.6bn. Acquires Retta from Altor. 2024: Forms Cedra (DK/NO technical installation); Bryntum partnership; EITCO acquisition; exits Europa Biosite. Munich office expansion.",
+      "recent_activity": "2025\n• Fund IV closes at €1.6bn (March); 75% from returning LPs\n• Acquires Retta from Altor (Sept) – B2B property management, Finland/Sweden\n• Forms Cedra Norway – acquires Deloitte Norway SMB business (Aug); 13 offices, 300+ professionals\n• Forms Cedra Denmark – partners with Roesgaard and Inforevision (Sept); ~300 employees\n• Exits Europa Biosite (July)\n\n2024\n• Cedra Sweden platform; Presto/HVD continuation vehicle; Bruhn NewTech (defence tech)\n• Munich office; Franz Reiffenstuel Partner",
       "timeline": [
         {
           "year": 2012,
@@ -1847,7 +2106,7 @@
         {
           "year": 2025,
           "event": "Retta B2B acquisition",
-          "description": "Acquires Retta B2B Real Estate Management"
+          "description": "Acquires Retta from Altor – Nordic B2B property management"
         },
         {
           "year": 2025,
@@ -1864,416 +2123,85 @@
         {
           "date": "2025-09-25",
           "type": "Investment",
-          "title": "Adelis enters partnership with Roesgaard and Inforevision to establish Cedra Denmark",
-          "text": "Formation of Cedra Denmark alongside leading audit firms to build a Nordic audit and advisory platform."
+          "title": "Adelis establishes Cedra Denmark with Roesgaard and Inforevision",
+          "text": "Nordic audit and advisory platform.",
+          "link": "https://news.cision.com/adelis-equity-partners/r/adelis-enters-partnership-with-leading-audit-firms-roesgaard-and-inforevision-to-establish-cedra-den,c4239614"
         },
         {
           "date": "2025-09-01",
           "type": "Investment",
-          "title": "Adelis acquires Retta B2B Real Estate Management",
-          "text": "Platform acquisition to accelerate Nordic growth in B2B real estate management."
+          "title": "Adelis acquires Retta from Altor",
+          "text": "B2B property management; Finland, Sweden, Denmark.",
+          "link": "https://news.cision.com/adelis-equity-partners/r/adelis-equity-partners-acquires-retta-b2b-real-estate-management-to-accelerate-nordic-growth,c4227072"
         },
         {
           "date": "2025-08-11",
           "type": "Investment",
-          "title": "Adelis acquires Deloitte Norway’s SMB business and forms Cedra Norway",
-          "text": "Creates Cedra Norway in partnership with leading auditors and advisors."
+          "title": "Adelis forms Cedra Norway via Deloitte SMB carve-out",
+          "text": "13 offices, 300+ professionals.",
+          "link": "https://news.cision.com/adelis-equity-partners/r/adelis-acquires-deloitte-norway-s-smb-business-and-forms-cedra-norway-in-partnership-with-leading-au,c4216414"
         },
         {
           "date": "2025-07-06",
           "type": "Exit",
           "title": "Adelis exits Europa Biosite",
-          "text": "Successful exit of life science portfolio company Europa Biosite."
+          "text": "Life science reagent distribution platform.",
+          "link": "https://news.cision.com/adelis-equity-partners/r/adelis-exits-its-investment-in-europa-biosite,c4184392"
         },
         {
           "date": "2025-06-05",
           "type": "Investment",
           "title": "Bryntum partners with Adelis",
-          "text": "Leading scheduling web-component provider Bryntum partners with Adelis to drive continued growth and expansion."
+          "text": "Scheduling software; growth and expansion."
         },
         {
           "date": "2025-05-28",
           "type": "Investment",
-          "title": "Adelis majority owner in ECM specialist EITCO",
-          "text": "Adelis becomes new majority owner in enterprise content management specialist EITCO."
+          "title": "Adelis acquires EITCO",
+          "text": "ECM specialist; Germany."
         },
         {
           "date": "2025-03-03",
           "type": "Fund",
-          "title": "Adelis Equity Partners closes EUR 1.6 billion Fourth Fund",
-          "text": "Adelis closes Fund IV at €1.6bn to continue buy-and-build strategy across the Nordics and Northern Europe."
-        },
-        {
-          "date": "2025-02-26",
-          "type": "Investment",
-          "title": "Adelis and entrepreneurs create Circura Danmark",
-          "text": "Formation of Circura Danmark, a leading provider of rehabilitation services in Denmark."
-        },
-        {
-          "date": "2025-01-21",
-          "type": "Investment",
-          "title": "Four leading audit firms establish new group; Adelis minority owner",
-          "text": "Adelis supports strategic investments and growth as minority owner in new audit and advisory group."
+          "title": "Adelis closes Fund IV at €1.6bn",
+          "text": "Largest fund; Nordic and Northern Europe.",
+          "link": "https://news.cision.com/adelis-equity-partners/r/adelis-equity-partners-closes-eur-1-6-billion-fourth-fund,c4112825"
         },
         {
           "date": "2024-12-18",
           "type": "Investment",
           "title": "Adelis partners with Btwentyfour",
-          "text": "Supply chain data automation software company Btwentyfour partners with Adelis to support continued growth and international expansion."
+          "text": "Supply chain data automation software."
         },
         {
           "date": "2024-09-19",
           "type": "Portfolio",
-          "title": "SeaCross joins Adelis’ defence technology group",
-          "text": "SeaCross becomes part of Adelis’ recently established defence technology platform."
+          "title": "SeaCross joins Adelis defence technology group",
+          "text": "Defence tech platform add-on."
         },
         {
           "date": "2024-09-10",
           "type": "Investment",
           "title": "Adelis partners with IonOpticks",
-          "text": "International life science company IonOpticks partners with Adelis to support global expansion and innovation."
+          "text": "Life science; global expansion."
         },
         {
           "date": "2024-07-29",
           "type": "Investment",
           "title": "Adelis acquires Bruhn NewTech",
-          "text": "Adelis becomes partner and majority shareholder to build a leading European defence technology group."
+          "text": "European defence technology platform."
         },
         {
           "date": "2024-02-20",
           "type": "Exit",
-          "title": "Adelis exits Presto and HVD Group to a Continuation Vehicle",
-          "text": "Continuation Vehicle led by HarbourVest Partners alongside Adelis Fund III."
+          "title": "Adelis exits Presto and HVD to Continuation Vehicle",
+          "text": "HarbourVest Partners lead."
         },
         {
           "date": "2023-11-06",
           "type": "Team",
-          "title": "Franz Reiffenstuel joins as Partner (Munich)",
-          "text": "Adelis opens Munich office and adds Partner Franz Reiffenstuel."
-        },
-        {
-          "date": "2023-09-12",
-          "type": "Portfolio",
-          "title": "Nordic BioSite becomes Europa Biosite after LubioScience acquisition",
-          "text": "Rebranding after acquisitions to strengthen European positioning."
-        },
-        {
-          "date": "2023-08-08",
-          "type": "Portfolio",
-          "title": "Presto acquires German market leader Jockel",
-          "text": "Presto expands in Europe to become leading safety services group; Adelis invests additional capital."
-        },
-        {
-          "date": "2023-03-10",
-          "type": "Investment",
-          "title": "Adelis to become controlling shareholder in Hedvig",
-          "text": "SEB and Nicklas Storåkers to co-invest alongside Adelis."
-        },
-        {
-          "date": "2022-12-09",
-          "type": "Investment",
-          "title": "Adelis new majority owner in Aderian",
-          "text": "Investment in IT services company Aderian to accelerate growth."
-        },
-        {
-          "date": "2022-11-24",
-          "type": "Exit",
-          "title": "Adelis exits Mobilhouse",
-          "text": "Divestment of Mobilhouse following value creation plan."
-        },
-        {
-          "date": "2022-09-30",
-          "type": "Investment",
-          "title": "Adelis backs Avidly",
-          "text": "Growth journey support for leading MarTech service provider Avidly."
-        },
-        {
-          "date": "2022-09-06",
-          "type": "Exit",
-          "title": "Adelis divests majority stake in Säkra",
-          "text": "Exit of leading insurance broker Säkra."
-        },
-        {
-          "date": "2022-08-30",
-          "type": "Exit",
-          "title": "Adelis passes baton in Nordentic to Corus",
-          "text": "Partial exit and transition of dental platform Nordentic to Corus."
-        },
-        {
-          "date": "2022-08-22",
-          "type": "Fund",
-          "title": "Continuation Vehicle for SSI Diagnostica Group",
-          "text": "Continuation vehicle enables transformational acquisition at SSI Diagnostica."
-        },
-        {
-          "date": "2022-07-12",
-          "type": "Investment",
-          "title": "Public cash tender offer for Avidly",
-          "text": "Adelis announces public cash tender offer for all shares and special rights in Avidly."
-        },
-        {
-          "date": "2022-06-27",
-          "type": "Investment",
-          "title": "UniSea partners with Adelis",
-          "text": "Investment to accelerate growth and global expansion at UniSea."
-        },
-        {
-          "date": "2022-06-23",
-          "type": "Investment",
-          "title": "Adelis acquires netIP",
-          "text": "Investment in IT company netIP to scale operations."
-        },
-        {
-          "date": "2022-06-16",
-          "type": "Exit",
-          "title": "Adelis exits Knightec",
-          "text": "Realization of Knightec following successful growth phase."
-        },
-        {
-          "date": "2022-05-25",
-          "type": "Investment",
-          "title": "Håndverkskompaniet and Adelis partner in Norway",
-          "text": "Partnership to create a leading rehabilitation services group in Norway."
-        },
-        {
-          "date": "2022-03-14",
-          "type": "Portfolio",
-          "title": "Diakrit and Virtuance join forces",
-          "text": "Real estate marketing platforms combine; Adelis as international growth partner."
-        },
-        {
-          "date": "2022-01-06",
-          "type": "Investment",
-          "title": "Westpack management partners with Adelis",
-          "text": "Partnership to support international expansion of Westpack."
-        },
-        {
-          "date": "2021-12-13",
-          "type": "Investment",
-          "title": "Pixelz management partners with Adelis",
-          "text": "Growth buyout of Pixelz to drive scaling."
-        },
-        {
-          "date": "2021-12-10",
-          "type": "Portfolio",
-          "title": "Adelis establishes Circura",
-          "text": "Creation of leading building rehabilitation services group in partnership with entrepreneurs."
-        },
-        {
-          "date": "2021-11-16",
-          "type": "Fund",
-          "title": "Adelis closes EUR 932 million Third Fund",
-          "text": "Successful close of Fund III at €932m."
-        },
-        {
-          "date": "2021-10-27",
-          "type": "Team",
-          "title": "Martin Welna joins as Partner (Denmark)",
-          "text": "New partner appointment based in Denmark."
-        },
-        {
-          "date": "2021-06-24",
-          "type": "Exit",
-          "title": "Adelis exits Quattro Mikenti Group (QMG)",
-          "text": "Successful exit of QMG following consolidation and growth."
-        },
-        {
-          "date": "2021-05-28",
-          "type": "Investment",
-          "title": "Adelis new partner to Nordic BioSite Group",
-          "text": "Investment to support growth of Nordic BioSite Group."
-        },
-        {
-          "date": "2020-12-23",
-          "type": "Investment",
-          "title": "Valamis partners with Adelis",
-          "text": "Investment in Valamis to accelerate global expansion."
-        },
-        {
-          "date": "2020-08-26",
-          "type": "Portfolio",
-          "title": "SSI Diagnostica acquires CTK Biotech",
-          "text": "Creation of global rapid diagnostics powerhouse."
-        },
-        {
-          "date": "2020-08-24",
-          "type": "Investment",
-          "title": "Adelis partners with Kanari",
-          "text": "Growth investment in Kanari."
-        },
-        {
-          "date": "2020-07-17",
-          "type": "Exit",
-          "title": "Adelis divests Nordomatic",
-          "text": "Successful divestment of Nordomatic."
-        },
-        {
-          "date": "2020-07-06",
-          "type": "Investment",
-          "title": "Axentia partners with Adelis",
-          "text": "Investment in Axentia for growth."
-        },
-        {
-          "date": "2020-07-02",
-          "type": "Exit",
-          "title": "Adelis exits AddPro",
-          "text": "Exit of AddPro following strong growth."
-        },
-        {
-          "date": "2020-06-25",
-          "type": "Investment",
-          "title": "Adelis becomes majority owner of Säkra",
-          "text": "Control investment in Säkra to drive growth."
-        },
-        {
-          "date": "2019-10-25",
-          "type": "Exit",
-          "title": "Adelis exits Logent",
-          "text": "Successful exit of Logent."
-        },
-        {
-          "date": "2019-05-24",
-          "type": "Investment",
-          "title": "Adelis becomes majority owner in Ropo Capital",
-          "text": "Investment to build leading invoice lifecycle services provider in Nordics."
-        },
-        {
-          "date": "2019-02-25",
-          "type": "Investment",
-          "title": "Adelis acquires Mobilhouse",
-          "text": "Investment to accelerate growth of Mobilhouse."
-        },
-        {
-          "date": "2018-12-04",
-          "type": "Investment",
-          "title": "DataCenter Finland adds Adelis to ownership base",
-          "text": "Strategic partnership with DataCenter Finland."
-        },
-        {
-          "date": "2018-11-05",
-          "type": "Investment",
-          "title": "Presto and Aptum combine; Adelis new majority owner",
-          "text": "Creation of Nordic fire safety leader."
-        },
-        {
-          "date": "2018-07-09",
-          "type": "Investment",
-          "title": "Adelis acquires Didriksons",
-          "text": "Investment in Nordic outerwear brand Didriksons."
-        },
-        {
-          "date": "2018-06-14",
-          "type": "Exit",
-          "title": "Adelis completes sale of IT Relation",
-          "text": "Exit of IT Relation after scale-up."
-        },
-        {
-          "date": "2018-05-31",
-          "type": "Investment",
-          "title": "Adelis becomes majority owner in Hantverksdata",
-          "text": "Investment to accelerate growth at Hantverksdata."
-        },
-        {
-          "date": "2018-05-08",
-          "type": "Exit",
-          "title": "Habasit Group acquires majority stake in NGI Holding A/S",
-          "text": "Realization via strategic sale to Habasit Group."
-        },
-        {
-          "date": "2018-02-20",
-          "type": "Exit",
-          "title": "Adelis secures successful exit of Med Group",
-          "text": "Exit of Finnish healthcare services provider Med Group."
-        },
-        {
-          "date": "2018-02-02",
-          "type": "Investment",
-          "title": "Adelis invests in Søgemedier A/S",
-          "text": "Investment in digital marketing firm Søgemedier A/S."
-        },
-        {
-          "date": "2017-07-03",
-          "type": "Investment",
-          "title": "AddPro strengthens ownership; Adelis majority owner",
-          "text": "Ownership restructuring to enable rapid expansion at AddPro."
-        },
-        {
-          "date": "2017-06-14",
-          "type": "Fund",
-          "title": "Adelis closes €600 million Second Fund",
-          "text": "Successful close of Fund II."
-        },
-        {
-          "date": "2017-05-03",
-          "type": "Investment",
-          "title": "Adelis new owner in Knightec",
-          "text": "Control investment in Knightec."
-        },
-        {
-          "date": "2017-04-03",
-          "type": "Investment",
-          "title": "QMG ownership reorganizes; Adelis majority owner",
-          "text": "Ownership reorganization increases key personnel stake to 20%."
-        },
-        {
-          "date": "2016-06-20",
-          "type": "Portfolio",
-          "title": "Nordomatic acquires dominus",
-          "text": "Buy-and-build add-on at Nordomatic."
-        },
-        {
-          "date": "2016-03-30",
-          "type": "Investment",
-          "title": "Adelis acquires SSI Diagnostica",
-          "text": "Privatization acquisition from State of Denmark."
-        },
-        {
-          "date": "2016-02-29",
-          "type": "Investment",
-          "title": "Adelis new majority owner in Nordomatic",
-          "text": "Control investment in Nordomatic AB."
-        },
-        {
-          "date": "2016-01-29",
-          "type": "Investment",
-          "title": "Adelis acquires Puuilo",
-          "text": "Investment in Finnish discount retailer with management team."
-        },
-        {
-          "date": "2015-11-18",
-          "type": "Investment",
-          "title": "INTERSPORT Sweden becomes integrated retailer; Adelis majority shareholder",
-          "text": "Control investment to support retail transformation."
-        },
-        {
-          "date": "2015-06-18",
-          "type": "Investment",
-          "title": "Adelis acquires Med Group",
-          "text": "Partnership with founders and management of Med Group."
-        },
-        {
-          "date": "2014-11-11",
-          "type": "Investment",
-          "title": "Adelis acquires majority stake in Green Team Group",
-          "text": "Control investment in Green Team Group."
-        },
-        {
-          "date": "2014-08-15",
-          "type": "Investment",
-          "title": "Adelis acquires majority stake in NGI",
-          "text": "Investment in NGI to scale operations."
-        },
-        {
-          "date": "2014-01-21",
-          "type": "Fund",
-          "title": "Adelis closes SEK 3,690m (€420m) Maiden Fund",
-          "text": "Successful close of inaugural fund."
-        },
-        {
-          "date": "2013-11-12",
-          "type": "Investment",
-          "title": "Adelis acquires Logent AB",
-          "text": "Acquisition of Logent AB alongside management team."
+          "title": "Franz Reiffenstuel joins as Partner",
+          "text": "Munich office opens."
         }
       ],
       "portfolio_companies": [
@@ -3440,11 +3368,18 @@
         }
       ],
       "fundraising": {
-        "current_fund": "Accent Equity VII (SEK 2,250 million, 2023 vintage)",
+        "current_fund": "Accent Equity VII (SEK 2.25bn, closed June 2025); Fund VI (SEK 3.0bn, 2018)",
         "next_fund": "Fund VIII in planning when Fund VII approaches investment target",
         "strategy": "Lower-midcap Nordics (EV 250–1,500 MSEK); strong heritage in industrial services and niche manufacturing"
       },
       "company_updates": [
+        {
+          "date": "2025-06-16",
+          "type": "Fund",
+          "title": "Accent Equity closes Fund VII at SEK 2.25bn",
+          "text": "Fund VII closes with SEK 2,250 million. Five platform investments: Linotol, Plockmatic, Helmacab, Brimer, Unisport. ~47% Nordic, 49% European investors.",
+          "link": "https://accentequity.se/tpost/ceduoy8131-accent-equity-successfully-closes-fund-v"
+        },
         {
           "date": "2025-06-30",
           "type": "Portfolio",
@@ -3456,12 +3391,6 @@
           "type": "Sustainability",
           "title": "Accent Equity releases 2024 Sustainability Report",
           "text": "Accent Equity releases 2024 Sustainability Report"
-        },
-        {
-          "date": "2025-06-16",
-          "type": "Fund",
-          "title": "Accent Equity successfully closes Fund VII",
-          "text": "Accent Equity successfully closes Fund VII at SEK 2,250 million"
         },
         {
           "date": "2025-03-24",
@@ -3686,7 +3615,7 @@
           "text": "Investment in Nordic critical power and data center infrastructure provider, forming the base for a decade of M&A expansion."
         }
       ],
-      "recent_activity": "2025: Plockmatic Group acquires Renz (Accent VII), Tempcon Group issues SEK 550M senior secured bonds, Fund VII closes at SEK 2.25bn. 2024: Invests in Unisport (new platform, Fund VII), acquires Brimer (Fund VII), TSG acquires AF Shipping, Malte Månson acquires Skandinaviska Buss & Truck, Triarca + Stitec combine (low voltage/eMobility/FTTH group), acquires Helkama Bica (specialty cables; Fund VII), Linotol acquires C M Betong, divests Norco Interior to Götessons Design Group, invests in Plockmatic (growth partner; Fund VII), Malte Månson acquires Experten Group. Strong Fund VII deployment across multiple platforms with focus on industrial consolidation and technology integration.",
+      "recent_activity": "2025\n• Fund VII closes at SEK 2.25bn (June)\n• Plockmatic Group acquires Renz\n• Tempcon Group issues SEK 550M senior secured bonds\n• Oscar Claeson promoted to Partner\n\n2024\n• Invests in Unisport, Brimer, Plockmatic, Helkama Bica (Fund VII platforms)\n• TSG acquires AF Shipping; Malte Månson acquires Skandinaviska Buss & Truck, Experten Group\n• Triarca + Stitec combine (low voltage/eMobility/FTTH)\n• Linotol acquires C M Betong\n• Divests Norco Interior to Götessons Design Group\n\nPortfolio: Strong Fund VII deployment; industrial services, niche manufacturing, tech integration",
       "timeline": [
         {
           "year": 1994,
@@ -3831,12 +3760,12 @@
         {
           "year": 2024,
           "event": "Unisport investment",
-          "description": "Invests in Unisport (new platform, Fund VII)"
+          "description": "Invests in Unisport as new growth partner (Fund VII)"
         },
         {
           "year": 2024,
           "event": "Brimer acquisition",
-          "description": "Acquires Brimer (Fund VII)"
+          "description": "Acquires Brimer to support accelerated growth (Fund VII)"
         },
         {
           "year": 2024,
@@ -3846,7 +3775,7 @@
         {
           "year": 2024,
           "event": "Malte Månson expansion",
-          "description": "Malte Månson acquires Skandinaviska Buss & Truck"
+          "description": "Acquires Malte Månson; add-ons: Skandinaviska Buss & Truck, Experten Group"
         },
         {
           "year": 2024,
@@ -3874,11 +3803,6 @@
           "description": "Invests in Plockmatic (growth partner; Fund VII)"
         },
         {
-          "year": 2024,
-          "event": "Malte Månson expansion",
-          "description": "Malte Månson acquires Experten Group"
-        },
-        {
           "year": 2025,
           "event": "Plockmatic Group expansion",
           "description": "Plockmatic Group acquires Renz (Accent VII)"
@@ -3897,16 +3821,6 @@
           "year": 2025,
           "event": "Oscar Claeson promotion",
           "description": "Promotes Oscar Claeson to Partner"
-        },
-        {
-          "year": 2024,
-          "event": "Unisport investment",
-          "description": "Invests in Unisport as new growth partner (Fund VII)"
-        },
-        {
-          "year": 2024,
-          "event": "Brimer acquisition",
-          "description": "Acquires Brimer to support accelerated growth (Fund VII)"
         },
         {
           "year": 2024,
@@ -4079,62 +3993,49 @@
         "next_fund": "Deployment across strategies",
         "strategy": "European mid-market; Benelux, DACH, France, Nordics, UK; four complementary strategies; platform + add-on"
       },
+      "recent_activity": "2025\n• Mid Cap Fund X closes at €3.3bn (Apr) – largest fund ever; Small Cap IV at €2.0bn (Jul)\n• Opens Munich office; Partner promotions\n• Acquires PwC Norway carve-out (Sep) – audit/advisory; re-investing partners\n• Acquires Francks Kylindustri (Oct) – industrial refrigeration from Amplio; Nordic market leader\n• Acquires Sterimed, Kestrel Capital, DATAPART Factoring, Lohoff Pension Services, Tecomatic, HSL Compliance\n• Add-ons across Renta, Ipsum, GoodLife Foods, MÜPRO, Defibrion, Dains\n• Exits GeoDynamics to Blinqx; Netel partial stake sale\n\n2024\n• 20 platform investments, 11 exits since start of year\n• Yellow Hive continuation fund; Renta expansion; Mabtech to EQT\n\nPortfolio: 200+ European companies; Business Services, Healthcare, Industrials",
       "company_updates": [
         {
-          "date": "2025",
-          "text": "IK Partners closes Mid Cap Fund X at €3.3bn"
+          "date": "2025-04",
+          "title": "IK Partners closes Mid Cap Fund X at €3.3bn hard cap",
+          "text": "Largest fund ever; record capital from new LPs.",
+          "link": "https://www.ikinvest.com/news/"
+        },
+        {
+          "date": "2025-07",
+          "title": "IK Partners closes Small Cap IV at €2.0bn",
+          "text": "Hard cap; full subscription in under six months.",
+          "link": "https://www.ikinvest.com/news/"
         },
         {
           "date": "2025",
-          "text": "IK Partners closes Small Cap IV at €2.0bn"
+          "title": "IK Partners opens Munich office with Partner promotions",
+          "text": "Expands DACH presence.",
+          "link": "https://www.ikinvest.com/news/"
+        },
+        {
+          "date": "2025-09",
+          "title": "IK Partners acquires PwC Norway carve-out",
+          "text": "Audit and advisory business; re-investing partners.",
+          "link": "https://www.ikinvest.com/news/"
+        },
+        {
+          "date": "2025-10",
+          "title": "IK Partners acquires Francks Kylindustri",
+          "text": "Industrial refrigeration from Amplio; 650+ employees, Nordic leader.",
+          "link": "https://ikpartners.com/press-release/ik-partners-to-acquire-francks-kylindustri/"
         },
         {
           "date": "2025",
-          "text": "IK Partners opens Munich office with Partner promotions"
+          "title": "IK Partners acquires Sterimed, Kestrel Capital, DATAPART, Lohoff, Tecomatic, HSL Compliance",
+          "text": "Multiple platform investments across sectors.",
+          "link": "https://www.ikinvest.com/news/"
         },
         {
           "date": "2025",
-          "text": "IK Partners acquires PwC Norway carve-out"
-        },
-        {
-          "date": "2025",
-          "text": "IK Partners acquires Francks Kylindustri"
-        },
-        {
-          "date": "2025",
-          "text": "IK Partners acquires Sterimed"
-        },
-        {
-          "date": "2025",
-          "text": "IK Partners acquires Kestrel Capital"
-        },
-        {
-          "date": "2025",
-          "text": "IK Partners acquires DATAPART Factoring"
-        },
-        {
-          "date": "2025",
-          "text": "IK Partners acquires Lohoff Pension Services"
-        },
-        {
-          "date": "2025",
-          "text": "IK Partners acquires Tecomatic"
-        },
-        {
-          "date": "2025",
-          "text": "IK Partners acquires HSL Compliance"
-        },
-        {
-          "date": "2025",
-          "text": "IK Partners completes multiple add-ons across Renta, Ipsum, GoodLife Foods, MÜPRO, Defibrion, Dains"
-        },
-        {
-          "date": "2025",
-          "text": "IK Partners exits GeoDynamics to Blinqx"
-        },
-        {
-          "date": "2025",
-          "text": "IK Partners completes Netel partial stake sale"
+          "title": "IK Partners exits GeoDynamics to Blinqx; Netel partial stake sale",
+          "text": "Portfolio realisations.",
+          "link": "https://www.ikinvest.com/news/"
         }
       ],
       "timeline": [
@@ -5669,7 +5570,111 @@
         "next_fund": "Deployment across Alder III",
         "strategy": "Nordic sustainable technology; turnover SEK 100–750M; Article 9 dark green fund"
       },
-      "recent_activity": "2025: 3Button Group investment (Mar). 2024: Flamonitec and Microbas Precision investments (Sep); Alder III final close SEK 3.1bn (May). Nordic sustainable tech portfolio."
+      "recent_activity": "2025\n• Invests in 3Button Group (Mar) – industrial automation, robotics, AGVs; Jönköping, Sweden\n\n2024\n• Alder III final close SEK 3.1bn (May); SFDR Article 9, double predecessor\n• Invests in Flamonitec (Sep) – flame scanners, Germany; first in measurement tech consolidation\n• Invests in Microbas Precision (Sep) – precision components, semiconductor/cleantech; Hässleholm\n\n2023\n• Invests in Insort (Oct) – optical food sorting, Austria; majority owner\n• Invests in EWGroup – soil remediation, waste management\n\nPortfolio: Nordic sustainable technology; SEK 100–750M turnover; Article 9 dark green",
+      "company_updates": [
+        {
+          "date": "2025-03",
+          "type": "Investment",
+          "title": "Alder invests in 3Button Group",
+          "text": "Majority stake in Swedish industrial automation leader – robotics, picking/packing, in-mould labelling, AGVs. SEK 204M sales (2023). First Alder III platform in industrial automation.",
+          "link": "https://alder.se/en/alder-investerar-i-3button-group-en-ledande-leverantor-av-avancerade-losning-inom-industriell-automation/"
+        },
+        {
+          "date": "2024-09",
+          "type": "Investment",
+          "title": "Alder invests in Flamonitec",
+          "text": "Majority owner in German flame scanner and monitoring systems manufacturer. First investment in advanced measurement technology consolidation initiative.",
+          "link": "https://alder.se/"
+        },
+        {
+          "date": "2024-09",
+          "type": "Investment",
+          "title": "Alder invests in Microbas Precision",
+          "text": "Majority owner in Swedish precision components supplier for semiconductor, cleantech, display, space and optics. Founded 1958, Hässleholm.",
+          "link": "https://alder.se/"
+        },
+        {
+          "date": "2024-05",
+          "type": "Fund",
+          "title": "Alder III closes at SEK 3.1 billion",
+          "text": "Final close at SEK 3.1bn, double Fund II. SFDR Article 9 dark green. Pension funds, foundations, insurance, family offices from Europe and North America.",
+          "link": "https://alder.se/en/alder-completes-successful-closing-of-alder-iii-with-commitments-of-sek-3-1-billion/"
+        }
+      ],
+      "timeline": [
+        {
+          "year": 2008,
+          "event": "Alder founded",
+          "description": "Nordic PE firm focused on sustainable technology"
+        },
+        {
+          "year": 2010,
+          "event": "Alder I",
+          "description": "First fund raised"
+        },
+        {
+          "year": 2023,
+          "event": "Insort and EWGroup",
+          "description": "Insort (optical food sorting, Austria); EWGroup (soil remediation)"
+        },
+        {
+          "year": 2024,
+          "event": "Alder III closes",
+          "description": "SEK 3.1bn final close; Flamonitec, Microbas Precision investments"
+        },
+        {
+          "year": 2025,
+          "event": "3Button Group",
+          "description": "First Alder III platform – industrial automation"
+        }
+      ],
+      "portfolio_companies": [
+        {
+          "name": "3Button Group",
+          "logo": "https://logo.clearbit.com/3bg.se",
+          "sector": "Technology",
+          "country": "Sweden",
+          "entry_year": "2025",
+          "status": "Active",
+          "detailed_description": "Industrial automation – robotics, picking/packing, in-mould labelling, AGVs. Jönköping. SEK 204M sales."
+        },
+        {
+          "name": "EWGroup",
+          "logo": "https://logo.clearbit.com/ewgroup.se",
+          "sector": "Business Services",
+          "country": "Sweden",
+          "entry_year": "2023",
+          "status": "Active",
+          "detailed_description": "Waste management, soil remediation, sampling, water treatment, project management"
+        },
+        {
+          "name": "Insort",
+          "logo": "https://logo.clearbit.com/insort.com",
+          "sector": "Technology",
+          "country": "Austria",
+          "entry_year": "2023",
+          "status": "Active",
+          "detailed_description": "Optical sorting and inspection for food industry; hyperspectral imaging. Merged with TriVision, Qcify."
+        },
+        {
+          "name": "Flamonitec",
+          "logo": "https://logo.clearbit.com/flamonitec.de",
+          "sector": "Technology",
+          "country": "Germany",
+          "entry_year": "2024",
+          "status": "Active",
+          "detailed_description": "Flame scanners and monitoring systems for industrial applications. Düsseldorf."
+        },
+        {
+          "name": "Microbas Precision",
+          "logo": "https://logo.clearbit.com/microbas.se",
+          "sector": "Technology",
+          "country": "Sweden",
+          "entry_year": "2024",
+          "status": "Active",
+          "detailed_description": "Precision components in glass ceramics, optical glass, metals for semiconductor, cleantech, display, space, optics. Hässleholm."
+        }
+      ]
     },
     "Bure Equity": {
       "name": "Bure Equity",
@@ -5721,55 +5726,81 @@
         "next_fund": "Permanent capital deployment; Atle expansion into Norway (First Fondene)",
         "strategy": "Active ownership in listed and unlisted; healthcare, technology, STEM; Nordic and Europe"
       },
-      "recent_activity": "2025: Leads consortium acquiring Silex Microsystems; new co-owner of Mentimeter; BioLamina stake to 52%; Atle acquires First Fondene (Norway); CEO appointments at Allgon, Mercuri, Mentice, BioLamina; Ovzon 3 launch. 2024: Vitrolife acquires Igenomix; Mycronic acquires atg Luther & Maelzer; XVIVO directed issue; Yubico listed.",
+      "recent_activity": "2025\n• Leads consortium acquiring Silex Microsystems (June) – Swedish MEMS foundry; 17% for SEK 917M; Swedish majority restored\n• BioLamina stake increased to 52%\n• Atle acquires First Fondene (Norway) – expansion into Norwegian fund market\n• Ovzon 3 satellite launch\n• CEO appointments: Allgon (Linda Nyquist-Evenrud), Mercuri (Philip Nyblaeus), Mentice (Frans Venker), BioLamina (Klaus Langhoff-Roos)\n\n2024\n• Becomes co-owner of Mentimeter – presentation software; SEK 727M with GP Bullhound (Aug)\n• Vitrolife acquires Igenomix – global reproductive healthcare leader\n• Mycronic acquires atg Luther & Maelzer\n• XVIVO directed share issue (SEK 440M)\n• Yubico lists on Nasdaq First North",
       "company_updates": [
         {
-          "date": "2025",
-          "text": "Silex Microsystems – Bure leads Swedish consortium acquiring majority ownership in Silex Microsystems"
+          "date": "2025-06",
+          "type": "Investment",
+          "title": "Bure leads consortium acquiring Silex Microsystems",
+          "text": "Swedish consortium (Bure, Creades, others) acquires 48.2% in Silex; Bure 17% for SEK 917M. MEMS foundry, Järfälla.",
+          "link": "https://www.silexmicrosystems.com/en/swedish-consortium-led-by-bure-and-creades-completes-acquisition-of-shares-in-silex-microsystems/"
         },
         {
           "date": "2025",
-          "text": "Allgon – Linda Nyquist-Evenrud appointed new President and CEO of Allgon Group"
+          "type": "Team",
+          "title": "Allgon – Linda Nyquist-Evenrud appointed CEO",
+          "text": "Linda Nyquist-Evenrud appointed new President and CEO of Allgon Group"
         },
         {
           "date": "2025",
-          "text": "Mercuri International Group – Philip Nyblaeus has been appointed President and CEO of Mercuri International Group"
+          "type": "Team",
+          "title": "Mercuri – Philip Nyblaeus appointed CEO",
+          "text": "Philip Nyblaeus appointed President and CEO of Mercuri International Group"
         },
         {
           "date": "2025",
-          "text": "Mentice – Frans Venker has been appointed as the new CEO of Mentice"
+          "type": "Team",
+          "title": "Mentice – Frans Venker appointed CEO",
+          "text": "Frans Venker appointed as the new CEO of Mentice"
         },
         {
           "date": "2025",
-          "text": "BioLamina – BioLamina appoints Klaus Langhoff-Roos as new CEO"
+          "type": "Team",
+          "title": "BioLamina – Klaus Langhoff-Roos appointed CEO",
+          "text": "BioLamina appoints Klaus Langhoff-Roos as new CEO"
         },
         {
           "date": "2025",
-          "text": "Atle – Strategic expansion into the Norwegian fund market through Atle's acquisition of a majority share in First Fondene AS"
+          "type": "Investment",
+          "title": "Atle acquires First Fondene (Norway)",
+          "text": "Strategic expansion into Norwegian fund market through majority stake in First Fondene AS"
         },
         {
           "date": "2025",
-          "text": "Atle – Bure's investment in active management strengthened by Atle's co-ownership in Amaron Holding AB"
+          "type": "Portfolio",
+          "title": "Atle co-ownership in Amaron",
+          "text": "Bure's active management platform strengthened by Atle's co-ownership in Amaron Holding AB"
+        },
+        {
+          "date": "2024-08",
+          "type": "Investment",
+          "title": "Bure becomes co-owner of Mentimeter",
+          "text": "Bure and GP Bullhound invest SEK 727M; Bure becomes largest institutional shareholder (~14%).",
+          "link": "https://www.bure.se/news-eng/bure-becomes-new-co-owner-of-mentimeter"
         },
         {
           "date": "2025",
-          "text": "Mentimeter – Bure becomes new co-owner of Mentimeter"
+          "type": "Portfolio",
+          "title": "XVIVO – Positive heart preservation trial data",
+          "text": "XVIVO presents positive data from heart preservation clinical trial"
         },
         {
           "date": "2025",
-          "text": "XVIVO Perfusion – XVIVO presents positive data from heart preservation clinical trial"
+          "type": "Portfolio",
+          "title": "Ovzon 3 launch",
+          "text": "Successful launch of Ovzon 3 satellite"
         },
         {
           "date": "2025",
-          "text": "Ovzon – Successful launch of Ovzon 3"
+          "type": "Portfolio",
+          "title": "Mycronic – Solid-state lasers reduce climate impact",
+          "text": "Switching to solid-state lasers reduces Mycronic's climate impact"
         },
         {
           "date": "2025",
-          "text": "Mycronic – Switching to solid-state lasers reduces Mycronic's climate impact"
-        },
-        {
-          "date": "2025",
-          "text": "BioLamina – Bure increases its shareholding in BioLamina to 52%"
+          "type": "Investment",
+          "title": "Bure increases BioLamina stake to 52%",
+          "text": "Bure increases its shareholding in BioLamina to 52%"
         },
         {
           "date": "2024",
@@ -5988,7 +6019,63 @@
         "next_fund": "Organic growth toward €10bn AUM target",
         "strategy": "Nordic multi-strategy; buyouts, growth equity, real estate, infrastructure, natural capital, special situations"
       },
-      "recent_activity": "2025: CapMan Wealth raises $120M for US mid-market buyout program (AlpInvest partnership). 2024: AUM €6.1bn (+22%); 13 investments, 7 exits; acquires Dasos Capital (Natural Capital); divests CapMan Procurement Services (€75M). CapMan Growth III final close. Target €10bn AUM."
+      "recent_activity": "2025\n• CapMan Wealth raises $120M for US mid-market buyout program (AlpInvest partnership)\n\n2024\n• AUM €6.1bn (+22%); 13 investments, 7 exits\n• Acquires Dasos Capital (Mar) – Natural Capital / sustainable timberland; ~€1.4bn AUM at acquisition\n• Divests CapMan Procurement Services (Oct) – €75M to Proxer Bidco; focus on core fund management\n• CapMan Growth III final close – €130M hard cap\n• Target €10bn AUM",
+      "company_updates": [
+        {
+          "date": "2025",
+          "type": "Fund",
+          "title": "CapMan Wealth US buyout program",
+          "text": "Raises $120M for US mid-market buyout program in partnership with AlpInvest"
+        },
+        {
+          "date": "2024-10",
+          "type": "Exit",
+          "title": "CapMan divests Procurement Services (CaPS)",
+          "text": "Divests to Proxer Bidco for €75M. Focus on core private asset fund management.",
+          "link": "https://www.inderes.se/en/releases/capman-oyj-inside-information-capman-plc-and-minority-shareholders-divest-service-business-caps-for-eur-75-million"
+        },
+        {
+          "date": "2024-03",
+          "type": "Investment",
+          "title": "CapMan acquires Dasos Capital",
+          "text": "Acquires sustainable timberland asset manager; ~€1.4bn AUM, 7 funds. Expands into Natural Capital.",
+          "link": "https://news.cision.com/capman-oyj/r/inside-information--capman-plc-acquires-dasos-capital-oy--an-asset-management-company-focusing-on-su,c3898172"
+        },
+        {
+          "date": "2024",
+          "type": "Fund",
+          "title": "CapMan Growth III final close",
+          "text": "Final close at €130M hard cap. Lower mid-market growth equity."
+        },
+        {
+          "date": "2024",
+          "type": "Other",
+          "title": "CapMan AUM €6.1bn (+22%)",
+          "text": "AUM growth to €6.1bn; 13 investments, 7 exits during 2024"
+        }
+      ],
+      "timeline": [
+        {
+          "year": 2024,
+          "event": "Dasos Capital",
+          "description": "Acquires Natural Capital asset manager"
+        },
+        {
+          "year": 2024,
+          "event": "Growth III close",
+          "description": "€130M final close"
+        },
+        {
+          "year": 2024,
+          "event": "CaPS divestment",
+          "description": "€75M to Proxer Bidco"
+        },
+        {
+          "year": 2025,
+          "event": "CapMan Wealth",
+          "description": "US buyout program $120M"
+        }
+      ]
     },
     "Celero": {
       "name": "Celero Capital",
@@ -6053,6 +6140,18 @@
           "background": "Former Litorina, Arkwright, joined 2024"
         },
         {
+          "name": "Fredrika Claezon",
+          "title": "Investment Manager",
+          "location": "Stockholm",
+          "background": "Former Nordea Corporate Finance, joined 2023"
+        },
+        {
+          "name": "Emil Erbing",
+          "title": "Investment Manager",
+          "location": "Stockholm",
+          "background": "Former Rothschild & Co, joined 2024"
+        },
+        {
           "name": "Johanna Kull",
           "title": "CFO & Head of ESG",
           "location": "Stockholm",
@@ -6064,7 +6163,44 @@
         "next_fund": "Deployment across platform investments",
         "strategy": "Nordic B2B services; property, facility management, manufacturing, power; entrepreneur-led platform creation"
       },
-      "recent_activity": "2025: Partners with Sporty (Norwegian fitness, 90+ gyms); establishes Deltra (Nordic distribution platform, five entrepreneur-led companies); Reledo acquires MTM Service (Denmark). 2024: Closes Fund I €300M+; platforms Corteco (outer shell renovation), Reledo (facility management), Opima (manufacturing), Aterion (power infrastructure).",
+      "recent_activity": "2025\n• Invests in Sporty (Nov) – majority stake in leading Norwegian fitness operator; 90+ gyms, 130,000+ members\n• Establishes Deltra – Nordic distribution platform with 5 entrepreneur-led companies; ~SEK 400M revenue\n• Reledo acquires MTM Service (Sept) – facility management in Denmark; expands Nordic footprint\n\n2024\n• Fund I closes at €300M+ (Dec)\n• Establishes Corteco – property outer shell renovation & maintenance; Sweden, Norway, Finland\n• Establishes Reledo – facility management platform; 4 companies, ~SEK 230M pro forma at inception\n• Establishes Opima – manufacturing services; 4 companies, ~SEK 230M turnover\n• Establishes Aterion – power infrastructure; 6 companies, SEK 800M+ revenue\n\nPortfolio: Corteco, Reledo, Opima, Aterion, Deltra, Sporty",
+      "company_updates": [
+        {
+          "date": "2025-11",
+          "type": "Investment",
+          "title": "Celero Capital partners with Sporty",
+          "text": "Majority stake in Norwegian fitness operator; 90+ gyms, 130,000+ members.",
+          "link": "https://www.celerocapital.com/news/celero-capital-partners-with-sporty-to-accelerate-growth/"
+        },
+        {
+          "date": "2025-11",
+          "type": "Investment",
+          "title": "Celero Capital establishes Deltra",
+          "text": "Nordic distribution platform with 5 entrepreneur-led companies; ~SEK 400M revenue.",
+          "link": "https://www.celerocapital.com/news/celero-capital-has-partnered-with-five-swedish-entrepreneur-led-companies-to-establish-deltra-a-platform-poised-to-become-a-leading-nordic-distributor-of-essential-industrial-supplies-and-co/"
+        },
+        {
+          "date": "2025-09",
+          "type": "Portfolio",
+          "title": "Reledo acquires MTM Service (Denmark)",
+          "text": "Facility management; expands Nordic footprint.",
+          "link": "https://www.celerocapital.com/news/reledo-a-celero-capital-portfolio-company-enters-denmark-acquires-mtm-service/"
+        },
+        {
+          "date": "2024-12",
+          "type": "Fund",
+          "title": "Celero Capital Fund I closes at €300M+",
+          "text": "First fund; European Investment Fund (InvestEU) backed.",
+          "link": "https://www.celerocapital.com/news/"
+        },
+        {
+          "date": "2024",
+          "type": "Investment",
+          "title": "Corteco, Reledo, Opima, Aterion platforms established",
+          "text": "Four entrepreneur-led platforms across property, facility management, manufacturing, power.",
+          "link": "https://www.celerocapital.com/news/"
+        }
+      ],
       "timeline": [
         {
           "year": 2022,
@@ -6105,6 +6241,16 @@
           "year": 2025,
           "event": "Aterion platform launch",
           "description": "Established Aterion with six entrepreneur-led companies targeting Nordic power industry leadership"
+        },
+        {
+          "year": 2025,
+          "event": "Deltra platform established",
+          "description": "Partnered with five entrepreneur-led companies to create Nordic distribution platform for industrial supplies and workwear"
+        },
+        {
+          "year": 2025,
+          "event": "Sporty investment",
+          "description": "Acquired majority stake in leading Norwegian fitness operator with 90+ gyms and 130,000+ members"
         }
       ]
     },
@@ -7206,7 +7352,7 @@
         "next_fund": "Ongoing deployment",
         "strategy": "Active, responsible ownership; strong risk-adjusted returns; may invest for limited time or decades"
       },
-      "recent_activity": "2026: Sells remaining Attendo shares. 2025: Invests in Circura Group; sells engcon; Nordstjernan Growth AB divested; issues call options in Alligo. Portfolio: Dacke Industri, Momentum Group, Etac, Rosti, Alligo, and others.",
+      "recent_activity": "2025: Divests Norva24, sells remaining engcon shares, issues Alligo call options, sells Nordstjernan Growth AB. 2024–2021: Invests in Oden Technologies; sells all shares in NCC; sells shares in Momentum Group; invests in Mentimeter; increases position in BioLamina; multiple strategic portfolio actions.",
       "company_updates": [
         {
           "date": "2025-05-19",
@@ -7357,28 +7503,7 @@
           "text": "Nordstjernan issues call options in Bonava"
         }
       ],
-      "recent_activity": "2025: Divests Norva24, sells remaining engcon shares, issues Alligo call options, sells Nordstjernan Growth AB. 2024–2021: Invests in Oden Technologies; sells all shares in NCC; sells shares in Momentum Group; invests in Mentimeter; increases position in BioLamina; multiple strategic portfolio actions.",
       "timeline": [
-        {
-          "year": 2021,
-          "event": "Momentum Group offer",
-          "description": "Mandatory public offer and subsequent actions"
-        },
-        {
-          "year": 2022,
-          "event": "Aidian acquisition",
-          "description": "Acquires Finnish diagnostics company Aidian"
-        },
-        {
-          "year": 2024,
-          "event": "NCC exit",
-          "description": "Sells all shares in NCC"
-        },
-        {
-          "year": 2024,
-          "event": "Oden Technologies investment",
-          "description": "Invests in Oden Technologies"
-        },
         {
           "year": 1890,
           "event": "Nordstjernan founded",
@@ -7754,13 +7879,26 @@
       "founded": 2018,
       "aum": "€700 million (Fund II)",
       "employees": "~30",
-      "offices": ["Stockholm", "Copenhagen"],
+      "offices": [
+        "Stockholm",
+        "Copenhagen"
+      ],
       "description": "Impilo is a Nordic investment company solely focused on pharmaceutical, medtech, specialist pharma services, and healthcare & related services. Targets EV €50–200M; majority investments with potential for minority. Impilo Health Diamond: improve quality of care, increase availability, lower cost, prevent need for care. Fund II closed at €700M hard cap (June 2025). Sustainability handbook; UNPRI-aligned.",
       "investment_focus": {
-        "sectors": ["Healthcare", "Pharmaceuticals", "MedTech", "Specialist Pharma Services"],
-        "geography": ["Nordic region"],
+        "sectors": [
+          "Healthcare",
+          "Pharmaceuticals",
+          "MedTech",
+          "Specialist Pharma Services"
+        ],
+        "geography": [
+          "Nordic region"
+        ],
         "deal_size": "Mid-market healthcare",
-        "investment_type": ["Buyouts", "Growth equity"]
+        "investment_type": [
+          "Buyouts",
+          "Growth equity"
+        ]
       },
       "team": [],
       "fundraising": {
@@ -7770,19 +7908,123 @@
       },
       "recent_activity": "2026: Immedica Loargys® FDA accelerated approval. 2025: Acquires Oticon Medical from Demant (first Fund II investment). Qufora acquires Rapidcare (UK). Fund II closes €700M. Portfolio: Immedica, Humana, Euro Accident, Scantox, tandlægen.dk, VaccinDirekt, Pelago Bioscience, Stille, Qufora, Oticon Medical, Decon, Avia Pharma, Lowenco.",
       "portfolio_companies": [
-        {"name": "Immedica", "logo": "https://logo.clearbit.com/immedica.com", "sector": "Pharmaceuticals", "country": "Sweden", "entry_year": "2018", "status": "Active", "detailed_description": "Launch, commercialisation and distribution of orphan and niche specialty pharmaceuticals"},
-        {"name": "Humana", "logo": "https://logo.clearbit.com/humanagroup.se", "sector": "Healthcare & Related Services", "country": "Sweden", "entry_year": "2019", "status": "Active", "detailed_description": "Leading Nordic private care provider"},
-        {"name": "Euro Accident", "logo": "https://logo.clearbit.com/euroaccident.se", "sector": "Healthcare & Related Services", "country": "Sweden", "entry_year": "2019", "status": "Active", "detailed_description": "Leading Swedish specialist in health-related insurance and employee wellbeing"},
-        {"name": "Scantox", "logo": "https://logo.clearbit.com/scantox.com", "sector": "Specialist Pharma Services", "country": "Denmark", "entry_year": "2021", "status": "Active", "detailed_description": "Leading Nordic pre-clinical contract research organization"},
-        {"name": "tandlægen.dk", "logo": "https://logo.clearbit.com/tandlaegen.dk", "sector": "Healthcare & Related Services", "country": "Denmark", "entry_year": "2021", "status": "Active", "detailed_description": "Leading Danish dental care chain"},
-        {"name": "Lowenco", "logo": "https://logo.clearbit.com/lowenco.com", "sector": "Specialist Pharma Services", "country": "Denmark", "entry_year": "2022", "status": "Active", "detailed_description": "Ultra-low temperature storage solutions for biopharma market"},
-        {"name": "Pelago Bioscience", "logo": "https://logo.clearbit.com/pelagobioscience.com", "sector": "Specialist Pharma Services", "country": "Sweden", "entry_year": "2023", "status": "Active", "detailed_description": "Drug discovery CRO with patented CETSA-technology"},
-        {"name": "VaccinDirekt", "logo": "https://logo.clearbit.com/vaccindirekt.se", "sector": "Healthcare & Related Services", "country": "Sweden", "entry_year": "2021", "status": "Active", "detailed_description": "Largest Nordic retail vaccination provider"},
-        {"name": "Decon", "logo": "https://logo.clearbit.com/decon.se", "sector": "MedTech", "country": "Sweden", "entry_year": "2023", "status": "Active", "detailed_description": "Power-assisted electrical solutions for wheelchairs"},
-        {"name": "Avia Pharma", "logo": "https://logo.clearbit.com/aviapharma.se", "sector": "Pharmaceuticals", "country": "Sweden", "entry_year": "2024", "status": "Active", "detailed_description": "Leading North European OTC/Rx platform"},
-        {"name": "Stille", "logo": "https://logo.clearbit.com/stillesurgical.com", "sector": "MedTech", "country": "Sweden", "entry_year": "2024", "status": "Active", "detailed_description": "Premium surgical instruments and advanced surgical tables"},
-        {"name": "Qufora", "logo": "https://logo.clearbit.com/qufora.com", "sector": "MedTech", "country": "Denmark", "entry_year": "2024", "status": "Active", "detailed_description": "TAI products and collecting devices"},
-        {"name": "Oticon Medical", "logo": "https://logo.clearbit.com/oticon.com", "sector": "MedTech", "country": "Sweden", "entry_year": "2025", "status": "Active", "detailed_description": "Global leader in bone-anchored hearing solutions (BAHS), acquired from Demant"}
+        {
+          "name": "Immedica",
+          "logo": "https://logo.clearbit.com/immedica.com",
+          "sector": "Pharmaceuticals",
+          "country": "Sweden",
+          "entry_year": "2018",
+          "status": "Active",
+          "detailed_description": "Launch, commercialisation and distribution of orphan and niche specialty pharmaceuticals"
+        },
+        {
+          "name": "Humana",
+          "logo": "https://logo.clearbit.com/humanagroup.se",
+          "sector": "Healthcare & Related Services",
+          "country": "Sweden",
+          "entry_year": "2019",
+          "status": "Active",
+          "detailed_description": "Leading Nordic private care provider"
+        },
+        {
+          "name": "Euro Accident",
+          "logo": "https://logo.clearbit.com/euroaccident.se",
+          "sector": "Healthcare & Related Services",
+          "country": "Sweden",
+          "entry_year": "2019",
+          "status": "Active",
+          "detailed_description": "Leading Swedish specialist in health-related insurance and employee wellbeing"
+        },
+        {
+          "name": "Scantox",
+          "logo": "https://logo.clearbit.com/scantox.com",
+          "sector": "Specialist Pharma Services",
+          "country": "Denmark",
+          "entry_year": "2021",
+          "status": "Active",
+          "detailed_description": "Leading Nordic pre-clinical contract research organization"
+        },
+        {
+          "name": "tandlægen.dk",
+          "logo": "https://logo.clearbit.com/tandlaegen.dk",
+          "sector": "Healthcare & Related Services",
+          "country": "Denmark",
+          "entry_year": "2021",
+          "status": "Active",
+          "detailed_description": "Leading Danish dental care chain"
+        },
+        {
+          "name": "Lowenco",
+          "logo": "https://logo.clearbit.com/lowenco.com",
+          "sector": "Specialist Pharma Services",
+          "country": "Denmark",
+          "entry_year": "2022",
+          "status": "Active",
+          "detailed_description": "Ultra-low temperature storage solutions for biopharma market"
+        },
+        {
+          "name": "Pelago Bioscience",
+          "logo": "https://logo.clearbit.com/pelagobioscience.com",
+          "sector": "Specialist Pharma Services",
+          "country": "Sweden",
+          "entry_year": "2023",
+          "status": "Active",
+          "detailed_description": "Drug discovery CRO with patented CETSA-technology"
+        },
+        {
+          "name": "VaccinDirekt",
+          "logo": "https://logo.clearbit.com/vaccindirekt.se",
+          "sector": "Healthcare & Related Services",
+          "country": "Sweden",
+          "entry_year": "2021",
+          "status": "Active",
+          "detailed_description": "Largest Nordic retail vaccination provider"
+        },
+        {
+          "name": "Decon",
+          "logo": "https://logo.clearbit.com/decon.se",
+          "sector": "MedTech",
+          "country": "Sweden",
+          "entry_year": "2023",
+          "status": "Active",
+          "detailed_description": "Power-assisted electrical solutions for wheelchairs"
+        },
+        {
+          "name": "Avia Pharma",
+          "logo": "https://logo.clearbit.com/aviapharma.se",
+          "sector": "Pharmaceuticals",
+          "country": "Sweden",
+          "entry_year": "2024",
+          "status": "Active",
+          "detailed_description": "Leading North European OTC/Rx platform"
+        },
+        {
+          "name": "Stille",
+          "logo": "https://logo.clearbit.com/stillesurgical.com",
+          "sector": "MedTech",
+          "country": "Sweden",
+          "entry_year": "2024",
+          "status": "Active",
+          "detailed_description": "Premium surgical instruments and advanced surgical tables"
+        },
+        {
+          "name": "Qufora",
+          "logo": "https://logo.clearbit.com/qufora.com",
+          "sector": "MedTech",
+          "country": "Denmark",
+          "entry_year": "2024",
+          "status": "Active",
+          "detailed_description": "TAI products and collecting devices"
+        },
+        {
+          "name": "Oticon Medical",
+          "logo": "https://logo.clearbit.com/oticon.com",
+          "sector": "MedTech",
+          "country": "Sweden",
+          "entry_year": "2025",
+          "status": "Active",
+          "detailed_description": "Global leader in bone-anchored hearing solutions (BAHS), acquired from Demant"
+        }
       ]
     },
     "Axcel": {
@@ -7793,46 +8035,266 @@
       "founded": 1994,
       "aum": ">€4.8 billion",
       "employees": "55+",
-      "offices": ["Copenhagen", "Stockholm", "Frankfurt"],
+      "offices": [
+        "Copenhagen",
+        "Stockholm",
+        "Frankfurt"
+      ],
       "description": "Axcel is a Nordic private equity firm founded in 1994 (30+ years). Invests across Northern Europe in four sectors: Technology, Business Services & Industrials, Healthcare, and Consumer. Nine funds raised with >€4.8bn committed capital. Track record: 26 current companies, 81 platform investments, 400+ add-on acquisitions, 54 exits. Value creation focus: Commercial Excellence, Buy & Build, Digitalisation, Sustainability.",
       "investment_focus": {
-        "sectors": ["Technology", "Business Services & Industrials", "Healthcare", "Consumer"],
-        "geography": ["Nordic region", "Northern Europe", "Germany"],
+        "sectors": [
+          "Technology",
+          "Business Services & Industrials",
+          "Healthcare",
+          "Consumer"
+        ],
+        "geography": [
+          "Nordic region",
+          "Northern Europe",
+          "Germany"
+        ],
         "deal_size": "Mid-market",
-        "investment_type": ["Buyouts", "Growth equity", "Buy-and-build"]
+        "investment_type": [
+          "Buyouts",
+          "Growth equity",
+          "Buy-and-build"
+        ]
       },
       "team": [],
       "fundraising": {
-        "current_fund": "Nine funds, >€4.8bn committed; Fund VII (€1.3bn, closed 2024); Elevate Fund; Axcel CV",
+        "current_fund": "Nine funds, >€4.8bn committed; Fund VII (€1.3bn, 2024); Elevate I (€459M, Nov 2025); Axcel CV",
         "next_fund": "Fund VIII in market (target >DKK 10bn / ~€1.33bn)",
         "strategy": "Nordic and Northern European mid-market; four sectors; Axcelerating Value Creation framework"
       },
-      "recent_activity": "2026: First platform in Germany (sangro, homecare); first Elevate I investment (KapitalKontroll, Norwegian fintech); Christian Bamberger Bro becomes Managing Partner. 2024–2025: Acquires Nordic Tyre Group from Altor. Portfolio: Bekk, LS Retail, Capture One, SuperOffice, GUBI, NTI Group, DANX Carousel Group, Vetopia, Oral Care, The Nutriment Company, AGRD Partners, Accru Partners, Acurum Group, Progrits, XPartners, and others.",
+      "recent_activity": "2026\n• First platform in Germany – acquires sangro (homecare distributor, carve-out from Nordic Capital); completion H1 2026\n• Christian Bamberger Bro becomes Managing Partner\n\n2025\n• Nordic Tyre Group – acquires from Altor (Dec 2024 signed, H1 2025 close); leading Nordic/Baltic tyre wholesaler, SEK 4bn revenue\n• Elevate I first investment – KapitalKontroll (Norwegian fintech, debt collection); Elevate I closed €459M (Nov 2025)\n\n2024\n• Fund VII closes at €1.3bn (March); 60% larger than Fund VI\n\nPortfolio: 26 companies including Bekk, LS Retail, Capture One, SuperOffice, GUBI, Nordic Tyre Group, NTI Group, DANX Carousel Group, Vetopia, sangro (pending)",
       "portfolio_companies": [
-        {"name": "Bekk", "sector": "Technology", "country": "Norway", "entry_year": "2025", "status": "Active"},
-        {"name": "LS Retail", "sector": "Technology", "country": "Iceland", "entry_year": "2025", "status": "Active"},
-        {"name": "AGRD Partners", "sector": "Business Services & Industrials", "country": "Sweden", "entry_year": "2025", "status": "Active"},
-        {"name": "Nordic Tyre Group", "sector": "Business Services & Industrials", "country": "Sweden", "entry_year": "2024", "status": "Active"},
-        {"name": "Accru Partners", "sector": "Business Services & Industrials", "country": "Sweden", "entry_year": "2024", "status": "Active"},
-        {"name": "Acurum Group", "sector": "Business Services & Industrials", "country": "Sweden", "entry_year": "2024", "status": "Active"},
-        {"name": "Elcor", "sector": "Business Services & Industrials", "country": "Denmark", "entry_year": "2023", "status": "Active"},
-        {"name": "Progrits", "sector": "Technology", "country": "Sweden", "entry_year": "2023", "status": "Active"},
-        {"name": "XPartners", "sector": "Business Services & Industrials", "country": "Sweden", "entry_year": "2023", "status": "Active"},
-        {"name": "Oral Care", "sector": "Healthcare", "country": "Sweden", "entry_year": "2022", "status": "Active"},
-        {"name": "The Nutriment Company", "sector": "Consumer", "country": "Sweden", "entry_year": "2022", "status": "Active"},
-        {"name": "NTI Group", "sector": "Technology", "country": "Denmark", "entry_year": "2022", "status": "Active"},
-        {"name": "itm8", "sector": "Technology", "country": "Denmark", "entry_year": "2022", "status": "Active"},
-        {"name": "BullWall", "sector": "Technology", "country": "Denmark", "entry_year": "2022", "status": "Active"},
-        {"name": "Init", "sector": "Technology", "country": "Denmark", "entry_year": "2022", "status": "Active"},
-        {"name": "DANX Carousel Group", "sector": "Business Services & Industrials", "country": "Denmark", "entry_year": "2022", "status": "Active"},
-        {"name": "Vetopia", "sector": "Healthcare", "country": "Denmark", "entry_year": "2021", "status": "Active"},
-        {"name": "emagine", "sector": "Technology", "country": "Denmark", "entry_year": "2021", "status": "Active"},
-        {"name": "Edda Group", "sector": "Business Services & Industrials", "country": "Denmark", "entry_year": "2020", "status": "Active"},
-        {"name": "Currentum", "sector": "Business Services & Industrials", "country": "Sweden", "entry_year": "2020", "status": "Active"},
-        {"name": "SuperOffice", "sector": "Technology", "country": "Norway", "entry_year": "2020", "status": "Active"},
-        {"name": "Phase One", "sector": "Technology", "country": "Denmark", "entry_year": "2019", "status": "Active"},
-        {"name": "Capture One", "sector": "Technology", "country": "Denmark", "entry_year": "2019", "status": "Active"},
-        {"name": "GUBI", "sector": "Consumer", "country": "Denmark", "entry_year": "2018", "status": "Active"}
+        {
+          "name": "Bekk",
+          "sector": "Technology",
+          "country": "Norway",
+          "entry_year": "2025",
+          "status": "Active"
+        },
+        {
+          "name": "LS Retail",
+          "sector": "Technology",
+          "country": "Iceland",
+          "entry_year": "2025",
+          "status": "Active"
+        },
+        {
+          "name": "AGRD Partners",
+          "sector": "Business Services & Industrials",
+          "country": "Sweden",
+          "entry_year": "2025",
+          "status": "Active"
+        },
+        {
+          "name": "Nordic Tyre Group",
+          "sector": "Business Services & Industrials",
+          "country": "Sweden",
+          "entry_year": "2024",
+          "status": "Active"
+        },
+        {
+          "name": "Accru Partners",
+          "sector": "Business Services & Industrials",
+          "country": "Sweden",
+          "entry_year": "2024",
+          "status": "Active"
+        },
+        {
+          "name": "Acurum Group",
+          "sector": "Business Services & Industrials",
+          "country": "Sweden",
+          "entry_year": "2024",
+          "status": "Active"
+        },
+        {
+          "name": "Elcor",
+          "sector": "Business Services & Industrials",
+          "country": "Denmark",
+          "entry_year": "2023",
+          "status": "Active"
+        },
+        {
+          "name": "Progrits",
+          "sector": "Technology",
+          "country": "Sweden",
+          "entry_year": "2023",
+          "status": "Active"
+        },
+        {
+          "name": "XPartners",
+          "sector": "Business Services & Industrials",
+          "country": "Sweden",
+          "entry_year": "2023",
+          "status": "Active"
+        },
+        {
+          "name": "Oral Care",
+          "sector": "Healthcare",
+          "country": "Sweden",
+          "entry_year": "2022",
+          "status": "Active"
+        },
+        {
+          "name": "The Nutriment Company",
+          "sector": "Consumer",
+          "country": "Sweden",
+          "entry_year": "2022",
+          "status": "Active"
+        },
+        {
+          "name": "NTI Group",
+          "sector": "Technology",
+          "country": "Denmark",
+          "entry_year": "2022",
+          "status": "Active"
+        },
+        {
+          "name": "itm8",
+          "sector": "Technology",
+          "country": "Denmark",
+          "entry_year": "2022",
+          "status": "Active"
+        },
+        {
+          "name": "BullWall",
+          "sector": "Technology",
+          "country": "Denmark",
+          "entry_year": "2022",
+          "status": "Active"
+        },
+        {
+          "name": "Init",
+          "sector": "Technology",
+          "country": "Denmark",
+          "entry_year": "2022",
+          "status": "Active"
+        },
+        {
+          "name": "DANX Carousel Group",
+          "sector": "Business Services & Industrials",
+          "country": "Denmark",
+          "entry_year": "2022",
+          "status": "Active"
+        },
+        {
+          "name": "Vetopia",
+          "sector": "Healthcare",
+          "country": "Denmark",
+          "entry_year": "2021",
+          "status": "Active"
+        },
+        {
+          "name": "emagine",
+          "sector": "Technology",
+          "country": "Denmark",
+          "entry_year": "2021",
+          "status": "Active"
+        },
+        {
+          "name": "Edda Group",
+          "sector": "Business Services & Industrials",
+          "country": "Denmark",
+          "entry_year": "2020",
+          "status": "Active"
+        },
+        {
+          "name": "Currentum",
+          "sector": "Business Services & Industrials",
+          "country": "Sweden",
+          "entry_year": "2020",
+          "status": "Active"
+        },
+        {
+          "name": "SuperOffice",
+          "sector": "Technology",
+          "country": "Norway",
+          "entry_year": "2020",
+          "status": "Active"
+        },
+        {
+          "name": "Phase One",
+          "sector": "Technology",
+          "country": "Denmark",
+          "entry_year": "2019",
+          "status": "Active"
+        },
+        {
+          "name": "Capture One",
+          "sector": "Technology",
+          "country": "Denmark",
+          "entry_year": "2019",
+          "status": "Active"
+        },
+        {
+          "name": "GUBI",
+          "sector": "Consumer",
+          "country": "Denmark",
+          "entry_year": "2018",
+          "status": "Active"
+        }
+      ],
+      "company_updates": [
+        {
+          "date": "2026-03",
+          "type": "Investment",
+          "title": "Axcel acquires sangro – first German platform",
+          "text": "Agreement to acquire sangro medical service GmbH, German homecare distributor (carve-out from Nordic Capital). Completion H1 2026. Axcel VII's 11th investment.",
+          "link": "https://axcel.com/axcel-partners-with-homecare-distributor-sangro-in-its-first-platform-investment-in-germany/"
+        },
+        {
+          "date": "2025-11",
+          "type": "Fund",
+          "title": "Axcel closes Elevate Fund I at €459M",
+          "text": "Elevate I closes at hard cap, oversubscribed. Lower mid-market focus: technology, business services, healthcare.",
+          "link": "https://axcel.com/axcel-closes-elevate-fund-i-at-eur-459m-hard-cap-following-strong-investor-demand/"
+        },
+        {
+          "date": "2025",
+          "type": "Investment",
+          "title": "Axcel first Elevate I investment – KapitalKontroll",
+          "text": "Norwegian fintech (cloud-based debt collection). Close expected Q1 2026.",
+          "link": "https://axcel.com/axcel-backs-norwegian-fintech-company-kapitalkontroll-in-first-elevate-i-investment/"
+        },
+        {
+          "date": "2024-12",
+          "type": "Investment",
+          "title": "Axcel partners with Nordic Tyre Group",
+          "text": "Majority stake from Altor. Leading Nordic/Baltic tyre wholesaler, SEK 4bn revenue, 500 employees. Completion H1 2025.",
+          "link": "https://axcel.com/axcel-partners-with-nordic-tyre-group-to-support-its-continued-growth-journey/"
+        },
+        {
+          "date": "2024-03",
+          "type": "Fund",
+          "title": "Axcel VII closes at €1.3bn",
+          "text": "Oversubscribed hard cap; 60% increase vs Fund VI. Nordic focus: Technology, Business services & Industrials, Healthcare, Consumer.",
+          "link": "https://axcel.com/axcel-closes-oversubscribed-seventh-fund-axcel-vii-at-eur-1-3-billion-hard-cap/"
+        }
+      ],
+      "timeline": [
+        {
+          "year": 2024,
+          "event": "Fund VII closes",
+          "description": "€1.3bn hard cap"
+        },
+        {
+          "year": 2024,
+          "event": "Nordic Tyre Group",
+          "description": "Partnership announced; Altor exit"
+        },
+        {
+          "year": 2025,
+          "event": "Elevate I",
+          "description": "€459M close; KapitalKontroll first investment"
+        },
+        {
+          "year": 2026,
+          "event": "sangro Germany",
+          "description": "First platform in Germany"
+        }
       ]
     },
     "MVI": {
@@ -7843,13 +8305,25 @@
       "founded": 1992,
       "aum": "Undisclosed (3 funds)",
       "employees": "11",
-      "offices": ["Stockholm"],
+      "offices": [
+        "Stockholm"
+      ],
       "description": "MVI invests in profitable Nordic SME companies with structural growth potential. Three themes: Digitalisation, Circularity, Societal Transformation. 21 companies helped to grow; 50+ dedicated people in network. Targets SEK 50–250M turnover. Entrepreneur-centric; builds partnerships, trust and future. Meaningful growth focus.",
       "investment_focus": {
-        "sectors": ["Technology", "Business Services", "Circular Economy", "Infrastructure"],
-        "geography": ["Nordic region"],
+        "sectors": [
+          "Technology",
+          "Business Services",
+          "Circular Economy",
+          "Infrastructure"
+        ],
+        "geography": [
+          "Nordic region"
+        ],
         "deal_size": "SEK 50–250M turnover",
-        "investment_type": ["Buyouts", "Buy-and-build"]
+        "investment_type": [
+          "Buyouts",
+          "Buy-and-build"
+        ]
       },
       "team": [],
       "fundraising": {
@@ -7859,13 +8333,69 @@
       },
       "recent_activity": "2026: Establishes Nordic manufacturing platform (Be-Pe, Prolego, HITAB); Freedom Group add-ons. 2024: Divested Biototal Group to SEB Private Equity. Portfolio: Nestit Group, Ascenco, SMP Parts, Nordic Drives Group, Ametal, Freedom Group, Flow Fastighetsvärden. Exits: PS Auction, Art Clinic, Great Security.",
       "portfolio_companies": [
-        {"name": "Nestit Group", "logo": "https://logo.clearbit.com/nestit.com", "sector": "Technology", "country": "Sweden", "entry_year": "2024", "status": "Active", "detailed_description": "Pan-Nordic office IT infrastructure partner for SMEs, created through DSolution and Easy Partner partnership"},
-        {"name": "Ascenco Group", "logo": "https://logo.clearbit.com/ascenco.se", "sector": "Business Services", "country": "Sweden", "entry_year": "2023", "status": "Active", "detailed_description": "Critical infrastructure services"},
-        {"name": "SMP Parts", "logo": "https://logo.clearbit.com/smpparts.se", "sector": "Business Services", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Smart digging systems, excavator attachments"},
-        {"name": "Nordic Drives Group", "logo": "https://logo.clearbit.com/nordicdrives.com", "sector": "Industrial", "country": "Sweden", "entry_year": "2021", "status": "Active", "detailed_description": "Electric drives and power systems, electric motors and industrial automation"},
-        {"name": "Ametal", "logo": "https://logo.clearbit.com/ametalis.com", "sector": "Business Services", "country": "Sweden", "entry_year": "2025", "status": "Active", "detailed_description": "Nordic environmental and sustainability consulting platform"},
-        {"name": "Flow Fastighetsvärden", "logo": "https://logo.clearbit.com/flowfastigheter.se", "sector": "Real Estate", "country": "Sweden", "entry_year": "2024", "status": "Active", "detailed_description": "Real estate company owning properties where grocery stores and food retail are main tenants"},
-        {"name": "Freedom Group", "logo": "https://logo.clearbit.com/freedomgroup.se", "sector": "Technology", "country": "Sweden", "entry_year": "2021", "status": "Active", "detailed_description": "Accounting digitization and financial software"}
+        {
+          "name": "Nestit Group",
+          "logo": "https://logo.clearbit.com/nestit.com",
+          "sector": "Technology",
+          "country": "Sweden",
+          "entry_year": "2024",
+          "status": "Active",
+          "detailed_description": "Pan-Nordic office IT infrastructure partner for SMEs, created through DSolution and Easy Partner partnership"
+        },
+        {
+          "name": "Ascenco Group",
+          "logo": "https://logo.clearbit.com/ascenco.se",
+          "sector": "Business Services",
+          "country": "Sweden",
+          "entry_year": "2023",
+          "status": "Active",
+          "detailed_description": "Critical infrastructure services"
+        },
+        {
+          "name": "SMP Parts",
+          "logo": "https://logo.clearbit.com/smpparts.se",
+          "sector": "Business Services",
+          "country": "Sweden",
+          "entry_year": "2022",
+          "status": "Active",
+          "detailed_description": "Smart digging systems, excavator attachments"
+        },
+        {
+          "name": "Nordic Drives Group",
+          "logo": "https://logo.clearbit.com/nordicdrives.com",
+          "sector": "Industrial",
+          "country": "Sweden",
+          "entry_year": "2021",
+          "status": "Active",
+          "detailed_description": "Electric drives and power systems, electric motors and industrial automation"
+        },
+        {
+          "name": "Ametal",
+          "logo": "https://logo.clearbit.com/ametalis.com",
+          "sector": "Business Services",
+          "country": "Sweden",
+          "entry_year": "2025",
+          "status": "Active",
+          "detailed_description": "Nordic environmental and sustainability consulting platform"
+        },
+        {
+          "name": "Flow Fastighetsvärden",
+          "logo": "https://logo.clearbit.com/flowfastigheter.se",
+          "sector": "Real Estate",
+          "country": "Sweden",
+          "entry_year": "2024",
+          "status": "Active",
+          "detailed_description": "Real estate company owning properties where grocery stores and food retail are main tenants"
+        },
+        {
+          "name": "Freedom Group",
+          "logo": "https://logo.clearbit.com/freedomgroup.se",
+          "sector": "Technology",
+          "country": "Sweden",
+          "entry_year": "2021",
+          "status": "Active",
+          "detailed_description": "Accounting digitization and financial software"
+        }
       ]
     },
     "Equip": {
@@ -7876,41 +8406,264 @@
       "founded": 2018,
       "aum": "NOK 8.6 billion",
       "employees": "15",
-      "offices": ["Oslo"],
-      "description": "Equip Capital is a Norwegian private equity firm founded in 2018 by five experienced PE professionals. 100+ years combined team experience. Invests in small and mid-sized Nordic companies across consumer, industrials, and business services. 19 portfolio companies; 3 funds. Member of Norwegian Venture Capital & Private Equity Association.",
+      "offices": [
+        "Oslo"
+      ],
+      "description": "Equip Capital is a Norwegian private equity firm founded in 2018 by five experienced PE professionals. 100+ years combined team experience. Invests in small and mid-sized Nordic companies across consumer, industrials, and business services. 19+ portfolio companies; 3 funds (Fund I €180M, Fund II €285M, SPV €306M). Member of Norwegian Venture Capital & Private Equity Association.",
       "investment_focus": {
-        "sectors": ["Business Services", "Consumer", "Technology", "Industrial", "Leisure"],
-        "geography": ["Nordic region"],
+        "sectors": [
+          "Business Services",
+          "Consumer",
+          "Technology",
+          "Industrial",
+          "Leisure"
+        ],
+        "geography": [
+          "Nordic region"
+        ],
         "deal_size": "Small to mid-market",
-        "investment_type": ["Buyouts", "Growth equity", "Control positions"]
+        "investment_type": [
+          "Buyouts",
+          "Growth equity",
+          "Control positions"
+        ]
       },
       "team": [],
       "fundraising": {
-        "current_fund": "Fund I, Fund II, Fund III (3 funds)",
+        "current_fund": "Fund I (€180M, closed Dec 2020), Fund II (€285M, closed Apr 2023), Equip SPV (€306M, closed 2024)",
         "next_fund": "Deployment across portfolio",
         "strategy": "Nordic small/mid-market; control positions in profitable businesses with growth potential"
       },
-      "recent_activity": "Portfolio: Activeon (trampoline parks), iteam (IT services), Holy Greens (salad restaurants), No Dig Alliance (underground pipelines), Bastard Burgers, Funplays, Miles, Cloud Connection, House of Discs, River Group, Cure, Makeup Mekka, North Travel, Busspart, Cares, Cautus Geo, Dura, Stenbolaget, TIND, Ryde.",
+      "recent_activity": "2024\n• Closes Equip SPV (€306M continuation vehicle) acquiring Activeon and iteam from Fund I\n• Delivers >6x return, nearly repaying €180M Fund I to investors\n• €90M fresh capital for add-ons and organic growth (Committed Advisors sole lead; Schroders Capital cornerstone)\n\n2023\n• Remagruppen acquires BNB (Beredningsbart Syd) as add-on – demolition and waste management services\n\nPortfolio: 19 companies across consumer, technology, business services, and leisure (Fund I, II, SPV)",
+      "company_updates": [
+        {
+          "date": "2024",
+          "type": "Fund",
+          "title": "Equip SPV continuation vehicle closes at €306M",
+          "text": "Exits Activeon and iteam from Fund I into Equip-managed continuation vehicle. ~6x return nearly repays €180M Fund I. €90M fresh capital for add-ons. Committed Advisors sole lead; Schroders Capital cornerstone.",
+          "link": "https://www.altassets.net/private-equity-news/by-region/europe-by-region/western-europe-europe-by-region/norway-western-europe-europe-by-region/equip-capital-raises-e306m-continuation-vehicle-for-two-fund-i-companies-returns-almost-entire-cost-of-first-fund.html"
+        },
+        {
+          "date": "2024",
+          "type": "Exit",
+          "title": "Activeon and iteam exit to continuation fund",
+          "text": "Rush (Activeon) and iteam transferred to Equip SPV, extending hold with new capital for European expansion and add-on strategy.",
+          "link": "https://realdeals.eu.com/article/almost-fully-drawn-fund-led-to-continuation-vehicle-path-for-equip-assets-rush-and-iteam-say-co-founders"
+        },
+        {
+          "date": "2023-10",
+          "type": "Investment",
+          "title": "BNB (Beredningsbart Syd) add-on to Remagruppen",
+          "text": "Remagruppen acquires BNB, Swedish demolition, decontamination and waste management services provider. Add-on strengthens Remagruppen's construction services platform in Sweden."
+        }
+      ],
+      "timeline": [
+        {
+          "year": 2018,
+          "event": "Equip Capital founded",
+          "description": "Five experienced PE professionals found Equip in Oslo; 100+ years combined team experience"
+        },
+        {
+          "year": 2019,
+          "event": "Fund I first investment",
+          "description": "Acquires Activeon (indoor trampoline parks) – first Norway and leisure sector deal"
+        },
+        {
+          "year": 2024,
+          "event": "Equip SPV continuation fund",
+          "description": "€306M continuation vehicle; Activeon and iteam exit from Fund I with ~6x return"
+        }
+      ],
       "portfolio_companies": [
-        {"name": "Activeon", "logo": "https://logo.clearbit.com/activeon.no", "sector": "Consumer", "country": "Norway", "entry_year": "2019", "status": "Active", "detailed_description": "Leading European operator of indoor trampoline and interactive attraction parks with 57+ parks across Nordics, Germany, Netherlands and UK. Equip acquired in 2019."},
-        {"name": "Bastard Burgers", "logo": "https://logo.clearbit.com/bastardburgers.se", "sector": "Consumer", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Fast-casual burger chain with 70+ restaurants across Sweden and Norway"},
-        {"name": "Busspart", "logo": "https://logo.clearbit.com/busspart.no", "sector": "Business Services", "country": "Norway", "entry_year": "2023", "status": "Active", "detailed_description": "Full-service provider of bus maintenance and inspection solutions"},
-        {"name": "Cares", "logo": "https://logo.clearbit.com/cares.no", "sector": "Business Services", "country": "Norway", "entry_year": "2022", "status": "Active", "detailed_description": "Cleaning and canteen services for SMEs and public sector"},
-        {"name": "Cautus Geo", "logo": "https://logo.clearbit.com/cautus.no", "sector": "Technology", "country": "Norway", "entry_year": "2022", "status": "Active", "detailed_description": "Automatic monitoring of structures, land, water, climate and environment"},
-        {"name": "Cloud Connection", "logo": "https://logo.clearbit.com/cloudconnection.no", "sector": "Technology", "country": "Norway", "entry_year": "2021", "status": "Active", "detailed_description": "ERP, HRM and CRM software and services"},
-        {"name": "Cure", "logo": "https://logo.clearbit.com/cure.no", "sector": "Technology", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Leading influencer marketing platform in the Nordics"},
-        {"name": "Dura", "logo": "https://logo.clearbit.com/duragroup.se", "sector": "Business Services", "country": "Norway", "entry_year": "2021", "status": "Active", "detailed_description": "Property maintenance services for ageing Scandinavian housing"},
-        {"name": "Funplays", "logo": "https://logo.clearbit.com/funplays.com", "sector": "Consumer", "country": "Norway", "entry_year": "2022", "status": "Active", "detailed_description": "Indoor play centres across Sweden, Norway and Denmark"},
-        {"name": "Holy Greens", "logo": "https://logo.clearbit.com/holygreens.se", "sector": "Consumer", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Fast-growing chain of salad restaurants in Sweden"},
-        {"name": "House of Discs", "logo": "https://logo.clearbit.com/latitude64.com", "sector": "Consumer", "country": "Norway", "entry_year": "2023", "status": "Active", "detailed_description": "Globally leading player in disc golf market"},
-        {"name": "iteam", "logo": "https://logo.clearbit.com/iteam.no", "sector": "Technology", "country": "Norway", "entry_year": "2021", "status": "Active", "detailed_description": "Leading IT services player in Norwegian SME market"},
-        {"name": "Makeup Mekka", "logo": "https://logo.clearbit.com/makeupmekka.no", "sector": "Consumer", "country": "Norway", "entry_year": "2022", "status": "Active", "detailed_description": "Norwegian online retailer of vegan and cruelty-free cosmetics"},
-        {"name": "Miles", "logo": "https://logo.clearbit.com/miles.no", "sector": "Technology", "country": "Norway", "entry_year": "2021", "status": "Active", "detailed_description": "Leading Norwegian IT consulting firm"},
-        {"name": "North Travel", "logo": "https://logo.clearbit.com/northtravel.no", "sector": "Consumer", "country": "Norway", "entry_year": "2022", "status": "Active", "detailed_description": "Nordic Destination Management Companies including Nordic Tours and 50 Degrees North"},
-        {"name": "River Group", "logo": "https://logo.clearbit.com/river-group.com", "sector": "Business Services", "country": "Norway", "entry_year": "2021", "status": "Active", "detailed_description": "Aftermarket service for water and wastewater pumps"},
-        {"name": "Ryde", "logo": "https://logo.clearbit.com/ryde-technology.com", "sector": "Technology", "country": "Norway", "entry_year": "2022", "status": "Active", "detailed_description": "Provider of rentable e-scooters in micro mobility market"},
-        {"name": "Stenbolaget", "logo": "https://logo.clearbit.com/stenbolaget.se", "sector": "Consumer", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Retailer, wholesaler and manufacturer of stone products"},
-        {"name": "TIND", "logo": "https://logo.clearbit.com/tind.io", "sector": "Technology", "country": "Norway", "entry_year": "2021", "status": "Active", "detailed_description": "Library management software for academic and research institutions"}
+        {
+          "name": "Activeon",
+          "logo": "https://logo.clearbit.com/activeon.no",
+          "sector": "Consumer",
+          "country": "Norway",
+          "entry_year": "2019",
+          "status": "Active",
+          "detailed_description": "Leading European operator of indoor trampoline and interactive attraction parks with 57+ parks across Nordics, Germany, Netherlands and UK. Equip acquired in 2019."
+        },
+        {
+          "name": "Bastard Burgers",
+          "logo": "https://logo.clearbit.com/bastardburgers.se",
+          "sector": "Consumer",
+          "country": "Sweden",
+          "entry_year": "2022",
+          "status": "Active",
+          "detailed_description": "Fast-casual burger chain with 70+ restaurants across Sweden and Norway"
+        },
+        {
+          "name": "Busspart",
+          "logo": "https://logo.clearbit.com/busspart.no",
+          "sector": "Business Services",
+          "country": "Norway",
+          "entry_year": "2023",
+          "status": "Active",
+          "detailed_description": "Full-service provider of bus maintenance and inspection solutions"
+        },
+        {
+          "name": "Cares",
+          "logo": "https://logo.clearbit.com/cares.no",
+          "sector": "Business Services",
+          "country": "Norway",
+          "entry_year": "2022",
+          "status": "Active",
+          "detailed_description": "Cleaning and canteen services for SMEs and public sector"
+        },
+        {
+          "name": "Cautus Geo",
+          "logo": "https://logo.clearbit.com/cautus.no",
+          "sector": "Technology",
+          "country": "Norway",
+          "entry_year": "2022",
+          "status": "Active",
+          "detailed_description": "Automatic monitoring of structures, land, water, climate and environment"
+        },
+        {
+          "name": "Cloud Connection",
+          "logo": "https://logo.clearbit.com/cloudconnection.no",
+          "sector": "Technology",
+          "country": "Norway",
+          "entry_year": "2021",
+          "status": "Active",
+          "detailed_description": "ERP, HRM and CRM software and services"
+        },
+        {
+          "name": "Cure",
+          "logo": "https://logo.clearbit.com/cure.no",
+          "sector": "Technology",
+          "country": "Sweden",
+          "entry_year": "2022",
+          "status": "Active",
+          "detailed_description": "Leading influencer marketing platform in the Nordics"
+        },
+        {
+          "name": "Dura",
+          "logo": "https://logo.clearbit.com/duragroup.se",
+          "sector": "Business Services",
+          "country": "Norway",
+          "entry_year": "2021",
+          "status": "Active",
+          "detailed_description": "Property maintenance services for ageing Scandinavian housing"
+        },
+        {
+          "name": "Funplays",
+          "logo": "https://logo.clearbit.com/funplays.com",
+          "sector": "Consumer",
+          "country": "Norway",
+          "entry_year": "2022",
+          "status": "Active",
+          "detailed_description": "Indoor play centres across Sweden, Norway and Denmark"
+        },
+        {
+          "name": "Holy Greens",
+          "logo": "https://logo.clearbit.com/holygreens.se",
+          "sector": "Consumer",
+          "country": "Sweden",
+          "entry_year": "2022",
+          "status": "Active",
+          "detailed_description": "Fast-growing chain of salad restaurants in Sweden"
+        },
+        {
+          "name": "House of Discs",
+          "logo": "https://logo.clearbit.com/latitude64.com",
+          "sector": "Consumer",
+          "country": "Norway",
+          "entry_year": "2023",
+          "status": "Active",
+          "detailed_description": "Globally leading player in disc golf market"
+        },
+        {
+          "name": "iteam",
+          "logo": "https://logo.clearbit.com/iteam.no",
+          "sector": "Technology",
+          "country": "Norway",
+          "entry_year": "2021",
+          "status": "Active",
+          "detailed_description": "Leading IT services player in Norwegian SME market"
+        },
+        {
+          "name": "Makeup Mekka",
+          "logo": "https://logo.clearbit.com/makeupmekka.no",
+          "sector": "Consumer",
+          "country": "Norway",
+          "entry_year": "2022",
+          "status": "Active",
+          "detailed_description": "Norwegian online retailer of vegan and cruelty-free cosmetics"
+        },
+        {
+          "name": "Miles",
+          "logo": "https://logo.clearbit.com/miles.no",
+          "sector": "Technology",
+          "country": "Norway",
+          "entry_year": "2021",
+          "status": "Active",
+          "detailed_description": "Leading Norwegian IT consulting firm"
+        },
+        {
+          "name": "North Travel",
+          "logo": "https://logo.clearbit.com/northtravel.no",
+          "sector": "Consumer",
+          "country": "Norway",
+          "entry_year": "2022",
+          "status": "Active",
+          "detailed_description": "Nordic Destination Management Companies including Nordic Tours and 50 Degrees North"
+        },
+        {
+          "name": "River Group",
+          "logo": "https://logo.clearbit.com/river-group.com",
+          "sector": "Business Services",
+          "country": "Norway",
+          "entry_year": "2021",
+          "status": "Active",
+          "detailed_description": "Aftermarket service for water and wastewater pumps"
+        },
+        {
+          "name": "Ryde",
+          "logo": "https://logo.clearbit.com/ryde-technology.com",
+          "sector": "Technology",
+          "country": "Norway",
+          "entry_year": "2022",
+          "status": "Active",
+          "detailed_description": "Provider of rentable e-scooters in micro mobility market"
+        },
+        {
+          "name": "Stenbolaget",
+          "logo": "https://logo.clearbit.com/stenbolaget.se",
+          "sector": "Consumer",
+          "country": "Sweden",
+          "entry_year": "2022",
+          "status": "Active",
+          "detailed_description": "Retailer, wholesaler and manufacturer of stone products"
+        },
+        {
+          "name": "TIND",
+          "logo": "https://logo.clearbit.com/tind.io",
+          "sector": "Technology",
+          "country": "Norway",
+          "entry_year": "2021",
+          "status": "Active",
+          "detailed_description": "Library management software for academic and research institutions"
+        },
+        {
+          "name": "No Dig Alliance",
+          "logo": "https://logo.clearbit.com/nodigalliance.com",
+          "sector": "Business Services",
+          "country": "Sweden",
+          "entry_year": "2021",
+          "status": "Active",
+          "detailed_description": "Nordic leader in trenchless installation, renovation and maintenance of underground pipelines. Operates in Norway, Sweden and Finland for municipalities and grid companies."
+        },
+        {
+          "name": "Remagruppen",
+          "logo": "https://logo.clearbit.com/remagruppen.se",
+          "sector": "Business Services",
+          "country": "Sweden",
+          "entry_year": "2023",
+          "status": "Active",
+          "detailed_description": "Leading Nordic group in sustainable property maintenance – roofing, façade, painting, solar. Subsidiaries include LA Takvård, PSI Services, MV Service, Jacobsons Plåtmålning, Decagruppen. BNB add-on (2023)."
+        }
       ]
     },
     "Trill Impact": {
@@ -7921,13 +8674,29 @@
       "founded": 2019,
       "aum": "€1.4 billion",
       "employees": "30+",
-      "offices": ["Stockholm"],
+      "offices": [
+        "Stockholm"
+      ],
       "description": "Trill Impact is a private markets firm exclusively making impact investments. Buyout (Northern Europe mid-market), Ventures (early-stage environmental/health), Microfinance (emerging markets). BlueMark verification of Impact Principles; top PRI scores. Sustainable Planet, Resilient Society, Healthy People.",
       "investment_focus": {
-        "sectors": ["Sustainability", "Healthcare", "Education", "Infrastructure", "Cybersecurity", "Agriculture"],
-        "geography": ["Europe", "Northern Europe"],
+        "sectors": [
+          "Sustainability",
+          "Healthcare",
+          "Education",
+          "Infrastructure",
+          "Cybersecurity",
+          "Agriculture"
+        ],
+        "geography": [
+          "Europe",
+          "Northern Europe"
+        ],
         "deal_size": "Mid-market",
-        "investment_type": ["Buyout", "Ventures", "Microfinance"]
+        "investment_type": [
+          "Buyout",
+          "Ventures",
+          "Microfinance"
+        ]
       },
       "team": [],
       "fundraising": {
@@ -7937,25 +8706,177 @@
       },
       "recent_activity": "2025: Acquires majority in Noova Energy Systems; Ventures co-leads Rail-Flow EUR 12.5m round. BlueMark verification renewed; top PRI 2025 scores. Portfolio: Nordomatic, ILT Education, Mesalvo, Allurity, Karriere Tutor, Infrakraft, Komet, Renewtech, Cinclus Pharma, May Health, Soil Capital, tado°, Open Cosmos, Noova.",
       "portfolio_companies": [
-        {"name": "Nordomatic", "logo": "https://logo.clearbit.com/nordomatic.com", "sector": "Business Services", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Leading independent partner for building automation, smart buildings and energy efficiency"},
-        {"name": "ILT Education", "logo": "https://logo.clearbit.com/ilteducation.com", "sector": "Education", "country": "Sweden", "entry_year": "2021", "status": "Active", "detailed_description": "Market-leading supplier of educational tools and Polylino digital learning for schools"},
-        {"name": "Mesalvo", "logo": "https://logo.clearbit.com/mesalvo.com", "sector": "Digital Healthcare", "country": "Germany", "entry_year": "2023", "status": "Active", "detailed_description": "Healthcare software for hospitals, radiologists and laboratories"},
-        {"name": "Allurity", "logo": "https://logo.clearbit.com/allurity.com", "sector": "Cybersecurity Services", "country": "Sweden", "entry_year": "2022", "status": "Active", "detailed_description": "Pan-European cybersecurity service provider"},
-        {"name": "Karriere Tutor", "logo": "https://logo.clearbit.com/karrieretutor.de", "sector": "Education", "country": "Germany", "entry_year": "2022", "status": "Active", "detailed_description": "Digital provider of government-subsidized vocational training"},
-        {"name": "Infrakraft", "logo": "https://logo.clearbit.com/infrakraft.se", "sector": "Infrastructure", "country": "Sweden", "entry_year": "2023", "status": "Active", "detailed_description": "Sustainable rail infrastructure development"},
-        {"name": "Komet", "logo": "https://logo.clearbit.com/komet.at", "sector": "Agriculture", "country": "Austria", "entry_year": "2022", "status": "Active", "detailed_description": "Irrigation components for pivot and hose reel systems"},
-        {"name": "Delivery Associates", "logo": "https://logo.clearbit.com/deliveryassociates.com", "sector": "Consulting Services", "country": "UK", "entry_year": "2022", "status": "Active", "detailed_description": "Impact consultancy for governments"},
-        {"name": "Renewtech", "logo": "https://logo.clearbit.com/renewtech.dk", "sector": "IT Refurbishment", "country": "Denmark", "entry_year": "2022", "status": "Active", "detailed_description": "B2B supplier of refurbished IT enterprise hardware"},
-        {"name": "TT Medic", "logo": "https://logo.clearbit.com/ttmedic.com", "sector": "MedTech", "country": "Austria", "entry_year": "2023", "status": "Active", "detailed_description": "Precision medical injection molding CDMO"},
-        {"name": "Primutec", "logo": "https://logo.clearbit.com/primutec.nl", "sector": "Business Services", "country": "Netherlands", "entry_year": "2022", "status": "Active", "detailed_description": "Building envelope services, flat roofing, solar PV"},
-        {"name": "Noova Energy Systems", "logo": "https://logo.clearbit.com/noova.no", "sector": "Business Services", "country": "Norway", "entry_year": "2022", "status": "Active", "detailed_description": "Energy management systems for SMEs"},
-        {"name": "Cinclus Pharma", "logo": "https://logo.clearbit.com/cincluspharma.com", "sector": "Pharmaceuticals", "country": "Sweden", "entry_year": "2023", "status": "Active", "detailed_description": "Late-stage biopharmaceutical for stomach acid disorders"},
-        {"name": "May Health", "logo": "https://logo.clearbit.com/may-health.com", "sector": "MedTech", "country": "France", "entry_year": "2023", "status": "Active", "detailed_description": "Medical device for PCOS-related fertility"},
-        {"name": "Soil Capital", "logo": "https://logo.clearbit.com/soilcapital.com", "sector": "Agriculture", "country": "Belgium", "entry_year": "2022", "status": "Active", "detailed_description": "Regenerative agriculture, certified B Corp"},
-        {"name": "Rail-Flow", "logo": "https://logo.clearbit.com/rail-flow.com", "sector": "Business Services", "country": "Germany", "entry_year": "2023", "status": "Active", "detailed_description": "Digital B2B SaaS platform for rail and intermodal freight"},
-        {"name": "tado°", "logo": "https://logo.clearbit.com/tado.com", "sector": "Technology", "country": "Germany", "entry_year": "2022", "status": "Active", "detailed_description": "Smart home climate management controls"},
-        {"name": "Open Cosmos", "logo": "https://logo.clearbit.com/open-cosmos.com", "sector": "Technology", "country": "UK", "entry_year": "2023", "status": "Active", "detailed_description": "Space tech and satellite data for climate and disasters"},
-        {"name": "MinervaX", "logo": "https://logo.clearbit.com/minervax.com", "sector": "Pharmaceuticals", "country": "Denmark", "entry_year": "2023", "status": "Active", "detailed_description": "Maternal vaccine for Group B streptococcus"}
+        {
+          "name": "Nordomatic",
+          "logo": "https://logo.clearbit.com/nordomatic.com",
+          "sector": "Business Services",
+          "country": "Sweden",
+          "entry_year": "2022",
+          "status": "Active",
+          "detailed_description": "Leading independent partner for building automation, smart buildings and energy efficiency"
+        },
+        {
+          "name": "ILT Education",
+          "logo": "https://logo.clearbit.com/ilteducation.com",
+          "sector": "Education",
+          "country": "Sweden",
+          "entry_year": "2021",
+          "status": "Active",
+          "detailed_description": "Market-leading supplier of educational tools and Polylino digital learning for schools"
+        },
+        {
+          "name": "Mesalvo",
+          "logo": "https://logo.clearbit.com/mesalvo.com",
+          "sector": "Digital Healthcare",
+          "country": "Germany",
+          "entry_year": "2023",
+          "status": "Active",
+          "detailed_description": "Healthcare software for hospitals, radiologists and laboratories"
+        },
+        {
+          "name": "Allurity",
+          "logo": "https://logo.clearbit.com/allurity.com",
+          "sector": "Cybersecurity Services",
+          "country": "Sweden",
+          "entry_year": "2022",
+          "status": "Active",
+          "detailed_description": "Pan-European cybersecurity service provider"
+        },
+        {
+          "name": "Karriere Tutor",
+          "logo": "https://logo.clearbit.com/karrieretutor.de",
+          "sector": "Education",
+          "country": "Germany",
+          "entry_year": "2022",
+          "status": "Active",
+          "detailed_description": "Digital provider of government-subsidized vocational training"
+        },
+        {
+          "name": "Infrakraft",
+          "logo": "https://logo.clearbit.com/infrakraft.se",
+          "sector": "Infrastructure",
+          "country": "Sweden",
+          "entry_year": "2023",
+          "status": "Active",
+          "detailed_description": "Sustainable rail infrastructure development"
+        },
+        {
+          "name": "Komet",
+          "logo": "https://logo.clearbit.com/komet.at",
+          "sector": "Agriculture",
+          "country": "Austria",
+          "entry_year": "2022",
+          "status": "Active",
+          "detailed_description": "Irrigation components for pivot and hose reel systems"
+        },
+        {
+          "name": "Delivery Associates",
+          "logo": "https://logo.clearbit.com/deliveryassociates.com",
+          "sector": "Consulting Services",
+          "country": "UK",
+          "entry_year": "2022",
+          "status": "Active",
+          "detailed_description": "Impact consultancy for governments"
+        },
+        {
+          "name": "Renewtech",
+          "logo": "https://logo.clearbit.com/renewtech.dk",
+          "sector": "IT Refurbishment",
+          "country": "Denmark",
+          "entry_year": "2022",
+          "status": "Active",
+          "detailed_description": "B2B supplier of refurbished IT enterprise hardware"
+        },
+        {
+          "name": "TT Medic",
+          "logo": "https://logo.clearbit.com/ttmedic.com",
+          "sector": "MedTech",
+          "country": "Austria",
+          "entry_year": "2023",
+          "status": "Active",
+          "detailed_description": "Precision medical injection molding CDMO"
+        },
+        {
+          "name": "Primutec",
+          "logo": "https://logo.clearbit.com/primutec.nl",
+          "sector": "Business Services",
+          "country": "Netherlands",
+          "entry_year": "2022",
+          "status": "Active",
+          "detailed_description": "Building envelope services, flat roofing, solar PV"
+        },
+        {
+          "name": "Noova Energy Systems",
+          "logo": "https://logo.clearbit.com/noova.no",
+          "sector": "Business Services",
+          "country": "Norway",
+          "entry_year": "2022",
+          "status": "Active",
+          "detailed_description": "Energy management systems for SMEs"
+        },
+        {
+          "name": "Cinclus Pharma",
+          "logo": "https://logo.clearbit.com/cincluspharma.com",
+          "sector": "Pharmaceuticals",
+          "country": "Sweden",
+          "entry_year": "2023",
+          "status": "Active",
+          "detailed_description": "Late-stage biopharmaceutical for stomach acid disorders"
+        },
+        {
+          "name": "May Health",
+          "logo": "https://logo.clearbit.com/may-health.com",
+          "sector": "MedTech",
+          "country": "France",
+          "entry_year": "2023",
+          "status": "Active",
+          "detailed_description": "Medical device for PCOS-related fertility"
+        },
+        {
+          "name": "Soil Capital",
+          "logo": "https://logo.clearbit.com/soilcapital.com",
+          "sector": "Agriculture",
+          "country": "Belgium",
+          "entry_year": "2022",
+          "status": "Active",
+          "detailed_description": "Regenerative agriculture, certified B Corp"
+        },
+        {
+          "name": "Rail-Flow",
+          "logo": "https://logo.clearbit.com/rail-flow.com",
+          "sector": "Business Services",
+          "country": "Germany",
+          "entry_year": "2023",
+          "status": "Active",
+          "detailed_description": "Digital B2B SaaS platform for rail and intermodal freight"
+        },
+        {
+          "name": "tado°",
+          "logo": "https://logo.clearbit.com/tado.com",
+          "sector": "Technology",
+          "country": "Germany",
+          "entry_year": "2022",
+          "status": "Active",
+          "detailed_description": "Smart home climate management controls"
+        },
+        {
+          "name": "Open Cosmos",
+          "logo": "https://logo.clearbit.com/open-cosmos.com",
+          "sector": "Technology",
+          "country": "UK",
+          "entry_year": "2023",
+          "status": "Active",
+          "detailed_description": "Space tech and satellite data for climate and disasters"
+        },
+        {
+          "name": "MinervaX",
+          "logo": "https://logo.clearbit.com/minervax.com",
+          "sector": "Pharmaceuticals",
+          "country": "Denmark",
+          "entry_year": "2023",
+          "status": "Active",
+          "detailed_description": "Maternal vaccine for Group B streptococcus"
+        }
       ]
     },
     "Norvestor": {
@@ -8447,19 +9368,14 @@
         },
         {
           "year": 2023,
-          "event": "L5 add-on",
-          "description": "L5 Navigation acquires ROCKMA System (Dec 6)",
+          "event": "L5 add-ons",
+          "description": "L5 Navigation acquires ROCKMA System (Dec), GeoFix in Sweden & Finland (Oct)",
           "company": "L5 Navigation"
         },
         {
           "year": 2023,
           "event": "Xamera partnership",
           "description": "New strategic owner/partner to Xamera (Dec 3)"
-        },
-        {
-          "year": 2023,
-          "event": "L5 add-on",
-          "description": "L5 Navigation acquires GeoFix businesses in Sweden & Finland (Oct 30)"
         },
         {
           "year": 2023,
@@ -8625,139 +9541,207 @@
       "company_updates": [
         {
           "date": "2025-09-10",
-          "text": "FSN Capital Confluence: Saferoad Group accelerates international growth with strategic acquisitions across Europe"
+          "title": "Saferoad Group accelerates international growth",
+          "text": "Strategic acquisitions across Europe.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2025-07-15",
-          "text": "FSN Capital IV has signed an agreement to sell its majority shareholding in Fibo"
+          "title": "FSN Capital IV to sell majority in Fibo",
+          "text": "Agreement signed.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2025-07-02",
-          "text": "FSN Capital VI to acquire Volue Infrastructure, a leading provider of niche infrastructure software"
+          "title": "FSN Capital VI to acquire Volue Infrastructure",
+          "text": "Niche infrastructure software provider.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2025-05-13",
-          "text": "FSN Capital Compass I invests in UHL Bau to create a leading player in the Austrian civil engineering market for critical infrastructure"
+          "title": "FSN Compass I invests in UHL Bau",
+          "text": "Austrian civil engineering for critical infrastructure.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2025-05-07",
-          "text": "FSN Capital IV has sold its remaining shares in Kjell & Company"
+          "title": "FSN Capital IV sells remaining Kjell & Company shares",
+          "text": "Exit completed.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2024-12-19",
-          "text": "FSN Capital Confluence: Nordlo successfully completes SEK 3.6 billion refinancing"
+          "title": "Nordlo completes SEK 3.6 billion refinancing",
+          "text": "FSN Capital Confluence; Nordlo successfully completes refinancing.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2024-08-06",
-          "text": "FSN Capital Confluence closes as a new continuation fund with LGT Capital Partners as lead investor"
+          "title": "FSN Capital Confluence closes as continuation fund",
+          "text": "LGT Capital Partners as lead investor.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2024-05-31",
-          "text": "FSN Capital announces three partner promotions"
+          "title": "FSN Capital announces three partner promotions",
+          "text": "Team expansion.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2024-05-13",
-          "text": "FSN Capital Compass Fund holds final close, raising more than its €400 million target to invest in purpose-driven companies in Northern Europe"
+          "title": "FSN Capital Compass Fund final close",
+          "text": "Raises more than €400 million for purpose-driven companies in Northern Europe.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2023-12-06",
-          "text": "FSN Capital attends COP28 as private equity poised to become catalyst of the Green Transition"
+          "title": "FSN Capital at COP28 – catalyst of the Green Transition",
+          "text": "Private equity sector engagement.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2023-06-13",
-          "text": "FSN Capital has signed an agreement to acquire a majority stake in Solcellespesialisten, Norway’s largest supplier and installer of solar energy systems"
+          "title": "Acquires Solcellespesialisten",
+          "text": "Norway's largest supplier and installer of solar energy systems.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2023-03-23",
-          "text": "FSN Capital III* has signed an agreement to sell its majority shareholding in Skamol"
+          "title": "FSN Capital III sells Skamol",
+          "text": "Agreement to sell majority shareholding.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2023-02-01",
-          "text": "FSN Capital VI partners with 11 technical installation companies to form a new Danish market leader"
+          "title": "FSN VI forms Danish technical installation leader",
+          "text": "Partners with 11 companies to create market leader.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2023-01-12",
-          "text": "FSN Capital VI and funds advised by Verdane agree investment of approx. €135 million in Polytech"
+          "title": "FSN VI and Verdane invest €135M in Polytech",
+          "text": "Global energy transition; wind turbine manufacturers.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2023-01-05",
-          "text": "FSN Capital VI* has signed an agreement to acquire a majority stake in Lobster, a leading no-code data integration software provider"
+          "title": "FSN VI acquires Lobster",
+          "text": "Leading no-code data integration software provider.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2022-12-01",
-          "text": "FSN Capital VI has signed an agreement to acquire a majority stake in Dutch IT-Services provider ilionx"
+          "title": "FSN VI acquires ilionx",
+          "text": "Dutch IT-Services provider.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2022-11-17",
-          "text": "FSN Capital V has signed an agreement to merge Mørenot into Hampiðjan Group in an all-share transaction"
+          "title": "Mørenot merges into Hampidjan Group",
+          "text": "All-share transaction.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2022-09-15",
-          "text": "FSN Capital VI* invests in Bäcker Görtz to create a leading player in the German bakery goods and quick-service-restaurant market"
+          "title": "FSN VI invests in Bäcker Görtz",
+          "text": "German bakery goods and QSR market player.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2022-05-27",
-          "text": "FSN Capital has signed an agreement to acquire a majority stake in Firesafe"
+          "title": "FSN Capital acquires Firesafe",
+          "text": "Majority stake agreement.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2022-05-25",
-          "text": "FSN Capital has signed an agreement to acquire a majority stake in Epista Life Science"
+          "title": "FSN Capital acquires Epista Life Science",
+          "text": "Majority stake agreement.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2022-02-21",
-          "text": "FSN Capital and Verdane agree investment in Active Brands to support new phase of growth"
+          "title": "FSN and Verdane invest in Active Brands",
+          "text": "New phase of growth.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2022-02-18",
-          "text": "FSN Capital has signed an agreement to acquire a majority stake in Seriline"
+          "title": "FSN Capital acquires Seriline",
+          "text": "Majority stake agreement.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2021-12-21",
-          "text": "FSN Capital VI* invests in OptiGroup and Hygas to create a European champion in B2B distribution"
+          "title": "FSN VI invests in OptiGroup and Hygas",
+          "text": "European B2B distribution champion.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2021-11-30",
-          "text": "FSN Capital names new Co-Managing Partners"
+          "title": "FSN Capital names new Co-Managing Partners",
+          "text": "Leadership update.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2021-11-30",
-          "text": "FSN Capital IV* has signed an agreement to sell its majority shareholding in EET"
+          "title": "FSN Capital IV sells EET",
+          "text": "Agreement to sell majority shareholding.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2021-11-08",
-          "text": "FSN Capital sets science-based targets under new private equity sector guidance"
+          "title": "FSN Capital sets science-based targets",
+          "text": "Under new PE sector guidance.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2021-11-01",
-          "text": "FSN Capital commits to Net Zero"
+          "title": "FSN Capital commits to Net Zero",
+          "text": "Sustainability commitment.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2021-10-22",
-          "text": "FSN Capital V: Saferoad & ViaCon created as independent companies"
+          "title": "Saferoad & ViaCon created as independent companies",
+          "text": "FSN Capital V spin-offs.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2021-09-16",
-          "text": "FSN Capital IV: Kjell & Company has been listed on Nasdaq Stockholm, First North Growth Market"
+          "title": "Kjell & Company listed on Nasdaq Stockholm",
+          "text": "First North Growth Market; FSN Capital IV.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2021-08-09",
-          "text": "FSN Capital VI partners with Prange Group to accelerate growth of Adragos Pharma"
+          "title": "FSN VI partners with Prange Group for Adragos Pharma",
+          "text": "CDMO growth acceleration.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2021-07-08",
-          "text": "FSN Capital VI* partners with existing owners to support further growth of MEGABAD"
+          "title": "FSN VI invests in MEGABAD",
+          "text": "Partners with existing owners.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2021-06-18",
-          "text": "FSN Capital raises €1.8 billion for its sixth mid-market fund"
+          "title": "FSN Capital raises €1.8 billion for Fund VI",
+          "text": "Sixth mid-market fund.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2021-05-12",
-          "text": "FSN Capital has signed an agreement to acquire a majority stake in Omegapoint"
+          "title": "FSN Capital acquires Omegapoint",
+          "text": "Majority stake agreement.",
+          "link": "https://www.fsncapital.com/news/"
         },
         {
           "date": "2021-03-30",
-          "text": "FSN Capital IV*: Kjell & Company enters Denmark by acquiring AV-Cables.dk"
+          "title": "Kjell & Company enters Denmark via AV-Cables.dk",
+          "text": "FSN Capital IV add-on acquisition.",
+          "link": "https://www.fsncapital.com/news/"
         }
       ],
       "recent_activity": "2025: FSN VI to acquire Volue Infrastructure (infrastructure software), Compass I invests in UHL Bau (Austrian civil engineering), FSN IV signs to sell Fibo, Saferoad accelerates European M&A under Confluence. 2024: Confluence continuation fund closes (LGT lead), Nordlo completes SEK 3.6bn refinancing. 2023: Acquires Solcellespesialisten, sells Skamol, forms Danish technical-installation leader via 11 companies, invests in Polytech with Verdane, acquires Lobster (no-code data integration), acquires ilionx (IT-services, NL).",

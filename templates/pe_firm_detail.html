@@ -85,6 +85,14 @@
         }
     }
 
+    /* Portfolio table horizontal scroll on GP profile */
+    #firmDetailContainer .portfolio-table-wrapper {
+        overflow-x: auto !important;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+    }
+
     /* Light table header styling for GP profile page */
     #firmDetailContainer .portfolio-table thead,
     #firmDetailContainer .portfolio-table th {
@@ -124,6 +132,16 @@
         color: #136a44;
         border: 1px solid #bfe8d1;
     }
+
+    .recent-activity-formatted { font-size: 0.65rem; line-height: 1.6; color: #475569; }
+    .recent-activity-formatted ul { margin: 0 0 0 1rem; padding-left: 0.6rem; }
+    .recent-activity-formatted li { margin-bottom: 0.25rem; }
+    .activity-modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+    .activity-modal { background: #fff; border-radius: 8px; max-width: 560px; width: 100%; max-height: 80vh; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+    .activity-modal-header { padding: 0.75rem 1rem; border-bottom: 1px solid #e5e7eb; display: flex; justify-content: space-between; align-items: center; background: #f8fafc; }
+    .activity-modal-body { padding: 1rem; overflow-y: auto; max-height: calc(80vh - 100px); font-size: 0.8rem; line-height: 1.6; color: #475569; }
+    .activity-modal-body ul { margin: 0 0 0 1rem; padding-left: 0.5rem; }
+    .activity-modal-body li { margin-bottom: 0.4rem; }
 </style>
 {% endblock %}
 
@@ -136,6 +154,16 @@
     </div>
 </div>
 
+<div id="recentActivityModal" class="activity-modal-overlay" style="display: none;">
+    <div class="activity-modal">
+        <div class="activity-modal-header">
+            <h3 id="recentActivityModalTitle" style="margin: 0; font-size: 0.9rem; font-weight: 700; color: #1f2937;">Recent Activity</h3>
+            <button type="button" id="recentActivityModalClose" style="background: none; border: none; font-size: 1.2rem; cursor: pointer; color: #6b7280; padding: 0 0.25rem;">&times;</button>
+        </div>
+        <div id="recentActivityModalBody" class="activity-modal-body"></div>
+    </div>
+</div>
+
 <script>
 const firmName = "{{ firm_name }}";
 let firmPortfolioCompanies = [];
@@ -143,6 +171,23 @@ let firmPortfolioSortState = { column: 'company', direction: 'asc' };
 
 document.addEventListener('DOMContentLoaded', async function() {
     await loadFirmDetail();
+    // Event delegation for "View all" activity buttons (dynamically added)
+    document.addEventListener('click', function(e) {
+        const btn = e.target.closest('.view-all-activity-btn');
+        if (btn) {
+            const fullHtml = window._recentActivityFullHtml;
+            const firmNameAttr = btn.getAttribute('data-firm-name');
+            if (fullHtml) {
+                document.getElementById('recentActivityModalTitle').textContent = (firmNameAttr ? firmNameAttr + ' – ' : '') + 'Recent Activity';
+                document.getElementById('recentActivityModalBody').innerHTML = fullHtml;
+                document.getElementById('recentActivityModal').style.display = 'flex';
+            }
+        }
+    });
+    const modal = document.getElementById('recentActivityModal');
+    const modalClose = document.getElementById('recentActivityModalClose');
+    if (modalClose) modalClose.addEventListener('click', function() { if (modal) modal.style.display = 'none'; });
+    if (modal) modal.addEventListener('click', function(e) { if (e.target === this) this.style.display = 'none'; });
 });
 
 async function loadFirmDetail() {
@@ -280,7 +325,17 @@ function displayFirmDetail(firm) {
                         <h3 class="content-card-title" style="font-size: 0.65rem;">Recent Activity</h3>
                     </div>
                     <div class="content-card-body">
-                        ${firm.real_news && firm.real_news.length > 0 ? `
+                        ${(function() {
+                            var ups = firm.company_updates || firm.companyUpdates;
+                            if (ups && ups.length > 0) {
+                                var res = formatCompanyUpdates(ups, 4);
+                                if (res.totalCount > 4) window._recentActivityFullHtml = res.fullHtml;
+                                return '<div class="recent-activity-formatted">' + res.html + '</div>' +
+                                    (res.totalCount > 4 ? '<div style="text-align:center;margin-top:0.35rem;"><button type="button" class="view-all-activity-btn" data-firm-name="' + escapeHtml(firm.name || '') + '" style="font-size:0.5rem;color:#4c1d95;background:none;border:none;cursor:pointer;text-decoration:underline;font-weight:600;"><i class="fas fa-expand-alt" style="margin-right:0.2rem;"></i>View all (' + res.totalCount + ')</button></div>' : '');
+                            }
+                            return '';
+                        })()}
+                        ${((firm.company_updates || firm.companyUpdates) && (firm.company_updates || firm.companyUpdates).length > 0) ? '' : (firm.real_news && firm.real_news.length > 0) ? `
                             <div class="recent-news-list" style="max-height: 200px; overflow-y: auto;">
                                 ${firm.real_news.slice(0, 5).map(article => `
                                     <div class="news-item-mini" style="padding: 0.3rem 0; border-bottom: 1px solid #f0f0f0; margin-bottom: 0.3rem;">
@@ -317,9 +372,12 @@ function displayFirmDetail(firm) {
                                     View All ${firm.total_news_count || 0} Articles <i class="fas fa-arrow-right"></i>
                                 </a>
                             </div>
-                        ` : `
-                            <p style="font-size: 0.5rem; line-height: 1.4; margin: 0; color: #555;">${escapeHtml(firm.recent_activity || 'No recent activity data available.')}</p>
-                        `}
+                        ` : (function() {
+                            var r = formatRecentActivity(firm.recent_activity || 'No recent activity data available.', 4);
+                            if (r.totalCount > 4) window._recentActivityFullHtml = r.fullHtml;
+                            var html = (r && r.html ? r.html : '');
+                            return '<div class="recent-activity-formatted">' + html + '</div>' + (r.totalCount > 4 ? '<div style="text-align:center;margin-top:0.35rem;"><button type="button" class="view-all-activity-btn" data-firm-name="' + escapeHtml(firm.name || '') + '" style="font-size:0.5rem;color:#4c1d95;background:none;border:none;cursor:pointer;text-decoration:underline;font-weight:600;"><i class="fas fa-expand-alt" style="margin-right:0.2rem;"></i>View all (' + r.totalCount + ')</button></div>' : '');
+                        })()}
                     </div>
                 </div>
             </div>
@@ -1282,17 +1340,28 @@ async function loadFirmTimeline(firm, firmName) {
                     // Try to match event to portfolio company for logo display
                     if (timelineEvent.company) {
                         const matchingCompany = firmCompanies.find(c => c.company === timelineEvent.company);
-                        if (matchingCompany) {
-                            timelineEvent.companyData = matchingCompany;
-                        }
+                        if (matchingCompany) timelineEvent.companyData = matchingCompany;
+                    } else {
+                        const ev = (timelineEvent.event || '').toLowerCase();
+                        const desc = (timelineEvent.description || '').toLowerCase();
+                        const match = firmCompanies.find(c => {
+                            if (c.entry !== String(year)) return false;
+                            const name = (c.company || '').toLowerCase().trim();
+                            if (!name || name.length < 3) return false;
+                            const nameCore = name.replace(/\s*\([^)]*\)\s*/g, ' ').trim();
+                            const firstWord = (ev.split(/\s+/)[0] || '').replace(/[^a-z0-9]/g, '');
+                            return ev.includes(nameCore) || ev.includes(name) || desc.includes(nameCore) || desc.includes(name) || (firstWord.length >= 4 && (nameCore.includes(firstWord) || nameCore.startsWith(firstWord)));
+                        });
+                        if (match) timelineEvent.companyData = match;
                     }
                     
                     const eventType = timelineEvent.event.toLowerCase();
+                    const eventDesc = (timelineEvent.description || '').toLowerCase();
                     if (eventType.includes('fund') || eventType.includes('closes') || eventType.includes('raises') || eventType.includes('continuation')) {
                         eventsByYear[year].fundActivities.push(timelineEvent);
                     } else if (eventType.includes('exit') || eventType.includes('sells') || eventType.includes('divests') || eventType.includes('sale')) {
                         eventsByYear[year].exits.push(timelineEvent);
-                    } else if (eventType.includes('acquires') || eventType.includes('invests') || eventType.includes('acquisition') || eventType.includes('investment') || eventType.includes('add-on') || eventType.includes('partnership')) {
+                    } else if (eventType.includes('acquires') || eventType.includes('invests') || eventType.includes('acquisition') || eventType.includes('investment') || eventType.includes('add-on') || eventType.includes('partnership') || (eventType.includes('formation') && (eventDesc.includes('creates') || eventDesc.includes('acquires') || eventDesc.includes('partnership')))) {
                         eventsByYear[year].acquisitions.push(timelineEvent);
                     } else {
                         eventsByYear[year].other.push(timelineEvent);
@@ -1318,24 +1387,32 @@ async function loadFirmTimeline(firm, firmName) {
                         });
                     }
                     
-                    // Acquisitions
+                    // Acquisitions → show as "New Investments" with logos (always show clickable logos when >1)
                     if (yearEvents.acquisitions.length > 0) {
-                        // Check if any acquisition has company data for logo display
-                        const hasCompanyData = yearEvents.acquisitions.some(e => e.companyData);
-                        const primaryCompany = yearEvents.acquisitions.find(e => e.companyData)?.companyData;
-                        
+                        const seen = new Set();
+                        let withCompanyData = yearEvents.acquisitions.filter(e => e.companyData).map(e => e.companyData).filter(c => { const k = (c.company || '').toLowerCase(); if (seen.has(k)) return false; seen.add(k); return true; });
+                        // When multiple investments: enrich with portfolio companies for this year so logos section is complete
+                        if (yearEvents.acquisitions.length > 1) {
+                            firmCompanies.filter(c => c.entry === String(year)).forEach(c => {
+                                const k = (c.company || '').toLowerCase();
+                                if (!seen.has(k)) { seen.add(k); withCompanyData.push(c); }
+                            });
+                            withCompanyData = withCompanyData.sort((a, b) => (a.company || '').localeCompare(b.company || ''));
+                        }
+                        const primaryCompany = yearEvents.acquisitions.find(e => e.companyData)?.companyData || withCompanyData[0];
+                        const singleEvent = yearEvents.acquisitions.length === 1 && withCompanyData.length <= 1;
                         events.push({
                             year: parseInt(year),
-                            type: 'acquisition',
-                            title: yearEvents.acquisitions.length === 1 ? yearEvents.acquisitions[0].event : `${yearEvents.acquisitions.length} Acquisitions`,
-                            description: yearEvents.acquisitions.length === 1 ? 
-                                yearEvents.acquisitions[0].description : 
+                            type: 'investment',
+                            title: singleEvent ? yearEvents.acquisitions[0].event : `${withCompanyData.length || yearEvents.acquisitions.length} New Investments`,
+                            description: yearEvents.acquisitions.length === 1 ?
+                                yearEvents.acquisitions[0].description :
                                 yearEvents.acquisitions.map(e => e.event).join(', '),
                             icon: 'fa-handshake',
                             color: '#8b5cf6',
                             events: yearEvents.acquisitions,
                             company: primaryCompany,
-                            companies: yearEvents.acquisitions.filter(e => e.companyData).map(e => e.companyData)
+                            companies: withCompanyData.length > 1 ? withCompanyData : []
                         });
                     }
                     
@@ -1359,8 +1436,13 @@ async function loadFirmTimeline(firm, firmName) {
                         });
                     }
                     
-                    // Other events
+                    // Other events (skip if it's an investment that portfolio will add with logo)
+                    const norm = (s) => (s || '').replace(/\([^)]*\)/g, '').toLowerCase().replace(/\s+/g, ' ').trim();
                     yearEvents.other.forEach(event => {
+                        const eventNorm = norm(event.event);
+                        const isInvestment = (event.description || '').toLowerCase().includes('investment') || (event.event || '').toLowerCase().includes('investment');
+                        const portfolioHasSame = isInvestment && firmCompanies.some(c => c.entry === String(year) && norm(c.company) === eventNorm);
+                        if (portfolioHasSame) return; // Let portfolio add it with company/logo
                         events.push({
                             year: parseInt(year),
                             type: event.event.toLowerCase().includes('founded') ? 'founding' : 'milestone',
@@ -1383,15 +1465,25 @@ async function loadFirmTimeline(firm, firmName) {
                 });
             }
             
-            // Add real news events to timeline
+            // Add real news events to timeline (skip if already covered by timeline)
+            const extractTokens = (s) => new Set((s || '').toLowerCase().replace(/[^\w\s]/g, ' ').split(/\s+/).filter(w => w.length > 2));
+            const isDuplicateNews = (year, artTitle, artDesc) => {
+                const artTokens = extractTokens(artTitle + ' ' + artDesc);
+                return events.some(e => {
+                    if (e.year !== year) return false;
+                    const evTokens = extractTokens((e.title || '') + ' ' + (e.description || ''));
+                    const overlap = [...artTokens].filter(t => evTokens.has(t)).length;
+                    return overlap >= Math.min(3, artTokens.size); // same if 3+ words overlap
+                });
+            };
             if (firm.real_news && firm.real_news.length > 0) {
                 firm.real_news.forEach(article => {
                     const articleDate = article.date;
                     if (articleDate) {
-                        // Extract year from date
                         const yearMatch = articleDate.match(/(\d{4})/);
                         if (yearMatch) {
                             const year = parseInt(yearMatch[1]);
+                            if (isDuplicateNews(year, article.title || '', article.description || '')) return;
                             
                             // Determine event type based on content
                             let eventType = 'news';
@@ -1513,15 +1605,30 @@ async function loadFirmTimeline(firm, firmName) {
                 });
             }
             
-            // Add investment events from portfolio
+            // Build set of (year, company) already covered by timeline/news events to avoid duplicates
+            const normalizeName = (s) => (s || '').replace(/\([^)]*\)/g, '').toLowerCase().replace(/\s+/g, ' ').trim();
+            const coveredByYear = {};
+            events.forEach(ev => {
+                const y = ev.year;
+                if (!coveredByYear[y]) coveredByYear[y] = new Set();
+                const add = (name) => { if (name) coveredByYear[y].add(normalizeName(name)); };
+                if (ev.company?.company) add(ev.company.company);
+                (ev.companies || []).forEach(c => add(c.company));
+                (ev.events || []).forEach(e => add(e.event));
+                if (ev.title) {
+                    if (ev.title.startsWith('Investment in ')) add(ev.title.replace('Investment in ', ''));
+                    else if (!ev.title.match(/^\d+\s+(new )?investments?$/i) && ev.title.length > 2) add(ev.title);
+                }
+            });
+
+            // Add investment events from portfolio (skip if already covered by timeline)
             const investmentsByYear = {};
             firmCompanies.forEach(company => {
                 if (company.entry && !isNaN(company.entry)) {
                     const year = parseInt(company.entry);
-                    if (!investmentsByYear[year]) {
-                        investmentsByYear[year] = [];
-                    }
-                    // Add logo URL if not present
+                    const covered = coveredByYear[year];
+                    if (covered && covered.has(normalizeName(company.company))) return; // skip duplicate
+                    if (!investmentsByYear[year]) investmentsByYear[year] = [];
                     if (!company.logo_url && company.website) {
                         const domain = extractDomain(company.website);
                         company.logo_url = `https://logo.clearbit.com/${domain}`;
@@ -1530,21 +1637,18 @@ async function loadFirmTimeline(firm, firmName) {
                 }
             });
             
-            // Create investment events (remove duplicates)
+            // Create investment events (remove duplicate companies by name)
             Object.keys(investmentsByYear).forEach(year => {
                 const companies = investmentsByYear[year];
                 const yearInt = parseInt(year);
-                
-                // Remove duplicate companies by name
                 const uniqueCompanies = [];
                 const seenNames = new Set();
                 companies.forEach(company => {
-                    if (!seenNames.has(company.company)) {
-                        seenNames.add(company.company);
-                        uniqueCompanies.push(company);
-                    }
+                    const n = normalizeName(company.company);
+                    if (!seenNames.has(n)) { seenNames.add(n); uniqueCompanies.push(company); }
                 });
                 
+                if (uniqueCompanies.length === 0) return;
                 if (uniqueCompanies.length === 1) {
                     events.push({
                         year: yearInt,
@@ -1580,7 +1684,8 @@ async function loadFirmTimeline(firm, firmName) {
 function loadCompanyUpdates(firm) {
     const container = document.getElementById('companyUpdatesContainer');
     const updates = firm.company_updates || firm.companyUpdates || [];
-    const newsUpdates = (firm.real_news || []).map(article => ({
+    // When firm has curated company_updates, use only those (no merge with real_news) - matches Accent/Amplio format
+    const newsUpdates = (updates.length > 0 ? [] : (firm.real_news || [])).map(article => ({
         date: article.date || '',
         type: inferTypeFromTitle(`${article.title || ''} ${article.description || ''}`),
         title: article.title || '',
@@ -1589,7 +1694,7 @@ function loadCompanyUpdates(firm) {
         source: article.source || 'Cision'
     }));
 
-    const mergedUpdates = [...updates, ...newsUpdates];
+    const mergedUpdates = updates.length > 0 ? updates : newsUpdates;
     console.log('Company Updates Debug:', { 
         container: !!container, 
         updatesCount: updates.length,
@@ -2563,25 +2668,27 @@ function displayTimeline(events) {
         let logoPreviewHtml = '';
         let markerHref = null;
         
-        if (event.company) {
-            const logoUrl = getTimelineCompanyLogoUrl(event.company);
-            const avatarUrl = avatarFallback(event.company.company);
-            markerHref = (() => { const s = getCompanySlug(event.company); return (s && s !== '-') ? `/company/${s}` : null; })();
-            iconHtml = `<img src="${escapeHtml(logoUrl)}" alt="${escapeHtml(event.company.company)}" onerror="this.onerror=null; this.src='${avatarUrl}'; this.onerror=function(){this.style.display='none'; (this.nextElementSibling||{}).style.display='flex';};"><div class="timeline-marker-fallback" style="display: none; background-color: ${event.color};"><i class="fas ${event.icon}"></i></div>`;
-        } else if (event.companies && event.companies.length > 0) {
+        // Prefer multi-logo layout when multiple companies (logos below) so it always shows
+        if (event.companies && event.companies.length > 1) {
             const firstCompany = event.companies[0];
             const firstLogoUrl = getTimelineCompanyLogoUrl(firstCompany);
             const avatarUrl = avatarFallback(firstCompany.company);
             markerHref = (() => { const s = getCompanySlug(firstCompany); return (s && s !== '-') ? `/company/${s}` : null; })();
             iconHtml = `<img src="${escapeHtml(firstLogoUrl)}" alt="${escapeHtml(firstCompany.company)}" onerror="this.onerror=null; this.src='${avatarUrl}'; this.onerror=function(){this.style.display='none'; (this.nextElementSibling||{}).style.display='flex';};"><div class="timeline-marker-fallback" style="display: none; background-color: ${event.color};"><i class="fas ${event.icon}"></i></div>`;
-            const previewCompanies = event.companies.slice(0, 4);
+            const previewCompanies = event.companies.slice(0, 8);
             logoPreviewHtml = `<div class="company-logos-preview">${previewCompanies.map(company => {
                 const cLogo = getTimelineCompanyLogoUrl(company);
                 const cAvatar = avatarFallback(company.company, 36);
                 const slug = getCompanySlug(company);
                 const href = (slug && slug !== '-') ? `/company/${slug}` : '#';
                 return `<a href="${escapeHtml(href)}" class="company-logo-item" title="${escapeHtml(company.company)}"><img src="${escapeHtml(cLogo)}" alt="${escapeHtml(company.company)}" width="20" height="20" loading="lazy" onerror="this.onerror=null; this.src='${cAvatar}';"></a>`;
-            }).join('')}${event.companies.length > 4 ? `<div class="company-logo-more">+${event.companies.length - 4}</div>` : ''}</div>`;
+            }).join('')}${event.companies.length > 8 ? `<div class="company-logo-more">+${event.companies.length - 8}</div>` : ''}</div>`;
+        } else if (event.company || (event.companies && event.companies.length === 1)) {
+            const single = event.company || event.companies[0];
+            const logoUrl = getTimelineCompanyLogoUrl(single);
+            const avatarUrl = avatarFallback(single.company);
+            markerHref = (() => { const s = getCompanySlug(single); return (s && s !== '-') ? `/company/${s}` : null; })();
+            iconHtml = `<img src="${escapeHtml(logoUrl)}" alt="${escapeHtml(single.company)}" onerror="this.onerror=null; this.src='${avatarUrl}'; this.onerror=function(){this.style.display='none'; (this.nextElementSibling||{}).style.display='flex';};"><div class="timeline-marker-fallback" style="display: none; background-color: ${event.color};"><i class="fas ${event.icon}"></i></div>`;
         } else {
             iconHtml = `<div class="timeline-marker-icon" style="background-color: ${event.color};"><i class="fas ${event.icon}"></i></div>`;
         }
@@ -2759,7 +2866,7 @@ function extractDomain(url) {
     }
 }
 
-const COMPANY_DOMAIN_OVERRIDES = { 'Brimer': 'brimer.no', 'Lunawood': 'lunawood.com', 'Enerco Group': 'enerco.se', 'Nordic Grid Solutions': 'triarca.dk', 'EITCO': 'eitco.de', 'Cedra': 'cedra.se', 'Vokstr': 'vokstr.no', 're:mount': 'remount.fi', 'netIP': 'netip.dk', 'Ropo Capital': 'ropo.com', 'Circura Danmark': 'circura.dk', 'Circura': 'circuragroup.com', 'DLVRY': 'dlvry.se', 'RETTA': 'innagroup.se', '3Button Group': '3bg.se', 'Briab': 'briab.se', 'EWGroup': 'ewgroup.se', 'eivis': 'eivis-group.com', 'SI - Sustainable Intelligence': 'wearesi.se', 'Umia': 'umia.se', 'Safe Monitoring Group': 'safemonitoringgroup.com', 'Humana': 'humanagroup.se', 'Cure': 'cure.no', 'Dura': 'duragroup.se', 'Funplays': 'funplays.com', 'House of Discs': 'latitude64.com', 'Makeup Mekka': 'makeupmekka.no', 'River Group': 'river-group.com', 'Ryde': 'ryde-technology.com', 'GEDH': 'groupe-edh.com', 'IM Global': 'imgp.com', 'IM Global Partner': 'imgp.com', 'iM Global Partner': 'imgp.com', 'iM Global Partner': 'imgp.com', 'Seventeen Group': 'seventeengroup.co.uk', 'Atlanda Health Group': 'atlanda.se', 'Immedica': 'immedica.com', 'Activeon': 'activeon.no', 'Bastard Burgers': 'bastardburgers.se', 'Nestit Group': 'nestit.com', 'Freedom Group': 'freedomgroup.se', 'AGRD Partners': 'agrdpartners.com', 'Accru Partners': 'accrupartners.com', 'Acurum Group': 'acurumgroup.com', 'Elcor': 'elcor.dk', 'Oral Care': 'oralcare.se', 'The Nutriment Company': 'nutriment.com', 'itm8': 'itm8.dk', 'BullWall': 'bullwall.com', 'Init': 'initgroup.com', 'DANX Carousel Group': 'danxcarousel.com', 'Vetopia': 'vetopia.com', 'emagine': 'emagine.dk', 'Currentum': 'currentumgroup.com', 'WP Westpack': 'westpack.se', 'Mobilhouse': 'mobilhouse.dk', 'Quattro Mikenti Group': 'qmg.fi', 'Puuilo': 'puuilo.fi', 'Intersport Sweden': 'intersport.se', 'Med Group': 'medgroup.fi', 'Microbas Precision': 'microbas.se', 'Faun Gruppen': 'faun.no', 'Flex IT': 'flex-it.dk', 'Network of Design': 'networkofdesign.com', 'Nordic Leisure Travel Group': 'nltg.com', 'Tresu': 'tresu.com', 'Multisoft': 'multisoft.no', 'IT-Total': 'it-total.no', 'Hermes': 'hermesas.no', 'Pelly Group': 'pellygroup.com', 'Sofigate': 'sofigate.com', 'Aste Helsinki': 'astehelsinki.fi', 'Picosun': 'picosun.com', 'Avidly': 'avidlyagency.com', 'Real Machinery': 'realmachinery.com', 'Touhula': 'touhula.fi', 'Polystar': 'polystar.com', 'Fluido': 'fluido.com', 'Idean Enterprises': 'idean.com', 'Dechra Pharmaceuticals': 'dechrapharmaceuticals.com', 'Advanced MedAesthetic Partners': 'advancedmedaesthetic.com', 'Talentium': 'talentium.fi', 'Icon Group': 'icongroup.com.au', 'CFC': 'cfcunderwriting.com', 'OEM International': 'oeminternational.se', 'HQ': 'hq.se', 'Acacium': 'acaciumgroup.com', 'Lobster': 'lobster.es', 'VisionSense Technologies': 'visionsense.com', 'Wishcard': 'wishcard.de', 'Batisante': 'batisante.com', 'Goodlife Foods': 'goodlifefoods.com', 'MDT Technologies': 'mdt-technologies.com', 'Medica': 'medica.co.uk', 'Mupro': 'mupro.de', 'Ondal': 'ondal.com', 'Coin4 Solutions': 'coin4solutions.com', 'Datapart': 'datapart.fi', 'Eqqo': 'eqqo.com', 'Ipsum': 'ipsum.com', 'Sofia Developpement': 'sofiadeveloppement.com', 'Remazing': 'remazing.com', 'Implema': 'implema.fi', 'Nordic Drives Group': 'nordicdrives.com', 'Ametal': 'ametal.fi', 'Flow Fastighetsvärden': 'flowfastigheter.se', 'Autocirc': 'autocirc.com', 'Cary Group': 'carygroup.com', 'Equipe Zorgbedrijven': 'equipezorgbedrijven.nl', 'Hjo Installation': 'hjoinstallation.se', 'One Inc': 'oneinc.com', 'Resman': 'resman.fi', 'Team Relocations': 'teamrelocations.com', 'Alligo': 'alligo.se', 'Momentum Group': 'momentumgroup.se', 'Nobia': 'nobia.com', 'Micropower': 'micropower.no', 'G&O': 'go.no', 'Stronger': 'stronger.se', 'Link Logistics': 'linklogistics.no', 'Hoyer': 'hoyer.com', 'KVD': 'kvd.no', 'Presis Infra': 'presisinfra.no', 'G-CON Manufacturing': 'g-conmanufacturing.com', 'Myneva': 'myneva.fi', 'Komet': 'komet.at', 'Primutec': 'primutec.nl', 'May Health': 'may-health.com', 'BFC': 'bfcgroup.com', 'Bluu Unit': 'bluuunit.com', 'DYQIDAG': 'dyqidag.no', 'Geia Group': 'geiagroup.no', 'Inwerk': 'inwerk.com', 'Kährs': 'kahrs.com', 'Kinios': 'kinios.com', 'Medon': 'medon.no', 'Nuent': 'nuent.no', 'Prodriven': 'prodriven.com', 'Schock': 'schock.com', 'Unica': 'unica.no', 'Aleris': 'aleris.com', 'Arvos Group': 'arvos-group.com', 'Esperi': 'esperi.com', 'HiQ': 'hiq.se', 'Leadec': 'leadec.com', 'Neprune': 'neprune.com', 'Nuent Group': 'nuent.no', 'Lakrids by Bülow': 'lakridsbybulow.com', 'Origo': 'origo.dk', 'Restolution': 'restolution.de', 'Apoteka': 'apoteka.no', 'Autie': 'autie.com', 'Bildeler': 'bildeler.no', 'Carla': 'carla.se', 'Cleanwatts': 'cleanwatts.energy', 'Educations Media Group': 'emg.se', 'Indevis': 'indevis.de', 'Innonature': 'innonature.com', 'Instabee': 'instabee.com', 'Once Upon': 'onceupon.com', 'Pflegecampus': 'pflegecampus.de', 'Porterbuddy': 'porterbuddy.com', 'Press Ganey': 'pressganey.com', 'Purity': 'purity.no', 'Remember': 'remember.dk', 'Ropro': 'ropro.no', 'Imbox': 'imbox.se', 'Euro Accident': 'euroaccident.se', 'Lowenco': 'lowenco.com', 'Pelago Bioscience': 'pelagobioscience.com', 'Stille': 'stillesurgical.com', 'PS Auction': 'psauktion.se', 'NTI Group': 'ntigroup.dk', 'Edda Group': 'edda.dk' };
+const COMPANY_DOMAIN_OVERRIDES = { 'Corteco': 'corteco.nu', 'Reledo': 'reledo.se', 'Opima': 'opima.se', 'Aterion': 'aterion.com', 'Deltra': 'deltra.se', 'Sporty': 'sportygroup.no', 'Tedge': 'tedgeenergy.se', 'Co-native': 'co-native.com', 'S R Intelligence (SRI)': 'sri.se', 'S R Intelligence': 'sri.se', 'Brimer': 'brimer.no', 'Lunawood': 'lunawood.com', 'Enerco Group': 'enerco.se', 'Nordic Grid Solutions': 'triarca.dk', 'EITCO': 'eitco.de', 'Cedra': 'cedra.se', 'Vokstr': 'vokstr.no', 're:mount': 'remount.fi', 'netIP': 'netip.dk', 'Ropo Capital': 'ropo.com', 'Circura Danmark': 'circura.dk', 'Circura': 'circuragroup.com', 'DLVRY': 'dlvry.se', 'RETTA': 'innagroup.se', '3Button Group': '3bg.se', 'Briab': 'briab.se', 'EWGroup': 'ewgroup.se', 'eivis': 'eivis-group.com', 'SI - Sustainable Intelligence': 'wearesi.se', 'Umia': 'umia.se', 'Safe Monitoring Group': 'safemonitoringgroup.com', 'Humana': 'humanagroup.se', 'Cure': 'cure.no', 'Dura': 'duragroup.se', 'Funplays': 'funplays.com', 'House of Discs': 'latitude64.com', 'Makeup Mekka': 'makeupmekka.no', 'River Group': 'river-group.com', 'Ryde': 'ryde-technology.com', 'GEDH': 'groupe-edh.com', 'IM Global': 'imgp.com', 'IM Global Partner': 'imgp.com', 'iM Global Partner': 'imgp.com', 'iM Global Partner': 'imgp.com', 'Seventeen Group': 'seventeengroup.co.uk', 'Atlanda Health Group': 'atlanda.se', 'Immedica': 'immedica.com', 'Activeon': 'activeon.no', 'Bastard Burgers': 'bastardburgers.se', 'Nestit Group': 'nestit.com', 'Freedom Group': 'freedomgroup.se', 'AGRD Partners': 'agrdpartners.com', 'Accru Partners': 'accrupartners.com', 'Acurum Group': 'acurumgroup.com', 'Elcor': 'elcor.dk', 'Oral Care': 'oralcare.se', 'The Nutriment Company': 'nutriment.com', 'itm8': 'itm8.dk', 'BullWall': 'bullwall.com', 'Init': 'initgroup.com', 'DANX Carousel Group': 'danxcarousel.com', 'Vetopia': 'vetopia.com', 'emagine': 'emagine.dk', 'Currentum': 'currentumgroup.com', 'WP Westpack': 'westpack.se', 'Mobilhouse': 'mobilhouse.dk', 'Quattro Mikenti Group': 'qmg.fi', 'Puuilo': 'puuilo.fi', 'Intersport Sweden': 'intersport.se', 'Med Group': 'medgroup.fi', 'Microbas Precision': 'microbas.se', 'Faun Gruppen': 'faun.no', 'Flex IT': 'flex-it.dk', 'Network of Design': 'networkofdesign.com', 'Nordic Leisure Travel Group': 'nltg.com', 'Tresu': 'tresu.com', 'Multisoft': 'multisoft.no', 'IT-Total': 'it-total.no', 'Hermes': 'hermesas.no', 'Pelly Group': 'pellygroup.com', 'SELATEK': 'selatek.se', 'Multisoft': 'multisoft.no', 'IT-Total': 'it-total.no', 'Sofigate': 'sofigate.com', 'Aste Helsinki': 'astehelsinki.fi', 'Picosun': 'picosun.com', 'Avidly': 'avidlyagency.com', 'Real Machinery': 'realmachinery.com', 'Touhula': 'touhula.fi', 'Polystar': 'polystar.com', 'Fluido': 'fluido.com', 'Idean Enterprises': 'idean.com', 'Dechra Pharmaceuticals': 'dechrapharmaceuticals.com', 'Advanced MedAesthetic Partners': 'advancedmedaesthetic.com', 'Talentium': 'talentium.fi', 'Icon Group': 'icongroup.com.au', 'CFC': 'cfcunderwriting.com', 'OEM International': 'oeminternational.se', 'HQ': 'hq.se', 'Acacium': 'acaciumgroup.com', 'Lobster': 'lobster.es', 'VisionSense Technologies': 'visionsense.com', 'Wishcard': 'wishcard.de', 'Batisante': 'batisante.com', 'Goodlife Foods': 'goodlifefoods.com', 'MDT Technologies': 'mdt-technologies.com', 'Medica': 'medica.co.uk', 'Mupro': 'mupro.de', 'Ondal': 'ondal.com', 'Coin4 Solutions': 'coin4solutions.com', 'Datapart': 'datapart.fi', 'Eqqo': 'eqqo.com', 'Ipsum': 'ipsum.com', 'Sofia Developpement': 'sofiadeveloppement.com', 'Remazing': 'remazing.com', 'Implema': 'implema.fi', 'Nordic Drives Group': 'nordicdrives.com', 'Ametal': 'ametal.fi', 'Flow Fastighetsvärden': 'flowfastigheter.se', 'Autocirc': 'autocirc.com', 'Cary Group': 'carygroup.com', 'Equipe Zorgbedrijven': 'equipezorgbedrijven.nl', 'Hjo Installation': 'hjoinstallation.se', 'One Inc': 'oneinc.com', 'Resman': 'resman.fi', 'Team Relocations': 'teamrelocations.com', 'Alligo': 'alligo.se', 'Momentum Group': 'momentumgroup.se', 'Nobia': 'nobia.com', 'Micropower': 'micropower.no', 'G&O': 'go.no', 'Stronger': 'stronger.se', 'Link Logistics': 'linklogistics.no', 'Hoyer': 'hoyer.com', 'KVD': 'kvd.no', 'Presis Infra': 'presisinfra.no', 'G-CON Manufacturing': 'g-conmanufacturing.com', 'Myneva': 'myneva.fi', 'Komet': 'komet.at', 'Primutec': 'primutec.nl', 'May Health': 'may-health.com', 'BFC': 'bfcgroup.com', 'Bluu Unit': 'bluuunit.com', 'DYQIDAG': 'dyqidag.no', 'Geia Group': 'geiagroup.no', 'Inwerk': 'inwerk.com', 'Kährs': 'kahrs.com', 'Kinios': 'kinios.com', 'Medon': 'medon.no', 'Nuent': 'nuent.no', 'Prodriven': 'prodriven.com', 'Schock': 'schock.com', 'Unica': 'unica.no', 'Aleris': 'aleris.com', 'Arvos Group': 'arvos-group.com', 'Esperi': 'esperi.com', 'HiQ': 'hiq.se', 'Leadec': 'leadec.com', 'Neprune': 'neprune.com', 'Nuent Group': 'nuent.no', 'Lakrids by Bülow': 'lakridsbybulow.com', 'Origo': 'origo.dk', 'Restolution': 'restolution.de', 'Apoteka': 'apoteka.no', 'Autie': 'autie.com', 'Bildeler': 'bildeler.no', 'Carla': 'carla.se', 'Cleanwatts': 'cleanwatts.energy', 'Educations Media Group': 'emg.se', 'Indevis': 'indevis.de', 'Innonature': 'innonature.com', 'Instabee': 'instabee.com', 'Once Upon': 'onceupon.com', 'Pflegecampus': 'pflegecampus.de', 'Porterbuddy': 'porterbuddy.com', 'Press Ganey': 'pressganey.com', 'Purity': 'purity.no', 'Remember': 'remember.dk', 'Ropro': 'ropro.no', 'Imbox': 'imbox.se', 'Euro Accident': 'euroaccident.se', 'Lowenco': 'lowenco.com', 'Pelago Bioscience': 'pelagobioscience.com', 'Stille': 'stillesurgical.com', 'PS Auction': 'psauktion.se', 'NTI Group': 'ntigroup.dk', 'Edda Group': 'edda.dk' };
 
 function generateCompanySlug(company) {
     const companyName = (company.company || 'company').toLowerCase()
@@ -2769,9 +2876,15 @@ function generateCompanySlug(company) {
     return `${companyName}-${source}`;
 }
 
+const FORCE_AVATAR_LOGO = ['Corteco', 'Reledo', 'Opima', 'Aterion', 'Deltra', 'Sporty', 'IT-Total', 'Multisoft', 'SELATEK'];
+
 function getCompanyLogoUrl(company, domain, cleanName) {
+    const name = (company && company.company) ? String(company.company).trim() : cleanName || 'Co';
+    if (FORCE_AVATAR_LOGO.includes(name)) {
+        return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=7c2d12&color=ffffff&size=64`;
+    }
     const favicon = domain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=128` : '';
-    const avatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(cleanName || 'Co')}&background=3f7de8&color=ffffff&size=64`;
+    const avatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(name || 'Co')}&background=3f7de8&color=ffffff&size=64`;
     const rawLogo = (company && company.logo_url) || '';
     const clearbit = (rawLogo && !rawLogo.includes('ui-avatars.com')) ? rawLogo
         : (domain ? `https://logo.clearbit.com/${domain}` : '');
@@ -2800,6 +2913,85 @@ function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
+}
+
+function formatCompanyUpdates(updates, limit) {
+    if (!updates || !Array.isArray(updates) || updates.length === 0) return { html: '', totalCount: 0, fullHtml: '' };
+    const byYear = {};
+    updates.forEach(u => {
+        const d = u.date || '';
+        const year = d.match(/^(\d{4})/) ? d.match(/^(\d{4})/)[1] : (new Date().getFullYear()).toString();
+        if (!byYear[year]) byYear[year] = [];
+        byYear[year].push(u);
+    });
+    const years = Object.keys(byYear).sort((a, b) => parseInt(b) - parseInt(a));
+    const allItems = [];
+    years.forEach(year => {
+        const items = byYear[year].sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
+        items.forEach(u => allItems.push({ year, u }));
+    });
+    const totalCount = allItems.length;
+    const limitItems = limit != null ? allItems.slice(0, limit) : allItems;
+    function buildHtml(items) {
+        let html = '';
+        let prevYear = null;
+        items.forEach(({ year, u }) => {
+            if (prevYear !== year) {
+                if (prevYear !== null) html += '</ul>';
+                html += `<div style="font-size:0.6rem; font-weight:700; color:#1f4b82; margin-top:${prevYear !== null ? '0.5rem' : '0'}; margin-bottom:0.25rem;">${escapeHtml(year)}</div><ul style="margin:0 0 0 1rem; padding-left:0.5rem; font-size:0.65rem; line-height:1.6; color:#475569;">`;
+                prevYear = year;
+            }
+            const text = u.title || u.text || '';
+            const link = u.link || '';
+            html += `<li style="margin-bottom:0.2rem;">${escapeHtml(text)}${link ? ` <a href="${escapeHtml(link)}" target="_blank" rel="noopener" style="color:#4c1d95; text-decoration:none; font-size:0.55rem;" title="Read more"><i class="fas fa-external-link-alt"></i></a>` : ''}</li>`;
+        });
+        if (prevYear !== null) html += '</ul>';
+        return html;
+    }
+    return { html: buildHtml(limitItems), totalCount, fullHtml: buildHtml(allItems) };
+}
+
+function formatRecentActivity(text, limit) {
+    if (!text || text === 'No recent activity data available.') return { html: `<p style="font-size:0.65rem; color:#64748b; margin:0;">No recent activity data available.</p>`, totalCount: 0, fullHtml: '' };
+    const lines = text.split(/\n/).map(l => l.trim()).filter(Boolean);
+    const bullets = [];
+    let currentYear = null;
+    for (const line of lines) {
+        const yearMatch = line.match(/^(\d{4}):?\s*$/);
+        if (yearMatch) {
+            currentYear = yearMatch[1];
+        } else {
+            const bullet = line.replace(/^[•\-]\s*/, '');
+            bullets.push({ year: currentYear, text: bullet });
+        }
+    }
+    const totalCount = bullets.length;
+    if (totalCount === 0) {
+        const fallbackHtml = `<p style="font-size:0.65rem; color:#64748b; margin:0; white-space:pre-line;">${escapeHtml(text)}</p>`;
+        return { html: fallbackHtml, totalCount: 0, fullHtml: fallbackHtml };
+    }
+    const limitBullets = limit != null ? bullets.slice(0, limit) : bullets;
+    function buildHtml(items) {
+        if (items.length === 0) return '';
+        let html = '';
+        let inList = false;
+        let prevYear = null;
+        for (const { year, text } of items) {
+            if (prevYear !== year && year) {
+                if (inList) html += '</ul>';
+                html += `<div style="font-size:0.6rem; font-weight:700; color:#1f4b82; margin-top:${prevYear !== null ? '0.5rem' : '0'}; margin-bottom:0.25rem;">${escapeHtml(year)}</div><ul style="margin:0 0 0 1rem; padding-left:0.5rem; font-size:0.65rem; line-height:1.6; color:#475569;">`;
+                inList = true;
+                prevYear = year;
+            } else if (!inList) {
+                html += '<ul style="margin:0 0 0 1rem; padding-left:0.5rem; font-size:0.65rem; line-height:1.6; color:#475569;">';
+                inList = true;
+            }
+            html += `<li style="margin-bottom:0.2rem;">${escapeHtml(text)}</li>`;
+        }
+        if (inList) html += '</ul>';
+        return html;
+    }
+    return { html: buildHtml(limitBullets), totalCount, fullHtml: buildHtml(bullets) };
 }
 </script>
 
