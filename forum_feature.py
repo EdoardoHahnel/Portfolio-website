@@ -1,7 +1,9 @@
 import hashlib
+import json
 import os
 import smtplib
 import sqlite3
+import urllib.request
 from datetime import datetime, timedelta, timezone
 from email.mime.text import MIMEText
 from email.utils import formataddr
@@ -190,6 +192,14 @@ def init_forum_db():
         )
         """
     )
+    # Migration: add country column if table existed from before
+    try:
+        cur.execute("PRAGMA table_info(page_views)")
+        cols = [r[1] for r in cur.fetchall()]
+        if "country" not in cols:
+            cur.execute("ALTER TABLE page_views ADD COLUMN country TEXT")
+    except Exception:
+        pass
     cur.execute("CREATE INDEX IF NOT EXISTS idx_page_views_date ON page_views(date)")
     cur.execute("CREATE INDEX IF NOT EXISTS idx_page_views_path ON page_views(path)")
 
@@ -198,6 +208,33 @@ def init_forum_db():
 
     _ensure_admin_user()
     _seed_forum_data()
+
+
+# In-memory cache for IP -> country (avoids repeated API calls)
+_ip_country_cache = {}
+
+
+def _get_country_for_ip(ip: str | None) -> str:
+    """Look up country for IP using ipapi.co. Returns 'Unknown' or 'Local' on failure."""
+    if not ip or not ip.strip():
+        return "Unknown"
+    ip = ip.strip()
+    if ip.startswith(("127.", "10.", "192.168.", "172.16.")) or ip == "::1":
+        return "Local"
+    if ip in _ip_country_cache:
+        return _ip_country_cache[ip]
+    try:
+        with urllib.request.urlopen(
+            f"https://ipapi.co/{ip}/json/",
+            timeout=2,
+        ) as resp:
+            data = json.loads(resp.read().decode())
+            country = data.get("country_name") or data.get("country_code") or "Unknown"
+            _ip_country_cache[ip] = country
+            return country
+    except Exception:
+        _ip_country_cache[ip] = "Unknown"
+        return "Unknown"
 
 
 def _load_platform_signups_json():
@@ -216,18 +253,27 @@ def _load_platform_signups_json():
 
 
 def log_page_view(path: str, ip: str | None = None):
-    """Log a page view for analytics (path, date, ip_hash)."""
+    """Log a page view for analytics (path, date, ip_hash, country)."""
     try:
         date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
         ip_hash = ""
+        country = None
         if ip:
             ip_hash = hashlib.sha256((ip + "portfoljbolagen_salt").encode()).hexdigest()[:16]
+            country = _get_country_for_ip(ip)
         conn = _get_db()
         cur = conn.cursor()
-        cur.execute(
-            "INSERT INTO page_views (path, date, ip_hash, created_at) VALUES (?, ?, ?, ?)",
-            (path, date_str, ip_hash or None, _now_iso()),
-        )
+        try:
+            cur.execute(
+                "INSERT INTO page_views (path, date, ip_hash, country, created_at) VALUES (?, ?, ?, ?, ?)",
+                (path, date_str, ip_hash or None, country or None, _now_iso()),
+            )
+        except sqlite3.OperationalError:
+            # Fallback if country column doesn't exist yet (old DB before migration)
+            cur.execute(
+                "INSERT INTO page_views (path, date, ip_hash, created_at) VALUES (?, ?, ?, ?)",
+                (path, date_str, ip_hash or None, _now_iso()),
+            )
         conn.commit()
         conn.close()
     except Exception:
@@ -930,6 +976,17 @@ def forum_admin():
         """,
         (cutoff,),
     ).fetchall()
+    # Geography: unique visitors by country (last 14 days)
+    visitors_by_country = conn.execute(
+        """
+        SELECT COALESCE(country, 'Unknown') as country, COUNT(DISTINCT ip_hash) as cnt
+        FROM page_views
+        WHERE ip_hash IS NOT NULL AND ip_hash != '' AND date >= ?
+        GROUP BY COALESCE(country, 'Unknown')
+        ORDER BY cnt DESC
+        """,
+        (cutoff,),
+    ).fetchall()
     analytics = {
         "total_views": total_views,
         "unique_visitors": unique_visitors,
@@ -937,6 +994,7 @@ def forum_admin():
         "views_by_date": [dict(r) for r in views_by_date],
         "views_last_14": [dict(r) for r in views_last_14],
         "unique_by_date": [dict(r) for r in unique_by_date],
+        "visitors_by_country": [dict(r) for r in visitors_by_country],
     }
     reports = conn.execute(
         """

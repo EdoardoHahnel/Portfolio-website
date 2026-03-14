@@ -123,7 +123,8 @@ def _track_page_views(response):
     if "text/html" not in (response.content_type or ""):
         return response
     try:
-        log_page_view(path, request.remote_addr)
+        client_ip = (request.headers.get("X-Forwarded-For") or "").split(",")[0].strip() or request.remote_addr
+        log_page_view(path, client_ip)
     except Exception:
         pass
     return response

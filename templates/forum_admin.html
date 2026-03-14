@@ -141,6 +141,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div style="height:200px;"><canvas id="uniqueChart"></canvas></div>
             </div>
         </div>
+        {% if analytics.visitors_by_country %}
+        <h3 style="font-size:0.9rem; margin:0.5rem 0;">Geografi – unika besökare per land (senaste 14 dagar)</h3>
+        <table class="forum-admin-table" style="width:100%; font-size:0.7rem; max-width:320px;">
+            <thead><tr><th>Land</th><th>Unika besökare</th></tr></thead>
+            <tbody>
+            {% for row in analytics.visitors_by_country %}
+            <tr><td>{{ row.country }}</td><td>{{ row.cnt }}</td></tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
         <h3 style="font-size:0.9rem; margin:0.5rem 0;">Populäraste sidor</h3>
         <table class="forum-admin-table" style="width:100%; font-size:0.7rem;">
             <thead><tr><th>Sida</th><th>Antal</th></tr></thead>
