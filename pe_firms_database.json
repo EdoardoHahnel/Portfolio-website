@@ -300,7 +300,7 @@
           "sector": "Industrial Tech",
           "country": "Germany",
           "logo": "https://logo.clearbit.com/all4labels.com",
-          "description": "Global manufacturer of premium labels and packaging solutions",
+          "description": "Leading global manufacturer of premium pressure-sensitive, shrink, in-mold and multi-layer labels for consumer goods. 30+ facilities across Europe, Americas, Asia. €700–900M revenue, ~4,500 employees.",
           "entry_year": "2019"
         },
         {
@@ -379,14 +379,14 @@
           "name": "BFC Fahrzeugteile",
           "sector": "Industrial Tech",
           "country": "Germany",
-          "description": "Tier-2 automotive supplier of metal-based clamping profiles",
+          "description": "Leading global supplier of metal-based clamping profiles for automotive door, trunk and body seals. One of three global market leaders. Bietigheim-Bissingen; six sites (Germany, USA, Turkey, China). €70M revenue, 203 employees. Triton since 2018.",
           "entry_year": "2018"
         },
         {
           "name": "bluu unit",
           "sector": "Business Services",
           "country": "Germany",
-          "description": "Natural refrigeration alliance",
+          "description": "The Natural Refrigeration Alliance: German HVAC&R platform for natural refrigerants. Founded 2022 (Kälte Eckert base). 30+ locations in Germany, Switzerland, Ireland; 1,200+ specialists, €103M revenue. Triton-backed consolidation.",
           "entry_year": "2022"
         },
         {
@@ -484,7 +484,7 @@
           "name": "Tendra Technical Services",
           "sector": "Business Services",
           "country": "United Kingdom",
-          "description": "Triton Smaller Mid-Cap first UK investment",
+          "description": "UK technical services platform (built environment): mechanical, electrical, coatings, facilities. Formed Dec 2025 via James Mercer Group, Fletchers Engineering, Coat Facilities. ~450 employees. Triton Smaller Mid-Cap first UK investment.",
           "entry_year": "2025"
         },
         {
@@ -498,14 +498,14 @@
           "name": "Unica",
           "sector": "Business Services",
           "country": "Netherlands",
-          "description": "Technology provider in the Netherlands",
+          "description": "Leading Dutch technology provider (Hoevelaken, founded 1933): fire safety, access & security, building intelligence, energy, ICT. 14 branches, datacenters to healthcare. €937M revenue, 4,300+ employees. Triton majority since 2017.",
           "entry_year": "2019"
         },
         {
           "name": "Wavelynx",
           "sector": "Industrial Tech",
           "country": "United States",
-          "description": "Secure mobile-first identity and access control solutions",
+          "description": "Provider of wireless, mobile-first access control and security for commercial buildings, hospitality and enterprise. Cloud-based systems, mobile credentials, IoT-enabled hardware. ~200 employees. Triton investment 2023.",
           "entry_year": "2023"
         }
       ]
@@ -2282,7 +2282,7 @@
           "sector": "Business Services",
           "country": "Sweden",
           "logo": "https://logo.clearbit.com/aderian.com",
-          "description": "IT services for SME customers",
+          "description": "Leading IT services provider to mid-sized customers in Sweden and Norway. Managed IT, cloud migration, digital transformation and cybersecurity. Adelis since 2023.",
           "entry_year": "2023"
         },
         {
@@ -2290,7 +2290,7 @@
           "sector": "Business Services",
           "country": "Denmark",
           "logo": "https://logo.clearbit.com/netip.dk",
-          "description": "Managed IT services",
+          "description": "Managed IT services and infrastructure for Danish mid-market. Cloud, cybersecurity, and digital transformation. Adelis since 2022.",
           "entry_year": "2022"
         },
         {
@@ -2298,7 +2298,7 @@
           "sector": "Business Services",
           "country": "Finland",
           "logo": "https://logo.clearbit.com/avidlyagency.com",
-          "description": "Marketing technology services",
+          "description": "Finland's leading marketing service provider, largest HubSpot partner in Nordics. Marketing automation, digital campaigns. 250 employees, 15 locations in Finland, Sweden, Norway, Denmark. Adelis acquired from CapMan 2022.",
           "entry_year": "2022"
         },
         {
@@ -2354,7 +2354,7 @@
           "sector": "Business Services",
           "country": "Sweden",
           "logo": "https://logo.clearbit.com/circura.se",
-          "description": "Building rehabilitation services",
+          "description": "Nordic market leader in building rehabilitation and renewal. Roofing, facades, windows, garages and energy-efficient renovations. Formed by Adelis with entrepreneur-led specialist firms. Adelis since 2021.",
           "entry_year": "2021"
         },
         {
@@ -2362,7 +2362,7 @@
           "sector": "Business Services",
           "country": "Finland",
           "logo": "https://logo.clearbit.com/renevo.fi",
-          "description": "Building renovation services",
+          "description": "B2B building renovation for apartment and commercial buildings. Line and facade renovations, housing cooperatives. Merged with Remonttipartio 2022. Adelis since 2021.",
           "entry_year": "2021"
         },
         {
@@ -2370,7 +2370,7 @@
           "sector": "Healthcare & Life Sciences",
           "country": "Sweden",
           "logo": "https://logo.clearbit.com/europabiosite.com",
-          "description": "Life-science research product distributor",
+          "description": "Nordic distributor of life science products for research. Supplies laboratories, pharmaceutical and biotech. Geographic expansion under Adelis. Adelis since 2021.",
           "entry_year": "2021"
         },
         {
@@ -2378,7 +2378,7 @@
           "sector": "Tech & Software",
           "country": "Finland",
           "logo": "https://logo.clearbit.com/valamis.com",
-          "description": "Corporate learning platform",
+          "description": "Corporate learning and learning experience platform (LXP). Enterprise learning management, content authoring and analytics. Global customer base. Adelis since 2021.",
           "entry_year": "2021"
         },
         {
@@ -2386,7 +2386,7 @@
           "sector": "Business Services",
           "country": "Sweden",
           "logo": "https://logo.clearbit.com/axentia.se",
-          "description": "Display systems for public transport",
+          "description": "Leading provider of battery- and solar-powered display systems for public transport. Market-leading low-power e-paper, LCD and LED displays for bus stops and vehicles. iBus system operates 3+ years on batteries with no external cabling. Installations across Sweden, Denmark, France, Belgium, Germany and the Netherlands. Adelis partner since 2020.",
           "entry_year": "2020"
         },
         {
@@ -7837,7 +7837,8 @@
           "country": "Nordics",
           "entry_year": "2019",
           "revenue": "SEK 800m",
-          "status": "Active"
+          "status": "Active",
+          "detailed_description": "Northern Europe's largest provider of 3D printing, injection moulding and vacuum casting for prototypes and low-volume production. Nalka invested 67.5% in 2019. Revenue ~SEK 800M, 350+ employees."
         },
         {
           "name": "Cibes Lift Group",
@@ -8340,7 +8341,7 @@
           "country": "Sweden",
           "entry_year": "2024",
           "status": "Active",
-          "detailed_description": "Pan-Nordic office IT infrastructure partner for SMEs, created through DSolution and Easy Partner partnership"
+          "detailed_description": "Nestit Group is a pan-Nordic office IT infrastructure partner for SMEs, formed in 2024 through the merger of DSolution, Easy Partner and MVI portfolio companies. 400+ specialists, 33 locations, 10,000+ customers across Sweden, Norway, Denmark and Finland. Managed IT, cloud, cybersecurity, connectivity, hardware."
         },
         {
           "name": "Ascenco Group",
@@ -8349,7 +8350,7 @@
           "country": "Sweden",
           "entry_year": "2023",
           "status": "Active",
-          "detailed_description": "Critical infrastructure services"
+          "detailed_description": "Ascenco Group provides critical infrastructure services for elevators, escalators and automatic doors across Sweden and the Nordics. Acquired by MVI in 2023; turnover SEK 400M+, ~200 employees. Includes Nordic Lift Tech, SJEC, Heiskompaniet and regional lift service companies."
         },
         {
           "name": "SMP Parts",
@@ -8358,7 +8359,7 @@
           "country": "Sweden",
           "entry_year": "2022",
           "status": "Active",
-          "detailed_description": "Smart digging systems, excavator attachments"
+          "detailed_description": "SMP Parts manufactures excavator attachments since 1919 (factory in Ilsbo, Sweden): tiltrotators, buckets, quick couplers, smart digging systems. Market leader in Nordic excavator attachment solutions."
         },
         {
           "name": "Nordic Drives Group",
@@ -8394,7 +8395,7 @@
           "country": "Sweden",
           "entry_year": "2021",
           "status": "Active",
-          "detailed_description": "Accounting digitization and financial software"
+          "detailed_description": "Freedom Group is a Swedish network of 26 accounting firms across 38 locations, 386 employees. Bookkeeping, tax, payroll, HR, CFO services, legal, property management. Bflow cloud-based accounting software. Founded 2021; active add-on strategy."
         }
       ]
     },
