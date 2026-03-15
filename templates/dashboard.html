@@ -204,6 +204,7 @@
     gap: 0.5rem;
 }
 .trends-chart-title i { color: var(--primary-color, #3f7de8); }
+/* Match portfolio page chart layout for consistent round circles */
 .trends-chart-container {
     position: relative;
     width: 100%;
@@ -215,6 +216,19 @@
     width: 100% !important;
     height: auto !important;
 }
+/* Sector Mix and Country Distribution: use square container (like portfolio) for round circles */
+.trends-chart-container.chart-circle {
+    aspect-ratio: 1;
+    width: 100%;
+    max-width: 140px;
+    min-height: 0;
+    height: auto;
+    margin: 0 auto;
+}
+.trends-chart-container.chart-circle canvas {
+    max-height: 120px !important;
+    width: 100% !important;
+}
 @media (max-width: 900px) {
     .trends-grid { grid-template-columns: 1fr; }
     .trends-chart-container {
@@ -222,6 +236,12 @@
         height: 180px;
     }
     .trends-chart-container canvas { max-height: 180px !important; }
+    .trends-chart-container.chart-circle {
+        max-width: 180px;
+        min-height: 0;
+        height: auto;
+    }
+    .trends-chart-container.chart-circle canvas { max-height: 180px !important; }
 }
 @media (max-width: 480px) {
     .trends-chart-container {
@@ -229,6 +249,12 @@
         height: 200px;
     }
     .trends-chart-container canvas { max-height: 200px !important; }
+    .trends-chart-container.chart-circle {
+        max-width: 200px;
+        min-height: 0;
+        height: auto;
+    }
+    .trends-chart-container.chart-circle canvas { max-height: 200px !important; }
 }
 
 /* PE Logo Marquee - Small, subtle, no dark background */
@@ -250,6 +276,11 @@
     gap: 1.25rem;
     padding-left: 100%;
     animation: pe-marquee-scroll 50s linear infinite;
+}
+@media (max-width: 768px) {
+    .pe-logo-marquee {
+        animation-duration: 22s;
+    }
 }
 .pe-logo-marquee:hover {
     animation-play-state: paused;
@@ -478,13 +509,13 @@
         </div>
         <div class="trends-chart-card" data-chart-link="sector">
             <h3 class="trends-chart-title"><i class="fas fa-industry"></i> Sector Mix</h3>
-            <div class="trends-chart-container">
+            <div class="trends-chart-container chart-circle">
                 <canvas id="trendsSectorChart"></canvas>
             </div>
         </div>
         <div class="trends-chart-card" data-chart-link="country">
             <h3 class="trends-chart-title"><i class="fas fa-globe"></i> Country Distribution</h3>
-            <div class="trends-chart-container">
+            <div class="trends-chart-container chart-circle">
                 <canvas id="trendsCountryChart"></canvas>
             </div>
         </div>

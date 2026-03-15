@@ -51,9 +51,14 @@
           "location": "Stockholm"
         },
         {
-          "name": "Caspar Callerström",
-          "title": "Deputy CEO and Head of Private Capital",
+          "name": "Bert Janssens",
+          "title": "Co-Head of Private Capital (Europe)",
           "location": "Stockholm"
+        },
+        {
+          "name": "Eric Liu",
+          "title": "Co-Head of Private Capital (North America)",
+          "location": "New York"
         },
         {
           "name": "Anna Kinberg Batra",
@@ -111,7 +116,96 @@
         "next_fund": "Deployment across Private Capital, Real Assets, Credit; global diversification",
         "strategy": "Global multi-strategy; large-cap buyouts, growth equity, ventures, infrastructure, real estate, impact; second-largest PE firm globally by capital raised"
       },
-      "recent_activity": "2025: Strongest realization year ever; sells Karo Healthcare to KKR; announces Coller Capital acquisition (Jan 2026). AUM ~€270bn; FAUM €141bn. EQT Infrastructure VI closed €21.5bn. EQT XI hard cap €24bn, activation mid-2026. 300+ portfolio companies. Exits: Karo, IFS (minority), Nord Anglia, Acumatica, Pioneer. Sustainability: carbon-neutral targets."
+      "recent_activity": "2025: Strongest realization year ever; sells Karo Healthcare to KKR; announces Coller Capital acquisition (Jan 2026). AUM ~€270bn; FAUM €141bn. EQT Infrastructure VI closed €21.5bn. EQT XI hard cap €24bn, activation mid-2026. 300+ portfolio companies. Exits: Karo, IFS (minority), Nord Anglia, Acumatica, Pioneer. Sustainability: carbon-neutral targets.",
+      "company_updates": [
+        {
+          "date": "2026-01-15",
+          "type": "Fund",
+          "title": "EQT announces Coller Capital acquisition",
+          "text": "To close Q3 2026; strengthens secondaries and fund-of-funds capabilities.",
+          "link": "https://eqtgroup.com/news"
+        },
+        {
+          "date": "2025-08-27",
+          "type": "Exit",
+          "title": "EQT completes Karo Healthcare sale to KKR",
+          "text": "EQT VIII sells pan-European consumer healthcare platform; ~€2.5bn. Karo revenue €530M (2024)."
+        },
+        {
+          "date": "2025-07-24",
+          "type": "Investment",
+          "title": "EQT completes Fortnox take-private",
+          "text": "EQT X and First Kraft acquire Swedish accounting software leader; SEK 55bn. Delisted Nasdaq Stockholm."
+        },
+        {
+          "date": "2025-05-27",
+          "type": "Team",
+          "title": "Per Franzén appointed CEO",
+          "text": "Succeeds Christian Sinding; Christian becomes Institutional Partner and Chairs EQT Council."
+        },
+        {
+          "date": "2025-04-09",
+          "type": "Exit",
+          "title": "EQT to sell Karo Healthcare to KKR",
+          "text": "Agreement for EQT VIII to divest pan-European consumer health platform."
+        },
+        {
+          "date": "2025-03-31",
+          "type": "Investment",
+          "title": "EQT and First Kraft offer for Fortnox",
+          "text": "Public cash offer; SEK 55bn valuation. Swedish cloud accounting software."
+        },
+        {
+          "date": "2025-03-10",
+          "type": "Team",
+          "title": "Bert Janssens and Eric Liu appointed Private Capital co-heads",
+          "text": "Janssens (Europe, Future, Growth, Ventures); Liu (North America)."
+        },
+        {
+          "date": "2025",
+          "type": "Fund",
+          "title": "EQT Infrastructure VI closes",
+          "text": "€21.5bn; one of largest infrastructure funds ever raised."
+        },
+        {
+          "date": "2024",
+          "type": "Fund",
+          "title": "EQT X closes",
+          "text": "€22bn; largest PE fund closed globally in 2024."
+        }
+      ],
+      "timeline": [
+        {
+          "year": 2024,
+          "event": "EQT X closes",
+          "description": "€22bn; largest private equity fund closed globally in 2024"
+        },
+        {
+          "year": 2025,
+          "event": "EQT Infrastructure VI closes",
+          "description": "€21.5bn infrastructure fund"
+        },
+        {
+          "year": 2025,
+          "event": "Per Franzén CEO",
+          "description": "Appointed CEO effective May 2025; Christian Sinding becomes Institutional Partner"
+        },
+        {
+          "year": 2025,
+          "event": "Fortnox take-private",
+          "description": "EQT X and First Kraft acquire Swedish accounting software leader (SEK 55bn)"
+        },
+        {
+          "year": 2025,
+          "event": "Karo Healthcare exit",
+          "description": "Sells to KKR; ~€2.5bn (EQT VIII)"
+        },
+        {
+          "year": 2026,
+          "event": "Coller Capital acquisition",
+          "description": "Announced Jan 2026; to close Q3 2026"
+        }
+      ]
     },
     "Nordic Capital": {
       "name": "Nordic Capital",
@@ -1103,7 +1197,7 @@
         {
           "name": "F24",
           "sector": "Digital Solutions",
-          "country": "Germany",
+          "country": "Austria",
           "logo": "https://logo.clearbit.com/f24.com",
           "description": "Improving business resilience with digital solutions"
         },
@@ -3615,7 +3709,7 @@
           "text": "Investment in Nordic critical power and data center infrastructure provider, forming the base for a decade of M&A expansion."
         }
       ],
-      "recent_activity": "2025\n• Fund VII closes at SEK 2.25bn (June)\n• Plockmatic Group acquires Renz\n• Tempcon Group issues SEK 550M senior secured bonds\n• Oscar Claeson promoted to Partner\n\n2024\n• Invests in Unisport, Brimer, Plockmatic, Helkama Bica (Fund VII platforms)\n• TSG acquires AF Shipping; Malte Månson acquires Skandinaviska Buss & Truck, Experten Group\n• Triarca + Stitec combine (low voltage/eMobility/FTTH)\n• Linotol acquires C M Betong\n• Divests Norco Interior to Götessons Design Group\n\nPortfolio: Strong Fund VII deployment; industrial services, niche manufacturing, tech integration",
+      "recent_activity": "2025\n• Fund VII closes at SEK 2.25bn (June)\n• Unisport investment (closed Q1); Plockmatic Group acquires Renz\n• Tempcon Group issues SEK 550M senior secured bonds\n• Oscar Claeson promoted to Partner\n\n2024\n• Invests in Brimer, Plockmatic, Helkama Bica (Fund VII platforms)\n• TSG acquires AF Shipping; Malte Månson acquires Skandinaviska Buss & Truck, Experten Group\n• Triarca + Stitec combine (low voltage/eMobility/FTTH)\n• Linotol acquires C M Betong\n• Divests Norco Interior to Götessons Design Group\n\nPortfolio: Strong Fund VII deployment; industrial services, niche manufacturing, tech integration",
       "timeline": [
         {
           "year": 1994,
@@ -3758,9 +3852,9 @@
           "description": "Linotol acquires Tiller-Vimek"
         },
         {
-          "year": 2024,
+          "year": 2025,
           "event": "Unisport investment",
-          "description": "Invests in Unisport as new growth partner (Fund VII)"
+          "description": "Invests in Unisport as new growth partner (Fund VII); deal closed Q1 2025"
         },
         {
           "year": 2024,

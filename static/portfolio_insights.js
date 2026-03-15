@@ -189,7 +189,11 @@ function renderCompaniesTable(cfg) {
         const description = company.description || company.detailed_description || '';
         const domain = extractCompanyDomain(company);
         const avatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(cleanCompany)}&background=3f7de8&color=ffffff&size=64`;
-        const logoUrl = getCompanyLogoUrl(company, domain, cleanCompany);
+        let logoUrl = getCompanyLogoUrl(company, domain, cleanCompany);
+        const companyName = (company.company || cleanCompany || '').trim();
+        if (['Corteco', 'Reledo', 'Opima'].some(n => companyName === n || companyName.toLowerCase() === n.toLowerCase())) {
+            logoUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(companyName || cleanCompany)}&background=7c2d12&color=ffffff&size=64`;
+        }
         const fallback2 = (domain ? `https://logo.clearbit.com/${domain}` : '') || avatarUrl;
         const slug = generateCompanySlug(company);
         const companyCell = `
@@ -525,12 +529,13 @@ function extractCompanyDomain(company) {
     return '';
 }
 
-const FORCE_AVATAR_LOGO = ['Corteco', 'Reledo', 'Opima', 'Aterion', 'Deltra', 'Sporty', 'IT-Total', 'Multisoft', 'SELATEK'];
+// Corteco, Reledo, Opima (.nu/.se): Clearbit/favicon often fail - use ui-avatars for reliable display
+const FORCE_AVATAR_LOGO = ['Corteco', 'Reledo', 'Opima', 'IT-Total', 'Multisoft', 'SELATEK'];
 
 function getCompanyLogoUrl(company, domain, cleanName) {
     const name = (company && company.company) ? String(company.company).trim() : cleanName || 'Co';
-    if (FORCE_AVATAR_LOGO.includes(name)) {
-        return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=7c2d12&color=ffffff&size=64`;
+    if (FORCE_AVATAR_LOGO.some(f => (name || '').toLowerCase() === f.toLowerCase())) {
+        return `https://ui-avatars.com/api/?name=${encodeURIComponent(name || 'Co')}&background=7c2d12&color=ffffff&size=64`;
     }
     const favicon = domain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=128` : '';
     const avatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(name || 'Co')}&background=3f7de8&color=ffffff&size=64`;

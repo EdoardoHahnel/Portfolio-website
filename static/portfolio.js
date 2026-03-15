@@ -851,7 +851,11 @@ function displayFilteredPortfolioFlat(companies) {
         const description = company.description || company.detailed_description || '';
 
         const companyDomain = extractCompanyDomain(company);
-        const companyLogoSrc = getCompanyLogoUrl(company, companyDomain, cleanCompany);
+        let companyLogoSrc = getCompanyLogoUrl(company, companyDomain, cleanCompany);
+        const companyName = (company.company || cleanCompany || '').trim();
+        if (['Corteco', 'Reledo', 'Opima'].some(n => companyName === n || companyName.toLowerCase() === n.toLowerCase())) {
+            companyLogoSrc = `https://ui-avatars.com/api/?name=${encodeURIComponent(companyName || cleanCompany)}&background=7c2d12&color=ffffff&size=64`;
+        }
         const companyAvatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(cleanCompany)}&background=3f7de8&color=ffffff&size=64`;
         const rawLogo = company.logo_url || '';
         const clearbitUrl = (rawLogo && !rawLogo.includes('ui-avatars.com')) ? rawLogo : (companyDomain ? `https://logo.clearbit.com/${companyDomain}` : '');
@@ -1018,7 +1022,8 @@ function displayPortfolio(companies) {
         // Remove fixed width - let CSS handle responsive sizing
         console.log('🔧 DEBUG: Created table with class:', table.className);
         
-        // Table header
+        // Table header - hide Deal Size for Celero
+        const isCelero = (source || '').toLowerCase().includes('celero');
         const thead = document.createElement('thead');
         thead.innerHTML = `
             <tr>
@@ -1030,7 +1035,7 @@ function displayPortfolio(companies) {
                 <th>Entry Year</th>
                 <th>Holding Period</th>
                 <th>Status</th>
-                <th>Deal Size</th>
+                ${!isCelero ? '<th>Deal Size</th>' : ''}
                 <th>Geography</th>
                 <th>Description</th>
                 <th style="text-align: center;">Website</th>
@@ -1056,7 +1061,11 @@ function displayPortfolio(companies) {
             const rawLogo = company.logo_url || '';
             const clearbitUrl = (rawLogo && !rawLogo.includes('ui-avatars.com')) ? rawLogo
                 : (companyDomain ? `https://logo.clearbit.com/${companyDomain}` : '');
-            const companyLogoSrc = getCompanyLogoUrl(company, companyDomain, cleanCompany);
+            let companyLogoSrc = getCompanyLogoUrl(company, companyDomain, cleanCompany);
+            const companyName = (company.company || cleanCompany || '').trim();
+            if (['Corteco', 'Reledo', 'Opima'].some(n => companyName === n || companyName.toLowerCase() === n.toLowerCase())) {
+                companyLogoSrc = `https://ui-avatars.com/api/?name=${encodeURIComponent(companyName || cleanCompany)}&background=7c2d12&color=ffffff&size=64`;
+            }
             const fallback2 = clearbitUrl || companyAvatarUrl;
             const companyNameHtml = `<span class="company-link-modal portfolio-uniform-cell" style="cursor: pointer;">
                     <img src="${companyLogoSrc}"
@@ -1084,8 +1093,8 @@ function displayPortfolio(companies) {
                 : '—';
             const statusColor = status === 'Active' ? '#10b981' : status === 'Exited' ? '#6b7280' : status === 'IPO' ? '#3b82f6' : '#94a3b8';
             
-            // Deal size - only show if we have actual data
-            const dealSize = company.deal_size || null;
+            // Deal size - hide for Celero
+            const dealSize = isCelero ? null : (company.deal_size || null);
             
             // Categorize geography
             const geography = categorizeGeography(company.market);
@@ -1112,9 +1121,9 @@ function displayPortfolio(companies) {
                         ${status}
                     </span>
                 </td>
-                <td style="text-align: center; font-size: 0.65rem; color: ${dealSize ? '#1e40af' : '#94a3b8'}; font-weight: ${dealSize ? '600' : 'normal'};">
+                ${!isCelero ? `<td style="text-align: center; font-size: 0.65rem; color: ${dealSize ? '#1e40af' : '#94a3b8'}; font-weight: ${dealSize ? '600' : 'normal'};">
                     ${dealSize || '—'}
-                </td>
+                </td>` : ''}
                 <td style="text-align: center;">
                     <span style="background: ${geographyColor}15; color: ${geographyColor}; padding: 2px 6px; border-radius: 6px; font-size: 0.55rem; font-weight: 600;">
                         ${geography}
@@ -1270,14 +1279,14 @@ function extractDomain(url) {
     }
 }
 
-// Companies where Clearbit/favicon often fail (Nordic .nu/.se) - use ui-avatars for reliable display
-const FORCE_AVATAR_LOGO = ['Corteco', 'Reledo', 'Opima', 'Aterion', 'Deltra', 'Sporty', 'IT-Total', 'Multisoft', 'SELATEK'];
+// Corteco, Reledo, Opima (.nu/.se): Clearbit/favicon often fail - use ui-avatars for reliable display
+const FORCE_AVATAR_LOGO = ['Corteco', 'Reledo', 'Opima', 'IT-Total', 'Multisoft', 'SELATEK'];
 
 // Company logo: prefer Google Favicon (reliable for .se/.no/.dk) over Clearbit (often missing for Nordic companies)
 function getCompanyLogoUrl(company, domain, cleanName) {
     const name = (company && company.company) ? String(company.company).trim() : cleanName || 'Co';
-    if (FORCE_AVATAR_LOGO.includes(name)) {
-        return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=7c2d12&color=ffffff&size=64`;
+    if (FORCE_AVATAR_LOGO.some(f => (name || '').toLowerCase() === f.toLowerCase())) {
+        return `https://ui-avatars.com/api/?name=${encodeURIComponent(name || 'Co')}&background=7c2d12&color=ffffff&size=64`;
     }
     const favicon = domain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=128` : '';
     const avatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(name || 'Co')}&background=3f7de8&color=ffffff&size=64`;
