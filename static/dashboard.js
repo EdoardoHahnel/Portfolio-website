@@ -761,16 +761,56 @@ async function loadPELogoMarquee() {
             const encodedKey = encodeURIComponent(firmKey);
             html += `<a href="/pe-firm/${encodedKey}" class="pe-logo-marquee-item" title="${escapeHtml(firm.name || firmKey)}"><img src="${primaryLogo}" alt="${escapeHtml(firm.name || firmKey)}" loading="eager" decoding="async" width="28" height="28" onerror="this.src='${fallbackFavicon}'; this.onerror=null;"></a>`;
         });
-        /* Triple copy for seamless loop on mobile (avoids visible gap at seam) */
+        /* Triple copy for seamless loop */
         container.innerHTML = html + html + html;
-        /* iOS: force composite layer so animation runs without requiring user tap */
-        container.style.transform = 'translateZ(0)';
-        requestAnimationFrame(() => {
-            void container.offsetHeight;
-        });
+        /* JS-driven marquee for reliable mobile support (Safari/Chrome fix CSS animation issues) */
+        startPELogoMarqueeAnimation(container);
     } catch (e) {
         container.innerHTML = '';
     }
+}
+
+function startPELogoMarqueeAnimation(marqueeEl) {
+    if (!marqueeEl || !marqueeEl.parentElement) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const duration = window.innerWidth <= 768 ? 20000 : 35000; /* 20s mobile, 35s desktop */
+    let position = 0;
+    let lastTime = null;
+    let rafId = null;
+
+    function animate(timestamp) {
+        if (!lastTime) lastTime = timestamp;
+        const delta = timestamp - lastTime;
+        lastTime = timestamp;
+
+        const totalWidth = marqueeEl.offsetWidth;
+        const copyWidth = totalWidth / 3;
+        if (copyWidth <= 0) {
+            rafId = requestAnimationFrame(animate);
+            return;
+        }
+        position += (delta / duration) * copyWidth;
+        if (position >= copyWidth) position -= copyWidth;
+
+        marqueeEl.style.transform = `translate3d(-${position}px, 0, 0)`;
+        marqueeEl.style.webkitTransform = `translate3d(-${position}px, 0, 0)`;
+
+        rafId = requestAnimationFrame(animate);
+    }
+
+    marqueeEl.addEventListener('mouseenter', () => {
+        marqueeEl.classList.add('paused');
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = null;
+    });
+    marqueeEl.addEventListener('mouseleave', () => {
+        marqueeEl.classList.remove('paused');
+        lastTime = null;
+        rafId = requestAnimationFrame(animate);
+    });
+
+    rafId = requestAnimationFrame(animate);
 }
 
 async function loadPEFirms() {

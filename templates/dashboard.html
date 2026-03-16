@@ -257,8 +257,7 @@
     .trends-chart-container.chart-circle canvas { max-height: 240px !important; }
 }
 
-/* PE Logo Marquee - Small, subtle, no dark background */
-/* Mobile: use translate3d for GPU, inner track for reliable width, triple copy to avoid seam */
+/* PE Logo Marquee - JS-driven for reliable mobile support (Safari, Chrome) */
 .pe-logo-marquee-section {
     margin-bottom: 0.75rem;
     padding: 0.4rem 0;
@@ -280,35 +279,14 @@
     width: max-content;
     box-sizing: border-box;
     padding-left: 100%;
-    will-change: transform;
+    /* Animation is JS-driven for mobile compatibility */
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    animation: pe-marquee-scroll 35s linear infinite;
-    -webkit-animation: pe-marquee-scroll 35s linear infinite;
 }
-@media (max-width: 768px) {
-    .pe-logo-marquee {
-        animation-duration: 20s;
-        -webkit-animation-duration: 20s;
-    }
-}
-@media (prefers-reduced-motion: reduce) {
-    .pe-logo-marquee {
-        animation: none;
-        -webkit-animation: none;
-    }
-}
-.pe-logo-marquee:hover {
-    animation-play-state: paused;
-    -webkit-animation-play-state: paused;
-}
-@keyframes pe-marquee-scroll {
-    0% { transform: translate3d(0, 0, 0); }
-    100% { transform: translate3d(-33.333%, 0, 0); }
-}
-@-webkit-keyframes pe-marquee-scroll {
-    0% { -webkit-transform: translate3d(0, 0, 0); }
-    100% { -webkit-transform: translate3d(-33.333%, 0, 0); }
+.pe-logo-marquee.paused {
+    animation: none !important;
 }
 .pe-logo-marquee-item {
     display: inline-flex;
