@@ -335,11 +335,16 @@ function displayFirmDetail(firm) {
                     <div class="content-card-body">
                         ${(function() {
                             var ups = firm.company_updates || firm.companyUpdates;
-                            if (ups && ups.length > 0) {
-                                var res = formatCompanyUpdates(ups, 4);
+                            var ups2025 = (ups || []).filter(function(u) { return (u.date || '').toString().startsWith('2025'); });
+                            var upsToShow = ups2025.length > 0 ? ups2025 : ups;
+                            if (upsToShow && upsToShow.length > 0) {
+                                var res = formatCompanyUpdates(upsToShow, 4);
                                 if (res.totalCount > 4) window._recentActivityFullHtml = res.fullHtml;
                                 return '<div class="recent-activity-formatted">' + res.html + '</div>' +
                                     (res.totalCount > 4 ? '<div style="text-align:center;margin-top:0.35rem;"><button type="button" class="view-all-activity-btn" data-firm-name="' + escapeHtml(firm.name || '') + '" style="font-size:0.5rem;color:#4c1d95;background:none;border:none;cursor:pointer;text-decoration:underline;font-weight:600;"><i class="fas fa-expand-alt" style="margin-right:0.2rem;"></i>View all (' + res.totalCount + ')</button></div>' : '');
+                            }
+                            if ((ups || []).length > 0 && ups2025.length === 0) {
+                                return '<p style="font-size:0.65rem; color:#64748b; margin:0;">No 2025 activity reported.</p>';
                             }
                             return '';
                         })()}
@@ -381,7 +386,7 @@ function displayFirmDetail(firm) {
                                 </a>
                             </div>
                         ` : (function() {
-                            var r = formatRecentActivity(firm.recent_activity || 'No recent activity data available.', 4);
+                            var r = formatRecentActivity(firm.recent_activity || 'No recent activity data available.', 4, 2025);
                             if (r.totalCount > 4) window._recentActivityFullHtml = r.fullHtml;
                             var html = (r && r.html ? r.html : '');
                             return '<div class="recent-activity-formatted">' + html + '</div>' + (r.totalCount > 4 ? '<div style="text-align:center;margin-top:0.35rem;"><button type="button" class="view-all-activity-btn" data-firm-name="' + escapeHtml(firm.name || '') + '" style="font-size:0.5rem;color:#4c1d95;background:none;border:none;cursor:pointer;text-decoration:underline;font-weight:600;"><i class="fas fa-expand-alt" style="margin-right:0.2rem;"></i>View all (' + r.totalCount + ')</button></div>' : '');
@@ -436,20 +441,6 @@ function displayFirmDetail(firm) {
                             <div style="font-size: 0.7rem; font-weight: 800; color: #059669; margin-bottom: 0.2rem;">${firm.employees}</div>
                             <div style="font-size: 0.45rem; color: #059669; font-weight: 600;">Team Size</div>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Discover GPs -->
-            <div class="content-card discover-gps-card" style="margin-top: 0.5rem;">
-                <div class="content-card-header">
-                    <h3 class="content-card-title" style="font-size: 0.65rem;">
-                        <i class="fas fa-building" style="font-size: 0.6rem;"></i> Discover GPs
-                    </h3>
-                </div>
-                <div class="content-card-body">
-                    <div id="discoverGpsGrid" class="discover-gps-grid">
-                        <div class="discover-gps-loading">Loading...</div>
                     </div>
                 </div>
             </div>
@@ -534,6 +525,20 @@ function displayFirmDetail(firm) {
                 </div>
                 <div class="content-card-body" id="investmentFocusContainer" style="display:flex; flex-direction:column; gap:0.6rem;">
                     <!-- Filled dynamically -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Discover GPs - always at bottom of page -->
+        <div class="content-card discover-gps-card" style="margin-top: 1rem;">
+            <div class="content-card-header">
+                <h3 class="content-card-title" style="font-size: 0.65rem;">
+                    <i class="fas fa-building" style="font-size: 0.6rem;"></i> Discover GPs
+                </h3>
+            </div>
+            <div class="content-card-body">
+                <div id="discoverGpsGrid" class="discover-gps-grid">
+                    <div class="discover-gps-loading">Loading...</div>
                 </div>
             </div>
         </div>
@@ -748,11 +753,9 @@ function renderFirmPortfolioTable(companies) {
     const isCelero = (firmName && String(firmName).toLowerCase().includes('celero')) ||
         (companies.length > 0 && String(companies[0].source || '').toLowerCase().includes('celero'));
     const eqtBannerBar = isEQT ? `
-        <div class="eqt-premium-banner" style="display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; padding: 0.5rem 0.75rem; background: #eaf2ff; border: 1px solid #d8e4f5; border-bottom: none; border-radius: 6px 6px 0 0;">
-            <img src="https://logo.clearbit.com/eqtgroup.com" alt="EQT" style="height: 28px; width: 28px; border-radius: 4px; background: white; object-fit: contain; flex-shrink: 0;" onerror="this.style.display='none'">
-            <span style="padding: 0.25rem 0.5rem; background: #fef3c7; color: #92400e; border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin-left: auto;">
-                Complete list available for Premium users
-            </span>
+        <div class="eqt-premium-banner premium-banner-bar" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.5rem 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; border-bottom: none; border-radius: 6px 6px 0 0;">
+            <i class="fas fa-crown" style="font-size: 0.7rem; color: #64748b;"></i>
+            <span style="font-size: 0.7rem; color: #64748b; font-weight: 500;">Complete list available for Premium users</span>
         </div>
     ` : '';
 
@@ -3027,13 +3030,13 @@ function formatCompanyUpdates(updates, limit) {
     return { html: buildHtml(limitItems), totalCount, fullHtml: buildHtml(allItems) };
 }
 
-function formatRecentActivity(text, limit) {
+function formatRecentActivity(text, limit, yearFilter) {
     if (!text || text === 'No recent activity data available.') return { html: `<p style="font-size:0.65rem; color:#64748b; margin:0;">No recent activity data available.</p>`, totalCount: 0, fullHtml: '' };
     const lines = text.split(/\n/).map(l => l.trim()).filter(Boolean);
     const bullets = [];
     let currentYear = null;
     for (const line of lines) {
-        const yearMatch = line.match(/^(\d{4}):?\s*$/);
+        const yearMatch = line.match(/^(\d{4})(?:[–\-]\d{4})?[:\s]*$/);
         if (yearMatch) {
             currentYear = yearMatch[1];
         } else {
@@ -3041,12 +3044,13 @@ function formatRecentActivity(text, limit) {
             bullets.push({ year: currentYear, text: bullet });
         }
     }
-    const totalCount = bullets.length;
+    const filteredBullets = (yearFilter && typeof yearFilter === 'number') ? bullets.filter(b => String(b.year) === String(yearFilter)) : bullets;
+    const totalCount = filteredBullets.length;
     if (totalCount === 0) {
-        const fallbackHtml = `<p style="font-size:0.65rem; color:#64748b; margin:0; white-space:pre-line;">${escapeHtml(text)}</p>`;
+        const fallbackHtml = `<p style="font-size:0.65rem; color:#64748b; margin:0;">No 2025 activity reported.</p>`;
         return { html: fallbackHtml, totalCount: 0, fullHtml: fallbackHtml };
     }
-    const limitBullets = limit != null ? bullets.slice(0, limit) : bullets;
+    const limitBullets = limit != null ? filteredBullets.slice(0, limit) : filteredBullets;
     function buildHtml(items) {
         if (items.length === 0) return '';
         let html = '';
@@ -3067,7 +3071,7 @@ function formatRecentActivity(text, limit) {
         if (inList) html += '</ul>';
         return html;
     }
-    return { html: buildHtml(limitBullets), totalCount, fullHtml: buildHtml(bullets) };
+    return { html: buildHtml(limitBullets), totalCount, fullHtml: buildHtml(filteredBullets) };
 }
 </script>
 

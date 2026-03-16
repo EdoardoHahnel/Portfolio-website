@@ -1174,9 +1174,9 @@ def get_pe_firm_detail(firm_name):
                 'total_news_count': len(real_news),
                 **firm_metadata  # Add any metadata from database
             }
-            # When firm has curated company_updates (Accent-style), Overview uses those;
-            # do not send real_news so Overview Recent Activity shows formatCompanyUpdates (year + bullets)
-            if firm_data.get('company_updates'):
+            # When firm has curated company_updates or recent_activity, Overview uses those;
+            # do not send real_news so Overview Recent Activity shows formatCompanyUpdates or formatRecentActivity (year + bullets)
+            if firm_data.get('company_updates') or firm_data.get('recent_activity'):
                 firm_data['real_news'] = []
                 firm_data['total_news_count'] = 0
             # Ensure team is always a list (some firms e.g. Helix Kapital lack it in JSON)

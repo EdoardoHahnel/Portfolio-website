@@ -116,7 +116,7 @@
         "next_fund": "Deployment across Private Capital, Real Assets, Credit; global diversification",
         "strategy": "Global multi-strategy; large-cap buyouts, growth equity, ventures, infrastructure, real estate, impact; second-largest PE firm globally by capital raised"
       },
-      "recent_activity": "2025: Strongest realization year ever; sells Karo Healthcare to KKR; announces Coller Capital acquisition (Jan 2026). AUM ~€270bn; FAUM €141bn. EQT Infrastructure VI closed €21.5bn. EQT XI hard cap €24bn, activation mid-2026. 300+ portfolio companies. Exits: Karo, IFS (minority), Nord Anglia, Acumatica, Pioneer. Sustainability: carbon-neutral targets.",
+      "recent_activity": "2025: Strongest realization year ever; sells Karo Healthcare to KKR; announces Coller Capital acquisition (Jan 2026). AUM ~€270bn; FAUM €142bn. EQT Infrastructure VI closed €21.5bn. EQT XI hard cap €24bn, activation mid-2026. 300+ portfolio companies. Exits: Karo, IFS (minority), Nord Anglia, Acumatica, Pioneer. Sustainability: carbon-neutral targets.",
       "company_updates": [
         {
           "date": "2026-01-15",
@@ -299,7 +299,19 @@
         "next_fund": "Deployment across Fund XI and Evolution funds",
         "strategy": "Healthcare, technology & payments, financial services, services & industrial tech; Nordic and North America; operational excellence"
       },
-      "recent_activity": "2025: Agrees sale of Clario to Thermo Fisher (~$9.4bn, largest healthcare PE exit); Clario doubled revenue to ~$1.2B. 2024: Evolution II closes €2bn in four months; 10 platform acquisitions, 4 exits; PEI awards: Fundraise of the Year, ESG Fund of the Year. Portfolio: 60 companies, €18bn revenue, 83,000 employees. UNPRI highest score; ESG-linked credit facility."
+      "recent_activity": "2025\n• Agrees sale of Clario to Thermo Fisher (~$9.4bn, largest healthcare PE exit)\n• Clario doubled revenue to ~$1.2B under ownership\n\n2024\n• Evolution II closes €2bn in four months\n• 10 platform acquisitions, 4 exits\n• PEI awards: Fundraise of the Year, ESG Fund of the Year\n\nPortfolio: 60 companies, €18bn revenue, 83,000 employees; UNPRI highest score; ESG-linked credit facility",
+      "timeline": [
+        {
+          "year": 2024,
+          "event": "Evolution II close",
+          "description": "Evolution II closes €2bn in four months"
+        },
+        {
+          "year": 2025,
+          "event": "Clario sale",
+          "description": "Agrees sale of Clario to Thermo Fisher (~$9.4bn)"
+        }
+      ]
     },
     "Triton": {
       "name": "Triton",
@@ -387,7 +399,34 @@
         "next_fund": "Triton Fund VII in fundraising (target €3.5bn+)",
         "strategy": "Mid-market buyouts in business services, industrial tech, healthcare; Northern Europe and DACH"
       },
-      "recent_activity": "2025–2026: Completes Kelvion sale to Apollo Funds (majority stake, ~€2bn); agrees sale of Ramudden Global to I Squared Capital (~€2.5bn); establishes formicon (architecture & engineering); completes Bosch security & communications acquisition (4,300 employees, >€1B revenue, now Keenfinity Group). Triton Smaller Mid-Cap first UK deal (Tendra). 2024: Merges Assemblin and Caverion; Stonepeak joins IFCO; MacGregor acquisition.",
+      "recent_activity": "2026\n• Completes Kelvion sale to Apollo Funds (Jan) – majority stake, ~€2bn\n• Agrees sale of Ramudden Global to I Squared Capital (~€2.5bn)\n\n2025\n• Establishes formicon (architecture & engineering)\n• Completes Bosch security & communications acquisition (Keenfinity Group)\n• Triton Smaller Mid-Cap first UK deal (Tendra)\n\n2024\n• Merges Assemblin and Caverion\n• Stonepeak joins IFCO; MacGregor acquisition",
+      "timeline": [
+        {
+          "year": 2024,
+          "event": "Assemblin Caverion merger",
+          "description": "Merges Assemblin and Caverion"
+        },
+        {
+          "year": 2025,
+          "event": "formicon establishment",
+          "description": "Architecture & engineering platform"
+        },
+        {
+          "year": 2025,
+          "event": "Keenfinity Group",
+          "description": "Bosch security & communications acquisition"
+        },
+        {
+          "year": 2026,
+          "event": "Kelvion sale",
+          "description": "Majority stake to Apollo Funds (~€2bn)"
+        },
+        {
+          "year": 2026,
+          "event": "Ramudden sale",
+          "description": "Agrees sale to I Squared Capital (~€2.5bn)"
+        }
+      ],
       "portfolio_companies": [
         {
           "name": "All4Labels",
@@ -673,7 +712,7 @@
         "next_fund": "Deployment across Amplio I",
         "strategy": "Nordic lower mid-market (SEK 100–500M EV); Business Services and IT & Technology Services; first institutional owner, buy-and-build"
       },
-      "recent_activity": "2025\n• Divests Multisoft (Mar) – low-code software; to SEB Private Equity; tripled revenue under ownership\n• Invests in S R Intelligence (Mar) – regulatory compliance, personnel security; Stockholm\n• Divests Francks Kylindustri – industrial refrigeration; to IK Partners; 4x revenue, 5x profitability\n• Tedge acquires Kylmontage (cooling), Berghogens – energy optimisation add-ons\n• SELATEK acquires TSTgruppen – revenue exceeds SEK 2bn; security and electrical platform\n\n2024\n• Segulah rebrands to Amplio Private Equity (Feb)\n\nPortfolio: S R Intelligence, Tedge, Co-native, SELATEK, IT-Total, Hermes, Pelly Group (Amplio I & Segulah V)",
+      "recent_activity": "2026\n• Divests Multisoft (Mar) – low-code software; to SEB Private Equity; tripled revenue under ownership\n• Tedge Energy acquires Kylmontage (Jan) – cooling solutions add-on\n\n2025\n• Invests in S R Intelligence (Mar) – regulatory compliance, personnel security; Stockholm\n• Divests Francks Kylindustri – industrial refrigeration; to IK Partners; 4x revenue, 5x profitability\n• Tedge acquires Berghogens – energy optimisation add-on\n• SELATEK acquires TSTgruppen – revenue exceeds SEK 2bn; security and electrical platform\n\n2024\n• Segulah rebrands to Amplio Private Equity (Feb)\n\nPortfolio: S R Intelligence, Tedge, Co-native, SELATEK, IT-Total, Hermes, Pelly Group (Amplio I & Segulah V)",
       "portfolio_companies": [
         {
           "name": "S R Intelligence (SRI)",
@@ -713,7 +752,7 @@
           "country": "Nordics",
           "entry_year": "2021",
           "status": "Divested",
-          "detailed_description": "Low code software provider (Segulah V); divested 2025"
+          "detailed_description": "Low code software provider (Segulah V); divested 2026"
         },
         {
           "name": "IT-Total",
@@ -826,9 +865,14 @@
           "description": "Investment in regulatory compliance specialist"
         },
         {
-          "year": 2025,
+          "year": 2026,
           "event": "Multisoft exit",
           "description": "Divests to SEB Private Equity"
+        },
+        {
+          "year": 2026,
+          "event": "Tedge Kylmontage",
+          "description": "Tedge Energy acquires Kylmontage (cooling solutions)"
         },
         {
           "year": 2025,
@@ -1522,7 +1566,7 @@
         "next_fund": "Continuation fund seeking (2025) to reset valuations for select holdings",
         "strategy": "Nordic niche market leaders; EUR 10–100M sales; business services and consumer; buy-and-build; Litorina playbook"
       },
-      "recent_activity": "2025: Northclean acquires Siskon Siivous (Finland) and Forenede Service (Sweden); Implema acquires CoreChange (SAP/BI). 2025: Physical Medicine Group acquires Sørlandsparken. Portfolio: Layer Group, Northclean, Implema, Digpro, Physical Medicine Group, and others. ~3,500 employees, SEK ~5bn sales across portfolio. 2024: Eton to EQT; KungSängen exit.",
+      "recent_activity": "2025\n• Northclean acquires Siskon Siivous (Finland) and Forenede Service (Sweden)\n• Implema acquires CoreChange (SAP/BI)\n• Physical Medicine Group acquires Sørlandsparken\n\n2024\n• Eton to EQT; KungSängen exit\n\nPortfolio: Layer Group, Northclean, Implema, Digpro, Physical Medicine Group; ~3,500 employees, SEK ~5bn sales",
       "timeline": [
         {
           "year": 2003,
@@ -1771,13 +1815,18 @@
         },
         {
           "year": 2025,
-          "event": "Physical Medicine Group expansion",
-          "description": "PMG acquires Sørlandsparken Tverrfaglige Helse"
+          "event": "Northclean expansion",
+          "description": "Northclean acquires Siskon Siivous (Finland) and Forenede Service (Sweden)"
         },
         {
           "year": 2025,
           "event": "Implema expansion",
-          "description": "Implema strengthens leadership position with acquisition of CoreChange's SAP and BI operations"
+          "description": "Implema acquires CoreChange (SAP/BI)"
+        },
+        {
+          "year": 2025,
+          "event": "Physical Medicine Group expansion",
+          "description": "PMG acquires Sørlandsparken Tverrfaglige Helse"
         }
       ]
     },
@@ -2588,7 +2637,24 @@
         "next_fund": "Ongoing deployment across construction, industry, services",
         "strategy": "Active ownership in Nordic mid-market; construction, industry, consumer, business services"
       },
-      "recent_activity": "2026: HL Display acquires Deinzer Holding; Annual and Sustainability Report 2025. 2025: Jonas Magnusson new CEO at HL Display. Listed structure enables flexible hold periods. Portfolio: 14 companies across industry, construction, services, consumer."
+      "recent_activity": "2026\n• HL Display acquires Deinzer Holding (signed Dec 2025)\n• Jonas Magnusson new CEO at HL Display (Apr 2026)\n• Annual and Sustainability Report 2025\n\n2025\n• HL Display signs agreement to acquire Deinzer\n\nPortfolio: 14 companies across industry, construction, services, consumer",
+      "timeline": [
+        {
+          "year": 2025,
+          "event": "HL Display Deinzer agreement",
+          "description": "Signs agreement to acquire Deinzer Holding (Dec)"
+        },
+        {
+          "year": 2026,
+          "event": "HL Display Deinzer completion",
+          "description": "Completes acquisition of Deinzer Holding"
+        },
+        {
+          "year": 2026,
+          "event": "HL Display CEO",
+          "description": "Jonas Magnusson appointed CEO (Apr)"
+        }
+      ]
     },
     "Summa Equity": {
       "name": "Summa Equity",
@@ -2656,7 +2722,7 @@
         "next_fund": "Deployment across Summa III; Impact Engine data model across all funds",
         "strategy": "Thematic impact investor around UN SDGs (Circular, Tech-enabled, Changing Demographics); Europe and North America"
       },
-      "recent_activity": "2026: Acquires Dignio (digital health); EA Technology acquires Fundamentals. 2025: Acquires Peoplesafe (workforce safety); exits Documaster, Milarex, Infobric; Vyntra (NetGuardians/Intix); Schulz & Berger. 2024: Fortum Recycling & Waste + NG Group; EA Technology; NetGuardians, Nutris; Sengenics→Standard BioTools. Themes: Circularity, Sustainable Food, Energy Transition, Tech-Enabled Resilience.",
+      "recent_activity": "2026\n• Acquires Dignio (digital health, Jan)\n• Acquires Peoplesafe (workforce safety, Jan)\n• EA Technology acquires Fundamentals\n\n2025\n• Exits Documaster (May), Milarex (Oct), Infobric (Sept)\n• Vyntra formation (NetGuardians/Intix merger)\n• Schulz & Berger add-on\n\n2024\n• Fortum Recycling & Waste + NG Group; EA Technology; NetGuardians, Nutris; Sengenics→Standard BioTools",
       "company_updates": [
         {
           "date": "2025-10-15",
@@ -2735,6 +2801,16 @@
           "year": 2025,
           "event": "Vyntra formation",
           "description": "NetGuardians and Intix merge to form Vyntra"
+        },
+        {
+          "year": 2026,
+          "event": "Dignio acquisition",
+          "description": "Acquires Norwegian digital health specialist"
+        },
+        {
+          "year": 2026,
+          "event": "Peoplesafe acquisition",
+          "description": "Acquires UK workforce safety provider"
         },
         {
           "year": 2025,
@@ -4176,7 +4252,7 @@
         {
           "year": 2025,
           "event": "Francks Kylindustri",
-          "description": "Acquires Francks Kylindustri (Aug)"
+          "description": "Acquires Francks Kylindustri (Oct)"
         },
         {
           "year": 2025,
@@ -4945,7 +5021,7 @@
         "next_fund": "Deployment across Edda, Freya, Idun, Capital",
         "strategy": "Pan-European growth; digitalisation and decarbonisation; Edda (software), Freya (flexible growth/buyouts), Idun (impact), Capital (continuation)"
       },
-      "recent_activity": "2025: Closes Freya XII at €2bn hard cap (flagship flexible growth/buyout fund). Partners with Konvekta (HVAC energy-recovery tech), Natlink (outdoor/hunting community platform). Realises Hornetsecurity, Danelec (marine IoT), Parkopedia. Partially realises Voyado, Lumene Group. fiskaly acquires DF Deutsche Fiskal (Germany). Wellhub merges with Urban Sports Club – Europe's largest corporate wellbeing group. 2024: Closes Idun II at €700m (impact/Article 9 fund). Partners with Sitoo (unified commerce), Cropster (coffee software), Corlytics (RegTech), Ingrid (e-commerce delivery). Closes Edda III at €1.1bn. Leads €95m round in Urban Sports Club. Danelec acquires Nautilus Labs (AI platform). Publishes 2023 Sustainability Report.",
+      "recent_activity": "2025\n• Closes Freya XII at €2bn hard cap (flagship flexible growth/buyout fund)\n• Partners with Konvekta (HVAC energy-recovery tech), Natlink (outdoor/hunting platform)\n• Realises Hornetsecurity, Danelec (marine IoT), Parkopedia\n• Partially realises Voyado, Lumene Group\n• fiskaly acquires DF Deutsche Fiskal (Germany)\n• Wellhub merges with Urban Sports Club\n\n2024\n• Closes Idun II at €700m (impact/Article 9); Edda III at €1.1bn\n• Partners with Sitoo, Cropster, Corlytics, Ingrid\n• Danelec acquires Nautilus Labs; Urban Sports Club round",
       "timeline": [
         {
           "year": 2025,
@@ -5447,7 +5523,24 @@
           "location": "Stockholm"
         }
       ],
-      "recent_activity": "2025: Admento (accounting/BPO), Restaurant365 (restaurant tech). 2024: Lakrids by Bülow from Accent Equity. Portfolio: Admento, Compusoft, Gung, Lakrids, Nordward, Twig, Eltera, Joe & The Juice, Evidensia, Cambio, INOM. ~350 add-ons; ~85% with previous owners.",
+      "recent_activity": "2025\n• Admento (accounting/BPO, Mar)\n• Restolution (restaurant software, Aug)\n\n2024\n• Lakrids by Bülow from Accent Equity\n\nPortfolio: Admento, Compusoft, Gung, Lakrids, Nordward, Twig, Eltera, Joe & The Juice, Evidensia, Cambio, INOM",
+      "timeline": [
+        {
+          "year": 2024,
+          "event": "Lakrids acquisition",
+          "description": "Acquires Lakrids by Bülow from Accent Equity"
+        },
+        {
+          "year": 2025,
+          "event": "Admento acquisition",
+          "description": "Nordic accounting and BPO services"
+        },
+        {
+          "year": 2025,
+          "event": "Restolution investment",
+          "description": "Nordic restaurant software provider"
+        }
+      ],
       "portfolio_companies": [
         {
           "name": "Admento",
@@ -6018,7 +6111,7 @@
           "description": "Bure leads Swedish consortium acquiring majority ownership in Silex Microsystems"
         },
         {
-          "year": 2025,
+          "year": 2024,
           "event": "Mentimeter investment",
           "description": "Bure becomes new co-owner of Mentimeter"
         },
@@ -6332,7 +6425,7 @@
           "description": "NAXS increased commitment to Celero Capital Fund (E) AB from €1.5M to €3.2M"
         },
         {
-          "year": 2025,
+          "year": 2024,
           "event": "Aterion platform launch",
           "description": "Established Aterion with six entrepreneur-led companies targeting Nordic power industry leadership"
         },
@@ -6420,23 +6513,28 @@
       "company_updates": [
         {
           "date": "2025-08-07",
-          "text": "Awardit enters partnership with German Incentive & Loyalty Specialist Buben & Mädchen"
+          "title": "Awardit partnership with Buben & Mädchen",
+          "text": "German incentive & loyalty specialist"
         },
         {
           "date": "2025-07-01",
-          "text": "Polaris creates a powerful strategic IT partner through the acquisition of Globeteam and merger with 7N"
+          "title": "Globeteam/7N merger",
+          "text": "Strategic IT partner creation"
         },
         {
           "date": "2025-06-03",
-          "text": "LEAB Becomes Part of Micropower Group"
+          "title": "LEAB joins Micropower Group",
+          "text": "Add-on acquisition"
         },
         {
           "date": "2025-05-08",
-          "text": "Contour Design Signs Agreement to Acquire Active Key Business from Cherry SE"
+          "title": "Contour Design acquires Active Key Business",
+          "text": "From Cherry SE"
         },
         {
           "date": "2025-05-05",
-          "text": "Awardit AB to be taken private by Polaris"
+          "title": "Awardit taken private",
+          "text": "Polaris takes Awardit private"
         },
         {
           "date": "2024-12-30",
@@ -6731,7 +6829,7 @@
           "text": "Polaris invests in IT consultancy ProData Consult"
         }
       ],
-      "recent_activity": "2025: Awardit partnership with German Buben & Mädchen, Polaris creates strategic IT partner through Globeteam/7N merger, LEAB joins Micropower Group, Contour Design acquires Active Key Business from Cherry SE, Awardit taken private. 2024: Velliv transfers sustainability capital management, partnerships with Salfarm/FaunaPharma and 7N, sells RelyOn Nutec to Mubadala Capital, announces public offer for Awardit. 2023: Divests NORTH to Howden, invests in AwardIt, hosts 25th anniversary Partnership Day, launches Polaris Public Equity, Flexible Capital closes first fund at DKK 1bn, completes MBO and launches Cepheo.",
+      "recent_activity": "2025\n• Awardit partnership with Buben & Mädchen (Aug)\n• Globeteam/7N merger – strategic IT partner (Jul)\n• LEAB joins Micropower Group (Jun)\n• Contour Design acquires Active Key Business from Cherry SE (May)\n• Awardit taken private (May)\n\n2024\n• Velliv transfers sustainability capital management\n• Partnerships with Salfarm/FaunaPharma, 7N\n• Sells RelyOn Nutec to Mubadala Capital\n• Announces public offer for Awardit\n\n2023\n• Divests NORTH to Howden; invests in AwardIt\n• Flexible Capital closes DKK 1bn; launches Cepheo",
       "timeline": [
         {
           "year": 1998,
@@ -7446,19 +7544,22 @@
         "next_fund": "Ongoing deployment",
         "strategy": "Active, responsible ownership; strong risk-adjusted returns; may invest for limited time or decades"
       },
-      "recent_activity": "2025: Divests Norva24, sells remaining engcon shares, issues Alligo call options, sells Nordstjernan Growth AB. 2024–2021: Invests in Oden Technologies; sells all shares in NCC; sells shares in Momentum Group; invests in Mentimeter; increases position in BioLamina; multiple strategic portfolio actions.",
+      "recent_activity": "2025\n• Divests Norva24 (Jan)\n• Sells remaining engcon shares (May)\n• Issues Alligo call options (May)\n• Sells Nordstjernan Growth AB (Mar) – to EQT executives\n\n2024\n• Invests in Oden Technologies\n• Sells all shares in NCC\n• Sells shares in Momentum Group\n\n2022\n• Invests in Mentimeter\n• Increases position in BioLamina",
       "company_updates": [
         {
           "date": "2025-05-19",
-          "text": "Nordstjernan issues call options in Alligo"
+          "title": "Nordstjernan issues call options in Alligo",
+          "text": "Call options issued"
         },
         {
           "date": "2025-05-19",
-          "text": "Nordstjernan completes sale of remaining shares in engcon AB"
+          "title": "Nordstjernan completes sale of remaining engcon shares",
+          "text": "Sale of remaining shares in engcon AB"
         },
         {
-          "date": "2025-05-12",
-          "text": "Nordstjernan sells Nordstjernan Growth AB"
+          "date": "2025-03-12",
+          "title": "Nordstjernan sells Nordstjernan Growth AB",
+          "text": "To company co-owned by EQT executives Callerström and von Koch"
         },
         {
           "date": "2025-04-29",
@@ -7470,7 +7571,8 @@
         },
         {
           "date": "2025-01-29",
-          "text": "Nordstjernan divests ownership in Norva24"
+          "title": "Nordstjernan divests Norva24",
+          "text": "Divests ownership in Norva24 to Apax Partners"
         },
         {
           "date": "2024-05-02",
@@ -7636,7 +7738,17 @@
         {
           "year": 2025,
           "event": "Norva24 divestment",
-          "description": "Divests Norva24"
+          "description": "Divests Norva24 to Apax Partners"
+        },
+        {
+          "year": 2025,
+          "event": "engcon exit",
+          "description": "Completes sale of remaining engcon shares"
+        },
+        {
+          "year": 2025,
+          "event": "Nordstjernan Growth AB exit",
+          "description": "Sells Nordstjernan Growth AB to EQT executives"
         },
         {
           "year": 2025,
@@ -7872,7 +7984,7 @@
         "current_fund": "Permanent capital via Interogo Holding",
         "strategy": "No traditional fund structure; invests via balance sheet of Interogo Holding"
       },
-      "recent_activity": "2025: Norstat acquires Sample Solutions (B2B sampling). 2024: Norstat acquires PFM Research (Swedish data collection); Munich office active on DACH deals. Portfolio includes Certego (locksmith/security, SEK 2.6bn), Uniwater (water/wastewater), Precis Digital (digital marketing), Norres Baggerman Group (DACH), Best Transport (logistics), Norstat (market research).",
+      "recent_activity": "2025\n• Norstat acquires Sample Solutions (B2B sampling)\n\n2024\n• Norstat acquires PFM Research (Swedish data collection)\n• Munich office active on DACH deals\n\nPortfolio: Certego, Uniwater, Precis Digital, Norres Baggerman Group, Best Transport, Norstat",
       "portfolio_companies": [
         {
           "name": "Norstat",
@@ -7945,12 +8057,14 @@
       ],
       "company_updates": [
         {
-          "date": "2025-01-01",
-          "text": "Norstat acquires Sample Solutions to strengthen premium B2B capabilities"
+          "date": "2025-06-25",
+          "title": "Norstat acquires Sample Solutions",
+          "text": "Strengthens premium B2B sampling capabilities; Rotterdam-based Sample Solutions joins Norstat Group"
         },
         {
           "date": "2024-12-01",
-          "text": "Norstat acquires Swedish data collection specialist PFM Research"
+          "title": "Norstat acquires PFM Research",
+          "text": "Swedish data collection specialist"
         },
         {
           "date": "2022-01-01",
@@ -7962,7 +8076,25 @@
         },
         {
           "date": "2021-01-01",
+          "title": "Certego acquisition",
           "text": "ASSA ABLOY sells Certego to Nalka Invest"
+        }
+      ],
+      "timeline": [
+        {
+          "year": 2021,
+          "event": "Certego acquisition",
+          "description": "Acquires Certego from ASSA ABLOY"
+        },
+        {
+          "year": 2024,
+          "event": "Norstat PFM Research",
+          "description": "Norstat acquires Swedish data collection specialist PFM Research"
+        },
+        {
+          "year": 2025,
+          "event": "Norstat Sample Solutions",
+          "description": "Norstat acquires Sample Solutions (B2B sampling)"
         }
       ]
     },
@@ -8001,7 +8133,7 @@
         "next_fund": "Deployment across Fund II",
         "strategy": "Healthcare-focused Nordic buyouts; EV €50–200M; health impact and sustainability"
       },
-      "recent_activity": "2026: Immedica Loargys® FDA accelerated approval. 2025: Acquires Oticon Medical from Demant (first Fund II investment). Qufora acquires Rapidcare (UK). Fund II closes €700M. Portfolio: Immedica, Humana, Euro Accident, Scantox, tandlægen.dk, VaccinDirekt, Pelago Bioscience, Stille, Qufora, Oticon Medical, Decon, Avia Pharma, Lowenco.",
+      "recent_activity": "2026\n• Immedica Loargys® FDA accelerated approval\n\n2025\n• Fund II closes at €700M (June)\n• Acquires Oticon Medical from Demant (first Fund II investment)\n• Qufora acquires Rapidcare (UK)\n\nPortfolio: Immedica, Humana, Euro Accident, Scantox, tandlægen.dk, VaccinDirekt, Pelago Bioscience, Stille, Qufora, Oticon Medical, Decon, Avia Pharma, Lowenco",
       "portfolio_companies": [
         {
           "name": "Immedica",
@@ -8119,6 +8251,28 @@
           "entry_year": "2025",
           "status": "Active",
           "detailed_description": "Global leader in bone-anchored hearing solutions (BAHS), acquired from Demant"
+        }
+      ],
+      "timeline": [
+        {
+          "year": 2018,
+          "event": "Impilo founded",
+          "description": "Nordic healthcare-focused PE firm established"
+        },
+        {
+          "year": 2025,
+          "event": "Fund II close",
+          "description": "Fund II closes at €700M hard cap"
+        },
+        {
+          "year": 2025,
+          "event": "Oticon Medical acquisition",
+          "description": "Acquires Oticon Medical from Demant (first Fund II investment)"
+        },
+        {
+          "year": 2025,
+          "event": "Qufora expansion",
+          "description": "Qufora acquires Rapidcare (UK)"
         }
       ]
     },
@@ -8389,6 +8543,11 @@
           "year": 2026,
           "event": "sangro Germany",
           "description": "First platform in Germany"
+        },
+        {
+          "year": 2026,
+          "event": "Leadership transition",
+          "description": "Christian Bamberger Bro becomes Managing Partner"
         }
       ]
     },
@@ -8420,13 +8579,25 @@
           "Buy-and-build"
         ]
       },
-      "team": [],
+      "team": [
+        {"name": "Stefan Karlsson", "title": "Partner", "location": "Stockholm"},
+        {"name": "Daniel Nilsson", "title": "Partner", "location": "Stockholm"},
+        {"name": "Mårten Werner", "title": "Partner", "location": "Stockholm"},
+        {"name": "Falk Wahlström", "title": "Director", "location": "Stockholm"},
+        {"name": "Christian Bylock", "title": "Director", "location": "Stockholm"},
+        {"name": "Adilson Fonseca", "title": "Senior Associate", "location": "Stockholm"},
+        {"name": "Lisa Reenbom", "title": "Associate", "location": "Stockholm"},
+        {"name": "Daniela Von Koskull", "title": "Associate", "location": "Stockholm"},
+        {"name": "Emma Bohlin", "title": "Associate", "location": "Stockholm"},
+        {"name": "Felicia Lindqvist", "title": "Investment and ESG Controller", "location": "Stockholm"},
+        {"name": "Liam Clareus", "title": "Intern Analyst", "location": "Stockholm"}
+      ],
       "fundraising": {
         "current_fund": "Fund I (2016), Fund II (closed Dec 2021), Fund III",
         "next_fund": "Deployment across portfolio",
         "strategy": "Nordic SME buyouts; themes: Digitalisering, Cirkuläritet, Samhällsomvandling"
       },
-      "recent_activity": "2026: Establishes Nordic manufacturing platform (Be-Pe, Prolego, HITAB); Freedom Group add-ons. 2024: Divested Biototal Group to SEB Private Equity. Portfolio: Nestit Group, Ascenco, SMP Parts, Nordic Drives Group, Ametal, Freedom Group, Flow Fastighetsvärden. Exits: PS Auction, Art Clinic, Great Security.",
+      "recent_activity": "2026\n• Establishes Nordic manufacturing platform (Be-Pe, Prolego, HITAB)\n• Freedom Group add-ons\n\n2025\n• Ametal – Nordic environmental and sustainability consulting platform\n\n2024\n• Divests Biototal Group to SEB Private Equity\n• Nestit Group formed (merger)\n• Flow Fastighetsvärden investment\n\nPortfolio: Nestit Group, Ascenco, SMP Parts, Nordic Drives Group, Ametal, Freedom Group, Flow Fastighetsvärden",
       "portfolio_companies": [
         {
           "name": "Nestit Group",
@@ -8490,6 +8661,23 @@
           "entry_year": "2021",
           "status": "Active",
           "detailed_description": "Freedom Group is a Swedish network of 26 accounting firms across 38 locations, 386 employees. Bookkeeping, tax, payroll, HR, CFO services, legal, property management. Bflow cloud-based accounting software. Founded 2021; active add-on strategy."
+        }
+      ],
+      "timeline": [
+        {
+          "year": 2024,
+          "event": "Biototal exit",
+          "description": "Divests Biototal Group to SEB Private Equity"
+        },
+        {
+          "year": 2024,
+          "event": "Nestit Group",
+          "description": "Pan-Nordic IT infrastructure platform formed (DSolution, Easy Partner merger)"
+        },
+        {
+          "year": 2025,
+          "event": "Ametal investment",
+          "description": "Nordic environmental and sustainability consulting platform"
         }
       ]
     },
@@ -8793,13 +8981,39 @@
           "Microfinance"
         ]
       },
-      "team": [],
+      "team": [
+        {"name": "Jan Ståhlberg", "title": "Founder & Managing Partner", "location": "Stockholm"},
+        {"name": "Björn Brixer", "title": "Partner & Chief Financial Officer", "location": "Stockholm"},
+        {"name": "Inga-Lill Carlberg", "title": "Partner & Chief Operating Officer", "location": "Stockholm"},
+        {"name": "Johanna Levander", "title": "Partner & Head of Investor Relations", "location": "Stockholm"},
+        {"name": "Alexander Domin", "title": "Partner & Head of Ventures", "location": "Munich"},
+        {"name": "Korbinian Knoblach", "title": "Partner & Co-Head of Buyout", "location": "Munich"},
+        {"name": "Matthew Levine", "title": "Partner & Head of US Buyout", "location": "New York"},
+        {"name": "Bita Sehat", "title": "Partner", "location": "Stockholm"},
+        {"name": "Chee Wei Wong", "title": "Partner", "location": "Stockholm"},
+        {"name": "Kristian Klosterkemper", "title": "Partner", "location": "Copenhagen"},
+        {"name": "Nina Hoffmann von Holten", "title": "Partner", "location": "Copenhagen"},
+        {"name": "Hetal Damani", "title": "Impact Partner", "location": "Stockholm"},
+        {"name": "Niclas Düring", "title": "Impact Partner", "location": "Stockholm"}
+      ],
       "fundraising": {
         "current_fund": "Buyout, Ventures, Microfinance strategies",
         "next_fund": "Deployment across strategies",
         "strategy": "Impact-only; verified Impact Principles; PRI top scores"
       },
-      "recent_activity": "2025: Acquires majority in Noova Energy Systems; Ventures co-leads Rail-Flow EUR 12.5m round. BlueMark verification renewed; top PRI 2025 scores. Portfolio: Nordomatic, ILT Education, Mesalvo, Allurity, Karriere Tutor, Infrakraft, Komet, Renewtech, Cinclus Pharma, May Health, Soil Capital, tado°, Open Cosmos, Noova.",
+      "recent_activity": "2025\n• Acquires majority in Noova Energy Systems\n• Ventures co-leads Rail-Flow EUR 12.5m round\n• BlueMark verification renewed; top PRI 2025 scores\n\nPortfolio: Nordomatic, ILT Education, Mesalvo, Allurity, Karriere Tutor, Infrakraft, Komet, Renewtech, Cinclus Pharma, May Health, Soil Capital, tado°, Open Cosmos, Noova",
+      "timeline": [
+        {
+          "year": 2025,
+          "event": "Noova Energy Systems",
+          "description": "Acquires majority stake"
+        },
+        {
+          "year": 2025,
+          "event": "Rail-Flow round",
+          "description": "Ventures co-leads EUR 12.5m round"
+        }
+      ],
       "portfolio_companies": [
         {
           "name": "Nordomatic",
@@ -9016,42 +9230,52 @@
         "next_fund": "Norvestor X (opened Nov 2025)",
         "strategy": "Lower-midcap Nordic buy-and-build; industrialised entrepreneurship; continuation vehicles"
       },
+      "recent_activity": "2025\n• Acquires Norautron (Oct) – Nordic EMS company\n• Divests Monti (Oct)\n• Rantalainen + BDO Norway combination (Aug)\n• PHM/Sperre GP-led continuation (Jul)\n• Divests Globeteam (Jul)\n• Nova I closes at €500M (Mar)\n• Neuver Maritime sale with Kongsberg (Mar)\n• PCS Modulsystem investment (Mar)\n• PSA legal-tech partnership (May)\n\n2024\n• Kongsberg Maritime carve-out; Wint investment\n\nPortfolio: Norautron, Rantalainen, PHM, PCS Modulsystem, and others",
       "company_updates": [
         {
           "date": "2025-10-16",
-          "text": "Norvestor acquires leading Nordic full-service EMS company Norautron"
+          "title": "Norvestor acquires Norautron",
+          "text": "Leading Nordic full-service EMS company"
         },
         {
           "date": "2025-10-08",
-          "text": "Norvestor divests Monti"
+          "title": "Norvestor divests Monti",
+          "text": "Exit completed"
         },
         {
           "date": "2025-08-22",
-          "text": "Rantalainen expands its Nordic platform through combination with the Business Services part of BDO in Norway"
+          "title": "Rantalainen + BDO Norway",
+          "text": "Combination with Business Services part of BDO Norway"
         },
         {
           "date": "2025-07-15",
-          "text": "Norvestor VIII and Norvestor SPV II divest PHM Group and Sperre Air Power to funds managed by Norvestor"
+          "title": "PHM/Sperre GP-led continuation",
+          "text": "Divests to Norvestor-managed continuation funds"
         },
         {
           "date": "2025-07-01",
-          "text": "Norvestor divests Globeteam"
+          "title": "Norvestor divests Globeteam",
+          "text": "Exit completed"
         },
         {
           "date": "2025-05-05",
-          "text": "Norvestor partners with legal tech solution provider PSA"
+          "title": "PSA legal-tech partnership",
+          "text": "Partners with legal tech solution provider"
         },
         {
           "date": "2025-03-26",
-          "text": "Norvestor closes Nova I fund oversubscribed at EUR 500m hard cap"
+          "title": "Nova I closes at €500M",
+          "text": "Oversubscribed hard cap"
         },
         {
           "date": "2025-03-10",
-          "text": "Norvestor and MG Link invest in Swedish modular construction company PCS Modulsystem"
+          "title": "PCS Modulsystem investment",
+          "text": "Swedish modular construction with MG Link"
         },
         {
           "date": "2025-03-03",
-          "text": "Norvestor and Kongsberg announce closing of the sale of Neuver Maritime"
+          "title": "Neuver Maritime sale",
+          "text": "Closes sale with Kongsberg"
         },
         {
           "date": "2024-11-14",
@@ -9290,7 +9514,6 @@
           "text": "Norvestor invests in Wellit"
         }
       ],
-      "recent_activity": "2025: Acquires Norautron; divests Monti; Rantalainen combines with BDO Norway Business Services (Nordic expansion); divests PHM Group and Sperre Air Power to Norvestor-managed funds (GP-led continuation); divests Globeteam; partners with PSA (legal-tech); closes Nova I €500m; co-invests in PCS Modulsystem; closes sale of Neuver Maritime with Kongsberg. 2024–2020: Divests 4Service (2024); invests in Wint (2024); Kongsberg Maritime steering/rudder business acquisition and later Neuver sale; partners with glueckkanja; PHM €300m bond (2021); Foxway co-invest with Nordic Capital (2023); Rantalainen/Colmec/Serwent growth; multiple platform and add-ons across 2020–2023.",
       "timeline": [
         {
           "year": 2021,
@@ -9384,12 +9607,23 @@
           "Buy-and-build"
         ]
       },
+      "team": [
+        {"name": "Stefan Lambert", "title": "Partner", "location": "Stockholm"},
+        {"name": "Joakim Karlsson", "title": "Partner", "location": "Stockholm"},
+        {"name": "Mattias Ericsson", "title": "Partner", "location": "Stockholm"},
+        {"name": "Victor Björk", "title": "Investment Director", "location": "Stockholm"},
+        {"name": "Alexander Wallenberg", "title": "Investment Director", "location": "Stockholm"},
+        {"name": "Alexander Ribrant", "title": "Investment Manager", "location": "Stockholm"},
+        {"name": "Amanda Hellström", "title": "Investment Manager", "location": "Stockholm"},
+        {"name": "Dante Haqués", "title": "Investment Associate", "location": "Stockholm"},
+        {"name": "Johan Bagger-Jörgensen", "title": "Investment Analyst", "location": "Stockholm"}
+      ],
       "fundraising": {
         "current_fund": "Helix Kapital Fund III (SEK 1.566bn, closed Apr 2024, oversubscribed, Article 8)",
         "next_fund": "Deployment across platforms and add-ons",
         "strategy": "B2B services, industrial tech, software; Sweden/Nordics; lower mid-market; buy-and-build; InvestEU backed"
       },
-      "recent_activity": "2025: Establishes Revivo Group; add-ons at Revivo (Lejon), Trinax (Struqtur), Sacpro (UVRelining), VisionSense (Autepra); partners with Recycling Partner. 2024: Fund III close; Spring Media exit; VisionSense acquires Vidamin; Trinax acquires Jiricom. Portfolio: Recycling Partner, Sacpro, Xamera, Trinax, Lucky Bowl, Revivo Group, VisionSense Technologies.",
+      "recent_activity": "2025\n• Establishes Revivo Group\n• Add-ons: Revivo (Lejon), Trinax (Struqtur), Sacpro (UVRelining), VisionSense (Autepra)\n• Partners with Recycling Partner\n\n2024\n• Fund III closes (SEK 1.566bn, Apr)\n• Spring Media exit\n• VisionSense acquires Vidamin\n• Trinax acquires Jiricom\n\nPortfolio: Recycling Partner, Sacpro, Xamera, Trinax, Lucky Bowl, Revivo Group, VisionSense Technologies",
       "timeline": [
         {
           "year": 2025,
@@ -9839,7 +10073,7 @@
           "link": "https://www.fsncapital.com/news/"
         }
       ],
-      "recent_activity": "2025: FSN VI to acquire Volue Infrastructure (infrastructure software), Compass I invests in UHL Bau (Austrian civil engineering), FSN IV signs to sell Fibo, Saferoad accelerates European M&A under Confluence. 2024: Confluence continuation fund closes (LGT lead), Nordlo completes SEK 3.6bn refinancing. 2023: Acquires Solcellespesialisten, sells Skamol, forms Danish technical-installation leader via 11 companies, invests in Polytech with Verdane, acquires Lobster (no-code data integration), acquires ilionx (IT-services, NL).",
+      "recent_activity": "2025\n• FSN VI to acquire Volue Infrastructure (infrastructure software)\n• Compass I invests in UHL Bau (Austrian civil engineering)\n• FSN IV signs to sell Fibo\n• FSN IV sells remaining Kjell & Company shares\n• Saferoad accelerates European M&A under Confluence\n\n2024\n• Confluence continuation fund closes (LGT lead)\n• Nordlo completes SEK 3.6bn refinancing\n\n2023\n• Acquires Solcellespesialisten, sells Skamol\n• Forms Danish technical-installation leader via 11 companies\n• Invests in Polytech with Verdane, acquires Lobster, ilionx",
       "timeline": [
         {
           "year": 1999,
@@ -9970,6 +10204,11 @@
           "year": 2025,
           "event": "Saferoad expansion",
           "description": "Saferoad Group accelerates international growth with strategic acquisitions across Europe"
+        },
+        {
+          "year": 2025,
+          "event": "Kjell & Company exit",
+          "description": "FSN IV sells remaining Kjell & Company shares"
         }
       ],
       "portfolio_companies": [

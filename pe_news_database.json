@@ -1,6 +1,56 @@
 {
   "news": [
     {
+      "title": "White & Case advises GHD on sale of Sangro to private equity investor Axcel",
+      "description": "White & Case advised GHD GesundHeits GmbH (GHD), a Nordic Capital portfolio company, on the sale of its Sangro medical services division to private equity investor Axcel. GHD divests sangro medical service GmbH, a leading distributor and logistics provider for homecare products and medical care.",
+      "link": "https://www.whitecase.com/news/press-release/white-case-advises-ghd-sale-sangro-private-equity-investor-axcel",
+      "date": "2026-03-06",
+      "firm": "Axcel",
+      "source": "White & Case",
+      "theme": "M&A",
+      "country": "Germany"
+    },
+    {
+      "title": "CapMan Buyout Exits PDSVISION, Sells To Bridgepoint And Polaris Private Equity",
+      "description": "CapMan Buyout exits PDSVISION, selling the company to Bridgepoint and Polaris Private Equity.",
+      "link": "https://www.tradingview.com/news/reuters.com,2026:newsml_FWN3YZ0D3:0-capman-buyout-exits-pdsvision-sells-to-bridgepoint-and-polaris-private-equity/",
+      "date": "2026-03-15",
+      "firm": "Polaris",
+      "source": "Reuters",
+      "theme": "Exit",
+      "country": "Nordics"
+    },
+    {
+      "title": "EQT exits Galderma Group AG in full via largest sponsor-backed block trade ever",
+      "description": "EQT completes final sell-down in Galderma. Aggregate gross proceeds of c. CHF 4.9 billion, of which EQT VIII received c. CHF 1.3 billion. The largest sponsor-backed block trade in history. EQT has realized c. CHF 21 billion / USD 26 billion through Galderma, the largest value-creation outcome in EQT's history.",
+      "link": "https://news.cision.com/eqt/r/eqt-exits-galderma-group-ag-in-full-via-largest-sponsor-backed-block-trade-ever,c4320588",
+      "date": "2026-03-13",
+      "firm": "EQT",
+      "source": "Cision",
+      "theme": "Exit",
+      "country": "Switzerland"
+    },
+    {
+      "title": "Ex-Altor duo plot new Nordic private equity firm",
+      "description": "Former Altor executives are planning to launch a new Nordic private equity firm.",
+      "link": "https://www.penews.com/articles/ex-altor-duo-plot-new-nordic-private-equity-firm-ab51dc55",
+      "date": "2026-03-14",
+      "firm": "Altor",
+      "source": "Private Equity News",
+      "theme": "Fundraising",
+      "country": "Nordics"
+    },
+    {
+      "title": "Triton Partners raises $5.5 billion for delayed flagship fund",
+      "description": "Triton Partners has raised $5.5 billion for its delayed flagship buyout fund.",
+      "link": "https://www.bloomberg.com/news/articles/2026-03-15/triton-partners-raises-5-5-billion-for-delayed-flagship-fund",
+      "date": "2026-03-15",
+      "firm": "Triton Partners",
+      "source": "Bloomberg",
+      "theme": "Fundraising",
+      "country": "Europe"
+    },
+    {
       "title": "Segulah evolves into Amplio Private Equity",
       "description": "Swedish PE firm Segulah rebrands to Amplio on 1 February 2024. Same team, evolved investment strategy focused on Business Services and IT & Technology Services.",
       "link": "https://www.amplio.se/segulah-evolves-into-amplio-private-equity-amplio/",

@@ -81,7 +81,6 @@ async function loadDashboard() {
     try { await ensurePeFirmLogos(); } catch (e) { console.error('Logo map init failed:', e); }
     try { await loadPELogoMarquee(); } catch (e) { console.error('PE logo marquee failed:', e); }
     try { await loadLatestNews(); } catch (e) { console.error('Latest news failed:', e); }
-    try { await loadActiveFundraising(); } catch (e) { console.error('Fundraising failed:', e); }
     try { await loadPortfolioTrends(); } catch (e) { console.error('Portfolio trends failed:', e); }
     try { await loadPEFirms(); } catch (e) { console.error('PE firms failed:', e); }
     try { await loadStats(); } catch (e) { console.error('Stats failed:', e); }
@@ -123,8 +122,13 @@ async function loadLatestNews() {
             
             container.innerHTML = '';
             
-            // Limit to first 10 items for dashboard performance
-            const peNews = data.news.slice(0, 10);
+            // Sort by date (newest first) then limit to 5 items for compact dashboard
+            const sorted = [...data.news].sort((a, b) => {
+                const da = a.date || '0000-00-00';
+                const db = b.date || '0000-00-00';
+                return db.localeCompare(da);
+            });
+            const peNews = sorted.slice(0, 5);
             
             console.log(`Displaying ${peNews.length} news items on dashboard`);
             
@@ -157,23 +161,24 @@ async function loadLatestNews() {
                 }
             });
             
-            // Add "View All" link
-            const viewAllLink = document.createElement('div');
-            viewAllLink.style.textAlign = 'center';
-            viewAllLink.style.marginTop = '15px';
-            viewAllLink.innerHTML = `<a href="/news" class="btn btn-primary btn-sm">View All ${data.news.length} Articles</a>`;
-            container.appendChild(viewAllLink);
+            // View all articles button at bottom
+            const viewAllEl = document.getElementById('latestNewsViewAll');
+            if (viewAllEl) {
+                viewAllEl.style.display = 'block';
+                viewAllEl.innerHTML = `<a href="/news" class="btn btn-primary btn-sm">View all articles</a>`;
+            }
             
         } else {
             console.log('No news data available');
-            // Show fallback message
             const container = document.getElementById('latestNews');
+            const viewAllEl = document.getElementById('latestNewsViewAll');
+            if (viewAllEl) viewAllEl.style.display = 'none';
             if (container) {
                 container.innerHTML = `
                     <div style="text-align: center; padding: 20px; color: #666;">
                         <i class="fas fa-newspaper" style="font-size: 24px; margin-bottom: 10px; opacity: 0.5;"></i>
-                        <p>Loading latest M&A news...</p>
-                        <a href="/news" class="btn btn-primary btn-sm">View All News</a>
+                        <p>No latest M&A news yet.</p>
+                        <a href="/news" class="btn btn-primary btn-sm" style="margin-top: 0.5rem;">View all articles</a>
                     </div>
                 `;
             }
@@ -181,12 +186,14 @@ async function loadLatestNews() {
     } catch (error) {
         console.error('Error loading news:', error);
         const container = document.getElementById('latestNews');
+        const viewAllEl = document.getElementById('latestNewsViewAll');
+        if (viewAllEl) viewAllEl.style.display = 'none';
         if (container) {
             container.innerHTML = `
                 <div style="text-align: center; padding: 20px; color: #dc2626;">
                     <i class="fas fa-exclamation-triangle" style="font-size: 24px; margin-bottom: 10px;"></i>
                     <p>Error loading news. Please refresh the page.</p>
-                    <a href="/news" class="btn btn-primary btn-sm">View All News</a>
+                    <a href="/news" class="btn btn-primary btn-sm" style="margin-top: 0.5rem;">View all articles</a>
                 </div>
             `;
         }
@@ -315,11 +322,11 @@ async function loadActiveFundraising() {
 }
 
 // ===== PORTFOLIO TRENDS =====
-// Shared with portfolio.js – identical format for circle charts
+// Diversified palette: blues, purples, teal – clearer segment distinction
 const DASHBOARD_CHART_COLORS = [
-    '#3f7de8', '#2f64c0', '#4a8ef4', '#2563eb',
-    '#1e40af', '#3b82f6', '#60a5fa', '#0ea5e9',
-    '#0284c7', '#0369a1'
+    '#3f7de8', '#7c3aed', '#2563eb', '#8b5cf6',
+    '#0d9488', '#6366f1', '#14b8a6', '#a78bfa',
+    '#0891b2', '#c084fc'
 ];
 
 let trendsYearChartInstance = null;
@@ -469,7 +476,7 @@ function createTrendsSectorChart(labels, values) {
                     labels: {
                         boxWidth: 8,
                         padding: 6,
-                        font: { size: 9, weight: '600' },
+                        font: { size: 10, weight: '600' },
                         usePointStyle: true,
                         pointStyle: 'circle',
                         color: '#1e293b'
@@ -546,7 +553,7 @@ function createTrendsCountryChart(labels, values) {
                     labels: {
                         boxWidth: 8,
                         padding: 6,
-                        font: { size: 9, weight: '600' },
+                        font: { size: 10, weight: '600' },
                         usePointStyle: true,
                         pointStyle: 'circle',
                         color: '#1e293b'
@@ -752,9 +759,11 @@ async function loadPELogoMarquee() {
             const primaryLogo = useApiLogo ? apiLogo : clearbitLogo || `https://ui-avatars.com/api/?name=${encodeURIComponent(firm.name || firmKey)}&background=4c1d95&color=fff&size=64`;
             const fallbackFavicon = overrideDomain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(overrideDomain)}&sz=128` : primaryLogo;
             const encodedKey = encodeURIComponent(firmKey);
-            html += `<a href="/pe-firm/${encodedKey}" class="pe-logo-marquee-item" title="${escapeHtml(firm.name || firmKey)}"><img src="${primaryLogo}" alt="${escapeHtml(firm.name || firmKey)}" onerror="this.src='${fallbackFavicon}'; this.onerror=null;"></a>`;
+            html += `<a href="/pe-firm/${encodedKey}" class="pe-logo-marquee-item" title="${escapeHtml(firm.name || firmKey)}"><img src="${primaryLogo}" alt="${escapeHtml(firm.name || firmKey)}" loading="eager" decoding="async" onerror="this.src='${fallbackFavicon}'; this.onerror=null;"></a>`;
         });
         container.innerHTML = html + html;
+        /* iOS: force reflow so animation layer composites and runs immediately */
+        void container.offsetHeight;
     } catch (e) {
         container.innerHTML = '';
     }

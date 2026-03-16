@@ -808,6 +808,12 @@ function displayFilteredPortfolioFlat(companies) {
     emptyState.classList.add('hidden');
     const sortedCompanies = [...companies].sort(comparePortfolioCompaniesBySort);
     const currentYear = new Date().getFullYear();
+
+    const premiumBanner = document.createElement('div');
+    premiumBanner.className = 'premium-banner-bar';
+    premiumBanner.style.cssText = 'display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.5rem 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; margin-bottom: 0.5rem; font-size: 0.7rem; color: #64748b; font-weight: 500;';
+    premiumBanner.innerHTML = '<i class="fas fa-crown" style="font-size: 0.7rem; color: #64748b;"></i><span>Complete list available for Premium users</span>';
+
     const tableWrapper = document.createElement('div');
     tableWrapper.className = 'portfolio-table-wrapper';
     const table = document.createElement('table');
@@ -906,6 +912,7 @@ function displayFilteredPortfolioFlat(companies) {
 
     tableWrapper.appendChild(table);
     container.innerHTML = '';
+    container.appendChild(premiumBanner);
     container.appendChild(tableWrapper);
 }
 
@@ -962,7 +969,13 @@ function displayPortfolio(companies) {
     
     emptyState.classList.add('hidden');
     container.innerHTML = '';
-    
+
+    const premiumBanner = document.createElement('div');
+    premiumBanner.className = 'premium-banner-bar';
+    premiumBanner.style.cssText = 'display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.5rem 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; margin-bottom: 0.75rem; font-size: 0.7rem; color: #64748b; font-weight: 500;';
+    premiumBanner.innerHTML = '<i class="fas fa-crown" style="font-size: 0.7rem; color: #64748b;"></i><span>Complete list available for Premium users</span>';
+    container.appendChild(premiumBanner);
+
     // Group companies by PE firm (source)
     const groupedCompanies = {};
     companies.forEach(company => {
