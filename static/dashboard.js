@@ -759,11 +759,15 @@ async function loadPELogoMarquee() {
             const primaryLogo = useApiLogo ? apiLogo : clearbitLogo || `https://ui-avatars.com/api/?name=${encodeURIComponent(firm.name || firmKey)}&background=4c1d95&color=fff&size=64`;
             const fallbackFavicon = overrideDomain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(overrideDomain)}&sz=128` : primaryLogo;
             const encodedKey = encodeURIComponent(firmKey);
-            html += `<a href="/pe-firm/${encodedKey}" class="pe-logo-marquee-item" title="${escapeHtml(firm.name || firmKey)}"><img src="${primaryLogo}" alt="${escapeHtml(firm.name || firmKey)}" loading="eager" decoding="async" onerror="this.src='${fallbackFavicon}'; this.onerror=null;"></a>`;
+            html += `<a href="/pe-firm/${encodedKey}" class="pe-logo-marquee-item" title="${escapeHtml(firm.name || firmKey)}"><img src="${primaryLogo}" alt="${escapeHtml(firm.name || firmKey)}" loading="eager" decoding="async" width="28" height="28" onerror="this.src='${fallbackFavicon}'; this.onerror=null;"></a>`;
         });
-        container.innerHTML = html + html;
-        /* iOS: force reflow so animation layer composites and runs immediately */
-        void container.offsetHeight;
+        /* Triple copy for seamless loop on mobile (avoids visible gap at seam) */
+        container.innerHTML = html + html + html;
+        /* iOS: force composite layer so animation runs without requiring user tap */
+        container.style.transform = 'translateZ(0)';
+        requestAnimationFrame(() => {
+            void container.offsetHeight;
+        });
     } catch (e) {
         container.innerHTML = '';
     }

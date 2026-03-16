@@ -1166,7 +1166,8 @@
         {
           "year": 2025,
           "event": "IMBOX investment",
-          "description": "Invests in IMBOX with founder and family partners"
+          "description": "Invests in IMBOX with founder and family partners",
+          "company": "Imbox"
         },
         {
           "year": 2025,
@@ -1298,7 +1299,7 @@
           "name": "Imbox",
           "sector": "Consumer & Fashion",
           "country": "Denmark",
-          "logo": "https://logo.clearbit.com/imbox.com",
+          "logo": "https://logo.clearbit.com/imbox.se",
           "description": "Redefining shoe protection"
         },
         {
@@ -5811,8 +5812,9 @@
         },
         {
           "year": 2025,
-          "event": "3Button Group",
-          "description": "First Alder III platform – industrial automation"
+          "event": "Invests in 3Button Group",
+          "description": "First Alder III platform – industrial automation",
+          "company": "3Button Group"
         }
       ],
       "portfolio_companies": [
@@ -8322,7 +8324,9 @@
           "sector": "Technology",
           "country": "Norway",
           "entry_year": "2025",
-          "status": "Active"
+          "status": "Active",
+          "logo": "https://logo.clearbit.com/bekk.no",
+          "website": "https://bekk.no"
         },
         {
           "name": "LS Retail",
@@ -8533,6 +8537,12 @@
           "year": 2024,
           "event": "Nordic Tyre Group",
           "description": "Partnership announced; Altor exit"
+        },
+        {
+          "year": 2025,
+          "event": "Invests in Bekk",
+          "description": "Partnership with Norwegian technology consultancy",
+          "company": "Bekk"
         },
         {
           "year": 2025,

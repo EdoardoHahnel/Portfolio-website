@@ -258,11 +258,12 @@
 }
 
 /* PE Logo Marquee - Small, subtle, no dark background */
-/* iOS fix: will-change + translateZ force GPU layer so animation runs immediately without tap */
+/* Mobile: use translate3d for GPU, inner track for reliable width, triple copy to avoid seam */
 .pe-logo-marquee-section {
     margin-bottom: 0.75rem;
     padding: 0.4rem 0;
     overflow: hidden;
+    -webkit-overflow-scrolling: touch;
 }
 .pe-logo-marquee-wrapper {
     overflow: hidden;
@@ -272,13 +273,14 @@
     overflow: hidden;
 }
 .pe-logo-marquee {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 1.25rem;
+    flex-shrink: 0;
+    width: max-content;
+    box-sizing: border-box;
     padding-left: 100%;
     will-change: transform;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     animation: pe-marquee-scroll 35s linear infinite;
@@ -286,8 +288,14 @@
 }
 @media (max-width: 768px) {
     .pe-logo-marquee {
-        animation-duration: 12s;
-        -webkit-animation-duration: 12s;
+        animation-duration: 20s;
+        -webkit-animation-duration: 20s;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .pe-logo-marquee {
+        animation: none;
+        -webkit-animation: none;
     }
 }
 .pe-logo-marquee:hover {
@@ -295,12 +303,12 @@
     -webkit-animation-play-state: paused;
 }
 @keyframes pe-marquee-scroll {
-    0% { transform: translateX(0) translateZ(0); }
-    100% { transform: translateX(-50%) translateZ(0); }
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-33.333%, 0, 0); }
 }
 @-webkit-keyframes pe-marquee-scroll {
-    0% { -webkit-transform: translateX(0) translateZ(0); }
-    100% { -webkit-transform: translateX(-50%) translateZ(0); }
+    0% { -webkit-transform: translate3d(0, 0, 0); }
+    100% { -webkit-transform: translate3d(-33.333%, 0, 0); }
 }
 .pe-logo-marquee-item {
     display: inline-flex;
@@ -474,7 +482,7 @@
         <div class="pe-signup-row">
             <div class="pe-signup-text">
                 <div class="pe-signup-countdown" id="peSignupCountdown">
-                    <span class="pe-countdown-ended">Last chance</span>
+                    <span class="pe-countdown-ended">Few hours left</span>
                 </div>
                 <span class="pe-signup-sep"></span>
                 <div class="pe-signup-copy">
