@@ -1256,23 +1256,23 @@
         {
           "name": "Flex IT",
           "sector": "Technology & Circular Economy",
-          "country": "Sweden",
+          "country": "Netherlands",
           "logo": "https://logo.clearbit.com/flexit.se",
-          "description": "Making hardware circular"
+          "description": "Dutch IT lifecycle & circular economy (Leiden); refurbished hardware"
         },
         {
           "name": "FLSmidth",
           "sector": "Industrial & Manufacturing",
           "country": "Denmark",
           "logo": "https://logo.clearbit.com/flsmidth.com",
-          "description": "Driving sustainable productivity"
+          "description": "Listed mining & cement OEM — Altor holds ~15% minority stake"
         },
         {
           "name": "Gunnebo",
           "sector": "Security Technology",
           "country": "Sweden",
           "logo": "https://logo.clearbit.com/gunnebo.com",
-          "description": "For a safer world"
+          "description": "Security solutions — co-owned with Stena Adactum (take-private 2020)"
         },
         {
           "name": "Haarslev Industries",
@@ -1340,9 +1340,9 @@
         {
           "name": "Meltwater",
           "sector": "Technology & Software",
-          "country": "Norway",
+          "country": "USA",
           "logo": "https://logo.clearbit.com/meltwater.com",
-          "description": "Helping you understand and influence the world"
+          "description": "Media intelligence (HQ San Francisco); Fund III & VI"
         },
         {
           "name": "Multi-Wing",
@@ -1433,14 +1433,14 @@
           "sector": "Sports & Consumer",
           "country": "France",
           "logo": "https://logo.clearbit.com/rossignol.com",
-          "description": "Another best day"
+          "description": "Winter sports — Rossignol, Dynastar, Lange, Look, Kerma & more"
         },
         {
           "name": "Stegra",
           "sector": "Clean Energy & Technology",
           "country": "Sweden",
           "logo": "https://logo.clearbit.com/stegra.com",
-          "description": "Powering a new, clean industrial revolution"
+          "description": "Green steel (ex-H2 Green Steel), Boden — Funds V, VI & ACT"
         },
         {
           "name": "Svea Solar",
@@ -1482,7 +1482,7 @@
           "sector": "Clean Energy & Technology",
           "country": "Norway",
           "logo": "https://logo.clearbit.com/vianode.com",
-          "description": "Perfecting the E in EVs"
+          "description": "Synthetic anode graphite (Herøya); Altor with Elkem & Hydro"
         }
       ]
     },
