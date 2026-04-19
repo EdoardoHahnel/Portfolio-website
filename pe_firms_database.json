@@ -1391,7 +1391,7 @@
           "sector": "Business Services",
           "country": "Nordic",
           "logo": "https://logo.clearbit.com/optigroup.com",
-          "description": "All essentials for business"
+          "description": "B2B distributor — exited; FSN Capital acquired from Altor (2021/22)"
         },
         {
           "name": "Orchid Orthopedic Solutions",
@@ -2522,7 +2522,7 @@
           "sector": "Tech & Software",
           "country": "Finland",
           "logo": "https://logo.clearbit.com/valamis.com",
-          "description": "Corporate learning and learning experience platform (LXP). Enterprise learning management, content authoring and analytics. Global customer base. Adelis since 2021.",
+          "description": "Helsinki-based learning technology company: cloud LXP/LMS, authoring, skills and compliance tracking, analytics, and integrations for enterprises and public-sector employers running onboarding and continuous upskilling at scale. Global customer footprint; Adelis partnered in 2020–21 to accelerate international expansion.",
           "entry_year": "2021"
         },
         {
@@ -2538,7 +2538,7 @@
           "sector": "Business Services",
           "country": "Finland",
           "logo": "https://logo.clearbit.com/ropo.fi",
-          "description": "Tech-enabled invoice lifecycle management",
+          "description": "Finnish B2B fintech for the invoice lifecycle—financing, credit management, and collections—giving SMEs and mid-market groups predictable cash flow and a digitised order-to-cash chain across Finland and the Nordics.",
           "entry_year": "2019"
         },
         {
@@ -2546,7 +2546,7 @@
           "sector": "Business Services",
           "country": "Denmark",
           "logo": "https://logo.clearbit.com/generaxion.com",
-          "description": "Digital marketing in the Nordics",
+          "description": "Nordic digital marketing services group (SEO/SEM, websites, e-commerce, inbound/content) for SMEs and mid-market brands via local market brands in Denmark, Sweden, Norway, and Finland.",
           "entry_year": "2018"
         },
         {
@@ -2554,7 +2554,7 @@
           "sector": "Tech & Software",
           "country": "Sweden",
           "logo": "https://logo.clearbit.com/hvdgroup.se",
-          "description": "ERP/FSM/project software for construction & skilled trades",
+          "description": "Vertical software group for construction and skilled trades (ERP, FSM, project tools)—now branded Aceve—formed from Hantverksdata, Next One, and many Nordic/Benelux/Germany add-ons; 22,000+ customers and cloud-first recurring revenue. Adelis since 2018; continuation vehicle with EQT from 2024.",
           "entry_year": "2018"
         },
         {
@@ -2562,7 +2562,7 @@
           "sector": "Consumer",
           "country": "Sweden",
           "logo": "https://logo.clearbit.com/didriksons.com",
-          "description": "Functional, sustainable everyday outdoor jackets",
+          "description": "Swedish outerwear brand (since 1913): functional waterproof shells, parkas, and kids’ lines emphasising sustainability and everyday outdoor use; omnichannel sales across the Nordics and export markets. Adelis since 2018.",
           "entry_year": "2018"
         },
         {
@@ -2570,7 +2570,7 @@
           "sector": "Business Services",
           "country": "Sweden",
           "logo": "https://logo.clearbit.com/presto.se",
-          "description": "Leading fire safety & training provider",
+          "description": "Pan-European fire-safety and workplace-compliance group: inspections, systems, monitoring, and certified training—scaled under Adelis via add-ons into Germany and Southern Europe; moved to HarbourVest-led continuation vehicle in 2024.",
           "entry_year": "2018"
         },
         {
@@ -2578,7 +2578,7 @@
           "sector": "Healthcare & Life Sciences",
           "country": "Denmark",
           "logo": "https://logo.clearbit.com/ssidiagnostica.com",
-          "description": "Infectious-disease IVD & vaccine QC",
+          "description": "Specialty IVD and QC supplier: rapid tests and media for GI, respiratory, and bloodborne pathogens, plus antisera/QC for vaccine producers—carved out 2016, built via US/global M&A (e.g. CTK Biotech, Techlab) and continuation fund 2022.",
           "entry_year": "2016"
         }
       ]
@@ -7484,7 +7484,7 @@
           "country": "Denmark",
           "logo": "https://logo.clearbit.com/hoyer.com",
           "description": "Manufacturer of electric motors, drives, and controls",
-          "detailed_description": "Hoyer is a Danish manufacturer of electric motors, drives, and controls headquartered in Hadsten. Polaris invested in 2025. The company serves industrial and automation customers across the Nordics and Europe with revenue of approximately €98 million and 250 employees.",
+          "detailed_description": "Hoyer is a Danish manufacturer of electric motors, drives, and controls headquartered in Hadsten. Majority owner is Capidea (Danish PE); Polaris and Motortramp are minority co-investors alongside Capidea — not a Polaris-controlled buyout. Revenue approximately €98 million and 250 employees.",
           "entry_year": "2025",
           "fund": "Polaris",
           "headquarters": "Hadsten, Denmark",
@@ -10252,10 +10252,10 @@
           "country": "Germany",
           "logo": "https://logo.clearbit.com/baeckergoertz.de",
           "description": "German bakery chain and QSR market leader",
-          "detailed_description": "Bäcker Görtz is a leading German bakery chain founded in 1963 by the Görtz family, headquartered in Ludwigshafen in the Rhine-Neckar region. The company operates approximately 200 bakery branches with 1,400–1,900 employees, generating around €130 million in annual revenue. It produces over 2 million baked goods weekly from a highly automated production facility and achieved organic growth at 14% CAGR since 2006 with operating margins exceeding 20%. FSN Capital VI acquired a majority stake in September 2022 (closed October 2022); founders Peter and Frank Görtz retained a significant minority stake and continue as Co-CEOs. The investment targets acceleration in Germany's €15 billion bakery market through add-ons and operational best practices.",
+          "detailed_description": "Bäcker Görtz is a leading German bakery chain founded in 1963 by the Görtz family, headquartered in Mannheim in the Rhine-Neckar region (neighboring Ludwigshafen across the Rhine). The company operates approximately 200 bakery branches with 1,400–1,900 employees, generating around €130 million in annual revenue. It produces over 2 million baked goods weekly from a highly automated production facility and achieved organic growth at 14% CAGR since 2006 with operating margins exceeding 20%. FSN Capital VI acquired a majority stake in September 2022 (closed October 2022); founders Peter and Frank Görtz retained a significant minority stake and continue as Co-CEOs. The investment targets acceleration in Germany's €15 billion bakery market through add-ons and operational best practices.",
           "entry_year": "2022",
           "fund": "FSN Capital VI",
-          "headquarters": "Ludwigshafen, Germany"
+          "headquarters": "Mannheim, Germany"
         },
         {
           "name": "ilionx",

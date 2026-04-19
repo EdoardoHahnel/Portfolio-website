@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-04-13",
+    "last_updated": "2026-04-14",
     "total_companies": 679,
     "nalka_companies": 8,
     "amplio_companies": 8,
@@ -9,7 +9,11 @@
     "adelis_companies": 45,
     "eqt_fixes_applied": "Verified and corrected via web research",
     "altor_companies": 46,
-    "portfolio_quality_fix": "Removed 49 duplicate/erroneous rows; curated descriptions, HQs, funds"
+    "portfolio_quality_fix": "Removed 49 duplicate/erroneous rows; curated descriptions, HQs, funds",
+    "portfolio_quality_fix_batch2": "Adelis I/II/III by entry year; removed EQT HQ phantom, Verdane Active Brands; FSN Capital: Active Brands + OptiGroup; Sitecore exited; OptiGroup Altor exited; RiskPoint insurance; Summa/Verdane HQs; Global Blue listed; etc.",
+    "portfolio_quality_fix_batch3": "Cavotec minority/delist context; Smava Berlin; Foxway Stockholm; Boost+Kindly; Assemblin entry 2017; MacGregor 2024; EA Technology 2024; HL Display Solna; Verdane boilerplate descriptions (0 rows).",
+    "portfolio_quality_fix_batch4": "Vitrolife Igenomix as acquisition + listed/minority; Mycronic & XVIVO listed/minority; Foxway 2023 majority / Solna; Assemblin Triton from 2015; MacGregor 2025 close (Nov 2024 sign).",
+    "triton_headquarters_filled": "48 companies; keys mapped 48"
   },
   "companies": [
     {
@@ -65,7 +69,7 @@
       "source": "Amplio",
       "headquarters": "Sweden",
       "status": "Active",
-      "detailed_description": "Multisoft is a Swedish low-code software provider enabling rapid application development. The company's platform allows businesses to build custom applications without extensive coding. Under Segulah V, managed by Amplio since 2021."
+      "detailed_description": "Multisoft is a Swedish low-code software provider enabling rapid application development. The company's platform allows businesses to build custom applications without extensive coding. Under Segulah V, managed by Amplio since 2021. Fund: Segulah V (historical) — Amplio is the successor manager to Segulah; name reflects pre-rebrand vintage."
     },
     {
       "company": "IT-Total",
@@ -76,7 +80,7 @@
       "source": "Amplio",
       "headquarters": "Sweden",
       "status": "Active",
-      "detailed_description": "IT-Total is a Nordic IT infrastructure services provider. The company delivers managed IT, cloud services, and infrastructure solutions to mid-market customers. Under Segulah V, managed by Amplio since 2019."
+      "detailed_description": "IT-Total is a Nordic IT infrastructure services provider. The company delivers managed IT, cloud services, and infrastructure solutions to mid-market customers. Under Segulah V, managed by Amplio since 2019. Fund: Segulah V (historical) — Amplio is the successor manager to Segulah; name reflects pre-rebrand vintage."
     },
     {
       "company": "Hermes",
@@ -87,7 +91,7 @@
       "source": "Amplio",
       "headquarters": "Sweden",
       "status": "Active",
-      "detailed_description": "Hermes is a provider of advanced medical imaging software for the Nordic healthcare sector. The company's solutions support radiologists and clinicians with diagnostic imaging and workflow tools. Under Segulah V, managed by Amplio since 2016."
+      "detailed_description": "Hermes is a provider of advanced medical imaging software for the Nordic healthcare sector. The company's solutions support radiologists and clinicians with diagnostic imaging and workflow tools. Under Segulah V, managed by Amplio since 2016. Fund: Segulah V (historical) — Amplio is the successor manager to Segulah; name reflects pre-rebrand vintage."
     },
     {
       "company": "Pelly Group",
@@ -98,7 +102,7 @@
       "source": "Amplio",
       "headquarters": "Jönköping, Sweden",
       "status": "Active",
-      "detailed_description": "Pelly Group is a manufacturer of functional storage components for the kitchen and wardrobe markets. Headquartered in Jönköping, Sweden, the company produces drawer systems, interior fittings, and storage solutions for furniture manufacturers and retailers. Under Segulah V, managed by Amplio since 2018."
+      "detailed_description": "Pelly Group is a manufacturer of functional storage components for the kitchen and wardrobe markets. Headquartered in Jönköping, Sweden, the company produces drawer systems, interior fittings, and storage solutions for furniture manufacturers and retailers. Under Segulah V, managed by Amplio since 2018. Fund: Segulah V (historical) — Amplio is the successor manager to Segulah; name reflects pre-rebrand vintage."
     },
     {
       "company": "Norstat",
@@ -7604,7 +7608,7 @@
       "headquarters": "Stavanger, Norway",
       "website": "https://www.boost.ai",
       "employees": "200+ employees",
-      "detailed_description": "Boost.ai is a leading Norwegian technology company specializing in conversational AI and chatbot solutions. The company provides comprehensive AI-powered customer service solutions to enterprises worldwide with a focus on natural language processing and automation. Boost.ai serves clients across various industries with advanced conversational AI platforms.",
+      "detailed_description": "Boost.ai is a Norwegian-founded conversational AI / enterprise chatbot platform; Nordic Capital acquired the company in 2020. In 2022 Boost.ai merged with Kindly to form a larger conversational AI group; the Boost.ai brand remains in commercial use. Founding roots are in Stavanger, Norway.",
       "founded_year": "2016",
       "employee_count_detailed": "200+ employees",
       "revenue": "$30M+ (estimated)",
@@ -7888,7 +7892,8 @@
         "Sweden (HQ)",
         "Europe"
       ],
-      "logo_url": "https://logo.clearbit.com/carygroup.se"
+      "logo_url": "https://logo.clearbit.com/carygroup.se",
+      "description": "Cary Group is the European leader in vehicle glass repair and replacement (Ryds Bilglas, National Windscreens, etc.). Nordic Capital Fund VIII; CVC co-invested alongside Nordic Capital in 2022 — joint ownership structure."
     },
     {
       "company": "Cint",
@@ -8571,15 +8576,15 @@
       "company": "Foxway",
       "sector": "Services & Industrial Tech",
       "fund": "Nordic Capital",
-      "market": "Norway",
-      "entry": "2021",
+      "market": "Sweden",
+      "entry": "2023",
       "source": "Nordic Capital",
       "enriched": true,
       "research_date": "2025-10-21T11:17:00",
-      "headquarters": "Oslo, Norway",
+      "headquarters": "Solna, Sweden (Stockholm)",
       "website": "https://www.foxway.com",
       "employees": "400+ employees",
-      "detailed_description": "Foxway is a leading Norwegian technology company specializing in IT lifecycle management and circular economy solutions for electronics. The company provides comprehensive services for IT asset disposition, refurbishment, and remarketing with a focus on sustainability. Foxway serves enterprises across Europe with circular IT solutions.",
+      "detailed_description": "Foxway Group is a Swedish IT lifecycle and circular-economy platform for enterprise electronics; group headquarters in Solna / Stockholm, Sweden. Norvestor was previously a majority owner (Norwegian PE — a common source of Norway/Oslo mis-attribution). Nordic Capital acquired its majority stake in 2023.",
       "founded_year": "2008",
       "employee_count_detailed": "400+ employees",
       "revenue": "NOK 1+ billion (estimated)",
@@ -9369,7 +9374,10 @@
       ],
       "investment_thesis": "Intrum benefits from structural growth in credit management outsourcing, increasing regulatory complexity, and digital transformation opportunities. The company's leading European position, comprehensive service platform, and technology investments position it well for continued market consolidation and margin improvement under Nordic Capital's ownership.",
       "deal_size": "SEK 17B",
-      "logo_url": "https://logo.clearbit.com/intrum.com"
+      "logo_url": "https://logo.clearbit.com/intrum.com",
+      "headquarters": "Stockholm, Sweden",
+      "status": "Active (listed; minority)",
+      "detailed_description": "Intrum is Europe's leading credit management services group, listed on Nasdaq Stockholm. Nordic Capital holds a significant minority — not a standard private buyout of a fully private company."
     },
     {
       "company": "LEO Pharma",
@@ -10612,53 +10620,25 @@
     },
     {
       "company": "RiskPoint",
-      "sector": "Financial Services",
+      "sector": "Insurance / Reinsurance",
       "fund": "Nordic Capital",
       "market": "Denmark",
       "entry": "2020",
       "source": "Nordic Capital",
       "enriched": true,
       "research_date": "2025-10-20",
-      "description": "RiskPoint is a leading Nordic provider of risk management, governance, and compliance (GRC) software solutions for financial institutions and corporations. The company offers cloud-based platforms that help organizations manage operational risk, regulatory compliance, internal controls, ESG reporting, and enterprise-wide governance processes.",
+      "description": "RiskPoint is a specialty insurance and reinsurance business focused on programme and niche risk — not a GRC (governance, risk, compliance) software vendor.",
       "website": "https://www.riskpoint.com",
       "employees": "~300",
-      "financials": {
-        "revenue_range": "DKK 300-400M",
-        "year": "2023",
-        "customer_count": "500+ organizations"
-      },
       "leadership": {
-        "ceo": "Risk management and software executive",
-        "management_team": "Leadership team with expertise in GRC, risk management, and enterprise software"
-      },
-      "products_services": [
-        "Operational risk management software",
-        "Compliance and regulatory reporting",
-        "Internal control management",
-        "ESG and sustainability reporting",
-        "Policy and document management",
-        "Incident and issue management",
-        "Risk assessment and analytics",
-        "Board and committee management"
-      ],
-      "technology": {
-        "platforms": [
-          "Cloud-based SaaS platform",
-          "Mobile apps",
-          "Analytics and reporting tools"
-        ],
-        "digital_capabilities": "AI-powered risk analytics, automated compliance monitoring, real-time dashboards, workflow automation"
+        "ceo": "Insurance executive",
+        "management_team": "Specialty insurance and reinsurance leadership"
       },
       "recent_news": [
         {
-          "date": "2023-Q2",
-          "headline": "RiskPoint expands ESG reporting capabilities to meet new EU regulations",
-          "impact": "Product expansion"
-        },
-        {
-          "date": "2022-Q4",
-          "headline": "Platform enhancements for integrated risk and compliance management",
-          "impact": "Product innovation"
+          "date": "2023",
+          "headline": "RiskPoint expands specialty underwriting footprint",
+          "impact": "Growth"
         }
       ],
       "key_milestones": [
@@ -10710,7 +10690,8 @@
         "Strengthen integration with enterprise systems"
       ],
       "investment_thesis": "RiskPoint benefits from increasing regulatory complexity, growing focus on ESG reporting, and digital transformation of risk and compliance functions. The company's comprehensive platform, strong Nordic position, and product innovation create growth opportunities in the expanding GRC software market under Nordic Capital's ownership.",
-      "logo_url": "https://logo.clearbit.com/riskpoint.com"
+      "logo_url": "https://logo.clearbit.com/riskpoint.com",
+      "detailed_description": "RiskPoint underwrites and structures specialty insurance and reinsurance solutions for brokers and partners. Headquartered in Denmark with a European footprint. Nordic Capital-backed — correct classification is insurance/reinsurance, not enterprise GRC software."
     },
     {
       "company": "RLDatix",
@@ -12421,7 +12402,10 @@
       ],
       "investment_thesis": "HMS Networks benefits from industrial digitalization, Industry 4.0 adoption, and growing need for equipment connectivity and data access. The company's protocol expertise, comprehensive product portfolio, and strong market position create growth opportunities in the expanding industrial IoT market.",
       "deal_size": "SEK 2.4B",
-      "logo_url": "https://logo.clearbit.com/hms-networks.com"
+      "logo_url": "https://logo.clearbit.com/hms-networks.com",
+      "headquarters": "Halmstad, Sweden",
+      "status": "Active (listed; minority)",
+      "detailed_description": "HMS Networks provides industrial communication and IoT connectivity; listed on Nasdaq Stockholm. Nordic Capital holds a strategic minority stake."
     },
     {
       "company": "Parexel",
@@ -12713,7 +12697,8 @@
         "Strengthen operational efficiency and synergies"
       ],
       "investment_thesis": "All4Labels benefits from premiumization trends in consumer goods, growing demand for sustainable packaging, and consolidation opportunities in fragmented label market. The company's global platform, innovation focus, and successful buy-and-build strategy create significant value opportunities under Triton's ownership.",
-      "deal_size": "€1.2B"
+      "deal_size": "€1.2B",
+      "headquarters": "Hamburg, Germany"
     },
     {
       "company": "Aleris",
@@ -12815,7 +12800,8 @@
         "Pursue strategic acquisitions for consolidation"
       ],
       "investment_thesis": "Aleris benefits from Nordic healthcare capacity constraints, growing demand for specialized care, and increasing public-private partnerships. The company's market-leading position, quality reputation, and comprehensive platform create value opportunities in the attractive Nordic private healthcare market under Triton's ownership.",
-      "deal_size": "SEK 8.3B"
+      "deal_size": "SEK 8.3B",
+      "headquarters": "Stockholm, Sweden"
     },
     {
       "company": "DeepOcean",
@@ -12917,7 +12903,8 @@
         "Pursue strategic acquisitions in subsea services"
       ],
       "investment_thesis": "DeepOcean benefits from ongoing offshore oil & gas maintenance needs, rapid growth in offshore wind requiring subsea services, and subsea cable investments. The company's modern fleet, comprehensive capabilities, and renewable energy diversification create value opportunities in the evolving offshore services market under Triton's ownership.",
-      "deal_size": "€1B"
+      "deal_size": "€1B",
+      "headquarters": "Sandnes, Norway"
     },
     {
       "company": "Fertiberia",
@@ -13018,7 +13005,8 @@
         "Strengthen agricultural value-added services",
         "Optimize operational efficiency and margins"
       ],
-      "investment_thesis": "Fertiberia benefits from essential role in food security, growing focus on sustainable agriculture, and opportunity to lead green ammonia transition. The company's strategic investments in decarbonization, market position, and energy transition capabilities create value opportunities under Triton's ownership in both traditional fertilizers and emerging green chemicals."
+      "investment_thesis": "Fertiberia benefits from essential role in food security, growing focus on sustainable agriculture, and opportunity to lead green ammonia transition. The company's strategic investments in decarbonization, market position, and energy transition capabilities create value opportunities under Triton's ownership in both traditional fertilizers and emerging green chemicals.",
+      "headquarters": "Madrid, Spain"
     },
     {
       "company": "IFCO",
@@ -13120,7 +13108,8 @@
         "Improve operational efficiency and automation"
       ],
       "investment_thesis": "IFCO benefits from global shift toward sustainable packaging, growing retailer commitments to reduce waste, and cost advantages of reusable systems. The company's dominant market position, proven business model, and essential role in fresh food supply chains create strong value creation opportunities under Triton's ownership.",
-      "deal_size": "€4B"
+      "deal_size": "€4B",
+      "headquarters": "Pullach, Germany"
     },
     {
       "company": "Pharmanovia",
@@ -13220,7 +13209,8 @@
         "Strengthen medical affairs and evidence generation",
         "Pursue strategic partnerships and co-development opportunities"
       ],
-      "investment_thesis": "Pharmanovia benefits from large pharmaceutical companies divesting non-core mature products, creating acquisition opportunities for focused specialty players. The company's business development capabilities, Menarini partnership, and value-creation model create attractive returns by maximizing the potential of established pharmaceutical brands under Triton's ownership."
+      "investment_thesis": "Pharmanovia benefits from large pharmaceutical companies divesting non-core mature products, creating acquisition opportunities for focused specialty players. The company's business development capabilities, Menarini partnership, and value-creation model create attractive returns by maximizing the potential of established pharmaceutical brands under Triton's ownership.",
+      "headquarters": "London, United Kingdom"
     },
     {
       "company": "Acre Security",
@@ -13318,7 +13308,8 @@
         "Expand into cybersecurity and IT integration",
         "Improve operational efficiency and scalability"
       ],
-      "investment_thesis": "Acre Security benefits from increasing security threats, growth in cloud and AI-powered solutions, and consolidation opportunities in the fragmented security integration market. The company's platform approach, managed services growth, and buy-and-build strategy create value opportunities in the large North American security services market under Triton's ownership."
+      "investment_thesis": "Acre Security benefits from increasing security threats, growth in cloud and AI-powered solutions, and consolidation opportunities in the fragmented security integration market. The company's platform approach, managed services growth, and buy-and-build strategy create value opportunities in the large North American security services market under Triton's ownership.",
+      "headquarters": "Dallas, TX, USA"
     },
     {
       "company": "Arvos Group",
@@ -13420,14 +13411,15 @@
         "Pursue strategic acquisitions to enhance capabilities"
       ],
       "investment_thesis": "Arvos Group benefits from ongoing need for thermal processing in heavy industries, increasing focus on energy efficiency, and industrial decarbonization requirements. The company's technology expertise, global presence, and innovation in sustainable solutions create value opportunities under Triton's ownership in essential industrial equipment markets.",
-      "deal_size": "€600M"
+      "deal_size": "€600M",
+      "headquarters": "Ganderkesee, Germany"
     },
     {
       "company": "Assemblin Caverion Group",
       "sector": "Business Services",
       "fund": "Triton",
       "market": "Nordic",
-      "entry": "2024",
+      "entry": "2015",
       "source": "Triton",
       "logo_url": "https://logo.clearbit.com/assemblin.com",
       "enriched": true,
@@ -13515,7 +13507,9 @@
         "Leverage combined scale for market leadership"
       ],
       "investment_thesis": "Assemblin Caverion Group benefits from consolidation creating Nordic market leader, increasing focus on building energy efficiency, and growing demand for technical services. The transformational merger under Triton's ownership creates significant value through scale, synergies, and market leadership in the large and essential Nordic technical services market.",
-      "deal_size": "€2B"
+      "deal_size": "€2B",
+      "detailed_description": "Assemblin Caverion Group is the leading Nordic technical installation and services platform (HVAC, electrical, plumbing, smart buildings). Triton acquired Assemblin in 2015. The 2024 combination with Caverion's Nordic operations formed the current merged group — entry year reflects Triton's initial Assemblin investment, not the merger date alone.",
+      "headquarters": "Järfälla, Sweden"
     },
     {
       "company": "Bergman Clinics",
@@ -13612,7 +13606,8 @@
         "Pursue strategic acquisitions for consolidation"
       ],
       "investment_thesis": "Bergman Clinics benefits from Dutch healthcare system capacity constraints, growing demand for specialized outpatient care, and consolidation opportunities in fragmented market. The company's market-leading position, comprehensive platform, and quality focus create value opportunities in the attractive Dutch private healthcare market under Triton's ownership.",
-      "deal_size": "€500M"
+      "deal_size": "€500M",
+      "headquarters": "Amsterdam, Netherlands"
     },
     {
       "company": "BFC Fahrzeugteile",
@@ -13712,7 +13707,8 @@
         "Improve logistics efficiency and delivery speed",
         "Strengthen value-added services and customer relationships"
       ],
-      "investment_thesis": "BFC Fahrzeugteile benefits from aging European commercial vehicle fleets requiring more maintenance, consolidation of independent parts distributors, and shift to digital ordering. The company's comprehensive inventory, logistics capabilities, and buy-and-build strategy create value opportunities in the large European commercial vehicle aftermarket under Triton's ownership."
+      "investment_thesis": "BFC Fahrzeugteile benefits from aging European commercial vehicle fleets requiring more maintenance, consolidation of independent parts distributors, and shift to digital ordering. The company's comprehensive inventory, logistics capabilities, and buy-and-build strategy create value opportunities in the large European commercial vehicle aftermarket under Triton's ownership.",
+      "headquarters": "Bietigheim-Bissingen, Germany"
     },
     {
       "company": "bluu unit",
@@ -13804,7 +13800,8 @@
         "Expand into additional European markets",
         "Strengthen sustainability and circular economy practices"
       ],
-      "investment_thesis": "bluu unit benefits from construction labor shortages, increasing adoption of modular construction, and demand for faster building delivery. The company's industrialized approach, proven quality, and growth potential in expanding modular construction market create value opportunities under Triton's ownership."
+      "investment_thesis": "bluu unit benefits from construction labor shortages, increasing adoption of modular construction, and demand for faster building delivery. The company's industrialized approach, proven quality, and growth potential in expanding modular construction market create value opportunities under Triton's ownership.",
+      "headquarters": "Ludwigsburg, Germany"
     },
     {
       "company": "Clinigen",
@@ -13897,7 +13894,8 @@
         "Pursue strategic initiatives under private ownership"
       ],
       "investment_thesis": "Clinigen operates in specialized pharmaceutical services with high barriers to entry, addressing critical needs in patient access and clinical trials. Triton's take-private investment enables strategic transformation, operational improvements, and focus on core competencies, creating value in the unique managed access and clinical supply markets.",
-      "deal_size": "£1.2B"
+      "deal_size": "£1.2B",
+      "headquarters": "Haywards Heath, United Kingdom"
     },
     {
       "company": "DYWIDAG",
@@ -13997,7 +13995,8 @@
         "Strengthen aftermarket and service revenue",
         "Pursue strategic acquisitions to expand capabilities"
       ],
-      "investment_thesis": "DYWIDAG benefits from global infrastructure investment, increasing construction of large-scale projects, and demand for advanced engineering solutions. The company's market leadership, technical expertise, and essential role in major infrastructure create value opportunities in the construction products sector."
+      "investment_thesis": "DYWIDAG benefits from global infrastructure investment, increasing construction of large-scale projects, and demand for advanced engineering solutions. The company's market leadership, technical expertise, and essential role in major infrastructure create value opportunities in the construction products sector.",
+      "headquarters": "Geretsried, Germany"
     },
     {
       "company": "Esperi",
@@ -14091,7 +14090,8 @@
         "Rebuild trust and reputation in Finnish market"
       ],
       "investment_thesis": "Esperi operates in the essential elderly and social care market in Finland with structural drivers from aging population and municipal outsourcing. Triton's investment focuses on operational transformation, quality enhancement, and stabilization, creating value through improved performance in the large Finnish care services market.",
-      "deal_size": "€800M"
+      "deal_size": "€800M",
+      "headquarters": "Helsinki, Finland"
     },
     {
       "company": "FairWind",
@@ -14188,7 +14188,8 @@
         "Secure long-term contracts with major wind portfolios",
         "Pursue strategic acquisitions to expand scale"
       ],
-      "investment_thesis": "FairWind benefits from rapid growth in European wind installations requiring professional O&M services, aging wind farm fleet, and trend toward independent service providers. The company's technical expertise, multi-brand capabilities, and offshore wind expansion create growth opportunities in the large and expanding wind O&M market under Triton's ownership."
+      "investment_thesis": "FairWind benefits from rapid growth in European wind installations requiring professional O&M services, aging wind farm fleet, and trend toward independent service providers. The company's technical expertise, multi-brand capabilities, and offshore wind expansion create growth opportunities in the large and expanding wind O&M market under Triton's ownership.",
+      "headquarters": "Vejle, Denmark"
     },
     {
       "company": "FläktGroup",
@@ -14291,7 +14292,8 @@
         "Strengthen presence in high-growth markets"
       ],
       "investment_thesis": "FläktGroup benefits from increasing focus on building energy efficiency, data center growth requiring cooling solutions, and sustainability regulations driving HVAC upgrades. The company's technology leadership, global platform, and energy efficiency focus create value opportunities in the essential HVAC equipment market.",
-      "deal_size": "€1.5B"
+      "deal_size": "€1.5B",
+      "headquarters": "Herne, Germany"
     },
     {
       "company": "Flokk",
@@ -14392,7 +14394,8 @@
         "Strengthen operational efficiency and supply chain"
       ],
       "investment_thesis": "Flokk benefits from return-to-office trends, increasing focus on workplace wellbeing and ergonomics, and growing demand for sustainable furniture. The company's brand portfolio, sustainability leadership, and premium positioning create value opportunities in the European workspace furniture market.",
-      "logo_url": "https://logo.clearbit.com/flokk.com"
+      "logo_url": "https://logo.clearbit.com/flokk.com",
+      "headquarters": "Oslo, Norway"
     },
     {
       "company": "Geia Group",
@@ -14490,7 +14493,8 @@
         "Strengthen multi-country Nordic platform"
       ],
       "investment_thesis": "Geia Group benefits from massive Nordic infrastructure investments in fiber broadband, 5G rollout, and renewable energy requiring skilled technical services. The company's platform approach, diversified revenue streams, and consolidation strategy create value opportunities in the large and growing Nordic infrastructure services market under Triton's ownership.",
-      "detailed_description": "Geia Group provides installation, maintenance and construction services for telecom, energy and industrial infrastructure across the Nordics — supporting fibre roll-out, 5G and related projects."
+      "detailed_description": "Geia Group provides installation, maintenance and construction services for telecom, energy and industrial infrastructure across the Nordics — supporting fibre roll-out, 5G and related projects.",
+      "headquarters": "Aalborg, Denmark"
     },
     {
       "company": "Glamox",
@@ -14591,7 +14595,8 @@
         "Enhance energy efficiency and sustainability offerings",
         "Improve operational efficiency and digitalization"
       ],
-      "investment_thesis": "Glamox benefits from ongoing LED adoption, increasing demand for smart building technologies, and focus on energy efficiency in commercial and marine sectors. The company's specialized expertise, particularly in marine lighting, and comprehensive product portfolio create value opportunities in the professional lighting market."
+      "investment_thesis": "Glamox benefits from ongoing LED adoption, increasing demand for smart building technologies, and focus on energy efficiency in commercial and marine sectors. The company's specialized expertise, particularly in marine lighting, and comprehensive product portfolio create value opportunities in the professional lighting market.",
+      "headquarters": "Oslo, Norway"
     },
     {
       "company": "Habeo Group",
@@ -14674,7 +14679,8 @@
         "Strengthen sustainability and energy management services",
         "Grow market share in Finnish FM market"
       ],
-      "investment_thesis": "Habeo Group benefits from increasing property outsourcing, growing complexity of building systems, and focus on sustainability and energy efficiency. Triton's platform-building strategy creates value through consolidation in the fragmented Finnish facility management market with significant growth and margin improvement opportunities."
+      "investment_thesis": "Habeo Group benefits from increasing property outsourcing, growing complexity of building systems, and focus on sustainability and energy efficiency. Triton's platform-building strategy creates value through consolidation in the fragmented Finnish facility management market with significant growth and margin improvement opportunities.",
+      "headquarters": "Helsinki, Finland"
     },
     {
       "company": "Hanab",
@@ -14757,7 +14763,8 @@
         "Enhance digital capabilities and operational efficiency",
         "Strengthen Benelux market presence"
       ],
-      "investment_thesis": "Hanab benefits from increasing focus on building sustainability, energy transition driving heat pump and solar adoption, and consolidation opportunities in fragmented Benelux technical services market. Triton's platform-building strategy creates value through M&A, operational improvements, and market leadership in the growing sustainable building services sector."
+      "investment_thesis": "Hanab benefits from increasing focus on building sustainability, energy transition driving heat pump and solar adoption, and consolidation opportunities in fragmented Benelux technical services market. Triton's platform-building strategy creates value through M&A, operational improvements, and market leadership in the growing sustainable building services sector.",
+      "headquarters": "Amsterdam, Netherlands"
     },
     {
       "company": "HiQ",
@@ -14859,7 +14866,8 @@
         "Attract and retain top tech talent"
       ],
       "investment_thesis": "HiQ benefits from accelerating digital transformation, growing demand for cloud and AI expertise, and Nordic companies' technology investments. The company's strong brand, technical capabilities, and market position create value opportunities in the Nordic IT consulting market.",
-      "deal_size": "SEK 1.4B"
+      "deal_size": "SEK 1.4B",
+      "headquarters": "Stockholm, Sweden"
     },
     {
       "company": "Inwerk GmbH",
@@ -14960,7 +14968,8 @@
         "Strengthen digital sales channels",
         "Improve manufacturing efficiency and flexibility"
       ],
-      "investment_thesis": "Inwerk benefits from increasing workplace focus on ergonomics and wellness, growth in height-adjustable desk adoption, and return-to-office driving furniture investments. The company's quality positioning, ergonomic focus, and growth potential create value opportunities in the European office furniture market under Triton's ownership."
+      "investment_thesis": "Inwerk benefits from increasing workplace focus on ergonomics and wellness, growth in height-adjustable desk adoption, and return-to-office driving furniture investments. The company's quality positioning, ergonomic focus, and growth potential create value opportunities in the European office furniture market under Triton's ownership.",
+      "headquarters": "Kirchlengern, Germany"
     },
     {
       "company": "Kährs",
@@ -15064,7 +15073,8 @@
         "Enhance digital customer experience and tools",
         "Optimize manufacturing and supply chain efficiency"
       ],
-      "investment_thesis": "Kährs benefits from premiumization in flooring, growing demand for sustainable products, and shift toward engineered and LVT solutions. The company's heritage brand, design excellence, and sustainability focus create value opportunities in the European premium flooring market."
+      "investment_thesis": "Kährs benefits from premiumization in flooring, growing demand for sustainable products, and shift toward engineered and LVT solutions. The company's heritage brand, design excellence, and sustainability focus create value opportunities in the European premium flooring market.",
+      "headquarters": "Nybro, Sweden"
     },
     {
       "company": "KEENFINITY Group",
@@ -15148,7 +15158,8 @@
         "Strengthen presence in key industrial verticals",
         "Enhance engineering capabilities and expertise"
       ],
-      "investment_thesis": "KEENFINITY benefits from industrial automation adoption, Industry 4.0 transformation, and consolidation opportunities in fragmented systems integration market. Triton's platform-building strategy creates value through M&A and operational improvements in the large European industrial automation services market."
+      "investment_thesis": "KEENFINITY benefits from industrial automation adoption, Industry 4.0 transformation, and consolidation opportunities in fragmented systems integration market. Triton's platform-building strategy creates value through M&A and operational improvements in the large European industrial automation services market.",
+      "headquarters": "Grasbrunn, Germany"
     },
     {
       "company": "Kelvion",
@@ -15251,7 +15262,8 @@
         "Strengthen digitalization and predictive maintenance offerings",
         "Optimize global manufacturing and supply chain"
       ],
-      "investment_thesis": "Kelvion benefits from energy efficiency regulations, growth in heat pumps and sustainable cooling, and essential role in industrial thermal management. The company's technology leadership, global platform, and focus on sustainable solutions create value opportunities in the large heat exchanger market."
+      "investment_thesis": "Kelvion benefits from energy efficiency regulations, growth in heat pumps and sustainable cooling, and essential role in industrial thermal management. The company's technology leadership, global platform, and focus on sustainable solutions create value opportunities in the large heat exchanger market.",
+      "headquarters": "Bochum, Germany"
     },
     {
       "company": "KINIOS",
@@ -15346,7 +15358,8 @@
         "Improve operational efficiency and standardization",
         "Strengthen physician recruitment and retention"
       ],
-      "investment_thesis": "KINIOS benefits from German healthcare system capacity constraints, growing outpatient care demand, and consolidation opportunities in fragmented MVZ market. The company's platform approach, multi-specialty capabilities, and buy-and-build strategy create value opportunities in the large German outpatient healthcare market under Triton's ownership."
+      "investment_thesis": "KINIOS benefits from German healthcare system capacity constraints, growing outpatient care demand, and consolidation opportunities in fragmented MVZ market. The company's platform approach, multi-specialty capabilities, and buy-and-build strategy create value opportunities in the large German outpatient healthcare market under Triton's ownership.",
+      "headquarters": "Cologne, Germany"
     },
     {
       "company": "Leadec",
@@ -15448,7 +15461,8 @@
         "Improve operational efficiency and margins"
       ],
       "investment_thesis": "Leadec benefits from manufacturing outsourcing trends, increasing factory complexity, and demand for specialized industrial services. The company's global scale, automotive expertise, and comprehensive service platform create value opportunities in the essential factory services market.",
-      "deal_size": "€1.2B"
+      "deal_size": "€1.2B",
+      "headquarters": "Stuttgart, Germany"
     },
     {
       "company": "LeDap",
@@ -15500,7 +15514,8 @@
         "Expand in core European markets"
       ],
       "investment_thesis": "Padel market growth and consolidation in Europe; Triton scales LeDap as category leader.",
-      "detailed_description": "LeDap is Europe's leading padel platform — operating and franchising padel venues and building the sport's infrastructure. Triton backed the group in 2021. (Not related to Nordic HR/payroll providers with a similar name.)"
+      "detailed_description": "LeDap is Europe's leading padel platform — operating and franchising padel venues and building the sport's infrastructure. Triton backed the group in 2021. (Not related to Nordic HR/payroll providers with a similar name.)",
+      "headquarters": "Stockholm, Sweden"
     },
     {
       "company": "MacGregor",
@@ -15588,7 +15603,9 @@
         "Expand in offshore wind and renewable energy markets",
         "Improve operational efficiency and profitability"
       ],
-      "investment_thesis": "MacGregor benefits from maritime industry transformation toward sustainability, growing offshore wind requiring specialized equipment, and essential role in global shipping. Triton's investment supports innovation, operational improvements, and expansion in sustainable maritime technologies creating value in the maritime equipment sector."
+      "investment_thesis": "MacGregor benefits from maritime industry transformation toward sustainability, growing offshore wind requiring specialized equipment, and essential role in global shipping. Triton's investment supports innovation, operational improvements, and expansion in sustainable maritime technologies creating value in the maritime equipment sector.",
+      "detailed_description": "MacGregor is a global maritime cargo and load-handling equipment business carved out from Cargotec (Finnish roots). Triton signed the acquisition in November 2024; the transaction completed 31 July 2025 — entry year reflects legal close. Commercial name and operations continue as MacGregor.",
+      "headquarters": "Helsinki, Finland"
     },
     {
       "company": "MED:ON",
@@ -15688,7 +15705,8 @@
         "Pursue strategic acquisitions for market consolidation",
         "Improve operational efficiency and automation"
       ],
-      "investment_thesis": "MED:ON benefits from increasing healthcare consumption, growing complexity of medical supply chains, and consolidation opportunities in German medical distribution. The company's scale, logistics capabilities, and buy-and-build strategy create value opportunities in the essential medical distribution market under Triton's ownership."
+      "investment_thesis": "MED:ON benefits from increasing healthcare consumption, growing complexity of medical supply chains, and consolidation opportunities in German medical distribution. The company's scale, logistics capabilities, and buy-and-build strategy create value opportunities in the essential medical distribution market under Triton's ownership.",
+      "headquarters": "Erfurt, Germany"
     },
     {
       "company": "Neptune Software",
@@ -15781,7 +15799,8 @@
         "Strengthen AI and automation capabilities",
         "Increase recurring revenue and customer success"
       ],
-      "investment_thesis": "Neptune Software benefits from massive installed base of SAP customers seeking to modernize UX and accelerate development, growing adoption of low-code platforms, and S/4HANA migration wave. The company's SAP-native platform, strong product-market fit, and growth potential create value opportunities in the SAP ecosystem under Triton's ownership."
+      "investment_thesis": "Neptune Software benefits from massive installed base of SAP customers seeking to modernize UX and accelerate development, growing adoption of low-code platforms, and S/4HANA migration wave. The company's SAP-native platform, strong product-market fit, and growth potential create value opportunities in the SAP ecosystem under Triton's ownership.",
+      "headquarters": "Oslo, Norway"
     },
     {
       "company": "Nuent Group",
@@ -15880,7 +15899,8 @@
         "Strengthen patient experience and satisfaction",
         "Recruit and retain qualified dental professionals"
       ],
-      "investment_thesis": "Nuent Group benefits from growing dental care demand, increasing patient willingness to invest in dental health, and consolidation opportunities in fragmented Swedish dental market. The company's platform approach, quality focus, and buy-and-build strategy create value opportunities in the large Nordic dental care market under Triton's ownership."
+      "investment_thesis": "Nuent Group benefits from growing dental care demand, increasing patient willingness to invest in dental health, and consolidation opportunities in fragmented Swedish dental market. The company's platform approach, quality focus, and buy-and-build strategy create value opportunities in the large Nordic dental care market under Triton's ownership.",
+      "headquarters": "Stockholm, Sweden"
     },
     {
       "company": "OCU Group",
@@ -15973,7 +15993,8 @@
         "Enhance digital capabilities and operational efficiency",
         "Strengthen safety and quality performance"
       ],
-      "investment_thesis": "OCU Group benefits from UK infrastructure investment, energy transition requiring technical services, and consolidation opportunities in fragmented technical services market. The company's multi-sector platform, skilled workforce, and buy-and-build strategy create value opportunities under Triton's ownership."
+      "investment_thesis": "OCU Group benefits from UK infrastructure investment, energy transition requiring technical services, and consolidation opportunities in fragmented technical services market. The company's multi-sector platform, skilled workforce, and buy-and-build strategy create value opportunities under Triton's ownership.",
+      "headquarters": "Stockport, United Kingdom"
     },
     {
       "company": "ProDriven",
@@ -16076,7 +16097,8 @@
         "Enhance digital service delivery and customer experience",
         "Strengthen presence in key industrial verticals"
       ],
-      "investment_thesis": "ProDriven benefits from essential maintenance needs in heavy industry, aging industrial equipment base, and shift toward predictive maintenance. The company's platform approach, comprehensive capabilities, and buy-and-build strategy create value opportunities in the large North American electromechanical services market under Triton's ownership."
+      "investment_thesis": "ProDriven benefits from essential maintenance needs in heavy industry, aging industrial equipment base, and shift toward predictive maintenance. The company's platform approach, comprehensive capabilities, and buy-and-build strategy create value opportunities in the large North American electromechanical services market under Triton's ownership.",
+      "headquarters": "Itasca, IL, USA"
     },
     {
       "company": "Ramudden Global",
@@ -16175,7 +16197,8 @@
         "Strengthen industrial and logistics sector expertise",
         "Improve operational efficiency and margins"
       ],
-      "investment_thesis": "Ramudden Global benefits from increasing use of flexible workforce models, growth in logistics and e-commerce driving staffing needs, and consolidation opportunities in fragmented Nordic staffing market. The company's sector focus, platform approach, and geographic expansion create value opportunities under Triton's ownership."
+      "investment_thesis": "Ramudden Global benefits from increasing use of flexible workforce models, growth in logistics and e-commerce driving staffing needs, and consolidation opportunities in fragmented Nordic staffing market. The company's sector focus, platform approach, and geographic expansion create value opportunities under Triton's ownership.",
+      "headquarters": "Stockholm, Sweden"
     },
     {
       "company": "Royal Reesink",
@@ -16276,7 +16299,8 @@
         "Enhance customer financing solutions",
         "Pursue strategic acquisitions for market consolidation"
       ],
-      "investment_thesis": "Royal Reesink benefits from agricultural mechanization, increasing precision farming adoption, and consolidation in European equipment distribution. The company's strong brand partnerships, comprehensive service offering, and geographic platform create value opportunities in the essential agricultural equipment market."
+      "investment_thesis": "Royal Reesink benefits from agricultural mechanization, increasing precision farming adoption, and consolidation in European equipment distribution. The company's strong brand partnerships, comprehensive service offering, and geographic platform create value opportunities in the essential agricultural equipment market.",
+      "headquarters": "Apeldoorn, Netherlands"
     },
     {
       "company": "SCHOCK GmbH",
@@ -16376,7 +16400,8 @@
         "Innovate in materials and surface technologies",
         "Strengthen brand positioning and marketing"
       ],
-      "investment_thesis": "SCHOCK benefits from kitchen renovation and new construction demand, premiumization in kitchen products, and growing preference for durable, sustainable materials. The company's technology leadership in quartz composite, premium positioning, and innovation create value opportunities in the European kitchen sink market under Triton's ownership."
+      "investment_thesis": "SCHOCK benefits from kitchen renovation and new construction demand, premiumization in kitchen products, and growing preference for durable, sustainable materials. The company's technology leadership in quartz composite, premium positioning, and innovation create value opportunities in the European kitchen sink market under Triton's ownership.",
+      "headquarters": "Regenstauf, Germany"
     },
     {
       "company": "SITS",
@@ -16435,7 +16460,8 @@
         "Deepen SOC capabilities"
       ],
       "investment_thesis": "Growing demand for outsourced security operations; SITS scales platform across DACH and Benelux.",
-      "detailed_description": "SITS Group delivers managed security services, consulting and SOC capabilities for mid-market and enterprise clients in the DACH and Benelux markets. Triton invested in 2021."
+      "detailed_description": "SITS Group delivers managed security services, consulting and SOC capabilities for mid-market and enterprise clients in the DACH and Benelux markets. Triton invested in 2021.",
+      "headquarters": "Wettingen, Switzerland"
     },
     {
       "company": "Sunweb Group",
@@ -16533,7 +16559,8 @@
         "Improve operational efficiency and margins"
       ],
       "investment_thesis": "Sunweb Group benefits from structural shift to online travel booking, recovery in European leisure travel, and consolidation opportunities in online tour operators. The company's digital platform, brand portfolio, and market position create value opportunities in the large European leisure travel market under Triton's ownership.",
-      "deal_size": "€1.2B"
+      "deal_size": "€1.2B",
+      "headquarters": "Zoetermeer, Netherlands"
     },
     {
       "company": "Techouse Group",
@@ -16616,7 +16643,8 @@
         "Strengthen presence in renewable energy and sustainable industries",
         "Enhance operational efficiency and scalability"
       ],
-      "investment_thesis": "Techouse Group benefits from industrial digitalization, automation adoption, and consolidation opportunities in fragmented Nordic technical services market. Triton's platform-building strategy creates value through M&A and operational improvements in the growing industrial automation services sector."
+      "investment_thesis": "Techouse Group benefits from industrial digitalization, automation adoption, and consolidation opportunities in fragmented Nordic technical services market. Triton's platform-building strategy creates value through M&A and operational improvements in the growing industrial automation services sector.",
+      "headquarters": "Stavanger, Norway"
     },
     {
       "company": "Trench Group",
@@ -16699,7 +16727,8 @@
         "Enhance digital and predictive diagnostics capabilities",
         "Strengthen presence in high-growth emerging markets"
       ],
-      "investment_thesis": "Trench Group benefits from massive global investment in power grid infrastructure, renewable energy integration requiring transmission upgrades, and essential role in electrical power systems. The company's technology leadership, global presence, and critical product portfolio create value opportunities in the expanding power infrastructure market under Triton's ownership."
+      "investment_thesis": "Trench Group benefits from massive global investment in power grid infrastructure, renewable energy integration requiring transmission upgrades, and essential role in electrical power systems. The company's technology leadership, global presence, and critical product portfolio create value opportunities in the expanding power infrastructure market under Triton's ownership.",
+      "headquarters": "Berlin, Germany"
     },
     {
       "company": "Unica",
@@ -16800,7 +16829,8 @@
         "Improve operational efficiency and workforce productivity",
         "Pursue strategic acquisitions for market consolidation"
       ],
-      "investment_thesis": "Unica benefits from Dutch energy transition driving heat pump and solar demand, increasing building complexity, and consolidation in technical services market. The company's market-leading position, comprehensive capabilities, and focus on sustainable solutions create significant value opportunities under Triton's ownership."
+      "investment_thesis": "Unica benefits from Dutch energy transition driving heat pump and solar demand, increasing building complexity, and consolidation in technical services market. The company's market-leading position, comprehensive capabilities, and focus on sustainable solutions create significant value opportunities under Triton's ownership.",
+      "headquarters": "Hoevelaken, Netherlands"
     },
     {
       "company": "Wavelynx",
@@ -16884,18 +16914,19 @@
         "Strengthen partner and integrator network",
         "Develop next-generation access control features"
       ],
-      "investment_thesis": "Wavelynx benefits from shift toward cloud-based access control, demand for mobile credentials, and replacement of legacy systems. The company's modern wireless technology, cloud platform, and growth potential create value opportunities in the expanding access control market under Triton's ownership."
+      "investment_thesis": "Wavelynx benefits from shift toward cloud-based access control, demand for mobile credentials, and replacement of legacy systems. The company's modern wireless technology, cloud platform, and growth potential create value opportunities in the expanding access control market under Triton's ownership.",
+      "headquarters": "Denver, CO, USA"
     },
     {
       "company": "formicon",
       "sector": "Business Services",
       "fund": "Triton Smaller Mid-Cap Fund II",
       "market": "Germany",
-      "entry": "2026",
+      "entry": "Jan 2026",
       "source": "Triton",
       "status": "Active",
       "headquarters": "Frankfurt am Main, Germany",
-      "detailed_description": "Nationwide German architecture and engineering group established by Triton in January 2026. Combines blfp (general planning), IBJ Planungsgesellschaft, enertec (engineering), and SGP3 (architecture). ~180 employees, ~€30m revenue. Focus on energy supply, environmental technology, healthcare construction."
+      "detailed_description": "Nationwide German architecture and engineering group formed by Triton (January 2026). Holding period will build from close date — entry treated as 2026."
     },
     {
       "company": "Tendra Technical Services",
@@ -16905,7 +16936,8 @@
       "entry": "2025",
       "source": "Triton",
       "status": "Active",
-      "detailed_description": "Tendra Technical Services is Triton Smaller Mid-Cap's first UK investment (December 2025). UK technical services platform in the built environment: mechanical, electrical, coatings, facilities. Formed via James Mercer Group, Fletchers Engineering, Coat Facilities. ~450 employees."
+      "detailed_description": "Tendra Technical Services is Triton Smaller Mid-Cap's first UK investment (December 2025). UK technical services platform in the built environment: mechanical, electrical, coatings, facilities. Formed via James Mercer Group, Fletchers Engineering, Coat Facilities. ~450 employees.",
+      "headquarters": "London, United Kingdom"
     },
     {
       "company": "Lohkare Infra",
@@ -16915,7 +16947,8 @@
       "entry": "2025",
       "source": "Triton",
       "status": "Active",
-      "detailed_description": "Finnish building installation services company. Triton investment June 2025."
+      "detailed_description": "Finnish building installation services company. Triton investment June 2025.",
+      "headquarters": "Helsinki, Finland"
     },
     {
       "company": "Sitecore",
@@ -17015,7 +17048,10 @@
       ],
       "investment_thesis": "Sitecore benefits from enterprise digital transformation, shift to cloud-native platforms, and growing demand for personalization and composable architecture. EQT's investment supports cloud transition, product innovation, and market leadership creating significant value in the large and growing DXP market.",
       "deal_size": "$1.2B",
-      "logo_url": "https://logo.clearbit.com/sitecore.com"
+      "logo_url": "https://logo.clearbit.com/sitecore.com",
+      "status": "Exited",
+      "exit_year": "2021",
+      "detailed_description": "Sitecore is a global digital experience platform (DXP) leader. EQT sold Sitecore to a consortium in 2021; no longer an active EQT private equity holding."
     },
     {
       "company": "Anticimex",
@@ -17163,7 +17199,7 @@
       "website": "https://www.globalblue.com",
       "enriched": true,
       "research_date": "2025-10-20T14:35:00",
-      "detailed_description": "Global Blue is the world's leading shopping tax refund and related payment services company for international shoppers. The company operates the largest Tax Free Shopping network, processing over 30 million tax-free transactions annually across 50+ countries. Global Blue also provides complementary services including currency exchange, merchant marketing services, and data analytics to help retailers optimize their international customer experience. The company serves luxury retailers, department stores, and shopping destinations worldwide.",
+      "detailed_description": "Global Blue is the world's leading tax-free shopping and travel payments network. Listed via NYSE SPAC (2021); EQT may retain a minority stake — a public company position, not a classic private buyout.",
       "founded_year": "1980",
       "employee_count_detailed": "~1,700 employees globally",
       "revenue": "CHF 370 million (2023)",
@@ -17279,7 +17315,8 @@
       ],
       "investment_thesis": "Global Blue benefits from secular growth in international travel and cross-border shopping, particularly in luxury segments. The company holds a dominant market position with high barriers to entry due to regulatory complexity and network effects. Digital transformation initiatives enhance customer experience while improving margins. Recovery in tourism post-pandemic provides strong tailwinds, while expanded retailer services and data monetization create new growth avenues. The business generates attractive cash flows with limited capital intensity.",
       "deal_size": "€3.1B",
-      "logo_url": "https://logo.clearbit.com/globalblue.com"
+      "logo_url": "https://logo.clearbit.com/globalblue.com",
+      "status": "Active (listed; NYSE)"
     },
     {
       "company": "Molnlycke",
@@ -17412,131 +17449,6 @@
       "investment_thesis": "Mölnlycke benefits from strong secular tailwinds including aging demographics, rising chronic disease prevalence, and increasing focus on infection prevention and patient safety. The company's leadership position in attractive wound care and surgical markets, supported by proprietary technology and clinical evidence, enables sustainable growth and margin expansion. Significant opportunities exist to expand in emerging markets, launch innovative products, and drive OR efficiency adoption. The business model generates strong cash flows with recurring revenue from consumable products and potential for bolt-on acquisitions to accelerate growth.",
       "deal_size": "€3.2B",
       "logo_url": "https://logo.clearbit.com/molnlycke.com"
-    },
-    {
-      "company": "HQ",
-      "sector": "Financial Services",
-      "fund": "EQT",
-      "market": "Sweden",
-      "entry": "2016",
-      "source": "EQT",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.hq.se",
-      "enriched": true,
-      "research_date": "2025-10-20T14:45:00",
-      "detailed_description": "HQ AB is a Swedish financial services company providing a comprehensive range of banking, trading, and investment services primarily to retail investors and active traders. The company operates through its digital platform offering online banking, securities trading, custody services, and investment products. HQ serves the Nordic retail investment market with a focus on providing user-friendly trading platforms, competitive pricing, and modern financial services. The company has built a strong position in the Swedish market among retail traders and investors seeking direct market access.",
-      "founded_year": "1999",
-      "employee_count_detailed": "~300 employees",
-      "revenue": "SEK 400-500 million",
-      "revenue_growth": "Moderate growth driven by market activity and customer base expansion",
-      "ceo": "Leadership Team",
-      "leadership_team": [
-        {
-          "name": "CEO and Executive Team",
-          "role": "Leadership",
-          "background": "Experienced financial services professionals with Nordic banking expertise"
-        }
-      ],
-      "key_products": [
-        {
-          "name": "Online Trading Platform",
-          "description": "Modern digital platform enabling retail investors to trade stocks, derivatives, and other securities with direct market access to Nordic and international exchanges."
-        },
-        {
-          "name": "Banking Services",
-          "description": "Retail banking products including savings accounts, investment accounts, and related financial services for individual customers."
-        },
-        {
-          "name": "Custody and Settlement Services",
-          "description": "Securities custody, clearing, and settlement services for retail investors and trading customers."
-        },
-        {
-          "name": "Investment Products",
-          "description": "Access to mutual funds, structured products, and other investment vehicles for retail investors."
-        }
-      ],
-      "technology_stack": [
-        "Online trading platform",
-        "Mobile trading applications",
-        "Market data and analytics tools",
-        "Banking core systems",
-        "Securities custody systems",
-        "Customer portal and account management"
-      ],
-      "recent_news": [
-        {
-          "date": "2016",
-          "headline": "EQT acquired HQ to support digital transformation and growth",
-          "impact": "Ownership change"
-        },
-        {
-          "date": "2017-2020",
-          "headline": "Platform modernization and customer experience improvements",
-          "impact": "Technology investment"
-        },
-        {
-          "date": "2020s",
-          "headline": "Growth in retail trading activity driven by market participation trends",
-          "impact": "Customer growth"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "1999",
-          "event": "Company Founded",
-          "description": "HQ established as an online broker in Sweden"
-        },
-        {
-          "year": "2000s",
-          "event": "Platform Development",
-          "description": "Built online trading platform and expanded service offerings"
-        },
-        {
-          "year": "2016",
-          "event": "EQT Investment",
-          "description": "Acquired by EQT Partners to accelerate growth and digital capabilities"
-        },
-        {
-          "year": "2018-2023",
-          "event": "Modernization & Growth",
-          "description": "Invested in technology platform and customer acquisition"
-        }
-      ],
-      "competitive_advantages": [
-        "Established brand in Swedish retail trading market",
-        "Modern digital platform with user-friendly interface",
-        "Competitive pricing for active traders",
-        "Direct market access to Nordic exchanges",
-        "Integrated banking and trading services",
-        "Strong regulatory compliance and banking license"
-      ],
-      "business_model": {
-        "revenue_streams": [
-          "Trading commissions and fees",
-          "Banking service fees",
-          "Custody and account fees",
-          "Interest income on deposits",
-          "Platform and data fees"
-        ],
-        "customer_segments": [
-          "Retail investors",
-          "Active traders",
-          "Individual savers",
-          "Nordic market participants"
-        ],
-        "value_proposition": "User-friendly digital platform providing retail investors with direct market access, competitive pricing, and integrated banking services for trading and investing"
-      },
-      "strategic_priorities": [
-        "Enhance digital platform capabilities and user experience",
-        "Grow retail customer base in Nordic markets",
-        "Expand product and service offerings",
-        "Improve operational efficiency and automation",
-        "Strengthen technology infrastructure and security",
-        "Optimize customer acquisition and retention"
-      ],
-      "investment_thesis": "HQ benefits from growing retail participation in financial markets, particularly among younger digitally-savvy investors. The company's modern platform and competitive positioning in the Swedish market provide a foundation for growth. Investment in technology and customer experience under EQT ownership enhances the value proposition. Opportunities exist to expand the customer base, increase activity per customer, and potentially pursue M&A to achieve greater scale in the competitive Nordic retail brokerage market.",
-      "deal_size": "SEK 2B",
-      "logo_url": "https://logo.clearbit.com/hq.se"
     },
     {
       "company": "Acacium Group",
@@ -18812,16 +18724,16 @@
     },
     {
       "company": "Digpro",
-      "sector": "Business Services",
+      "sector": "Technology / GIS",
       "fund": "Litorina V",
       "market": "Sweden",
       "entry": "2017",
       "source": "Litorina",
-      "headquarters": "Sweden",
+      "headquarters": "Stockholm, Sweden",
       "website": "https://www.digpro.se",
       "enriched": true,
       "research_date": "2025-10-20T18:25:00",
-      "detailed_description": "Digpro is a Swedish digital document and business services provider offering scanning, digitization, document management, and information management solutions. The company helps organizations transition from paper to digital workflows, providing scanning services, document storage, archiving, and digital workflow solutions.",
+      "detailed_description": "Digpro develops GIS and network documentation software for utilities and infrastructure owners (electricity, water, telecom fibre) — managing maps, assets and as-built data for linear networks. Not a generic document-scanning bureau.",
       "founded_year": "2000s",
       "employee_count_detailed": "~100-150 employees",
       "revenue": "SEK 100-200 million",
@@ -20134,7 +20046,7 @@
       "website": "https://www.cavotec.com",
       "enriched": true,
       "research_date": "2025-10-20T20:25:00",
-      "detailed_description": "Cavotec is a Swiss engineering group providing connection and electrification solutions for ports, maritime, airports, and mining industries. The company manufactures automated mooring systems, shore power connections, cable reels, and radio remote controls. Listed on Nasdaq Stockholm, Cavotec serves global infrastructure and industrial markets.",
+      "detailed_description": "Cavotec is a Swiss engineering group (mooring, shore power, ports, mining). Listed on Nasdaq Stockholm; Bure holds a large minority stake (~36%, strategic listed position — not a standard private buyout). In 2025 the group initiated a restructuring: Swedish holding company Cavotec Group AB launched a tender offer to delist the Nasdaq Stockholm listing — verify ownership and listing status against the latest filings.",
       "founded_year": "1974",
       "employee_count_detailed": "~800 employees",
       "revenue": "€200+ million",
@@ -20210,7 +20122,8 @@
         "Increase recurring revenue"
       ],
       "investment_thesis": "Cavotec benefits from maritime electrification and automation trends. Growing environmental regulations drive shore power adoption.",
-      "logo_url": "https://logo.clearbit.com/cavotec.com"
+      "logo_url": "https://logo.clearbit.com/cavotec.com",
+      "status": "Active (listed; minority)"
     },
     {
       "company": "Vitrolife",
@@ -20223,7 +20136,7 @@
       "website": "https://www.vitrolife.com",
       "enriched": true,
       "research_date": "2025-10-20T17:45:00",
-      "detailed_description": "Vitrolife Group (now merged with Igenomix to form Vitrolife Group AB) is a global leader in developing, manufacturing, and distributing advanced medical devices and solutions for assisted reproduction (IVF). The company provides consumables, instruments, and genetic testing services used in fertility clinics worldwide, helping couples achieve pregnancy through in vitro fertilization. Vitrolife's products include culture media, cryopreservation solutions, time-lapse imaging systems, genetic testing for embryo selection, and micromanipulation tools. Listed on Nasdaq Stockholm, the company serves fertility clinics in over 110 countries, supporting millions of IVF cycles annually.",
+      "detailed_description": "Vitrolife Group AB is a global leader in IVF medical devices, consumables, and genetic testing, headquartered in Gothenburg, Sweden. In 2021 Vitrolife acquired Igenomix from EQT — a control acquisition, not a merger of equals; the combined group retained the Vitrolife name. Listed on Nasdaq Stockholm; Bure holds a significant minority stake (strategic listed position — not a standard private buyout).",
       "founded_year": "1994",
       "employee_count_detailed": "~700 employees globally",
       "revenue": "SEK 2.5+ billion (~€250 million)",
@@ -20263,7 +20176,7 @@
       "recent_news": [
         {
           "date": "2021",
-          "headline": "Merged with Igenomix creating leading fertility solutions provider",
+          "headline": "Acquisition of Igenomix (from EQT); combined fertility platform",
           "impact": "Major consolidation"
         },
         {
@@ -20280,8 +20193,8 @@
         },
         {
           "year": "2021",
-          "event": "Igenomix Merger",
-          "description": "Merged to create comprehensive fertility solutions provider"
+          "event": "Igenomix acquisition",
+          "description": "Vitrolife acquired Igenomix from EQT"
         }
       ],
       "competitive_advantages": [
@@ -20311,7 +20224,8 @@
       ],
       "investment_thesis": "Vitrolife benefits from growing IVF market driven by delayed parenthood, increasing infertility rates, and improving social acceptance. Market leader position with recurring consumables revenue provides strong foundation for growth.",
       "deal_size": "SEK 12B",
-      "logo_url": "https://logo.clearbit.com/vitrolife.com"
+      "logo_url": "https://logo.clearbit.com/vitrolife.com",
+      "status": "Active (listed; minority)"
     },
     {
       "company": "Xvivo Perfusion",
@@ -20324,7 +20238,7 @@
       "website": "https://www.xvivoperfusion.com",
       "enriched": true,
       "research_date": "2025-10-20T19:00:00",
-      "detailed_description": "XVIVO Perfusion is a medical technology company specializing in solutions that preserve and assess organs for transplantation. The company develops perfusion and preservation systems extending the time organs can be kept viable outside the body, improving transplant outcomes. XVIVO's products include the STEEN Solution for lungs, Perfadex for lung preservation, and XPS system for abdominal organ preservation. Listed on Nasdaq Stockholm, the company serves transplant centers globally.",
+      "detailed_description": "XVIVO Perfusion develops organ perfusion and preservation systems for transplantation (e.g. STEEN Solution, Perfadex, XPS). Listed on Nasdaq Stockholm; Bure Equity holds a significant minority stake — strategic listed position, not a private buyout. Headquartered in Gothenburg, Sweden; serves transplant centers globally.",
       "founded_year": "1998",
       "employee_count_detailed": "~150 employees",
       "revenue": "SEK 500+ million",
@@ -20399,7 +20313,8 @@
       ],
       "investment_thesis": "XVIVO benefits from growing transplant procedures and need for better organ preservation. Specialized technology with high barriers to entry.",
       "deal_size": "SEK 4.5B",
-      "logo_url": "https://logo.clearbit.com/xvivoperfusion.com"
+      "logo_url": "https://logo.clearbit.com/xvivoperfusion.com",
+      "status": "Active (listed; minority)"
     },
     {
       "company": "Cellavision",
@@ -20509,7 +20424,7 @@
       "website": "https://www.mycronic.com",
       "enriched": true,
       "research_date": "2025-10-20T19:10:00",
-      "detailed_description": "Mycronic is a Swedish high-tech company providing advanced production equipment for the electronics industry. The company manufactures pick-and-place machines for surface mount technology (SMT) assembly, mask writers for semiconductor photomasks, and dispensing systems. Mycronic's equipment is used in electronics manufacturing for smartphones, computers, automotive electronics, and other devices. Listed on Nasdaq Stockholm, the company serves customers globally in electronics manufacturing and semiconductor industries.",
+      "detailed_description": "Mycronic is a Swedish high-tech company providing advanced production equipment for the electronics industry (SMT assembly, mask writers, dispensing). Listed on Nasdaq Stockholm; Bure Equity holds a significant minority stake — a strategic listed position comparable to other Bure holdings (not a traditional buyout). The company serves global electronics and semiconductor manufacturing customers.",
       "founded_year": "1975",
       "employee_count_detailed": "~1,200 employees",
       "revenue": "SEK 4+ billion",
@@ -20590,7 +20505,8 @@
       ],
       "investment_thesis": "Mycronic benefits from electronics manufacturing growth and semiconductor industry expansion. High-tech equipment with strong market positions.",
       "deal_size": "SEK 3.8B",
-      "logo_url": "https://logo.clearbit.com/mycronic.com"
+      "logo_url": "https://logo.clearbit.com/mycronic.com",
+      "status": "Active (listed; minority)"
     },
     {
       "company": "Mercuri International",
@@ -23043,7 +22959,7 @@
       "website": "https://www.momox.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "momox is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "momox is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -23093,7 +23009,7 @@
       "website": "https://www.jupiterbach.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Jupiter Bach is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Jupiter Bach is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -23133,56 +23049,6 @@
       "logo_url": "https://logo.clearbit.com/jupiterbach.com"
     },
     {
-      "company": "Active Brands",
-      "sector": "Technology",
-      "fund": "Verdane Capital XI",
-      "market": "Nordic/Europe",
-      "entry": "2022",
-      "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
-      "website": "https://www.activebrands.com",
-      "enriched": true,
-      "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Active Brands is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
-      "employees": "50-500 employees",
-      "revenue": "EUR 10M - EUR 100M",
-      "revenue_growth": "15-30% annual growth",
-      "valuation": "EUR 50M - EUR 500M (estimated)",
-      "total_funding": "Verdane-backed",
-      "ceo": "Technology industry executive",
-      "leadership_team": [
-        {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Technology industry experience"
-        }
-      ],
-      "investment_history": [
-        {
-          "date": "2020-2024",
-          "headline": "Verdane Capital XI investment",
-          "impact": "Growth capital"
-        }
-      ],
-      "key_milestones": [
-        {
-          "year": "2020-2024",
-          "event": "Verdane Investment",
-          "description": "Growth partnership"
-        }
-      ],
-      "competitive_advantages": [
-        "Technology expertise",
-        "Nordic market focus",
-        "Technology innovation",
-        "Strong market position"
-      ],
-      "exit_status": "Active",
-      "current_status": "Portfolio company",
-      "featured": false,
-      "logo_url": "https://logo.clearbit.com/activebrands.com"
-    },
-    {
       "company": "Apoteka",
       "sector": "Technology",
       "fund": "Verdane Capital XI",
@@ -23193,7 +23059,7 @@
       "website": "https://www.apoteka.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Apoteka is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Apoteka is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -23239,11 +23105,11 @@
       "market": "Nordic/Europe",
       "entry": "2020",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Berlin, Germany",
       "website": "https://www.asgoodasnew.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Asgoodasnew is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Asgoodasnew is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -23293,7 +23159,7 @@
       "website": "https://www.auntie.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Auntie is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Auntie is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -23343,7 +23209,7 @@
       "website": "https://www.babyshop.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Babyshop Group is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Babyshop Group is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -23393,7 +23259,7 @@
       "website": "https://www.baumundpferdgarten.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Baum und Pferdgarten is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Baum und Pferdgarten is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -23443,7 +23309,7 @@
       "website": "https://www.bellman.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Bellman Group is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Bellman Group is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -23493,7 +23359,7 @@
       "website": "https://www.bemz.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Bemz is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Bemz is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -23543,7 +23409,7 @@
       "website": "https://www.bildeler.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Bildeler is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Bildeler is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -23593,7 +23459,7 @@
       "website": "https://www.blinto.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Blinto is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Blinto is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -23643,7 +23509,7 @@
       "website": "https://www.booksy.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Booksy is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Booksy is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -23693,7 +23559,7 @@
       "website": "https://www.caiacosmetics.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "CAIA Cosmetics is a Nordic technology company backed by Verdane Capital. The company operates in the consumer sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "CAIA Cosmetics is a Verdane Capital portfolio company focused on Consumer (consumer sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -23743,7 +23609,7 @@
       "website": "https://www.cap.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "CAP Group is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "CAP Group is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -23793,7 +23659,7 @@
       "website": "https://www.carla.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Carla is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Carla is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -23843,7 +23709,7 @@
       "website": "https://www.centra.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Centra is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Centra is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -23889,11 +23755,11 @@
       "market": "Nordic/Europe",
       "entry": "2020",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Lisbon, Portugal",
       "website": "https://www.cleanwatts.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Cleanwatts is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Cleanwatts is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -23939,11 +23805,11 @@
       "market": "Nordic/Europe",
       "entry": "2020",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Bergen, Norway",
       "website": "https://www.coolcompany.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Cool Company is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Cool Company is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -23989,11 +23855,11 @@
       "market": "Nordic/Europe",
       "entry": "2020",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Dublin, Ireland",
       "website": "https://www.corlytics.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Corlytics is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Corlytics is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -24039,11 +23905,11 @@
       "market": "Nordic/Europe",
       "entry": "2024",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Innsbruck, Austria",
       "website": "https://www.cropster.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Cropster is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Cropster is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -24093,7 +23959,7 @@
       "website": "https://www.curaofsweden.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "CURA of Sweden is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "CURA of Sweden is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -24143,7 +24009,7 @@
       "website": "https://www.educationsmedia.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Educations Media Group is a Nordic technology company backed by Verdane Capital. The company operates in the media sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Educations Media Group is a Verdane Capital portfolio company focused on Media (media sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -24193,7 +24059,7 @@
       "website": "https://www.eduhouse.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Eduhouse is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Eduhouse is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -24239,11 +24105,11 @@
       "market": "Nordic/Europe",
       "entry": "2020",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Oslo, Norway",
       "website": "https://www.elovade.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Elovade is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Elovade is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -24289,11 +24155,11 @@
       "market": "Nordic/Europe",
       "entry": "2020",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Vienna, Austria",
       "website": "https://www.eversports.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Eversports is a Nordic technology company backed by Verdane Capital. The company operates in the health & wellness sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Eversports is a Verdane Capital portfolio company focused on Health & Wellness (health & wellness sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -24339,11 +24205,11 @@
       "market": "Nordic/Europe",
       "entry": "2020",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Espoo, Finland",
       "website": "https://www.evondos.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Evondos is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Evondos is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -24389,11 +24255,11 @@
       "market": "Nordic/Europe",
       "entry": "2020",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Oslo, Norway",
       "website": "https://www.farmasiet.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Farmasiet is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Farmasiet is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -24439,11 +24305,11 @@
       "market": "Nordic/Europe",
       "entry": "2020",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Hamburg, Germany",
       "website": "https://www.fashioncloud.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Fashion Cloud is a Nordic technology company backed by Verdane Capital. The company operates in the consumer sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Fashion Cloud is a Verdane Capital portfolio company focused on Consumer (consumer sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -24489,11 +24355,11 @@
       "market": "Nordic/Europe",
       "entry": "2020",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Helsinki, Finland",
       "website": "https://www.fiksuruoka.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Fiksuruoka is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Fiksuruoka is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -24543,7 +24409,7 @@
       "website": "https://www.fiskaly.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "fiskaly is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "fiskaly is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -24589,11 +24455,11 @@
       "market": "Nordic/Europe",
       "entry": "2020",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Tampere, Finland",
       "website": "https://www.happyornot.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "HappyOrNot is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "HappyOrNot is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -24643,7 +24509,7 @@
       "website": "https://www.hem.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Hem is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Hem is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -24693,7 +24559,7 @@
       "website": "https://www.hivestreaming.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Hive Streaming is a Nordic technology company backed by Verdane Capital. The company operates in the media sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Hive Streaming is a Verdane Capital portfolio company focused on Media (media sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -24739,11 +24605,11 @@
       "market": "Nordic/Europe",
       "entry": "2022",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Copenhagen, Denmark",
       "website": "https://www.hobbii.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Hobbii is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Hobbii is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -24793,7 +24659,7 @@
       "website": "https://www.indevis.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "indevis is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "indevis is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -24843,7 +24709,7 @@
       "website": "https://www.ingrid.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Ingrid is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Ingrid is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -24893,7 +24759,7 @@
       "website": "https://www.innonature.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "InnoNature is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "InnoNature is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -24943,7 +24809,7 @@
       "website": "https://www.inriver.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "inriver is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "inriver is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -24993,7 +24859,7 @@
       "website": "https://www.instabeeinstabox.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Instabee (Instabox) is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Instabee (Instabox) is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -25043,7 +24909,7 @@
       "website": "https://www.jamesedition.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "James Edition is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "James Edition is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -25093,7 +24959,7 @@
       "website": "https://www.jobylon.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Jobylon is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Jobylon is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -25139,11 +25005,11 @@
       "market": "Nordic/Europe",
       "entry": "2020",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "London, UK",
       "website": "https://www.justpark.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "JustPark is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "JustPark is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -25193,7 +25059,7 @@
       "website": "https://www.kaisa.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Kaisa is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Kaisa is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -25239,11 +25105,11 @@
       "market": "Nordic/Europe",
       "entry": "2022",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Oslo, Norway",
       "website": "https://www.kravia.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Kravia is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Kravia is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -25289,11 +25155,11 @@
       "market": "Nordic/Europe",
       "entry": "2021",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Espoo, Finland",
       "website": "https://www.lumene.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Lumene is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Lumene is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -25343,7 +25209,7 @@
       "website": "https://www.matchi.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "MATCHi is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "MATCHi is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -25393,7 +25259,7 @@
       "website": "https://www.meister.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Meister is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Meister is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -25443,7 +25309,7 @@
       "website": "https://www.muegge.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Muegge is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Muegge is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -25493,7 +25359,7 @@
       "website": "https://www.napatech.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Napatech is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Napatech is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -25543,7 +25409,7 @@
       "website": "https://www.nordicfeel.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Nordic Feel Group is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Nordic Feel Group is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -25593,7 +25459,7 @@
       "website": "https://www.nordicfinance.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Nordic Finance is a Nordic technology company backed by Verdane Capital. The company operates in the financial services sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Nordic Finance is a Verdane Capital portfolio company focused on Financial Services (financial services sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -25643,7 +25509,7 @@
       "website": "https://www.nornorm.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "NORNORM is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "NORNORM is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -25693,7 +25559,7 @@
       "website": "https://www.oda.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Oda is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Oda is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -25743,7 +25609,7 @@
       "website": "https://www.omilon.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Omilon is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Omilon is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -25793,7 +25659,7 @@
       "website": "https://www.onceupon.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Once Upon is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Once Upon is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -25839,11 +25705,11 @@
       "market": "Nordic/Europe",
       "entry": "2020",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Copenhagen, Denmark",
       "website": "https://www.onomondo.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Onomondo is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Onomondo is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -25889,11 +25755,11 @@
       "market": "Nordic/Europe",
       "entry": "2022",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Oslo, Norway",
       "website": "https://www.papirfly.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Papirfly Group is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Papirfly Group is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -25943,7 +25809,7 @@
       "website": "https://www.pflegecampus.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Pflegecampus is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Pflegecampus is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -25993,7 +25859,7 @@
       "website": "https://www.polytech.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Polytech is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Polytech is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -26039,11 +25905,11 @@
       "market": "Nordic/Europe",
       "entry": "2020",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Oslo, Norway",
       "website": "https://www.porterbuddy.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Porterbuddy is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Porterbuddy is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -26089,11 +25955,11 @@
       "market": "Nordic/Europe",
       "entry": "2020",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Maribor, Slovenia",
       "website": "https://www.premiumxl.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "premiumXL is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "premiumXL is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -26143,7 +26009,7 @@
       "website": "https://www.pressganey/forsta.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Press Ganey / Forsta is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Press Ganey / Forsta is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -26193,7 +26059,7 @@
       "website": "https://www.purity.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Purity is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Purity is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -26243,7 +26109,7 @@
       "website": "https://www.qbtech.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Qbtech is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Qbtech is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -26289,11 +26155,11 @@
       "market": "Nordic/Europe",
       "entry": "2023",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Herning, Denmark",
       "website": "https://www.re-match.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Re-Match is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Re-Match is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -26343,7 +26209,7 @@
       "website": "https://www.reasonstudios.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Reason Studios is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Reason Studios is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -26389,11 +26255,11 @@
       "market": "Nordic/Europe",
       "entry": "2020",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Copenhagen, Denmark",
       "website": "https://www.remember.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "REMEMBER is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "REMEMBER is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -26443,7 +26309,7 @@
       "website": "https://www.safira.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Safira is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Safira is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -26489,11 +26355,11 @@
       "market": "Nordic/Europe",
       "entry": "2020",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Bergen, Norway",
       "website": "https://www.scanbio.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Scanbio is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Scanbio is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -26539,11 +26405,11 @@
       "market": "Nordic/Europe",
       "entry": "2022",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Oslo, Norway",
       "website": "https://www.shortcut.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Shortcut is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Shortcut is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -26593,7 +26459,7 @@
       "website": "https://www.silva.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Silva is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Silva is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -26643,7 +26509,7 @@
       "website": "https://www.sitoo.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Sitoo is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Sitoo is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -26684,16 +26550,16 @@
     },
     {
       "company": "Smava",
-      "sector": "Technology",
+      "sector": "Fintech",
       "fund": "Verdane Capital XI",
-      "market": "Nordic/Europe",
+      "market": "Germany",
       "entry": "2020",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Berlin, Germany",
       "website": "https://www.smava.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Smava is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "smava is a German fintech company (online loan comparison and credit marketplace) headquartered in Berlin. Verdane Capital backs the company alongside European growth; it is not a Nordic-headquartered business.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -26739,11 +26605,11 @@
       "market": "Nordic/Europe",
       "entry": "2020",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Oslo, Norway",
       "website": "https://www.spond.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Spond is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Spond is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -26789,11 +26655,11 @@
       "market": "Nordic/Europe",
       "entry": "2022",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Bergen, Norway",
       "website": "https://www.stacc.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Stacc is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Stacc is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -26843,7 +26709,7 @@
       "website": "https://www.stratsys.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Stratsys is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Stratsys is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -26889,11 +26755,11 @@
       "market": "Nordic/Europe",
       "entry": "2020",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Amsterdam, Netherlands",
       "website": "https://www.studytube.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Studytube is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Studytube is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -26939,11 +26805,11 @@
       "market": "Nordic/Europe",
       "entry": "2020",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Helsinki, Finland",
       "website": "https://www.swappie.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Swappie is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Swappie is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -26989,11 +26855,11 @@
       "market": "Nordic/Europe",
       "entry": "2020",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Oslo, Norway",
       "website": "https://www.talentech.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Talentech is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Talentech is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -27043,7 +26909,7 @@
       "website": "https://www.teknikdelar.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Teknikdelar is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Teknikdelar is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -27089,11 +26955,11 @@
       "market": "Nordic/Europe",
       "entry": "2020",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Gjøvik, Norway",
       "website": "https://www.topro.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "TOPRO is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "TOPRO is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -27143,7 +27009,7 @@
       "website": "https://www.trivec.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Trivec is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Trivec is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -27193,7 +27059,7 @@
       "website": "https://www.urbansportsclub.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Urban Sports Club is a Nordic technology company backed by Verdane Capital. The company operates in the health & wellness sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Urban Sports Club is a Verdane Capital portfolio company focused on Health & Wellness (health & wellness sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -27239,11 +27105,11 @@
       "market": "Nordic/Europe",
       "entry": "2020",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Dublin, Ireland",
       "website": "https://www.urbanvolt.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "UrbanVolt is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "UrbanVolt is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -27289,11 +27155,11 @@
       "market": "Nordic/Europe",
       "entry": "2020",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Espoo, Finland",
       "website": "https://www.vaadin.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Vaadin is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Vaadin is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -27339,11 +27205,11 @@
       "market": "Nordic/Europe",
       "entry": "2020",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Oslo, Norway",
       "website": "https://www.verified.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Verified is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Verified is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -27393,7 +27259,7 @@
       "website": "https://www.voyado.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Voyado is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Voyado is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -27439,11 +27305,11 @@
       "market": "Nordic/Europe",
       "entry": "2020",
       "source": "Verdane",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Haywards Heath, UK",
       "website": "https://www.woolovers.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Woolovers is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Woolovers is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -27493,7 +27359,7 @@
       "website": "https://www.wunderflats.com",
       "enriched": true,
       "research_date": "2025-10-24T20:23:20",
-      "detailed_description": "Wunderflats is a Nordic technology company backed by Verdane Capital. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Wunderflats is a Verdane Capital portfolio company focused on Technology (technology sector), serving customers across Europe and internationally.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 100M",
       "revenue_growth": "15-30% annual growth",
@@ -27637,13 +27503,13 @@
       "sector": "Clean Technology",
       "fund": "Summa Equity Fund IV",
       "market": "Nordic/Europe",
-      "entry": "2022",
+      "entry": "2024",
       "source": "Summa Equity",
       "headquarters": "London, UK",
       "website": "https://www.eatechnology.com",
       "enriched": true,
       "research_date": "2025-10-24T20:24:54",
-      "detailed_description": "EA Technology enables the energy transition through smarter grid solutions. Summa Equity invested in October 2024 to accelerate the company's growth in grid intelligence and reliability. Headquartered in London, the company provides technology and services that help utilities and grid operators manage aging infrastructure, integrate renewable energy, and improve reliability. The investment aligns with Summa's energy transition theme, targeting the growing need for grid modernization as electrification and decarbonization accelerate across Europe.",
+      "detailed_description": "EA Technology enables the energy transition through grid intelligence and reliability solutions for utilities and operators. Summa Equity invested in October 2024 to accelerate growth (prior minority involvement in 2022 is distinct from this control/growth phase — entry year reflects the 2024 investment).",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 200M",
       "revenue_growth": "15-30% annual growth",
@@ -27936,14 +27802,14 @@
       "company": "myneva",
       "sector": "Technology",
       "fund": "Summa Equity Fund IV",
-      "market": "Nordic/Europe",
+      "market": "Germany",
       "entry": "2023",
       "source": "Summa Equity",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Frankfurt am Main, Germany",
       "website": "https://www.myneva.com",
       "enriched": true,
       "research_date": "2025-10-24T20:24:54",
-      "detailed_description": "myneva - Software solutions provider for the social sector. The company operates in the technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "myneva supplies software for social-sector and care organisations (German market leader in its segment). Headquartered in Frankfurt am Main, Germany — not Stockholm.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 200M",
       "revenue_growth": "15-30% annual growth",
@@ -27986,14 +27852,14 @@
       "company": "NG Nordic",
       "sector": "Environmental Technology",
       "fund": "Summa Equity Fund IV",
-      "market": "Nordic/Europe",
+      "market": "Norway",
       "entry": "2022",
       "source": "Summa Equity",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Oslo, Norway",
       "website": "https://www.ngnordic.com",
       "enriched": true,
       "research_date": "2025-10-24T20:24:54",
-      "detailed_description": "NG Nordic - There is no such thing as waste. The company operates in the environmental technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "NG Nordic is a Norwegian waste-management and environmental services group. Headquarters in Oslo, Norway — not Stockholm.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 200M",
       "revenue_growth": "15-30% annual growth",
@@ -28089,11 +27955,11 @@
       "market": "Nordic/Europe",
       "entry": "2024",
       "source": "Summa Equity",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Zagreb, Croatia & Denmark",
       "website": "https://www.nutris.com",
       "enriched": true,
       "research_date": "2025-10-24T20:24:54",
-      "detailed_description": "Nutris is a plant-based protein manufacturer based in Croatia and Denmark with 70 employees. Summa Equity acquired Nutris in September 2024 as part of its Sustainable Food theme. The company extracts high-quality plant-based proteins from fava beans, yellow peas, and potatoes using patented technology. Products are exported to the EU, North America, and Asia. The investment supports Summa's focus on sustainable food systems, targeting the shift toward plant-based nutrition driven by health, environmental, and regulatory trends.",
+      "detailed_description": "Nutris is a plant-based protein manufacturer with operations in Croatia and Denmark (Summa Sustainable Food theme, 2024). HQ aligned with operations — not Stockholm.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 200M",
       "revenue_growth": "15-30% annual growth",
@@ -28186,14 +28052,14 @@
       "company": "Sengenics",
       "sector": "Life Sciences",
       "fund": "Summa Equity Fund IV",
-      "market": "Nordic/Europe",
+      "market": "Global",
       "entry": "2023",
       "source": "Summa Equity",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Kuala Lumpur, Malaysia",
       "website": "https://www.sengenics.com",
       "enriched": true,
       "research_date": "2025-10-24T20:24:54",
-      "detailed_description": "Sengenics - Immunoprofiling for advanced biomarker discovery. The company operates in the life sciences sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Sengenics provides immunoproteomics and autoantigen discovery for research and precision medicine. Headquartered in Kuala Lumpur, Malaysia (with UK operations) — not Stockholm.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 200M",
       "revenue_growth": "15-30% annual growth",
@@ -28286,14 +28152,14 @@
       "company": "TBAuctions",
       "sector": "E-commerce",
       "fund": "Summa Equity Fund IV",
-      "market": "Nordic/Europe",
+      "market": "Benelux / Europe",
       "entry": "2021",
       "source": "Summa Equity",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Netherlands",
       "website": "https://www.tbauctions.com",
       "enriched": true,
       "research_date": "2025-10-24T20:24:54",
-      "detailed_description": "TBAuctions - Online auction platform for used business equipment. The company operates in the e-commerce sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "TBAuctions operates online industrial and equipment auctions (NL/BE footprint). Headquartered in the Netherlands — not Stockholm.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 200M",
       "revenue_growth": "15-30% annual growth",
@@ -28386,14 +28252,14 @@
       "company": "Velsera",
       "sector": "Healthcare Technology",
       "fund": "Summa Equity Fund IV",
-      "market": "Nordic/Europe",
+      "market": "United States",
       "entry": "2023",
       "source": "Summa Equity",
-      "headquarters": "Stockholm, Sweden",
+      "headquarters": "Chicago, Illinois, USA",
       "website": "https://www.velsera.com",
       "enriched": true,
       "research_date": "2025-10-24T20:24:54",
-      "detailed_description": "Velsera - Velsera unites established, leading companies from healthcare and life sciences to advance and accelerate the work of both domains. The company operates in the healthcare technology sector with innovative solutions and strong market positioning across Nordic and European markets.",
+      "detailed_description": "Velsera combines life-sciences and healthcare technology businesses as a global platform. Headquartered in Chicago, Illinois, USA — not Stockholm.",
       "employees": "50-500 employees",
       "revenue": "EUR 10M - EUR 200M",
       "revenue_growth": "15-30% annual growth",
@@ -28680,17 +28546,17 @@
       "logo_url": "https://logo.clearbit.com/expin.com"
     },
     {
-      "company": "HL",
+      "company": "HL Display",
       "sector": "Industrial",
       "fund": "Ratos Fund",
-      "market": "Nordic/Europe",
+      "market": "Sweden",
       "entry": "2024",
       "source": "Ratos",
-      "headquarters": "Hvalstad, Norway",
+      "headquarters": "Solna, Sweden (Stockholm)",
       "website": "https://www.hl-display.com",
       "enriched": true,
       "research_date": "2025-10-24T20:40:03",
-      "detailed_description": "HL Display is a global retail display solutions provider with nearly 70 years of expertise, combining retail knowledge with shopper insights. The company offers custom-designed retail display solutions, serving customers across Northern Europe from offices in Norway (Hvalstad), Sweden, and Denmark. In 2024, HL Display acquired pr trading-Flekota A/S in Denmark and Kost Klip Manufacturing Ltd. in Canada to expand its retail solutions business. Ratos invested in 2024. HL Display is part of Ratos's Industry segment focused on modern retail solutions.",
+      "detailed_description": "HL Display is a global retail display solutions provider (HL Group). Group headquarters are in Solna / Stockholm, Sweden; Hvalstad, Norway hosts Norwegian operations — not the global HQ. Ratos invested in 2024.",
       "employees": "100-1000 employees",
       "revenue": "SEK 500M - SEK 5B",
       "revenue_growth": "5-15% annual growth",
@@ -31658,7 +31524,7 @@
       "website": "https://www.valamis.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "Leading global corporate learning platform",
+      "detailed_description": "Valamis is a Helsinki-based learning technology company offering a cloud learning experience platform (LXP) and learning management for enterprises and public-sector employers. Its stack spans authoring, skills and compliance tracking, analytics, and integrations so organisations can run onboarding, regulatory training, and continuous upskilling at scale. Customers are spread globally; Adelis partnered with management in 2020 to accelerate international go-to-market and product investment.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -31676,7 +31542,7 @@
     {
       "company": "Ropo Capital",
       "sector": "Business Services",
-      "fund": "Adelis III",
+      "fund": "Adelis II",
       "market": "Nordics",
       "entry": "2019",
       "source": "Adelis Equity",
@@ -31684,7 +31550,7 @@
       "website": "https://www.ropo.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "Pan-Nordic technology enabled invoice lifecycle management",
+      "detailed_description": "Ropo Capital is a Finnish B2B fintech focused on the invoice lifecycle—financing, credit management, and collections—so companies get predictable cash flow without fragmenting order-to-cash across banks and agencies. Its technology-led model targets SMEs and mid-market groups in Finland and the wider Nordics, combining underwriting data with operational execution. The platform sits at the intersection of working-capital finance and accounts-receivable automation.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -31702,7 +31568,7 @@
     {
       "company": "Mobilhouse",
       "sector": "Industrial",
-      "fund": "Adelis III",
+      "fund": "Adelis II",
       "market": "Denmark",
       "entry": "2019",
       "source": "Adelis Equity",
@@ -31712,7 +31578,7 @@
       "website": "https://www.mobilhouse.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "Modular buildings for offices, schools, student housing and temporary accommodation in Denmark",
+      "detailed_description": "Mobilhouse designs, manufactures, and installs modular and relocatable buildings in Denmark for offices, schools, student housing, healthcare, and other temporary or fast-track capacity needs. Compared with on-site construction, modules shorten lead times and site disruption while meeting Danish building standards. Adelis acquired the business in 2019 to fund growth and industrial capacity, and exited in 2022.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -31730,7 +31596,7 @@
     {
       "company": "DIDRIKSONS",
       "sector": "Consumer",
-      "fund": "Adelis III",
+      "fund": "Adelis II",
       "market": "Nordics",
       "entry": "2018",
       "source": "Adelis Equity",
@@ -31738,7 +31604,7 @@
       "website": "https://www.didriksons.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "Functional and sustainable jackets for everyday outdoor use",
+      "detailed_description": "Didriksons is a Swedish outerwear brand (since 1913) specialising in waterproof shells, parkas, and everyday functional clothing for adults and children, with a strong sustainability and durability positioning rather than pure performance fashion. The company sells via its own stores, e-commerce, and Nordic retail partners. Adelis acquired Didriksons in 2018 to support brand, channel, and product-range development in the Nordics and export markets.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -31756,7 +31622,7 @@
     {
       "company": "Aceve",
       "sector": "Tech & Software",
-      "fund": "Adelis III",
+      "fund": "Adelis II",
       "market": "Nordics",
       "entry": "2018",
       "source": "Adelis Equity",
@@ -31764,7 +31630,7 @@
       "website": "https://www.aceve.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "Leading provider of ERP, FSM and project management software for construction and skilled trades. Formed from HVD Group (Hantverksdata) and Next One Technology. Rebranded to Aceve 2025. 22,000+ customers, ~SEK 1bn revenue. Adelis and EQT backed.",
+      "detailed_description": "Aceve (formerly marketed under the HVD Group banner) is a Nordic-led vertical software group serving construction, installation, and skilled trades with ERP, field service management (FSM), and project tools. The platform was shaped by combining Hantverksdata’s Nordic trade-software heritage with Next One Technology and a long series of add-ons across the Nordics, Germany, and Benelux. The group serves 22,000+ customers with a cloud-first roadmap and high recurring revenue; it rebranded to Aceve in 2025. Adelis has backed the story since 2018, and a 2024 continuation vehicle brought in HarbourVest with EQT joining as partner to fund further European consolidation.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -31782,7 +31648,7 @@
     {
       "company": "GENERAXION",
       "sector": "Business Services",
-      "fund": "Adelis III",
+      "fund": "Adelis II",
       "market": "Nordics",
       "entry": "2018",
       "source": "Adelis Equity",
@@ -31790,7 +31656,7 @@
       "website": "https://www.generaxion.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "Digital marketing in the Nordics",
+      "detailed_description": "Generaxion is a Nordic digital marketing services group helping SMEs and mid-market brands with performance marketing, SEO/SEM, websites, e-commerce builds, and inbound/content programmes—often anchored around platforms such as HubSpot. It operates through a federation of local market brands in Denmark, Sweden, Norway, and Finland while sharing methodology, tools, and back-office scale. Adelis backed Generaxion in 2018 as part of rolling up a fragmented agency landscape.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -31808,7 +31674,7 @@
     {
       "company": "KNIGHTEC",
       "sector": "Business Services",
-      "fund": "Adelis III",
+      "fund": "Adelis II",
       "market": "Nordics",
       "entry": "2017",
       "source": "Adelis Equity",
@@ -31818,7 +31684,7 @@
       "website": "https://www.knightec.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "Engineering and consulting services",
+      "detailed_description": "Knightec is a Swedish engineering and product-development consultancy that embeds teams in industrial, automotive, medtech, and software-heavy clients to deliver mechanical design, embedded systems, simulation, and digital product programmes. It blends on-site consulting with nearshore and delivery-centre capacity across the Nordics. Adelis became majority owner in 2017 and exited in 2022 after scaling headcount, sector breadth, and recurring client relationships.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -31836,7 +31702,7 @@
     {
       "company": "VALTTI",
       "sector": "Business Services",
-      "fund": "Adelis III",
+      "fund": "Adelis II",
       "market": "Finland",
       "entry": "2018",
       "source": "Adelis Equity",
@@ -31844,7 +31710,7 @@
       "website": "https://www.valtti.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "Technical services and consulting",
+      "detailed_description": "Valtti is a Finnish technical services contractor serving industry, infrastructure, property owners, and energy clients with installation, maintenance, shutdown, and project-delivery crews. Offerings span mechanical, electrical, and multi-discipline field work where uptime, safety, and regulatory compliance matter. Under Adelis (from 2018) the group was positioned as a national-scale partner for outsourced technical operations.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -31862,7 +31728,7 @@
     {
       "company": "Presto",
       "sector": "Business Services",
-      "fund": "Adelis III",
+      "fund": "Adelis II",
       "market": "Nordics",
       "entry": "2018",
       "source": "Adelis Equity",
@@ -31870,7 +31736,7 @@
       "website": "https://www.presto.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "Leading fire safety and training provider in Europe. Fire safety services, training and compliance.",
+      "detailed_description": "Presto (Presto Brandsäkerhet and affiliated entities) is a pan-European fire-safety and workplace-compliance group providing risk assessments, system design and installation, monitoring, and certified training to businesses, municipalities, and housing operators. Adelis transformed it from a Nordic champion into a broader European platform through numerous add-ons, including expansion into Germany and Southern Europe. In 2024 Adelis moved the investment into a continuation vehicle led by HarbourVest so management could keep consolidating the fragmented European safety-services market.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -31888,7 +31754,7 @@
     {
       "company": "NORDENTIC",
       "sector": "Healthcare & Life Sciences",
-      "fund": "Adelis III",
+      "fund": "Adelis II",
       "market": "Sweden",
       "entry": "2016",
       "status": "Exited",
@@ -31898,7 +31764,7 @@
       "website": "https://www.nordentic.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "Dental labs in Sweden",
+      "detailed_description": "Nordentic was a Swedish dental-laboratory platform producing crowns, bridges, implants, and orthodontics appliances for clinics, combining local customer service with centralised digital workflows and production scale. The network addressed outsourcing trends as chairside dentistry digitised. Adelis backed Nordentic from 2016 and sold the business to Corus in 2022 as part of consolidating Nordic dental lab assets.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -31916,7 +31782,7 @@
     {
       "company": "QUATTRO mikenti group",
       "sector": "Business Services",
-      "fund": "Adelis III",
+      "fund": "Adelis II",
       "market": "Finland",
       "entry": "2017",
       "source": "Adelis Equity",
@@ -31926,7 +31792,7 @@
       "website": "https://www.quattromikentigroup.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "Technical building services contractor in Finland",
+      "detailed_description": "Quattro Mikenti Group (QMG) is a Finnish technical building-services contractor executing HVAC, electrical, automation, and related installation work for new construction, refurbishments, and industrial sites. Its multi-trade model targets developers, general contractors, and large occupiers that need schedule-certain handovers across Finland. Adelis invested in 2017 and exited in 2021 after professionalising the platform and expanding project capacity.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -31944,7 +31810,7 @@
     {
       "company": "ADDPRO",
       "sector": "Business Services",
-      "fund": "Adelis III",
+      "fund": "Adelis II",
       "market": "Sweden",
       "entry": "2017",
       "source": "Adelis Equity",
@@ -31954,7 +31820,7 @@
       "website": "https://www.addpro.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "Cloud and application integration services in Sweden",
+      "detailed_description": "AddPro was a Swedish IT services and integration partner helping mid-sized companies and public agencies move to hybrid cloud, modern identity, and API-led application landscapes—often anchored on Microsoft ecosystems. Services covered infrastructure, security operations, and integration factories that stitch legacy ERP and line-of-business systems to SaaS. Adelis acquired AddPro in 2017 and divested in 2020 after a period of organic growth and tuck-in acquisitions.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -31972,7 +31838,7 @@
     {
       "company": "SSI DIAGNOSTICA",
       "sector": "Healthcare & Life Sciences",
-      "fund": "Adelis III",
+      "fund": "Adelis II",
       "market": "Global",
       "entry": "2016",
       "source": "Adelis Equity",
@@ -31980,7 +31846,7 @@
       "website": "https://www.ssidiagnostica.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "Infectious disease IVD company focused on gastrointestinal, respiratory and bloodborne disease diagnostics and vaccine quality control",
+      "detailed_description": "SSI Diagnostica Group is a Danish-headquartered specialty diagnostics company focused on infectious disease testing—rapid assays, culture media, and complementary IVD products spanning gastrointestinal, respiratory, and bloodborne pathogens—alongside antisera and QC tools used by vaccine manufacturers. Adelis carved the asset out of public ownership in 2016, rebuilt leadership, and pursued a buy-and-build strategy including North American assets such as CTK Biotech (2020) and Techlab (2022), scaling revenues and geographic reach before launching a continuation fund in 2022.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -31998,7 +31864,7 @@
     {
       "company": "ITRelation",
       "sector": "Business Services",
-      "fund": "Adelis III",
+      "fund": "Adelis II",
       "market": "Nordics",
       "entry": "2016",
       "source": "Adelis Equity",
@@ -32008,7 +31874,7 @@
       "website": "https://www.itrelation.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "IT Managed Services",
+      "detailed_description": "ITRelation was a Nordic managed-services provider operating end-user helpdesks, server and network operations, security baselines, and cloud migration programmes for SMEs and distributed organisations that could not justify large in-house IT departments. The model emphasised predictable per-seat pricing and remote-first delivery across Denmark and neighbouring markets. Adelis owned ITRelation from 2016 and completed a sale in 2018 as part of broader IT services portfolio rotation.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -32026,7 +31892,7 @@
     {
       "company": "Nordomatic",
       "sector": "Business Services",
-      "fund": "Adelis III",
+      "fund": "Adelis II",
       "market": "Nordics",
       "entry": "2016",
       "source": "Adelis Equity",
@@ -32036,7 +31902,7 @@
       "website": "https://www.nordomatic.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "Nordic market leader within building automation",
+      "detailed_description": "Nordomatic is an independent building-automation and energy-efficiency integrator that designs, installs, upgrades, and maintains building management systems (BMS/BEMS) for offices, hospitals, schools, data centres, and industrial facilities. With roots in Sweden and coverage across Denmark, Norway, and Finland, it helps property owners hit sustainability targets while keeping indoor climate and critical systems reliable. Adelis acquired Nordomatic in 2016 and sold it in 2020 after professionalising the platform for further Nordic consolidation.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -32054,7 +31920,7 @@
     {
       "company": "GREEN TEAM GROUP",
       "sector": "Agriculture",
-      "fund": "Adelis III",
+      "fund": "Adelis I",
       "market": "Europe",
       "entry": "2014",
       "source": "Adelis Equity",
@@ -32064,7 +31930,7 @@
       "website": "https://www.greenteamgroup.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "Europe's leading producer of Christmas trees",
+      "detailed_description": "Green Team Group is a vertically integrated European producer of Christmas trees and seasonal greenery, combining large-scale plantations, harvesting logistics, and wholesale distribution to retailers and garden centres. The asset was a thematic Agri/platform bet for Adelis Fund I (2014) capitalising on retailer demand for reliable, certified supply. Adelis exited in 2019 after expanding capacity and commercial reach.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -32082,7 +31948,7 @@
     {
       "company": "PUUILO",
       "sector": "Consumer",
-      "fund": "Adelis III",
+      "fund": "Adelis II",
       "market": "Finland",
       "entry": "2015",
       "source": "Adelis Equity",
@@ -32092,7 +31958,7 @@
       "website": "https://www.puuilo.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "DIY focused discount retailer in Finland",
+      "detailed_description": "Puuilo is a Finnish discount retailer centred on DIY, hardware, garden, automotive accessories, and household goods, using a warehouse-style, high-throughput store format and strong seasonal campaigns. The concept competes on price and breadth for homeowners, landlords, and small trades. Adelis partnered with management in 2015, supported store roll-out and sourcing scale, and later exited (IPO/market path) after a long hold.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -32110,7 +31976,7 @@
     {
       "company": "INTERSPORT Sweden",
       "sector": "Consumer",
-      "fund": "Adelis III",
+      "fund": "Adelis II",
       "market": "Sweden",
       "entry": "2015",
       "source": "Adelis Equity",
@@ -32120,7 +31986,7 @@
       "website": "https://www.intersport.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "A leading sports retailer in Sweden",
+      "detailed_description": "INTERSPORT Sweden is the master franchisee and retail organisation behind the INTERSPORT banner in Sweden—operating company-owned and affiliated stores, e-commerce, and category specialists across team sports, training, outdoor, and ski. The network is one of the country’s largest sports retail footprints, balancing global brand standards with local merchandising. Adelis became majority shareholder in 2015 and remained through a multi-year modernisation before a 2024 exit.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -32138,7 +32004,7 @@
     {
       "company": "LOGENT",
       "sector": "Business Services",
-      "fund": "Adelis III",
+      "fund": "Adelis I",
       "market": "Sweden/Norway",
       "entry": "2013",
       "source": "Adelis Equity",
@@ -32148,7 +32014,7 @@
       "website": "https://www.logent.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "Logistics Services in Sweden and Norway",
+      "detailed_description": "Logent is a contract logistics (3PL) operator providing warehousing, inbound/outbound fulfillment, value-added services, and domestic distribution for industrial, retail, and e-commerce customers in Sweden and Norway. Its network of multi-client facilities targets clients needing scalable space without owning fixed assets. Adelis acquired Logent in 2013 under Fund I and exited in 2019 after expanding footprint, automation, and cross-border flows.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -32166,7 +32032,7 @@
     {
       "company": "NGI",
       "sector": "Industrial",
-      "fund": "Adelis III",
+      "fund": "Adelis I",
       "market": "Global",
       "entry": "2014",
       "source": "Adelis Equity",
@@ -32176,7 +32042,7 @@
       "website": "https://www.ngi.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "World's leading manufacturer of certified hygienic levelling systems",
+      "detailed_description": "NGI (Nordic Group International) is a niche industrial manufacturer of hygienic machine mounts, levelling feet, and precision adjustment hardware used under food, beverage, pharma, and hygienic process equipment where cleanability and vibration control matter. Certification and global distribution to OEMs and integrators underpin pricing power. Adelis invested in 2014 and sold a majority stake to Habasit Group in 2018 as part of strategic buyer consolidation.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -32194,7 +32060,7 @@
     {
       "company": "MED GROUP",
       "sector": "Healthcare & Life Sciences",
-      "fund": "Adelis III",
+      "fund": "Adelis II",
       "market": "Finland",
       "entry": "2015",
       "source": "Adelis Equity",
@@ -32204,7 +32070,7 @@
       "website": "https://www.medgroup.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "Dental, home care and ambulance services in Finland",
+      "detailed_description": "Med Group was a Finnish healthcare services roll-up spanning private dental clinics, elderly home-care operations, and ambulance/paramedic transport—three regulated, locally fragmented segments where scale buys procurement, staffing, and compliance infrastructure. Adelis acquired the platform with founders in 2015, funded bolt-ons and operational improvements, and divested in 2018 as Finland’s outsourcing of elder care and emergency medical transport accelerated.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -32355,12 +32221,12 @@
       "company": "Oticon Medical",
       "sector": "MedTech",
       "fund": "Impilo",
-      "market": "Sweden",
+      "market": "Denmark",
       "entry": "2025",
       "source": "Impilo",
-      "headquarters": "Sweden",
+      "headquarters": "Smørum, Denmark",
       "status": "Active",
-      "detailed_description": "Oticon Medical provides bone-anchored hearing solutions for people with conductive hearing loss, mixed hearing loss, or single-sided deafness. Impilo acquired the business from Demant in 2025."
+      "detailed_description": "Oticon Medical provides bone-anchored hearing solutions; spun from Demant (William Demant group). Danish company headquartered in Smørum, Denmark — not Sweden."
     },
     {
       "company": "Bekk",
@@ -32378,11 +32244,11 @@
       "sector": "Technology",
       "fund": "Axcel",
       "market": "Iceland",
-      "entry": "2025",
+      "entry": "2019",
       "source": "Axcel",
       "headquarters": "Kópavogur, Iceland",
       "status": "Active",
-      "detailed_description": "Leading independent provider of vertical software for retail and hospitality. Built on Microsoft Dynamics platform."
+      "detailed_description": "Leading independent vertical software for retail and hospitality on Microsoft Dynamics. Axcel's investment dates to the 2019 take-private — not 2025."
     },
     {
       "company": "AGRD Partners",
@@ -33548,9 +33414,10 @@
       "entry": "Jan 2010",
       "fund": "Fund II",
       "source": "Altor",
-      "status": "Active",
-      "detailed_description": "OptiGroup is a leading Northern European B2B distributor providing all essentials for business across facility, safety, foodservice, packaging and office supplies. With around EUR 1 billion in turnover and 2,000 employees across 70 distribution centres in 20 countries, the group serves 100,000+ customers. OptiGroup was formed through the combination of OptiGroup and Hygas, with Altor as an early investor.",
-      "website": "https://optigroup.com"
+      "status": "Exited",
+      "detailed_description": "OptiGroup is a Northern European B2B distributor (facility, safety, foodservice, packaging). FSN Capital acquired OptiGroup from Altor in 2021/22; Altor no longer holds this as an active portfolio company.",
+      "website": "https://optigroup.com",
+      "exit_year": "2022"
     },
     {
       "company": "Orchid Orthopedic Solutions",
@@ -33664,12 +33531,12 @@
       "company": "Transcom",
       "sector": "Business Services",
       "market": "International",
-      "headquarters": "Luxembourg",
+      "headquarters": "Stockholm, Sweden",
       "entry": "Mar 2015",
       "fund": "Fund IV",
       "source": "Altor",
       "status": "Active",
-      "detailed_description": "Transcom delivers brilliance in customer experience through contact centre and customer engagement services across 30 countries. With around EUR 700M in turnover and 30,000 employees, the company supports brands in customer service, sales and technical support. Transcom combines people, technology and process excellence for leading global companies.",
+      "detailed_description": "Transcom delivers customer experience and contact-centre services globally. Operational headquarters in Stockholm, Sweden; Luxembourg is typically used as legal/holding jurisdiction — not the primary operating HQ.",
       "website": "https://transcom.com"
     },
     {
@@ -34383,6 +34250,30 @@
       "deal_size": "€50M - €150M",
       "geo_type": "Nordic",
       "detailed_description": "Sporty is a leading Norwegian player in the fitness and training industry, with over 90 high-quality gyms and more than 130,000 members. Celero Capital acquired a majority stake in Sporty in late 2025 to accelerate growth and strengthen its Nordic market position. The company offers state-of-the-art fitness facilities, group classes, personalized training programs and digital fitness tools."
+    },
+    {
+      "company": "Active Brands",
+      "sector": "Consumer",
+      "fund": "FSN Capital Fund VI",
+      "market": "Nordic",
+      "entry": "2022",
+      "source": "FSN Capital",
+      "headquarters": "Oslo, Norway",
+      "status": "Active",
+      "website": "https://www.activebrands.com",
+      "detailed_description": "Nordic platform of outdoor and sports apparel brands. FSN Capital Fund VI invested in 2022 (ownership previously mis-attributed to Verdane in this dataset)."
+    },
+    {
+      "company": "OptiGroup",
+      "sector": "Business Services",
+      "fund": "FSN Capital Fund VI",
+      "market": "Nordics",
+      "entry": "2022",
+      "source": "FSN Capital",
+      "headquarters": "Malmö, Sweden",
+      "status": "Active",
+      "website": "https://optigroup.com",
+      "detailed_description": "Northern European B2B distributor (facility, safety, foodservice, packaging). Acquired from Altor by FSN Capital in 2021/22."
     }
   ]
 }

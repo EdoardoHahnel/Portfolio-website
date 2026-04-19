@@ -99,6 +99,116 @@ def load_portfolio_database():
     except Exception as e:
         print(f"Error loading portfolio database: {e}")
 
+
+def _normalize_portfolio_entry_year(raw):
+    """Extract year only from entry. Handles '2025-05', '2020-2024', '2023'."""
+    if not raw:
+        return ''
+    s = str(raw).strip()
+    if '-' in s:
+        parts = s.split('-')
+        first = parts[0]
+        if first.isdigit() and len(first) == 4:
+            return first
+    if len(s) >= 4 and s[:4].isdigit():
+        return s[:4]
+    return s
+
+
+def _expand_portfolio_company_description(desc, name, sector, country, firm_name):
+    """Expand short descriptions (same logic as /api/portfolio curated rows)."""
+    desc = (desc or '').strip()
+    if len(desc) >= 120:
+        return desc
+    sector_str = sector or 'business'
+    country_str = country or 'the region'
+    if not desc:
+        return f"{name} is a {sector_str} company headquartered in {country_str}. The company is a portfolio investment of {firm_name}."
+    base = desc.rstrip('.')
+    return f"{name} is a {sector_str} company headquartered in {country_str}. {base}. The company is a portfolio investment of {firm_name}."
+
+
+# PE firms whose portfolio rows come from pe_firms_database.json (not portfolio_enriched.json)
+_CURATED_PORTFOLIO_FIRM_SOURCES = frozenset({
+    'Polaris', 'FSN Capital', 'Nordstjernan', 'Valedo Partners', 'IK Partners', 'Equip',
+})
+
+
+def _merged_portfolio_companies(portfolio_storage_local=None):
+    """
+    Same company list as GET /api/portfolio: enriched companies except curated sources,
+    plus portfolio_companies from pe_firms_database for those sources.
+    Used so /api/company/<slug> resolves the same row the portfolio table shows.
+    """
+    if portfolio_storage_local is None:
+        portfolio_storage_local = []
+        if os.path.exists(data_path('portfolio_enriched.json')):
+            with open(data_path('portfolio_enriched.json'), 'r', encoding='utf-8') as f:
+                portfolio_storage_local = json.load(f).get('companies', [])
+        else:
+            portfolio_storage_local = list(portfolio_storage)
+
+    final_companies = []
+    for company in portfolio_storage_local:
+        if company.get('source') not in _CURATED_PORTFOLIO_FIRM_SOURCES:
+            c = dict(company)
+            if c.get('entry'):
+                c['entry'] = _normalize_portfolio_entry_year(c['entry'])
+            if not c.get('description') and c.get('detailed_description'):
+                c['description'] = c['detailed_description']
+            if not c.get('logo_url') and c.get('logo'):
+                c['logo_url'] = c['logo']
+            final_companies.append(c)
+
+    if os.path.exists(data_path('pe_firms_database.json')):
+        with open(data_path('pe_firms_database.json'), 'r', encoding='utf-8') as pf:
+            pe_data = json.load(pf)
+            pe_firms = pe_data.get('pe_firms', {})
+            for firm_name in _CURATED_PORTFOLIO_FIRM_SOURCES:
+                if firm_name in pe_firms:
+                    firm_metadata = pe_firms[firm_name]
+                    if firm_metadata.get('portfolio_companies'):
+                        for pc in firm_metadata['portfolio_companies']:
+                            final_companies.append(company_dict_from_pe_firms_portfolio_pc(pc, firm_name))
+    return final_companies
+
+
+def company_dict_from_pe_firms_portfolio_pc(pc, firm_name):
+    """
+    One portfolio row from pe_firms_database.json portfolio_companies.
+    Matches /api/portfolio so PE firm tabs and /api/company/<slug> stay aligned.
+    """
+    name = pc.get('name', '') or ''
+    sector = pc.get('sector', '') or ''
+    country = pc.get('country', '') or ''
+    raw_long = (pc.get('detailed_description') or '').strip()
+    raw_short = (pc.get('description') or '').strip()
+    raw_desc = raw_long or raw_short
+    website = (pc.get('website') or '').strip()
+    if website and not website.startswith('http'):
+        website = 'https://' + website
+    logo_url = (pc.get('logo_url') or pc.get('logo') or '').strip()
+    return {
+        'company': name,
+        'sector': sector,
+        'market': country,
+        'entry': _normalize_portfolio_entry_year(pc.get('entry_year', '')),
+        'status': pc.get('status') or 'Active',
+        'source': firm_name,
+        'website': website,
+        'logo_url': logo_url,
+        'logo': logo_url,
+        'description': _expand_portfolio_company_description(raw_desc, name, sector, country, firm_name),
+        'detailed_description': raw_long or raw_short,
+        'headquarters': pc.get('headquarters', country),
+        'deal_size': (pc.get('deal_size') or '') or '',
+        'fund': pc.get('fund', firm_name),
+        'geography': 'Nordic' if country in ['Sweden', 'Denmark', 'Norway', 'Finland'] else 'International',
+        'employees': (pc.get('employees') or '') or '',
+        'revenue': (pc.get('revenue') or '') or '',
+    }
+
+
 # Load news and portfolio on startup
 load_news_database()
 load_portfolio_database()
@@ -740,83 +850,7 @@ def get_portfolio():
             if portfolio_storage:
                 print(f"Loaded {len(portfolio_storage)} companies from database")
         
-        # For selected firms, replace with curated database portfolio.
-        # Keep Altor and Adelis Equity on enriched source to preserve stronger company logo/website coverage.
-        # Triton will use the enriched dataset (has full coverage) until the full curated list is populated
-        firms_to_replace = ['Polaris', 'FSN Capital', 'Nordstjernan', 'Valedo Partners', 'IK Partners', 'Equip']
-        final_companies = []
-        
-        def _normalize_entry_year(raw):
-            """Extract year only from entry. Handles '2025-05', '2020-2024', '2023'."""
-            if not raw:
-                return ''
-            s = str(raw).strip()
-            if '-' in s:
-                parts = s.split('-')
-                first = parts[0]
-                if first.isdigit() and len(first) == 4:
-                    return first  # e.g. '2025-05' -> '2025', '2020-2024' -> '2020'
-            if len(s) >= 4 and s[:4].isdigit():
-                return s[:4]
-            return s
-
-        # Filter out companies from firms that need replacement
-        for company in portfolio_storage:
-            if company.get('source') not in firms_to_replace:
-                c = dict(company)
-                if c.get('entry'):
-                    c['entry'] = _normalize_entry_year(c['entry'])
-                # Use detailed_description as description when description is missing (for table display)
-                if not c.get('description') and c.get('detailed_description'):
-                    c['description'] = c['detailed_description']
-                # Ensure logo_url for frontend (accepts logo as fallback)
-                if not c.get('logo_url') and c.get('logo'):
-                    c['logo_url'] = c['logo']
-                final_companies.append(c)
-
-        def _expand_description(desc, name, sector, country, firm_name):
-            """Expand short descriptions to ~3 sentences."""
-            desc = (desc or '').strip()
-            if len(desc) >= 120:
-                return desc
-            sector_str = sector or 'business'
-            country_str = country or 'the region'
-            if not desc:
-                return f"{name} is a {sector_str} company headquartered in {country_str}. The company is a portfolio investment of {firm_name}."
-            base = desc.rstrip('.')
-            return f"{name} is a {sector_str} company headquartered in {country_str}. {base}. The company is a portfolio investment of {firm_name}."
-
-        if os.path.exists(data_path('pe_firms_database.json')):
-            with open(data_path('pe_firms_database.json'), 'r', encoding='utf-8') as pf:
-                pe_data = json.load(pf)
-                pe_firms = pe_data.get('pe_firms', {})
-                
-                for firm_name in firms_to_replace:
-                    if firm_name in pe_firms:
-                        firm_metadata = pe_firms[firm_name]
-                        if firm_metadata.get('portfolio_companies'):
-                            for pc in firm_metadata['portfolio_companies']:
-                                name = pc.get('name', '')
-                                sector = pc.get('sector', '')
-                                country = pc.get('country', '')
-                                raw_entry = pc.get('entry_year', '')
-                                raw_desc = pc.get('detailed_description', '') or pc.get('description', '')
-                                company_data = {
-                                    'company': name,
-                                    'sector': sector,
-                                    'market': country,
-                                    'entry': _normalize_entry_year(raw_entry),
-                                    'status': 'Active',
-                                    'source': firm_name,
-                                    'website': pc.get('website', ''),
-                                    'logo_url': pc.get('logo_url', '') or pc.get('logo', ''),
-                                    'description': _expand_description(raw_desc, name, sector, country, firm_name),
-                                    'headquarters': pc.get('headquarters', country),
-                                    'deal_size': pc.get('deal_size', ''),
-                                    'fund': pc.get('fund', firm_name),
-                                    'geography': 'Nordic' if country in ['Sweden', 'Denmark', 'Norway', 'Finland'] else 'International'
-                                }
-                                final_companies.append(company_data)
+        final_companies = _merged_portfolio_companies(portfolio_storage)
         
         resp = jsonify({
             'success': True,
@@ -877,78 +911,13 @@ def search_portfolio():
     """
     Search portfolio companies by keyword
     """
+    global portfolio_storage
     query = request.args.get('q', '').lower()
-    
-    # For selected firms, replace with curated database portfolio.
-    # Keep Altor and Adelis Equity on enriched source to preserve stronger company logo/website coverage.
-    # Triton will use the enriched dataset (has full coverage) until the full curated list is populated
-    firms_to_replace = ['Polaris', 'FSN Capital', 'Nordstjernan', 'Valedo Partners', 'IK Partners', 'Equip']
-    final_companies = []
-    
-    def _norm_entry(raw):
-        if not raw:
-            return ''
-        s = str(raw).strip()
-        if '-' in s:
-            first = s.split('-')[0]
-            if first.isdigit() and len(first) == 4:
-                return first
-        if len(s) >= 4 and s[:4].isdigit():
-            return s[:4]
-        return s
+    if os.path.exists(data_path('portfolio_enriched.json')):
+        with open(data_path('portfolio_enriched.json'), 'r', encoding='utf-8') as f:
+            portfolio_storage = json.load(f).get('companies', [])
+    final_companies = _merged_portfolio_companies(portfolio_storage)
 
-    # Filter out companies from firms that need replacement
-    for company in portfolio_storage:
-        if company.get('source') not in firms_to_replace:
-            c = dict(company)
-            if c.get('entry'):
-                c['entry'] = _norm_entry(c['entry'])
-            if not c.get('logo_url') and c.get('logo'):
-                c['logo_url'] = c['logo']
-            final_companies.append(c)
-
-    # Add database portfolio companies for these firms (with same helpers as main portfolio API)
-    def _expand_desc(desc, name, sector, country, firm_name):
-        desc = (desc or '').strip()
-        if len(desc) >= 120:
-            return desc
-        sector_str = sector or 'business'
-        country_str = country or 'the region'
-        if not desc:
-            return f"{name} is a {sector_str} company headquartered in {country_str}. The company is a portfolio investment of {firm_name}."
-        base = desc.rstrip('.')
-        return f"{name} is a {sector_str} company headquartered in {country_str}. {base}. The company is a portfolio investment of {firm_name}."
-
-    if os.path.exists(data_path('pe_firms_database.json')):
-        with open(data_path('pe_firms_database.json'), 'r', encoding='utf-8') as pf:
-            pe_data = json.load(pf)
-            pe_firms = pe_data.get('pe_firms', {})
-            
-            for firm_name in firms_to_replace:
-                if firm_name in pe_firms:
-                    firm_metadata = pe_firms[firm_name]
-                    if firm_metadata.get('portfolio_companies'):
-                        for pc in firm_metadata['portfolio_companies']:
-                            name = pc.get('name', '')
-                            sector = pc.get('sector', '')
-                            country = pc.get('country', '')
-                            company_data = {
-                                'company': name,
-                                'sector': sector,
-                                'market': country,
-                                'entry': _norm_entry(pc.get('entry_year', '')),
-                                'status': 'Active',
-                                'source': firm_name,
-                                'website': pc.get('website', ''),
-                                'logo_url': pc.get('logo_url', '') or pc.get('logo', ''),
-                                'description': _expand_desc(pc.get('description', ''), name, sector, country, firm_name),
-                                'headquarters': pc.get('headquarters', country),
-                                'deal_size': pc.get('deal_size', ''),
-                                'fund': pc.get('fund', firm_name),
-                                'geography': 'Nordic' if country in ['Sweden', 'Denmark', 'Norway', 'Finland'] else 'International'
-                            }
-                            final_companies.append(company_data)
-    
     if not query:
         return jsonify({
             'success': True,
@@ -1720,6 +1689,29 @@ def get_company_by_slug(company_slug):
             return out
         
         norm_decoded = _normalize_slug(decoded_slug.replace('-', ' '))
+
+        port_list = portfolio_storage
+        try:
+            if os.path.exists(data_path('portfolio_enriched.json')):
+                with open(data_path('portfolio_enriched.json'), 'r', encoding='utf-8') as f:
+                    port_list = json.load(f).get('companies', [])
+        except Exception:
+            port_list = portfolio_storage
+        merged_companies = _merged_portfolio_companies(port_list)
+
+        # 0. Same list as GET /api/portfolio (curated IK/Polaris/etc. rows, not duplicate enriched stubs)
+        for company in merged_companies:
+            slug_name = _normalize_slug(company.get('company', ''))
+            slug_source = _normalize_slug(company.get('source', ''))
+            expected = f"{slug_name}-{slug_source}" if slug_name and slug_source else ""
+            if norm_decoded == expected:
+                smart = _compute_smart_sections(company, merged_companies)
+                return jsonify({
+                    'success': True,
+                    'company': _prepare_company_for_response(company),
+                    'similar_companies': smart['similar_companies'],
+                    'sibling_companies': smart['sibling_companies'],
+                })
         
         # 1. Normalized slug match (handles Brödernas->brdernas, G-CON->gcon, etc.)
         for company in portfolio_storage:
@@ -1727,7 +1719,7 @@ def get_company_by_slug(company_slug):
             slug_source = _normalize_slug(company.get('source', ''))
             expected = f"{slug_name}-{slug_source}" if slug_name and slug_source else ""
             if norm_decoded == expected:
-                smart = _compute_smart_sections(company, portfolio_storage)
+                smart = _compute_smart_sections(company, merged_companies)
                 return jsonify({
                     'success': True,
                     'company': _prepare_company_for_response(company),
@@ -1750,7 +1742,7 @@ def get_company_by_slug(company_slug):
                 expected_slug = f"{slug_name}-{slug_source}"
                 
                 if decoded_slug.lower() == expected_slug:
-                    smart = _compute_smart_sections(company, portfolio_storage)
+                    smart = _compute_smart_sections(company, merged_companies)
                     return jsonify({
                         'success': True,
                         'company': _prepare_company_for_response(company),
@@ -1765,7 +1757,7 @@ def get_company_by_slug(company_slug):
                 
                 if (company_name_match.lower() in company_name and 
                     source_match.lower() in source):
-                    smart = _compute_smart_sections(company, portfolio_storage)
+                    smart = _compute_smart_sections(company, merged_companies)
                     return jsonify({
                         'success': True,
                         'company': _prepare_company_for_response(company),
@@ -1795,28 +1787,11 @@ def get_company_by_slug(company_slug):
                             if decoded_slug.lower() == expected or norm_decoded_legacy == expected or (
                                 len(parts) >= 2 and company_name_match and _normalize_slug_legacy(company_name_match) in pc_slug and
                                 source_match.lower() in slug_firm):
-                                company_data = {
-                                    'company': pc.get('name', ''),
-                                    'sector': pc.get('sector', ''),
-                                    'market': pc.get('country', ''),
-                                    'entry': pc.get('entry_year', ''),
-                                    'status': pc.get('status', 'Active'),
-                                    'source': firm_name,
-                                    'website': pc.get('website', ''),
-                                    'logo_url': pc.get('logo_url') or pc.get('logo', ''),
-                                    'description': pc.get('description', ''),
-                                    'detailed_description': pc.get('detailed_description', pc.get('description', '')),
-                                    'headquarters': pc.get('headquarters', pc.get('country', '')),
-                                    'deal_size': pc.get('deal_size', ''),
-                                    'fund': pc.get('fund', firm_name),
-                                    'geography': 'Nordic' if pc.get('country') in ['Sweden', 'Denmark', 'Norway', 'Finland'] else 'International'
-                                }
-                                if pc.get('website') and not company_data['website'].startswith('http'):
-                                    company_data['website'] = 'https://' + company_data['website']
-                                smart = _compute_smart_sections(company_data, portfolio_storage)
+                                company_data = company_dict_from_pe_firms_portfolio_pc(pc, firm_name)
+                                smart = _compute_smart_sections(company_data, merged_companies)
                                 return jsonify({
                                     'success': True,
-                                    'company': company_data,
+                                    'company': _prepare_company_for_response(company_data),
                                     'similar_companies': smart['similar_companies'],
                                     'sibling_companies': smart['sibling_companies'],
                                 })

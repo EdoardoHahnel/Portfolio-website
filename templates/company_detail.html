@@ -10,7 +10,7 @@
         background: linear-gradient(135deg, #3f7de8 0%, #2f64c0 100%);
         color: white;
         padding: 1rem 1.5rem 1.25rem;
-        margin: -1.5rem -1.5rem 1.25rem -1.5rem;
+        margin: -0.75rem -0.75rem 1.25rem -0.75rem;
         border-radius: 0;
         position: relative;
     }
@@ -99,8 +99,10 @@
     }
 
     .company-detail-content {
-        max-width: 960px;
-        margin: 0 auto;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        box-sizing: border-box;
     }
 
     .stats-banner {
@@ -592,7 +594,7 @@
         </div>
 
         <!-- Action Buttons -->
-        <div class="detail-section" style="text-align: center; padding: 1rem;">
+        <div class="detail-section" style="text-align: left; padding: 1rem;">
             <a id="websiteBtn" href="#" target="_blank" class="btn btn-primary btn-sm" style="display: none;">
                 <i class="fas fa-external-link-alt"></i>
                 Visit Company Website
@@ -649,10 +651,69 @@ function loadCompanyData(company, smartData = {}) {
     const holdingPeriodText = holdingPeriod ? (isExited ? (holdingPeriod === 1 ? 'Held for 1 year' : `Held for ${holdingPeriod} years`) : (holdingPeriod === 1 ? '1 yr' : `${holdingPeriod} yrs`)) : '—';
     const geography = categorizeGeography(company.market);
 
-    const COMPANY_DOMAIN_OVERRIDES = { 'Brimer': 'brimer.no', 'Lunawood': 'lunawood.com', 'Enerco Group': 'enerco.se', 'Nordic Grid Solutions': 'triarca.dk', 'EITCO': 'eitco.de', 'Cedra': 'cedra.se', 'Vokstr': 'vokstr.no', 're:mount': 'remount.fi', 'netIP': 'netip.dk', 'Ropo Capital': 'ropo.com', 'Circura Danmark': 'circura.dk', 'Circura': 'circuragroup.com', 'DLVRY': 'dlvry.se', 'RETTA': 'innagroup.se', '3Button Group': '3bg.se', 'Briab': 'briab.se', 'EWGroup': 'ewgroup.se', 'eivis': 'eivis-group.com', 'SI - Sustainable Intelligence': 'wearesi.se', 'Umia': 'umia.se', 'Safe Monitoring Group': 'safemonitoringgroup.com', 'Brödernas': 'brodernas.se', 'G-CON Manufacturing': 'g-conmanufacturing.com', 'S R Intelligence (SRI)': 'sri.se', 'Tedge': 'tedge.se', 'Co-native': 'conative.se', 'SELATEK': 'selatek.se', 'Bekk': 'bekk.no', 'LS Retail': 'lsretail.com', 'Nordic Tyre Group': 'nordictyregroup.com', 'SuperOffice': 'superoffice.com', 'Capture One': 'captureone.com', 'Phase One': 'phaseone.com', 'GUBI': 'gubi.com', 'NTI Group': 'ntigroup.dk', 'XPartners': 'xpartners.se', 'Edda Group': 'edda.dk', 'Immedica': 'immedica.com', 'Humana': 'humanagroup.se', 'Euro Accident': 'euroaccident.se', 'Scantox': 'scantox.com', 'Nestit Group': 'nestit.com', 'Ascenco Group': 'ascenco.se', 'Freedom Group': 'freedomgroup.se', 'Activeon': 'activeon.no', 'Bastard Burgers': 'bastardburgers.se', 'Cure': 'cure.no', 'Dura': 'duragroup.se', 'Funplays': 'funplays.com', 'House of Discs': 'latitude64.com', 'Makeup Mekka': 'makeupmekka.no', 'Corteco': 'corteco.nu', 'Reledo': 'reledo.se', 'Opima': 'opima.se', 'Aterion': 'aterion.com', 'Deltra': 'deltra.se', 'Sporty': 'sportygroup.no', 'River Group': 'river-group.com', 'Ryde': 'ryde-technology.com', 'Nordomatic': 'nordomatic.com', 'ILT Education': 'ilteducation.com', 'Allurity': 'allurity.com', 'Renewtech': 'renewtech.dk', 'tado°': 'tado.com', 'Open Cosmos': 'open-cosmos.com', 'MinervaX': 'minervax.com', 'Soil Capital': 'soilcapital.com', 'Delivery Associates': 'deliveryassociates.com', 'Cinclus Pharma': 'cincluspharma.com', 'May Health': 'may-health.com', 'Rail-Flow': 'rail-flow.com', 'Infrakraft': 'infrakraft.se', 'Komet': 'komet.at', 'Karriere Tutor': 'karrieretutor.de', 'Mesalvo': 'mesalvo.com', 'TT Medic': 'ttmedic.com', 'Primutec': 'primutec.nl', 'Noova Energy Systems': 'noova.no', 'AGRD Partners': 'agrdpartners.com', 'Accru Partners': 'accrupartners.com', 'Acurum Group': 'acurumgroup.com', 'Elcor': 'elcor.dk', 'Oral Care': 'oralcare.se', 'The Nutriment Company': 'nutriment.com', 'itm8': 'itm8.dk', 'BullWall': 'bullwall.com', 'Init': 'initgroup.com', 'DANX Carousel Group': 'danxcarousel.com', 'Vetopia': 'vetopia.com', 'emagine': 'emagine.dk', 'Currentum': 'currentumgroup.com', 'WP Westpack': 'westpack.se', 'Mobilhouse': 'mobilhouse.dk', 'Quattro Mikenti Group': 'qmg.fi', 'Puuilo': 'puuilo.fi', 'Intersport Sweden': 'intersport.se', 'Med Group': 'medgroup.fi', 'Microbas Precision': 'microbas.se', 'Faun Gruppen': 'faun.no', 'Flex IT': 'flex-it.dk', 'Network of Design': 'networkofdesign.com', 'Nordic Leisure Travel Group': 'nltg.com', 'Tresu': 'tresu.com', 'Multisoft': 'multisoft.no', 'IT-Total': 'it-total.no', 'Hermes': 'hermesas.no', 'Pelly Group': 'pellygroup.com', 'Sofigate': 'sofigate.com', 'Aste Helsinki': 'astehelsinki.fi', 'Picosun': 'picosun.com', 'Avidly': 'avidlyagency.com', 'Real Machinery': 'realmachinery.com', 'Touhula': 'touhula.fi', 'Polystar': 'polystar.com', 'Fluido': 'fluido.com', 'Idean Enterprises': 'idean.com', 'Dechra Pharmaceuticals': 'dechrapharmaceuticals.com', 'Advanced MedAesthetic Partners': 'advancedmedaesthetic.com', 'Talentium': 'talentium.fi', 'Icon Group': 'icongroup.com.au', 'CFC': 'cfcunderwriting.com', 'OEM International': 'oeminternational.se', 'HQ': 'hq.se', 'Acacium': 'acaciumgroup.com', 'Lobster': 'lobster.es', 'VisionSense Technologies': 'visionsense.com', 'GEDH': 'groupe-edh.com', 'IM Global': 'imgp.com', 'IM Global Partner': 'imgp.com', 'iM Global Partner': 'imgp.com', 'Seventeen Group': 'seventeengroup.co.uk', 'Wishcard': 'wishcard.de', 'Atlanda Health Group': 'atlanda.se', 'IVC Evidensia': 'ivcevidensia.com', 'Ludvig & Co': 'ludvig.se', 'Ondal Medical Systems': 'ondal.com', 'Enerco': 'enerco.se', 'Batisante': 'batisante.com', 'Goodlife Foods': 'goodlifefoods.com', 'MDT Technologies': 'mdt-technologies.com', 'Medica': 'medica.co.uk', 'Mupro': 'mupro.de', 'Ondal': 'ondal.com', 'Coin4 Solutions': 'coin4solutions.com', 'Datapart': 'datapart.fi', 'Eqqo': 'eqqo.com', 'Ipsum': 'ipsum.com', 'Sofia Developpement': 'sofiadeveloppement.com', 'Remazing': 'remazing.com', 'Implema': 'implema.fi', 'Nordic Drives Group': 'nordicdrives.com', 'Ametal': 'ametal.fi', 'Flow Fastighetsvärden': 'flowfastigheter.se', 'Autocirc': 'autocirc.com', 'Cary Group': 'carygroup.com', 'Equipe Zorgbedrijven': 'equipezorgbedrijven.nl', 'Hjo Installation': 'hjoinstallation.se', 'One Inc': 'oneinc.com', 'Resman': 'resman.fi', 'Team Relocations': 'teamrelocations.com', 'Alligo': 'alligo.se', 'Momentum Group': 'momentumgroup.se', 'Nobia': 'nobia.com', 'Micropower': 'micropower.no', 'G&O': 'go.no', 'Stronger': 'stronger.se', 'Link Logistics': 'linklogistics.no', 'Hoyer': 'hoyer.com', 'KVD': 'kvd.no', 'Presis Infra': 'presisinfra.no', 'Myneva': 'myneva.fi', 'BFC': 'bfcgroup.com', 'Bluu Unit': 'bluuunit.com', 'DYQIDAG': 'dyqidag.no', 'Geia Group': 'geiagroup.no', 'Inwerk': 'inwerk.com', 'Kährs': 'kahrs.com', 'Kinios': 'kinios.com', 'Medon': 'medon.no', 'Nuent': 'nuent.no', 'Prodriven': 'prodriven.com', 'Schock': 'schock.com', 'Unica': 'unica.no', 'Aleris': 'aleris.com', 'Arvos Group': 'arvos-group.com', 'Esperi': 'esperi.com', 'HiQ': 'hiq.se', 'Leadec': 'leadec.com', 'Neprune': 'neprune.com', 'Nuent Group': 'nuent.no', 'Lakrids by Bülow': 'lakridsbybulow.com', 'Origo': 'origo.dk', 'Restolution': 'restolution.de', 'Apoteka': 'apoteka.no', 'Autie': 'autie.com', 'Bildeler': 'bildeler.no', 'Carla': 'carla.se', 'Cleanwatts': 'cleanwatts.energy', 'Educations Media Group': 'emg.se', 'Indevis': 'indevis.de', 'Innonature': 'innonature.com', 'Instabee': 'instabee.com', 'Once Upon': 'onceupon.com', 'Pflegecampus': 'pflegecampus.de', 'Porterbuddy': 'porterbuddy.com', 'Press Ganey': 'pressganey.com', 'Purity': 'purity.no', 'Remember': 'remember.dk', 'Ropro': 'ropro.no', 'Imbox': 'imbox.se', 'VTU': 'vtu.com' };
-    const domain = (company.company && COMPANY_DOMAIN_OVERRIDES[company.company]) || extractDomain(company.website);
-    const faviconUrl = domain ? 'https://www.google.com/s2/favicons?domain=' + encodeURIComponent(domain) + '&sz=128' : '';
+    function domainFromClearbitLogo(url) {
+        if (!url || typeof url !== 'string') return '';
+        const idx = url.indexOf('logo.clearbit.com/');
+        if (idx < 0) return '';
+        return url.substring(idx + 18).split(/[/?#]/)[0].trim().replace(/^www\./, '');
+    }
+
+    const COMPANY_DOMAIN_OVERRIDES = { 'Brimer': 'brimer.no', 'Lunawood': 'lunawood.com', 'Enerco Group': 'enerco.se', 'Nordic Grid Solutions': 'triarca.dk', 'EITCO': 'eitco.de', 'Cedra': 'cedra.se', 'Vokstr': 'vokstr.no', 're:mount': 'remount.fi', 'netIP': 'netip.dk', 'Ropo Capital': 'ropo.com', 'Circura Danmark': 'circura.dk', 'Circura': 'circuragroup.com', 'DLVRY': 'dlvry.se', 'RETTA': 'innagroup.se', '3Button Group': '3bg.se', 'Briab': 'briab.se', 'EWGroup': 'ewgroup.se', 'eivis': 'eivis-group.com', 'SI - Sustainable Intelligence': 'wearesi.se', 'Umia': 'umia.se', 'Safe Monitoring Group': 'safemonitoringgroup.com', 'Brödernas': 'brodernas.se', 'G-CON Manufacturing': 'g-conmanufacturing.com', 'S R Intelligence (SRI)': 'sri.se', 'Tedge': 'tedge.se', 'Co-native': 'conative.se', 'SELATEK': 'selatek.se', 'Bekk': 'bekk.no', 'LS Retail': 'lsretail.com', 'Nordic Tyre Group': 'nordictyregroup.com', 'SuperOffice': 'superoffice.com', 'Capture One': 'captureone.com', 'Phase One': 'phaseone.com', 'GUBI': 'gubi.com', 'NTI Group': 'ntigroup.dk', 'XPartners': 'xpartners.se', 'Edda Group': 'edda.dk', 'Immedica': 'immedica.com', 'Humana': 'humanagroup.se', 'Euro Accident': 'euroaccident.se', 'Scantox': 'scantox.com', 'Nestit Group': 'nestit.com', 'Ascenco Group': 'ascenco.se', 'Freedom Group': 'freedomgroup.se', 'Activeon': 'activeon.no', 'Bastard Burgers': 'bastardburgers.se', 'Cure': 'cure.no', 'Dura': 'duragroup.se', 'Funplays': 'funplays.com', 'House of Discs': 'latitude64.com', 'Makeup Mekka': 'makeupmekka.no', 'Corteco': 'corteco.nu', 'Reledo': 'reledo.se', 'Opima': 'opima.se', 'Aterion': 'aterion.com', 'Deltra': 'deltra.se', 'Sporty': 'sportygroup.no', 'River Group': 'river-group.com', 'Ryde': 'ryde-technology.com', 'Nordomatic': 'nordomatic.com', 'ILT Education': 'ilteducation.com', 'Allurity': 'allurity.com', 'Renewtech': 'renewtech.dk', 'tado°': 'tado.com', 'Open Cosmos': 'open-cosmos.com', 'MinervaX': 'minervax.com', 'Soil Capital': 'soilcapital.com', 'Delivery Associates': 'deliveryassociates.com', 'Cinclus Pharma': 'cincluspharma.com', 'May Health': 'may-health.com', 'Rail-Flow': 'rail-flow.com', 'Infrakraft': 'infrakraft.se', 'Komet': 'komet.at', 'Karriere Tutor': 'karrieretutor.de', 'Mesalvo': 'mesalvo.com', 'TT Medic': 'ttmedic.com', 'Primutec': 'primutec.nl', 'Noova Energy Systems': 'noova.no', 'AGRD Partners': 'agrdpartners.com', 'Accru Partners': 'accrupartners.com', 'Acurum Group': 'acurumgroup.com', 'Elcor': 'elcor.dk', 'Oral Care': 'oralcare.se', 'The Nutriment Company': 'nutriment.com', 'itm8': 'itm8.dk', 'BullWall': 'bullwall.com', 'Init': 'initgroup.com', 'DANX Carousel Group': 'danxcarousel.com', 'Vetopia': 'vetopia.com', 'emagine': 'emagine.dk', 'Currentum': 'currentumgroup.com', 'WP Westpack': 'westpack.se', 'Mobilhouse': 'mobilhouse.dk', 'Quattro Mikenti Group': 'qmg.fi', 'Puuilo': 'puuilo.fi', 'Intersport Sweden': 'intersport.se', 'Med Group': 'medgroup.fi', 'Microbas Precision': 'microbas.se', 'Faun Gruppen': 'faun.no', 'Flex IT': 'flex-it.dk', 'Network of Design': 'networkofdesign.com', 'Nordic Leisure Travel Group': 'nltg.com', 'Tresu': 'tresu.com', 'Multisoft': 'multisoft.no', 'IT-Total': 'it-total.no', 'Hermes': 'hermesas.no', 'Pelly Group': 'pellygroup.com', 'Sofigate': 'sofigate.com', 'Aste Helsinki': 'astehelsinki.fi', 'Picosun': 'picosun.com', 'Avidly': 'avidlyagency.com', 'Real Machinery': 'realmachinery.com', 'Touhula': 'touhula.fi', 'Polystar': 'polystar.com', 'Fluido': 'fluido.com', 'Idean Enterprises': 'idean.com', 'Dechra Pharmaceuticals': 'dechrapharmaceuticals.com', 'Advanced MedAesthetic Partners': 'advancedmedaesthetic.com', 'Talentium': 'talentium.fi', 'Icon Group': 'icongroup.com.au', 'CFC': 'cfcunderwriting.com', 'OEM International': 'oeminternational.se', 'HQ': 'hq.se', 'Acacium': 'acaciumgroup.com', 'Lobster': 'lobster.es', 'VisionSense Technologies': 'visionsense.com', 'GEDH': 'groupe-edh.com', 'IM Global': 'imgp.com', 'IM Global Partner': 'imgp.com', 'iM Global Partner': 'imgp.com', 'Seventeen Group': 'seventeengroup.co.uk', 'Wishcard': 'wishcard.de', 'Atlanda Health Group': 'atlanda.se', 'IVC Evidensia': 'ivcevidensia.com', 'Ludvig & Co': 'ludvig.se', 'Ondal Medical Systems': 'ondal.com', 'Enerco': 'enerco.se', 'Batisante': 'batisante.com', 'Goodlife Foods': 'goodlifefoods.com', 'MDT Technologies': 'mdt-technologies.com', 'Medica': 'medica.co.uk', 'Mupro': 'mupro.de', 'Ondal': 'ondal.com', 'Coin4 Solutions': 'coin4solutions.com', 'Datapart': 'datapart.fi', 'Eqqo': 'eqqo.com', 'Ipsum': 'ipsum.com', 'Sofia Developpement': 'sofiadeveloppement.com', 'Remazing': 'remazing.com', 'Implema': 'implema.fi', 'Nordic Drives Group': 'nordicdrives.com', 'Ametal': 'ametal.fi', 'Flow Fastighetsvärden': 'flowfastigheter.se', 'Autocirc': 'autocirc.com', 'Cary Group': 'carygroup.com', 'Equipe Zorgbedrijven': 'equipezorgbedrijven.nl', 'Hjo Installation': 'hjoinstallation.se', 'One Inc': 'oneinc.com', 'Resman': 'resman.fi', 'Team Relocations': 'teamrelocations.com', 'Alligo': 'alligo.se', 'Momentum Group': 'momentumgroup.se', 'Nobia': 'nobia.com', 'Micropower': 'micropower.no', 'Micropower Group': 'micropower.no', 'G&O': 'go.no', 'Stronger': 'stronger.se', 'Link Logistics': 'linklogistics.no', 'Hoyer': 'hoyer.com', 'KVD': 'kvd.no', 'Presis Infra': 'presisinfra.no', 'Myneva': 'myneva.fi', 'BFC': 'bfcgroup.com', 'Bluu Unit': 'bluuunit.com', 'DYQIDAG': 'dyqidag.no', 'Geia Group': 'geiagroup.no', 'Inwerk': 'inwerk.com', 'Kährs': 'kahrs.com', 'Kinios': 'kinios.com', 'Medon': 'medon.no', 'Nuent': 'nuent.no', 'Prodriven': 'prodriven.com', 'Schock': 'schock.com', 'Unica': 'unica.no', 'Aleris': 'aleris.com', 'Arvos Group': 'arvos-group.com', 'Esperi': 'esperi.com', 'HiQ': 'hiq.se', 'HL Display': 'hl-display.com', 'Leadec': 'leadec.com', 'Neprune': 'neprune.com', 'Nuent Group': 'nuent.no', 'Lakrids by Bülow': 'lakridsbybulow.com', 'Origo': 'origo.dk', 'Restolution': 'restolution.de', 'Apoteka': 'apoteka.no', 'Autie': 'autie.com', 'Bildeler': 'bildeler.no', 'Carla': 'carla.se', 'Cleanwatts': 'cleanwatts.energy', 'Educations Media Group': 'emg.se', 'Indevis': 'indevis.de', 'Innonature': 'innonature.com', 'Instabee': 'instabee.com', 'Once Upon': 'onceupon.com', 'Pflegecampus': 'pflegecampus.de', 'Porterbuddy': 'porterbuddy.com', 'Press Ganey': 'pressganey.com', 'Purity': 'purity.no', 'Remember': 'remember.dk', 'Ropro': 'ropro.no', 'Imbox': 'imbox.se', 'VTU': 'vtu.com' };
+    Object.assign(COMPANY_DOMAIN_OVERRIDES, {
+        'Icon Group': 'icongroup.dk',
+        'Dechra Pharmaceuticals': 'dechra.com',
+        'Nuent Group': 'nuent.com',
+        'Nuent': 'nuent.com',
+        'Resman': 'resman.com',
+        'Acacium Group': 'acacium.com',
+        'Sofia Développement': 'sofia.dev',
+        'DATAPART': 'datapart-factoring.de',
+        'EQQO': 'eqqo.eu',
+        'coin4 Solutions': 'coin4solutions.de',
+        'Ipsum': 'ipsum.co.uk',
+        'FläktGroup': 'flaktgroup.com',
+        'MED:ON': 'medon.com',
+        'BFC Fahrzeugteile': 'bfcfahrzeugteile.com',
+        'bluu unit': 'bluuunit.com',
+        'formicon': 'formicon.com',
+        'Tendra Technical Services': 'tendra.com',
+        'Lohkare Infra': 'lohkare.fi',
+        'Lohoff': 'lohoff.com',
+        'KINIOS': 'kinios.com',
+        'Inwerk GmbH': 'inwerk.com',
+        'ProDriven': 'prodriven.com',
+        'Surgical Information Systems': 'sisfirst.com',
+        'NOBA Bank Group': 'nobabank.com',
+        'Esperi': 'esperi.fi',
+        'Aleris': 'aleris.se',
+        'Ondal Medical Systems': 'ondal.com',
+        'Micropower Group': 'micropower.no',
+        'Humana': 'humana.se',
+        'Euro Accident': 'euroaccident.se',
+        'Lowenco': 'lowenco.com',
+        'Pelago Bioscience': 'pelagobioscience.com',
+        'Stille': 'stillesurgical.com',
+        'Implema': 'implema.fi',
+        'DYWIDAG': 'dywidag-systems.com',
+        'Ametal': 'ametalis.com',
+    });
     const rawLogo = company.logo_url || company.logo || '';
+    let overrideDomain = '';
+    const coName = (company.company || company.name || '').trim();
+    if (coName) {
+        overrideDomain = COMPANY_DOMAIN_OVERRIDES[coName] || '';
+        if (!overrideDomain) {
+            const nl = coName.toLowerCase();
+            for (const k of Object.keys(COMPANY_DOMAIN_OVERRIDES)) {
+                if (k.toLowerCase() === nl) {
+                    overrideDomain = COMPANY_DOMAIN_OVERRIDES[k];
+                    break;
+                }
+            }
+        }
+    }
+    const domain = overrideDomain || extractDomain(company.website) || domainFromClearbitLogo(rawLogo);
+    const faviconUrl = domain ? 'https://www.google.com/s2/favicons?domain=' + encodeURIComponent(domain) + '&sz=128' : '';
     const clearbitUrl = (rawLogo && !rawLogo.includes('ui-avatars.com'))
         ? rawLogo
         : (domain ? 'https://logo.clearbit.com/' + domain : '');
@@ -690,10 +751,16 @@ function loadCompanyData(company, smartData = {}) {
     document.getElementById('statEmployees').textContent = company.employees || '—';
     document.getElementById('statDealSize').textContent = company.deal_size || '—';
     
-    // Description
-    const descriptionText = company.description || company.detailed_description || 
+    // Description — prefer longest non-empty text (portfolio API row vs enriched profile; IK/Polaris curated vs stub)
+    const descExpanded = (company.description || '').trim();
+    const descDetailed = (company.detailed_description || '').trim();
+    const descCandidates = [descExpanded, descDetailed].filter(Boolean);
+    const descriptionText = descCandidates.length
+        ? descCandidates.reduce((a, b) => (a.length >= b.length ? a : b))
+        : '';
+    const descriptionFinal = descriptionText ||
         `${company.company} is a ${company.sector || 'business'} company based in ${company.headquarters || company.market || 'the Nordic region'}. The company operates in the ${company.sector || 'business services'} sector and is a portfolio company of ${company.source || 'a leading PE firm'}.`;
-    document.getElementById('companyDescription').textContent = descriptionText;
+    document.getElementById('companyDescription').textContent = descriptionFinal;
     
     // Investment Details - PE Firm with logo (clickable)
     const peFirmName = company.source || '';
@@ -755,7 +822,45 @@ function loadCompanyData(company, smartData = {}) {
 }
 
 // Match portfolio tab logo logic: favicon (reliable for Nordic) > clearbit > avatar
-var COMPANY_DOMAIN_OVERRIDES_DETAIL = { 'Brimer': 'brimer.no', 'Lunawood': 'lunawood.com', 'Enerco Group': 'enerco.se', 'Nordic Grid Solutions': 'triarca.dk', 'EITCO': 'eitco.de', 'Cedra': 'cedra.se', 'Vokstr': 'vokstr.no', 're:mount': 'remount.fi', 'netIP': 'netip.dk', 'Ropo Capital': 'ropo.com', 'Circura Danmark': 'circura.dk', 'Circura': 'circuragroup.com', 'DLVRY': 'dlvry.se', 'RETTA': 'innagroup.se', '3Button Group': '3bg.se', 'Briab': 'briab.se', 'EWGroup': 'ewgroup.se', 'eivis': 'eivis-group.com', 'Norstat': 'norstatgroup.com', 'Norres Baggerman Group': 'norres.com', 'Precis Digital': 'precisdigital.com', 'Certego': 'certego.dk', 'Uniwater': 'uniwater.se', 'Best Transport': 'besttransport.se', 'S R Intelligence (SRI)': 'sri.se', 'Tedge': 'tedge.se', 'Co-native': 'conative.se', 'SELATEK': 'selatek.se', 'Multisoft': 'multisoft.no', 'IT-Total': 'it-total.no', 'Hermes': 'hermesas.no', 'Pelly Group': 'pellygroup.com', 'Corteco': 'corteco.nu', 'Reledo': 'reledo.se', 'Opima': 'opima.se', 'Aterion': 'aterion.com', 'Deltra': 'deltra.se', 'Sporty': 'sportygroup.no' };
+var COMPANY_DOMAIN_OVERRIDES_DETAIL = { 'Brimer': 'brimer.no', 'Lunawood': 'lunawood.com', 'Enerco Group': 'enerco.se', 'Nordic Grid Solutions': 'triarca.dk', 'EITCO': 'eitco.de', 'Cedra': 'cedra.se', 'Vokstr': 'vokstr.no', 're:mount': 'remount.fi', 'netIP': 'netip.dk', 'Ropo Capital': 'ropo.com', 'Circura Danmark': 'circura.dk', 'Circura': 'circuragroup.com', 'DLVRY': 'dlvry.se', 'RETTA': 'innagroup.se', '3Button Group': '3bg.se', 'Briab': 'briab.se', 'EWGroup': 'ewgroup.se', 'eivis': 'eivis-group.com', 'Norstat': 'norstatgroup.com', 'Norres Baggerman Group': 'norres.com', 'Precis Digital': 'precisdigital.com', 'Certego': 'certego.dk', 'Uniwater': 'uniwater.se', 'Best Transport': 'besttransport.se', 'S R Intelligence (SRI)': 'sri.se', 'Tedge': 'tedge.se', 'Co-native': 'conative.se', 'SELATEK': 'selatek.se', 'Multisoft': 'multisoft.no', 'IT-Total': 'it-total.no', 'Hermes': 'hermesas.no', 'Pelly Group': 'pellygroup.com', 'Corteco': 'corteco.nu', 'Reledo': 'reledo.se', 'Opima': 'opima.se', 'Aterion': 'aterion.com', 'Deltra': 'deltra.se', 'Sporty': 'sportygroup.no', 'HL Display': 'hl-display.com' };
+Object.assign(COMPANY_DOMAIN_OVERRIDES_DETAIL, {
+    'Icon Group': 'icongroup.dk',
+    'Dechra Pharmaceuticals': 'dechra.com',
+    'Nuent Group': 'nuent.com',
+    'Nuent': 'nuent.com',
+    'Resman': 'resman.com',
+    'Acacium Group': 'acacium.com',
+    'Sofia Développement': 'sofia.dev',
+    'DATAPART': 'datapart-factoring.de',
+    'EQQO': 'eqqo.eu',
+    'coin4 Solutions': 'coin4solutions.de',
+    'Ipsum': 'ipsum.co.uk',
+    'FläktGroup': 'flaktgroup.com',
+    'MED:ON': 'medon.com',
+    'BFC Fahrzeugteile': 'bfcfahrzeugteile.com',
+    'bluu unit': 'bluuunit.com',
+    'formicon': 'formicon.com',
+    'Tendra Technical Services': 'tendra.com',
+    'Lohkare Infra': 'lohkare.fi',
+    'Lohoff': 'lohoff.com',
+    'KINIOS': 'kinios.com',
+    'Inwerk GmbH': 'inwerk.com',
+    'ProDriven': 'prodriven.com',
+    'Surgical Information Systems': 'sisfirst.com',
+    'NOBA Bank Group': 'nobabank.com',
+    'Esperi': 'esperi.fi',
+    'Aleris': 'aleris.se',
+    'Ondal Medical Systems': 'ondal.com',
+    'Micropower Group': 'micropower.no',
+    'Humana': 'humana.se',
+    'Euro Accident': 'euroaccident.se',
+    'Lowenco': 'lowenco.com',
+    'Pelago Bioscience': 'pelagobioscience.com',
+    'Stille': 'stillesurgical.com',
+    'Implema': 'implema.fi',
+    'DYWIDAG': 'dywidag-systems.com',
+    'Ametal': 'ametalis.com',
+});
 function extractDomainFromUrl(url) {
     if (!url) return '';
     try {
