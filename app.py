@@ -1019,7 +1019,9 @@ def get_pe_firm_detail(firm_name):
             'triton': 'Triton Partners',
             'adelis': 'Adelis Equity',
             'ik': 'IK Partners',
-            'bure': 'Bure Equity'
+            'bure': 'Bure Equity',
+            'fidelio': 'Fidelio Capital',
+            'fidelio capital': 'Fidelio Capital',
         }
 
         if os.path.exists(data_path('pe_firms_database.json')):

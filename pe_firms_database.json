@@ -20,7 +20,7 @@
         "Oslo",
         "Helsinki"
       ],
-      "description": "EQT is a purpose-driven global investment organization with 30-year track record and Nordic heritage. ~€270bn AUM; 300+ portfolio companies. Largest alternative investment platform in Europe. Strategies: Private Capital (Equity, Growth, Ventures, Healthcare, Life Sciences, Future), Real Assets (Infrastructure, Real Estate), Credit, Private Wealth. Announced acquisition of Coller Capital (Jan 2026, to close Q3 2026). Listed Nasdaq Stockholm.",
+      "description": "EQT Partners is the adviser to EQT AB, a Swedish global investment organisation founded in 1994 and listed on Nasdaq Stockholm. Its funds invest across private equity—including large-cap and mid-market buyouts, growth equity, venture, healthcare, and life sciences—as well as real assets such as infrastructure and real estate, credit, and private wealth strategies, with geographic reach in Europe, North America, and Asia-Pacific. As of the mid-2020s the group manages on the order of EUR 270 billion in assets under management, with a substantial share fee-generating, and oversees a portfolio of more than three hundred companies alongside a growing secondaries and GP-stakes capability highlighted by the announced acquisition of Coller Capital. EQT routinely ranks among the world’s largest private markets firms by capital raised and presents itself as a purpose-driven, thematic investor with deep Nordic roots and a fully global footprint.",
       "investment_focus": {
         "sectors": [
           "Healthcare",
@@ -227,7 +227,7 @@
         "Luxembourg",
         "Seoul"
       ],
-      "description": "Nordic Capital is a leading private equity investor founded in 1989. 13 funds raised; €34bn AUM; €29.5bn invested in 155+ companies; 98 exits. Focus: Healthcare, Technology & Payments, Financial Services, Services & Industrial Tech. 60 current portfolio companies; €18bn revenue; 83,000 employees; >420 material add-ons. Fund XI (€9bn) and Evolution I & II (€3.2bn). 5x PEI Operational Excellence Award.",
+      "description": "Nordic Capital is a global private equity firm that specialises in leveraged buyouts and significant minority investments in established, market-leading companies in Northern Europe and North America. Founded in 1989 and headquartered in Stockholm, it manages on the order of EUR 34 billion in committed capital and maintains offices in Copenhagen, Frankfurt, Helsinki, Jersey, London, Luxembourg, New York, Oslo, and Seoul—reflecting both its Nordic roots and its transatlantic deal flow. The firm concentrates on four industry verticals: healthcare; technology and payments; financial services; and a broad bucket of services and industrial technology where operational improvement and thematic insight matter as much as financial structuring. Nordic Capital has repeatedly appeared among the twenty-five largest private equity firms globally in industry rankings, underpinned by large flagship funds and parallel Evolution vehicles that extend its capacity to hold and scale complex assets.",
       "investment_focus": {
         "sectors": [
           "Healthcare",
@@ -328,7 +328,7 @@
         "Stockholm",
         "Jersey"
       ],
-      "description": "Triton is an operationally minded European PE firm (founded 1997). €21bn+ capital raised; 100+ investments; ~900 platform and add-on investments; 150+ investment professionals. Buy Well, Build Better, Sell Growth. Accelerator Unit for operational support. Sectors: Industrial Tech, Business Services, Healthcare.",
+      "description": "Triton is a European private equity firm founded in 1997 and headquartered in London, with investment hubs in Frankfurt, Luxembourg, Stockholm, and Jersey. It presents itself as an operationally minded mid-market buyer in business services, industrial technology, and healthcare, with a trademark slogan—“Buy Well, Build Better, Sell Strong”—that captures its emphasis on due diligence, post-close transformation, and exit timing. Triton has raised more than EUR 21 billion across successive fund generations—including large flagship buyout funds, a smaller mid-cap programme, and debt opportunities vehicles—and counts more than one hundred primary investments and many hundreds of platform and add-on transactions. An internal Accelerator Unit supports portfolio executives on commercial, digital, and ESG priorities.",
       "investment_focus": {
         "sectors": [
           "Industrial Tech",
@@ -349,49 +349,139 @@
       },
       "team": [
         {
-          "name": "Peder Prahl",
-          "title": "Managing Partner",
-          "location": "Stockholm"
+          "name": "Graeme Ardus",
+          "title": "Head of Sustainability",
+          "location": "London"
         },
         {
-          "name": "Mikael Schöldström",
-          "title": "Partner",
-          "location": "Stockholm"
+          "name": "Mikael Aro",
+          "title": "Operating Partner",
+          "location": "London"
         },
         {
-          "name": "Lauri Ratia",
+          "name": "Sean Clay",
+          "title": "Operating Partner",
+          "location": "London"
+        },
+        {
+          "name": "Maximilian Coqui",
+          "title": "Partner, Full Potential",
+          "location": "London"
+        },
+        {
+          "name": "David Eliet",
+          "title": "Financing Professional",
+          "location": "London"
+        },
+        {
+          "name": "Michael Gahleitner",
+          "title": "Managing Partner, Co-Head of Industrial Tech",
+          "location": "London"
+        },
+        {
+          "name": "Sebastian Gocksch",
+          "title": "Co-Head Transaction Tax / Legal",
+          "location": "London"
+        },
+        {
+          "name": "Mattias Hindfelt",
+          "title": "Digital Operating Partner",
+          "location": "London"
+        },
+        {
+          "name": "Eckhard Hoffmann",
+          "title": "Financing Professional",
+          "location": "London"
+        },
+        {
+          "name": "Thomas Jutz",
+          "title": "Operating Partner",
+          "location": "London"
+        },
+        {
+          "name": "Arnoud Klerkx",
+          "title": "Operating Partner",
+          "location": "London"
+        },
+        {
+          "name": "Philipp Klöcker",
+          "title": "Operating Partner",
+          "location": "London"
+        },
+        {
+          "name": "Jonas Köhlin",
+          "title": "Managing Partner, Head of Full Potential",
+          "location": "London"
+        },
+        {
+          "name": "Jens Lennertz",
+          "title": "Operating Partner",
+          "location": "London"
+        },
+        {
+          "name": "Hans Maret",
+          "title": "Senior Industry Expert; TDO Investment Advisory Committee",
+          "location": "London"
+        },
+        {
+          "name": "Ditte Marstrand Wulf",
+          "title": "Head of Leadership & Culture",
+          "location": "London"
+        },
+        {
+          "name": "Jonathon Milne",
+          "title": "Co-Head Transaction Tax / Legal",
+          "location": "London"
+        },
+        {
+          "name": "Per-Oskar Nordlöf",
+          "title": "Financing Professional",
+          "location": "London"
+        },
+        {
+          "name": "Joakim Olsson",
           "title": "Partner",
           "location": "London"
         },
         {
-          "name": "Oliver Stenbäck",
-          "title": "Partner, Industrial Tech",
-          "location": "Frankfurt"
-        },
-        {
-          "name": "Christian Mogensen",
-          "title": "Partner, Healthcare",
+          "name": "Jasper zu Putlitz",
+          "title": "Operating Partner",
           "location": "London"
         },
         {
-          "name": "Tomas Ditlev",
-          "title": "Senior Advisor",
-          "location": "Luxembourg"
-        },
-        {
-          "name": "Henrik Lönnroth",
-          "title": "Partner, Business Services",
-          "location": "Stockholm"
-        },
-        {
-          "name": "Anna-Karin Celsing",
-          "title": "CFO",
+          "name": "Carl Johan Renvall",
+          "title": "Co-Head of Portfolio Monitoring and Development",
           "location": "London"
         },
         {
-          "name": "Johan Kardell",
+          "name": "Helmut Safar",
+          "title": "Head of Global Procurement",
+          "location": "London"
+        },
+        {
+          "name": "Philipp Schäfers",
+          "title": "Financing Professional",
+          "location": "London"
+        },
+        {
+          "name": "Cornelius Schleifer",
+          "title": "Co-Head of Portfolio Monitoring and Development",
+          "location": "London"
+        },
+        {
+          "name": "Anders Thulin",
           "title": "Partner",
-          "location": "Stockholm"
+          "location": "London"
+        },
+        {
+          "name": "Matthew Turner",
+          "title": "Senior Partner, Co-Head of Business Services",
+          "location": "London"
+        },
+        {
+          "name": "Helen Williams",
+          "title": "Partner, Head of Accelerator Unit",
+          "location": "London"
         }
       ],
       "fundraising": {
@@ -654,7 +744,7 @@
       "offices": [
         "Stockholm"
       ],
-      "description": "Amplio was established in 2024 by the former Segulah team. Swedish PE firm specializing in the Nordic lower mid-market (EV typically SEK 100–500M). Invests in Business Services and IT & Technology Services; sustainability themes: Sustainable Solutions, Digital Business Efficiency, Smart Urbanisation. Amplio I is SFDR Article 8. Manages Amplio I & Segulah V. Team has +10 years of joint investing; responsible for +80 add-ons across the Nordics.",
+      "description": "Amplio is a Swedish private equity firm established in 2024 by the team that previously built Segulah’s franchise. It focuses on the Nordic lower mid-market—enterprise values typically between SEK 100 million and SEK 500 million—where it can be the first institutional owner and professionalise founder-led businesses in business services and IT and technology services. Amplio’s mandate is explicitly tied to sustainability themes such as sustainable solutions, digital efficiency, and smarter cities, and its flagship vehicle is classified under SFDR Article 8. The same team continues to manage legacy Segulah V capital while deploying Amplio I, drawing on more than a decade of joint experience and a long record of add-on acquisitions across the region.",
       "investment_focus": {
         "sectors": [
           "Business Services",
@@ -687,11 +777,6 @@
           "location": "Stockholm"
         },
         {
-          "name": "Håkan Dahlin",
-          "title": "CFO",
-          "location": "Stockholm"
-        },
-        {
           "name": "Anton Cederling",
           "title": "Investment Manager",
           "location": "Stockholm"
@@ -704,6 +789,11 @@
         {
           "name": "Fabian Boberg",
           "title": "Associate",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Håkan Dahlin",
+          "title": "CFO",
           "location": "Stockholm"
         }
       ],
@@ -896,7 +986,7 @@
         "Helsinki",
         "Zurich"
       ],
-      "description": "Altor is a Nordic private equity firm founded in 2003, focused on transformational investments across the Nordics and DACH. The firm has invested in close to 100 companies and 300+ add-on acquisitions. Five offices; ~123 employees. Strong ESG commitment; four latest funds have 15-year horizons. Active across value transformations, high-growth partnerships, and selective minority stakes. Themes: digital/AI, energy transition, green transition.",
+      "description": "Altor Equity Partners is a Nordic private equity firm founded in 2003 and headquartered in Stockholm, with additional offices in Copenhagen, Oslo, Helsinki, and Zurich. It describes its work as transformational private equity: majority investments, often in the upper mid-market across the Nordics and DACH, where operational change, digitalisation, and thematic work on energy and the green transition can move the needle. Over two decades Altor has invested in close to a hundred companies and completed more than three hundred add-on acquisitions, supported by a team of well over a hundred professionals. Recent fund generations have moved toward longer fifteen-year horizons and an explicitly ESG-integrated process, including partnerships such as WovenLight on AI-enabled value creation. Consumer, healthcare, industrials, financial services, and technology remain the primary sector lanes.",
       "investment_focus": {
         "sectors": [
           "Consumer",
@@ -1497,7 +1587,7 @@
       "offices": [
         "Stockholm"
       ],
-      "description": "Litorina is a Swedish private equity firm founded in 1998 (25+ years). Invests in profitable Nordic niche market leaders with EUR 10–100M sales. 100+ years combined team experience; 50+ portfolio investments, 12 current companies. Value creation: consolidation, roll-out, international expansion. Business services and consumer sectors. Litorina playbook framework.",
+      "description": "Litorina is a Swedish private equity firm founded in 1998 that has spent more than twenty-five years investing in profitable Nordic companies that lead narrow product or service niches with sales typically between EUR 10 million and EUR 100 million. The team brings over a century of combined transaction experience and has completed more than fifty investments, with around a dozen active portfolio companies at any given time. Litorina’s value-creation playbook emphasises consolidation, geographic roll-out, and international expansion—often through systematic buy-and-build—in both business services and consumer-facing businesses. The firm has also explored continuation structures to align timelines with long-duration niche assets.",
       "investment_focus": {
         "sectors": [
           "Consumer",
@@ -1515,50 +1605,58 @@
       },
       "team": [
         {
-          "name": "Johan Blomquist",
-          "title": "Managing Partner",
-          "location": "Stockholm",
-          "background": "Key people"
+          "name": "Amanda Huldt",
+          "title": "Office Manager",
+          "location": "Stockholm"
         },
         {
-          "name": "John Strand",
-          "title": "CEO, Layer Group",
-          "location": "Stockholm",
-          "background": "Layer Group CEO"
+          "name": "Andreas Nyberg",
+          "title": "Director",
+          "location": "Stockholm"
         },
         {
-          "name": "Fredrik Hansson",
+          "name": "Eric Hegelund",
+          "title": "Associate",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Erik Holmberg",
+          "title": "Interim CFO",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Kristian Holmström",
+          "title": "Senior Advisor",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Lars Verneholt",
           "title": "Managing Partner",
           "location": "Stockholm"
         },
         {
-          "name": "Johan Lannebo",
+          "name": "Ludwig Tarnow",
+          "title": "Associate",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Magnus Ressel",
           "title": "Partner",
           "location": "Stockholm"
         },
         {
-          "name": "Caroline af Ugglas",
+          "name": "Mattias Letmark",
           "title": "Partner",
           "location": "Stockholm"
         },
         {
-          "name": "Per Johansson",
-          "title": "Partner, Consumer",
+          "name": "Paul Steene",
+          "title": "Partner",
           "location": "Stockholm"
         },
         {
-          "name": "Martin Bjurström",
-          "title": "CFO",
-          "location": "Stockholm"
-        },
-        {
-          "name": "Anna Söderblom",
-          "title": "Partner, Business Services",
-          "location": "Stockholm"
-        },
-        {
-          "name": "Erik Wallgren",
-          "title": "Senior Investment Manager",
+          "name": "Tero Merentie",
+          "title": "Director",
           "location": "Stockholm"
         }
       ],
@@ -1845,7 +1943,7 @@
         "Helsinki",
         "Munich"
       ],
-      "description": "Adelis Equity Partners is a growth-focused private equity firm based in the Nordics and Germany. Founded in 2012, the firm invests in small to medium-sized companies across Northern Europe (typically €10–300M revenue) in three core sectors: Healthcare & Life Science, Tech & Software, and Business Services. Track record: ~50 platform investments and 250+ add-on acquisitions since inception. Fund IV closed at €1.6bn (2025); total capital raised exceeds €4.25bn.",
+      "description": "Adelis Equity Partners is a growth-oriented private equity firm anchored in Stockholm with teams in Oslo, Helsinki, and Munich. Founded in 2012, it backs small and medium-sized businesses across Northern Europe—typically with revenues in the tens to low hundreds of millions of euros—where founders or families are ready for a professional majority partner. Healthcare and life science, technology and software, and business services form the backbone of the strategy, and the firm is known for energetic buy-and-build execution: roughly fifty platform investments and well over two hundred add-ons since inception. Adelis has raised more than EUR 4.25 billion to date, including a EUR 1.6 billion fourth fund that closed in 2025, and it remains focused on control-oriented growth buyouts rather than passive financial engineering.",
       "investment_focus": {
         "sectors": [
           "Healthcare & Life Science",
@@ -1866,67 +1964,218 @@
       },
       "team": [
         {
-          "name": "Jan Åström",
-          "title": "Founding Partner",
-          "location": "Stockholm",
-          "background": "Founding partner"
+          "name": "Adalbjörn Stefansson",
+          "title": "Investor relations",
+          "location": "Stockholm"
         },
         {
-          "name": "Joel Russell",
-          "title": "Founding Partner",
-          "location": "Stockholm",
-          "background": "Founding partner"
+          "name": "Andreas Askenbäck",
+          "title": "Finance manager",
+          "location": "Stockholm"
         },
         {
-          "name": "Anders Björk",
-          "title": "Founding Partner",
-          "location": "Stockholm",
-          "background": "Founding partner"
+          "name": "Anne-Sophie Holst Sanders",
+          "title": "Investment team",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Annika Björklund",
+          "title": "Fund accountant",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Claud Henze",
+          "title": "Investment team",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Dimitri Yakupov",
+          "title": "Investment team",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Edward Herslow",
+          "title": "Investment team",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Erik Hallert",
+          "title": "Investment team",
+          "location": "Stockholm"
         },
         {
           "name": "Franz Reiffenstuel",
-          "title": "Partner",
-          "location": "Munich",
-          "background": "Joined 2023, Munich office"
+          "title": "Investment team",
+          "location": "Munich"
         },
         {
-          "name": "Staffan Proos",
-          "title": "Partner",
+          "name": "Gustav Bard",
+          "title": "Investment team",
           "location": "Stockholm"
         },
         {
-          "name": "Erik Mitteregger",
-          "title": "Managing Partner",
+          "name": "Hampus Nestius",
+          "title": "Investment team",
           "location": "Stockholm"
         },
         {
-          "name": "Kristian Tofte",
-          "title": "Partner",
-          "location": "Oslo"
-        },
-        {
-          "name": "Henrik Löfgren",
-          "title": "Partner",
+          "name": "Hanna Jängnemyr",
+          "title": "Investment team",
           "location": "Stockholm"
         },
         {
-          "name": "Mikael Blomquist",
-          "title": "Partner, Tech & Software",
+          "name": "Hendrik Henatsch",
+          "title": "Investment team",
           "location": "Stockholm"
         },
         {
-          "name": "Anna Bernhardsson",
+          "name": "Henrik Klerfelt",
           "title": "CFO",
           "location": "Stockholm"
         },
         {
-          "name": "Johan Ericsson",
-          "title": "Partner, Business Services",
+          "name": "Jakob Wedenborn",
+          "title": "Investment team",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Jan Åkesson",
+          "title": "Investment team",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Jesper Bahlke",
+          "title": "Investment team",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Joel Russell",
+          "title": "Investment team",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Johan Seger",
+          "title": "Senior Advisor",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Johan Widén",
+          "title": "Investment team",
+          "location": "Stockholm"
+        },
+        {
+          "name": "John-Matias Uuttana",
+          "title": "Investment team",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Jørgen Møinichen",
+          "title": "Investment team",
+          "location": "Oslo"
+        },
+        {
+          "name": "Kristina Würz",
+          "title": "Executive assistant",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Lene Sandvoll Stern",
+          "title": "Investment team",
+          "location": "Oslo"
+        },
+        {
+          "name": "Linda Andell",
+          "title": "Office Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Linnea Olofsson",
+          "title": "Head of ESG",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Lova Lundin",
+          "title": "Financial controller",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Lucia Morris",
+          "title": "Investment team",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Luciana Lobo Cedstam",
+          "title": "Team assistant",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Mads Juel Sørensen",
+          "title": "Investment team",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Martin Welna",
+          "title": "Investment team",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Morten Loft Sørensen",
+          "title": "Investment team",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Nina Källmén",
+          "title": "Investment team",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Philip Enckell",
+          "title": "Investment team",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Rasmus Molander",
+          "title": "Investment team",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Rolf Bräu",
+          "title": "Investment team",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Sibel Karina Arnes",
+          "title": "Investment team",
+          "location": "Oslo"
+        },
+        {
+          "name": "Simen Abel Engh",
+          "title": "Investment team",
+          "location": "Oslo"
+        },
+        {
+          "name": "Sofia Falke (fmr Classon)",
+          "title": "Investment team",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Sofia Forsman",
+          "title": "Office Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Therese Leksäther",
+          "title": "Team assistant",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Waltteri Rautakorpi",
+          "title": "Investment team",
           "location": "Helsinki"
         },
         {
-          "name": "Lisa Lindqvist",
-          "title": "Senior Investment Manager",
+          "name": "Wiebke Buchholz",
+          "title": "Investment team",
           "location": "Stockholm"
         }
       ],
@@ -2594,7 +2843,7 @@
       "offices": [
         "Stockholm"
       ],
-      "description": "Ratos is a listed Swedish investment company (Nasdaq Stockholm) with 150+ years of history. Owns and develops listed and unlisted Nordic small and mid-sized companies. 14 companies; 9,100 employees (ex Aibel); SEK 19bn net sales; SEK 1.9bn adjusted EBITA (2025). Industry, Construction & Services, Consumer. Sustainability integrated. Subsidiaries remain independent.",
+      "description": "Ratos is a Swedish investment company listed on Nasdaq Stockholm with corporate origins in 1866, making it one of the Nordic region’s oldest continuously operating industrial and investment names. Today it behaves as an active owner of small and mid-sized unlisted companies—currently fourteen portfolio businesses with combined net sales around SEK 19 billion and roughly nine thousand employees—clustered in industry, construction and services, and consumer end-markets. Ratos emphasises subsidiary autonomy, board-level governance, and sustainability integration without imposing a single operating model on diverse businesses. The listed structure gives permanent capital and transparent reporting, while adjusted EBITA and cash conversion remain central measures of whether ownership is working.",
       "investment_focus": {
         "sectors": [
           "Industrial",
@@ -2613,24 +2862,34 @@
       },
       "team": [
         {
-          "name": "Jonas Wiström",
+          "name": "Gustaf Salford",
           "title": "President & CEO",
-          "location": "Stockholm"
+          "location": "Stockholm",
+          "background": "Contact: Firstname.Lastname@ratos.com"
         },
         {
-          "name": "Helene Gustafsson",
-          "title": "CFO",
-          "location": "Stockholm"
+          "name": "Anna Vilogorac",
+          "title": "CFO & IR",
+          "location": "Stockholm",
+          "background": "Contact: Firstname.Lastname@ratos.com"
+        },
+        {
+          "name": "Katarina Grönwall",
+          "title": "Vice President Communications & Sustainability",
+          "location": "Stockholm",
+          "background": "Contact: Firstname.Lastname@ratos.com"
+        },
+        {
+          "name": "Wilhelm Montgomery",
+          "title": "Vice President Strategy & Investments",
+          "location": "Stockholm",
+          "background": "Contact: Firstname.Lastname@ratos.com"
         },
         {
           "name": "Magnus Stephensen",
-          "title": "Head of Construction & Services",
-          "location": "Stockholm"
-        },
-        {
-          "name": "Magnus Jacobsson",
-          "title": "Head of Industry",
-          "location": "Stockholm"
+          "title": "General Counsel",
+          "location": "Stockholm",
+          "background": "Contact: Firstname.Lastname@ratos.com"
         }
       ],
       "fundraising": {
@@ -2670,7 +2929,7 @@
         "London",
         "Copenhagen"
       ],
-      "description": "Summa Equity is a thematic impact investment firm (2016). ~€4bn raised; 35 investments; mid-market. Themes: Circularity, Sustainable Food, Energy Transition, Tech-Enabled Resilience. Fund III (c.€2.3bn) largest European impact fund at close (Article 9). Investing to solve global challenges; future-proof world. Summa Foundation; Oda, Nofitech, Tibber, NG Nordic in portfolio.",
+      "description": "Summa Equity is a Stockholm-based thematic impact investor founded in 2016 that deploys private equity and growth capital only where it sees a credible link between financial return and measurable progress on global sustainability challenges. The firm organises its work around themes such as circular economy, sustainable food systems, energy transition, tech-enabled resilience, and changing demographics, and it manages roughly EUR 4 billion across more than thirty-five investments in Europe and North America. Summa III, closed at about EUR 2.3 billion, was marketed as one of Europe’s largest Article 9 impact funds at the time of fundraising. Portfolio examples such as Oda, Nofitech, Tibber, and NG Nordic illustrate how Summa combines deep sector work with the Summa Foundation’s broader philanthropic ambitions.",
       "investment_focus": {
         "sectors": [
           "Circularity",
@@ -2692,29 +2951,438 @@
       },
       "team": [
         {
-          "name": "Torleif Haldorsen",
-          "title": "CEO",
-          "location": "Stockholm",
-          "background": "CEO (2024)"
-        },
-        {
           "name": "Reynir Indahl",
-          "title": "Founding Partner",
+          "title": "Founder & Managing Partner",
           "location": "Stockholm"
         },
         {
-          "name": "Olle Bergman",
-          "title": "Managing Partner",
-          "location": "Stockholm"
-        },
-        {
-          "name": "Peder Hasslev",
+          "name": "Bertrand Camus",
           "title": "Partner",
           "location": "Stockholm"
         },
         {
-          "name": "Johan H. Andersson",
+          "name": "Matthias Fink",
           "title": "Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Stephanie Caspar",
+          "title": "Partner, Head of Portfolio & Via Summa",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Hannah Gunvor Jacobsen",
+          "title": "Partner, COO & Head of Investor Relations",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Martin Sjölund",
+          "title": "Partner & General Counsel",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Jacob Frandsen",
+          "title": "Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Christian Melby",
+          "title": "Partner & Chief Investment Officer",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Martin Gjølme",
+          "title": "Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Gisle Glück Evensen",
+          "title": "Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Andrew Marino",
+          "title": "Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Alex Raksin",
+          "title": "Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Justus Krisch",
+          "title": "Investment Associate",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Mathias Vollan",
+          "title": "Investment Associate",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Erik Faye",
+          "title": "Investment Associate",
+          "location": "Stockholm"
+        },
+        {
+          "name": "André Lagerkvist",
+          "title": "Investment Associate",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Jonathan Voldberg Hyttemoen",
+          "title": "Investment Associate",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Niko Michl",
+          "title": "Investment Associate",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Astrid Lindquist",
+          "title": "Investment Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Ludvig Guldberg",
+          "title": "Investment Associate",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Aurélia Carrère",
+          "title": "Thematic Chair",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Shuayb Ibrahim",
+          "title": "Investment Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Betty Ålander",
+          "title": "Investment Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Denny Lekic",
+          "title": "Investment Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Sercan Samanci",
+          "title": "Investment Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Johan Pietilä Holmner",
+          "title": "Investment Director",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Mehdi Lahlou",
+          "title": "Investment Director",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Maximilian Waldmann",
+          "title": "Investment Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Vanessa McKay",
+          "title": "Investment Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Fabian Schmidt-Bähr",
+          "title": "Investment Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Sebastian Greve Sunde",
+          "title": "Investment Director",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Peder Qvigstad",
+          "title": "Investment Director",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Silje Lambrechts",
+          "title": "Investment Director",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Sundeep Singh",
+          "title": "Investment Director",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Annette Roth Humlevik",
+          "title": "Investment Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Tuva Einang Prestegard",
+          "title": "Investment Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Tuva Greaker",
+          "title": "Investment Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Gustav Lindberg",
+          "title": "Investment Director",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Marcus Arvidsson",
+          "title": "Risk & Compliance Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Johan Carlsson",
+          "title": "Senior Legal Counsel",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Martin Collin",
+          "title": "Senior Tax Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Carine Beer",
+          "title": "Chief People Officer to Via Summa",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Maren Menschik",
+          "title": "Manager to Via Summa",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Caroline Dehlimarken",
+          "title": "Senior Manager to Via Summa",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Christian Fuhrhop",
+          "title": "CFO to Via Summa",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Manuel Klesse",
+          "title": "Impact Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Emelie Norling",
+          "title": "Impact Director",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Alexander Bjørklund",
+          "title": "Impact Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Hannah Elisabeth Berget",
+          "title": "Impact Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Alexander Häkämies Karlsson",
+          "title": "Financial Controller",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Adrian Røstad",
+          "title": "Senior Accountant",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Monika Rusik",
+          "title": "Senior Valuation Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Mohamad Ali Zahed",
+          "title": "Chief Financial Officer",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Martin Skough",
+          "title": "Senior Finance Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Charles Miller-Stirling",
+          "title": "Investor Relations Director",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Daniel Blaker",
+          "title": "Senior Brand & Communication Associate",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Helene Varming",
+          "title": "Brand & Communication Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Rehab Abdelkader",
+          "title": "Investor Relations Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Erika Alm",
+          "title": "Senior Investor Relations Associate",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Hannah Goich",
+          "title": "Senior Investor Relations Associate",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Ludvig Cosma Stålberg",
+          "title": "Digital Director in IT",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Filippa Fri",
+          "title": "Human Resources Associate",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Mette Øi",
+          "title": "Senior Management Associate",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Kristin Warpefelt",
+          "title": "Senior Human Resources Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Petter Lippestad",
+          "title": "Business Development & IT Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Janne Davidsen",
+          "title": "Human Resources Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Martin Skancke",
+          "title": "Board Member",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Eva Broms",
+          "title": "Board Member",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Mirja Lehmler-Brown",
+          "title": "Board Member",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Annika Moman",
+          "title": "Industrial Expert (Advisor)",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Kees Kruythoff",
+          "title": "Thematic Chair (Advisor)",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Göran Lindö",
+          "title": "Industrial Expert (Advisor)",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Conor Kehoe",
+          "title": "Advisor",
+          "location": "Stockholm"
+        },
+        {
+          "name": "George Serafeim",
+          "title": "Advisor",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Christoph Waer",
+          "title": "Advisor",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Jon Hindar",
+          "title": "Industrial Expert (Advisor)",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Rebecca McVey Gillion",
+          "title": "Office Manager Stockholm",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Petter Finnema Hegerroll",
+          "title": "Administrative Assistant",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Lisa Faiss",
+          "title": "Executive Assistant & Office Manager Munich",
+          "location": "Munich"
+        },
+        {
+          "name": "Andrea Fleischer",
+          "title": "Executive Assistant",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Janina Strömberg",
+          "title": "Executive Assistant",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Kimberly Gayle Wijk",
+          "title": "Administrative Assistant",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Maria Baker",
+          "title": "Executive Assistant",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Sanna Rolén",
+          "title": "Office Manager Oslo",
+          "location": "Oslo"
+        },
+        {
+          "name": "Emma Eriksson",
+          "title": "Executive Assistant",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Anne Myren",
+          "title": "Executive Assistant to Managing Partner & COO",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Katarina Kahlmann",
+          "title": "CEO Summa Foundation",
           "location": "Stockholm"
         }
       ],
@@ -3455,7 +4123,7 @@
       "offices": [
         "Stockholm"
       ],
-      "description": "Accent Equity Partners has invested in private Nordic companies since 1994. The firm focuses on buyout and expansion capital in mature companies with proven, scalable business models. Investment criteria: at least SEK 100M equity, typically EBITA SEK 20–100M, lead investor with 3–6 year holding period. Sector-diversified with strong track record in industrial services and niche manufacturing (e.g. Tempcon, Enerco, Triarca). Total commitments across seven funds exceed EUR 1.5 billion.",
+      "description": "Accent Equity Partners is a Stockholm-based investor that has backed private Nordic companies since 1994. The firm works as a lead or co-lead partner in buyouts and expansion capital, typically in established businesses where EBITA and equity cheques fit its lower- to mid-market sweet spot and where industrial services, niche manufacturing, and broader business services have long been a natural hunting ground. Across seven funds it has built a diversified Nordic portfolio—Tempcon, Enerco, and Triarca are among the better-known industrial names—with total commitments well above EUR 1.5 billion. Accent Equity VII closed in 2025; the team continues to focus on companies that already have a proven, scalable model and room to grow across the region.",
       "investment_focus": {
         "sectors": [
           "Diversified (Industrial, Business Services, Technology, Consumer)"
@@ -3472,11 +4140,6 @@
       },
       "team": [
         {
-          "name": "Niklas Sloutski",
-          "title": "CEO and Partner",
-          "location": "Stockholm"
-        },
-        {
           "name": "Benny Zakrisson",
           "title": "Partner and Investment Manager",
           "location": "Stockholm"
@@ -3487,34 +4150,23 @@
           "location": "Stockholm"
         },
         {
+          "name": "Caroline Brandt Lilja",
+          "title": "Director",
+          "location": "Stockholm"
+        },
+        {
           "name": "Claes Bodell",
           "title": "Partner and Investment Manager",
           "location": "Stockholm"
         },
         {
           "name": "Daniel Winberg",
-          "title": "Partner and Investment Manager",
+          "title": "Senior Advisor",
           "location": "Stockholm"
         },
         {
-          "name": "Oscar Claeson",
-          "title": "Partner and Investment Manager",
-          "location": "Stockholm",
-          "background": "Promoted to Partner Jan 2025; leads Accent Academy"
-        },
-        {
-          "name": "Mikael Strand",
-          "title": "Associate Partner",
-          "location": "Stockholm"
-        },
-        {
-          "name": "Tommy Torwald",
-          "title": "Associate Partner",
-          "location": "Stockholm"
-        },
-        {
-          "name": "Caroline Brandt Lilja",
-          "title": "Director",
+          "name": "Frederik Andersen",
+          "title": "Valuation & Reporting Manager",
           "location": "Stockholm"
         },
         {
@@ -3523,8 +4175,33 @@
           "location": "Stockholm"
         },
         {
+          "name": "Johanna Hedman Palm",
+          "title": "Sustainability Manager",
+          "location": "Stockholm"
+        },
+        {
           "name": "Lowe Rehnberg",
           "title": "Director",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Mikael Strand",
+          "title": "Associate Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Niklas Sloutski",
+          "title": "CEO and Partner",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Oscar Claeson",
+          "title": "Partner and Investment Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Patric Grimhall",
+          "title": "CFO",
           "location": "Stockholm"
         },
         {
@@ -3533,8 +4210,18 @@
           "location": "Stockholm"
         },
         {
-          "name": "Patric Grimhall",
-          "title": "CFO",
+          "name": "Susanne Andersson",
+          "title": "Administrative Assistant",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Tina Hammersland",
+          "title": "Associate",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Tommy Torwald",
+          "title": "Associate Partner",
           "location": "Stockholm"
         }
       ],
@@ -4109,7 +4796,7 @@
         "Luxembourg",
         "Hong Kong"
       ],
-      "description": "IK Partners is a leading European mid-market private equity firm. Since 1989 raised >€20bn across 17 funds; invested in 200+ European companies. People-first approach. Regions: Benelux, DACH, France, Nordics, UK. Four strategies: Mid Cap (€200M–1B+ EV), Small Cap (to €200M), Development Capital (to €80M), Partnership Fund (minority, €200M+).",
+      "description": "IK Partners is a European mid-market private equity firm headquartered in London with roots dating to 1989. It has raised more than EUR 20 billion across seventeen fund generations and invested in over two hundred companies, describing its culture as people-first and its approach as partnership-driven rather than transaction-led. Geographically IK focuses on Benelux, the DACH region, France, the Nordics, and the United Kingdom, with four complementary strategies: Mid Cap for larger buyouts, Small Cap for companies up to roughly EUR 200 million enterprise value, Development Capital for smaller growth situations, and a Partnership Fund for significant minority stakes in larger businesses. Platform investments are typically complemented by active add-on programmes across business services, healthcare, and industrials.",
       "investment_focus": {
         "sectors": [
           "Business Services",
@@ -4133,30 +4820,209 @@
       },
       "team": [
         {
-          "name": "Chris Masek",
-          "title": "CEO and Partner",
-          "location": "London",
-          "background": "CEO with >10 years tenure"
-        },
-        {
-          "name": "Morten Giørtz-Carlsen",
+          "name": "Thierry Aoun",
           "title": "Partner",
           "location": "London"
         },
         {
-          "name": "Peter Axelsson",
+          "name": "Ingmar Bär",
+          "title": "Partner",
+          "location": "Hamburg"
+        },
+        {
+          "name": "Julian Bärenfänger",
+          "title": "Partner",
+          "location": "Hamburg"
+        },
+        {
+          "name": "Arnaud Bosc",
+          "title": "Partner",
+          "location": "Paris"
+        },
+        {
+          "name": "Morgane Bouhenic",
+          "title": "Partner",
+          "location": "Paris"
+        },
+        {
+          "name": "Maria Brunow",
           "title": "Partner",
           "location": "Stockholm"
         },
         {
-          "name": "Henrik Thuring",
+          "name": "Rémi Buttiaux",
+          "title": "Managing Partner, Business Services Sector Lead",
+          "location": "Paris"
+        },
+        {
+          "name": "Joachim Dettmar",
+          "title": "Partner",
+          "location": "Munich"
+        },
+        {
+          "name": "Vincent Elriz",
+          "title": "Partner",
+          "location": "Paris"
+        },
+        {
+          "name": "Pierre Gallix",
+          "title": "Managing Partner, Head of Development Capital Strategy",
+          "location": "Paris"
+        },
+        {
+          "name": "Henrik Geijer",
           "title": "Partner",
           "location": "Stockholm"
         },
         {
-          "name": "Thomas Rossander",
+          "name": "Thomas Grob",
+          "title": "Managing Partner, Head of Partnership Fund Strategy",
+          "location": "Paris"
+        },
+        {
+          "name": "Remko Hilhorst",
+          "title": "Managing Partner",
+          "location": "Amsterdam"
+        },
+        {
+          "name": "Frances Houweling",
+          "title": "Partner",
+          "location": "Amsterdam"
+        },
+        {
+          "name": "Mirko Jablonsky",
+          "title": "Partner, Industrials Sector Lead",
+          "location": "Hamburg"
+        },
+        {
+          "name": "Frederik Jacobs",
+          "title": "Partner",
+          "location": "Amsterdam"
+        },
+        {
+          "name": "Antoine Jacquemin",
+          "title": "Partner",
+          "location": "Paris"
+        },
+        {
+          "name": "Carl Jakobsson",
           "title": "Partner",
           "location": "Stockholm"
+        },
+        {
+          "name": "Alexandra Kazi",
+          "title": "Partner",
+          "location": "London"
+        },
+        {
+          "name": "Kristian Carlsson Kemppinen",
+          "title": "Managing Partner, Head of Small Cap Strategy",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Diki Korniloff",
+          "title": "Partner",
+          "location": "Paris"
+        },
+        {
+          "name": "Alice Langley",
+          "title": "Partner",
+          "location": "London"
+        },
+        {
+          "name": "Mads Ryum Larsen",
+          "title": "Managing Partner",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Xavier Lemonnier",
+          "title": "Partner",
+          "location": "Paris"
+        },
+        {
+          "name": "Christopher Masek",
+          "title": "Chief Executive Officer",
+          "location": "Paris"
+        },
+        {
+          "name": "Simon May",
+          "title": "Partner",
+          "location": "London"
+        },
+        {
+          "name": "Anders Petersson",
+          "title": "Managing Partner, Healthcare Sector Lead",
+          "location": "Hamburg"
+        },
+        {
+          "name": "Nils Pohlmann",
+          "title": "Partner",
+          "location": "Hamburg"
+        },
+        {
+          "name": "Jérôme Richard",
+          "title": "Partner",
+          "location": "Paris"
+        },
+        {
+          "name": "Tom Salmon",
+          "title": "Partner",
+          "location": "London"
+        },
+        {
+          "name": "Dan Soudry",
+          "title": "Managing Partner, Head of Mid Cap Strategy",
+          "location": "London"
+        },
+        {
+          "name": "Johan Van de Steen",
+          "title": "Managing Partner",
+          "location": "Luxembourg"
+        },
+        {
+          "name": "Magdalena Svensson",
+          "title": "Partner",
+          "location": "Paris"
+        },
+        {
+          "name": "Adrian Tanski",
+          "title": "Partner",
+          "location": "Munich"
+        },
+        {
+          "name": "Onne Tjerkstra",
+          "title": "Partner",
+          "location": "Amsterdam"
+        },
+        {
+          "name": "Andrew Townend",
+          "title": "Partner",
+          "location": "Luxembourg"
+        },
+        {
+          "name": "Jakob Treffers",
+          "title": "Partner",
+          "location": "Amsterdam"
+        },
+        {
+          "name": "David Varet",
+          "title": "Partner",
+          "location": "Paris"
+        },
+        {
+          "name": "Sander van Vreumingen",
+          "title": "Partner",
+          "location": "Amsterdam"
+        },
+        {
+          "name": "Pete Wilson",
+          "title": "Partner",
+          "location": "London"
+        },
+        {
+          "name": "James Yates",
+          "title": "Chief Financial Officer and Managing Partner",
+          "location": "London"
         }
       ],
       "fundraising": {
@@ -4958,7 +5824,7 @@
         "London",
         "Helsinki"
       ],
-      "description": "Verdane is a European growth equity investor in tech and sustainability. €9bn raised; 200+ investments; 7 offices. Equity €20–150M; themes: Digitalisation (B2C services/products, software), Decarbonisation (resource efficiency, energy transition). Pledge to neutralise scope 1–3 via engineered carbon removal.",
+      "description": "Verdane is a European growth equity investor headquartered in Oslo with offices across the Nordics, Germany, and London. Founded in 2003, it has raised roughly EUR 9 billion and completed more than two hundred investments, concentrating on equity tickets between EUR 20 million and EUR 150 million in software, digital consumer services, and sustainability-related technology. The platform is organised into parallel strategies—Edda for software consolidation, Freya for flexible growth and buyouts, Idun as an Article 9 impact fund, and Capital for broader tech growth—so that different risk-return and ESG profiles can sit under one partnership. Verdane has also pledged to neutralise its scope one through three emissions using engineered carbon removal, signalling how seriously it treats climate risk alongside digitalisation and decarbonisation as core investment themes.",
       "investment_focus": {
         "sectors": [
           "Software & Digital Growth",
@@ -5489,7 +6355,7 @@
       "offices": [
         "Stockholm"
       ],
-      "description": "Valedo Partners is a growth-oriented Swedish PE firm founded in 2006 (spin-off from EQT). 35+ portfolio companies; ~85% in partnership with previous owners; ~350 add-ons; exited businesses grew ~300% on average. Targets SEK 100–500M sales; established, profitable. Active ownership; intends to invest SEK 2bn over 3–5 years.",
+      "description": "Valedo Partners is a Stockholm-based growth-oriented private equity firm founded in 2006 by professionals who spun out of EQT, carrying forward a culture of active ownership but with a deliberate focus on founder- and family-led businesses. It targets established, profitable Nordic companies with sales typically between SEK 100 million and SEK 500 million, and in roughly eighty-five percent of cases it invests alongside previous owners rather than replacing them on day one. Valedo has backed more than thirty-five platforms, completed on the order of three hundred and fifty add-ons, and reports that realised investments grew revenue about threefold on average during ownership—evidence of a buy-and-build and operational playbook applied with patience. The firm intends to deploy around SEK 2 billion over a three- to five-year window in its current vintage.",
       "investment_focus": {
         "sectors": [
           "Technology",
@@ -5688,7 +6554,7 @@
       "offices": [
         "Stockholm"
       ],
-      "description": "Alder is a Nordic private equity firm focused on sustainable technology companies with turnover SEK 100–750M. The firm was founded in 2008 and raised its first fund (Alder I) in 2010. Alder III closed in May 2024 at SEK 3.1bn and is classified as SFDR Article 9 (dark green).",
+      "description": "Alder is a Stockholm-based private equity firm that invests exclusively in sustainable technology—industrial tech, clean tech, and related businesses that combine commercial upside with measurable environmental benefit. Since its founding in 2008 it has concentrated on Nordic (and selectively broader European) companies with turnover roughly between SEK 100 million and SEK 750 million, where product and market fit are already visible and capital can accelerate scale. The firm’s third fund, Alder III, closed in May 2024 at SEK 3.1 billion and is structured as an SFDR Article 9 “dark green” vehicle, reflecting an investment mandate that treats sustainability as core to the thesis rather than an overlay. Alder’s story is one of deep sector conviction and long holding periods alongside entrepreneurs who are building the low-carbon and resource-efficient economy.",
       "investment_focus": {
         "sectors": [
           "Sustainable technology",
@@ -5708,49 +6574,109 @@
       },
       "team": [
         {
+          "name": "Susanna Andreasson",
+          "title": "Investment Manager",
+          "location": "Stockholm",
+          "email": "susanna.andreasson@alder.se",
+          "phone": "+46 72 142 87 02"
+        },
+        {
+          "name": "Fabian Bevanda",
+          "title": "Investment Analyst",
+          "location": "Stockholm",
+          "email": "fabian.bevanda@alder.se",
+          "phone": "+46 763 97 93 04"
+        },
+        {
           "name": "Henrik Blomé",
           "title": "Partner",
-          "location": "Stockholm"
+          "location": "Stockholm",
+          "email": "henrik.blome@alder.se",
+          "phone": "+46 706 38 01 30"
         },
         {
           "name": "Dag Broman",
           "title": "Partner",
-          "location": "Stockholm"
-        },
-        {
-          "name": "Henrik Flygar",
-          "title": "Partner",
-          "location": "Stockholm"
-        },
-        {
-          "name": "Arash Raisse",
-          "title": "Partner",
-          "location": "Stockholm"
-        },
-        {
-          "name": "Johanna Strömqvist",
-          "title": "CFO",
-          "location": "Stockholm"
-        },
-        {
-          "name": "Eva Normell",
-          "title": "Sustainability Officer",
-          "location": "Stockholm"
+          "location": "Stockholm",
+          "email": "dag.broman@alder.se",
+          "phone": "+46 705 16 40 18"
         },
         {
           "name": "Elise Fahlén",
           "title": "Investment Director",
-          "location": "Stockholm"
+          "location": "Stockholm",
+          "email": "elise.fahlen@alder.se",
+          "phone": "+46 704 41 88 79"
+        },
+        {
+          "name": "Henrik Flygar",
+          "title": "Partner",
+          "location": "Stockholm",
+          "email": "henrik.flygar@alder.se",
+          "phone": "+46 706 66 07 79"
+        },
+        {
+          "name": "Felicia Jakobsson",
+          "title": "Investment Controller",
+          "location": "Stockholm",
+          "email": "felicia.jakobsson@alder.se",
+          "phone": "+46 73 203 92 75"
+        },
+        {
+          "name": "Carl-Johan Langenskiöld Folke",
+          "title": "Investment Manager",
+          "location": "Stockholm",
+          "email": "cj.langenskioldfolke@alder.se",
+          "phone": "+46 708 45 13 00"
         },
         {
           "name": "Henrik Lindholm",
           "title": "Investment Director",
-          "location": "Stockholm"
+          "location": "Stockholm",
+          "email": "henrik.lindholm@alder.se",
+          "phone": "+46 704 98 72 81"
+        },
+        {
+          "name": "Eva Normell",
+          "title": "Sustainability Officer",
+          "location": "Stockholm",
+          "email": "eva.normell@alder.se",
+          "phone": "+46 703 31 42 60"
         },
         {
           "name": "Keiward Pham",
           "title": "Investment Director",
-          "location": "Stockholm"
+          "location": "Stockholm",
+          "email": "keiward.pham@alder.se",
+          "phone": "+46 725 09 48 48"
+        },
+        {
+          "name": "Arash Raisse",
+          "title": "Partner",
+          "location": "Stockholm",
+          "email": "arash.raisse@alder.se",
+          "phone": "+46 725 00 62 55"
+        },
+        {
+          "name": "Niklas Skytting",
+          "title": "Investment Manager",
+          "location": "Stockholm",
+          "email": "niklas.skytting@alder.se",
+          "phone": "+46 721 50 30 15"
+        },
+        {
+          "name": "Johanna Strömqvist",
+          "title": "CFO",
+          "location": "Stockholm",
+          "email": "johanna.stromqvist@alder.se",
+          "phone": "+46 730 60 11 72"
+        },
+        {
+          "name": "Elin Söderlund",
+          "title": "Investment Analyst",
+          "location": "Stockholm",
+          "email": "elin.soderlund@alder.se",
+          "phone": "+46 70 818 69 92"
         }
       ],
       "fundraising": {
@@ -5876,7 +6802,7 @@
       "offices": [
         "Stockholm"
       ],
-      "description": "Bure Equity (Nasdaq Stockholm) is a listed evergreen investment company with permanent capital. Combines listed control stakes (Mycronic, Vitrolife, XVIVO Perfusion, Ovzon, Cavotec, Yubico) with unlisted holdings (Allgon, Atle, Bure Growth, Mentimeter, Mercuri International, Silex Microsystems). Sustainability integrated in ownership model.",
+      "description": "Bure Equity is a Swedish listed investment company on Nasdaq Stockholm that combines the permanence of balance-sheet capital with an active-ownership mindset in both listed and unlisted holdings. Tracing its corporate roots to 1992, Bure today mixes significant stakes in listed names such as Mycronic, Vitrolife, and Yubico with a portfolio of unlisted growth and technology businesses—including Atle, Mentimeter, Mercuri International, and Silex Microsystems—across healthcare, technology, and broader STEM-related themes. Sustainability is integrated into how the board and management engage with portfolio companies rather than treated as a separate reporting exercise. The model is deliberately long-term: Bure can hold positions for many years when the industrial logic warrants it.",
       "investment_focus": {
         "sectors": [
           "Healthcare",
@@ -5895,18 +6821,58 @@
       },
       "team": [
         {
-          "name": "Patrik Tigerschiöld",
-          "title": "Chair",
+          "name": "Henrik Blomquist",
+          "title": "CEO",
           "location": "Stockholm"
         },
         {
-          "name": "Anders Ljungberg",
+          "name": "Max Jonson",
           "title": "CFO",
           "location": "Stockholm"
         },
         {
-          "name": "Henrik Blomquist",
-          "title": "CEO",
+          "name": "Kristina Wigh",
+          "title": "Office Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Gösta Johannesson",
+          "title": "Senior Advisor",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Sophie Hagströmer",
+          "title": "Investment Director",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Oskar Hörnell",
+          "title": "Investment Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Gabriella Öman",
+          "title": "Investment Associate",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Ella Kuritzén",
+          "title": "Investment Associate",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Leah Engman",
+          "title": "Data & Investment Analyst",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Klas Danielsson",
+          "title": "Equity Research Analyst",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Kristoffer Östlin",
+          "title": "Investment Analyst",
           "location": "Stockholm"
         }
       ],
@@ -6151,7 +7117,7 @@
         "Luxembourg",
         "Düsseldorf"
       ],
-      "description": "CapMan is a leading Nordic private asset management company (listed Nasdaq Helsinki). Founded 1989; >35 years of private markets experience. Invests across Real Estate, Infrastructure, Natural Capital, Real Asset Debt, and Private Equity (Buyout, Growth, Special Situations). >€8bn raised since inception; 400+ professional investors. PRI sustainability rating across all investment areas.",
+      "description": "CapMan is a Helsinki-based private asset manager listed on Nasdaq Helsinki and active across the Nordic region and wider Europe since 1989. What began as a classic Nordic buyout franchise has evolved into a multi-strategy platform that spans private equity (buyout, growth, and special situations), real estate, infrastructure, natural capital, and real-asset debt, serving a broad base of institutional clients. The firm manages on the order of EUR 7 billion in assets under management—part of more than EUR 8 billion raised since inception—and employs more than two hundred professionals from offices in Helsinki, Stockholm, Copenhagen, Oslo, London, Luxembourg, and Düsseldorf. CapMan emphasises responsible investment across all asset classes and has sought third-party validation of its sustainability approach, including PRI assessments that cover its main investment verticals.",
       "investment_focus": {
         "sectors": [
           "Services",
@@ -6178,29 +7144,29 @@
       },
       "team": [
         {
-          "name": "Joakim Simonen",
-          "title": "Chairman and Senior Managing Partner",
-          "location": "Helsinki"
-        },
-        {
-          "name": "Petri Suuronen",
+          "name": "Antti Karppinen",
           "title": "Managing Partner, Buyout",
           "location": "Helsinki"
         },
         {
-          "name": "Tom Lindström",
-          "title": "Managing Partner, Growth",
-          "location": "Stockholm"
-        },
-        {
-          "name": "Hannu Törmänen",
-          "title": "Managing Partner, Real Estate",
+          "name": "Anders Björkell",
+          "title": "Partner, Buyout",
           "location": "Helsinki"
         },
         {
-          "name": "Erik Lekander",
-          "title": "Managing Partner, Infrastructure",
-          "location": "Stockholm"
+          "name": "Joonas Korkalainen",
+          "title": "Investment Manager, Buyout",
+          "location": "Helsinki"
+        },
+        {
+          "name": "Robin Westberg",
+          "title": "Partner, Buyout",
+          "location": "Helsinki"
+        },
+        {
+          "name": "Riikka Wärn",
+          "title": "Executive Assistant, Buyout",
+          "location": "Helsinki"
         }
       ],
       "fundraising": {
@@ -6278,7 +7244,7 @@
         "Stockholm",
         "Oslo"
       ],
-      "description": "Celero Capital is a Nordic lower mid-market private equity firm founded in 2022 by Peter Möller (former FSN Capital, Permira, Goldman Sachs). Focus: services, consumer goods, niche industrials. Implements Celero Accelerator Modules (CAMs) for hands-on value creation. UNPRI signatory; SFDR Article 8. Backed by European Investment Fund (InvestEU).",
+      "description": "Celero Capital is a Nordic lower mid-market private equity firm founded in 2022 in Stockholm, with a Norwegian presence in Oslo, by a team led by Peter Møller with prior experience at FSN Capital, Permira, and Goldman Sachs. The firm targets equity tickets roughly between EUR 20 million and EUR 150 million in services, consumer goods, specialised industrials, property-related services, and manufacturing solutions—segments where hands-on operational support can unlock scale. Celero applies a proprietary set of “Accelerator Modules” to portfolio companies, works as a UNPRI signatory with an SFDR Article 8 fund, and secured cornerstone backing from the European Investment Fund under InvestEU for its first institutional vehicle, which closed above EUR 300 million in 2024.",
       "investment_focus": {
         "sectors": [
           "Services",
@@ -6302,49 +7268,97 @@
           "name": "Peter Möller",
           "title": "Managing Partner",
           "location": "Stockholm",
-          "background": "Former FSN Capital, Permira, Goldman Sachs"
+          "background": "21 years of PE experience; previously FSN Capital, Permira and Goldman Sachs (London and New York). MSc in Economics and Business Administration (dual major SSE and Wharton)."
         },
         {
           "name": "Kenneth Haavet",
           "title": "Partner",
           "location": "Stockholm",
-          "background": "Former CEO Orkla Consumer & Financial Investments, FSN Capital, Macquarie"
+          "background": "14 years of PE; former CEO of Orkla Consumer & Financial Investments; FSN Capital and Macquarie Capital (Sydney). Master of Applied Finance (Macquarie), BBus with Distinction (UTS)."
         },
         {
           "name": "Viktor Hansson",
           "title": "Partner",
           "location": "Stockholm",
-          "background": "Former Head of M&A Nordlo, FSN Capital, Bain"
+          "background": "11 years of PE; former Head of M&A at Nordlo; FSN Capital, Munters, Bain & Company. MSc Industrial Engineering and Management (KTH), BSc Business and Economics (Stockholm University)."
         },
         {
           "name": "Gustaf von Platen",
           "title": "Principal",
           "location": "Stockholm",
-          "background": "Former FSN Capital, J.P. Morgan, joined 2023"
+          "background": "Joined 2023; seven years at FSN Capital; J.P. Morgan Nordic M&A (London). MSc and BSc Business and Management (SSE), BA History (Stockholm University)."
         },
         {
           "name": "Oscar Haglund",
           "title": "Investment Manager",
           "location": "Stockholm",
-          "background": "Former Litorina, Arkwright, joined 2024"
+          "background": "Joined 2024; Litorina and Arkwright consulting. MSc Double Degree Finance (SSE and Bocconi), BSc Business and Economics (SSE)."
         },
         {
           "name": "Fredrika Claezon",
           "title": "Investment Manager",
           "location": "Stockholm",
-          "background": "Former Nordea Corporate Finance, joined 2023"
+          "background": "Joined 2023; Nordea Corporate Finance. MSc Strategic Management (RSM), BSc Business Administration (University of Amsterdam)."
         },
         {
           "name": "Emil Erbing",
           "title": "Investment Manager",
           "location": "Stockholm",
-          "background": "Former Rothschild & Co, joined 2024"
+          "background": "Joined 2024; Rothschild & Co (Stockholm). BSc Business and Economics (Lund University)."
+        },
+        {
+          "name": "Lovisa Severin",
+          "title": "Investment Associate",
+          "location": "Stockholm",
+          "background": "Joined 2025; Goldman Sachs (London and Frankfurt). BSc International Business (Copenhagen Business School)."
+        },
+        {
+          "name": "Pavel Thorn",
+          "title": "Investment Associate",
+          "location": "Stockholm",
+          "background": "Joined 2026; Litorina, Armada Credit Partners, DNB Markets. BSc Business and Economics (SSE)."
         },
         {
           "name": "Johanna Kull",
           "title": "CFO & Head of ESG",
           "location": "Stockholm",
-          "background": "Former Urban Partners, Apollo, joined 2024"
+          "background": "Joined 2024; 17 years in financial services and PE; Urban Partners, Apollo, Nomura, HSBC (London). Chartered accountant; MSc Business Administration (Gothenburg)."
+        },
+        {
+          "name": "Hanna Östergren",
+          "title": "Office Manager",
+          "location": "Stockholm",
+          "background": "Joined 2025; sales and secretary roles, most recently legal secretary at Juristhuset (Stockholm)."
+        },
+        {
+          "name": "Erik Lindgren",
+          "title": "Investment Intern",
+          "location": "Stockholm",
+          "background": "Joined 2026; internships at North Point Securities and ARC Group. BSc Business and Economics (SSE), in progress."
+        },
+        {
+          "name": "Victor Bagley",
+          "title": "Investment Intern",
+          "location": "Stockholm",
+          "background": "Joined 2026; M&A internships at Vimian Group and The Nutriment Company. BSc Business Administration (SSE)."
+        },
+        {
+          "name": "Joanna Ansell",
+          "title": "CAM Advisor",
+          "location": "Stockholm",
+          "background": "20+ years scaling digital businesses; tech and digital consumer (D2C & B2B). BA (Hons) French & European Studies (Keele), MBA (Surrey)."
+        },
+        {
+          "name": "Mikael Olander",
+          "title": "CAM Advisor",
+          "location": "Stockholm",
+          "background": "Nordic e-commerce executive; founder and former CEO of Bygghemma (BHG Group) and CDON Group; Chairman of WeSports. BSc Finance (LSU), MBA (UCLA Anderson)."
+        },
+        {
+          "name": "Jarl Uggla",
+          "title": "CAM Advisor",
+          "location": "Stockholm",
+          "background": "30+ years senior management; organisational change at B2B and B2C companies across Asia, North America, Africa and Central Europe. Industrial engineering (ABB Business School); IMD and IHM programmes."
         }
       ],
       "fundraising": {
@@ -6455,7 +7469,7 @@
         "Copenhagen",
         "Oslo"
       ],
-      "description": "Polaris Private Equity is a Copenhagen-based Nordic mid-market firm (25+ years). 50+ investments; 16 active portfolio companies. Funds III–V total DKK 11bn+ (Fund V DKK 4.9bn, 2020). Equity tickets EUR 20–80M; sales EUR 20–300M. Industrial and business services; industrial decarbonisation theme (Micropower, LEAB, Vinnergi). Oslo office.",
+      "description": "Polaris Private Equity is a Copenhagen-based mid-market firm founded in 1998 with an additional office in Oslo and a reputation for deep work in industrial and business-services companies across the Nordics. It has completed more than fifty investments and typically backs businesses with equity tickets in the EUR 20–80 million range and sales roughly between EUR 20 million and EUR 300 million. Recent funds—including Polaris Fund V and the Flexible Capital sleeve—have raised more than DKK 11 billion in aggregate, allowing the firm to support both traditional five- to seven-year holds and longer-duration industrial themes such as decarbonisation and energy efficiency (illustrated by holdings like Micropower, LEAB, and Vinnergi). Polaris combines sector specialisation with a flexible attitude to ownership length when the industrial logic demands patience.",
       "investment_focus": {
         "sectors": [
           "Services",
@@ -6475,35 +7489,333 @@
       },
       "team": [
         {
-          "name": "Jan-Ove Holmen",
-          "title": "CEO",
-          "location": "Copenhagen",
-          "background": "CEO"
+          "name": "Alex Lund Nielsen",
+          "title": "Senior Financial Controller",
+          "location": "Copenhagen"
         },
         {
-          "name": "Martin Møller",
-          "title": "Chair",
-          "location": "Copenhagen",
-          "background": "Chair"
+          "name": "Alexander Kops Wellendorf",
+          "title": "Finance Analyst",
+          "location": "Copenhagen"
         },
         {
-          "name": "Lars Fischer",
+          "name": "Allan Bach Pedersen",
+          "title": "Partner",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Anders Skouenborg",
+          "title": "Head of Legal",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Andrea Berglund Fuglsang",
+          "title": "Office Assistant",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Andrea Signe Trolle",
+          "title": "Investment Manager",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Anne-Caroline Rytter Helstrup",
+          "title": "Associate Director",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Anton Rohde Bergstrøm",
+          "title": "Finance Analyst",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Asbjørn Sheller Petersen",
+          "title": "Analyst",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Asger Svend Brøndholt Thimmer",
+          "title": "Analyst",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Camilla Ringsted",
+          "title": "Director",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Carl Brusewitz",
+          "title": "Director",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Carl Ragnartz",
+          "title": "Analyst",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Daniel Nejman",
+          "title": "Associate Director",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Daniel Yderholm Larsen",
+          "title": "Financial Controller",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Emil Ragnartz",
+          "title": "Analyst",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Erik Nordwall",
+          "title": "Analyst",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Frances Owen",
+          "title": "Head of Sustainability",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Frederik Wodstrup Christiansen",
+          "title": "Head of Debt Financing",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Gitte Conrad Frederiksen",
+          "title": "Accountant",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Gustav Brobert",
+          "title": "Director",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Harald Ekblom",
+          "title": "Analyst",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Henrik Bonnerup",
+          "title": "Partner",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Jan Dahlqvist",
+          "title": "Senior Advisor",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Jan Johan Kühl",
           "title": "Managing Partner",
           "location": "Copenhagen"
         },
         {
-          "name": "Jan Juul Hansen",
+          "name": "Jari-Niklas Borkowsky",
+          "title": "Financial Controller",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Jasmin Torreck Ingvardsen",
+          "title": "Analyst",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Jeanett Elfort",
+          "title": "Receptionist",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Jesper Langmack",
+          "title": "Partner and Head of Polaris Flexible Capital",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Joachim Satchwell",
+          "title": "Director",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Johan Pålsson",
           "title": "Partner",
           "location": "Copenhagen"
         },
         {
-          "name": "Anders Sundström",
+          "name": "Johan Pernvi",
           "title": "Partner",
-          "location": "Oslo"
+          "location": "Copenhagen"
         },
         {
-          "name": "Karsten Knudsen",
+          "name": "Jonathan Elofsson",
+          "title": "Investment Manager",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Jonathan Fransson Höglander",
+          "title": "Analyst",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Jonathan Stolpe",
+          "title": "Investment Manager",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Karin Möllborg",
+          "title": "Director",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Kent Brovn Arp",
+          "title": "Partner of Polaris Flexible Capital",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Lasse Kjeldsted",
+          "title": "Senior Financial Controller",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Lene Møller Rønfeldt",
+          "title": "CFO",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Luyiza Yevhrafova",
+          "title": "Associate Director",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Magnus Valore",
+          "title": "Legal Analyst",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Marianne Enevold",
+          "title": "Executive Assistant — Office Manager",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Martin Godsk Kristensen",
+          "title": "Investment Manager",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Mie Buch",
+          "title": "Investor Relations Manager",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Nicolai Gissing Vennekilde",
+          "title": "Director",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Niels Worning",
           "title": "Senior Advisor",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Oskar Andersson",
+          "title": "Director",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Patrick Robinson",
+          "title": "Financial Director",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Peter Tøjner Götke",
+          "title": "Investment Manager",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Rasmus Legind-Hansen Taarup",
+          "title": "Finance Analyst",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Robert Rosensköld",
+          "title": "Director",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Roger Hagborg",
+          "title": "Partner and Head of Polaris Public Equity",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Rune Lillie Gornitzka",
+          "title": "Partner",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Simon Damkjær Wille",
+          "title": "Partner",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Stephanie Erev",
+          "title": "Interim Head of Sustainability",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Stine Sundholm Dørfler",
+          "title": "Financial Manager",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Susanne Larsson",
+          "title": "Head of Investor Relations",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Terne Sofie Høy Petersen",
+          "title": "KYC Analyst",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Thorsten Spurr Madsen",
+          "title": "Director",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Tobias Valentin Gregers Honoré",
+          "title": "Finance Analyst",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Trine Bisgaard Lisberg",
+          "title": "Head of Risk Management & Compliance",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Vibeke Mørch-Hansen",
+          "title": "Chief Accountant and HR Manager",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Anne Holm Rannaleet",
+          "title": "Chairman, Polaris Management Board",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Bertil Villard",
+          "title": "Board Member, Polaris Management",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Peter Høltermand",
+          "title": "Investment Advisory Board (Flexible Capital); Board Member, Polaris Management",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Marc Antoine Voisard",
+          "title": "Advisor to the Board, Polaris Management",
           "location": "Copenhagen"
         }
       ],
@@ -7504,7 +8816,7 @@
       "offices": [
         "Stockholm"
       ],
-      "description": "Nordstjernan is a foundation-owned investment house (Axel and Margaret Ax:son Johnson foundations). Founded 1890; investment company since 1999. 130+ years of experience. Purpose: safeguard longevity of foundations, custodian of industrial heritage. Permanent capital. Portfolio SEK 50bn. 44 companies invested in over 25 years; 31 exits. Viveka Ekberg CEO.",
+      "description": "Nordstjernan is a Stockholm-based investment house owned by the Axel and Margaret Ax:son Johnson foundations, with a history stretching to 1890 and a formal investment-company structure since 1999. Its mandate is unusual in Nordic private markets: safeguard the foundations’ long-term capital while acting as a responsible steward of industrial and commercial heritage. The portfolio—on the order of SEK 50 billion—mixes long-held operating companies with more recent growth and technology positions, and Nordstjernan has invested in more than forty companies over twenty-five years while realising over thirty exits. The organisation can remain invested for decades when the strategic rationale warrants patience, and it emphasises strong risk-adjusted returns alongside governance that aligns with foundation ownership.",
       "investment_focus": {
         "sectors": [
           "Industrials",
@@ -7524,20 +8836,203 @@
       },
       "team": [
         {
-          "name": "Viveka Ekberg",
-          "title": "CEO",
-          "location": "Stockholm",
-          "background": "CEO (2025)"
+          "name": "Johan Lilliehöök",
+          "title": "President and CEO",
+          "location": "Stockholm"
         },
         {
-          "name": "Patrik Tigerschiöld",
-          "title": "Chair",
-          "location": "Stockholm",
-          "background": "Chair & key figure"
+          "name": "Jimmy Renström",
+          "title": "Chief Financial Officer",
+          "location": "Stockholm"
         },
         {
-          "name": "Anders Ljungberg",
-          "title": "CFO",
+          "name": "Alexander Alm-Pandeya",
+          "title": "Investment Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Emma Hector Begander",
+          "title": "Investment Professional",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Lucas Aras",
+          "title": "Investment Professional",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Simon Seretis",
+          "title": "Managing Director",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Johan Eklund",
+          "title": "Investment Director",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Martin Prage",
+          "title": "Investment Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Ylva Ersvik",
+          "title": "Investment Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Rasmus Wiman",
+          "title": "Investment Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Erik Andersson",
+          "title": "Investment Professional",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Hans De Geer",
+          "title": "Investment Professional",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Jakob Engdahl",
+          "title": "Investment Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Jacqueline Odin",
+          "title": "Investment Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Sofia Samuelsson",
+          "title": "Investment Professional",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Peter Jarvis",
+          "title": "Investment Professional, Credit",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Thomas Naess",
+          "title": "Managing Director, Credit",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Ted Arffman",
+          "title": "Investment Director, Credit",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Helena Grane",
+          "title": "Investment Professional, Credit",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Carl Bergsten",
+          "title": "Head of Capital Markets",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Louisa Lorenius",
+          "title": "Reception",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Paula Röttorp",
+          "title": "General Counsel",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Tor Krusell",
+          "title": "HR and Communications Director",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Elena Sundberg",
+          "title": "HR Administrator",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Gunilla Hansson",
+          "title": "Assistant to the Chairman",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Helena Palmér",
+          "title": "Head of Group Accounting",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Kajsa Andersson",
+          "title": "Communications Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Karin Ek",
+          "title": "Assistant to the CEO",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Katarina Sivander",
+          "title": "Office Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Mats Liljegren",
+          "title": "Controller",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Nils Johan Tjärnlund",
+          "title": "Head of Archives and Research",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Svante Boije af Gennäs",
+          "title": "IT Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Johanna Lisskar",
+          "title": "Real Estate Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Susanne Flamme",
+          "title": "Head of Operations Engelsberg",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Daniel Sörén",
+          "title": "Caretaker Engelsberg",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Elin Fihlén",
+          "title": "Gardener",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Engla Ragnarsson",
+          "title": "Head Gardener Engelsberg",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Ida Olsson",
+          "title": "Gardener and Woodworker",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Peter Ragnarsson",
+          "title": "Gardener Engelsberg",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Sören Öberg",
+          "title": "Caretaker Engelsberg",
           "location": "Stockholm"
         }
       ],
@@ -7913,7 +9408,7 @@
         "Stockholm",
         "Munich"
       ],
-      "description": "Nalka is a committed investor in market-leading small- and medium-sized businesses in the Nordic and DACH regions. 12 portfolio companies; 7,000+ employees; 65+ add-on acquisitions since 2020. Develops independent, competitive, sustainable and long-term profitable companies. Two offices (Stockholm, Munich). Owned by Interogo Holding (IKEA-linked).",
+      "description": "Nalka is an investor in market-leading small and medium-sized enterprises in the Nordic countries and the DACH region, backed by permanent capital from Interogo Holding rather than a conventional ten-year fund structure. Headquartered in Stockholm with a Munich office, it develops independent, competitive businesses that management and Nalka believe can remain profitable and sustainable over decades. The portfolio comprises roughly a dozen platform companies employing more than seven thousand people, and since 2020 the group has executed more than sixty-five add-on acquisitions—evidence of an active buy-and-build style within industrial, business services, technology, logistics, and consumer end-markets. The Interogo link to the IKEA ecosystem informs a long-term, values-conscious ownership philosophy even though portfolio companies operate on a fully arm’s-length basis.",
       "investment_focus": {
         "sectors": [
           "Business Services",
@@ -7935,51 +9430,124 @@
       },
       "team": [
         {
-          "name": "Henrik Jonsson",
-          "title": "Chair",
-          "location": "Stockholm",
-          "background": "Former MD of Nalka Invest (2009-2018)"
-        },
-        {
-          "name": "Petra Sjögren",
-          "title": "CFO",
-          "location": "Stockholm"
-        },
-        {
-          "name": "Mimmi Hedelin",
-          "title": "Senior Investment Director",
-          "location": "Stockholm"
-        },
-        {
-          "name": "Mikael Jast",
-          "title": "Senior Investment Director",
-          "location": "Stockholm"
+          "name": "Annelie Torwald",
+          "title": "Payroll and Accounting Manager",
+          "location": "Nordic"
         },
         {
           "name": "Pontus Boman",
           "title": "Senior Investment Director",
-          "location": "Stockholm"
+          "location": "Nordic"
         },
         {
-          "name": "Joachim Braun",
-          "title": "Managing Director",
-          "location": "Munich",
-          "background": "Heads DACH operations; joined 2022 from Silverfleet Capital"
+          "name": "Ludwig Åberg",
+          "title": "Associate",
+          "location": "Nordic"
+        },
+        {
+          "name": "Hanna Höije",
+          "title": "Associate",
+          "location": "Nordic"
         },
         {
           "name": "Louise Tilja",
           "title": "Investment Director",
-          "location": "Stockholm"
+          "location": "Nordic"
+        },
+        {
+          "name": "Mikael Jast",
+          "title": "Senior Investment Director",
+          "location": "Nordic"
+        },
+        {
+          "name": "Sigrid Fjermeros",
+          "title": "Investment Manager",
+          "location": "Nordic"
+        },
+        {
+          "name": "Lena Westergren",
+          "title": "Office Manager & Assistant",
+          "location": "Nordic"
+        },
+        {
+          "name": "Tina Abazari",
+          "title": "Associate",
+          "location": "Nordic"
+        },
+        {
+          "name": "Petra Sjögren",
+          "title": "CFO",
+          "location": "Nordic"
+        },
+        {
+          "name": "Sebastian Johansson",
+          "title": "Associate",
+          "location": "Nordic"
         },
         {
           "name": "Johan Symmons",
           "title": "Investment Director",
-          "location": "Stockholm"
+          "location": "Nordic"
         },
         {
           "name": "Daniel Ahlenius",
           "title": "Investment Director",
-          "location": "Stockholm"
+          "location": "Nordic"
+        },
+        {
+          "name": "Mimmi Hedelin",
+          "title": "Senior Investment Director",
+          "location": "Nordic"
+        },
+        {
+          "name": "Joachim Braun",
+          "title": "Managing Director",
+          "location": "DACH"
+        },
+        {
+          "name": "Martin Lagerblad",
+          "title": "Managing Director",
+          "location": "Nordic"
+        },
+        {
+          "name": "Max Odqvist",
+          "title": "Investment Manager",
+          "location": "Nordic"
+        },
+        {
+          "name": "Christian Thorwid",
+          "title": "Investment Manager",
+          "location": "Nordic"
+        },
+        {
+          "name": "Anders Nyman",
+          "title": "Investment Director",
+          "location": "Nordic"
+        },
+        {
+          "name": "Niklas Schüler",
+          "title": "Associate",
+          "location": "DACH"
+        },
+        {
+          "name": "Carl Lyth Fried",
+          "title": "Communications Manager",
+          "location": "Nordic"
+        },
+        {
+          "name": "Christian Markborn",
+          "title": "Investment Director",
+          "location": "Nordic"
+        },
+        {
+          "name": "Karin Chacón Pezo",
+          "title": "Executive Assistant",
+          "location": "DACH"
+        },
+        {
+          "name": "Yueyi Yin",
+          "title": "Investment Team",
+          "location": "DACH"
         }
       ],
       "fundraising": {
@@ -8112,7 +9680,7 @@
         "Stockholm",
         "Copenhagen"
       ],
-      "description": "Impilo is a Nordic investment company solely focused on pharmaceutical, medtech, specialist pharma services, and healthcare & related services. Targets EV €50–200M; majority investments with potential for minority. Impilo Health Diamond: improve quality of care, increase availability, lower cost, prevent need for care. Fund II closed at €700M hard cap (June 2025). Sustainability handbook; UNPRI-aligned.",
+      "description": "Impilo is a Stockholm-based investment firm devoted entirely to healthcare—pharmaceuticals, medtech, specialist pharma services, and adjacent care delivery—across the Nordic region. Founded in 2018, it pursues majority positions in businesses with enterprise values typically between EUR 50 million and EUR 200 million, though it can also take meaningful minorities when the strategic fit is strong. Impilo articulates its mission through the “Health Diamond”: improving quality of care, increasing availability, lowering system cost, and preventing avoidable care where possible. Its second fund reached a EUR 700 million hard cap in 2025, and the firm pairs commercial ambition with a published sustainability handbook and UNPRI-aligned reporting so that health impact and ESG considerations stay embedded in ownership.",
       "investment_focus": {
         "sectors": [
           "Healthcare",
@@ -8129,7 +9697,188 @@
           "Growth equity"
         ]
       },
-      "team": [],
+      "team": [
+        {
+          "name": "Alva Hardeberg",
+          "title": "Investment Intern",
+          "location": "Stockholm",
+          "background": "Joined 2025. B.Sc. Business & Economics (SSE); exchange at Bocconi. Previously Altor; internships at ABG Sundal Collier, eEquity and Nordic Capital."
+        },
+        {
+          "name": "Anna Ryrberg",
+          "title": "Investment Director",
+          "location": "Stockholm",
+          "background": "Joined 2025. B.Sc. Financial Economics (Honours), University of St Andrews; sub-honours in Mathematics & Statistics and Management. ~9 years at Summa Equity (healthcare focus), among first investment-team hires. Previously J.P. Morgan investment banking (London)."
+        },
+        {
+          "name": "Camilla Møhl",
+          "title": "Chief People Officer",
+          "location": "Stockholm",
+          "background": "Joined December 2024. M.Sc. Human Resource Management and B.Sc. Business and Economics (CBS); semester at Wisconsin–Madison. 20+ years in HR and organisation; former CHRO Coloplast; Chief People, Communications & Marketing Officer NNIT; HR roles at Carlsberg and Mars."
+        },
+        {
+          "name": "Carolina Oscarius Dahl",
+          "title": "Partner",
+          "location": "Stockholm",
+          "background": "Joined 2023. M.Sc. Economics and Business (SSE, 2008), major Accounting & Finance. Investment Director Interogo Holding Long-term Equity (2020–2022); Nordstjernan 2016–2020 with healthcare boards; McKinsey & Company 2008–2016."
+        },
+        {
+          "name": "Cynthia Xinyi Wang",
+          "title": "Investment Intern",
+          "location": "Stockholm",
+          "background": "Joined 2026. Pursuing B.Sc. Business and Economics (SSE), major Accounting & Finance. Previously Investment Analyst at Broadgate Asset Management; Bioinformatics Analyst at Karolinska Institute."
+        },
+        {
+          "name": "Edvard Hubendick",
+          "title": "Senior Investment Manager",
+          "location": "Stockholm",
+          "background": "Joined 2019. M.Sc. Industrial Engineering and Management (Linköping, 2017). Former associate McKinsey & Stockholm with substantial healthcare focus."
+        },
+        {
+          "name": "Emilia Staaf",
+          "title": "Investment Manager",
+          "location": "Stockholm",
+          "background": "Joined 2025. B.Sc. Business and Economics (SSE), finance and accounting; exchange Wharton. Former Analyst, J.P. Morgan investment banking (Stockholm)."
+        },
+        {
+          "name": "Frederikke Beck",
+          "title": "Senior Investment Manager",
+          "location": "Stockholm",
+          "background": "Joined 2023. M.Sc. Finance and Accounting (CBS); exchange NUS. Two years Polaris; three years KIRKBI (LEGO family office); one year J.P. Morgan Nordic M&A (London)."
+        },
+        {
+          "name": "Fredrik Odin",
+          "title": "Investment Director",
+          "location": "Stockholm",
+          "background": "Joined 2017. M.Sc. Finance (LSE), B.Sc. Economics, Politics and International Relations (Warwick); Swedish Army Language School. Investment Executive XIO Group (London); Bank of America Merrill Lynch Nordic M&A 2013–2015."
+        },
+        {
+          "name": "Fredrik Strömholm",
+          "title": "Partner",
+          "location": "Stockholm",
+          "background": "Joined 2016; chairman of the investment committee. M.Sc. Economics (SSE, 1989), finance major at HEC France. Co-founded Impilo after partner role at Altor (co-founded 2003). Goldman Sachs International 1989–1996 and 1999–2002, latterly MD corporate finance."
+        },
+        {
+          "name": "Gustav Jungdalen Lundgren",
+          "title": "Investment Director",
+          "location": "Stockholm",
+          "background": "Joined 2017. B.Sc. Business and Economics (SSE, 2012). Former partner ABG Sundal Collier investment banking Stockholm from 2012, partner 2016."
+        },
+        {
+          "name": "Henrik Nielsen",
+          "title": "Senior Investment Manager",
+          "location": "Stockholm",
+          "background": "Joined 2021. M.Sc. Economics (Copenhagen), B.Sc. (Aarhus); exchange Columbia. Consultant BCG Stockholm/Copenhagen, Scandinavian Principal Investors & Private Equity ~2 years."
+        },
+        {
+          "name": "Henry Chen",
+          "title": "Investment Manager",
+          "location": "Stockholm",
+          "background": "Joined 2025. M.Sc. Finance and B.Sc. Business and Economics (SSE); exchange NUS. Consultant BCG Stockholm, Principal Investors & Private Equity ~3 years."
+        },
+        {
+          "name": "Jeanette Hjelm",
+          "title": "Executive Assistant",
+          "location": "Stockholm",
+          "background": "Joined October 2017. Former executive assistant Ernst & Young 13 years; PwC and other finance and office administration roles."
+        },
+        {
+          "name": "Jesper Eliasson",
+          "title": "Partner & CFO",
+          "location": "Stockholm",
+          "background": "Joined 2016; member of the investment committee. Civilekonom (Stockholm University, 1996). CFO and partner Altor 2003–2016; Industri Kapital (now IK) 1996–2003 Stockholm and London."
+        },
+        {
+          "name": "Johan Kårestedt",
+          "title": "Investment Manager",
+          "location": "Stockholm",
+          "background": "Joined 2024. B.Sc. Business and Economics (SSE), finance and accounting. Former Associate McKinsey & Company Stockholm."
+        },
+        {
+          "name": "Magnus Barken",
+          "title": "Investment Intern",
+          "location": "Stockholm",
+          "background": "Joined 2025. Pursuing M.Sc. Finance and Strategic Management (CBS), B.Sc. International Business; exchange Yonsei. Former BCG Principal Investors & Private Equity."
+        },
+        {
+          "name": "Magnus Edlund",
+          "title": "Partner",
+          "location": "Stockholm",
+          "background": "Joined 2017; member of the investment committee. M.Sc. Industrial Management & Engineering (KTH, 2003). Director Altor 2009–2017; BCG Stockholm and London 2004–2009."
+        },
+        {
+          "name": "Malin Sundqvist",
+          "title": "Director of Finance",
+          "location": "Stockholm",
+          "background": "Joined 2023. M.Sc. Business Administration and Economics (Gothenburg), innovation and industrial management; exchange CBS. KPMG Transaction Services Stockholm from 2014, financial due diligence."
+        },
+        {
+          "name": "Martin Fagerlund",
+          "title": "Partner & COO",
+          "location": "Stockholm",
+          "background": "Joined 2019; member of the investment committee. LL.M and B.B.A. (Stockholm University, 2006). Lawyer Mannheimer Swartling 2006–2015 (secondments Altor, Ericsson M&A); co-founded boutique M&A law firm 2016–2018."
+        },
+        {
+          "name": "Matilda Hessedahl",
+          "title": "Senior Investment Manager",
+          "location": "Stockholm",
+          "background": "Joined 2021. M.Sc. and B.Sc. (SSE). Consultant BCG Stockholm; Scandinavian Principal Investors & Private Equity and Healthcare ~2 years."
+        },
+        {
+          "name": "Nicholas Hooge",
+          "title": "Partner",
+          "location": "Stockholm",
+          "background": "Joined 2020; member of the investment committee. M.Sc. Business Administration and Management Science (CBS, 2004). Senior Director EQT Copenhagen and New York 2006–2019; Deutsche Bank Nordic M&A London 2004–2006."
+        },
+        {
+          "name": "Olga Court-Payen",
+          "title": "Senior Investment Manager",
+          "location": "Stockholm",
+          "background": "Joined 2023. M.Sc. Applied Economics and Finance (CBS); exchange ESSEC. Two years Polaris; one year Carnegie Copenhagen."
+        },
+        {
+          "name": "Paula Johansson",
+          "title": "Investment Manager",
+          "location": "Stockholm",
+          "background": "Joined 2022. M.D. (Karolinska Institute), B.Sc. (SSE)."
+        },
+        {
+          "name": "Peter Højmark",
+          "title": "Investment Intern",
+          "location": "Stockholm",
+          "background": "Joined 2024. Pursuing M.Sc. Applied Economics and Finance (CBS), B.Sc. Economics and Business Administration; President FinanceLab. Student assistant Danmarks Nationalbank."
+        },
+        {
+          "name": "Simon Jaukkuri",
+          "title": "Investment Manager",
+          "location": "Stockholm",
+          "background": "Joined 2024. B.Sc. Business and Economics (SSE), finance and accounting. Former Analyst Rothschild & Co Stockholm."
+        },
+        {
+          "name": "Stephan Madsen",
+          "title": "Investment Director",
+          "location": "Stockholm",
+          "background": "Joined 2025. M.Sc. Finance (CBS, 2008). 15+ years PE and IB: MD H.I.G. Capital (Nordic mid-market); BC Partners London 2017–2022; IK Partners 2010–2016; Goldman Sachs London healthcare 2008–2010."
+        },
+        {
+          "name": "Tobias Brix",
+          "title": "Investment Manager",
+          "location": "Stockholm",
+          "background": "Joined February 2026. M.Sc. Financial Analysis (LBS), B.Sc. Economics and Business Administration (CBS). Consultant BCG Copenhagen, Principal Investors & Private Equity ~2 years; analyst Polaris."
+        },
+        {
+          "name": "Tova Lindahl",
+          "title": "Office Assistant",
+          "location": "Stockholm",
+          "background": "Joined November 2024."
+        },
+        {
+          "name": "Victor Steien",
+          "title": "Partner",
+          "location": "Stockholm",
+          "background": "Joined 2018. M.Sc. Economics and Business (SSE, 2008), Finance. Goldman Sachs London 2008–2014; Morgan Stanley Stockholm Executive Director 2014–2018, Nordic M&A and corporate finance."
+        }
+      ],
       "fundraising": {
         "current_fund": "Fund II (€700M hard cap, closed June 2025)",
         "next_fund": "Deployment across Fund II",
@@ -8291,7 +10040,7 @@
         "Stockholm",
         "Frankfurt"
       ],
-      "description": "Axcel is a Nordic private equity firm founded in 1994 (30+ years). Invests across Northern Europe in four sectors: Technology, Business Services & Industrials, Healthcare, and Consumer. Nine funds raised with >€4.8bn committed capital. Track record: 26 current companies, 81 platform investments, 400+ add-on acquisitions, 54 exits. Value creation focus: Commercial Excellence, Buy & Build, Digitalisation, Sustainability.",
+      "description": "Axcel is a Copenhagen-headquartered private equity firm that has invested in the Nordic and wider Northern European mid-market since 1994, with additional investment presence in Stockholm and Frankfurt. Over nine fund generations it has raised more than EUR 4.8 billion in committed capital and built a track record that spans dozens of platform companies, several hundred bolt-on transactions, and a large number of realisations—work that reflects a consistent emphasis on commercial excellence, digitalisation, buy-and-build, and sustainability as levers of value. The firm organises its deal flow around four sectors: technology; business services and industrials; healthcare; and consumer. Axcel’s Elevate strategy and continuation vehicles sit alongside its main fund line, and Fund VIII was in the market with a target above DKK 10 billion as the firm entered the second half of the 2020s.",
       "investment_focus": {
         "sectors": [
           "Technology",
@@ -8311,7 +10060,318 @@
           "Buy-and-build"
         ]
       },
-      "team": [],
+      "team": [
+        {
+          "name": "Agathe Søndergaard Helle",
+          "title": "Sustainability Associate",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Armin Besic",
+          "title": "Valuation & Data Manager",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Asbjørn Hyldgaard",
+          "title": "Partner",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Björn Forslin",
+          "title": "Investment Manager",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Björn Larsson",
+          "title": "Partner",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Caroline Lundgaard",
+          "title": "Director",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Cecilie Breth Graversen",
+          "title": "Receptionist",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Christian Bamberger Bro",
+          "title": "Managing Partner",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Christian Cederfeld de Simonsen",
+          "title": "Director",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Christian Rosenørn-Due",
+          "title": "Finance Manager",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Christian Schmidt-Jacobsen",
+          "title": "Partner",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Christoffer Müller",
+          "title": "Partner",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Cille Walsted Thomassen",
+          "title": "Receptionist",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Daniel Nørskov Bech",
+          "title": "Director",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Ekaterina Yaltykova",
+          "title": "Senior Fund Controller",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Ella Berglund",
+          "title": "Investment Manager",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Emelie Zhao",
+          "title": "Investment Manager",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Emma Elisabeth Brenøe",
+          "title": "Investment Manager",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Emma Vase",
+          "title": "Investor Relations Manager",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Felix Thelen",
+          "title": "Associate Director",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Filip Flenhagen",
+          "title": "Investment Manager",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Frands Brockenhuus-Schack",
+          "title": "Associate Director",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Frederik Holm Andersen",
+          "title": "Investment Manager",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Grit Heintze",
+          "title": "Accounting Assistant",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Gustav Arick-Nielsen",
+          "title": "Associate Director",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Hanna Lindberg",
+          "title": "Executive Assistant",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Hans Fechner",
+          "title": "Associate",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Helena Werner Söderman",
+          "title": "Head of People and Culture",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Henri Nurmela",
+          "title": "Director",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Henrik Nyberg",
+          "title": "Investment Manager",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Jacob Drakenberg Walberg",
+          "title": "Partner",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Jacob Østergaard Hansen",
+          "title": "Analyst",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Jan-Nicolas Garbe",
+          "title": "Partner",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Jeppe Haghfelt",
+          "title": "Student Assistant",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Jesper Breitenstein",
+          "title": "Head of Investor Relations",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Jesper Frydensberg Rasmussen",
+          "title": "CFO",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Johan Lundén",
+          "title": "Partner",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Johannes Benzing",
+          "title": "Director",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "John Falck",
+          "title": "Associate Director",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Julie Søder",
+          "title": "Executive Assistant",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Kajsa Stenlund",
+          "title": "Executive Assistant",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Karoline Søholt",
+          "title": "Finance Manager",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Kasper Olesen",
+          "title": "Partner",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Lars Cordt",
+          "title": "Partner",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Lovisa Berglund",
+          "title": "Analyst",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Maria Fiorini Lorenzen",
+          "title": "Head of Communications",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Mathilde Hylleberg Andersen",
+          "title": "Head of Compliance and Legal",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Nadine Michel",
+          "title": "Executive Assistant & Office Manager",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Nehna Møller-Pettersen",
+          "title": "Investment Manager",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Nils Elmlund",
+          "title": "Associate Director",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Oscar Freiesleben Hjort",
+          "title": "Associate Director",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Patrick Kjær",
+          "title": "Investment Manager",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Pia Barlebo",
+          "title": "Head of Office Support",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Sarah Hempel",
+          "title": "Head of Sustainability",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Sebastian Aarosin",
+          "title": "Director",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Sonja Gerde",
+          "title": "Director",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Susanne Ardai-Blomberg",
+          "title": "Receptionist",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Thomas Blomqvist",
+          "title": "Partner",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Thomas Pedersen",
+          "title": "Analyst",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Victor Emil Theisen",
+          "title": "Associate",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Victor Frederik Valentin Rasmussen",
+          "title": "Investment Manager",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "William Carlheim-Gyllenskiöld",
+          "title": "Investment Manager",
+          "location": "Copenhagen"
+        }
+      ],
       "fundraising": {
         "current_fund": "Nine funds, >€4.8bn committed; Fund VII (€1.3bn, 2024); Elevate I (€459M, Nov 2025); Axcel CV",
         "next_fund": "Fund VIII in market (target >DKK 10bn / ~€1.33bn)",
@@ -8572,7 +10632,7 @@
       "offices": [
         "Stockholm"
       ],
-      "description": "MVI invests in profitable Nordic SME companies with structural growth potential. Three themes: Digitalisation, Circularity, Societal Transformation. 21 companies helped to grow; 50+ dedicated people in network. Targets SEK 50–250M turnover. Entrepreneur-centric; builds partnerships, trust and future. Meaningful growth focus.",
+      "description": "MVI is a Stockholm-based private equity investor focused on profitable Nordic SMEs with turnover generally between SEK 50 million and SEK 250 million and clear structural growth ahead. Founded in 1992, the firm organises its sourcing around three long-term themes—digitalisation, circular economy, and broader societal transformation—and has supported more than twenty portfolio companies with the help of a network of roughly fifty dedicated professionals and advisers. MVI presents itself as entrepreneur-centric: fewer, deeper relationships, emphasis on trust and shared ambition, and a refusal to treat portfolio companies as interchangeable financial assets. Successive funds since 2016 have refined the same Nordic mid-market buyout formula.",
       "investment_focus": {
         "sectors": [
           "Technology",
@@ -8590,17 +10650,126 @@
         ]
       },
       "team": [
-        {"name": "Stefan Karlsson", "title": "Partner", "location": "Stockholm"},
-        {"name": "Daniel Nilsson", "title": "Partner", "location": "Stockholm"},
-        {"name": "Mårten Werner", "title": "Partner", "location": "Stockholm"},
-        {"name": "Falk Wahlström", "title": "Director", "location": "Stockholm"},
-        {"name": "Christian Bylock", "title": "Director", "location": "Stockholm"},
-        {"name": "Adilson Fonseca", "title": "Senior Associate", "location": "Stockholm"},
-        {"name": "Lisa Reenbom", "title": "Associate", "location": "Stockholm"},
-        {"name": "Daniela Von Koskull", "title": "Associate", "location": "Stockholm"},
-        {"name": "Emma Bohlin", "title": "Associate", "location": "Stockholm"},
-        {"name": "Felicia Lindqvist", "title": "Investment and ESG Controller", "location": "Stockholm"},
-        {"name": "Liam Clareus", "title": "Intern Analyst", "location": "Stockholm"}
+        {
+          "name": "Daniel Nilsson",
+          "title": "Partner",
+          "location": "Stockholm",
+          "email": "daniel.nilsson@mvi.se",
+          "phone": "+46 70 655 78 52"
+        },
+        {
+          "name": "Stefan Karlsson",
+          "title": "Partner",
+          "location": "Stockholm",
+          "email": "stefan.karlsson@mvi.se",
+          "phone": "+46 70 601 00 39"
+        },
+        {
+          "name": "Marten Werner",
+          "title": "Partner",
+          "location": "Stockholm",
+          "email": "marten.werner@mvi.se",
+          "phone": "+46 70 992 72 24"
+        },
+        {
+          "name": "Falk Wahlstrom",
+          "title": "Director",
+          "location": "Stockholm",
+          "email": "falk.wahlstrom@mvi.se",
+          "phone": "+46 76 050 96 51"
+        },
+        {
+          "name": "Christian Bylock",
+          "title": "Director",
+          "location": "Stockholm",
+          "email": "christian.bylock@mvi.se",
+          "phone": "+46 73 843 72 32"
+        },
+        {
+          "name": "Adilson Fonseca",
+          "title": "Senior Associate",
+          "location": "Stockholm",
+          "email": "adilson.fonseca@mvi.se",
+          "phone": "+46 70 777 29 02"
+        },
+        {
+          "name": "Lisa Reenbom",
+          "title": "Associate",
+          "location": "Stockholm",
+          "email": "lisa.reenbom@mvi.se",
+          "phone": "+46 72 236 22 37"
+        },
+        {
+          "name": "Daniela von Koskull",
+          "title": "Associate",
+          "location": "Stockholm",
+          "email": "daniela.von.koskull@mvi.se",
+          "phone": "+46 76 775 15 09"
+        },
+        {
+          "name": "Emma Bohlin",
+          "title": "Associate",
+          "location": "Stockholm",
+          "email": "emma.bohlin@mvi.se",
+          "phone": "+46 76 775 15 10"
+        },
+        {
+          "name": "Felicia Lindqvist",
+          "title": "Investment and ESG Controller",
+          "location": "Stockholm",
+          "email": "felicia.lindqvist@mvi.se",
+          "phone": "+46 72 229 80 44"
+        },
+        {
+          "name": "Liam Claréus",
+          "title": "Analyst",
+          "location": "Stockholm",
+          "email": "liam.clareus@mvi.se",
+          "phone": "+46 70 880 30 55"
+        },
+        {
+          "name": "Saga Persson",
+          "title": "Investor Relations Manager",
+          "location": "Stockholm",
+          "email": "saga.persson@mvi.se",
+          "phone": "+46 70 341 57 45"
+        },
+        {
+          "name": "Finn Johnsson",
+          "title": "Advisory Board — Chairman",
+          "location": "Stockholm",
+          "background": "Senior advisor to MVI."
+        },
+        {
+          "name": "Harald Kjessler",
+          "title": "Advisory Board — Member",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Carola Lemne",
+          "title": "Advisory Board — Member",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Kristina Schauman",
+          "title": "Advisory Board — Member",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Håkan Eriksson",
+          "title": "Advisory Board — Member",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Christian Krüeger",
+          "title": "Advisory Board — Member",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Anders Månsson",
+          "title": "Advisory Board — Member",
+          "location": "Stockholm"
+        }
       ],
       "fundraising": {
         "current_fund": "Fund I (2016), Fund II (closed Dec 2021), Fund III",
@@ -8702,7 +10871,7 @@
       "offices": [
         "Oslo"
       ],
-      "description": "Equip Capital is a Norwegian private equity firm founded in 2018 by five experienced PE professionals. 100+ years combined team experience. Invests in small and mid-sized Nordic companies across consumer, industrials, and business services. 19+ portfolio companies; 3 funds (Fund I €180M, Fund II €285M, SPV €306M). Member of Norwegian Venture Capital & Private Equity Association.",
+      "description": "Equip Capital is a Norwegian private equity firm founded in 2018 by five partners with more than a century of combined experience in Nordic investing. Based in Oslo, it concentrates on small and mid-sized companies across consumer, industrials, business services, technology, and leisure where a control-oriented owner can support the next stage of profitable growth. Equip has raised several successive vehicles—including Fund I at roughly EUR 180 million, Fund II near EUR 285 million, and a larger single-purpose commitment around EUR 306 million—backed by institutional Nordic and international LPs. The portfolio now counts nearly twenty companies and the firm is an active member of the Norwegian Venture Capital and Private Equity Association.",
       "investment_focus": {
         "sectors": [
           "Business Services",
@@ -8721,7 +10890,113 @@
           "Control positions"
         ]
       },
-      "team": [],
+      "team": [
+        {
+          "name": "Sverre B. Flåskjer",
+          "title": "Managing Partner",
+          "location": "Oslo",
+          "email": "sf@equip.no",
+          "phone": "+47 481 10 466"
+        },
+        {
+          "name": "Torkild Hebbert Haukaas",
+          "title": "Partner",
+          "location": "Oslo",
+          "email": "thh@equip.no",
+          "phone": "+47 911 41 290"
+        },
+        {
+          "name": "Eivind Saga",
+          "title": "Partner",
+          "location": "Oslo",
+          "email": "es@equip.no",
+          "phone": "+47 419 22 000"
+        },
+        {
+          "name": "Andreas Lysdahl",
+          "title": "Partner",
+          "location": "Oslo",
+          "email": "al@equip.no",
+          "phone": "+47 970 64 687"
+        },
+        {
+          "name": "Filip Abusdal Engebretsen",
+          "title": "Partner",
+          "location": "Oslo",
+          "email": "fae@equip.no",
+          "phone": "+47 977 36 663"
+        },
+        {
+          "name": "Karl Magnus Smeby",
+          "title": "Director",
+          "location": "Oslo",
+          "email": "kms@equip.no",
+          "phone": "+47 971 54 222"
+        },
+        {
+          "name": "Peder Gjerstad",
+          "title": "Director",
+          "location": "Oslo",
+          "email": "pg@equip.no",
+          "phone": "+47 909 46 750"
+        },
+        {
+          "name": "Sigrid Fosen Wøien",
+          "title": "Investment Manager",
+          "location": "Oslo",
+          "email": "sigrid@equip.no",
+          "phone": "+47 976 30 196"
+        },
+        {
+          "name": "Hanna Skolt",
+          "title": "Investment Manager",
+          "location": "Oslo",
+          "email": "hs@equip.no",
+          "phone": "+47 473 90 733"
+        },
+        {
+          "name": "Caroline Lysebo",
+          "title": "Associate",
+          "location": "Oslo",
+          "email": "cl@equip.no",
+          "phone": "+47 954 93 939"
+        },
+        {
+          "name": "Iver Olai Lade Gjørvad",
+          "title": "Associate",
+          "location": "Oslo",
+          "email": "ig@equip.no",
+          "phone": "+47 466 80 086"
+        },
+        {
+          "name": "Charlotte Ekanger",
+          "title": "CFO",
+          "location": "Oslo",
+          "email": "ce@equip.no",
+          "phone": "+47 906 11 768"
+        },
+        {
+          "name": "Martina Solberg",
+          "title": "Controller",
+          "location": "Oslo",
+          "email": "ms@equip.no",
+          "phone": "+47 952 73 349"
+        },
+        {
+          "name": "Marie Haga",
+          "title": "Group Accounting Manager",
+          "location": "Oslo",
+          "email": "mh@equip.no",
+          "phone": "+47 476 69 420"
+        },
+        {
+          "name": "Charlotte Zetterqvist",
+          "title": "Office Assistant",
+          "location": "Oslo",
+          "email": "cz@equip.no",
+          "phone": "+47 968 37 457"
+        }
+      ],
       "fundraising": {
         "current_fund": "Fund I (€180M, closed Dec 2020), Fund II (€285M, closed Apr 2023), Equip SPV (€306M, closed 2024)",
         "next_fund": "Deployment across portfolio",
@@ -8970,7 +11245,7 @@
       "offices": [
         "Stockholm"
       ],
-      "description": "Trill Impact is a private markets firm exclusively making impact investments. Buyout (Northern Europe mid-market), Ventures (early-stage environmental/health), Microfinance (emerging markets). BlueMark verification of Impact Principles; top PRI scores. Sustainable Planet, Resilient Society, Healthy People.",
+      "description": "Trill Impact is a Swedish private markets firm founded in 2019 that invests exclusively for impact—no parallel non-impact mandates—across buyout, venture, and microfinance strategies. The buyout sleeve targets mid-market companies in Northern Europe where environmental or social outcomes can be verified alongside cash flows; ventures back early-stage businesses in climate and health; and microfinance provides responsible credit in emerging markets. Trill submits to independent BlueMark verification of alignment with the Operating Principles for Impact Management and has received top-tier PRI scores, reflecting institutional investors’ demand for discipline around impact claims. Thematically the firm groups its work under sustainable planet, resilient society, and healthy people.",
       "investment_focus": {
         "sectors": [
           "Sustainability",
@@ -8992,19 +11267,101 @@
         ]
       },
       "team": [
-        {"name": "Jan Ståhlberg", "title": "Founder & Managing Partner", "location": "Stockholm"},
-        {"name": "Björn Brixer", "title": "Partner & Chief Financial Officer", "location": "Stockholm"},
-        {"name": "Inga-Lill Carlberg", "title": "Partner & Chief Operating Officer", "location": "Stockholm"},
-        {"name": "Johanna Levander", "title": "Partner & Head of Investor Relations", "location": "Stockholm"},
-        {"name": "Alexander Domin", "title": "Partner & Head of Ventures", "location": "Munich"},
-        {"name": "Korbinian Knoblach", "title": "Partner & Co-Head of Buyout", "location": "Munich"},
-        {"name": "Matthew Levine", "title": "Partner & Head of US Buyout", "location": "New York"},
-        {"name": "Bita Sehat", "title": "Partner", "location": "Stockholm"},
-        {"name": "Chee Wei Wong", "title": "Partner", "location": "Stockholm"},
-        {"name": "Kristian Klosterkemper", "title": "Partner", "location": "Copenhagen"},
-        {"name": "Nina Hoffmann von Holten", "title": "Partner", "location": "Copenhagen"},
-        {"name": "Hetal Damani", "title": "Impact Partner", "location": "Stockholm"},
-        {"name": "Niclas Düring", "title": "Impact Partner", "location": "Stockholm"}
+        {
+          "name": "Dominique Alf",
+          "title": "Investment Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Michaela Appelkvist",
+          "title": "Investment Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Pia Gackstatter",
+          "title": "Investment Analyst",
+          "location": "Munich"
+        },
+        {
+          "name": "Ole Gillebo",
+          "title": "Investment Director",
+          "location": "Oslo"
+        },
+        {
+          "name": "Nina Hoffmann von Holten",
+          "title": "Partner",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Christoffer Johansson",
+          "title": "Investment Associate",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Kristian Klosterkemper",
+          "title": "Partner",
+          "location": "Munich"
+        },
+        {
+          "name": "Korbinian Knoblach",
+          "title": "Partner & Co-Head of Buyout",
+          "location": "Munich"
+        },
+        {
+          "name": "Hannah Larby",
+          "title": "Investment Manager",
+          "location": "New York"
+        },
+        {
+          "name": "Matthew Levine",
+          "title": "Partner & Head of US Buyout",
+          "location": "New York"
+        },
+        {
+          "name": "Ludvig Lundsten",
+          "title": "Investment Director",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Kilian Miessner",
+          "title": "Investment Analyst",
+          "location": "Munich"
+        },
+        {
+          "name": "Moritz Paulus",
+          "title": "Senior Investment Director",
+          "location": "Munich"
+        },
+        {
+          "name": "Isabelle Pilgrim",
+          "title": "Investment Manager",
+          "location": "Munich"
+        },
+        {
+          "name": "Alexander Raza",
+          "title": "Investment Manager",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Steffen Schulze",
+          "title": "Senior Investment Director",
+          "location": "Munich"
+        },
+        {
+          "name": "Kelly Siebert",
+          "title": "Investment Associate",
+          "location": "New York"
+        },
+        {
+          "name": "Linus Wang",
+          "title": "Investment Manager",
+          "location": "Copenhagen"
+        },
+        {
+          "name": "Chee Wei Wong",
+          "title": "Partner",
+          "location": "New York"
+        }
       ],
       "fundraising": {
         "current_fund": "Buyout, Ventures, Microfinance strategies",
@@ -9211,7 +11568,7 @@
         "Stockholm",
         "Helsinki"
       ],
-      "description": "Norvestor is a Nordic private equity firm (30+ years). 80+ platform investments; 25+ unrealized. Norvestor IX (€1.5bn, 2023); Nova I (€500M hard cap, 2024) lower mid-market. Norvestor X in market (2025). Business services, tech-enabled services, consumer services, industrial solutions. GP-led continuation model; Nordic-to-Pan-EU expansion.",
+      "description": "Norvestor is a Nordic private equity firm founded in Oslo in 1989 that focuses on the lower mid-market, where it can apply what it calls “industrialised entrepreneurship”—systematic buy-and-build, operational cadence, and founder-friendly transitions. The firm has completed more than eighty platform investments and maintains roughly twenty-five active holdings, with successive funds scaling from Norvestor IX at EUR 1.5 billion to the Nova programme for slightly smaller situations and Norvestor X opening to investors in 2025. Sector emphasis falls on business services, tech-enabled services, consumer services, and industrial solutions, often with a path from Nordic domestic champions to pan-European platforms. Norvestor has also embraced GP-led continuation vehicles to align duration with value creation when public markets or strategic buyers are not the right exit.",
       "investment_focus": {
         "sectors": [
           "Business Services",
@@ -9230,8 +11587,333 @@
       },
       "team": [
         {
-          "name": "Henrik Aspén",
+          "name": "Aamina Ghamy",
+          "title": "Senior Accountant",
+          "location": "Oslo"
+        },
+        {
+          "name": "Alexander Bastar",
+          "title": "Investment Associate",
+          "location": "Oslo"
+        },
+        {
+          "name": "Anette Østby",
+          "title": "Accountant & Administrative Assistant",
+          "location": "Oslo"
+        },
+        {
+          "name": "Annie Sundin",
+          "title": "Senior Investment Associate",
+          "location": "Oslo"
+        },
+        {
+          "name": "Anton-Moritz Oliver",
+          "title": "Investment Director",
+          "location": "Oslo"
+        },
+        {
+          "name": "Arfah Chaudry",
+          "title": "Compliance Officer",
+          "location": "Oslo"
+        },
+        {
+          "name": "Attilio Femiano-Chillé",
+          "title": "Risk Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Beata Telenga",
+          "title": "Canteen",
+          "location": "Oslo"
+        },
+        {
+          "name": "Charlotte Wallem-Mehn",
+          "title": "Investment Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Christian Sontum",
+          "title": "Partner",
+          "location": "Oslo"
+        },
+        {
+          "name": "Dalila Auburtin",
+          "title": "Administrative and Corporate Assistant",
+          "location": "Oslo"
+        },
+        {
+          "name": "Elisabeth Patiño George",
+          "title": "Portfolio Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Emma Myresten",
+          "title": "Investor Relations Executive",
+          "location": "Oslo"
+        },
+        {
+          "name": "Erica Hegerin",
+          "title": "General Counsel",
+          "location": "Oslo"
+        },
+        {
+          "name": "Erlend Bondø",
+          "title": "CFO",
+          "location": "Oslo"
+        },
+        {
+          "name": "Fredrik Franke",
+          "title": "Head of Sustainability",
+          "location": "Oslo"
+        },
+        {
+          "name": "Fredrik Gyllenhammar Raaum",
+          "title": "Partner",
+          "location": "Oslo"
+        },
+        {
+          "name": "Fredrik Korterud",
+          "title": "Partner",
+          "location": "Oslo"
+        },
+        {
+          "name": "Georg Enderlein",
+          "title": "Partner",
+          "location": "Oslo"
+        },
+        {
+          "name": "Henning Vold",
+          "title": "Partner",
+          "location": "Oslo"
+        },
+        {
+          "name": "Henrik Ceder",
+          "title": "Chief Digital Officer",
+          "location": "Oslo"
+        },
+        {
+          "name": "Henrik Mjøen Hafstad",
+          "title": "Head of Debt Capital Markets",
+          "location": "Oslo"
+        },
+        {
+          "name": "Henrik Thorsby",
+          "title": "Investment Associate",
+          "location": "Oslo"
+        },
+        {
+          "name": "Henrik Ødegaard",
+          "title": "Head of Talent & Performance Management",
+          "location": "Oslo"
+        },
+        {
+          "name": "Herman Svensk",
+          "title": "Senior Investment Associate",
+          "location": "Oslo"
+        },
+        {
+          "name": "Håvard Berge",
+          "title": "Investment Director",
+          "location": "Oslo"
+        },
+        {
+          "name": "Ian Poppelman",
+          "title": "Partner",
+          "location": "Oslo"
+        },
+        {
+          "name": "Jenny Haapa",
+          "title": "Investment Associate",
+          "location": "Oslo"
+        },
+        {
+          "name": "Johannes Blencke",
+          "title": "Senior Investment Associate",
+          "location": "Oslo"
+        },
+        {
+          "name": "Johannes Eliasson",
+          "title": "Investment Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Jonas Kaldahl",
+          "title": "Investment Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Julie Hamilton",
+          "title": "Administrative Assistant",
+          "location": "Oslo"
+        },
+        {
+          "name": "Karl Svozilik",
+          "title": "Partner",
+          "location": "Oslo"
+        },
+        {
+          "name": "Katharina Jonas",
+          "title": "Investment Associate",
+          "location": "Oslo"
+        },
+        {
+          "name": "Katrine Helstrup Ovesen",
+          "title": "Senior Investment Associate",
+          "location": "Oslo"
+        },
+        {
+          "name": "Lars Grinde",
           "title": "Managing Partner",
+          "location": "Oslo"
+        },
+        {
+          "name": "Lauri Tanskanen",
+          "title": "Investment Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Lilly Beate Salvesvoll",
+          "title": "Accounting Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Lukas Formanek",
+          "title": "Valuation and Financial Analysis Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Maria Skodje Bergsten",
+          "title": "Executive Assistant",
+          "location": "Oslo"
+        },
+        {
+          "name": "Marie Fossli Nordheim",
+          "title": "Senior Accountant",
+          "location": "Oslo"
+        },
+        {
+          "name": "Marika af Enehjelm",
+          "title": "Partner",
+          "location": "Oslo"
+        },
+        {
+          "name": "Marius Hol",
+          "title": "Investment Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Martin Egeli",
+          "title": "Investment Associate",
+          "location": "Oslo"
+        },
+        {
+          "name": "Martin Kildahl",
+          "title": "Investment Director",
+          "location": "Oslo"
+        },
+        {
+          "name": "Michaela Chebaro",
+          "title": "Office Manager Stockholm",
+          "location": "Stockholm"
+        },
+        {
+          "name": "Niko Stojanovic",
+          "title": "Investor Relations Executive",
+          "location": "Oslo"
+        },
+        {
+          "name": "Nils Halvord",
+          "title": "Sustainability Associate",
+          "location": "Oslo"
+        },
+        {
+          "name": "Olav Osland Vik-Mo",
+          "title": "Partner & COO",
+          "location": "Oslo"
+        },
+        {
+          "name": "Oskar von Brockhusen",
+          "title": "Investment Associate",
+          "location": "Oslo"
+        },
+        {
+          "name": "Outi Kreus",
+          "title": "Investment Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Per-Ola Baalerud",
+          "title": "Partner",
+          "location": "Oslo"
+        },
+        {
+          "name": "Peter Tollstadius",
+          "title": "Investment Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Petter Björklund",
+          "title": "Investment Associate",
+          "location": "Oslo"
+        },
+        {
+          "name": "Rebecca Farr",
+          "title": "Head of Investor Relations & Fundraising",
+          "location": "Oslo"
+        },
+        {
+          "name": "Sam Jonsson Åslund",
+          "title": "Investment Associate",
+          "location": "Oslo"
+        },
+        {
+          "name": "Sebastian Bugge",
+          "title": "Investment Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Simon Bering",
+          "title": "Digital Value Creation Lead",
+          "location": "Oslo"
+        },
+        {
+          "name": "Simon Bodjanski",
+          "title": "Portfolio Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Stina Andersson",
+          "title": "Partner",
+          "location": "Oslo"
+        },
+        {
+          "name": "Tara Teymourian",
+          "title": "Senior Investment Associate",
+          "location": "Oslo"
+        },
+        {
+          "name": "Tine Ridder-Nielsen",
+          "title": "Administrative Project Leader",
+          "location": "Oslo"
+        },
+        {
+          "name": "Tone Guran",
+          "title": "Finance and Compliance Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Tor Erling Gunnerød",
+          "title": "Partner",
+          "location": "Oslo"
+        },
+        {
+          "name": "Trond Bjørnøy",
+          "title": "Partner and Chair",
+          "location": "Oslo"
+        },
+        {
+          "name": "Xuan Zhuang",
+          "title": "Investment Controller",
           "location": "Oslo"
         }
       ],
@@ -9598,7 +12280,7 @@
       "offices": [
         "Stockholm"
       ],
-      "description": "Helix Kapital is a Swedish growth-oriented private equity firm established in 2008. Partners with entrepreneurial management to accelerate profitable growth. Focus: tech-enabled B2B services and industrial tech that modernize traditional industries. Fund III (SEK 1.566bn, Apr 2024) oversubscribed; Article 8; InvestEU backed.",
+      "description": "Helix Kapital is a Stockholm-based growth-oriented private equity firm established in 2008 that partners with entrepreneurial management teams to accelerate already profitable businesses in Sweden and the wider Nordics. Its sweet spot is tech-enabled B2B services, industrial technology, and software that modernises traditional industries—businesses where buy-and-build and operational discipline can compound returns. Helix Kapital Fund III closed in April 2024 at SEK 1.566 billion, was heavily oversubscribed, carries an SFDR Article 8 classification, and includes backing from the InvestEU programme, underscoring both institutional demand for the strategy and the firm’s emphasis on responsible investment alongside financial outcomes.",
       "investment_focus": {
         "sectors": [
           "Industrial Tech",
@@ -9618,15 +12300,69 @@
         ]
       },
       "team": [
-        {"name": "Stefan Lambert", "title": "Partner", "location": "Stockholm"},
-        {"name": "Joakim Karlsson", "title": "Partner", "location": "Stockholm"},
-        {"name": "Mattias Ericsson", "title": "Partner", "location": "Stockholm"},
-        {"name": "Victor Björk", "title": "Investment Director", "location": "Stockholm"},
-        {"name": "Alexander Wallenberg", "title": "Investment Director", "location": "Stockholm"},
-        {"name": "Alexander Ribrant", "title": "Investment Manager", "location": "Stockholm"},
-        {"name": "Amanda Hellström", "title": "Investment Manager", "location": "Stockholm"},
-        {"name": "Dante Haqués", "title": "Investment Associate", "location": "Stockholm"},
-        {"name": "Johan Bagger-Jörgensen", "title": "Investment Analyst", "location": "Stockholm"}
+        {
+          "name": "Stefan Lambert",
+          "title": "Partner",
+          "location": "Stockholm",
+          "email": "stefan.lambert@helixkapital.se",
+          "phone": "+46 70 216 65 69"
+        },
+        {
+          "name": "Joakim Karlsson",
+          "title": "Partner",
+          "location": "Stockholm",
+          "email": "joakim.karlsson@helixkapital.se",
+          "phone": "+46 73 390 44 35"
+        },
+        {
+          "name": "Mattias Ericsson",
+          "title": "Partner",
+          "location": "Stockholm",
+          "email": "mattias.ericsson@helixkapital.se",
+          "phone": "+46 70 643 44 60"
+        },
+        {
+          "name": "Victor Björk",
+          "title": "Investment Director",
+          "location": "Stockholm",
+          "email": "victor.bjork@helixkapital.se",
+          "phone": "+46 73 200 40 45"
+        },
+        {
+          "name": "Alexander Wallenberg",
+          "title": "Investment Director",
+          "location": "Stockholm",
+          "email": "alexander.wallenberg@helixkapital.se",
+          "phone": "+46 70 581 57 73"
+        },
+        {
+          "name": "Alexander Ribrant",
+          "title": "Investment Manager",
+          "location": "Stockholm",
+          "email": "alexander.ribrant@helixkapital.se",
+          "phone": "+46 70 253 39 75"
+        },
+        {
+          "name": "Amanda Hellström",
+          "title": "Investment Manager",
+          "location": "Stockholm",
+          "email": "amanda.hellstrom@helixkapital.se",
+          "phone": "+46 70 032 35 63"
+        },
+        {
+          "name": "Dante Haqués",
+          "title": "Investment Associate",
+          "location": "Stockholm",
+          "email": "dante.haques@helixkapital.se",
+          "phone": "+46 76 632 20 50"
+        },
+        {
+          "name": "Johan Bagger-Jörgensen",
+          "title": "Investment Analyst",
+          "location": "Stockholm",
+          "email": "johan.bagger@helixkapital.se",
+          "phone": "+46 70 527 10 88"
+        }
       ],
       "fundraising": {
         "current_fund": "Helix Kapital Fund III (SEK 1.566bn, closed Apr 2024, oversubscribed, Article 8)",
@@ -9827,7 +12563,7 @@
         "Copenhagen",
         "Munich"
       ],
-      "description": "FSN Capital is a leading Northern European private equity firm founded in 1999. >€4bn AUM; 60 platform investments, 400+ add-ons, 28 active portfolio companies. Purpose: contribute to welfare of everyday people through transformational ownership. EV range €100M–1B. FSN Compass (continuation fund >€400M) and Confluence (2024) provide exit liquidity. Net Zero committed; science-based targets.",
+      "description": "FSN Capital is a Northern European private equity firm founded in Oslo in 1999 and recognised for mid-cap transformational ownership rather than passive financial sponsorship. It typically invests in companies with enterprise values between roughly EUR 100 million and EUR 1 billion, bridging the Nordics with continental Europe and backing platforms in services, industrials, healthcare, technology, and consumer. The firm’s public narrative stresses a purpose—“contributing to the welfare of everyday people”—expressed through operational improvement and long holding periods where appropriate. Across six main funds and complementary vehicles such as FSN Compass and the Confluence continuation programme, FSN has completed sixty platform deals and more than four hundred add-ons while maintaining close to thirty active portfolio companies; it has also committed to net-zero pathways with science-based targets.",
       "investment_focus": {
         "sectors": [
           "Services",
@@ -9850,25 +12586,498 @@
       },
       "team": [
         {
-          "name": "Frode Strand-Nielsen",
-          "title": "Founder & Managing Partner",
-          "location": "Oslo",
-          "background": "Transitioning to Chair; generation hand-off"
+          "name": "Adelina Sirbu",
+          "title": "Controller",
+          "location": "Oslo"
         },
         {
-          "name": "Morten Welo",
-          "title": "Managing Partner",
-          "location": "Oslo",
-          "background": "New Co-Managing Partner"
+          "name": "Agnes Kristinsdóttir",
+          "title": "Business Services Coordinator",
+          "location": "Oslo"
         },
         {
-          "name": "Bjørn Erik Næss",
+          "name": "Ana Drazic",
+          "title": "Finance Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Anette Fehn",
+          "title": "Business Services Manager, IR",
+          "location": "Oslo"
+        },
+        {
+          "name": "Angela Wu",
+          "title": "Senior IR Director",
+          "location": "Oslo"
+        },
+        {
+          "name": "Anne Winther",
+          "title": "Office Coordinator",
+          "location": "Oslo"
+        },
+        {
+          "name": "Åse Ullmann",
+          "title": "Head of People Services & Support",
+          "location": "Oslo"
+        },
+        {
+          "name": "Awais Shafique",
+          "title": "Senior Operating Director, Strategy & Operations",
+          "location": "Oslo"
+        },
+        {
+          "name": "Barbara Stolz",
+          "title": "Investment Director",
+          "location": "Oslo"
+        },
+        {
+          "name": "Bror Magnus Sand",
+          "title": "Investment Associate",
+          "location": "Oslo"
+        },
+        {
+          "name": "Cattis Legelius",
+          "title": "Office Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Charles de Lezardiere",
+          "title": "IR Director",
+          "location": "Oslo"
+        },
+        {
+          "name": "Charlotte Sörnäs",
+          "title": "HR Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Christian Jelsbech",
+          "title": "Investment Director",
+          "location": "Oslo"
+        },
+        {
+          "name": "Christian McCarty",
+          "title": "Operating Director, Capital Markets",
+          "location": "Oslo"
+        },
+        {
+          "name": "Clemens Plainer",
+          "title": "Principal",
+          "location": "Oslo"
+        },
+        {
+          "name": "Constantin Schloesser",
+          "title": "Investment Associate",
+          "location": "Oslo"
+        },
+        {
+          "name": "Daniel Lebe",
+          "title": "Digital Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Debbie Fellmerk",
+          "title": "Investment Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Eirik Hjeltnes Wabø",
+          "title": "Principal",
+          "location": "Oslo"
+        },
+        {
+          "name": "Emma Currier",
+          "title": "Investment Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Erik Nelson",
           "title": "Partner",
           "location": "Oslo"
         },
         {
-          "name": "Christian Rynning-Tønnesen",
+          "name": "Eskil Koffeld",
           "title": "Partner",
+          "location": "Oslo"
+        },
+        {
+          "name": "Felix Schroeder",
+          "title": "Finance Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Frederik Dagø",
+          "title": "Decarbonization Director",
+          "location": "Oslo"
+        },
+        {
+          "name": "Frida Jónsdóttir",
+          "title": "Jr. Operating Director, Strategy & Operations",
+          "location": "Oslo"
+        },
+        {
+          "name": "Gereon Wellmann",
+          "title": "Sustainability Specialist",
+          "location": "Oslo"
+        },
+        {
+          "name": "Hanne Iversen",
+          "title": "General Counsel",
+          "location": "Oslo"
+        },
+        {
+          "name": "Helene Wekre",
+          "title": "Investment Associate",
+          "location": "Oslo"
+        },
+        {
+          "name": "Heline Odqvist",
+          "title": "Investment Associate",
+          "location": "Oslo"
+        },
+        {
+          "name": "Herman Anker",
+          "title": "Investment Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Jacob Freeman",
+          "title": "Legal Advisor",
+          "location": "Oslo"
+        },
+        {
+          "name": "Jesper Isaksen",
+          "title": "Partner & Head of Talent",
+          "location": "Oslo"
+        },
+        {
+          "name": "Joakim Ytterberg",
+          "title": "Investment Associate",
+          "location": "Oslo"
+        },
+        {
+          "name": "Joar Jansson",
+          "title": "Investment Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Johanna Jaklinder",
+          "title": "HR Coordinator",
+          "location": "Oslo"
+        },
+        {
+          "name": "Johanna Wackerbeck",
+          "title": "Head of Strategy",
+          "location": "Oslo"
+        },
+        {
+          "name": "Johanne Bremnes Bakken",
+          "title": "Team Project Assistant",
+          "location": "Oslo"
+        },
+        {
+          "name": "Johannes Brunner",
+          "title": "Senior Operating Director, Finance & Operations",
+          "location": "Oslo"
+        },
+        {
+          "name": "Jonna Thomasson",
+          "title": "Office Coordinator",
+          "location": "Oslo"
+        },
+        {
+          "name": "Julie Yu",
+          "title": "Communications Specialist",
+          "location": "Oslo"
+        },
+        {
+          "name": "Kim Krog",
+          "title": "Head of Fund Operations",
+          "location": "Oslo"
+        },
+        {
+          "name": "Knut Røsjorde",
+          "title": "Operating Partner",
+          "location": "Oslo"
+        },
+        {
+          "name": "Kristina Wirén González",
+          "title": "Investment Director",
+          "location": "Oslo"
+        },
+        {
+          "name": "Lars Veen Uldal",
+          "title": "Sustainability Specialist",
+          "location": "Oslo"
+        },
+        {
+          "name": "Maja Nilsson",
+          "title": "Legal Counsel",
+          "location": "Oslo"
+        },
+        {
+          "name": "Marcus Egelstig",
+          "title": "Partner",
+          "location": "Oslo"
+        },
+        {
+          "name": "Marcus Wintersø",
+          "title": "Principal",
+          "location": "Oslo"
+        },
+        {
+          "name": "Maria Grøner",
+          "title": "Investment Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Marie-Christine Volkert",
+          "title": "Investment Associate",
+          "location": "Oslo"
+        },
+        {
+          "name": "Marie Øymyr Moe",
+          "title": "CFO & Head of Operations",
+          "location": "Oslo"
+        },
+        {
+          "name": "Maximilian Weimann",
+          "title": "Investment Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Mia Boje Andersen",
+          "title": "Manager Operating Support",
+          "location": "Oslo"
+        },
+        {
+          "name": "Mia Sørli Wikborg",
+          "title": "Sustainability Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Michael Gentili",
+          "title": "Head of Capital Markets",
+          "location": "Oslo"
+        },
+        {
+          "name": "Miriam Okafor",
+          "title": "Investment Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Moa Strand",
+          "title": "Operating Director, Strategy & Operations",
+          "location": "Oslo"
+        },
+        {
+          "name": "Moritz Hafner",
+          "title": "Partner",
+          "location": "Oslo"
+        },
+        {
+          "name": "Moritz Madlener",
+          "title": "Investment Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Morten Welo",
+          "title": "Partner, COO and Head of IR",
+          "location": "Oslo"
+        },
+        {
+          "name": "Mykhailo Sydorenko",
+          "title": "Tax & Compliance Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Nicholas Hjorth",
+          "title": "Principal",
+          "location": "Oslo"
+        },
+        {
+          "name": "Niclas Thiel",
+          "title": "Partner",
+          "location": "Oslo"
+        },
+        {
+          "name": "Nikolai Doepel",
+          "title": "Investment Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Nurcan Krieger",
+          "title": "Business Services Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Oscar Ottosen",
+          "title": "Investment Associate",
+          "location": "Oslo"
+        },
+        {
+          "name": "Pål Dale",
+          "title": "Senior Operating Director, Strategy & Operations",
+          "location": "Oslo"
+        },
+        {
+          "name": "Patrice Jabet",
+          "title": "Partner",
+          "location": "Oslo"
+        },
+        {
+          "name": "Philipp Steinmeister",
+          "title": "Investment Associate",
+          "location": "Oslo"
+        },
+        {
+          "name": "Reginald Seawright",
+          "title": "Investment Director",
+          "location": "Oslo"
+        },
+        {
+          "name": "Robin Mürer",
+          "title": "Co-Managing Partner",
+          "location": "Oslo"
+        },
+        {
+          "name": "Sara Källstrøm Kreilisheim",
+          "title": "Business Services Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Sarah Coetzee",
+          "title": "Business Services Coordinator",
+          "location": "Oslo"
+        },
+        {
+          "name": "Seran Shanmugathas",
+          "title": "Digital Specialist",
+          "location": "Oslo"
+        },
+        {
+          "name": "Severin Loos",
+          "title": "Investment Director",
+          "location": "Oslo"
+        },
+        {
+          "name": "Simon Larsson",
+          "title": "Principal",
+          "location": "Oslo"
+        },
+        {
+          "name": "Stina Lycik",
+          "title": "Business Services Manager",
+          "location": "Oslo"
+        },
+        {
+          "name": "Talitha Eber",
+          "title": "Investment Director",
+          "location": "Oslo"
+        },
+        {
+          "name": "Tuva Schiager",
+          "title": "IR Coordinator",
+          "location": "Oslo"
+        },
+        {
+          "name": "Ulrik Smith",
+          "title": "Co-Managing Partner",
+          "location": "Oslo"
+        },
+        {
+          "name": "Unidon Krasniqi",
+          "title": "Data & Analytics Specialist, Finance & Operations",
+          "location": "Oslo"
+        },
+        {
+          "name": "Veronica Gundersen",
+          "title": "Office Coordinator",
+          "location": "Oslo"
+        },
+        {
+          "name": "Vincent Wahl",
+          "title": "Operating Manager, Digital Strategy",
+          "location": "Oslo"
+        },
+        {
+          "name": "Zarina Saeque",
+          "title": "Operating Director, Strategy & Operations",
+          "location": "Oslo"
+        },
+        {
+          "name": "Ziqi Huo",
+          "title": "Office Coordinator",
+          "location": "Oslo"
+        },
+        {
+          "name": "Christer Tryggestad",
+          "title": "Industrial Advisor",
+          "location": "Oslo"
+        },
+        {
+          "name": "Christian Mangstl",
+          "title": "Executive Advisor",
+          "location": "Oslo"
+        },
+        {
+          "name": "Das Narayandas",
+          "title": "Executive Advisor",
+          "location": "Oslo"
+        },
+        {
+          "name": "Espen Asheim",
+          "title": "Executive Advisor",
+          "location": "Oslo"
+        },
+        {
+          "name": "Eva Elmstedt",
+          "title": "Executive Advisor",
+          "location": "Oslo"
+        },
+        {
+          "name": "Frode Strand-Nielsen",
+          "title": "Founder and Chairperson",
+          "location": "Oslo"
+        },
+        {
+          "name": "Jeanette Fangel Løgstrup",
+          "title": "Senior Sustainability Advisor",
+          "location": "Oslo"
+        },
+        {
+          "name": "Knut Kjær",
+          "title": "Senior Advisor",
+          "location": "Oslo"
+        },
+        {
+          "name": "Krishna Palepu",
+          "title": "Executive Advisor",
+          "location": "Oslo"
+        },
+        {
+          "name": "Mike Winkel",
+          "title": "Executive Advisor",
+          "location": "Oslo"
+        },
+        {
+          "name": "Morten Strand",
+          "title": "Executive Advisor",
+          "location": "Oslo"
+        },
+        {
+          "name": "Oliver Bendig",
+          "title": "Executive Advisor",
+          "location": "Oslo"
+        },
+        {
+          "name": "Peter Kürstein",
+          "title": "Executive Advisor",
+          "location": "Oslo"
+        },
+        {
+          "name": "Søren F. Knudsen",
+          "title": "Executive Advisor",
           "location": "Oslo"
         }
       ],
@@ -10560,6 +13769,153 @@
           "website": "https://www.saferoad.com"
         }
       ]
+    },
+    "Fidelio Capital": {
+      "name": "Fidelio Capital",
+      "logo_url": "https://logo.clearbit.com/fideliocapital.com",
+      "website": "https://www.fideliocapital.com",
+      "headquarters": "Stockholm, Sweden",
+      "founded": 2010,
+      "aum": "—",
+      "employees": "25+",
+      "offices": [
+        "Stockholm"
+      ],
+      "description": "Fidelio Capital is a Stockholm-based private equity firm partnering with Nordic companies. The team combines backgrounds from leading international investors, banks, and advisors with a hands-on approach to value creation and long-term ownership.",
+      "investment_focus": {
+        "sectors": [
+          "Technology",
+          "Business services",
+          "Consumer",
+          "Healthcare"
+        ],
+        "geography": [
+          "Nordic region"
+        ],
+        "deal_size": "Mid-market",
+        "investment_type": [
+          "Buyouts",
+          "Growth",
+          "Majority and minority"
+        ]
+      },
+      "fundraising": {
+        "current_fund": "Fidelio Capital III and predecessor funds",
+        "next_fund": "Deployment across portfolio",
+        "strategy": "Nordic mid-market; operational value creation"
+      },
+      "team": [
+        {
+          "name": "Gabriel Fitzgerald",
+          "title": "Managing Partner, Founder",
+          "location": "Stockholm",
+          "background": "Previously Nordic Capital and Carnegie (Stockholm). MSc Finance (Stockholm School of Economics); stage-one medical degree (Linköping University)."
+        },
+        {
+          "name": "Alexandra Björklund",
+          "title": "CFO & Head of IR",
+          "location": "Stockholm",
+          "background": "Joined April 2022; JP Morgan, Blackstone, Areim. MSc Finance (SSE)."
+        },
+        {
+          "name": "Theodor Bonnier",
+          "title": "Head of Value Creation",
+          "location": "Stockholm",
+          "background": "Joined April 2013; Barclays Investment Bank (London), Catella Corporate Finance. BSc Finance and Marketing (SSE)."
+        },
+        {
+          "name": "Ann-Louise Smetana",
+          "title": "Operations Manager",
+          "location": "Stockholm",
+          "background": "Joined February 2022; Carnegie, HDR Partners, Danator. MSc Finance (SSE)."
+        },
+        {
+          "name": "Hanna Risberg",
+          "title": "Legal Counsel",
+          "location": "Stockholm",
+          "background": "Joined September 2021 from Vinge (secondee). LL.M. (Uppsala University)."
+        },
+        {
+          "name": "Håkan Håkansson",
+          "title": "Senior Advisor",
+          "location": "Stockholm",
+          "background": "Partner from October 2017; former CEO of Lyko; Goldman Sachs, TA Associates, Sageview Capital. MSc Finance (SSE)."
+        },
+        {
+          "name": "Martin Erleman",
+          "title": "Partner",
+          "location": "Stockholm",
+          "background": "Joined May 2012; Nordic Capital, Goldman Sachs, SEB Enskilda. MSc Finance (SSE)."
+        },
+        {
+          "name": "Hampus Tunhammar",
+          "title": "Partner",
+          "location": "Stockholm",
+          "background": "Joined January 2017; 3i, L.E.K. Consulting (London). BSc Finance and Economics (SSE)."
+        },
+        {
+          "name": "Nick Hewett",
+          "title": "Director",
+          "location": "Stockholm",
+          "background": "Joined April 2020; Bowmark Capital (London), Nomura. MA Theology (Cambridge, first class)."
+        },
+        {
+          "name": "Mattias Malmback",
+          "title": "Director",
+          "location": "Stockholm",
+          "background": "Joined October 2017; Citi (London), CapMan. BSc Finance and Accounting (SSE)."
+        },
+        {
+          "name": "Fredrik Blomberg",
+          "title": "Director",
+          "location": "Stockholm",
+          "background": "Joined June 2018; Rothschild & Co (London), Carnegie. BSc International Business (CBS)."
+        },
+        {
+          "name": "Gustav Furenmo",
+          "title": "Investment Manager",
+          "location": "Stockholm",
+          "background": "Joined July 2021; Goldman Sachs PIA (London), IK Partners. BSc Statistics & Economics (Lund), MSc Corporate Finance (EDHEC)."
+        },
+        {
+          "name": "Jakob Nilsson",
+          "title": "Investment Manager",
+          "location": "Stockholm",
+          "background": "Joined January 2023; Carnegie, Ericsson, Deloitte. BSc Business and Economics (SSE)."
+        },
+        {
+          "name": "David Axelsson",
+          "title": "Investment Manager",
+          "location": "Stockholm",
+          "background": "Joined March 2025; Carnegie. MSc Finance (SSE), BSc Business and Economics (Uppsala)."
+        },
+        {
+          "name": "Daniel Englund",
+          "title": "Investment Manager",
+          "location": "Stockholm",
+          "background": "Joined June 2025; KLAR Partners (London), Goldman Sachs. BSc and MSc Engineering (Linköping)."
+        },
+        {
+          "name": "Theodor Stenmo",
+          "title": "Investment Associate",
+          "location": "Stockholm",
+          "background": "Joined August 2024; Rothschild & Co, SEB. BSc Business & Economics (SSE), MiM (IE Madrid)."
+        },
+        {
+          "name": "Emelie Teglund",
+          "title": "Investment Associate",
+          "location": "Stockholm",
+          "background": "Joined August 2025; IK Partners, Danske Bank. MSc Corporate Finance & Banking (EDHEC), Master Tax Law (Karlstad)."
+        },
+        {
+          "name": "Johanna Olsson",
+          "title": "Office Assistant",
+          "location": "Stockholm",
+          "background": "Joined February 2022; Luma Finans, SEB (Stockholm)."
+        }
+      ],
+      "timeline": [],
+      "company_updates": []
     }
   }
 }

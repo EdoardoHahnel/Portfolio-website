@@ -487,9 +487,12 @@ function displayFirmDetail(firm) {
                                 <div class="team-info">
                                     <div class="team-name">${escapeHtml(member.name)}</div>
                                     <div class="team-title">${escapeHtml(member.title)}</div>
-                                    <div class="team-location">
+                                    ${member.location ? `<div class="team-location">
                                         <i class="fas fa-map-marker-alt"></i> ${escapeHtml(member.location)}
-                                    </div>
+                                    </div>` : ''}
+                                    ${member.email ? `<div class="team-contact" style="font-size:0.5rem;margin-top:0.2rem;"><a href="mailto:${escapeHtml(member.email)}" style="color:#2563eb;">${escapeHtml(member.email)}</a></div>` : ''}
+                                    ${member.phone ? `<div class="team-phone" style="font-size:0.5rem;color:#475569;"><i class="fas fa-phone" style="margin-right:0.25rem;opacity:0.7;"></i><a href="tel:${String(member.phone).replace(/\s+/g, '')}" style="color:#475569;">${escapeHtml(member.phone)}</a></div>` : ''}
+                                    ${member.background ? `<div class="team-background" style="font-size:0.48rem;line-height:1.35;color:#64748b;margin-top:0.35rem;">${escapeHtml(member.background)}</div>` : ''}
                                 </div>
                             </div>
                         `).join('')}
