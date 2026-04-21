@@ -329,18 +329,19 @@ function displayFirmDetail(firm) {
                     <div class="content-card-body">
                         ${(function() {
                             var ups = firm.company_updates || firm.companyUpdates;
-                            var ups2025 = (ups || []).filter(function(u) { return (u.date || '').toString().startsWith('2025'); });
-                            var upsToShow = ups2025.length > 0 ? ups2025 : ups;
-                            if (upsToShow && upsToShow.length > 0) {
-                                var res = formatCompanyUpdates(upsToShow, 4);
-                                if (res.totalCount > 4) window._recentActivityFullHtml = res.fullHtml;
-                                return '<div class="recent-activity-formatted">' + res.html + '</div>' +
-                                    (res.totalCount > 4 ? '<div style="text-align:center;margin-top:0.35rem;"><button type="button" class="view-all-activity-btn" data-firm-name="' + escapeHtml(firm.name || '') + '" style="font-size:0.5rem;color:#4c1d95;background:none;border:none;cursor:pointer;text-decoration:underline;font-weight:600;"><i class="fas fa-expand-alt" style="margin-right:0.2rem;"></i>View all (' + res.totalCount + ')</button></div>' : '');
+                            var upsFull = firm.company_updates_full || firm.companyUpdatesFull;
+                            var RECENT_CAP = 5;
+                            if (!ups || !Array.isArray(ups) || ups.length === 0) return '';
+                            var fullList = (upsFull && Array.isArray(upsFull) && upsFull.length) ? upsFull
+                                : ups.slice().sort(function(a, b) { return String(b.date || '').localeCompare(String(a.date || '')); });
+                            var totalCount = fullList.length;
+                            var preview = fullList.slice(0, RECENT_CAP);
+                            var resPreview = formatCompanyUpdates(preview, null);
+                            if (totalCount > RECENT_CAP) {
+                                window._recentActivityFullHtml = formatCompanyUpdates(fullList, null).html;
                             }
-                            if ((ups || []).length > 0 && ups2025.length === 0) {
-                                return '<p style="font-size:0.65rem; color:#64748b; margin:0;">No 2025 activity reported.</p>';
-                            }
-                            return '';
+                            return '<div class="recent-activity-formatted" style="max-height:220px;overflow-y:auto;">' + resPreview.html + '</div>' +
+                                (totalCount > RECENT_CAP ? '<div style="text-align:center;margin-top:0.35rem;"><button type="button" class="view-all-activity-btn" data-firm-name="' + escapeHtml(firm.name || '') + '" style="font-size:0.5rem;color:#4c1d95;background:none;border:none;cursor:pointer;text-decoration:underline;font-weight:600;"><i class="fas fa-expand-alt" style="margin-right:0.2rem;"></i>View all (' + totalCount + ')</button></div>' : '');
                         })()}
                         ${((firm.company_updates || firm.companyUpdates) && (firm.company_updates || firm.companyUpdates).length > 0) ? '' : (firm.real_news && firm.real_news.length > 0) ? `
                             <div class="recent-news-list" style="max-height: 200px; overflow-y: auto;">
@@ -380,10 +381,10 @@ function displayFirmDetail(firm) {
                                 </a>
                             </div>
                         ` : (function() {
-                            var r = formatRecentActivity(firm.recent_activity || 'No recent activity data available.', 4, 2025);
-                            if (r.totalCount > 4) window._recentActivityFullHtml = r.fullHtml;
+                            var r = formatRecentActivity(firm.recent_activity || 'No recent activity data available.', 5, null);
+                            if (r.totalCount > 5) window._recentActivityFullHtml = r.fullHtml;
                             var html = (r && r.html ? r.html : '');
-                            return '<div class="recent-activity-formatted">' + html + '</div>' + (r.totalCount > 4 ? '<div style="text-align:center;margin-top:0.35rem;"><button type="button" class="view-all-activity-btn" data-firm-name="' + escapeHtml(firm.name || '') + '" style="font-size:0.5rem;color:#4c1d95;background:none;border:none;cursor:pointer;text-decoration:underline;font-weight:600;"><i class="fas fa-expand-alt" style="margin-right:0.2rem;"></i>View all (' + r.totalCount + ')</button></div>' : '');
+                            return '<div class="recent-activity-formatted">' + html + '</div>' + (r.totalCount > 5 ? '<div style="text-align:center;margin-top:0.35rem;"><button type="button" class="view-all-activity-btn" data-firm-name="' + escapeHtml(firm.name || '') + '" style="font-size:0.5rem;color:#4c1d95;background:none;border:none;cursor:pointer;text-decoration:underline;font-weight:600;"><i class="fas fa-expand-alt" style="margin-right:0.2rem;"></i>View all (' + r.totalCount + ')</button></div>' : '');
                         })()}
                     </div>
                 </div>
@@ -1340,23 +1341,19 @@ async function loadFirmTimeline(firm, firmName) {
             // Build timeline events
             const events = [];
             
-            // Add custom timeline events first (if they exist)
+            // Add custom timeline events first (if they exist) — one horizontal card per entry (no year/type bucketing)
             if (firm.timeline && firm.timeline.length > 0) {
-                // Group events by year and category
-                const eventsByYear = {};
-                
-                firm.timeline.forEach(timelineEvent => {
+                const timelineSorted = firm.timeline.map((e, i) => ({ e, i })).sort((a, b) => {
+                    const ya = parseInt(a.e.year, 10) || 0;
+                    const yb = parseInt(b.e.year, 10) || 0;
+                    if (ya !== yb) return ya - yb;
+                    return a.i - b.i;
+                }).map(x => x.e);
+
+                timelineSorted.forEach(rawEv => {
+                    const timelineEvent = Object.assign({}, rawEv);
                     const year = timelineEvent.year;
-                    if (!eventsByYear[year]) {
-                        eventsByYear[year] = {
-                            acquisitions: [],
-                            exits: [],
-                            fundActivities: [],
-                            other: []
-                        };
-                    }
-                    
-                    // Try to match event to portfolio company for logo display
+
                     if (timelineEvent.company) {
                         let matchingCompany = firmCompanies.find(c => (c.company || c.name || '') === timelineEvent.company);
                         if (!matchingCompany && firm.portfolio_companies) {
@@ -1384,103 +1381,62 @@ async function loadFirmTimeline(firm, firmName) {
                         });
                         if (match) timelineEvent.companyData = match;
                     }
-                    
-                    const eventType = timelineEvent.event.toLowerCase();
+
+                    const eventType = (timelineEvent.event || '').toLowerCase();
                     const eventDesc = (timelineEvent.description || '').toLowerCase();
-                    if (eventType.includes('fund') || eventType.includes('closes') || eventType.includes('raises') || eventType.includes('continuation')) {
-                        eventsByYear[year].fundActivities.push(timelineEvent);
-                    } else if (eventType.includes('exit') || eventType.includes('sells') || eventType.includes('divests') || eventType.includes('sale')) {
-                        eventsByYear[year].exits.push(timelineEvent);
-                    } else if (eventType.includes('acquires') || eventType.includes('invests') || eventType.includes('acquisition') || eventType.includes('investment') || eventType.includes('add-on') || eventType.includes('partnership') || (eventType.includes('formation') && (eventDesc.includes('creates') || eventDesc.includes('acquires') || eventDesc.includes('partnership')))) {
-                        eventsByYear[year].acquisitions.push(timelineEvent);
-                    } else {
-                        eventsByYear[year].other.push(timelineEvent);
-                    }
-                });
-                
-                // Create consolidated events
-                Object.keys(eventsByYear).forEach(year => {
-                    const yearEvents = eventsByYear[year];
-                    
-                    // Fund activities
-                    if (yearEvents.fundActivities.length > 0) {
+                    const isFund = eventType.includes('fundraise') || eventType.includes('closes') || eventType.includes('continuation')
+                        || (eventType.includes('fund') && !eventType.includes('funding'))
+                        || (eventDesc.includes('fund') && !eventDesc.includes('funding') && (eventDesc.includes('raise') || eventDesc.includes('€') || eventDesc.includes('bn')));
+                    const isExit = eventType.includes('exit') || eventType.includes('divestment') || eventType.includes('sells') || eventType.includes('divests') || eventType.includes('sale')
+                        || eventDesc.includes('divest') || eventDesc.includes('divests') || eventDesc.includes('sold ') || eventDesc.includes('exits ');
+                    const isAcquisition = !isExit && (
+                        eventType.includes('acquires') || eventType.includes('invests') || eventType.includes('acquisition') || eventType.includes('investment') || eventType.includes('add-on') || eventType.includes('partnership')
+                        || (eventType.includes('stake') && !eventType.includes('divest'))
+                        || (eventType.includes('formation') && (eventDesc.includes('creates') || eventDesc.includes('acquires') || eventDesc.includes('partnership')))
+                    );
+
+                    const y = parseInt(year, 10);
+                    const co = timelineEvent.companyData;
+                    const companiesArr = co ? [co] : [];
+
+                    if (isFund) {
                         events.push({
-                            year: parseInt(year),
-                            type: 'fund',
-                            title: yearEvents.fundActivities.length === 1 ? yearEvents.fundActivities[0].event : `${yearEvents.fundActivities.length} Fund Activities`,
-                            description: yearEvents.fundActivities.length === 1 ? 
-                                yearEvents.fundActivities[0].description : 
-                                yearEvents.fundActivities.map(e => e.event).join(', '),
-                            icon: 'fa-coins',
-                            color: '#10b981',
-                            events: yearEvents.fundActivities
+                            year: y, type: 'fund', title: timelineEvent.event, description: timelineEvent.description,
+                            icon: 'fa-coins', color: '#10b981', events: [timelineEvent], company: co, companies: companiesArr
                         });
+                        return;
                     }
-                    
-                    // Acquisitions → show as "New Investments" with logos (always show clickable logos when >1)
-                    if (yearEvents.acquisitions.length > 0) {
-                        const seen = new Set();
-                        let withCompanyData = yearEvents.acquisitions.filter(e => e.companyData).map(e => e.companyData).filter(c => { const k = (c.company || '').toLowerCase(); if (seen.has(k)) return false; seen.add(k); return true; });
-                        // When multiple investments: enrich with portfolio companies for this year so logos section is complete
-                        if (yearEvents.acquisitions.length > 1) {
-                            firmCompanies.filter(c => c.entry === String(year)).forEach(c => {
-                                const k = (c.company || '').toLowerCase();
-                                if (!seen.has(k)) { seen.add(k); withCompanyData.push(c); }
-                            });
-                            withCompanyData = withCompanyData.sort((a, b) => (a.company || '').localeCompare(b.company || ''));
-                        }
-                        const primaryCompany = yearEvents.acquisitions.find(e => e.companyData)?.companyData || withCompanyData[0];
-                        const singleEvent = yearEvents.acquisitions.length === 1 && withCompanyData.length <= 1;
+                    if (isExit) {
                         events.push({
-                            year: parseInt(year),
-                            type: 'investment',
-                            title: singleEvent ? yearEvents.acquisitions[0].event : `${withCompanyData.length || yearEvents.acquisitions.length} New Investments`,
-                            description: yearEvents.acquisitions.length === 1 ?
-                                yearEvents.acquisitions[0].description :
-                                yearEvents.acquisitions.map(e => e.event).join(', '),
-                            icon: 'fa-handshake',
-                            color: '#8b5cf6',
-                            events: yearEvents.acquisitions,
-                            company: primaryCompany,
-                            companies: withCompanyData.length > 1 ? withCompanyData : []
+                            year: y, type: 'exit', title: timelineEvent.event, description: timelineEvent.description,
+                            icon: 'fa-sign-out-alt', color: '#ef4444', events: [timelineEvent], company: co, companies: companiesArr
                         });
+                        return;
                     }
-                    
-                    // Exits
-                    if (yearEvents.exits.length > 0) {
-                        // Check if any exit has company data for logo display
-                        const primaryCompany = yearEvents.exits.find(e => e.companyData)?.companyData;
-                        
+                    if (isAcquisition) {
                         events.push({
-                            year: parseInt(year),
-                            type: 'exit',
-                            title: yearEvents.exits.length === 1 ? yearEvents.exits[0].event : `${yearEvents.exits.length} Exits`,
-                            description: yearEvents.exits.length === 1 ? 
-                                yearEvents.exits[0].description : 
-                                yearEvents.exits.map(e => e.event).join(', '),
-                            icon: 'fa-sign-out-alt',
-                            color: '#ef4444',
-                            events: yearEvents.exits,
-                            company: primaryCompany,
-                            companies: yearEvents.exits.filter(e => e.companyData).map(e => e.companyData)
+                            year: y, type: 'investment', title: timelineEvent.event, description: timelineEvent.description,
+                            icon: 'fa-handshake', color: '#8b5cf6', events: [timelineEvent], company: co, companies: companiesArr
                         });
+                        return;
                     }
-                    
-                    // Other events (skip if it's an investment that portfolio will add with logo)
+
                     const norm = (s) => (s || '').replace(/\([^)]*\)/g, '').toLowerCase().replace(/\s+/g, ' ').trim();
-                    yearEvents.other.forEach(event => {
-                        const eventNorm = norm(event.event);
-                        const isInvestment = (event.description || '').toLowerCase().includes('investment') || (event.event || '').toLowerCase().includes('investment');
-                        const portfolioHasSame = isInvestment && firmCompanies.some(c => c.entry === String(year) && norm(c.company) === eventNorm);
-                        if (portfolioHasSame) return; // Let portfolio add it with company/logo
-                        events.push({
-                            year: parseInt(year),
-                            type: event.event.toLowerCase().includes('founded') ? 'founding' : 'milestone',
-                            title: event.event,
-                            description: event.description,
-                            icon: event.event.toLowerCase().includes('founded') ? 'fa-flag-checkered' : 'fa-star',
-                            color: event.event.toLowerCase().includes('founded') ? '#667eea' : '#f59e0b'
-                        });
+                    const eventNorm = norm(timelineEvent.event);
+                    const isInvestmentOther = eventDesc.includes('investment') || eventType.includes('investment');
+                    const portfolioHasSame = isInvestmentOther && firmCompanies.some(c => c.entry === String(year) && norm(c.company) === eventNorm);
+                    if (portfolioHasSame) return;
+
+                    events.push({
+                        year: y,
+                        type: eventType.includes('founded') ? 'founding' : 'milestone',
+                        title: timelineEvent.event,
+                        description: timelineEvent.description,
+                        icon: eventType.includes('founded') ? 'fa-flag-checkered' : 'fa-star',
+                        color: eventType.includes('founded') ? '#667eea' : '#f59e0b',
+                        events: [timelineEvent],
+                        company: co,
+                        companies: companiesArr
                     });
                 });
             } else if (firm.founded) {
@@ -1702,13 +1658,89 @@ async function loadFirmTimeline(firm, firmName) {
                 }
             });
             
-            // Display timeline (sorting handled in displayTimeline)
-            displayTimeline(events);
+            // Merge same-calendar-year investment cards (curated + portfolio) into one horizontal card
+            displayTimeline(consolidateTimelineInvestments(events));
         }
     } catch (error) {
         console.error('Error loading timeline:', error);
         document.getElementById('firmTimeline').innerHTML = '<p style="color: var(--text-secondary);">Unable to load timeline.</p>';
     }
+}
+
+/** One investment card per year when multiple investment-type events exist (matches earlier timeline UX). */
+function consolidateTimelineInvestments(events) {
+    const isInv = (e) => e.type === 'investment' || e.type === 'acquisition';
+    const withIdx = events.map((e, i) => Object.assign({ _ti: i }, e));
+    withIdx.sort((a, b) => a._ti - b._ti);
+    const invByYear = new Map();
+    for (const e of withIdx) {
+        if (!isInv(e)) continue;
+        if (!invByYear.has(e.year)) invByYear.set(e.year, []);
+        invByYear.get(e.year).push(e);
+    }
+    const mergedForYear = new Map();
+    for (const [y, list] of invByYear) {
+        if (list.length > 1) {
+            const minTi = Math.min(...list.map((x) => x._ti));
+            mergedForYear.set(y, { minTi, card: buildMergedInvestmentTimelineCard(list, y) });
+        }
+    }
+    const skipTi = new Set();
+    for (const [y, list] of invByYear) {
+        if (mergedForYear.has(y)) list.forEach((e) => skipTi.add(e._ti));
+    }
+    const out = [];
+    for (const e of withIdx) {
+        if (skipTi.has(e._ti)) {
+            const m = mergedForYear.get(e.year);
+            if (m && e._ti === m.minTi) out.push(m.card);
+            continue;
+        }
+        const { _ti, ...rest } = e;
+        out.push(rest);
+    }
+    return out;
+}
+
+function buildMergedInvestmentTimelineCard(invItems, year) {
+    const clean = invItems.map((o) => {
+        const { _ti, ...rest } = o;
+        return rest;
+    });
+    const parts = [];
+    const companies = [];
+    const seen = new Set();
+    const addCo = (c) => {
+        if (!c) return;
+        const name = (c.company || c.name || '').trim();
+        if (!name) return;
+        const key = name.toLowerCase();
+        if (seen.has(key)) return;
+        seen.add(key);
+        companies.push(c);
+    };
+    for (const it of clean) {
+        const t = (it.title && String(it.title).trim()) || '';
+        const d = (it.description && String(it.description).trim()) || '';
+        const line = t || d;
+        if (line) {
+            const short = line.replace(/^Investment in\s+/i, '');
+            if (!parts.includes(short)) parts.push(short);
+        }
+        addCo(it.company);
+        (it.companies || []).forEach(addCo);
+    }
+    let description = parts.join(', ');
+    if (description.length > 400) description = description.slice(0, 397) + '…';
+    return {
+        year,
+        type: 'investment',
+        title: `${clean.length} New Investments`,
+        description,
+        icon: 'fa-handshake',
+        color: '#8b5cf6',
+        companies: companies.length ? companies : undefined
+    };
 }
 
 function loadCompanyUpdates(firm) {
@@ -3101,7 +3133,7 @@ function formatRecentActivity(text, limit, yearFilter) {
     const filteredBullets = (yearFilter && typeof yearFilter === 'number') ? bullets.filter(b => String(b.year) === String(yearFilter)) : bullets;
     const totalCount = filteredBullets.length;
     if (totalCount === 0) {
-        const fallbackHtml = `<p style="font-size:0.65rem; color:#64748b; margin:0;">No 2025 activity reported.</p>`;
+        const fallbackHtml = `<p style="font-size:0.65rem; color:#64748b; margin:0;">${yearFilter ? 'No activity for the selected period.' : 'No recent activity listed.'}</p>`;
         return { html: fallbackHtml, totalCount: 0, fullHtml: fallbackHtml };
     }
     const limitBullets = limit != null ? filteredBullets.slice(0, limit) : filteredBullets;

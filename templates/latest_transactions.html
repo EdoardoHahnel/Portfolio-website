@@ -1,0 +1,336 @@
+{% extends "base.html" %}
+
+{% block title %}Latest Transactions{% endblock %}
+
+{% block extra_css %}
+<style>
+    .lt-wrap { max-width: 1100px; margin: 0 auto; padding: 0 1rem 2rem; }
+    .lt-intro {
+        font-size: 0.95rem;
+        color: var(--text-secondary, #64748b);
+        line-height: 1.55;
+        margin-bottom: 1.25rem;
+    }
+    .lt-intro a { color: #4c1d95; font-weight: 500; }
+    .lt-controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        align-items: center;
+        margin-bottom: 1.25rem;
+    }
+    .lt-controls .search-box {
+        flex: 1;
+        min-width: 200px;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 0.85rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        background: #fff;
+    }
+    .lt-controls .search-box input {
+        border: none;
+        outline: none;
+        flex: 1;
+        font-size: 0.9rem;
+    }
+    .lt-controls select {
+        padding: 0.5rem 0.75rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        background: #fff;
+    }
+    .lt-meta {
+        font-size: 0.8rem;
+        color: #64748b;
+        margin-left: auto;
+    }
+    .lt-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+    }
+    .lt-card {
+        background: #fff;
+        border: 1px solid #e8e8e8;
+        border-radius: 10px;
+        padding: 1rem 1.15rem;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .lt-card:hover {
+        border-color: #c4b5fd;
+        box-shadow: 0 4px 14px rgba(76, 29, 149, 0.08);
+    }
+    .lt-card-top {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0.5rem 1rem;
+        align-items: flex-start;
+        margin-bottom: 0.5rem;
+    }
+    .lt-date {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: #4c1d95;
+    }
+    .lt-badges { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .lt-badge {
+        font-size: 0.68rem;
+        font-weight: 600;
+        padding: 0.15rem 0.45rem;
+        border-radius: 4px;
+        background: #ede9fe;
+        color: #5b21b6;
+    }
+    .lt-badge.type-divestment { background: #ffedd5; color: #c2410c; }
+    .lt-badge.type-acquisition { background: #dbeafe; color: #1d4ed8; }
+    .lt-badge.type-investment { background: #d1fae5; color: #047857; }
+    .lt-title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0 0 0.25rem;
+        line-height: 1.3;
+    }
+    .lt-pe {
+        font-size: 0.88rem;
+        color: #4c1d95;
+        font-weight: 600;
+        margin-bottom: 0.35rem;
+    }
+    .lt-sub {
+        font-size: 0.8rem;
+        color: #64748b;
+        margin-bottom: 0.5rem;
+    }
+    .lt-desc {
+        font-size: 0.85rem;
+        color: #475569;
+        line-height: 1.5;
+        margin: 0;
+    }
+    .lt-card-footer {
+        margin-top: 0.75rem;
+        padding-top: 0.65rem;
+        border-top: 1px solid #f1f5f9;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        align-items: center;
+    }
+    .lt-link {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #4c1d95;
+        text-decoration: none;
+    }
+    .lt-link:hover { text-decoration: underline; }
+    .lt-loading, .lt-empty {
+        text-align: center;
+        padding: 2.5rem 1rem;
+        color: #64748b;
+    }
+    .lt-loading .spinner {
+        width: 36px; height: 36px;
+        border: 3px solid #e9d5ff;
+        border-top-color: #4c1d95;
+        border-radius: 50%;
+        animation: ltspin 0.8s linear infinite;
+        margin: 0 auto 1rem;
+    }
+    @keyframes ltspin { to { transform: rotate(360deg); } }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="page-header scroll-reveal lt-wrap" style="padding-top: 1rem;">
+    <h1 class="page-title">Latest Transactions</h1>
+    <p class="page-subtitle">The most recent private equity deals in our Nordic deal database — investments, acquisitions, divestments, and exits.</p>
+    <p class="lt-intro">
+        Data is sourced from the same deal feed as our <a href="/deal-flow">Deal Flow</a> tracker, sorted with the newest announcements first.
+        Use search and filters to narrow by company, investor, deal type, or year.
+    </p>
+</div>
+
+<div class="content-card scroll-reveal-item lt-wrap" style="margin-top: 0;">
+    <div class="content-card-body">
+        <div class="lt-controls">
+            <div class="search-box">
+                <i class="fas fa-search" style="color:#94a3b8;"></i>
+                <input type="text" id="ltSearch" placeholder="Search company, investor, sector…" autocomplete="off">
+            </div>
+            <select id="ltDealType" aria-label="Deal type">
+                <option value="">All deal types</option>
+            </select>
+            <select id="ltYear" aria-label="Year">
+                <option value="">All years</option>
+            </select>
+            <span class="lt-meta" id="ltStats">Loading…</span>
+        </div>
+
+        <div id="ltLoading" class="lt-loading">
+            <div class="spinner"></div>
+            <p>Loading latest transactions…</p>
+        </div>
+        <div id="ltEmpty" class="lt-empty hidden">
+            <p>No deals match your filters.</p>
+        </div>
+        <div id="ltGrid" class="lt-grid hidden"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+(function () {
+    const API = '/api/latest-transactions?limit=500';
+    const grid = document.getElementById('ltGrid');
+    const loading = document.getElementById('ltLoading');
+    const empty = document.getElementById('ltEmpty');
+    const stats = document.getElementById('ltStats');
+    const searchEl = document.getElementById('ltSearch');
+    const dealTypeEl = document.getElementById('ltDealType');
+    const yearEl = document.getElementById('ltYear');
+
+    let allDeals = [];
+    let filtersBuilt = false;
+
+    function escapeHtml(s) {
+        if (!s) return '';
+        const d = document.createElement('div');
+        d.textContent = s;
+        return d.innerHTML;
+    }
+
+    function formatDate(raw) {
+        if (!raw) return '—';
+        const s = String(raw).trim().slice(0, 10);
+        if (s.length === 10 && s[4] === '-' && s[7] === '-') return s;
+        return String(raw).slice(0, 16);
+    }
+
+    function badgeClass(dealType) {
+        const t = (dealType || '').toLowerCase();
+        if (t.includes('divest')) return 'type-divestment';
+        if (t.includes('acquisition')) return 'type-acquisition';
+        if (t.includes('invest')) return 'type-investment';
+        return '';
+    }
+
+    function populateFiltersFromPayload(payload) {
+        if (filtersBuilt || !payload) return;
+        const typeArr = payload.deal_types || [];
+        const yearArr = payload.years || [];
+        typeArr.forEach(function (t) {
+            const opt = document.createElement('option');
+            opt.value = t;
+            opt.textContent = t;
+            dealTypeEl.appendChild(opt);
+        });
+        yearArr.forEach(function (y) {
+            const opt = document.createElement('option');
+            opt.value = y;
+            opt.textContent = y;
+            yearEl.appendChild(opt);
+        });
+        filtersBuilt = true;
+    }
+
+    function buildQuery() {
+        const params = new URLSearchParams();
+        params.set('limit', '500');
+        const q = searchEl.value.trim();
+        if (q) params.set('q', q);
+        const dt = dealTypeEl.value;
+        if (dt) params.set('deal_type', dt);
+        const y = yearEl.value;
+        if (y) params.set('year', y);
+        return '/api/latest-transactions?' + params.toString();
+    }
+
+    function render(deals, payload) {
+        grid.innerHTML = '';
+        if (!deals.length) {
+            grid.classList.add('hidden');
+            empty.classList.remove('hidden');
+            stats.textContent = payload && payload.matched === 0
+                ? '0 deals match'
+                : '0 shown';
+            return;
+        }
+        empty.classList.add('hidden');
+        grid.classList.remove('hidden');
+        const shown = deals.length;
+        const matched = payload && typeof payload.matched === 'number' ? payload.matched : shown;
+        const total = payload && typeof payload.total_in_file === 'number' ? payload.total_in_file : '—';
+        stats.textContent = 'Showing ' + shown + ' of ' + matched + ' matched (' + total + ' in database)';
+
+        deals.forEach(function (d) {
+            const card = document.createElement('article');
+            card.className = 'lt-card';
+            const type = escapeHtml(d.deal_type || 'Deal');
+            const bc = badgeClass(d.deal_type);
+            const url = (d.url || '').trim();
+            const size = (d.deal_size || '').trim();
+            const geo = (d.geography || '').trim();
+            const sector = (d.sector || '').trim();
+            const subParts = [sector, geo, size].filter(Boolean);
+            card.innerHTML =
+                '<div class="lt-card-top">' +
+                    '<span class="lt-date">' + escapeHtml(formatDate(d.date)) + '</span>' +
+                    '<div class="lt-badges">' +
+                        '<span class="lt-badge ' + bc + '">' + type + '</span>' +
+                        (d.status ? '<span class="lt-badge">' + escapeHtml(d.status) + '</span>' : '') +
+                    '</div>' +
+                '</div>' +
+                '<h2 class="lt-title">' + escapeHtml(d.company || '—') + '</h2>' +
+                '<div class="lt-pe"><i class="fas fa-building" style="opacity:.7;margin-right:.35rem;"></i>' + escapeHtml(d.pe_firm || '—') + '</div>' +
+                (subParts.length ? '<div class="lt-sub">' + escapeHtml(subParts.join(' · ')) + '</div>' : '') +
+                (d.description ? '<p class="lt-desc">' + escapeHtml(d.description) + '</p>' : '') +
+                (url ? '<div class="lt-card-footer"><a class="lt-link" href="' + escapeHtml(url) + '" target="_blank" rel="noopener noreferrer">Source / link <i class="fas fa-external-link-alt" style="font-size:0.7rem;"></i></a></div>' : '');
+            grid.appendChild(card);
+        });
+    }
+
+    async function load(initial) {
+        loading.classList.remove('hidden');
+        grid.classList.add('hidden');
+        empty.classList.add('hidden');
+        try {
+            const url = initial ? API : buildQuery();
+            const res = await fetch(url, { cache: 'no-store' });
+            const payload = await res.json();
+            if (!payload.success) throw new Error(payload.message || 'Failed to load');
+            allDeals = payload.deals || [];
+            populateFiltersFromPayload(payload);
+            render(allDeals, payload);
+        } catch (e) {
+            stats.textContent = 'Could not load deals';
+            empty.classList.remove('hidden');
+            empty.querySelector('p').textContent = (e && e.message) ? e.message : 'Error loading data.';
+        } finally {
+            loading.classList.add('hidden');
+        }
+    }
+
+    let debounce;
+    function scheduleReload() {
+        clearTimeout(debounce);
+        debounce = setTimeout(function () { load(false); }, 280);
+    }
+
+    searchEl.addEventListener('input', scheduleReload);
+    dealTypeEl.addEventListener('change', function () { load(false); });
+    yearEl.addEventListener('change', function () { load(false); });
+
+    load(true);
+})();
+</script>
+{% endblock %}

@@ -131,6 +131,7 @@ def _expand_portfolio_company_description(desc, name, sector, country, firm_name
 # PE firms whose portfolio rows come from pe_firms_database.json (not portfolio_enriched.json)
 _CURATED_PORTFOLIO_FIRM_SOURCES = frozenset({
     'Polaris', 'FSN Capital', 'Nordstjernan', 'Valedo Partners', 'IK Partners', 'Equip',
+    'Fidelio Capital',
 })
 
 
@@ -524,6 +525,98 @@ def deal_flow():
     Deal flow tracker
     """
     return render_template('deal_flow.html')
+
+
+def _parse_deal_date_for_sort(raw):
+    """Parse deal_flow_database date field for descending sort (supports YYYY-MM-DD and timestamps)."""
+    if not raw:
+        return datetime(1900, 1, 1)
+    s = str(raw).strip()
+    if len(s) >= 10 and s[4] == '-' and s[7] == '-' and s[:4].isdigit():
+        day_part = s[:10]
+        for fmt in ('%Y-%m-%d',):
+            try:
+                return datetime.strptime(day_part, fmt)
+            except ValueError:
+                break
+    return datetime(1900, 1, 1)
+
+
+@app.route('/latest-transactions/')
+@app.route('/latest-transactions')
+def latest_transactions():
+    """Latest Nordic private equity transactions (newest first)."""
+    return render_template('latest_transactions.html')
+
+
+@app.route('/api/latest-transactions/', methods=['GET'])
+@app.route('/api/latest-transactions', methods=['GET'])
+def get_latest_transactions():
+    """
+    Deals from deal_flow_database.json sorted by date descending.
+    Query: limit (default 200, max 500), deal_type, year, q (search substring).
+    """
+    try:
+        limit = request.args.get('limit', default=200, type=int)
+        limit = max(1, min(limit, 500))
+        deal_type_filter = (request.args.get('deal_type') or '').strip().lower()
+        year_filter = request.args.get('year', type=int)
+        q = (request.args.get('q') or '').strip().lower()
+
+        with open(data_path('deal_flow_database.json'), 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        deals = list(data.get('deals', []))
+
+        deal_types_facet = sorted(
+            {(d.get('deal_type') or '').strip() for d in deals if (d.get('deal_type') or '').strip()},
+            key=str.lower,
+        )
+        years_facet = sorted(
+            {
+                str(d.get('date') or '')[:4]
+                for d in deals
+                if len(str(d.get('date') or '')) >= 4 and str(d.get('date'))[:4].isdigit()
+            },
+            reverse=True,
+        )
+
+        def match(d):
+            if deal_type_filter:
+                dt = (d.get('deal_type') or '').strip().lower()
+                if dt != deal_type_filter.lower():
+                    return False
+            if year_filter is not None:
+                raw = d.get('date') or ''
+                if not str(raw).strip().startswith(str(year_filter)):
+                    return False
+            if q:
+                blob = ' '.join([
+                    str(d.get('company') or ''),
+                    str(d.get('pe_firm') or ''),
+                    str(d.get('description') or ''),
+                    str(d.get('sector') or ''),
+                    str(d.get('geography') or ''),
+                ]).lower()
+                if q not in blob:
+                    return False
+            return True
+
+        filtered = [d for d in deals if match(d)]
+        filtered.sort(key=lambda x: _parse_deal_date_for_sort(x.get('date')), reverse=True)
+        sliced = filtered[:limit]
+
+        return jsonify({
+            'success': True,
+            'deals': sliced,
+            'returned': len(sliced),
+            'matched': len(filtered),
+            'total_in_file': len(deals),
+            'deal_types': deal_types_facet,
+            'years': years_facet,
+            'metadata': data.get('metadata', {}),
+        })
+    except Exception as e:
+        return jsonify({'success': False, 'message': str(e)}), 500
 
 
 @app.route('/api/deal-flow', methods=['GET'])
@@ -1046,7 +1139,7 @@ def get_pe_firm_detail(firm_name):
 
                 # For selected firms with curated portfolio_companies, prioritize curated records.
                 # Keep Altor and Adelis Equity on enriched source to preserve stronger company logo/website coverage.
-                curated_firms = ['Polaris', 'FSN Capital', 'Nordstjernan', 'Valedo Partners', 'IK Partners']
+                curated_firms = ['Polaris', 'FSN Capital', 'Nordstjernan', 'Valedo Partners', 'IK Partners', 'Fidelio Capital']
                 if canonical_firm_name in curated_firms and firm_metadata.get('portfolio_companies'):
                     for pc in firm_metadata['portfolio_companies']:
                         company_data = {
@@ -1150,6 +1243,15 @@ def get_pe_firm_detail(firm_name):
             if firm_data.get('company_updates') or firm_data.get('recent_activity'):
                 firm_data['real_news'] = []
                 firm_data['total_news_count'] = 0
+            # Recent Activity card: only the five latest by date; keep full list for "View all" modal
+            _cu = firm_data.get('company_updates')
+            if isinstance(_cu, list) and len(_cu) > 0:
+                _sorted = sorted(_cu, key=lambda x: x.get('date') or '', reverse=True)
+                if len(_sorted) > 5:
+                    firm_data['company_updates_full'] = _sorted
+                    firm_data['company_updates'] = _sorted[:5]
+                else:
+                    firm_data['company_updates'] = _sorted
             # Ensure team is always a list (some firms e.g. Helix Kapital lack it in JSON)
             firm_data['team'] = firm_data.get('team') or []
             

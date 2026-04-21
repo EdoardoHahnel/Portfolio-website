@@ -802,7 +802,7 @@
         "next_fund": "Deployment across Amplio I",
         "strategy": "Nordic lower mid-market (SEK 100–500M EV); Business Services and IT & Technology Services; first institutional owner, buy-and-build"
       },
-      "recent_activity": "2026\n• Divests Multisoft (Mar) – low-code software; to SEB Private Equity; tripled revenue under ownership\n• Tedge Energy acquires Kylmontage (Jan) – cooling solutions add-on\n\n2025\n• Invests in S R Intelligence (Mar) – regulatory compliance, personnel security; Stockholm\n• Divests Francks Kylindustri – industrial refrigeration; to IK Partners; 4x revenue, 5x profitability\n• Tedge acquires Berghogens – energy optimisation add-on\n• SELATEK acquires TSTgruppen – revenue exceeds SEK 2bn; security and electrical platform\n\n2024\n• Segulah rebrands to Amplio Private Equity (Feb)\n\nPortfolio: S R Intelligence, Tedge, Co-native, SELATEK, IT-Total, Hermes, Pelly Group (Amplio I & Segulah V)",
+      "recent_activity": "2026\n• Divests SELATEK to IK Partners (Apr) – first exit for Amplio I\n• Divests Multisoft (Mar) – Fund V successful exit\n• Tedge Energy acquires Kylmontage (Jan) – cooling solutions\n\n2025\n• Partners with SRI (Mar); forms Tedge Energy with Ferla / Edekyl & Värme (Feb)\n• Divests Francks Kylindustri to IK (Aug); Tedge and SELATEK add-on programmes\n\n2024\n• Segulah evolves into Amplio Private Equity (Feb); Co-native Retune; portfolio build-outs across SELATEK, Francks/Therma, Multisoft, IT-Total\n\n2023\n• Partners with Enstar on energy optimisation (Jun); Co-native and SELATEK M&A; Beerenberg listed (Segulah IV, Oct)\n\nPortfolio: S R Intelligence, Tedge, Co-native, IT-Total, Hermes, Pelly Group (Amplio I & legacy Segulah V); SELATEK & Multisoft exited",
       "portfolio_companies": [
         {
           "name": "S R Intelligence (SRI)",
@@ -833,8 +833,8 @@
           "sector": "Business Services",
           "country": "Nordics",
           "entry_year": "2021",
-          "status": "Active",
-          "detailed_description": "Leading provider of security solutions, electrical installation & automation"
+          "status": "Divested",
+          "detailed_description": "Security, electrical installation & automation; divested to IK Partners Apr 2026 (first Amplio I exit)"
         },
         {
           "name": "Multisoft",
@@ -842,7 +842,7 @@
           "country": "Nordics",
           "entry_year": "2021",
           "status": "Divested",
-          "detailed_description": "Low code software provider (Segulah V); divested 2026"
+          "detailed_description": "Low-code software (Segulah V); divested Mar 2026"
         },
         {
           "name": "IT-Total",
@@ -871,103 +871,268 @@
       ],
       "company_updates": [
         {
+          "date": "2026-04-20",
+          "title": "Amplio divests SELATEK to IK Partners",
+          "text": "Highly successful first exit for Amplio I."
+        },
+        {
+          "date": "2026-03-31",
+          "title": "SELATEK strengthens its presence in Småland through the acquisition of Växjö Eltjänst",
+          "text": "Electrical services add-on in Småland."
+        },
+        {
           "date": "2026-03-05",
-          "title": "Amplio divests Multisoft",
-          "text": "Successful exit for Fund V; to SEB Private Equity.",
+          "title": "Amplio divests Multisoft in another successful exit for Fund V",
+          "text": "Successful exit for Fund V.",
           "link": "https://www.amplio.se/amplio-divests-multisoft/"
         },
         {
           "date": "2026-01-20",
-          "title": "Tedge Energy acquires Kylmontage",
-          "text": "Strengthens offering within cooling solutions.",
+          "title": "Tedge Energy acquires Kylmontage and strengthens its offering within cooling solutions",
+          "text": "Cooling solutions add-on.",
           "link": "https://www.amplio.se/tedge-energy-acquires-kylmontage/"
         },
         {
           "date": "2025-10-23",
-          "title": "SELATEK acquires TSTgruppen",
-          "text": "Surpasses two billion SEK in revenue.",
+          "title": "SELATEK acquires TSTgruppen and surpasses two billion SEK in revenue",
+          "text": "Platform surpasses SEK 2bn revenue.",
           "link": "https://www.amplio.se/selatek-acquires-tstgruppen/"
         },
         {
           "date": "2025-09-25",
-          "title": "Tedge Energy acquires Berghogens",
-          "text": "Strengthens presence in West Sweden.",
+          "title": "Tedge Energy acquires Berghogens and strengthens its presence in West Sweden",
+          "text": "Energy optimisation platform expansion.",
           "link": "https://www.amplio.se/tedge-acquires-berghogens/"
         },
         {
           "date": "2025-08-20",
-          "title": "SELATEK acquires Triator Brand- & Säkerhetsteknik",
-          "text": "Strengthens security offering; establishes presence in Växjö.",
+          "title": "SELATEK acquires Triator Brand- & Säkerhetsteknik – strengthens security offering and establishes presence in Växjö",
+          "text": "Security and presence in Växjö.",
           "link": "https://www.amplio.se/selatek-acquires-triator/"
         },
         {
           "date": "2025-08-15",
-          "title": "SELATEK acquires Kelmo",
-          "text": "Strengthens industrial automation offering.",
+          "title": "SELATEK acquires Kelmo and strengthens its offering in industrial automation",
+          "text": "Industrial automation add-on.",
           "link": "https://www.amplio.se/selatek-acquires-kelmo/"
         },
         {
           "date": "2025-08-12",
-          "title": "Amplio divests Francks Kylindustri",
+          "title": "Amplio divests Francks Kylindustri in another successful exit for Fund V",
           "text": "Successful exit for Fund V; to IK Partners.",
           "link": "https://www.amplio.se/amplio-divests-francks-in-another-successful-exit-for-fund-v/"
         },
         {
           "date": "2025-06-25",
-          "title": "SELATEK acquires Elektromontage Power",
-          "text": "Low and high voltage power solutions.",
+          "title": "SELATEK acquires Elektromontage Power and strengthens its offering in low and high voltage power solutions",
+          "text": "Power solutions add-on.",
           "link": "https://www.amplio.se/selatek-acquires-elektromontage-power/"
         },
         {
           "date": "2025-05-14",
-          "title": "Multisoft acquires Mysoft",
-          "text": "Establishes Norwegian presence.",
+          "title": "Multisoft establishes Norwegian presence through the acquisition of Mysoft",
+          "text": "Norwegian expansion.",
           "link": "https://www.amplio.se/multisoft-acquires-mysoft/"
         },
         {
           "date": "2025-03-13",
-          "title": "Amplio partners with SRI",
-          "text": "Personnel security and regulatory compliance specialist.",
+          "title": "Amplio partners with SRI, a leading specialist within personnel security and regulatory compliance in Sweden",
+          "text": "Partnership with S R Intelligence (SRI).",
           "link": "https://www.amplio.se/amplio-partners-with-sri-a-leading-specialist-within-personnel-security-and-regulatory-compliance-in-sweden/"
         },
         {
           "date": "2025-02-27",
-          "title": "Tedge Energy formed",
-          "text": "Amplio and Ferla partner with Edekyl & Värme for energy optimization platform.",
+          "title": "Amplio and Ferla partners up with Edekyl & Värme to form Tedge Energy, a leading group within energy optimization",
+          "text": "Formation of Tedge Energy platform.",
           "link": "https://www.amplio.se/amplio-and-ferla-partners-up-with-edekyl/"
         },
         {
           "date": "2025-02-04",
-          "title": "Francks Kylindustri acquires NR Kyl",
-          "text": "Strengthens position in Gothenburg region.",
+          "title": "Francks Kylindustri strengthens its position in the Gothenburg region through acquiring NR Kyl",
+          "text": "Gothenburg region expansion.",
           "link": "https://www.amplio.se/francks-acquires-nr-kyl/"
+        },
+        {
+          "date": "2025-01-10",
+          "title": "SELATEK acquires Järfälla Låsservice",
+          "text": "Security and locks services add-on."
+        },
+        {
+          "date": "2024-12-02",
+          "title": "Therma Industri and Francks Kylindustri strengthen the position in Telemark through the acquisition of Storm Kulde",
+          "text": "Southwest of Oslo; cooling and heating."
+        },
+        {
+          "date": "2024-11-22",
+          "title": "Therma Industri and Francks Kylindustri strengthen the position in Trøndelag through the acquisition of Naturlig Kulde",
+          "text": "Mid-Norway expansion."
+        },
+        {
+          "date": "2024-11-13",
+          "title": "Co-native acquires Retune, strengthening its position as the leading public cloud specialist group in the Nordics",
+          "text": "Public cloud specialist group."
+        },
+        {
+          "date": "2024-08-21",
+          "title": "Elgruppen i Sölvesborg joins SELATEK",
+          "text": "Electrical group integration."
+        },
+        {
+          "date": "2024-07-12",
+          "title": "Francks Kylindustri acquires Svedan Industri Køleanlæg, creating a leading industrial cooling and heating specialist in Denmark",
+          "text": "Denmark industrial cooling and heating."
+        },
+        {
+          "date": "2024-06-25",
+          "title": "Therma Industri and Francks Kylindustri strengthen the position in Western Norway through the acquisition of Florø Kjøleservice",
+          "text": "Western Norway."
+        },
+        {
+          "date": "2024-05-20",
+          "title": "SELATEK acquires Newsafe and significantly strengthens its offering within security solutions",
+          "text": "Security solutions."
+        },
+        {
+          "date": "2024-03-07",
+          "title": "Francks Kylindustri continues the expansion in Denmark through the acquisition of NH3 Kølegruppen",
+          "text": "Denmark expansion."
+        },
+        {
+          "date": "2024-02-29",
+          "title": "SELATEK acquires Deltatec",
+          "text": "Electrical / automation add-on."
+        },
+        {
+          "date": "2024-02-01",
+          "title": "Multisoft expands its product suite through the acquisition of the cloud-based software platform Workbuster",
+          "text": "Cloud HR software add-on."
+        },
+        {
+          "date": "2024-02-01",
+          "title": "Segulah evolves into Amplio Private Equity (‘Amplio’)",
+          "text": "Rebrand and new firm identity."
+        },
+        {
+          "date": "2023-12-20",
+          "title": "IT-Total strengthens Managed Services offering through the acquisition of Aura and strategic partnership with Sudo",
+          "text": "Managed services and partnerships."
+        },
+        {
+          "date": "2023-12-15",
+          "title": "SELATEK expands to Jönköping through the acquisition of Elmontage",
+          "text": "Jönköping expansion."
+        },
+        {
+          "date": "2023-10-06",
+          "title": "Segulah IV’s portfolio company Beerenberg has been listed on Euronext Growth Oslo",
+          "text": "Legacy Segulah IV portfolio milestone."
+        },
+        {
+          "date": "2023-08-07",
+          "title": "Francks Kylindustri strengthens the position in Småland through the acquisition of LS Värmepumpservice",
+          "text": "Småland heat pump services."
+        },
+        {
+          "date": "2023-06-30",
+          "title": "SELATEK continues to expand in south-eastern Sweden through the acquisition of ELIAS Syd",
+          "text": "South-eastern Sweden."
+        },
+        {
+          "date": "2023-06-28",
+          "title": "SELATEK expands in south-eastern Sweden through the acquisition of Brand El & Säkerhetsteknik i Blekinge and reaches over one billion SEK in revenues",
+          "text": "Passes SEK 1bn revenue."
+        },
+        {
+          "date": "2023-06-21",
+          "title": "Amplio partners with Enstar to build a leading platform within energy optimisation",
+          "text": "Energy optimisation platform partnership."
+        },
+        {
+          "date": "2023-06-19",
+          "title": "Therma Industri and Francks Kylindustri strengthen the position in Western Norway through the acquisition of Bergen Kuldeteknikk",
+          "text": "Western Norway."
+        },
+        {
+          "date": "2023-06-16",
+          "title": "Asurgent joins Co-native, creating the market leader for Microsoft Cloud services in Sweden",
+          "text": "Microsoft cloud services consolidation."
+        },
+        {
+          "date": "2023-06-15",
+          "title": "SELATEK strengthens its position further in Southern Sweden through the acquisition of Elservice Strömsnäsbruk-Markaryd",
+          "text": "Southern Sweden electrical services."
+        },
+        {
+          "date": "2023-05-26",
+          "title": "Co-native expands the group through the acquisition of AWS cloud specialist Elastic Move",
+          "text": "AWS cloud specialist add-on."
+        },
+        {
+          "date": "2023-05-26",
+          "title": "Therma Industri och Francks Kylindustri strengthen the position in central Norway through the acquisition of Trøndelag Kuldeteknikk",
+          "text": "Central Norway."
+        },
+        {
+          "date": "2023-04-24",
+          "title": "Co-native acquires the AWS cloud specialist Buzzcloud",
+          "text": "AWS cloud add-on."
+        },
+        {
+          "date": "2023-03-22",
+          "title": "SELATEK strengthens its position in Southern Sweden through the acquisition of Widings Elektriska",
+          "text": "Southern Sweden."
+        },
+        {
+          "date": "2023-01-16",
+          "title": "Francks Kylindustri and Therma Industri continue the expansion in Norway through the acquisition of Haugaland Kjøleservice",
+          "text": "Norway expansion."
         }
       ],
       "timeline": [
+        {
+          "year": 2023,
+          "event": "Enstar energy optimisation partnership",
+          "description": "Partners with Enstar to build a leading energy optimisation platform"
+        },
         {
           "year": 2024,
           "event": "Amplio rebrand",
           "description": "Segulah evolves into Amplio Private Equity"
         },
         {
+          "year": 2024,
+          "event": "Co-native Retune",
+          "description": "Acquires Retune; strengthens Nordic public cloud position"
+        },
+        {
           "year": 2025,
-          "event": "S R Intelligence",
-          "description": "Investment in regulatory compliance specialist"
+          "event": "Tedge Energy formed",
+          "description": "With Ferla and Edekyl & Värme; energy optimization group"
+        },
+        {
+          "year": 2025,
+          "event": "S R Intelligence partnership",
+          "description": "Partners with SRI — personnel security and regulatory compliance"
+        },
+        {
+          "year": 2025,
+          "event": "Francks Kylindustri exit",
+          "description": "Divests to IK Partners; successful Fund V exit"
         },
         {
           "year": 2026,
           "event": "Multisoft exit",
-          "description": "Divests to SEB Private Equity"
+          "description": "Another successful exit for Fund V"
         },
         {
           "year": 2026,
-          "event": "Tedge Kylmontage",
-          "description": "Tedge Energy acquires Kylmontage (cooling solutions)"
+          "event": "SELATEK exit",
+          "description": "Divests SELATEK to IK Partners — first exit for Amplio I"
         },
         {
-          "year": 2025,
-          "event": "Francks exit",
-          "description": "Divests industrial refrigeration to IK Partners"
+          "year": 2026,
+          "event": "Tedge acquires Kylmontage",
+          "description": "Strengthens cooling solutions offering"
         }
       ]
     },
@@ -1075,138 +1240,483 @@
       },
       "company_updates": [
         {
+          "date": "2026-03-31",
+          "type": "Exit",
+          "title": "Altor divests Hamlet Protein to Royal Agrifirm Group",
+          "text": "Divestment to Royal Agrifirm Group."
+        },
+        {
+          "date": "2026-03-24",
+          "type": "Investment",
+          "title": "Altor acquires majority stake in Eltera",
+          "text": "Altor partners with management and acquires a majority stake in Eltera."
+        },
+        {
+          "date": "2025-12-08",
+          "type": "Investment",
+          "title": "Altor acquires majority stake in Evac",
+          "text": "Altor acquires a majority stake in Evac and partners with management."
+        },
+        {
           "date": "2025-10-24",
           "type": "Exit",
-          "title": "Altor divests RevolutionRace",
-          "text": "Divests all 16.3M shares at SEK 60. ~10x sales growth during 8-year ownership; sales to ~SEK 2bn.",
-          "link": "https://altor.com/altor-divests-all-its-shares-in-revolutionrace"
+          "title": "Altor divests all its shares in RevolutionRace",
+          "text": "Divests all shares in RevolutionRace."
         },
         {
           "date": "2025-09-01",
           "type": "Exit",
-          "title": "Altor divests Retta to Adelis",
-          "text": "Nordic B2B property management leader (Finland, Sweden) sold to Adelis Equity Partners.",
-          "link": "https://altor.com/altor-divests-retta-to-adelis-equity-partners"
+          "title": "Altor divests Retta to Adelis Equity Partners",
+          "text": "Nordic B2B property management; sold to Adelis Equity Partners."
         },
         {
           "date": "2025-07-04",
           "type": "Investment",
           "title": "Altor invests in IMBOX",
-          "text": "Majority stake in Danish automated footwear protection. Founder and Grundtvig family remain. Target: 3x installed base over 3–5 years.",
-          "link": "https://altor.com/altor-invests-in-imbox-in-partnership-with-the-founder-rene-marker-and-the-grundtvig-family"
+          "text": "In partnership with founder René Marker and the Grundtvig family."
         },
         {
           "date": "2025-06-25",
           "type": "Other",
-          "title": "WovenLight AI partnership",
-          "text": "Strategic partnership to advance AI leadership across portfolio."
+          "title": "Altor advances AI leadership with WovenLight",
+          "text": "Strategic partnership with WovenLight."
         },
         {
           "date": "2025-06-11",
           "type": "Team",
           "title": "Klas Johansson steps down as Co-Managing Partner",
-          "text": "Continues as Senior Advisor and Board Member"
+          "text": "Continues as Senior Advisor and Board Member."
         },
         {
           "date": "2025-05-27",
           "type": "Exit",
-          "title": "Altor divests XXL",
-          "text": "Divests all shares in XXL"
+          "title": "Altor divests all shares in XXL",
+          "text": "Altor divests all shares in XXL"
         },
         {
           "date": "2025-04-16",
+          "type": "Team",
+          "title": "Michael Halbye, Chairman of Ludvig & Co, has passed away",
           "text": "Michael Halbye, Chairman of Ludvig & Co, has passed away"
         },
         {
           "date": "2025-04-08",
           "type": "Exit",
           "title": "Altor divests Qmatic",
-          "text": "Sells Qmatic to Valsoft"
+          "text": "Sells Qmatic to Valsoft."
         },
         {
           "date": "2025-03-11",
           "type": "Exit",
-          "title": "Altor divests Wrist",
-          "text": "Sells Wrist to J.F. Lehman & Company"
+          "title": "Altor divests Wrist to J.F. Lehman & Company",
+          "text": "Altor divests Wrist to J.F. Lehman & Company"
         },
         {
           "date": "2025-01-24",
           "type": "Exit",
           "title": "Altor divests Marshall Group to HSG",
-          "text": "HongShan Capital acquires Marshall Group (audio, tech, design) for €1.1bn. Marshall family retains 20%+.",
-          "link": "https://altor.com/altor-divests-marshall-group-to-hongshan-group"
+          "text": "Divestment to HongShan Group (HSG)."
         },
         {
           "date": "2024-12-20",
+          "type": "Exit",
+          "title": "Altor divests Nordic Tyre Group to Axcel",
           "text": "Altor divests Nordic Tyre Group to Axcel"
         },
         {
           "date": "2024-11-22",
-          "text": "Oceansapart continues operations under new ownership"
+          "type": "Portfolio",
+          "title": "Oceansapart continues under new ownership",
+          "text": "Oceansapart continues operations under new ownership."
         },
         {
           "date": "2024-10-21",
+          "type": "Exit",
+          "title": "Altor divests Carnegie to DNB Bank",
           "text": "Altor divests Carnegie to DNB Bank"
         },
         {
           "date": "2024-10-02",
+          "type": "Investment",
+          "title": "Altor to partner with iconic hockey brand CCM Hockey",
           "text": "Altor to partner with iconic hockey brand CCM Hockey"
         },
         {
           "date": "2024-09-25",
+          "type": "Exit",
+          "title": "Altor divests Nova Austral",
           "text": "Altor divests Nova Austral"
         },
         {
           "date": "2024-08-28",
+          "type": "Exit",
+          "title": "Altor divests 19.2% shares in SATS",
           "text": "Altor divests 19.2% shares in SATS"
         },
         {
           "date": "2024-07-12",
+          "type": "Exit",
+          "title": "Altor divests Silo AI",
           "text": "Altor divests Silo AI"
         },
         {
           "date": "2024-07-01",
+          "type": "Other",
+          "title": "Altor secures settlement in the OW Bunker action",
           "text": "Altor secures settlement in the OW Bunker action"
         },
         {
           "date": "2024-07-01",
-          "text": "Altor acquires a majority stake in F24 and partners with management"
+          "type": "Investment",
+          "title": "Altor acquires majority stake in F24",
+          "text": "Partners with management."
         },
         {
           "date": "2024-06-04",
+          "type": "Portfolio",
+          "title": "Altor takes first step to build global champion for renewable cotton",
           "text": "Altor takes first step to build global champion for renewable cotton"
         },
         {
+          "date": "2024-02-19",
+          "type": "Investment",
+          "title": "Altor announces final outcome of public cash offer to Permascand shareholders",
+          "text": "Final outcome of the recommended public cash offer to Permascand Top Holding AB."
+        },
+        {
           "date": "2024-02-15",
-          "text": "Altor increases its financial interest in Mandatum by an additional 6.6% of outstanding shares"
+          "type": "Other",
+          "title": "Altor publishes supplement to offer document for Permascand",
+          "text": "Supplement to the offer document for the recommended public cash offer to Permascand shareholders."
+        },
+        {
+          "date": "2024-02-15",
+          "type": "Investment",
+          "title": "Altor increases stake in Mandatum",
+          "text": "Increases financial interest by an additional 6.6% of outstanding shares."
         },
         {
           "date": "2024-02-12",
-          "text": "Altor completes the public cash offer to the shareholders of Permascand and acquires over 90% of the shares"
+          "type": "Investment",
+          "title": "Altor completes public cash offer to Permascand shareholders",
+          "text": "Acquires over 90% of the shares in Permascand Top Holding AB."
+        },
+        {
+          "date": "2024-02-05",
+          "type": "Investment",
+          "title": "Altor completes Permascand offer at 95% and extends acceptance period",
+          "text": "Completes the public cash offer to Permascand Top Holding AB at 95 percent."
         },
         {
           "date": "2024-01-22",
-          "text": "Altor PC AB extends the acceptance period for the Offer to Permascand shareholders and confirms price will not be increased"
+          "type": "Other",
+          "title": "Altor extends Permascand offer acceptance period",
+          "text": "Altor PC AB extends acceptance period; SEK 17 per share offer price not increased."
         },
         {
           "date": "2024-01-19",
+          "type": "Fund",
+          "title": "Altor successfully raises record fund",
           "text": "Altor successfully raises record fund"
         },
         {
           "date": "2023-12-19",
-          "text": "Altor PC AB announces recommended public cash offer to shareholders in Permascand Top Holding AB"
+          "type": "Other",
+          "title": "Altor publishes offer document for public cash offer to Permascand shareholders",
+          "text": "Altor publishes offer document for public cash offer to Permascand shareholders"
+        },
+        {
+          "date": "2023-12-19",
+          "type": "Investment",
+          "title": "Altor announces recommended public cash offer to Permascand shareholders",
+          "text": "Recommended public cash offer to shareholders in Permascand Top Holding AB."
+        },
+        {
+          "date": "2023-12-13",
+          "type": "Exit",
+          "title": "Altor sells controlling stake in Eleda to Bain Capital",
+          "text": "Eleda gets new ownership; partnership with Bain for future expansion."
         },
         {
           "date": "2023-10-18",
-          "text": "Altor invests in Aira"
+          "type": "Investment",
+          "title": "Altor invests in Aira",
+          "text": "Clean energy-tech."
+        },
+        {
+          "date": "2023-10-13",
+          "type": "Investment",
+          "title": "Altor acquires minority stake in Mandatum",
+          "text": "Altor acquires minority stake in Mandatum"
+        },
+        {
+          "date": "2023-09-15",
+          "type": "Investment",
+          "title": "Altor to invest in Marshall Group",
+          "text": "Altor to invest in Marshall Group"
+        },
+        {
+          "date": "2023-02-17",
+          "type": "Investment",
+          "title": "Altor acquires majority of VTU and partners with management",
+          "text": "Altor acquires majority of VTU and partners with management"
+        },
+        {
+          "date": "2023-02-07",
+          "type": "Investment",
+          "title": "Altor acquires majority stake in Kommunalkredit",
+          "text": "Green transition bank."
+        },
+        {
+          "date": "2023-01-19",
+          "type": "Investment",
+          "title": "Altor acquires 7.2% of outstanding shares in FLSmidth & Co. A/S",
+          "text": "Altor acquires 7.2% of outstanding shares in FLSmidth & Co. A/S"
+        },
+        {
+          "date": "2022-08-30",
+          "type": "Portfolio",
+          "title": "Altor supports H2 Green Steel on EUR 190 million funding round",
+          "text": "Altor supports H2 Green Steel on EUR 190 million funding round"
+        },
+        {
+          "date": "2022-06-21",
+          "type": "Investment",
+          "title": "Altor invests in smart energy platform Tibber",
+          "text": "Altor invests in smart energy platform Tibber"
+        },
+        {
+          "date": "2022-06-14",
+          "type": "Investment",
+          "title": "Altor and Silo AI partner to build European AI flagship",
+          "text": "Altor and Silo AI partner to build European AI flagship"
+        },
+        {
+          "date": "2022-05-25",
+          "type": "Investment",
+          "title": "Altor enters equal partnership with founders of Audiowell",
+          "text": "Altor enters equal partnership with founders of Audiowell"
+        },
+        {
+          "date": "2022-05-16",
+          "type": "Investment",
+          "title": "Altor acquires Nordic Climate Group – becomes majority owner",
+          "text": "Altor acquires Nordic Climate Group – becomes majority owner"
+        },
+        {
+          "date": "2022-04-06",
+          "type": "Portfolio",
+          "title": "Elkem, Hydro and Altor partner to accelerate Vianode",
+          "text": "Sustainable battery materials."
+        },
+        {
+          "date": "2022-03-24",
+          "type": "Investment",
+          "title": "Altor acquires significant minority stake in Svea Solar",
+          "text": "Altor acquires significant minority stake in Svea Solar"
+        },
+        {
+          "date": "2021-12-21",
+          "type": "Exit",
+          "title": "Altor and Triton divest majority stake in OptiGroup to FSN",
+          "text": "Altor and Triton divest majority stake in OptiGroup to FSN"
+        },
+        {
+          "date": "2021-12-10",
+          "type": "Investment",
+          "title": "Altor and SMS Group invest in KAEFER for 50% shareholding",
+          "text": "Altor and SMS Group invest in KAEFER for 50% shareholding"
+        },
+        {
+          "date": "2021-08-16",
+          "type": "Investment",
+          "title": "Altor enters partnership with Raw Fury",
+          "text": "Altor enters partnership with Raw Fury"
+        },
+        {
+          "date": "2021-08-02",
+          "type": "Investment",
+          "title": "Altor acquires majority stake in oceansapart",
+          "text": "Altor acquires majority stake in oceansapart"
+        },
+        {
+          "date": "2021-06-28",
+          "type": "Investment",
+          "title": "Altor acquires majority stake in Palette Software",
+          "text": "Altor acquires majority stake in Palette Software"
+        },
+        {
+          "date": "2021-06-16",
+          "type": "Investment",
+          "title": "Altor acquires majority stake in Multi-Wing",
+          "text": "Altor acquires majority stake in Multi-Wing"
+        },
+        {
+          "date": "2021-05-21",
+          "type": "Investment",
+          "title": "Altor acquires minority stake in global fashion house Totême",
+          "text": "Altor acquires minority stake in global fashion house Totême"
+        },
+        {
+          "date": "2021-05-10",
+          "type": "Investment",
+          "title": "Altor enters partnership with founders of Aarke",
+          "text": "Altor enters partnership with founders of Aarke"
+        },
+        {
+          "date": "2021-05-03",
+          "type": "Portfolio",
+          "title": "Altor-backed Network of Design acquires Cooee Design",
+          "text": "Altor-backed Network of Design acquires Cooee Design"
+        },
+        {
+          "date": "2021-01-22",
+          "type": "Portfolio",
+          "title": "Iyuno Media Group agrees to acquire SDI Media",
+          "text": "Altor-backed Iyuno Media Group."
         }
       ],
-      "recent_activity": "2025\n• Divests RevolutionRace (Oct), Retta to Adelis (Sept), XXL, Qmatic, Wrist\n• Divests Marshall Group to HongShan Capital (Jan); €1.1bn; iconic audio brand\n• Invests in IMBOX (July) – Danish footwear protection equipment-as-a-service\n• WovenLight AI strategic partnership (June)\n• Klas Johansson steps down as Co-Managing Partner; continues Senior Advisor\n\n2024\n• Divests Nordic Tyre Group (Axcel), Carnegie (DNB), Nova Austral, SATS stake\n• Majority in F24; invests in Aira (clean energy-tech)\n• Increases Mandatum stake; Permascand acquisition\n\n2023\n• Altor VI closes >€3bn (record fundraise)",
+      "recent_activity": "2026\n• Divests Hamlet Protein to Royal Agrifirm Group; majority in Eltera with management\n\n2025\n• Majority in Evac; exits RevolutionRace, Retta (to Adelis), XXL, Wrist; Marshall to HSG\n• IMBOX; WovenLight AI partnership\n\n2024\n• Exits Nordic Tyre (Axcel), Carnegie (DNB), Silo AI; partial SATS; CCM Hockey; Permascand offer completed\n• OW Bunker settlement; record fund (Jan)\n\nPortfolio: Nordic/DACH transformational PE; consumer, industrials, tech, financial services",
       "timeline": [
+        {
+          "year": 2021,
+          "event": "OptiGroup exit",
+          "description": "With Triton, divests majority stake in OptiGroup to FSN"
+        },
+        {
+          "year": 2021,
+          "event": "KAEFER investment",
+          "description": "With SMS Group, invests in KAEFER for a 50% shareholding"
+        },
+        {
+          "year": 2021,
+          "event": "Raw Fury partnership",
+          "description": "Enters partnership with games publisher Raw Fury"
+        },
+        {
+          "year": 2021,
+          "event": "oceansapart majority",
+          "description": "Acquires majority stake in oceansapart (apparel)"
+        },
+        {
+          "year": 2021,
+          "event": "Palette Software majority",
+          "description": "Acquires majority stake in Palette Software"
+        },
+        {
+          "year": 2021,
+          "event": "Multi-Wing majority",
+          "description": "Acquires majority stake in Multi-Wing with long-term owner partnership"
+        },
+        {
+          "year": 2021,
+          "event": "Totême minority",
+          "description": "Acquires minority stake in fashion house Totême"
+        },
+        {
+          "year": 2021,
+          "event": "Aarke partnership",
+          "description": "Partners with founders of Aarke"
+        },
+        {
+          "year": 2021,
+          "event": "Network of Design add-on",
+          "description": "Altor-backed Network of Design acquires Cooee Design"
+        },
+        {
+          "year": 2021,
+          "event": "Iyuno / SDI Media",
+          "description": "Altor-backed Iyuno Media Group agrees to acquire SDI Media"
+        },
+        {
+          "year": 2022,
+          "event": "H2 Green Steel funding",
+          "description": "Supports H2 Green Steel on EUR 190m funding round"
+        },
+        {
+          "year": 2022,
+          "event": "Tibber investment",
+          "description": "Invests in smart energy platform Tibber"
+        },
+        {
+          "year": 2022,
+          "event": "Silo AI partnership",
+          "description": "Partners with Silo AI to build a leading European AI flagship"
+        },
+        {
+          "year": 2022,
+          "event": "Audiowell partnership",
+          "description": "Equal partnership with founders of Audiowell"
+        },
+        {
+          "year": 2022,
+          "event": "Nordic Climate Group",
+          "description": "Acquires Nordic Climate Group — becomes majority owner"
+        },
+        {
+          "year": 2022,
+          "event": "Vianode partnership",
+          "description": "With Elkem and Hydro, partners to accelerate Vianode (battery materials)"
+        },
+        {
+          "year": 2022,
+          "event": "Svea Solar stake",
+          "description": "Acquires significant minority stake in Svea Solar"
+        },
         {
           "year": 2023,
           "event": "Record fundraise",
           "description": "Raises Altor VI, >€3bn"
+        },
+        {
+          "year": 2023,
+          "event": "Permascand recommended offer",
+          "description": "Announces recommended public cash offer to Permascand Top Holding AB shareholders"
+        },
+        {
+          "year": 2023,
+          "event": "Eleda exit",
+          "description": "Sells controlling stake in Eleda to Bain Capital; partnership for expansion"
+        },
+        {
+          "year": 2023,
+          "event": "Aira investment",
+          "description": "Invests in Aira (clean energy-tech)"
+        },
+        {
+          "year": 2023,
+          "event": "Mandatum minority",
+          "description": "Acquires minority stake in Mandatum"
+        },
+        {
+          "year": 2023,
+          "event": "Marshall Group investment",
+          "description": "Commits to invest in Marshall Group"
+        },
+        {
+          "year": 2023,
+          "event": "VTU majority",
+          "description": "Acquires majority of VTU and partners with management"
+        },
+        {
+          "year": 2023,
+          "event": "Kommunalkredit majority",
+          "description": "Acquires majority stake in Kommunalkredit — green transition bank"
+        },
+        {
+          "year": 2023,
+          "event": "FLSmidth stake",
+          "description": "Acquires 7.2% of outstanding shares in FLSmidth & Co. A/S"
+        },
+        {
+          "year": 2024,
+          "event": "Permascand offer completed",
+          "description": "Completes public cash offer; acquires >90% of Permascand shares"
+        },
+        {
+          "year": 2024,
+          "event": "Mandatum stake increase",
+          "description": "Increases stake in Mandatum by additional 6.6%"
         },
         {
           "year": 2024,
@@ -1215,13 +1725,59 @@
         },
         {
           "year": 2024,
-          "event": "Carnegie divestment",
-          "description": "Divests Carnegie to DNB Bank"
+          "event": "Renewable cotton platform",
+          "description": "Takes first step to build global champion for renewable cotton"
+        },
+        {
+          "year": 2024,
+          "event": "CCM Hockey partnership",
+          "description": "Partners with iconic hockey brand CCM Hockey"
+        },
+        {
+          "year": 2024,
+          "event": "Nova Austral exit",
+          "description": "Divests Nova Austral"
+        },
+        {
+          "year": 2024,
+          "event": "SATS partial exit",
+          "description": "Divests 19.2% of shares in SATS"
+        },
+        {
+          "year": 2024,
+          "event": "Silo AI exit",
+          "description": "Divests Silo AI"
+        },
+        {
+          "year": 2024,
+          "event": "OW Bunker settlement",
+          "description": "Secures settlement in the OW Bunker action"
         },
         {
           "year": 2024,
           "event": "Nordic Tyre Group divestment",
           "description": "Divests Nordic Tyre Group to Axcel"
+        },
+        {
+          "year": 2024,
+          "event": "Carnegie divestment",
+          "description": "Divests Carnegie to DNB Bank"
+        },
+        {
+          "year": 2025,
+          "event": "Evac investment",
+          "description": "Majority stake in Evac with management"
+        },
+        {
+          "year": 2025,
+          "event": "IMBOX investment",
+          "description": "Invests in IMBOX with founder René Marker and Grundtvig family",
+          "company": "Imbox"
+        },
+        {
+          "year": 2025,
+          "event": "WovenLight AI partnership",
+          "description": "Strategic partnership with WovenLight on AI leadership"
         },
         {
           "year": 2025,
@@ -1251,18 +1807,17 @@
         {
           "year": 2025,
           "event": "Marshall Group exit",
-          "description": "Signs to divest Marshall Group to HSG"
+          "description": "Divests Marshall Group to HSG (HongShan Group)"
         },
         {
-          "year": 2025,
-          "event": "IMBOX investment",
-          "description": "Invests in IMBOX with founder and family partners",
-          "company": "Imbox"
+          "year": 2026,
+          "event": "Eltera investment",
+          "description": "Majority stake in Eltera with management"
         },
         {
-          "year": 2025,
-          "event": "AI partnership",
-          "description": "Advances AI leadership via strategic partnership with WovenLight"
+          "year": 2026,
+          "event": "Hamlet Protein exit",
+          "description": "Divests Hamlet Protein to Royal Agrifirm Group"
         }
       ],
       "portfolio_companies": [
@@ -1410,6 +1965,7 @@
           "name": "Kommunalkredit",
           "sector": "Financial Services",
           "country": "Austria",
+          "entry_year": "2023",
           "logo": "https://logo.clearbit.com/kommunalkredit.at",
           "description": "Financing the green transition"
         },
@@ -1943,7 +2499,7 @@
         "Helsinki",
         "Munich"
       ],
-      "description": "Adelis Equity Partners is a growth-oriented private equity firm anchored in Stockholm with teams in Oslo, Helsinki, and Munich. Founded in 2012, it backs small and medium-sized businesses across Northern Europe—typically with revenues in the tens to low hundreds of millions of euros—where founders or families are ready for a professional majority partner. Healthcare and life science, technology and software, and business services form the backbone of the strategy, and the firm is known for energetic buy-and-build execution: roughly fifty platform investments and well over two hundred add-ons since inception. Adelis has raised more than EUR 4.25 billion to date, including a EUR 1.6 billion fourth fund that closed in 2025, and it remains focused on control-oriented growth buyouts rather than passive financial engineering.",
+      "description": "Adelis Equity Partners is a growth-oriented private equity firm anchored in Stockholm with teams in Oslo, Helsinki, Copenhagen, and Munich. Founded in 2012, it backs small and medium-sized businesses across Northern Europe—typically with revenues in the tens to low hundreds of millions of euros—where founders or families are ready for a professional majority partner. Healthcare and life science, technology and software, and business services form the backbone of the strategy, and the firm is known for energetic buy-and-build execution: roughly fifty platform investments and well over two hundred add-ons since inception. Adelis has raised more than EUR 4.25 billion to date, including a EUR 1.6 billion fourth fund that closed in 2025; recent platforms include Cedra (Nordic audit/advisory), Circura (building renewal and rehabilitation), and defence technology alongside software leaders such as Bryntum. It remains focused on control-oriented growth buyouts rather than passive financial engineering.",
       "investment_focus": {
         "sectors": [
           "Healthcare & Life Science",
@@ -2184,7 +2740,7 @@
         "next_fund": "Deployment across Fund IV",
         "strategy": "Growth buyouts in €10–300M revenue companies; Nordic + Germany; Healthcare & Life Science, Tech & Software, Business Services; Munich office (2023)"
       },
-      "recent_activity": "2025\n• Fund IV closes at €1.6bn (March); 75% from returning LPs\n• Acquires Retta from Altor (Sept) – B2B property management, Finland/Sweden\n• Forms Cedra Norway – acquires Deloitte Norway SMB business (Aug); 13 offices, 300+ professionals\n• Forms Cedra Denmark – partners with Roesgaard and Inforevision (Sept); ~300 employees\n• Exits Europa Biosite (July)\n\n2024\n• Cedra Sweden platform; Presto/HVD continuation vehicle; Bruhn NewTech (defence tech)\n• Munich office; Franz Reiffenstuel Partner",
+      "recent_activity": "2025\n• Circura Group (building renewal) with Nordstjernan; Bryntum + AG Grid global web-components\n• Fund IV €1.6bn; Cedra Denmark/Norway; Retta B2B; EITCO; Europa Biosite exit\n\n2024\n• Defence tech (Bruhn NewTech, SeaCross); life science (IonOpticks); Btwentyfour; Presto/HVD CV\n\nPortfolio: Nordic growth buyouts across software, business services, healthcare, and audit platforms",
       "timeline": [
         {
           "year": 2012,
@@ -2478,6 +3034,11 @@
         },
         {
           "year": 2025,
+          "event": "Nordic audit group (minority)",
+          "description": "Four leading audit firms establish group focused on audit and advisory; Adelis minority owner for strategic growth"
+        },
+        {
+          "year": 2025,
           "event": "Circura Denmark formation",
           "description": "Creates Circura Danmark with four entrepreneur-led companies"
         },
@@ -2489,7 +3050,7 @@
         {
           "year": 2025,
           "event": "Bryntum partnership",
-          "description": "Partners with Bryntum to drive continued growth and expansion"
+          "description": "Bryntum partners with Adelis; scheduling web-components growth (earlier 2025)"
         },
         {
           "year": 2025,
@@ -2499,7 +3060,7 @@
         {
           "year": 2025,
           "event": "Retta B2B acquisition",
-          "description": "Acquires Retta from Altor – Nordic B2B property management"
+          "description": "Acquires Retta B2B Real Estate Management to accelerate Nordic growth"
         },
         {
           "year": 2025,
@@ -2510,91 +3071,449 @@
           "year": 2025,
           "event": "Cedra Denmark formation",
           "description": "Enters partnership with Roesgaard and Inforevision to establish Cedra Denmark"
+        },
+        {
+          "year": 2025,
+          "event": "Circura Group and Nordstjernan",
+          "description": "Adelis and entrepreneurs establish Circura Group as leading Nordic building renewal platform; Nordstjernan invests for growth"
+        },
+        {
+          "year": 2025,
+          "event": "Bryntum and AG Grid",
+          "description": "Portfolio company Bryntum partners with AG Grid to build globally leading high-quality web-components provider"
         }
       ],
       "company_updates": [
         {
+          "date": "2025-12-08",
+          "type": "Investment",
+          "title": "Adelis and entrepreneurs establish Circura Group",
+          "text": "Adelis and entrepreneurs establish Circura Group – the leading Nordic platform for building renewal services. Nordstjernan invests to support continued growth."
+        },
+        {
+          "date": "2025-11-21",
+          "type": "Portfolio",
+          "title": "Bryntum partners with AG Grid",
+          "text": "Adelis and portfolio company Bryntum partner with AG Grid to create the globally leading provider of high-quality web-components."
+        },
+        {
           "date": "2025-09-25",
           "type": "Investment",
-          "title": "Adelis establishes Cedra Denmark with Roesgaard and Inforevision",
-          "text": "Nordic audit and advisory platform.",
+          "title": "Adelis enters partnership to establish Cedra Denmark",
+          "text": "Adelis enters partnership with leading audit firms Roesgaard and Inforevision to establish Cedra Denmark.",
           "link": "https://news.cision.com/adelis-equity-partners/r/adelis-enters-partnership-with-leading-audit-firms-roesgaard-and-inforevision-to-establish-cedra-den,c4239614"
         },
         {
           "date": "2025-09-01",
           "type": "Investment",
-          "title": "Adelis acquires Retta from Altor",
-          "text": "B2B property management; Finland, Sweden, Denmark.",
+          "title": "Adelis Equity Partners acquires Retta B2B Real Estate Management",
+          "text": "Accelerates Nordic growth in B2B real estate management.",
           "link": "https://news.cision.com/adelis-equity-partners/r/adelis-equity-partners-acquires-retta-b2b-real-estate-management-to-accelerate-nordic-growth,c4227072"
         },
         {
           "date": "2025-08-11",
           "type": "Investment",
-          "title": "Adelis forms Cedra Norway via Deloitte SMB carve-out",
-          "text": "13 offices, 300+ professionals.",
+          "title": "Adelis forms Cedra Norway via Deloitte Norway SMB carve-out",
+          "text": "Acquires Deloitte Norway SMB business and forms Cedra Norway in partnership with leading auditors and advisors.",
           "link": "https://news.cision.com/adelis-equity-partners/r/adelis-acquires-deloitte-norway-s-smb-business-and-forms-cedra-norway-in-partnership-with-leading-au,c4216414"
         },
         {
           "date": "2025-07-06",
           "type": "Exit",
-          "title": "Adelis exits Europa Biosite",
-          "text": "Life science reagent distribution platform.",
+          "title": "Adelis exits its investment in Europa Biosite",
+          "text": "Life science distribution platform exit.",
           "link": "https://news.cision.com/adelis-equity-partners/r/adelis-exits-its-investment-in-europa-biosite,c4184392"
         },
         {
           "date": "2025-06-05",
-          "type": "Investment",
+          "type": "Portfolio",
           "title": "Bryntum partners with Adelis",
-          "text": "Scheduling software; growth and expansion."
+          "text": "Bryntum, the leading scheduling web-component provider, partners with Adelis to drive continued growth and expansion."
         },
         {
           "date": "2025-05-28",
           "type": "Investment",
-          "title": "Adelis acquires EITCO",
-          "text": "ECM specialist; Germany."
+          "title": "Adelis new majority owner in ECM specialist EITCO",
+          "text": "Majority investment in ECM specialist."
         },
         {
           "date": "2025-03-03",
           "type": "Fund",
-          "title": "Adelis closes Fund IV at €1.6bn",
-          "text": "Largest fund; Nordic and Northern Europe.",
+          "title": "Adelis Equity Partners closes EUR 1.6 billion Fourth Fund",
+          "text": "Fourth fund close.",
           "link": "https://news.cision.com/adelis-equity-partners/r/adelis-equity-partners-closes-eur-1-6-billion-fourth-fund,c4112825"
+        },
+        {
+          "date": "2025-02-26",
+          "type": "Investment",
+          "title": "Adelis creates Circura Danmark",
+          "text": "Adelis and four entrepreneur-led companies join forces to create Circura Danmark, a leading provider of rehabilitation services in Denmark."
+        },
+        {
+          "date": "2025-01-21",
+          "type": "Investment",
+          "title": "Adelis minority owner in Nordic audit group",
+          "text": "Four leading audit firms join forces to establish a group focused on audit and advisory. Adelis becomes minority owner to support strategic investments and growth."
         },
         {
           "date": "2024-12-18",
           "type": "Investment",
           "title": "Adelis partners with Btwentyfour",
-          "text": "Supply chain data automation software."
+          "text": "Supply chain data automation software; continued growth and international expansion."
         },
         {
           "date": "2024-09-19",
           "type": "Portfolio",
           "title": "SeaCross joins Adelis defence technology group",
-          "text": "Defence tech platform add-on."
+          "text": "SeaCross joins Adelis defence technology group"
         },
         {
           "date": "2024-09-10",
           "type": "Investment",
           "title": "Adelis partners with IonOpticks",
-          "text": "Life science; global expansion."
+          "text": "International life science company; global expansion and innovation."
         },
         {
           "date": "2024-07-29",
           "type": "Investment",
-          "title": "Adelis acquires Bruhn NewTech",
-          "text": "European defence technology platform."
+          "title": "Bruhn NewTech welcomes Adelis as majority shareholder",
+          "text": "First step towards a leading European technology defence group."
         },
         {
           "date": "2024-02-20",
           "type": "Exit",
-          "title": "Adelis exits Presto and HVD to Continuation Vehicle",
-          "text": "HarbourVest Partners lead."
+          "title": "Adelis exits Presto and HVD Group to continuation vehicle",
+          "text": "Via Adelis Fund II; HarbourVest-led continuation vehicle alongside Adelis Fund III."
         },
         {
           "date": "2023-11-06",
           "type": "Team",
-          "title": "Franz Reiffenstuel joins as Partner",
-          "text": "Munich office opens."
+          "title": "Franz Reiffenstuel joins Adelis as Partner",
+          "text": "Newly opened Munich office."
+        },
+        {
+          "date": "2023-09-12",
+          "type": "Portfolio",
+          "title": "Nordic BioSite acquires LubioScience; becomes Europa Biosite",
+          "text": "Nordic BioSite acquires LubioScience; becomes Europa Biosite"
+        },
+        {
+          "date": "2023-08-08",
+          "type": "Portfolio",
+          "title": "Presto acquires Jockel",
+          "text": "German market leader; Adelis invests additional capital for European safety services consolidation."
+        },
+        {
+          "date": "2023-03-10",
+          "type": "Investment",
+          "title": "Adelis to become controlling shareholder in Hedvig",
+          "text": "SEB and Nicklas Storåkers to co-invest."
+        },
+        {
+          "date": "2022-12-09",
+          "type": "Investment",
+          "title": "Adelis new majority owner in IT services company Aderian",
+          "text": "Adelis new majority owner in IT services company Aderian"
+        },
+        {
+          "date": "2022-11-24",
+          "type": "Exit",
+          "title": "Adelis exits Mobilhouse",
+          "text": "Adelis exits Mobilhouse"
+        },
+        {
+          "date": "2022-09-30",
+          "type": "Investment",
+          "title": "Adelis backs Avidly in its growth journey",
+          "text": "Adelis backs Avidly in its growth journey"
+        },
+        {
+          "date": "2022-09-06",
+          "type": "Exit",
+          "title": "Adelis divests its majority stake in Säkra",
+          "text": "Adelis divests its majority stake in Säkra"
+        },
+        {
+          "date": "2022-08-30",
+          "type": "Exit",
+          "title": "Adelis passes the baton in Nordentic to Corus",
+          "text": "Adelis passes the baton in Nordentic to Corus"
+        },
+        {
+          "date": "2022-08-22",
+          "type": "Fund",
+          "title": "Adelis raises Fund Continuation Vehicle for SSI Diagnostica Group",
+          "text": "Enables transformational acquisition."
+        },
+        {
+          "date": "2022-07-12",
+          "type": "Investment",
+          "title": "Adelis announces public cash tender offer for Avidly",
+          "text": "Adelis announces public cash tender offer for Avidly"
+        },
+        {
+          "date": "2022-06-27",
+          "type": "Investment",
+          "title": "UniSea partners with Adelis",
+          "text": "UniSea partners with Adelis"
+        },
+        {
+          "date": "2022-06-23",
+          "type": "Investment",
+          "title": "Adelis acquires IT company netIP",
+          "text": "Adelis acquires IT company netIP"
+        },
+        {
+          "date": "2022-06-16",
+          "type": "Exit",
+          "title": "Adelis successfully exits Knightec",
+          "text": "Adelis successfully exits Knightec"
+        },
+        {
+          "date": "2022-05-25",
+          "type": "Investment",
+          "title": "Håndverkskompaniet and Adelis partner for rehabilitation services in Norway",
+          "text": "Håndverkskompaniet and Adelis partner for rehabilitation services in Norway"
+        },
+        {
+          "date": "2022-03-14",
+          "type": "Portfolio",
+          "title": "Diakrit and Virtuance join forces",
+          "text": "Backed by Adelis as international growth partner."
+        },
+        {
+          "date": "2022-01-06",
+          "type": "Investment",
+          "title": "Westpack management team partners with Adelis",
+          "text": "Westpack management team partners with Adelis"
+        },
+        {
+          "date": "2021-12-13",
+          "type": "Investment",
+          "title": "Pixelz management team partners with Adelis in growth buyout",
+          "text": "Pixelz management team partners with Adelis in growth buyout"
+        },
+        {
+          "date": "2021-12-10",
+          "type": "Investment",
+          "title": "Adelis establishes Circura",
+          "text": "Leading building rehabilitation services group with entrepreneurs."
+        },
+        {
+          "date": "2021-11-16",
+          "type": "Fund",
+          "title": "Adelis Equity Partners closes EUR 932 million Third Fund",
+          "text": "Adelis Equity Partners closes EUR 932 million Third Fund"
+        },
+        {
+          "date": "2021-10-27",
+          "type": "Team",
+          "title": "Martin Welna joins Adelis as new Partner based in Denmark",
+          "text": "Martin Welna joins Adelis as new Partner based in Denmark"
+        },
+        {
+          "date": "2021-06-24",
+          "type": "Exit",
+          "title": "Adelis exits Quattro Mikenti Group (QMG)",
+          "text": "Adelis exits Quattro Mikenti Group (QMG)"
+        },
+        {
+          "date": "2021-05-28",
+          "type": "Investment",
+          "title": "Adelis new partner to Nordic BioSite Group",
+          "text": "Adelis new partner to Nordic BioSite Group"
+        },
+        {
+          "date": "2020-12-23",
+          "type": "Investment",
+          "title": "Valamis partners with Adelis",
+          "text": "Valamis partners with Adelis"
+        },
+        {
+          "date": "2020-08-26",
+          "type": "Portfolio",
+          "title": "SSI Diagnostica acquires CTK Biotech",
+          "text": "SSI Diagnostica acquires CTK Biotech"
+        },
+        {
+          "date": "2020-08-24",
+          "type": "Investment",
+          "title": "Adelis new partner to Kanari",
+          "text": "Adelis new partner to Kanari"
+        },
+        {
+          "date": "2020-07-17",
+          "type": "Exit",
+          "title": "Adelis successfully divests Nordomatic",
+          "text": "Adelis successfully divests Nordomatic"
+        },
+        {
+          "date": "2020-07-06",
+          "type": "Investment",
+          "title": "Axentia partners with Adelis",
+          "text": "Axentia partners with Adelis"
+        },
+        {
+          "date": "2020-07-02",
+          "type": "Exit",
+          "title": "Adelis exits its investment in AddPro",
+          "text": "Adelis exits its investment in AddPro"
+        },
+        {
+          "date": "2019-10-25",
+          "type": "Investment",
+          "title": "Säkra: Adelis becomes majority owner",
+          "text": "Säkra: Adelis becomes majority owner"
+        },
+        {
+          "date": "2019-05-24",
+          "type": "Exit",
+          "title": "Adelis successfully exits Logent",
+          "text": "Adelis successfully exits Logent"
+        },
+        {
+          "date": "2019-02-25",
+          "type": "Investment",
+          "title": "Adelis new majority owner in Ropo Capital",
+          "text": "Adelis new majority owner in Ropo Capital"
+        },
+        {
+          "date": "2019-02-08",
+          "type": "Investment",
+          "title": "Adelis acquires Mobilhouse",
+          "text": "Adelis acquires Mobilhouse"
+        },
+        {
+          "date": "2018-12-04",
+          "type": "Investment",
+          "title": "DataCenter Finland adds Adelis to ownership base",
+          "text": "DataCenter Finland adds Adelis to ownership base"
+        },
+        {
+          "date": "2018-11-05",
+          "type": "Investment",
+          "title": "Presto and Aptum join forces; Adelis new majority owner",
+          "text": "Leading player in fire safety in the Nordic region."
+        },
+        {
+          "date": "2018-07-09",
+          "type": "Investment",
+          "title": "Adelis acquires Didriksons",
+          "text": "Adelis acquires Didriksons"
+        },
+        {
+          "date": "2018-06-14",
+          "type": "Exit",
+          "title": "Adelis completes the sale of IT Relation",
+          "text": "Adelis completes the sale of IT Relation"
+        },
+        {
+          "date": "2018-05-31",
+          "type": "Investment",
+          "title": "Hantverksdata: Adelis becomes new majority owner",
+          "text": "Hantverksdata: Adelis becomes new majority owner"
+        },
+        {
+          "date": "2018-05-08",
+          "type": "Exit",
+          "title": "Habasit Group acquires majority stake in NGI Holding A/S",
+          "text": "Habasit Group acquires majority stake in NGI Holding A/S"
+        },
+        {
+          "date": "2018-02-20",
+          "type": "Exit",
+          "title": "Adelis secures successful exit of Med Group",
+          "text": "Adelis secures successful exit of Med Group"
+        },
+        {
+          "date": "2018-02-02",
+          "type": "Investment",
+          "title": "Adelis invests in Søgemedier A/S",
+          "text": "Adelis invests in Søgemedier A/S"
+        },
+        {
+          "date": "2017-07-03",
+          "type": "Investment",
+          "title": "AddPro: Adelis becomes new majority owner",
+          "text": "AddPro: Adelis becomes new majority owner"
+        },
+        {
+          "date": "2017-06-14",
+          "type": "Fund",
+          "title": "Adelis Equity Partners closes €600 million Second Fund",
+          "text": "Adelis Equity Partners closes €600 million Second Fund"
+        },
+        {
+          "date": "2017-05-03",
+          "type": "Investment",
+          "title": "Adelis new owner in Knightec",
+          "text": "Adelis new owner in Knightec"
+        },
+        {
+          "date": "2017-04-03",
+          "type": "Investment",
+          "title": "Adelis new majority owner in Quattro Mikenti Group (QMG)",
+          "text": "Adelis new majority owner in Quattro Mikenti Group (QMG)"
+        },
+        {
+          "date": "2016-06-20",
+          "type": "Portfolio",
+          "title": "Nordomatic acquires dominus",
+          "text": "Nordomatic acquires dominus"
+        },
+        {
+          "date": "2016-03-30",
+          "type": "Investment",
+          "title": "Adelis acquires SSI Diagnostica from the State of Denmark",
+          "text": "Adelis acquires SSI Diagnostica from the State of Denmark"
+        },
+        {
+          "date": "2016-02-29",
+          "type": "Investment",
+          "title": "Adelis new majority owner in Nordomatic AB",
+          "text": "Adelis new majority owner in Nordomatic AB"
+        },
+        {
+          "date": "2015-11-30",
+          "type": "Investment",
+          "title": "Adelis acquires Puuilo with management team",
+          "text": "Adelis acquires Puuilo with management team"
+        },
+        {
+          "date": "2015-06-18",
+          "type": "Investment",
+          "title": "INTERSPORT Sweden: Adelis becomes majority shareholder",
+          "text": "INTERSPORT Sweden: Adelis becomes majority shareholder"
+        },
+        {
+          "date": "2014-11-11",
+          "type": "Investment",
+          "title": "Adelis acquires Med Group with founders and management",
+          "text": "Adelis acquires Med Group with founders and management"
+        },
+        {
+          "date": "2014-08-15",
+          "type": "Investment",
+          "title": "Adelis acquires majority stake in Green Team Group",
+          "text": "Adelis acquires majority stake in Green Team Group"
+        },
+        {
+          "date": "2014-01-21",
+          "type": "Investment",
+          "title": "Adelis acquires majority stake in NGI",
+          "text": "Adelis acquires majority stake in NGI"
+        },
+        {
+          "date": "2013-11-12",
+          "type": "Fund",
+          "title": "Adelis closes maiden fund at SEK 3,690 million (€420 million)",
+          "text": "Adelis closes maiden fund at SEK 3,690 million (€420 million)"
+        },
+        {
+          "date": "2013-11-12",
+          "type": "Investment",
+          "title": "Adelis and management acquire Logent AB",
+          "text": "Adelis and management acquire Logent AB"
         }
       ],
       "portfolio_companies": [
@@ -4123,7 +5042,7 @@
       "offices": [
         "Stockholm"
       ],
-      "description": "Accent Equity Partners is a Stockholm-based investor that has backed private Nordic companies since 1994. The firm works as a lead or co-lead partner in buyouts and expansion capital, typically in established businesses where EBITA and equity cheques fit its lower- to mid-market sweet spot and where industrial services, niche manufacturing, and broader business services have long been a natural hunting ground. Across seven funds it has built a diversified Nordic portfolio—Tempcon, Enerco, and Triarca are among the better-known industrial names—with total commitments well above EUR 1.5 billion. Accent Equity VII closed in 2025; the team continues to focus on companies that already have a proven, scalable model and room to grow across the region.",
+      "description": "Accent Equity Partners is a Stockholm-based investor that has backed private Nordic companies since 1994. The firm works as a lead or co-lead partner in buyouts and expansion capital, typically in established businesses where EBITA and equity cheques fit its lower- to mid-market sweet spot and where industrial services, niche manufacturing, and broader business services have long been a natural hunting ground. Across seven funds it has built a diversified Nordic portfolio—Tempcon, Enerco, and Triarca are among the better-known industrial names—with total commitments well above EUR 1.5 billion. Accent Equity VII closed in 2025 and a SEK 1.5 billion continuation vehicle (Accent Equity CV) in 2026; the team continues to focus on companies that already have a proven, scalable model and room to grow across the region.",
       "investment_focus": {
         "sectors": [
           "Diversified (Industrial, Business Services, Technology, Consumer)"
@@ -4226,16 +5145,40 @@
         }
       ],
       "fundraising": {
-        "current_fund": "Accent Equity VII (SEK 2.25bn, closed June 2025); Fund VI (SEK 3.0bn, 2018)",
+        "current_fund": "Accent Equity CV (SEK 1.5bn continuation, closed April 2026); Accent Equity VII (SEK 2.25bn, closed June 2025); Fund VI (SEK 3.0bn, 2018)",
         "next_fund": "Fund VIII in planning when Fund VII approaches investment target",
         "strategy": "Lower-midcap Nordics (EV 250–1,500 MSEK); strong heritage in industrial services and niche manufacturing"
       },
       "company_updates": [
         {
+          "date": "2026-04-09",
+          "type": "Fund",
+          "title": "Accent Equity closes SEK 1,500m continuation fund (Accent Equity CV)",
+          "text": "Accent Equity successfully closes a SEK 1,500 million continuation fund to support the future growth and exit of three portfolio companies."
+        },
+        {
+          "date": "2026-02-11",
+          "type": "Portfolio",
+          "title": "Nordic Grid Solutions acquires HAMAG and Sargo",
+          "text": "Accent Equity-owned Nordic Grid Solutions acquires HAMAG and Sargo, strengthening its position in e-mobility (Accent Equity VI)."
+        },
+        {
+          "date": "2026-01-23",
+          "type": "Portfolio",
+          "title": "Lyngsoe Systems acquires mk Solutions' North America business",
+          "text": "Accent Equity-owned Lyngsoe Systems acquires mk Solutions' business in North America (Accent Equity VI)."
+        },
+        {
+          "date": "2025-12-19",
+          "type": "Sustainability",
+          "title": "Together Scholarship celebrates 14th anniversary",
+          "text": "Accent Equity's Together Scholarship celebrates its 14th and 2025 scholarship awarded."
+        },
+        {
           "date": "2025-06-16",
           "type": "Fund",
           "title": "Accent Equity closes Fund VII at SEK 2.25bn",
-          "text": "Fund VII closes with SEK 2,250 million. Five platform investments: Linotol, Plockmatic, Helmacab, Brimer, Unisport. ~47% Nordic, 49% European investors.",
+          "text": "Fund VII closes with SEK 2,250 million. Five platform investments: Linotol, Plockmatic, Helkama Bica, Brimer, Unisport. ~47% Nordic, 49% European investors.",
           "link": "https://accentequity.se/tpost/ceduoy8131-accent-equity-successfully-closes-fund-v"
         },
         {
@@ -4347,6 +5290,12 @@
           "text": "Accent Equity-owned Linotol Group acquires C M Betong, further strengthening its offering within industrial flooring solutions in the Nordic region"
         },
         {
+          "date": "2024-02-28",
+          "type": "Investment",
+          "title": "Accent Equity invests in Car-O-Liner distributor in Finland",
+          "text": "The acquisition expands Accent’s presence in the Nordic automotive aftermarket and body repair equipment market."
+        },
+        {
           "date": "2024-09-12",
           "type": "Exit",
           "title": "Accent Equity divests Lakrids by Bülow to Valedo Partners",
@@ -4371,16 +5320,46 @@
           "text": "Accent Equity-owned Malte Månson acquires Experten Group"
         },
         {
-          "date": "2024-02-28",
+          "date": "2023-12-22",
+          "type": "Portfolio",
+          "title": "Linotol Group acquires Tiller-Vimek",
+          "text": "Accent Equity-owned Linotol Group acquires Tiller-Vimek, further strengthening its geographical presence in Norway and the Nordic region."
+        },
+        {
+          "date": "2023-10-24",
+          "type": "Award",
+          "title": "Accent Equity nominee in Private Equity Exchange & Awards",
+          "text": "Accent Equity nominee in the Private Equity Exchange & Awards."
+        },
+        {
+          "date": "2023-06-14",
+          "type": "Award",
+          "title": "Accent Equity finalist in Real Deals ESG Awards",
+          "text": "Accent Equity finalist in the Real Deals ESG Awards."
+        },
+        {
+          "date": "2023-06-08",
           "type": "Investment",
-          "title": "Accent Equity invests in Car-O-Liner distributor in Finland",
-          "text": "The acquisition expands Accent’s presence in the Nordic automotive aftermarket and body repair equipment market."
+          "title": "Accent Equity acquires Linotol and C Holmqvist Entreprenad",
+          "text": "Accent Equity acquires Linotol and C Holmqvist Entreprenad, creating a platform for growth within industrial flooring solutions (Fund VII)."
         },
         {
           "date": "2023-06-05",
           "type": "Investment",
           "title": "Accent Equity Fund V invests in Scandza",
           "text": "Accent enters into partnership with the Nordic food and beverage group Scandza, supporting further brand growth and operational efficiency improvements."
+        },
+        {
+          "date": "2023-05-30",
+          "type": "Sustainability",
+          "title": "Accent Equity releases 2022 Sustainability Report",
+          "text": "Accent Equity releases 2022 Sustainability Report."
+        },
+        {
+          "date": "2023-02-13",
+          "type": "Investment",
+          "title": "Accent Equity acquires Malte Månson",
+          "text": "Accent Equity acquires Malte Månson, Sweden's leading independent service and repair provider for trucks and transportation vehicles (Accent Equity VI)."
         },
         {
           "date": "2022-10-14",
@@ -4473,7 +5452,7 @@
           "text": "Investment in Nordic critical power and data center infrastructure provider, forming the base for a decade of M&A expansion."
         }
       ],
-      "recent_activity": "2025\n• Fund VII closes at SEK 2.25bn (June)\n• Unisport investment (closed Q1); Plockmatic Group acquires Renz\n• Tempcon Group issues SEK 550M senior secured bonds\n• Oscar Claeson promoted to Partner\n\n2024\n• Invests in Brimer, Plockmatic, Helkama Bica (Fund VII platforms)\n• TSG acquires AF Shipping; Malte Månson acquires Skandinaviska Buss & Truck, Experten Group\n• Triarca + Stitec combine (low voltage/eMobility/FTTH)\n• Linotol acquires C M Betong\n• Divests Norco Interior to Götessons Design Group\n\nPortfolio: Strong Fund VII deployment; industrial services, niche manufacturing, tech integration",
+      "recent_activity": "2026\n• SEK 1,500m continuation fund (Accent Equity CV) closes\n• Nordic Grid Solutions acquires HAMAG and Sargo\n• Lyngsoe Systems acquires mk Solutions' North America business\n\n2025\n• Together Scholarship 14th edition; Fund VII at SEK 2.25bn; Plockmatic/Renz; sustainability reporting\n\n2024\n• Fund VII platforms: Brimer, Plockmatic, Helkama Bica, Unisport; portfolio build-ups and Norco Interior exit",
       "timeline": [
         {
           "year": 1994,
@@ -4616,6 +5595,26 @@
           "description": "Linotol acquires Tiller-Vimek"
         },
         {
+          "year": 2026,
+          "event": "Continuation fund closes",
+          "description": "Closes Accent Equity CV at SEK 1,500 million to support growth and exit of three portfolio companies"
+        },
+        {
+          "year": 2026,
+          "event": "Nordic Grid Solutions expansion",
+          "description": "Nordic Grid Solutions acquires HAMAG and Sargo, strengthening e-mobility position (Fund VI)"
+        },
+        {
+          "year": 2026,
+          "event": "Lyngsoe Systems expansion",
+          "description": "Lyngsoe Systems acquires mk Solutions' North American business (Fund VI)"
+        },
+        {
+          "year": 2025,
+          "event": "Together Scholarship milestone",
+          "description": "Together Scholarship celebrates its 14th edition and 2025 scholarship awarded"
+        },
+        {
           "year": 2025,
           "event": "Unisport investment",
           "description": "Invests in Unisport as new growth partner (Fund VII); deal closed Q1 2025"
@@ -4633,7 +5632,7 @@
         {
           "year": 2024,
           "event": "Malte Månson expansion",
-          "description": "Acquires Malte Månson; add-ons: Skandinaviska Buss & Truck, Experten Group"
+          "description": "Portfolio add-ons: Skandinaviska Buss & Truck, Experten Group"
         },
         {
           "year": 2024,
@@ -4679,16 +5678,6 @@
           "year": 2025,
           "event": "Oscar Claeson promotion",
           "description": "Promotes Oscar Claeson to Partner"
-        },
-        {
-          "year": 2024,
-          "event": "Linotol platform creation",
-          "description": "Acquires Linotol and C Holmqvist Entreprenad, creating platform for industrial flooring solutions"
-        },
-        {
-          "year": 2024,
-          "event": "Malte Månson acquisition",
-          "description": "Acquires Malte Månson, Sweden's leading independent service and repair provider for trucks"
         },
         {
           "year": 2023,
@@ -6680,31 +7669,67 @@
         }
       ],
       "fundraising": {
-        "current_fund": "Alder III (SEK 3.1bn, closed May 2024, SFDR Article 9)",
-        "next_fund": "Deployment across Alder III",
+        "current_fund": "Alder III (SEK 3.1bn, closed May 2024, SFDR Article 9); Alder Strategic Opportunity Fund I (continuation); Alder Fund I fully realized (2025)",
+        "next_fund": "Deployment across Alder III and continuation vehicles",
         "strategy": "Nordic sustainable technology; turnover SEK 100–750M; Article 9 dark green fund"
       },
-      "recent_activity": "2025\n• Invests in 3Button Group (Mar) – industrial automation, robotics, AGVs; Jönköping, Sweden\n\n2024\n• Alder III final close SEK 3.1bn (May); SFDR Article 9, double predecessor\n• Invests in Flamonitec (Sep) – flame scanners, Germany; first in measurement tech consolidation\n• Invests in Microbas Precision (Sep) – precision components, semiconductor/cleantech; Hässleholm\n\n2023\n• Invests in Insort (Oct) – optical food sorting, Austria; majority owner\n• Invests in EWGroup – soil remediation, waste management\n\nPortfolio: Nordic sustainable technology; SEK 100–750M turnover; Article 9 dark green",
+      "recent_activity": "2026\n• Alder II divests SI and SMG to Alder Strategic Opportunity Fund I\n• Livitron launches new website and strengthens unified brand\n\n2025\n• Alder Fund I AB fully realized – final holding divested\n• Insort merges with Qcify and TriVision\n• Invests in 3Button Group – advanced industrial automation\n\n2024\n• Alder III (SEK 3.1bn) in deployment; Microbas Precision and Flamonitec platforms\n• Executive team meet-up\n\nPortfolio: Nordic sustainable technology; Article 9 dark green (Alder III)",
       "company_updates": [
         {
-          "date": "2025-03",
+          "date": "2026-04-14",
+          "type": "Exit",
+          "title": "Alder II AB divests SI and SMG to Alder Strategic Opportunity Fund I",
+          "text": "Alder II AB (\"Alder II\") divests SI and SMG to Alder Strategic Opportunity Fund I."
+        },
+        {
+          "date": "2026-01-20",
+          "type": "Portfolio",
+          "title": "Livitron launches new website and strengthens unified brand",
+          "text": "Alder portfolio company Livitron launches new website and strengthens its unified brand."
+        },
+        {
+          "date": "2025-12-03",
+          "type": "Fund",
+          "title": "Alder Fund I AB concludes – final holding divested",
+          "text": "Alder Fund I AB concludes a successful journey – final holding divested."
+        },
+        {
+          "date": "2025-04-24",
+          "type": "Portfolio",
+          "title": "Insort merges with TriVision",
+          "text": "Alder's portfolio company Insort merges with TriVision."
+        },
+        {
+          "date": "2025-03-25",
+          "type": "Portfolio",
+          "title": "Insort merges with Qcify",
+          "text": "Alder's portfolio company Insort merges with Qcify."
+        },
+        {
+          "date": "2025-03-14",
           "type": "Investment",
           "title": "Alder invests in 3Button Group",
-          "text": "Majority stake in Swedish industrial automation leader – robotics, picking/packing, in-mould labelling, AGVs. SEK 204M sales (2023). First Alder III platform in industrial automation.",
+          "text": "Alder invests in 3Button Group, a leading provider of advanced industrial automation solutions. Majority stake in Swedish industrial automation leader – robotics, picking/packing, in-mould labelling, AGVs. SEK 204M sales (2023). First Alder III platform in industrial automation.",
           "link": "https://alder.se/en/alder-investerar-i-3button-group-en-ledande-leverantor-av-avancerade-losning-inom-industriell-automation/"
         },
         {
-          "date": "2024-09",
+          "date": "2024-11-12",
+          "type": "Team",
+          "title": "Executive meet-up recap",
+          "text": "Executive meet-up recap – a productive and insightful gathering."
+        },
+        {
+          "date": "2024-09-05",
           "type": "Investment",
-          "title": "Alder invests in Flamonitec",
-          "text": "Majority owner in German flame scanner and monitoring systems manufacturer. First investment in advanced measurement technology consolidation initiative.",
+          "title": "Alder invests in Microbas Precision AB",
+          "text": "Alder invests in Microbas Precision AB, a leading supplier of precision components. Majority owner in Swedish precision components supplier for semiconductor, cleantech, display, space and optics. Founded 1958, Hässleholm.",
           "link": "https://alder.se/"
         },
         {
-          "date": "2024-09",
+          "date": "2024-09-04",
           "type": "Investment",
-          "title": "Alder invests in Microbas Precision",
-          "text": "Majority owner in Swedish precision components supplier for semiconductor, cleantech, display, space and optics. Founded 1958, Hässleholm.",
+          "title": "Alder invests in Flamonitec",
+          "text": "Alder invests in Flamonitec, a leading manufacturer of advanced measurement equipment. Majority owner in German flame scanner and monitoring systems manufacturer. First investment in advanced measurement technology consolidation initiative.",
           "link": "https://alder.se/"
         },
         {
@@ -6734,13 +7759,33 @@
         {
           "year": 2024,
           "event": "Alder III closes",
-          "description": "SEK 3.1bn final close; Flamonitec, Microbas Precision investments"
+          "description": "SEK 3.1bn final close; Flamonitec and Microbas Precision investments"
         },
         {
           "year": 2025,
           "event": "Invests in 3Button Group",
-          "description": "First Alder III platform – industrial automation",
+          "description": "First Alder III platform – advanced industrial automation",
           "company": "3Button Group"
+        },
+        {
+          "year": 2025,
+          "event": "Insort platform expansion",
+          "description": "Insort merges with Qcify and TriVision"
+        },
+        {
+          "year": 2025,
+          "event": "Alder Fund I realized",
+          "description": "Alder Fund I AB concludes; final holding divested"
+        },
+        {
+          "year": 2026,
+          "event": "Livitron brand refresh",
+          "description": "Portfolio company Livitron launches new website and strengthens unified brand"
+        },
+        {
+          "year": 2026,
+          "event": "Alder II divestment to SOF I",
+          "description": "Alder II AB divests SI and SMG to Alder Strategic Opportunity Fund I"
         }
       ],
       "portfolio_companies": [
@@ -13804,6 +14849,129 @@
         "next_fund": "Deployment across portfolio",
         "strategy": "Nordic mid-market; operational value creation"
       },
+      "portfolio_companies": [
+        {
+          "name": "Newsec",
+          "sector": "Real Estate Services",
+          "country": "Sweden",
+          "headquarters": "Stockholm, Sweden",
+          "entry_year": "2024",
+          "fund": "Fidelio Capital III",
+          "website": "https://www.newsec.com",
+          "logo": "https://logo.clearbit.com/newsec.com",
+          "description": "Northern European property adviser and transaction partner.",
+          "detailed_description": "Backing the next phase of growth for a Northern European property house — advisory, transactions and capital markets across the Nordics and Baltics."
+        },
+        {
+          "name": "Alphalyse",
+          "sector": "Healthcare / Life Sciences",
+          "country": "Denmark",
+          "headquarters": "Odense, Denmark",
+          "entry_year": "2025",
+          "fund": "Fidelio Capital III",
+          "website": "https://www.alphalyse.com",
+          "logo": "https://logo.clearbit.com/alphalyse.com",
+          "description": "Biologic drug analytics and CRO services.",
+          "detailed_description": "Pioneering provider of host cell protein impurity testing and LC-MS-based analytics for biologic drugs; Danish specialist CRO supporting global biopharma."
+        },
+        {
+          "name": "KEYTO",
+          "sector": "Consumer Services",
+          "country": "Sweden",
+          "headquarters": "Stockholm, Sweden",
+          "entry_year": "2023",
+          "fund": "Fidelio Capital III",
+          "website": "https://www.keytogroup.com",
+          "logo": "https://logo.clearbit.com/keytogroup.com",
+          "description": "Technology-enabled home services platform.",
+          "detailed_description": "A technology-enabled one-stop destination for home services — cleaning, white goods, gardening, handyman and related services across Sweden and the UK."
+        },
+        {
+          "name": "ibinder",
+          "sector": "Technology",
+          "country": "Sweden",
+          "headquarters": "Stockholm, Sweden",
+          "entry_year": "2019",
+          "fund": "Fidelio Capital II / III",
+          "website": "https://www.ibinder.com",
+          "logo": "https://logo.clearbit.com/ibinder.com",
+          "description": "Digital workflows for construction and real estate.",
+          "detailed_description": "Digital solutions for the construction and real estate industries — document management, collaboration and compliance for projects and assets."
+        },
+        {
+          "name": "Odevo",
+          "sector": "Technology / Property Services",
+          "country": "Sweden",
+          "headquarters": "Stockholm, Sweden",
+          "entry_year": "2019",
+          "fund": "Fidelio Capital II / III",
+          "website": "https://www.odevo.com",
+          "logo": "https://logo.clearbit.com/odevo.com",
+          "description": "Property management and resident experience software.",
+          "detailed_description": "Simplifying living by combining people and technology — platform for property managers and communities; expanding across Europe and Latin America."
+        },
+        {
+          "name": "NN07 (No Nationality)",
+          "sector": "Consumer / Fashion",
+          "country": "Denmark",
+          "headquarters": "Copenhagen, Denmark",
+          "entry_year": "2021",
+          "fund": "Fidelio Capital III",
+          "website": "https://www.nn07.com",
+          "logo": "https://logo.clearbit.com/nn07.com",
+          "description": "International menswear — modern classics.",
+          "detailed_description": "International menswear brand (NN07 / No Nationality), developing elevated essentials and future classics with wholesale and direct retail."
+        },
+        {
+          "name": "Vimian",
+          "sector": "Healthcare / Animal Health",
+          "country": "Sweden",
+          "headquarters": "Stockholm, Sweden",
+          "entry_year": "2015",
+          "fund": "Fidelio Capital I / II",
+          "website": "https://www.vimian.com",
+          "logo": "https://logo.clearbit.com/vimian.com",
+          "description": "Animal health technology and services group.",
+          "detailed_description": "Improving animal health for better lives — listed group spanning veterinary services, diagnostics, pharmaceuticals and technology (incl. segments such as AniCura)."
+        },
+        {
+          "name": "Greenfood",
+          "sector": "Food & Beverage",
+          "country": "Sweden",
+          "headquarters": "Helsingborg, Sweden",
+          "entry_year": "2012",
+          "fund": "Fidelio Capital II / III",
+          "website": "https://www.greenfood.se",
+          "logo": "https://logo.clearbit.com/greenfood.se",
+          "description": "Healthy food and convenience concepts.",
+          "detailed_description": "Leading European healthy food provider — brands, distribution and concepts including salad bars and fresh categories; long-term Fidelio partnership, majority ownership from 2025."
+        },
+        {
+          "name": "AniCura",
+          "sector": "Healthcare / Veterinary",
+          "country": "Sweden",
+          "headquarters": "Stockholm, Sweden",
+          "entry_year": "2018",
+          "fund": "Fidelio Capital (via Vimian)",
+          "website": "https://www.anicura.com",
+          "logo": "https://logo.clearbit.com/anicura.com",
+          "description": "European veterinary hospital group.",
+          "detailed_description": "Europe’s leading family of animal hospitals — primary and specialist care, part of the Vimian Group’s veterinary ecosystem."
+        },
+        {
+          "name": "Lyko",
+          "sector": "Consumer / E-commerce",
+          "country": "Sweden",
+          "headquarters": "Västerås, Sweden",
+          "entry_year": "2017",
+          "fund": "Fidelio Capital II",
+          "website": "https://www.lyko.com",
+          "logo": "https://logo.clearbit.com/lyko.com",
+          "description": "Haircare and beauty retail.",
+          "detailed_description": "Innovative online destination for haircare and beauty — multi-brand e-commerce, salons and own brands in the Nordics."
+        }
+      ],
+      "recent_activity": "2026\n• KEYTO platform: two strategic additions and new service vertical (Jan); three expansions late 2025 (UK & Sweden)\n\n2025\n• Greenfood: Fidelio becomes majority owner (Jul); Fresh Produce sale to Dole Nordic agreed (Dec); Picadeli / TotalEnergies expansion in France (Oct)\n• Alphalyse majority — Danish CRO, LC-MS biologic drug analytics (Jul)\n• Odevo adds Portik — Spain, Italy, Mexico, Portugal (Jun)\n• Vimian: Alireza Tajbakhsh appointed CEO (Nov)\n\nPortfolio: Newsec, Alphalyse, KEYTO, ibinder, Odevo, NN07 (No Nationality), Vimian, Greenfood, AniCura, Lyko",
       "team": [
         {
           "name": "Gabriel Fitzgerald",
@@ -13914,8 +15082,85 @@
           "background": "Joined February 2022; Luma Finans, SEB (Stockholm)."
         }
       ],
-      "timeline": [],
-      "company_updates": []
+      "timeline": [
+        {
+          "year": 2025,
+          "event": "Alphalyse majority investment",
+          "description": "Majority in Danish CRO focused on LC-MS analytics for biologic drugs; supports global growth"
+        },
+        {
+          "year": 2025,
+          "event": "Greenfood majority ownership",
+          "description": "Increases ownership to majority; partnership since 2012; takes over from Nordic Capital"
+        },
+        {
+          "year": 2025,
+          "event": "Odevo / Portik expansion",
+          "description": "Odevo enters Spain, Italy, Mexico, and Portugal as Portik joins the group"
+        },
+        {
+          "year": 2025,
+          "event": "Greenfood Fresh Produce divestment",
+          "description": "Agreement to sell Fresh Produce business to Dole Nordic AB"
+        },
+        {
+          "year": 2025,
+          "event": "Vimian CEO appointment",
+          "description": "Alireza Tajbakhsh appointed Chief Executive Officer"
+        },
+        {
+          "year": 2026,
+          "event": "KEYTO platform growth",
+          "description": "Strategic additions, new service vertical, and expansion across Sweden and the UK"
+        }
+      ],
+      "company_updates": [
+        {
+          "date": "2026-01-30",
+          "title": "KEYTO expands with two strategic additions and launches new service vertical",
+          "text": "Strengthens its one-stop home services platform in Sweden; broadens offering and establishes a new growth vertical."
+        },
+        {
+          "date": "2026-01-14",
+          "title": "KEYTO accelerates further through three strategic expansions",
+          "text": "Late 2025 initiatives strengthen the service offering across Sweden and the UK; reinforces customer value and trusted service brands."
+        },
+        {
+          "date": "2025-12-17",
+          "title": "Greenfood signs agreement to sell its Fresh Produce business",
+          "text": "Agreement with Dole Nordic AB regarding the sale of Greenfood’s Fresh Produce business."
+        },
+        {
+          "date": "2025-12-17",
+          "title": "KEYTO makes two strategic investments",
+          "text": "Expands within Servly and gardening services in Sweden; strengthens the one-stop household services destination."
+        },
+        {
+          "date": "2025-11-24",
+          "title": "Vimian appoints Alireza Tajbakhsh as Chief Executive Officer",
+          "text": "Joined Vimian in 2021; previously Head of Veterinary Services and interim Head of MedTech."
+        },
+        {
+          "date": "2025-10-01",
+          "title": "Greenfood expands in France",
+          "text": "Picadeli signs a three-year agreement with TotalEnergies to expand at motorway service stations in France."
+        },
+        {
+          "date": "2025-07-28",
+          "title": "Fidelio increases ownership in Greenfood",
+          "text": "Fidelio becomes majority owner, taking over from Nordic Capital; partnership dating to 2012."
+        },
+        {
+          "date": "2025-07-01",
+          "title": "Fidelio invests in Alphalyse to support global growth in biologic drug analytics",
+          "text": "Majority stake in Danish CRO focused on liquid-chromatography mass-spectrometry (LC-MS) based analytics."
+        },
+        {
+          "date": "2025-06-26",
+          "title": "Odevo expands to southern Europe and Latin America as Portik joins the group",
+          "text": "Entry into Spain, Italy, Mexico, and Portugal; Portik adds scale in fragmented property-management markets."
+        }
+      ]
     }
   }
 }
