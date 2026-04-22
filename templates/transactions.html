@@ -1,20 +1,20 @@
 {% extends "base.html" %}
 
-{# GP / acquirer + target company logos via Clearbit (fallback: building icon) #}
-{% macro txn_logo_pair(gp_domain, gp_alt, co_domain, co_alt) %}
+{# GP logos resolved like Investors (API + favicon + avatar); company: domain chain in transactions_logos.js #}
+{% macro txn_logo_pair(gp_key, gp_domain, gp_alt, co_domain, co_alt) %}
 <div class="txn-logos" role="group" aria-label="Acquirer and target logos">
     <div class="txn-logo-cell">
         <span class="txn-logo-caption"><i class="fas fa-briefcase" aria-hidden="true"></i> GP / Acquirer</span>
         <div class="txn-logo-avatar">
-            <img src="https://logo.clearbit.com/{{ gp_domain }}" alt="{{ gp_alt }}" width="52" height="52" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="txn-logo-fallback" style="display:none" aria-hidden="true"><i class="fas fa-building"></i></div>
+            <img class="txn-logo-img txn-logo-gp" src="https://www.google.com/s2/favicons?domain={{ gp_domain }}&amp;sz=128" alt="{{ gp_alt }}" width="52" height="52" loading="lazy" decoding="async" data-gp-key="{{ gp_key }}" data-fallback-domain="{{ gp_domain }}">
+            <div class="txn-logo-fallback" style="display:none" aria-hidden="true"><i class="fas fa-briefcase"></i></div>
         </div>
     </div>
     <span class="txn-logo-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
     <div class="txn-logo-cell">
         <span class="txn-logo-caption"><i class="fas fa-industry" aria-hidden="true"></i> Company</span>
         <div class="txn-logo-avatar">
-            <img src="https://logo.clearbit.com/{{ co_domain }}" alt="{{ co_alt }}" width="52" height="52" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <img class="txn-logo-img txn-logo-co" src="https://www.google.com/s2/favicons?domain={{ co_domain }}&amp;sz=128" alt="{{ co_alt }}" width="52" height="52" loading="lazy" decoding="async" data-fallback-domain="{{ co_domain }}">
             <div class="txn-logo-fallback" style="display:none" aria-hidden="true"><i class="fas fa-building"></i></div>
         </div>
     </div>
@@ -134,7 +134,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="page-header scroll-reveal">
+<div class="page-header">
     <h1 class="page-title">Transactions</h1>
     <p class="page-subtitle">Curated Nordic private equity transactions — signings, completions, and selected exits.</p>
 </div>
@@ -153,7 +153,7 @@
                     <span class="txn-deal-date">March 2026</span>
                     <span class="txn-pill">Signed (expected close Q2 2026)</span>
                 </div>
-                {{ txn_logo_pair('nordiccapital.com', 'Nordic Capital', 'tradinghub.com', 'TradingHub') }}
+                {{ txn_logo_pair('Nordic Capital', 'nordiccapital.com', 'Nordic Capital', 'tradinghub.com', 'TradingHub') }}
                 <div class="txn-grid">
                     <div><span class="txn-k">Acquirer</span><span class="txn-v">Nordic Capital (Stockholm, Sweden)</span></div>
                     <div><span class="txn-k">Target</span><span class="txn-v">TradingHub</span></div>
@@ -173,7 +173,7 @@
                     <span class="txn-deal-date">March 2026</span>
                     <span class="txn-pill">Signed</span>
                 </div>
-                {{ txn_logo_pair('altor.com', 'Altor', 'eltera.no', 'Eltera') }}
+                {{ txn_logo_pair('Altor', 'altor.com', 'Altor', 'eltera.no', 'Eltera') }}
                 <div class="txn-grid">
                     <div><span class="txn-k">Acquirer</span><span class="txn-v">Altor (Stockholm, Sweden)</span></div>
                     <div><span class="txn-k">Target</span><span class="txn-v">Eltera</span></div>
@@ -193,7 +193,7 @@
                     <span class="txn-deal-date">December 2025</span>
                     <span class="txn-pill">Signed (expected close H1 2026)</span>
                 </div>
-                {{ txn_logo_pair('altor.com', 'Altor', 'evac.com', 'Evac') }}
+                {{ txn_logo_pair('Altor', 'altor.com', 'Altor', 'evac.com', 'Evac') }}
                 <div class="txn-grid">
                     <div><span class="txn-k">Acquirer</span><span class="txn-v">Altor Fund VI &amp; Altor ACT I (Stockholm, Sweden)</span></div>
                     <div><span class="txn-k">Target</span><span class="txn-v">Evac Holding Oy</span></div>
@@ -213,7 +213,7 @@
                     <span class="txn-deal-date">November 2025</span>
                     <span class="txn-pill done">Completed</span>
                 </div>
-                {{ txn_logo_pair('nordiccapital.com', 'Nordic Capital', 'evosep.com', 'Evosep') }}
+                {{ txn_logo_pair('Nordic Capital', 'nordiccapital.com', 'Nordic Capital', 'evosep.com', 'Evosep') }}
                 <div class="txn-grid">
                     <div><span class="txn-k">Acquirer</span><span class="txn-v">Nordic Capital (Stockholm, Sweden)</span></div>
                     <div><span class="txn-k">Target</span><span class="txn-v">Evosep</span></div>
@@ -233,7 +233,7 @@
                     <span class="txn-deal-date">October 2025</span>
                     <span class="txn-pill done">Completed</span>
                 </div>
-                {{ txn_logo_pair('nordiccapital.com', 'Nordic Capital', 'bmlltech.com', 'BMLL Technologies') }}
+                {{ txn_logo_pair('Nordic Capital', 'nordiccapital.com', 'Nordic Capital', 'bmlltech.com', 'BMLL Technologies') }}
                 <div class="txn-grid">
                     <div><span class="txn-k">Acquirer</span><span class="txn-v">Nordic Capital (Stockholm, Sweden)</span></div>
                     <div><span class="txn-k">Target</span><span class="txn-v">BMLL Technologies</span></div>
@@ -253,7 +253,7 @@
                     <span class="txn-deal-date">October 2025</span>
                     <span class="txn-pill done">Completed</span>
                 </div>
-                {{ txn_logo_pair('norvestor.com', 'Norvestor', 'norautron.com', 'Norautron') }}
+                {{ txn_logo_pair('Norvestor', 'norvestor.com', 'Norvestor', 'norautron.com', 'Norautron') }}
                 <div class="txn-grid">
                     <div><span class="txn-k">Acquirer</span><span class="txn-v">Norvestor (Oslo, Norway)</span></div>
                     <div><span class="txn-k">Target</span><span class="txn-v">Norautron</span></div>
@@ -273,7 +273,7 @@
                     <span class="txn-deal-date">June–July 2025</span>
                     <span class="txn-pill done">Completed</span>
                 </div>
-                {{ txn_logo_pair('eqtgroup.com', 'EQT', 'fortnox.se', 'Fortnox') }}
+                {{ txn_logo_pair('EQT', 'eqtgroup.com', 'EQT', 'fortnox.se', 'Fortnox') }}
                 <div class="txn-grid">
                     <div><span class="txn-k">Acquirer</span><span class="txn-v">EQT (Stockholm, Sweden) + First Kraft</span></div>
                     <div><span class="txn-k">Target</span><span class="txn-v">Fortnox AB</span></div>
@@ -293,7 +293,7 @@
                     <span class="txn-deal-date">July 2025</span>
                     <span class="txn-pill done">Completed</span>
                 </div>
-                {{ txn_logo_pair('altor.com', 'Altor', 'imbox.dk', 'IMBOX Protection') }}
+                {{ txn_logo_pair('Altor', 'altor.com', 'Altor', 'imbox.dk', 'IMBOX Protection') }}
                 <div class="txn-grid">
                     <div><span class="txn-k">Acquirer</span><span class="txn-v">Altor Fund VI (Stockholm, Sweden)</span></div>
                     <div><span class="txn-k">Target</span><span class="txn-v">IMBOX Protection A/S</span></div>
@@ -313,7 +313,7 @@
                     <span class="txn-deal-date">April 2025</span>
                     <span class="txn-pill exit">Completed</span>
                 </div>
-                {{ txn_logo_pair('kkr.com', 'KKR', 'karohealthcare.com', 'Karo Healthcare') }}
+                {{ txn_logo_pair('', 'kkr.com', 'KKR', 'karohealthcare.com', 'Karo Healthcare') }}
                 <div class="txn-grid">
                     <div><span class="txn-k">Acquirer</span><span class="txn-v">KKR (buyer) / EQT (seller)</span></div>
                     <div><span class="txn-k">Target</span><span class="txn-v">Karo Healthcare</span></div>
@@ -333,7 +333,7 @@
                     <span class="txn-deal-date">March 2025</span>
                     <span class="txn-pill exit">Completed</span>
                 </div>
-                {{ txn_logo_pair('jflp.com', 'J.F. Lehman and Company', 'wrist.com', 'Wrist Ship Supply') }}
+                {{ txn_logo_pair('', 'jflp.com', 'J.F. Lehman and Company', 'wrist.com', 'Wrist Ship Supply') }}
                 <div class="txn-grid">
                     <div><span class="txn-k">Acquirer</span><span class="txn-v">J.F. Lehman &amp; Company (buyer) / Altor (seller)</span></div>
                     <div><span class="txn-k">Target</span><span class="txn-v">Wrist Ship Supply (W.S.S. Holding A/S)</span></div>
@@ -349,4 +349,8 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='transactions_logos.js') }}"></script>
 {% endblock %}
