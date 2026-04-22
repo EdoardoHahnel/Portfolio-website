@@ -527,6 +527,7 @@ def deal_flow():
     return render_template('deal_flow.html')
 
 
+@app.route('/test/')
 @app.route('/test')
 def test_page():
     """Static sample page (same shell as PE firms list)."""
