@@ -527,11 +527,18 @@ def deal_flow():
     return render_template('deal_flow.html')
 
 
+@app.route('/transactions/')
+@app.route('/transactions')
+def transactions_page():
+    """Curated PE transactions (static template, same shell as PE firms list)."""
+    return render_template('transactions.html')
+
+
 @app.route('/test/')
 @app.route('/test')
-def test_page():
-    """Static sample page (same shell as PE firms list)."""
-    return render_template('test.html')
+def legacy_test_redirect():
+    """Old URL → Transactions."""
+    return redirect('/transactions', code=301)
 
 
 @app.route('/api/deal-flow', methods=['GET'])

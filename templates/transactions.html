@@ -1,0 +1,352 @@
+{% extends "base.html" %}
+
+{# GP / acquirer + target company logos via Clearbit (fallback: building icon) #}
+{% macro txn_logo_pair(gp_domain, gp_alt, co_domain, co_alt) %}
+<div class="txn-logos" role="group" aria-label="Acquirer and target logos">
+    <div class="txn-logo-cell">
+        <span class="txn-logo-caption"><i class="fas fa-briefcase" aria-hidden="true"></i> GP / Acquirer</span>
+        <div class="txn-logo-avatar">
+            <img src="https://logo.clearbit.com/{{ gp_domain }}" alt="{{ gp_alt }}" width="52" height="52" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="txn-logo-fallback" style="display:none" aria-hidden="true"><i class="fas fa-building"></i></div>
+        </div>
+    </div>
+    <span class="txn-logo-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+    <div class="txn-logo-cell">
+        <span class="txn-logo-caption"><i class="fas fa-industry" aria-hidden="true"></i> Company</span>
+        <div class="txn-logo-avatar">
+            <img src="https://logo.clearbit.com/{{ co_domain }}" alt="{{ co_alt }}" width="52" height="52" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="txn-logo-fallback" style="display:none" aria-hidden="true"><i class="fas fa-building"></i></div>
+        </div>
+    </div>
+</div>
+{% endmacro %}
+
+{% block title %}Transactions{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
+<style>
+    .txn-deals { display: flex; flex-direction: column; gap: 1.25rem; }
+    .txn-deal {
+        border: 1px solid #e8e8ef;
+        border-radius: 10px;
+        padding: 1.25rem 1.35rem;
+        background: #fff;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+    }
+    .txn-logos {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        gap: 0.65rem 1rem;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+    }
+    .txn-logo-cell { text-align: center; min-width: 76px; }
+    .txn-logo-caption {
+        font-size: 0.62rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: #94a3b8;
+        display: block;
+        margin-bottom: 0.35rem;
+    }
+    .txn-logo-caption i { margin-right: 0.2rem; opacity: 0.85; }
+    .txn-logo-avatar {
+        width: 52px;
+        height: 52px;
+        border-radius: 10px;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    .txn-logo-avatar img { width: 100%; height: 100%; object-fit: contain; padding: 5px; }
+    .txn-logo-fallback {
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        color: #64748b;
+        font-size: 1.2rem;
+        background: #f1f5f9;
+    }
+    .txn-logo-arrow { color: #cbd5e1; font-size: 0.85rem; padding-bottom: 0.35rem; }
+    .txn-deal-head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 0.5rem 1rem;
+        margin-bottom: 0.85rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid #f1f5f9;
+    }
+    .txn-deal-num {
+        font-size: 0.75rem;
+        font-weight: 800;
+        color: #4c1d95;
+        min-width: 1.5rem;
+    }
+    .txn-deal-title {
+        flex: 1;
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0;
+        line-height: 1.3;
+    }
+    .txn-deal-date {
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+    }
+    .txn-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.65rem 1.25rem;
+        margin-bottom: 0.85rem;
+        font-size: 0.88rem;
+    }
+    @media (max-width: 640px) { .txn-grid { grid-template-columns: 1fr; } }
+    .txn-k { display: block; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; margin-bottom: 0.15rem; }
+    .txn-v { color: #1e293b; line-height: 1.4; }
+    .txn-desc { margin: 0; font-size: 0.88rem; line-height: 1.6; color: #475569; padding-top: 0.75rem; border-top: 1px solid #f8fafc; }
+    .txn-pill {
+        font-size: 0.68rem;
+        font-weight: 700;
+        padding: 0.25rem 0.55rem;
+        border-radius: 999px;
+        background: #ede9fe;
+        color: #5b21b6;
+        border: 1px solid #ddd6fe;
+        white-space: nowrap;
+    }
+    .txn-pill.done { background: #ecfdf5; color: #047857; border-color: #a7f3d0; }
+    .txn-pill.exit { background: #fff7ed; color: #c2410c; border-color: #fed7aa; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="page-header scroll-reveal">
+    <h1 class="page-title">Transactions</h1>
+    <p class="page-subtitle">Curated Nordic private equity transactions — signings, completions, and selected exits.</p>
+</div>
+
+<div class="content-card scroll-reveal-item">
+    <div class="content-card-header">
+        <h2 class="content-card-title">Deal snapshots</h2>
+    </div>
+    <div class="content-card-body">
+        <div class="txn-deals">
+
+            <article class="txn-deal">
+                <div class="txn-deal-head">
+                    <span class="txn-deal-num">1</span>
+                    <h3 class="txn-deal-title">Nordic Capital → TradingHub</h3>
+                    <span class="txn-deal-date">March 2026</span>
+                    <span class="txn-pill">Signed (expected close Q2 2026)</span>
+                </div>
+                {{ txn_logo_pair('nordiccapital.com', 'Nordic Capital', 'tradinghub.com', 'TradingHub') }}
+                <div class="txn-grid">
+                    <div><span class="txn-k">Acquirer</span><span class="txn-v">Nordic Capital (Stockholm, Sweden)</span></div>
+                    <div><span class="txn-k">Target</span><span class="txn-v">TradingHub</span></div>
+                    <div><span class="txn-k">Sector</span><span class="txn-v">FinTech / Compliance Tech</span></div>
+                    <div><span class="txn-k">Geography</span><span class="txn-v">United Kingdom</span></div>
+                    <div><span class="txn-k">Type</span><span class="txn-v">Majority Buyout</span></div>
+                    <div><span class="txn-k">Deal value</span><span class="txn-v">Undisclosed</span></div>
+                    <div style="grid-column: 1 / -1;"><span class="txn-k">Seller</span><span class="txn-v">Summit Partners (partial exit)</span></div>
+                </div>
+                <p class="txn-desc">Nordic Capital agreed to acquire a majority stake in TradingHub, a leading trade surveillance technology platform for global financial institutions. Founded in 2010, TradingHub processes over 4 billion trades per day and serves major investment banks, asset managers, and hedge funds. Existing investor Summit Partners and co-founder Neil Walker retain minority positions.</p>
+            </article>
+
+            <article class="txn-deal">
+                <div class="txn-deal-head">
+                    <span class="txn-deal-num">2</span>
+                    <h3 class="txn-deal-title">Altor → Eltera</h3>
+                    <span class="txn-deal-date">March 2026</span>
+                    <span class="txn-pill">Signed</span>
+                </div>
+                {{ txn_logo_pair('altor.com', 'Altor', 'eltera.no', 'Eltera') }}
+                <div class="txn-grid">
+                    <div><span class="txn-k">Acquirer</span><span class="txn-v">Altor (Stockholm, Sweden)</span></div>
+                    <div><span class="txn-k">Target</span><span class="txn-v">Eltera</span></div>
+                    <div><span class="txn-k">Sector</span><span class="txn-v">Electrical Services / Industrials</span></div>
+                    <div><span class="txn-k">Geography</span><span class="txn-v">Norway</span></div>
+                    <div><span class="txn-k">Type</span><span class="txn-v">Majority Buyout</span></div>
+                    <div><span class="txn-k">Deal value</span><span class="txn-v">Undisclosed</span></div>
+                    <div style="grid-column: 1 / -1;"><span class="txn-k">Seller</span><span class="txn-v">Valedo Partners</span></div>
+                </div>
+                <p class="txn-desc">Altor acquired a majority stake in Eltera, the leading Norwegian provider of electrical installation services. Founded in 2013, Eltera has grown to over 30 operating entities and more than 1,000 employees across Norway. The company operates a decentralised model combining local entrepreneurship with collective scale benefits.</p>
+            </article>
+
+            <article class="txn-deal">
+                <div class="txn-deal-head">
+                    <span class="txn-deal-num">3</span>
+                    <h3 class="txn-deal-title">Altor → Evac</h3>
+                    <span class="txn-deal-date">December 2025</span>
+                    <span class="txn-pill">Signed (expected close H1 2026)</span>
+                </div>
+                {{ txn_logo_pair('altor.com', 'Altor', 'evac.com', 'Evac') }}
+                <div class="txn-grid">
+                    <div><span class="txn-k">Acquirer</span><span class="txn-v">Altor Fund VI &amp; Altor ACT I (Stockholm, Sweden)</span></div>
+                    <div><span class="txn-k">Target</span><span class="txn-v">Evac Holding Oy</span></div>
+                    <div><span class="txn-k">Sector</span><span class="txn-v">Cleantech / Marine &amp; Industrial</span></div>
+                    <div><span class="txn-k">Geography</span><span class="txn-v">Finland</span></div>
+                    <div><span class="txn-k">Type</span><span class="txn-v">Majority Buyout</span></div>
+                    <div><span class="txn-k">Deal value</span><span class="txn-v">Undisclosed</span></div>
+                    <div style="grid-column: 1 / -1;"><span class="txn-k">Seller</span><span class="txn-v">Bridgepoint</span></div>
+                </div>
+                <p class="txn-desc">Altor signed an agreement to acquire a majority stake in Evac, a global leader in integrated water and waste management systems for marine and land-based industries. Founded in 1979 and headquartered in Espoo, Finland, Evac operates the well-known brands Evac, Cathelco, and HEM. Evac management reinvested alongside Altor.</p>
+            </article>
+
+            <article class="txn-deal">
+                <div class="txn-deal-head">
+                    <span class="txn-deal-num">4</span>
+                    <h3 class="txn-deal-title">Nordic Capital → Evosep</h3>
+                    <span class="txn-deal-date">November 2025</span>
+                    <span class="txn-pill done">Completed</span>
+                </div>
+                {{ txn_logo_pair('nordiccapital.com', 'Nordic Capital', 'evosep.com', 'Evosep') }}
+                <div class="txn-grid">
+                    <div><span class="txn-k">Acquirer</span><span class="txn-v">Nordic Capital (Stockholm, Sweden)</span></div>
+                    <div><span class="txn-k">Target</span><span class="txn-v">Evosep</span></div>
+                    <div><span class="txn-k">Sector</span><span class="txn-v">Life Sciences / Proteomics</span></div>
+                    <div><span class="txn-k">Geography</span><span class="txn-v">Denmark</span></div>
+                    <div><span class="txn-k">Type</span><span class="txn-v">Majority Buyout (80% stake)</span></div>
+                    <div><span class="txn-k">Deal value</span><span class="txn-v">Undisclosed</span></div>
+                    <div style="grid-column: 1 / -1;"><span class="txn-k">Seller</span><span class="txn-v">Novo Holdings / EIFO</span></div>
+                </div>
+                <p class="txn-desc">Nordic Capital acquired an 80% stake in Evosep, a Danish innovator of sample preparation and separation solutions for LC-MS-based proteomics. Founded in 2016 in Odense, Evosep's technology enables fast, high-throughput protein analysis for translational research and biopharma. Founders Ole Vorm and Matthias Mann remained invested. Minority shareholders Novo Holdings and EIFO fully divested.</p>
+            </article>
+
+            <article class="txn-deal">
+                <div class="txn-deal-head">
+                    <span class="txn-deal-num">5</span>
+                    <h3 class="txn-deal-title">Nordic Capital → BMLL Technologies</h3>
+                    <span class="txn-deal-date">October 2025</span>
+                    <span class="txn-pill done">Completed</span>
+                </div>
+                {{ txn_logo_pair('nordiccapital.com', 'Nordic Capital', 'bmlltech.com', 'BMLL Technologies') }}
+                <div class="txn-grid">
+                    <div><span class="txn-k">Acquirer</span><span class="txn-v">Nordic Capital (Stockholm, Sweden)</span></div>
+                    <div><span class="txn-k">Target</span><span class="txn-v">BMLL Technologies</span></div>
+                    <div><span class="txn-k">Sector</span><span class="txn-v">Financial Data &amp; Analytics</span></div>
+                    <div><span class="txn-k">Geography</span><span class="txn-v">United Kingdom</span></div>
+                    <div><span class="txn-k">Type</span><span class="txn-v">Majority Buyout</span></div>
+                    <div><span class="txn-k">Deal value</span><span class="txn-v">~$250M</span></div>
+                    <div style="grid-column: 1 / -1;"><span class="txn-k">Seller</span><span class="txn-v">Optiver (partial exit)</span></div>
+                </div>
+                <p class="txn-desc">Nordic Capital acquired BMLL, an independent provider of harmonised historical order book data and analytics. Founded in 2014 at the University of Cambridge, BMLL delivers Level 1–3 order-book data across global equities, ETFs, and futures. The deal was conducted alongside BMLL's management and minority shareholder Optiver.</p>
+            </article>
+
+            <article class="txn-deal">
+                <div class="txn-deal-head">
+                    <span class="txn-deal-num">6</span>
+                    <h3 class="txn-deal-title">Norvestor → Norautron</h3>
+                    <span class="txn-deal-date">October 2025</span>
+                    <span class="txn-pill done">Completed</span>
+                </div>
+                {{ txn_logo_pair('norvestor.com', 'Norvestor', 'norautron.com', 'Norautron') }}
+                <div class="txn-grid">
+                    <div><span class="txn-k">Acquirer</span><span class="txn-v">Norvestor (Oslo, Norway)</span></div>
+                    <div><span class="txn-k">Target</span><span class="txn-v">Norautron</span></div>
+                    <div><span class="txn-k">Sector</span><span class="txn-v">Electronics Manufacturing Services</span></div>
+                    <div><span class="txn-k">Geography</span><span class="txn-v">Norway</span></div>
+                    <div><span class="txn-k">Type</span><span class="txn-v">Majority Buyout</span></div>
+                    <div><span class="txn-k">Deal value</span><span class="txn-v">Undisclosed</span></div>
+                    <div style="grid-column: 1 / -1;"><span class="txn-k">Seller</span><span class="txn-v">Embron Group (Broch family)</span></div>
+                </div>
+                <p class="txn-desc">Norvestor IX signed an agreement to acquire Norautron from Embron Group, a family-owned investment company controlled by the Broch family. Norautron, headquartered in Horten, Norway, is a full-service electronics manufacturer with 1,000+ employees across 6 countries, serving sectors including maritime, energy, defence, and healthcare. The Broch family retained a minority position.</p>
+            </article>
+
+            <article class="txn-deal">
+                <div class="txn-deal-head">
+                    <span class="txn-deal-num">7</span>
+                    <h3 class="txn-deal-title">EQT → Fortnox</h3>
+                    <span class="txn-deal-date">June–July 2025</span>
+                    <span class="txn-pill done">Completed</span>
+                </div>
+                {{ txn_logo_pair('eqtgroup.com', 'EQT', 'fortnox.se', 'Fortnox') }}
+                <div class="txn-grid">
+                    <div><span class="txn-k">Acquirer</span><span class="txn-v">EQT (Stockholm, Sweden) + First Kraft</span></div>
+                    <div><span class="txn-k">Target</span><span class="txn-v">Fortnox AB</span></div>
+                    <div><span class="txn-k">Sector</span><span class="txn-v">SaaS / Business Software</span></div>
+                    <div><span class="txn-k">Geography</span><span class="txn-v">Sweden</span></div>
+                    <div><span class="txn-k">Type</span><span class="txn-v">Take-Private</span></div>
+                    <div><span class="txn-k">Deal value</span><span class="txn-v">~$5.5B</span></div>
+                    <div style="grid-column: 1 / -1;"><span class="txn-k">Seller</span><span class="txn-v">Public market (Nasdaq Stockholm)</span></div>
+                </div>
+                <p class="txn-desc">EQT, together with co-investor First Kraft, completed a take-private of Fortnox, Sweden's leading provider of cloud-based business applications for SMEs, accountants, and auditors. Initially offered at SEK 44.5bn (~$4.5B), the final valuation reached approximately $5.5B. EQT acquired over 90% of shares by July 4, 2025, triggering compulsory redemption and delisting from Nasdaq Stockholm. The largest Nordic PE deal of 2025.</p>
+            </article>
+
+            <article class="txn-deal">
+                <div class="txn-deal-head">
+                    <span class="txn-deal-num">8</span>
+                    <h3 class="txn-deal-title">Altor → IMBOX Protection</h3>
+                    <span class="txn-deal-date">July 2025</span>
+                    <span class="txn-pill done">Completed</span>
+                </div>
+                {{ txn_logo_pair('altor.com', 'Altor', 'imbox.dk', 'IMBOX Protection') }}
+                <div class="txn-grid">
+                    <div><span class="txn-k">Acquirer</span><span class="txn-v">Altor Fund VI (Stockholm, Sweden)</span></div>
+                    <div><span class="txn-k">Target</span><span class="txn-v">IMBOX Protection A/S</span></div>
+                    <div><span class="txn-k">Sector</span><span class="txn-v">Consumer / Footwear Care</span></div>
+                    <div><span class="txn-k">Geography</span><span class="txn-v">Denmark</span></div>
+                    <div><span class="txn-k">Type</span><span class="txn-v">Majority Buyout</span></div>
+                    <div><span class="txn-k">Deal value</span><span class="txn-v">Undisclosed</span></div>
+                    <div style="grid-column: 1 / -1;"><span class="txn-k">Seller</span><span class="txn-v">Founder-led (partial)</span></div>
+                </div>
+                <p class="txn-desc">Altor Fund VI acquired a majority stake in IMBOX Protection, entering into a partnership with founder René Marker and the Grundtvig family. IMBOX is a Danish company specialising in shoe protection and care products. The founders continued as partners alongside Altor, with the firm supporting the company's international expansion ambitions.</p>
+            </article>
+
+            <article class="txn-deal">
+                <div class="txn-deal-head">
+                    <span class="txn-deal-num">9</span>
+                    <h3 class="txn-deal-title">EQT exit: Karo Healthcare → KKR</h3>
+                    <span class="txn-deal-date">April 2025</span>
+                    <span class="txn-pill exit">Completed</span>
+                </div>
+                {{ txn_logo_pair('kkr.com', 'KKR', 'karohealthcare.com', 'Karo Healthcare') }}
+                <div class="txn-grid">
+                    <div><span class="txn-k">Acquirer</span><span class="txn-v">KKR (buyer) / EQT (seller)</span></div>
+                    <div><span class="txn-k">Target</span><span class="txn-v">Karo Healthcare</span></div>
+                    <div><span class="txn-k">Sector</span><span class="txn-v">Consumer Health / Pharma</span></div>
+                    <div><span class="txn-k">Geography</span><span class="txn-v">Sweden</span></div>
+                    <div><span class="txn-k">Type</span><span class="txn-v">Secondary Buyout (EQT exit)</span></div>
+                    <div><span class="txn-k">Deal value</span><span class="txn-v">&gt;€2.5B</span></div>
+                    <div style="grid-column: 1 / -1;"><span class="txn-k">Seller</span><span class="txn-v">EQT</span></div>
+                </div>
+                <p class="txn-desc">EQT sold Karo Healthcare, one of Europe's leading consumer health platforms with a wide portfolio of OTC brands across Europe, to KKR for over €2.5 billion. One of the largest Nordic PE transactions of 2025 and a major exit for EQT, underscoring strong buyer appetite for high-quality Nordic consumer health assets.</p>
+            </article>
+
+            <article class="txn-deal">
+                <div class="txn-deal-head">
+                    <span class="txn-deal-num">10</span>
+                    <h3 class="txn-deal-title">Altor exit: Wrist Ship Supply → JFLCO</h3>
+                    <span class="txn-deal-date">March 2025</span>
+                    <span class="txn-pill exit">Completed</span>
+                </div>
+                {{ txn_logo_pair('jflp.com', 'J.F. Lehman and Company', 'wrist.com', 'Wrist Ship Supply') }}
+                <div class="txn-grid">
+                    <div><span class="txn-k">Acquirer</span><span class="txn-v">J.F. Lehman &amp; Company (buyer) / Altor (seller)</span></div>
+                    <div><span class="txn-k">Target</span><span class="txn-v">Wrist Ship Supply (W.S.S. Holding A/S)</span></div>
+                    <div><span class="txn-k">Sector</span><span class="txn-v">Maritime / Logistics</span></div>
+                    <div><span class="txn-k">Geography</span><span class="txn-v">Denmark</span></div>
+                    <div><span class="txn-k">Type</span><span class="txn-v">Secondary Buyout (Altor exit)</span></div>
+                    <div><span class="txn-k">Deal value</span><span class="txn-v">Undisclosed</span></div>
+                    <div style="grid-column: 1 / -1;"><span class="txn-k">Seller</span><span class="txn-v">Altor Fund II</span></div>
+                </div>
+                <p class="txn-desc">Altor completed the divestment of Wrist, the global leader in marine supply, provisions, spare parts logistics, and budget management for the shipping industry. Wrist was sold to J.F. Lehman &amp; Company, a US private equity firm specialising in aerospace, defence, and maritime sectors.</p>
+            </article>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
