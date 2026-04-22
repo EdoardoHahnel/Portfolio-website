@@ -527,27 +527,10 @@ def deal_flow():
     return render_template('deal_flow.html')
 
 
-@app.route('/transactions/')
-@app.route('/transactions')
-def transactions_page():
-    """Curated Nordic PE transactions (static JSON)."""
-    try:
-        with open(data_path('latest_curated_transactions.json'), 'r', encoding='utf-8') as f:
-            bundle = json.load(f)
-    except (OSError, json.JSONDecodeError):
-        bundle = {'meta': {}, 'transactions': []}
-    return render_template(
-        'transactions.html',
-        transactions=bundle.get('transactions', []),
-        page_meta=bundle.get('meta', {}),
-    )
-
-
-@app.route('/latest-transactions/')
-@app.route('/latest-transactions')
-def legacy_latest_transactions_redirect():
-    """Old path → canonical /transactions."""
-    return redirect('/transactions', code=301)
+@app.route('/test')
+def test_page():
+    """Static sample page (same shell as PE firms list)."""
+    return render_template('test.html')
 
 
 @app.route('/api/deal-flow', methods=['GET'])
