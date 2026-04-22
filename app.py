@@ -542,11 +542,39 @@ def _parse_deal_date_for_sort(raw):
     return datetime(1900, 1, 1)
 
 
+def _render_latest_transactions_page():
+    """Shared handler: curated JSON feed (fast, no deal_flow scan)."""
+    try:
+        with open(data_path('latest_curated_transactions.json'), 'r', encoding='utf-8') as f:
+            bundle = json.load(f)
+    except (OSError, json.JSONDecodeError):
+        bundle = {'meta': {}, 'transactions': []}
+    return render_template(
+        'latest_transactions.html',
+        transactions=bundle.get('transactions', []),
+        page_meta=bundle.get('meta', {}),
+    )
+
+
 @app.route('/latest-transactions/')
 @app.route('/latest-transactions')
 def latest_transactions():
-    """Latest Nordic private equity transactions (newest first)."""
-    return render_template('latest_transactions.html')
+    """Curated Nordic PE transactions (static feed)."""
+    return _render_latest_transactions_page()
+
+
+@app.route('/transactions')
+@app.route('/transactions/')
+def latest_transactions_short():
+    """Short URL alias → same page as /latest-transactions."""
+    return _render_latest_transactions_page()
+
+
+@app.route('/Latest-Transactions')
+@app.route('/Latest-transactions')
+def latest_transactions_canonical_redirect():
+    """Linux paths are case-sensitive; normalize common variants."""
+    return redirect('/latest-transactions', code=301)
 
 
 @app.route('/api/latest-transactions/', methods=['GET'])

@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "subtitle": "Curated Nordic and Nordic-sponsored private equity transactions — signings, completions, and major exits.",
+    "footnote": "Summaries are for informational purposes. Dates and statuses reflect public announcements at the time of writing."
+  },
+  "transactions": [
+    {
+      "headline": "Nordic Capital → TradingHub",
+      "date": "March 2026",
+      "acquirer": "Nordic Capital (Stockholm, Sweden)",
+      "target": "TradingHub",
+      "sector": "FinTech / Compliance Tech",
+      "geography": "United Kingdom",
+      "deal_type": "Majority Buyout",
+      "deal_value": "Undisclosed",
+      "status": "Signed (expected close Q2 2026)",
+      "seller": "Summit Partners (partial exit)",
+      "description": "Nordic Capital agreed to acquire a majority stake in TradingHub, a leading trade surveillance technology platform for global financial institutions. Founded in 2010, TradingHub processes over 4 billion trades per day and serves major investment banks, asset managers, and hedge funds. Existing investor Summit Partners and co-founder Neil Walker retain minority positions."
+    },
+    {
+      "headline": "Altor → Eltera",
+      "date": "March 2026",
+      "acquirer": "Altor (Stockholm, Sweden)",
+      "target": "Eltera",
+      "sector": "Electrical Services / Industrials",
+      "geography": "Norway",
+      "deal_type": "Majority Buyout",
+      "deal_value": "Undisclosed",
+      "status": "Signed",
+      "seller": "Valedo Partners",
+      "description": "Altor acquired a majority stake in Eltera, the leading Norwegian provider of electrical installation services. Founded in 2013, Eltera has grown to over 30 operating entities and more than 1,000 employees across Norway. The company operates a decentralised model combining local entrepreneurship with collective scale benefits."
+    },
+    {
+      "headline": "Altor → Evac",
+      "date": "December 2025",
+      "acquirer": "Altor Fund VI & Altor ACT I (Stockholm, Sweden)",
+      "target": "Evac Holding Oy",
+      "sector": "Cleantech / Marine & Industrial",
+      "geography": "Finland",
+      "deal_type": "Majority Buyout",
+      "deal_value": "Undisclosed",
+      "status": "Signed (expected close H1 2026)",
+      "seller": "Bridgepoint",
+      "description": "Altor signed an agreement to acquire a majority stake in Evac, a global leader in integrated water and waste management systems for marine and land-based industries. Founded in 1979 and headquartered in Espoo, Finland, Evac operates the well-known brands Evac, Cathelco, and HEM. Evac management reinvested alongside Altor."
+    },
+    {
+      "headline": "Nordic Capital → Evosep",
+      "date": "November 2025",
+      "acquirer": "Nordic Capital (Stockholm, Sweden)",
+      "target": "Evosep",
+      "sector": "Life Sciences / Proteomics",
+      "geography": "Denmark",
+      "deal_type": "Majority Buyout (80% stake)",
+      "deal_value": "Undisclosed",
+      "status": "Completed",
+      "seller": "Novo Holdings / EIFO",
+      "description": "Nordic Capital acquired an 80% stake in Evosep, a Danish innovator of sample preparation and separation solutions for LC-MS-based proteomics. Founded in 2016 in Odense, Evosep's technology enables fast, high-throughput protein analysis for translational research and biopharma. Founders Ole Vorm and Matthias Mann remained invested. Minority shareholders Novo Holdings and EIFO fully divested."
+    },
+    {
+      "headline": "Nordic Capital → BMLL Technologies",
+      "date": "October 2025",
+      "acquirer": "Nordic Capital (Stockholm, Sweden)",
+      "target": "BMLL Technologies",
+      "sector": "Financial Data & Analytics",
+      "geography": "United Kingdom",
+      "deal_type": "Majority Buyout",
+      "deal_value": "~$250M",
+      "status": "Completed",
+      "seller": "Optiver (partial exit)",
+      "description": "Nordic Capital acquired BMLL, an independent provider of harmonised historical order book data and analytics. Founded in 2014 at the University of Cambridge, BMLL delivers Level 1–3 order-book data across global equities, ETFs, and futures. The deal was conducted alongside BMLL's management and minority shareholder Optiver."
+    },
+    {
+      "headline": "Norvestor → Norautron",
+      "date": "October 2025",
+      "acquirer": "Norvestor (Oslo, Norway)",
+      "target": "Norautron",
+      "sector": "Electronics Manufacturing Services",
+      "geography": "Norway",
+      "deal_type": "Majority Buyout",
+      "deal_value": "Undisclosed",
+      "status": "Completed",
+      "seller": "Embron Group (Broch family)",
+      "description": "Norvestor IX signed an agreement to acquire Norautron from Embron Group, a family-owned investment company controlled by the Broch family. Norautron, headquartered in Horten, Norway, is a full-service electronics manufacturer with 1,000+ employees across 6 countries, serving sectors including maritime, energy, defence, and healthcare. The Broch family retained a minority position."
+    },
+    {
+      "headline": "EQT → Fortnox",
+      "date": "June–July 2025",
+      "acquirer": "EQT (Stockholm, Sweden) + First Kraft",
+      "target": "Fortnox AB",
+      "sector": "SaaS / Business Software",
+      "geography": "Sweden",
+      "deal_type": "Take-Private",
+      "deal_value": "~$5.5B",
+      "status": "Completed",
+      "seller": "Public market (Nasdaq Stockholm)",
+      "description": "EQT, together with co-investor First Kraft, completed a take-private of Fortnox, Sweden's leading provider of cloud-based business applications for SMEs, accountants, and auditors. Initially offered at SEK 44.5bn (~$4.5B), the final valuation reached approximately $5.5B. EQT acquired over 90% of shares by July 4, 2025, triggering compulsory redemption and delisting from Nasdaq Stockholm. The largest Nordic PE deal of 2025."
+    },
+    {
+      "headline": "Altor → IMBOX Protection",
+      "date": "July 2025",
+      "acquirer": "Altor Fund VI (Stockholm, Sweden)",
+      "target": "IMBOX Protection A/S",
+      "sector": "Consumer / Footwear Care",
+      "geography": "Denmark",
+      "deal_type": "Majority Buyout",
+      "deal_value": "Undisclosed",
+      "status": "Completed",
+      "seller": "Founder-led (partial)",
+      "description": "Altor Fund VI acquired a majority stake in IMBOX Protection, entering into a partnership with founder René Marker and the Grundtvig family. IMBOX is a Danish company specialising in shoe protection and care products. The founders continued as partners alongside Altor, with the firm supporting the company's international expansion ambitions."
+    },
+    {
+      "headline": "EQT exit: Karo Healthcare → KKR",
+      "date": "April 2025",
+      "acquirer": "KKR (buyer) / EQT (seller)",
+      "target": "Karo Healthcare",
+      "sector": "Consumer Health / Pharma",
+      "geography": "Sweden",
+      "deal_type": "Secondary Buyout (EQT exit)",
+      "deal_value": ">€2.5B",
+      "status": "Completed",
+      "seller": "EQT",
+      "description": "EQT sold Karo Healthcare, one of Europe's leading consumer health platforms with a wide portfolio of OTC brands across Europe, to KKR for over €2.5 billion. One of the largest Nordic PE transactions of 2025 and a major exit for EQT, underscoring strong buyer appetite for high-quality Nordic consumer health assets."
+    },
+    {
+      "headline": "Altor exit: Wrist Ship Supply → JFLCO",
+      "date": "March 2025",
+      "acquirer": "J.F. Lehman & Company (buyer) / Altor (seller)",
+      "target": "Wrist Ship Supply (W.S.S. Holding A/S)",
+      "sector": "Maritime / Logistics",
+      "geography": "Denmark",
+      "deal_type": "Secondary Buyout (Altor exit)",
+      "deal_value": "Undisclosed",
+      "status": "Completed",
+      "seller": "Altor Fund II",
+      "description": "Altor completed the divestment of Wrist, the global leader in marine supply, provisions, spare parts logistics, and budget management for the shipping industry. Wrist was sold to J.F. Lehman & Company, a US private equity firm specialising in aerospace, defence, and maritime sectors."
+    }
+  ]
+}
