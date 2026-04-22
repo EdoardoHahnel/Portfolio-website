@@ -527,30 +527,17 @@ def deal_flow():
     return render_template('deal_flow.html')
 
 
-def _parse_deal_date_for_sort(raw):
-    """Parse deal_flow_database date field for descending sort (supports YYYY-MM-DD and timestamps)."""
-    if not raw:
-        return datetime(1900, 1, 1)
-    s = str(raw).strip()
-    if len(s) >= 10 and s[4] == '-' and s[7] == '-' and s[:4].isdigit():
-        day_part = s[:10]
-        for fmt in ('%Y-%m-%d',):
-            try:
-                return datetime.strptime(day_part, fmt)
-            except ValueError:
-                break
-    return datetime(1900, 1, 1)
-
-
-def _render_latest_transactions_page():
-    """Shared handler: curated JSON feed (fast, no deal_flow scan)."""
+@app.route('/transactions/')
+@app.route('/transactions')
+def transactions_page():
+    """Curated Nordic PE transactions (static JSON)."""
     try:
         with open(data_path('latest_curated_transactions.json'), 'r', encoding='utf-8') as f:
             bundle = json.load(f)
     except (OSError, json.JSONDecodeError):
         bundle = {'meta': {}, 'transactions': []}
     return render_template(
-        'latest_transactions.html',
+        'transactions.html',
         transactions=bundle.get('transactions', []),
         page_meta=bundle.get('meta', {}),
     )
@@ -558,93 +545,9 @@ def _render_latest_transactions_page():
 
 @app.route('/latest-transactions/')
 @app.route('/latest-transactions')
-def latest_transactions():
-    """Curated Nordic PE transactions (static feed)."""
-    return _render_latest_transactions_page()
-
-
-@app.route('/transactions')
-@app.route('/transactions/')
-def latest_transactions_short():
-    """Short URL alias → same page as /latest-transactions."""
-    return _render_latest_transactions_page()
-
-
-@app.route('/Latest-Transactions')
-@app.route('/Latest-transactions')
-def latest_transactions_canonical_redirect():
-    """Linux paths are case-sensitive; normalize common variants."""
-    return redirect('/latest-transactions', code=301)
-
-
-@app.route('/api/latest-transactions/', methods=['GET'])
-@app.route('/api/latest-transactions', methods=['GET'])
-def get_latest_transactions():
-    """
-    Deals from deal_flow_database.json sorted by date descending.
-    Query: limit (default 200, max 500), deal_type, year, q (search substring).
-    """
-    try:
-        limit = request.args.get('limit', default=200, type=int)
-        limit = max(1, min(limit, 500))
-        deal_type_filter = (request.args.get('deal_type') or '').strip().lower()
-        year_filter = request.args.get('year', type=int)
-        q = (request.args.get('q') or '').strip().lower()
-
-        with open(data_path('deal_flow_database.json'), 'r', encoding='utf-8') as f:
-            data = json.load(f)
-        deals = list(data.get('deals', []))
-
-        deal_types_facet = sorted(
-            {(d.get('deal_type') or '').strip() for d in deals if (d.get('deal_type') or '').strip()},
-            key=str.lower,
-        )
-        years_facet = sorted(
-            {
-                str(d.get('date') or '')[:4]
-                for d in deals
-                if len(str(d.get('date') or '')) >= 4 and str(d.get('date'))[:4].isdigit()
-            },
-            reverse=True,
-        )
-
-        def match(d):
-            if deal_type_filter:
-                dt = (d.get('deal_type') or '').strip().lower()
-                if dt != deal_type_filter.lower():
-                    return False
-            if year_filter is not None:
-                raw = d.get('date') or ''
-                if not str(raw).strip().startswith(str(year_filter)):
-                    return False
-            if q:
-                blob = ' '.join([
-                    str(d.get('company') or ''),
-                    str(d.get('pe_firm') or ''),
-                    str(d.get('description') or ''),
-                    str(d.get('sector') or ''),
-                    str(d.get('geography') or ''),
-                ]).lower()
-                if q not in blob:
-                    return False
-            return True
-
-        filtered = [d for d in deals if match(d)]
-        filtered.sort(key=lambda x: _parse_deal_date_for_sort(x.get('date')), reverse=True)
-        sliced = filtered[:limit]
-
-        return jsonify({
-            'success': True,
-            'deals': sliced,
-            'returned': len(sliced),
-            'matched': len(filtered),
-            'total_in_file': len(deals),
-            'deal_types': deal_types_facet,
-            'years': years_facet,
-            'metadata': data.get('metadata', {}),
-        })
-    except Exception as e:
-        return jsonify({'success': False, 'message': str(e)}), 500
+def legacy_latest_transactions_redirect():
+    """Old path → canonical /transactions."""
+    return redirect('/transactions', code=301)
 
 
 @app.route('/api/deal-flow', methods=['GET'])

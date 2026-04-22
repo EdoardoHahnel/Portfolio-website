@@ -57,7 +57,7 @@
                         <a href="/portfolio" class="pe-nav-link {% if request.path == '/portfolio' %}is-active{% endif %}">Portfolio</a>
                     </li>
                     <li class="pe-nav-item">
-                        <a href="/latest-transactions" class="pe-nav-link {% if request.path.rstrip('/') in ('/latest-transactions', '/transactions') %}is-active{% endif %}">Latest Transactions</a>
+                        <a href="/transactions" class="pe-nav-link {% if request.path.rstrip('/') == '/transactions' %}is-active{% endif %}">Transactions</a>
                     </li>
                     <li class="pe-nav-item">
                         <a href="/news" class="pe-nav-link {% if request.path == '/news' %}is-active{% endif %}">News</a>
@@ -95,7 +95,7 @@
                 <a href="/portfolio" class="pe-mobile-drawer-link {% if request.path == '/portfolio' %}is-active{% endif %}">Portfolio</a>
             </li>
             <li class="pe-mobile-drawer-item">
-                <a href="/latest-transactions" class="pe-mobile-drawer-link {% if request.path.rstrip('/') in ('/latest-transactions', '/transactions') %}is-active{% endif %}">Latest Transactions</a>
+                <a href="/transactions" class="pe-mobile-drawer-link {% if request.path.rstrip('/') == '/transactions' %}is-active{% endif %}">Transactions</a>
             </li>
             <li class="pe-mobile-drawer-item">
                 <a href="/news" class="pe-mobile-drawer-link {% if request.path == '/news' %}is-active{% endif %}">News</a>
