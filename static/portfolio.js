@@ -1708,10 +1708,21 @@ async function openCompanyModal(company) {
     document.getElementById('modalBannerEmployees').textContent = company.employees || '—';
     document.getElementById('modalBannerDeal').textContent = company.deal_size || '—';
     
-    // Company Overview - check both description fields
-    const descriptionText = company.description || company.detailed_description || 
-        `${company.company} is a ${company.sector || 'business'} company based in ${company.headquarters || company.market || 'the Nordic region'}. The company operates in the ${company.sector || 'business services'} sector and is a portfolio company of ${company.source || 'a leading PE firm'}.`;
-    document.getElementById('modalDescription').textContent = descriptionText;
+    // Company Overview — narrative only; metrics live in "Figures & source"
+    const modalDescEl = document.getElementById('modalDescription');
+    if (modalDescEl) {
+        modalDescEl.textContent = window.companyKeyFacts
+            ? companyKeyFacts.getOverviewText(company)
+            : (company.description || company.detailed_description ||
+                `${company.company} is a ${company.sector || 'business'} company based in ${company.headquarters || company.market || 'the Nordic region'}. The company operates in the ${company.sector || 'business services'} sector and is a portfolio company of ${company.source || 'a leading PE firm'}.`);
+    }
+    const modalKeyFactsEl = document.getElementById('modalKeyFactsSection');
+    if (window.companyKeyFacts && modalKeyFactsEl) {
+        companyKeyFacts.renderKeyFactsSection(modalKeyFactsEl, company);
+    } else if (modalKeyFactsEl) {
+        modalKeyFactsEl.style.display = 'none';
+        modalKeyFactsEl.hidden = true;
+    }
     
     // Investment Details
     document.getElementById('modalPEFirm').textContent = company.source || 'N/A';
@@ -1823,8 +1834,12 @@ async function fetchCompanyResearchData(company) {
         if (data.success && data.research_data) {
             const research = data.research_data;
             
-            // Update overview if we got better data
-            if (research.overview && research.overview.length > 100) {
+            // Update overview if we got better data (do not replace curated registry-split profiles)
+            if (
+                research.overview &&
+                research.overview.length > 100 &&
+                !company.metrics_source
+            ) {
                 document.getElementById('modalDescription').textContent = research.overview;
             }
             
@@ -1856,6 +1871,11 @@ async function fetchCompanyResearchData(company) {
             console.log('✅ Research data loaded successfully');
         } else {
             console.log('⚠️ No additional research data available');
+        }
+
+        if (window.companyKeyFacts && company) {
+            const kfEl = document.getElementById('modalKeyFactsSection');
+            companyKeyFacts.renderKeyFactsSection(kfEl, company);
         }
         
     } catch (error) {

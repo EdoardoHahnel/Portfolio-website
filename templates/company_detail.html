@@ -5,6 +5,7 @@
 {% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='components.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='company_key_facts.css') }}">
 <style>
     .company-detail-header {
         background: linear-gradient(135deg, #3f7de8 0%, #2f64c0 100%);
@@ -507,6 +508,16 @@
             <p id="companyDescription" class="description-text"></p>
         </div>
 
+        <div id="companyKeyFactsSection" class="detail-section company-key-facts" style="display: none;" hidden>
+            <h2 class="section-title">
+                <i class="fas fa-table"></i>
+                Figures &amp; source
+            </h2>
+            <p class="key-facts-subtitle"></p>
+            <div class="key-facts-source-meta"></div>
+            <div class="key-facts-grid"></div>
+        </div>
+
         <!-- Investment Details -->
         <div class="detail-section">
             <h2 class="section-title">
@@ -603,6 +614,7 @@
     </div>
 </div>
 
+<script src="{{ url_for('static', filename='company_key_facts.js') }}"></script>
 <script>
 document.addEventListener('DOMContentLoaded', async function() {
     const companySlug = '{{ company_slug }}';
@@ -751,16 +763,30 @@ function loadCompanyData(company, smartData = {}) {
     document.getElementById('statEmployees').textContent = company.employees || '—';
     document.getElementById('statDealSize').textContent = company.deal_size || '—';
     
-    // Description — prefer longest non-empty text (portfolio API row vs enriched profile; IK/Polaris curated vs stub)
-    const descExpanded = (company.description || '').trim();
-    const descDetailed = (company.detailed_description || '').trim();
-    const descCandidates = [descExpanded, descDetailed].filter(Boolean);
-    const descriptionText = descCandidates.length
-        ? descCandidates.reduce((a, b) => (a.length >= b.length ? a : b))
-        : '';
-    const descriptionFinal = descriptionText ||
-        `${company.company} is a ${company.sector || 'business'} company based in ${company.headquarters || company.market || 'the Nordic region'}. The company operates in the ${company.sector || 'business services'} sector and is a portfolio company of ${company.source || 'a leading PE firm'}.`;
-    document.getElementById('companyDescription').textContent = descriptionFinal;
+    // Overview: narrative only; registry / portfolio metrics render in "Figures & source" below
+    const overviewText = window.companyKeyFacts
+        ? companyKeyFacts.getOverviewText(company)
+        : (() => {
+              const descExpanded = (company.description || '').trim();
+              const descDetailed = (company.detailed_description || '').trim();
+              const descCandidates = [descExpanded, descDetailed].filter(Boolean);
+              const descriptionText = descCandidates.length
+                  ? descCandidates.reduce((a, b) => (a.length >= b.length ? a : b))
+                  : '';
+              return (
+                  descriptionText ||
+                  `${company.company} is a ${company.sector || 'business'} company based in ${company.headquarters || company.market || 'the Nordic region'}. The company operates in the ${company.sector || 'business services'} sector and is a portfolio company of ${company.source || 'a leading PE firm'}.`
+              );
+          })();
+    document.getElementById('companyDescription').textContent = overviewText;
+
+    const keyFactsEl = document.getElementById('companyKeyFactsSection');
+    if (window.companyKeyFacts && keyFactsEl) {
+        companyKeyFacts.renderKeyFactsSection(keyFactsEl, company);
+    } else if (keyFactsEl) {
+        keyFactsEl.style.display = 'none';
+        keyFactsEl.hidden = true;
+    }
     
     // Investment Details - PE Firm with logo (clickable)
     const peFirmName = company.source || '';

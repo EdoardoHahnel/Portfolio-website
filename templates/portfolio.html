@@ -3,6 +3,7 @@
 {% block title %}Portfolio Companies{% endblock %}
 
 {% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='company_key_facts.css') }}">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
 .portfolio-charts-grid {
@@ -529,6 +530,15 @@
                 <p id="modalDescription" class="modal-description"></p>
             </div>
 
+            <div id="modalKeyFactsSection" class="modal-section modal-key-facts" style="display: none;" hidden>
+                <h3 class="modal-section-title">
+                    <i class="fas fa-table"></i> Figures &amp; source
+                </h3>
+                <p class="key-facts-subtitle"></p>
+                <div class="key-facts-source-meta"></div>
+                <div class="key-facts-grid"></div>
+            </div>
+
             <!-- Company Timeline -->
             <div class="modal-section">
                 <h3 class="modal-section-title">
@@ -787,6 +797,7 @@
     </div>
 </div>
 
+<script src="{{ url_for('static', filename='company_key_facts.js') }}"></script>
 <script src="{{ url_for('static', filename='portfolio.js') }}"></script>
 {% endblock %}
 

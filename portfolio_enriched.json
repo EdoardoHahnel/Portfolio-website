@@ -21893,40 +21893,37 @@
     {
       "company": "Belid Lighting Group",
       "sector": "Industrial",
-      "fund": "Accent Fund VI",
+      "fund": "Accent Equity VI",
       "market": "Sweden",
       "entry": "2018",
       "source": "Accent Equity",
       "headquarters": "Varberg, Sweden",
       "website": "https://www.belidlightinggroup.com",
       "enriched": true,
-      "research_date": "2025-10-24T20:06:32",
-      "detailed_description": "Belid Lighting Group, established in 1969, is a Scandinavian light fixture supplier catering to both home retail and professional/industrial segments. The company designs and conducts state-of-the-art in-house manufacturing in Varberg, Sweden.",
-      "employees": "100-500 employees",
-      "revenue": "SEK 500M - SEK 2B",
-      "revenue_growth": "8-15% annual growth",
-      "valuation": "SEK 1-5 billion (estimated)",
+      "research_date": "2026-04-21T12:00:00",
+      "detailed_description": "Belid Lighting Group is a Scandinavian lighting supplier serving retail and professional segments, with product development and manufacturing anchored in Varberg.\n\nRegistry snapshot (Allabolag, 2024): Revenue SEK 200,136,000; net result SEK 7,894,000; EBITDA SEK 8,624,000. Legal form: aktiebolag; founded 1939.",
+      "employees": "123",
+      "revenue": "SEK 200.1m (FY2024 revenue)",
       "total_funding": "Accent-backed",
-      "ceo": "Industrial industry executive",
       "leadership_team": [
         {
-          "name": "Management team",
+          "name": "Management",
           "role": "Leadership",
-          "background": "Industrial industry experience"
+          "background": "See Accent Equity materials for board composition."
         }
       ],
       "investment_history": [
         {
           "date": "2018",
-          "headline": "Accent Fund VI investment",
-          "impact": "Growth capital"
+          "headline": "Accent Equity VI investment",
+          "impact": "Growth partnership"
         }
       ],
       "key_milestones": [
         {
           "year": "2018",
-          "event": "Accent Investment",
-          "description": "Growth partnership"
+          "event": "Accent investment",
+          "description": "Partnership with Accent Equity VI"
         }
       ],
       "competitive_advantages": [
@@ -21936,45 +21933,44 @@
       ],
       "exit_status": "Active",
       "current_status": "Portfolio company",
-      "logo_url": "https://logo.clearbit.com/belidlighting.se"
+      "logo_url": "https://logo.clearbit.com/belidlighting.se",
+      "metrics_source": "Allabolag",
+      "metrics_url": "https://www.allabolag.se/foretag/belid-lighting-ab/varberg/producenter/2JYIGW3I63IK3"
     },
     {
       "company": "Blomsterboda",
       "sector": "Consumer",
-      "fund": "Accent Fund V",
+      "fund": "Accent Equity V",
       "market": "Sweden",
       "entry": "2017",
       "source": "Accent Equity",
       "headquarters": "Vallentuna, Sweden",
       "website": "https://www.blomsterboda.se",
       "enriched": true,
-      "research_date": "2025-10-24T20:06:32",
-      "detailed_description": "Blomsterboda was founded in 2017 when Rydells and S-Blommor joined forces. It provides flowers and plants to some 550 grocery stores across Sweden through full service shop-in-shop flower concepts, focusing on sustainable flowers and growing 11 million tulips yearly in its own greenhouse.",
-      "employees": "100-500 employees",
-      "revenue": "SEK 500M - SEK 2B",
-      "revenue_growth": "8-15% annual growth",
-      "valuation": "SEK 1-5 billion (estimated)",
+      "research_date": "2026-04-21T12:00:00",
+      "detailed_description": "Blomsterboda is a leading Swedish wholesaler of flowers and plants, supplying grocery and retail partners with full-service shop-in-shop concepts and large-scale greenhouse production.\n\nRegistry snapshot (Allabolag, 2024): Revenue SEK 768,479,000; net result SEK 5,084,000; EBITDA SEK 15,692,000. Legal form: aktiebolag; founded 1997.",
+      "employees": "299",
+      "revenue": "SEK 768.5m (FY2024 revenue)",
       "total_funding": "Accent-backed",
-      "ceo": "Consumer industry executive",
       "leadership_team": [
         {
-          "name": "Management team",
+          "name": "Management",
           "role": "Leadership",
-          "background": "Consumer industry experience"
+          "background": "See Accent Equity materials for board composition."
         }
       ],
       "investment_history": [
         {
           "date": "2017",
-          "headline": "Accent Fund V investment",
-          "impact": "Growth capital"
+          "headline": "Accent Equity V investment",
+          "impact": "Growth partnership"
         }
       ],
       "key_milestones": [
         {
           "year": "2017",
-          "event": "Accent Investment",
-          "description": "Growth partnership"
+          "event": "Accent investment",
+          "description": "Partnership with Accent Equity V"
         }
       ],
       "competitive_advantages": [
@@ -21984,45 +21980,50 @@
       ],
       "exit_status": "Active",
       "current_status": "Portfolio company",
-      "logo_url": "https://logo.clearbit.com/blomsterboda.se"
+      "logo_url": "https://logo.clearbit.com/blomsterboda.se",
+      "metrics_source": "Allabolag",
+      "metrics_url": "https://www.allabolag.se/foretag/blomsterboda-sverige-ab/vallentuna/grossister/2K1I2OGI63IGS"
     },
     {
       "company": "Brimer",
       "sector": "Industrial",
-      "fund": "Accent Fund VII",
+      "fund": "Accent Equity VII",
       "market": "Norway",
       "entry": "2024",
       "source": "Accent Equity",
       "headquarters": "Ulsteinvik, Norway",
-      "website": "https://www.brimer.no",
+      "website": "https://brimer.no",
       "enriched": true,
-      "research_date": "2025-10-24T20:06:32",
-      "detailed_description": "Founded in 1974, Brimer is one of Europe's foremost manufacturers of corrosion-free composite materials (GRP) for water, wastewater, fish processing, aquaculture, and subsea energy. With facilities in Norway and Latvia, Brimer employs approximately 170 people.",
-      "employees": "100-500 employees",
-      "revenue": "SEK 500M - SEK 2B",
-      "revenue_growth": "8-15% annual growth",
-      "valuation": "SEK 1-5 billion (estimated)",
+      "research_date": "2026-04-21T12:00:00",
+      "detailed_description": "Brimer is a leading European manufacturer of corrosion-resistant composite (GRP) solutions for water, wastewater, aquaculture, and industrial applications, with production in Norway and Latvia. Accent Equity acquired the company in 2024 to accelerate international growth. Portfolio snapshot (Accent Equity): revenue about NOK 434m (2025); chairman Carl Fürstenbach; CEO Håvard Haanes.",
+      "employees": "~170",
+      "revenue": "NOK 434m (2025, Accent portfolio disclosure)",
       "total_funding": "Accent-backed",
-      "ceo": "Industrial industry executive",
+      "ceo": "Håvard Haanes",
       "leadership_team": [
         {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Industrial industry experience"
+          "name": "Håvard Haanes",
+          "role": "CEO",
+          "background": "Group chief executive"
+        },
+        {
+          "name": "Carl Fürstenbach",
+          "role": "Chairman",
+          "background": "Board chair"
         }
       ],
       "investment_history": [
         {
           "date": "2024",
-          "headline": "Accent Fund VII investment",
-          "impact": "Acquired from Entec Group to support accelerated growth"
+          "headline": "Accent Equity VII acquisition",
+          "impact": "Buyout to support accelerated growth"
         }
       ],
       "key_milestones": [
         {
           "year": "2024",
-          "event": "Accent Equity acquisition",
-          "description": "Acquired from Entec Group; management co-investment"
+          "event": "Accent acquisition",
+          "description": "New control owner alongside management"
         }
       ],
       "competitive_advantages": [
@@ -22032,45 +22033,51 @@
       ],
       "exit_status": "Active",
       "current_status": "Portfolio company",
-      "logo_url": "https://logo.clearbit.com/brimer.no"
+      "logo_url": "https://logo.clearbit.com/brimer.no",
+      "chairman": "Carl Fürstenbach",
+      "metrics_source": "Accent Equity",
+      "metrics_url": "https://accentequity.se/companies/brimer"
     },
     {
       "company": "East",
       "sector": "Business Services",
-      "fund": "Accent Fund VI",
+      "fund": "Accent Equity VI",
       "market": "Denmark",
       "entry": "2021",
       "source": "Accent Equity",
       "headquarters": "Ikast, Denmark",
       "website": "https://eastdk.com",
       "enriched": true,
-      "research_date": "2025-10-24T20:06:32",
-      "detailed_description": "EAST was founded in 2007 and provides garment sourcing, design, and logistics services. Headquartered in Ikast, Denmark, the group conducts sales across Europe. Main sourcing is in Guangzhou, China, with operations in India and partners in Morocco and Turkey. Around 200 employees.",
-      "employees": "100-500 employees",
-      "revenue": "SEK 500M - SEK 2B",
-      "revenue_growth": "8-15% annual growth",
-      "valuation": "SEK 1-5 billion (estimated)",
+      "research_date": "2026-04-21T12:00:00",
+      "detailed_description": "East provides apparel sourcing, design, and logistics for European brands, with sourcing concentrated in Asia and commercial operations centred in Denmark. Accent Equity became majority owner in 2021 (Fund VI). Portfolio snapshot (Accent Equity): revenue about DKK 343m (2025); chairman Daniel Winberg; CEO Poul Skovgaard.",
+      "employees": "~200",
+      "revenue": "DKK 343m (2025, Accent portfolio disclosure)",
       "total_funding": "Accent-backed",
-      "ceo": "Business Services industry executive",
+      "ceo": "Poul Skovgaard",
       "leadership_team": [
         {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Business Services industry experience"
+          "name": "Poul Skovgaard",
+          "role": "CEO",
+          "background": "Group chief executive"
+        },
+        {
+          "name": "Daniel Winberg",
+          "role": "Chairman",
+          "background": "Board chair"
         }
       ],
       "investment_history": [
         {
-          "date": "2018",
-          "headline": "Accent Fund VI investment",
-          "impact": "Growth capital"
+          "date": "2021",
+          "headline": "Accent Equity VI majority investment",
+          "impact": "Control investment alongside management"
         }
       ],
       "key_milestones": [
         {
-          "year": "2018",
-          "event": "Accent Investment",
-          "description": "Growth partnership"
+          "year": "2021",
+          "event": "Accent majority ownership",
+          "description": "Fund VI platform partnership"
         }
       ],
       "competitive_advantages": [
@@ -22080,45 +22087,50 @@
       ],
       "exit_status": "Active",
       "current_status": "Portfolio company",
-      "logo_url": "https://logo.clearbit.com/enerco.se"
+      "logo_url": "https://logo.clearbit.com/eastdk.com",
+      "chairman": "Daniel Winberg",
+      "metrics_source": "Accent Equity",
+      "metrics_url": "https://accentequity.se/companies/east"
     },
     {
       "company": "Enerco Group",
       "sector": "Industrial",
-      "fund": "Accent Fund VI",
+      "fund": "Accent Equity VI",
       "market": "Sweden",
       "entry": "2021",
       "source": "Accent Equity",
       "headquarters": "Hofors, Sweden",
       "website": "https://enerco.se",
       "enriched": true,
-      "research_date": "2025-10-24T20:06:32",
-      "detailed_description": "Enerco Group was established in 2015 and provides Swedish industrial customers with maintenance and technology services as an industrial service partner, enhancing cost-effectiveness, quality, sustainability efforts, safety, and innovation.",
-      "employees": "100-500 employees",
-      "revenue": "SEK 500M - SEK 2B",
-      "revenue_growth": "8-15% annual growth",
-      "valuation": "SEK 1-5 billion (estimated)",
+      "research_date": "2026-04-21T12:00:00",
+      "detailed_description": "Enerco Group is an industrial services and technology partner to Swedish process and manufacturing industries, focused on maintenance, projects, and operational efficiency. Accent Equity partnered with the group in 2021 (Fund VI). Portfolio snapshot (Accent Equity): revenue about SEK 1,288m on a pro forma basis (2025); chairman Carl Fürstenbach; CEO Niklas Pettersson.",
+      "revenue": "SEK 1,288m (2025 pro forma, Accent portfolio disclosure)",
       "total_funding": "Accent-backed",
-      "ceo": "Industrial industry executive",
+      "ceo": "Niklas Pettersson",
       "leadership_team": [
         {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Industrial industry experience"
+          "name": "Niklas Pettersson",
+          "role": "CEO",
+          "background": "Group chief executive"
+        },
+        {
+          "name": "Carl Fürstenbach",
+          "role": "Chairman",
+          "background": "Board chair"
         }
       ],
       "investment_history": [
         {
-          "date": "2017",
-          "headline": "Accent Fund VI investment",
-          "impact": "Growth capital"
+          "date": "2021",
+          "headline": "Accent Equity VI investment",
+          "impact": "Majority partnership"
         }
       ],
       "key_milestones": [
         {
-          "year": "2017",
-          "event": "Accent Investment",
-          "description": "Growth partnership"
+          "year": "2021",
+          "event": "Accent investment",
+          "description": "Fund VI backs industrial services platform"
         }
       ],
       "competitive_advantages": [
@@ -22128,45 +22140,45 @@
       ],
       "exit_status": "Active",
       "current_status": "Portfolio company",
-      "logo_url": "https://logo.clearbit.com/enerco.se"
+      "logo_url": "https://logo.clearbit.com/enerco.se",
+      "chairman": "Carl Fürstenbach",
+      "metrics_source": "Accent Equity",
+      "metrics_url": "https://accentequity.se/companies/enerco"
     },
     {
       "company": "Genexis Group",
       "sector": "Technology",
-      "fund": "Accent Fund VI",
+      "fund": "Accent Equity VI",
       "market": "Sweden",
       "entry": "2022",
       "source": "Accent Equity",
       "headquarters": "Stockholm, Sweden",
       "website": "https://genexis-group.com",
       "enriched": true,
-      "research_date": "2025-10-24T20:06:32",
-      "detailed_description": "Genexis Group is a leading European product and technology provider for broadband installers, operators, and service providers. Delivers smart fiber deployment solutions, hardware-independent software, and reduces TCO for operators. Formerly Inteno Group; rebranded upon Accent Equity VI acquisition in 2022.",
-      "employees": "100-500 employees",
-      "revenue": "SEK 500M - SEK 2B",
-      "revenue_growth": "8-15% annual growth",
-      "valuation": "SEK 1-5 billion (estimated)",
+      "research_date": "2026-04-21T12:00:00",
+      "detailed_description": "Genexis Group is the listed holding structure for a European broadband CPE and software platform (successor to the Inteno platform acquired by an Accent-led consortium in 2022). Operational scale sits in subsidiaries; the Stockholm entity reflects statutory reporting for the group parent.\n\nRegistry snapshot (Allabolag, 2024): Revenue SEK 27,926,000; net result SEK -1,329,000; EBITDA SEK 16,512,000. Legal form: publikt aktiebolag; founded 2022.",
+      "employees": "1 (legal entity headcount, Allabolag 2024)",
+      "revenue": "SEK 27.9m (FY2024 revenue, legal entity)",
       "total_funding": "Accent-backed",
-      "ceo": "Technology industry executive",
       "leadership_team": [
         {
-          "name": "Management team",
+          "name": "Management",
           "role": "Leadership",
-          "background": "Technology industry experience"
+          "background": "See group filings and Accent Equity materials for executive leadership."
         }
       ],
       "investment_history": [
         {
           "date": "2022",
-          "headline": "Accent Fund VI investment",
-          "impact": "Acquired Inteno Group; rebranded to Genexis Group"
+          "headline": "Accent Equity VI-led acquisition",
+          "impact": "Inteno carve-out; rebranding to Genexis"
         }
       ],
       "key_milestones": [
         {
           "year": "2022",
-          "event": "Accent Equity acquisition",
-          "description": "Consortium led by Accent VI acquired Inteno; rebranded to Genexis Group"
+          "event": "Consortium acquisition",
+          "description": "Accent VI leads buyout of Inteno; Genexis brand"
         }
       ],
       "competitive_advantages": [
@@ -22176,45 +22188,44 @@
       ],
       "exit_status": "Active",
       "current_status": "Portfolio company",
-      "logo_url": "https://logo.clearbit.com/genexis-group.com"
+      "logo_url": "https://logo.clearbit.com/genexis-group.com",
+      "metrics_source": "Allabolag",
+      "metrics_url": "https://www.allabolag.se/foretag/genexis-group-ab/stockholm/kontorstj%C3%A4nster/2KIB8VMI63II9"
     },
     {
       "company": "Global Leisure Group",
       "sector": "Consumer",
-      "fund": "Accent Fund VI",
+      "fund": "Accent Equity VI",
       "market": "Sweden",
       "entry": "2020",
       "source": "Accent Equity",
       "headquarters": "Malmö, Sweden",
       "website": "https://www.globalleisure.group",
       "enriched": true,
-      "research_date": "2025-10-24T20:06:32",
-      "detailed_description": "Global Leisure Group is an industry leader in development, design, production and installation of full leisure and play concepts under eleven well-known brands. Covers leisure, play, adventure, sport, edutainment, water splash, and retail play. Seven production units and two assembly units across Europe.",
-      "employees": "100-500 employees",
-      "revenue": "SEK 500M - SEK 2B",
-      "revenue_growth": "8-15% annual growth",
-      "valuation": "SEK 1-5 billion (estimated)",
+      "research_date": "2026-04-21T12:00:00",
+      "detailed_description": "Global Leisure Group develops and delivers turnkey leisure, play, and sport concepts for commercial venues across Europe, consolidating multiple specialist brands under one industrial platform.\n\nRegistry snapshot (Allabolag, 2024): Revenue SEK 10,703,000; net result SEK -1,048,000; EBITDA SEK 1,295,000. Legal form: aktiebolag; founded 2012. Note: statutory parent; operating subsidiaries carry most headcount.",
+      "employees": "1 (legal entity headcount, Allabolag 2024)",
+      "revenue": "SEK 10.7m (FY2024 revenue, legal entity)",
       "total_funding": "Accent-backed",
-      "ceo": "Consumer industry executive",
       "leadership_team": [
         {
-          "name": "Management team",
+          "name": "Management",
           "role": "Leadership",
-          "background": "Consumer industry experience"
+          "background": "Platform leadership across leisure brands"
         }
       ],
       "investment_history": [
         {
-          "date": "2016",
-          "headline": "Accent Fund VI investment",
-          "impact": "Growth capital"
+          "date": "2020",
+          "headline": "Accent Equity VI investment",
+          "impact": "Platform build-out in leisure"
         }
       ],
       "key_milestones": [
         {
-          "year": "2016",
-          "event": "Accent Investment",
-          "description": "Growth partnership"
+          "year": "2020",
+          "event": "Accent investment",
+          "description": "Fund VI backs leisure concepts group"
         }
       ],
       "competitive_advantages": [
@@ -22224,45 +22235,44 @@
       ],
       "exit_status": "Active",
       "current_status": "Portfolio company",
-      "logo_url": "https://logo.clearbit.com/globalleisure.se"
+      "logo_url": "https://logo.clearbit.com/globalleisure.se",
+      "metrics_source": "Allabolag",
+      "metrics_url": "https://www.allabolag.se/foretag/global-leisure-group-ab/malm%C3%B6/sport-produktion/2K3JT8DI63IKQ"
     },
     {
       "company": "Götessons Design Group",
       "sector": "Consumer",
-      "fund": "Accent Fund VI",
+      "fund": "Accent Equity VI",
       "market": "Sweden",
       "entry": "2019",
       "source": "Accent Equity",
       "headquarters": "Ulricehamn, Sweden",
       "website": "https://www.gotessonsdesigngroup.com",
       "enriched": true,
-      "research_date": "2025-10-24T20:06:32",
-      "detailed_description": "Götessons Design Group is a market-leading interior company developing and manufacturing functional products for work environments, public and retail spaces, and hospitality. Product range includes acoustic solutions, storage, lighting, lounge furniture, tables and seating. Six core brands: Götessons, Scan Sørlie, David Design, Akustikmiljö, Norco Interior, SIAS Contract.",
-      "employees": "100-500 employees",
-      "revenue": "SEK 500M - SEK 2B",
-      "revenue_growth": "8-15% annual growth",
-      "valuation": "SEK 1-5 billion (estimated)",
+      "research_date": "2026-04-21T12:00:00",
+      "detailed_description": "Götessons Design Group is a Nordic interior platform for workplace and public environments—acoustics, furniture, and fittings—housing brands such as Götessons, Norco Interior, and David Design.\n\nRegistry snapshot (Allabolag, 2024): Revenue SEK 27,667,000; net result SEK -52,789,000; EBITDA SEK -21,675,000 (FY2024). Legal form: aktiebolag; founded 2019. Note: group restructuring and M&A can materially affect parent-level P&L.",
+      "employees": "13 (legal entity headcount, Allabolag 2024)",
+      "revenue": "SEK 27.7m (FY2024 revenue, legal entity)",
       "total_funding": "Accent-backed",
-      "ceo": "Consumer industry executive",
       "leadership_team": [
         {
-          "name": "Management team",
+          "name": "Management",
           "role": "Leadership",
-          "background": "Consumer industry experience"
+          "background": "Brand and integration leadership across design group"
         }
       ],
       "investment_history": [
         {
           "date": "2019",
-          "headline": "Accent Fund VI investment",
-          "impact": "Growth capital"
+          "headline": "Accent Equity VI investment",
+          "impact": "Control investment in interior platform"
         }
       ],
       "key_milestones": [
         {
-          "year": "2017",
-          "event": "Accent Investment",
-          "description": "Growth partnership"
+          "year": "2019",
+          "event": "Accent investment",
+          "description": "Fund VI backs design group consolidation"
         }
       ],
       "competitive_advantages": [
@@ -22272,45 +22282,45 @@
       ],
       "exit_status": "Active",
       "current_status": "Portfolio company",
-      "logo_url": "https://logo.clearbit.com/götessonsdesign.se"
+      "logo_url": "https://logo.clearbit.com/götessonsdesign.se",
+      "metrics_source": "Allabolag",
+      "metrics_url": "https://www.allabolag.se/foretag/g%C3%B6tessons-design-group-ab/ulricehamn/kontorstj%C3%A4nster/2KHCQZAI63II9"
     },
     {
       "company": "Helmacab",
       "sector": "Industrial",
-      "fund": "Accent Fund VII",
+      "fund": "Accent Equity VII",
       "market": "Finland",
       "entry": "2024",
       "source": "Accent Equity",
-      "headquarters": "Hanko, Finland",
+      "headquarters": "Finland",
       "website": "https://helmacab.com",
       "enriched": true,
-      "research_date": "2025-10-24T20:06:32",
-      "detailed_description": "Helmacab develops and produces high-quality specialty cables for marine, telecom and industrial applications. Cable offering includes power, fiber optic and hybrid solutions. Finland-based with three production facilities in Finland and China, and global sales presence.",
-      "employees": "100-500 employees",
-      "revenue": "SEK 500M - SEK 2B",
-      "revenue_growth": "8-15% annual growth",
-      "valuation": "SEK 1-5 billion (estimated)",
+      "research_date": "2026-04-21T12:00:00",
+      "detailed_description": "Helmacab engineers and manufactures specialty cable systems for marine, telecom, and industrial applications, with production in Finland and China and worldwide commercial reach. Registry snapshot (Asiakastieto, 2024): revenue EUR 80.9m (+21.7%); operating profit EUR 5.7m (7.1% margin); equity ratio 57%; 183 employees.",
+      "employees": "183",
+      "revenue": "EUR 80.9m (FY2024 revenue)",
+      "revenue_growth": "+21.7% YoY (Asiakastieto)",
       "total_funding": "Accent-backed",
-      "ceo": "Industrial industry executive",
       "leadership_team": [
         {
-          "name": "Management team",
+          "name": "Management",
           "role": "Leadership",
-          "background": "Industrial industry experience"
+          "background": "Industrial cable systems leadership"
         }
       ],
       "investment_history": [
         {
-          "date": "2015",
-          "headline": "Accent Fund VI investment",
-          "impact": "Growth capital"
+          "date": "2024",
+          "headline": "Accent Equity VII investment",
+          "impact": "Buyout alongside management"
         }
       ],
       "key_milestones": [
         {
-          "year": "2015",
-          "event": "Accent Investment",
-          "description": "Growth partnership"
+          "year": "2024",
+          "event": "Accent acquisition",
+          "description": "Fund VII backs specialty cable platform"
         }
       ],
       "competitive_advantages": [
@@ -22320,45 +22330,44 @@
       ],
       "exit_status": "Active",
       "current_status": "Portfolio company",
-      "logo_url": "https://logo.clearbit.com/helmacab.se"
+      "logo_url": "https://logo.clearbit.com/helmacab.com",
+      "metrics_source": "Asiakastieto",
+      "metrics_url": "https://www.asiakastieto.fi/yritykset/fi/helmacab-oy/22989534/rekisteritiedot"
     },
     {
       "company": "Linotol Group",
       "sector": "Industrial",
-      "fund": "Accent Fund VI",
+      "fund": "Accent Equity VII",
       "market": "Sweden",
       "entry": "2023",
       "source": "Accent Equity",
       "headquarters": "Norrköping, Sweden",
       "website": "https://www.linotol.se",
       "enriched": true,
-      "research_date": "2025-10-24T20:06:32",
-      "detailed_description": "Linotol Group is a market leading supplier of flooring solutions in Scandinavia, with presence in Sweden and Norway. Serves property owners, developers and construction companies with flooring solutions mainly for logistics and industrial purposes.",
-      "employees": "100-500 employees",
-      "revenue": "SEK 500M - SEK 2B",
-      "revenue_growth": "8-15% annual growth",
-      "valuation": "SEK 1-5 billion (estimated)",
+      "research_date": "2026-04-21T12:00:00",
+      "detailed_description": "Linotol Group is Accent’s industrial flooring platform in the Nordics, combining Linotol and bolt-on assets to serve logistics, industrial, and infrastructure customers.\n\nRegistry snapshot (Allabolag, 2024): Revenue SEK 10,279,000; net result SEK -13,017,000; EBITDA SEK -481,000. Legal form: aktiebolag; founded 2023. Note: statutory parent; operating companies carry most revenue and staff.",
+      "employees": "3 (legal entity headcount, Allabolag 2024)",
+      "revenue": "SEK 10.3m (FY2024 revenue, legal entity)",
       "total_funding": "Accent-backed",
-      "ceo": "Industrial industry executive",
       "leadership_team": [
         {
-          "name": "Management team",
+          "name": "Management",
           "role": "Leadership",
-          "background": "Industrial industry experience"
+          "background": "Platform leadership for industrial flooring solutions"
         }
       ],
       "investment_history": [
         {
-          "date": "2016",
-          "headline": "Accent Fund VI investment",
-          "impact": "Growth capital"
+          "date": "2023",
+          "headline": "Accent Equity VII platform creation",
+          "impact": "Combination of Linotol and C Holmqvist Entreprenad"
         }
       ],
       "key_milestones": [
         {
-          "year": "2016",
-          "event": "Accent Investment",
-          "description": "Growth partnership"
+          "year": "2023",
+          "event": "Fund VII platform launch",
+          "description": "Industrial flooring consolidation"
         }
       ],
       "competitive_advantages": [
@@ -22368,45 +22377,49 @@
       ],
       "exit_status": "Active",
       "current_status": "Portfolio company",
-      "logo_url": "https://logo.clearbit.com/linotol.se"
+      "logo_url": "https://logo.clearbit.com/linotol.se",
+      "metrics_source": "Allabolag",
+      "metrics_url": "https://www.allabolag.se/foretag/linotol-group-ab/norrk%C3%B6ping/kontorstj%C3%A4nster/2KIPK0AI63II9"
     },
     {
       "company": "Lunawood",
       "sector": "Industrial",
-      "fund": "Accent Fund VI",
+      "fund": "Accent Equity VI",
       "market": "Finland",
       "entry": "2019",
       "source": "Accent Equity",
       "headquarters": "Lahti, Finland",
       "website": "https://lunawood.com",
       "enriched": true,
-      "research_date": "2025-10-24T20:06:32",
-      "detailed_description": "Lunawood is the global leader in thermally modified softwood and hardwood, a sustainable alternative to traditional building materials. Products sold in over 60 countries for cladding, facades, decking and landscaping. Two production sites in Finland, one in the USA.",
-      "employees": "100-500 employees",
-      "revenue": "SEK 500M - SEK 2B",
-      "revenue_growth": "8-15% annual growth",
-      "valuation": "SEK 1-5 billion (estimated)",
+      "research_date": "2026-04-21T12:00:00",
+      "detailed_description": "Lunawood is the global category leader in thermally modified Nordic softwood for façades, decking, and landscaping, exporting to dozens of markets from Finnish production. Accent Equity invested in 2019 (Fund VI). Portfolio snapshot (Accent Equity): revenue about EUR 68m (2025); chairman Daniel Winberg; CEO Arto Halonen.",
+      "revenue": "EUR 68m (2025, Accent portfolio disclosure)",
       "total_funding": "Accent-backed",
-      "ceo": "Industrial industry executive",
+      "ceo": "Arto Halonen",
       "leadership_team": [
         {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Industrial industry experience"
+          "name": "Arto Halonen",
+          "role": "CEO",
+          "background": "Group chief executive"
+        },
+        {
+          "name": "Daniel Winberg",
+          "role": "Chairman",
+          "background": "Board chair"
         }
       ],
       "investment_history": [
         {
-          "date": "2018",
-          "headline": "Accent Fund VI investment",
-          "impact": "Growth capital"
+          "date": "2019",
+          "headline": "Accent Equity VI investment",
+          "impact": "Majority partnership"
         }
       ],
       "key_milestones": [
         {
-          "year": "2018",
-          "event": "Accent Investment",
-          "description": "Growth partnership"
+          "year": "2019",
+          "event": "Accent investment",
+          "description": "Fund VI backs thermowood platform"
         }
       ],
       "competitive_advantages": [
@@ -22416,45 +22429,55 @@
       ],
       "exit_status": "Active",
       "current_status": "Portfolio company",
-      "logo_url": "https://logo.clearbit.com/lunawood.se"
+      "logo_url": "https://logo.clearbit.com/lunawood.com",
+      "chairman": "Daniel Winberg",
+      "metrics_source": "Accent Equity",
+      "metrics_url": "https://accentequity.se/companies/lunawood"
     },
     {
       "company": "Lyngsoe Systems",
       "sector": "Technology",
-      "fund": "Accent Fund VI",
+      "fund": "Accent Equity VI",
       "market": "Denmark",
       "entry": "2022",
       "source": "Accent Equity",
       "headquarters": "Aars, Denmark",
       "website": "https://lyngsoesystems.com",
       "enriched": true,
-      "research_date": "2025-10-24T20:06:32",
-      "detailed_description": "Lyngsoe Systems, founded in 1952, is one of the world's leading software developers and system integrators of logistical solutions. Advanced solutions include asset-tracking and automation for airport, postal, supply chain, library and healthcare industries.",
-      "employees": "100-500 employees",
-      "revenue": "SEK 500M - SEK 2B",
-      "revenue_growth": "8-15% annual growth",
-      "valuation": "SEK 1-5 billion (estimated)",
+      "research_date": "2026-04-21T12:00:00",
+      "detailed_description": "Lyngsoe Systems delivers asset tracking and logistics automation software and integration for airports, postal operators, healthcare, and supply chains worldwide. Accent Equity acquired the business in 2022 (Fund VI). Portfolio snapshot (Accent Equity): revenue about DKK 404m (2025); co-CEOs Michael Vistisen and Henrik Kjeldgaard; chairman Carl Fürstenbach.",
+      "revenue": "DKK 404m (2025, Accent portfolio disclosure)",
       "total_funding": "Accent-backed",
-      "ceo": "Technology industry executive",
+      "ceo": "Michael Vistisen & Henrik Kjeldgaard",
       "leadership_team": [
         {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Technology industry experience"
+          "name": "Michael Vistisen",
+          "role": "Co-CEO",
+          "background": "Joint chief executive"
+        },
+        {
+          "name": "Henrik Kjeldgaard",
+          "role": "Co-CEO",
+          "background": "Joint chief executive"
+        },
+        {
+          "name": "Carl Fürstenbach",
+          "role": "Chairman",
+          "background": "Board chair"
         }
       ],
       "investment_history": [
         {
-          "date": "2017",
-          "headline": "Accent Fund VI investment",
-          "impact": "Growth capital"
+          "date": "2022",
+          "headline": "Accent Equity VI acquisition",
+          "impact": "Buyout of logistics software platform"
         }
       ],
       "key_milestones": [
         {
-          "year": "2017",
-          "event": "Accent Investment",
-          "description": "Growth partnership"
+          "year": "2022",
+          "event": "Accent acquisition",
+          "description": "Fund VI backs automation and track-and-trace leader"
         }
       ],
       "competitive_advantages": [
@@ -22464,45 +22487,50 @@
       ],
       "exit_status": "Active",
       "current_status": "Portfolio company",
-      "logo_url": "https://logo.clearbit.com/lyngsoe.se"
+      "logo_url": "https://logo.clearbit.com/lyngsoesystems.com",
+      "chairman": "Carl Fürstenbach",
+      "metrics_source": "Accent Equity",
+      "metrics_url": "https://accentequity.se/companies/lyngsoe-systems"
     },
     {
       "company": "Malte Månson",
       "sector": "Business Services",
-      "fund": "Accent Fund VI",
+      "fund": "Accent Equity VI",
       "market": "Sweden",
       "entry": "2023",
       "source": "Accent Equity",
       "headquarters": "Stockholm, Sweden",
       "website": "https://maltemanson.com",
       "enriched": true,
-      "research_date": "2025-10-24T20:06:32",
-      "detailed_description": "Founded in 1918, Malte Månson is Sweden's largest independent service and repair provider for commercial vehicles. Authorized by MAN, DAF, IVECO, Mercedes-Benz, Setra, VDL, and EVO. Operates 30 workshops with over 300 professionals. Includes Malte City for light commercial vehicles.",
-      "employees": "100-500 employees",
-      "revenue": "SEK 500M - SEK 2B",
-      "revenue_growth": "8-15% annual growth",
-      "valuation": "SEK 1-5 billion (estimated)",
+      "research_date": "2026-04-21T12:00:00",
+      "detailed_description": "Malte Månson is Sweden’s largest independent service and repair network for heavy commercial vehicles, partnering with leading OEM brands and operating a nationwide workshop footprint. Accent Equity invested in 2023 (Fund VI). Portfolio snapshot (Accent Equity): revenue about SEK 784m on a pro forma basis (2025); chairman Mikael Strand; CEO Staffan Lindewald.",
+      "revenue": "SEK 784m (2025 pro forma, Accent portfolio disclosure)",
       "total_funding": "Accent-backed",
-      "ceo": "Business Services industry executive",
+      "ceo": "Staffan Lindewald",
       "leadership_team": [
         {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Business Services industry experience"
+          "name": "Staffan Lindewald",
+          "role": "CEO",
+          "background": "Group chief executive"
+        },
+        {
+          "name": "Mikael Strand",
+          "role": "Chairman",
+          "background": "Board chair"
         }
       ],
       "investment_history": [
         {
-          "date": "2016",
-          "headline": "Accent Fund VI investment",
-          "impact": "Growth capital"
+          "date": "2023",
+          "headline": "Accent Equity VI investment",
+          "impact": "Majority buyout with management"
         }
       ],
       "key_milestones": [
         {
-          "year": "2016",
-          "event": "Accent Investment",
-          "description": "Growth partnership"
+          "year": "2023",
+          "event": "Accent acquisition",
+          "description": "Fund VI backs aftermarket services leader"
         }
       ],
       "competitive_advantages": [
@@ -22512,45 +22540,50 @@
       ],
       "exit_status": "Active",
       "current_status": "Portfolio company",
-      "logo_url": "https://logo.clearbit.com/maltemånson.se"
+      "logo_url": "https://logo.clearbit.com/maltemanson.com",
+      "chairman": "Mikael Strand",
+      "metrics_source": "Accent Equity",
+      "metrics_url": "https://accentequity.se/companies/malte-manson"
     },
     {
       "company": "Mont Blanc Group",
       "sector": "Industrial",
-      "fund": "Accent Fund V",
+      "fund": "Accent Equity V",
       "market": "Sweden",
       "entry": "2015",
       "source": "Accent Equity",
       "headquarters": "Dalsjöfors, Sweden",
-      "website": "https://www.montblancgroup.com",
+      "website": "https://montblancgroup.com",
       "enriched": true,
-      "research_date": "2025-10-24T20:06:32",
-      "detailed_description": "Mont Blanc Group is one of Europe's leading companies in load carrying equipment for cars: roof racks, bike carriers, roof boxes and outdoor accessories. OEM supplier to car manufacturers; also serves independent aftermarket. Products sold in 30+ countries; production in Romania, France and Sweden.",
-      "employees": "100-500 employees",
-      "revenue": "SEK 500M - SEK 2B",
-      "revenue_growth": "8-15% annual growth",
-      "valuation": "SEK 1-5 billion (estimated)",
+      "research_date": "2026-04-21T12:00:00",
+      "detailed_description": "Mont Blanc Group engineers and markets load-carrying equipment and outdoor accessories for OEM and aftermarket customers across Europe. Accent Equity partnered via Fund V. Portfolio snapshot (Accent Equity): revenue about SEK 165m (2025); chairman Benny Zakrisson; CEO Rutger Barrdahl.",
+      "revenue": "SEK 165m (2025, Accent portfolio disclosure)",
       "total_funding": "Accent-backed",
-      "ceo": "Industrial industry executive",
+      "ceo": "Rutger Barrdahl",
       "leadership_team": [
         {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Industrial industry experience"
+          "name": "Rutger Barrdahl",
+          "role": "CEO",
+          "background": "Group chief executive"
+        },
+        {
+          "name": "Benny Zakrisson",
+          "role": "Chairman",
+          "background": "Board chair"
         }
       ],
       "investment_history": [
         {
           "date": "2015",
-          "headline": "Accent Fund VI investment",
-          "impact": "Growth capital"
+          "headline": "Accent Equity V investment",
+          "impact": "Buyout of automotive accessories platform"
         }
       ],
       "key_milestones": [
         {
           "year": "2015",
-          "event": "Accent Investment",
-          "description": "Growth partnership"
+          "event": "Accent investment",
+          "description": "Fund V backs roof rack and outdoor equipment leader"
         }
       ],
       "competitive_advantages": [
@@ -22560,45 +22593,50 @@
       ],
       "exit_status": "Active",
       "current_status": "Portfolio company",
-      "logo_url": "https://logo.clearbit.com/montblanc.se"
+      "logo_url": "https://logo.clearbit.com/montblancgroup.com",
+      "chairman": "Benny Zakrisson",
+      "metrics_source": "Accent Equity",
+      "metrics_url": "https://accentequity.se/companies/mont-blanc-group"
     },
     {
       "company": "Plockmatic",
       "sector": "Technology",
-      "fund": "Accent Fund VII",
+      "fund": "Accent Equity VII",
       "market": "Sweden",
       "entry": "2024",
       "source": "Accent Equity",
       "headquarters": "Stockholm, Sweden",
-      "website": "https://www.plockmaticgroup.com",
+      "website": "https://plockmaticgroup.com",
       "enriched": true,
-      "research_date": "2025-10-24T20:06:32",
-      "detailed_description": "Plockmatic is a trusted provider of innovative document finishing solutions for the global digital print and packaging industries. Offers in-house developed products supporting automation and individual customization. Key brands: Plockmatic, Morgana, Intec.",
-      "employees": "100-500 employees",
-      "revenue": "SEK 500M - SEK 2B",
-      "revenue_growth": "8-15% annual growth",
-      "valuation": "SEK 1-5 billion (estimated)",
+      "research_date": "2026-04-21T12:00:00",
+      "detailed_description": "Plockmatic Group supplies finishing equipment—collating, booklet making, and packaging—for commercial print and digital print workflows worldwide. Accent Equity invested in 2024 (Fund VII). Portfolio snapshot (Accent Equity): revenue about EUR 70m (2025); chairman Oscar Claeson; CEO Jan Marstorp.",
+      "revenue": "EUR 70m (2025, Accent portfolio disclosure)",
       "total_funding": "Accent-backed",
-      "ceo": "Technology industry executive",
+      "ceo": "Jan Marstorp",
       "leadership_team": [
         {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Technology industry experience"
+          "name": "Jan Marstorp",
+          "role": "CEO",
+          "background": "Group chief executive"
+        },
+        {
+          "name": "Oscar Claeson",
+          "role": "Chairman",
+          "background": "Board chair"
         }
       ],
       "investment_history": [
         {
-          "date": "2017",
-          "headline": "Accent Fund VI investment",
-          "impact": "Growth capital"
+          "date": "2024",
+          "headline": "Accent Equity VII investment",
+          "impact": "Growth partnership in print finishing"
         }
       ],
       "key_milestones": [
         {
-          "year": "2017",
-          "event": "Accent Investment",
-          "description": "Growth partnership"
+          "year": "2024",
+          "event": "Accent investment",
+          "description": "Fund VII backs document finishing platform"
         }
       ],
       "competitive_advantages": [
@@ -22608,45 +22646,50 @@
       ],
       "exit_status": "Active",
       "current_status": "Portfolio company",
-      "logo_url": "https://logo.clearbit.com/plockmatic.se"
+      "logo_url": "https://logo.clearbit.com/plockmaticgroup.com",
+      "chairman": "Oscar Claeson",
+      "metrics_source": "Accent Equity",
+      "metrics_url": "https://accentequity.se/companies/plockmatic"
     },
     {
       "company": "Steen-Hansen",
       "sector": "Industrial",
-      "fund": "Accent Fund VI",
+      "fund": "Accent Equity VI",
       "market": "Norway",
       "entry": "2022",
       "source": "Accent Equity",
       "headquarters": "Bergen, Norway",
       "website": "https://steen-hansen.no",
       "enriched": true,
-      "research_date": "2025-10-24T20:06:32",
-      "detailed_description": "Steen-Hansen AS is the global leader in antifouling and coatings for the aquaculture industry, offering sustainable copper-reduced and copper-free products for net protection. Also produces specialised paint systems for industrial applications, textile protection, passive fire protection and surface treatment.",
-      "employees": "100-500 employees",
-      "revenue": "SEK 500M - SEK 2B",
-      "revenue_growth": "8-15% annual growth",
-      "valuation": "SEK 1-5 billion (estimated)",
+      "research_date": "2026-04-21T12:00:00",
+      "detailed_description": "Steen-Hansen is the global reference in antifouling coatings and protective systems for aquaculture nets and marine infrastructure, alongside specialised industrial coatings. Accent Equity invested in 2022 (Fund VI). Portfolio snapshot (Accent Equity): revenue about NOK 308m (2025); chairman Claes Bodell; CEO Svein Ove Rabben.",
+      "revenue": "NOK 308m (2025, Accent portfolio disclosure)",
       "total_funding": "Accent-backed",
-      "ceo": "Industrial industry executive",
+      "ceo": "Svein Ove Rabben",
       "leadership_team": [
         {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Industrial industry experience"
+          "name": "Svein Ove Rabben",
+          "role": "CEO",
+          "background": "Group chief executive"
+        },
+        {
+          "name": "Claes Bodell",
+          "role": "Chairman",
+          "background": "Board chair"
         }
       ],
       "investment_history": [
         {
-          "date": "2016",
-          "headline": "Accent Fund VI investment",
-          "impact": "Growth capital"
+          "date": "2022",
+          "headline": "Accent Equity VI investment",
+          "impact": "Partnership with founder-led management"
         }
       ],
       "key_milestones": [
         {
-          "year": "2016",
-          "event": "Accent Investment",
-          "description": "Growth partnership"
+          "year": "2022",
+          "event": "Accent investment",
+          "description": "Fund VI backs marine coatings leader"
         }
       ],
       "competitive_advantages": [
@@ -22656,45 +22699,50 @@
       ],
       "exit_status": "Active",
       "current_status": "Portfolio company",
-      "logo_url": "https://logo.clearbit.com/steen-hansen.se"
+      "logo_url": "https://logo.clearbit.com/steen-hansen.no",
+      "chairman": "Claes Bodell",
+      "metrics_source": "Accent Equity",
+      "metrics_url": "https://accentequity.se/companies/steen-hansen"
     },
     {
       "company": "Steni",
       "sector": "Industrial",
-      "fund": "Accent Fund V",
+      "fund": "Accent Equity V",
       "market": "Norway",
       "entry": "2013",
       "source": "Accent Equity",
       "headquarters": "Steinsholt, Norway",
       "website": "https://steni.com",
       "enriched": true,
-      "research_date": "2025-10-24T20:06:32",
-      "detailed_description": "Steni manufactures and sells exterior and interior panels and systems based on proprietary fibre composite technology. Product assortment includes standardized and customized panels for professional and DIY markets. Installed base of more than 30 million sqm of façade systems worldwide.",
-      "employees": "100-500 employees",
-      "revenue": "SEK 500M - SEK 2B",
-      "revenue_growth": "8-15% annual growth",
-      "valuation": "SEK 1-5 billion (estimated)",
+      "research_date": "2026-04-21T12:00:00",
+      "detailed_description": "Steni manufactures high-performance composite façade and interior panel systems for buildings worldwide, combining standard and bespoke architectural solutions. Accent Equity invested in 2013 (Fund V). Portfolio snapshot (Accent Equity): revenue about NOK 323m (2025); chairman Carl Fürstenbach; CEO Geir Olav Farstad.",
+      "revenue": "NOK 323m (2025, Accent portfolio disclosure)",
       "total_funding": "Accent-backed",
-      "ceo": "Industrial industry executive",
+      "ceo": "Geir Olav Farstad",
       "leadership_team": [
         {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Industrial industry experience"
+          "name": "Geir Olav Farstad",
+          "role": "CEO",
+          "background": "Group chief executive"
+        },
+        {
+          "name": "Carl Fürstenbach",
+          "role": "Chairman",
+          "background": "Board chair"
         }
       ],
       "investment_history": [
         {
-          "date": "2018",
-          "headline": "Accent Fund VI investment",
-          "impact": "Growth capital"
+          "date": "2013",
+          "headline": "Accent Equity V investment",
+          "impact": "Buyout of façade systems champion"
         }
       ],
       "key_milestones": [
         {
-          "year": "2018",
-          "event": "Accent Investment",
-          "description": "Growth partnership"
+          "year": "2013",
+          "event": "Accent investment",
+          "description": "Fund V backs building products platform"
         }
       ],
       "competitive_advantages": [
@@ -22704,45 +22752,60 @@
       ],
       "exit_status": "Active",
       "current_status": "Portfolio company",
-      "logo_url": "https://logo.clearbit.com/steni.se"
+      "logo_url": "https://logo.clearbit.com/steni.com",
+      "chairman": "Carl Fürstenbach",
+      "metrics_source": "Accent Equity",
+      "metrics_url": "https://accentequity.se/companies/steni"
     },
     {
       "company": "Tempcon",
       "sector": "Business Services",
-      "fund": "Accent Fund V",
+      "fund": "Accent Equity CV",
       "market": "Sweden",
       "entry": "2016",
       "source": "Accent Equity",
       "headquarters": "Helsingborg, Sweden",
-      "website": "https://www.tempcongroup.se",
+      "website": "https://tempcongroup.se",
       "enriched": true,
-      "research_date": "2025-10-24T20:06:32",
-      "detailed_description": "Tempcon is a leading provider of temperature controlled logistics mainly serving producers, wholesalers and retailers in the Swedish food industry. Nationwide transport, terminals and warehouses. Operates under brands including Tommy Nordbergh Åkeri, Klimat-transport, PL Fraktservice, Sydfrys, Logex, Tempcon Stockholm, Berneco Transport, and others.",
-      "employees": "100-500 employees",
-      "revenue": "SEK 500M - SEK 2B",
-      "revenue_growth": "8-15% annual growth",
-      "valuation": "SEK 1-5 billion (estimated)",
+      "research_date": "2026-04-21T12:00:00",
+      "detailed_description": "Tempcon Group is Sweden’s leading temperature-controlled food logistics network, integrating national transport, terminals, and value-added services for producers and retailers. Accent Equity originally invested in 2016 and the asset is supported from the continuation fund (Accent Equity CV). Portfolio snapshot (Accent Equity): revenue about SEK 3,112m on a pro forma basis (2025); chairman Benny Zakrisson; CEO Christian Hallberg.",
+      "revenue": "SEK 3,112m (2025 pro forma, Accent portfolio disclosure)",
       "total_funding": "Accent-backed",
-      "ceo": "Business Services industry executive",
+      "ceo": "Christian Hallberg",
       "leadership_team": [
         {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Business Services industry experience"
+          "name": "Christian Hallberg",
+          "role": "CEO",
+          "background": "Group chief executive"
+        },
+        {
+          "name": "Benny Zakrisson",
+          "role": "Chairman",
+          "background": "Board chair"
         }
       ],
       "investment_history": [
         {
-          "date": "2019",
-          "headline": "Accent Fund VI investment",
-          "impact": "Growth capital"
+          "date": "2016",
+          "headline": "Accent Equity V investment",
+          "impact": "Original buyout of cold-chain logistics leader"
+        },
+        {
+          "date": "2026",
+          "headline": "Accent Equity CV",
+          "impact": "Continuation capital for growth and exit readiness"
         }
       ],
       "key_milestones": [
         {
-          "year": "2019",
-          "event": "Accent Investment",
-          "description": "Growth partnership"
+          "year": "2016",
+          "event": "Accent investment",
+          "description": "Fund V creates nationwide food logistics platform"
+        },
+        {
+          "year": "2026",
+          "event": "Continuation fund",
+          "description": "Accent Equity CV provides follow-on capital"
         }
       ],
       "competitive_advantages": [
@@ -22752,45 +22815,60 @@
       ],
       "exit_status": "Active",
       "current_status": "Portfolio company",
-      "logo_url": "https://logo.clearbit.com/tempcon.se"
+      "logo_url": "https://logo.clearbit.com/tempcongroup.se",
+      "chairman": "Benny Zakrisson",
+      "metrics_source": "Accent Equity",
+      "metrics_url": "https://accentequity.se/companies/tempcon"
     },
     {
       "company": "ThorSvecon Group",
       "sector": "Business Services",
-      "fund": "Accent Fund VI",
+      "fund": "Accent Equity CV",
       "market": "Sweden",
       "entry": "2018",
       "source": "Accent Equity",
       "headquarters": "Västerås, Sweden",
       "website": "https://tsg.se",
       "enriched": true,
-      "research_date": "2025-10-24T20:06:32",
-      "detailed_description": "ThorSvecon Group (TSG) offers door-to-door sustainable logistics integrating short sea liner services, terminals, warehousing, forwarding and agency services. Liner service calls ports in Sweden, UK, Netherlands, and Belgium. Operates port terminal in Hull, UK.",
-      "employees": "100-500 employees",
-      "revenue": "SEK 500M - SEK 2B",
-      "revenue_growth": "8-15% annual growth",
-      "valuation": "SEK 1-5 billion (estimated)",
+      "research_date": "2026-04-21T12:00:00",
+      "detailed_description": "ThorSvecon Group (TSG) integrates short-sea shipping, port terminals, forwarding, and contract logistics for industrial and retail customers across the North Sea and Baltic corridors. Accent Equity invested in 2018 and the company is part of the Accent Equity CV continuation programme. Portfolio snapshot (Accent Equity): revenue about SEK 924m on a pro forma basis (2025); chairman Mikael Strand; CEO Eric Hjalmarsson.",
+      "revenue": "SEK 924m (2025 pro forma, Accent portfolio disclosure)",
       "total_funding": "Accent-backed",
-      "ceo": "Business Services industry executive",
+      "ceo": "Eric Hjalmarsson",
       "leadership_team": [
         {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Business Services industry experience"
+          "name": "Eric Hjalmarsson",
+          "role": "CEO",
+          "background": "Group chief executive"
+        },
+        {
+          "name": "Mikael Strand",
+          "role": "Chairman",
+          "background": "Board chair"
         }
       ],
       "investment_history": [
         {
           "date": "2018",
-          "headline": "Accent Fund VI investment",
-          "impact": "Growth capital"
+          "headline": "Accent Equity investment",
+          "impact": "Buyout of multimodal logistics platform"
+        },
+        {
+          "date": "2026",
+          "headline": "Accent Equity CV",
+          "impact": "Continuation capital alongside Nordic Grid and Tempcon"
         }
       ],
       "key_milestones": [
         {
           "year": "2018",
-          "event": "Accent Investment",
-          "description": "Growth partnership"
+          "event": "Accent investment",
+          "description": "Control investment in ThorSvecon / TSG"
+        },
+        {
+          "year": "2026",
+          "event": "Continuation fund",
+          "description": "Accent Equity CV ownership lane"
         }
       ],
       "competitive_advantages": [
@@ -22800,45 +22878,60 @@
       ],
       "exit_status": "Active",
       "current_status": "Portfolio company",
-      "logo_url": "https://logo.clearbit.com/thorsvecon.se"
+      "logo_url": "https://logo.clearbit.com/tsg.se",
+      "chairman": "Mikael Strand",
+      "metrics_source": "Accent Equity",
+      "metrics_url": "https://accentequity.se/companies/thorsvecon-group"
     },
     {
       "company": "Nordic Grid Solutions",
       "sector": "Industrial",
-      "fund": "Accent Fund VI",
+      "fund": "Accent Equity CV",
       "market": "Denmark",
       "entry": "2021",
       "source": "Accent Equity",
       "headquarters": "Hornsyld, Denmark",
-      "website": "https://www.triarca.dk/en/nordic-grid-solutions",
+      "website": "https://triarca.dk/en/nordic-grid-solutions",
       "enriched": true,
-      "research_date": "2025-10-24T20:06:32",
-      "detailed_description": "Nordic Grid Solutions (NGS) is a Nordic growth platform within e-mobility and low-voltage infrastructure, comprising Triarca A/S, HAMAG A/S, Sargo A/S in Denmark and Stitec AB in Sweden. Delivers solutions for electricity distribution, e-mobility, and fibre networks across the Nordic region.",
-      "employees": "100-500 employees",
-      "revenue": "SEK 500M - SEK 2B",
-      "revenue_growth": "8-15% annual growth",
-      "valuation": "SEK 1-5 billion (estimated)",
+      "research_date": "2026-04-21T12:00:00",
+      "detailed_description": "Nordic Grid Solutions is Accent’s low-voltage and e-mobility infrastructure platform, combining Triarca, Stitec, and related Danish assets to serve utilities, installers, and industrial customers. The investment sits in the Accent Equity CV continuation structure (initial platform work under prior funds). Portfolio snapshot (Accent Equity): revenue about DKK 215m on a pro forma basis (2025); chairman Benny Zakrisson; CEO Lars Prisak.",
+      "revenue": "DKK 215m (2025 pro forma, Accent portfolio disclosure)",
       "total_funding": "Accent-backed",
-      "ceo": "Industrial industry executive",
+      "ceo": "Lars Prisak",
       "leadership_team": [
         {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Industrial industry experience"
+          "name": "Lars Prisak",
+          "role": "CEO",
+          "background": "Group chief executive"
+        },
+        {
+          "name": "Benny Zakrisson",
+          "role": "Chairman",
+          "background": "Board chair"
         }
       ],
       "investment_history": [
         {
-          "date": "2017",
-          "headline": "Accent Fund VI investment",
-          "impact": "Growth capital"
+          "date": "2021",
+          "headline": "Platform expansion",
+          "impact": "Triarca / NGS consolidation under Accent"
+        },
+        {
+          "date": "2026",
+          "headline": "Accent Equity CV",
+          "impact": "Continuation fund ownership"
         }
       ],
       "key_milestones": [
         {
-          "year": "2017",
-          "event": "Accent Investment",
-          "description": "Growth partnership"
+          "year": "2021",
+          "event": "Nordic Grid platform",
+          "description": "E-mobility and LV infrastructure build-out"
+        },
+        {
+          "year": "2026",
+          "event": "Continuation fund",
+          "description": "Accent Equity CV support for add-ons"
         }
       ],
       "competitive_advantages": [
@@ -22848,45 +22941,50 @@
       ],
       "exit_status": "Active",
       "current_status": "Portfolio company",
-      "logo_url": "https://logo.clearbit.com/triarca.se"
+      "logo_url": "https://logo.clearbit.com/triarca.dk",
+      "chairman": "Benny Zakrisson",
+      "metrics_source": "Accent Equity",
+      "metrics_url": "https://accentequity.se/companies/ngs"
     },
     {
       "company": "Unisport",
       "sector": "Consumer",
-      "fund": "Accent Fund VII",
+      "fund": "Accent Equity VII",
       "market": "Sweden",
       "entry": "2025",
       "source": "Accent Equity",
       "headquarters": "Hjärnarp, Sweden",
       "website": "https://unisport.com",
       "enriched": true,
-      "research_date": "2025-10-24T20:06:32",
-      "detailed_description": "Unisport is the market leader in indoor sports facilities and equipment in the Nordics with a purpose to make people move. Long history through classic brands Kerko Sport (founded 1916) and Rantzows (founded 1926). More than 150 employees.",
-      "employees": "100-500 employees",
-      "revenue": "SEK 500M - SEK 2B",
-      "revenue_growth": "8-15% annual growth",
-      "valuation": "SEK 1-5 billion (estimated)",
+      "research_date": "2026-04-21T12:00:00",
+      "detailed_description": "Unisport designs, produces, and installs indoor sports surfaces and arena infrastructure across the Nordics, spanning schools, clubs, and commercial facilities. Accent Equity invested in 2025 (Fund VII). Portfolio snapshot (Accent Equity): revenue about EUR 67m (2025); chairman Oscar Claeson; CEO Ted Bengtsson.",
+      "revenue": "EUR 67m (2025, Accent portfolio disclosure)",
       "total_funding": "Accent-backed",
-      "ceo": "Consumer industry executive",
+      "ceo": "Ted Bengtsson",
       "leadership_team": [
         {
-          "name": "Management team",
-          "role": "Leadership",
-          "background": "Consumer industry experience"
+          "name": "Ted Bengtsson",
+          "role": "CEO",
+          "background": "Group chief executive"
+        },
+        {
+          "name": "Oscar Claeson",
+          "role": "Chairman",
+          "background": "Board chair"
         }
       ],
       "investment_history": [
         {
           "date": "2025",
-          "headline": "Accent Fund VII investment",
-          "impact": "Growth partnership; deal closed Q1 2025 (announced Nov 2024)"
+          "headline": "Accent Equity VII investment",
+          "impact": "Growth partnership; closing Q1 2025"
         }
       ],
       "key_milestones": [
         {
           "year": "2025",
-          "event": "Accent Fund VII Investment",
-          "description": "Accent Equity acquires Unisport as new growth partner; closed Q1 2025"
+          "event": "Accent investment",
+          "description": "Fund VII backs indoor sports environments leader"
         }
       ],
       "competitive_advantages": [
@@ -22896,7 +22994,10 @@
       ],
       "exit_status": "Active",
       "current_status": "Portfolio company",
-      "logo_url": "https://logo.clearbit.com/unisport.se"
+      "logo_url": "https://logo.clearbit.com/unisport.com",
+      "chairman": "Oscar Claeson",
+      "metrics_source": "Accent Equity",
+      "metrics_url": "https://accentequity.se/companies/unisport"
     },
     {
       "company": "Arrive (formerly EasyPark Group)",
@@ -30936,11 +31037,11 @@
       "headquarters": "Helsinki, Finland",
       "website": "https://www.innagroup.se",
       "enriched": true,
-      "research_date": "2025-02-26T12:00:00",
-      "detailed_description": "Leading B2B property management and real estate services in Finland, Sweden and Denmark. Retta merged with Cobblestone to form INNA Group (innagroup.se). Serves institutional investors, property owners and commercial clients. Acquired by Adelis from Altor in September 2025.",
+      "research_date": "2026-04-22T12:00:00",
+      "detailed_description": "Leading B2B property management and real estate services in Finland, Sweden and Denmark. Retta merged with Cobblestone to form INNA Group (innagroup.se). Serves institutional investors, property owners and commercial clients. Acquired by Adelis from Altor in September 2025.\n\nCompiled snapshot (estimates & public data, 2024–2025): Revenue ~USD 72.5k (estimate); employees about 1–10 (estimate); Note: indicative pending statutory filings.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
-      "revenue": "To be researched",
+      "revenue": "~USD 72.5k (estimate)",
       "revenue_growth": "To be researched",
       "ceo": "To be researched",
       "leadership_team": [],
@@ -30950,7 +31051,10 @@
       "recent_developments": [],
       "financial_highlights": [],
       "market_position": "To be researched",
-      "logo_url": "https://logo.clearbit.com/retta.com"
+      "logo_url": "https://logo.clearbit.com/retta.com",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com",
+      "employees": "1–10 (estimate)"
     },
     {
       "company": "Bryntum",
@@ -30962,11 +31066,11 @@
       "headquarters": "Malmö, Sweden",
       "website": "https://www.bryntum.com",
       "enriched": true,
-      "research_date": "2025-02-26T12:00:00",
-      "detailed_description": "Globally leading provider of advanced scheduling web-components for project management applications. Serves thousands of customers across 80+ countries in aerospace, healthcare, logistics and software development. Acquired by Adelis June 2025.",
+      "research_date": "2026-04-22T12:00:00",
+      "detailed_description": "Globally leading provider of advanced scheduling web-components for project management applications. Serves thousands of customers across 80+ countries in aerospace, healthcare, logistics and software development. Acquired by Adelis June 2025.\n\nCompiled snapshot (estimates & public data, 2024–2025): Revenue SEK 63.5m; EBITDA SEK 29.5m; six employees (2025 figures).",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
-      "revenue": "To be researched",
+      "revenue": "SEK 63.5m (2025)",
       "revenue_growth": "To be researched",
       "ceo": "To be researched",
       "leadership_team": [],
@@ -30976,7 +31080,10 @@
       "recent_developments": [],
       "financial_highlights": [],
       "market_position": "To be researched",
-      "logo_url": "https://logo.clearbit.com/bryntum.com"
+      "logo_url": "https://logo.clearbit.com/bryntum.com",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com",
+      "employees": "6"
     },
     {
       "company": "Circura Danmark",
@@ -30988,11 +31095,11 @@
       "headquarters": "Copenhagen, Denmark",
       "website": "https://www.circuradanmark.dk",
       "enriched": true,
-      "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "Building rehabilitation and renewal services in Denmark. Part of Circura Group, the Nordic market leader in building renewal. Roofing, facades, windows and energy-efficient renovations for commercial and residential properties.",
+      "research_date": "2026-04-22T12:00:00",
+      "detailed_description": "Building rehabilitation and renewal services in Denmark. Part of Circura Group, the Nordic market leader in building renewal. Roofing, facades, windows and energy-efficient renovations for commercial and residential properties.\n\nCompiled snapshot (estimates & public data, 2024–2025): Revenue about DKK 750m; employees about 400.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
-      "revenue": "To be researched",
+      "revenue": "~DKK 750m",
       "revenue_growth": "To be researched",
       "ceo": "To be researched",
       "leadership_team": [],
@@ -31002,7 +31109,10 @@
       "recent_developments": [],
       "financial_highlights": [],
       "market_position": "To be researched",
-      "logo_url": "https://logo.clearbit.com/circuradanmark.com"
+      "logo_url": "https://logo.clearbit.com/circuradanmark.com",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com",
+      "employees": "~400"
     },
     {
       "company": "Btwentyfour",
@@ -31014,11 +31124,11 @@
       "headquarters": "London, UK",
       "website": "https://www.btwentyfour.com",
       "enriched": true,
-      "research_date": "2025-02-26T12:00:00",
-      "detailed_description": "Leading supply chain data automation software platform. Enables global brands and retailers to automate supplier and product data management. Acquired by Adelis December 2024.",
+      "research_date": "2026-04-22T12:00:00",
+      "detailed_description": "Leading supply chain data automation software platform. Enables global brands and retailers to automate supplier and product data management. Acquired by Adelis December 2024.\n\nCompiled snapshot (estimates & public data, 2024–2025): Revenue about USD 9.8m; 75 employees.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
-      "revenue": "To be researched",
+      "revenue": "~USD 9.8m",
       "revenue_growth": "To be researched",
       "ceo": "To be researched",
       "leadership_team": [],
@@ -31028,23 +31138,26 @@
       "recent_developments": [],
       "financial_highlights": [],
       "market_position": "To be researched",
-      "logo_url": "https://logo.clearbit.com/btwentyfour.com"
+      "logo_url": "https://logo.clearbit.com/btwentyfour.com",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com",
+      "employees": "75"
     },
     {
       "company": "Cedra",
       "sector": "Business Services",
       "fund": "Adelis III",
-      "market": "Nordics",
+      "market": "Sweden, Norway & Denmark",
       "entry": "2020",
       "source": "Adelis Equity",
       "headquarters": "Stockholm, Sweden",
       "website": "https://www.cedra.se",
       "enriched": true,
-      "research_date": "2025-02-26T12:00:00",
-      "detailed_description": "Leading provider of audit and advisory services in the Nordics. Cedra Sweden (2020), Cedra Norway (2025), Cedra Denmark (2025). Serves mid-market and SME customers with technology, digitalization and compliance expertise.",
+      "research_date": "2026-04-22T12:00:00",
+      "detailed_description": "Leading provider of audit and advisory services in the Nordics. Cedra Sweden (2020), Cedra Norway (2025), Cedra Denmark (2025). Serves mid-market and SME customers with technology, digitalization and compliance expertise.\n\nCompiled snapshot (estimates & public data, 2024–2025): Revenue about SEK 500m (estimate).",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
-      "revenue": "To be researched",
+      "revenue": "~SEK 500m (estimate)",
       "revenue_growth": "To be researched",
       "ceo": "To be researched",
       "leadership_team": [],
@@ -31054,7 +31167,9 @@
       "recent_developments": [],
       "financial_highlights": [],
       "market_position": "To be researched",
-      "logo_url": "https://logo.clearbit.com/cedra.com"
+      "logo_url": "https://logo.clearbit.com/cedra.com",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com"
     },
     {
       "company": "Säkra",
@@ -31068,13 +31183,17 @@
       "headquarters": "Stockholm, Sweden",
       "website": "https://www.sakra.se",
       "logo_url": "https://logo.clearbit.com/sakra.se",
-      "detailed_description": "Säkra AB is one of Sweden's largest insurance intermediaries with over 30 years of market presence. The company operates as an insurance broker and financial advisory firm serving businesses and private clients. Services include business insurance, risk management, employee benefits, occupational pensions, savings and wealth management. 500 insurance professionals across 60 offices in Sweden. Adelis was majority owner 2020–2022; divested to support continued growth."
+      "detailed_description": "Säkra AB is one of Sweden's largest insurance intermediaries with over 30 years of market presence. The company operates as an insurance broker and financial advisory firm serving businesses and private clients. Services include business insurance, risk management, employee benefits, occupational pensions, savings and wealth management. 500 insurance professionals across 60 offices in Sweden. Adelis was majority owner 2020–2022; divested to support continued growth.\n\nCompiled snapshot (estimates & public data, 2024–2025): Revenue SEK 685m; EBITDA SEK 76.2m; net result SEK −218.5m (2024). Note: exited from Adelis portfolio.",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com",
+      "research_date": "2026-04-22T12:00:00",
+      "revenue": "SEK 685m (2024)"
     },
     {
       "company": "Kanari",
       "sector": "Tech & Software",
       "fund": "Adelis II",
-      "market": "Nordics",
+      "market": "Norway & Nordics",
       "entry": "2020",
       "exit_year": "2024",
       "status": "Exited",
@@ -31082,7 +31201,11 @@
       "headquarters": "Oslo, Norway",
       "website": "https://www.kanari.com",
       "logo_url": "https://logo.clearbit.com/kanari.com",
-      "detailed_description": "Kanari Group (formerly Red Ocean Technology) is a Nordic provider of IT stability and performance analytics. Specializes in Stability & Performance Analytics (SPA), Application Performance Monitoring (APM) and observability solutions for complex IT environments. Serves ~400 companies including DNB and TietoEVRY. Adelis acquired majority stake in 2020 and supported rebrand from Red Ocean to Kanari; divested to Conscia in 2024."
+      "detailed_description": "Kanari Group (formerly Red Ocean Technology) is a Nordic provider of IT stability and performance analytics. Specializes in Stability & Performance Analytics (SPA), Application Performance Monitoring (APM) and observability solutions for complex IT environments. Serves ~400 companies including DNB and TietoEVRY. Adelis acquired majority stake in 2020 and supported rebrand from Red Ocean to Kanari; divested to Conscia in 2024.\n\nCompiled snapshot (estimates & public data, 2024–2025): Revenue SEK 19.4m; EBITDA SEK −2.6m; net result SEK −3.1m. Note: exited.",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com",
+      "research_date": "2026-04-22T12:00:00",
+      "revenue": "SEK 19.4m"
     },
     {
       "company": "Axentia",
@@ -31095,7 +31218,11 @@
       "headquarters": "Linköping, Sweden",
       "website": "https://www.axentia.se",
       "logo_url": "https://logo.clearbit.com/axentia.se",
-      "detailed_description": "Axentia is a leading Swedish provider of battery- and solar-powered display systems for public transport. Develops market-leading low-power e-paper, LCD, TFT and RGB-LED displays enabling autonomous installation without external cabling. The iBus system operates on batteries for 3+ years between changes. Installations across Sweden (Skånetrafiken, Östgötatrafiken), Denmark (Movia), France (CTS Strasbourg), Belgium (STIB Brussels), Germany, Italy, Norway and the Netherlands. Adelis partner since 2020."
+      "detailed_description": "Axentia is a leading Swedish provider of battery- and solar-powered display systems for public transport. Develops market-leading low-power e-paper, LCD, TFT and RGB-LED displays enabling autonomous installation without external cabling. The iBus system operates on batteries for 3+ years between changes. Installations across Sweden (Skånetrafiken, Östgötatrafiken), Denmark (Movia), France (CTS Strasbourg), Belgium (STIB Brussels), Germany, Italy, Norway and the Netherlands. Adelis partner since 2020.\n\nCompiled snapshot (estimates & public data, 2024–2025): Revenue SEK 9.2m; EBITDA SEK 0.6m; net result SEK −55.2m (2024). Note: Swedish holding entity accounts.",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com",
+      "research_date": "2026-04-22T12:00:00",
+      "revenue": "SEK 9.2m (2024)"
     },
     {
       "company": "EITCO",
@@ -31107,11 +31234,11 @@
       "headquarters": "Berlin, Germany",
       "website": "https://www.eitco.de",
       "enriched": true,
-      "research_date": "2025-02-26T12:00:00",
-      "detailed_description": "Leading Enterprise Content Management (ECM) specialist in Germany. Serves public sector and enterprises with ECM software, arveo content services platform, and digital transformation. c.200 employees across Berlin, Bonn and Essen. Acquired by Adelis May 2025.",
+      "research_date": "2026-04-22T12:00:00",
+      "detailed_description": "Leading Enterprise Content Management (ECM) specialist in Germany. Serves public sector and enterprises with ECM software, arveo content services platform, and digital transformation. c.200 employees across Berlin, Bonn and Essen. Acquired by Adelis May 2025.\n\nCompiled snapshot (estimates & public data, 2024–2025): Revenue about USD 13.2m (estimate).",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
-      "revenue": "To be researched",
+      "revenue": "~USD 13.2m (estimate)",
       "revenue_growth": "To be researched",
       "ceo": "To be researched",
       "leadership_team": [],
@@ -31121,7 +31248,9 @@
       "recent_developments": [],
       "financial_highlights": [],
       "market_position": "To be researched",
-      "logo_url": "https://logo.clearbit.com/eitco.de"
+      "logo_url": "https://logo.clearbit.com/eitco.de",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com"
     },
     {
       "company": "Hedvig",
@@ -31133,11 +31262,11 @@
       "headquarters": "Stockholm, Sweden",
       "website": "https://www.hedvig.com",
       "enriched": true,
-      "research_date": "2025-02-26T12:00:00",
-      "detailed_description": "Fast-growing digital insurance company. Offers home and pet insurance through a modern, app-based platform with focus on customer experience and fair pricing.",
+      "research_date": "2026-04-22T12:00:00",
+      "detailed_description": "Fast-growing digital insurance company. Offers home and pet insurance through a modern, app-based platform with focus on customer experience and fair pricing.\n\nCompiled snapshot (estimates & public data, 2024–2025): Revenue SEK 84.6m; EBITDA SEK −77.3m; net result SEK −77.7m (2024).",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
-      "revenue": "To be researched",
+      "revenue": "SEK 84.6m (2024)",
       "revenue_growth": "To be researched",
       "ceo": "To be researched",
       "leadership_team": [],
@@ -31147,7 +31276,9 @@
       "recent_developments": [],
       "financial_highlights": [],
       "market_position": "To be researched",
-      "logo_url": "https://logo.clearbit.com/hedvig.com"
+      "logo_url": "https://logo.clearbit.com/hedvig.com",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com"
     },
     {
       "company": "Evallic",
@@ -31159,11 +31290,11 @@
       "headquarters": "Stockholm, Sweden",
       "website": "https://www.evallic.com",
       "enriched": true,
-      "research_date": "2025-02-26T12:00:00",
-      "detailed_description": "European defence technology group. Home to leading European defence technologies trusted by NATO members. Formed by Adelis with Bruhn NewTech (CBRN software) as first acquisition July 2024; includes SeaCross, Riskaware.",
+      "research_date": "2026-04-22T12:00:00",
+      "detailed_description": "European defence technology group. Home to leading European defence technologies trusted by NATO members. Formed by Adelis with Bruhn NewTech (CBRN software) as first acquisition July 2024; includes SeaCross, Riskaware.\n\nCompiled snapshot (estimates & public data, 2024–2025): Revenue SEK 1.0m; EBITDA SEK −2.8m; net result SEK −2.4m (2024). Note: early-stage defence platform.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
-      "revenue": "To be researched",
+      "revenue": "SEK 1.0m (2024)",
       "revenue_growth": "To be researched",
       "ceo": "To be researched",
       "leadership_team": [],
@@ -31173,7 +31304,9 @@
       "recent_developments": [],
       "financial_highlights": [],
       "market_position": "To be researched",
-      "logo_url": "https://logo.clearbit.com/evallic.com"
+      "logo_url": "https://logo.clearbit.com/evallic.com",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com"
     },
     {
       "company": "IonOpticks",
@@ -31185,8 +31318,8 @@
       "headquarters": "Melbourne, Australia",
       "website": "https://www.ionopticks.com",
       "enriched": true,
-      "research_date": "2025-02-26T12:00:00",
-      "detailed_description": "Leading provider of HPLC columns primarily for proteomics and life science research. Supports drug discovery, biopharma and academic research globally. Acquired by Adelis September 2024.",
+      "research_date": "2026-04-22T12:00:00",
+      "detailed_description": "Leading provider of HPLC columns primarily for proteomics and life science research. Supports drug discovery, biopharma and academic research globally. Acquired by Adelis September 2024.\n\nCompiled snapshot (estimates & public data, 2024–2025): No revenue, EBITDA, or net result figures located in reviewed sources; to be updated when filings are available.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -31199,23 +31332,25 @@
       "recent_developments": [],
       "financial_highlights": [],
       "market_position": "To be researched",
-      "logo_url": "https://logo.clearbit.com/ionopticks.com"
+      "logo_url": "https://logo.clearbit.com/ionopticks.com",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com"
     },
     {
       "company": "AVIDLY",
       "sector": "Business Services",
       "fund": "Adelis III",
-      "market": "Nordics",
+      "market": "Finland & Nordics",
       "entry": "2022",
       "source": "Adelis Equity",
       "headquarters": "Helsinki, Finland",
       "website": "https://www.avidly.com",
       "enriched": true,
-      "research_date": "2025-02-26T12:00:00",
-      "detailed_description": "Global provider of marketing technology services. Digital marketing, advertising and marketing automation for brands across the Nordics and internationally.",
+      "research_date": "2026-04-22T12:00:00",
+      "detailed_description": "Global provider of marketing technology services. Digital marketing, advertising and marketing automation for brands across the Nordics and internationally.\n\nCompiled snapshot (estimates & public data, 2024–2025): Revenue about USD 32.3m; employees about 100+.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
-      "revenue": "To be researched",
+      "revenue": "~USD 32.3m",
       "revenue_growth": "To be researched",
       "ceo": "To be researched",
       "leadership_team": [],
@@ -31225,7 +31360,10 @@
       "recent_developments": [],
       "financial_highlights": [],
       "market_position": "To be researched",
-      "logo_url": "https://logo.clearbit.com/avidly.com"
+      "logo_url": "https://logo.clearbit.com/avidly.com",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com",
+      "employees": "100+"
     },
     {
       "company": "netIP",
@@ -31237,8 +31375,8 @@
       "headquarters": "Copenhagen, Denmark",
       "website": "https://www.netip.dk",
       "enriched": true,
-      "research_date": "2025-02-26T12:00:00",
-      "detailed_description": "Leading provider of managed IT services in Denmark. IT infrastructure, networking and managed services for mid-sized customers.",
+      "research_date": "2026-04-22T12:00:00",
+      "detailed_description": "Leading provider of managed IT services in Denmark. IT infrastructure, networking and managed services for mid-sized customers.\n\nCompiled snapshot (estimates & public data, 2024–2025): No revenue, EBITDA, or net result figures located in reviewed sources; to be updated when filings are available.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -31251,7 +31389,9 @@
       "recent_developments": [],
       "financial_highlights": [],
       "market_position": "To be researched",
-      "logo_url": "https://logo.clearbit.com/netip.com"
+      "logo_url": "https://logo.clearbit.com/netip.com",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com"
     },
     {
       "company": "Aderian",
@@ -31263,11 +31403,11 @@
       "headquarters": "Stockholm, Sweden",
       "website": "https://www.aderian.com",
       "enriched": true,
-      "research_date": "2025-02-26T12:00:00",
-      "detailed_description": "Aderian is a leading IT services provider to mid-sized customers in Sweden and Norway. The company offers managed IT, cloud migration, digital transformation, and cybersecurity services, helping businesses modernize their technology infrastructure. Adelis invested in 2023.",
+      "research_date": "2026-04-22T12:00:00",
+      "detailed_description": "Aderian is a leading IT services provider to mid-sized customers in Sweden and Norway. The company offers managed IT, cloud migration, digital transformation, and cybersecurity services, helping businesses modernize their technology infrastructure. Adelis invested in 2023.\n\nCompiled snapshot (estimates & public data, 2024–2025): Revenue SEK 6.9m; EBITDA SEK −0.6m; net result SEK −0.7m (2024). Note: holding entity accounts.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
-      "revenue": "To be researched",
+      "revenue": "SEK 6.9m (2024)",
       "revenue_growth": "To be researched",
       "ceo": "To be researched",
       "leadership_team": [],
@@ -31277,7 +31417,9 @@
       "recent_developments": [],
       "financial_highlights": [],
       "market_position": "To be researched",
-      "logo_url": "https://logo.clearbit.com/aderian.com"
+      "logo_url": "https://logo.clearbit.com/aderian.com",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com"
     },
     {
       "company": "DIAKRIT",
@@ -31289,11 +31431,11 @@
       "headquarters": "Malmö, Sweden",
       "website": "https://www.diakrit.com",
       "enriched": true,
-      "research_date": "2025-02-26T12:00:00",
-      "detailed_description": "Global provider of digital property marketing content. Marketing technology and content services for real estate developers and property marketers worldwide.",
+      "research_date": "2026-04-22T12:00:00",
+      "detailed_description": "Global provider of digital property marketing content. Marketing technology and content services for real estate developers and property marketers worldwide.\n\nCompiled snapshot (estimates & public data, 2024–2025): Revenue SEK 0.5m; EBITDA SEK −3.0m; net result SEK −122.4m (2024). Note: holding entity accounts.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
-      "revenue": "To be researched",
+      "revenue": "SEK 0.5m (2024)",
       "revenue_growth": "To be researched",
       "ceo": "To be researched",
       "leadership_team": [],
@@ -31303,7 +31445,9 @@
       "recent_developments": [],
       "financial_highlights": [],
       "market_position": "To be researched",
-      "logo_url": "https://logo.clearbit.com/diakrit.com"
+      "logo_url": "https://logo.clearbit.com/diakrit.com",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com"
     },
     {
       "company": "Unisea",
@@ -31315,11 +31459,11 @@
       "headquarters": "Bergen, Norway",
       "website": "https://www.unisea.com",
       "enriched": true,
-      "research_date": "2025-02-26T12:00:00",
-      "detailed_description": "Leading Maritime Fleet Management Systems SaaS provider supporting customers worldwide. Fleet operations, compliance and vessel management software.",
+      "research_date": "2026-04-22T12:00:00",
+      "detailed_description": "Leading Maritime Fleet Management Systems SaaS provider supporting customers worldwide. Fleet operations, compliance and vessel management software.\n\nCompiled snapshot (estimates & public data, 2024–2025): Revenue about USD 9.4m; 65 employees.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
-      "revenue": "To be researched",
+      "revenue": "~USD 9.4m",
       "revenue_growth": "To be researched",
       "ceo": "To be researched",
       "leadership_team": [],
@@ -31329,7 +31473,10 @@
       "recent_developments": [],
       "financial_highlights": [],
       "market_position": "To be researched",
-      "logo_url": "https://logo.clearbit.com/unisea.com"
+      "logo_url": "https://logo.clearbit.com/unisea.com",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com",
+      "employees": "65"
     },
     {
       "company": "Vokstr",
@@ -31341,11 +31488,11 @@
       "headquarters": "Oslo, Norway",
       "website": "https://www.vokstr.no",
       "enriched": true,
-      "research_date": "2025-02-26T12:00:00",
-      "detailed_description": "Group of market-leading building rehabilitation companies in Oslo and South Norway. Håndverkskompaniet, Bico, Finstad & Jørgensen. ~NOK 2.7bn turnover, ~300 employees. Partnered with Adelis May 2022.",
+      "research_date": "2026-04-22T12:00:00",
+      "detailed_description": "Group of market-leading building rehabilitation companies in Oslo and South Norway. Håndverkskompaniet, Bico, Finstad & Jørgensen. ~NOK 2.7bn turnover, ~300 employees. Partnered with Adelis May 2022.\n\nCompiled snapshot (estimates & public data, 2024–2025): Revenue NOK 8.8m; net result NOK 25.6m (2024); EBIT NOK 49k (2024). Note: EBITDA not separately reported; confirm net result scope in filings.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
-      "revenue": "To be researched",
+      "revenue": "NOK 8.8m (2024)",
       "revenue_growth": "To be researched",
       "ceo": "To be researched",
       "leadership_team": [],
@@ -31355,23 +31502,25 @@
       "recent_developments": [],
       "financial_highlights": [],
       "market_position": "To be researched",
-      "logo_url": "https://logo.clearbit.com/vokstr.no"
+      "logo_url": "https://logo.clearbit.com/vokstr.no",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com"
     },
     {
       "company": "DLVRY",
       "sector": "Business Services",
       "fund": "Adelis III",
-      "market": "Nordics",
+      "market": "Sweden & Nordics",
       "entry": "2021",
       "source": "Adelis Equity",
       "headquarters": "Stockholm, Sweden",
       "website": "https://www.dlvry.se",
       "enriched": true,
-      "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "DLVRY is a leading Nordic foodservice supplier headquartered in Stockholm. The company provides food and beverage products, equipment, and services to restaurants, hotels, canteens, and institutional customers across Sweden and the Nordics. Adelis acquired the company in 2021 to build a platform in the fragmented foodservice distribution market.",
+      "research_date": "2026-04-22T12:00:00",
+      "detailed_description": "DLVRY is a leading Nordic foodservice supplier headquartered in Stockholm. The company provides food and beverage products, equipment, and services to restaurants, hotels, canteens, and institutional customers across Sweden and the Nordics. Adelis acquired the company in 2021 to build a platform in the fragmented foodservice distribution market.\n\nCompiled snapshot (estimates & public data, 2024–2025): Revenue NOK 47.1m; EBITDA NOK −15.3m; net result NOK −59.3m (2024); 39 employees.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
-      "revenue": "To be researched",
+      "revenue": "NOK 47.1m (2024)",
       "revenue_growth": "To be researched",
       "ceo": "To be researched",
       "leadership_team": [],
@@ -31381,7 +31530,10 @@
       "recent_developments": [],
       "financial_highlights": [],
       "market_position": "To be researched",
-      "logo_url": "https://logo.clearbit.com/dlvry.se"
+      "logo_url": "https://logo.clearbit.com/dlvry.se",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com",
+      "employees": "39"
     },
     {
       "company": "WP Westpack",
@@ -31393,11 +31545,11 @@
       "headquarters": "Antwerp, Belgium",
       "website": "https://www.wpwestpack.com",
       "enriched": true,
-      "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "WP Westpack is a European manufacturer of custom-made packaging solutions for the jewelry, watch, and eyewear industries. Headquartered in Antwerp, Belgium, the company produces premium packaging for luxury brands including cases, boxes, and display materials. Adelis invested in 2022.",
+      "research_date": "2026-04-22T12:00:00",
+      "detailed_description": "WP Westpack is a European manufacturer of custom-made packaging solutions for the jewelry, watch, and eyewear industries. Headquartered in Antwerp, Belgium, the company produces premium packaging for luxury brands including cases, boxes, and display materials. Adelis invested in 2022.\n\nCompiled snapshot (estimates & public data, 2024–2025): Revenue about USD 1.7m (estimate).",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
-      "revenue": "To be researched",
+      "revenue": "~USD 1.7m (estimate)",
       "revenue_growth": "To be researched",
       "ceo": "To be researched",
       "leadership_team": [],
@@ -31407,7 +31559,9 @@
       "recent_developments": [],
       "financial_highlights": [],
       "market_position": "To be researched",
-      "logo_url": "https://logo.clearbit.com/wpwestpack.com"
+      "logo_url": "https://logo.clearbit.com/wpwestpack.com",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com"
     },
     {
       "company": "pixelz",
@@ -31416,11 +31570,11 @@
       "market": "Global",
       "entry": "2022",
       "source": "Adelis Equity",
-      "headquarters": "Global",
+      "headquarters": "Copenhagen, Denmark",
       "website": "https://www.pixelz.com",
       "enriched": true,
-      "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "AI-powered post-production services for creative assets tailored to the fashion industry",
+      "research_date": "2026-04-22T12:00:00",
+      "detailed_description": "AI-powered post-production services for creative assets tailored to the fashion industry\n\nCompiled snapshot (estimates & public data, 2024–2025): No revenue, EBITDA, or net result figures located in reviewed sources; to be updated when filings are available.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -31433,7 +31587,9 @@
       "recent_developments": [],
       "financial_highlights": [],
       "market_position": "To be researched",
-      "logo_url": "https://logo.clearbit.com/pixelz.com"
+      "logo_url": "https://logo.clearbit.com/pixelz.com",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com"
     },
     {
       "company": "Europa Biosite",
@@ -31445,8 +31601,8 @@
       "headquarters": "Helsinki, Finland",
       "website": "https://www.europabiosite.com",
       "enriched": true,
-      "research_date": "2025-02-26T12:00:00",
-      "detailed_description": "European life science research product distributor. Leading pan-European distributor of reagents, lab consumables and research products for life science and biotech.",
+      "research_date": "2026-04-22T12:00:00",
+      "detailed_description": "European life science research product distributor. Leading pan-European distributor of reagents, lab consumables and research products for life science and biotech.\n\nCompiled snapshot (estimates & public data, 2024–2025): No revenue, EBITDA, or net result figures located in reviewed sources; to be updated when filings are available.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -31459,7 +31615,9 @@
       "recent_developments": [],
       "financial_highlights": [],
       "market_position": "To be researched",
-      "logo_url": "https://logo.clearbit.com/europabiosite.com"
+      "logo_url": "https://logo.clearbit.com/europabiosite.com",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com"
     },
     {
       "company": "re:mount",
@@ -31471,11 +31629,11 @@
       "headquarters": "Helsinki, Finland",
       "website": "https://www.remount.fi",
       "enriched": true,
-      "research_date": "2025-02-26T12:00:00",
-      "detailed_description": "Finland-based B2B renovation services for apartment and commercial buildings. Formed 2022 from Renevo and Remonttipartio. ~EUR 160M revenue. Housing cooperatives, line and facade renovations. Adelis since 2021.",
+      "research_date": "2026-04-22T12:00:00",
+      "detailed_description": "Finland-based B2B renovation services for apartment and commercial buildings. Formed 2022 from Renevo and Remonttipartio. ~EUR 160M revenue. Housing cooperatives, line and facade renovations. Adelis since 2021.\n\nCompiled snapshot (estimates & public data, 2024–2025): Revenue above EUR 200m (2022 estimate).",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
-      "revenue": "To be researched",
+      "revenue": ">EUR 200m (2022 est.)",
       "revenue_growth": "To be researched",
       "ceo": "To be researched",
       "leadership_team": [],
@@ -31485,23 +31643,25 @@
       "recent_developments": [],
       "financial_highlights": [],
       "market_position": "To be researched",
-      "logo_url": "https://logo.clearbit.com/remount.fi"
+      "logo_url": "https://logo.clearbit.com/remount.fi",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com"
     },
     {
       "company": "Circura",
       "sector": "Business Services",
       "fund": "Adelis III",
-      "market": "Nordics",
+      "market": "Sweden (Nordic group)",
       "entry": "2021",
       "source": "Adelis Equity",
       "headquarters": "Stockholm, Sweden",
       "website": "https://www.circuragroup.com",
       "enriched": true,
-      "research_date": "2025-02-26T12:00:00",
-      "detailed_description": "Nordic market leader in building renewal services. Building rehabilitation in Sweden. Part of Circura Group with Circura Danmark and Circura Norway. Revenue exceeding SEK 10 billion.",
+      "research_date": "2026-04-22T12:00:00",
+      "detailed_description": "Nordic market leader in building renewal services. Building rehabilitation in Sweden. Part of Circura Group with Circura Danmark and Circura Norway. Revenue exceeding SEK 10 billion.\n\nCompiled snapshot (estimates & public data, 2024–2025): Revenue SEK 16.5m; EBITDA SEK −14.3m; net result SEK 123.8m (2024). Note: Swedish holding entity accounts.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
-      "revenue": "To be researched",
+      "revenue": "SEK 16.5m (2024)",
       "revenue_growth": "To be researched",
       "ceo": "To be researched",
       "leadership_team": [],
@@ -31511,7 +31671,9 @@
       "recent_developments": [],
       "financial_highlights": [],
       "market_position": "To be researched",
-      "logo_url": "https://logo.clearbit.com/circura.com"
+      "logo_url": "https://logo.clearbit.com/circura.com",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com"
     },
     {
       "company": "VALAMIS",
@@ -31523,8 +31685,8 @@
       "headquarters": "Helsinki, Finland",
       "website": "https://www.valamis.com",
       "enriched": true,
-      "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "Valamis is a Helsinki-based learning technology company offering a cloud learning experience platform (LXP) and learning management for enterprises and public-sector employers. Its stack spans authoring, skills and compliance tracking, analytics, and integrations so organisations can run onboarding, regulatory training, and continuous upskilling at scale. Customers are spread globally; Adelis partnered with management in 2020 to accelerate international go-to-market and product investment.",
+      "research_date": "2026-04-22T12:00:00",
+      "detailed_description": "Valamis is a Helsinki-based learning technology company offering a cloud learning experience platform (LXP) and learning management for enterprises and public-sector employers. Its stack spans authoring, skills and compliance tracking, analytics, and integrations so organisations can run onboarding, regulatory training, and continuous upskilling at scale. Customers are spread globally; Adelis partnered with management in 2020 to accelerate international go-to-market and product investment.\n\nCompiled snapshot (estimates & public data, 2024–2025): No revenue, EBITDA, or net result figures located in reviewed sources; to be updated when filings are available.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -31537,20 +31699,22 @@
       "recent_developments": [],
       "financial_highlights": [],
       "market_position": "To be researched",
-      "logo_url": "https://logo.clearbit.com/valamis.com"
+      "logo_url": "https://logo.clearbit.com/valamis.com",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com"
     },
     {
       "company": "Ropo Capital",
       "sector": "Business Services",
       "fund": "Adelis II",
-      "market": "Nordics",
+      "market": "Finland & Nordics",
       "entry": "2019",
       "source": "Adelis Equity",
       "headquarters": "Helsinki, Finland",
       "website": "https://www.ropo.com",
       "enriched": true,
-      "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "Ropo Capital is a Finnish B2B fintech focused on the invoice lifecycle—financing, credit management, and collections—so companies get predictable cash flow without fragmenting order-to-cash across banks and agencies. Its technology-led model targets SMEs and mid-market groups in Finland and the wider Nordics, combining underwriting data with operational execution. The platform sits at the intersection of working-capital finance and accounts-receivable automation.",
+      "research_date": "2026-04-22T12:00:00",
+      "detailed_description": "Ropo Capital is a Finnish B2B fintech focused on the invoice lifecycle—financing, credit management, and collections—so companies get predictable cash flow without fragmenting order-to-cash across banks and agencies. Its technology-led model targets SMEs and mid-market groups in Finland and the wider Nordics, combining underwriting data with operational execution. The platform sits at the intersection of working-capital finance and accounts-receivable automation.\n\nCompiled snapshot (estimates & public data, 2024–2025): No revenue, EBITDA, or net result figures located in reviewed sources; to be updated when filings are available.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
       "revenue": "To be researched",
@@ -31563,7 +31727,9 @@
       "recent_developments": [],
       "financial_highlights": [],
       "market_position": "To be researched",
-      "logo_url": "https://logo.clearbit.com/ropo.com"
+      "logo_url": "https://logo.clearbit.com/ropo.com",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com"
     },
     {
       "company": "Mobilhouse",
@@ -31577,11 +31743,11 @@
       "headquarters": "Copenhagen, Denmark",
       "website": "https://www.mobilhouse.com",
       "enriched": true,
-      "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "Mobilhouse designs, manufactures, and installs modular and relocatable buildings in Denmark for offices, schools, student housing, healthcare, and other temporary or fast-track capacity needs. Compared with on-site construction, modules shorten lead times and site disruption while meeting Danish building standards. Adelis acquired the business in 2019 to fund growth and industrial capacity, and exited in 2022.",
+      "research_date": "2026-04-22T12:00:00",
+      "detailed_description": "Mobilhouse designs, manufactures, and installs modular and relocatable buildings in Denmark for offices, schools, student housing, healthcare, and other temporary or fast-track capacity needs. Compared with on-site construction, modules shorten lead times and site disruption while meeting Danish building standards. Adelis acquired the business in 2019 to fund growth and industrial capacity, and exited in 2022.\n\nCompiled snapshot (estimates & public data, 2024–2025): Revenue above DKK 300m (2023). Note: exited from Adelis portfolio.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
-      "revenue": "To be researched",
+      "revenue": ">DKK 300m (2023)",
       "revenue_growth": "To be researched",
       "ceo": "To be researched",
       "leadership_team": [],
@@ -31591,23 +31757,25 @@
       "recent_developments": [],
       "financial_highlights": [],
       "market_position": "To be researched",
-      "logo_url": "https://logo.clearbit.com/mobilhouse.com"
+      "logo_url": "https://logo.clearbit.com/mobilhouse.com",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com"
     },
     {
       "company": "DIDRIKSONS",
       "sector": "Consumer",
       "fund": "Adelis II",
-      "market": "Nordics",
+      "market": "Sweden & Nordic markets",
       "entry": "2018",
       "source": "Adelis Equity",
       "headquarters": "Ullared, Sweden",
       "website": "https://www.didriksons.com",
       "enriched": true,
-      "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "Didriksons is a Swedish outerwear brand (since 1913) specialising in waterproof shells, parkas, and everyday functional clothing for adults and children, with a strong sustainability and durability positioning rather than pure performance fashion. The company sells via its own stores, e-commerce, and Nordic retail partners. Adelis acquired Didriksons in 2018 to support brand, channel, and product-range development in the Nordics and export markets.",
+      "research_date": "2026-04-22T12:00:00",
+      "detailed_description": "Didriksons is a Swedish outerwear brand (since 1913) specialising in waterproof shells, parkas, and everyday functional clothing for adults and children, with a strong sustainability and durability positioning rather than pure performance fashion. The company sells via its own stores, e-commerce, and Nordic retail partners. Adelis acquired Didriksons in 2018 to support brand, channel, and product-range development in the Nordics and export markets.\n\nCompiled snapshot (estimates & public data, 2024–2025): Revenue SEK 141.8m; EBITDA SEK 11.0m; net result SEK 1.5m (2024). Note: subsidiary entity accounts.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
-      "revenue": "To be researched",
+      "revenue": "SEK 141.8m (2024)",
       "revenue_growth": "To be researched",
       "ceo": "To be researched",
       "leadership_team": [],
@@ -31617,23 +31785,25 @@
       "recent_developments": [],
       "financial_highlights": [],
       "market_position": "To be researched",
-      "logo_url": "https://logo.clearbit.com/didriksons.com"
+      "logo_url": "https://logo.clearbit.com/didriksons.com",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com"
     },
     {
       "company": "Aceve",
       "sector": "Tech & Software",
       "fund": "Adelis II",
-      "market": "Nordics",
+      "market": "Northern Europe (Nordics + expansion)",
       "entry": "2018",
       "source": "Adelis Equity",
-      "headquarters": "Nordics",
+      "headquarters": "Stockholm, Sweden",
       "website": "https://www.aceve.com",
       "enriched": true,
-      "research_date": "2025-10-27T22:00:00",
-      "detailed_description": "Aceve (formerly marketed under the HVD Group banner) is a Nordic-led vertical software group serving construction, installation, and skilled trades with ERP, field service management (FSM), and project tools. The platform was shaped by combining Hantverksdata’s Nordic trade-software heritage with Next One Technology and a long series of add-ons across the Nordics, Germany, and Benelux. The group serves 22,000+ customers with a cloud-first roadmap and high recurring revenue; it rebranded to Aceve in 2025. Adelis has backed the story since 2018, and a 2024 continuation vehicle brought in HarbourVest with EQT joining as partner to fund further European consolidation.",
+      "research_date": "2026-04-22T12:00:00",
+      "detailed_description": "Aceve (formerly marketed under the HVD Group banner) is a Nordic-led vertical software group serving construction, installation, and skilled trades with ERP, field service management (FSM), and project tools. The platform was shaped by combining Hantverksdata’s Nordic trade-software heritage with Next One Technology and a long series of add-ons across the Nordics, Germany, and Benelux. The group serves 22,000+ customers with a cloud-first roadmap and high recurring revenue; it rebranded to Aceve in 2025. Adelis has backed the story since 2018, and a 2024 continuation vehicle brought in HarbourVest with EQT joining as partner to fund further European consolidation.\n\nCompiled snapshot (estimates & public data, 2024–2025): Revenue SEK 180.0m; EBITDA SEK 5.3m; net result SEK 17.8m (2024); 123 employees.",
       "founded_year": "Unknown",
       "employee_count_detailed": "To be researched",
-      "revenue": "To be researched",
+      "revenue": "SEK 180.0m (2024)",
       "revenue_growth": "To be researched",
       "ceo": "To be researched",
       "leadership_team": [],
@@ -31643,16 +31813,19 @@
       "recent_developments": [],
       "financial_highlights": [],
       "market_position": "To be researched",
-      "logo_url": "https://logo.clearbit.com/aceve.com"
+      "logo_url": "https://logo.clearbit.com/aceve.com",
+      "metrics_source": "Compiled estimates & filings",
+      "metrics_url": "https://www.adelisequity.com",
+      "employees": "123"
     },
     {
       "company": "GENERAXION",
       "sector": "Business Services",
       "fund": "Adelis II",
-      "market": "Nordics",
+      "market": "Denmark, Sweden, Norway & Finland",
       "entry": "2018",
       "source": "Adelis Equity",
-      "headquarters": "Nordics",
+      "headquarters": "Copenhagen, Denmark",
       "website": "https://www.generaxion.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
@@ -31675,12 +31848,12 @@
       "company": "KNIGHTEC",
       "sector": "Business Services",
       "fund": "Adelis II",
-      "market": "Nordics",
+      "market": "Sweden & Nordics",
       "entry": "2017",
       "source": "Adelis Equity",
       "status": "Exited",
       "exit_year": "2022",
-      "headquarters": "Nordics",
+      "headquarters": "Stockholm, Sweden",
       "website": "https://www.knightec.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
@@ -31706,7 +31879,7 @@
       "market": "Finland",
       "entry": "2018",
       "source": "Adelis Equity",
-      "headquarters": "Finland",
+      "headquarters": "Vantaa, Finland",
       "website": "https://www.valtti.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
@@ -31729,10 +31902,10 @@
       "company": "Presto",
       "sector": "Business Services",
       "fund": "Adelis II",
-      "market": "Nordics",
+      "market": "Nordic & European markets",
       "entry": "2018",
       "source": "Adelis Equity",
-      "headquarters": "Nordics",
+      "headquarters": "Stockholm, Sweden",
       "website": "https://www.presto.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
@@ -31760,7 +31933,7 @@
       "status": "Exited",
       "exit_year": "2022",
       "source": "Adelis Equity",
-      "headquarters": "Sweden",
+      "headquarters": "Stockholm, Sweden",
       "website": "https://www.nordentic.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
@@ -31788,7 +31961,7 @@
       "source": "Adelis Equity",
       "status": "Exited",
       "exit_year": "2021",
-      "headquarters": "Finland",
+      "headquarters": "Espoo, Finland",
       "website": "https://www.quattromikentigroup.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
@@ -31816,7 +31989,7 @@
       "source": "Adelis Equity",
       "status": "Exited",
       "exit_year": "2020",
-      "headquarters": "Sweden",
+      "headquarters": "Stockholm, Sweden",
       "website": "https://www.addpro.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
@@ -31842,7 +32015,7 @@
       "market": "Global",
       "entry": "2016",
       "source": "Adelis Equity",
-      "headquarters": "Global",
+      "headquarters": "Hillerød, Denmark",
       "website": "https://www.ssidiagnostica.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
@@ -31865,12 +32038,12 @@
       "company": "ITRelation",
       "sector": "Business Services",
       "fund": "Adelis II",
-      "market": "Nordics",
+      "market": "Denmark & Nordics",
       "entry": "2016",
       "source": "Adelis Equity",
       "status": "Exited",
       "exit_year": "2018",
-      "headquarters": "Nordics",
+      "headquarters": "Ballerup, Denmark",
       "website": "https://www.itrelation.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
@@ -31893,12 +32066,12 @@
       "company": "Nordomatic",
       "sector": "Business Services",
       "fund": "Adelis II",
-      "market": "Nordics",
+      "market": "Sweden, Denmark, Norway & Finland",
       "entry": "2016",
       "source": "Adelis Equity",
       "status": "Exited",
       "exit_year": "2020",
-      "headquarters": "Nordics",
+      "headquarters": "Stockholm, Sweden",
       "website": "https://www.nordomatic.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
@@ -31926,7 +32099,7 @@
       "source": "Adelis Equity",
       "status": "Exited",
       "exit_year": "2019",
-      "headquarters": "Europe",
+      "headquarters": "Give, Denmark",
       "website": "https://www.greenteamgroup.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
@@ -31954,7 +32127,7 @@
       "source": "Adelis Equity",
       "status": "Exited",
       "exit_year": "2024",
-      "headquarters": "Finland",
+      "headquarters": "Kerava, Finland",
       "website": "https://www.puuilo.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
@@ -31982,7 +32155,7 @@
       "source": "Adelis Equity",
       "status": "Exited",
       "exit_year": "2024",
-      "headquarters": "Sweden",
+      "headquarters": "Solna, Sweden",
       "website": "https://www.intersport.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
@@ -32010,7 +32183,7 @@
       "source": "Adelis Equity",
       "status": "Exited",
       "exit_year": "2019",
-      "headquarters": "Sweden/Norway",
+      "headquarters": "Gothenburg, Sweden",
       "website": "https://www.logent.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
@@ -32038,7 +32211,7 @@
       "source": "Adelis Equity",
       "status": "Exited",
       "exit_year": "2018",
-      "headquarters": "Global",
+      "headquarters": "Malmö, Sweden",
       "website": "https://www.ngi.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
@@ -32066,7 +32239,7 @@
       "source": "Adelis Equity",
       "status": "Exited",
       "exit_year": "2018",
-      "headquarters": "Finland",
+      "headquarters": "Helsinki, Finland",
       "website": "https://www.medgroup.com",
       "enriched": true,
       "research_date": "2025-10-27T22:00:00",
