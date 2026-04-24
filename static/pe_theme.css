@@ -307,22 +307,22 @@ body.pe-mobile-menu-open {
     background: #f3f8ff;
 }
 
-/* Free access signup - slim, above hero, premium dark blue-purple */
+/* Free access signup - compact strip above hero */
 .pe-signup-banner {
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 .pe-signup-banner-inner {
     position: relative;
-    border-radius: 10px;
-    border: 1px solid rgba(99, 102, 241, 0.25);
+    border-radius: 8px;
+    border: 1px solid rgba(99, 102, 241, 0.22);
     background: linear-gradient(135deg, #1e1e3f 0%, #16162d 50%, #0f0f1f 100%);
-    padding: 12px 18px;
+    padding: 6px 12px;
     box-shadow:
-        0 1px 0 rgba(255, 255, 255, 0.06) inset,
-        0 4px 16px rgba(0, 0, 0, 0.2),
-        0 8px 32px rgba(15, 23, 42, 0.4);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+        0 1px 0 rgba(255, 255, 255, 0.05) inset,
+        0 2px 10px rgba(0, 0, 0, 0.18),
+        0 4px 18px rgba(15, 23, 42, 0.28);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     overflow: hidden;
 }
 
@@ -336,11 +336,11 @@ body.pe-mobile-menu-open {
 }
 
 .pe-signup-banner-inner:hover {
-    transform: translateY(-1px);
+    transform: translateY(-0.5px);
     box-shadow:
-        0 1px 0 rgba(255, 255, 255, 0.08) inset,
-        0 6px 24px rgba(0, 0, 0, 0.25),
-        0 12px 40px rgba(15, 23, 42, 0.5);
+        0 1px 0 rgba(255, 255, 255, 0.07) inset,
+        0 3px 14px rgba(0, 0, 0, 0.22),
+        0 6px 22px rgba(15, 23, 42, 0.38);
 }
 
 .pe-signup-accent {
@@ -348,11 +348,11 @@ body.pe-mobile-menu-open {
     left: 0;
     top: 0;
     bottom: 0;
-    width: 3px;
+    width: 2px;
     z-index: 2;
-    border-radius: 10px 0 0 10px;
+    border-radius: 8px 0 0 8px;
     background: linear-gradient(180deg, #6366f1, #4f46e5, #4338ca);
-    box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 0 8px rgba(99, 102, 241, 0.35);
 }
 
 .pe-signup-row {
@@ -361,21 +361,21 @@ body.pe-mobile-menu-open {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 10px 14px;
+    gap: 6px 10px;
 }
 
 .pe-signup-text {
-    flex: 1 1 420px;
-    min-width: 280px;
+    flex: 1 1 360px;
+    min-width: 0;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 6px;
 }
 
 .pe-signup-sep {
     width: 1px;
-    height: 20px;
-    background: linear-gradient(180deg, transparent, rgba(99, 102, 241, 0.45), transparent);
+    height: 14px;
+    background: linear-gradient(180deg, transparent, rgba(99, 102, 241, 0.4), transparent);
     flex-shrink: 0;
 }
 
@@ -384,49 +384,59 @@ body.pe-mobile-menu-open {
     flex-direction: column;
     gap: 1px;
     flex: 1;
-    min-width: 220px;
+    min-width: 0;
+}
+
+.pe-signup-line {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0 0.15rem;
 }
 
 .pe-signup-headline {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     font-weight: 800;
     color: #fff;
     letter-spacing: -0.01em;
+    line-height: 1.25;
 }
 
 .pe-signup-headline-muted {
-    font-size: 0.82rem;
+    font-size: 0.72rem;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.95);
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1.25;
 }
 
 .pe-signup-desc {
     display: block;
-    font-size: 0.72rem;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.62rem;
+    color: rgba(255, 255, 255, 0.82);
     letter-spacing: 0.01em;
+    line-height: 1.3;
+    margin-top: 1px;
 }
 
-/* Last chance badge - premium emphasis */
+/* Last chance badge - compact */
 .pe-signup-countdown {
     display: flex;
     align-items: stretch;
     gap: 0;
     flex-shrink: 0;
     background: linear-gradient(135deg, #4f46e5 0%, #3730a3 50%, #312e81 100%);
-    border-radius: 8px;
+    border-radius: 6px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow:
-        0 1px 0 rgba(255, 255, 255, 0.2) inset,
-        0 2px 8px rgba(79, 70, 229, 0.4),
-        0 0 20px rgba(99, 102, 241, 0.15);
+        0 1px 0 rgba(255, 255, 255, 0.15) inset,
+        0 1px 5px rgba(79, 70, 229, 0.35);
     animation: pe-last-chance-glow 3s ease-in-out infinite;
 }
 
 @keyframes pe-last-chance-glow {
-    0%, 100% { box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 2px 8px rgba(79, 70, 229, 0.4), 0 0 20px rgba(99, 102, 241, 0.15); }
-    50% { box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 2px 12px rgba(79, 70, 229, 0.5), 0 0 28px rgba(99, 102, 241, 0.25); }
+    0%, 100% { box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px rgba(79, 70, 229, 0.35), 0 0 12px rgba(99, 102, 241, 0.12); }
+    50% { box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 2px 8px rgba(79, 70, 229, 0.45), 0 0 16px rgba(99, 102, 241, 0.18); }
 }
 
 .pe-countdown-block {
@@ -434,8 +444,8 @@ body.pe-mobile-menu-open {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 8px 12px;
-    min-width: 44px;
+    padding: 5px 8px;
+    min-width: 36px;
     color: #fff;
 }
 
@@ -444,43 +454,46 @@ body.pe-mobile-menu-open {
 }
 
 .pe-countdown-num {
-    font-size: 1.15rem;
+    font-size: 0.95rem;
     font-weight: 800;
     font-variant-numeric: tabular-nums;
     line-height: 1.1;
 }
 
 .pe-countdown-label {
-    font-size: 0.58rem;
+    font-size: 0.52rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     opacity: 0.85;
-    margin-top: 1px;
+    margin-top: 0;
 }
 
 .pe-countdown-ended {
-    padding: 10px 18px;
-    font-size: 0.82rem;
+    padding: 5px 10px;
+    font-size: 0.65rem;
     font-weight: 700;
     color: #fff;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    line-height: 1.2;
+    white-space: nowrap;
 }
 
 .pe-signup-form-pill {
     display: flex;
-    gap: 8px;
+    gap: 5px;
     flex-shrink: 0;
+    align-items: center;
 }
 
 .pe-signup-input-pill {
-    width: 172px;
-    padding: 8px 14px;
-    font-size: 0.78rem;
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 8px;
+    width: 148px;
+    padding: 5px 10px;
+    font-size: 0.7rem;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
     background: rgba(30, 30, 63, 0.7);
     color: #ffffff;
     transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
@@ -499,24 +512,24 @@ body.pe-mobile-menu-open {
     outline: none;
     border-color: rgba(255, 255, 255, 0.9);
     background: rgba(30, 30, 63, 0.9);
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.18);
 }
 
 .pe-signup-btn-pill {
-    padding: 8px 16px;
-    font-size: 0.78rem;
+    padding: 5px 12px;
+    font-size: 0.7rem;
     font-weight: 700;
     color: #fff;
     background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
     cursor: pointer;
     white-space: nowrap;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
     transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.35);
+    box-shadow: 0 1px 5px rgba(79, 70, 229, 0.32);
 }
 
 .pe-signup-btn-pill:hover {
@@ -549,7 +562,7 @@ body.pe-mobile-menu-open {
 
 @media (max-width: 640px) {
     .pe-signup-banner-inner {
-        padding: 8px 12px;
+        padding: 6px 10px;
     }
     .pe-signup-sep {
         display: none;

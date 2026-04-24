@@ -16,6 +16,69 @@
 .portfolio-chart-card .content-card-body {
     overflow: hidden;
 }
+/* Doughnuts: same ~120px plot height as the year bar chart; square frame = circular ring */
+.portfolio-chart-doughnut .content-card-body {
+    padding: 0.4rem 0.5rem 0.45rem;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* Same *scale* as year bar (120px): square plot, shrinks in narrow columns */
+.portfolio-doughnut-sq {
+    width: min(120px, 100%);
+    aspect-ratio: 1 / 1;
+    max-width: 100%;
+    position: relative;
+    flex-shrink: 0;
+}
+/* Chart.js sets canvas width/height for crisp output */
+.portfolio-doughnut-canvas {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+}
+.portfolio-year-canvas {
+    max-height: 120px;
+    width: 100%;
+}
+
+/* All Portfolio Companies: tighter title → table */
+.portfolio-companies-card .content-card-header {
+    padding: 0.5rem 0.9rem 0.45rem;
+}
+.portfolio-companies-card .content-card-title {
+    font-size: 1.08rem;
+    margin: 0;
+    line-height: 1.25;
+}
+.portfolio-companies-card .content-card-body {
+    padding: 0.4rem 0.9rem 0.85rem;
+}
+.portfolio-companies-card .portfolio-container {
+    margin-top: 0.2rem;
+}
+#portfolioContainer .premium-banner-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 0 0 0.28rem 0;
+    padding: 0.3rem 0.55rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    font-size: 0.64rem;
+    color: #64748b;
+    font-weight: 500;
+    line-height: 1.2;
+}
+#portfolioContainer .premium-banner-bar i {
+    font-size: 0.6rem;
+    color: #64748b;
+    opacity: 0.9;
+}
 
 .content-card,
 .firm-section,
@@ -31,9 +94,75 @@
 
 .portfolio-filters-row {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.3rem;
     flex-wrap: wrap;
     align-items: center;
+}
+
+/* Compact filter bar */
+.portfolio-filters-card { margin-bottom: 0.65rem; }
+.portfolio-filters-card .content-card-body {
+    padding: 0.45rem 0.7rem 0.55rem;
+}
+.portfolio-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+.portfolio-filters__row1 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem 0.6rem;
+    justify-content: space-between;
+}
+.portfolio-filters__row1 .portfolio-filters__search {
+    flex: 1 1 12rem;
+    min-width: 0;
+}
+.portfolio-filters__row1 .search-box input {
+    width: 100% !important;
+    max-width: none;
+    padding: 0.32rem 0.6rem;
+    font-size: 0.78rem;
+}
+.portfolio-filters__actions {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+    flex-shrink: 0;
+}
+.portfolio-total-pill {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.3rem;
+    font-size: 0.7rem;
+    color: #64748b;
+    white-space: nowrap;
+    padding: 0.2rem 0.5rem;
+    background: #f1f5f9;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+}
+.portfolio-total-label { font-weight: 600; }
+.portfolio-total-num { font-weight: 700; color: #1e3f68; }
+.portfolio-filters .filter-multiselect-btn {
+    padding: 0.3rem 0.5rem;
+    min-width: 4.5rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    border-radius: 6px;
+    gap: 0.2rem;
+}
+.portfolio-filters .filter-multiselect-btn .fa-chevron-down {
+    font-size: 0.55rem;
+    opacity: 0.7;
+}
+.portfolio-filters .filter-btn-count { font-size: 0.65rem; }
+.portfolio-filters #clearFiltersBtn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.72rem;
 }
 
 /* PE Firm Logo Strip - NO container, NO border, NO background - applies always */
@@ -190,33 +319,28 @@
         grid-template-columns: 1fr;
     }
     
-    .portfolio-filters-row {
-        width: 100%;
+    .portfolio-filters__row1 {
         flex-direction: column;
         align-items: stretch;
-        gap: 0.45rem;
     }
-
-    .portfolio-filters-row .filter-multiselect-btn,
-    .portfolio-filters-row .btn {
+    .portfolio-filters__actions {
+        justify-content: space-between;
+    }
+    .portfolio-filters__row1 .search-box,
+    .portfolio-filters__row1 .search-box input {
         width: 100%;
+    }
+    .portfolio-filters-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.35rem;
+    }
+    .portfolio-filters .filter-multiselect {
         min-width: 0;
     }
-
-    .control-panel {
-        align-items: stretch;
-        gap: 0.6rem;
-    }
-
-    .control-panel .controls-left {
+    .portfolio-filters .filter-multiselect-btn {
         width: 100%;
     }
-
-    .control-panel .search-box,
-    .control-panel .search-box input {
-        width: 100%;
-    }
-
 }
 </style>
 {% endblock %}
@@ -280,11 +404,11 @@
             </h3>
         </div>
         <div class="content-card-body">
-            <canvas id="yearChart" style="max-height: 120px; width: 100%;"></canvas>
+            <canvas id="yearChart" class="portfolio-year-canvas"></canvas>
         </div>
     </div>
     
-    <div class="content-card portfolio-chart-card" data-chart-canvas="sectorChart" data-chart-title="Industry Distribution">
+    <div class="content-card portfolio-chart-card portfolio-chart-doughnut" data-chart-canvas="sectorChart" data-chart-title="Industry Distribution">
         <div class="content-card-header">
             <h3 class="content-card-title" style="font-size: 0.55rem;">
                 <i class="fas fa-chart-pie"></i>
@@ -292,11 +416,13 @@
             </h3>
         </div>
         <div class="content-card-body">
-            <canvas id="sectorChart" style="max-height: 120px; width: 100%;"></canvas>
+            <div class="portfolio-doughnut-sq" aria-hidden="true">
+                <canvas id="sectorChart" class="portfolio-doughnut-canvas"></canvas>
+            </div>
         </div>
     </div>
     
-    <div class="content-card portfolio-chart-card" data-chart-canvas="countryChart" data-chart-title="Country Distribution">
+    <div class="content-card portfolio-chart-card portfolio-chart-doughnut" data-chart-canvas="countryChart" data-chart-title="Country Distribution">
         <div class="content-card-header">
             <h3 class="content-card-title" style="font-size: 0.55rem;">
                 <i class="fas fa-globe"></i>
@@ -304,7 +430,9 @@
             </h3>
         </div>
         <div class="content-card-body">
-            <canvas id="countryChart" style="max-height: 120px; width: 100%;"></canvas>
+            <div class="portfolio-doughnut-sq" aria-hidden="true">
+                <canvas id="countryChart" class="portfolio-doughnut-canvas"></canvas>
+            </div>
         </div>
     </div>
 </div>
@@ -312,16 +440,23 @@
     <i class="fas fa-arrow-right"></i> Click any chart to open a dedicated insights page with live drill-down.
 </div>
 
-<div class="content-card" style="margin-bottom: 1.5rem;">
+<div class="content-card portfolio-filters-card">
     <div class="content-card-body">
-            <section class="control-panel">
-                <div class="controls-left">
-                    <div class="search-box">
+            <section class="portfolio-filters" aria-label="Filter portfolio">
+                <div class="portfolio-filters__row1">
+                    <div class="search-box portfolio-filters__search">
                         <i class="fas fa-search"></i>
-                        <input type="text" id="portfolioSearchInput" placeholder="Search companies, sectors, markets...">
+                        <input type="text" id="portfolioSearchInput" placeholder="Search companies, sectors, markets..." autocomplete="off">
+                    </div>
+                    <div class="portfolio-filters__actions">
+                        <button id="clearFiltersBtn" class="btn btn-secondary btn-sm" type="button">Clear</button>
+                        <div class="portfolio-total-pill" title="Count after current filters">
+                            <span class="portfolio-total-label">Total</span>
+                            <span id="portfolioTotalCount" class="portfolio-total-num">0</span>
+                        </div>
                     </div>
                 </div>
-                <div class="controls-left portfolio-filters-row">
+                <div class="portfolio-filters-row">
                     <div class="filter-multiselect" data-filter="sector">
                         <button type="button" class="filter-multiselect-btn" aria-haspopup="listbox">
                             <span class="filter-btn-label">Sector</span>
@@ -416,16 +551,6 @@
                             </div>
                         </div>
                     </div>
-                    <button id="clearFiltersBtn" class="btn btn-secondary btn-sm" type="button">
-                        Clear
-                    </button>
-                </div>
-                
-                <div class="stats">
-                    <div class="stat-item">
-                        <span class="stat-label">Total Companies:</span>
-                        <span id="portfolioTotalCount" class="stat-value">0</span>
-                    </div>
                 </div>
             </section>
     </div>
@@ -441,7 +566,7 @@
 </div>
 
 <!-- Portfolio Section -->
-<div class="content-card">
+<div class="content-card portfolio-companies-card">
     <div class="content-card-header">
         <h2 class="content-card-title">All Portfolio Companies</h2>
     </div>

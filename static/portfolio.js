@@ -306,12 +306,70 @@ function createYearChart(companies) {
     });
 }
 
-// Shared dashboard-aligned colour palette for circle charts
-const DASHBOARD_CHART_COLORS = [
-    '#3f7de8', '#2f64c0', '#4a8ef4', '#2563eb',
-    '#1e40af', '#3b82f6', '#60a5fa', '#0ea5e9',
-    '#0284c7', '#0369a1'
+/**
+ * Slice colours: same indigo / violet family as the Investment Year bar chart gradients.
+ * No legend on the chart — names on hover (tooltip), like a typical analytics layout.
+ */
+const PORTFOLIO_PIE_SLICES = [
+    '#4F46E5', '#6366F1', '#7C3AED', '#8B5CF6', '#5B21B6',
+    '#6D28D9', '#7E22CE', '#818CF8', '#9333EA', '#A78BFA',
+    '#A855F7', '#C084FC'
 ];
+
+function getPortfolioPieSliceColors(count) {
+    return Array.from({ length: count }, (_, i) => PORTFOLIO_PIE_SLICES[i % PORTFOLIO_PIE_SLICES.length]);
+}
+
+/**
+ * Doughnut in a 120×120px cell (see .portfolio-doughnut-sq), same vertical band as the year bar.
+ * Aligned with createYearChart: responsive, hidden legend, similar tooltip, crisp HiDPI.
+ */
+function getPortfolioDoughnutChartOptions(clickBuilder) {
+    const dpr = typeof window !== 'undefined' && window.devicePixelRatio
+        ? Math.min(window.devicePixelRatio, 2)
+        : 1;
+    return {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 1,
+        devicePixelRatio: dpr,
+        cutout: '52%',
+        layout: { padding: 0 },
+        onClick: clickBuilder,
+        onHover: (event, elements) => {
+            if (event?.native?.target) {
+                event.native.target.style.cursor = elements?.length ? 'pointer' : 'default';
+            }
+        },
+        elements: {
+            arc: { borderJoinStyle: 'round' }
+        },
+        plugins: {
+            legend: { display: false },
+            tooltip: {
+                backgroundColor: 'rgba(0,0,0,0.85)',
+                padding: 10,
+                titleFont: { size: 12, weight: 'bold' },
+                bodyFont: { size: 11 },
+                displayColors: true,
+                boxPadding: 4
+            }
+        }
+    };
+}
+
+function getPortfolioDoughnutDatasetConfig(data) {
+    const n = data.length;
+    return {
+        data,
+        backgroundColor: getPortfolioPieSliceColors(n),
+        borderWidth: 1.5,
+        borderColor: '#ffffff',
+        hoverBorderColor: '#ffffff',
+        hoverBorderWidth: 2,
+        hoverOffset: 4
+    };
+}
 
 function createSectorChart(companies) {
     const ctx = document.getElementById('sectorChart');
@@ -333,76 +391,37 @@ function createSectorChart(companies) {
     const data = sortedSectors.map(s => s[1]);
     
     if (sectorChartInstance) sectorChartInstance.destroy();
+    if (!data.length) {
+        return;
+    }
     
+    const opts = getPortfolioDoughnutChartOptions((event, elements, chart) => {
+        if (!elements || elements.length === 0) return;
+        const index = elements[0].index;
+        const sector = chart.data.labels[index];
+        window.location.href = `/portfolio-insights?chart=sector&value=${encodeURIComponent(String(sector))}`;
+    });
+    opts.plugins = opts.plugins || {};
+    opts.plugins.tooltip = {
+        ...opts.plugins.tooltip,
+        callbacks: {
+            title: (items) => (items[0] ? String(items[0].label) : ''),
+            label: function(context) {
+                const value = context.parsed;
+                const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                const pct = ((value / total) * 100).toFixed(1);
+                return `${value} companies (${pct}%)`;
+            }
+        }
+    };
+
     sectorChartInstance = new Chart(ctx, {
         type: 'doughnut',
         data: {
             labels: labels,
-            datasets: [{
-                data: data,
-                backgroundColor: labels.map((_, i) => DASHBOARD_CHART_COLORS[i % DASHBOARD_CHART_COLORS.length]),
-                borderWidth: 3,
-                borderColor: '#ffffff',
-                hoverBorderWidth: 4,
-                hoverBorderColor: '#ffffff',
-                hoverOffset: 6
-            }]
+            datasets: [getPortfolioDoughnutDatasetConfig(data)]
         },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            cutout: '58%',
-            spacing: 2,
-            onClick: (event, elements, chart) => {
-                if (!elements || elements.length === 0) return;
-                const index = elements[0].index;
-                const sector = chart.data.labels[index];
-                window.location.href = `/portfolio-insights?chart=sector&value=${encodeURIComponent(String(sector))}`;
-            },
-            onHover: (event, elements) => {
-                if (event?.native?.target) {
-                    event.native.target.style.cursor = elements?.length ? 'pointer' : 'default';
-                }
-            },
-            animation: {
-                animateRotate: true,
-                animateScale: true,
-                duration: 800,
-                easing: 'easeOutQuart'
-            },
-            plugins: {
-                legend: {
-                    position: 'bottom',
-                    labels: {
-                        boxWidth: 8,
-                        padding: 6,
-                        font: { size: 9, weight: '600' },
-                        usePointStyle: true,
-                        pointStyle: 'circle',
-                        color: '#1e293b'
-                    }
-                },
-                tooltip: {
-                    backgroundColor: 'rgba(31, 41, 55, 0.96)',
-                    padding: 12,
-                    titleFont: { size: 12, weight: 'bold' },
-                    bodyFont: { size: 11 },
-                    borderColor: '#3f7de8',
-                    borderWidth: 1,
-                    cornerRadius: 8,
-                    displayColors: true,
-                    boxPadding: 4,
-                    callbacks: {
-                        label: function(context) {
-                            const value = context.parsed;
-                            const total = context.dataset.data.reduce((a, b) => a + b, 0);
-                            const pct = ((value / total) * 100).toFixed(1);
-                            return ` ${context.label}: ${value} companies (${pct}%)`;
-                        }
-                    }
-                }
-            }
-        }
+        options: opts
     });
 }
 
@@ -426,76 +445,37 @@ function createCountryChart(companies) {
     const data = sortedCountries.map(s => s[1]);
     
     if (countryChartInstance) countryChartInstance.destroy();
+    if (!data.length) {
+        return;
+    }
     
+    const countryOpts = getPortfolioDoughnutChartOptions((event, elements, chart) => {
+        if (!elements || elements.length === 0) return;
+        const index = elements[0].index;
+        const market = chart.data.labels[index];
+        window.location.href = `/portfolio-insights?chart=country&value=${encodeURIComponent(String(market))}`;
+    });
+    countryOpts.plugins = countryOpts.plugins || {};
+    countryOpts.plugins.tooltip = {
+        ...countryOpts.plugins.tooltip,
+        callbacks: {
+            title: (items) => (items[0] ? String(items[0].label) : ''),
+            label: function(context) {
+                const value = context.parsed;
+                const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                const pct = ((value / total) * 100).toFixed(1);
+                return `${value} companies (${pct}%)`;
+            }
+        }
+    };
+
     countryChartInstance = new Chart(ctx, {
         type: 'doughnut',
         data: {
             labels: labels,
-            datasets: [{
-                data: data,
-                backgroundColor: labels.map((_, i) => DASHBOARD_CHART_COLORS[i % DASHBOARD_CHART_COLORS.length]),
-                borderWidth: 3,
-                borderColor: '#ffffff',
-                hoverBorderWidth: 4,
-                hoverBorderColor: '#ffffff',
-                hoverOffset: 6,
-                spacing: 2
-            }]
+            datasets: [getPortfolioDoughnutDatasetConfig(data)]
         },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            cutout: '58%',
-            onClick: (event, elements, chart) => {
-                if (!elements || elements.length === 0) return;
-                const index = elements[0].index;
-                const market = chart.data.labels[index];
-                window.location.href = `/portfolio-insights?chart=country&value=${encodeURIComponent(String(market))}`;
-            },
-            onHover: (event, elements) => {
-                if (event?.native?.target) {
-                    event.native.target.style.cursor = elements?.length ? 'pointer' : 'default';
-                }
-            },
-            animation: {
-                animateRotate: true,
-                animateScale: true,
-                duration: 800,
-                easing: 'easeOutQuart'
-            },
-            plugins: {
-                legend: {
-                    position: 'bottom',
-                    labels: {
-                        boxWidth: 8,
-                        padding: 6,
-                        font: { size: 9, weight: '600' },
-                        usePointStyle: true,
-                        pointStyle: 'circle',
-                        color: '#1e293b'
-                    }
-                },
-                tooltip: {
-                    backgroundColor: 'rgba(31, 41, 55, 0.96)',
-                    padding: 12,
-                    titleFont: { size: 12, weight: 'bold' },
-                    bodyFont: { size: 11 },
-                    borderColor: '#3f7de8',
-                    borderWidth: 1,
-                    cornerRadius: 8,
-                    displayColors: true,
-                    boxPadding: 4,
-                    callbacks: {
-                        label: function(context) {
-                            const value = context.parsed;
-                            const total = context.dataset.data.reduce((a, b) => a + b, 0);
-                            const pct = ((value / total) * 100).toFixed(1);
-                            return ` ${context.label}: ${value} companies (${pct}%)`;
-                        }
-                    }
-                }
-            }
-        }
+        options: countryOpts
     });
 }
 
@@ -811,8 +791,7 @@ function displayFilteredPortfolioFlat(companies) {
 
     const premiumBanner = document.createElement('div');
     premiumBanner.className = 'premium-banner-bar';
-    premiumBanner.style.cssText = 'display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.5rem 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; margin-bottom: 0.5rem; font-size: 0.7rem; color: #64748b; font-weight: 500;';
-    premiumBanner.innerHTML = '<i class="fas fa-crown" style="font-size: 0.7rem; color: #64748b;"></i><span>Complete list available for Premium users</span>';
+    premiumBanner.innerHTML = '<i class="fas fa-crown" aria-hidden="true"></i><span>Complete list available for Premium users</span>';
 
     const tableWrapper = document.createElement('div');
     tableWrapper.className = 'portfolio-table-wrapper';
@@ -972,8 +951,7 @@ function displayPortfolio(companies) {
 
     const premiumBanner = document.createElement('div');
     premiumBanner.className = 'premium-banner-bar';
-    premiumBanner.style.cssText = 'display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.5rem 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; margin-bottom: 0.75rem; font-size: 0.7rem; color: #64748b; font-weight: 500;';
-    premiumBanner.innerHTML = '<i class="fas fa-crown" style="font-size: 0.7rem; color: #64748b;"></i><span>Complete list available for Premium users</span>';
+    premiumBanner.innerHTML = '<i class="fas fa-crown" aria-hidden="true"></i><span>Complete list available for Premium users</span>';
     container.appendChild(premiumBanner);
 
     // Group companies by PE firm (source)

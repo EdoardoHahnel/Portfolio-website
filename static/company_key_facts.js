@@ -46,6 +46,16 @@
         return s.charAt(0).toUpperCase() + s.slice(1);
     }
 
+    /** Registry placeholders (e.g. Adelis portfolio) — omit from the figures grid */
+    function isPlaceholderValue(v) {
+        if (v == null) return true;
+        const s = String(v).trim();
+        if (!s) return true;
+        if (/^to be researched\.?$/i.test(s)) return true;
+        if (/^(tbd|tbc)$/i.test(s)) return true;
+        return false;
+    }
+
     /**
      * Turn snapshot body (after "Registry snapshot (...): ") into label/value rows.
      */
@@ -103,10 +113,10 @@
             });
         };
         const out = rows.slice();
-        if (company.chairman && !have('chairman')) {
+        if (company.chairman && !have('chairman') && !isPlaceholderValue(company.chairman)) {
             out.push({ label: 'Chairman', value: company.chairman });
         }
-        if (company.ceo && !have('ceo')) {
+        if (company.ceo && !have('ceo') && !isPlaceholderValue(company.ceo)) {
             out.push({ label: 'CEO', value: company.ceo });
         }
         return out;
@@ -121,14 +131,23 @@
         const split = splitOverviewAndSnapshot(company);
         let rows = snapshotBodyToRows(split.snapshotBody);
         if (!rows.length && company.metrics_source) {
-            if (company.revenue) rows.push({ label: 'Revenue', value: company.revenue });
-            if (company.revenue_growth) rows.push({ label: 'Revenue growth', value: company.revenue_growth });
-            if (company.employees) rows.push({ label: 'Employees', value: String(company.employees) });
+            if (company.revenue && !isPlaceholderValue(company.revenue)) {
+                rows.push({ label: 'Revenue', value: company.revenue });
+            }
+            if (company.revenue_growth && !isPlaceholderValue(company.revenue_growth)) {
+                rows.push({ label: 'Revenue growth', value: company.revenue_growth });
+            }
+            if (company.employees && !isPlaceholderValue(company.employees)) {
+                rows.push({ label: 'Employees', value: String(company.employees) });
+            }
         }
         rows = mergeLeadershipRows(company, rows);
+        rows = rows.filter(function (r) {
+            return !isPlaceholderValue(r.value);
+        });
 
-        const showSection =
-            rows.length > 0 || !!company.metrics_source || !!split.snapshotTitle || !!company.metrics_url;
+        /* Only show block when at least one non-placeholder row exists */
+        const showSection = rows.length > 0;
 
         if (!showSection) {
             sectionRoot.style.display = 'none';
