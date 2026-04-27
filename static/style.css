@@ -629,6 +629,38 @@ body {
     overflow: hidden;
 }
 
+.news-card--expandable {
+    cursor: pointer;
+}
+.news-card--expandable a.news-link {
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+.news-expand-hint {
+    font-size: 0.68rem;
+    color: #4f46e5;
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+    line-height: 1.3;
+}
+.news-card-body-full {
+    margin: 0 0 0.6rem 0;
+    padding: 0.65rem 0.75rem;
+    background: #f9fafb;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    text-align: left;
+}
+.news-card-body-full[hidden] {
+    display: none !important;
+}
+.news-card-body-full-inner {
+    font-size: 0.8rem;
+    line-height: 1.55;
+    color: #374151;
+}
+
 .news-footer {
     display: flex;
     justify-content: space-between;

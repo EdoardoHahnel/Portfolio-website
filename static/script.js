@@ -936,24 +936,44 @@ function truncateText(text, maxLength) {
 }
 
 // ===== CREATE NEWS CARD =====
-// Creates a single news card element
+// Full article body: paragraphs (escaped) with <br> for in-paragraph newlines
+function formatNewsBodyParagraphs(text) {
+    if (!text) return '';
+    return text
+        .split(/\n{2,}/)
+        .map(function (p) {
+            return p.trim();
+        })
+        .filter(Boolean)
+        .map(function (p) {
+            return escapeHtml(p).replace(/\n/g, '<br>');
+        })
+        .join('<br><br>');
+}
+
+// Creates a single news card element (click card to expand long articles)
 function createNewsCard(article, index) {
-    // Create the card container
     const card = document.createElement('div');
     card.className = 'news-card';
     card.style.animationDelay = `${index * 0.1}s`;
-    
-    // Format the date nicely
+
     const date = article.date || 'Unknown date';
-    
-    // Get source icon
     const sourceIcon = getSourceIcon(article.source);
-    
-    // Use firm from the news data
     const firmName = article.firm || 'PE Firm';
     const firmLogoHtml = createRobustLogoHTML(firmName, '32px');
-    
-    // Build the HTML for the card
+
+    const desc = (article.description || '').trim();
+    const needsExpand = desc.length > 120 || /\n/.test(desc);
+    const previewText = needsExpand ? truncateText(desc, 120) : desc;
+    const fullInnerHtml = needsExpand ? formatNewsBodyParagraphs(desc) : '';
+
+    const expandBlock = needsExpand
+        ? `<p class="news-expand-hint">Click the card to show the full article</p>
+        <div class="news-card-body-full" hidden>
+            <div class="news-card-body-full-inner">${fullInnerHtml}</div>
+        </div>`
+        : '';
+
     card.innerHTML = `
         <div class="news-card-header">
             <div style="display: flex; align-items: center; gap: 8px;">
@@ -961,14 +981,15 @@ function createNewsCard(article, index) {
             </div>
         </div>
         <h3 class="news-title">${escapeHtml(truncateText(article.title, 80))}</h3>
-        <p class="news-description">${escapeHtml(truncateText(article.description, 120))}</p>
+        <p class="news-description">${escapeHtml(previewText)}</p>
+        ${expandBlock}
         <div class="news-footer">
             <span class="news-date">
                 <i class="far fa-calendar"></i>
                 ${escapeHtml(date)}
             </span>
             <div class="news-actions">
-                <a href="${escapeHtml(article.link)}" target="_blank" class="news-link">
+                <a href="${escapeHtml(article.link)}" target="_blank" rel="noopener noreferrer" class="news-link">
                     Read More
                     <i class="fas fa-arrow-right"></i>
                 </a>
@@ -979,7 +1000,35 @@ function createNewsCard(article, index) {
             </div>
         </div>
     `;
-    
+
+    if (needsExpand) {
+        card.classList.add('news-card--expandable');
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('aria-expanded', 'false');
+
+        card.addEventListener('click', function (e) {
+            if (e.target.closest('a.news-link')) return;
+            const nowExpanded = card.classList.toggle('news-card--expanded');
+            card.setAttribute('aria-expanded', nowExpanded ? 'true' : 'false');
+            const full = card.querySelector('.news-card-body-full');
+            const hint = card.querySelector('.news-expand-hint');
+            if (full) full.hidden = !nowExpanded;
+            if (hint) {
+                hint.textContent = nowExpanded
+                    ? 'Click the card to collapse'
+                    : 'Click the card to show the full article';
+            }
+        });
+
+        card.addEventListener('keydown', function (e) {
+            if (e.key !== 'Enter' && e.key !== ' ') return;
+            if (e.target.closest('a')) return;
+            e.preventDefault();
+            card.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }));
+        });
+    }
+
     return card;
 }
 
