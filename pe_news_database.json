@@ -1,6 +1,16 @@
 {
   "news": [
     {
+      "title": "Triton leder budkonsortium på Cint: 5,60 kr/aktie, värdering cirka 2 mrd kr",
+      "description": "Ett konsortium lett av riskkapitalbolaget Triton har lagt ett bud på Cint, som driver en plattform för marknadsundersökningar och datainsikter.\n\nBudet ligger på 5,60 kronor kontant per aktie, vilket innebär en premie på cirka 33 procent jämfört med fredagens stängningskurs på 4,21 kronor. Trots en stark uppgång under 2026 har aktien tappat omkring 64 procent de senaste två åren.\n\nBudgivarna består av Triton, största ägaren Bolero, Cints vd Patrick Comer samt operativa chefen Brett Schnittlich. Totalt värderas bolaget till cirka 2 miljarder kronor.\n\nCints styrelse rekommenderar aktieägarna att acceptera erbjudandet. Gruppen bakom budet äger redan omkring 34 procent av aktierna, där Bolero står för cirka 29 procent. Bakom Bolero finns Peder Pråhl, som också grundade Triton.\n\nEnligt Triton ser man stor potential i Cint, men menar att marknaden förändras snabbt och att bolaget behöver öka tempot inom innovation och utveckling. Nästa fas väntas kräva större investeringar och strategiska beslut, något som anses lättare att genomföra som privat bolag.\n\nFokus framåt uppges ligga på satsningar inom AI, resultatmätning och fortsatt utveckling av plattformen.\n\nCint grundades 1998 och omsatte 150 miljoner euro under 2025, vilket var nästan 10 procent lägre än året innan. Ebita-resultatet uppgick till 29 miljoner euro.",
+      "link": "https://www.cintgroup.com/",
+      "date": "2026-04-24",
+      "firm": "Triton Partners",
+      "source": "Portföljbolagen",
+      "theme": "M&A",
+      "country": "Sweden"
+    },
+    {
       "title": "White & Case advises GHD on sale of Sangro to private equity investor Axcel",
       "description": "White & Case advised GHD GesundHeits GmbH (GHD), a Nordic Capital portfolio company, on the sale of its Sangro medical services division to private equity investor Axcel. GHD divests sangro medical service GmbH, a leading distributor and logistics provider for homecare products and medical care.",
       "link": "https://www.whitecase.com/news/press-release/white-case-advises-ghd-sale-sangro-private-equity-investor-axcel",
@@ -917,8 +927,8 @@
       "source": "Cision News"
     }
   ],
-  "total_news": 105,
-  "last_updated": "2026-02-27T08:04:45",
+  "total_news": 111,
+  "last_updated": "2026-04-27T05:43:45Z",
   "description": "Nordic PE news from Cision news pages and recent activity",
   "source": "Cision News Pages",
   "firms_covered": [
