@@ -1701,7 +1701,15 @@ async function openCompanyModal(company) {
         modalKeyFactsEl.style.display = 'none';
         modalKeyFactsEl.hidden = true;
     }
-    
+
+    const modalFinancialsEl = document.getElementById('modalFinancialsSection');
+    if (window.companyKeyFacts && modalFinancialsEl && companyKeyFacts.renderFinancialsSection) {
+        companyKeyFacts.renderFinancialsSection(modalFinancialsEl, company);
+    } else if (modalFinancialsEl) {
+        modalFinancialsEl.style.display = 'none';
+        modalFinancialsEl.hidden = true;
+    }
+
     // Investment Details
     document.getElementById('modalPEFirm').textContent = company.source || 'N/A';
     document.getElementById('modalFund').textContent = company.fund || 'N/A';
@@ -1854,6 +1862,10 @@ async function fetchCompanyResearchData(company) {
         if (window.companyKeyFacts && company) {
             const kfEl = document.getElementById('modalKeyFactsSection');
             companyKeyFacts.renderKeyFactsSection(kfEl, company);
+            const finEl = document.getElementById('modalFinancialsSection');
+            if (finEl && companyKeyFacts.renderFinancialsSection) {
+                companyKeyFacts.renderFinancialsSection(finEl, company);
+            }
         }
         
     } catch (error) {

@@ -21901,9 +21901,9 @@
       "website": "https://www.belidlightinggroup.com",
       "enriched": true,
       "research_date": "2026-04-21T12:00:00",
-      "detailed_description": "Belid Lighting Group is a Scandinavian lighting supplier serving retail and professional segments, with product development and manufacturing anchored in Varberg.\n\nRegistry snapshot (Allabolag, 2024): Revenue SEK 200,136,000; net result SEK 7,894,000; EBITDA SEK 8,624,000. Legal form: aktiebolag; founded 1939.",
+      "detailed_description": "Belid Lighting Group is a Scandinavian lighting supplier serving retail and professional segments, with product development and manufacturing anchored in Varberg.\n\nRegistry snapshot (Belid Lighting AB FY2024, UC): Founded 1939.",
       "employees": "123",
-      "revenue": "SEK 200.1m (FY2024 revenue)",
+      "revenue": "SEK 198.9m (FY2024 Nettoomsättning, Belid Lighting AB per UC)",
       "total_funding": "Accent-backed",
       "leadership_team": [
         {
@@ -21935,7 +21935,78 @@
       "current_status": "Portfolio company",
       "logo_url": "https://logo.clearbit.com/belidlighting.se",
       "metrics_source": "Allabolag",
-      "metrics_url": "https://www.allabolag.se/foretag/belid-lighting-ab/varberg/producenter/2JYIGW3I63IK3"
+      "metrics_url": "https://www.allabolag.se/foretag/belid-lighting-ab/varberg/producenter/2JYIGW3I63IK3",
+      "financials": {
+        "section_title": "Financials",
+        "legal_entity": "Belid Lighting AB",
+        "org_nr": "556039-0659",
+        "phone": "0340-62 30 00",
+        "address": "Klasavägen 4, 432 48 Varberg",
+        "corporate_note": "Del av Belid Holding AB",
+        "amounts_note": "Belopp i 1000 SEK",
+        "period_labels": ["2024-12", "2023-12", "2022-12"],
+        "free_preview": true,
+        "book_year": {
+          "title": "Bokslutsperiod",
+          "rows": [
+            { "label": "Startdatum", "values": ["2024-01-01", "2023-01-01", "2022-01-01"] },
+            { "label": "Slutdatum", "values": ["2024-12-31", "2023-12-31", "2022-12-31"] }
+          ]
+        },
+        "tables": [
+          {
+            "title": "Löner & utdelning",
+            "unit_note": "Belopp i 1000 SEK",
+            "rows": [
+              { "label": "Löner styrelse och VD", "values": ["—", "0", "—"] },
+              { "label": "Löner övriga", "values": ["49 710", "49 921", "57 212"] },
+              { "label": "Föreslagen utdelning", "values": ["0", "0", "0"] }
+            ]
+          },
+          {
+            "title": "Resultaträkning",
+            "unit_note": "Belopp i 1000 SEK",
+            "rows": [
+              { "label": "Nettoomsättning", "values": ["198 856", "192 500", "206 778"] },
+              { "label": "Övrig omsättning", "values": ["1 280", "1 407", "1 210"] },
+              { "label": "Omsättning", "values": ["200 136", "193 907", "207 988"] },
+              { "label": "Lagerförändring", "values": ["0", "0", "0"] },
+              { "label": "Rörelsekostnader", "values": ["−203 820", "−191 222", "−226 679"] },
+              { "label": "Rörelseresultat efter avskrivningar", "values": ["−3 685", "2 686", "−18 691"] },
+              { "label": "Finansiella intäkter", "values": ["102", "49", "9"] },
+              { "label": "Finansiella kostnader", "values": ["−4 311", "−4 290", "−3 260"] },
+              { "label": "Resultat efter finansnetto", "values": ["−7 894", "−1 555", "−21 942"] },
+              { "label": "Resultat före skatt", "values": ["−7 299", "−1 555", "−9 761"] },
+              { "label": "Skatt på årets resultat", "values": ["108", "793", "87"] },
+              { "label": "Årets resultat", "values": ["−7 191", "−2 348", "−9 674"] }
+            ]
+          },
+          {
+            "title": "Balansräkning",
+            "unit_note": "Belopp i 1000 SEK",
+            "rows": [
+              { "label": "Immateriella anläggningstillgångar", "values": ["44 726", "50 611", "49 513"] },
+              { "label": "Materiella anläggningstillgångar", "values": ["59 364", "58 770", "63 346"] },
+              { "label": "Finansiella anläggningstillgångar", "values": ["0", "0", "0"] },
+              { "label": "Anläggningstillgångar", "values": ["104 090", "109 381", "112 859"] },
+              { "label": "Varulager", "values": ["48 683", "60 262", "75 407"] },
+              { "label": "Kundfordringar", "values": ["17 959", "20 264", "14 804"] },
+              { "label": "Kassa och bank", "values": ["2 546", "912", "1 248"] },
+              { "label": "Omsättningstillgångar", "values": ["71 959", "85 200", "93 484"] },
+              { "label": "Summa tillgångar", "values": ["176 050", "194 582", "206 343"] },
+              { "label": "Fritt eget kapital", "values": ["43 241", "63 075", "66 857"] },
+              { "label": "Obeskattade reserver", "values": ["0", "851", "851"] },
+              { "label": "Eget kapital", "values": ["74 501", "81 692", "83 907"] },
+              { "label": "Avsättningar", "values": ["7 866", "8 073", "8 859"] },
+              { "label": "Långfristiga skulder", "values": ["54 967", "67 523", "78 668"] },
+              { "label": "Leverantörsskulder", "values": ["11 067", "12 814", "15 364"] },
+              { "label": "Kortfristiga skulder", "values": ["38 716", "36 443", "34 059"] },
+              { "label": "Summa eget kapital och skulder", "values": ["176 050", "194 582", "206 343"] }
+            ]
+          }
+        ],
+        "source": "Källa: UC AB"
+      }
     },
     {
       "company": "Blomsterboda",

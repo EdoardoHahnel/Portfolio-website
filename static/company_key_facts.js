@@ -56,14 +56,141 @@
         return false;
     }
 
+    /** Split e.g. "EBITDA SEK x. Legal form: aktiebolag" into separate snapshot fragments */
+    function expandFusedSnapshotSegments(rawSegments) {
+        const fuseRe = /^(.+?\.)\s+([A-Za-zÅÄÖåäöÜüÆæØøß][^:]{0,140}:\s*.+)$/;
+        const out = [];
+        rawSegments.forEach(function (seg) {
+            seg = seg.trim();
+            if (!seg) return;
+            const fused = seg.match(fuseRe);
+            if (fused) {
+                out.push(fused[1].trim().replace(/\.\s*$/, ''));
+                out.push(fused[2].trim().replace(/\.\s*$/, ''));
+            } else {
+                out.push(seg.replace(/\.\s*$/, '').trim());
+            }
+        });
+        return out;
+    }
+
+    function isLegalFormRow(label) {
+        return /^legal form$/i.test(String(label || '').trim());
+    }
+
+    /** UC table amounts are tSEK; cell may use Unicode minus */
+    function thousandsCellToSek(cellStr) {
+        if (cellStr == null || cellStr === '—') return null;
+        const raw = String(cellStr).trim();
+        if (!raw) return null;
+        let s = raw.replace(/\s/g, '');
+        const neg = /^[\u2212−-]/.test(s);
+        if (neg) s = s.replace(/^[\u2212−-]+/, '');
+        s = s.replace(/,/g, '');
+        const n = parseInt(s, 10);
+        if (isNaN(n)) return null;
+        return (neg ? -n : n) * 1000;
+    }
+
+    /** Full SEK, thin-space style grouping simplified to locale */
+    function formatSekFromAbsoluteSek(sek) {
+        const neg = sek < 0;
+        const abs = Math.round(Math.abs(sek));
+        const formatted = abs.toLocaleString('sv-SE');
+        return (neg ? '−' : '') + 'SEK ' + formatted;
+    }
+
+    /** Resultaträkning table reference (titles may vary slightly) */
+    function findResultatrakningTable(f) {
+        const tables = f && f.tables ? f.tables : [];
+        for (let i = 0; i < tables.length; i++) {
+            const ttl = normFinancialLabel(tables[i].title || '');
+            if (ttl.indexOf('resultat') !== -1 && ttl.indexOf('balans') === -1) {
+                return tables[i];
+            }
+        }
+        return null;
+    }
+
+    function plCell(pl, labelSv, periodIndex) {
+        if (!pl || !pl.rows) return null;
+        const want = normFinancialLabel(labelSv);
+        for (let i = 0; i < pl.rows.length; i++) {
+            if (normFinancialLabel(pl.rows[i].label || '') === want) {
+                const vals = pl.rows[i].values;
+                if (vals && vals[periodIndex] != null) return vals[periodIndex];
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Period column for Figures & source headline numbers (Revenue, Net result…).
+     * Default 0 = first entry in period_labels / values[] (Belid: FY2024 column).
+     * Set financials.figures_period_index to override if your values[] order differs.
+     */
+    function financialsHeadlinePeriodIndex(f) {
+        if (f && typeof f.figures_period_index === 'number') {
+            const n = Math.floor(f.figures_period_index);
+            if (!isNaN(n) && n >= 0) return n;
+        }
+        return 0;
+    }
+
+    /**
+     * Override Revenue / Net result / EBITDA from structured financials.
+     * Revenue = Nettoomsättning (net sales) when present, else Omsättning (includes övrig omsättning).
+     * Uses financials.period_labels[0] (same column as tables' values[0]).
+     */
+    function mergeFigureRowsWithFinancials(company, rows) {
+        let out = (rows || []).filter(function (r) {
+            return !isLegalFormRow(r.label);
+        });
+        if (!hasFinancialsPayload(company.financials)) {
+            return out;
+        }
+        const pl = findResultatrakningTable(company.financials);
+        if (!pl) return out;
+
+        const stripHeadlines = { revenue: true, 'net result': true, ebitda: true };
+        out = out.filter(function (r) {
+            const k = (r.label || '').trim().toLowerCase();
+            return !stripHeadlines[k];
+        });
+
+        const idx = financialsHeadlinePeriodIndex(company.financials);
+        const head = [];
+        const netto = plCell(pl, 'Nettoomsättning', idx);
+        const brutto = plCell(pl, 'Omsättning', idx);
+        const revRaw = netto != null ? netto : brutto;
+        const net = plCell(pl, 'Årets resultat', idx);
+        const ebd = plCell(pl, 'EBITDA', idx);
+
+        if (revRaw != null) {
+            const sek = thousandsCellToSek(revRaw);
+            if (sek != null) head.push({ label: 'Revenue', value: formatSekFromAbsoluteSek(sek) });
+        }
+        if (ebd != null) {
+            const sek = thousandsCellToSek(ebd);
+            if (sek != null) head.push({ label: 'EBITDA', value: formatSekFromAbsoluteSek(sek) });
+        }
+        if (net != null) {
+            const sek = thousandsCellToSek(net);
+            if (sek != null) head.push({ label: 'Net result', value: formatSekFromAbsoluteSek(sek) });
+        }
+
+        return head.concat(out);
+    }
+
     /**
      * Turn snapshot body (after "Registry snapshot (...): ") into label/value rows.
      */
     function snapshotBodyToRows(body) {
         if (!body) return [];
-        const segments = body.split(/\s*;\s*/).map(function (s) {
-            return s.replace(/\.\s*$/, '').trim();
+        const split = body.split(/\s*;\s*/).map(function (s) {
+            return s.trim();
         }).filter(Boolean);
+        const segments = expandFusedSnapshotSegments(split);
 
         const rows = [];
         const labelPatterns = [
@@ -83,9 +210,13 @@
         ];
 
         segments.forEach(function (seg) {
+            seg = seg.replace(/\.\s*$/, '').trim();
+            if (!seg) return;
             const colon = seg.match(/^([^:]+):\s*(.+)$/);
             if (colon) {
-                rows.push({ label: formatLabel(colon[1]), value: colon[2].trim() });
+                const lab = formatLabel(colon[1]);
+                if (isLegalFormRow(lab)) return;
+                rows.push({ label: lab, value: colon[2].trim() });
                 return;
             }
             const low = seg.toLowerCase();
@@ -97,6 +228,7 @@
                 const re = labelPatterns[i][0];
                 const lab = labelPatterns[i][1];
                 if (re.test(seg)) {
+                    if (isLegalFormRow(lab)) return;
                     rows.push({ label: lab, value: seg.replace(re, '').trim() });
                     return;
                 }
@@ -122,6 +254,257 @@
         return out;
     }
 
+    function hasFinancialsPayload(f) {
+        if (!f || typeof f !== 'object') return false;
+        return Boolean(
+            (f.tables && f.tables.length) ||
+                (f.book_year && f.book_year.rows && f.book_year.rows.length) ||
+                (f.legal_entity && String(f.legal_entity).trim()) ||
+                (f.org_nr && String(f.org_nr).trim())
+        );
+    }
+
+    /** Lowercase + trim for stable matching (Swedish labels). */
+    function normFinancialLabel(s) {
+        return String(s || '')
+            .trim()
+            .replace(/\s+/g, ' ')
+            .toLowerCase();
+    }
+
+    /**
+     * Bold + row tint for key P&L / balance lines only (not Bokslut / löner tables).
+     * @returns {'financials-row--grand'|'financials-row--mid'|''}
+     */
+    function financialRowEmphasisClass(tableTitle, rowLabel) {
+        const t = normFinancialLabel(tableTitle);
+        const lab = normFinancialLabel(rowLabel);
+        if (!lab) return '';
+
+        const isBS = t.indexOf('balans') !== -1;
+        const isPL = t.indexOf('resultat') !== -1 && !isBS;
+        if (!isBS && !isPL) return '';
+
+        if (isPL) {
+            if (lab === 'årets resultat') return 'financials-row--grand';
+            return '';
+        }
+
+        if (lab === 'summa tillgångar' || lab === 'summa eget kapital och skulder') {
+            return 'financials-row--grand';
+        }
+        if (
+            lab === 'anläggningstillgångar' ||
+            lab === 'omsättningstillgångar' ||
+            lab === 'eget kapital'
+        ) {
+            return 'financials-row--mid';
+        }
+        return '';
+    }
+
+    /**
+     * @param {HTMLElement} innerEl - .company-financials-inner
+     * @param {object} f - company.financials
+     */
+    function renderFinancialsInner(innerEl, f) {
+        if (!innerEl) return;
+        innerEl.innerHTML = '';
+        if (!hasFinancialsPayload(f)) return;
+
+        if (f.legal_entity || f.org_nr || f.phone || f.address || f.corporate_note) {
+            const ent = document.createElement('div');
+            ent.className = 'financials-entity';
+            if (f.legal_entity) {
+                const nameEl = document.createElement('div');
+                nameEl.className = 'financials-entity-name';
+                nameEl.textContent = f.legal_entity;
+                ent.appendChild(nameEl);
+            }
+            const dl = document.createElement('dl');
+            dl.className = 'financials-entity-dl';
+            function addDlRow(label, val) {
+                if (!val) return;
+                const dt = document.createElement('dt');
+                dt.textContent = label;
+                const dd = document.createElement('dd');
+                dd.textContent = val;
+                dl.appendChild(dt);
+                dl.appendChild(dd);
+            }
+            addDlRow('Org.nr', f.org_nr);
+            addDlRow('Telefon', f.phone);
+            addDlRow('Adress', f.address);
+            ent.appendChild(dl);
+            if (f.corporate_note) {
+                const note = document.createElement('p');
+                note.className = 'financials-entity-note';
+                note.textContent = f.corporate_note;
+                ent.appendChild(note);
+            }
+            innerEl.appendChild(ent);
+        }
+
+        const periods = f.period_labels || [];
+
+        function appendTable(title, unitNote, rows) {
+            const tableTitle = title || '';
+            const block = document.createElement('div');
+            block.className = 'financials-table-block';
+            const tHead = document.createElement('h4');
+            tHead.className = 'financials-table-title';
+            tHead.textContent = tableTitle;
+            block.appendChild(tHead);
+            if (unitNote) {
+                const nu = document.createElement('p');
+                nu.className = 'financials-unit-note';
+                nu.textContent = unitNote;
+                block.appendChild(nu);
+            }
+            const scroll = document.createElement('div');
+            scroll.className = 'financials-scroll';
+            const table = document.createElement('table');
+            table.className = 'financials-grid';
+
+            const colgroup = document.createElement('colgroup');
+            const colLabel = document.createElement('col');
+            colLabel.className = 'financials-col-label';
+            colgroup.appendChild(colLabel);
+            for (let ci = 0; ci < periods.length; ci++) {
+                const cp = document.createElement('col');
+                cp.className = 'financials-col-period';
+                colgroup.appendChild(cp);
+            }
+            table.appendChild(colgroup);
+
+            const thead = document.createElement('thead');
+            const trh = document.createElement('tr');
+            const thCorner = document.createElement('th');
+            thCorner.scope = 'col';
+            thCorner.textContent = '';
+            trh.appendChild(thCorner);
+            periods.forEach(function (p) {
+                const cl = document.createElement('th');
+                cl.scope = 'col';
+                cl.textContent = p;
+                trh.appendChild(cl);
+            });
+            thead.appendChild(trh);
+            table.appendChild(thead);
+            const tbody = document.createElement('tbody');
+            (rows || []).forEach(function (row) {
+                const tr = document.createElement('tr');
+                const emph = financialRowEmphasisClass(tableTitle, row.label || '');
+                if (emph) tr.classList.add(emph);
+                const thRow = document.createElement('th');
+                thRow.scope = 'row';
+                thRow.textContent = row.label || '';
+                tr.appendChild(thRow);
+                const vals = row.values || [];
+                for (let c = 0; c < periods.length; c++) {
+                    const td = document.createElement('td');
+                    const raw = vals[c];
+                    td.textContent = raw === null || raw === undefined ? '—' : String(raw);
+                    tr.appendChild(td);
+                }
+                tbody.appendChild(tr);
+            });
+            table.appendChild(tbody);
+            scroll.appendChild(table);
+            block.appendChild(scroll);
+            innerEl.appendChild(block);
+        }
+
+        if (f.book_year && f.book_year.rows && f.book_year.rows.length) {
+            appendTable(f.book_year.title || 'Bokslutsperiod', null, f.book_year.rows);
+        }
+        if (f.tables && f.tables.length) {
+            f.tables.forEach(function (tbl) {
+                appendTable(
+                    tbl.title || 'Tabell',
+                    tbl.unit_note || f.amounts_note,
+                    tbl.rows
+                );
+            });
+        }
+
+        if (f.source) {
+            const src = document.createElement('p');
+            src.className = 'financials-source-line';
+            src.textContent = f.source;
+            innerEl.appendChild(src);
+        }
+    }
+
+    function renderFinancialsPremiumLock(innerEl) {
+        if (!innerEl) return;
+        innerEl.innerHTML = '';
+        const wrap = document.createElement('div');
+        wrap.className = 'financials-premium-lock';
+
+        const icon = document.createElement('div');
+        icon.className = 'financials-premium-lock-icon';
+        icon.setAttribute('aria-hidden', 'true');
+        icon.innerHTML = '<i class="fas fa-lock"></i>';
+
+        const p = document.createElement('p');
+        p.className = 'financials-premium-lock-text';
+        p.textContent = 'Financials are only for premium users.';
+
+        const sub = document.createElement('p');
+        sub.className = 'financials-premium-lock-sub';
+        sub.textContent =
+            'Full accounts, UC-style tables and deep figures unlock with platform access.';
+
+        const actions = document.createElement('div');
+        actions.className = 'financials-premium-lock-actions';
+
+        const a = document.createElement('a');
+        a.className = 'financials-premium-lock-cta';
+        a.href = '/forum/platform-signup';
+        a.textContent = 'Get premium access';
+
+        actions.appendChild(a);
+        wrap.appendChild(icon);
+        wrap.appendChild(p);
+        wrap.appendChild(sub);
+        wrap.appendChild(actions);
+        innerEl.appendChild(wrap);
+    }
+
+    /**
+     * Standalone Financials section (same card treatment as Figures & source).
+     * @param {HTMLElement} sectionRoot - #companyFinancialsSection or #modalFinancialsSection
+     * @param {object} company
+     */
+    function renderFinancialsSection(sectionRoot, company) {
+        if (!sectionRoot) return;
+        if (!company || typeof company !== 'object') {
+            sectionRoot.style.display = 'none';
+            sectionRoot.hidden = true;
+            return;
+        }
+        const innerEl = sectionRoot.querySelector('.company-financials-inner');
+        const f = company && company.financials;
+        const headingEl = sectionRoot.querySelector('.financials-section-heading');
+
+        sectionRoot.style.display = '';
+        sectionRoot.hidden = false;
+        if (headingEl) {
+            headingEl.textContent =
+                (f && f.section_title && String(f.section_title).trim()) || 'Financials';
+        }
+
+        const freePreview = !!(f && f.free_preview === true);
+        const hasData = hasFinancialsPayload(f);
+
+        if (freePreview && hasData) {
+            renderFinancialsInner(innerEl, f);
+            return;
+        }
+
+        renderFinancialsPremiumLock(innerEl);
+    }
     /**
      * @param {HTMLElement} sectionRoot - element with .key-facts-source-meta, .key-facts-grid
      */
@@ -130,7 +513,16 @@
 
         const split = splitOverviewAndSnapshot(company);
         let rows = snapshotBodyToRows(split.snapshotBody);
-        if (!rows.length && company.metrics_source) {
+        if (company.financials && company.financials.free_preview === true) {
+            rows = mergeFigureRowsWithFinancials(company, rows);
+        }
+        const hasMetricsLink =
+            company.metrics_url && typeof company.metrics_url === 'string' && company.metrics_url.trim();
+        const hasMetricsBadge =
+            company.metrics_source &&
+            typeof company.metrics_source === 'string' &&
+            company.metrics_source.trim();
+        if (!rows.length && (company.metrics_source || company.metrics_url)) {
             if (company.revenue && !isPlaceholderValue(company.revenue)) {
                 rows.push({ label: 'Revenue', value: company.revenue });
             }
@@ -140,14 +532,30 @@
             if (company.employees && !isPlaceholderValue(company.employees)) {
                 rows.push({ label: 'Employees', value: String(company.employees) });
             }
+        } else if (company.metrics_source || company.metrics_url) {
+            const haveLab = function (want) {
+                return rows.some(function (r) {
+                    return (r.label || '').toLowerCase() === want;
+                });
+            };
+            if (company.employees && !isPlaceholderValue(company.employees) && !haveLab('employees')) {
+                rows.push({ label: 'Employees', value: String(company.employees) });
+            }
+            if (
+                !hasFinancialsPayload(company.financials) &&
+                company.revenue &&
+                !isPlaceholderValue(company.revenue) &&
+                !haveLab('revenue')
+            ) {
+                rows.push({ label: 'Revenue', value: company.revenue });
+            }
         }
         rows = mergeLeadershipRows(company, rows);
         rows = rows.filter(function (r) {
             return !isPlaceholderValue(r.value);
         });
 
-        /* Only show block when at least one non-placeholder row exists */
-        const showSection = rows.length > 0;
+        const showSection = rows.length > 0 || !!hasMetricsLink || !!hasMetricsBadge;
 
         if (!showSection) {
             sectionRoot.style.display = 'none';
@@ -179,6 +587,7 @@
                 a.innerHTML = 'View source <i class="fas fa-external-link-alt" aria-hidden="true"></i>';
                 meta.appendChild(a);
             }
+            meta.style.display = meta.children.length ? '' : 'none';
         }
 
         if (grid && rows.length) {
@@ -202,7 +611,8 @@
         const subtitle = sectionRoot.querySelector('.key-facts-subtitle');
         if (subtitle) {
             subtitle.textContent =
-                split.snapshotTitle || (company.metrics_source ? 'Latest reported figures' : '');
+                split.snapshotTitle ||
+                (hasMetricsBadge || hasMetricsLink ? 'Latest reported figures' : '');
             subtitle.style.display = subtitle.textContent ? '' : 'none';
         }
     }
@@ -223,5 +633,6 @@
         splitOverviewAndSnapshot: splitOverviewAndSnapshot,
         getOverviewText: getOverviewText,
         renderKeyFactsSection: renderKeyFactsSection,
+        renderFinancialsSection: renderFinancialsSection,
     };
 })(typeof window !== 'undefined' ? window : this);

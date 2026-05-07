@@ -518,6 +518,14 @@
             <div class="key-facts-grid"></div>
         </div>
 
+        <div id="companyFinancialsSection" class="detail-section company-financials" style="display: none;" hidden>
+            <h2 class="section-title">
+                <i class="fas fa-file-invoice-dollar"></i>
+                <span id="companyFinancialsHeadingText" class="financials-section-heading">Financials</span>
+            </h2>
+            <div id="companyFinancialsInner" class="company-financials-inner"></div>
+        </div>
+
         <!-- Investment Details -->
         <div class="detail-section">
             <h2 class="section-title">
@@ -787,7 +795,15 @@ function loadCompanyData(company, smartData = {}) {
         keyFactsEl.style.display = 'none';
         keyFactsEl.hidden = true;
     }
-    
+
+    const financialsSectionEl = document.getElementById('companyFinancialsSection');
+    if (window.companyKeyFacts && financialsSectionEl && companyKeyFacts.renderFinancialsSection) {
+        companyKeyFacts.renderFinancialsSection(financialsSectionEl, company);
+    } else if (financialsSectionEl) {
+        financialsSectionEl.style.display = 'none';
+        financialsSectionEl.hidden = true;
+    }
+
     // Investment Details - PE Firm with logo (clickable)
     const peFirmName = company.source || '';
     const peFirmLink = document.getElementById('peFirmLink');

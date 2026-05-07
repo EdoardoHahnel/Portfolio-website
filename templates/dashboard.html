@@ -410,6 +410,131 @@
 }
 
 /* Latest Investment News - single column, compact, no scroll */
+/* Homepage — free financials showcase (Belid demo) */
+.pe-showcase-financials {
+    margin-bottom: 1.25rem;
+}
+.pe-showcase-financials-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.35rem;
+    border-radius: 12px;
+    border: 1px solid rgba(63, 125, 232, 0.22);
+    background: linear-gradient(135deg, #eff6ff 0%, #ffffff 55%, #f8fafc 100%);
+    box-shadow: 0 4px 24px rgba(63, 125, 232, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.2s ease;
+}
+.pe-showcase-financials-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 36px rgba(63, 125, 232, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
+    border-color: rgba(63, 125, 232, 0.45);
+}
+.pe-showcase-financials-left {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    min-width: 0;
+    flex: 1;
+}
+.pe-showcase-financials-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    flex-shrink: 0;
+    object-fit: contain;
+    padding: 4px;
+}
+.pe-showcase-financials-kicker {
+    font-size: 0.62rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #3f7de8;
+    margin-bottom: 0.2rem;
+}
+.pe-showcase-financials-title {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.25;
+}
+.pe-showcase-financials-desc {
+    margin: 0;
+    font-size: 0.82rem;
+    color: #64748b;
+    line-height: 1.4;
+}
+.pe-showcase-financials-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #fff;
+    background: #3f7de8;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+.pe-showcase-financials-card:hover .pe-showcase-financials-cta {
+    background: #2f64c0;
+}
+@media (max-width: 600px) {
+    .pe-showcase-financials-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .pe-showcase-financials-cta {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+.pe-showcase-financials-logos {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    gap: 0.55rem;
+    flex-shrink: 0;
+}
+.pe-showcase-financials-logo-sep {
+    width: 1px;
+    height: 34px;
+    background: #cbd5e1;
+    align-self: center;
+    flex-shrink: 0;
+}
+.pe-showcase-accent-lockup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.08rem;
+    min-width: 0;
+}
+.pe-showcase-accent-logo {
+    width: 36px !important;
+    height: 36px !important;
+    padding: 3px !important;
+}
+.pe-showcase-accent-tag {
+    font-size: 8px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: #94a3b8;
+    line-height: 1.15;
+    max-width: 4.5rem;
+    text-align: center;
+}
+
 .pe-news-section {
     margin-bottom: 14px;
 }
@@ -487,6 +612,40 @@
         <a href="/pe-firms" class="pe-cta pe-cta-primary">Explore PE Firms</a>
         <a href="/portfolio" class="pe-cta pe-cta-secondary">View Portfolio Companies</a>
     </div>
+</section>
+
+<section class="pe-showcase-financials scroll-reveal scroll-reveal-item" aria-label="Featured portfolio company: Belid Lighting Group">
+    <a href="/company/belid-lighting-group-accent-equity" class="pe-showcase-financials-card">
+        <div class="pe-showcase-financials-left">
+            <div class="pe-showcase-financials-logos" aria-hidden="true">
+                <img src="https://logo.clearbit.com/belidlighting.se"
+                     alt=""
+                     width="44" height="44"
+                     loading="lazy"
+                     class="pe-showcase-financials-logo"
+                     onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=belidlightinggroup.com&amp;sz=128';this.onerror=function(){this.style.visibility='hidden';};"/>
+                <span class="pe-showcase-financials-logo-sep"></span>
+                <div class="pe-showcase-accent-lockup">
+                    <img src="https://www.google.com/s2/favicons?domain=accentequity.se&amp;sz=128"
+                         alt=""
+                         width="36" height="36"
+                         loading="lazy"
+                         class="pe-showcase-financials-logo pe-showcase-accent-logo"
+                         onerror="this.onerror=null;this.src='https://logo.clearbit.com/accentequity.se';this.onerror=function(){this.style.visibility='hidden';};"/>
+                    <span class="pe-showcase-accent-tag">Accent Equity</span>
+                </div>
+            </div>
+            <div>
+                <div class="pe-showcase-financials-kicker"><i class="fas fa-star"></i> Spotlight · open access</div>
+                <h2 class="pe-showcase-financials-title">Explore Belid Lighting Group</h2>
+                <p class="pe-showcase-financials-desc">
+                    A Scandinavian lighting platform <strong>owned by Accent Equity</strong>, with the VI fund entering in <strong>2018</strong>.
+                    Jump in for PE context, holdings history, and a full <strong>Financials</strong> pack we’ve opened for everyone on this company.
+                </p>
+            </div>
+        </div>
+        <span class="pe-showcase-financials-cta">Profile &amp; financials <i class="fas fa-arrow-right"></i></span>
+    </a>
 </section>
 
 <section class="pe-metric-grid scroll-reveal">

@@ -1,12 +1,16 @@
 /* Figures & source — company detail + portfolio modal */
-.detail-section.company-key-facts {
+.detail-section.company-key-facts,
+.detail-section.company-financials {
     background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
     border-color: #e2e8f0;
     box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+    margin-top: 2.25rem;
 }
 
 .company-key-facts,
-.modal-key-facts {
+.modal-key-facts,
+.company-financials,
+.modal-financials {
     background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
     border: 1px solid #e2e8f0;
     border-radius: 10px;
@@ -16,6 +20,10 @@
 
 .company-key-facts .section-title {
     margin-bottom: 0.35rem;
+}
+
+.company-financials .section-title {
+    margin-bottom: 0.9rem;
 }
 
 .key-facts-subtitle {
@@ -107,7 +115,7 @@
     color: #334155;
 }
 
-/* Modal variant */
+/* Modal variants */
 .modal-key-facts {
     margin-top: 0;
 }
@@ -118,4 +126,232 @@
 
 .modal-key-facts .key-facts-subtitle {
     margin-bottom: 0.75rem;
+}
+
+.modal-financials {
+    margin-top: 1.75rem;
+}
+
+.modal-financials .modal-section-title {
+    margin-bottom: 0.9rem;
+}
+/* Financials — legal entity & UC tables */
+.company-financials-inner {
+    padding-top: 0.15rem;
+}
+
+.financials-entity {
+    margin-bottom: 1rem;
+}
+
+.financials-entity-name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.45rem;
+}
+
+.financials-entity-dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.2rem 1rem;
+    margin: 0;
+    font-size: 0.82rem;
+    line-height: 1.45;
+}
+
+.financials-entity-dl dt {
+    margin: 0;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.financials-entity-dl dd {
+    margin: 0;
+    color: #0f172a;
+}
+
+.financials-entity-note {
+    margin: 0.55rem 0 0 0;
+    font-size: 0.8rem;
+    color: #475569;
+    font-weight: 500;
+}
+
+.financials-table-block {
+    margin-bottom: 1.1rem;
+}
+
+.financials-table-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #475569;
+    margin: 0 0 0.35rem 0;
+}
+
+.financials-unit-note {
+    font-size: 0.72rem;
+    color: #64748b;
+    margin: 0 0 0.45rem 0;
+}
+
+.company-financials-inner .financials-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid #e8ecf1;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.company-financials-inner .financials-grid {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.78rem;
+    table-layout: fixed;
+    min-width: 32rem;
+}
+
+.company-financials-inner col.financials-col-label {
+    width: 46%;
+}
+
+.company-financials-inner col.financials-col-period {
+    width: 18%;
+}
+
+.company-financials-inner .financials-grid th,
+.company-financials-inner .financials-grid td {
+    padding: 0.45rem 0.55rem;
+    text-align: right;
+    border-bottom: 1px solid #f1f5f9;
+    white-space: nowrap;
+}
+
+.company-financials-inner .financials-grid thead th {
+    background: #f8fafc;
+    font-weight: 700;
+    color: #334155;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.company-financials-inner .financials-grid tbody tr:last-child th,
+.company-financials-inner .financials-grid tbody tr:last-child td {
+    border-bottom: none;
+}
+.company-financials-inner .financials-grid thead th:first-child,
+.company-financials-inner .financials-grid tbody th[scope='row'] {
+    text-align: left;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    box-sizing: border-box;
+    vertical-align: top;
+    white-space: normal;
+    word-break: break-word;
+    box-shadow: 1px 0 0 #f1f5f9;
+}
+
+.company-financials-inner .financials-grid tbody th[scope='row'] {
+    background: #fff;
+    font-weight: 400;
+}
+
+.company-financials-inner .financials-grid thead th:nth-child(n + 2),
+.company-financials-inner .financials-grid tbody td {
+    text-align: right;
+}
+
+.company-financials-inner .financials-grid thead th:first-child {
+    background: #f8fafc;
+}
+
+.company-financials-inner .financials-grid tbody td {
+    font-weight: 400;
+}
+
+.company-financials-inner .financials-grid tbody tr.financials-row--grand td,
+.company-financials-inner .financials-grid tbody tr.financials-row--grand th {
+    font-weight: 700;
+    background: #dfe4ea;
+    color: #0f172a;
+}
+
+.company-financials-inner .financials-grid tbody tr.financials-row--mid td,
+.company-financials-inner .financials-grid tbody tr.financials-row--mid th {
+    font-weight: 500;
+    background: #f0f3f7;
+    color: #0f172a;
+}
+
+.company-financials-inner .financials-grid tbody tr.financials-row--grand th[scope='row'],
+.company-financials-inner .financials-grid tbody tr.financials-row--mid th[scope='row'] {
+    z-index: 2;
+}
+
+/* Premium gate — financials locked */
+.financials-premium-lock {
+    text-align: center;
+    padding: 1.5rem 1.25rem 1.65rem;
+    background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 1px dashed #cbd5e1;
+    border-radius: 10px;
+    max-width: 28rem;
+    margin: 0 auto;
+}
+
+.financials-premium-lock-icon {
+    font-size: 1.35rem;
+    color: #94a3b8;
+    margin-bottom: 0.65rem;
+}
+
+.financials-premium-lock-text {
+    margin: 0 0 0.4rem 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #334155;
+}
+
+.financials-premium-lock-sub {
+    margin: 0 0 1rem 0;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: #64748b;
+}
+
+.financials-premium-lock-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.financials-premium-lock-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: #fff;
+    background: #3f7de8;
+    padding: 0.45rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.financials-premium-lock-cta:hover {
+    background: #2f64c0;
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+.financials-source-line {
+    font-size: 0.72rem;
+    color: #64748b;
+    margin: 0.5rem 0 0 0;
 }
