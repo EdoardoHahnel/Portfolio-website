@@ -622,7 +622,7 @@
     </div>
 </div>
 
-<script src="{{ url_for('static', filename='company_key_facts.js') }}"></script>
+<script src="{{ url_for('static', filename='company_key_facts.js') }}?v={{ static_version }}"></script>
 <script>
 document.addEventListener('DOMContentLoaded', async function() {
     const companySlug = '{{ company_slug }}';

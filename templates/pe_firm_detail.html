@@ -914,14 +914,19 @@ async function loadFirmPortfolio(firmName) {
                         fund: pc.fund || '',
                         market: pc.country || '',
                         source: firmName,
-                        headquarters: pc.country || '',
+                        headquarters: pc.headquarters || pc.country || '',
                         entry: pc.entry_year || '',
-                        status: 'Active',
-                        deal_size: '',
+                        status: pc.status || 'Active',
+                        deal_size: pc.deal_size || '',
                         geography: (['Sweden', 'Denmark', 'Norway', 'Finland'].includes(pc.country || '') ? 'Nordic' : 'International'),
-                        description: pc.description || '',
+                        description: pc.description || pc.detailed_description || '',
+                        detailed_description: pc.detailed_description || pc.description || '',
                         website: pc.website || '',
-                        logo_url: pc.logo_url || pc.logo || (pc.website ? `https://logo.clearbit.com/${extractDomain(pc.website)}` : '')
+                        logo_url: pc.logo_url || pc.logo || (pc.website ? `https://logo.clearbit.com/${extractDomain(pc.website)}` : ''),
+                        revenue: pc.revenue || '',
+                        metrics_source: pc.metrics_source || '',
+                        metrics_url: pc.metrics_url || '',
+                        financials: pc.financials || null
                     }));
                 }
             } catch (e) {

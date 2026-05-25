@@ -223,7 +223,10 @@ app.register_blueprint(forum_bp)
 @app.context_processor
 def _inject_current_year():
     """Inject current year for footer copyright."""
-    return {'current_year': datetime.now().year}
+    return {
+        'current_year': datetime.now().year,
+        'static_version': os.environ.get('STATIC_VERSION', '20260525b'),
+    }
 
 
 @app.after_request
@@ -1067,22 +1070,9 @@ def get_pe_firm_detail(firm_name):
                 curated_firms = ['Polaris', 'FSN Capital', 'Nordstjernan', 'Valedo Partners', 'IK Partners', 'Fidelio Capital']
                 if canonical_firm_name in curated_firms and firm_metadata.get('portfolio_companies'):
                     for pc in firm_metadata['portfolio_companies']:
-                        company_data = {
-                            'company': pc.get('name', ''),
-                            'sector': pc.get('sector', ''),
-                            'market': pc.get('country', ''),
-                            'entry': pc.get('entry_year', ''),
-                            'status': 'Active',
-                            'source': canonical_firm_name,
-                            'website': pc.get('website', ''),
-                            'logo_url': pc.get('logo_url', '') or pc.get('logo', ''),
-                            'description': pc.get('description', ''),
-                            'headquarters': pc.get('headquarters', pc.get('country', '')),
-                            'deal_size': pc.get('deal_size', ''),
-                            'fund': pc.get('fund', firm_name),
-                            'geography': 'Nordic' if pc.get('country') in ['Sweden', 'Denmark', 'Norway', 'Finland'] else 'International'
-                        }
-                        firm_companies.append(company_data)
+                        firm_companies.append(
+                            company_dict_from_pe_firms_portfolio_pc(pc, canonical_firm_name)
+                        )
 
         # Fallback: build firm companies from enriched portfolio using canonical name
         if not firm_companies and os.path.exists(data_path('portfolio_enriched.json')):
@@ -1742,8 +1732,16 @@ def get_company_by_slug(company_slug):
                     'sibling_companies': smart['sibling_companies'],
                 })
         
-        # 1. Normalized slug match (handles Brödernas->brdernas, G-CON->gcon, etc.)
-        for company in portfolio_storage:
+        # 1–3. Legacy fallbacks — search merged list only (avoids stale enriched rows without financials)
+        parts = decoded_slug.split('-')
+        company_name_match = ''
+        source_match = ''
+        if len(parts) >= 2:
+            source_match = '-'.join(parts[-2:]) if len(parts) >= 2 else parts[-1]
+            company_name_parts = parts[:-2] if len(parts) > 2 else [parts[0]]
+            company_name_match = ' '.join(company_name_parts)
+
+        for company in merged_companies:
             slug_name = _normalize_slug(company.get('company', ''))
             slug_source = _normalize_slug(company.get('source', ''))
             expected = f"{slug_name}-{slug_source}" if slug_name and slug_source else ""
@@ -1755,37 +1753,23 @@ def get_company_by_slug(company_slug):
                     'similar_companies': smart['similar_companies'],
                     'sibling_companies': smart['sibling_companies'],
                 })
-        
-        # 2. Exact match (original logic)
-        parts = decoded_slug.split('-')
-        company_name_match = ''
-        source_match = ''
-        if len(parts) >= 2:
-            source_match = '-'.join(parts[-2:]) if len(parts) >= 2 else parts[-1]
-            company_name_parts = parts[:-2] if len(parts) > 2 else [parts[0]]
-            company_name_match = ' '.join(company_name_parts)
-            
-            for company in portfolio_storage:
-                slug_name = company.get('company', '').lower().replace(' ', '-').replace('&', 'and')
-                slug_source = company.get('source', '').lower().replace(' ', '-')
-                expected_slug = f"{slug_name}-{slug_source}"
-                
-                if decoded_slug.lower() == expected_slug:
-                    smart = _compute_smart_sections(company, merged_companies)
-                    return jsonify({
-                        'success': True,
-                        'company': _prepare_company_for_response(company),
-                        'similar_companies': smart['similar_companies'],
-                        'sibling_companies': smart['sibling_companies'],
-                    })
-            
-            # 3. Fuzzy matching
-            for company in portfolio_storage:
-                company_name = company.get('company', '').lower()
-                source = company.get('source', '').lower()
-                
-                if (company_name_match.lower() in company_name and 
-                    source_match.lower() in source):
+
+            slug_name_legacy = (company.get('company') or '').lower().replace(' ', '-').replace('&', 'and')
+            slug_source_legacy = (company.get('source') or '').lower().replace(' ', '-')
+            expected_legacy = f"{slug_name_legacy}-{slug_source_legacy}"
+            if decoded_slug.lower() == expected_legacy:
+                smart = _compute_smart_sections(company, merged_companies)
+                return jsonify({
+                    'success': True,
+                    'company': _prepare_company_for_response(company),
+                    'similar_companies': smart['similar_companies'],
+                    'sibling_companies': smart['sibling_companies'],
+                })
+
+            if company_name_match and source_match:
+                company_name = (company.get('company') or '').lower()
+                source = (company.get('source') or '').lower()
+                if (company_name_match.lower() in company_name and source_match.lower() in source):
                     smart = _compute_smart_sections(company, merged_companies)
                     return jsonify({
                         'success': True,
