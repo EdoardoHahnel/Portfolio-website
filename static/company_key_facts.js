@@ -436,42 +436,6 @@
         }
     }
 
-    function renderFinancialsPremiumLock(innerEl) {
-        if (!innerEl) return;
-        innerEl.innerHTML = '';
-        const wrap = document.createElement('div');
-        wrap.className = 'financials-premium-lock';
-
-        const icon = document.createElement('div');
-        icon.className = 'financials-premium-lock-icon';
-        icon.setAttribute('aria-hidden', 'true');
-        icon.innerHTML = '<i class="fas fa-lock"></i>';
-
-        const p = document.createElement('p');
-        p.className = 'financials-premium-lock-text';
-        p.textContent = 'Financials are only for premium users.';
-
-        const sub = document.createElement('p');
-        sub.className = 'financials-premium-lock-sub';
-        sub.textContent =
-            'Full accounts, UC-style tables and deep figures unlock with platform access.';
-
-        const actions = document.createElement('div');
-        actions.className = 'financials-premium-lock-actions';
-
-        const a = document.createElement('a');
-        a.className = 'financials-premium-lock-cta';
-        a.href = '/forum/platform-signup';
-        a.textContent = 'Get premium access';
-
-        actions.appendChild(a);
-        wrap.appendChild(icon);
-        wrap.appendChild(p);
-        wrap.appendChild(sub);
-        wrap.appendChild(actions);
-        innerEl.appendChild(wrap);
-    }
-
     /**
      * Standalone Financials section (same card treatment as Figures & source).
      * @param {HTMLElement} sectionRoot - #companyFinancialsSection or #modalFinancialsSection
@@ -495,15 +459,15 @@
                 (f && f.section_title && String(f.section_title).trim()) || 'Financials';
         }
 
-        const freePreview = !!(f && f.free_preview === true);
         const hasData = hasFinancialsPayload(f);
 
-        if (freePreview && hasData) {
+        if (hasData) {
             renderFinancialsInner(innerEl, f);
             return;
         }
 
-        renderFinancialsPremiumLock(innerEl);
+        sectionRoot.style.display = 'none';
+        sectionRoot.hidden = true;
     }
     /**
      * @param {HTMLElement} sectionRoot - element with .key-facts-source-meta, .key-facts-grid
@@ -513,7 +477,7 @@
 
         const split = splitOverviewAndSnapshot(company);
         let rows = snapshotBodyToRows(split.snapshotBody);
-        if (company.financials && company.financials.free_preview === true) {
+        if (hasFinancialsPayload(company.financials)) {
             rows = mergeFigureRowsWithFinancials(company, rows);
         }
         const hasMetricsLink =

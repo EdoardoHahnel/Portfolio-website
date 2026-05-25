@@ -207,6 +207,9 @@ def company_dict_from_pe_firms_portfolio_pc(pc, firm_name):
         'geography': 'Nordic' if country in ['Sweden', 'Denmark', 'Norway', 'Finland'] else 'International',
         'employees': (pc.get('employees') or '') or '',
         'revenue': (pc.get('revenue') or '') or '',
+        'metrics_source': pc.get('metrics_source') or '',
+        'metrics_url': pc.get('metrics_url') or '',
+        'financials': pc.get('financials'),
     }
 
 
