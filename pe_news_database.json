@@ -1,6 +1,56 @@
 {
   "news": [
     {
+      "title": "Nordic Capital & Permira Launch $3bn Takeover Bid for Bavarian Nordic",
+      "description": "Nordic Capital and Permira have made an all-cash voluntary public takeover offer for Danish vaccine manufacturer Bavarian Nordic, valuing the company at approximately $3 billion — a premium of up to 37.4% over the six-month volume-weighted average share price.\n\nThe board and all executives have committed to tendering their shares, with a planned delisting from Nasdaq Copenhagen to follow. Denmark's largest pension fund ATP, which holds a 10% stake, has publicly opposed the offer, stating it does not reflect the company's true value.\n\nThe consortium views the acquisition as a vehicle to accelerate Bavarian Nordic's vaccine portfolio expansion and long-term M&A strategy under private ownership.",
+      "link": "https://www.bavarian-nordic.com/investor/news/news.aspx?news=7263",
+      "date": "2026-05-26",
+      "firm": "Nordic Capital",
+      "source": "Portföljbolagen",
+      "theme": "Public-to-Private",
+      "country": "Denmark"
+    },
+    {
+      "title": "Altor Acquires Nordic Pipework Group Sertion in Latest Infrastructure Services Bet",
+      "description": "Altor Fund VI signed an agreement on May 8 to acquire a majority stake in Sertion AB from Consolid Equity, alongside entrepreneurs and members of management.\n\nSertion is a leading Nordic B2B provider of complex pipework services — covering water, heating, sanitation, industrial piping, and energy gas solutions — with approximately 1,000 employees and annual turnover exceeding SEK 3 billion.\n\nThe deal marks Altor's second acquisition in Nordic infrastructure services within two months, following the March buyout of Norwegian electrical installer Eltera from Valedo Partners.",
+      "link": "https://altor.com/news/altor-to-acquire-a-majority-stake-in-sertion-partnering-with-management-and-entrepreneurs-1",
+      "date": "2026-05-11",
+      "firm": "Altor",
+      "source": "Portföljbolagen",
+      "theme": "Buyout",
+      "country": "Sweden"
+    },
+    {
+      "title": "Nordic Capital Exits Orchid Orthopedic Solutions",
+      "description": "Nordic Capital has exited its position in Orchid Orthopedic Solutions. The transaction was confirmed via PitchBook on May 14, 2026.\n\nFurther details on the buyer and transaction value have not yet been publicly disclosed.",
+      "link": "https://dealnews.ai/tecomet-and-orchid-orthopedic-solutions-complete-merger-medtech-manufacturing/",
+      "date": "2026-05-14",
+      "firm": "Nordic Capital",
+      "source": "Portföljbolagen",
+      "theme": "Exit",
+      "country": "USA"
+    },
+    {
+      "title": "Verdane Seeds Eterno in Latest Early-Stage Move",
+      "description": "Oslo and Stockholm-based growth equity firm Verdane made a seed investment in Eterno on May 19, 2026.\n\nFurther details on the company and investment size have not yet been publicly disclosed. The deal marks Verdane's most recent portfolio addition as of late May 2026.",
+      "link": "https://verdane.com/verdane-partners-with-eterno/",
+      "date": "2026-05-19",
+      "firm": "Verdane",
+      "source": "Portföljbolagen",
+      "theme": "Seed Investment",
+      "country": "Germany"
+    },
+    {
+      "title": "Nordic Capital Carves Out Moody's Regulatory Reporting & ALM Business",
+      "description": "Nordic Capital completed an investment in the Regulatory Reporting and ALM Solutions business carved out from Moody's on May 5, 2026.\n\nThe deal aligns with Nordic Capital's established thesis around financial services software and regulatory technology. Further transaction details have not been publicly disclosed.",
+      "link": "https://www.regnology.net/en/resources/news/regnology-acquires-moodys-regulatory-and-alm-solutions/",
+      "date": "2026-05-05",
+      "firm": "Nordic Capital",
+      "source": "Portföljbolagen",
+      "theme": "Buyout",
+      "country": "Germany"
+    },
+    {
       "title": "Triton-led consortium makes offer for Cint: SEK 5.60 per share, equity value about SEK 2 billion",
       "description": "A consortium led by private equity firm Triton has made an offer for Cint, which runs a market research and data insights platform.\n\nThe bid is SEK 5.60 in cash per share, representing a premium of about 33% versus last Friday’s closing price of SEK 4.21. Despite a strong move higher in 2026, the stock is down by roughly 64% over the past two years.\n\nThe bidders are Triton, largest shareholder Bolero, Cint CEO Patrick Comer, and COO Brett Schnittlich. The company is valued at about SEK 2 billion in total.\n\nCint’s board recommends that shareholders accept the offer. The bid group already owns around 34% of the shares, with Bolero accounting for about 29%. Peder Pråhl stands behind Bolero; he also founded Triton.\n\nAccording to Triton, Cint has significant potential, but the market is changing quickly and the company must increase the pace of innovation and development. The next phase is expected to require greater investment and strategic decisions—something that is seen as easier to deliver as a private company.\n\nThe stated focus going forward is AI, results measurement, and further platform development.\n\nCint was founded in 1998. It generated revenue of €150 million in 2025, almost 10% below the year before. Adjusted EBITA was €29 million.",
       "link": "https://www.breakit.se/artikel/46145/bud-pa-borsbolaget-cint-riskkapitalbolag-ligger-bakom",
@@ -927,8 +977,8 @@
       "source": "Cision News"
     }
   ],
-  "total_news": 111,
-  "last_updated": "2026-04-27T05:58:20Z",
+  "total_news": 116,
+  "last_updated": "2026-05-25T12:00:00Z",
   "description": "Nordic PE news from Cision news pages and recent activity",
   "source": "Cision News Pages",
   "firms_covered": [

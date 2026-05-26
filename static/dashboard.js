@@ -74,8 +74,32 @@ const firmDomainOverrides = {
     'Altor': 'altor.com',
     'Axcel': 'axcel.dk',
     'CVC': 'cvc.com',
-    'CVC Capital Partners': 'cvc.com'
+    'CVC Capital Partners': 'cvc.com',
+    'FSN Capital': 'fsncapital.com',
+    'Summa Equity': 'summaequity.com',
+    'Equip': 'equip.no',
+    'Trill Impact': 'trillimpact.com',
+    'Fidelio Capital': 'fideliocapital.com',
+    'Helix Kapital': 'helixkapital.se',
+    'Norvestor': 'norvestor.com',
+    'MVI': 'mvi.se'
 };
+
+// Homepage Nordic PE Firms grid (12 cards to fill the container)
+const HOMEPAGE_FEATURED_PE_FIRMS = [
+    'EQT',
+    'Nordic Capital',
+    'Triton',
+    'Amplio',
+    'Altor',
+    'Axcel',
+    'Adelis Equity',
+    'Summa Equity',
+    'IK Partners',
+    'Verdane',
+    'Valedo Partners',
+    'FSN Capital'
+];
 
 async function loadDashboard() {
     try { await ensurePeFirmLogos(); } catch (e) { console.error('Logo map init failed:', e); }
@@ -429,35 +453,44 @@ function createTrendsYearChart(labels, values) {
     });
 }
 
-function createTrendsSectorChart(labels, values) {
-    const ctx = document.getElementById('trendsSectorChart');
-    if (!ctx || typeof Chart === 'undefined') return;
-    if (trendsSectorChartInstance) trendsSectorChartInstance.destroy();
-    if (!labels.length || !values.length) return;
-    trendsSectorChartInstance = new Chart(ctx, {
-        type: 'doughnut',
+function truncateTrendsLabel(label, maxLen = 22) {
+    const text = String(label || '').trim();
+    if (text.length <= maxLen) return text;
+    return text.slice(0, maxLen - 1).trim() + '…';
+}
+
+function createTrendsDistributionBarChart(canvasEl, labels, values, insightKey) {
+    if (!canvasEl || typeof Chart === 'undefined') return null;
+    if (!labels.length || !values.length) return null;
+
+    const fullLabels = labels.slice();
+    const displayLabels = labels.map(l => truncateTrendsLabel(l));
+    const total = values.reduce((a, b) => a + b, 0);
+    const maxValue = Math.max(...values, 1);
+
+    return new Chart(canvasEl, {
+        type: 'bar',
         data: {
-            labels: labels,
+            labels: displayLabels,
             datasets: [{
                 data: values,
                 backgroundColor: labels.map((_, i) => DASHBOARD_CHART_COLORS[i % DASHBOARD_CHART_COLORS.length]),
-                borderWidth: 3,
-                borderColor: '#ffffff',
-                hoverBorderWidth: 4,
-                hoverBorderColor: '#ffffff',
-                hoverOffset: 6
+                borderRadius: 6,
+                borderSkipped: false,
+                barThickness: 14,
+                maxBarThickness: 16
             }]
         },
         options: {
+            indexAxis: 'y',
             responsive: true,
             maintainAspectRatio: false,
-            cutout: '58%',
-            spacing: 2,
+            layout: { padding: { right: 8 } },
             onClick: (event, elements, chart) => {
                 if (!elements || elements.length === 0) return;
                 const index = elements[0].index;
-                const sector = chart.data.labels[index];
-                window.location.href = `/portfolio-insights?chart=sector&value=${encodeURIComponent(String(sector))}`;
+                const value = fullLabels[index];
+                window.location.href = `/portfolio-insights?chart=${encodeURIComponent(insightKey)}&value=${encodeURIComponent(String(value))}`;
             },
             onHover: (event, elements) => {
                 if (event?.native?.target) {
@@ -465,40 +498,54 @@ function createTrendsSectorChart(labels, values) {
                 }
             },
             animation: {
-                animateRotate: true,
-                animateScale: true,
-                duration: 800,
+                duration: 700,
                 easing: 'easeOutQuart'
             },
             plugins: {
-                legend: {
-                    position: 'bottom',
-                    labels: {
-                        boxWidth: 8,
-                        padding: 6,
-                        font: { size: 10, weight: '600' },
-                        usePointStyle: true,
-                        pointStyle: 'circle',
-                        color: '#1e293b'
-                    }
-                },
+                legend: { display: false },
                 tooltip: {
-                    backgroundColor: 'rgba(31, 41, 55, 0.96)',
+                    backgroundColor: 'rgba(15, 23, 42, 0.96)',
                     padding: 12,
                     titleFont: { size: 12, weight: 'bold' },
                     bodyFont: { size: 11 },
-                    borderColor: '#3f7de8',
+                    borderColor: 'rgba(63, 125, 232, 0.4)',
                     borderWidth: 1,
                     cornerRadius: 8,
                     displayColors: true,
-                    boxPadding: 4,
                     callbacks: {
-                        label: function(context) {
-                            const value = context.parsed;
-                            const total = context.dataset.data.reduce((a, b) => a + b, 0);
-                            const pct = ((value / total) * 100).toFixed(1);
-                            return ` ${context.label}: ${value} (${pct}%)`;
+                        title: (items) => {
+                            const idx = items[0]?.dataIndex;
+                            return idx != null ? fullLabels[idx] : '';
+                        },
+                        label: (context) => {
+                            const value = context.parsed.x;
+                            const pct = total ? ((value / total) * 100).toFixed(1) : '0';
+                            return ` ${value} companies (${pct}%)`;
                         }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    suggestedMax: maxValue * 1.08,
+                    grid: { color: 'rgba(148, 163, 184, 0.2)', drawBorder: false },
+                    border: { display: false },
+                    ticks: {
+                        stepSize: 1,
+                        font: { size: 10 },
+                        color: '#64748b',
+                        padding: 4
+                    }
+                },
+                y: {
+                    grid: { display: false },
+                    border: { display: false },
+                    ticks: {
+                        autoSkip: false,
+                        font: { size: 11, weight: '500' },
+                        color: '#334155',
+                        padding: 6
                     }
                 }
             }
@@ -506,81 +553,16 @@ function createTrendsSectorChart(labels, values) {
     });
 }
 
+function createTrendsSectorChart(labels, values) {
+    const ctx = document.getElementById('trendsSectorChart');
+    if (trendsSectorChartInstance) trendsSectorChartInstance.destroy();
+    trendsSectorChartInstance = createTrendsDistributionBarChart(ctx, labels, values, 'sector');
+}
+
 function createTrendsCountryChart(labels, values) {
     const ctx = document.getElementById('trendsCountryChart');
-    if (!ctx || typeof Chart === 'undefined') return;
     if (trendsCountryChartInstance) trendsCountryChartInstance.destroy();
-    if (!labels.length || !values.length) return;
-    trendsCountryChartInstance = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            labels: labels,
-            datasets: [{
-                data: values,
-                backgroundColor: labels.map((_, i) => DASHBOARD_CHART_COLORS[i % DASHBOARD_CHART_COLORS.length]),
-                borderWidth: 3,
-                borderColor: '#ffffff',
-                hoverBorderWidth: 4,
-                hoverBorderColor: '#ffffff',
-                hoverOffset: 6,
-                spacing: 2
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            cutout: '58%',
-            onClick: (event, elements, chart) => {
-                if (!elements || elements.length === 0) return;
-                const index = elements[0].index;
-                const market = chart.data.labels[index];
-                window.location.href = `/portfolio-insights?chart=country&value=${encodeURIComponent(String(market))}`;
-            },
-            onHover: (event, elements) => {
-                if (event?.native?.target) {
-                    event.native.target.style.cursor = elements?.length ? 'pointer' : 'default';
-                }
-            },
-            animation: {
-                animateRotate: true,
-                animateScale: true,
-                duration: 800,
-                easing: 'easeOutQuart'
-            },
-            plugins: {
-                legend: {
-                    position: 'bottom',
-                    labels: {
-                        boxWidth: 8,
-                        padding: 6,
-                        font: { size: 10, weight: '600' },
-                        usePointStyle: true,
-                        pointStyle: 'circle',
-                        color: '#1e293b'
-                    }
-                },
-                tooltip: {
-                    backgroundColor: 'rgba(31, 41, 55, 0.96)',
-                    padding: 12,
-                    titleFont: { size: 12, weight: 'bold' },
-                    bodyFont: { size: 11 },
-                    borderColor: '#3f7de8',
-                    borderWidth: 1,
-                    cornerRadius: 8,
-                    displayColors: true,
-                    boxPadding: 4,
-                    callbacks: {
-                        label: function(context) {
-                            const value = context.parsed;
-                            const total = context.dataset.data.reduce((a, b) => a + b, 0);
-                            const pct = ((value / total) * 100).toFixed(1);
-                            return ` ${context.label}: ${value} (${pct}%)`;
-                        }
-                    }
-                }
-            }
-        }
-    });
+    trendsCountryChartInstance = createTrendsDistributionBarChart(ctx, labels, values, 'country');
 }
 
 function renderTrendsEmpty() {
@@ -822,8 +804,13 @@ async function loadPEFirms() {
             const container = document.getElementById('peFirmsGrid');
             container.innerHTML = '';
             
-            // Show first 8 firms
-            Object.keys(data.firms).slice(0, 8).forEach(firmKey => {
+            const firmKeys = HOMEPAGE_FEATURED_PE_FIRMS.filter(
+                key => data.firms[key]
+            );
+            const fallbackKeys = Object.keys(data.firms).filter(
+                key => !firmKeys.includes(key)
+            );
+            [...firmKeys, ...fallbackKeys].slice(0, 12).forEach(firmKey => {
                 const firm = data.firms[firmKey];
                 const card = document.createElement('a');
                 card.href = `/pe-firm/${firmKey}`;
@@ -835,6 +822,9 @@ async function loadPEFirms() {
                 const clearbitLogo = overrideDomain ? `https://logo.clearbit.com/${overrideDomain}` : '';
                 const fallbackFavicon = overrideDomain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(overrideDomain)}&sz=128` : '';
                 const primaryLogo = useApiLogo ? apiLogo : clearbitLogo;
+                const scale = typeof getFirmScaleMetric === 'function'
+                    ? getFirmScaleMetric(firm)
+                    : { label: 'AUM', value: firm.aum, icon: 'fa-dollar-sign' };
                 card.innerHTML = `
                     <div class="firm-logo-container">
                         <img src="${primaryLogo}" 
@@ -848,7 +838,7 @@ async function loadPEFirms() {
                         <div class="firm-name-compact">${escapeHtml(firm.name)}</div>
                         <div class="firm-stats-compact">
                             <span><i class="fas fa-map-marker-alt"></i> ${escapeHtml(firm.headquarters.split(',')[0])}</span>
-                            <span><i class="fas fa-dollar-sign"></i> ${escapeHtml(firm.aum)}</span>
+                            <span title="${escapeHtml(scale.label)}"><i class="fas ${scale.icon}"></i> ${escapeHtml(scale.value)}</span>
                         </div>
                     </div>
                     <i class="fas fa-arrow-right firm-arrow"></i>

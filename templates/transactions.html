@@ -130,6 +130,15 @@
     }
     .txn-pill.done { background: #ecfdf5; color: #047857; border-color: #a7f3d0; }
     .txn-pill.exit { background: #fff7ed; color: #c2410c; border-color: #fed7aa; }
+    /* Always visible — no scroll-reveal dependency */
+    .transactions-deals-card {
+        opacity: 1;
+        transform: none;
+    }
+    .txn-deal {
+        opacity: 1;
+        transform: none;
+    }
 </style>
 {% endblock %}
 
@@ -139,7 +148,7 @@
     <p class="page-subtitle">Curated Nordic private equity transactions — signings, completions, and selected exits.</p>
 </div>
 
-<div class="content-card scroll-reveal-item">
+<div class="content-card transactions-deals-card">
     <div class="content-card-header">
         <h2 class="content-card-title">Deal snapshots</h2>
     </div>
@@ -149,6 +158,86 @@
             <article class="txn-deal">
                 <div class="txn-deal-head">
                     <span class="txn-deal-num">1</span>
+                    <h3 class="txn-deal-title">Verdane → Eterno</h3>
+                    <span class="txn-deal-date">May 2026</span>
+                    <span class="txn-pill done">Completed</span>
+                </div>
+                {{ txn_logo_pair('Verdane', 'verdane.com', 'Verdane', 'eterno.health', 'Eterno') }}
+                <div class="txn-grid">
+                    <div><span class="txn-k">Acquirer</span><span class="txn-v">Verdane (Oslo / Stockholm)</span></div>
+                    <div><span class="txn-k">Target</span><span class="txn-v">Eterno</span></div>
+                    <div><span class="txn-k">Sector</span><span class="txn-v">HealthTech / Practice Software</span></div>
+                    <div><span class="txn-k">Geography</span><span class="txn-v">Germany</span></div>
+                    <div><span class="txn-k">Type</span><span class="txn-v">Growth Equity Investment</span></div>
+                    <div><span class="txn-k">Deal value</span><span class="txn-v">Undisclosed</span></div>
+                    <div style="grid-column: 1 / -1;"><span class="txn-k">Seller</span><span class="txn-v">Founder-led (partial)</span></div>
+                </div>
+                <p class="txn-desc">Verdane invested in Eterno, a Berlin-based health technology company building an AI-native operating system for outpatient care. The partnership supports scaling Eterno's cloud platform, accelerating commercial rollout, and selective acquisitions in Germany's fragmented practice-management market, where more than 2,000 physicians already use Eterno in daily operations.</p>
+            </article>
+
+            <article class="txn-deal">
+                <div class="txn-deal-head">
+                    <span class="txn-deal-num">2</span>
+                    <h3 class="txn-deal-title">Nordic Capital exit: Orchid Orthopedic Solutions → Tecomet</h3>
+                    <span class="txn-deal-date">May 2026</span>
+                    <span class="txn-pill exit">Completed</span>
+                </div>
+                {{ txn_logo_pair('Nordic Capital', 'nordiccapital.com', 'Nordic Capital', 'tecomet.com', 'Tecomet') }}
+                <div class="txn-grid">
+                    <div><span class="txn-k">Acquirer</span><span class="txn-v">Tecomet (Charlesbank Capital Partners) / merger partner</span></div>
+                    <div><span class="txn-k">Target</span><span class="txn-v">Orchid Orthopedic Solutions</span></div>
+                    <div><span class="txn-k">Sector</span><span class="txn-v">MedTech Contract Manufacturing</span></div>
+                    <div><span class="txn-k">Geography</span><span class="txn-v">United States</span></div>
+                    <div><span class="txn-k">Type</span><span class="txn-v">Merger (Nordic Capital exit)</span></div>
+                    <div><span class="txn-k">Deal value</span><span class="txn-v">Undisclosed</span></div>
+                    <div style="grid-column: 1 / -1;"><span class="txn-k">Seller</span><span class="txn-v">Nordic Capital</span></div>
+                </div>
+                <p class="txn-desc">Orchid Orthopedic Solutions and Tecomet completed their merger on May 14, 2026, forming a scaled global manufacturing platform for MedTech and Aerospace &amp; Defense customers under the Tecomet brand. Nordic Capital, which had backed Orchid since 2019, exited alongside the transaction while Charlesbank remains invested in the combined group.</p>
+            </article>
+
+            <article class="txn-deal">
+                <div class="txn-deal-head">
+                    <span class="txn-deal-num">3</span>
+                    <h3 class="txn-deal-title">Regnology → Moody's Regulatory Reporting &amp; ALM</h3>
+                    <span class="txn-deal-date">May 2026</span>
+                    <span class="txn-pill done">Completed</span>
+                </div>
+                {{ txn_logo_pair('Nordic Capital', 'nordiccapital.com', 'Nordic Capital', 'regnology.net', 'Regnology') }}
+                <div class="txn-grid">
+                    <div><span class="txn-k">Acquirer</span><span class="txn-v">Regnology (Nordic Capital portfolio)</span></div>
+                    <div><span class="txn-k">Target</span><span class="txn-v">Moody's Regulatory Reporting &amp; ALM Solutions</span></div>
+                    <div><span class="txn-k">Sector</span><span class="txn-v">Financial Services Software / RegTech</span></div>
+                    <div><span class="txn-k">Geography</span><span class="txn-v">Global (HQ Germany)</span></div>
+                    <div><span class="txn-k">Type</span><span class="txn-v">Carve-out Acquisition</span></div>
+                    <div><span class="txn-k">Deal value</span><span class="txn-v">Undisclosed</span></div>
+                    <div style="grid-column: 1 / -1;"><span class="txn-k">Seller</span><span class="txn-v">Moody's</span></div>
+                </div>
+                <p class="txn-desc">Regnology, backed by Nordic Capital, completed its acquisition of Moody's Regulatory Reporting and ALM Solutions business on May 5, 2026. The deal adds Basel III, IFRS 9, large-bank ALM, Solvency II, and prudential reporting capabilities across 50+ jurisdictions, extending Regnology's regulatory, risk, and finance reporting platform.</p>
+            </article>
+
+            <article class="txn-deal">
+                <div class="txn-deal-head">
+                    <span class="txn-deal-num">4</span>
+                    <h3 class="txn-deal-title">Altor → Sertion</h3>
+                    <span class="txn-deal-date">May 2026</span>
+                    <span class="txn-pill">Signed</span>
+                </div>
+                {{ txn_logo_pair('Altor', 'altor.com', 'Altor', 'sertion.com', 'Sertion') }}
+                <div class="txn-grid">
+                    <div><span class="txn-k">Acquirer</span><span class="txn-v">Altor Fund VI (Stockholm, Sweden)</span></div>
+                    <div><span class="txn-k">Target</span><span class="txn-v">Sertion AB</span></div>
+                    <div><span class="txn-k">Sector</span><span class="txn-v">Infrastructure Services / Industrials</span></div>
+                    <div><span class="txn-k">Geography</span><span class="txn-v">Sweden, Norway, Denmark</span></div>
+                    <div><span class="txn-k">Type</span><span class="txn-v">Majority Buyout</span></div>
+                    <div><span class="txn-k">Deal value</span><span class="txn-v">Undisclosed</span></div>
+                    <div style="grid-column: 1 / -1;"><span class="txn-k">Seller</span><span class="txn-v">Consolid Equity (+ entrepreneurs &amp; management)</span></div>
+                </div>
+                <p class="txn-desc">Altor signed an agreement on May 8, 2026 to acquire a majority stake in Sertion, a leading Nordic B2B provider of complex pipework services with approximately 1,000 employees and turnover exceeding SEK 3 billion. Entrepreneurs and management reinvest alongside Altor. The transaction is subject to customary regulatory approvals.</p>
+            </article>
+
+            <article class="txn-deal">
+                <div class="txn-deal-head">
+                    <span class="txn-deal-num">5</span>
                     <h3 class="txn-deal-title">Nordic Capital → TradingHub</h3>
                     <span class="txn-deal-date">March 2026</span>
                     <span class="txn-pill">Signed (expected close Q2 2026)</span>
@@ -168,7 +257,7 @@
 
             <article class="txn-deal">
                 <div class="txn-deal-head">
-                    <span class="txn-deal-num">2</span>
+                    <span class="txn-deal-num">6</span>
                     <h3 class="txn-deal-title">Altor → Eltera</h3>
                     <span class="txn-deal-date">March 2026</span>
                     <span class="txn-pill">Signed</span>
@@ -188,7 +277,7 @@
 
             <article class="txn-deal">
                 <div class="txn-deal-head">
-                    <span class="txn-deal-num">3</span>
+                    <span class="txn-deal-num">7</span>
                     <h3 class="txn-deal-title">Altor → Evac</h3>
                     <span class="txn-deal-date">December 2025</span>
                     <span class="txn-pill">Signed (expected close H1 2026)</span>
@@ -208,7 +297,7 @@
 
             <article class="txn-deal">
                 <div class="txn-deal-head">
-                    <span class="txn-deal-num">4</span>
+                    <span class="txn-deal-num">8</span>
                     <h3 class="txn-deal-title">Nordic Capital → Evosep</h3>
                     <span class="txn-deal-date">November 2025</span>
                     <span class="txn-pill done">Completed</span>
@@ -228,7 +317,7 @@
 
             <article class="txn-deal">
                 <div class="txn-deal-head">
-                    <span class="txn-deal-num">5</span>
+                    <span class="txn-deal-num">9</span>
                     <h3 class="txn-deal-title">Nordic Capital → BMLL Technologies</h3>
                     <span class="txn-deal-date">October 2025</span>
                     <span class="txn-pill done">Completed</span>
@@ -248,7 +337,7 @@
 
             <article class="txn-deal">
                 <div class="txn-deal-head">
-                    <span class="txn-deal-num">6</span>
+                    <span class="txn-deal-num">10</span>
                     <h3 class="txn-deal-title">Norvestor → Norautron</h3>
                     <span class="txn-deal-date">October 2025</span>
                     <span class="txn-pill done">Completed</span>
@@ -268,7 +357,7 @@
 
             <article class="txn-deal">
                 <div class="txn-deal-head">
-                    <span class="txn-deal-num">7</span>
+                    <span class="txn-deal-num">11</span>
                     <h3 class="txn-deal-title">EQT → Fortnox</h3>
                     <span class="txn-deal-date">June–July 2025</span>
                     <span class="txn-pill done">Completed</span>
@@ -288,7 +377,7 @@
 
             <article class="txn-deal">
                 <div class="txn-deal-head">
-                    <span class="txn-deal-num">8</span>
+                    <span class="txn-deal-num">12</span>
                     <h3 class="txn-deal-title">Altor → IMBOX Protection</h3>
                     <span class="txn-deal-date">July 2025</span>
                     <span class="txn-pill done">Completed</span>
@@ -308,7 +397,7 @@
 
             <article class="txn-deal">
                 <div class="txn-deal-head">
-                    <span class="txn-deal-num">9</span>
+                    <span class="txn-deal-num">13</span>
                     <h3 class="txn-deal-title">EQT exit: Karo Healthcare → KKR</h3>
                     <span class="txn-deal-date">April 2025</span>
                     <span class="txn-pill exit">Completed</span>
@@ -328,7 +417,7 @@
 
             <article class="txn-deal">
                 <div class="txn-deal-head">
-                    <span class="txn-deal-num">10</span>
+                    <span class="txn-deal-num">14</span>
                     <h3 class="txn-deal-title">Altor exit: Wrist Ship Supply → JFLCO</h3>
                     <span class="txn-deal-date">March 2025</span>
                     <span class="txn-pill exit">Completed</span>

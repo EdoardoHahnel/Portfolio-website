@@ -128,6 +128,21 @@
     box-shadow: 0 8px 24px rgba(63, 125, 232, 0.15);
 }
 
+/* Homepage Nordic PE Firms — 12-card grid fills the section */
+#peFirmsGrid.pe-firms-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+@media (max-width: 1100px) {
+    #peFirmsGrid.pe-firms-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+@media (max-width: 768px) {
+    #peFirmsGrid.pe-firms-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* PE firm cards - subtle lift */
 .pe-firm-card-compact {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -189,11 +204,6 @@
     box-shadow: 0 4px 16px rgba(63, 125, 232, 0.12);
     border-color: rgba(63, 125, 232, 0.25);
 }
-.trends-click-hint {
-    margin: 0.75rem 0 0 0;
-    color: #64748b;
-    font-size: 0.75rem;
-}
 .trends-chart-title {
     font-size: 0.85rem;
     font-weight: 700;
@@ -216,18 +226,13 @@
     width: 100% !important;
     height: auto !important;
 }
-/* Sector Mix and Country Distribution: use square container (like portfolio) for round circles */
-.trends-chart-container.chart-circle {
-    aspect-ratio: 1;
-    width: 100%;
-    max-width: 220px;
-    min-height: 0;
-    height: auto;
-    margin: 0 auto;
+/* Sector mix & country: horizontal bar charts */
+.trends-chart-container.chart-bars {
+    min-height: 220px;
+    height: 220px;
 }
-.trends-chart-container.chart-circle canvas {
-    max-height: 200px !important;
-    width: 100% !important;
+.trends-chart-container.chart-bars canvas {
+    max-height: 220px !important;
 }
 @media (max-width: 900px) {
     .trends-grid { grid-template-columns: 1fr; }
@@ -236,12 +241,11 @@
         height: 180px;
     }
     .trends-chart-container canvas { max-height: 180px !important; }
-    .trends-chart-container.chart-circle {
-        max-width: 240px;
-        min-height: 0;
-        height: auto;
+    .trends-chart-container.chart-bars {
+        min-height: 240px;
+        height: 240px;
     }
-    .trends-chart-container.chart-circle canvas { max-height: 220px !important; }
+    .trends-chart-container.chart-bars canvas { max-height: 240px !important; }
 }
 @media (max-width: 480px) {
     .trends-chart-container {
@@ -249,12 +253,11 @@
         height: 200px;
     }
     .trends-chart-container canvas { max-height: 200px !important; }
-    .trends-chart-container.chart-circle {
-        max-width: 260px;
-        min-height: 0;
-        height: auto;
+    .trends-chart-container.chart-bars {
+        min-height: 260px;
+        height: 260px;
     }
-    .trends-chart-container.chart-circle canvas { max-height: 240px !important; }
+    .trends-chart-container.chart-bars canvas { max-height: 260px !important; }
 }
 
 /* PE Logo Marquee - JS-driven for reliable mobile support (Safari, Chrome) */
@@ -706,18 +709,17 @@
         </div>
         <div class="trends-chart-card" data-chart-link="sector">
             <h3 class="trends-chart-title"><i class="fas fa-industry"></i> Sector Mix</h3>
-            <div class="trends-chart-container chart-circle">
+            <div class="trends-chart-container chart-bars">
                 <canvas id="trendsSectorChart"></canvas>
             </div>
         </div>
         <div class="trends-chart-card" data-chart-link="country">
             <h3 class="trends-chart-title"><i class="fas fa-globe"></i> Country Distribution</h3>
-            <div class="trends-chart-container chart-circle">
+            <div class="trends-chart-container chart-bars">
                 <canvas id="trendsCountryChart"></canvas>
             </div>
         </div>
     </div>
-    <p class="trends-click-hint"><i class="fas fa-arrow-right"></i> Click any chart to open portfolio insights with live drill-down.</p>
 </section>
 
 <!-- Trending Case Studies - compact strip before PE Firms -->

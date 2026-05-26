@@ -247,6 +247,9 @@ function displayFirmDetail(firm) {
     const overrideDomain = firmDomainOverrides[firm.name] || websiteDomain;
     const fallbackFavicon = overrideDomain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(overrideDomain)}&sz=128` : '';
     const avatarFallback = `https://ui-avatars.com/api/?name=${encodeURIComponent(firm.name)}&background=3f7de8&color=ffffff&size=64`;
+    const scaleMetric = typeof getFirmScaleMetric === 'function'
+        ? getFirmScaleMetric(firm)
+        : { label: 'AUM', value: firm.aum || '—', icon: 'fa-dollar-sign' };
 
     container.innerHTML = `
         <!-- Firm Header -->
@@ -264,7 +267,7 @@ function displayFirmDetail(firm) {
                         <div style="display: flex; gap: 0.5rem; margin-top: 0.2rem; font-size: 0.45rem; opacity: 0.9; flex-wrap: wrap;">
                             <span><i class="fas fa-map-marker-alt"></i> ${escapeHtml(firm.headquarters)}</span>
                             <span><i class="fas fa-calendar"></i> Founded ${firm.founded}</span>
-                            <span><i class="fas fa-dollar-sign"></i> AUM: ${escapeHtml(firm.aum)}</span>
+                            <span><i class="fas ${scaleMetric.icon}"></i> ${escapeHtml(scaleMetric.label)}: ${escapeHtml(scaleMetric.value)}</span>
                             <span><i class="fas fa-users"></i> ${firm.employees} employees</span>
                         </div>
                     </div>
@@ -315,8 +318,8 @@ function displayFirmDetail(firm) {
                                 <div style="font-size: 0.6rem; font-weight: 600; color: #1a1a1a;">${firm.employees}</div>
                             </div>
                             <div style="padding: 0.25rem; border-radius: 4px; background: #f8f9fa;">
-                                <div style="font-size: 0.45rem; color: #666; margin-bottom: 0.1rem;">AUM</div>
-                                <div style="font-size: 0.6rem; font-weight: 600; color: #1a1a1a;">${escapeHtml(firm.aum)}</div>
+                                <div style="font-size: 0.45rem; color: #666; margin-bottom: 0.1rem;">${escapeHtml(scaleMetric.label)}</div>
+                                <div style="font-size: 0.6rem; font-weight: 600; color: #1a1a1a;">${escapeHtml(scaleMetric.value)}</div>
                             </div>
                         </div>
                     </div>
@@ -429,8 +432,8 @@ function displayFirmDetail(firm) {
                             <div style="font-size: 0.45rem; color: #1e40af; font-weight: 600;">Founded</div>
                         </div>
                         <div style="padding: 0.4rem; background: linear-gradient(135deg, #faf5ff, #f3e8ff); border-radius: 6px; text-align: center; border: 1px solid #d8b4fe;">
-                            <div style="font-size: 0.7rem; font-weight: 800; color: #4c1d95; margin-bottom: 0.2rem;">${escapeHtml(firm.aum)}</div>
-                            <div style="font-size: 0.45rem; color: #4c1d95; font-weight: 600;">Assets Under Management</div>
+                            <div style="font-size: 0.7rem; font-weight: 800; color: #4c1d95; margin-bottom: 0.2rem;">${escapeHtml(scaleMetric.value)}</div>
+                            <div style="font-size: 0.45rem; color: #4c1d95; font-weight: 600;">${escapeHtml(scaleMetric.label)}</div>
                         </div>
                         <div style="padding: 0.4rem; background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-radius: 6px; text-align: center; border: 1px solid #bbf7d0;">
                             <div style="font-size: 0.7rem; font-weight: 800; color: #059669; margin-bottom: 0.2rem;">${firm.employees}</div>

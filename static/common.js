@@ -33,10 +33,34 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, observerOptions);
+    function revealIfInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        const margin = 80;
+        if (rect.top < window.innerHeight - margin && rect.bottom > margin) {
+            el.classList.add('revealed');
+        }
+    }
+
     document.querySelectorAll('.scroll-reveal, .scroll-reveal-item').forEach(function(el) {
+        revealIfInViewport(el);
         observer.observe(el);
     });
 });
+
+/** Scale metric for firm cards (AUM vs portfolio sales / NAV for listed cos). */
+window.getFirmScaleMetric = function (firm) {
+    if (!firm) return { label: 'AUM', value: '—', icon: 'fa-dollar-sign' };
+    const label = (firm.aum_label || '').trim();
+    const value = (firm.aum || '—').trim();
+    if (label) {
+        const icon = /nav|sales|revenue/i.test(label) ? 'fa-chart-line' : 'fa-dollar-sign';
+        return { label: label, value: value, icon: icon };
+    }
+    if ((firm.name || '') === 'Ratos') {
+        return { label: 'Portfolio net sales', value: value, icon: 'fa-chart-line' };
+    }
+    return { label: 'AUM', value: value, icon: 'fa-dollar-sign' };
+};
 
 
 // Utility functions available globally

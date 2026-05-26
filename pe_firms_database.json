@@ -3757,7 +3757,8 @@
       "website": "https://www.ratos.com",
       "headquarters": "Stockholm, Sweden",
       "founded": 1866,
-      "aum": "SEK 19 billion net sales (portfolio)",
+      "aum": "~SEK 19B",
+      "aum_label": "Portfolio net sales",
       "employees": "90+",
       "offices": [
         "Stockholm"

@@ -64,6 +64,10 @@ function displayFirms(firms) {
         const faviconLogo = overrideDomain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(overrideDomain)}&sz=128` : '';
         const avatarLogo = `https://ui-avatars.com/api/?name=${encodeURIComponent(firm.name)}&background=3f7de8&color=ffffff&size=128`;
         
+        const scale = typeof getFirmScaleMetric === 'function'
+            ? getFirmScaleMetric(firm)
+            : { label: 'AUM', value: firm.aum, icon: 'fa-dollar-sign' };
+
         card.innerHTML = `
             <div class="pe-firm-card-header">
                 <img src="${clearbitLogo || faviconLogo || avatarLogo}" alt="${escapeHtml(firm.name)}" class="pe-firm-logo"
@@ -85,9 +89,9 @@ function displayFirms(firms) {
                         <i class="fas fa-calendar"></i>
                         <span>Est. ${firm.founded}</span>
                     </div>
-                    <div class="stat-item-inline">
-                        <i class="fas fa-dollar-sign"></i>
-                        <span>${escapeHtml(firm.aum)}</span>
+                    <div class="stat-item-inline" title="${escapeHtml(scale.label)}">
+                        <i class="fas ${scale.icon}"></i>
+                        <span>${escapeHtml(scale.value)}</span>
                     </div>
                 </div>
                 
