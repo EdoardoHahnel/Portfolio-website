@@ -128,7 +128,7 @@
     box-shadow: 0 8px 24px rgba(63, 125, 232, 0.15);
 }
 
-/* Homepage Nordic PE Firms — 12-card grid fills the section */
+/* Homepage Nordic private equity firms — 12-card grid fills the section */
 #peFirmsGrid.pe-firms-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
 }
@@ -155,6 +155,120 @@
 /* Smoother scroll reveal */
 .scroll-reveal-item {
     transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Social proof — above coverage metrics */
+.pe-social-proof {
+    margin: 0 0 1rem 0;
+    padding: 1px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(63, 125, 232, 0.45) 0%, rgba(124, 58, 237, 0.35) 50%, rgba(37, 99, 235, 0.4) 100%);
+    box-shadow: 0 8px 32px rgba(63, 125, 232, 0.12);
+}
+.pe-social-proof-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.35rem;
+    padding: 1rem 1.25rem;
+    border-radius: 13px;
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 55%, #f1f5f9 100%);
+}
+.pe-social-proof-stat {
+    flex-shrink: 0;
+    text-align: left;
+    min-width: 5.5rem;
+}
+.pe-social-proof-number {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    background: linear-gradient(135deg, #1d4ed8 0%, #4f46e5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.pe-social-proof-stat-label {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #64748b;
+}
+.pe-social-proof-body {
+    flex: 1;
+    min-width: 200px;
+}
+.pe-social-proof-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin: 0 0 0.4rem 0;
+    padding: 0.2rem 0.55rem;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #047857;
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    border-radius: 999px;
+}
+.pe-social-proof-eyebrow i {
+    font-size: 0.6rem;
+}
+.pe-social-proof-headline {
+    margin: 0 0 0.35rem 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.35;
+}
+.pe-social-proof-sub {
+    margin: 0;
+    font-size: 0.78rem;
+    color: #64748b;
+    line-height: 1.45;
+    max-width: 36rem;
+}
+.pe-social-proof-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    width: 100%;
+    margin-top: 0.15rem;
+    padding-top: 0.65rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.2);
+}
+.pe-social-proof-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.65rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #334155;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 999px;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+.pe-social-proof-chip i {
+    font-size: 0.7rem;
+    color: #3f7de8;
+}
+@media (max-width: 640px) {
+    .pe-social-proof-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+    .pe-social-proof-stat { width: 100%; }
+    .pe-social-proof-chips { padding-top: 0.5rem; }
 }
 
 /* Hero entrance - fade up on load */
@@ -596,7 +710,7 @@
                         <span class="pe-signup-headline">6 months free</span>
                         <span class="pe-signup-headline-muted"> — full platform access when you sign up</span>
                     </div>
-                    <span class="pe-signup-desc">PE firms · 400+ companies · Fundraisings · News · No credit card</span>
+                    <span class="pe-signup-desc">Private equity investors · 400+ companies · Fundraisings · News · No credit card</span>
                 </div>
             </div>
             <form class="pe-signup-form-pill" action="/forum/platform-signup" method="post">
@@ -609,10 +723,10 @@
 
 <section class="pe-hero">
     <div class="pe-hero-eyebrow">Private Markets Intelligence</div>
-    <h1 class="pe-hero-title">The Nordic PE <span>Operating Dashboard</span></h1>
-    <p class="pe-hero-subtitle">Track firms, portfolio companies, fundraising activity, and market-moving news in one platform.</p>
+    <h1 class="pe-hero-title">The Nordic Private Equity <span>Operating Dashboard</span></h1>
+    <p class="pe-hero-subtitle">Track investors, portfolio companies, fundraising activity, and market-moving news in one platform.</p>
     <div class="pe-hero-actions">
-        <a href="/pe-firms" class="pe-cta pe-cta-primary">Explore PE Firms</a>
+        <a href="/pe-firms" class="pe-cta pe-cta-primary">Explore Investors</a>
         <a href="/portfolio" class="pe-cta pe-cta-secondary">View Portfolio Companies</a>
     </div>
 </section>
@@ -643,12 +757,31 @@
                 <h2 class="pe-showcase-financials-title">Explore Belid Lighting Group</h2>
                 <p class="pe-showcase-financials-desc">
                     A Scandinavian lighting platform <strong>owned by Accent Equity</strong>, with the VI fund entering in <strong>2018</strong>.
-                    Jump in for PE context, holdings history, and a full <strong>Financials</strong> pack we’ve opened for everyone on this company.
+                    Jump in for private equity context, holdings history, and a full <strong>Financials</strong> pack we’ve opened for everyone on this company.
                 </p>
             </div>
         </div>
         <span class="pe-showcase-financials-cta">Profile &amp; financials <i class="fas fa-arrow-right"></i></span>
     </a>
+</section>
+
+<section class="pe-social-proof scroll-reveal revealed" aria-label="Social proof">
+    <div class="pe-social-proof-inner">
+        <div class="pe-social-proof-stat">
+            <span class="pe-social-proof-number">1,500+</span>
+            <span class="pe-social-proof-stat-label">Active users</span>
+        </div>
+        <div class="pe-social-proof-body">
+            <span class="pe-social-proof-eyebrow"><i class="fas fa-circle-check" aria-hidden="true"></i> Trusted across the Nordics</span>
+            <p class="pe-social-proof-headline">The go-to workspace for Nordic private equity research</p>
+            <p class="pe-social-proof-sub">Join professionals, analysts and students who rely on Portföljbolagen to map investors, track portfolio companies, and follow deal flow — without jumping between spreadsheets and news tabs.</p>
+        </div>
+        <div class="pe-social-proof-chips">
+            <span class="pe-social-proof-chip"><i class="fas fa-briefcase" aria-hidden="true"></i> Professionals</span>
+            <span class="pe-social-proof-chip"><i class="fas fa-chart-line" aria-hidden="true"></i> Analysts</span>
+            <span class="pe-social-proof-chip"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Students</span>
+        </div>
+    </div>
 </section>
 
 <section class="pe-metric-grid scroll-reveal">
@@ -665,14 +798,14 @@
     <a href="/pe-firms" class="pe-metric-card scroll-reveal-item">
         <div class="pe-metric-kicker">Manager Universe</div>
         <div class="pe-metric-value counter-animate" id="managerUniverseCount" data-target="28">0</div>
-        <div class="pe-metric-label">Nordic PE Firms</div>
+        <div class="pe-metric-label">Nordic Private Equity Firms</div>
     </a>
 </section>
 
 <section class="content-card scroll-reveal">
     <div class="content-card-header">
-        <h2 class="content-card-title"><i class="fas fa-building"></i>Nordic PE Firms</h2>
-        <a href="/pe-firms" class="btn btn-secondary btn-sm">See All Firms</a>
+        <h2 class="content-card-title"><i class="fas fa-building"></i>Nordic Private Equity Firms</h2>
+        <a href="/pe-firms" class="btn btn-secondary btn-sm">See All Investors</a>
     </div>
     <div class="content-card-body">
         <div id="peFirmsGrid" class="pe-firms-grid"></div>
@@ -722,7 +855,7 @@
     </div>
 </section>
 
-<!-- Trending Case Studies - compact strip before PE Firms -->
+<!-- Trending Case Studies - compact strip -->
 <section class="pe-trending-compact scroll-reveal">
     <div class="pe-trending-header">
         <span class="pe-trending-label"><i class="fas fa-fire"></i> Trending</span>
@@ -756,7 +889,7 @@
             </span>
             <span class="pe-trending-chip-body">
                 <span class="pe-trending-chip-title">HL Display</span>
-                <span class="pe-trending-chip-desc">Case study: Buy-and-build in Nordic PE (SSE thesis)</span>
+                <span class="pe-trending-chip-desc">Case study: Buy-and-build in Nordic private equity (SSE thesis)</span>
             </span>
         </a>
         <a class="pe-trending-chip" href="/case-study/eqt" title="EQT – Responsible business & Anticimex case study">

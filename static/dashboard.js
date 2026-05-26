@@ -114,15 +114,33 @@ async function loadStats() {
     try {
         const response = await fetch('/api/analytics/summary');
         const data = await response.json();
-        
-        if (data.success) {
-            document.getElementById('totalCompanies').textContent = data.summary.total_companies || 349;
-            document.getElementById('totalNews').textContent = data.summary.total_news || 50;
-            const muEl = document.getElementById('managerUniverseCount');
-            if (muEl && data.summary.total_pe_firms) {
-                muEl.textContent = data.summary.total_pe_firms;
-                muEl.setAttribute('data-target', data.summary.total_pe_firms);
+        let newsCount = null;
+
+        try {
+            const newsResp = await fetch('/api/investment-news');
+            const newsData = await newsResp.json();
+            if (newsData.success && typeof newsData.count === 'number') {
+                newsCount = newsData.count;
             }
+        } catch (_) {}
+
+        if (data.success) {
+            const companies = data.summary.total_companies || 349;
+            const firms = data.summary.total_pe_firms || 28;
+            const news = newsCount != null ? newsCount : (data.summary.total_news || 50);
+
+            function setCounterEl(id, value) {
+                const el = document.getElementById(id);
+                if (!el) return;
+                el.setAttribute('data-target', String(value));
+                if (!el.classList.contains('counted')) {
+                    el.textContent = '0';
+                }
+            }
+
+            setCounterEl('totalCompanies', companies);
+            setCounterEl('totalNews', news);
+            setCounterEl('managerUniverseCount', firms);
         }
     } catch (error) {
         console.error('Error loading stats:', error);
