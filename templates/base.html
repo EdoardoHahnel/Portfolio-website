@@ -70,7 +70,28 @@
                     </li>
                 </ul>
             </div>
-            
+            <div class="pe-nav-end" aria-label="Site search">
+                <div class="pe-global-search" id="peGlobalSearch">
+                    <div class="pe-global-search-field">
+                        <i class="fas fa-search pe-global-search-icon" aria-hidden="true"></i>
+                        <input
+                            type="search"
+                            class="pe-global-search-input"
+                            id="peGlobalSearchInput"
+                            placeholder="Search investors & companies…"
+                            autocomplete="off"
+                            spellcheck="false"
+                            aria-label="Search investors and portfolio companies"
+                            aria-expanded="false"
+                            aria-controls="peGlobalSearchDropdown"
+                            aria-autocomplete="list"
+                            enterkeyhint="search"
+                        >
+                        <kbd class="pe-global-search-hint" aria-hidden="true">/</kbd>
+                    </div>
+                    <div class="pe-global-search-dropdown" id="peGlobalSearchDropdown" role="listbox" hidden></div>
+                </div>
+            </div>
         </div>
     </nav>
     <div class="pe-mobile-overlay" id="peMobileOverlay" aria-hidden="true"></div>
@@ -126,8 +147,10 @@
         </footer>
     </main>
     
-    <script src="{{ url_for('static', filename='common.js') }}"></script>
-    <script src="{{ url_for('static', filename='news_ticker.js') }}"></script>
+    <script>window.PE_SEARCH_INDEX_URL = "{{ url_for('static', filename='search-index.json') }}?v={{ static_version|default('1') }}";</script>
+    <script src="{{ url_for('static', filename='common.js') }}?v={{ static_version|default('1') }}"></script>
+    <script src="{{ url_for('static', filename='news_ticker.js') }}?v={{ static_version|default('1') }}"></script>
+    <script src="{{ url_for('static', filename='global_search.js') }}?v={{ static_version|default('1') }}"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function () {
         const toggle = document.getElementById('peMobileMenuToggle');
@@ -135,10 +158,6 @@
         const overlay = document.getElementById('peMobileOverlay');
         const closeBtn = document.getElementById('peMobileDrawerClose');
         if (!toggle || !drawer || !overlay || !closeBtn) return;
-
-        const isMobileWidth = function () {
-            return window.innerWidth <= 960;
-        };
 
         const setMenuOpen = function (open) {
             drawer.classList.toggle('is-open', open);
@@ -153,7 +172,7 @@
         };
 
         toggle.addEventListener('click', function () {
-            if (!isMobileWidth()) return;
+            if (window.innerWidth > 960) return;
             setMenuOpen(!drawer.classList.contains('is-open'));
         });
 
@@ -169,10 +188,10 @@
         });
 
         window.addEventListener('resize', function () {
-            if (window.innerWidth > 960) closeMenu();
+            if (window.innerWidth > 960 && drawer.classList.contains('is-open')) {
+                closeMenu();
+            }
         });
-
-        if (!isMobileWidth()) closeMenu();
     });
     </script>
     

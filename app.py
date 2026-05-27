@@ -135,10 +135,83 @@ _CURATED_PORTFOLIO_FIRM_SOURCES = frozenset({
 })
 
 
+def _enriched_curated_index(portfolio_storage_local):
+    """Lookup enriched rows for curated GP sources (financials live in portfolio_enriched)."""
+    by_name = {}
+    by_lower = {}
+    for company in portfolio_storage_local:
+        if company.get('source') not in _CURATED_PORTFOLIO_FIRM_SOURCES:
+            continue
+        name = (company.get('company') or '').strip()
+        if not name:
+            continue
+        by_name[name] = company
+        by_lower[name.lower()] = company
+    return by_name, by_lower
+
+
+def _has_uc_financials(company):
+    """True when portfolio_enriched has Belid-style UC tables."""
+    fin = company.get('financials') if company else None
+    return isinstance(fin, dict) and bool(fin.get('tables'))
+
+
+def _normalize_enriched_company_row(company, firm_name=None):
+    """Standardize a portfolio_enriched row for API / templates."""
+    c = dict(company)
+    if firm_name:
+        c['source'] = firm_name
+    if c.get('entry'):
+        c['entry'] = _normalize_portfolio_entry_year(c['entry'])
+    if not c.get('description') and c.get('detailed_description'):
+        c['description'] = c['detailed_description']
+    if not c.get('logo_url') and c.get('logo'):
+        c['logo_url'] = c['logo']
+    return c
+
+
+def _overlay_enriched_onto_row(row, enriched):
+    """Merge Allabolag financials and metrics from portfolio_enriched onto a PE-firms row."""
+    if not enriched:
+        return row
+    if _has_uc_financials(enriched):
+        out = _normalize_enriched_company_row(enriched, row.get('source'))
+        out['company'] = out.get('company') or row.get('company')
+        for key in ('sector', 'market', 'fund', 'status', 'website', 'headquarters', 'deal_size', 'geography'):
+            if not out.get(key) and row.get(key):
+                out[key] = row[key]
+        return out
+    out = dict(row)
+    for key in (
+        'financials', 'metrics_source', 'metrics_url', 'revenue',
+        'headquarters', 'website', 'logo_url', 'logo', 'employees',
+    ):
+        val = enriched.get(key)
+        if val:
+            out[key] = val
+    if enriched.get('detailed_description'):
+        out['detailed_description'] = enriched['detailed_description']
+        if not out.get('description'):
+            out['description'] = enriched['detailed_description']
+    return out
+
+
+def _fresh_portfolio_list():
+    """Always read latest companies from portfolio_enriched.json."""
+    if os.path.exists(data_path('portfolio_enriched.json')):
+        try:
+            with open(data_path('portfolio_enriched.json'), 'r', encoding='utf-8') as f:
+                return json.load(f).get('companies', [])
+        except Exception:
+            pass
+    return list(portfolio_storage)
+
+
 def _merged_portfolio_companies(portfolio_storage_local=None):
     """
     Same company list as GET /api/portfolio: enriched companies except curated sources,
     plus portfolio_companies from pe_firms_database for those sources.
+    Curated rows are overlaid with portfolio_enriched (financials, metrics, revenue).
     Used so /api/company/<slug> resolves the same row the portfolio table shows.
     """
     if portfolio_storage_local is None:
@@ -149,7 +222,10 @@ def _merged_portfolio_companies(portfolio_storage_local=None):
         else:
             portfolio_storage_local = list(portfolio_storage)
 
+    enriched_by_name, enriched_by_lower = _enriched_curated_index(portfolio_storage_local)
     final_companies = []
+    seen_curated = set()
+
     for company in portfolio_storage_local:
         if company.get('source') not in _CURATED_PORTFOLIO_FIRM_SOURCES:
             c = dict(company)
@@ -170,7 +246,32 @@ def _merged_portfolio_companies(portfolio_storage_local=None):
                     firm_metadata = pe_firms[firm_name]
                     if firm_metadata.get('portfolio_companies'):
                         for pc in firm_metadata['portfolio_companies']:
-                            final_companies.append(company_dict_from_pe_firms_portfolio_pc(pc, firm_name))
+                            row = company_dict_from_pe_firms_portfolio_pc(pc, firm_name)
+                            name = (row.get('company') or '').strip()
+                            enriched = enriched_by_name.get(name) or enriched_by_lower.get(name.lower())
+                            row = _overlay_enriched_onto_row(row, enriched)
+                            final_companies.append(row)
+                            seen_curated.add((name, firm_name))
+
+    # Enriched-only curated companies (e.g. scraped financials not yet in pe_firms list)
+    for company in portfolio_storage_local:
+        if company.get('source') not in _CURATED_PORTFOLIO_FIRM_SOURCES:
+            continue
+        name = (company.get('company') or '').strip()
+        source = company.get('source') or ''
+        if (name, source) in seen_curated:
+            continue
+        if not company.get('financials'):
+            continue
+        c = dict(company)
+        if c.get('entry'):
+            c['entry'] = _normalize_portfolio_entry_year(c['entry'])
+        if not c.get('description') and c.get('detailed_description'):
+            c['description'] = c['detailed_description']
+        if not c.get('logo_url') and c.get('logo'):
+            c['logo_url'] = c['logo']
+        final_companies.append(c)
+
     return final_companies
 
 
@@ -220,12 +321,48 @@ init_forum_db()
 app.register_blueprint(forum_bp)
 
 
+_search_firms_embed_cache = None
+
+
+def _embedded_search_firms():
+    """Small firm list embedded in HTML so GP search works without a large API fetch."""
+    global _search_firms_embed_cache
+    if _search_firms_embed_cache is not None:
+        return _search_firms_embed_cache
+    from urllib.parse import quote
+
+    firms = []
+    try:
+        with open(data_path('pe_firms_database.json'), 'r', encoding='utf-8') as f:
+            pe_firms = json.load(f).get('pe_firms', {})
+        for key, firm in pe_firms.items():
+            name = (firm.get('name') or key).strip()
+            hq = (firm.get('headquarters') or '').strip()
+            fo = firm.get('investment_focus')
+            if isinstance(fo, dict):
+                sectors = ' '.join(fo.get('sectors') or [])
+            else:
+                sectors = str(fo or '')
+            firms.append({
+                'type': 'firm',
+                'name': name,
+                'subtitle': hq or 'Private equity investor',
+                'url': f'/pe-firm/{quote(key)}',
+                'logo_domain': _firm_logo_domain(key, firm),
+                'search': f'{key} {name} {hq} {sectors}'.lower(),
+            })
+    except Exception as e:
+        print(f'Embedded search firms error: {e}')
+    _search_firms_embed_cache = firms
+    return firms
+
+
 @app.context_processor
-def _inject_current_year():
-    """Inject current year for footer copyright."""
+def _inject_template_globals():
+    """Inject shared template variables (footer year, asset cache bust)."""
     return {
         'current_year': datetime.now().year,
-        'static_version': os.environ.get('STATIC_VERSION', '20260525b'),
+        'static_version': os.environ.get('STATIC_VERSION', '20260527e'),
     }
 
 
@@ -298,9 +435,18 @@ def dcf_lbo():
 @app.route('/company/<company_slug>')
 def company_detail(company_slug):
     """
-    Individual company detail page
+    Individual company detail page — embed company JSON server-side so financials
+    render even if the client API fetch is cached or the dev server was not restarted.
     """
-    return render_template('company_detail.html', company_slug=company_slug)
+    import urllib.parse
+    company, smart = _resolve_company_by_slug(urllib.parse.unquote(company_slug))
+    return render_template(
+        'company_detail.html',
+        company_slug=company_slug,
+        initial_company=company,
+        initial_similar=(smart or {}).get('similar_companies', []),
+        initial_sibling=(smart or {}).get('sibling_companies', []),
+    )
 
 
 @app.route('/pe-firms')
@@ -839,11 +985,8 @@ def get_portfolio():
     global portfolio_storage
     try:
         # Always reload from file to ensure fresh data (no restart needed)
-        if os.path.exists(data_path('portfolio_enriched.json')):
-            with open(data_path('portfolio_enriched.json'), 'r', encoding='utf-8') as f:
-                data = json.load(f)
-                portfolio_storage = data.get('companies', [])
-        elif not portfolio_storage:
+        portfolio_storage = _fresh_portfolio_list()
+        if not portfolio_storage:
             # Try enriched database first
             if os.path.exists(data_path('portfolio_enriched.json')):
                 with open(data_path('portfolio_enriched.json'), 'r', encoding='utf-8') as f:
@@ -961,6 +1104,304 @@ def search_portfolio():
     })
 
 
+def _search_relevance(query, *fields):
+    """Higher score = better match."""
+    q = query.lower()
+    score = 0
+    for raw in fields:
+        text = (raw or '').lower().strip()
+        if not text:
+            continue
+        if text == q:
+            score = max(score, 100)
+        elif text.startswith(q):
+            score = max(score, 80)
+        elif q in text:
+            score = max(score, 50)
+    return score
+
+
+_COMPANY_SEARCH_DOMAIN_OVERRIDES = {
+    'Apoteka': 'apoteka.dk',
+    'Auntie': 'auntie.io',
+    'Bellman Group': 'bellmangroup.se',
+    'Cleanwatts': 'cleanwattsdigital.com',
+    'Educations Media Group': 'educations.com',
+    'Fashion Cloud': 'fashion.cloud',
+    'Fiksuruoka': 'fiksuruoka.fi',
+    'HappyOrNot': 'happyornot.fi',
+    'InnoNature': 'innonature.de',
+    'Instabee (Instabox)': 'instabee.com',
+    'Kravia': 'kravia.com',
+    'Once Upon': 'onceupon.photo',
+    'Porterbuddy': 'instabee.com',
+    'Press Ganey / Forsta': 'pressganey.com',
+    'Purity': 'puritysoftdrinks.co.uk',
+    'TOPRO': 'topro.no',
+    'premiumXL': 'premiumxl.de',
+}
+
+_company_domain_overrides_cache = None
+
+
+def _load_company_domain_overrides():
+    """Merged overrides from portfolio.js (company_domain_overrides.json)."""
+    global _company_domain_overrides_cache
+    if _company_domain_overrides_cache is not None:
+        return _company_domain_overrides_cache
+    merged = dict(_COMPANY_SEARCH_DOMAIN_OVERRIDES)
+    overrides_path = data_path('company_domain_overrides.json')
+    if os.path.exists(overrides_path):
+        try:
+            with open(overrides_path, 'r', encoding='utf-8') as f:
+                merged.update(json.load(f))
+        except Exception as e:
+            print(f'Company domain overrides load error: {e}')
+    _company_domain_overrides_cache = merged
+    return merged
+
+
+def _lookup_company_domain(name):
+    if not name:
+        return ''
+    overrides = _load_company_domain_overrides()
+    if name in overrides:
+        return overrides[name]
+    name_lower = name.lower()
+    for key, domain in overrides.items():
+        if key.lower() == name_lower:
+            return domain
+    return ''
+
+
+def _domain_from_logo_url(logo):
+    logo = (logo or '').strip()
+    if 'logo.clearbit.com/' in logo:
+        return logo.split('logo.clearbit.com/')[-1].split('/')[0].split('?')[0].replace('www.', '')
+    if 'domain=' in logo:
+        from urllib.parse import urlparse, parse_qs
+        qs = parse_qs(urlparse(logo).query)
+        dom = (qs.get('domain') or [''])[0]
+        if dom:
+            return dom.replace('www.', '')
+    return ''
+
+
+def _favicon_url(domain, size=64):
+    if not domain:
+        return ''
+    return f'https://www.google.com/s2/favicons?domain={domain}&sz={size}'
+
+
+def _company_logo_domain(c):
+    name = (c.get('company') or '').strip()
+    domain = _lookup_company_domain(name)
+    if domain:
+        return domain
+    website = (c.get('website') or '').strip()
+    if website:
+        try:
+            host = website.replace('https://', '').replace('http://', '').split('/')[0]
+            return host.replace('www.', '')
+        except Exception:
+            pass
+    return _domain_from_logo_url(c.get('logo_url') or c.get('logo') or '')
+
+
+def _firm_logo_domain(firm_name, firm_data):
+    website = (firm_data.get('website') or '').strip()
+    if website:
+        try:
+            host = website.replace('https://', '').replace('http://', '').split('/')[0]
+            return host.replace('www.', '')
+        except Exception:
+            pass
+    logo = (firm_data.get('logo_url') or '').strip()
+    if 'logo.clearbit.com/' in logo:
+        return logo.split('logo.clearbit.com/')[-1].split('/')[0].replace('www.', '')
+    return ''
+
+
+_search_index_cache = None
+
+
+def _build_global_search_index():
+    """Build lightweight search index for client-side filtering."""
+    from urllib.parse import quote
+
+    firms = []
+    try:
+        with open(data_path('pe_firms_database.json'), 'r', encoding='utf-8') as f:
+            pe_firms = json.load(f).get('pe_firms', {})
+        for key, firm in pe_firms.items():
+            name = (firm.get('name') or key).strip()
+            hq = (firm.get('headquarters') or '').strip()
+            fo = firm.get('investment_focus')
+            if isinstance(fo, dict):
+                sectors = ' '.join(fo.get('sectors') or [])
+            else:
+                sectors = str(fo or '')
+            logo_domain = _firm_logo_domain(key, firm)
+            firms.append({
+                'type': 'firm',
+                'name': name,
+                'subtitle': hq or 'Private equity investor',
+                'url': f'/pe-firm/{quote(key)}',
+                'logo_domain': logo_domain,
+                'logo_url': firm.get('logo_url') or '',
+                'logo_favicon': _favicon_url(logo_domain),
+                'search': f'{key} {name} {hq} {sectors}'.lower(),
+            })
+    except Exception as e:
+        print(f'Search index firms error: {e}')
+
+    companies = []
+    for c in _merged_portfolio_companies():
+        name = (c.get('company') or '').strip()
+        if not name:
+            continue
+        slug = _company_slug(c)
+        if not slug:
+            continue
+        source = (c.get('source') or '').strip()
+        sector = (c.get('sector') or '').strip()
+        market = (c.get('market') or '').strip()
+        subtitle_parts = [p for p in [source, sector] if p]
+        logo_domain = _company_logo_domain(c)
+        raw_logo = (c.get('logo_url') or c.get('logo') or '').strip()
+        direct_logo = raw_logo if raw_logo and 'logo.clearbit.com' not in raw_logo and 'ui-avatars.com' not in raw_logo else ''
+        companies.append({
+            'type': 'company',
+            'name': name,
+            'subtitle': ' · '.join(subtitle_parts) if subtitle_parts else 'Portfolio company',
+            'url': f'/company/{slug}',
+            'logo_domain': logo_domain,
+            'logo_url': direct_logo,
+            'logo_favicon': _favicon_url(logo_domain),
+            'search': f'{name} {source} {sector} {market}'.lower(),
+        })
+
+    return {'firms': firms, 'companies': companies}
+
+
+def _refresh_search_index_file():
+    """Write static/search-index.json for client-side search (no /api/ fetch)."""
+    try:
+        idx = _build_global_search_index()
+        items = idx['firms'] + idx['companies']
+        path = os.path.join(BASE_DIR, 'static', 'search-index.json')
+        with open(path, 'w', encoding='utf-8') as f:
+            json.dump(items, f, ensure_ascii=False)
+        print(f'Search index: {len(items)} items -> static/search-index.json')
+        return len(items)
+    except Exception as e:
+        print(f'Search index write error: {e}')
+        return 0
+
+
+@app.route('/api/global-search-index', methods=['GET'])
+def global_search_index():
+    """Full search index for client-side typeahead (loaded once per page)."""
+    global _search_index_cache
+    try:
+        if _search_index_cache is None:
+            _search_index_cache = _build_global_search_index()
+        return jsonify({
+            'success': True,
+            'firms': _search_index_cache['firms'],
+            'companies': _search_index_cache['companies'],
+        })
+    except Exception as e:
+        print(f'Search index error: {e}')
+        return jsonify({'success': False, 'message': str(e)}), 500
+
+
+@app.route('/api/global-search', methods=['GET'])
+def global_search():
+    """
+    Unified search across PE firms (GPs) and portfolio companies.
+    Example: /api/global-search?q=verdane
+    """
+    from urllib.parse import quote
+
+    query = (request.args.get('q') or '').strip()
+    q_lower = query.lower()
+    try:
+        limit = min(max(int(request.args.get('limit', 12)), 1), 24)
+    except (TypeError, ValueError):
+        limit = 12
+
+    if len(q_lower) < 2:
+        return jsonify({'success': True, 'query': query, 'results': []})
+
+    results = []
+
+    try:
+        with open(data_path('pe_firms_database.json'), 'r', encoding='utf-8') as f:
+            pe_firms = json.load(f).get('pe_firms', {})
+        for key, firm in pe_firms.items():
+            name = (firm.get('name') or key).strip()
+            hq = (firm.get('headquarters') or '').strip()
+            fo = firm.get('investment_focus')
+            if isinstance(fo, dict):
+                sectors_text = ' '.join(fo.get('sectors') or [])
+            else:
+                sectors_text = str(fo or '')
+            score = _search_relevance(q_lower, key, name, hq, sectors_text)
+            if score <= 0:
+                continue
+            domain = _firm_logo_domain(key, firm)
+            subtitle = hq or 'Private equity investor'
+            if key.lower() != name.lower() and q_lower in key.lower():
+                subtitle = f'{subtitle} · {key}' if subtitle else key
+            results.append({
+                'type': 'firm',
+                'name': name,
+                'subtitle': subtitle,
+                'url': f'/pe-firm/{quote(key)}',
+                'logo_domain': domain,
+                'logo_url': firm.get('logo_url') or '',
+                'score': score + 5,
+            })
+    except Exception as e:
+        print(f'Global search firms error: {e}')
+
+    companies = _merged_portfolio_companies()
+    for c in companies:
+        name = (c.get('company') or '').strip()
+        source = (c.get('source') or '').strip()
+        sector = (c.get('sector') or '').strip()
+        market = (c.get('market') or '').strip()
+        score = _search_relevance(q_lower, name, source, sector, market)
+        if score <= 0:
+            continue
+        slug = _company_slug(c)
+        if not slug:
+            continue
+        subtitle_parts = [p for p in [source, sector] if p]
+        results.append({
+            'type': 'company',
+            'name': name,
+            'subtitle': ' · '.join(subtitle_parts) if subtitle_parts else 'Portfolio company',
+            'url': f'/company/{slug}',
+            'logo_domain': _company_logo_domain(c),
+            'logo_url': c.get('logo_url') or c.get('logo') or '',
+            'score': score,
+        })
+
+    results.sort(key=lambda r: (-r['score'], 0 if r['type'] == 'firm' else 1, r['name'].lower()))
+    trimmed = results[:limit]
+    for r in trimmed:
+        r.pop('score', None)
+
+    return jsonify({
+        'success': True,
+        'query': query,
+        'count': len(trimmed),
+        'results': trimmed,
+    })
+
+
 @app.route('/api/portfolio/reload', methods=['POST'])
 def reload_portfolio():
     """
@@ -1065,14 +1506,11 @@ def get_pe_firm_detail(firm_name):
 
                 firm_metadata = pe_firms.get(canonical_firm_name, {})
 
-                # For selected firms with curated portfolio_companies, prioritize curated records.
-                # Keep Altor and Adelis Equity on enriched source to preserve stronger company logo/website coverage.
+                # Curated firms: PE-firms list + financials overlay from portfolio_enriched (see _merged_portfolio_companies).
                 curated_firms = ['Polaris', 'FSN Capital', 'Nordstjernan', 'Valedo Partners', 'IK Partners', 'Fidelio Capital']
-                if canonical_firm_name in curated_firms and firm_metadata.get('portfolio_companies'):
-                    for pc in firm_metadata['portfolio_companies']:
-                        firm_companies.append(
-                            company_dict_from_pe_firms_portfolio_pc(pc, canonical_firm_name)
-                        )
+                if canonical_firm_name in curated_firms:
+                    merged = _merged_portfolio_companies()
+                    firm_companies = [c for c in merged if c.get('source') == canonical_firm_name]
 
         # Fallback: build firm companies from enriched portfolio using canonical name
         if not firm_companies and os.path.exists(data_path('portfolio_enriched.json')):
@@ -1151,8 +1589,35 @@ def get_pe_firm_detail(firm_name):
                 'company_count': len(firm_companies),
                 'real_news': real_news[:10],  # Latest 10 news items
                 'total_news_count': len(real_news),
-                **firm_metadata  # Add any metadata from database
+                **{k: v for k, v in firm_metadata.items() if k != 'portfolio_companies'},
             }
+            # Use merged portfolio rows (incl. Allabolag financials), not raw pe_firms stubs
+            if firm_companies:
+                firm_data['portfolio_companies'] = [
+                    {
+                        'name': c.get('company'),
+                        'company': c.get('company'),
+                        'sector': c.get('sector'),
+                        'country': c.get('market'),
+                        'fund': c.get('fund'),
+                        'description': c.get('description'),
+                        'detailed_description': c.get('detailed_description'),
+                        'entry_year': c.get('entry'),
+                        'status': c.get('status'),
+                        'logo': c.get('logo_url') or c.get('logo'),
+                        'logo_url': c.get('logo_url') or c.get('logo'),
+                        'headquarters': c.get('headquarters'),
+                        'revenue': c.get('revenue'),
+                        'employees': c.get('employees'),
+                        'website': c.get('website'),
+                        'metrics_source': c.get('metrics_source'),
+                        'metrics_url': c.get('metrics_url'),
+                        'financials': c.get('financials'),
+                    }
+                    for c in firm_companies
+                ]
+            elif firm_metadata.get('portfolio_companies'):
+                firm_data['portfolio_companies'] = firm_metadata['portfolio_companies']
             # When firm has curated company_updates or recent_activity, Overview uses those;
             # do not send real_news so Overview Recent Activity shows formatCompanyUpdates or formatRecentActivity (year + bullets)
             if firm_data.get('company_updates') or firm_data.get('recent_activity'):
@@ -1663,162 +2128,139 @@ def _compute_smart_sections(company, all_companies):
     }
 
 
+def _prepare_company_for_response(c):
+    """Ensure logo_url is set (some records use 'logo' field)."""
+    out = dict(c)
+    if not out.get('logo_url') and out.get('logo'):
+        out['logo_url'] = out['logo']
+    return out
+
+
+def _normalize_company_slug(s):
+    import re
+    if not s:
+        return ''
+    s = s.lower().strip().replace('&', 'and')
+    s = re.sub(r'[^a-z0-9\s]', '', s)
+    return s.replace(' ', '-')
+
+
+def _normalize_company_slug_legacy(s):
+    if not s:
+        return ''
+    s = s.lower().strip().replace('&', 'and')
+    s = ''.join(c for c in s if c.isalnum() or c.isspace())
+    return s.replace(' ', '-')
+
+
+def _resolve_company_by_slug(company_slug):
+    """
+    Resolve portfolio company + smart sections by URL slug.
+    Returns (company_dict, smart_dict) or (None, None).
+    """
+    import urllib.parse
+    import re
+
+    decoded_slug = urllib.parse.unquote(company_slug or '')
+    norm_decoded = _normalize_company_slug(decoded_slug.replace('-', ' '))
+
+    port_list = _fresh_portfolio_list()
+    merged_companies = _merged_portfolio_companies(port_list)
+    enriched_by_name, enriched_by_lower = _enriched_curated_index(port_list)
+
+    def _return(company):
+        prepared = _prepare_company_for_response(company)
+        smart = _compute_smart_sections(prepared, merged_companies)
+        return prepared, smart
+
+    # Curated firms: prefer portfolio_enriched row when it has UC tables
+    for company in port_list:
+        if company.get('source') not in _CURATED_PORTFOLIO_FIRM_SOURCES:
+            continue
+        if not _has_uc_financials(company):
+            continue
+        slug_name = _normalize_company_slug(company.get('company', ''))
+        slug_source = _normalize_company_slug(company.get('source', ''))
+        expected = f"{slug_name}-{slug_source}" if slug_name and slug_source else ''
+        if norm_decoded == expected:
+            return _return(_normalize_enriched_company_row(company))
+
+    for company in merged_companies:
+        slug_name = _normalize_company_slug(company.get('company', ''))
+        slug_source = _normalize_company_slug(company.get('source', ''))
+        expected = f"{slug_name}-{slug_source}" if slug_name and slug_source else ''
+        if norm_decoded == expected:
+            return _return(company)
+
+    parts = decoded_slug.split('-')
+    company_name_match = ''
+    source_match = ''
+    if len(parts) >= 2:
+        source_match = '-'.join(parts[-2:]) if len(parts) >= 2 else parts[-1]
+        company_name_parts = parts[:-2] if len(parts) > 2 else [parts[0]]
+        company_name_match = ' '.join(company_name_parts)
+
+    for company in merged_companies:
+        slug_name = _normalize_company_slug(company.get('company', ''))
+        slug_source = _normalize_company_slug(company.get('source', ''))
+        expected = f"{slug_name}-{slug_source}" if slug_name and slug_source else ''
+        if norm_decoded == expected:
+            return _return(company)
+
+        slug_name_legacy = (company.get('company') or '').lower().replace(' ', '-').replace('&', 'and')
+        slug_source_legacy = (company.get('source') or '').lower().replace(' ', '-')
+        expected_legacy = f"{slug_name_legacy}-{slug_source_legacy}"
+        if decoded_slug.lower() == expected_legacy:
+            return _return(company)
+
+        if company_name_match and source_match:
+            company_name = (company.get('company') or '').lower()
+            source = (company.get('source') or '').lower()
+            if company_name_match.lower() in company_name and source_match.lower() in source:
+                return _return(company)
+
+    if os.path.exists(data_path('pe_firms_database.json')):
+        with open(data_path('pe_firms_database.json'), 'r', encoding='utf-8') as pf:
+            pe_data = json.load(pf)
+            pe_firms = pe_data.get('pe_firms', {})
+            for firm_name, firm_data in pe_firms.items():
+                if not firm_data.get('portfolio_companies'):
+                    continue
+                slug_firm = _normalize_company_slug_legacy(firm_name)
+                for pc in firm_data['portfolio_companies']:
+                    pc_slug = _normalize_company_slug_legacy(pc.get('name') or '')
+                    expected = f"{pc_slug}-{slug_firm}"
+                    norm_decoded_legacy = _normalize_company_slug_legacy(decoded_slug.replace('-', ' '))
+                    if decoded_slug.lower() == expected or norm_decoded_legacy == expected or (
+                        len(parts) >= 2 and company_name_match
+                        and _normalize_company_slug_legacy(company_name_match) in pc_slug
+                        and source_match.lower() in slug_firm
+                    ):
+                        company_data = company_dict_from_pe_firms_portfolio_pc(pc, firm_name)
+                        pc_name = (company_data.get('company') or '').strip()
+                        enriched = enriched_by_name.get(pc_name) or enriched_by_lower.get(pc_name.lower())
+                        company_data = _overlay_enriched_onto_row(company_data, enriched)
+                        return _return(company_data)
+
+    return None, None
+
+
 @app.route('/api/company/<company_slug>', methods=['GET'])
 def get_company_by_slug(company_slug):
-    """
-    Get a portfolio company by slug
-    """
+    """Get a portfolio company by slug."""
     try:
-        # Load portfolio data
-        if not portfolio_storage:
-            if os.path.exists(data_path('portfolio_enriched.json')):
-                with open(data_path('portfolio_enriched.json'), 'r', encoding='utf-8') as f:
-                    data = json.load(f)
-                    all_companies = data.get('companies', [])
-                    portfolio_storage.extend(all_companies)
-            elif os.path.exists(data_path('portfolio_complete.json')):
-                with open(data_path('portfolio_complete.json'), 'r', encoding='utf-8') as f:
-                    data = json.load(f)
-                    all_companies = []
-                    for firm_name, firm_data in data.get('pe_firms', {}).items():
-                        companies = firm_data.get('companies', [])
-                        for company in companies:
-                            company['source'] = firm_name
-                            all_companies.append(company)
-                    portfolio_storage.extend(all_companies)
-        
-        # Decode slug to find company (slug format: company-name-source)
         import urllib.parse
-        import re
-        decoded_slug = urllib.parse.unquote(company_slug)
-        
-        # Normalize slug to match frontend generateCompanySlug: strip non-alphanumeric, lowercase
-        def _normalize_slug(s):
-            if not s:
-                return ''
-            s = s.lower().strip().replace('&', 'and')
-            s = re.sub(r'[^a-z0-9\s]', '', s)
-            return s.replace(' ', '-')
-        
-        def _prepare_company_for_response(c):
-            """Ensure logo_url is set (some records use 'logo' field)"""
-            out = dict(c)
-            if not out.get('logo_url') and out.get('logo'):
-                out['logo_url'] = out['logo']
-            return out
-        
-        norm_decoded = _normalize_slug(decoded_slug.replace('-', ' '))
-
-        port_list = portfolio_storage
-        try:
-            if os.path.exists(data_path('portfolio_enriched.json')):
-                with open(data_path('portfolio_enriched.json'), 'r', encoding='utf-8') as f:
-                    port_list = json.load(f).get('companies', [])
-        except Exception:
-            port_list = portfolio_storage
-        merged_companies = _merged_portfolio_companies(port_list)
-
-        # 0. Same list as GET /api/portfolio (curated IK/Polaris/etc. rows, not duplicate enriched stubs)
-        for company in merged_companies:
-            slug_name = _normalize_slug(company.get('company', ''))
-            slug_source = _normalize_slug(company.get('source', ''))
-            expected = f"{slug_name}-{slug_source}" if slug_name and slug_source else ""
-            if norm_decoded == expected:
-                smart = _compute_smart_sections(company, merged_companies)
-                return jsonify({
-                    'success': True,
-                    'company': _prepare_company_for_response(company),
-                    'similar_companies': smart['similar_companies'],
-                    'sibling_companies': smart['sibling_companies'],
-                })
-        
-        # 1–3. Legacy fallbacks — search merged list only (avoids stale enriched rows without financials)
-        parts = decoded_slug.split('-')
-        company_name_match = ''
-        source_match = ''
-        if len(parts) >= 2:
-            source_match = '-'.join(parts[-2:]) if len(parts) >= 2 else parts[-1]
-            company_name_parts = parts[:-2] if len(parts) > 2 else [parts[0]]
-            company_name_match = ' '.join(company_name_parts)
-
-        for company in merged_companies:
-            slug_name = _normalize_slug(company.get('company', ''))
-            slug_source = _normalize_slug(company.get('source', ''))
-            expected = f"{slug_name}-{slug_source}" if slug_name and slug_source else ""
-            if norm_decoded == expected:
-                smart = _compute_smart_sections(company, merged_companies)
-                return jsonify({
-                    'success': True,
-                    'company': _prepare_company_for_response(company),
-                    'similar_companies': smart['similar_companies'],
-                    'sibling_companies': smart['sibling_companies'],
-                })
-
-            slug_name_legacy = (company.get('company') or '').lower().replace(' ', '-').replace('&', 'and')
-            slug_source_legacy = (company.get('source') or '').lower().replace(' ', '-')
-            expected_legacy = f"{slug_name_legacy}-{slug_source_legacy}"
-            if decoded_slug.lower() == expected_legacy:
-                smart = _compute_smart_sections(company, merged_companies)
-                return jsonify({
-                    'success': True,
-                    'company': _prepare_company_for_response(company),
-                    'similar_companies': smart['similar_companies'],
-                    'sibling_companies': smart['sibling_companies'],
-                })
-
-            if company_name_match and source_match:
-                company_name = (company.get('company') or '').lower()
-                source = (company.get('source') or '').lower()
-                if (company_name_match.lower() in company_name and source_match.lower() in source):
-                    smart = _compute_smart_sections(company, merged_companies)
-                    return jsonify({
-                        'success': True,
-                        'company': _prepare_company_for_response(company),
-                        'similar_companies': smart['similar_companies'],
-                        'sibling_companies': smart['sibling_companies'],
-                    })
-
-        # 4. Fallback: check pe_firms_database portfolio_companies (for FSN Capital, etc.)
-        def _normalize_slug_legacy(s):
-            if not s:
-                return ''
-            s = s.lower().strip().replace('&', 'and')
-            s = ''.join(c for c in s if c.isalnum() or c.isspace())
-            return s.replace(' ', '-')
-
-        if os.path.exists(data_path('pe_firms_database.json')):
-            with open(data_path('pe_firms_database.json'), 'r', encoding='utf-8') as pf:
-                pe_data = json.load(pf)
-                pe_firms = pe_data.get('pe_firms', {})
-                for firm_name, firm_data in pe_firms.items():
-                    if firm_data.get('portfolio_companies'):
-                        slug_firm = _normalize_slug_legacy(firm_name)
-                        for pc in firm_data['portfolio_companies']:
-                            pc_slug = _normalize_slug_legacy(pc.get('name') or '')
-                            expected = f"{pc_slug}-{slug_firm}"
-                            norm_decoded_legacy = _normalize_slug_legacy(decoded_slug.replace('-', ' '))
-                            if decoded_slug.lower() == expected or norm_decoded_legacy == expected or (
-                                len(parts) >= 2 and company_name_match and _normalize_slug_legacy(company_name_match) in pc_slug and
-                                source_match.lower() in slug_firm):
-                                company_data = company_dict_from_pe_firms_portfolio_pc(pc, firm_name)
-                                smart = _compute_smart_sections(company_data, merged_companies)
-                                return jsonify({
-                                    'success': True,
-                                    'company': _prepare_company_for_response(company_data),
-                                    'similar_companies': smart['similar_companies'],
-                                    'sibling_companies': smart['sibling_companies'],
-                                })
-        
-        return jsonify({
-            'success': False,
-            'message': 'Company not found'
-        }), 404
-        
+        company, smart = _resolve_company_by_slug(urllib.parse.unquote(company_slug))
+        if company:
+            return jsonify({
+                'success': True,
+                'company': company,
+                'similar_companies': smart['similar_companies'],
+                'sibling_companies': smart['sibling_companies'],
+            })
+        return jsonify({'success': False, 'message': 'Company not found'}), 404
     except Exception as e:
-        return jsonify({
-            'success': False,
-            'message': str(e)
-        }), 500
+        return jsonify({'success': False, 'message': str(e)}), 500
 
 
 @app.route('/api/portfolio/research/<company_name>', methods=['GET'])
@@ -1928,6 +2370,9 @@ def research_portfolio_company(company_name):
             'message': str(e),
             'company': company_name
         }), 500
+
+
+_refresh_search_index_file()
 
 
 # Run the application

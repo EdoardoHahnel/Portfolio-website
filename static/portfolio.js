@@ -1279,11 +1279,13 @@ function getCompanyLogoUrl(company, domain, cleanName) {
     if (FORCE_AVATAR_LOGO.some(f => (name || '').toLowerCase() === f.toLowerCase())) {
         return `https://ui-avatars.com/api/?name=${encodeURIComponent(name || 'Co')}&background=7c2d12&color=ffffff&size=64`;
     }
+    const rawLogo = ((company && company.logo_url) || (company && company.logo) || '').trim();
+    if (rawLogo && !rawLogo.includes('ui-avatars.com') && !rawLogo.includes('logo.clearbit.com')) {
+        return rawLogo;
+    }
     const favicon = domain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=128` : '';
     const avatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(name || 'Co')}&background=3f7de8&color=ffffff&size=64`;
-    const rawLogo = (company && company.logo_url) || '';
-    const clearbit = (rawLogo && !rawLogo.includes('ui-avatars.com')) ? rawLogo
-        : (domain ? `https://logo.clearbit.com/${domain}` : '');
+    const clearbit = rawLogo || (domain ? `https://logo.clearbit.com/${domain}` : '');
     return favicon || clearbit || avatar;
 }
 
@@ -1493,8 +1495,8 @@ const COMPANY_DOMAIN_OVERRIDES = {
     'One Inc': 'oneinc.com',
     'Resman': 'resman.fi',
     'Team Relocations': 'teamrelocations.com',
-    'Alligo': 'alligo.se',
-    'Momentum Group': 'momentumgroup.se',
+    'Alligo': 'alligo.com',
+    'Momentum Group': 'momentum.group',
     'Nobia': 'nobia.com',
     'Micropower': 'micropower.no',
     'G&O': 'go.no',
@@ -1530,20 +1532,32 @@ const COMPANY_DOMAIN_OVERRIDES = {
     'Lakrids by Bülow': 'lakridsbybulow.com',
     'Origo': 'origo.dk',
     'Restolution': 'restolution.de',
-    'Apoteka': 'apoteka.no',
-    'Autie': 'autie.com',
+    'Apoteka': 'apoteka.dk',
+    'Auntie': 'auntie.io',
+    'Autie': 'auntie.io',
     'Bildeler': 'bildeler.no',
     'Carla': 'carla.se',
     'Cleanwatts': 'cleanwatts.energy',
-    'Educations Media Group': 'emg.se',
+    'Educations Media Group': 'educations.com',
+    'Fashion Cloud': 'fashion.cloud',
+    'Fiksuruoka': 'fiksuruoka.fi',
     'Indevis': 'indevis.de',
-    'Innonature': 'innonature.com',
+    'InnoNature': 'innonature.de',
+    'Innonature': 'innonature.de',
     'Instabee': 'instabee.com',
-    'Once Upon': 'onceupon.com',
+    'Instabee (Instabox)': 'instabee.com',
+    'Once Upon': 'onceupon.photo',
     'Pflegecampus': 'pflegecampus.de',
-    'Porterbuddy': 'porterbuddy.com',
+    'Porterbuddy': 'instabee.com',
     'Press Ganey': 'pressganey.com',
-    'Purity': 'purity.no',
+    'Press Ganey / Forsta': 'pressganey.com',
+    'Purity': 'puritysoftdrinks.co.uk',
+    'TOPRO': 'topro.no',
+    'Bellman Group': 'bellmangroup.se',
+    'Cleanwatts': 'cleanwattsdigital.com',
+    'HappyOrNot': 'happyornot.fi',
+    'Kravia': 'kravia.com',
+    'premiumXL': 'premiumxl.de',
     'Remember': 'remember.dk',
     'Ropro': 'ropro.no'
 };
