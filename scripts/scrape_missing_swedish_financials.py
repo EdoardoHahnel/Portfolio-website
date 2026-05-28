@@ -15,13 +15,15 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from scrape_allabolag_financials import PORTFOLIO, format_revenue_line
 from scrape_celero_eqt_financials import resolve_and_scrape, search_allabolag, try_scrape
 
-from audit_swedish_missing_financials import (
-    firm_matches,
-    has_uc_financials,
-    is_swedish,
+from audit_swedish_missing_financials import has_uc_financials, is_swedish
+from scrape_nordstjernan_nordic_polaris_ratos_financials import (
+    find_pe_meta,
+    load_pe_portfolio_meta,
+    make_portfolio_entry,
 )
 
 BASE = Path(__file__).resolve().parents[1]
+PE_FIRMS = BASE / "pe_firms_database.json"
 CHECKPOINT = BASE / "scripts" / "scrape_missing_swedish_checkpoint.json"
 DEBUG_OUT = BASE / "scripts" / "allabolag_missing_swedish_debug.json"
 
@@ -86,7 +88,7 @@ def load_checkpoint() -> dict:
     if CHECKPOINT.exists():
         with open(CHECKPOINT, encoding="utf-8") as f:
             return json.load(f)
-    return {"results": {}, "done_names": []}
+    return {"results": {}}
 
 
 def save_checkpoint(cp: dict) -> None:
@@ -118,6 +120,25 @@ def apply_one(by_name: dict, name: str, r: dict) -> bool:
 
 
 
+def pe_swedish_not_in_enriched(enriched_names: set[str]) -> list[tuple[str, str, dict]]:
+    """(firm_key, company_name, pe_portfolio_company dict) for Swedish PE-firms rows."""
+    if not PE_FIRMS.exists():
+        return []
+    with open(PE_FIRMS, encoding="utf-8") as f:
+        pe = json.load(f).get("pe_firms", {})
+    out = []
+    for firm_key, firm in pe.items():
+        for pc in firm.get("portfolio_companies") or []:
+            name = (pc.get("name") or "").strip()
+            if not name or name in enriched_names:
+                continue
+            country = (pc.get("country") or "").lower()
+            if country not in ("sweden", "sverige") and "sweden" not in country:
+                continue
+            out.append((firm_key, name, pc))
+    return out
+
+
 def apply_checkpoint_to_portfolio(db: dict, by_name: dict, results: dict) -> int:
     """Apply checkpoint ok+fin to companies still missing financials.tables."""
     applied = 0
@@ -140,6 +161,7 @@ def main():
 
     companies_list = db["companies"]
     by_name = {c["company"]: c for c in companies_list}
+    pe_meta = load_pe_portfolio_meta()
     cp = load_checkpoint()
     results: dict = cp.get("results") or {}
     apply_checkpoint_to_portfolio(db, by_name, results)
@@ -149,15 +171,17 @@ def main():
         name = (c.get("company") or "").strip()
         if not name or name in SKIP_COMPANIES:
             continue
-        if not firm_matches(c.get("source") or ""):
-            continue
         if not is_swedish(c):
             continue
         if has_uc_financials(c):
             continue
         targets.append((name, c))
 
-    print(f"Targets: {len(targets)} Swedish companies without UC financials", flush=True)
+    pe_adds = pe_swedish_not_in_enriched(set(by_name.keys()))
+    print(
+        f"Targets: {len(targets)} in enriched + {len(pe_adds)} Swedish only in pe_firms_database",
+        flush=True,
+    )
     ok_count = 0
     fail_count = 0
 
@@ -196,8 +220,57 @@ def main():
         save_checkpoint(cp)
         time.sleep(1.2)
 
+    added_from_pe = 0
+    for j, (firm_key, name, pc) in enumerate(pe_adds, 1):
+        stub = {
+            "company": name,
+            "market": pc.get("country") or "Sweden",
+            "headquarters": pc.get("country") or "Sweden",
+            "source": firm_key,
+        }
+        search_q = build_search_query(stub)
+        print(f"[PE {j}/{len(pe_adds)}] {name} ({firm_key}) q={search_q!r}", flush=True)
+        r = resolve_company(name, stub, search_q)
+        r["source"] = firm_key
+        entry = {
+            "ok": r.get("ok"),
+            "url": r.get("url"),
+            "legal": r.get("legal"),
+            "error": r.get("error"),
+            "source": firm_key,
+            "periods": (r.get("fin") or {}).get("period_labels"),
+        }
+        if r.get("ok") and r.get("fin"):
+            entry["fin"] = r["fin"]
+        results[name] = entry
+        if r.get("ok"):
+            pe = find_pe_meta(name, pe_meta) or pc
+            row = make_portfolio_entry(name, firm_key, r["fin"], r["url"], pe)
+            companies_list.append(row)
+            by_name[name] = row
+            added_from_pe += 1
+            save_portfolio(db)
+            print(f"  OK added {r['fin'].get('legal_entity')}", flush=True)
+            ok_count += 1
+        else:
+            fail_count += 1
+            print(f"  FAIL {r.get('error')}", flush=True)
+        cp["results"] = results
+        save_checkpoint(cp)
+        time.sleep(1.2)
+
+    if added_from_pe:
+        db["metadata"]["total_companies"] = len(companies_list)
+        save_portfolio(db)
+        print(f"Added {added_from_pe} companies from pe_firms_database", flush=True)
+
     with open(DEBUG_OUT, "w", encoding="utf-8") as f:
-        json.dump(results, f, ensure_ascii=False, indent=2)
+        json.dump(
+            {k: {kk: vv for kk, vv in v.items() if kk != "fin"} for k, v in results.items()},
+            f,
+            ensure_ascii=False,
+            indent=2,
+        )
 
     failed = [n for n, v in results.items() if not v.get("ok")]
     print(f"\nDone. OK={ok_count} FAIL={fail_count} (this run targets={len(targets)})", flush=True)
