@@ -276,6 +276,378 @@
      * Bold + row tint for key P&L / balance lines only (not Bokslut / löner tables).
      * @returns {'financials-row--grand'|'financials-row--mid'|''}
      */
+    /** "2024-12" → "2024" for chart axis */
+    function formatPeriodChartLabel(periodKey) {
+        const s = String(periodKey || '').trim();
+        const m = s.match(/^(\d{4})/);
+        if (m) return m[1];
+        return s || '—';
+    }
+
+    /**
+     * Revenue (Nettoomsättning or Omsättning) + Årets resultat by period, oldest → newest.
+     * Values in thousands SEK (tSEK) for chart scale.
+     */
+    function buildFinancialsChartData(f) {
+        const pl = findResultatrakningTable(f);
+        const periods = (f && f.period_labels) || [];
+        if (!pl || periods.length < 2) return null;
+
+        const order = periods
+            .map(function (_, i) {
+                return i;
+            })
+            .sort(function (a, b) {
+                return String(periods[a]).localeCompare(String(periods[b]));
+            });
+
+        const labels = [];
+        const revenue = [];
+        const netResult = [];
+
+        order.forEach(function (i) {
+            const netto = plCell(pl, 'Nettoomsättning', i);
+            const brutto = plCell(pl, 'Omsättning', i);
+            const revSek = thousandsCellToSek(netto != null ? netto : brutto);
+            const netSek = thousandsCellToSek(plCell(pl, 'Årets resultat', i));
+            labels.push(formatPeriodChartLabel(periods[i]));
+            revenue.push(revSek != null ? revSek / 1000 : null);
+            netResult.push(netSek != null ? netSek / 1000 : null);
+        });
+
+        const hasRev = revenue.some(function (v) {
+            return v != null;
+        });
+        const hasNet = netResult.some(function (v) {
+            return v != null;
+        });
+        if (!hasRev && !hasNet) return null;
+
+        return {
+            labels: labels,
+            revenue: revenue,
+            netResult: netResult,
+            unitNote: (f.amounts_note || 'Belopp i 1000 SEK').trim(),
+        };
+    }
+
+    function formatTsekChartValue(tsek) {
+        if (tsek == null || isNaN(tsek)) return '—';
+        const abs = Math.abs(tsek);
+        if (abs >= 1000) {
+            return (tsek / 1000).toLocaleString('sv-SE', { maximumFractionDigits: 1 }) + ' MSEK';
+        }
+        return tsek.toLocaleString('sv-SE', { maximumFractionDigits: 0 }) + ' tSEK';
+    }
+
+    function financialsAxisTick(value) {
+        const n = Number(value);
+        if (!isFinite(n)) return value;
+        if (Math.abs(n) >= 1000) {
+            return (n / 1000).toLocaleString('sv-SE', { maximumFractionDigits: 0 }) + 'k';
+        }
+        return n.toLocaleString('sv-SE', { maximumFractionDigits: 0 });
+    }
+
+    function financialsNetAxisUsesZeroBaseline(values) {
+        const nums = (values || []).filter(function (v) {
+            return v != null && !isNaN(v);
+        });
+        if (!nums.length) return true;
+        return nums.every(function (v) {
+            return v >= 0;
+        });
+    }
+
+    function destroyFinancialsChart(innerEl) {
+        if (!innerEl) return;
+        if (innerEl._financialsChartRo) {
+            try {
+                innerEl._financialsChartRo.disconnect();
+            } catch (e) {
+                /* ignore */
+            }
+            innerEl._financialsChartRo = null;
+        }
+        if (innerEl._financialsChart) {
+            try {
+                innerEl._financialsChart.destroy();
+            } catch (e) {
+                /* ignore */
+            }
+            innerEl._financialsChart = null;
+        }
+    }
+
+    function renderFinancialsChartBlock(innerEl, f) {
+        if (!innerEl || typeof global.Chart === 'undefined') return;
+        const series = buildFinancialsChartData(f);
+        if (!series) return;
+
+        const wrap = document.createElement('div');
+        wrap.className = 'financials-chart-block';
+        const title = document.createElement('h4');
+        title.className = 'financials-chart-title';
+        title.textContent = 'Revenue & net income';
+        wrap.appendChild(title);
+        const canvasWrap = document.createElement('div');
+        canvasWrap.className = 'financials-chart-canvas-wrap';
+        const canvas = document.createElement('canvas');
+        canvas.className = 'financials-trend-chart';
+        canvas.setAttribute('role', 'img');
+        canvas.setAttribute(
+            'aria-label',
+            'Chart of revenue and net result over ' + series.labels.join(', ')
+        );
+        canvasWrap.appendChild(canvas);
+        wrap.appendChild(canvasWrap);
+        innerEl.appendChild(wrap);
+
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
+
+        destroyFinancialsChart(innerEl);
+
+        const FONT =
+            "'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif";
+        const COLOR_REVENUE = '#4F46E5';
+        const COLOR_REVENUE_DEEP = '#3730A3';
+        const COLOR_NET = '#0F766E';
+        const COLOR_NET_LIGHT = '#14B8A6';
+        const COLOR_AXIS = '#64748B';
+        const COLOR_GRID = 'rgba(148, 163, 184, 0.22)';
+        const COLOR_TICK = '#475569';
+
+        function revenueBarFill(chart) {
+            const h = chart.height || 300;
+            const g = chart.ctx.createLinearGradient(0, 0, 0, h);
+            g.addColorStop(0, '#6366F1');
+            g.addColorStop(1, COLOR_REVENUE_DEEP);
+            return g;
+        }
+
+        function resizeFinancialsChart() {
+            const chart = innerEl._financialsChart;
+            if (!chart) return;
+            try {
+                chart.resize();
+            } catch (e) {
+                /* ignore */
+            }
+        }
+
+        innerEl._financialsChart = new global.Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: series.labels,
+                datasets: [
+                    {
+                        type: 'bar',
+                        label: 'Revenue',
+                        data: series.revenue,
+                        backgroundColor: function (context) {
+                            return revenueBarFill(context.chart);
+                        },
+                        hoverBackgroundColor: COLOR_REVENUE_DEEP,
+                        borderRadius: 4,
+                        maxBarThickness: 56,
+                        categoryPercentage: 0.68,
+                        barPercentage: 0.88,
+                        borderSkipped: false,
+                        order: 2,
+                        yAxisID: 'y',
+                    },
+                    {
+                        type: 'line',
+                        label: 'Net income',
+                        data: series.netResult,
+                        yAxisID: 'y1',
+                        borderColor: COLOR_NET,
+                        backgroundColor: 'rgba(20, 184, 166, 0.08)',
+                        borderWidth: 2,
+                        pointRadius: 4,
+                        pointHoverRadius: 6,
+                        pointBackgroundColor: COLOR_NET_LIGHT,
+                        pointBorderColor: '#ffffff',
+                        pointBorderWidth: 2,
+                        tension: 0.15,
+                        fill: false,
+                        order: 1,
+                    },
+                ],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                layout: {
+                    padding: { top: 4, right: 12, bottom: 2, left: 4 },
+                },
+                interaction: { mode: 'index', intersect: false },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        align: 'end',
+                        labels: {
+                            usePointStyle: true,
+                            pointStyleWidth: 10,
+                            boxWidth: 8,
+                            boxHeight: 8,
+                            padding: 16,
+                            font: {
+                                family: FONT,
+                                size: 11,
+                                weight: '500',
+                            },
+                            color: COLOR_TICK,
+                            generateLabels: function (chart) {
+                                const defaults =
+                                    global.Chart.defaults.plugins.legend.labels
+                                        .generateLabels;
+                                const items = defaults(chart);
+                                items.forEach(function (item, i) {
+                                    if (i === 0) item.pointStyle = 'rectRounded';
+                                    else item.pointStyle = 'circle';
+                                });
+                                return items;
+                            },
+                        },
+                    },
+                    tooltip: {
+                        backgroundColor: '#ffffff',
+                        titleColor: '#0f172a',
+                        bodyColor: '#334155',
+                        borderColor: '#e2e8f0',
+                        borderWidth: 1,
+                        padding: 12,
+                        boxPadding: 6,
+                        cornerRadius: 6,
+                        titleFont: {
+                            family: FONT,
+                            size: 12,
+                            weight: '600',
+                        },
+                        bodyFont: { family: FONT, size: 11, weight: '500' },
+                        displayColors: true,
+                        callbacks: {
+                            title: function (items) {
+                                if (!items || !items.length) return '';
+                                return items[0].label || '';
+                            },
+                            label: function (context) {
+                                const v = context.parsed.y;
+                                return (
+                                    ' ' +
+                                    context.dataset.label +
+                                    ': ' +
+                                    formatTsekChartValue(v)
+                                );
+                            },
+                            footer: function () {
+                                return series.unitNote ? [series.unitNote] : [];
+                            },
+                        },
+                        footerFont: {
+                            family: FONT,
+                            size: 10,
+                            weight: '400',
+                            style: 'italic',
+                        },
+                        footerColor: '#94a3b8',
+                    },
+                },
+                scales: {
+                    y: {
+                        type: 'linear',
+                        position: 'left',
+                        beginAtZero: true,
+                        grace: '8%',
+                        border: { display: false },
+                        title: {
+                            display: true,
+                            text: 'Revenue',
+                            font: {
+                                family: FONT,
+                                size: 10,
+                                weight: '600',
+                            },
+                            color: COLOR_REVENUE,
+                            padding: { bottom: 4 },
+                        },
+                        ticks: {
+                            maxTicksLimit: 6,
+                            font: { family: FONT, size: 10 },
+                            color: COLOR_AXIS,
+                            padding: 8,
+                            callback: financialsAxisTick,
+                        },
+                        grid: {
+                            color: COLOR_GRID,
+                            drawBorder: false,
+                        },
+                    },
+                    y1: {
+                        type: 'linear',
+                        position: 'right',
+                        beginAtZero: financialsNetAxisUsesZeroBaseline(
+                            series.netResult
+                        ),
+                        grace: '8%',
+                        border: { display: false },
+                        title: {
+                            display: true,
+                            text: 'Net income',
+                            font: {
+                                family: FONT,
+                                size: 10,
+                                weight: '600',
+                            },
+                            color: COLOR_NET,
+                            padding: { bottom: 4 },
+                        },
+                        ticks: {
+                            maxTicksLimit: 6,
+                            font: { family: FONT, size: 10 },
+                            color: COLOR_AXIS,
+                            padding: 8,
+                            callback: financialsAxisTick,
+                        },
+                        grid: {
+                            drawOnChartArea: false,
+                            drawBorder: false,
+                        },
+                    },
+                    x: {
+                        border: { display: false },
+                        ticks: {
+                            font: {
+                                family: FONT,
+                                size: 11,
+                                weight: '500',
+                            },
+                            color: COLOR_TICK,
+                            padding: 6,
+                        },
+                        grid: { display: false },
+                    },
+                },
+            },
+        });
+
+        requestAnimationFrame(resizeFinancialsChart);
+        setTimeout(resizeFinancialsChart, 50);
+        if (typeof global.ResizeObserver === 'function') {
+            if (innerEl._financialsChartRo) {
+                try {
+                    innerEl._financialsChartRo.disconnect();
+                } catch (e) {
+                    /* ignore */
+                }
+            }
+            innerEl._financialsChartRo = new global.ResizeObserver(resizeFinancialsChart);
+            innerEl._financialsChartRo.observe(canvasWrap);
+        }
+    }
+
     function financialRowEmphasisClass(tableTitle, rowLabel) {
         const t = normFinancialLabel(tableTitle);
         const lab = normFinancialLabel(rowLabel);
@@ -309,8 +681,11 @@
      */
     function renderFinancialsInner(innerEl, f) {
         if (!innerEl) return;
+        destroyFinancialsChart(innerEl);
         innerEl.innerHTML = '';
         if (!hasFinancialsPayload(f)) return;
+
+        renderFinancialsChartBlock(innerEl, f);
 
         if (f.legal_entity || f.org_nr || f.phone || f.address || f.corporate_note) {
             const ent = document.createElement('div');

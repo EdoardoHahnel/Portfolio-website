@@ -26,6 +26,62 @@
     margin-bottom: 0.9rem;
 }
 
+/* Revenue & net result trend chart (Allabolag multi-year) */
+.financials-chart-block {
+    margin-bottom: 0.65rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.financials-chart-block + .financials-entity {
+    margin-top: 0;
+    padding-top: 0.15rem;
+}
+
+.financials-chart-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #475569;
+}
+
+.financials-chart-canvas-wrap {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    max-width: 100%;
+}
+
+@media (max-width: 640px) {
+    .financials-chart-canvas-wrap {
+        height: 260px;
+    }
+}
+
+/* charts.css caps every canvas at 120px — exempt financials trend chart */
+.financials-chart-canvas-wrap canvas.financials-trend-chart {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    max-height: none !important;
+    max-width: 100%;
+    margin: 0 !important;
+}
+
+/* Restore readable Chart.js text (charts.css forces ~0.3rem globally) */
+.financials-chart-block .chartjs-render-monitor,
+.financials-chart-block .chartjs-render-monitor * {
+    font-size: 10px !important;
+}
+
+.financials-chart-block .chartjs-render-monitor text[data-text] {
+    display: inline !important;
+}
+
 .key-facts-subtitle {
     font-size: 0.8rem;
     font-weight: 600;

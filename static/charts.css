@@ -1,7 +1,7 @@
 /* Chart and Graph Global Sizing - 50% smaller */
 
-/* All charts and canvases */
-canvas {
+/* All charts and canvases (financials trend chart overrides in company_key_facts.css) */
+canvas:not(.financials-trend-chart) {
     max-height: 120px !important;
     transform: scale(1.0);
     transform-origin: center center;
